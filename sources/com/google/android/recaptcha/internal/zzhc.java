@@ -3,27 +3,27 @@ package com.google.android.recaptcha.internal;
 import android.net.TrafficStats;
 import android.webkit.URLUtil;
 import androidx.car.app.navigation.model.Maneuver;
-import hd.c;
-import hd.g;
-import id.h;
+import id.c;
+import id.g;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
+import jd.h;
 import kotlin.jvm.internal.i;
 import org.telegram.messenger.MessageObject;
-import v7.z7;
+import v7.h8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzhc implements zzha {
     private final c zza;
 
     public zzhc() {
         int i10 = zzby.zza;
-        this.zza = z7.a(zzhb.zza);
+        this.zza = h8.a(zzhb.zza);
     }
 
     private static final void zzb(byte[] bArr) {
@@ -222,8 +222,8 @@ public final class zzhc implements zzha {
             httpURLConnection.connect();
             httpURLConnection.getOutputStream().write(bArr);
             return httpURLConnection.getResponseCode() == 200;
-        } catch (Exception e7) {
-            e7.getMessage();
+        } catch (Exception e) {
+            e.getMessage();
             return false;
         }
     }

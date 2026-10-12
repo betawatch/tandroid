@@ -1,79 +1,30 @@
 package v2;
 
-import n4.x;
-import u2.a1;
-import u2.b1;
+import b2.x;
+import g2.b0;
+import u2.u;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f implements b1 {
-    public final h a;
-    public final a1 b;
+public abstract class f implements y2.i {
+    public final long a = u.g.getAndIncrement();
+    public final g2.m b;
     public final int c;
-    public boolean d;
-    public final /* synthetic */ h e;
+    public final x d;
+    public final int e;
+    public final Object f;
+    public final long h;
+    public final long n;
+    public final b0 r;
 
-    public f(h hVar, h hVar2, a1 a1Var, int i10) {
-        this.e = hVar;
-        this.a = hVar2;
-        this.b = a1Var;
+    public f(g2.h hVar, g2.m mVar, int i10, x xVar, int i11, Object obj, long j10, long j11) {
+        this.r = new b0(hVar);
+        this.b = mVar;
         this.c = i10;
-    }
-
-    public final void b() {
-        if (this.d) {
-            return;
-        }
-        h hVar = this.e;
-        a5.a aVar = hVar.h;
-        int[] iArr = hVar.b;
-        int i10 = this.c;
-        aVar.l(iArr[i10], hVar.c[i10], 0, null, hVar.J);
-        this.d = true;
-    }
-
-    @Override // u2.b1
-    public final boolean e() {
-        h hVar = this.e;
-        return !hVar.v() && this.b.x(hVar.O);
-    }
-
-    @Override // u2.b1
-    public final int f(x xVar, h2.h hVar, int i10) {
-        h hVar2 = this.e;
-        if (hVar2.v()) {
-            return -3;
-        }
-        a aVar = hVar2.L;
-        a1 a1Var = this.b;
-        if (aVar != null && aVar.d(this.c + 1) <= a1Var.t()) {
-            return -3;
-        }
-        b();
-        return a1Var.C(xVar, hVar, i10, hVar2.O);
-    }
-
-    @Override // u2.b1
-    public final int j(long j3) {
-        h hVar = this.e;
-        if (hVar.v()) {
-            return 0;
-        }
-        boolean z10 = hVar.O;
-        a1 a1Var = this.b;
-        int v = a1Var.v(j3, z10);
-        a aVar = hVar.L;
-        if (aVar != null) {
-            v = Math.min(v, aVar.d(this.c + 1) - a1Var.t());
-        }
-        a1Var.H(v);
-        if (v > 0) {
-            b();
-        }
-        return v;
-    }
-
-    @Override // u2.b1
-    public final void a() {
+        this.d = xVar;
+        this.e = i11;
+        this.f = obj;
+        this.h = j10;
+        this.n = j11;
     }
 }

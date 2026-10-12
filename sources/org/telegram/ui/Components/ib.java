@@ -1,24 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ib implements Runnable {
+public final /* synthetic */ class ib implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xb b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ib(xb xbVar, int i10) {
+    public /* synthetic */ ib(Object obj, int i10) {
         this.a = i10;
-        this.b = xbVar;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.onExitTransitionStart();
+                sc scVar = (sc) this.b;
+                Float f7 = (Float) obj;
+                qb qbVar = scVar.p;
+                if (qbVar != null) {
+                    if (!scVar.e.top) {
+                        qbVar.c(r0.getHeight() - f7.floatValue());
+                        break;
+                    }
+                }
                 break;
             default:
-                this.b.onEnterTransitionStart();
+                ti tiVar = ((vi) this.b).c2;
+                if (tiVar != null) {
+                    tiVar.U(obj);
+                    break;
+                }
                 break;
         }
     }

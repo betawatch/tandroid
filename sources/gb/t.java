@@ -1,68 +1,42 @@
 package gb;
 
-import java.util.Iterator;
-import java.util.Map;
-import v7.k8;
+import java.io.ObjectInputStream;
+import java.io.ObjectStreamClass;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class t extends db.u {
-    public final v a;
+public abstract class t {
+    public static final t a;
 
-    public t(v vVar) {
-        this.a = vVar;
-    }
-
-    public abstract Object a();
-
-    public abstract Object b(Object obj);
-
-    public abstract void c(Object obj, lb.a aVar, s sVar);
-
-    @Override // db.u
-    public final Object read(lb.a aVar) {
-        if (aVar.x() == 9) {
-            aVar.t();
-            return null;
-        }
-        Object a2 = a();
-        Map map = this.a.a;
+    static {
+        t sVar;
         try {
-            aVar.b();
-            while (aVar.k()) {
-                s sVar = (s) map.get(aVar.r());
-                if (sVar == null) {
-                    aVar.C();
-                } else {
-                    c(a2, aVar, sVar);
+            Class<?> cls = Class.forName("sun.misc.Unsafe");
+            Field declaredField = cls.getDeclaredField("theUnsafe");
+            declaredField.setAccessible(true);
+            sVar = new p(cls.getMethod("allocateInstance", Class.class), declaredField.get(null));
+        } catch (Exception unused) {
+            try {
+                try {
+                    Method declaredMethod = ObjectStreamClass.class.getDeclaredMethod("getConstructorId", Class.class);
+                    declaredMethod.setAccessible(true);
+                    int intValue = ((Integer) declaredMethod.invoke(null, Object.class)).intValue();
+                    Method declaredMethod2 = ObjectStreamClass.class.getDeclaredMethod("newInstance", Class.class, Integer.TYPE);
+                    declaredMethod2.setAccessible(true);
+                    sVar = new q(intValue, declaredMethod2);
+                } catch (Exception unused2) {
+                    sVar = new s();
                 }
+            } catch (Exception unused3) {
+                Method declaredMethod3 = ObjectInputStream.class.getDeclaredMethod("newInstance", Class.class, Class.class);
+                declaredMethod3.setAccessible(true);
+                sVar = new r(declaredMethod3);
             }
-            aVar.f();
-            return b(a2);
-        } catch (IllegalAccessException e7) {
-            k8 k8Var = ib.c.a;
-            throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e7);
-        } catch (IllegalStateException e10) {
-            throw new db.j(e10);
         }
+        a = sVar;
     }
 
-    @Override // db.u
-    public final void write(lb.b bVar, Object obj) {
-        if (obj == null) {
-            bVar.i();
-            return;
-        }
-        bVar.c();
-        try {
-            Iterator it = this.a.b.iterator();
-            while (it.hasNext()) {
-                ((s) it.next()).a(bVar, obj);
-            }
-            bVar.f();
-        } catch (IllegalAccessException e7) {
-            k8 k8Var = ib.c.a;
-            throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e7);
-        }
-    }
+    public abstract Object a(Class cls);
 }

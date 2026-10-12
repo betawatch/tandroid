@@ -1,44 +1,16 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ap0 implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ zf.b b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public interface ap0 {
+    void a(TL_account.Password password);
 
-    public /* synthetic */ ap0(aq0 aq0Var, zf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, xo0 xo0Var) {
-        this.e = aq0Var;
-        this.b = bVar;
-        this.c = tL_starGiftUnique;
-        this.d = j3;
-        this.f = xo0Var;
-    }
+    void b();
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                aq0.V((aq0) this.e, this.b, this.c, this.d, (xo0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
-                break;
-            default:
-                xh.h4.V((xh.h4) this.e, (org.telegram.ui.ActionBar.b2) this.f, this.b, this.c, this.d, (TLRPC.TL_payments_paymentFormStarGift) obj);
-                break;
-        }
-    }
+    boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard);
 
-    public /* synthetic */ ap0(xh.h4 h4Var, org.telegram.ui.ActionBar.b2 b2Var, zf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
-        this.e = h4Var;
-        this.f = b2Var;
-        this.b = bVar;
-        this.c = tL_starGiftUnique;
-        this.d = j3;
-    }
+    void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo);
 }

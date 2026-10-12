@@ -22,15 +22,15 @@ public final class b implements Comparable, Serializable {
 
     public b(LocalDateTime localDateTime, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
         localDateTime.getClass();
-        this.a = j$.com.android.tools.r8.a.w(localDateTime, zoneOffset);
+        this.a = j$.com.android.tools.r8.a.v(localDateTime, zoneOffset);
         this.b = localDateTime;
         this.c = zoneOffset;
         this.d = zoneOffset2;
     }
 
-    public b(long j3, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
-        this.a = j3;
-        this.b = LocalDateTime.K(j3, 0, zoneOffset);
+    public b(long j10, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
+        this.a = j10;
+        this.b = LocalDateTime.K(j10, 0, zoneOffset);
         this.c = zoneOffset;
         this.d = zoneOffset2;
     }

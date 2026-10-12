@@ -1,62 +1,21 @@
 package c5;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m {
-    public final ArrayList a;
+    public final String a;
+    public final long b;
+    public final String c;
+    public final String d;
 
-    public m(int i10) {
-        switch (i10) {
-            case 2:
-                File file = new File(System.getProperty("java.io.tmpdir"));
-                if (!file.exists()) {
-                    file.mkdirs();
-                }
-                this.a = new ArrayList();
-                break;
-            default:
-                this.a = new ArrayList();
-                new ArrayList();
-                new ArrayList();
-                break;
-        }
-    }
-
-    public void a() {
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            if (obj != null) {
-                throw new ClassCastException();
-            }
-            try {
-                throw null;
-            } catch (Exception e7) {
-                zc.i.d.log(Level.WARNING, "could not delete file ", (Throwable) e7);
-            }
-        }
-        arrayList.clear();
-    }
-
-    public m(JSONArray jSONArray) {
-        ArrayList arrayList = new ArrayList();
-        if (jSONArray != null) {
-            for (int i10 = 0; i10 < jSONArray.length(); i10++) {
-                JSONObject optJSONObject = jSONArray.optJSONObject(i10);
-                if (optJSONObject != null) {
-                    arrayList.add(new l(optJSONObject));
-                }
-            }
-        }
-        this.a = arrayList;
+    public m(JSONObject jSONObject) {
+        this.d = jSONObject.optString("billingPeriod");
+        this.c = jSONObject.optString("priceCurrencyCode");
+        this.a = jSONObject.optString("formattedPrice");
+        this.b = jSONObject.optLong("priceAmountMicros");
+        jSONObject.optInt("recurrenceMode");
+        jSONObject.optInt("billingCycleCount");
     }
 }

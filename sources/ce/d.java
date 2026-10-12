@@ -1,24 +1,170 @@
 package ce;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import be.j2;
+import com.google.firebase.messaging.s;
+import de.g;
+import de.h;
+import id.i;
+import j9.u;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.atomic.AtomicLongFieldUpdater;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import k1.k;
+import k1.m;
+import kotlin.jvm.internal.j;
+import td.l;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static final h a = new h(-1, null, null, 0);
-    public static final int b = fe.a.j(32, 12, "kotlinx.coroutines.bufferedChannel.segmentSize");
-    public static final int c = fe.a.j(10000, 12, "kotlinx.coroutines.bufferedChannel.expandBufferCompletionWaitIterations");
-    public static final da.a d = new da.a("BUFFERED");
-    public static final da.a e = new da.a("SHOULD_BUFFER");
-    public static final da.a f = new da.a("S_RESUMING_BY_RCV");
-    public static final da.a g = new da.a("RESUMING_BY_EB");
-    public static final da.a h = new da.a("POISONED");
-    public static final da.a i = new da.a("DONE_RCV");
-    public static final da.a j = new da.a("INTERRUPTED_SEND");
-    public static final da.a k = new da.a("INTERRUPTED_RCV");
-    public static final da.a l = new da.a("CHANNEL_CLOSED");
-    public static final da.a m = new da.a("SUSPEND");
-    public static final da.a n = new da.a("SUSPEND_NO_WAITER");
-    public static final da.a o = new da.a("FAILED");
-    public static final da.a p = new da.a("CLOSE_HANDLER_CLOSED");
-    public static final da.a q = new da.a("CLOSE_HANDLER_INVOKED");
-    public static final da.a r = new da.a("NO_CLOSE_CAUSE");
+public final class d extends j implements l {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ d(int i10, Object obj, Object obj2) {
+        super(1);
+        this.b = i10;
+        this.c = obj;
+        this.d = obj2;
+    }
+
+    @Override // td.l
+    public final Object invoke(Object obj) {
+        boolean z10;
+        boolean z11;
+        long j10;
+        int i10;
+        Object eVar;
+        i iVar;
+        switch (this.b) {
+            case 0:
+                ((e) this.c).c.removeCallbacks((u) this.d);
+                return i.a;
+            default:
+                Throwable th2 = (Throwable) obj;
+                ((m) this.c).invoke(th2);
+                de.b bVar = (de.b) ((s) this.d).d;
+                bVar.getClass();
+                AtomicLongFieldUpdater atomicLongFieldUpdater = de.b.b;
+                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = de.b.i;
+                a6.i iVar2 = de.d.r;
+                while (true) {
+                    z10 = true;
+                    if (atomicReferenceFieldUpdater.compareAndSet(bVar, iVar2, th2)) {
+                        z11 = true;
+                    } else if (atomicReferenceFieldUpdater.get(bVar) != iVar2) {
+                        z11 = false;
+                    }
+                }
+                while (true) {
+                    long j11 = atomicLongFieldUpdater.get(bVar);
+                    int i11 = (int) (j11 >> 60);
+                    if (i11 == 0) {
+                        j10 = j11 & 1152921504606846975L;
+                        i10 = 2;
+                    } else if (i11 == 1) {
+                        j10 = j11 & 1152921504606846975L;
+                        i10 = 3;
+                    }
+                    de.b bVar2 = bVar;
+                    AtomicLongFieldUpdater atomicLongFieldUpdater2 = atomicLongFieldUpdater;
+                    boolean compareAndSet = atomicLongFieldUpdater2.compareAndSet(bVar2, j11, (i10 << 60) + j10);
+                    bVar = bVar2;
+                    if (!compareAndSet) {
+                        atomicLongFieldUpdater = atomicLongFieldUpdater2;
+                    }
+                }
+                bVar.c();
+                if (z11) {
+                    AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = de.b.j;
+                    while (true) {
+                        Object obj2 = atomicReferenceFieldUpdater2.get(bVar);
+                        a6.i iVar3 = obj2 == null ? de.d.p : de.d.q;
+                        while (!atomicReferenceFieldUpdater2.compareAndSet(bVar, obj2, iVar3)) {
+                            if (atomicReferenceFieldUpdater2.get(bVar) != obj2) {
+                                break;
+                            }
+                        }
+                        if (obj2 != null) {
+                            kotlin.jvm.internal.s.a(1, obj2);
+                            ((l) obj2).invoke((Throwable) de.b.i.get(bVar));
+                        }
+                    }
+                }
+                while (true) {
+                    bVar.getClass();
+                    AtomicLongFieldUpdater atomicLongFieldUpdater3 = de.b.c;
+                    long j12 = atomicLongFieldUpdater3.get(bVar);
+                    long j13 = de.b.b.get(bVar);
+                    if (bVar.i(j13, z10)) {
+                        eVar = new de.e((Throwable) de.b.i.get(bVar));
+                    } else {
+                        long j14 = j13 & 1152921504606846975L;
+                        de.f fVar = g.a;
+                        if (j12 < j14) {
+                            Object obj3 = de.d.k;
+                            h hVar = (h) de.b.g.get(bVar);
+                            while (true) {
+                                if (bVar.i(de.b.b.get(bVar), z10)) {
+                                    eVar = new de.e((Throwable) de.b.i.get(bVar));
+                                } else {
+                                    long andIncrement = atomicLongFieldUpdater3.getAndIncrement(bVar);
+                                    long j15 = de.d.b;
+                                    long j16 = andIncrement / j15;
+                                    int i12 = (int) (andIncrement % j15);
+                                    if (hVar.c != j16) {
+                                        h e = bVar.e(j16, hVar);
+                                        if (e == null) {
+                                            continue;
+                                            z10 = true;
+                                        } else {
+                                            hVar = e;
+                                        }
+                                    }
+                                    Object o10 = bVar.o(hVar, i12, andIncrement, obj3);
+                                    if (o10 == de.d.m) {
+                                        j2 j2Var = obj3 instanceof j2 ? (j2) obj3 : null;
+                                        if (j2Var != null) {
+                                            j2Var.a(hVar, i12);
+                                        }
+                                        bVar.q(andIncrement);
+                                        hVar.i();
+                                    } else if (o10 == de.d.o) {
+                                        if (andIncrement < bVar.g()) {
+                                            hVar.b();
+                                        }
+                                        z10 = true;
+                                    } else {
+                                        if (o10 == de.d.n) {
+                                            throw new IllegalStateException("unexpected");
+                                        }
+                                        hVar.b();
+                                        eVar = o10;
+                                    }
+                                }
+                            }
+                        }
+                        eVar = fVar;
+                    }
+                    if (eVar instanceof de.f) {
+                        eVar = null;
+                    }
+                    i iVar4 = i.a;
+                    if (eVar == null) {
+                        iVar = null;
+                    } else {
+                        k kVar = (k) eVar;
+                        if (kVar instanceof k1.j) {
+                            ((k1.j) kVar).b.L(th2 == null ? new CancellationException("DataStore scope was cancelled before updateData could complete") : th2);
+                        }
+                        iVar = iVar4;
+                    }
+                    if (iVar == null) {
+                        return iVar4;
+                    }
+                    z10 = true;
+                }
+        }
+    }
 }

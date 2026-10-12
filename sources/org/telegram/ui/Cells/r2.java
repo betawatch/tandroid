@@ -15,9 +15,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class r2 {
     public final s2 a;
@@ -33,7 +33,7 @@ public final class r2 {
     }
 
     public static void a(r2 r2Var, int i10, MessageObject messageObject, TLRPC.Chat chat) {
-        long j3;
+        long j10;
         boolean z10;
         int i11;
         r2Var.getClass();
@@ -44,7 +44,7 @@ public final class r2 {
             r2Var.d = false;
             r2Var.e = false;
             r2Var.b = id2;
-            TextPaint textPaint = org.telegram.ui.ActionBar.i6.F0[0];
+            TextPaint textPaint = org.telegram.ui.ActionBar.g6.F0[0];
             if (chat != null) {
                 ArrayList<TLRPC.TL_forumTopic> topics = MessagesController.getInstance(i10).getTopicsController().getTopics(chat.id);
                 boolean z11 = true;
@@ -59,20 +59,20 @@ public final class r2 {
                     return;
                 }
                 ArrayList arrayList = new ArrayList(topics);
-                Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.h7(6)));
+                Collections.sort(arrayList, Comparator$-CC.comparingInt(new bi.s6(5)));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 if (messageObject == null || ChatObject.isMonoForum(chat)) {
-                    j3 = 0;
+                    j10 = 0;
                     z10 = false;
                     i11 = 0;
                 } else {
-                    j3 = MessageObject.getTopicId(i10, messageObject.messageOwner, true);
-                    TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(i10).getTopicsController().findTopic(chat.id, j3);
+                    j10 = MessageObject.getTopicId(i10, messageObject.messageOwner, true);
+                    TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(i10).getTopicsController().findTopic(chat.id, j10);
                     if (findTopic != null) {
-                        CharSequence j10 = ng.d.j(findTopic, textPaint, null);
-                        spannableStringBuilder.append(j10);
-                        i11 = findTopic.unread_count > 0 ? j10.length() : 0;
-                        r2Var.c = j10.length();
+                        CharSequence j11 = og.d.j(findTopic, textPaint, null);
+                        spannableStringBuilder.append(j11);
+                        i11 = findTopic.unread_count > 0 ? j11.length() : 0;
+                        r2Var.c = j11.length();
                         if (messageObject.isOutOwner()) {
                             r2Var.d = false;
                         } else {
@@ -97,19 +97,19 @@ public final class r2 {
                             spannableStringBuilder.append((CharSequence) "  ");
                         }
                         long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_forumTopic) arrayList.get(i12)).from_id);
-                        org.telegram.ui.g5 g5Var = new org.telegram.ui.g5(i10, r2Var.a);
-                        g5Var.h = false;
-                        g5Var.c(peerDialogId);
-                        r2Var.f.put(Long.valueOf(peerDialogId), g5Var);
+                        org.telegram.ui.k5 k5Var = new org.telegram.ui.k5(i10, r2Var.a);
+                        k5Var.h = false;
+                        k5Var.c(peerDialogId);
+                        r2Var.f.put(Long.valueOf(peerDialogId), k5Var);
                         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(DialogObject.getName(peerDialogId));
                         valueOf.insert(0, (CharSequence) "  ");
-                        valueOf.setSpan(g5Var, 0, 1, 33);
+                        valueOf.setSpan(k5Var, 0, 1, 33);
                         spannableStringBuilder.append((CharSequence) valueOf);
                     }
                 } else {
                     int i13 = 0;
                     for (int i14 = 4; i13 < Math.min(i14, arrayList.size()); i14 = 4) {
-                        if (((TLRPC.TL_forumTopic) arrayList.get(i13)).id != j3) {
+                        if (((TLRPC.TL_forumTopic) arrayList.get(i13)).id != j10) {
                             if (spannableStringBuilder.length() != 0) {
                                 if (z11 && z10) {
                                     spannableStringBuilder.append((CharSequence) " ");
@@ -117,7 +117,7 @@ public final class r2 {
                                     spannableStringBuilder.append((CharSequence) ", ");
                                 }
                             }
-                            spannableStringBuilder.append(ng.d.j((TLRPC.ForumTopic) arrayList.get(i13), textPaint, null));
+                            spannableStringBuilder.append(og.d.j((TLRPC.ForumTopic) arrayList.get(i13), textPaint, null));
                             z11 = false;
                         }
                         i13++;
@@ -125,12 +125,12 @@ public final class r2 {
                 }
                 if (i11 > 0) {
                     Typeface bold = AndroidUtilities.bold();
-                    int i15 = org.telegram.ui.ActionBar.i6.X8;
-                    m61 m61Var = new m61();
-                    m61Var.a = bold;
-                    m61Var.c = i15;
-                    m61Var.b = org.telegram.ui.ActionBar.i6.x0(null, i15, false);
-                    spannableStringBuilder.setSpan(m61Var, 0, Math.min(spannableStringBuilder.length(), i11 + 2), 0);
+                    int i15 = org.telegram.ui.ActionBar.g6.X8;
+                    i61 i61Var = new i61();
+                    i61Var.a = bold;
+                    i61Var.c = i15;
+                    i61Var.b = org.telegram.ui.ActionBar.g6.x0(null, i15, false);
+                    spannableStringBuilder.setSpan(i61Var, 0, Math.min(spannableStringBuilder.length(), i11 + 2), 0);
                 }
                 r2Var.g = spannableStringBuilder;
             }

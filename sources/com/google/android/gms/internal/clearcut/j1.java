@@ -20,21 +20,21 @@ public abstract class j1 {
     public static final boolean h;
 
     /* JADX WARN: Can't wrap try/catch for region: R(27:0|1|(24:3|(1:(1:6)(1:(1:67)))(1:68)|7|(3:54|55|(1:57)(20:58|(1:60)(2:61|62)|11|(18:46|47|(1:50)|49|14|(1:18)|19|20|21|22|23|24|(1:40)(1:28)|(1:32)|33|(1:35)(1:39)|36|37)|13|14|(2:16|18)|19|20|21|22|23|24|(1:26)|40|(2:30|32)|33|(0)(0)|36|37))|9|10|11|(0)|13|14|(0)|19|20|21|22|23|24|(0)|40|(0)|33|(0)(0)|36|37)|69|7|(0)|9|10|11|(0)|13|14|(0)|19|20|21|22|23|24|(0)|40|(0)|33|(0)(0)|36|37|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x0296, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x0297, code lost:
     
         r0 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0295, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x0296, code lost:
     
         r7 = true;
      */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x027f  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0299  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x02a6  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x02b6  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x02b8  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0130 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x006e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0280  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x029a  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02a7  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x02b7  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x02b9  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0131 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x006f A[EXC_TOP_SPLITTER, SYNTHETIC] */
     static {
         i1 i1Var;
         Class<?> cls;
@@ -50,15 +50,15 @@ public abstract class j1 {
         b = f7;
         c = k.a;
         Class<?> cls3 = Long.TYPE;
-        boolean j3 = j(cls3);
+        boolean j10 = j(cls3);
         Class<?> cls4 = Integer.TYPE;
-        boolean j10 = j(cls4);
+        boolean j11 = j(cls4);
         if (f7 != null) {
             if (!k.a()) {
                 i1Var = new h1(f7);
-            } else if (j3) {
-                i1Var = new g1(f7, 1);
             } else if (j10) {
+                i1Var = new g1(f7, 1);
+            } else if (j11) {
                 i1Var = new g1(f7, 0);
             }
             d = i1Var;
@@ -257,29 +257,29 @@ public abstract class j1 {
         h = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN ? z12222 : false;
     }
 
-    public static byte a(long j3, byte[] bArr) {
-        return d.l(bArr, g + j3);
+    public static byte a(long j10, byte[] bArr) {
+        return d.l(bArr, g + j10);
     }
 
-    public static void b(long j3, Object obj, int i10) {
-        d.b(j3, obj, i10);
+    public static void b(long j10, Object obj, int i10) {
+        d.b(j10, obj, i10);
     }
 
-    public static void c(Object obj, long j3, byte b10) {
-        long j10 = (-4) & j3;
-        int g10 = d.g(obj, j10);
-        int i10 = ((~((int) j3)) & 3) << 3;
-        b(j10, obj, ((255 & b10) << i10) | (g10 & (~(255 << i10))));
+    public static void c(Object obj, long j10, byte b10) {
+        long j11 = (-4) & j10;
+        int g10 = d.g(obj, j11);
+        int i10 = ((~((int) j10)) & 3) << 3;
+        b(j11, obj, ((255 & b10) << i10) | (g10 & (~(255 << i10))));
     }
 
-    public static void d(Object obj, long j3, Object obj2) {
-        d.a.putObject(obj, j3, obj2);
+    public static void d(Object obj, long j10, Object obj2) {
+        d.a.putObject(obj, j10, obj2);
     }
 
-    public static void e(Object obj, long j3, byte b10) {
-        long j10 = (-4) & j3;
-        int i10 = (((int) j3) & 3) << 3;
-        b(j10, obj, ((255 & b10) << i10) | (d.g(obj, j10) & (~(255 << i10))));
+    public static void e(Object obj, long j10, byte b10) {
+        long j11 = (-4) & j10;
+        int i10 = (((int) j10) & 3) << 3;
+        b(j11, obj, ((255 & b10) << i10) | (d.g(obj, j11) & (~(255 << i10))));
     }
 
     public static Unsafe f() {
@@ -352,15 +352,15 @@ public abstract class j1 {
         }
     }
 
-    public static Object k(Object obj, long j3) {
-        return d.a.getObject(obj, j3);
+    public static Object k(Object obj, long j10) {
+        return d.a.getObject(obj, j10);
     }
 
-    public static byte l(Object obj, long j3) {
-        return (byte) (d.g(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3)));
+    public static byte l(Object obj, long j10) {
+        return (byte) (d.g(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3)));
     }
 
-    public static byte m(Object obj, long j3) {
-        return (byte) (d.g(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3)));
+    public static byte m(Object obj, long j10) {
+        return (byte) (d.g(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3)));
     }
 }

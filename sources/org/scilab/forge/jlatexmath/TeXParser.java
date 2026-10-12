@@ -1,15 +1,15 @@
 package org.scilab.forge.jlatexmath;
 
 import a1.g;
-import com.google.android.gms.internal.vision.e2;
-import hg.c;
+import com.google.android.gms.internal.play_billing.k3;
+import i2.d;
 import java.lang.Character;
 import java.util.HashSet;
 import java.util.Set;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class TeXParser {
     private static final char BACKPRIME = 8245;
@@ -197,9 +197,9 @@ public class TeXParser {
                     if ("newcommand".equals(command) || "renewcommand".equals(command)) {
                         try {
                             MacroInfo.Commands.get(command).invoke(this, getOptsArgs(2, 2));
-                        } catch (ParseException e7) {
+                        } catch (ParseException e) {
                             if (!this.isPartial) {
-                                throw e7;
+                                throw e;
                             }
                         }
                         this.parseString.delete(i14, this.pos);
@@ -210,9 +210,9 @@ public class TeXParser {
                         if (i11 > 10000) {
                             throw new ParseException("Macro expansion limit exceeded");
                         }
-                        long j3 = firstpassExpansionWork + this.len;
-                        firstpassExpansionWork = j3;
-                        if (j3 > MAX_FIRSTPASS_WORK) {
+                        long j10 = firstpassExpansionWork + this.len;
+                        firstpassExpansionWork = j10;
+                        if (j10 > MAX_FIRSTPASS_WORK) {
                             throw new ParseException("Formula expands too much");
                         }
                         MacroInfo macroInfo = MacroInfo.Commands.get(command);
@@ -220,9 +220,9 @@ public class TeXParser {
                         optsArgs[0] = command;
                         try {
                             this.parseString.replace(i14, this.pos, (String) macroInfo.invoke(this, optsArgs));
-                        } catch (ParseException e10) {
+                        } catch (ParseException e7) {
                             if (!this.isPartial) {
-                                throw e10;
+                                throw e7;
                             }
                             i14 += command.length() + 1;
                         }
@@ -236,9 +236,9 @@ public class TeXParser {
                             if (i11 > 10000) {
                                 throw new ParseException("Macro expansion limit exceeded");
                             }
-                            long j10 = firstpassExpansionWork + this.len;
-                            firstpassExpansionWork = j10;
-                            if (j10 > MAX_FIRSTPASS_WORK) {
+                            long j11 = firstpassExpansionWork + this.len;
+                            firstpassExpansionWork = j11;
+                            if (j11 > MAX_FIRSTPASS_WORK) {
                                 throw new ParseException("Formula expands too much");
                             }
                             try {
@@ -251,9 +251,9 @@ public class TeXParser {
                                 this.parseString.replace(i14, this.pos, str + "{" + group + "}\\makeatother}");
                                 this.len = this.parseString.length();
                                 this.pos = i14;
-                            } catch (ParseException e11) {
+                            } catch (ParseException e10) {
                                 if (!this.isPartial) {
-                                    throw e11;
+                                    throw e10;
                                 }
                             }
                         } else if (!this.isPartial) {
@@ -660,7 +660,7 @@ public class TeXParser {
                 if (this.isPartial) {
                     return new ColorAtom(new RomanAtom(new TeXFormula("\\backslash ".concat(command)).root), (Color) null, Color.RED);
                 }
-                throw new ParseException(g.q("Unknown symbol or command or predefined TeXFormula: '", command, "'"));
+                throw new ParseException(g.p("Unknown symbol or command or predefined TeXFormula: '", command, "'"));
             }
         } catch (FormulaNotFoundException unused2) {
             return SymbolAtom.get(command);
@@ -749,8 +749,8 @@ public class TeXParser {
             }
             try {
                 return SymbolAtom.get(str2);
-            } catch (SymbolNotFoundException e7) {
-                throw new ParseException("The character '" + Character.toString(convertToRomanNumber) + "' was mapped to an unknown symbol with the name '" + str2 + "'!", e7);
+            } catch (SymbolNotFoundException e) {
+                throw new ParseException("The character '" + Character.toString(convertToRomanNumber) + "' was mapped to an unknown symbol with the name '" + str2 + "'!", e);
             }
         }
         Character.UnicodeBlock unicodeBlock = Character.UnicodeBlock.BASIC_LATIN;
@@ -758,7 +758,7 @@ public class TeXParser {
         TeXFormula.FontInfos externalFont = (!(equals && TeXFormula.isRegisteredBlock(unicodeBlock)) && equals) ? null : TeXFormula.getExternalFont(of2);
         if (externalFont == null) {
             if (this.isPartial) {
-                return new ColorAtom(new RomanAtom(new TeXFormula(c.i(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
+                return new ColorAtom(new RomanAtom(new TeXFormula(d.j(convertToRomanNumber, "\\text{(Unknown char ", ")}")).root), (Color) null, Color.RED);
             }
             throw new ParseException("Unknown character : '" + Character.toString(convertToRomanNumber) + "' (or " + ((int) convertToRomanNumber) + ")");
         }
@@ -1398,7 +1398,7 @@ public class TeXParser {
             if (this.isPartial) {
                 return stringBuffer.toString();
             }
-            throw new ParseException(e2.j("The token ", str, " must be closed by ", str2));
+            throw new ParseException(k3.k("The token ", str, " must be closed by ", str2));
         }
         return stringBuffer.substring(0, (stringBuffer.length() - this.pos) + i12);
     }

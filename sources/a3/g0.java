@@ -1,172 +1,144 @@
 package a3;
 
-import ai.o1;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.regex.Pattern;
-import ki.p0;
-import ki.t0;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FileUploadOperation;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationsSettingsFacade;
-import org.telegram.messenger.SecretChatHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.fp;
-import org.telegram.ui.Components.g11;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fg1;
-import org.telegram.ui.ty;
-import org.telegram.ui.zn;
-import yh.s3;
+import android.os.SystemClock;
+import android.os.Trace;
+import b2.b2;
+import b2.w0;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class g0 {
+    public final qf.b a;
+    public final a0 b;
+    public final z c = new z();
+    public final e2.j0 d = new e2.j0(0, (byte) 0);
+    public final e2.j0 e = new e2.j0(0, (byte) 0);
+    public final e2.s f;
+    public final b0 g;
+    public long h;
+    public long i;
+    public long j;
+    public b2 k;
+    public long l;
 
-    public /* synthetic */ g0(Object obj, long j3, long j10, Object obj2, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = j3;
-        this.c = j10;
-        this.e = obj2;
+    public g0(qf.b bVar, a0 a0Var, b0 b0Var) {
+        this.a = bVar;
+        this.b = a0Var;
+        this.g = b0Var;
+        e2.s sVar = new e2.s();
+        int highestOneBit = Integer.bitCount(16) != 1 ? Integer.highestOneBit(15) << 1 : 16;
+        sVar.a = 0;
+        sVar.b = -1;
+        sVar.c = 0;
+        sVar.e = new long[highestOneBit];
+        sVar.d = highestOneBit - 1;
+        this.f = sVar;
+        this.h = -9223372036854775807L;
+        this.k = b2.d;
+        this.i = -9223372036854775807L;
+        this.j = -9223372036854775807L;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                pf.b bVar = (pf.b) this.d;
-                String str = (String) this.e;
-                long j3 = this.b;
-                long j10 = this.c;
-                l0 l0Var = (l0) bVar.c;
-                String str2 = e2.d0.a;
-                j2.f fVar = ((i2.c0) l0Var).a.s;
-                j2.a p5 = fVar.p();
-                fVar.q(p5, 1016, new j2.c(p5, str, j10, j3));
+    public final void a(long j10, long j11) {
+        final qf.b bVar = this.a;
+        f fVar = (f) bVar.c;
+        while (true) {
+            e2.s sVar = this.f;
+            int i10 = sVar.c;
+            if (i10 == 0) {
                 return;
-            case 1:
-                ((o1) this.d).n(this.b, (TLRPC.TL_textWithEntities) this.e, this.c);
-                return;
-            case 2:
-                n4.x xVar = (n4.x) this.d;
-                String str3 = (String) this.e;
-                long j11 = this.b;
-                long j12 = this.c;
-                k2.j jVar = (k2.j) xVar.c;
-                String str4 = e2.d0.a;
-                j2.f fVar2 = ((i2.c0) jVar).a.s;
-                j2.a p10 = fVar2.p();
-                fVar2.q(p10, 1008, new hg.o1(p10, str3, j12, j11));
-                return;
-            case 3:
-                t0 t0Var = (t0) this.d;
-                p0 p0Var = (p0) this.e;
-                long j13 = this.b;
-                long j14 = this.c;
-                synchronized (t0Var.g) {
-                    if (!p0Var.d && !p0Var.e) {
-                        ((g11) t0Var.e).a(p0Var.a, p0Var.b, j13, j14);
-                        return;
+            }
+            if (i10 == 0) {
+                throw new NoSuchElementException();
+            }
+            long j12 = ((long[]) sVar.e)[sVar.a];
+            Long l4 = (Long) this.e.i(j12);
+            a0 a0Var = this.b;
+            if (l4 != null && l4.longValue() != this.l) {
+                this.l = l4.longValue();
+                a0Var.e(2);
+            }
+            long j13 = this.l;
+            a0 a0Var2 = this.b;
+            z zVar = this.c;
+            int a2 = a0Var2.a(j12, j10, j11, j13, false, false, zVar);
+            if (a2 != 5 && a2 != 4) {
+                this.g.a(j12, zVar.a);
+            }
+            if (a2 == 0 || a2 == 1) {
+                this.i = j12;
+                boolean z10 = a2 == 0;
+                long d = sVar.d();
+                b2 b2Var = (b2) this.d.i(d);
+                if (b2Var != null && !b2Var.equals(b2.d) && !b2Var.equals(this.k)) {
+                    this.k = b2Var;
+                    b2.w wVar = new b2.w();
+                    wVar.y = b2Var.a;
+                    wVar.z = b2Var.b;
+                    wVar.r = w0.n("video/raw");
+                    bVar.b = new b2.x(wVar);
+                    fVar.i.execute(new a1.f(2, bVar, b2Var));
+                }
+                long nanoTime = z10 ? System.nanoTime() : zVar.b;
+                boolean z11 = a0Var.e != 3;
+                a0Var.e = 3;
+                a0Var.l.getClass();
+                a0Var.g = e2.m0.S(SystemClock.elapsedRealtime());
+                if (z11 && fVar.e != null) {
+                    final int i11 = 0;
+                    fVar.i.execute(new Runnable() { // from class: a3.e
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i11) {
+                                case 0:
+                                    ((f) bVar.c).h.onFirstFrameRendered();
+                                    break;
+                                default:
+                                    ((f) bVar.c).h.b();
+                                    break;
+                            }
+                        }
+                    });
+                }
+                b2.x xVar = (b2.x) bVar.b;
+                fVar.j.a(d, nanoTime, xVar == null ? new b2.x(new b2.w()) : xVar, null);
+                j jVar = (j) fVar.d.remove();
+                jVar.c.M0(jVar.a, jVar.b, nanoTime);
+            } else if (a2 == 2 || a2 == 3) {
+                this.i = j12;
+                sVar.d();
+                final int i12 = 1;
+                fVar.i.execute(new Runnable() { // from class: a3.e
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                ((f) bVar.c).h.onFirstFrameRendered();
+                                break;
+                            default:
+                                ((f) bVar.c).h.b();
+                                break;
+                        }
+                    }
+                });
+                j jVar2 = (j) fVar.d.remove();
+                n nVar = jVar2.c;
+                r2.l lVar = jVar2.a;
+                int i13 = jVar2.b;
+                Trace.beginSection("dropVideoBuffer");
+                lVar.f(i13);
+                Trace.endSection();
+                nVar.R0(0, 1);
+            } else {
+                if (a2 != 4) {
+                    if (a2 != 5) {
+                        throw new IllegalStateException(String.valueOf(a2));
                     }
                     return;
                 }
-            case 4:
-                ((FileUploadOperation) this.d).lambda$checkNewDataAvailable$4((Float) this.e, this.b, this.c);
-                return;
-            case 5:
-                ((MediaDataController) this.d).lambda$loadPinnedMessages$163(this.b, this.c, (ArrayList) this.e);
-                return;
-            case 6:
-                ((MediaDataController) this.d).lambda$saveDraftReplyMessage$193(this.b, this.c, (TLRPC.Message) this.e);
-                return;
-            case 7:
-                ((MessagesStorage) this.d).lambda$loadPendingTasks$29(this.b, this.c, (TLRPC.TL_messages_deleteScheduledMessages) this.e);
-                return;
-            case 8:
-                ((MessagesStorage) this.d).lambda$loadPendingTasks$21(this.b, (TLRPC.InputPeer) this.e, this.c);
-                return;
-            case 9:
-                ((MessagesStorage) this.d).lambda$getUnreadMention$156(this.b, this.c, (MessagesStorage.IntCallback) this.e);
-                return;
-            case 10:
-                ((NotificationsSettingsFacade) this.d).lambda$applyDialogNotificationsSettings$1(this.b, this.c, (TLRPC.PeerNotifySettings) this.e);
-                return;
-            case 11:
-                ((SecretChatHelper) this.d).lambda$resendMessages$15(this.b, (TLRPC.EncryptedChat) this.e, this.c);
-                return;
-            case 12:
-                ((GroupCallMessagesController) this.d).lambda$processUpdate$3(this.b, this.c, (byte[]) this.e);
-                return;
-            case 13:
-                ((fp) this.d).d(this.b, this.c, (HashSet) this.e);
-                return;
-            case 14:
-                ty tyVar = (ty) this.d;
-                long j15 = this.b;
-                long j16 = this.c;
-                fg1 fg1Var = (fg1) this.e;
-                if (tyVar.C2 == null) {
-                    tyVar.finishFragment();
-                    return;
-                }
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(MessagesStorage.TopicKey.of(j15, j16));
-                tyVar.C2.w(tyVar, arrayList, null, false, tyVar.J2, tyVar.K2, tyVar.L2, fg1Var);
-                if (tyVar.i2) {
-                    tyVar.C2 = null;
-                    return;
-                }
-                return;
-            case 15:
-                LaunchActivity launchActivity = (LaunchActivity) this.d;
-                long j17 = this.b;
-                long j18 = this.c;
-                zn znVar = (zn) this.e;
-                Pattern pattern = LaunchActivity.B1;
-                TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.O).getTopicsController().findTopic(j17, j18);
-                StringBuilder u10 = a1.g.u(j17, "LaunchActivity openForum after load ", " ");
-                u10.append(j18);
-                u10.append(" TL_forumTopic ");
-                u10.append(findTopic);
-                FileLog.d(u10.toString());
-                if (launchActivity.q0 != null) {
-                    ng.d.a(znVar, MessagesStorage.TopicKey.of(-j17, j18));
-                    ((ActionBarLayout) launchActivity.O()).P(znVar);
-                    return;
-                }
-                return;
-            default:
-                s3.f0((s3) this.d, this.b, this.c, (Utilities.Callback) this.e);
-                return;
+                this.i = j12;
+            }
         }
-    }
-
-    public /* synthetic */ g0(Object obj, long j3, TLObject tLObject, long j10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = j3;
-        this.e = tLObject;
-        this.c = j10;
-    }
-
-    public /* synthetic */ g0(Object obj, Object obj2, long j3, long j10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.e = obj2;
-        this.b = j3;
-        this.c = j10;
     }
 }

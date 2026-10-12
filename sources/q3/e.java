@@ -2,9 +2,9 @@ package q3;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e extends j {
+public final class e extends i {
     public final String b;
     public final String c;
     public final String d;
@@ -38,7 +38,7 @@ public final class e extends j {
         return hashCode2 + (str3 != null ? str3.hashCode() : 0);
     }
 
-    @Override // q3.j
+    @Override // q3.i
     public final String toString() {
         return this.a + ": language=" + this.b + ", description=" + this.c + ", text=" + this.d;
     }

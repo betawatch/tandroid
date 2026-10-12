@@ -1,58 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class h11 {
-    public final String a;
-    public final Runnable b;
-    public final String c;
-    public final String[] d;
-    public final int e;
-    public final int f;
-    public int g;
-    public String h;
+public final class h11 implements z4.e {
+    public int a;
+    public final /* synthetic */ i11 b;
 
-    public h11(String str, int i10, int i11, Runnable runnable) {
-        this(i10, str, null, null, null, i11, runnable);
+    public h11(i11 i11Var) {
+        this.b = i11Var;
     }
 
-    public final void a(String str) {
-        this.h = str;
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof h11) && this.f == ((h11) obj).f;
-    }
-
-    public final String toString() {
-        SerializedData serializedData = new SerializedData();
-        serializedData.writeInt32(this.g);
-        serializedData.writeInt32(1);
-        serializedData.writeInt32(this.f);
-        return Utilities.bytesToHex(serializedData.toByteArray());
-    }
-
-    public h11(int i10, String str, String str2, int i11, Runnable runnable) {
-        this(i10, str, null, str2, null, i11, runnable);
-    }
-
-    public h11(int i10, String str, String str2, String str3, int i11, Runnable runnable) {
-        this(i10, str, str2, str3, null, i11, runnable);
-    }
-
-    public h11(int i10, String str, String str2, String str3, String str4, int i11, Runnable runnable) {
-        this.f = i10;
-        this.a = str;
-        this.c = str2;
-        this.b = runnable;
-        this.e = i11;
-        if (str3 != null && str4 != null) {
-            this.d = new String[]{str3, str4};
-        } else if (str3 != null) {
-            this.d = new String[]{str3};
+    @Override // z4.e
+    public final void b(int i10) {
+        i11 i11Var = this.b;
+        ProfileActivity profileActivity = i11Var.n;
+        int k10 = profileActivity.n0.D0.k(i10);
+        i11Var.a(this.a != k10);
+        this.a = k10;
+        if (profileActivity.q0 == null) {
+            return;
         }
+        if (profileActivity.T0.t()) {
+            AndroidUtilities.runOnUIThread(new uz0(i11Var, 3), 500L);
+        } else {
+            i11Var.c();
+        }
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+    }
+
+    @Override // z4.e
+    public final void a(float f7, int i10, int i11) {
     }
 }

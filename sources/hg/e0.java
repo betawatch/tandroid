@@ -1,27 +1,25 @@
 package hg;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class e0 extends s4.e0 {
-    public final /* synthetic */ f0 r;
+public enum e0 {
+    d(0, R.string.SearchMessagesFilterAll, R.string.SearchMessagesFilterAllFrom),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF26(8, R.string.SearchMessagesFilterPrivate, R.string.SearchMessagesFilterPrivateFrom),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF39(4, R.string.SearchMessagesFilterGroup, R.string.SearchMessagesFilterGroupFrom),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF52(2, R.string.SearchMessagesFilterChannels, R.string.SearchMessagesFilterChannelsFrom);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(f0 f0Var, Context context) {
-        super(context);
-        this.r = f0Var;
-    }
+    public final int a;
+    public final int b;
+    public final int c;
 
-    @Override // s4.e0
-    public final int k(int i10, View view) {
-        return org.telegram.messenger.q.A(8.0f, ((j0) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
-    }
-
-    @Override // s4.e0
-    public final int m(int i10) {
-        return super.m(i10) * 2;
+    e0(int i10, int i11, int i12) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
     }
 }

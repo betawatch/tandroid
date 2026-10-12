@@ -4,14 +4,14 @@ import a6.d;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import c5.x;
+import c5.y;
 import com.google.android.gms.common.api.m;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import s4.v;
+import s9.j;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public static Handler f;
@@ -19,7 +19,7 @@ public final class a implements Runnable {
     public volatile int b = 1;
     public final AtomicBoolean c = new AtomicBoolean();
     public final AtomicBoolean d = new AtomicBoolean();
-    public final b a = new b(this, new x(this, 8));
+    public final b a = new b(this, new y(this, 7));
 
     public a(d dVar) {
         this.e = dVar;
@@ -36,8 +36,8 @@ public final class a implements Runnable {
         }
         try {
             dVar.i.tryAcquire(i10, 5L, TimeUnit.SECONDS);
-        } catch (InterruptedException e7) {
-            Log.i("GACSignInLoader", "Unexpected InterruptedException", e7);
+        } catch (InterruptedException e) {
+            Log.i("GACSignInLoader", "Unexpected InterruptedException", e);
             Thread.currentThread().interrupt();
         }
     }
@@ -54,7 +54,7 @@ public final class a implements Runnable {
                 throw th2;
             }
         }
-        handler.post(new v(7, this, obj));
+        handler.post(new j(6, this, obj));
     }
 
     @Override // java.lang.Runnable

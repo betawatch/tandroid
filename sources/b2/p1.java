@@ -1,121 +1,200 @@
 package b2;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import org.telegram.tgnet.ConnectionsManager;
+import android.util.Pair;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class p1 {
-    public boolean A;
-    public boolean B;
-    public boolean C;
-    public HashMap D;
-    public HashSet E;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public e9.i0 m;
-    public e9.i0 n;
-    public int o;
-    public e9.i0 p;
-    public int q;
-    public int r;
-    public int s;
-    public e9.i0 t;
-    public o1 u;
-    public e9.i0 v;
-    public int w;
-    public boolean x;
-    public int y;
-    public boolean z;
-    public int a = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    public int b = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    public int c = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    public int d = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    public int i = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    public int j = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    public boolean k = true;
-    public boolean l = true;
+public abstract class p1 {
+    public static final l1 a = new l1();
+    public static final String b;
+    public static final String c;
+    public static final String d;
 
-    public p1() {
-        e9.g0 g0Var = e9.i0.b;
-        e9.a1 a1Var = e9.a1.e;
-        this.m = a1Var;
-        this.n = a1Var;
-        this.o = 0;
-        this.p = a1Var;
-        this.q = 0;
-        this.r = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.s = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.t = a1Var;
-        this.u = o1.d;
-        this.v = a1Var;
-        this.w = 0;
-        this.x = true;
-        this.y = 0;
-        this.z = false;
-        this.A = false;
-        this.B = false;
-        this.C = false;
-        this.D = new HashMap();
-        this.E = new HashSet();
+    static {
+        String str = e2.m0.a;
+        b = Integer.toString(0, 36);
+        c = Integer.toString(1, 36);
+        d = Integer.toString(2, 36);
     }
 
-    public static e9.a1 e(String[] strArr) {
-        e9.f0 u10 = e9.i0.u();
-        for (String str : strArr) {
-            str.getClass();
-            u10.b(e2.d0.Q(str));
+    public int a(boolean z10) {
+        return p() ? -1 : 0;
+    }
+
+    public abstract int b(Object obj);
+
+    public int c(boolean z10) {
+        if (p()) {
+            return -1;
         }
-        return u10.i();
+        return o() - 1;
     }
 
-    public void a(m1 m1Var) {
-        this.D.put(m1Var.a, m1Var);
+    public final int d(int i10, m1 m1Var, o1 o1Var, int i11, boolean z10) {
+        int i12 = f(i10, m1Var, false).c;
+        if (m(i12, o1Var, 0L).o != i10) {
+            return i10 + 1;
+        }
+        int e = e(i12, i11, z10);
+        if (e == -1) {
+            return -1;
+        }
+        return m(e, o1Var, 0L).n;
     }
 
-    public q1 b() {
-        return new q1(this);
+    public int e(int i10, int i11, boolean z10) {
+        if (i11 == 0) {
+            if (i10 == c(z10)) {
+                return -1;
+            }
+            return i10 + 1;
+        }
+        if (i11 == 1) {
+            return i10;
+        }
+        if (i11 == 2) {
+            return i10 == c(z10) ? a(z10) : i10 + 1;
+        }
+        throw new IllegalStateException();
     }
 
-    public p1 c() {
-        this.D.clear();
-        return this;
+    public boolean equals(Object obj) {
+        int c10;
+        if (this != obj) {
+            if (obj instanceof p1) {
+                p1 p1Var = (p1) obj;
+                if (p1Var.o() == o() && p1Var.h() == h()) {
+                    o1 o1Var = new o1();
+                    m1 m1Var = new m1();
+                    o1 o1Var2 = new o1();
+                    m1 m1Var2 = new m1();
+                    int i10 = 0;
+                    while (true) {
+                        if (i10 >= o()) {
+                            int i11 = 0;
+                            while (true) {
+                                if (i11 >= h()) {
+                                    int a2 = a(true);
+                                    if (a2 == p1Var.a(true) && (c10 = c(true)) == p1Var.c(true)) {
+                                        while (a2 != c10) {
+                                            int e = e(a2, 0, true);
+                                            if (e == p1Var.e(a2, 0, true)) {
+                                                a2 = e;
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    if (!f(i11, m1Var, true).equals(p1Var.f(i11, m1Var2, true))) {
+                                        break;
+                                    }
+                                    i11++;
+                                }
+                            }
+                        } else {
+                            if (!m(i10, o1Var, 0L).equals(p1Var.m(i10, o1Var2, 0L))) {
+                                break;
+                            }
+                            i10++;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+        return true;
     }
 
-    public final void d(q1 q1Var) {
-        this.a = q1Var.a;
-        this.b = q1Var.b;
-        this.c = q1Var.c;
-        this.d = q1Var.d;
-        this.e = q1Var.e;
-        this.f = q1Var.f;
-        this.g = q1Var.g;
-        this.h = q1Var.h;
-        this.i = q1Var.i;
-        this.j = q1Var.j;
-        this.k = q1Var.k;
-        this.l = q1Var.l;
-        this.m = q1Var.m;
-        this.n = q1Var.n;
-        this.o = q1Var.o;
-        this.p = q1Var.p;
-        this.q = q1Var.q;
-        this.r = q1Var.r;
-        this.s = q1Var.s;
-        this.t = q1Var.t;
-        this.u = q1Var.u;
-        this.v = q1Var.v;
-        this.w = q1Var.w;
-        this.x = q1Var.x;
-        this.y = q1Var.y;
-        this.z = q1Var.z;
-        this.A = q1Var.A;
-        this.B = q1Var.B;
-        this.C = q1Var.C;
-        this.E = new HashSet(q1Var.E);
-        this.D = new HashMap(q1Var.D);
+    public abstract m1 f(int i10, m1 m1Var, boolean z10);
+
+    public m1 g(Object obj, m1 m1Var) {
+        return f(b(obj), m1Var, true);
+    }
+
+    public abstract int h();
+
+    public int hashCode() {
+        o1 o1Var = new o1();
+        m1 m1Var = new m1();
+        int o10 = o() + 217;
+        for (int i10 = 0; i10 < o(); i10++) {
+            o10 = (o10 * 31) + m(i10, o1Var, 0L).hashCode();
+        }
+        int h = h() + (o10 * 31);
+        for (int i11 = 0; i11 < h(); i11++) {
+            h = (h * 31) + f(i11, m1Var, true).hashCode();
+        }
+        int a2 = a(true);
+        while (a2 != -1) {
+            h = (h * 31) + a2;
+            a2 = e(a2, 0, true);
+        }
+        return h;
+    }
+
+    public final Pair i(o1 o1Var, m1 m1Var, int i10, long j10) {
+        Pair j11 = j(o1Var, m1Var, i10, j10, 0L);
+        j11.getClass();
+        return j11;
+    }
+
+    public final Pair j(o1 o1Var, m1 m1Var, int i10, long j10, long j11) {
+        u6.j(i10, o());
+        m(i10, o1Var, j11);
+        if (j10 == -9223372036854775807L) {
+            j10 = o1Var.l;
+            if (j10 == -9223372036854775807L) {
+                return null;
+            }
+        }
+        int i11 = o1Var.n;
+        f(i11, m1Var, false);
+        while (i11 < o1Var.o && m1Var.e != j10) {
+            int i12 = i11 + 1;
+            if (f(i12, m1Var, false).e > j10) {
+                break;
+            }
+            i11 = i12;
+        }
+        f(i11, m1Var, true);
+        long j12 = j10 - m1Var.e;
+        long j13 = m1Var.d;
+        if (j13 != -9223372036854775807L) {
+            j12 = Math.min(j12, j13 - 1);
+        }
+        long max = Math.max(0L, j12);
+        Object obj = m1Var.b;
+        obj.getClass();
+        return Pair.create(obj, Long.valueOf(max));
+    }
+
+    public int k(int i10, int i11, boolean z10) {
+        if (i11 == 0) {
+            if (i10 == a(z10)) {
+                return -1;
+            }
+            return i10 - 1;
+        }
+        if (i11 == 1) {
+            return i10;
+        }
+        if (i11 == 2) {
+            return i10 == a(z10) ? c(z10) : i10 - 1;
+        }
+        throw new IllegalStateException();
+    }
+
+    public abstract Object l(int i10);
+
+    public abstract o1 m(int i10, o1 o1Var, long j10);
+
+    public final void n(int i10, o1 o1Var) {
+        m(i10, o1Var, 0L);
+    }
+
+    public abstract int o();
+
+    public final boolean p() {
+        return o() == 0;
     }
 }

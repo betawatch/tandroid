@@ -1,12 +1,10 @@
 package v3;
 
-import a6.i;
-import b2.o0;
-import b2.p0;
-import b2.r;
-import b2.r0;
+import b2.t0;
+import b2.u0;
+import b2.w0;
 import c3.b0;
-import c3.h0;
+import c3.i0;
 import c3.k;
 import c3.n;
 import c3.o;
@@ -15,42 +13,43 @@ import c3.q;
 import c3.s;
 import c3.w;
 import c3.z;
-import e2.d0;
-import e2.v;
-import e9.a1;
-import e9.g0;
-import e9.i0;
+import e2.m0;
+import e2.x;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.io.EOFException;
 import java.math.RoundingMode;
 import java.util.List;
-import q3.m;
+import q3.l;
+import v7.b8;
 import v7.n7;
-import v7.v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d implements o {
     public final int a;
     public final long b;
-    public final v c;
+    public final x c;
     public final z d;
     public final w e;
-    public final i f;
+    public final k6.h f;
     public final n g;
     public q h;
-    public h0 i;
-    public h0 j;
+    public i0 i;
+    public i0 j;
     public int k;
-    public p0 l;
-    public long m;
+    public u0 l;
+    public u0 m;
     public long n;
     public long o;
     public long p;
-    public int q;
-    public f r;
-    public boolean s;
+    public long q;
+    public int r;
+    public h s;
     public boolean t;
-    public long u;
+    public boolean u;
+    public long v;
 
     public d(int i10) {
         this(i10, -9223372036854775807L);
@@ -58,879 +57,660 @@ public final class d implements o {
 
     @Override // c3.o
     public final boolean a(p pVar) {
-        return e(pVar, true);
-    }
-
-    public final void b() {
-        b0 b0Var = this.r;
-        if ((b0Var instanceof a) && ((k) b0Var).f()) {
-            long j3 = this.p;
-            if (j3 == -1 || j3 == this.r.d()) {
-                return;
-            }
-            a aVar = (a) this.r;
-            this.r = new a(this.p, aVar.i, aVar.j, aVar.k, aVar.h);
-            q qVar = this.h;
-            qVar.getClass();
-            qVar.d2(this.r);
-            this.i.getClass();
-            this.r.l();
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0018, code lost:
-    
-        if (r9.j() > (r2 - 4)) goto L12;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean d(p pVar) {
-        f fVar = this.r;
-        if (fVar != null) {
-            long d = fVar.d();
-            if (d != -1) {
-            }
-        }
-        try {
-            return !pVar.h(this.c.a, 0, 4, true);
-        } catch (EOFException unused) {
-            return true;
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x00df, code lost:
-    
-        if (r18 == false) goto L56;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x00e1, code lost:
-    
-        r17.r(r3 + r7);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00e9, code lost:
-    
-        r16.k = r5;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x00eb, code lost:
-    
-        return true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:63:0x00e6, code lost:
-    
-        r17.q();
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean e(p pVar, boolean z10) {
-        int i10;
-        int i11;
-        int h;
-        int i12 = z10 ? 32768 : 131072;
-        pVar.q();
-        if (pVar.getPosition() == 0) {
-            v vVar = (v) this.f.b;
-            int i13 = 0;
-            p0 p0Var = null;
-            while (true) {
-                try {
-                    pVar.a(0, 10, vVar.a);
-                    vVar.J(0);
-                    if (vVar.A() != 4801587) {
-                        break;
-                    }
-                    vVar.K(3);
-                    int w10 = vVar.w();
-                    int i14 = w10 + 10;
-                    if (p0Var == null) {
-                        byte[] bArr = new byte[i14];
-                        System.arraycopy(vVar.a, 0, bArr, 0, 10);
-                        pVar.a(10, w10, bArr);
-                        p0Var = new q3.i(null).c(i14, bArr);
-                    } else {
-                        pVar.l(w10);
-                    }
-                    i13 += i14;
-                } catch (EOFException unused) {
-                }
-            }
-            pVar.q();
-            pVar.l(i13);
-            this.l = p0Var;
-            if (p0Var != null) {
-                this.e.b(p0Var);
-            }
-            i10 = (int) pVar.j();
-            if (!z10) {
-                pVar.r(i10);
-            }
-            i11 = 0;
-        } else {
-            i10 = 0;
-            i11 = 0;
-        }
-        int i15 = i11;
-        int i16 = i15;
-        while (true) {
-            if (!d(pVar)) {
-                v vVar2 = this.c;
-                vVar2.J(0);
-                int j3 = vVar2.j();
-                if ((i11 == 0 || ((-128000) & j3) == (i11 & (-128000))) && (h = c3.b.h(j3)) != -1) {
-                    i15++;
-                    if (i15 != 1) {
-                        if (i15 == 4) {
-                            break;
-                        }
-                    } else {
-                        this.d.a(j3);
-                        i11 = j3;
-                    }
-                    pVar.l(h - 4);
-                } else {
-                    int i17 = i16 + 1;
-                    if (i16 == i12) {
-                        if (z10) {
-                            return false;
-                        }
-                        b();
-                        throw new EOFException();
-                    }
-                    if (z10) {
-                        pVar.q();
-                        pVar.l(i10 + i17);
-                    } else {
-                        pVar.r(1);
-                    }
-                    i15 = 0;
-                    i16 = i17;
-                    i11 = 0;
-                }
-            } else if (i15 <= 0) {
-                b();
-                throw new EOFException();
-            }
-        }
+        return j(pVar, true);
     }
 
     @Override // c3.o
-    public final void g(q qVar) {
+    public final void c(q qVar) {
         this.h = qVar;
-        h0 f22 = qVar.f2(0, 1);
-        this.i = f22;
-        this.j = f22;
-        this.h.k1();
+        i0 a02 = qVar.a0(0, 1);
+        this.i = a02;
+        this.j = a02;
+        this.h.D();
     }
 
     @Override // c3.o
-    public final void h(long j3, long j10) {
+    public final void d(long j10, long j11) {
         this.k = 0;
-        this.m = -9223372036854775807L;
-        this.n = 0L;
-        this.q = 0;
-        this.u = j10;
-        if (this.r instanceof b) {
+        this.n = -9223372036854775807L;
+        this.o = 0L;
+        this.r = 0;
+        this.q = -1L;
+        this.v = j11;
+        if (this.s instanceof b) {
             throw null;
         }
     }
 
     @Override // c3.o
-    public final List i() {
-        g0 g0Var = i0.b;
-        return a1.e;
+    public final List e() {
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0072, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x0344, code lost:
     
-        if (r3 != 1231971951) goto L26;
+        if (d9.s.a.apply(r9) != false) goto L155;
      */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:171:0x019a  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x01a4  */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x01b2  */
-    /* JADX WARN: Removed duplicated region for block: B:185:0x01d5  */
-    /* JADX WARN: Removed duplicated region for block: B:188:0x01e1  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x008f  */
-    /* JADX WARN: Removed duplicated region for block: B:191:0x0201  */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x021a  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x025d  */
-    /* JADX WARN: Removed duplicated region for block: B:212:0x0285  */
-    /* JADX WARN: Removed duplicated region for block: B:233:0x01f1  */
-    /* JADX WARN: Removed duplicated region for block: B:234:0x01ce  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x01ab  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x019f  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x02ea  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x036e  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x046e  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0569  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x037a  */
+    /* JADX WARN: Code restructure failed: missing block: B:125:0x037e, code lost:
+    
+        if (((q3.n) r10).a.equals("TLEN") != false) goto L170;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0067, code lost:
+    
+        if (r4 != 1231971951) goto L24;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0323  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x0196  */
+    /* JADX WARN: Removed duplicated region for block: B:185:0x01a0  */
+    /* JADX WARN: Removed duplicated region for block: B:188:0x01ac  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x01d8  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x0230  */
+    /* JADX WARN: Removed duplicated region for block: B:210:0x023f  */
+    /* JADX WARN: Removed duplicated region for block: B:213:0x025c  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x02bb  */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x024a  */
+    /* JADX WARN: Removed duplicated region for block: B:252:0x0218  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x01ce  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:255:0x01a5  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x019b  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x03e4  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x049c  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x04df  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x05da  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x04a5  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x03ed  */
     @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int m(p pVar, s sVar) {
-        z zVar;
+    public final int f(p pVar, s sVar) {
         Throwable th2;
         int i10;
         int i11;
-        long j3;
-        v vVar;
         long j10;
+        long j11;
         int i12;
         int i13;
-        w wVar;
-        int j11;
+        long j12;
+        int m10;
         long[] jArr;
-        v vVar2;
+        x xVar;
+        f fVar;
         int i14;
         int i15;
-        int i16;
-        int i17;
-        int i18;
-        long j12;
-        f aVar;
-        p0 p0Var;
-        c cVar;
-        f aVar2;
+        w wVar;
+        h aVar;
         long j13;
         long j14;
-        int i19;
-        int x10;
-        e2.d.h(this.i);
-        String str = d0.a;
-        int i20 = this.k;
-        z zVar2 = this.d;
-        if (i20 == 0) {
+        u0 u0Var;
+        t0 t0Var;
+        t0 t0Var2;
+        int i16;
+        long S;
+        c cVar;
+        h hVar;
+        u0 u0Var2;
+        w wVar2;
+        int A;
+        this.i.getClass();
+        String str = m0.a;
+        int i17 = this.k;
+        z zVar = this.d;
+        if (i17 == 0) {
             try {
-                e(pVar, false);
+                j(pVar, false);
             } catch (EOFException unused) {
-                zVar = zVar2;
                 th2 = null;
                 i10 = -1;
                 i11 = -1;
-                j3 = 1000000;
+                j10 = 1000000;
             }
         }
-        f fVar = this.r;
-        v vVar3 = this.c;
-        if (fVar == null) {
-            v vVar4 = new v(zVar2.b);
-            j3 = 1000000;
-            pVar.a(0, zVar2.b, vVar4.a);
-            if ((zVar2.a & 1) != 0) {
-                if (zVar2.d != 1) {
-                    i12 = 36;
-                    th2 = null;
-                    j10 = 0;
-                    if (vVar4.c >= i12 + 4) {
-                        vVar4.J(i12);
-                        i13 = vVar4.j();
-                        if (i13 != 1483304551) {
-                        }
-                        wVar = this.e;
-                        if (i13 != 1231971951) {
-                            if (i13 == 1447187017) {
-                                long length = pVar.getLength();
-                                long position = pVar.getPosition();
-                                vVar4.K(6);
-                                long j15 = position + zVar2.b;
-                                long j16 = j15 + vVar4.j();
-                                int j17 = vVar4.j();
-                                if (j17 <= 0) {
-                                    aVar = null;
-                                    zVar = zVar2;
+        if (this.s == null) {
+            x xVar2 = new x(zVar.b);
+            pVar.a(0, zVar.b, xVar2.a);
+            int i18 = 21;
+            th2 = null;
+            if ((zVar.a & 1) != 0) {
+                if (zVar.d != 1) {
+                    i18 = 36;
+                }
+            } else if (zVar.d == 1) {
+                i18 = 13;
+            }
+            j10 = 1000000;
+            j11 = 0;
+            if (xVar2.c >= i18 + 4) {
+                xVar2.N(i18);
+                i12 = xVar2.m();
+                if (i12 != 1483304551) {
+                }
+                w wVar3 = this.e;
+                if (i12 != 1231971951) {
+                    if (i12 == 1447187017) {
+                        long length = pVar.getLength();
+                        long position = pVar.getPosition();
+                        j12 = -9223372036854775807L;
+                        xVar2.O(6);
+                        i13 = 0;
+                        long j15 = position + zVar.b;
+                        long m11 = j15 + xVar2.m();
+                        int m12 = xVar2.m();
+                        if (m12 <= 0) {
+                            aVar = null;
+                            wVar2 = wVar3;
+                        } else {
+                            long Y = m0.Y(zVar.c, (m12 * zVar.f) - 1);
+                            int H = xVar2.H();
+                            int H2 = xVar2.H();
+                            int H3 = xVar2.H();
+                            xVar2.O(2);
+                            long j16 = position + zVar.b;
+                            long[] jArr2 = new long[H];
+                            long[] jArr3 = new long[H];
+                            int i19 = 0;
+                            while (true) {
+                                if (i19 < H) {
+                                    x xVar3 = xVar2;
+                                    wVar2 = wVar3;
+                                    jArr2[i19] = (i19 * Y) / H;
+                                    jArr3[i19] = j16;
+                                    if (H3 == 1) {
+                                        A = xVar3.A();
+                                    } else if (H3 == 2) {
+                                        A = xVar3.H();
+                                    } else if (H3 == 3) {
+                                        A = xVar3.D();
+                                    } else {
+                                        if (H3 != 4) {
+                                            aVar = null;
+                                            break;
+                                        }
+                                        A = xVar3.E();
+                                    }
+                                    j16 += H2 * A;
+                                    i19++;
+                                    xVar2 = xVar3;
+                                    wVar3 = wVar2;
                                 } else {
-                                    long V = d0.V(zVar2.c, (j17 * zVar2.f) - 1);
-                                    int D = vVar4.D();
-                                    int D2 = vVar4.D();
-                                    int D3 = vVar4.D();
-                                    vVar4.K(2);
-                                    long j18 = position + zVar2.b;
-                                    long[] jArr2 = new long[D];
-                                    long[] jArr3 = new long[D];
-                                    int i21 = 0;
-                                    while (true) {
-                                        if (i21 < D) {
-                                            long j19 = j18;
-                                            long j20 = V;
-                                            jArr2[i21] = (i21 * V) / D;
-                                            jArr3[i21] = j19;
-                                            if (D3 != 1) {
-                                                i19 = i21;
-                                                if (D3 == 2) {
-                                                    x10 = vVar4.D();
-                                                } else if (D3 == 3) {
-                                                    x10 = vVar4.A();
-                                                } else {
-                                                    if (D3 != 4) {
-                                                        aVar = null;
-                                                        zVar = zVar2;
-                                                        break;
-                                                    }
-                                                    x10 = vVar4.B();
-                                                }
-                                            } else {
-                                                i19 = i21;
-                                                x10 = vVar4.x();
-                                            }
-                                            j18 = (x10 * D2) + j19;
-                                            i21 = i19 + 1;
-                                            V = j20;
-                                        } else {
-                                            long j21 = V;
-                                            long j22 = j18;
-                                            if (length == -1 || length == j16) {
-                                                j14 = j16;
-                                            } else {
-                                                StringBuilder u10 = a1.g.u(length, "VBRI data size mismatch: ", ", ");
-                                                j14 = j16;
-                                                u10.append(j14);
-                                                e2.a.n("VbriSeeker", u10.toString());
-                                            }
-                                            if (j14 != j22) {
-                                                StringBuilder u11 = a1.g.u(j14, "VBRI bytes and ToC mismatch (using max): ", ", ");
-                                                u11.append(j22);
-                                                u11.append("\nSeeking will be inaccurate.");
-                                                e2.a.n("VbriSeeker", u11.toString());
-                                                j14 = Math.max(j14, j22);
-                                            }
-                                            zVar = zVar2;
-                                            aVar = new g(jArr2, jArr3, j21, j15, j14, zVar.e);
-                                        }
+                                    wVar2 = wVar3;
+                                    if (length != -1 && length != m11) {
+                                        StringBuilder t10 = a1.g.t(length, "VBRI data size mismatch: ", ", ");
+                                        t10.append(m11);
+                                        e2.a.l("VbriSeeker", t10.toString());
                                     }
-                                }
-                                pVar.r(zVar.b);
-                            } else if (i13 != 1483304551) {
-                                pVar.q();
-                                aVar = null;
-                                zVar = zVar2;
-                            }
-                            vVar2 = vVar3;
-                            p0Var = this.l;
-                            long position2 = pVar.getPosition();
-                            if (p0Var != null) {
-                                for (o0 o0Var : p0Var.a) {
-                                    if (o0Var instanceof m) {
-                                        int[] iArr = ((m) o0Var).e;
-                                        if (p0Var != null) {
-                                            for (o0 o0Var2 : p0Var.a) {
-                                                if (o0Var2 instanceof q3.o) {
-                                                    q3.o oVar = (q3.o) o0Var2;
-                                                    if (oVar.a.equals("TLEN")) {
-                                                        j13 = d0.P(Long.parseLong((String) oVar.c.get(0)));
-                                                        break;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                        j13 = -9223372036854775807L;
-                                        int length2 = iArr.length;
-                                        int i22 = length2 + 1;
-                                        long[] jArr4 = new long[i22];
-                                        long[] jArr5 = new long[i22];
-                                        jArr4[0] = position2;
-                                        jArr5[0] = 0;
-                                        long j23 = 0;
-                                        int i23 = 1;
-                                        while (i23 <= length2) {
-                                            int i24 = i23 - 1;
-                                            position2 += r10.c + iArr[i24];
-                                            j23 += r10.d + r10.f[i24];
-                                            jArr4[i23] = position2;
-                                            jArr5[i23] = j23;
-                                            i23++;
-                                            length2 = length2;
-                                            iArr = iArr;
-                                        }
-                                        cVar = new c(j13, jArr4, jArr5);
-                                        if (this.s) {
-                                            if (cVar != null) {
-                                                aVar = cVar;
-                                            } else if (aVar == null) {
-                                                aVar = null;
-                                            }
-                                            int i25 = this.a;
-                                            if (aVar != null && !aVar.f() && (i25 & 1) != 0 && aVar.l() != -9223372036854775807L && (aVar.d() != -1 || pVar.getLength() != -1)) {
-                                                long e7 = aVar.e() != -1 ? aVar.e() : 0L;
-                                                long d = aVar.d() != -1 ? aVar.d() : pVar.getLength();
-                                                aVar2 = new a(d, v7.e(d0.X(d - e7, 8000000L, aVar.l(), RoundingMode.HALF_UP)), -1, false, e7);
-                                            } else if (aVar == null || !(aVar.f() || (i25 & 1) == 0)) {
-                                                vVar = vVar2;
-                                                pVar.a(0, 4, vVar.a);
-                                                vVar.J(0);
-                                                zVar.a(vVar.j());
-                                                aVar2 = new a(pVar.getLength(), zVar.e, zVar.b, false, pVar.getPosition());
-                                                h0 h0Var = this.i;
-                                                aVar2.l();
-                                                h0Var.getClass();
-                                            } else {
-                                                aVar2 = aVar;
-                                            }
-                                            vVar = vVar2;
-                                            h0 h0Var2 = this.i;
-                                            aVar2.l();
-                                            h0Var2.getClass();
-                                        } else {
-                                            aVar2 = new e(-9223372036854775807L);
-                                            vVar = vVar2;
-                                        }
-                                        this.r = aVar2;
-                                        this.h.d2(aVar2);
-                                        r rVar = new r();
-                                        rVar.p = r0.n("audio/mpeg");
-                                        rVar.q = r0.n((String) zVar.g);
-                                        rVar.r = 4096;
-                                        rVar.I = zVar.d;
-                                        rVar.J = zVar.c;
-                                        rVar.L = wVar.a;
-                                        rVar.M = wVar.b;
-                                        rVar.k = this.l;
-                                        if (this.r.k() != -2147483647) {
-                                            rVar.h = this.r.k();
-                                        }
-                                        this.j.b(new b2.s(rVar));
-                                        this.o = pVar.getPosition();
+                                    if (m11 != j16) {
+                                        StringBuilder t11 = a1.g.t(m11, "VBRI bytes and ToC mismatch (using max): ", ", ");
+                                        t11.append(j16);
+                                        t11.append("\nSeeking will be inaccurate.");
+                                        e2.a.l("VbriSeeker", t11.toString());
+                                        m11 = Math.max(m11, j16);
                                     }
+                                    aVar = new i(jArr2, jArr3, Y, j15, m11, zVar.e);
                                 }
-                            }
-                            cVar = null;
-                            if (this.s) {
-                            }
-                            this.r = aVar2;
-                            this.h.d2(aVar2);
-                            r rVar2 = new r();
-                            rVar2.p = r0.n("audio/mpeg");
-                            rVar2.q = r0.n((String) zVar.g);
-                            rVar2.r = 4096;
-                            rVar2.I = zVar.d;
-                            rVar2.J = zVar.c;
-                            rVar2.L = wVar.a;
-                            rVar2.M = wVar.b;
-                            rVar2.k = this.l;
-                            if (this.r.k() != -2147483647) {
-                            }
-                            this.j.b(new b2.s(rVar2));
-                            this.o = pVar.getPosition();
-                        }
-                        zVar = zVar2;
-                        j11 = vVar4.j();
-                        int B = (j11 & 1) == 0 ? vVar4.B() : -1;
-                        long z10 = (j11 & 2) == 0 ? vVar4.z() : -1L;
-                        if ((j11 & 4) != 4) {
-                            long[] jArr6 = new long[100];
-                            int i26 = 0;
-                            for (int i27 = 100; i26 < i27; i27 = 100) {
-                                jArr6[i26] = vVar4.x();
-                                i26++;
-                                vVar3 = vVar3;
-                            }
-                            jArr = jArr6;
-                        } else {
-                            jArr = null;
-                        }
-                        vVar2 = vVar3;
-                        if ((j11 & 8) != 0) {
-                            vVar4.K(4);
-                        }
-                        if (vVar4.a() < 24) {
-                            vVar4.K(21);
-                            int A = vVar4.A();
-                            i15 = (16773120 & A) >> 12;
-                            i14 = A & 4095;
-                        } else {
-                            i14 = -1;
-                            i15 = -1;
-                        }
-                        long j24 = B;
-                        int i28 = zVar.b;
-                        int i29 = zVar.c;
-                        int i30 = zVar.e;
-                        i16 = zVar.f;
-                        if ((wVar.a != -1 || wVar.b == -1) && i15 != -1 && i14 != -1) {
-                            wVar.a = i15;
-                            wVar.b = i14;
-                        }
-                        long position3 = pVar.getPosition();
-                        if (pVar.getLength() != -1 || z10 == -1) {
-                            i17 = i13;
-                            i18 = i16;
-                        } else {
-                            i18 = i16;
-                            long j25 = position3 + z10;
-                            if (pVar.getLength() != j25) {
-                                StringBuilder sb2 = new StringBuilder("Data size mismatch between stream (");
-                                i17 = i13;
-                                sb2.append(pVar.getLength());
-                                sb2.append(") and Xing frame (");
-                                sb2.append(j25);
-                                sb2.append("), using Xing value.");
-                                e2.a.i("Mp3Extractor", sb2.toString());
-                            } else {
-                                i17 = i13;
                             }
                         }
                         pVar.r(zVar.b);
-                        if (i17 != 1483304551) {
-                            long V2 = (j24 == -1 || j24 == 0) ? -9223372036854775807L : d0.V(i29, (j24 * i18) - 1);
-                            if (V2 != -9223372036854775807L) {
-                                aVar = new h(position3, i28, V2, i30, z10, jArr);
-                                p0Var = this.l;
-                                long position22 = pVar.getPosition();
-                                if (p0Var != null) {
+                        wVar = wVar2;
+                    } else if (i12 != 1483304551) {
+                        pVar.q();
+                        aVar = null;
+                        wVar = wVar3;
+                        i13 = 0;
+                        j12 = -9223372036854775807L;
+                    }
+                    u0Var = this.l;
+                    long position2 = pVar.getPosition();
+                    if (u0Var != null) {
+                        t0[] t0VarArr = u0Var.a;
+                        int length2 = t0VarArr.length;
+                        int i20 = i13;
+                        while (true) {
+                            if (i20 >= length2) {
+                                t0Var = null;
+                                break;
+                            }
+                            t0 t0Var3 = t0VarArr[i20];
+                            if (l.class.isAssignableFrom(t0Var3.getClass())) {
+                                t0Var = (t0) l.class.cast(t0Var3);
+                            }
+                            t0Var = null;
+                            if (t0Var != null) {
+                                break;
+                            }
+                            i20++;
+                        }
+                        l lVar = (l) t0Var;
+                        if (lVar != null) {
+                            int[] iArr = lVar.e;
+                            t0[] t0VarArr2 = u0Var.a;
+                            int length3 = t0VarArr2.length;
+                            int i21 = i13;
+                            while (true) {
+                                if (i21 >= length3) {
+                                    t0Var2 = null;
+                                    break;
                                 }
-                                cVar = null;
-                                if (this.s) {
+                                t0 t0Var4 = t0VarArr2[i21];
+                                if (q3.n.class.isAssignableFrom(t0Var4.getClass())) {
+                                    t0Var2 = (t0) q3.n.class.cast(t0Var4);
                                 }
-                                this.r = aVar2;
-                                this.h.d2(aVar2);
-                                r rVar22 = new r();
-                                rVar22.p = r0.n("audio/mpeg");
-                                rVar22.q = r0.n((String) zVar.g);
-                                rVar22.r = 4096;
-                                rVar22.I = zVar.d;
-                                rVar22.J = zVar.c;
-                                rVar22.L = wVar.a;
-                                rVar22.M = wVar.b;
-                                rVar22.k = this.l;
-                                if (this.r.k() != -2147483647) {
+                                t0Var2 = null;
+                                if (t0Var2 != null) {
+                                    break;
                                 }
-                                this.j.b(new b2.s(rVar22));
-                                this.o = pVar.getPosition();
+                                i21++;
                             }
-                            aVar = null;
-                            p0Var = this.l;
-                            long position222 = pVar.getPosition();
-                            if (p0Var != null) {
+                            q3.n nVar = (q3.n) t0Var2;
+                            if (nVar == null) {
+                                S = j12;
+                                i16 = i13;
+                            } else {
+                                i16 = i13;
+                                S = m0.S(Long.parseLong((String) nVar.c.get(i16)));
                             }
-                            cVar = null;
-                            if (this.s) {
+                            int length4 = iArr.length;
+                            int i22 = length4 + 1;
+                            long[] jArr4 = new long[i22];
+                            long[] jArr5 = new long[i22];
+                            jArr4[i16] = position2;
+                            jArr5[i16] = 0;
+                            long j17 = 0;
+                            int i23 = 1;
+                            while (i23 <= length4) {
+                                int i24 = length4;
+                                int i25 = i23 - 1;
+                                long j18 = position2 + lVar.c + iArr[i25];
+                                j17 += lVar.d + lVar.f[i25];
+                                jArr4[i23] = j18;
+                                jArr5[i23] = j17;
+                                i23++;
+                                length4 = i24;
+                                position2 = j18;
                             }
-                            this.r = aVar2;
-                            this.h.d2(aVar2);
-                            r rVar222 = new r();
-                            rVar222.p = r0.n("audio/mpeg");
-                            rVar222.q = r0.n((String) zVar.g);
-                            rVar222.r = 4096;
-                            rVar222.I = zVar.d;
-                            rVar222.J = zVar.c;
-                            rVar222.L = wVar.a;
-                            rVar222.M = wVar.b;
-                            rVar222.k = this.l;
-                            if (this.r.k() != -2147483647) {
-                            }
-                            this.j.b(new b2.s(rVar222));
-                            this.o = pVar.getPosition();
-                        } else {
-                            long length3 = pVar.getLength();
-                            long V3 = (j24 == -1 || j24 == 0) ? -9223372036854775807L : d0.V(i29, (i18 * j24) - 1);
-                            if (V3 != -9223372036854775807L) {
-                                if (z10 != -1) {
-                                    length3 = position3 + z10;
-                                    j12 = z10 - i28;
-                                } else if (length3 != -1) {
-                                    j12 = (length3 - position3) - i28;
+                            cVar = new c(S, jArr4, jArr5);
+                            if (this.t) {
+                                if (cVar != null) {
+                                    aVar = cVar;
+                                } else if (aVar == null) {
+                                    aVar = null;
                                 }
-                                long j26 = length3;
-                                long j27 = j12;
-                                RoundingMode roundingMode = RoundingMode.HALF_UP;
-                                aVar = new a(j26, v7.b(d0.X(j27, 8000000L, V3, roundingMode)), v7.b(n7.b(j27, j24, roundingMode)), false, position3 + i28);
-                                p0Var = this.l;
-                                long position2222 = pVar.getPosition();
-                                if (p0Var != null) {
+                                if (aVar == null) {
+                                    aVar = g(pVar, false);
                                 }
-                                cVar = null;
-                                if (this.s) {
+                                hVar = aVar;
+                                boolean d = hVar.d();
+                                int i26 = this.a;
+                                if (!d && !(hVar instanceof a) && (i26 & 1) != 0 && hVar.h() != -9223372036854775807L && (hVar.a() != -1 || pVar.getLength() != -1)) {
+                                    long c10 = hVar.c() != -1 ? hVar.c() : 0L;
+                                    long a2 = hVar.a() != -1 ? hVar.a() : pVar.getLength();
+                                    hVar = new a(a2, c10, b8.e(m0.a0(a2 - c10, 8000000L, hVar.h(), RoundingMode.HALF_UP)), -1, false, true);
+                                } else if (!hVar.d() && !(hVar instanceof a) && (i26 & 1) != 0) {
+                                    hVar = g(pVar, false);
                                 }
-                                this.r = aVar2;
-                                this.h.d2(aVar2);
-                                r rVar2222 = new r();
-                                rVar2222.p = r0.n("audio/mpeg");
-                                rVar2222.q = r0.n((String) zVar.g);
-                                rVar2222.r = 4096;
-                                rVar2222.I = zVar.d;
-                                rVar2222.J = zVar.c;
-                                rVar2222.L = wVar.a;
-                                rVar2222.M = wVar.b;
-                                rVar2222.k = this.l;
-                                if (this.r.k() != -2147483647) {
+                                this.i.e(hVar.h());
+                            } else {
+                                hVar = new g(j12);
+                            }
+                            this.s = hVar;
+                            this.h.K(hVar);
+                            u0Var2 = this.l;
+                            if (u0Var2 == null) {
+                                u0 u0Var3 = this.m;
+                                if (u0Var3 != null) {
+                                    u0Var2 = u0Var2.b(u0Var3);
                                 }
-                                this.j.b(new b2.s(rVar2222));
-                                this.o = pVar.getPosition();
+                            } else {
+                                u0Var2 = this.m;
                             }
-                            aVar = null;
-                            p0Var = this.l;
-                            long position22222 = pVar.getPosition();
-                            if (p0Var != null) {
+                            b2.w wVar4 = new b2.w();
+                            wVar4.q = w0.n("audio/mpeg");
+                            wVar4.r = w0.n((String) zVar.g);
+                            wVar4.s = 4096;
+                            wVar4.J = zVar.d;
+                            wVar4.K = zVar.c;
+                            wVar4.M = wVar.a;
+                            wVar4.N = wVar.b;
+                            wVar4.k = u0Var2;
+                            if (this.s.g() != -2147483647) {
+                                wVar4.h = this.s.g();
                             }
-                            cVar = null;
-                            if (this.s) {
-                            }
-                            this.r = aVar2;
-                            this.h.d2(aVar2);
-                            r rVar22222 = new r();
-                            rVar22222.p = r0.n("audio/mpeg");
-                            rVar22222.q = r0.n((String) zVar.g);
-                            rVar22222.r = 4096;
-                            rVar22222.I = zVar.d;
-                            rVar22222.J = zVar.c;
-                            rVar22222.L = wVar.a;
-                            rVar22222.M = wVar.b;
-                            rVar22222.k = this.l;
-                            if (this.r.k() != -2147483647) {
-                            }
-                            this.j.b(new b2.s(rVar22222));
-                            this.o = pVar.getPosition();
+                            this.j.b(new b2.x(wVar4));
+                            this.p = pVar.getPosition();
                         }
                     }
-                    if (vVar4.c >= 40) {
-                        vVar4.J(36);
-                        if (vVar4.j() == 1447187017) {
-                            i13 = 1447187017;
-                            wVar = this.e;
-                            if (i13 != 1231971951) {
-                            }
-                            zVar = zVar2;
-                            j11 = vVar4.j();
-                            if ((j11 & 1) == 0) {
-                            }
-                            if ((j11 & 2) == 0) {
-                            }
-                            if ((j11 & 4) != 4) {
-                            }
-                            vVar2 = vVar3;
-                            if ((j11 & 8) != 0) {
-                            }
-                            if (vVar4.a() < 24) {
-                            }
-                            long j242 = B;
-                            int i282 = zVar.b;
-                            int i292 = zVar.c;
-                            int i302 = zVar.e;
-                            i16 = zVar.f;
-                            if (wVar.a != -1) {
-                            }
-                            wVar.a = i15;
-                            wVar.b = i14;
-                            long position32 = pVar.getPosition();
-                            if (pVar.getLength() != -1) {
-                            }
-                            i17 = i13;
-                            i18 = i16;
-                            pVar.r(zVar.b);
-                            if (i17 != 1483304551) {
-                            }
+                    cVar = null;
+                    if (this.t) {
+                    }
+                    this.s = hVar;
+                    this.h.K(hVar);
+                    u0Var2 = this.l;
+                    if (u0Var2 == null) {
+                    }
+                    b2.w wVar42 = new b2.w();
+                    wVar42.q = w0.n("audio/mpeg");
+                    wVar42.r = w0.n((String) zVar.g);
+                    wVar42.s = 4096;
+                    wVar42.J = zVar.d;
+                    wVar42.K = zVar.c;
+                    wVar42.M = wVar.a;
+                    wVar42.N = wVar.b;
+                    wVar42.k = u0Var2;
+                    if (this.s.g() != -2147483647) {
+                    }
+                    this.j.b(new b2.x(wVar42));
+                    this.p = pVar.getPosition();
+                }
+                i13 = 0;
+                j12 = -9223372036854775807L;
+                m10 = xVar2.m();
+                int E = (m10 & 1) != 0 ? xVar2.E() : -1;
+                long C = (m10 & 2) != 0 ? xVar2.C() : -1L;
+                if ((m10 & 4) == 4) {
+                    long[] jArr6 = new long[100];
+                    for (int i27 = 0; i27 < 100; i27++) {
+                        jArr6[i27] = xVar2.A();
+                    }
+                    jArr = jArr6;
+                } else {
+                    jArr = null;
+                }
+                if ((m10 & 8) != 0) {
+                    xVar = xVar2;
+                    xVar.O(4);
+                } else {
+                    xVar = xVar2;
+                }
+                if (xVar.a() >= 24) {
+                    xVar.O(11);
+                    float intBitsToFloat = Float.intBitsToFloat(xVar.m());
+                    int H4 = xVar.H();
+                    int H5 = xVar.H();
+                    e a10 = e.a(H4);
+                    e a11 = e.a(H5);
+                    fVar = (intBitsToFloat <= 0.0f && a10 == null && a11 == null) ? null : new f(intBitsToFloat, a10, a11);
+                    xVar.O(2);
+                    int D = xVar.D();
+                    i15 = (16773120 & D) >> 12;
+                    i14 = D & 4095;
+                } else {
+                    fVar = null;
+                    i14 = -1;
+                    i15 = -1;
+                }
+                long j19 = E;
+                int i28 = zVar.b;
+                int i29 = zVar.c;
+                int i30 = zVar.e;
+                int i31 = zVar.f;
+                wVar = wVar3;
+                f fVar2 = fVar;
+                if ((wVar.a != -1 || wVar.b == -1) && i15 != -1 && i14 != -1) {
+                    wVar.a = i15;
+                    wVar.b = i14;
+                }
+                this.m = fVar2 != null ? new u0(fVar2) : null;
+                long position3 = pVar.getPosition();
+                pVar.r(zVar.b);
+                if (i12 == 1483304551) {
+                    long length5 = pVar.getLength();
+                    if (j19 == -1 || j19 == 0) {
+                        j13 = length5;
+                        j14 = -9223372036854775807L;
+                    } else {
+                        j13 = length5;
+                        j14 = m0.Y(i29, (j19 * i31) - 1);
+                    }
+                    if (j14 != -9223372036854775807L) {
+                        if (C != -1 && j13 != -1 && position3 + C != j13) {
+                            long j20 = j13 - position3;
+                            StringBuilder t12 = a1.g.t(j20, "Data size mismatch between stream (", ") and Xing frame (");
+                            t12.append(C);
+                            t12.append("), using smaller value.");
+                            e2.a.g("XingSeeker", t12.toString());
+                            C = Math.min(C, j20);
                         }
+                        aVar = new j(position3, i28, j14, i30, C, jArr);
+                        u0Var = this.l;
+                        long position22 = pVar.getPosition();
+                        if (u0Var != null) {
+                        }
+                        cVar = null;
+                        if (this.t) {
+                        }
+                        this.s = hVar;
+                        this.h.K(hVar);
+                        u0Var2 = this.l;
+                        if (u0Var2 == null) {
+                        }
+                        b2.w wVar422 = new b2.w();
+                        wVar422.q = w0.n("audio/mpeg");
+                        wVar422.r = w0.n((String) zVar.g);
+                        wVar422.s = 4096;
+                        wVar422.J = zVar.d;
+                        wVar422.K = zVar.c;
+                        wVar422.M = wVar.a;
+                        wVar422.N = wVar.b;
+                        wVar422.k = u0Var2;
+                        if (this.s.g() != -2147483647) {
+                        }
+                        this.j.b(new b2.x(wVar422));
+                        this.p = pVar.getPosition();
                     }
-                    i13 = 0;
-                    wVar = this.e;
-                    if (i13 != 1231971951) {
+                    aVar = null;
+                    u0Var = this.l;
+                    long position222 = pVar.getPosition();
+                    if (u0Var != null) {
                     }
-                    zVar = zVar2;
-                    j11 = vVar4.j();
-                    if ((j11 & 1) == 0) {
+                    cVar = null;
+                    if (this.t) {
                     }
-                    if ((j11 & 2) == 0) {
+                    this.s = hVar;
+                    this.h.K(hVar);
+                    u0Var2 = this.l;
+                    if (u0Var2 == null) {
                     }
-                    if ((j11 & 4) != 4) {
+                    b2.w wVar4222 = new b2.w();
+                    wVar4222.q = w0.n("audio/mpeg");
+                    wVar4222.r = w0.n((String) zVar.g);
+                    wVar4222.s = 4096;
+                    wVar4222.J = zVar.d;
+                    wVar4222.K = zVar.c;
+                    wVar4222.M = wVar.a;
+                    wVar4222.N = wVar.b;
+                    wVar4222.k = u0Var2;
+                    if (this.s.g() != -2147483647) {
                     }
-                    vVar2 = vVar3;
-                    if ((j11 & 8) != 0) {
+                    this.j.b(new b2.x(wVar4222));
+                    this.p = pVar.getPosition();
+                } else {
+                    long length6 = pVar.getLength();
+                    long Y2 = (j19 == -1 || j19 == 0) ? -9223372036854775807L : m0.Y(i29, (i31 * j19) - 1);
+                    if (Y2 != -9223372036854775807L) {
+                        if (C != -1) {
+                            length6 = position3 + C;
+                        } else if (length6 != -1) {
+                            C = length6 - position3;
+                        }
+                        long j21 = C - i28;
+                        long j22 = length6;
+                        RoundingMode roundingMode = RoundingMode.HALF_UP;
+                        aVar = new a(j22, position3 + i28, b8.b(m0.a0(j21, 8000000L, Y2, roundingMode)), b8.b(n7.b(j21, j19, roundingMode)), false, true);
+                        u0Var = this.l;
+                        long position2222 = pVar.getPosition();
+                        if (u0Var != null) {
+                        }
+                        cVar = null;
+                        if (this.t) {
+                        }
+                        this.s = hVar;
+                        this.h.K(hVar);
+                        u0Var2 = this.l;
+                        if (u0Var2 == null) {
+                        }
+                        b2.w wVar42222 = new b2.w();
+                        wVar42222.q = w0.n("audio/mpeg");
+                        wVar42222.r = w0.n((String) zVar.g);
+                        wVar42222.s = 4096;
+                        wVar42222.J = zVar.d;
+                        wVar42222.K = zVar.c;
+                        wVar42222.M = wVar.a;
+                        wVar42222.N = wVar.b;
+                        wVar42222.k = u0Var2;
+                        if (this.s.g() != -2147483647) {
+                        }
+                        this.j.b(new b2.x(wVar42222));
+                        this.p = pVar.getPosition();
                     }
-                    if (vVar4.a() < 24) {
+                    aVar = null;
+                    u0Var = this.l;
+                    long position22222 = pVar.getPosition();
+                    if (u0Var != null) {
                     }
-                    long j2422 = B;
-                    int i2822 = zVar.b;
-                    int i2922 = zVar.c;
-                    int i3022 = zVar.e;
-                    i16 = zVar.f;
-                    if (wVar.a != -1) {
+                    cVar = null;
+                    if (this.t) {
                     }
-                    wVar.a = i15;
-                    wVar.b = i14;
-                    long position322 = pVar.getPosition();
-                    if (pVar.getLength() != -1) {
+                    this.s = hVar;
+                    this.h.K(hVar);
+                    u0Var2 = this.l;
+                    if (u0Var2 == null) {
                     }
-                    i17 = i13;
-                    i18 = i16;
-                    pVar.r(zVar.b);
-                    if (i17 != 1483304551) {
+                    b2.w wVar422222 = new b2.w();
+                    wVar422222.q = w0.n("audio/mpeg");
+                    wVar422222.r = w0.n((String) zVar.g);
+                    wVar422222.s = 4096;
+                    wVar422222.J = zVar.d;
+                    wVar422222.K = zVar.c;
+                    wVar422222.M = wVar.a;
+                    wVar422222.N = wVar.b;
+                    wVar422222.k = u0Var2;
+                    if (this.s.g() != -2147483647) {
                     }
-                }
-                i12 = 21;
-                th2 = null;
-                j10 = 0;
-                if (vVar4.c >= i12 + 4) {
-                }
-                if (vVar4.c >= 40) {
-                }
-                i13 = 0;
-                wVar = this.e;
-                if (i13 != 1231971951) {
-                }
-                zVar = zVar2;
-                j11 = vVar4.j();
-                if ((j11 & 1) == 0) {
-                }
-                if ((j11 & 2) == 0) {
-                }
-                if ((j11 & 4) != 4) {
-                }
-                vVar2 = vVar3;
-                if ((j11 & 8) != 0) {
-                }
-                if (vVar4.a() < 24) {
-                }
-                long j24222 = B;
-                int i28222 = zVar.b;
-                int i29222 = zVar.c;
-                int i30222 = zVar.e;
-                i16 = zVar.f;
-                if (wVar.a != -1) {
-                }
-                wVar.a = i15;
-                wVar.b = i14;
-                long position3222 = pVar.getPosition();
-                if (pVar.getLength() != -1) {
-                }
-                i17 = i13;
-                i18 = i16;
-                pVar.r(zVar.b);
-                if (i17 != 1483304551) {
-                }
-            } else {
-                if (zVar2.d == 1) {
-                    i12 = 13;
-                    th2 = null;
-                    j10 = 0;
-                    if (vVar4.c >= i12 + 4) {
-                    }
-                    if (vVar4.c >= 40) {
-                    }
-                    i13 = 0;
-                    wVar = this.e;
-                    if (i13 != 1231971951) {
-                    }
-                    zVar = zVar2;
-                    j11 = vVar4.j();
-                    if ((j11 & 1) == 0) {
-                    }
-                    if ((j11 & 2) == 0) {
-                    }
-                    if ((j11 & 4) != 4) {
-                    }
-                    vVar2 = vVar3;
-                    if ((j11 & 8) != 0) {
-                    }
-                    if (vVar4.a() < 24) {
-                    }
-                    long j242222 = B;
-                    int i282222 = zVar.b;
-                    int i292222 = zVar.c;
-                    int i302222 = zVar.e;
-                    i16 = zVar.f;
-                    if (wVar.a != -1) {
-                    }
-                    wVar.a = i15;
-                    wVar.b = i14;
-                    long position32222 = pVar.getPosition();
-                    if (pVar.getLength() != -1) {
-                    }
-                    i17 = i13;
-                    i18 = i16;
-                    pVar.r(zVar.b);
-                    if (i17 != 1483304551) {
-                    }
-                }
-                i12 = 21;
-                th2 = null;
-                j10 = 0;
-                if (vVar4.c >= i12 + 4) {
-                }
-                if (vVar4.c >= 40) {
-                }
-                i13 = 0;
-                wVar = this.e;
-                if (i13 != 1231971951) {
-                }
-                zVar = zVar2;
-                j11 = vVar4.j();
-                if ((j11 & 1) == 0) {
-                }
-                if ((j11 & 2) == 0) {
-                }
-                if ((j11 & 4) != 4) {
-                }
-                vVar2 = vVar3;
-                if ((j11 & 8) != 0) {
-                }
-                if (vVar4.a() < 24) {
-                }
-                long j2422222 = B;
-                int i2822222 = zVar.b;
-                int i2922222 = zVar.c;
-                int i3022222 = zVar.e;
-                i16 = zVar.f;
-                if (wVar.a != -1) {
-                }
-                wVar.a = i15;
-                wVar.b = i14;
-                long position322222 = pVar.getPosition();
-                if (pVar.getLength() != -1) {
-                }
-                i17 = i13;
-                i18 = i16;
-                pVar.r(zVar.b);
-                if (i17 != 1483304551) {
+                    this.j.b(new b2.x(wVar422222));
+                    this.p = pVar.getPosition();
                 }
             }
+            if (xVar2.c >= 40) {
+                xVar2.N(36);
+                if (xVar2.m() == 1447187017) {
+                    i12 = 1447187017;
+                    w wVar32 = this.e;
+                    if (i12 != 1231971951) {
+                    }
+                    i13 = 0;
+                    j12 = -9223372036854775807L;
+                    m10 = xVar2.m();
+                    if ((m10 & 1) != 0) {
+                    }
+                    if ((m10 & 2) != 0) {
+                    }
+                    if ((m10 & 4) == 4) {
+                    }
+                    if ((m10 & 8) != 0) {
+                    }
+                    if (xVar.a() >= 24) {
+                    }
+                    long j192 = E;
+                    int i282 = zVar.b;
+                    int i292 = zVar.c;
+                    int i302 = zVar.e;
+                    int i312 = zVar.f;
+                    wVar = wVar32;
+                    f fVar22 = fVar;
+                    if (wVar.a != -1) {
+                    }
+                    wVar.a = i15;
+                    wVar.b = i14;
+                    this.m = fVar22 != null ? new u0(fVar22) : null;
+                    long position32 = pVar.getPosition();
+                    pVar.r(zVar.b);
+                    if (i12 == 1483304551) {
+                    }
+                }
+            }
+            i12 = 0;
+            w wVar322 = this.e;
+            if (i12 != 1231971951) {
+            }
+            i13 = 0;
+            j12 = -9223372036854775807L;
+            m10 = xVar2.m();
+            if ((m10 & 1) != 0) {
+            }
+            if ((m10 & 2) != 0) {
+            }
+            if ((m10 & 4) == 4) {
+            }
+            if ((m10 & 8) != 0) {
+            }
+            if (xVar.a() >= 24) {
+            }
+            long j1922 = E;
+            int i2822 = zVar.b;
+            int i2922 = zVar.c;
+            int i3022 = zVar.e;
+            int i3122 = zVar.f;
+            wVar = wVar322;
+            f fVar222 = fVar;
+            if (wVar.a != -1) {
+            }
+            wVar.a = i15;
+            wVar.b = i14;
+            this.m = fVar222 != null ? new u0(fVar222) : null;
+            long position322 = pVar.getPosition();
+            pVar.r(zVar.b);
+            if (i12 == 1483304551) {
+            }
         } else {
-            zVar = zVar2;
-            vVar = vVar3;
             th2 = null;
-            j3 = 1000000;
-            j10 = 0;
-            if (this.o != 0) {
+            j10 = 1000000;
+            j11 = 0;
+            if (this.p != 0) {
                 long position4 = pVar.getPosition();
-                long j28 = this.o;
-                if (position4 < j28) {
-                    pVar.r((int) (j28 - position4));
+                long j23 = this.p;
+                if (position4 < j23) {
+                    pVar.r((int) (j23 - position4));
                 }
             }
         }
-        if (this.q == 0) {
+        if (this.r == 0) {
             pVar.q();
-            if (!d(pVar)) {
-                vVar.J(0);
-                int j29 = vVar.j();
-                if (((-128000) & j29) != (this.k & (-128000)) || c3.b.h(j29) == -1) {
+            if (!i(pVar)) {
+                x xVar4 = this.c;
+                xVar4.N(0);
+                int m13 = xVar4.m();
+                if (((-128000) & m13) != (this.k & (-128000)) || c3.b.h(m13) == -1) {
                     pVar.r(1);
                     this.k = 0;
                     i10 = 0;
                     i11 = -1;
                     if (i10 == i11) {
-                        f fVar2 = this.r;
-                        if (fVar2 instanceof b) {
-                            if (fVar2.l() != ((this.n * j3) / zVar.c) + this.m) {
-                                ((b) this.r).getClass();
+                        h hVar2 = this.s;
+                        if (hVar2 instanceof b) {
+                            if (hVar2.h() != ((this.o * j10) / zVar.c) + this.n) {
+                                ((b) this.s).getClass();
                                 throw th2;
                             }
                         }
                     }
                     return i10;
                 }
-                zVar.a(j29);
-                if (this.m == -9223372036854775807L) {
-                    this.m = this.r.b(pVar.getPosition());
-                    long j30 = this.b;
-                    if (j30 != -9223372036854775807L) {
-                        this.m = (j30 - this.r.b(j10)) + this.m;
+                zVar.a(m13);
+                if (this.n == -9223372036854775807L) {
+                    this.n = this.s.b(pVar.getPosition());
+                    long j24 = this.b;
+                    if (j24 != -9223372036854775807L) {
+                        this.n = (j24 - this.s.b(j11)) + this.n;
                     }
                 }
-                this.q = zVar.b;
-                this.p = pVar.getPosition() + zVar.b;
-                if (this.r instanceof b) {
-                    long j31 = ((this.n + zVar.f) * j3) / zVar.c;
+                this.r = zVar.b;
+                this.q = pVar.getPosition() + zVar.b;
+                if (this.s instanceof b) {
+                    long j25 = ((this.o + zVar.f) * j10) / zVar.c;
                     throw th2;
                 }
             }
@@ -940,14 +720,14 @@ public final class d implements o {
             }
             return i10;
         }
-        int a2 = this.j.a(pVar, this.q, true);
-        if (a2 != -1) {
-            int i31 = this.q - a2;
-            this.q = i31;
-            if (i31 <= 0) {
-                this.j.c(((this.n * j3) / zVar.c) + this.m, 1, zVar.b, 0, null);
-                this.n += zVar.f;
-                this.q = 0;
+        int a12 = this.j.a(pVar, this.r, true);
+        if (a12 != -1) {
+            int i32 = this.r - a12;
+            this.r = i32;
+            if (i32 <= 0) {
+                this.j.c(((this.o * j10) / zVar.c) + this.n, 1, zVar.b, 0, null);
+                this.o += zVar.f;
+                this.r = 0;
                 i10 = 0;
                 i11 = -1;
                 if (i10 == i11) {
@@ -967,22 +747,142 @@ public final class d implements o {
         return i10;
     }
 
-    public d(int i10, long j3) {
+    public final a g(p pVar, boolean z10) {
+        x xVar = this.c;
+        pVar.a(0, 4, xVar.a);
+        xVar.N(0);
+        int m10 = xVar.m();
+        z zVar = this.d;
+        zVar.a(m10);
+        return new a(pVar.getLength(), pVar.getPosition(), zVar.e, zVar.b, z10, true);
+    }
+
+    public final void h() {
+        b0 b0Var = this.s;
+        if ((b0Var instanceof a) && ((k) b0Var).d()) {
+            long j10 = this.q;
+            if (j10 == -1 || j10 == this.s.a()) {
+                return;
+            }
+            a aVar = (a) this.s;
+            this.s = new a(this.q, aVar.i, aVar.j, aVar.k, aVar.l, false);
+            q qVar = this.h;
+            qVar.getClass();
+            qVar.K(this.s);
+            i0 i0Var = this.i;
+            i0Var.getClass();
+            i0Var.e(this.s.h());
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0018, code lost:
+    
+        if (r9.k() > (r2 - 4)) goto L12;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean i(p pVar) {
+        h hVar = this.s;
+        if (hVar != null) {
+            long a2 = hVar.a();
+            if (a2 != -1) {
+            }
+        }
+        try {
+            return !pVar.j(this.c.a, 0, 4, true);
+        } catch (EOFException unused) {
+            return true;
+        }
+    }
+
+    public final boolean j(p pVar, boolean z10) {
+        int i10;
+        int i11;
+        int h;
+        pVar.q();
+        if (pVar.getPosition() == 0) {
+            u0 r10 = this.f.r(pVar, null, 131072);
+            this.l = r10;
+            if (r10 != null) {
+                this.e.b(r10);
+            }
+            i10 = (int) pVar.k();
+            if (!z10) {
+                pVar.r(i10);
+            }
+            i11 = 0;
+        } else {
+            i10 = 0;
+            i11 = 0;
+        }
+        int i12 = i11;
+        int i13 = i12;
+        while (true) {
+            if (!i(pVar)) {
+                x xVar = this.c;
+                xVar.N(0);
+                int m10 = xVar.m();
+                if ((i11 == 0 || ((-128000) & m10) == (i11 & (-128000))) && (h = c3.b.h(m10)) != -1) {
+                    i12++;
+                    if (i12 != 1) {
+                        if (i12 == 4) {
+                            break;
+                        }
+                    } else {
+                        this.d.a(m10);
+                        i11 = m10;
+                    }
+                    pVar.l(h - 4);
+                } else {
+                    int i14 = i13 + 1;
+                    if (i13 == 131072) {
+                        if (z10) {
+                            return false;
+                        }
+                        h();
+                        throw new EOFException();
+                    }
+                    if (z10) {
+                        pVar.q();
+                        pVar.l(i10 + i14);
+                    } else {
+                        pVar.r(1);
+                    }
+                    i12 = 0;
+                    i13 = i14;
+                    i11 = 0;
+                }
+            } else if (i12 <= 0) {
+                h();
+                throw new EOFException();
+            }
+        }
+        if (z10) {
+            pVar.r(i10 + i13);
+        } else {
+            pVar.q();
+        }
+        this.k = i11;
+        return true;
+    }
+
+    public d(int i10, long j10) {
         this.a = i10;
-        this.b = j3;
-        this.c = new v(10);
+        this.b = j10;
+        this.c = new x(10);
         this.d = new z();
         this.e = new w();
-        this.m = -9223372036854775807L;
-        this.f = new i(8);
+        this.n = -9223372036854775807L;
+        this.f = new k6.h(10);
         n nVar = new n();
         this.g = nVar;
         this.j = nVar;
-        this.p = -1L;
+        this.q = -1L;
     }
 
     @Override // c3.o
-    public final o c() {
+    public final o b() {
         return this;
     }
 

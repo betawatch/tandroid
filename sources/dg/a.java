@@ -1,18 +1,20 @@
 package dg;
 
-import android.graphics.Bitmap;
-import java.util.List;
+import java.nio.ShortBuffer;
+import oa.d;
+import rb.b;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a {
-    public final int a;
-    public final Bitmap b;
-    public final List c;
+public interface a {
+    public static final d q;
+    public static final b t;
 
-    public a(Bitmap bitmap, int i10, List list) {
-        this.c = list;
-        this.b = bitmap;
-        this.a = i10;
+    static {
+        int i10 = 7;
+        q = new d(i10);
+        t = new b(i10);
     }
+
+    void C(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12);
 }

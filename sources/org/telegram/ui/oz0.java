@@ -1,38 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class oz0 extends l01 {
-    public oz0(Context context) {
-        super(context);
+public final /* synthetic */ class oz0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ rz0 b;
+
+    public /* synthetic */ oz0(rz0 rz0Var, int i10) {
+        this.a = i10;
+        this.b = rz0Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ai.m4 m4Var;
-        super.dispatchDraw(canvas);
-        org.telegram.ui.Components.s5 s5Var = this.e;
-        if (s5Var == null || (m4Var = s5Var.k) == null) {
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                rz0 rz0Var = this.b;
+                rz0Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new oz0(rz0Var, 1));
+                break;
+            default:
+                this.b.c.getMessagesController().loadAppConfig();
+                break;
         }
-        m4Var.startAnimation();
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!getImageReceiver().hasNotThumb()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
-            return;
-        }
-        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
     }
 }

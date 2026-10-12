@@ -1,20 +1,20 @@
 package com.google.firebase.messaging;
 
-import ai.w1;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Base64;
 import android.util.Log;
+import bi.w2;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.ExecutorService;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j {
     public static final Object c = new Object();
-    public static f0 d;
+    public static e0 d;
     public final Object a;
     public final Object b;
 
@@ -24,27 +24,27 @@ public final class j {
     }
 
     public static Task a(Context context, Intent intent, boolean z10) {
-        f0 f0Var;
+        e0 e0Var;
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             Log.d("FirebaseMessaging", "Binding to service");
         }
         synchronized (c) {
             try {
                 if (d == null) {
-                    d = new f0(context);
+                    d = new e0(context);
                 }
-                f0Var = d;
+                e0Var = d;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
         if (!z10) {
-            return f0Var.b(intent).continueWith(new a3.b(2), new w1(26));
+            return e0Var.b(intent).continueWith(new a3.b(2), new w2(6));
         }
-        if (s.c().e(context)) {
-            c0.c(context, f0Var, intent);
+        if (s.j().l(context)) {
+            b0.c(context, e0Var, intent);
         } else {
-            f0Var.b(intent);
+            e0Var.b(intent);
         }
         return Tasks.forResult(-1);
     }

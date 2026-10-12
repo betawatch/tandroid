@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 final class zzqn extends zzqq {
     private final byte[] zzf;
@@ -294,10 +294,10 @@ final class zzqn extends zzqq {
         }
         byte[] bArr = this.zzf;
         this.zzi = i10 + 8;
-        long j3 = bArr[i10];
-        long j10 = bArr[i10 + 2];
-        long j11 = bArr[i10 + 3];
-        return ((bArr[i10 + 6] & 255) << 48) | (j3 & 255) | ((bArr[i10 + 1] & 255) << 8) | ((j10 & 255) << 16) | ((j11 & 255) << 24) | ((bArr[i10 + 4] & 255) << 32) | ((bArr[i10 + 5] & 255) << 40) | ((bArr[i10 + 7] & 255) << 56);
+        long j10 = bArr[i10];
+        long j11 = bArr[i10 + 2];
+        long j12 = bArr[i10 + 3];
+        return ((bArr[i10 + 6] & 255) << 48) | (j10 & 255) | ((bArr[i10 + 1] & 255) << 8) | ((j11 & 255) << 16) | ((j12 & 255) << 24) | ((bArr[i10 + 4] & 255) << 32) | ((bArr[i10 + 5] & 255) << 40) | ((bArr[i10 + 7] & 255) << 56);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:40:0x00b7, code lost:
@@ -308,9 +308,9 @@ final class zzqn extends zzqq {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final long zzr() {
-        long j3;
         long j10;
         long j11;
+        long j12;
         int i10 = this.zzi;
         int i11 = this.zzg;
         if (i11 != i10) {
@@ -325,71 +325,71 @@ final class zzqn extends zzqq {
                 int i13 = i10 + 2;
                 int i14 = (bArr[i12] << 7) ^ b10;
                 if (i14 < 0) {
-                    j10 = i14 ^ (-128);
+                    j11 = i14 ^ (-128);
                 } else {
                     int i15 = i10 + 3;
                     int i16 = (bArr[i13] << 14) ^ i14;
                     if (i16 >= 0) {
-                        j10 = i16 ^ 16256;
+                        j11 = i16 ^ 16256;
                     } else {
                         int i17 = i10 + 4;
                         int i18 = i16 ^ (bArr[i15] << 21);
                         if (i18 < 0) {
-                            long j12 = (-2080896) ^ i18;
+                            long j13 = (-2080896) ^ i18;
                             i13 = i17;
-                            j10 = j12;
+                            j11 = j13;
                         } else {
                             i15 = i10 + 5;
-                            long j13 = (bArr[i17] << 28) ^ i18;
-                            if (j13 >= 0) {
-                                j10 = j13 ^ 266354560;
+                            long j14 = (bArr[i17] << 28) ^ i18;
+                            if (j14 >= 0) {
+                                j11 = j14 ^ 266354560;
                             } else {
                                 i13 = i10 + 6;
-                                long j14 = (bArr[i15] << 35) ^ j13;
-                                if (j14 < 0) {
-                                    j11 = -34093383808L;
+                                long j15 = (bArr[i15] << 35) ^ j14;
+                                if (j15 < 0) {
+                                    j12 = -34093383808L;
                                 } else {
                                     int i19 = i10 + 7;
-                                    long j15 = j14 ^ (bArr[i13] << 42);
-                                    if (j15 >= 0) {
-                                        j10 = 4363953127296L ^ j15;
+                                    long j16 = j15 ^ (bArr[i13] << 42);
+                                    if (j16 >= 0) {
+                                        j11 = 4363953127296L ^ j16;
                                     } else {
                                         i13 = i10 + 8;
-                                        j14 = j15 ^ (bArr[i19] << 49);
-                                        if (j14 < 0) {
-                                            j11 = -558586000294016L;
+                                        j15 = j16 ^ (bArr[i19] << 49);
+                                        if (j15 < 0) {
+                                            j12 = -558586000294016L;
                                         } else {
                                             i19 = i10 + 9;
-                                            j3 = (j14 ^ (bArr[i13] << 56)) ^ 71499008037633920L;
-                                            if (j3 < 0) {
+                                            j10 = (j15 ^ (bArr[i13] << 56)) ^ 71499008037633920L;
+                                            if (j10 < 0) {
                                                 i13 = i10 + 10;
                                             } else {
-                                                j10 = j3;
+                                                j11 = j10;
                                             }
                                         }
                                     }
                                     i13 = i19;
                                 }
-                                j3 = j14 ^ j11;
-                                j10 = j3;
+                                j10 = j15 ^ j12;
+                                j11 = j10;
                             }
                         }
                     }
                     i13 = i15;
                 }
                 this.zzi = i13;
-                return j10;
+                return j11;
             }
         }
         return zzs();
     }
 
     public final long zzs() {
-        long j3 = 0;
+        long j10 = 0;
         for (int i10 = 0; i10 < 64; i10 += 7) {
-            j3 |= (r3 & Byte.MAX_VALUE) << i10;
+            j10 |= (r3 & Byte.MAX_VALUE) << i10;
             if ((zza() & 128) == 0) {
-                return j3;
+                return j10;
             }
         }
         throw new zzsx("CodedInputStream encountered a malformed varint.");

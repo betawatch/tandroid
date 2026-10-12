@@ -3,203 +3,205 @@ package p4;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.content.pm.ServiceInfo;
-import android.content.res.AssetManager;
+import android.content.ServiceConnection;
 import android.os.Build;
-import android.os.Handler;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.Serializable;
+import android.os.IBinder;
+import android.os.Messenger;
+import android.os.RemoteException;
+import android.util.Log;
+import com.google.android.gms.internal.vision.g3;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.concurrent.Executor;
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Wallet.n5;
-import org.telegram.ui.bi0;
+import java.util.List;
+import ji.d4;
+import ji.m5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class s0 {
-    public boolean a;
-    public final Object b;
-    public final Object c;
-    public final Object d;
-    public final Object e;
-    public final Serializable f;
-    public Object g;
-    public Object h;
+public final class s0 extends g3 implements ServiceConnection {
+    public static final /* synthetic */ int G = 0;
+    public boolean E;
+    public m5 F;
+    public final ComponentName r;
+    public final com.google.android.gms.internal.cast.a0 s;
+    public final ArrayList v;
+    public boolean w;
+    public boolean x;
+    public n0 y;
 
-    public s0(Context context, e eVar) {
-        this.f = new ArrayList();
-        this.g = new androidx.mediarouter.app.g(this, 8);
-        this.h = new n5(this, 1);
-        this.b = context;
-        this.c = eVar;
-        this.d = new Handler();
-        this.e = context.getPackageManager();
+    static {
+        Log.isLoggable("MediaRouteProviderProxy", 3);
     }
 
-    public FileInputStream a(AssetManager assetManager, String str) {
-        try {
-            return assetManager.openFd(str).createInputStream();
-        } catch (FileNotFoundException e7) {
-            String message = e7.getMessage();
-            if (message == null || !message.contains("compressed")) {
-                return null;
-            }
-            ((r4.c) this.c).H();
+    public s0(Context context, ComponentName componentName) {
+        super(context, new d4(componentName, 17));
+        this.v = new ArrayList();
+        this.r = componentName;
+        this.s = new com.google.android.gms.internal.cast.a0();
+    }
+
+    @Override // com.google.android.gms.internal.vision.g3
+    public final p c(String str) {
+        if (str == null) {
+            throw new IllegalArgumentException("initialMemberRouteId cannot be null.");
+        }
+        b2.u uVar = (b2.u) this.n;
+        if (uVar == null) {
             return null;
         }
+        List list = (List) uVar.c;
+        int size = list.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            if (((m) list.get(i10)).d().equals(str)) {
+                q0 q0Var = new q0(this, str);
+                this.v.add(q0Var);
+                if (this.E) {
+                    q0Var.a(this.y);
+                }
+                r();
+                return q0Var;
+            }
+        }
+        return null;
     }
 
-    public void b(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new bi0(this, i10, serializable, 19));
+    @Override // com.google.android.gms.internal.vision.g3
+    public final q d(String str) {
+        if (str != null) {
+            return o(str, null);
+        }
+        throw new IllegalArgumentException("routeId cannot be null");
     }
 
-    public void c() {
-        int i10;
-        e eVar = (e) this.c;
-        PackageManager packageManager = (PackageManager) this.e;
-        ArrayList arrayList = (ArrayList) this.f;
-        if (this.a) {
-            ArrayList arrayList2 = new ArrayList();
-            if (Build.VERSION.SDK_INT >= 30) {
-                Intent intent = new Intent("android.media.MediaRoute2ProviderService");
-                ArrayList arrayList3 = new ArrayList();
-                Iterator<ResolveInfo> it = packageManager.queryIntentServices(intent, 0).iterator();
-                while (it.hasNext()) {
-                    arrayList3.add(it.next().serviceInfo);
+    @Override // com.google.android.gms.internal.vision.g3
+    public final q e(String str, String str2) {
+        if (str == null) {
+            throw new IllegalArgumentException("routeId cannot be null");
+        }
+        if (str2 != null) {
+            return o(str, str2);
+        }
+        throw new IllegalArgumentException("routeGroupId cannot be null");
+    }
+
+    @Override // com.google.android.gms.internal.vision.g3
+    public final void f(n nVar) {
+        if (this.E) {
+            n0 n0Var = this.y;
+            int i10 = n0Var.d;
+            n0Var.d = i10 + 1;
+            n0Var.b(10, i10, 0, nVar != null ? nVar.a : null, null);
+        }
+        r();
+    }
+
+    public final void n() {
+        if (this.x) {
+            return;
+        }
+        Intent intent = new Intent("android.media.MediaRouteProviderService");
+        intent.setComponent(this.r);
+        try {
+            this.x = this.a.bindService(intent, this, Build.VERSION.SDK_INT >= 29 ? 4097 : 1);
+        } catch (SecurityException unused) {
+        }
+    }
+
+    public final r0 o(String str, String str2) {
+        b2.u uVar = (b2.u) this.n;
+        if (uVar == null) {
+            return null;
+        }
+        List list = (List) uVar.c;
+        int size = list.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            if (((m) list.get(i10)).d().equals(str)) {
+                r0 r0Var = new r0(this, str, str2);
+                this.v.add(r0Var);
+                if (this.E) {
+                    r0Var.a(this.y);
                 }
-                arrayList2 = arrayList3;
+                r();
+                return r0Var;
             }
-            Iterator<ResolveInfo> it2 = packageManager.queryIntentServices(new Intent("android.media.MediaRouteProviderService"), 0).iterator();
-            int i11 = 0;
-            while (true) {
-                boolean z10 = true;
-                if (!it2.hasNext()) {
-                    break;
-                }
-                ServiceInfo serviceInfo = it2.next().serviceInfo;
-                if (serviceInfo != null) {
-                    if ((x.c == null ? false : x.c().f()) && !arrayList2.isEmpty()) {
-                        int size = arrayList2.size();
-                        int i12 = 0;
-                        while (i12 < size) {
-                            Object obj = arrayList2.get(i12);
-                            i12++;
-                            ServiceInfo serviceInfo2 = (ServiceInfo) obj;
-                            if (!serviceInfo.packageName.equals(serviceInfo2.packageName) || !serviceInfo.name.equals(serviceInfo2.name)) {
+        }
+        return null;
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        if (this.x) {
+            p();
+            Messenger messenger = iBinder != null ? new Messenger(iBinder) : null;
+            if (messenger != null) {
+                try {
+                    if (messenger.getBinder() != null) {
+                        n0 n0Var = new n0(this, messenger);
+                        int i10 = n0Var.d;
+                        n0Var.d = i10 + 1;
+                        n0Var.g = i10;
+                        if (n0Var.b(1, i10, 4, null, null)) {
+                            try {
+                                n0Var.a.getBinder().linkToDeath(n0Var, 0);
+                                this.y = n0Var;
+                                return;
+                            } catch (RemoteException unused) {
+                                n0Var.binderDied();
+                                return;
                             }
                         }
+                        return;
                     }
-                    String str = serviceInfo.packageName;
-                    String str2 = serviceInfo.name;
-                    int size2 = arrayList.size();
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 >= size2) {
-                            i13 = -1;
-                            break;
-                        }
-                        ComponentName componentName = ((r0) arrayList.get(i13)).r;
-                        if (componentName.getPackageName().equals(str) && componentName.getClassName().equals(str2)) {
-                            break;
-                        } else {
-                            i13++;
-                        }
-                    }
-                    if (i13 < 0) {
-                        r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.F = new m4.w(this, r0Var);
-                        if (!r0Var.w) {
-                            r0Var.w = true;
-                            r0Var.r();
-                        }
-                        i10 = i11 + 1;
-                        arrayList.add(i11, r0Var);
-                        eVar.a(r0Var, false);
-                    } else if (i13 >= i11) {
-                        r0 r0Var2 = (r0) arrayList.get(i13);
-                        if (!r0Var2.w) {
-                            r0Var2.w = true;
-                            r0Var2.r();
-                        }
-                        if (r0Var2.y == null) {
-                            if (!r0Var2.w || (((n) r0Var2.h) == null && r0Var2.v.isEmpty())) {
-                                z10 = false;
-                            }
-                            if (z10) {
-                                r0Var2.q();
-                                r0Var2.n();
-                            }
-                        }
-                        i10 = i11 + 1;
-                        Collections.swap(arrayList, i13, i11);
-                    }
-                    i11 = i10;
+                } catch (NullPointerException unused2) {
                 }
             }
-            if (i11 < arrayList.size()) {
-                for (int size3 = arrayList.size() - 1; size3 >= i11; size3--) {
-                    r0 r0Var3 = (r0) arrayList.get(size3);
-                    u d = eVar.d(r0Var3);
-                    if (d != null) {
-                        r0Var3.getClass();
-                        x.b();
-                        r0Var3.f = null;
-                        r0Var3.h(null);
-                        eVar.m(d, null);
-                        eVar.a.b(514, d);
-                        eVar.l.remove(d);
-                    }
-                    arrayList.remove(r0Var3);
-                    r0Var3.F = null;
-                    if (r0Var3.w) {
-                        r0Var3.w = false;
-                        r0Var3.r();
-                    }
-                }
+            Log.e("MediaRouteProviderProxy", this + ": Service returned invalid messenger binder");
+        }
+    }
+
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        p();
+    }
+
+    public final void p() {
+        if (this.y != null) {
+            g(null);
+            this.E = false;
+            ArrayList arrayList = this.v;
+            int size = arrayList.size();
+            for (int i10 = 0; i10 < size; i10++) {
+                ((o0) arrayList.get(i10)).c();
+            }
+            n0 n0Var = this.y;
+            n0Var.b(2, 0, 0, null, null);
+            n0Var.b.b.clear();
+            n0Var.a.getBinder().unlinkToDeath(n0Var, 0);
+            n0Var.i.s.post(new m0(n0Var, 0));
+            this.y = null;
+        }
+    }
+
+    public final void q() {
+        if (this.x) {
+            this.x = false;
+            p();
+            try {
+                this.a.unbindService(this);
+            } catch (IllegalArgumentException e) {
+                Log.e("MediaRouteProviderProxy", this + ": unbindService failed", e);
             }
         }
     }
 
-    public s0(AssetManager assetManager, Executor executor, r4.c cVar, String str, File file) {
-        this.a = false;
-        this.b = executor;
-        this.c = cVar;
-        this.f = str;
-        this.e = file;
-        int i10 = Build.VERSION.SDK_INT;
-        byte[] bArr = null;
-        if (i10 >= 24 && i10 <= 34) {
-            switch (i10) {
-                case 24:
-                case 25:
-                    bArr = r4.d.h;
-                    break;
-                case 26:
-                    bArr = r4.d.g;
-                    break;
-                case 27:
-                    bArr = r4.d.f;
-                    break;
-                case 28:
-                case 29:
-                case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                    bArr = r4.d.e;
-                    break;
-                case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
-                case 32:
-                case 33:
-                case 34:
-                    bArr = r4.d.d;
-                    break;
-            }
+    public final void r() {
+        if (!this.w || (((n) this.h) == null && this.v.isEmpty())) {
+            q();
+        } else {
+            n();
         }
-        this.d = bArr;
+    }
+
+    public final String toString() {
+        return "Service connection " + this.r.flattenToShortString();
     }
 }

@@ -1,69 +1,69 @@
 package x3;
 
-import b2.p0;
-import b2.r;
-import b2.r0;
-import b2.s;
-import e2.v;
-import e9.i0;
+import b2.u0;
+import b2.w;
+import b2.w0;
+import e2.x;
+import e9.n0;
+import f2.p;
 import java.util.ArrayList;
 import java.util.Arrays;
-import n6.t;
+import n6.o;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h extends i {
     public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
     public static final byte[] p = {79, 112, 117, 115, 84, 97, 103, 115};
     public boolean n;
 
-    public static boolean e(v vVar, byte[] bArr) {
-        if (vVar.a() < bArr.length) {
+    public static boolean e(x xVar, byte[] bArr) {
+        if (xVar.a() < bArr.length) {
             return false;
         }
-        int i10 = vVar.b;
+        int i10 = xVar.b;
         byte[] bArr2 = new byte[bArr.length];
-        vVar.h(0, bArr.length, bArr2);
-        vVar.J(i10);
+        xVar.k(0, bArr.length, bArr2);
+        xVar.N(i10);
         return Arrays.equals(bArr2, bArr);
     }
 
     @Override // x3.i
-    public final long b(v vVar) {
-        byte[] bArr = vVar.a;
-        return (this.i * c3.b.k(bArr[0], bArr.length > 1 ? bArr[1] : (byte) 0)) / 1000000;
+    public final long b(x xVar) {
+        byte[] bArr = xVar.a;
+        return (this.i * p.e(bArr[0], bArr.length > 1 ? bArr[1] : (byte) 0)) / 1000000;
     }
 
     @Override // x3.i
-    public final boolean c(v vVar, long j3, t tVar) {
-        if (e(vVar, o)) {
-            byte[] copyOf = Arrays.copyOf(vVar.a, vVar.c);
+    public final boolean c(x xVar, long j10, o oVar) {
+        if (e(xVar, o)) {
+            byte[] copyOf = Arrays.copyOf(xVar.a, xVar.c);
             int i10 = copyOf[9] & 255;
-            ArrayList a2 = c3.b.a(copyOf);
-            if (((s) tVar.b) == null) {
-                r rVar = new r();
-                rVar.p = r0.n("audio/ogg");
-                rVar.q = r0.n("audio/opus");
-                rVar.I = i10;
-                rVar.J = 48000;
-                rVar.t = a2;
-                tVar.b = new s(rVar);
+            ArrayList a2 = p.a(copyOf);
+            if (((b2.x) oVar.b) == null) {
+                w wVar = new w();
+                wVar.q = w0.n("audio/ogg");
+                wVar.r = w0.n("audio/opus");
+                wVar.J = i10;
+                wVar.K = 48000;
+                wVar.u = a2;
+                oVar.b = new b2.x(wVar);
                 return true;
             }
         } else {
-            if (!e(vVar, p)) {
-                e2.d.h((s) tVar.b);
+            if (!e(xVar, p)) {
+                ((b2.x) oVar.b).getClass();
                 return false;
             }
-            e2.d.h((s) tVar.b);
+            ((b2.x) oVar.b).getClass();
             if (!this.n) {
                 this.n = true;
-                vVar.K(8);
-                p0 r10 = c3.b.r(i0.w((String[]) c3.b.v(vVar, false, false).b));
+                xVar.O(8);
+                u0 r10 = c3.b.r(n0.v(c3.b.u(xVar, false, false).a));
                 if (r10 != null) {
-                    r a10 = ((s) tVar.b).a();
-                    a10.k = r10.b(((s) tVar.b).l);
-                    tVar.b = new s(a10);
+                    w a10 = ((b2.x) oVar.b).a();
+                    a10.k = r10.b(((b2.x) oVar.b).l);
+                    oVar.b = new b2.x(a10);
                     return true;
                 }
             }

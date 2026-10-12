@@ -3,12 +3,14 @@ package g2;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
+import e2.m0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class n implements h {
     public final Context a;
@@ -30,7 +32,7 @@ public final class n implements h {
         this.b = new ArrayList();
     }
 
-    public static void d(h hVar, c0 c0Var) {
+    public static void c(h hVar, c0 c0Var) {
         if (hVar != null) {
             hVar.addTransferListener(c0Var);
         }
@@ -41,13 +43,13 @@ public final class n implements h {
         c0Var.getClass();
         this.c.addTransferListener(c0Var);
         this.b.add(c0Var);
-        d(this.d, c0Var);
-        d(this.e, c0Var);
-        d(this.f, c0Var);
-        d(this.h, c0Var);
-        d(this.n, c0Var);
-        d(this.r, c0Var);
-        d(this.s, c0Var);
+        c(this.d, c0Var);
+        c(this.e, c0Var);
+        c(this.f, c0Var);
+        c(this.h, c0Var);
+        c(this.n, c0Var);
+        c(this.r, c0Var);
+        c(this.s, c0Var);
     }
 
     public final void b(h hVar) {
@@ -91,10 +93,10 @@ public final class n implements h {
 
     @Override // g2.h
     public final long open(m mVar) {
-        e2.d.g(this.v == null);
+        u6.p(this.v == null);
         Uri uri = mVar.a;
         String scheme = uri.getScheme();
-        String str = e2.d0.a;
+        String str = m0.a;
         String scheme2 = uri.getScheme();
         boolean isEmpty = TextUtils.isEmpty(scheme2);
         Context context = this.a;
@@ -139,9 +141,9 @@ public final class n implements h {
                         this.h = hVar2;
                         b(hVar2);
                     } catch (ClassNotFoundException unused) {
-                        e2.a.n("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
-                    } catch (Exception e7) {
-                        throw new RuntimeException("Error instantiating RTMP extension", e7);
+                        e2.a.l("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
+                    } catch (Exception e) {
+                        throw new RuntimeException("Error instantiating RTMP extension", e);
                     }
                     if (this.h == null) {
                         this.h = hVar;
@@ -176,7 +178,7 @@ public final class n implements h {
         return this.v.open(mVar);
     }
 
-    @Override // b2.k
+    @Override // b2.p
     public final int read(byte[] bArr, int i10, int i11) {
         h hVar = this.v;
         hVar.getClass();

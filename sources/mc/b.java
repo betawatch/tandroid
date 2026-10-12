@@ -1,17 +1,42 @@
 package mc;
 
+import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
+import ji.w4;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class b {
-    public int a;
-    public int b;
-    public int c;
+public final class b extends a {
+    public static final /* synthetic */ w4 n;
+    public static final /* synthetic */ w4 r;
 
-    public final int a() {
-        return this.b + 1 + this.c;
+    static {
+        te.a aVar = new te.a(b.class, "ESDescriptorBox.java");
+        aVar.e(aVar.d("getEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor"));
+        aVar.e(aVar.d("setEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor", "esDescriptor", "void"));
+        n = aVar.e(aVar.d("equals", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "java.lang.Object", "o", "boolean"));
+        r = aVar.e(aVar.d("hashCode", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "int"));
     }
 
-    public abstract void b(ByteBuffer byteBuffer);
+    public final boolean equals(Object obj) {
+        k3.p(te.a.c(n, this, this, obj));
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || b.class != obj.getClass()) {
+            return false;
+        }
+        ByteBuffer byteBuffer = this.e;
+        ByteBuffer byteBuffer2 = ((b) obj).e;
+        return byteBuffer != null ? byteBuffer.equals(byteBuffer2) : byteBuffer2 == null;
+    }
+
+    public final int hashCode() {
+        k3.p(te.a.b(r, this, this));
+        ByteBuffer byteBuffer = this.e;
+        if (byteBuffer != null) {
+            return byteBuffer.hashCode();
+        }
+        return 0;
+    }
 }

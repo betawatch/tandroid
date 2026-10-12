@@ -1,142 +1,186 @@
 package j2;
 
-import b2.k0;
-import e2.m;
-import e9.i0;
-import m4.a0;
-import m4.a1;
-import m4.b0;
-import m4.f1;
-import m4.n;
-import m4.q;
-import m4.r;
+import android.media.AudioDescriptor;
+import android.os.SystemClock;
+import e2.m0;
+import e2.o;
+import k2.h0;
+import k2.n0;
+import k2.o0;
+import k2.p0;
+import k2.s0;
+import k2.t0;
+import k2.x;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements m, d9.e, i5.g, a0, a1, e2.h {
+public final /* synthetic */ class e implements o {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e(int i10) {
         this.a = i10;
     }
 
-    @Override // e2.h
-    public void accept(Object obj) {
-        f1 f1Var = (f1) obj;
-        switch (this.a) {
-            case 22:
-                f1Var.e();
-                break;
-            case 23:
-                f1Var.e0();
-                break;
-            case 24:
-                f1Var.z0();
-                break;
-            case 25:
-                f1Var.G0();
-                break;
-            case 26:
-            default:
-                f1Var.F();
-                break;
-            case 27:
-                f1Var.V();
-                break;
-        }
+    public static /* bridge */ /* synthetic */ AudioDescriptor b(Object obj) {
+        return (AudioDescriptor) obj;
     }
 
-    @Override // d9.e, i5.e
-    public Object apply(Object obj) {
-        return i0.z(Integer.valueOf(((v2.h) obj).a));
-    }
-
-    @Override // m4.a0
-    public void d(q qVar, int i10) {
-        switch (this.a) {
-            case 17:
-                qVar.getClass();
-                break;
-            case 18:
-                qVar.b(i10);
-                break;
-            default:
-                qVar.getClass();
-                break;
-        }
-    }
-
-    @Override // m4.a1
-    public Object h(b0 b0Var, r rVar, int i10) {
-        switch (this.a) {
-            case 20:
-                b0Var.getClass();
-                throw new ClassCastException();
-            case 21:
-                b0Var.getClass();
-                throw new ClassCastException();
-            case 26:
-                return b0Var.n(rVar);
-            default:
-                b0Var.getClass();
-                throw new ClassCastException();
-        }
-    }
-
-    @Override // e2.m
+    @Override // e2.o
     public void invoke(Object obj) {
-        b bVar = (b) obj;
+        long j10;
+        x xVar;
         switch (this.a) {
             case 0:
-                bVar.getClass();
+                ((b) obj).getClass();
                 break;
             case 1:
-                bVar.getClass();
+                ((b) obj).getClass();
                 break;
             case 2:
-                bVar.getClass();
+                ((b) obj).getClass();
                 break;
             case 3:
-                bVar.getClass();
+                ((b) obj).getClass();
                 break;
             case 4:
-                bVar.getClass();
+                ((b) obj).getClass();
                 break;
+            case 5:
+                ((b) obj).getClass();
+                break;
+            case 6:
+                ((b) obj).getClass();
+                break;
+            case 7:
+                ((b) obj).getClass();
+                break;
+            case 8:
+                ((b) obj).getClass();
+                break;
+            case 9:
+                ((b) obj).getClass();
+                break;
+            case 10:
+                ((b) obj).getClass();
+                break;
+            case 11:
+                ((b) obj).getClass();
+                break;
+            case 12:
+                ((b) obj).getClass();
+                break;
+            case 13:
+                ((b) obj).getClass();
+                break;
+            case 14:
+                ((b) obj).getClass();
+                break;
+            case 15:
+                ((b) obj).getClass();
+                break;
+            case 16:
+                ((b) obj).getClass();
+                break;
+            case 17:
+                ((b) obj).getClass();
+                break;
+            case 18:
+                ((b) obj).getClass();
+                break;
+            case 19:
+                ((b) obj).getClass();
+                break;
+            case 20:
+                ((b) obj).getClass();
+                break;
+            case 21:
+            case 22:
+            case 23:
+            case 24:
             default:
-                bVar.getClass();
+                x xVar2 = ((n0) obj).a.n;
+                if (xVar2 != null) {
+                    xVar2.q();
+                    break;
+                }
+                break;
+            case 25:
+                o0 o0Var = (o0) obj;
+                s0 s0Var = o0Var.b;
+                if (o0Var.equals(s0Var.j) && s0Var.n != null) {
+                    p0 p0Var = s0Var.p;
+                    int i10 = p0Var.b;
+                    if (i10 != -1) {
+                        long j11 = ((k2.o) p0Var.e).f / i10;
+                        h0 h0Var = s0Var.t;
+                        h0Var.getClass();
+                        j10 = m0.Y(h0Var.a.getSampleRate(), j11);
+                    } else {
+                        j10 = -9223372036854775807L;
+                    }
+                    s0Var.n.m(((k2.o) s0Var.p.e).f, m0.h0(j10), SystemClock.elapsedRealtime() - s0Var.W);
+                    break;
+                }
+                break;
+            case 26:
+                o0 o0Var2 = (o0) obj;
+                o0Var2.getClass();
+                s0.c0.getAndDecrement();
+                x xVar3 = o0Var2.b.n;
+                if (xVar3 != null) {
+                    int i11 = o0Var2.a.a;
+                    xVar3.E(new t0());
+                    break;
+                }
+                break;
+            case 27:
+                o0 o0Var3 = (o0) obj;
+                s0 s0Var2 = o0Var3.b;
+                if (o0Var3.equals(s0Var2.j) && (xVar = s0Var2.n) != null && s0Var2.O) {
+                    xVar.I();
+                    break;
+                }
+                break;
+            case 28:
+                o0 o0Var4 = (o0) obj;
+                s0 s0Var3 = o0Var4.b;
+                if (o0Var4.equals(s0Var3.j) && s0Var3.M) {
+                    s0Var3.N = true;
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ e(int i10, Object obj, Object obj2) {
-        this.a = i10;
     }
 
     public /* synthetic */ e(a aVar, float f7) {
-        this.a = 5;
+        this.a = 20;
     }
 
     public /* synthetic */ e(a aVar, int i10) {
-        this.a = 3;
-    }
-
-    public /* synthetic */ e(a aVar, k0 k0Var, int i10) {
-        this.a = 4;
-    }
-
-    public /* synthetic */ e(a aVar, boolean z10) {
-        this.a = 1;
-    }
-
-    public /* synthetic */ e(Object obj, int i10) {
         this.a = i10;
     }
 
-    public /* synthetic */ e(String str, int i10, int i11, n nVar) {
-        this.a = 21;
+    public /* synthetic */ e(a aVar, int i10, int i11) {
+        this.a = i11;
     }
 
-    @Override // i5.g
-    public void a(Exception exc) {
+    public /* synthetic */ e(a aVar, long j10) {
+        this.a = 11;
+    }
+
+    public /* synthetic */ e(a aVar, b2.x xVar, i2.f fVar) {
+        this.a = 2;
+    }
+
+    public /* synthetic */ e(a aVar, b2.p0 p0Var, int i10) {
+        this.a = 19;
+    }
+
+    public /* synthetic */ e(a aVar, Object obj, int i10) {
+        this.a = i10;
+    }
+
+    public /* synthetic */ e(a aVar, boolean z10, int i10) {
+        this.a = i10;
     }
 }

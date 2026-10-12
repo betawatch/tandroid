@@ -1,101 +1,26 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class xi extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+public final class xi extends org.telegram.ui.Components.wo {
+    public final /* synthetic */ fo M;
 
-    public /* synthetic */ xi(zn znVar, int i10) {
-        this.a = i10;
-        this.b = znVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xi(fo foVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(activity, i10, document, c6Var);
+        this.M = foVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        wj wjVar;
-        switch (this.a) {
-            case 0:
-                zn znVar = this.b;
-                org.telegram.ui.Components.y60 y60Var = znVar.b3;
-                if (y60Var != null) {
-                    y60Var.setIsMessageTransition(false);
-                    znVar.b3.c(true);
-                    znVar.b3.setVisibility(4);
-                    break;
-                }
-                break;
-            case 1:
-                float dp = AndroidUtilities.dp(30.0f);
-                zn znVar2 = this.b;
-                znVar2.A9 = dp;
-                znVar2.t9();
-                break;
-            case 2:
-                zn znVar3 = this.b;
-                if (znVar3.fragmentView != null && (wjVar = znVar3.x0) != null) {
-                    wjVar.invalidate();
-                    znVar3.fragmentView.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.P.setVisibility(4);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new cj(this, 4), 2000L);
-                break;
-            case 5:
-                zn znVar4 = this.b;
-                if (animator.equals(znVar4.g3)) {
-                    znVar4.g3 = null;
-                    break;
-                }
-                break;
-            case 6:
-                zn znVar5 = this.b;
-                if (animator.equals(znVar5.g3)) {
-                    znVar5.g3 = null;
-                    break;
-                }
-                break;
-            case 7:
-                zn znVar6 = this.b;
-                if (animator.equals(znVar6.h3)) {
-                    znVar6.i3 = 1.0f;
-                    znVar6.pc();
-                    znVar6.h3 = null;
-                    break;
-                }
-                break;
-            case 8:
-                zn znVar7 = this.b;
-                if (animator.equals(znVar7.h3)) {
-                    znVar7.i3 = 0.0f;
-                    znVar7.pc();
-                    znVar7.h3 = null;
-                    break;
-                }
-                break;
-            case 9:
-                this.b.T4 = null;
-                break;
-            case 10:
-                zn znVar8 = this.b;
-                znVar8.Ea = 1.0f;
-                znVar8.Y.setVisibility(4);
-                znVar8.O0.setVisibility(4);
-                znVar8.t9();
-                break;
-            default:
-                zn znVar9 = this.b;
-                znVar9.Ea = 0.0f;
-                znVar9.t9();
-                break;
-        }
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        float y3 = getY();
+        fo foVar = this.M;
+        float y10 = foVar.R0.getY() + y3;
+        this.J = foVar.X0.getBackgroundSizeY();
+        this.I = y10;
     }
 }

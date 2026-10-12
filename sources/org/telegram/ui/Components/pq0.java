@@ -1,32 +1,50 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class pq0 extends g.o {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ mr0 d;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ pq0(mr0 mr0Var, int i10) {
-        this.c = i10;
-        this.d = mr0Var;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class pq0 implements hg.f0 {
+    public final /* synthetic */ jr0 a;
+
+    public pq0(jr0 jr0Var) {
+        this.a = jr0Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        switch (this.c) {
-            case 0:
-                if (i10 == 0) {
-                    return this.d.H.J;
-                }
-                return 1;
-            case 1:
-                ir0 ir0Var = this.d.M;
-                return (i10 == ir0Var.w || i10 == ir0Var.x || i10 == ir0Var.y || i10 == ir0Var.F || ir0Var.j(i10) == 0) ? 4 : 1;
-            default:
-                if (i10 == 0) {
-                    return this.d.I.J;
-                }
-                return 1;
+    @Override // hg.f0
+    public final void b(a0.h hVar, ArrayList arrayList) {
+        int i10;
+        int i11;
+        int i12;
+        int i13 = 0;
+        while (i13 < arrayList.size()) {
+            TLObject tLObject = ((hg.g0) arrayList.get(i13)).a;
+            if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
+                arrayList.remove(i13);
+                i13--;
+            }
+            i13++;
         }
+        jr0 jr0Var = this.a;
+        jr0Var.E0 = arrayList;
+        for (int i14 = 0; i14 < jr0Var.E0.size(); i14++) {
+            hg.g0 g0Var = (hg.g0) jr0Var.E0.get(i14);
+            TLObject tLObject2 = g0Var.a;
+            if (tLObject2 instanceof TLRPC.User) {
+                i12 = ((org.telegram.ui.ActionBar.e3) jr0Var).currentAccount;
+                MessagesController.getInstance(i12).putUser((TLRPC.User) g0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.Chat) {
+                i11 = ((org.telegram.ui.ActionBar.e3) jr0Var).currentAccount;
+                MessagesController.getInstance(i11).putChat((TLRPC.Chat) g0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
+                i10 = ((org.telegram.ui.ActionBar.e3) jr0Var).currentAccount;
+                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) g0Var.a, true);
+            }
+        }
+        jr0Var.M.l();
     }
 }

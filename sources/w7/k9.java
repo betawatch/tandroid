@@ -6,7 +6,7 @@ import java.util.AbstractCollection;
 import java.util.Arrays;
 import java.util.Collection;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class k9 extends AbstractCollection implements Serializable {
     public static final Object[] a = new Object[0];
@@ -26,17 +26,17 @@ public abstract class k9 extends AbstractCollection implements Serializable {
         throw new UnsupportedOperationException();
     }
 
-    public abstract int i(Object[] objArr);
+    public abstract int h(Object[] objArr);
+
+    public int m() {
+        throw new UnsupportedOperationException();
+    }
 
     public int n() {
         throw new UnsupportedOperationException();
     }
 
-    public int o() {
-        throw new UnsupportedOperationException();
-    }
-
-    public Object[] p() {
+    public Object[] o() {
         return null;
     }
 
@@ -66,15 +66,15 @@ public abstract class k9 extends AbstractCollection implements Serializable {
         int size = size();
         int length = objArr.length;
         if (length < size) {
-            Object[] p5 = p();
-            if (p5 != null) {
-                return Arrays.copyOfRange(p5, o(), n(), objArr.getClass());
+            Object[] o10 = o();
+            if (o10 != null) {
+                return Arrays.copyOfRange(o10, n(), m(), objArr.getClass());
             }
             objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size);
         } else if (length > size) {
             objArr[size] = null;
         }
-        i(objArr);
+        h(objArr);
         return objArr;
     }
 }

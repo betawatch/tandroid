@@ -26,12 +26,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.bd;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.ia0;
-import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.ad;
+import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.h11;
+import org.telegram.ui.Components.ha0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class k4 {
     public int A;
@@ -46,14 +46,14 @@ public final class k4 {
     public int h;
     public boolean i;
     public final org.telegram.ui.Components.g6 j;
-    public ia0 k;
-    public final vh.f l;
+    public ha0 k;
+    public final wh.f l;
     public int m;
-    public final bd n;
+    public final ad n;
     public j4 o;
     public boolean p;
-    public l11 q;
-    public l11 r;
+    public h11 q;
+    public h11 r;
     public long s;
     public Bitmap w;
     public Paint x;
@@ -66,9 +66,9 @@ public final class k4 {
 
     public k4(u1 u1Var) {
         this.a = u1Var;
-        this.l = vh.f.e(u1Var);
-        this.j = new org.telegram.ui.Components.g6(u1Var, 0L, 350L, hs.h);
-        this.n = new bd(u1Var);
+        this.l = wh.f.e(u1Var);
+        this.j = new org.telegram.ui.Components.g6(u1Var, 0L, 350L, es.h);
+        this.n = new ad(u1Var);
     }
 
     public final boolean a() {
@@ -103,8 +103,8 @@ public final class k4 {
         }
         boolean z10 = this.i;
         org.telegram.ui.Components.g6 g6Var = this.j;
-        float e7 = g6Var.e(z10);
-        float e10 = g6Var.e(this.i);
+        float e = g6Var.e(z10);
+        float e7 = g6Var.e(this.i);
         u1 u1Var2 = this.a;
         MessageObject messageObject = u1Var2.getMessageObject();
         Path path3 = this.u;
@@ -124,10 +124,10 @@ public final class k4 {
             RadialProgress2 radialProgress2 = j4Var.G;
             int i11 = this.d;
             int i12 = j4Var.a;
-            float f18 = e7;
+            float f18 = e;
             int i13 = this.e;
             int i14 = j4Var.b;
-            float f19 = e10;
+            float f19 = e7;
             u1 u1Var3 = u1Var2;
             imageReceiver.setImageCoords(i11 + i12, i13 + i14, j4Var.c - i12, j4Var.d - i14);
             imageReceiver.draw(canvas2);
@@ -136,7 +136,7 @@ public final class k4 {
                 int round = Math.round(0 / 1000.0f);
                 if (!j4Var.x && j4Var.K != (max = Math.max(0, j4Var.J - round))) {
                     j4Var.K = max;
-                    j4Var.L = new l11(AndroidUtilities.formatLongDuration(max), 12.0f, null);
+                    j4Var.L = new h11(AndroidUtilities.formatLongDuration(max), 12.0f, null);
                 }
             }
             if (f19 > 0.0f) {
@@ -152,7 +152,7 @@ public final class k4 {
                 f14 = min2;
                 f17 = min;
             }
-            radialProgress2.g(org.telegram.ui.ActionBar.i6.le, org.telegram.ui.ActionBar.i6.me, org.telegram.ui.ActionBar.i6.ne, org.telegram.ui.ActionBar.i6.oe);
+            radialProgress2.g(org.telegram.ui.ActionBar.g6.le, org.telegram.ui.ActionBar.g6.me, org.telegram.ui.ActionBar.g6.ne, org.telegram.ui.ActionBar.g6.oe);
             RectF rectF3 = radialProgress2.a;
             float f21 = f14;
             rectF3.set(((imageReceiver.getImageWidth() / 2.0f) - radialProgress2.x) + imageReceiver.getImageX(), ((imageReceiver.getImageHeight() / 2.0f) - radialProgress2.x) + imageReceiver.getImageY(), (imageReceiver.getImageWidth() / 2.0f) + radialProgress2.x + imageReceiver.getImageX(), (imageReceiver.getImageHeight() / 2.0f) + radialProgress2.x + imageReceiver.getImageY());
@@ -174,12 +174,12 @@ public final class k4 {
             canvas2.restore();
             i10++;
             f14 = f21;
-            e7 = f18;
+            e = f18;
             u1Var2 = u1Var3;
-            e10 = f19;
+            e7 = f19;
         }
-        float f22 = e7;
-        float f23 = e10;
+        float f22 = e;
+        float f23 = e7;
         u1 u1Var4 = u1Var2;
         if (f23 > 0.0f) {
             canvas2.save();
@@ -221,7 +221,7 @@ public final class k4 {
                     canvas2.clipPath(path);
                     f13 = f23;
                     c(canvas2, f13);
-                    canvas2.drawColor(org.telegram.ui.ActionBar.i6.m1(1.0f, TLObject.FLAG_30));
+                    canvas2.drawColor(org.telegram.ui.ActionBar.g6.m1(1.0f, TLObject.FLAG_30));
                     j4Var2.L.c(this.d + j4Var2.a + dp3 + AndroidUtilities.dp(5.66f), this.e + j4Var2.b + dp3 + f26, 1.0f, -1, canvas2);
                     canvas2.restore();
                     i18++;
@@ -244,13 +244,13 @@ public final class k4 {
             float dp5 = AndroidUtilities.dp(32.0f);
             float f27 = this.d;
             float f28 = this.g;
-            float z11 = com.google.android.gms.internal.vision.e2.z(f28, dp4, 2.0f, f27);
+            float z11 = com.google.android.gms.internal.play_billing.k3.z(f28, dp4, 2.0f, f27);
             f7 = 11.32f;
             float f29 = this.e;
             f10 = 5.0f;
             float f30 = this.h;
             f11 = 17.0f;
-            rectF.set(z11, com.google.android.gms.internal.vision.e2.z(f30, dp5, 2.0f, f29), org.telegram.messenger.q.a(f28, dp4, 2.0f, f27), org.telegram.messenger.q.a(f30, dp5, 2.0f, f29));
+            rectF.set(z11, com.google.android.gms.internal.play_billing.k3.z(f30, dp5, 2.0f, f29), org.telegram.messenger.q.b(f28, dp4, 2.0f, f27), org.telegram.messenger.q.b(f30, dp5, 2.0f, f29));
             path.rewind();
             float f31 = dp5 / 2.0f;
             path.addRoundRect(rectF, f31, f31, Path.Direction.CW);
@@ -260,34 +260,34 @@ public final class k4 {
             canvas2.clipPath(path);
             f12 = f22;
             c(canvas2, f12);
-            canvas2.drawColor(org.telegram.ui.ActionBar.i6.m1(f12, 1342177280));
+            canvas2.drawColor(org.telegram.ui.ActionBar.g6.m1(f12, 1342177280));
             path2 = path;
             this.q.c((((this.g / 2.0f) + this.d) - (dp4 / 2.0f)) + AndroidUtilities.dp(14.0f), this.e + (this.h / 2.0f), f12, -1, canvas2);
             canvas2.restore();
-            if (u1Var.getDelegate() == null || !u1Var.getDelegate().i1(5, u1Var)) {
-                ia0 ia0Var = this.k;
-                if (ia0Var != null && !ia0Var.d() && !this.k.c()) {
+            if (u1Var.getDelegate() == null || !u1Var.getDelegate().Z0(5, u1Var)) {
+                ha0 ha0Var = this.k;
+                if (ha0Var != null && !ha0Var.d() && !this.k.c()) {
                     this.k.a();
                 }
             } else {
-                ia0 ia0Var2 = this.k;
-                if (ia0Var2 == null) {
-                    ia0 ia0Var3 = new ia0();
-                    this.k = ia0Var3;
-                    ia0Var3.setCallback(u1Var);
-                    this.k.g(org.telegram.ui.ActionBar.i6.m1(0.1f, -1), org.telegram.ui.ActionBar.i6.m1(0.3f, -1), org.telegram.ui.ActionBar.i6.m1(0.35f, -1), org.telegram.ui.ActionBar.i6.m1(0.8f, -1));
-                    ia0 ia0Var4 = this.k;
-                    ia0Var4.D = true;
-                    ia0Var4.x.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-                } else if (ia0Var2.c() || this.k.d()) {
-                    ia0 ia0Var5 = this.k;
-                    ia0Var5.b = -1L;
-                    ia0Var5.c = -1L;
+                ha0 ha0Var2 = this.k;
+                if (ha0Var2 == null) {
+                    ha0 ha0Var3 = new ha0();
+                    this.k = ha0Var3;
+                    ha0Var3.setCallback(u1Var);
+                    this.k.g(org.telegram.ui.ActionBar.g6.m1(0.1f, -1), org.telegram.ui.ActionBar.g6.m1(0.3f, -1), org.telegram.ui.ActionBar.g6.m1(0.35f, -1), org.telegram.ui.ActionBar.g6.m1(0.8f, -1));
+                    ha0 ha0Var4 = this.k;
+                    ha0Var4.D = true;
+                    ha0Var4.x.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
+                } else if (ha0Var2.c() || this.k.d()) {
+                    ha0 ha0Var5 = this.k;
+                    ha0Var5.b = -1L;
+                    ha0Var5.c = -1L;
                 }
             }
-            ia0 ia0Var6 = this.k;
-            if (ia0Var6 != null) {
-                ia0Var6.e(rectF);
+            ha0 ha0Var6 = this.k;
+            if (ha0Var6 != null) {
+                ha0Var6.e(rectF);
                 this.k.k(f31);
                 this.k.setAlpha((int) (f12 * 255.0f));
                 this.k.draw(canvas2);
@@ -309,7 +309,7 @@ public final class k4 {
         path2.addRoundRect(rectF, f34, f34, Path.Direction.CW);
         canvas2.save();
         canvas2.clipPath(path2);
-        canvas2.drawColor(org.telegram.ui.ActionBar.i6.m1(timeAlpha, TLObject.FLAG_30));
+        canvas2.drawColor(org.telegram.ui.ActionBar.g6.m1(timeAlpha, TLObject.FLAG_30));
         this.r.c((((this.d + this.g) - dp6) - dp8) + AndroidUtilities.dp(5.66f), this.e + dp8 + f34, timeAlpha, -1, canvas2);
         canvas.restore();
     }
@@ -395,7 +395,7 @@ public final class k4 {
             return;
         }
         this.C = false;
-        vh.f fVar = this.l;
+        wh.f fVar = this.l;
         if (fVar != null) {
             fVar.a(this.a);
         }
@@ -451,7 +451,7 @@ public final class k4 {
                                 TLRPC.MessageExtendedMedia messageExtendedMedia = j4Var2.E;
                                 motionEvent.getX();
                                 motionEvent.getY();
-                                delegate.Z1(u1Var, messageExtendedMedia);
+                                delegate.M1(u1Var, messageExtendedMedia);
                             } else if (messageObject.isSending()) {
                                 SendMessagesHelper.getInstance(messageObject.currentAccount).cancelSendingMessage(messageObject);
                             }
@@ -475,7 +475,7 @@ public final class k4 {
                     TLRPC.MessageExtendedMedia messageExtendedMedia2 = j4Var22.E;
                     motionEvent.getX();
                     motionEvent.getY();
-                    delegate2.Z1(u1Var, messageExtendedMedia2);
+                    delegate2.M1(u1Var, messageExtendedMedia2);
                 }
             }
             this.p = false;
@@ -1167,16 +1167,16 @@ public final class k4 {
             k4Var.g = (int) ((i4Var4.d / 1000.0f) * k4Var.f);
             k4Var.h = (int) (i4Var4.g * i4Var4.i);
             if (k4Var.i) {
-                l11 l11Var = new l11(yh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
-                k4Var.q = l11Var;
-                if (l11Var.c > k4Var.g - AndroidUtilities.dp(30.0f)) {
-                    k4Var.q = new l11(yh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                h11 h11Var = new h11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                k4Var.q = h11Var;
+                if (h11Var.c > k4Var.g - AndroidUtilities.dp(30.0f)) {
+                    k4Var.q = new h11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
             if (k4Var.r == null || k4Var.s != tL_messageMediaPaidMedia3.stars_amount) {
-                long j3 = tL_messageMediaPaidMedia3.stars_amount;
-                k4Var.s = j3;
-                k4Var.r = new l11(yh.p7.S0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j3), 0.9f, null), 12.0f, AndroidUtilities.bold());
+                long j10 = tL_messageMediaPaidMedia3.stars_amount;
+                k4Var.s = j10;
+                k4Var.r = new h11(zh.p7.S0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j10), 0.9f, null), 12.0f, AndroidUtilities.bold());
             }
         }
     }
@@ -1327,10 +1327,10 @@ public final class k4 {
         if (this.i) {
             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = messageObject == null ? null : (TLRPC.TL_messageMediaPaidMedia) messageObject.messageOwner.media;
             if (tL_messageMediaPaidMedia != null) {
-                l11 l11Var = new l11(yh.p7.Y0(z16, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
-                this.q = l11Var;
-                if (l11Var.c > this.g - AndroidUtilities.dp(30.0f)) {
-                    this.q = new l11(yh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                h11 h11Var = new h11(zh.p7.Y0(z16, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                this.q = h11Var;
+                if (h11Var.c > this.g - AndroidUtilities.dp(30.0f)) {
+                    this.q = new h11(zh.p7.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
         }

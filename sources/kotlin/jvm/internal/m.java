@@ -1,10 +1,10 @@
 package kotlin.jvm.internal;
 
-import ae.f0;
+import be.e0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class m extends b implements wd.g {
+public abstract class m extends b implements xd.g {
     public final boolean a;
 
     public m(Object obj, Class cls, String str, String str2, int i10) {
@@ -14,19 +14,19 @@ public abstract class m extends b implements wd.g {
 
     @Override // kotlin.jvm.internal.b
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final wd.g getReflected() {
+    public final xd.g getReflected() {
         if (this.a) {
             throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties. Please follow/upvote https://youtrack.jetbrains.com/issue/KT-55980");
         }
-        wd.b compute = compute();
+        xd.b compute = compute();
         if (compute != this) {
-            return (wd.g) compute;
+            return (xd.g) compute;
         }
-        throw new f0("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
+        throw new e0("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
     }
 
     @Override // kotlin.jvm.internal.b
-    public final wd.b compute() {
+    public final xd.b compute() {
         return this.a ? this : super.compute();
     }
 
@@ -38,7 +38,7 @@ public abstract class m extends b implements wd.g {
             m mVar = (m) obj;
             return getOwner().equals(mVar.getOwner()) && getName().equals(mVar.getName()) && getSignature().equals(mVar.getSignature()) && i.a(getBoundReceiver(), mVar.getBoundReceiver());
         }
-        if (obj instanceof wd.g) {
+        if (obj instanceof xd.g) {
             return obj.equals(compute());
         }
         return false;
@@ -49,7 +49,7 @@ public abstract class m extends b implements wd.g {
     }
 
     public final String toString() {
-        wd.b compute = compute();
+        xd.b compute = compute();
         if (compute != this) {
             return compute.toString();
         }

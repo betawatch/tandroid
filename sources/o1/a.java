@@ -1,15 +1,14 @@
 package o1;
 
-import a0.m;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.view.Choreographer;
 import java.util.ArrayList;
-import m.f3;
-import org.telegram.ui.Components.a21;
-import org.telegram.ui.Components.c21;
+import ji.d4;
+import org.telegram.ui.Components.w11;
+import org.telegram.ui.Components.y11;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -21,14 +20,14 @@ public final class a implements Choreographer.FrameCallback {
     }
 
     @Override // android.view.Choreographer.FrameCallback
-    public final void doFrame(long j3) {
+    public final void doFrame(long j10) {
         int i10;
         boolean z10;
         k kVar;
         boolean z11;
         switch (this.a) {
             case 0:
-                b bVar = (b) ((f3) ((la.h) this.b).b).b;
+                b bVar = (b) ((d4) ((li.k) this.b).b).b;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 ArrayList arrayList = bVar.b;
                 long uptimeMillis2 = SystemClock.uptimeMillis();
@@ -36,32 +35,32 @@ public final class a implements Choreographer.FrameCallback {
                 while (i11 < arrayList.size()) {
                     h hVar = (h) arrayList.get(i11);
                     if (hVar != null) {
-                        m mVar = bVar.a;
-                        Long l4 = (Long) mVar.get(hVar);
+                        a0.l lVar = bVar.a;
+                        Long l4 = (Long) lVar.get(hVar);
                         if (l4 != null) {
                             if (l4.longValue() < uptimeMillis2) {
-                                mVar.remove(hVar);
+                                lVar.remove(hVar);
                             }
                         }
-                        long j10 = hVar.i;
-                        if (j10 == 0) {
+                        long j11 = hVar.i;
+                        if (j11 == 0) {
                             hVar.i = uptimeMillis;
                             hVar.f(hVar.b);
                         } else {
-                            long j11 = uptimeMillis - j10;
+                            long j12 = uptimeMillis - j11;
                             hVar.i = uptimeMillis;
                             k kVar2 = (k) hVar;
                             if (kVar2.v != Float.MAX_VALUE) {
-                                l lVar = kVar2.u;
-                                double d = lVar.i;
+                                l lVar2 = kVar2.u;
+                                double d = lVar2.i;
                                 z10 = true;
                                 i10 = i11;
-                                long j12 = j11 / 2;
-                                e c10 = lVar.c(kVar2.b, kVar2.a, j12);
-                                l lVar2 = kVar2.u;
-                                lVar2.i = kVar2.v;
+                                long j13 = j12 / 2;
+                                e c10 = lVar2.c(kVar2.b, kVar2.a, j13);
+                                l lVar3 = kVar2.u;
+                                lVar3.i = kVar2.v;
                                 kVar2.v = Float.MAX_VALUE;
-                                e c11 = lVar2.c(c10.a, c10.b, j12);
+                                e c11 = lVar3.c(c10.a, c10.b, j13);
                                 kVar2.b = c11.a;
                                 kVar2.a = c11.b;
                                 kVar = kVar2;
@@ -69,7 +68,7 @@ public final class a implements Choreographer.FrameCallback {
                                 i10 = i11;
                                 z10 = true;
                                 kVar = kVar2;
-                                e c12 = kVar2.u.c(kVar2.b, kVar2.a, j11);
+                                e c12 = kVar2.u.c(kVar2.b, kVar2.a, j12);
                                 kVar.b = c12.a;
                                 kVar.a = c12.b;
                             }
@@ -77,9 +76,9 @@ public final class a implements Choreographer.FrameCallback {
                             kVar.b = max;
                             kVar.b = Math.min(max, kVar.g);
                             float f7 = kVar.a;
-                            l lVar3 = kVar.u;
-                            lVar3.getClass();
-                            if (Math.abs(f7) >= lVar3.e || Math.abs(r8 - ((float) lVar3.i)) >= lVar3.d) {
+                            l lVar4 = kVar.u;
+                            lVar4.getClass();
+                            if (Math.abs(f7) >= lVar4.e || Math.abs(r8 - ((float) lVar4.i)) >= lVar4.d) {
                                 z11 = false;
                             } else {
                                 kVar.b = (float) kVar.u.i;
@@ -110,21 +109,21 @@ public final class a implements Choreographer.FrameCallback {
                 }
                 if (arrayList.size() > 0) {
                     if (bVar.d == null) {
-                        bVar.d = new la.h(bVar.c);
+                        bVar.d = new li.k(bVar.c);
                     }
-                    la.h hVar2 = bVar.d;
-                    ((Choreographer) hVar2.c).postFrameCallback((a) hVar2.d);
+                    li.k kVar3 = bVar.d;
+                    ((Choreographer) kVar3.c).postFrameCallback((a) kVar3.d);
                     break;
                 }
                 break;
             default:
-                a21 a21Var = ((c21) this.b).a;
-                if (a21Var != null) {
-                    Handler handler = a21Var.getHandler();
-                    if (handler != null && a21Var.b.get()) {
+                w11 w11Var = ((y11) this.b).a;
+                if (w11Var != null) {
+                    Handler handler = w11Var.getHandler();
+                    if (handler != null && w11Var.b.get()) {
                         handler.sendMessage(handler.obtainMessage(0));
                     }
-                    if (((c21) this.b).a.S) {
+                    if (((y11) this.b).a.S) {
                         Choreographer.getInstance().postFrameCallback(this);
                         break;
                     }

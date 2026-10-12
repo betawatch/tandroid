@@ -1,49 +1,167 @@
 package com.google.android.gms.internal.vision;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.os.RemoteException;
+import android.util.Log;
+import j$.util.Objects;
+import ji.d4;
+import w7.p6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g3 extends o6.a {
-    public static final Parcelable.Creator<g3> CREATOR = new a1(1);
-    public int a;
-    public int b;
-    public int c;
-    public long d;
-    public int e;
+public abstract class g3 {
+    public final Context a;
+    public boolean b;
+    public boolean c;
+    public final Object d;
+    public Object e;
+    public Object f;
+    public Object h;
+    public Object n;
 
-    public static g3 b(la.h hVar) {
-        g3 g3Var = new g3();
-        a3.l lVar = (a3.l) hVar.b;
-        g3Var.a = lVar.a;
-        g3Var.b = lVar.b;
-        g3Var.e = lVar.c;
-        lVar.getClass();
-        g3Var.c = 0;
-        ((a3.l) hVar.b).getClass();
-        g3Var.d = 0L;
-        return g3Var;
+    public g3(Context context, String str, String str2) {
+        this.d = new Object();
+        this.b = false;
+        this.c = false;
+        this.a = context;
+        this.f = str;
+        this.h = str2.length() != 0 ? "com.google.android.gms.vision.dynamite.".concat(str2) : new String("com.google.android.gms.vision.dynamite.");
+        this.n = str2;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.d0.q(parcel, 20293);
-        int i11 = this.a;
-        w7.d0.s(parcel, 2, 4);
-        parcel.writeInt(i11);
-        int i12 = this.b;
-        w7.d0.s(parcel, 3, 4);
-        parcel.writeInt(i12);
-        int i13 = this.c;
-        w7.d0.s(parcel, 4, 4);
-        parcel.writeInt(i13);
-        long j3 = this.d;
-        w7.d0.s(parcel, 5, 8);
-        parcel.writeLong(j3);
-        int i14 = this.e;
-        w7.d0.s(parcel, 6, 4);
-        parcel.writeInt(i14);
-        w7.d0.r(parcel, q6);
+    public p4.p c(String str) {
+        if (str != null) {
+            return null;
+        }
+        throw new IllegalArgumentException("initialMemberRouteId cannot be null.");
+    }
+
+    public abstract p4.q d(String str);
+
+    public p4.q e(String str, String str2) {
+        if (str == null) {
+            throw new IllegalArgumentException("routeId cannot be null");
+        }
+        if (str2 != null) {
+            return d(str);
+        }
+        throw new IllegalArgumentException("routeGroupId cannot be null");
+    }
+
+    public abstract void f(p4.n nVar);
+
+    public void g(b2.u uVar) {
+        p4.y.b();
+        if (((b2.u) this.n) != uVar) {
+            this.n = uVar;
+            if (this.c) {
+                return;
+            }
+            this.c = true;
+            ((ab.o0) this.e).sendEmptyMessage(1);
+        }
+    }
+
+    public void h(p4.n nVar) {
+        p4.y.b();
+        if (Objects.equals((p4.n) this.h, nVar)) {
+            return;
+        }
+        this.h = nVar;
+        if (this.b) {
+            return;
+        }
+        this.b = true;
+        ((ab.o0) this.e).sendEmptyMessage(2);
+    }
+
+    public abstract Object i(y6.e eVar, Context context);
+
+    public abstract void j();
+
+    public boolean k() {
+        return m() != null;
+    }
+
+    public void l() {
+        synchronized (this.d) {
+            if (this.e == null) {
+                return;
+            }
+            try {
+                j();
+            } catch (RemoteException e) {
+                Log.e((String) this.f, "Could not finalize native handle", e);
+            }
+        }
+    }
+
+    public Object m() {
+        y6.e eVar;
+        synchronized (this.d) {
+            Object obj = this.e;
+            if (obj != null) {
+                return obj;
+            }
+            try {
+                eVar = y6.e.c(this.a, y6.e.c, (String) this.h);
+            } catch (y6.b unused) {
+                String str = "com.google.android.gms.vision." + ((String) this.n);
+                if (Log.isLoggable("Vision", 3)) {
+                    Log.d("Vision", "Cannot load thick client module, fall back to load optional module " + str);
+                }
+                try {
+                    eVar = y6.e.c(this.a, y6.e.b, str);
+                } catch (y6.b e) {
+                    p6.a(e, "Error loading optional module %s", str);
+                    if (!this.b) {
+                        String str2 = (String) this.n;
+                        if (Log.isLoggable("Vision", 3)) {
+                            Log.d("Vision", "Broadcasting download intent for dependency " + str2);
+                        }
+                        String str3 = (String) this.n;
+                        Intent intent = new Intent();
+                        intent.setClassName("com.google.android.gms", "com.google.android.gms.vision.DependencyBroadcastReceiverProxy");
+                        intent.putExtra("com.google.android.gms.vision.DEPENDENCIES", str3);
+                        intent.setAction("com.google.android.gms.vision.DEPENDENCY");
+                        this.a.sendBroadcast(intent);
+                        this.b = true;
+                    }
+                    eVar = null;
+                }
+            }
+            if (eVar != null) {
+                try {
+                    this.e = i(eVar, this.a);
+                } catch (RemoteException | y6.b e7) {
+                    Log.e((String) this.f, "Error creating remote native handle", e7);
+                }
+            }
+            boolean z10 = this.c;
+            if (!z10 && this.e == null) {
+                Log.w((String) this.f, "Native handle not yet available. Reverting to no-op handle.");
+                this.c = true;
+            } else if (z10 && this.e != null) {
+                Log.w((String) this.f, "Native handle is now available.");
+            }
+            return this.e;
+        }
+    }
+
+    public g3(Context context, d4 d4Var) {
+        this.e = new ab.o0(this, 11);
+        if (context != null) {
+            this.a = context;
+            if (d4Var == null) {
+                this.d = new d4(new ComponentName(context, getClass()), 17);
+                return;
+            } else {
+                this.d = d4Var;
+                return;
+            }
+        }
+        throw new IllegalArgumentException("context must not be null");
     }
 }

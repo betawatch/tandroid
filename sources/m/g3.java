@@ -1,13 +1,12 @@
 package m;
 
-import ai.sb;
 import android.view.View;
 import android.window.OnBackInvokedCallback;
 import android.window.OnBackInvokedDispatcher;
 import j$.util.Objects;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class g3 {
     public static OnBackInvokedDispatcher a(View view) {
@@ -16,7 +15,7 @@ public abstract class g3 {
 
     public static OnBackInvokedCallback b(Runnable runnable) {
         Objects.requireNonNull(runnable);
-        return new sb(runnable, 4);
+        return new androidx.activity.r(runnable, 4);
     }
 
     public static void c(Object obj, Object obj2) {

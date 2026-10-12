@@ -1,8 +1,9 @@
 package g2;
 
 import java.io.InputStream;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k extends InputStream {
     public final h a;
@@ -14,6 +15,14 @@ public final class k extends InputStream {
     public k(h hVar, m mVar) {
         this.a = hVar;
         this.b = mVar;
+    }
+
+    public final void a() {
+        if (this.d) {
+            return;
+        }
+        this.a.open(this.b);
+        this.d = true;
     }
 
     @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
@@ -41,14 +50,9 @@ public final class k extends InputStream {
 
     @Override // java.io.InputStream
     public final int read(byte[] bArr, int i10, int i11) {
-        e2.d.g(!this.e);
-        boolean z10 = this.d;
-        h hVar = this.a;
-        if (!z10) {
-            hVar.open(this.b);
-            this.d = true;
-        }
-        int read = hVar.read(bArr, i10, i11);
+        u6.p(!this.e);
+        a();
+        int read = this.a.read(bArr, i10, i11);
         if (read == -1) {
             return -1;
         }

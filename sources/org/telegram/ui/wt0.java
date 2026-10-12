@@ -1,176 +1,79 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.View;
-import android.view.WindowManager;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.PhotoViewer;
+import android.R;
+import android.net.Uri;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class wt0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class wt0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+    public final /* synthetic */ xt0 b;
 
-    public wt0(PhotoViewer photoViewer, int i10) {
-        this.b = photoViewer;
+    public /* synthetic */ wt0(xt0 xt0Var, int i10) {
         this.a = i10;
+        this.b = xt0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        cv0 cv0Var;
-        PhotoViewer photoViewer = this.b;
-        int i10 = photoViewer.u4;
-        if (i10 == 1) {
-            photoViewer.C1.a();
-            lg.p pVar = photoViewer.C1.b;
-            pVar.d = null;
-            pVar.J = false;
-            photoViewer.U0.setVisibility(8);
-            photoViewer.C1.setVisibility(8);
-            CropAreaView cropAreaView = photoViewer.C1.b.a;
-            cropAreaView.n0 = 0.0f;
-            cropAreaView.o0 = 1.0f;
-            cropAreaView.p0 = 0.0f;
-            cropAreaView.q0 = 0.0f;
-            cropAreaView.invalidate();
-        } else if (i10 == 2) {
-            try {
-                photoViewer.e0.removeView(photoViewer.I1);
-            } catch (Exception e7) {
-                FileLog.e(e7);
-            }
-            photoViewer.I1 = null;
-        } else if (i10 == 3) {
-            photoViewer.L1.o0(false);
-            try {
-                photoViewer.e0.removeView(photoViewer.L1.getView());
-            } catch (Exception e10) {
-                FileLog.e(e10);
-            }
-            photoViewer.L1 = null;
-        } else if (i10 == 4) {
-            photoViewer.O1 = true;
-            photoViewer.e0.invalidate();
-            photoViewer.e0.post(new rt0(1, this, photoViewer.N1));
-            photoViewer.N1 = null;
-            photoViewer.v5.m(false, true);
-            photoViewer.w5.m(false, true);
-        } else if (i10 == 5) {
-            photoViewer.q5.setVisibility(8);
-            org.telegram.ui.Components.lg0 lg0Var = photoViewer.q5;
-            lg0Var.d = null;
-            lg0Var.a.o(false, null, 0L, 0.0f);
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
+    
+        if (r2 != 7) goto L31;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        b2.o oVar;
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.b.b;
+                bv0 bv0Var = photoViewer.E2;
+                if (bv0Var != null) {
+                    org.telegram.ui.Components.h81 h81Var = photoViewer.F2;
+                    if (bv0Var.e != h81Var) {
+                        bv0Var.c = false;
+                        bv0Var.d = false;
+                        if (bv0Var.b) {
+                            bv0Var.a++;
+                            bv0Var.b = false;
+                        }
+                        bv0Var.setImageResource(R.color.transparent);
+                    }
+                    if (h81Var != null) {
+                        i2.h0 h0Var = h81Var.d;
+                        if (h0Var != null) {
+                            try {
+                                h0Var.F1();
+                                b2.x xVar = h0Var.S;
+                                if (xVar != null && (oVar = xVar.I) != null) {
+                                    int i10 = oVar.c;
+                                    if (i10 != 6) {
+                                        break;
+                                    }
+                                }
+                            } catch (Exception unused) {
+                            }
+                        }
+                        long p5 = h81Var.p() - h81Var.n();
+                        if (!bv0Var.c && !bv0Var.d && !bv0Var.b && p5 < 5250.0f) {
+                            Uri uri = h81Var.F;
+                            int i11 = bv0Var.a + 1;
+                            bv0Var.a = i11;
+                            Utilities.globalQueue.postRunnable(new c90(bv0Var, uri, i11, 4));
+                            bv0Var.b = true;
+                        }
+                    }
+                    bv0Var.e = h81Var;
+                    break;
+                }
+                break;
+            case 1:
+                bv0.a(this.b.b.E2);
+                break;
+            default:
+                bv0.a(this.b.b.E2);
+                break;
         }
-        photoViewer.p6 = null;
-        int i11 = photoViewer.u4;
-        photoViewer.u4 = this.a;
-        photoViewer.f1().L.b(photoViewer.u4 != 0);
-        ci.h4 h4Var = photoViewer.K1;
-        if (h4Var != null) {
-            h4Var.b(photoViewer.u4 != 3);
-        }
-        if (photoViewer.u4 != 3) {
-            photoViewer.Z5 = 0.0f;
-        }
-        if (photoViewer.c2 == 1) {
-            photoViewer.C1.setVisibility(0);
-        }
-        if (photoViewer.c2 == 11 && (i11 == 3 || i11 == 2 || i11 == 1 || i11 == 4)) {
-            photoViewer.c6 = photoViewer.h6;
-            photoViewer.d6 = photoViewer.i6;
-            photoViewer.e6 = photoViewer.j6;
-            photoViewer.f6 = photoViewer.k6;
-        } else {
-            float r22 = photoViewer.r2(false);
-            photoViewer.e6 = r22;
-            photoViewer.a6 = r22;
-            photoViewer.w3(r22);
-            photoViewer.c6 = 0.0f;
-            photoViewer.d6 = 0.0f;
-        }
-        photoViewer.o6 = -1;
-        photoViewer.e0.invalidate();
-        hv0 hv0Var = photoViewer.i7;
-        if (hv0Var != null) {
-            PhotoViewer photoViewer2 = hv0Var.d;
-            photoViewer2.d = hv0Var.c;
-            WindowManager.LayoutParams layoutParams = photoViewer2.d0;
-            layoutParams.flags = -2147286784;
-            layoutParams.softInputMode = 272;
-            photoViewer2.g0.setFocusable(false);
-            photoViewer2.e0.setFocusable(false);
-            photoViewer2.L0.setAlpha(255);
-            photoViewer2.e0.setAlpha(1.0f);
-            ArrayList arrayList = hv0Var.b;
-            int i12 = hv0Var.a;
-            photoViewer2.Z1(null, null, null, null, arrayList, null, null, i12, hv0Var.c.E((MessageObject) arrayList.get(i12), null, hv0Var.a, true, false));
-            photoViewer.i7 = null;
-            mu0 mu0Var = new mu0();
-            mu0Var.c = false;
-            photoViewer.k3(false, false, mu0Var);
-            photoViewer.k3(true, true, mu0Var);
-            return;
-        }
-        AnimatorSet animatorSet = new AnimatorSet();
-        ArrayList arrayList2 = new ArrayList();
-        t5 t5Var = photoViewer.P0;
-        Property property = View.TRANSLATION_Y;
-        arrayList2.add(ObjectAnimator.ofFloat(t5Var, (Property<t5, Float>) property, 0.0f));
-        t5 t5Var2 = photoViewer.P0;
-        Property property2 = View.ALPHA;
-        arrayList2.add(ObjectAnimator.ofFloat(t5Var2, (Property<t5, Float>) property2, 1.0f));
-        qg.o2 o2Var = photoViewer.p5;
-        if (o2Var != null) {
-            arrayList2.add(ObjectAnimator.ofFloat(o2Var, (Property<qg.o2, Float>) property2, 1.0f));
-        }
-        ai.o4 o4Var = photoViewer.s5;
-        if (o4Var != null) {
-            arrayList2.add(ObjectAnimator.ofFloat(o4Var, (Property<ai.o4, Float>) property2, 1.0f));
-        }
-        arrayList2.add(ObjectAnimator.ofFloat(photoViewer.S0, (Property<ii.z1, Float>) property, 0.0f));
-        if (photoViewer.c2 != 1) {
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.F, (Property<org.telegram.ui.Components.a8, Float>) property, 0.0f));
-        }
-        if (photoViewer.i2) {
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.Q1, (Property<su0, Float>) property, 0.0f));
-        }
-        int i13 = photoViewer.c2;
-        if (i13 == 0 || i13 == 4) {
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.N0, (Property<CheckBox, Float>) property2, 1.0f));
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.O0, (Property<PhotoViewer.CounterView, Float>) property2, 1.0f));
-        } else if (i13 == 1) {
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.C1, (Property<org.telegram.ui.Components.vf0, Float>) property2, 1.0f));
-        }
-        if (photoViewer.e1.getTag() != null) {
-            photoViewer.e1.setVisibility(photoViewer.d2 ? 8 : 0);
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.e1, (Property<org.telegram.ui.ActionBar.k0, Float>) property2, 1.0f));
-        }
-        if (photoViewer.f1.getTag() != null) {
-            photoViewer.f1.setVisibility((!photoViewer.d2 && photoViewer.J4 && ((cv0Var = photoViewer.d) == null || cv0Var.N())) ? 0 : 8);
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.f1, (Property<org.telegram.ui.Components.ga0, Float>) property2, 1.0f));
-        }
-        if (photoViewer.g1.getTag() != null) {
-            photoViewer.g1.setVisibility(photoViewer.d2 ? 8 : 0);
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.g1, (Property<zs0, Float>) property2, 1.0f));
-        }
-        View view = photoViewer.j0;
-        if (view != null) {
-            view.setVisibility(0);
-            arrayList2.add(ObjectAnimator.ofFloat(photoViewer.j0, (Property<View, Float>) property2, 1.0f));
-        }
-        animatorSet.playTogether(arrayList2);
-        animatorSet.setDuration(200L);
-        animatorSet.addListener(new vt0(this, i11));
-        animatorSet.start();
     }
 }

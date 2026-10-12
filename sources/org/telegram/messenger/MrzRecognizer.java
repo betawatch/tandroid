@@ -13,11 +13,11 @@ import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class Result {
         public static final int GENDER_FEMALE = 2;
         public static final int GENDER_MALE = 1;
@@ -408,22 +408,22 @@ public class MrzRecognizer {
     }
 
     private static Result recognizeBarcode(Bitmap bitmap) {
-        r8.n nVar = new r8.n(new com.google.android.gms.internal.vision.u2(ApplicationLoader.applicationContext, new com.google.android.gms.internal.vision.x1()));
+        r8.n nVar = new r8.n(new com.google.android.gms.internal.vision.t2(ApplicationLoader.applicationContext, new com.google.android.gms.internal.vision.x1()));
         if (bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500) {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
-        la.h hVar = new la.h(24);
+        li.k kVar = new li.k(23);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        hVar.d = bitmap;
-        a3.l lVar = (a3.l) hVar.b;
+        kVar.d = bitmap;
+        a3.l lVar = (a3.l) kVar.b;
         lVar.a = width;
         lVar.b = height;
-        SparseArray b12 = nVar.b1(hVar);
+        SparseArray e12 = nVar.e1(kVar);
         int i10 = 0;
-        for (int i11 = 0; i11 < b12.size(); i11++) {
-            r8.m mVar = (r8.m) b12.valueAt(i11);
+        for (int i11 = 0; i11 < e12.size(); i11++) {
+            r8.m mVar = (r8.m) e12.valueAt(i11);
             int i12 = mVar.d;
             int i13 = 6;
             int i14 = 4;

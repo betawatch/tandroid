@@ -1,74 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fs implements Drawable.Callback {
+public final /* synthetic */ class fs implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gs b;
+    public final /* synthetic */ is b;
 
-    public /* synthetic */ fs(gs gsVar, int i10) {
+    public /* synthetic */ fs(is isVar, int i10) {
         this.a = i10;
-        this.b = gsVar;
+        this.b = isVar;
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        View view;
         switch (this.a) {
             case 0:
-                gs gsVar = this.b;
-                if (gsVar.c < 1.0f) {
-                    gsVar.invalidateSelf();
-                    break;
+                is isVar = this.b;
+                if (isVar.b == null && (view = isVar.d) != null) {
+                    View findFocus = view.findFocus();
+                    if (findFocus instanceof EditText) {
+                        isVar.b = (EditText) findFocus;
+                    }
+                }
+                EditText editText = isVar.b;
+                if (editText != null) {
+                    if (editText.length() != 0 || isVar.e) {
+                        try {
+                            isVar.performHapticFeedback(3, 2);
+                            isVar.playSoundEffect(0);
+                        } catch (Exception unused) {
+                        }
+                        isVar.b.dispatchKeyEvent(new KeyEvent(0, 67));
+                        isVar.b.dispatchKeyEvent(new KeyEvent(1, 67));
+                        if (isVar.f) {
+                            isVar.postDelayed(isVar.h, 50L);
+                            break;
+                        }
+                    }
                 }
                 break;
             default:
-                gs gsVar2 = this.b;
-                if (gsVar2.c > 0.0f) {
-                    gsVar2.invalidateSelf();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        switch (this.a) {
-            case 0:
-                gs gsVar = this.b;
-                if (gsVar.c < 1.0f) {
-                    gsVar.scheduleSelf(runnable, j3);
-                    break;
-                }
-                break;
-            default:
-                gs gsVar2 = this.b;
-                if (gsVar2.c > 0.0f) {
-                    gsVar2.scheduleSelf(runnable, j3);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                gs gsVar = this.b;
-                if (gsVar.c < 1.0f) {
-                    gsVar.unscheduleSelf(runnable);
-                    break;
-                }
-                break;
-            default:
-                gs gsVar2 = this.b;
-                if (gsVar2.c > 0.0f) {
-                    gsVar2.unscheduleSelf(runnable);
-                    break;
-                }
+                is isVar2 = this.b;
+                isVar2.n = false;
+                isVar2.f = true;
+                isVar2.h.run();
                 break;
         }
     }

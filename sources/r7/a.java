@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements Continuation, com.google.android.gms.common.api.internal.s {
     public static final /* synthetic */ a a = new a();
@@ -22,9 +22,9 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                     taskCompletionSource.setResult(Boolean.FALSE);
                     return;
                 }
-                com.google.android.gms.common.api.internal.p e7 = iVar.b.e();
-                e7.b = null;
-                e7.c = null;
+                com.google.android.gms.common.api.internal.p e = iVar.b.e();
+                e.b = null;
+                e.c = null;
                 if (z10) {
                     k6.c[] m10 = kVar.m();
                     if (m10 != null) {
@@ -109,9 +109,9 @@ public final /* synthetic */ class a implements Continuation, com.google.android
                 Location location = (Location) d.a(obtain, Location.CREATOR);
                 obtain.recycle();
                 taskCompletionSource.setResult(location);
-            } catch (RuntimeException e7) {
+            } catch (RuntimeException e) {
                 obtain.recycle();
-                throw e7;
+                throw e;
             }
         } catch (Throwable th2) {
             N02.recycle();

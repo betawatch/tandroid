@@ -1,6 +1,6 @@
 package i0;
 
-import a0.m;
+import a0.l;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
@@ -17,12 +17,12 @@ import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.List;
-import v7.d8;
-import v7.g8;
+import v7.y7;
+import v7.z7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g extends d8 {
+public final class g extends y7 {
     public static final Class a;
     public static final Constructor b;
     public static final Method c;
@@ -40,8 +40,8 @@ public final class g extends d8 {
             method2 = cls.getMethod("addFontWeightStyle", ByteBuffer.class, cls2, List.class, cls2, Boolean.TYPE);
             method = Typeface.class.getMethod("createFromFamiliesWithDefault", Array.newInstance(cls, 1).getClass());
             constructor = constructor2;
-        } catch (ClassNotFoundException | NoSuchMethodException e7) {
-            Log.e("TypefaceCompatApi24Impl", e7.getClass().getName(), e7);
+        } catch (ClassNotFoundException | NoSuchMethodException e) {
+            Log.e("TypefaceCompatApi24Impl", e.getClass().getName(), e);
             cls = null;
             method = null;
             method2 = null;
@@ -70,7 +70,7 @@ public final class g extends d8 {
         }
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         Object obj;
         int i11;
@@ -84,10 +84,10 @@ public final class g extends d8 {
         if (obj != null) {
             for (h0.f fVar : eVar.a) {
                 int i12 = fVar.f;
-                File d10 = g8.d(context);
+                File d10 = z7.d(context);
                 if (d10 != null) {
                     try {
-                        if (g8.b(d10, resources, i12)) {
+                        if (z7.b(d10, resources, i12)) {
                             try {
                                 fileInputStream = new FileInputStream(d10);
                             } catch (IOException unused2) {
@@ -114,7 +114,7 @@ public final class g extends d8 {
         return null;
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public final Typeface b(Context context, o0.h[] hVarArr, int i10) {
         Object obj;
         try {
@@ -124,16 +124,16 @@ public final class g extends d8 {
         }
         if (obj != null) {
             int i11 = 0;
-            m mVar = new m(0);
+            l lVar = new l(0);
             int length = hVarArr.length;
             while (true) {
                 if (i11 < length) {
                     o0.h hVar = hVarArr[i11];
                     Uri uri = hVar.a;
-                    ByteBuffer byteBuffer = (ByteBuffer) mVar.get(uri);
+                    ByteBuffer byteBuffer = (ByteBuffer) lVar.get(uri);
                     if (byteBuffer == null) {
-                        byteBuffer = g8.e(context, uri);
-                        mVar.put(uri, byteBuffer);
+                        byteBuffer = z7.e(context, uri);
+                        lVar.put(uri, byteBuffer);
                     }
                     if (byteBuffer == null || !g(obj, byteBuffer, hVar.b, hVar.c, hVar.d)) {
                         break;

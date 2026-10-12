@@ -1,11 +1,11 @@
 package n7;
 
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class c1 implements Comparable {
     public static int c(byte b10) {
@@ -33,7 +33,7 @@ public abstract class c1 implements Comparable {
         if (cls.isInstance(this)) {
             return (c1) cls.cast(this);
         }
-        throw new b1(e2.j("Expected a ", cls.getName(), " value, but got ", getClass().getName()));
+        throw new b1(k3.k("Expected a ", cls.getName(), " value, but got ", getClass().getName()));
     }
 
     public abstract int zza();

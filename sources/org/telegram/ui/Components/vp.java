@@ -1,28 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.messenger.ChatThemeController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class vp extends fk0 {
-    public final /* synthetic */ cq r;
+public final class vp implements ResultCallback {
+    public final /* synthetic */ ChatThemeController a;
+    public final /* synthetic */ zp b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vp(cq cqVar, Context context) {
-        super(context);
-        this.r = cqVar;
+    public vp(zp zpVar, ChatThemeController chatThemeController) {
+        this.b = zpVar;
+        this.a = chatThemeController;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (this.r.N) {
-            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToDayTheme));
-        } else {
-            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToNightTheme));
-        }
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        int i10;
+        ChatThemeController chatThemeController = this.a;
+        List<org.telegram.ui.ActionBar.b4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
+        zp zpVar = this.b;
+        i10 = ((org.telegram.ui.ActionBar.e3) zpVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new sk(8, this, emojiThemes));
+        zpVar.b0 = false;
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

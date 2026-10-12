@@ -1,107 +1,60 @@
 package rg;
 
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
+import android.content.Context;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import android.text.TextPaint;
+import di.a6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.pa;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class a1 {
-    public final e6 a;
-    public LinearGradient d;
-    public final int g;
-    public final int h;
-    public final int i;
-    public final int j;
-    public boolean m;
-    public boolean n;
-    public float b = 0.5f;
-    public float c = 0.5f;
-    public final Matrix e = new Matrix();
-    public final Paint f = new Paint(1);
-    public final int[] l = new int[5];
-    public float o = 1.0f;
-    public float p = 1.5f;
-    public float q = 0.0f;
-    public final int k = -1;
+public final class a1 extends org.telegram.ui.Cells.x0 {
+    public final pa t2;
+    public final TextPaint u2;
+    public final /* synthetic */ c1 v2;
 
-    public a1(int i10, int i11, int i12, int i13, e6 e6Var) {
-        this.a = e6Var;
-        this.g = i10;
-        this.h = i11;
-        this.i = i12;
-        this.j = i13;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a1(c1 c1Var, Context context, com.google.firebase.messaging.m mVar) {
+        super(context, mVar, false);
+        this.v2 = c1Var;
+        this.t2 = new pa(c1Var.d, this, 10, false);
+        TextPaint textPaint = new TextPaint(1);
+        this.u2 = textPaint;
+        textPaint.setTypeface(AndroidUtilities.bold());
+        textPaint.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
+        textPaint.setColor(-1);
     }
 
-    public final void a() {
-        int b10 = b(this.g);
-        int b11 = b(this.h);
-        int i10 = this.i;
-        int b12 = i10 < 0 ? 0 : b(i10);
-        int i11 = this.j;
-        int b13 = i11 < 0 ? 0 : b(i11);
-        int i12 = this.k;
-        int b14 = i12 < 0 ? 0 : b(i12);
-        LinearGradient linearGradient = this.d;
-        int[] iArr = this.l;
-        if (linearGradient != null && iArr[0] == b10 && iArr[1] == b11 && iArr[2] == b12 && iArr[3] == b13 && iArr[4] == b14) {
-            return;
+    @Override // org.telegram.ui.Cells.x0
+    public final Paint I(String str) {
+        if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
+            return this.u2;
         }
-        iArr[0] = b10;
-        iArr[1] = b11;
-        iArr[2] = b12;
-        iArr[3] = b13;
-        iArr[4] = b14;
-        if (b12 == 0) {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1]}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        } else if (b13 == 0) {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2]}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP);
-        } else if (b14 == 0) {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2], iArr[3]}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
-        } else {
-            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2], iArr[3], iArr[4]}, new float[]{0.0f, 0.425f, 0.655f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
+        if ("paintChatActionBackground".equals(str)) {
+            a6 a6Var = this.v2.h;
+            a6Var.v0 = true;
+            boolean z10 = a6Var.B0;
+            pa paVar = this.t2;
+            if (paVar.r != z10) {
+                paVar.r = z10;
+                if (paVar.i == 10) {
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    colorMatrix.setSaturation(1.6f);
+                    AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, paVar.r ? 0.97f : 0.92f);
+                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, paVar.r ? 0.12f : -0.06f);
+                    paVar.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    paVar.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                }
+            }
+            Paint c10 = paVar.c(1.0f);
+            if (c10 != null) {
+                return c10;
+            }
         }
-        this.d.setLocalMatrix(this.e);
-        this.f.setShader(this.d);
-    }
-
-    public final int b(int i10) {
-        int c10 = c(i10);
-        if (!this.n) {
-            return c10;
-        }
-        return Color.argb(Color.alpha(c10), Color.red(c10) - 15, Color.green(c10) - 15, Color.blue(c10) - 15);
-    }
-
-    public int c(int i10) {
-        return i6.w0(i10, this.a);
-    }
-
-    public final void d(int i10, float f7, int i11, int i12, float f10, int i13) {
-        a();
-        boolean z10 = this.m;
-        Matrix matrix = this.e;
-        if (z10) {
-            matrix.reset();
-            matrix.postScale((i12 - i10) / 100.0f, (i13 - i11) / 100.0f, this.b * 100.0f, this.c * 100.0f);
-            matrix.postTranslate(f7, f10);
-            this.d.setLocalMatrix(matrix);
-            return;
-        }
-        int i14 = i13 - i11;
-        a();
-        matrix.reset();
-        matrix.postScale((i12 - i10) / 100.0f, (i14 + i14) / 100.0f, 75.0f, 50.0f);
-        matrix.postTranslate(f7, (-r9) + f10);
-        this.d.setLocalMatrix(matrix);
-    }
-
-    public final void e(RectF rectF) {
-        d((int) rectF.left, 0.0f, (int) rectF.top, (int) rectF.right, 0.0f, (int) rectF.bottom);
+        return super.I(str);
     }
 }

@@ -1,141 +1,44 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class vn implements az {
-    public final /* synthetic */ Utilities.Callback a;
-    public final /* synthetic */ sn b;
+public final class vn extends s4.c0 {
+    public final /* synthetic */ ig.e0 r;
 
-    public vn(Utilities.Callback callback, sn snVar) {
-        this.a = callback;
-        this.b = snVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vn(ig.e0 e0Var, Context context) {
+        super(context);
+        this.r = e0Var;
     }
 
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ boolean A() {
-        return false;
+    @Override // s4.c0
+    public final int k(int i10, View view) {
+        int i11;
+        io ioVar = (io) this.r.V;
+        if (ioVar.V0) {
+            i10 = -1;
+        }
+        int k10 = super.k(i10, view);
+        if (ioVar.V0) {
+            k10 += AndroidUtilities.dp(160.0f);
+        }
+        if (!ioVar.V0) {
+            k10 = org.telegram.messenger.q.C(7.0f, ioVar.R0 - AndroidUtilities.statusBarHeight, k10);
+        }
+        if (ioVar.V0 && k10 == 0 && (i11 = ioVar.W0) >= 0) {
+            io.N(ioVar, i11);
+            ioVar.W0 = -1;
+        }
+        ioVar.V0 = false;
+        return k10;
     }
 
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ boolean c() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ int f() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ boolean j() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10) {
-        this.a.run(new rh.h(document, obj));
-        this.b.dismiss(true);
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ float p() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final void x(long j3, TLRPC.Document document, String str, boolean z10) {
-        this.a.run(new rh.h(document, null));
-        this.b.dismiss(true);
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ boolean z() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void i(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void l(String str) {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void n() {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void o(l61 l61Var) {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void s(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void t(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void y(long j3) {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void e(Object obj, Object obj2) {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.az
-    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11) {
+    @Override // s4.c0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class r1 extends n0 implements t1, RandomAccess {
     public final ArrayList b;
@@ -27,7 +27,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // java.util.AbstractList, java.util.List
     public final /* synthetic */ void add(int i10, Object obj) {
-        i();
+        h();
         this.b.add(i10, (String) obj);
         ((AbstractList) this).modCount++;
     }
@@ -39,7 +39,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final void clear() {
-        i();
+        h();
         this.b.clear();
         ((AbstractList) this).modCount++;
     }
@@ -54,30 +54,30 @@ public final class r1 extends n0 implements t1, RandomAccess {
         if (!(obj instanceof q0)) {
             byte[] bArr = (byte[]) obj;
             String str = new String(bArr, j1.a);
-            if (b3.a.s(0, bArr.length, bArr)) {
+            if (a3.a.s(0, bArr.length, bArr)) {
                 arrayList.set(i10, str);
             }
             return str;
         }
         q0 q0Var = (q0) obj;
-        String str2 = q0Var.n() == 0 ? "" : new String(q0Var.b, q0Var.r(), q0Var.n(), j1.a);
-        int r10 = q0Var.r();
-        if (b3.a.s(r10, q0Var.n() + r10, q0Var.b)) {
+        String str2 = q0Var.m() == 0 ? "" : new String(q0Var.b, q0Var.q(), q0Var.m(), j1.a);
+        int q6 = q0Var.q();
+        if (a3.a.s(q6, q0Var.m() + q6, q0Var.b)) {
             arrayList.set(i10, str2);
         }
         return str2;
     }
 
     @Override // com.google.android.gms.internal.vision.t1
-    public final void m(q0 q0Var) {
-        i();
+    public final void l(q0 q0Var) {
+        h();
         this.b.add(q0Var);
         ((AbstractList) this).modCount++;
     }
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
     public final Object remove(int i10) {
-        i();
+        h();
         Object remove = this.b.remove(i10);
         ((AbstractList) this).modCount++;
         if (remove instanceof String) {
@@ -87,12 +87,12 @@ public final class r1 extends n0 implements t1, RandomAccess {
             return new String((byte[]) remove, j1.a);
         }
         q0 q0Var = (q0) remove;
-        return q0Var.n() == 0 ? "" : new String(q0Var.b, q0Var.r(), q0Var.n(), j1.a);
+        return q0Var.m() == 0 ? "" : new String(q0Var.b, q0Var.q(), q0Var.m(), j1.a);
     }
 
     @Override // java.util.AbstractList, java.util.List
     public final Object set(int i10, Object obj) {
-        i();
+        h();
         Object obj2 = this.b.set(i10, (String) obj);
         if (obj2 instanceof String) {
             return (String) obj2;
@@ -101,7 +101,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
             return new String((byte[]) obj2, j1.a);
         }
         q0 q0Var = (q0) obj2;
-        return q0Var.n() == 0 ? "" : new String(q0Var.b, q0Var.r(), q0Var.n(), j1.a);
+        return q0Var.m() == 0 ? "" : new String(q0Var.b, q0Var.q(), q0Var.m(), j1.a);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -127,7 +127,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.t1
     public final t1 zze() {
-        return this.a ? new t2(this) : this;
+        return this.a ? new s2(this) : this;
     }
 
     public r1(ArrayList arrayList) {
@@ -136,7 +136,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
     public final boolean addAll(int i10, Collection collection) {
-        i();
+        h();
         if (collection instanceof t1) {
             collection = ((t1) collection).zzd();
         }

@@ -7,7 +7,7 @@ import android.text.TextPaint;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class e4 extends LinearLayout {
     public final /* synthetic */ int a = 1;
@@ -18,11 +18,11 @@ public final class e4 extends LinearLayout {
     public final /* synthetic */ ud0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e4(Context context, e5 e5Var, ud0 ud0Var, tg.g gVar, tg.h hVar) {
+    public e4(Context context, e5 e5Var, ud0 ud0Var, ug.h hVar, ug.i iVar) {
         super(context);
         this.c = ud0Var;
-        this.e = gVar;
-        this.f = hVar;
+        this.e = hVar;
+        this.f = iVar;
         this.b = false;
         TextPaint textPaint = new TextPaint(1);
         this.d = textPaint;
@@ -37,7 +37,7 @@ public final class e4 extends LinearLayout {
         switch (this.a) {
             case 1:
                 super.onDraw(canvas);
-                canvas.drawText(":", ((tg.g) this.e).getRight() - AndroidUtilities.dp(12.0f), (getHeight() / 2.0f) - AndroidUtilities.dp(11.0f), (TextPaint) this.d);
+                canvas.drawText(":", ((ug.h) this.e).getRight() - AndroidUtilities.dp(12.0f), (getHeight() / 2.0f) - AndroidUtilities.dp(11.0f), (TextPaint) this.d);
                 break;
             default:
                 super.onDraw(canvas);
@@ -68,18 +68,18 @@ public final class e4 extends LinearLayout {
                 super.onMeasure(i10, i11);
                 break;
             default:
-                tg.h hVar = (tg.h) this.f;
-                tg.g gVar = (tg.g) this.e;
+                ug.i iVar = (ug.i) this.f;
+                ug.h hVar = (ug.h) this.e;
                 this.b = true;
                 Point point2 = AndroidUtilities.displaySize;
                 int i13 = point2.x > point2.y ? 3 : 5;
                 ud0 ud0Var5 = this.c;
                 ud0Var5.setItemCount(i13);
-                gVar.setItemCount(i13);
                 hVar.setItemCount(i13);
+                iVar.setItemCount(i13);
                 ud0Var5.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
-                gVar.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
                 hVar.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
+                iVar.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i13;
                 this.b = false;
                 super.onMeasure(i10, i11);
                 break;

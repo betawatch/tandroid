@@ -1,18 +1,79 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.ViewTreeObserver;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class i1 implements ViewTreeObserver.OnScrollChangedListener {
+public final class i1 extends LinearLayout {
     public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout a;
 
-    public i1(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i1(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, Context context) {
+        super(context);
         this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
     }
 
-    @Override // android.view.ViewTreeObserver.OnScrollChangedListener
-    public final void onScrollChanged() {
-        this.a.invalidate();
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (!(view instanceof j1) || this.a.N == null) {
+            return super.drawChild(canvas, view, j10);
+        }
+        return false;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        i1 i1Var = this;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = i1Var.a;
+        if (actionBarPopupWindow$ActionBarPopupWindowLayout.O) {
+            actionBarPopupWindow$ActionBarPopupWindowLayout.E = -1000000;
+            actionBarPopupWindow$ActionBarPopupWindowLayout.F = -1000000;
+            int childCount = i1Var.getChildCount();
+            ArrayList arrayList = null;
+            int i12 = 0;
+            int i13 = 0;
+            int i14 = 0;
+            while (i12 < childCount) {
+                View childAt = i1Var.getChildAt(i12);
+                if (childAt.getVisibility() != 8) {
+                    Object tag = childAt.getTag(R.id.width_tag);
+                    Object tag2 = childAt.getTag(R.id.object_tag);
+                    Object tag3 = childAt.getTag(R.id.fit_width_tag);
+                    if (tag != null) {
+                        childAt.getLayoutParams().width = -2;
+                    }
+                    i1Var.measureChildWithMargins(childAt, i10, 0, i11, 0);
+                    if (tag3 == null) {
+                        boolean z10 = tag instanceof Integer;
+                        if (!z10 && tag2 == null) {
+                            i13 = Math.max(i13, childAt.getMeasuredWidth());
+                        } else if (z10) {
+                            i14 = Math.max(((Integer) tag).intValue(), childAt.getMeasuredWidth());
+                            actionBarPopupWindow$ActionBarPopupWindowLayout.E = childAt.getMeasuredHeight();
+                            actionBarPopupWindow$ActionBarPopupWindowLayout.F = AndroidUtilities.dp(6.0f) + actionBarPopupWindow$ActionBarPopupWindowLayout.E;
+                        }
+                    }
+                    if (arrayList == null) {
+                        arrayList = new ArrayList();
+                    }
+                    arrayList.add(childAt);
+                }
+                i12++;
+                i1Var = this;
+            }
+            if (arrayList != null) {
+                int size = arrayList.size();
+                for (int i15 = 0; i15 < size; i15++) {
+                    ((View) arrayList.get(i15)).getLayoutParams().width = Math.max(i13, i14);
+                }
+            }
+        }
+        super.onMeasure(i10, i11);
     }
 }

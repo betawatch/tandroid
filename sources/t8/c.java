@@ -4,34 +4,33 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.util.Log;
 import android.util.SparseArray;
-import b2.g;
-import com.google.android.gms.internal.vision.g3;
-import com.google.android.gms.internal.vision.u2;
+import b2.h;
+import com.google.android.gms.internal.vision.f3;
+import com.google.android.gms.internal.vision.t2;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
-import la.h;
+import li.k;
 import n6.l;
-import sc.v;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class c extends g {
+public final class c extends h {
     public final q8.a b;
-    public final u2 c;
+    public final t2 c;
     public final Object d;
     public boolean e;
 
-    public c(u2 u2Var) {
+    public c(t2 t2Var) {
         super(3);
         this.b = new q8.a();
         this.d = new Object();
         this.e = true;
-        this.c = u2Var;
+        this.c = t2Var;
     }
 
-    @Override // b2.g
-    public final void U0() {
-        super.U0();
+    @Override // b2.h
+    public final void X0() {
+        super.X0();
         synchronized (this.d) {
             try {
                 if (this.e) {
@@ -44,15 +43,15 @@ public final class c extends g {
         }
     }
 
-    public final SparseArray b1(h hVar) {
-        ByteBuffer J;
+    public final SparseArray e1(k kVar) {
+        ByteBuffer I;
         a[] n10;
-        Bitmap bitmap = (Bitmap) hVar.d;
+        Bitmap bitmap = (Bitmap) kVar.d;
         if (bitmap != null) {
             int width = bitmap.getWidth();
             int height = bitmap.getHeight();
             int i10 = width * height;
-            J = ByteBuffer.allocateDirect(((((height + 1) / 2) * ((width + 1) / 2)) << 1) + i10);
+            I = ByteBuffer.allocateDirect(((((height + 1) / 2) * ((width + 1) / 2)) << 1) + i10);
             int i11 = i10;
             for (int i12 = 0; i12 < i10; i12++) {
                 int i13 = i12 % width;
@@ -61,26 +60,26 @@ public final class c extends g {
                 float red = Color.red(pixel);
                 float green = Color.green(pixel);
                 float blue = Color.blue(pixel);
-                J.put(i12, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
+                I.put(i12, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
                 if (i14 % 2 == 0 && i13 % 2 == 0) {
-                    float d = v.d(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
-                    float d10 = v.d(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
+                    float c10 = b.c(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
+                    float c11 = b.c(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
                     int i15 = i11 + 1;
-                    J.put(i11, (byte) d);
+                    I.put(i11, (byte) c10);
                     i11 += 2;
-                    J.put(i15, (byte) d10);
+                    I.put(i15, (byte) c11);
                 }
             }
         } else {
-            J = hVar.J();
+            I = kVar.I();
         }
         synchronized (this.d) {
             if (!this.e) {
                 throw new IllegalStateException("Cannot use detector after release()");
             }
-            u2 u2Var = this.c;
-            l.h(J);
-            n10 = u2Var.n(J, g3.b(hVar));
+            t2 t2Var = this.c;
+            l.h(I);
+            n10 = t2Var.n(I, f3.b(kVar));
         }
         HashSet hashSet = new HashSet();
         SparseArray sparseArray = new SparseArray(n10.length);
@@ -104,7 +103,7 @@ public final class c extends g {
                 try {
                     if (this.e) {
                         Log.w("FaceDetector", "FaceDetector was not released with FaceDetector.release()");
-                        U0();
+                        X0();
                     }
                 } finally {
                 }

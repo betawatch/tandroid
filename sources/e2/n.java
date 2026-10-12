@@ -1,7 +1,62 @@
 package e2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.os.Handler;
+import android.os.Message;
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface n {
-    void e(Object obj, b2.q qVar);
+public final /* synthetic */ class n implements Handler.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ n(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        switch (this.a) {
+            case 0:
+                r rVar = (r) this.b;
+                p pVar = rVar.c;
+                pVar.getClass();
+                Iterator it = rVar.d.iterator();
+                while (it.hasNext()) {
+                    q qVar = (q) it.next();
+                    if (!qVar.d && qVar.c) {
+                        b2.v d = qVar.b.d();
+                        qVar.b = new b2.u();
+                        qVar.c = false;
+                        pVar.c(qVar.a, d);
+                    }
+                    i0 i0Var = rVar.b;
+                    i0Var.getClass();
+                    if (i0Var.a.hasMessages(1)) {
+                        break;
+                    }
+                }
+                break;
+            default:
+                e0 e0Var = (e0) this.b;
+                e0Var.getClass();
+                int i10 = message.what;
+                if (i10 == 1) {
+                    e0Var.g.a();
+                    break;
+                } else if (i10 == 2) {
+                    e0Var.h.a();
+                    break;
+                } else if (i10 == 3) {
+                    e0Var.i.a();
+                    break;
+                } else if (i10 == 4) {
+                    e0Var.j.a();
+                    break;
+                }
+                break;
+        }
+        return true;
+    }
 }

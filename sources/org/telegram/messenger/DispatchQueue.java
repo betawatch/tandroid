@@ -7,7 +7,7 @@ import android.os.Process;
 import android.os.SystemClock;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class DispatchQueue extends Thread {
     private static final int THREAD_PRIORITY_DEFAULT = -1000;
@@ -32,8 +32,8 @@ public class DispatchQueue extends Thread {
         try {
             this.syncLatch.await();
             this.handler.removeCallbacks(runnable);
-        } catch (Exception e7) {
-            FileLog.e((Throwable) e7, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
     }
 
@@ -43,8 +43,8 @@ public class DispatchQueue extends Thread {
             for (Runnable runnable : runnableArr) {
                 this.handler.removeCallbacks(runnable);
             }
-        } catch (Exception e7) {
-            FileLog.e((Throwable) e7, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
     }
 
@@ -52,8 +52,8 @@ public class DispatchQueue extends Thread {
         try {
             this.syncLatch.await();
             this.handler.removeCallbacksAndMessages(null);
-        } catch (Exception e7) {
-            FileLog.e((Throwable) e7, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
     }
 
@@ -77,8 +77,8 @@ public class DispatchQueue extends Thread {
     public boolean postToFrontRunnable(Runnable runnable) {
         try {
             this.syncLatch.await();
-        } catch (Exception e7) {
-            FileLog.e((Throwable) e7, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
         return this.handler.postAtFrontOfQueue(runnable);
     }
@@ -90,7 +90,7 @@ public class DispatchQueue extends Thread {
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
         Looper.prepare();
-        this.handler = new Handler(Looper.myLooper(), new Handler.Callback() { // from class: org.telegram.messenger.y1
+        this.handler = new Handler(Looper.myLooper(), new Handler.Callback() { // from class: org.telegram.messenger.a2
             @Override // android.os.Handler.Callback
             public final boolean handleMessage(Message message) {
                 boolean lambda$run$0;
@@ -131,16 +131,16 @@ public class DispatchQueue extends Thread {
         }
     }
 
-    public boolean postRunnable(Runnable runnable, long j3) {
+    public boolean postRunnable(Runnable runnable, long j10) {
         try {
             this.syncLatch.await();
-        } catch (Exception e7) {
-            FileLog.e((Throwable) e7, false);
+        } catch (Exception e) {
+            FileLog.e((Throwable) e, false);
         }
-        if (j3 <= 0) {
+        if (j10 <= 0) {
             return this.handler.post(runnable);
         }
-        return this.handler.postDelayed(runnable, j3);
+        return this.handler.postDelayed(runnable, j10);
     }
 
     public DispatchQueue(String str, boolean z10, int i10) {

@@ -1,49 +1,46 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.util.Property;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ql extends s4.t0 {
-    public final /* synthetic */ xl a;
+public final class ql implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a;
+    public final float[] b = {0.0f, 1.0f};
+    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ rl d;
 
-    public ql(xl xlVar) {
-        this.a = xlVar;
+    public ql(rl rlVar, FrameLayout frameLayout) {
+        this.d = rlVar;
+        this.c = frameLayout;
     }
 
-    @Override // s4.t0
-    public final void a(RecyclerView recyclerView, int i10) {
-        am0 am0Var;
-        xl xlVar = this.a;
-        ai.w0 w0Var = xlVar.P;
-        yi yiVar = xlVar.b;
-        boolean z10 = i10 != 0;
-        xlVar.L = z10;
-        if (!z10 && xlVar.J != null) {
-            xlVar.J = null;
-        }
-        if (i10 == 0) {
-            int dp = AndroidUtilities.dp(13.0f);
-            int backgroundPaddingTop = yiVar.getBackgroundPaddingTop();
-            if (((yiVar.e2[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (am0Var = (am0) w0Var.K(0)) == null) {
-                return;
-            }
-            View view = am0Var.a;
-            if (view.getTop() > xlVar.A0 - xlVar.z0) {
-                w0Var.v0(0, view.getTop() - (xlVar.A0 - xlVar.z0), null);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float lerp = AndroidUtilities.lerp(this.b, valueAnimator.getAnimatedFraction());
+        if (lerp >= 0.7f && !this.a) {
+            rl rlVar = this.d;
+            ul ulVar = rlVar.b;
+            ul ulVar2 = rlVar.b;
+            if (ulVar.i0 != null) {
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(ulVar2.i0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(ulVar2.i0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(ulVar2.i0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
+                animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
+                animatorSet.setDuration(250L);
+                animatorSet.start();
+                this.a = true;
             }
         }
-    }
-
-    @Override // s4.t0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        xl xlVar = this.a;
-        xlVar.h0();
-        if (xlVar.J != null) {
-            xlVar.K += i11;
-        }
-        xlVar.b.b2(xlVar, i11);
+        float interpolation = lerp <= 0.5f ? es.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (es.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (es.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
+        FrameLayout frameLayout = this.c;
+        frameLayout.setScaleX(interpolation);
+        frameLayout.setScaleY(interpolation);
     }
 }

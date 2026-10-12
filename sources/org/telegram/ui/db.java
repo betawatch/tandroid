@@ -1,11 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class db {
-    public final /* synthetic */ vb a;
+public final /* synthetic */ class db implements org.telegram.ui.Components.ol0, ni.c {
+    public final /* synthetic */ ac a;
 
-    public db(vb vbVar) {
-        this.a = vbVar;
+    @Override // org.telegram.ui.Components.ol0
+    public void c() {
+        this.a.c1();
+    }
+
+    @Override // ni.c
+    public void d(int i10) {
+        ac.X(this.a, i10);
     }
 }

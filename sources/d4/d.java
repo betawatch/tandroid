@@ -1,10 +1,11 @@
 package d4;
 
 import android.graphics.Color;
-import com.google.android.gms.internal.vision.e2;
-import v7.v7;
+import com.google.android.gms.internal.play_billing.k3;
+import v7.b8;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d {
     public final String a;
@@ -56,7 +57,7 @@ public final class d {
             }
         } catch (NumberFormatException unused) {
         }
-        e2.s("Ignoring unknown alignment: ", str, "SsaStyle");
+        k3.r("Ignoring unknown alignment: ", str, "SsaStyle");
         return -1;
     }
 
@@ -64,8 +65,8 @@ public final class d {
         try {
             int parseInt = Integer.parseInt(str);
             return parseInt == 1 || parseInt == -1;
-        } catch (NumberFormatException e7) {
-            e2.a.o("SsaStyle", "Failed to parse boolean value: '" + str + "'", e7);
+        } catch (NumberFormatException e) {
+            e2.a.m("SsaStyle", "Failed to parse boolean value: '" + str + "'", e);
             return false;
         }
     }
@@ -73,10 +74,10 @@ public final class d {
     public static Integer c(String str) {
         try {
             long parseLong = str.startsWith("&H") ? Long.parseLong(str.substring(2), 16) : Long.parseLong(str);
-            e2.d.b(parseLong <= 4294967295L);
-            return Integer.valueOf(Color.argb(v7.b(((parseLong >> 24) & 255) ^ 255), v7.b(parseLong & 255), v7.b((parseLong >> 8) & 255), v7.b((parseLong >> 16) & 255)));
-        } catch (IllegalArgumentException e7) {
-            e2.a.o("SsaStyle", "Failed to parse color expression: '" + str + "'", e7);
+            u6.g(parseLong <= 4294967295L);
+            return Integer.valueOf(Color.argb(b8.b(((parseLong >> 24) & 255) ^ 255), b8.b(parseLong & 255), b8.b((parseLong >> 8) & 255), b8.b((parseLong >> 16) & 255)));
+        } catch (IllegalArgumentException e) {
+            e2.a.m("SsaStyle", "Failed to parse color expression: '" + str + "'", e);
             return null;
         }
     }

@@ -17,12 +17,12 @@ import android.util.TypedValue;
 import android.util.Xml;
 import android.view.InflateException;
 import android.view.animation.AnimationUtils;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
-import v7.c8;
+import v7.x7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
@@ -37,40 +37,40 @@ public abstract class a {
     public static final int[] j = {R.attr.value, R.attr.interpolator, R.attr.valueType, R.attr.fraction};
     public static final int[] k = {R.attr.propertyName, R.attr.pathData, R.attr.propertyXName, R.attr.propertyYName};
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x03a9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x03aa, code lost:
     
         r2 = new android.animation.Animator[r10.size()];
         r3 = r10.size();
         r11 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x03b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x03b5, code lost:
     
         if (r1 >= r3) goto L220;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x03b6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x03b7, code lost:
     
         r4 = r10.get(r1);
         r1 = r1 + 1;
         r2[r11] = (android.animation.Animator) r4;
         r11 = r11 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x03c4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x03c5, code lost:
     
         if (r33 != 0) goto L211;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x03c6, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x03c7, code lost:
     
         r32.playTogether(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x03c9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x03ca, code lost:
     
         return r0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x03ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x03cb, code lost:
     
         r32.playSequentially(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x03cd, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x03ce, code lost:
     
         return r0;
      */
@@ -78,17 +78,17 @@ public abstract class a {
     
         r1 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x03a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x03a6, code lost:
     
         if (r32 == null) goto L212;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x03a7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x03a8, code lost:
     
         if (r10 == null) goto L212;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x037d A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0381  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x037e A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0382  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -393,18 +393,18 @@ public abstract class a {
         if (i10 == 2) {
             String string = typedArray.getString(i11);
             String string2 = typedArray.getString(i12);
-            i0.d[] c10 = c8.c(string);
-            i0.d[] c11 = c8.c(string2);
+            i0.d[] c10 = x7.c(string);
+            i0.d[] c11 = x7.c(string2);
             if (c10 != null || c11 != null) {
                 if (c10 != null) {
                     e eVar = new e();
                     if (c11 == null) {
                         return PropertyValuesHolder.ofObject(str, eVar, c10);
                     }
-                    if (c8.a(c10, c11)) {
+                    if (x7.a(c10, c11)) {
                         return PropertyValuesHolder.ofObject(str, eVar, c10, c11);
                     }
-                    throw new InflateException(e2.j(" Can't morph from ", string, " to ", string2));
+                    throw new InflateException(k3.k(" Can't morph from ", string, " to ", string2));
                 }
                 if (c11 != null) {
                     return PropertyValuesHolder.ofObject(str, new e(), c11);
@@ -452,8 +452,8 @@ public abstract class a {
         TypedArray f7 = h0.b.f(resources, theme, attributeSet, g);
         TypedArray f10 = h0.b.f(resources, theme, attributeSet, k);
         ValueAnimator valueAnimator3 = objectAnimator == null ? new ValueAnimator() : objectAnimator;
-        long j3 = h0.b.c(xmlPullParser, "duration") ? f7.getInt(1, 300) : 300;
-        long j10 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "startOffset") != null ? f7.getInt(2, 0) : 0;
+        long j10 = h0.b.c(xmlPullParser, "duration") ? f7.getInt(1, 300) : 300;
+        long j11 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "startOffset") != null ? f7.getInt(2, 0) : 0;
         int i11 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "valueType") != null ? f7.getInt(7, 4) : 4;
         if (xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "valueFrom") != null && xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "valueTo") != null) {
             if (i11 == 4) {
@@ -469,8 +469,8 @@ public abstract class a {
                 valueAnimator3.setValues(b10);
             }
         }
-        valueAnimator3.setDuration(j3);
-        valueAnimator3.setStartDelay(j10);
+        valueAnimator3.setDuration(j10);
+        valueAnimator3.setStartDelay(j11);
         valueAnimator3.setRepeatCount(xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "repeatCount") != null ? f7.getInt(3, 0) : 0);
         valueAnimator3.setRepeatMode(xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "repeatMode") != null ? f7.getInt(4, 1) : 1);
         if (f10 != null) {
@@ -484,7 +484,7 @@ public abstract class a {
                 if (b12 == null && b13 == null) {
                     throw new InflateException(f10.getPositionDescription() + " propertyXName or propertyYName is needed for PathData");
                 }
-                Path d10 = c8.d(b11);
+                Path d10 = x7.d(b11);
                 PathMeasure pathMeasure = new PathMeasure(d10, false);
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(Float.valueOf(0.0f));

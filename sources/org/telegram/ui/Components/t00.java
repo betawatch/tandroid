@@ -1,43 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class t00 extends s4.e0 {
-    public final /* synthetic */ gg.i0 r;
+public final class t00 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ View d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t00(gg.i0 i0Var, Context context) {
-        super(context);
-        this.r = i0Var;
+    public /* synthetic */ t00(View view, int i10, float f7, int i11) {
+        this.a = i11;
+        this.d = view;
+        this.b = i10;
+        this.c = f7;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
-    
-        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.a10) r5.r.J).getMeasuredWidth()) goto L13;
-     */
-    @Override // s4.e0, s4.z0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(View view, s4.y0 y0Var) {
-        int j3 = j(o(), view);
-        if (j3 > 0 || (j3 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
-            j3 += AndroidUtilities.dp(60.0f);
-        } else {
-            if (j3 >= 0) {
-                if (j3 == 0) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                u00 u00Var = (u00) this.d;
+                int i10 = this.b;
+                u00Var.b(i10 == 5 ? 0.0f : -this.c, i10 + 1);
+                u00Var.y = 0.0f;
+                u00Var.invalidate();
+                break;
+            case 1:
+                ((org.telegram.ui.web.u1) this.d).c(this.b, this.c, false);
+                break;
+            default:
+                zh.e8 e8Var = (zh.e8) this.d;
+                e8Var.c0 = this.c;
+                if (e8Var.getValue() != this.b) {
+                    e8Var.e(e8Var.getValue());
                 }
-            }
-            j3 -= AndroidUtilities.dp(60.0f);
+                e8Var.invalidate();
+                break;
         }
-        int k10 = k(p(), view);
-        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j3 * j3))));
-        if (max > 0) {
-            y0Var.b(-j3, -k10, max, this.j);
-        }
+    }
+
+    public t00(zh.e8 e8Var, float f7, int i10) {
+        this.a = 2;
+        this.d = e8Var;
+        this.c = f7;
+        this.b = i10;
     }
 }

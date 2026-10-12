@@ -1,21 +1,21 @@
 package com.google.android.recaptcha.internal;
 
-import ae.g0;
-import hd.c;
-import hd.g;
-import kd.a;
+import be.f0;
+import id.c;
+import id.g;
+import ld.a;
 import org.telegram.tgnet.TLObject;
-import v7.a8;
-import v7.z7;
+import v7.h8;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzif {
     private final c zza;
 
     public zzif() {
         int i10 = zzby.zza;
-        this.zza = z7.a(zzie.zza);
+        this.zza = h8.a(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
@@ -27,7 +27,7 @@ public final class zzif {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, jd.c cVar) {
+    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, kd.c cVar) {
         zzic zzicVar;
         int i10;
         if (cVar instanceof zzic) {
@@ -42,13 +42,13 @@ public final class zzif {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    a8.b(obj);
+                    i8.b(obj);
                     return obj;
                 }
-                a8.b(obj);
+                i8.b(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
-                Object f7 = g0.f(zzidVar, zzicVar);
+                Object f7 = f0.f(zzidVar, zzicVar);
                 return f7 == aVar ? aVar : f7;
             }
         }
@@ -60,7 +60,7 @@ public final class zzif {
         }
     }
 
-    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, jd.c cVar) {
+    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, kd.c cVar) {
         return zzc(this, zzcyVar, zzyeVar, cVar);
     }
 }

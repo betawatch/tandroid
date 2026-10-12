@@ -9,12 +9,12 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class h0 extends e0 implements List, RandomAccess, j$.util.List {
     public static final f0 b = new f0(m0.e, 0);
 
-    public static m0 r(int i10, Object[] objArr) {
+    public static m0 q(int i10, Object[] objArr) {
         return i10 == 0 ? m0.e : new m0(i10, objArr);
     }
 
@@ -69,6 +69,15 @@ public abstract class h0 extends e0 implements List, RandomAccess, j$.util.List 
         return false;
     }
 
+    @Override // com.google.android.gms.internal.cast.e0
+    public int h(Object[] objArr) {
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = get(i10);
+        }
+        return size;
+    }
+
     @Override // java.util.Collection, java.util.List
     public final int hashCode() {
         int size = size();
@@ -77,15 +86,6 @@ public abstract class h0 extends e0 implements List, RandomAccess, j$.util.List 
             i10 = (i10 * 31) + get(i11).hashCode();
         }
         return i10;
-    }
-
-    @Override // com.google.android.gms.internal.cast.e0
-    public int i(Object[] objArr) {
-        int size = size();
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = get(i10);
-        }
-        return size;
     }
 
     @Override // java.util.List
@@ -126,11 +126,18 @@ public abstract class h0 extends e0 implements List, RandomAccess, j$.util.List 
     }
 
     @Override // java.util.List
-    /* renamed from: q */
+    /* renamed from: p */
     public h0 subList(int i10, int i11) {
-        v7.k5.c(i10, i11, size());
+        v7.l5.c(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? m0.e : new g0(this, i10, i12);
+    }
+
+    @Override // java.util.List
+    /* renamed from: r, reason: merged with bridge method [inline-methods] */
+    public final f0 listIterator(int i10) {
+        v7.l5.b(i10, size());
+        return isEmpty() ? b : new f0(this, i10);
     }
 
     @Override // java.util.List
@@ -141,13 +148,6 @@ public abstract class h0 extends e0 implements List, RandomAccess, j$.util.List 
     @Override // java.util.List, j$.util.List
     public /* synthetic */ void replaceAll(UnaryOperator unaryOperator) {
         List.-CC.$default$replaceAll(this, unaryOperator);
-    }
-
-    @Override // java.util.List
-    /* renamed from: s, reason: merged with bridge method [inline-methods] */
-    public final f0 listIterator(int i10) {
-        v7.k5.b(i10, size());
-        return isEmpty() ? b : new f0(this, i10);
     }
 
     @Override // java.util.List

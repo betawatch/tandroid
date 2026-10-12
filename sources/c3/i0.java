@@ -1,58 +1,19 @@
 package c3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i0 {
-    public final byte[] a = new byte[10];
-    public boolean b;
-    public int c;
-    public long d;
-    public int e;
-    public int f;
-    public int g;
+public interface i0 {
+    int a(b2.p pVar, int i10, boolean z10);
 
-    public final void a(h0 h0Var, g0 g0Var) {
-        if (this.c > 0) {
-            h0Var.c(this.d, this.e, this.f, this.g, g0Var);
-            this.c = 0;
-        }
-    }
+    void b(b2.x xVar);
 
-    public final void b(h0 h0Var, long j3, int i10, int i11, int i12, g0 g0Var) {
-        e2.d.f("TrueHD chunk samples must be contiguous in the sample queue.", this.g <= i11 + i12);
-        if (this.b) {
-            int i13 = this.c;
-            int i14 = i13 + 1;
-            this.c = i14;
-            if (i13 == 0) {
-                this.d = j3;
-                this.e = i10;
-                this.f = 0;
-            }
-            this.f += i11;
-            this.g = i12;
-            if (i14 >= 16) {
-                a(h0Var, g0Var);
-            }
-        }
-    }
+    void c(long j10, int i10, int i11, int i12, h0 h0Var);
 
-    public final void c(p pVar) {
-        if (this.b) {
-            return;
-        }
-        byte[] bArr = this.a;
-        pVar.a(0, 10, bArr);
-        pVar.q();
-        if (bArr[4] == -8 && bArr[5] == 114 && bArr[6] == 111) {
-            byte b10 = bArr[7];
-            if ((b10 & 254) == 186) {
-                r1 = 40 << ((bArr[((b10 & 255) == 187 ? 1 : 0) != 0 ? '\t' : '\b'] >> 4) & 7);
-            }
-        }
-        if (r1 == 0) {
-            return;
-        }
-        this.b = true;
-    }
+    void d(int i10, e2.x xVar);
+
+    void e(long j10);
+
+    int f(b2.p pVar, int i10, boolean z10);
+
+    void g(e2.x xVar, int i10, int i11);
 }

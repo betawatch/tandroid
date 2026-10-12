@@ -1,22 +1,45 @@
 package ji;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.MessageObject;
+import android.view.View;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class i extends AnimatorListenerAdapter {
-    public final /* synthetic */ MessageObject.GroupedMessages.TransitionParams a;
+public final /* synthetic */ class i implements ViewTreeObserver.OnGlobalFocusChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public i(MessageObject.GroupedMessages.TransitionParams transitionParams) {
-        this.a = transitionParams;
+    public /* synthetic */ i(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        MessageObject.GroupedMessages.TransitionParams transitionParams = this.a;
-        transitionParams.backgroundChangeBounds = false;
-        transitionParams.drawBackgroundForDeletedItems = false;
+    @Override // android.view.ViewTreeObserver.OnGlobalFocusChangeListener
+    public final void onGlobalFocusChanged(View view, View view2) {
+        switch (this.a) {
+            case 0:
+                ((r) this.b).c0();
+                break;
+            case 1:
+                ((d2) this.b).w0();
+                break;
+            case 2:
+                x3 x3Var = (x3) this.b;
+                x3Var.Y2 = (view2 == null || x3Var.F(view2) == null) ? false : true;
+                if (view2 instanceof h1) {
+                    x3Var.J3 = (h1) view2;
+                    break;
+                }
+                break;
+            default:
+                u5 u5Var = (u5) this.b;
+                u5Var.x();
+                w5 w5Var = u5Var.v;
+                if (w5Var != null) {
+                    w5Var.invalidate();
+                    break;
+                }
+                break;
+        }
     }
 }

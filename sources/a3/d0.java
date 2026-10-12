@@ -1,72 +1,50 @@
 package a3;
 
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Looper;
-import android.os.Message;
 import android.view.Choreographer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d0 implements Choreographer.FrameCallback, Handler.Callback {
-    public static final d0 e = new d0();
-    public volatile long a = -9223372036854775807L;
-    public final Handler b;
-    public Choreographer c;
-    public int d;
+public final class d0 extends c0 implements Choreographer.FrameCallback {
+    @Override // a3.c0
+    public final void a() {
+        long j10;
+        this.b.registerDisplayListener(this, e2.m0.q(null));
+        this.a.postFrameCallback(this);
+        if (this.b.getDisplay(0) != null) {
+            j10 = (long) (1.0E9d / r0.getRefreshRate());
+        } else {
+            e2.a.l("VideoFrameReleaseHelper", "Unable to query display refresh rate");
+            j10 = -9223372036854775807L;
+        }
+        this.d = j10;
+    }
 
-    public d0() {
-        HandlerThread handlerThread = new HandlerThread("ExoPlayer:FrameReleaseChoreographer");
-        handlerThread.start();
-        Looper looper = handlerThread.getLooper();
-        String str = e2.d0.a;
-        Handler handler = new Handler(looper, this);
-        this.b = handler;
-        handler.sendEmptyMessage(1);
+    @Override // a3.c0
+    public final void b() {
+        this.b.unregisterDisplayListener(this);
+        this.a.removeFrameCallback(this);
+        this.c = -9223372036854775807L;
+        this.d = -9223372036854775807L;
     }
 
     @Override // android.view.Choreographer.FrameCallback
-    public final void doFrame(long j3) {
-        this.a = j3;
-        Choreographer choreographer = this.c;
-        choreographer.getClass();
-        choreographer.postFrameCallbackDelayed(this, 500L);
+    public final void doFrame(long j10) {
+        this.c = j10;
+        this.a.postFrameCallbackDelayed(this, 500L);
     }
 
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        int i10 = message.what;
-        if (i10 == 1) {
-            try {
-                this.c = Choreographer.getInstance();
-            } catch (RuntimeException e7) {
-                e2.a.o("VideoFrameReleaseHelper", "Vsync sampling disabled due to platform error", e7);
+    @Override // android.hardware.display.DisplayManager.DisplayListener
+    public final void onDisplayChanged(int i10) {
+        long j10;
+        if (i10 == 0) {
+            this.a.postFrameCallback(this);
+            if (this.b.getDisplay(0) != null) {
+                j10 = (long) (1.0E9d / r5.getRefreshRate());
+            } else {
+                e2.a.l("VideoFrameReleaseHelper", "Unable to query display refresh rate");
+                j10 = -9223372036854775807L;
             }
-            return true;
+            this.d = j10;
         }
-        if (i10 == 2) {
-            Choreographer choreographer = this.c;
-            if (choreographer != null) {
-                int i11 = this.d + 1;
-                this.d = i11;
-                if (i11 == 1) {
-                    choreographer.postFrameCallback(this);
-                }
-            }
-            return true;
-        }
-        if (i10 != 3) {
-            return false;
-        }
-        Choreographer choreographer2 = this.c;
-        if (choreographer2 != null) {
-            int i12 = this.d - 1;
-            this.d = i12;
-            if (i12 == 0) {
-                choreographer2.removeFrameCallback(this);
-                this.a = -9223372036854775807L;
-            }
-        }
-        return true;
     }
 }

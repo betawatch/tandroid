@@ -1,18 +1,22 @@
 package k2;
 
-import b2.v0;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class w {
-    public final v0 a;
-    public final long b;
-    public final long c;
-    public long d;
+public final class w extends Exception {
+    public final boolean a;
+    public final b2.x b;
 
-    public w(v0 v0Var, long j3, long j10) {
-        this.a = v0Var;
-        this.b = j3;
-        this.c = j10;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public w(int i10, int i11, int i12, int i13, b2.x xVar, boolean z10, m mVar) {
+        super(r3.toString(), mVar);
+        StringBuilder l4 = i2.d.l("AudioTrack init failed 0 Config(", i10, ", ", i11, ", ");
+        i2.d.u(l4, i12, ", ", i13, ") ");
+        l4.append(xVar);
+        l4.append(z10 ? " (recoverable)" : "");
+        this.a = z10;
+        this.b = xVar;
     }
 }

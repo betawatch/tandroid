@@ -1,74 +1,67 @@
 package jb;
 
-import db.g;
-import db.j;
-import db.u;
-import db.v;
-import java.sql.Time;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import v7.r8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b extends u {
-    public static final a b = new a();
-    public final SimpleDateFormat a;
+public final class b extends r8 {
+    public final Method a = Class.class.getMethod("isRecord", null);
+    public final Method b = Class.class.getMethod("getRecordComponents", null);
+    public final Method c;
+    public final Method d;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-    public class a implements v {
-        @Override // db.v
-        public final u create(g gVar, kb.a aVar) {
-            if (aVar.a == Time.class) {
-                return new b(0);
+    public b() {
+        Class<?> cls = Class.forName("java.lang.reflect.RecordComponent");
+        this.c = cls.getMethod("getName", null);
+        this.d = cls.getMethod("getType", null);
+    }
+
+    @Override // v7.r8
+    public final Method a(Class cls, Field field) {
+        try {
+            return cls.getMethod(field.getName(), null);
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e);
+        }
+    }
+
+    @Override // v7.r8
+    public final Constructor b(Class cls) {
+        try {
+            Object[] objArr = (Object[]) this.b.invoke(cls, null);
+            Class<?>[] clsArr = new Class[objArr.length];
+            for (int i10 = 0; i10 < objArr.length; i10++) {
+                clsArr[i10] = (Class) this.d.invoke(objArr[i10], null);
             }
-            return null;
+            return cls.getDeclaredConstructor(clsArr);
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e);
         }
     }
 
-    public /* synthetic */ b(int i10) {
-        this();
-    }
-
-    @Override // db.u
-    public final Object read(lb.a aVar) {
-        Time time;
-        if (aVar.x() == 9) {
-            aVar.t();
-            return null;
-        }
-        String v = aVar.v();
-        synchronized (this) {
-            TimeZone timeZone = this.a.getTimeZone();
-            try {
-                try {
-                    time = new Time(this.a.parse(v).getTime());
-                } catch (ParseException e7) {
-                    throw new j("Failed parsing '" + v + "' as SQL Time; at path " + aVar.j(), e7);
-                }
-            } finally {
-                this.a.setTimeZone(timeZone);
+    @Override // v7.r8
+    public final String[] c(Class cls) {
+        try {
+            Object[] objArr = (Object[]) this.b.invoke(cls, null);
+            String[] strArr = new String[objArr.length];
+            for (int i10 = 0; i10 < objArr.length; i10++) {
+                strArr[i10] = (String) this.c.invoke(objArr[i10], null);
             }
+            return strArr;
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e);
         }
-        return time;
     }
 
-    @Override // db.u
-    public final void write(lb.b bVar, Object obj) {
-        String format;
-        Time time = (Time) obj;
-        if (time == null) {
-            bVar.i();
-            return;
+    @Override // v7.r8
+    public final boolean d(Class cls) {
+        try {
+            return ((Boolean) this.a.invoke(cls, null)).booleanValue();
+        } catch (ReflectiveOperationException e) {
+            throw new RuntimeException("Unexpected ReflectiveOperationException occurred (Gson 2.11.0). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior.", e);
         }
-        synchronized (this) {
-            format = this.a.format((Date) time);
-        }
-        bVar.r(format);
-    }
-
-    private b() {
-        this.a = new SimpleDateFormat("hh:mm:ss a");
     }
 }

@@ -1,35 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class za1 extends la1 {
-    public final int v;
-    public final int w;
-    public int x;
-    public xh y;
+public final class za1 implements qq {
+    public final /* synthetic */ TLRPC.TL_chatChannelParticipant a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean[] c;
 
-    public za1(Context context, int i10, int i11, ig.f fVar, int i12) {
-        super(context, i11, fVar, null);
-        this.v = i10;
-        this.w = i12;
+    public za1(TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant, boolean z10, boolean[] zArr) {
+        this.a = tL_chatChannelParticipant;
+        this.b = z10;
+        this.c = zArr;
     }
 
-    @Override // org.telegram.ui.la1
-    public final void b(na1 na1Var) {
-        int i10;
-        if (na1Var == null || (i10 = this.x) < 0) {
-            return;
+    @Override // org.telegram.ui.qq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = this.a;
+        if (i10 == 0) {
+            TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+            channelParticipant.admin_rights = null;
+            channelParticipant.rank = "";
+        } else {
+            TLRPC.ChannelParticipant channelParticipant2 = tL_chatChannelParticipant.channelParticipant;
+            channelParticipant2.admin_rights = tL_chatAdminRights;
+            channelParticipant2.rank = str;
+            if (this.b) {
+                this.c[0] = true;
+            }
         }
-        na1Var.a(this.v, this.w, i10, this.y);
     }
 
-    @Override // org.telegram.ui.la1
-    public final void c() {
-    }
-
-    @Override // org.telegram.ui.la1
-    public final void f() {
+    @Override // org.telegram.ui.qq
+    public final void a(TLRPC.User user) {
     }
 }

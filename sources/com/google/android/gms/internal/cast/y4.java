@@ -3,11 +3,11 @@ package com.google.android.gms.internal.cast;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class y4 extends v7.s5 {
+public final class y4 extends v7.t5 {
     public static final Logger e = Logger.getLogger(y4.class.getName());
-    public static final boolean f = s6.e;
+    public static final boolean f = t6.e;
     public u5 a;
     public final byte[] b;
     public final int c;
@@ -33,8 +33,8 @@ public final class y4 extends v7.s5 {
     public static int n(String str) {
         int length;
         try {
-            length = u6.c(str);
-        } catch (t6 unused) {
+            length = v6.c(str);
+        } catch (u6 unused) {
             length = str.getBytes(l5.a).length;
         }
         return o(length) + length;
@@ -53,25 +53,25 @@ public final class y4 extends v7.s5 {
         return (i10 & (-268435456)) == 0 ? 4 : 5;
     }
 
-    public static int p(long j3) {
+    public static int p(long j10) {
         int i10;
-        if (((-128) & j3) == 0) {
+        if (((-128) & j10) == 0) {
             return 1;
         }
-        if (j3 < 0) {
+        if (j10 < 0) {
             return 10;
         }
-        if (((-34359738368L) & j3) != 0) {
-            j3 >>>= 28;
+        if (((-34359738368L) & j10) != 0) {
+            j10 >>>= 28;
             i10 = 6;
         } else {
             i10 = 2;
         }
-        if (((-2097152) & j3) != 0) {
-            j3 >>>= 14;
+        if (((-2097152) & j10) != 0) {
+            j10 >>>= 14;
             i10 += 2;
         }
-        return (j3 & (-16384)) != 0 ? i10 + 1 : i10;
+        return (j10 & (-16384)) != 0 ? i10 + 1 : i10;
     }
 
     public final void a(byte b10) {
@@ -96,8 +96,8 @@ public final class y4 extends v7.s5 {
 
     public final void c(int i10, x4 x4Var) {
         j((i10 << 3) | 2);
-        j(x4Var.o());
-        b(x4Var.o(), x4Var.b);
+        j(x4Var.n());
+        b(x4Var.n(), x4Var.b);
     }
 
     public final void d(int i10, int i11) {
@@ -125,38 +125,38 @@ public final class y4 extends v7.s5 {
         }
     }
 
-    public final void f(int i10, long j3) {
+    public final void f(int i10, long j10) {
         j((i10 << 3) | 1);
-        g(j3);
+        g(j10);
     }
 
-    public final void g(long j3) {
+    public final void g(long j10) {
         try {
             byte[] bArr = this.b;
             int i10 = this.d;
             int i11 = i10 + 1;
             this.d = i11;
-            bArr[i10] = (byte) (((int) j3) & 255);
+            bArr[i10] = (byte) (((int) j10) & 255);
             int i12 = i10 + 2;
             this.d = i12;
-            bArr[i11] = (byte) (((int) (j3 >> 8)) & 255);
+            bArr[i11] = (byte) (((int) (j10 >> 8)) & 255);
             int i13 = i10 + 3;
             this.d = i13;
-            bArr[i12] = (byte) (((int) (j3 >> 16)) & 255);
+            bArr[i12] = (byte) (((int) (j10 >> 16)) & 255);
             int i14 = i10 + 4;
             this.d = i14;
-            bArr[i13] = (byte) (((int) (j3 >> 24)) & 255);
+            bArr[i13] = (byte) (((int) (j10 >> 24)) & 255);
             int i15 = i10 + 5;
             this.d = i15;
-            bArr[i14] = (byte) (((int) (j3 >> 32)) & 255);
+            bArr[i14] = (byte) (((int) (j10 >> 32)) & 255);
             int i16 = i10 + 6;
             this.d = i16;
-            bArr[i15] = (byte) (((int) (j3 >> 40)) & 255);
+            bArr[i15] = (byte) (((int) (j10 >> 40)) & 255);
             int i17 = i10 + 7;
             this.d = i17;
-            bArr[i16] = (byte) (((int) (j3 >> 48)) & 255);
+            bArr[i16] = (byte) (((int) (j10 >> 48)) & 255);
             this.d = i10 + 8;
-            bArr[i17] = (byte) (((int) (j3 >> 56)) & 255);
+            bArr[i17] = (byte) (((int) (j10 >> 56)) & 255);
         } catch (IndexOutOfBoundsException e7) {
             throw new z4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(this.c), 1), e7);
         }
@@ -166,23 +166,23 @@ public final class y4 extends v7.s5 {
         j((i10 << 3) | 2);
         int i11 = this.d;
         try {
-            int o9 = o(str.length() * 3);
-            int o10 = o(str.length());
+            int o10 = o(str.length() * 3);
+            int o11 = o(str.length());
             int i12 = this.c;
             byte[] bArr = this.b;
-            if (o10 != o9) {
-                j(u6.c(str));
+            if (o11 != o10) {
+                j(v6.c(str));
                 int i13 = this.d;
-                this.d = u6.b(str, bArr, i13, i12 - i13);
+                this.d = v6.b(str, bArr, i13, i12 - i13);
             } else {
-                int i14 = i11 + o10;
+                int i14 = i11 + o11;
                 this.d = i14;
-                int b10 = u6.b(str, bArr, i14, i12 - i14);
+                int b10 = v6.b(str, bArr, i14, i12 - i14);
                 this.d = i11;
-                j((b10 - i11) - o10);
+                j((b10 - i11) - o11);
                 this.d = b10;
             }
-        } catch (t6 e7) {
+        } catch (u6 e7) {
             this.d = i11;
             e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e7);
             byte[] bytes = str.getBytes(l5.a);
@@ -225,43 +225,43 @@ public final class y4 extends v7.s5 {
         }
     }
 
-    public final void k(int i10, long j3) {
+    public final void k(int i10, long j10) {
         j(i10 << 3);
-        l(j3);
+        l(j10);
     }
 
-    public final void l(long j3) {
+    public final void l(long j10) {
         boolean z10 = f;
         int i10 = this.c;
         byte[] bArr = this.b;
         if (!z10 || i10 - this.d < 10) {
-            while ((j3 & (-128)) != 0) {
+            while ((j10 & (-128)) != 0) {
                 try {
                     int i11 = this.d;
                     this.d = i11 + 1;
-                    bArr[i11] = (byte) ((((int) j3) & 127) | 128);
-                    j3 >>>= 7;
+                    bArr[i11] = (byte) ((((int) j10) & 127) | 128);
+                    j10 >>>= 7;
                 } catch (IndexOutOfBoundsException e7) {
                     throw new z4(String.format("Pos: %d, limit: %d, len: %d", Integer.valueOf(this.d), Integer.valueOf(i10), 1), e7);
                 }
             }
             int i12 = this.d;
             this.d = i12 + 1;
-            bArr[i12] = (byte) j3;
+            bArr[i12] = (byte) j10;
             return;
         }
         while (true) {
-            int i13 = (int) j3;
-            if ((j3 & (-128)) == 0) {
+            int i13 = (int) j10;
+            if ((j10 & (-128)) == 0) {
                 int i14 = this.d;
                 this.d = i14 + 1;
-                s6.c.d(bArr, s6.f + i14, (byte) i13);
+                t6.c.d(bArr, t6.f + i14, (byte) i13);
                 return;
             } else {
                 int i15 = this.d;
                 this.d = i15 + 1;
-                s6.c.d(bArr, s6.f + i15, (byte) ((i13 & 127) | 128));
-                j3 >>>= 7;
+                t6.c.d(bArr, t6.f + i15, (byte) ((i13 & 127) | 128));
+                j10 >>>= 7;
             }
         }
     }

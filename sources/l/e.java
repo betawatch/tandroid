@@ -1,6 +1,5 @@
 package l;
 
-import ai.v2;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -18,18 +17,18 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import bi.j2;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import k2.g0;
+import ji.w4;
 import m.f2;
 import m.g2;
-import m.j2;
 import m.r1;
 import org.telegram.messenger.beta.R;
-import r0.i0;
+import r0.j0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e extends s implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -48,24 +47,25 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
     public final int d;
     public final boolean e;
     public final Handler f;
-    public final androidx.mediarouter.app.j r;
-    public final g0 v;
+    public final j2 s;
+    public final w4 v;
     public View y;
     public final ArrayList h = new ArrayList();
     public final ArrayList n = new ArrayList();
-    public final v2 s = new v2(this, 2);
+    public final androidx.mediarouter.app.i r = new androidx.mediarouter.app.i(this, 1);
     public int w = 0;
     public int x = 0;
     public boolean K = false;
 
     public e(Context context, View view, int i10, boolean z10) {
-        this.r = new androidx.mediarouter.app.j(this, r1);
-        this.v = new g0(this, r1);
+        int i11 = 2;
+        this.s = new j2(this, i11);
+        this.v = new w4(this, i11);
         this.b = context;
         this.y = view;
         this.d = i10;
         this.e = z10;
-        WeakHashMap weakHashMap = i0.a;
+        WeakHashMap weakHashMap = j0.a;
         this.F = view.getLayoutDirection() == 1 ? 0 : 1;
         Resources resources = context.getResources();
         this.c = Math.max(resources.getDisplayMetrics().widthPixels / 2, resources.getDimensionPixelSize(R.dimen.abc_config_prefDialogWidth));
@@ -107,7 +107,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         }
         d dVar = (d) arrayList.remove(i10);
         k kVar2 = dVar.b;
-        j2 j2Var = dVar.a;
+        m.j2 j2Var = dVar.a;
         m.x xVar = j2Var.O;
         kVar2.r(this);
         if (this.P) {
@@ -120,7 +120,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
             this.F = ((d) arrayList.get(size2 - 1)).c;
         } else {
             View view = this.y;
-            WeakHashMap weakHashMap = i0.a;
+            WeakHashMap weakHashMap = j0.a;
             this.F = view.getLayoutDirection() == 1 ? 0 : 1;
         }
         if (size2 != 0) {
@@ -183,7 +183,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         if (arrayList.isEmpty()) {
             return null;
         }
-        return ((d) hg.c.g(1, arrayList)).a.c;
+        return ((d) i2.d.g(1, arrayList)).a.c;
     }
 
     @Override // l.b0
@@ -238,7 +238,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         l(d0Var);
         w wVar = this.M;
         if (wVar != null) {
-            wVar.v(d0Var);
+            wVar.q(d0Var);
         }
         return true;
     }
@@ -258,7 +258,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         if (this.y != view) {
             this.y = view;
             int i10 = this.w;
-            WeakHashMap weakHashMap = i0.a;
+            WeakHashMap weakHashMap = j0.a;
             this.x = Gravity.getAbsoluteGravity(i10, view.getLayoutDirection());
         }
     }
@@ -305,7 +305,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         if (this.w != i10) {
             this.w = i10;
             View view = this.y;
-            WeakHashMap weakHashMap = i0.a;
+            WeakHashMap weakHashMap = j0.a;
             this.x = Gravity.getAbsoluteGravity(i10, view.getLayoutDirection());
         }
     }
@@ -384,7 +384,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
             hVar2.c = z10;
         }
         int m10 = s.m(hVar2, context, this.c);
-        j2 j2Var = new j2(context, null, this.d);
+        m.j2 j2Var = new m.j2(context, null, this.d);
         j2Var.S = this.v;
         j2Var.F = this;
         m.x xVar = j2Var.O;
@@ -394,12 +394,12 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         j2Var.N = true;
         xVar.setFocusable(true);
         xVar.setInputMethodMode(2);
-        j2Var.n(hVar2);
-        j2Var.p(m10);
+        j2Var.o(hVar2);
+        j2Var.q(m10);
         j2Var.w = this.x;
         ArrayList arrayList = this.n;
         if (arrayList.size() > 0) {
-            dVar = (d) hg.c.g(1, arrayList);
+            dVar = (d) i2.d.g(1, arrayList);
             k kVar2 = dVar.b;
             int size2 = kVar2.f.size();
             int i15 = 0;
@@ -452,7 +452,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         }
         if (view != null) {
             if (Build.VERSION.SDK_INT <= 28) {
-                Method method = j2.T;
+                Method method = m.j2.T;
                 if (method != null) {
                     try {
                         Object[] objArr = new Object[1];
@@ -499,26 +499,26 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
                             j2Var.f = width;
                             j2Var.v = true;
                             j2Var.s = true;
-                            j2Var.j(i11);
+                            j2Var.k(i11);
                         }
                         width = i12 - m10;
                         j2Var.f = width;
                         j2Var.v = true;
                         j2Var.s = true;
-                        j2Var.j(i11);
+                        j2Var.k(i11);
                     } else if (z12) {
                         width = i12 + m10;
                         j2Var.f = width;
                         j2Var.v = true;
                         j2Var.s = true;
-                        j2Var.j(i11);
+                        j2Var.k(i11);
                     } else {
                         m10 = view.getWidth();
                         width = i12 - m10;
                         j2Var.f = width;
                         j2Var.v = true;
                         j2Var.s = true;
-                        j2Var.j(i11);
+                        j2Var.k(i11);
                     }
                 }
                 i10 = 1;
@@ -554,7 +554,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
                 j2Var.f = this.I;
             }
             if (this.H) {
-                j2Var.j(this.J);
+                j2Var.k(this.J);
             }
             Rect rect2 = this.a;
             j2Var.M = rect2 != null ? new Rect(rect2) : null;

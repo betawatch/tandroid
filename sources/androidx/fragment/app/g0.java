@@ -1,23 +1,26 @@
 package androidx.fragment.app;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g0 implements Parcelable {
-    public static final Parcelable.Creator<g0> CREATOR = new w.a(12);
-    public String a;
-    public int b;
+public final class g0 implements f0 {
+    public final int a;
+    public final /* synthetic */ i0 b;
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    public g0(i0 i0Var, int i10) {
+        this.b = i0Var;
+        this.a = i10;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeString(this.a);
-        parcel.writeInt(this.b);
+    @Override // androidx.fragment.app.f0
+    public final boolean a(ArrayList arrayList, ArrayList arrayList2) {
+        i0 i0Var = this.b;
+        r rVar = i0Var.z;
+        int i10 = this.a;
+        if (rVar == null || i10 >= 0 || !rVar.l().T(-1, 0)) {
+            return i0Var.U(i10, 1, arrayList, arrayList2);
+        }
+        return false;
     }
 }

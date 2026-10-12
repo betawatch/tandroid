@@ -1,79 +1,71 @@
 package b2;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e1 implements Comparable, Parcelable {
-    public static final Parcelable.Creator<e1> CREATOR = new m(2);
-    public static final String d;
-    public static final String e;
-    public static final String f;
-    public final int a;
-    public final int b;
-    public final int c;
+public interface e1 {
+    void onAudioAttributesChanged(f fVar);
 
-    static {
-        String str = e2.d0.a;
-        d = Integer.toString(0, 36);
-        e = Integer.toString(1, 36);
-        f = Integer.toString(2, 36);
-    }
+    void onAudioSessionIdChanged(int i10);
 
-    public e1(int i10, int i11, int i12) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-    }
+    void onAvailableCommandsChanged(c1 c1Var);
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        e1 e1Var = (e1) obj;
-        int i10 = this.a - e1Var.a;
-        if (i10 != 0) {
-            return i10;
-        }
-        int i11 = this.b - e1Var.b;
-        return i11 == 0 ? this.c - e1Var.c : i11;
-    }
+    void onCues(d2.c cVar);
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
+    void onCues(List list);
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && e1.class == obj.getClass()) {
-            e1 e1Var = (e1) obj;
-            if (this.a == e1Var.a && this.b == e1Var.b && this.c == e1Var.c) {
-                return true;
-            }
-        }
-        return false;
-    }
+    void onEvents(g1 g1Var, d1 d1Var);
 
-    public final int hashCode() {
-        return (((this.a * 31) + this.b) * 31) + this.c;
-    }
+    void onIsLoadingChanged(boolean z10);
 
-    public final String toString() {
-        return this.a + "." + this.b + "." + this.c;
-    }
+    void onIsPlayingChanged(boolean z10);
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeInt(this.a);
-        parcel.writeInt(this.b);
-        parcel.writeInt(this.c);
-    }
+    void onLoadingChanged(boolean z10);
 
-    public e1(Parcel parcel) {
-        this.a = parcel.readInt();
-        this.b = parcel.readInt();
-        this.c = parcel.readInt();
-    }
+    void onMediaItemTransition(p0 p0Var, int i10);
+
+    void onMediaMetadataChanged(s0 s0Var);
+
+    void onMetadata(u0 u0Var);
+
+    void onPlayWhenReadyChanged(boolean z10, int i10);
+
+    void onPlaybackParametersChanged(a1 a1Var);
+
+    void onPlaybackStateChanged(int i10);
+
+    void onPlaybackSuppressionReasonChanged(int i10);
+
+    void onPlayerError(z0 z0Var);
+
+    void onPlayerErrorChanged(z0 z0Var);
+
+    void onPlayerStateChanged(boolean z10, int i10);
+
+    void onPlaylistMetadataChanged(s0 s0Var);
+
+    void onPositionDiscontinuity(int i10);
+
+    void onPositionDiscontinuity(f1 f1Var, f1 f1Var2, int i10);
+
+    void onRenderedFirstFrame();
+
+    void onRepeatModeChanged(int i10);
+
+    void onShuffleModeEnabledChanged(boolean z10);
+
+    void onSkipSilenceEnabledChanged(boolean z10);
+
+    void onSurfaceSizeChanged(int i10, int i11);
+
+    void onTimelineChanged(p1 p1Var, int i10);
+
+    void onTrackSelectionParametersChanged(u1 u1Var);
+
+    void onTracksChanged(w1 w1Var);
+
+    void onVideoSizeChanged(b2 b2Var);
+
+    void onVolumeChanged(float f7);
 }

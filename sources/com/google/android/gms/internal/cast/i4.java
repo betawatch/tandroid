@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class i4 {
     public static /* synthetic */ MediaCodec.CryptoInfo.Pattern a() {
@@ -63,7 +63,7 @@ public abstract /* synthetic */ class i4 {
         }
     }
 
-    public static /* synthetic */ void e(gf.a aVar) {
+    public static /* synthetic */ void e(hf.a aVar) {
         boolean isTerminated;
         if ((Build.VERSION.SDK_INT <= 23 || aVar != ForkJoinPool.commonPool()) && !(isTerminated = aVar.isTerminated())) {
             aVar.shutdown();
@@ -84,18 +84,18 @@ public abstract /* synthetic */ class i4 {
         }
     }
 
-    public static void f(i9.y yVar) {
+    public static void f(j9.a0 a0Var) {
         boolean isTerminated;
-        ExecutorService executorService = yVar.a;
-        if ((Build.VERSION.SDK_INT <= 23 || yVar != ForkJoinPool.commonPool()) && !(isTerminated = executorService.isTerminated())) {
-            yVar.shutdown();
+        ExecutorService executorService = a0Var.a;
+        if ((Build.VERSION.SDK_INT <= 23 || a0Var != ForkJoinPool.commonPool()) && !(isTerminated = executorService.isTerminated())) {
+            a0Var.shutdown();
             boolean z10 = false;
             while (!isTerminated) {
                 try {
                     isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
                 } catch (InterruptedException unused) {
                     if (!z10) {
-                        yVar.shutdownNow();
+                        a0Var.shutdownNow();
                         z10 = true;
                     }
                 }
@@ -106,18 +106,18 @@ public abstract /* synthetic */ class i4 {
         }
     }
 
-    public static void g(i9.b0 b0Var) {
+    public static void g(j9.d0 d0Var) {
         boolean isTerminated;
-        ExecutorService executorService = b0Var.a;
-        if ((Build.VERSION.SDK_INT <= 23 || b0Var != ForkJoinPool.commonPool()) && !(isTerminated = executorService.isTerminated())) {
-            b0Var.shutdown();
+        ExecutorService executorService = d0Var.a;
+        if ((Build.VERSION.SDK_INT <= 23 || d0Var != ForkJoinPool.commonPool()) && !(isTerminated = executorService.isTerminated())) {
+            d0Var.shutdown();
             boolean z10 = false;
             while (!isTerminated) {
                 try {
                     isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
                 } catch (InterruptedException unused) {
                     if (!z10) {
-                        b0Var.shutdownNow();
+                        d0Var.shutdownNow();
                         z10 = true;
                     }
                 }
@@ -149,9 +149,9 @@ public abstract /* synthetic */ class i4 {
         }
     }
 
-    public static void i(r9.f fVar) {
-        if ((Build.VERSION.SDK_INT <= 23 || fVar != ForkJoinPool.commonPool()) && !fVar.a.isTerminated()) {
-            fVar.shutdown();
+    public static void i(s9.g gVar) {
+        if ((Build.VERSION.SDK_INT <= 23 || gVar != ForkJoinPool.commonPool()) && !gVar.a.isTerminated()) {
+            gVar.shutdown();
             throw null;
         }
     }

@@ -2,9 +2,9 @@ package t7;
 
 import android.content.Context;
 import java.util.ArrayList;
+import v7.v8;
 import v7.w8;
-import v7.x8;
-import v7.z8;
+import v7.y8;
 import w7.ia;
 import w7.ka;
 import w7.la;
@@ -15,45 +15,45 @@ import z7.sf;
 import z7.uf;
 import z7.wf;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class r extends b2.g {
+public final class r extends b2.h {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ r(int i10) {
-        super(4);
+        super(5);
         this.b = i10;
     }
 
-    @Override // b2.g
-    public final Object N0(Object obj) {
+    @Override // b2.h
+    public final Object Q0(Object obj) {
         switch (this.b) {
             case 0:
-                qb.g c10 = qb.g.c();
-                Context b10 = qb.g.c().b();
+                rb.g c10 = rb.g.c();
+                Context b10 = rb.g.c().b();
                 ArrayList arrayList = new ArrayList();
                 ((o) obj).getClass();
-                t tVar = new t();
+                u uVar = new u(22);
                 j5.a aVar = j5.a.e;
                 l5.s.b(b10);
                 l5.s.a().c(aVar);
                 j5.a.d.contains(new i5.c("json"));
-                arrayList.add(tVar);
-                return new q(c10.b(), (qb.k) c10.a(qb.k.class));
+                arrayList.add(uVar);
+                return new q(c10.b(), (rb.k) c10.a(rb.k.class));
             case 1:
-                w8 w8Var = (w8) obj;
-                qb.g c11 = qb.g.c();
-                return new z8(c11.b(), (qb.k) c11.a(qb.k.class), new x8(qb.g.c().b(), w8Var), w8Var.a);
+                v8 v8Var = (v8) obj;
+                rb.g c11 = rb.g.c();
+                return new y8(c11.b(), (rb.k) c11.a(rb.k.class), new w8(rb.g.c().b(), v8Var), v8Var.a);
             case 2:
-                qb.g c12 = qb.g.c();
-                return new la(c12.b(), (qb.k) c12.a(qb.k.class), new ka(qb.g.c().b(), (ia) obj));
+                rb.g c12 = rb.g.c();
+                return new la(c12.b(), (rb.k) c12.a(rb.k.class), new ka(rb.g.c().b(), (ia) obj));
             case 3:
-                qb.g c13 = qb.g.c();
-                return new fa(c13.b(), (qb.k) c13.a(qb.k.class), new ca(qb.g.c().b(), (ba) obj));
+                rb.g c13 = rb.g.c();
+                return new fa(c13.b(), (rb.k) c13.a(rb.k.class), new ca(rb.g.c().b(), (ba) obj));
             default:
-                qb.g c14 = qb.g.c();
-                return new wf(c14.b(), (qb.k) c14.a(qb.k.class), new uf(qb.g.c().b(), (sf) obj));
+                rb.g c14 = rb.g.c();
+                return new wf(c14.b(), (rb.k) c14.a(rb.k.class), new uf(rb.g.c().b(), (sf) obj));
         }
     }
 }

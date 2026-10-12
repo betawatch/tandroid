@@ -1,28 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.graphics.SurfaceTexture;
-import org.telegram.messenger.DispatchQueue;
+import android.graphics.PointF;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k00 implements SurfaceTexture.OnFrameAvailableListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ DispatchQueue b;
+public interface k00 {
+    ByteBuffer a();
 
-    public /* synthetic */ k00(DispatchQueue dispatchQueue, int i10) {
-        this.a = i10;
-        this.b = dispatchQueue;
-    }
+    boolean b();
 
-    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
-    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
-                ((l00) this.b).e(false, true, true);
-                break;
-            default:
-                ((e60) this.b).requestRender(true, false);
-                break;
-        }
-    }
+    boolean c();
+
+    float getBlurAngle();
+
+    float getBlurExcludeBlurSize();
+
+    PointF getBlurExcludePoint();
+
+    float getBlurExcludeSize();
+
+    int getBlurType();
+
+    float getContrastValue();
+
+    float getEnhanceValue();
+
+    float getExposureValue();
+
+    float getFadeValue();
+
+    float getGrainValue();
+
+    float getHighlightsValue();
+
+    float getSaturationValue();
+
+    float getShadowsValue();
+
+    float getSharpenValue();
+
+    float getSoftenSkinValue();
+
+    int getTintHighlightsColor();
+
+    float getTintHighlightsIntensityValue();
+
+    int getTintShadowsColor();
+
+    float getTintShadowsIntensityValue();
+
+    float getVignetteValue();
+
+    float getWarmthValue();
 }

@@ -1,21 +1,15 @@
 package w3;
 
-import e2.v;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements d9.e, f2.t {
-    public final /* synthetic */ j a;
+public final class g {
+    public final long a;
+    public final boolean b;
+    public final int c;
 
-    @Override // d9.e, i5.e
-    public Object apply(Object obj) {
-        q qVar = (q) obj;
-        this.a.getClass();
-        return qVar;
-    }
-
-    @Override // f2.t
-    public void b(long j3, v vVar) {
-        c3.b.d(j3, vVar, this.a.K);
+    public g(int i10, long j10, boolean z10) {
+        this.a = j10;
+        this.b = z10;
+        this.c = i10;
     }
 }

@@ -1,38 +1,33 @@
 package m4;
 
-import java.util.List;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class a implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b b;
 
-    static {
-        e2.d0.I(0);
-        e2.d0.I(1);
-        e2.d0.I(2);
-        e2.d0.I(3);
-        e2.d0.I(4);
-        e2.d0.I(5);
-        e2.d0.I(6);
-        e2.d0.I(7);
-        e2.d0.I(8);
+    public /* synthetic */ a(b bVar, int i10) {
+        this.a = i10;
+        this.b = bVar;
     }
 
-    public static e9.a1 a(List list) {
-        if (list.isEmpty()) {
-            e9.g0 g0Var = e9.i0.b;
-            return e9.a1.e;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        b bVar = this.b;
+        switch (i10) {
+            case 0:
+                bVar.a.unregisterReceiver(bVar.d);
+                break;
+            case 1:
+                b.a(bVar);
+                break;
+            default:
+                Uri uri = b.g;
+                bVar.b();
+                break;
         }
-        if (list.size() > 0) {
-            list.get(0).getClass();
-            throw new ClassCastException();
-        }
-        e9.f0 u10 = e9.i0.u();
-        if (list.size() <= 0) {
-            return u10.i();
-        }
-        list.get(0).getClass();
-        throw new ClassCastException();
     }
 }

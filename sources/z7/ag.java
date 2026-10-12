@@ -3,7 +3,7 @@ package z7;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class ag extends o6.a {
     public static final Parcelable.Creator<ag> CREATOR = new cg(0);
@@ -13,27 +13,27 @@ public final class ag extends o6.a {
     public final int d;
     public final long e;
 
-    public ag(int i10, int i11, int i12, long j3, int i13) {
+    public ag(int i10, int i11, int i12, long j10, int i13) {
         this.a = i10;
         this.b = i11;
         this.c = i12;
         this.d = i13;
-        this.e = j3;
+        this.e = j10;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.d0.q(parcel, 20293);
-        w7.d0.s(parcel, 1, 4);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        w7.d0.s(parcel, 2, 4);
+        w7.g0.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        w7.d0.s(parcel, 3, 4);
+        w7.g0.s(parcel, 3, 4);
         parcel.writeInt(this.c);
-        w7.d0.s(parcel, 4, 4);
+        w7.g0.s(parcel, 4, 4);
         parcel.writeInt(this.d);
-        w7.d0.s(parcel, 5, 8);
+        w7.g0.s(parcel, 5, 8);
         parcel.writeLong(this.e);
-        w7.d0.r(parcel, q6);
+        w7.g0.r(parcel, q6);
     }
 }

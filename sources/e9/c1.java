@@ -1,58 +1,18 @@
 package e9;
 
-import java.util.Map;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class c1 extends m0 {
-    public final transient k0 d;
-    public final transient Object[] e;
-    public final transient int f;
-    public final transient int h;
+public final class c1 extends a {
+    public static final c1 d = new c1(new Object[0]);
+    public final Object[] c;
 
-    public c1(k0 k0Var, Object[] objArr, int i10, int i11) {
-        this.d = k0Var;
-        this.e = objArr;
-        this.f = i10;
-        this.h = i11;
+    public c1(Object[] objArr) {
+        super(objArr.length, 0);
+        this.c = objArr;
     }
 
-    @Override // e9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.d.get(key))) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // e9.d0
-    public final int n(int i10, Object[] objArr) {
-        return i().n(i10, objArr);
-    }
-
-    @Override // e9.d0
-    public final boolean r() {
-        return true;
-    }
-
-    @Override // e9.d0
-    /* renamed from: s */
-    public final o1 iterator() {
-        return i().listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.h;
-    }
-
-    @Override // e9.m0
-    public final i0 w() {
-        return new b1(this);
+    @Override // e9.a
+    public final Object a(int i10) {
+        return this.c[i10];
     }
 }

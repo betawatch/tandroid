@@ -1,18 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class rj extends ph.i {
-    public final /* synthetic */ zn H;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.TLRPC;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rj(zn znVar, rf rfVar) {
-        super(rfVar);
-        this.H = znVar;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class rj implements MessagesStorage.BooleanCallback {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ sj b;
+
+    public rj(sj sjVar, boolean z10) {
+        this.b = sjVar;
+        this.a = z10;
     }
 
-    @Override // ph.i
-    public final r0.k1 b(r0.k1 k1Var) {
-        return this.H.z8(k1Var);
+    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
+    public final void run(boolean z10) {
+        fo foVar = this.b.b;
+        if (z10) {
+            TLRPC.User user = foVar.f;
+            boolean z11 = this.a;
+            if (user != null || z11) {
+                foVar.getMessagesStorage().getMessagesCount(foVar.T5, new qj(1, this, z11));
+                return;
+            }
+        }
+        foVar.va(foVar.d4, z10);
     }
 }

@@ -1,10 +1,10 @@
 package m2;
 
-import e2.d0;
+import e2.m0;
 import java.math.RoundingMode;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class n extends s {
     public final long d;
@@ -14,84 +14,84 @@ public abstract class n extends s {
     public final long h;
     public final long i;
 
-    public n(j jVar, long j3, long j10, long j11, long j12, List list, long j13, long j14, long j15) {
-        super(jVar, j3, j10);
-        this.d = j11;
-        this.e = j12;
+    public n(j jVar, long j10, long j11, long j12, long j13, List list, long j14, long j15, long j16) {
+        super(jVar, j10, j11);
+        this.d = j12;
+        this.e = j13;
         this.f = list;
-        this.i = j13;
-        this.g = j14;
-        this.h = j15;
+        this.i = j14;
+        this.g = j15;
+        this.h = j16;
     }
 
-    public final long b(long j3, long j10) {
-        long d = d(j3);
-        return d != -1 ? d : (int) (f((j10 - this.h) + this.i, j3) - c(j3, j10));
+    public final long b(long j10, long j11) {
+        long d = d(j10);
+        return d != -1 ? d : (int) (f((j11 - this.h) + this.i, j10) - c(j10, j11));
     }
 
-    public final long c(long j3, long j10) {
-        long d = d(j3);
-        long j11 = this.d;
+    public final long c(long j10, long j11) {
+        long d = d(j10);
+        long j12 = this.d;
         if (d == -1) {
-            long j12 = this.g;
-            if (j12 != -9223372036854775807L) {
-                return Math.max(j11, f((j10 - this.h) - j12, j3));
+            long j13 = this.g;
+            if (j13 != -9223372036854775807L) {
+                return Math.max(j12, f((j11 - this.h) - j13, j10));
             }
         }
-        return j11;
+        return j12;
     }
 
-    public abstract long d(long j3);
+    public abstract long d(long j10);
 
-    public final long e(long j3, long j10) {
-        long j11 = this.b;
-        long j12 = this.d;
+    public final long e(long j10, long j11) {
+        long j12 = this.b;
+        long j13 = this.d;
         List list = this.f;
         if (list != null) {
-            return (((q) list.get((int) (j3 - j12))).b * 1000000) / j11;
+            return (((q) list.get((int) (j10 - j13))).b * 1000000) / j12;
         }
-        long d = d(j10);
-        return (d == -1 || j3 != (j12 + d) - 1) ? (this.e * 1000000) / j11 : j10 - g(j3);
+        long d = d(j11);
+        return (d == -1 || j10 != (j13 + d) - 1) ? (this.e * 1000000) / j12 : j11 - g(j10);
     }
 
-    public final long f(long j3, long j10) {
-        long d = d(j10);
-        long j11 = this.d;
+    public final long f(long j10, long j11) {
+        long d = d(j11);
+        long j12 = this.d;
         if (d != 0) {
             if (this.f != null) {
-                long j12 = (d + j11) - 1;
-                long j13 = j11;
-                while (j13 <= j12) {
-                    long j14 = ((j12 - j13) / 2) + j13;
-                    long g10 = g(j14);
-                    if (g10 < j3) {
-                        j13 = j14 + 1;
+                long j13 = (d + j12) - 1;
+                long j14 = j12;
+                while (j14 <= j13) {
+                    long j15 = ((j13 - j14) / 2) + j14;
+                    long g10 = g(j15);
+                    if (g10 < j10) {
+                        j14 = j15 + 1;
                     } else {
-                        if (g10 <= j3) {
-                            return j14;
+                        if (g10 <= j10) {
+                            return j15;
                         }
-                        j12 = j14 - 1;
+                        j13 = j15 - 1;
                     }
                 }
-                return j13 == j11 ? j13 : j12;
+                return j14 == j12 ? j14 : j13;
             }
-            long j15 = (j3 / ((this.e * 1000000) / this.b)) + j11;
-            if (j15 >= j11) {
-                return d == -1 ? j15 : Math.min(j15, (j11 + d) - 1);
+            long j16 = (j10 / ((this.e * 1000000) / this.b)) + j12;
+            if (j16 >= j12) {
+                return d == -1 ? j16 : Math.min(j16, (j12 + d) - 1);
             }
         }
-        return j11;
+        return j12;
     }
 
-    public final long g(long j3) {
-        long j10 = this.d;
+    public final long g(long j10) {
+        long j11 = this.d;
         List list = this.f;
-        long j11 = list != null ? ((q) list.get((int) (j3 - j10))).a - this.c : (j3 - j10) * this.e;
-        String str = d0.a;
-        return d0.X(j11, 1000000L, this.b, RoundingMode.DOWN);
+        long j12 = list != null ? ((q) list.get((int) (j10 - j11))).a - this.c : (j10 - j11) * this.e;
+        String str = m0.a;
+        return m0.a0(j12, 1000000L, this.b, RoundingMode.DOWN);
     }
 
-    public abstract j h(k kVar, long j3);
+    public abstract j h(k kVar, long j10);
 
     public boolean i() {
         return this.f != null;

@@ -1,34 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class x8 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g9 b;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ x8(g9 g9Var, int i10) {
-        this.a = i10;
-        this.b = g9Var;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class x8 extends zq {
+    public final /* synthetic */ int f0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ x8(Context context, boolean z10, yq yqVar, int i10) {
+        super(context, z10, yqVar);
+        this.f0 = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        switch (this.a) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.f0) {
             case 0:
-                if (i10 == -1) {
-                    g9.U(this.b);
-                    break;
-                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
+                break;
+            case 1:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
                 break;
             default:
-                g9 g9Var = this.b;
-                if (i10 == -1) {
-                    g9.U(g9Var);
-                }
-                if (i10 == 1) {
-                    g9Var.f0();
-                    break;
-                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
                 break;
         }
     }

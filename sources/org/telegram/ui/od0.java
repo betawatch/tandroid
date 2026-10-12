@@ -1,29 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class od0 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wg0 b;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-    public /* synthetic */ od0(wg0 wg0Var, int i10) {
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class od0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bh0 b;
+
+    public /* synthetic */ od0(bh0 bh0Var, int i10) {
         this.a = i10;
-        this.b = wg0Var;
+        this.b = bh0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                wg0 wg0Var = this.b;
-                wg0Var.b[wg0Var.a].d();
-                wg0Var.k1(true, true);
+                this.b.c0 = false;
+                break;
+            case 1:
+                bh0 bh0Var = this.b;
+                bh0Var.r0 = false;
+                bh0Var.x1(true, true);
                 break;
             default:
-                wg0 wg0Var2 = this.b;
-                wg0Var2.l0 = true;
-                if (wg0Var2.a != 0) {
-                    wg0Var2.u1(0, true, null, true);
+                bh0 bh0Var2 = this.b;
+                if (bh0Var2.getParentActivity() != null && !bh0Var2.getParentActivity().isFinishing() && bh0Var2.getParentActivity() != null) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(bh0Var2.getParentActivity());
+                    alertDialog$Builder.a.R = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
+                    alertDialog$Builder.a.T = LocaleController.getString(R.string.SafetyNetErrorOccurred);
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new ud0(bh0Var2, 1));
+                    alertDialog$Builder.o();
                     break;
                 }
                 break;

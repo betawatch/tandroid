@@ -1,72 +1,34 @@
 package hg;
 
-import android.os.Bundle;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.p61;
-import org.telegram.ui.zn;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.Components.jb0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w0 b;
+public final /* synthetic */ class v0 implements MediaDataController.KeywordResultCallback, org.telegram.ui.Cells.e2 {
+    public final /* synthetic */ j1 a;
 
-    public /* synthetic */ v0(w0 w0Var, int i10) {
-        this.a = i10;
-        this.b = w0Var;
+    public /* synthetic */ v0(j1 j1Var) {
+        this.a = j1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.X();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        p61 p61Var = (p61) obj;
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        w0 w0Var = this.b;
-        if (w0Var.d.h(p61Var)) {
-            return;
-        }
-        int i10 = p61Var.d;
-        if (i10 == 2 || p61Var.a == 17) {
-            Bundle bundle = new Bundle();
-            bundle.putLong("user_id", w0Var.getUserConfig().getClientUserId());
-            bundle.putInt("chatMode", 5);
-            bundle.putString("quick_reply", "hello");
-            w0Var.presentFragment(new zn(bundle));
-            return;
-        }
-        if (i10 == 1) {
-            w0Var.s = !w0Var.s;
-            w0Var.c.W2.N(true);
-            w0Var.V(true);
-        } else {
-            if (i10 == 3) {
-                b0 b0Var = w0Var.d;
-                w0Var.v = true;
-                b0Var.h = true;
-                w0Var.c.W2.N(true);
-                w0Var.V(true);
-                return;
-            }
-            if (i10 == 4) {
-                b0 b0Var2 = w0Var.d;
-                w0Var.v = false;
-                b0Var2.h = false;
-                w0Var.c.W2.N(true);
-                w0Var.V(true);
-            }
-        }
+    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
+    public void run(ArrayList arrayList, String str) {
+        j1 j1Var = this.a;
+        j1Var.N = arrayList;
+        j1Var.I = null;
+        j1Var.A0 = null;
+        j1Var.x = null;
+        j1Var.y = null;
+        j1Var.J = null;
+        j1Var.Q = null;
+        j1Var.M = null;
+        j1Var.K = null;
+        j1Var.P = null;
+        j1Var.l();
+        jb0 jb0Var = j1Var.V;
+        ArrayList arrayList2 = j1Var.N;
+        jb0Var.a((arrayList2 == null || arrayList2.isEmpty()) ? false : true);
     }
 }

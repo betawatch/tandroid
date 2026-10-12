@@ -1,55 +1,45 @@
 package pf;
 
-import g2.h;
-import g2.m;
-import java.io.IOException;
-import java.io.InputStream;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class c extends InputStream {
-    public final h a;
-    public final byte[] b = new byte[1];
-    public long c;
+public class c {
+    public Runnable a;
+    public Runnable b;
+    public Runnable c;
 
-    public c(h hVar, m mVar) {
-        this.a = hVar;
-        try {
-            this.c = hVar.open(mVar);
-        } catch (IOException e7) {
-            throw new RuntimeException(e7);
+    public c(Runnable runnable, Runnable runnable2) {
+        this.a = runnable;
+        this.c = runnable2;
+    }
+
+    public final void a(boolean z10) {
+        Runnable runnable = this.b;
+        if (runnable != null) {
+            runnable.run();
+        }
+        c(z10);
+    }
+
+    public void b() {
+        c(false);
+    }
+
+    public void c(boolean z10) {
+        Runnable runnable = this.c;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 
-    @Override // java.io.InputStream
-    public final int available() {
-        return (int) this.c;
-    }
-
-    @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // java.io.InputStream
-    public final int read() {
-        h hVar = this.a;
-        byte[] bArr = this.b;
-        int read = hVar.read(bArr, 0, 1);
-        this.c--;
-        if (read == -1) {
-            return -1;
+    public void d() {
+        Runnable runnable = this.a;
+        if (runnable != null) {
+            runnable.run();
+            this.a = null;
         }
-        return bArr[0] & 255;
     }
 
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        if (i11 == 0) {
-            return 0;
-        }
-        int read = this.a.read(bArr, i10, i11);
-        this.c -= read;
-        return read;
+    public final void e(Runnable runnable) {
+        this.b = runnable;
     }
 }

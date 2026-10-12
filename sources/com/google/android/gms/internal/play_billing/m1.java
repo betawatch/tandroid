@@ -4,11 +4,11 @@ import com.google.android.gms.internal.cast.z4;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import v7.d6;
+import v7.e6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class m1 extends d6 {
+public final class m1 extends e6 {
     public static final Logger e = Logger.getLogger(m1.class.getName());
     public static final boolean f = c3.e;
     public i2 a;
@@ -20,7 +20,7 @@ public final class m1 extends d6 {
         int length = bArr.length;
         if (((length - i10) | i10) < 0) {
             Locale locale = Locale.US;
-            throw new IllegalArgumentException(a1.g.m(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
+            throw new IllegalArgumentException(a1.g.l(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
         }
         this.b = bArr;
         this.d = 0;
@@ -41,8 +41,8 @@ public final class m1 extends d6 {
         return (352 - (Integer.numberOfLeadingZeros(i10) * 9)) >>> 6;
     }
 
-    public static int c(long j3) {
-        return (640 - (Long.numberOfLeadingZeros(j3) * 9)) >>> 6;
+    public static int c(long j10) {
+        return (640 - (Long.numberOfLeadingZeros(j10) * 9)) >>> 6;
     }
 
     public final void d(int i10, byte[] bArr) {
@@ -56,8 +56,8 @@ public final class m1 extends d6 {
 
     public final void e(int i10, l1 l1Var) {
         o((i10 << 3) | 2);
-        o(l1Var.o());
-        d(l1Var.o(), l1Var.b);
+        o(l1Var.n());
+        d(l1Var.n(), l1Var.b);
     }
 
     public final void f(int i10, int i11) {
@@ -79,23 +79,23 @@ public final class m1 extends d6 {
         }
     }
 
-    public final void h(int i10, long j3) {
+    public final void h(int i10, long j10) {
         o((i10 << 3) | 1);
-        i(j3);
+        i(j10);
     }
 
-    public final void i(long j3) {
+    public final void i(long j10) {
         int i10 = this.d;
         try {
             byte[] bArr = this.b;
-            bArr[i10] = (byte) j3;
-            bArr[i10 + 1] = (byte) (j3 >> 8);
-            bArr[i10 + 2] = (byte) (j3 >> 16);
-            bArr[i10 + 3] = (byte) (j3 >> 24);
-            bArr[i10 + 4] = (byte) (j3 >> 32);
-            bArr[i10 + 5] = (byte) (j3 >> 40);
-            bArr[i10 + 6] = (byte) (j3 >> 48);
-            bArr[i10 + 7] = (byte) (j3 >> 56);
+            bArr[i10] = (byte) j10;
+            bArr[i10 + 1] = (byte) (j10 >> 8);
+            bArr[i10 + 2] = (byte) (j10 >> 16);
+            bArr[i10 + 3] = (byte) (j10 >> 24);
+            bArr[i10 + 4] = (byte) (j10 >> 32);
+            bArr[i10 + 5] = (byte) (j10 >> 40);
+            bArr[i10 + 6] = (byte) (j10 >> 48);
+            bArr[i10 + 7] = (byte) (j10 >> 56);
             this.d = i10 + 8;
         } catch (IndexOutOfBoundsException e7) {
             throw new z4(i10, this.c, 8, e7);
@@ -185,40 +185,40 @@ public final class m1 extends d6 {
         }
     }
 
-    public final void p(int i10, long j3) {
+    public final void p(int i10, long j10) {
         o(i10 << 3);
-        q(j3);
+        q(j10);
     }
 
-    public final void q(long j3) {
+    public final void q(long j10) {
         int i10;
         int i11 = this.d;
         boolean z10 = f;
         int i12 = this.c;
         byte[] bArr = this.b;
         if (!z10 || i12 - i11 < 10) {
-            long j10 = j3;
-            while ((j10 & (-128)) != 0) {
+            long j11 = j10;
+            while ((j11 & (-128)) != 0) {
                 i10 = i11 + 1;
                 try {
-                    bArr[i11] = (byte) (((int) j10) | 128);
-                    j10 >>>= 7;
+                    bArr[i11] = (byte) (((int) j11) | 128);
+                    j11 >>>= 7;
                     i11 = i10;
                 } catch (IndexOutOfBoundsException e7) {
                     throw new z4(i10, i12, 1, e7);
                 }
             }
             i10 = i11 + 1;
-            bArr[i11] = (byte) j10;
+            bArr[i11] = (byte) j11;
         } else {
-            long j11 = j3;
-            while ((j11 & (-128)) != 0) {
-                c3.c.d(bArr, c3.f + i11, (byte) (((int) j11) | 128));
-                j11 >>>= 7;
+            long j12 = j10;
+            while ((j12 & (-128)) != 0) {
+                c3.c.d(bArr, c3.f + i11, (byte) (((int) j12) | 128));
+                j12 >>>= 7;
                 i11++;
             }
             i10 = i11 + 1;
-            c3.c.d(bArr, c3.f + i11, (byte) j11);
+            c3.c.d(bArr, c3.f + i11, (byte) j12);
         }
         this.d = i10;
     }

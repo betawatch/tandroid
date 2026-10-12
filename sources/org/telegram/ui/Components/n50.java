@@ -1,34 +1,17 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.opengl.GLES20;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class n50 extends FrameLayout {
-    public View a;
-    public TextView b;
-    public fk0 c;
-    public LinearLayout d;
+public final class n50 extends o50 {
+    public final int g;
+    public final int h;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
-    }
-
-    public void setGravity(int i10) {
-        this.b.setGravity(i10);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
-    }
-
-    public void setTextColor(int i10) {
-        this.b.setTextColor(i10);
+    public n50() {
+        super(R.raw.round_blur_stage_2_frag);
+        this.g = GLES20.glGetUniformLocation(this.a, "bTexture");
+        this.h = GLES20.glGetUniformLocation(this.a, "center");
     }
 }

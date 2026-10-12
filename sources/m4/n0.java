@@ -1,53 +1,63 @@
 package m4;
 
-import java.util.List;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n0 implements y0, z0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b1 b;
-    public final /* synthetic */ int c;
+public final class n0 implements v {
+    public final n4.t a;
 
-    public /* synthetic */ n0(b1 b1Var, int i10, int i11) {
-        this.a = i11;
-        this.b = b1Var;
-        this.c = i10;
+    public n0(n4.t tVar) {
+        this.a = tVar;
     }
 
-    @Override // m4.z0
-    public void a(f1 f1Var, r rVar, List list) {
-        switch (this.a) {
-            case 1:
-                f1Var.b0(this.b.J0(rVar, f1Var, this.c), list);
-                break;
-            case 2:
-                b1 b1Var = this.b;
-                b1Var.getClass();
-                int size = list.size();
-                int i10 = this.c;
-                if (size != 1) {
-                    f1Var.P(b1Var.J0(rVar, f1Var, i10), b1Var.J0(rVar, f1Var, i10 + 1), list);
-                    break;
-                } else {
-                    f1Var.s0((b2.k0) list.get(0), b1Var.J0(rVar, f1Var, i10));
-                    break;
-                }
-            default:
-                f1Var.b0(this.b.J0(rVar, f1Var, this.c), list);
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || obj.getClass() != n0.class) {
+            return false;
+        }
+        return Objects.equals(this.a, ((n0) obj).a);
     }
 
-    @Override // m4.y0
-    public void g(f1 f1Var, r rVar) {
-        switch (this.a) {
-            case 0:
-                f1Var.Y(this.b.J0(rVar, f1Var, this.c));
-                break;
-            default:
-                f1Var.R(this.b.J0(rVar, f1Var, this.c));
-                break;
-        }
+    public final int hashCode() {
+        return Objects.hash(this.a);
+    }
+
+    @Override // m4.v
+    public final /* synthetic */ void g() {
+    }
+
+    @Override // m4.v
+    public final /* synthetic */ void b(int i10) {
+    }
+
+    @Override // m4.v
+    public final /* synthetic */ void a(int i10, p pVar) {
+    }
+
+    @Override // m4.v
+    public final /* synthetic */ void c(int i10, b2.c1 c1Var) {
+    }
+
+    @Override // m4.v
+    public final /* synthetic */ void e(int i10, p1 p1Var) {
+    }
+
+    @Override // m4.v
+    public final /* synthetic */ void j(int i10, t1 t1Var) {
+    }
+
+    @Override // m4.v
+    public final /* synthetic */ void d(int i10, int i11, int i12) {
+    }
+
+    @Override // m4.v
+    public final /* synthetic */ void f(int i10, s1 s1Var, boolean z10, boolean z11, int i11) {
+    }
+
+    @Override // m4.v
+    public final /* synthetic */ void h(int i10, l1 l1Var, b2.c1 c1Var, boolean z10, boolean z11) {
     }
 }

@@ -1,138 +1,38 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fh1 implements TextWatcher {
+public final /* synthetic */ class fh1 implements org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ih1 b;
+    public final /* synthetic */ oh1 b;
 
-    public /* synthetic */ fh1(ih1 ih1Var, int i10) {
+    public /* synthetic */ fh1(oh1 oh1Var, int i10) {
         this.a = i10;
-        this.b = ih1Var;
+        this.b = oh1Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        org.telegram.ui.Components.ck0 ck0Var;
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
             case 0:
-                this.b.getClass();
+                this.b.finishFragment();
                 break;
             case 1:
-                ih1 ih1Var = this.b;
-                if (!ih1Var.M) {
-                    int i10 = ih1Var.O;
-                    if (i10 != 0) {
-                        if (i10 != 1) {
-                            if (i10 == 8 && editable.length() > 0) {
-                                ih1Var.H0(true);
-                                break;
-                            }
-                        } else {
-                            try {
-                                ih1Var.f0[6].P((int) ((Math.min(1.0f, ih1Var.n.getLayout().getLineWidth(0) / ih1Var.n.getWidth()) * 142.0f) + 18.0f));
-                                ih1Var.a.d();
-                                break;
-                            } catch (Exception e7) {
-                                FileLog.e(e7);
-                                return;
-                            }
-                        }
-                    } else {
-                        org.telegram.ui.Components.ck0 animatedDrawable = ih1Var.a.getAnimatedDrawable();
-                        if (ih1Var.n.length() <= 0) {
-                            if (animatedDrawable != ih1Var.f0[3] || ih1Var.n.getTransformationMethod() != null) {
-                                org.telegram.ui.Components.ck0[] ck0VarArr = ih1Var.f0;
-                                if (animatedDrawable != ck0VarArr[5]) {
-                                    ck0VarArr[2].P(-1);
-                                    org.telegram.ui.Components.ck0 ck0Var2 = ih1Var.f0[2];
-                                    if (animatedDrawable != ck0Var2) {
-                                        ih1Var.a.setAnimation(ck0Var2);
-                                        ih1Var.f0[2].N(49, false, false);
-                                    }
-                                    ih1Var.a.d();
-                                    break;
-                                }
-                            }
-                            ih1Var.a.setAnimation(ih1Var.f0[4]);
-                            ih1Var.f0[4].T(0.0f, false);
-                            ih1Var.a.d();
-                            break;
-                        } else if (ih1Var.n.getTransformationMethod() != null) {
-                            org.telegram.ui.Components.ck0[] ck0VarArr2 = ih1Var.f0;
-                            if (animatedDrawable != ck0VarArr2[3]) {
-                                org.telegram.ui.Components.ck0 ck0Var3 = ck0VarArr2[2];
-                                if (animatedDrawable == ck0Var3) {
-                                    if (ck0Var3.a0 < 49) {
-                                        ck0Var3.P(49);
-                                        break;
-                                    }
-                                } else {
-                                    ih1Var.a.setAnimation(ck0Var3);
-                                    ih1Var.f0[2].P(49);
-                                    ih1Var.f0[2].T(0.0f, false);
-                                    ih1Var.a.d();
-                                    break;
-                                }
-                            }
-                        } else {
-                            org.telegram.ui.Components.ck0[] ck0VarArr3 = ih1Var.f0;
-                            if (animatedDrawable != ck0VarArr3[3] && animatedDrawable != (ck0Var = ck0VarArr3[5])) {
-                                ih1Var.a.setAnimation(ck0Var);
-                                ih1Var.f0[5].T(0.0f, false);
-                                ih1Var.a.d();
-                                break;
-                            }
-                        }
-                    }
-                }
+                oh1 oh1Var = this.b;
+                oh1Var.B0();
+                oh1Var.finishFragment();
+                break;
+            case 2:
+                oh1 oh1Var2 = this.b;
+                oh1Var2.R = "";
+                oh1Var2.E0(false);
+                break;
+            case 3:
+                oh1.a0(this.b);
                 break;
             default:
-                ih1 ih1Var2 = this.b;
-                if (ih1Var2.F) {
-                    if (ih1Var2.E.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        AndroidUtilities.updateViewVisibilityAnimated(ih1Var2.E, true, 0.1f, true);
-                        break;
-                    } else if (ih1Var2.E.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        AndroidUtilities.updateViewVisibilityAnimated(ih1Var2.E, false, 0.1f, true);
-                        break;
-                    }
-                }
+                oh1.X(this.b);
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

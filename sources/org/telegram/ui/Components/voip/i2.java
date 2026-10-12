@@ -1,37 +1,27 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-import android.view.WindowManager;
-import org.telegram.messenger.AndroidUtilities;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m2 b;
+public final class i2 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ k2 a;
 
-    public /* synthetic */ i2(m2 m2Var, int i10) {
-        this.a = i10;
-        this.b = m2Var;
+    public i2(k2 k2Var) {
+        this.a = k2Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m2 m2Var = this.b;
-                WindowManager.LayoutParams layoutParams = m2Var.d;
-                layoutParams.x = (int) floatValue;
-                AndroidUtilities.updateViewLayout(m2Var.c, m2Var.a, layoutParams);
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m2 m2Var2 = this.b;
-                WindowManager.LayoutParams layoutParams2 = m2Var2.d;
-                layoutParams2.y = (int) floatValue2;
-                AndroidUtilities.updateViewLayout(m2Var2.c, m2Var2.a, layoutParams2);
-                break;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        k2 k2Var = this.a;
+        com.google.android.gms.internal.cast.p pVar = k2Var.S;
+        if (pVar != null) {
+            pVar.run();
+            k2Var.S = null;
         }
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

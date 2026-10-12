@@ -77,7 +77,7 @@ public final class m1 {
         if (i13 == 2) {
             int f7 = f(bArr, i11, lVar);
             int i14 = lVar.a;
-            b1Var.a(i10, i14 == 0 ? n.c : n.n(f7, i14, bArr));
+            b1Var.a(i10, i14 == 0 ? n.c : n.m(f7, i14, bArr));
             return f7 + i14;
         }
         if (i13 != 3) {
@@ -154,7 +154,7 @@ public final class m1 {
         return i14;
     }
 
-    public static int e(long j3, byte[] bArr, int i10, int i11) {
+    public static int e(long j10, byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             m1 m1Var = l1.a;
             if (i10 > -12) {
@@ -163,7 +163,7 @@ public final class m1 {
             return i10;
         }
         if (i11 == 1) {
-            byte a2 = j1.a(j3, bArr);
+            byte a2 = j1.a(j10, bArr);
             m1 m1Var2 = l1.a;
             if (i10 > -12 || a2 > -65) {
                 return -1;
@@ -173,8 +173,8 @@ public final class m1 {
         if (i11 != 2) {
             throw new AssertionError();
         }
-        byte a10 = j1.a(j3, bArr);
-        byte a11 = j1.a(j3 + 1, bArr);
+        byte a10 = j1.a(j10, bArr);
+        byte a11 = j1.a(j10 + 1, bArr);
         m1 m1Var3 = l1.a;
         if (i10 > -12 || a10 > -65 || a11 > -65) {
             return -1;
@@ -192,10 +192,10 @@ public final class m1 {
         return i11;
     }
 
-    public static long g(long j3, long j10, long j11) {
-        long j12 = (j3 ^ j10) * j11;
-        long j13 = ((j12 ^ (j12 >>> 47)) ^ j10) * j11;
-        return (j13 ^ (j13 >>> 47)) * j11;
+    public static long g(long j10, long j11, long j12) {
+        long j13 = (j10 ^ j11) * j12;
+        long j14 = ((j13 ^ (j13 >>> 47)) ^ j11) * j12;
+        return (j14 ^ (j14 >>> 47)) * j12;
     }
 
     public static long h(byte[] bArr) {
@@ -211,17 +211,17 @@ public final class m1 {
         char c11 = 0;
         if (length <= 32) {
             if (length > 16) {
-                long j3 = (length << 1) - 7286425919675154353L;
+                long j10 = (length << 1) - 7286425919675154353L;
                 long n10 = n(0, bArr2) * (-5435081209227447693L);
                 long n11 = n(8, bArr2);
-                long n12 = n(length - 8, bArr2) * j3;
-                return g(Long.rotateRight(n12, 30) + Long.rotateRight(n10 + n11, 43) + (n(length - 16, bArr2) * (-7286425919675154353L)), Long.rotateRight(n11 - 7286425919675154353L, 18) + n10 + n12, j3);
+                long n12 = n(length - 8, bArr2) * j10;
+                return g(Long.rotateRight(n12, 30) + Long.rotateRight(n10 + n11, 43) + (n(length - 16, bArr2) * (-7286425919675154353L)), Long.rotateRight(n11 - 7286425919675154353L, 18) + n10 + n12, j10);
             }
             if (length >= 8) {
-                long j10 = (length << 1) - 7286425919675154353L;
+                long j11 = (length << 1) - 7286425919675154353L;
                 long n13 = n(0, bArr2) - 7286425919675154353L;
                 long n14 = n(length - 8, bArr2);
-                return g((Long.rotateRight(n14, 37) * j10) + n13, (Long.rotateRight(n13, 25) + n14) * j10, j10);
+                return g((Long.rotateRight(n14, 37) * j11) + n13, (Long.rotateRight(n13, 25) + n14) * j11, j11);
             }
             if (length >= 4) {
                 return g(length + ((a(0, bArr2) & 4294967295L) << 3), a(length - 4, bArr2) & 4294967295L, (length << 1) - 7286425919675154353L);
@@ -231,21 +231,21 @@ public final class m1 {
             }
             byte b10 = bArr2[0];
             byte b11 = bArr2[length >> 1];
-            long j11 = ((length + ((bArr2[length - 1] & 255) << 2)) * (-4348849565147123417L)) ^ (((b10 & 255) + ((b11 & 255) << 8)) * (-7286425919675154353L));
-            return (j11 ^ (j11 >>> 47)) * (-7286425919675154353L);
+            long j12 = ((length + ((bArr2[length - 1] & 255) << 2)) * (-4348849565147123417L)) ^ (((b10 & 255) + ((b11 & 255) << 8)) * (-7286425919675154353L));
+            return (j12 ^ (j12 >>> 47)) * (-7286425919675154353L);
         }
         char c12 = '@';
         if (length <= 64) {
-            long j12 = (length << 1) - 7286425919675154353L;
+            long j13 = (length << 1) - 7286425919675154353L;
             long n15 = n(0, bArr2) * (-7286425919675154353L);
             long n16 = n(8, bArr2);
-            long n17 = n(length - 8, bArr2) * j12;
+            long n17 = n(length - 8, bArr2) * j13;
             long rotateRight = Long.rotateRight(n17, 30) + Long.rotateRight(n15 + n16, 43) + (n(length - 16, bArr2) * (-7286425919675154353L));
-            long g10 = g(rotateRight, Long.rotateRight(n16 - 7286425919675154353L, 18) + n15 + n17, j12);
-            long n18 = n(16, bArr2) * j12;
+            long g10 = g(rotateRight, Long.rotateRight(n16 - 7286425919675154353L, 18) + n15 + n17, j13);
+            long n18 = n(16, bArr2) * j13;
             long n19 = n(24, bArr2);
-            long n20 = (n(length - 32, bArr2) + rotateRight) * j12;
-            return g(Long.rotateRight(n20, 30) + Long.rotateRight(n18 + n19, 43) + ((n(length - 24, bArr2) + g10) * j12), Long.rotateRight(n19 + n15, 18) + n18 + n20, j12);
+            long n20 = (n(length - 32, bArr2) + rotateRight) * j13;
+            return g(Long.rotateRight(n20, 30) + Long.rotateRight(n18 + n19, 43) + ((n(length - 24, bArr2) + g10) * j13), Long.rotateRight(n19 + n15, 18) + n18 + n20, j13);
         }
         long[] jArr = new long[2];
         long[] jArr2 = new long[2];
@@ -255,48 +255,48 @@ public final class m1 {
         int i12 = i10 & 63;
         int i13 = i11 + i12;
         int i14 = i13 - 63;
-        long j13 = 2480279821605975764L;
-        long j14 = 1390051526045402406L;
+        long j14 = 2480279821605975764L;
+        long j15 = 1390051526045402406L;
         int i15 = i12;
         int i16 = 0;
         while (true) {
             char c13 = c11;
-            long rotateRight2 = Long.rotateRight(n(i16 + 8, bArr2) + n21 + j13 + jArr[c11], 37) * (-5435081209227447693L);
-            long rotateRight3 = Long.rotateRight(n(i16 + 48, bArr2) + j13 + jArr[1], 42) * (-5435081209227447693L);
-            long j15 = rotateRight2 ^ jArr2[1];
+            long rotateRight2 = Long.rotateRight(n(i16 + 8, bArr2) + n21 + j14 + jArr[c11], 37) * (-5435081209227447693L);
+            long rotateRight3 = Long.rotateRight(n(i16 + 48, bArr2) + j14 + jArr[1], 42) * (-5435081209227447693L);
+            long j16 = rotateRight2 ^ jArr2[1];
             char c14 = c12;
             long n22 = n(i16 + 40, bArr2) + jArr[c13] + rotateRight3;
-            long rotateRight4 = Long.rotateRight(j14 + jArr2[c13], 33) * (-5435081209227447693L);
+            long rotateRight4 = Long.rotateRight(j15 + jArr2[c13], 33) * (-5435081209227447693L);
             char c15 = c10;
             int i17 = i15;
-            l(bArr2, i16, jArr[1] * (-5435081209227447693L), j15 + jArr2[c13], jArr);
+            l(bArr2, i16, jArr[1] * (-5435081209227447693L), j16 + jArr2[c13], jArr);
             int i18 = i16;
             long[] jArr3 = jArr;
             l(bArr2, i18 + 32, rotateRight4 + jArr2[1], n(i18 + 16, bArr2) + n22, jArr2);
             i16 = i18 + 64;
             if (i16 == i11) {
-                long j16 = ((j15 & 255) << 1) - 5435081209227447693L;
-                long j17 = jArr2[c13] + i17;
-                jArr2[c13] = j17;
-                long j18 = jArr3[c13] + j17;
-                jArr3[c13] = j18;
-                jArr2[c13] = jArr2[c13] + j18;
-                long rotateRight5 = Long.rotateRight(n(i13 - 55, bArr2) + rotateRight4 + n22 + jArr3[c13], 37) * j16;
-                long rotateRight6 = Long.rotateRight(n(i13 - 15, bArr2) + n22 + jArr3[1], 42) * j16;
-                long j19 = rotateRight5 ^ (jArr2[1] * 9);
+                long j17 = ((j16 & 255) << 1) - 5435081209227447693L;
+                long j18 = jArr2[c13] + i17;
+                jArr2[c13] = j18;
+                long j19 = jArr3[c13] + j18;
+                jArr3[c13] = j19;
+                jArr2[c13] = jArr2[c13] + j19;
+                long rotateRight5 = Long.rotateRight(n(i13 - 55, bArr2) + rotateRight4 + n22 + jArr3[c13], 37) * j17;
+                long rotateRight6 = Long.rotateRight(n(i13 - 15, bArr2) + n22 + jArr3[1], 42) * j17;
+                long j20 = rotateRight5 ^ (jArr2[1] * 9);
                 long n23 = n(i13 - 23, bArr2) + (jArr3[c13] * 9) + rotateRight6;
-                long rotateRight7 = Long.rotateRight(j15 + jArr2[c13], 33) * j16;
-                l(bArr2, i14, jArr3[1] * j16, jArr2[c13] + j19, jArr3);
+                long rotateRight7 = Long.rotateRight(j16 + jArr2[c13], 33) * j17;
+                l(bArr2, i14, jArr3[1] * j17, jArr2[c13] + j20, jArr3);
                 l(bArr2, i13 - 31, jArr2[1] + rotateRight7, n(i13 - 47, bArr2) + n23, jArr2);
-                return g((((n23 >>> c15) ^ n23) * (-4348849565147123417L)) + g(jArr3[c13], jArr2[c13], j16) + j19, g(jArr3[1], jArr2[1], j16) + rotateRight7, j16);
+                return g((((n23 >>> c15) ^ n23) * (-4348849565147123417L)) + g(jArr3[c13], jArr2[c13], j17) + j20, g(jArr3[1], jArr2[1], j17) + rotateRight7, j17);
             }
             bArr2 = bArr;
             n21 = rotateRight4;
             jArr = jArr3;
             c11 = c13;
-            j14 = j15;
+            j15 = j16;
             c12 = c14;
-            j13 = n22;
+            j14 = n22;
             i15 = i17;
             c10 = c15;
         }
@@ -566,37 +566,37 @@ public final class m1 {
         sb2.append("}");
     }
 
-    public static void l(byte[] bArr, int i10, long j3, long j10, long[] jArr) {
+    public static void l(byte[] bArr, int i10, long j10, long j11, long[] jArr) {
         long n10 = n(i10, bArr);
         long n11 = n(i10 + 8, bArr);
         long n12 = n(i10 + 16, bArr);
         long n13 = n(i10 + 24, bArr);
-        long j11 = j3 + n10;
-        long j12 = n11 + j11 + n12;
-        long rotateRight = Long.rotateRight(j12, 44) + Long.rotateRight(j10 + j11 + n13, 21);
-        jArr[0] = j12 + n13;
-        jArr[1] = rotateRight + j11;
+        long j12 = j10 + n10;
+        long j13 = n11 + j12 + n12;
+        long rotateRight = Long.rotateRight(j13, 44) + Long.rotateRight(j11 + j12 + n13, 21);
+        jArr[0] = j13 + n13;
+        jArr[1] = rotateRight + j12;
     }
 
     public static int m(byte[] bArr, int i10, l lVar) {
         int i11 = i10 + 1;
-        long j3 = bArr[i10];
-        if (j3 >= 0) {
-            lVar.b = j3;
+        long j10 = bArr[i10];
+        if (j10 >= 0) {
+            lVar.b = j10;
             return i11;
         }
         int i12 = i10 + 2;
         byte b10 = bArr[i11];
-        long j10 = (j3 & 127) | ((b10 & Byte.MAX_VALUE) << 7);
+        long j11 = (j10 & 127) | ((b10 & Byte.MAX_VALUE) << 7);
         int i13 = 7;
         while (b10 < 0) {
             int i14 = i12 + 1;
             i13 += 7;
-            j10 |= (r10 & Byte.MAX_VALUE) << i13;
+            j11 |= (r10 & Byte.MAX_VALUE) << i13;
             b10 = bArr[i12];
             i12 = i14;
         }
-        lVar.b = j10;
+        lVar.b = j11;
         return i12;
     }
 
@@ -614,13 +614,13 @@ public final class m1 {
         String str;
         StringBuilder sb2 = new StringBuilder(nVar.size());
         for (int i10 = 0; i10 < nVar.size(); i10++) {
-            int o9 = nVar.o(i10);
-            if (o9 == 34) {
+            int n10 = nVar.n(i10);
+            if (n10 == 34) {
                 str = "\\\"";
-            } else if (o9 == 39) {
+            } else if (n10 == 39) {
                 str = "\\'";
-            } else if (o9 != 92) {
-                switch (o9) {
+            } else if (n10 != 92) {
+                switch (n10) {
                     case 7:
                         str = "\\a";
                         break;
@@ -643,13 +643,13 @@ public final class m1 {
                         str = "\\r";
                         break;
                     default:
-                        if (o9 < 32 || o9 > 126) {
+                        if (n10 < 32 || n10 > 126) {
                             sb2.append('\\');
-                            sb2.append((char) (((o9 >>> 6) & 3) + 48));
-                            sb2.append((char) (((o9 >>> 3) & 7) + 48));
-                            o9 = (o9 & 7) + 48;
+                            sb2.append((char) (((n10 >>> 6) & 3) + 48));
+                            sb2.append((char) (((n10 >>> 3) & 7) + 48));
+                            n10 = (n10 & 7) + 48;
                         }
-                        sb2.append((char) o9);
+                        sb2.append((char) n10);
                         continue;
                 }
             } else {
@@ -686,7 +686,7 @@ public final class m1 {
             lVar.c = n.c;
             return f7;
         }
-        lVar.c = n.n(f7, i11, bArr);
+        lVar.c = n.m(f7, i11, bArr);
         return f7 + i11;
     }
 
@@ -733,7 +733,7 @@ public final class m1 {
         boolean z11;
         byte b10;
         int i12;
-        long j3;
+        long j10;
         int i13;
         int i14 = i10;
         byte b11 = -16;
@@ -808,22 +808,22 @@ public final class m1 {
                     throw new ArrayIndexOutOfBoundsException(String.format("Array length=%d, index=%d, limit=%d", Integer.valueOf(bArr.length), Integer.valueOf(i14), Integer.valueOf(i11)));
                 }
                 z10 = false;
-                long j10 = i14;
+                long j11 = i14;
                 z11 = true;
-                int i20 = (int) (i11 - j10);
+                int i20 = (int) (i11 - j11);
                 if (i20 < 16) {
                     i12 = 0;
-                    j3 = 1;
+                    j10 = 1;
                 } else {
-                    long j11 = j10;
+                    long j12 = j11;
                     i12 = 0;
-                    j3 = 1;
+                    j10 = 1;
                     while (true) {
                         if (i12 < i20) {
-                            long j12 = j11 + 1;
-                            if (j1.a(j11, bArr) >= 0) {
+                            long j13 = j12 + 1;
+                            if (j1.a(j12, bArr) >= 0) {
                                 i12++;
-                                j11 = j12;
+                                j12 = j13;
                             }
                         } else {
                             i12 = i20;
@@ -831,19 +831,19 @@ public final class m1 {
                     }
                 }
                 int i21 = i20 - i12;
-                long j13 = j10 + i12;
+                long j14 = j11 + i12;
                 while (true) {
                     byte b16 = 0;
                     while (true) {
                         if (i21 > 0) {
-                            long j14 = j13 + j3;
-                            byte a2 = j1.a(j13, bArr);
+                            long j15 = j14 + j10;
+                            byte a2 = j1.a(j14, bArr);
                             if (a2 >= 0) {
                                 i21--;
-                                j13 = j14;
+                                j14 = j15;
                                 b16 = a2;
                             } else {
-                                j13 = j14;
+                                j14 = j15;
                                 b16 = a2;
                             }
                         }
@@ -858,9 +858,9 @@ public final class m1 {
                             } else {
                                 i21 -= 2;
                                 if (b16 >= b12) {
-                                    long j15 = j13 + j3;
-                                    if (j1.a(j13, bArr) <= -65) {
-                                        j13 = j15;
+                                    long j16 = j14 + j10;
+                                    if (j1.a(j14, bArr) <= -65) {
+                                        j14 = j16;
                                         i13 = i19;
                                         i19 = i13;
                                         b11 = -16;
@@ -874,13 +874,13 @@ public final class m1 {
                                 break;
                             } else {
                                 i21 -= 4;
-                                long j16 = j13 + j3;
-                                byte a10 = j1.a(j13, bArr);
+                                long j17 = j14 + j10;
+                                byte a10 = j1.a(j14, bArr);
                                 if (a10 <= -65 && (((a10 + 112) + (b16 << 28)) >> 30) == 0) {
-                                    long j17 = j13 + 2;
-                                    if (j1.a(j16, bArr) <= -65) {
-                                        j13 += 3;
-                                        if (j1.a(j17, bArr) > -65) {
+                                    long j18 = j14 + 2;
+                                    if (j1.a(j17, bArr) <= -65) {
+                                        j14 += 3;
+                                        if (j1.a(j18, bArr) > -65) {
                                         }
                                         i19 = i13;
                                         b11 = -16;
@@ -892,13 +892,13 @@ public final class m1 {
                             break;
                         } else {
                             i21 -= 3;
-                            long j18 = j13 + j3;
-                            byte a11 = j1.a(j13, bArr);
+                            long j19 = j14 + j10;
+                            byte a11 = j1.a(j14, bArr);
                             if (a11 <= -65 && (b16 != -32 || a11 >= -96)) {
                                 int i23 = i19;
                                 if (b16 != -19 || a11 < -96) {
-                                    j13 += 2;
-                                    if (j1.a(j18, bArr) <= -65) {
+                                    j14 += 2;
+                                    if (j1.a(j19, bArr) <= -65) {
                                         i19 = i23;
                                     }
                                 }

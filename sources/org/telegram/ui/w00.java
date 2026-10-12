@@ -1,89 +1,61 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class w00 extends og.a {
-    public View.OnClickListener c;
-    public CharSequence d;
-    public String e;
-    public boolean f;
-    public boolean g;
-    public long h;
-    public String i;
-    public int j;
-    public int k;
-    public boolean l;
-    public TL_chatlists.TL_exportedChatlistInvite m;
+public final class w00 extends FrameLayout {
+    public final /* synthetic */ x00 a;
 
-    public static w00 b(int i10, String str, boolean z10) {
-        w00 w00Var = new w00(4, false);
-        w00Var.k = i10;
-        w00Var.d = str;
-        w00Var.l = z10;
-        return w00Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w00(x00 x00Var, Context context) {
+        super(context);
+        this.a = x00Var;
+        ImageView imageView = new ImageView(context);
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.msg_limit_links);
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        imageView.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Oh, false)));
+        addView(imageView, w7.a6.a(44.0f, 0.0f, 22.0f, 0.0f, 0.0f, 54, 49));
+        wh.n nVar = new wh.n(context);
+        nVar.setTypeface(AndroidUtilities.bold());
+        nVar.setTextSize(1, 20.0f);
+        int i10 = org.telegram.ui.ActionBar.g6.j5;
+        nVar.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
+        nVar.setGravity(1);
+        nVar.setText(x00Var.S(nVar));
+        MessagesController.DialogFilter dialogFilter = x00Var.X;
+        nVar.s = (dialogFilter == null || !dialogFilter.title_noanimate) ? 0 : 26;
+        addView(nVar, w7.a6.a(-2.0f, 20.0f, 84.0f, 20.0f, 0.0f, -2, 49));
+        TextView textView = new TextView(context);
+        textView.setText(x00Var.Y.isEmpty() ? LocaleController.getString(R.string.FolderLinkShareSubtitleEmpty) : LocaleController.getString(R.string.FolderLinkShareSubtitle));
+        textView.setLines(2);
+        textView.setGravity(1);
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
+        addView(textView, w7.a6.a(-2.0f, 30.0f, 117.0f, 30.0f, 0.0f, -2, 49));
+        ImageView imageView2 = new ImageView(context);
+        imageView2.setScaleType(scaleType);
+        imageView2.setImageResource(R.drawable.msg_close);
+        imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.C6, false), PorterDuff.Mode.MULTIPLY));
+        imageView2.setOnClickListener(new a(this, 22));
+        addView(imageView2, w7.a6.a(48.0f, 0.0f, -4.0f, 2.0f, 0.0f, 48, 53));
     }
 
-    public static w00 c(int i10, String str, String str2, boolean z10) {
-        w00 w00Var = new w00(1, false);
-        w00Var.g = z10;
-        w00Var.d = str;
-        w00Var.i = str2;
-        w00Var.j = i10;
-        return w00Var;
-    }
-
-    public static w00 d(String str) {
-        w00 w00Var = new w00(TextUtils.isEmpty(str) ? 3 : 6, false);
-        w00Var.d = str;
-        return w00Var;
-    }
-
-    public final boolean equals(Object obj) {
-        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite;
-        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2;
-        if (this != obj) {
-            if (obj == null || w00.class != obj.getClass()) {
-                return false;
-            }
-            w00 w00Var = (w00) obj;
-            int i10 = this.a;
-            if (i10 != w00Var.a) {
-                return false;
-            }
-            if (i10 == 11) {
-                if (!TextUtils.equals(this.d, w00Var.d) || !TextUtils.equals(this.e, w00Var.e)) {
-                    return false;
-                }
-            } else {
-                if ((i10 == 0 || i10 == 1 || i10 == 3 || i10 == 4) && !TextUtils.equals(this.d, w00Var.d)) {
-                    return false;
-                }
-                int i11 = this.a;
-                if (i11 == 0) {
-                    if (this.f != w00Var.f) {
-                        return false;
-                    }
-                } else if (i11 == 1) {
-                    if (this.h != w00Var.h || !TextUtils.equals(this.i, w00Var.i) || this.j != w00Var.j) {
-                        return false;
-                    }
-                } else if (i11 == 7 && (tL_exportedChatlistInvite = this.m) != (tL_exportedChatlistInvite2 = w00Var.m)) {
-                    if (!TextUtils.equals(tL_exportedChatlistInvite.url, tL_exportedChatlistInvite2.url)) {
-                        return false;
-                    }
-                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite3 = this.m;
-                    boolean z10 = tL_exportedChatlistInvite3.revoked;
-                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite4 = w00Var.m;
-                    if (z10 != tL_exportedChatlistInvite4.revoked || !TextUtils.equals(tL_exportedChatlistInvite3.title, tL_exportedChatlistInvite4.title) || this.m.peers.size() != w00Var.m.peers.size()) {
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(171.0f), TLObject.FLAG_30));
     }
 }

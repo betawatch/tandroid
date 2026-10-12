@@ -12,8 +12,8 @@ import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
-import e2.d0;
-import e2.v;
+import e2.m0;
+import e2.x;
 import j$.util.DesugarCollections;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayDeque;
@@ -27,12 +27,13 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import v7.p6;
+import v7.q6;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class h {
-    public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*)?$");
+    public static final Pattern a = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*+)?$");
     public static final Pattern b = Pattern.compile("(\\S+?):(\\S+)");
     public static final Map c;
     public static final Map d;
@@ -159,7 +160,7 @@ public abstract class h {
                 spannableStringBuilder.setSpan(new UnderlineSpan(), i13, length, 33);
                 break;
             case 5:
-                spannableStringBuilder.setSpan(new d2.i(eVar.c), i13, length, 33);
+                spannableStringBuilder.setSpan(new d2.h(eVar.c), i13, length, 33);
                 break;
             case 7:
                 int c11 = c(list2, str, eVar);
@@ -180,7 +181,7 @@ public abstract class h {
                         int i19 = dVar.b - i17;
                         CharSequence subSequence = spannableStringBuilder.subSequence(i18, i19);
                         spannableStringBuilder.delete(i18, i19);
-                        spannableStringBuilder.setSpan(new d2.g(subSequence.toString(), c12), i15, i18, 33);
+                        spannableStringBuilder.setSpan(new d2.f(subSequence.toString(), c12), i15, i18, 33);
                         i17 = subSequence.length() + i17;
                         i15 = i18;
                     }
@@ -209,7 +210,7 @@ public abstract class h {
                     i11 = 1;
                     i12 = (i22 == 1 ? 1 : 0) | (bVar.m == 1 ? 2 : 0);
                 }
-                p6.a(new StyleSpan(i12), spannableStringBuilder, i13, length);
+                q6.a(new StyleSpan(i12), spannableStringBuilder, i13, length);
             } else {
                 i11 = 1;
             }
@@ -223,27 +224,27 @@ public abstract class h {
                 if (!bVar.g) {
                     throw new IllegalStateException("Font color not defined");
                 }
-                p6.a(new ForegroundColorSpan(bVar.f), spannableStringBuilder, i13, length);
+                q6.a(new ForegroundColorSpan(bVar.f), spannableStringBuilder, i13, length);
             }
             if (bVar.i) {
                 if (!bVar.i) {
                     throw new IllegalStateException("Background color not defined.");
                 }
-                p6.a(new BackgroundColorSpan(bVar.h), spannableStringBuilder, i13, length);
+                q6.a(new BackgroundColorSpan(bVar.h), spannableStringBuilder, i13, length);
             }
             if (bVar.e != null) {
-                p6.a(new TypefaceSpan(bVar.e), spannableStringBuilder, i13, length);
+                q6.a(new TypefaceSpan(bVar.e), spannableStringBuilder, i13, length);
             }
             int i23 = bVar.n;
             if (i23 == 1) {
-                p6.a(new AbsoluteSizeSpan((int) bVar.o, true), spannableStringBuilder, i13, length);
+                q6.a(new AbsoluteSizeSpan((int) bVar.o, true), spannableStringBuilder, i13, length);
             } else if (i23 == 2) {
-                p6.a(new RelativeSizeSpan(bVar.o), spannableStringBuilder, i13, length);
+                q6.a(new RelativeSizeSpan(bVar.o), spannableStringBuilder, i13, length);
             } else if (i23 == 3) {
-                p6.a(new RelativeSizeSpan(bVar.o / 100.0f), spannableStringBuilder, i13, length);
+                q6.a(new RelativeSizeSpan(bVar.o / 100.0f), spannableStringBuilder, i13, length);
             }
             if (bVar.q) {
-                spannableStringBuilder.setSpan(new d2.f(), i13, length, 33);
+                spannableStringBuilder.setSpan(new d2.e(), i13, length, 33);
             }
         }
     }
@@ -282,7 +283,7 @@ public abstract class h {
         return -1;
     }
 
-    public static c d(String str, Matcher matcher, v vVar, ArrayList arrayList) {
+    public static c d(String str, Matcher matcher, x xVar, ArrayList arrayList) {
         g gVar = new g();
         try {
             String group = matcher.group(1);
@@ -295,19 +296,19 @@ public abstract class h {
             group3.getClass();
             e(group3, gVar);
             StringBuilder sb2 = new StringBuilder();
-            vVar.getClass();
-            String k10 = vVar.k(StandardCharsets.UTF_8);
-            while (!TextUtils.isEmpty(k10)) {
+            xVar.getClass();
+            String n10 = xVar.n(StandardCharsets.UTF_8);
+            while (!TextUtils.isEmpty(n10)) {
                 if (sb2.length() > 0) {
                     sb2.append("\n");
                 }
-                sb2.append(k10.trim());
-                k10 = vVar.k(StandardCharsets.UTF_8);
+                sb2.append(n10.trim());
+                n10 = xVar.n(StandardCharsets.UTF_8);
             }
             gVar.c = f(str, sb2.toString(), arrayList);
             return new c(gVar.a().a(), gVar.a, gVar.b);
         } catch (IllegalArgumentException unused) {
-            e2.a.n("WebvttCueParser", "Skipping cue with bad header: " + matcher.group());
+            e2.a.l("WebvttCueParser", "Skipping cue with bad header: " + matcher.group());
             return null;
         }
     }
@@ -402,7 +403,7 @@ public abstract class h {
                                 i10 = 1;
                                 break;
                             default:
-                                e2.a.n("WebvttCueParser", "Invalid alignment value: ".concat(group2));
+                                e2.a.l("WebvttCueParser", "Invalid alignment value: ".concat(group2));
                                 i10 = 2;
                                 break;
                         }
@@ -468,7 +469,7 @@ public abstract class h {
                                     i11 = 2;
                                     break;
                                 default:
-                                    e2.a.n("WebvttCueParser", "Invalid anchor value: ".concat(substring));
+                                    e2.a.l("WebvttCueParser", "Invalid anchor value: ".concat(substring));
                                     i11 = Integer.MIN_VALUE;
                                     break;
                             }
@@ -484,16 +485,16 @@ public abstract class h {
                         } else if (group2.equals("rl")) {
                             i12 = 1;
                         } else {
-                            e2.a.n("WebvttCueParser", "Invalid 'vertical' value: ".concat(group2));
+                            e2.a.l("WebvttCueParser", "Invalid 'vertical' value: ".concat(group2));
                             i12 = Integer.MIN_VALUE;
                         }
                         gVar.k = i12;
                     } else {
-                        e2.a.n("WebvttCueParser", "Unknown cue setting " + group + ":" + group2);
+                        e2.a.l("WebvttCueParser", "Unknown cue setting " + group + ":" + group2);
                     }
                 }
             } catch (NumberFormatException unused) {
-                e2.a.n("WebvttCueParser", "Skipping bad cue setting: " + matcher.group());
+                e2.a.l("WebvttCueParser", "Skipping bad cue setting: " + matcher.group());
             }
         }
     }
@@ -543,7 +544,7 @@ public abstract class h {
                             spannableStringBuilder.append(' ');
                             break;
                         default:
-                            e2.a.n("WebvttCueParser", "ignoring unsupported entity: '&" + substring + ";'");
+                            e2.a.l("WebvttCueParser", "ignoring unsupported entity: '&" + substring + ";'");
                             break;
                     }
                     if (indexOf == indexOf2) {
@@ -571,8 +572,8 @@ public abstract class h {
                     String substring2 = str2.substring(i13, i12);
                     if (!substring2.trim().isEmpty()) {
                         String trim = substring2.trim();
-                        e2.d.b(!trim.isEmpty());
-                        String str4 = d0.a;
+                        u6.g(!trim.isEmpty());
+                        String str4 = m0.a;
                         String str5 = trim.split("[ \\.]", 2)[0];
                         str5.getClass();
                         switch (str5.hashCode()) {
@@ -662,7 +663,7 @@ public abstract class h {
                                 } else if (!z11) {
                                     int length = spannableStringBuilder.length();
                                     String trim2 = substring2.trim();
-                                    e2.d.b(!trim2.isEmpty());
+                                    u6.g(!trim2.isEmpty());
                                     int indexOf4 = trim2.indexOf(" ");
                                     if (indexOf4 == -1) {
                                         c11 = 0;
@@ -708,7 +709,7 @@ public abstract class h {
                     i10 = 0;
                     break;
                 default:
-                    e2.a.n("WebvttCueParser", "Invalid anchor value: ".concat(substring));
+                    e2.a.l("WebvttCueParser", "Invalid anchor value: ".concat(substring));
                     i10 = TLObject.FLAG_31;
                     break;
             }

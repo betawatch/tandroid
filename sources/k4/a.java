@@ -1,69 +1,69 @@
 package k4;
 
-import b2.r;
-import b2.r0;
-import b2.s;
-import b2.s0;
-import c3.h0;
+import b2.w;
+import b2.w0;
+import b2.x0;
+import c3.i0;
 import c3.q;
-import e2.d0;
-import e2.v;
+import e2.m0;
+import e2.x;
+import f2.t;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a implements b {
     public static final int[] m = {-1, -1, -1, -1, 2, 4, 6, 8, -1, -1, -1, -1, 2, 4, 6, 8};
     public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, 107, 118, 130, 143, 157, 173, 190, 209, 230, 253, 279, 307, 337, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
     public final q a;
-    public final h0 b;
-    public final e2.q c;
+    public final i0 b;
+    public final t c;
     public final int d;
     public final byte[] e;
-    public final v f;
+    public final x f;
     public final int g;
-    public final s h;
+    public final b2.x h;
     public int i;
     public long j;
     public int k;
     public long l;
 
-    public a(q qVar, h0 h0Var, e2.q qVar2) {
+    public a(q qVar, i0 i0Var, t tVar) {
         this.a = qVar;
-        this.b = h0Var;
-        this.c = qVar2;
-        int i10 = qVar2.b;
+        this.b = i0Var;
+        this.c = tVar;
+        int i10 = tVar.b;
         int max = Math.max(1, i10 / 10);
         this.g = max;
-        v vVar = new v((byte[]) qVar2.e);
-        vVar.q();
-        int q6 = vVar.q();
-        this.d = q6;
-        int i11 = qVar2.a;
-        int i12 = qVar2.c;
-        int i13 = (((i12 - (i11 * 4)) * 8) / (qVar2.d * i11)) + 1;
-        if (q6 != i13) {
-            throw s0.a(null, "Expected frames per block: " + i13 + "; got: " + q6);
+        x xVar = new x(tVar.e);
+        xVar.t();
+        int t10 = xVar.t();
+        this.d = t10;
+        int i11 = tVar.a;
+        int i12 = tVar.c;
+        int i13 = (((i12 - (i11 * 4)) * 8) / (tVar.d * i11)) + 1;
+        if (t10 != i13) {
+            throw x0.a(null, "Expected frames per block: " + i13 + "; got: " + t10);
         }
-        int f7 = d0.f(max, q6);
-        this.e = new byte[f7 * i12];
-        this.f = new v(q6 * 2 * i11 * f7);
-        int i14 = ((i12 * i10) * 8) / q6;
-        r rVar = new r();
-        rVar.q = r0.n("audio/raw");
-        rVar.h = i14;
-        rVar.i = i14;
-        rVar.r = max * 2 * i11;
-        rVar.I = i11;
-        rVar.J = i10;
-        rVar.K = 2;
-        this.h = new s(rVar);
+        int g10 = m0.g(max, t10);
+        this.e = new byte[g10 * i12];
+        this.f = new x(t10 * 2 * i11 * g10);
+        int i14 = ((i12 * i10) * 8) / t10;
+        w wVar = new w();
+        wVar.r = w0.n("audio/raw");
+        wVar.h = i14;
+        wVar.i = i14;
+        wVar.s = max * 2 * i11;
+        wVar.J = i11;
+        wVar.K = i10;
+        wVar.L = 2;
+        this.h = new b2.x(wVar);
     }
 
     @Override // k4.b
-    public final void a(long j3) {
+    public final void a(long j10) {
         this.i = 0;
-        this.j = j3;
+        this.j = j10;
         this.k = 0;
         this.l = 0L;
     }
@@ -90,20 +90,24 @@ public final class a implements b {
     }
 
     @Override // k4.b
-    public final void c(int i10, long j3) {
-        this.a.d2(new f(this.c, this.d, i10, j3));
-        this.b.b(this.h);
+    public final void c(int i10, long j10) {
+        f fVar = new f(this.c, this.d, i10, j10);
+        this.a.K(fVar);
+        b2.x xVar = this.h;
+        i0 i0Var = this.b;
+        i0Var.b(xVar);
+        i0Var.e(fVar.e);
     }
 
     public final void d(int i10) {
-        long j3 = this.j;
-        long j10 = this.l;
-        e2.q qVar = this.c;
-        long j11 = qVar.b;
-        String str = d0.a;
-        long X = j3 + d0.X(j10, 1000000L, j11, RoundingMode.DOWN);
-        int i11 = i10 * 2 * qVar.a;
-        this.b.c(X, 1, i11, this.k - i11, null);
+        long j10 = this.j;
+        long j11 = this.l;
+        t tVar = this.c;
+        long j12 = tVar.b;
+        String str = m0.a;
+        long a02 = j10 + m0.a0(j11, 1000000L, j12, RoundingMode.DOWN);
+        int i11 = i10 * 2 * tVar.a;
+        this.b.c(a02, 1, i11, this.k - i11, null);
         this.l += i10;
         this.k -= i11;
     }

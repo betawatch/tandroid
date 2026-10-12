@@ -13,19 +13,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class s {
-    /* JADX WARN: Removed duplicated region for block: B:19:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x007f  */
     /* JADX WARN: Removed duplicated region for block: B:22:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static androidx.emoji2.text.q a(Context context) {
+    public static androidx.emoji2.text.r a(Context context) {
         ProviderInfo providerInfo;
         o0.d dVar;
         ApplicationInfo applicationInfo;
-        t7.t cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c() : new t7.t();
+        pb.a cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c(2) : new pb.a(2);
         PackageManager packageManager = context.getPackageManager();
         w7.n6.a(packageManager, "Package manager required to locate emoji font provider");
         Iterator<ResolveInfo> it = packageManager.queryIntentContentProviders(new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
@@ -43,19 +43,19 @@ public abstract class s {
             try {
                 String str = providerInfo.authority;
                 String str2 = providerInfo.packageName;
-                Signature[] C = cVar.C(packageManager, str2);
+                Signature[] j02 = cVar.j0(packageManager, str2);
                 ArrayList arrayList = new ArrayList();
-                for (Signature signature : C) {
+                for (Signature signature : j02) {
                     arrayList.add(signature.toByteArray());
                 }
                 dVar = new o0.d(str, str2, "emojicompat-emoji-font", Collections.singletonList(arrayList));
-            } catch (PackageManager.NameNotFoundException e7) {
-                Log.wtf("emoji2.text.DefaultEmojiConfig", e7);
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.wtf("emoji2.text.DefaultEmojiConfig", e);
             }
             if (dVar != null) {
                 return null;
             }
-            return new androidx.emoji2.text.q(new androidx.emoji2.text.p(context, dVar));
+            return new androidx.emoji2.text.r(new androidx.emoji2.text.q(context, dVar));
         }
         dVar = null;
         if (dVar != null) {

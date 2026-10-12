@@ -1,265 +1,592 @@
 package s4;
 
+import android.animation.TimeInterpolator;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.view.animation.Interpolator;
 import java.util.ArrayList;
-import java.util.Arrays;
-import m.f3;
+import java.util.List;
+import java.util.WeakHashMap;
+import org.telegram.messenger.BuildVars;
+import org.telegram.ui.Components.lt;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class k {
-    public final ArrayList a;
-    public final int[] b;
-    public final int[] c;
-    public final o d;
-    public final int e;
-    public final int f;
-    public final boolean g;
+public class k extends e1 {
+    public static TimeInterpolator E;
+    public Interpolator o;
+    public final ArrayList p = new ArrayList();
+    public final ArrayList q = new ArrayList();
+    public final ArrayList r = new ArrayList();
+    public final ArrayList s = new ArrayList();
+    public final ArrayList t = new ArrayList();
+    public final ArrayList u = new ArrayList();
+    public final ArrayList v = new ArrayList();
+    public final ArrayList w = new ArrayList();
+    public final ArrayList x = new ArrayList();
+    public final ArrayList y = new ArrayList();
+    public final ArrayList z = new ArrayList();
+    public final ArrayList A = new ArrayList();
+    public final ArrayList B = new ArrayList();
+    public boolean C = true;
+    public long D = 0;
 
-    public k(o oVar, ArrayList arrayList, int[] iArr, int[] iArr2, boolean z10) {
-        this.a = arrayList;
-        this.b = iArr;
-        this.c = iArr2;
-        Arrays.fill(iArr, 0);
-        Arrays.fill(iArr2, 0);
-        this.d = oVar;
-        int e7 = oVar.e();
-        this.e = e7;
-        int d = oVar.d();
-        this.f = d;
-        this.g = z10;
-        n nVar = arrayList.isEmpty() ? null : (n) arrayList.get(0);
-        if (nVar == null || nVar.a != 0 || nVar.b != 0) {
-            n nVar2 = new n();
-            nVar2.a = 0;
-            nVar2.b = 0;
-            nVar2.d = false;
-            nVar2.c = 0;
-            nVar2.e = false;
-            arrayList.add(0, nVar2);
-        }
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            n nVar3 = (n) arrayList.get(size);
-            int i10 = nVar3.a;
-            int i11 = nVar3.c;
-            int i12 = i10 + i11;
-            int i13 = nVar3.b + i11;
-            if (this.g) {
-                while (e7 > i12) {
-                    if (iArr[e7 - 1] == 0) {
-                        c(e7, d, size, false);
-                    }
-                    e7--;
-                }
-                while (d > i13) {
-                    if (iArr2[d - 1] == 0) {
-                        c(e7, d, size, true);
-                    }
-                    d--;
-                }
-            }
-            for (int i14 = 0; i14 < nVar3.c; i14++) {
-                int i15 = nVar3.a + i14;
-                int i16 = nVar3.b + i14;
-                int i17 = this.d.a(i15, i16) ? 1 : 2;
-                iArr[i15] = (i16 << 5) | i17;
-                iArr2[i16] = (i15 << 5) | i17;
-            }
-            e7 = nVar3.a;
-            d = nVar3.b;
-        }
+    static {
+        boolean z10 = BuildVars.DEBUG_VERSION;
     }
 
-    public static l d(int i10, ArrayList arrayList, boolean z10) {
-        int size = arrayList.size() - 1;
-        while (size >= 0) {
-            l lVar = (l) arrayList.get(size);
-            if (lVar.a == i10 && lVar.c == z10) {
-                arrayList.remove(size);
-                while (size < arrayList.size()) {
-                    ((l) arrayList.get(size)).b += z10 ? 1 : -1;
-                    size++;
-                }
-                return lVar;
-            }
-            size--;
-        }
-        return null;
+    public float A(View view) {
+        return 0.0f;
     }
 
-    public final void a(f0 f0Var) {
-        int[] iArr;
-        int i10;
-        b bVar = f0Var instanceof b ? (b) f0Var : new b(f0Var);
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = this.a;
-        int size = arrayList2.size() - 1;
-        int i11 = this.e;
-        int i12 = this.f;
-        while (size >= 0) {
-            n nVar = (n) arrayList2.get(size);
-            int i13 = nVar.c;
-            int i14 = nVar.a + i13;
-            int i15 = nVar.b + i13;
-            int[] iArr2 = this.b;
-            boolean z10 = this.g;
-            o oVar = this.d;
-            ArrayList arrayList3 = arrayList2;
-            if (i14 < i11) {
-                int i16 = i11 - i14;
-                if (z10) {
-                    int i17 = i16 - 1;
-                    while (i17 >= 0) {
-                        int i18 = i14 + i17;
-                        int i19 = iArr2[i18];
-                        int i20 = size;
-                        int i21 = i19 & 31;
-                        if (i21 != 0) {
-                            iArr = iArr2;
-                            if (i21 == 4 || i21 == 8) {
-                                int i22 = i19 >> 5;
-                                i10 = i17;
-                                l d = d(i22, arrayList, false);
-                                bVar.D(i18, d.b - 1);
-                                if (i21 == 4) {
-                                    int i23 = d.b - 1;
-                                    oVar.getClass();
-                                    bVar.j1(i23, 1);
-                                }
-                            } else {
-                                if (i21 != 16) {
-                                    StringBuilder j3 = hg.c.j(i18, "unknown flag for pos ", " ");
-                                    j3.append(Long.toBinaryString(i21));
-                                    throw new IllegalStateException(j3.toString());
-                                }
-                                arrayList.add(new l(i18, i18, true));
-                                i10 = i17;
-                            }
-                        } else {
-                            iArr = iArr2;
-                            i10 = i17;
-                            boolean z11 = true;
-                            bVar.K0(i18, 1);
-                            int size2 = arrayList.size();
-                            int i24 = 0;
-                            while (i24 < size2) {
-                                Object obj = arrayList.get(i24);
-                                i24++;
-                                l lVar = (l) obj;
-                                lVar.b--;
-                                z11 = true;
-                            }
-                        }
-                        i17 = i10 - 1;
-                        size = i20;
-                        iArr2 = iArr;
+    public void B(final i iVar) {
+        k kVar;
+        final i iVar2;
+        b1 b1Var = iVar.a;
+        View view = b1Var == null ? null : b1Var.a;
+        b1 b1Var2 = iVar.b;
+        View view2 = b1Var2 != null ? b1Var2.a : null;
+        ArrayList arrayList = this.B;
+        if (view != null) {
+            ViewPropertyAnimator startDelay = view.animate().setDuration(this.g).setStartDelay(0L);
+            arrayList.add(iVar.a);
+            startDelay.translationX(iVar.e - iVar.c);
+            startDelay.translationY(iVar.f - iVar.d);
+            startDelay.alpha(0.0f);
+            if (A(view) > 0.0f) {
+                startDelay.scaleX(1.0f - A(view)).scaleY(1.0f - A(view));
+            }
+            final int i10 = 0;
+            startDelay.setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: s4.e
+                public final /* synthetic */ k b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    switch (i10) {
+                        case 0:
+                            b1 b1Var3 = iVar.a;
+                            this.b.O();
+                            break;
+                        default:
+                            b1 b1Var4 = iVar.b;
+                            this.b.O();
+                            break;
                     }
-                } else {
-                    bVar.K0(i14, i16);
                 }
-            }
-            int i25 = size;
-            int[] iArr3 = iArr2;
-            if (i15 < i12) {
-                int i26 = i12 - i15;
-                if (z10) {
-                    for (int i27 = i26 - 1; i27 >= 0; i27--) {
-                        int i28 = i15 + i27;
-                        int i29 = this.c[i28];
-                        int i30 = i29 & 31;
-                        if (i30 != 0) {
-                            if (i30 != 4 && i30 != 8) {
-                                if (i30 != 16) {
-                                    StringBuilder j10 = hg.c.j(i28, "unknown flag for pos ", " ");
-                                    j10.append(Long.toBinaryString(i30));
-                                    throw new IllegalStateException(j10.toString());
-                                }
-                                arrayList.add(new l(i28, i14, false));
-                            }
-                            bVar.D(d(i29 >> 5, arrayList, true).b, i14);
-                            if (i30 == 4) {
-                                oVar.getClass();
-                                bVar.j1(i14, 1);
-                            }
-                        } else {
-                            boolean z12 = true;
-                            bVar.f0(i14, 1);
-                            int size3 = arrayList.size();
-                            int i31 = 0;
-                            while (i31 < size3) {
-                                Object obj2 = arrayList.get(i31);
-                                i31++;
-                                ((l) obj2).b++;
-                                z12 = true;
-                            }
-                        }
-                    }
-                } else {
-                    bVar.f0(i14, i26);
-                }
-            }
-            for (int i32 = i13 - 1; i32 >= 0; i32--) {
-                int i33 = nVar.a + i32;
-                if ((iArr3[i33] & 31) == 2) {
-                    oVar.getClass();
-                    bVar.j1(i33, 1);
-                }
-            }
-            i11 = nVar.a;
-            i12 = nVar.b;
-            size = i25 - 1;
-            arrayList2 = arrayList3;
-        }
-        bVar.a();
-    }
-
-    public final void b(i0 i0Var) {
-        a(new f3(i0Var, 18));
-    }
-
-    public final void c(int i10, int i11, int i12, boolean z10) {
-        int i13;
-        int i14;
-        int i15;
-        if (z10) {
-            i11--;
-            i14 = i10;
-            i13 = i11;
+            });
+            kVar = this;
+            iVar2 = iVar;
+            startDelay.setStartDelay(0L).setInterpolator(this.k).setListener(new h(kVar, iVar2, startDelay, view, 0)).start();
         } else {
-            i13 = i10 - 1;
-            i14 = i13;
+            kVar = this;
+            iVar2 = iVar;
         }
-        while (i12 >= 0) {
-            n nVar = (n) this.a.get(i12);
-            int i16 = nVar.a;
-            int i17 = nVar.c;
-            int i18 = i16 + i17;
-            int i19 = nVar.b + i17;
-            int[] iArr = this.b;
-            int[] iArr2 = this.c;
-            o oVar = this.d;
-            if (z10) {
-                for (int i20 = i14 - 1; i20 >= i18; i20--) {
-                    if (oVar.b(i20, i13)) {
-                        i15 = oVar.a(i20, i13) ? 8 : 4;
-                        iArr2[i13] = (i20 << 5) | 16;
-                        iArr[i20] = (i13 << 5) | i15;
-                        return;
+        if (view2 != null) {
+            ViewPropertyAnimator animate = view2.animate();
+            arrayList.add(iVar2.b);
+            animate.translationX(0.0f).translationY(0.0f).setDuration(kVar.f).setStartDelay(i() - kVar.f).setInterpolator(kVar.k).alpha(1.0f);
+            if (A(view2) > 0.0f) {
+                animate.scaleX(1.0f).scaleY(1.0f);
+            }
+            final int i11 = 1;
+            animate.setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: s4.e
+                public final /* synthetic */ k b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    switch (i11) {
+                        case 0:
+                            b1 b1Var3 = iVar2.a;
+                            this.b.O();
+                            break;
+                        default:
+                            b1 b1Var4 = iVar2.b;
+                            this.b.O();
+                            break;
                     }
                 }
-            } else {
-                for (int i21 = i11 - 1; i21 >= i19; i21--) {
-                    if (oVar.b(i13, i21)) {
-                        i15 = oVar.a(i13, i21) ? 8 : 4;
-                        int i22 = i10 - 1;
-                        iArr[i22] = (i21 << 5) | 16;
-                        iArr2[i21] = (i22 << 5) | i15;
-                        return;
+            });
+            animate.setListener(new h(kVar, iVar2, animate, view2, 1)).start();
+        }
+    }
+
+    public void C(b1 b1Var, j jVar) {
+        int i10 = jVar.b;
+        int i11 = jVar.c;
+        int i12 = jVar.d;
+        int i13 = jVar.e;
+        View view = b1Var.a;
+        int i14 = i12 - i10;
+        int i15 = i13 - i11;
+        if (i14 != 0) {
+            view.animate().translationX(0.0f);
+        }
+        if (i15 != 0) {
+            view.animate().translationY(0.0f);
+        }
+        ViewPropertyAnimator animate = view.animate();
+        this.z.add(b1Var);
+        animate.setUpdateListener(new ah.l0(29, this, b1Var));
+        Interpolator interpolator = this.o;
+        if (interpolator != null) {
+            animate.setInterpolator(interpolator);
+        } else {
+            animate.setInterpolator(this.i);
+        }
+        animate.setDuration(j()).setStartDelay(0L).setListener(new lt(this, b1Var, i14, view, i15, animate, 1)).start();
+    }
+
+    public void D(b1 b1Var) {
+        View view = b1Var.a;
+        ViewPropertyAnimator animate = view.animate();
+        this.A.add(b1Var);
+        if (this.l > 0) {
+            view.bringToFront();
+        }
+        animate.setDuration(this.d).setStartDelay(this.l).setInterpolator(this.j).alpha(0.0f).scaleX(1.0f - A(view)).scaleY(1.0f - A(view));
+        animate.setUpdateListener(new d(this, b1Var, 0));
+        animate.setListener(new g(this, b1Var, animate, view)).start();
+    }
+
+    public final void E(ArrayList arrayList) {
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            ((b1) arrayList.get(size)).a.animate().cancel();
+        }
+    }
+
+    public final void G() {
+        if (k()) {
+            return;
+        }
+        e();
+        N();
+        this.w.clear();
+        this.x.clear();
+    }
+
+    public final void H(ArrayList arrayList, b1 b1Var) {
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            i iVar = (i) arrayList.get(size);
+            if (J(iVar, b1Var) && iVar.a == null && iVar.b == null) {
+                arrayList.remove(iVar);
+            }
+        }
+    }
+
+    public final void I(i iVar) {
+        b1 b1Var = iVar.a;
+        if (b1Var != null) {
+            J(iVar, b1Var);
+        }
+        b1 b1Var2 = iVar.b;
+        if (b1Var2 != null) {
+            J(iVar, b1Var2);
+        }
+    }
+
+    public boolean J(i iVar, b1 b1Var) {
+        if (iVar.b == b1Var) {
+            iVar.b = null;
+        } else {
+            if (iVar.a != b1Var) {
+                return false;
+            }
+            iVar.a = null;
+        }
+        View view = b1Var.a;
+        view.setAlpha(1.0f);
+        if (A(view) > 0.0f) {
+            view.setScaleX(1.0f);
+            view.setScaleY(1.0f);
+        }
+        view.setTranslationX(0.0f);
+        view.setTranslationY(0.0f);
+        d(b1Var);
+        return true;
+    }
+
+    public long K(long j10, long j11, long j12) {
+        return Math.max(j11, j12) + j10;
+    }
+
+    public long L() {
+        return this.d;
+    }
+
+    public final void R(b1 b1Var) {
+        if (E == null) {
+            E = new ValueAnimator().getInterpolator();
+        }
+        b1Var.a.animate().setInterpolator(E);
+        f(b1Var);
+    }
+
+    public final void S() {
+        this.C = false;
+    }
+
+    @Override // s4.l0
+    public final boolean c(b1 b1Var, List list) {
+        return !list.isEmpty() || t(b1Var);
+    }
+
+    @Override // s4.l0
+    public void f(b1 b1Var) {
+        View view = b1Var.a;
+        view.animate().cancel();
+        ArrayList arrayList = this.r;
+        int size = arrayList.size();
+        while (true) {
+            size--;
+            if (size < 0) {
+                break;
+            }
+            if (((j) arrayList.get(size)).a == b1Var) {
+                view.setTranslationY(0.0f);
+                view.setTranslationX(0.0f);
+                v(b1Var);
+                arrayList.remove(size);
+            }
+        }
+        H(this.s, b1Var);
+        if (this.p.remove(b1Var)) {
+            view.setAlpha(1.0f);
+            view.setScaleX(1.0f);
+            view.setScaleY(1.0f);
+            d(b1Var);
+        }
+        if (this.q.remove(b1Var)) {
+            view.setAlpha(1.0f);
+            view.setScaleX(1.0f);
+            view.setScaleY(1.0f);
+            u(b1Var);
+        }
+        ArrayList arrayList2 = this.v;
+        for (int size2 = arrayList2.size() - 1; size2 >= 0; size2--) {
+            ArrayList arrayList3 = (ArrayList) arrayList2.get(size2);
+            H(arrayList3, b1Var);
+            if (arrayList3.isEmpty()) {
+                arrayList2.remove(size2);
+            }
+        }
+        ArrayList arrayList4 = this.u;
+        for (int size3 = arrayList4.size() - 1; size3 >= 0; size3--) {
+            ArrayList arrayList5 = (ArrayList) arrayList4.get(size3);
+            int size4 = arrayList5.size() - 1;
+            while (true) {
+                if (size4 < 0) {
+                    break;
+                }
+                if (((j) arrayList5.get(size4)).a == b1Var) {
+                    view.setTranslationY(0.0f);
+                    view.setTranslationX(0.0f);
+                    v(b1Var);
+                    arrayList5.remove(size4);
+                    if (arrayList5.isEmpty()) {
+                        arrayList4.remove(size3);
+                    }
+                } else {
+                    size4--;
+                }
+            }
+        }
+        ArrayList arrayList6 = this.t;
+        for (int size5 = arrayList6.size() - 1; size5 >= 0; size5--) {
+            ArrayList arrayList7 = (ArrayList) arrayList6.get(size5);
+            if (arrayList7.remove(b1Var)) {
+                view.setAlpha(1.0f);
+                if (A(view) > 0.0f) {
+                    view.setScaleX(1.0f);
+                    view.setScaleY(1.0f);
+                }
+                u(b1Var);
+                if (arrayList7.isEmpty()) {
+                    arrayList6.remove(size5);
+                }
+            }
+        }
+        if (this.A.remove(b1Var) && BuildVars.DEBUG_VERSION) {
+            throw new IllegalStateException("after animation is cancelled, item should not be in mRemoveAnimations list");
+        }
+        if (this.y.remove(b1Var) && BuildVars.DEBUG_VERSION) {
+            throw new IllegalStateException("after animation is cancelled, item should not be in mAddAnimations list");
+        }
+        if (this.B.remove(b1Var) && BuildVars.DEBUG_VERSION) {
+            throw new IllegalStateException("after animation is cancelled, item should not be in mChangeAnimations list");
+        }
+        if (this.z.remove(b1Var) && BuildVars.DEBUG_VERSION) {
+            throw new IllegalStateException("after animation is cancelled, item should not be in mMoveAnimations list");
+        }
+        G();
+    }
+
+    @Override // s4.l0
+    public void g() {
+        ArrayList arrayList = this.r;
+        int size = arrayList.size();
+        while (true) {
+            size--;
+            if (size < 0) {
+                break;
+            }
+            j jVar = (j) arrayList.get(size);
+            View view = jVar.a.a;
+            view.setTranslationY(0.0f);
+            view.setTranslationX(0.0f);
+            v(jVar.a);
+            arrayList.remove(size);
+        }
+        ArrayList arrayList2 = this.p;
+        for (int size2 = arrayList2.size() - 1; size2 >= 0; size2--) {
+            d((b1) arrayList2.get(size2));
+            arrayList2.remove(size2);
+        }
+        ArrayList arrayList3 = this.q;
+        int size3 = arrayList3.size();
+        while (true) {
+            size3--;
+            if (size3 < 0) {
+                break;
+            }
+            b1 b1Var = (b1) arrayList3.get(size3);
+            View view2 = b1Var.a;
+            view2.setAlpha(1.0f);
+            if (A(view2) > 0.0f) {
+                view2.setScaleX(1.0f);
+                view2.setScaleY(1.0f);
+            }
+            u(b1Var);
+            arrayList3.remove(size3);
+        }
+        ArrayList arrayList4 = this.s;
+        for (int size4 = arrayList4.size() - 1; size4 >= 0; size4--) {
+            I((i) arrayList4.get(size4));
+        }
+        arrayList4.clear();
+        if (k()) {
+            ArrayList arrayList5 = this.u;
+            for (int size5 = arrayList5.size() - 1; size5 >= 0; size5--) {
+                ArrayList arrayList6 = (ArrayList) arrayList5.get(size5);
+                for (int size6 = arrayList6.size() - 1; size6 >= 0; size6--) {
+                    j jVar2 = (j) arrayList6.get(size6);
+                    View view3 = jVar2.a.a;
+                    view3.setTranslationY(0.0f);
+                    view3.setTranslationX(0.0f);
+                    v(jVar2.a);
+                    arrayList6.remove(size6);
+                    if (arrayList6.isEmpty()) {
+                        arrayList5.remove(arrayList6);
                     }
                 }
             }
-            i14 = nVar.a;
-            i11 = nVar.b;
-            i12--;
+            ArrayList arrayList7 = this.t;
+            for (int size7 = arrayList7.size() - 1; size7 >= 0; size7--) {
+                ArrayList arrayList8 = (ArrayList) arrayList7.get(size7);
+                for (int size8 = arrayList8.size() - 1; size8 >= 0; size8--) {
+                    b1 b1Var2 = (b1) arrayList8.get(size8);
+                    View view4 = b1Var2.a;
+                    view4.setAlpha(1.0f);
+                    if (A(view4) > 0.0f) {
+                        view4.setScaleX(1.0f);
+                        view4.setScaleY(1.0f);
+                    }
+                    u(b1Var2);
+                    arrayList8.remove(size8);
+                    if (arrayList8.isEmpty()) {
+                        arrayList7.remove(arrayList8);
+                    }
+                }
+            }
+            ArrayList arrayList9 = this.v;
+            for (int size9 = arrayList9.size() - 1; size9 >= 0; size9--) {
+                ArrayList arrayList10 = (ArrayList) arrayList9.get(size9);
+                for (int size10 = arrayList10.size() - 1; size10 >= 0; size10--) {
+                    I((i) arrayList10.get(size10));
+                    if (arrayList10.isEmpty()) {
+                        arrayList9.remove(arrayList10);
+                    }
+                }
+            }
+            E(this.A);
+            E(this.z);
+            E(this.y);
+            E(this.B);
+            e();
         }
+    }
+
+    @Override // s4.l0
+    public final boolean k() {
+        return (this.q.isEmpty() && this.s.isEmpty() && this.r.isEmpty() && this.p.isEmpty() && this.z.isEmpty() && this.A.isEmpty() && this.y.isEmpty() && this.B.isEmpty() && this.u.isEmpty() && this.t.isEmpty() && this.v.isEmpty()) ? false : true;
+    }
+
+    @Override // s4.l0
+    public void m() {
+        ArrayList arrayList = this.p;
+        boolean isEmpty = arrayList.isEmpty();
+        ArrayList arrayList2 = this.r;
+        boolean isEmpty2 = arrayList2.isEmpty();
+        ArrayList arrayList3 = this.s;
+        boolean isEmpty3 = arrayList3.isEmpty();
+        ArrayList arrayList4 = this.q;
+        boolean isEmpty4 = arrayList4.isEmpty();
+        if (isEmpty && isEmpty2 && isEmpty4 && isEmpty3) {
+            return;
+        }
+        int size = arrayList.size();
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            D((b1) obj);
+        }
+        arrayList.clear();
+        if (!isEmpty2) {
+            ArrayList arrayList5 = new ArrayList();
+            arrayList5.addAll(arrayList2);
+            this.u.add(arrayList5);
+            arrayList2.clear();
+            f fVar = new f(this, arrayList5, i10);
+            if (!this.C || isEmpty) {
+                fVar.run();
+            } else {
+                View view = ((j) arrayList5.get(0)).a.a;
+                long L = L();
+                WeakHashMap weakHashMap = r0.j0.a;
+                view.postOnAnimationDelayed(fVar, L);
+            }
+        }
+        if (!isEmpty3) {
+            ArrayList arrayList6 = new ArrayList();
+            arrayList6.addAll(arrayList3);
+            this.v.add(arrayList6);
+            arrayList3.clear();
+            f fVar2 = new f(this, arrayList6, 1);
+            if (!this.C || isEmpty) {
+                fVar2.run();
+            } else {
+                View view2 = ((i) arrayList6.get(0)).a.a;
+                long j10 = this.d;
+                WeakHashMap weakHashMap2 = r0.j0.a;
+                view2.postOnAnimationDelayed(fVar2, j10);
+            }
+        }
+        if (isEmpty4) {
+            return;
+        }
+        ArrayList arrayList7 = new ArrayList();
+        arrayList7.addAll(arrayList4);
+        this.t.add(arrayList7);
+        arrayList4.clear();
+        f fVar3 = new f(this, arrayList7, 2);
+        if (!this.C || (isEmpty && isEmpty2 && isEmpty3)) {
+            fVar3.run();
+            return;
+        }
+        long K = K(!isEmpty ? this.d : 0L, !isEmpty2 ? j() : 0L, isEmpty3 ? 0L : i());
+        View view3 = ((b1) arrayList7.get(0)).a;
+        WeakHashMap weakHashMap3 = r0.j0.a;
+        view3.postOnAnimationDelayed(fVar3, K);
+    }
+
+    @Override // s4.e1
+    public void p(b1 b1Var) {
+        R(b1Var);
+        View view = b1Var.a;
+        view.setAlpha(0.0f);
+        if (A(view) > 0.0f) {
+            view.setScaleX(1.0f - A(view));
+            view.setScaleY(1.0f - A(view));
+        }
+        this.q.add(b1Var);
+        F();
+    }
+
+    @Override // s4.e1
+    public boolean q(b1 b1Var, b1 b1Var2, b2.v0 v0Var, int i10, int i11, int i12, int i13) {
+        if (b1Var == b1Var2) {
+            return r(b1Var, v0Var, i10, i11, i12, i13);
+        }
+        View view = b1Var.a;
+        float translationX = view.getTranslationX();
+        float translationY = view.getTranslationY();
+        float alpha = view.getAlpha();
+        R(b1Var);
+        view.setTranslationX(translationX);
+        view.setTranslationY(translationY);
+        view.setAlpha(alpha);
+        View view2 = b1Var2.a;
+        R(b1Var2);
+        view2.setTranslationX(-((int) ((i12 - i10) - translationX)));
+        view2.setTranslationY(-((int) ((i13 - i11) - translationY)));
+        view2.setAlpha(0.0f);
+        if (A(view2) > 0.0f) {
+            view2.setScaleX(1.0f - A(view2));
+            view2.setScaleY(1.0f - A(view2));
+        }
+        this.s.add(new i(b1Var, b1Var2, i10, i11, i12, i13));
+        F();
+        return true;
+    }
+
+    @Override // s4.e1
+    public boolean r(b1 b1Var, b2.v0 v0Var, int i10, int i11, int i12, int i13) {
+        View view = b1Var.a;
+        int translationX = i10 + ((int) view.getTranslationX());
+        int translationY = i11 + ((int) b1Var.a.getTranslationY());
+        R(b1Var);
+        int i14 = i12 - translationX;
+        int i15 = i13 - translationY;
+        if (i14 == 0 && i15 == 0) {
+            v(b1Var);
+            return false;
+        }
+        if (i14 != 0) {
+            view.setTranslationX(-i14);
+        }
+        if (i15 != 0) {
+            view.setTranslationY(-i15);
+        }
+        this.r.add(new j(b1Var, translationX, translationY, i12, i13));
+        F();
+        return true;
+    }
+
+    @Override // s4.e1
+    public void s(b1 b1Var, b2.v0 v0Var) {
+        R(b1Var);
+        this.p.add(b1Var);
+        F();
+    }
+
+    public void F() {
+    }
+
+    public void M() {
+    }
+
+    public void N() {
+    }
+
+    public void O() {
+    }
+
+    public void Q() {
+    }
+
+    public void P(b1 b1Var) {
+    }
+
+    public void z(b1 b1Var) {
     }
 }

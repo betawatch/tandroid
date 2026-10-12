@@ -7,13 +7,15 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.support.v4.media.MediaMetadataCompat;
 import android.util.Pair;
-import b2.s0;
+import b2.x0;
 import com.google.android.gms.internal.cast.z4;
+import e9.k0;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import ji.d4;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -26,71 +28,72 @@ public final class f extends Handler {
         this.c = bVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0088  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public boolean a(Message message, n2.v vVar) {
-        long j3;
+    public boolean a(Message message, n2.x xVar) {
+        long min;
         n2.a aVar = (n2.a) message.obj;
         if (aVar.b) {
-            int i10 = aVar.d + 1;
-            aVar.d = i10;
+            int i10 = aVar.e + 1;
+            aVar.e = i10;
             ((n2.b) this.c).i.getClass();
             if (i10 <= 3) {
-                SystemClock.elapsedRealtime();
-                SystemClock.elapsedRealtime();
-                Throwable z4Var = vVar.getCause() instanceof IOException ? (IOException) vVar.getCause() : new z4(vVar.getCause());
-                rb.a aVar2 = ((n2.b) this.c).i;
-                int i11 = aVar.d;
-                aVar2.getClass();
-                if (!(z4Var instanceof s0) && !(z4Var instanceof FileNotFoundException) && !(z4Var instanceof g2.u) && !(z4Var instanceof y2.k)) {
-                    int i12 = g2.j.b;
-                    while (z4Var != null) {
-                        if (!(z4Var instanceof g2.j) || ((g2.j) z4Var).a != 2008) {
-                            z4Var = z4Var.getCause();
-                        }
-                    }
-                    j3 = Math.min((i11 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
-                    if (j3 != -9223372036854775807L) {
-                        synchronized (this) {
-                            try {
-                                if (this.b) {
-                                    return false;
-                                }
-                                sendMessageDelayed(Message.obtain(message), j3);
-                                return true;
-                            } catch (Throwable th2) {
-                                throw th2;
-                            }
-                        }
+                u2.u uVar = new u2.u(xVar.a, xVar.b, xVar.c, SystemClock.elapsedRealtime(), SystemClock.elapsedRealtime() - aVar.c, xVar.d);
+                oa.d dVar = ((n2.b) this.c).i;
+                int i11 = aVar.e;
+                dVar.getClass();
+                for (Throwable z4Var = xVar.getCause() instanceof IOException ? (IOException) xVar.getCause() : new z4(xVar.getCause()); z4Var != null; z4Var = z4Var.getCause()) {
+                    if ((z4Var instanceof x0) || (z4Var instanceof FileNotFoundException) || (z4Var instanceof g2.u) || (z4Var instanceof y2.k) || ((z4Var instanceof g2.j) && ((g2.j) z4Var).a == 2008)) {
+                        min = -9223372036854775807L;
+                        break;
                     }
                 }
-                j3 = -9223372036854775807L;
-                if (j3 != -9223372036854775807L) {
+                min = Math.min((i11 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
+                if (min == -9223372036854775807L) {
+                    return false;
+                }
+                synchronized (((n2.b) this.c).o) {
+                    d4 d4Var = ((n2.b) this.c).y;
+                    if (d4Var != null) {
+                        ((k0) d4Var.b).c(uVar);
+                    }
+                }
+                synchronized (this) {
+                    try {
+                        if (this.b) {
+                            return false;
+                        }
+                        sendMessageDelayed(Message.obtain(message), min);
+                        return true;
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
                 }
             }
         }
         return false;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
+    public synchronized void b() {
+        removeCallbacksAndMessages(null);
+        this.b = true;
+    }
+
     @Override // android.os.Handler
     public final void handleMessage(Message message) {
-        Throwable th2;
+        Object obj;
+        u2.u uVar;
         switch (this.a) {
             case 0:
-                androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.c;
+                androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.c;
                 if (this.b) {
                     switch (message.what) {
                         case 1:
-                            a0.a(message.getData());
+                            b0.a(message.getData());
                             return;
                         case 2:
-                            rVar.b((PlaybackStateCompat) message.obj);
+                            qVar.b((PlaybackStateCompat) message.obj);
                             return;
                         case 3:
-                            rVar.a((MediaMetadataCompat) message.obj);
+                            qVar.a((MediaMetadataCompat) message.obj);
                             return;
                         case 4:
                             return;
@@ -99,10 +102,10 @@ public final class f extends Handler {
                         case 6:
                             return;
                         case 7:
-                            a0.a((Bundle) message.obj);
+                            b0.a((Bundle) message.obj);
                             return;
                         case 8:
-                            rVar.d();
+                            qVar.d();
                             return;
                         case 9:
                             ((Integer) message.obj).getClass();
@@ -124,31 +127,41 @@ public final class f extends Handler {
                 try {
                     int i10 = message.what;
                     if (i10 == 1) {
-                        th2 = ((n2.b) this.c).k.l((n2.p) aVar.c);
+                        obj = ((n2.b) this.c).k.l((n2.q) aVar.d);
                     } else {
                         if (i10 != 2) {
                             throw new RuntimeException();
                         }
                         n2.b bVar = (n2.b) this.c;
-                        th2 = bVar.k.k(bVar.l, (n2.o) aVar.c);
+                        n2.w k10 = bVar.k.k(bVar.l, (n2.p) aVar.d);
+                        synchronized (((n2.b) this.c).o) {
+                            try {
+                                d4 d4Var = ((n2.b) this.c).y;
+                                if (d4Var != null && (uVar = k10.b) != null) {
+                                    ((k0) d4Var.b).c(new u2.u(uVar.a, uVar.b, uVar.c, uVar.d, SystemClock.elapsedRealtime() - aVar.c, uVar.f));
+                                }
+                            } finally {
+                            }
+                        }
+                        obj = k10;
                     }
-                } catch (n2.v e7) {
-                    boolean a2 = a(message, e7);
-                    th2 = e7;
+                } catch (n2.x e) {
+                    boolean a2 = a(message, e);
+                    obj = e;
                     if (a2) {
                         return;
                     }
-                } catch (Exception e10) {
-                    e2.a.o("DefaultDrmSession", "Key/provisioning request produced an unexpected exception. Not retrying.", e10);
-                    th2 = e10;
+                } catch (Exception e7) {
+                    e2.a.m("DefaultDrmSession", "Key/provisioning request produced an unexpected exception. Not retrying.", e7);
+                    obj = e7;
                 }
-                rb.a aVar2 = ((n2.b) this.c).i;
-                long j3 = aVar.a;
-                aVar2.getClass();
+                oa.d dVar = ((n2.b) this.c).i;
+                long j10 = aVar.a;
+                dVar.getClass();
                 synchronized (this) {
                     try {
                         if (!this.b) {
-                            ((n2.b) this.c).n.obtainMessage(message.what, Pair.create(aVar.c, th2)).sendToTarget();
+                            ((n2.b) this.c).n.obtainMessage(message.what, Pair.create(aVar.d, obj)).sendToTarget();
                         }
                     } finally {
                     }
@@ -158,9 +171,9 @@ public final class f extends Handler {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(androidx.mediarouter.app.r rVar, Looper looper) {
+    public f(androidx.mediarouter.app.q qVar, Looper looper) {
         super(looper);
-        this.c = rVar;
+        this.c = qVar;
         this.b = false;
     }
 }

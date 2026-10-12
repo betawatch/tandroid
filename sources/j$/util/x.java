@@ -1,5 +1,6 @@
 package j$.util;
 
+import j$.util.function.IntConsumer$-CC;
 import java.util.function.IntConsumer;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
@@ -12,7 +13,7 @@ public final class x implements IntConsumer {
     private int max = TLObject.FLAG_31;
 
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
     @Override // java.util.function.IntConsumer
@@ -35,7 +36,7 @@ public final class x implements IntConsumer {
         Long valueOf = Long.valueOf(this.count);
         Long valueOf2 = Long.valueOf(this.sum);
         Integer valueOf3 = Integer.valueOf(this.min);
-        long j3 = this.count;
-        return String.format("%s{count=%d, sum=%d, min=%d, average=%f, max=%d}", simpleName, valueOf, valueOf2, valueOf3, Double.valueOf(j3 > 0 ? this.sum / j3 : 0.0d), Integer.valueOf(this.max));
+        long j10 = this.count;
+        return String.format("%s{count=%d, sum=%d, min=%d, average=%f, max=%d}", simpleName, valueOf, valueOf2, valueOf3, Double.valueOf(j10 > 0 ? this.sum / j10 : 0.0d), Integer.valueOf(this.max));
     }
 }

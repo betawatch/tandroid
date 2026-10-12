@@ -1,25 +1,80 @@
 package s4;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final class h {
-    public d1 a;
-    public d1 b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
 
-    public h(d1 d1Var, d1 d1Var2, int i10, int i11, int i12, int i13) {
-        this.a = d1Var;
-        this.b = d1Var2;
-        this.c = i10;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class h extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
+    public final /* synthetic */ ViewPropertyAnimator c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ k e;
+
+    public /* synthetic */ h(k kVar, i iVar, ViewPropertyAnimator viewPropertyAnimator, View view, int i10) {
+        this.a = i10;
+        this.e = kVar;
+        this.b = iVar;
+        this.c = viewPropertyAnimator;
+        this.d = view;
     }
 
-    public final String toString() {
-        return "ChangeInfo{oldHolder=" + this.a + ", newHolder=" + this.b + ", fromX=" + this.c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.c.setListener(null);
+                View view = this.d;
+                view.setAlpha(1.0f);
+                k kVar = this.e;
+                if (kVar.A(view) > 0.0f) {
+                    view.setScaleX(1.0f);
+                    view.setScaleY(1.0f);
+                }
+                view.setTranslationX(0.0f);
+                view.setTranslationY(0.0f);
+                i iVar = this.b;
+                b1 b1Var = iVar.a;
+                kVar.O();
+                kVar.d(iVar.a);
+                kVar.B.remove(iVar.a);
+                kVar.G();
+                break;
+            default:
+                this.c.setListener(null);
+                View view2 = this.d;
+                view2.setAlpha(1.0f);
+                k kVar2 = this.e;
+                if (kVar2.A(view2) > 0.0f) {
+                    view2.setScaleX(1.0f);
+                    view2.setScaleY(1.0f);
+                }
+                view2.setTranslationX(0.0f);
+                view2.setTranslationY(0.0f);
+                i iVar2 = this.b;
+                b1 b1Var2 = iVar2.b;
+                kVar2.O();
+                kVar2.d(iVar2.b);
+                kVar2.B.remove(iVar2.b);
+                kVar2.G();
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                b1 b1Var = this.b.a;
+                this.e.getClass();
+                break;
+            default:
+                b1 b1Var2 = this.b.b;
+                this.e.getClass();
+                break;
+        }
     }
 }

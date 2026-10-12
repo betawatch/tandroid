@@ -6,7 +6,7 @@ import android.util.Log;
 import android.widget.ListAdapter;
 import androidx.appcompat.app.AlertController$RecycleListView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class i0 implements o0, DialogInterface.OnClickListener {
     public g.f a;
@@ -38,11 +38,6 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
     }
 
     @Override // m.o0
-    public final CharSequence d() {
-        return this.c;
-    }
-
-    @Override // m.o0
     public final void dismiss() {
         g.f fVar = this.a;
         if (fVar != null) {
@@ -52,38 +47,43 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
     }
 
     @Override // m.o0
-    public final Drawable e() {
+    public final CharSequence e() {
+        return this.c;
+    }
+
+    @Override // m.o0
+    public final Drawable h() {
         return null;
     }
 
     @Override // m.o0
-    public final void h(CharSequence charSequence) {
+    public final void i(CharSequence charSequence) {
         this.c = charSequence;
     }
 
     @Override // m.o0
-    public final void i(Drawable drawable) {
+    public final void j(Drawable drawable) {
         Log.e("AppCompatSpinner", "Cannot set popup background for MODE_DIALOG, ignoring");
     }
 
     @Override // m.o0
-    public final void j(int i10) {
+    public final void k(int i10) {
         Log.e("AppCompatSpinner", "Cannot set vertical offset for MODE_DIALOG, ignoring");
     }
 
     @Override // m.o0
-    public final void k(int i10) {
+    public final void l(int i10) {
         Log.e("AppCompatSpinner", "Cannot set horizontal (original) offset for MODE_DIALOG, ignoring");
     }
 
     @Override // m.o0
-    public final void l(int i10, int i11) {
+    public final void m(int i10, int i11) {
         if (this.b == null) {
             return;
         }
         p0 p0Var = this.d;
-        c5.b0 b0Var = new c5.b0(p0Var.getPopupContext());
-        g.b bVar = (g.b) b0Var.c;
+        c5.c0 c0Var = new c5.c0(p0Var.getPopupContext());
+        g.b bVar = (g.b) c0Var.c;
         CharSequence charSequence = this.c;
         if (charSequence != null) {
             bVar.d = charSequence;
@@ -94,21 +94,21 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
         bVar.j = this;
         bVar.m = selectedItemPosition;
         bVar.l = true;
-        g.f e7 = b0Var.e();
-        this.a = e7;
-        AlertController$RecycleListView alertController$RecycleListView = e7.f.e;
+        g.f g10 = c0Var.g();
+        this.a = g10;
+        AlertController$RecycleListView alertController$RecycleListView = g10.f.e;
         g0.d(alertController$RecycleListView, i10);
         g0.c(alertController$RecycleListView, i11);
         this.a.show();
     }
 
     @Override // m.o0
-    public final int m() {
+    public final int n() {
         return 0;
     }
 
     @Override // m.o0
-    public final void n(ListAdapter listAdapter) {
+    public final void o(ListAdapter listAdapter) {
         this.b = (j0) listAdapter;
     }
 

@@ -9,7 +9,7 @@ import java.util.function.LongConsumer;
 /* loaded from: classes2.dex */
 public class q6 extends s6 implements LongConsumer {
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.s6
@@ -36,7 +36,7 @@ public class q6 extends s6 implements LongConsumer {
                 d8.a(getClass(), "{0} calling SpinedBuffer.OfLong.forEach(Consumer)");
                 throw null;
             }
-            j$.com.android.tools.r8.a.k((p6) spliterator(), consumer);
+            j$.com.android.tools.r8.a.j((p6) spliterator(), consumer);
         }
     }
 
@@ -51,12 +51,12 @@ public class q6 extends s6 implements LongConsumer {
     }
 
     @Override // java.util.function.LongConsumer
-    public void accept(long j3) {
+    public void accept(long j10) {
         n();
         long[] jArr = (long[]) this.e;
         int i10 = this.b;
         this.b = i10 + 1;
-        jArr[i10] = j3;
+        jArr[i10] = j10;
     }
 
     @Override // java.lang.Iterable

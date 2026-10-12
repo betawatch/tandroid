@@ -1,47 +1,33 @@
 package m4;
 
 import android.os.Bundle;
-import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class r {
-    public final n4.z a;
-    public final int b;
-    public final int c;
-    public final q d;
-    public final Bundle e;
+    public static final String a;
+    public static final String b;
+    public static final String c;
+    public static final String d;
 
-    public r(n4.z zVar, int i10, int i11, boolean z10, q qVar, Bundle bundle) {
-        this.a = zVar;
-        this.b = i10;
-        this.c = i11;
-        this.d = qVar;
-        this.e = bundle;
+    static {
+        String str = e2.m0.a;
+        a = Integer.toString(0, 36);
+        b = Integer.toString(1, 36);
+        c = Integer.toString(2, 36);
+        d = Integer.toString(3, 36);
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof r)) {
-            return false;
+    public static r a(Bundle bundle) {
+        Bundle o10 = e2.m0.o(bundle.getBundle(a));
+        bundle.getBoolean(b, false);
+        bundle.getBoolean(c, false);
+        bundle.getBoolean(d, false);
+        if (o10 == null) {
+            o10 = Bundle.EMPTY;
         }
-        if (this == obj) {
-            return true;
-        }
-        r rVar = (r) obj;
-        q qVar = rVar.d;
-        q qVar2 = this.d;
-        return (qVar2 == null && qVar == null) ? this.a.equals(rVar.a) : Objects.equals(qVar2, qVar);
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.d, this.a);
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("ControllerInfo {pkg=");
-        n4.z zVar = this.a;
-        sb2.append(zVar.a.a);
-        sb2.append(", uid=");
-        return a1.g.o(zVar.a.c, "}", sb2);
+        r rVar = new r();
+        new Bundle(o10);
+        return rVar;
     }
 }

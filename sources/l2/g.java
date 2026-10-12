@@ -2,7 +2,7 @@ package l2;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import b2.s0;
+import b2.x0;
 import j$.util.DesugarTimeZone;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -13,32 +13,32 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g implements y2.n {
     public static final Pattern a = Pattern.compile("(.+?)(Z|((\\+|-|−)(\\d\\d)(:?(\\d\\d))?))");
 
     @Override // y2.n
-    public final Object t2(Uri uri, g2.k kVar) {
+    public final Object d2(Uri uri, g2.k kVar) {
         String readLine = new BufferedReader(new InputStreamReader(kVar, StandardCharsets.UTF_8)).readLine();
         try {
             Matcher matcher = a.matcher(readLine);
             if (!matcher.matches()) {
-                throw s0.b("Couldn't parse timestamp: " + readLine, null);
+                throw x0.b("Couldn't parse timestamp: " + readLine, null);
             }
             String group = matcher.group(1);
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
             simpleDateFormat.setTimeZone(DesugarTimeZone.getTimeZone("UTC"));
             long time = simpleDateFormat.parse(group).getTime();
             if (!"Z".equals(matcher.group(2))) {
-                long j3 = "+".equals(matcher.group(4)) ? 1L : -1L;
+                long j10 = "+".equals(matcher.group(4)) ? 1L : -1L;
                 long parseLong = Long.parseLong(matcher.group(5));
                 String group2 = matcher.group(7);
-                time -= (((parseLong * 60) + (TextUtils.isEmpty(group2) ? 0L : Long.parseLong(group2))) * 60000) * j3;
+                time -= (((parseLong * 60) + (TextUtils.isEmpty(group2) ? 0L : Long.parseLong(group2))) * 60000) * j10;
             }
             return Long.valueOf(time);
-        } catch (ParseException e7) {
-            throw s0.b(null, e7);
+        } catch (ParseException e) {
+            throw x0.b(null, e);
         }
     }
 }

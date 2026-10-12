@@ -1,27 +1,15 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class w4 extends z4 {
-    @Override // org.telegram.ui.z4
-    public final void a() {
-        MessagesController.getInstance(UserConfig.selectedAccount).loadFullChat(((TLRPC.Chat) this.c).id, this.d, false);
-    }
+public final class w4 extends g5 {
+    public final /* synthetic */ c2.b G;
 
-    @Override // org.telegram.ui.z4
-    public final void b(Object... objArr) {
-        boolean z10;
-        TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
-        if (chatFull != null && chatFull.id == ((TLRPC.Chat) this.c).id && (z10 = this.g)) {
-            if (z10) {
-                this.g = false;
-                this.b.removeObserver(this.a, this.e);
-            }
-            this.f.accept(chatFull);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w4(c2.b bVar, Context context, org.telegram.ui.ActionBar.c6 c6Var, z4 z4Var) {
+        super(context, c6Var, z4Var);
+        this.G = bVar;
     }
 }

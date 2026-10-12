@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.b {
     public final CastDevice a;
@@ -14,10 +14,10 @@ public final class e implements com.google.android.gms.common.api.b {
     public final Bundle c;
     public final String d = UUID.randomUUID().toString();
 
-    public /* synthetic */ e(aa.a aVar) {
-        this.a = (CastDevice) aVar.b;
-        this.b = (d6.d0) aVar.c;
-        this.c = (Bundle) aVar.d;
+    public /* synthetic */ e(androidx.biometric.e eVar) {
+        this.a = (CastDevice) eVar.b;
+        this.b = (d6.d0) eVar.c;
+        this.c = (Bundle) eVar.d;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:28:0x0058, code lost:

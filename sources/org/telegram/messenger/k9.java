@@ -1,46 +1,31 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k9 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ BaseController f;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class k9 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ TLRPC.StickerSet c;
 
-    public /* synthetic */ k9(MediaDataController mediaDataController, boolean z10, int i10, ArrayList arrayList, boolean z11, int i11) {
-        this.f = mediaDataController;
-        this.c = z10;
-        this.b = i10;
-        this.h = arrayList;
-        this.d = z11;
-        this.e = i11;
+    public /* synthetic */ k9(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
+        this.c = stickerSet;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.f).lambda$processLoadedRecentDocuments$52(this.c, this.b, (ArrayList) this.h, this.d, this.e);
+                this.b.lambda$toggleStickerSetInternal$115(this.c, (ArrayList) obj);
                 break;
             default:
-                ((MessagesController) this.f).lambda$processLoadedMessages$188(this.b, (TLRPC.messages_Messages) this.h, this.c, this.d, this.e);
+                this.b.lambda$toggleStickerSetInternal$112(this.c, (ArrayList) obj);
                 break;
         }
-    }
-
-    public /* synthetic */ k9(MessagesController messagesController, int i10, TLRPC.messages_Messages messages_messages, boolean z10, boolean z11, int i11) {
-        this.f = messagesController;
-        this.b = i10;
-        this.h = messages_messages;
-        this.c = z10;
-        this.d = z11;
-        this.e = i11;
     }
 }

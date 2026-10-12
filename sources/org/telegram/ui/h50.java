@@ -1,118 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class h50 extends s4.o {
-    public final /* synthetic */ g60 b;
+public final class h50 extends org.telegram.ui.Components.jr0 {
+    public final /* synthetic */ n60 b1;
 
-    public h50(g60 g60Var) {
-        this.b = g60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h50(n60 n60Var, Context context, String str, String str2, String str3, String str4) {
+        super(context, null, str, str2, false, str3, str4, true);
+        this.b1 = n60Var;
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        return true;
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        g60 g60Var = this.b;
-        a60 a60Var = g60Var.P;
-        int i17 = a60Var.w;
-        if (i17 >= 0) {
-            int i18 = g60Var.h3;
-            if (i10 == i18 && i11 == i17) {
-                return true;
-            }
-            if ((i10 == i18 && i11 != i17) || (i10 != i18 && i11 == i17)) {
-                return false;
+    @Override // org.telegram.ui.Components.jr0
+    public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = hVar.m();
+            n60 n60Var = this.b1;
+            if (m10 == 1) {
+                n60Var.l1().m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i10), 41);
+            } else {
+                n60Var.l1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(hVar.m()), null, null);
             }
         }
-        int i19 = a60Var.x;
-        if (i19 >= 0) {
-            int i20 = g60Var.u3;
-            if (i10 == i20 && i11 == i19) {
-                return true;
-            }
-            if ((i10 == i20 && i11 != i19) || (i10 != i20 && i11 == i19)) {
-                return false;
-            }
-        }
-        int i21 = a60Var.y;
-        if (i21 >= 0) {
-            int i22 = g60Var.v3;
-            if (i10 == i22 && i11 == i21) {
-                return true;
-            }
-            if ((i10 == i22 && i11 != i21) || (i10 != i22 && i11 == i21)) {
-                return false;
-            }
-        }
-        int i23 = a60Var.K;
-        if (i23 >= 0) {
-            int i24 = g60Var.g3;
-            if (i10 == i24 && i11 == i23) {
-                return true;
-            }
-            if ((i10 == i24 && i11 != i23) || (i10 != i24 && i11 == i23)) {
-                return false;
-            }
-        }
-        int i25 = a60Var.J;
-        if (i25 >= 0) {
-            int i26 = g60Var.t3;
-            if (i10 == i26 && i11 == i25) {
-                return true;
-            }
-            if ((i10 == i26 && i11 != i25) || (i10 != i26 && i11 == i25)) {
-                return false;
-            }
-        }
-        int i27 = a60Var.I;
-        if (i27 >= 0 && i27 == i11 && i10 == g60Var.s3) {
-            return true;
-        }
-        int i28 = g60Var.I0;
-        if (i10 == i28 - 1 && i11 == a60Var.F - 1) {
-            return true;
-        }
-        if (i10 != i28 - 1 && i11 != a60Var.F - 1) {
-            if (i11 >= a60Var.G && i11 < a60Var.H && i10 >= (i16 = g60Var.q3) && i10 < g60Var.r3) {
-                return ((ChatObject.VideoParticipant) g60Var.E0.get(i10 - i16)).equals((ChatObject.VideoParticipant) g60Var.q0.get(i11 - g60Var.P.G));
-            }
-            if (i11 >= a60Var.d && i11 < a60Var.e && i10 >= (i15 = g60Var.i3) && i10 < g60Var.j3) {
-                TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) g60Var.D0.get(i10 - i15);
-                return MessageObject.getPeerId(groupCallParticipant.peer) == MessageObject.getPeerId(g60Var.a1.visibleParticipants.get(i11 - g60Var.P.d).peer) && (i10 == i11 || groupCallParticipant.lastActiveDate == ((long) groupCallParticipant.active_date));
-            }
-            if (i11 >= a60Var.f && i11 < a60Var.h && i10 >= (i14 = g60Var.k3) && i10 < g60Var.l3) {
-                return ((Long) g60Var.F0.get(i10 - i14)).equals(g60Var.a1.invitedUsers.get(i11 - g60Var.P.f));
-            }
-            if (i11 >= a60Var.n && i11 < a60Var.r && i10 >= (i13 = g60Var.m3) && i10 < g60Var.n3) {
-                return ((Long) g60Var.G0.get(i10 - i13)).equals(g60Var.a1.shadyJoinParticipants.get(i11 - g60Var.P.n));
-            }
-            if (i11 >= a60Var.s && i11 < a60Var.v && i10 >= (i12 = g60Var.o3) && i10 < g60Var.p3) {
-                return ((Long) g60Var.H0.get(i10 - i12)).equals(g60Var.a1.shadyLeftParticipants.get(i11 - g60Var.P.s));
-            }
-        }
-        return false;
-    }
-
-    @Override // s4.o
-    public final int d() {
-        return this.b.P.F;
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b.I0;
     }
 }

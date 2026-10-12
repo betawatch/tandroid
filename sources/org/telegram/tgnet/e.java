@@ -1,13 +1,13 @@
 package org.telegram.tgnet;
 
-import ai.ea;
 import android.text.Layout;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.b4;
-import ci.d4;
+import bi.n9;
+import di.b4;
+import di.d4;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.AndroidUtilities;
@@ -15,23 +15,23 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Components.bd;
 import org.telegram.ui.Components.cd;
-import org.telegram.ui.Components.dd;
 import org.telegram.ui.Components.e0;
 import org.telegram.ui.Components.y;
-import org.telegram.ui.ii1;
+import org.telegram.ui.Wallet.t8;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 import org.telegram.ui.web.b1;
-import org.telegram.ui.web.g0;
-import w7.x5;
-import xh.h4;
-import xh.x;
-import yh.s3;
-import yh.v0;
+import org.telegram.ui.web.h0;
+import w7.a6;
+import yh.f4;
+import zh.r3;
+import zh.v0;
+import zh.z;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -48,41 +48,41 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        dd ddVar;
-        dd ddVar2;
+        cd cdVar;
+        cd cdVar2;
         switch (this.a) {
             case 0:
                 ((ConnectionsManager) this.b).lambda$sendRequestTypedAndProcessUpdates$5((Executor) this.c, (Utilities.Callback2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                e0.X((e0) this.b, (of.e) this.c, (TL_aicompose.TL_aiComposeTone) this.d);
+                e0.X((e0) this.b, (pf.c) this.c, (TL_aicompose.TL_aiComposeTone) this.d);
                 break;
             case 2:
-                org.telegram.ui.Components.q.T((org.telegram.ui.Components.q) this.b, (e6) this.c, (TL_aicompose.AiComposeTone) this.d, (TLRPC.TL_error) obj2);
+                org.telegram.ui.Components.q.T((org.telegram.ui.Components.q) this.b, (c6) this.c, (TL_aicompose.AiComposeTone) this.d, (TLRPC.TL_error) obj2);
                 break;
             case 3:
-                y.Q((y) this.b, (of.e) this.c, (b2) this.d);
+                y.Q((y) this.b, (pf.c) this.c, (a2) this.d);
                 break;
             case 4:
                 b1 b1Var = (b1) this.b;
-                ea eaVar = (ea) this.c;
+                n9 n9Var = (n9) this.c;
                 BotWebViewContainer$BotWebViewProxy botWebViewContainer$BotWebViewProxy = (BotWebViewContainer$BotWebViewProxy) this.d;
                 String str = (String) obj;
                 ArrayList arrayList = (ArrayList) obj2;
                 if (!TextUtils.isEmpty(str)) {
-                    b1Var.x(eaVar, "prepared_message_failed", b1.A(str, "error"));
+                    b1Var.x(n9Var, "prepared_message_failed", b1.A(str, "error"));
                     break;
                 } else {
-                    b1Var.x(eaVar, "prepared_message_sent", null);
-                    g0 g0Var = b1Var.c;
-                    if (g0Var != null) {
-                        g0Var.c();
+                    b1Var.x(n9Var, "prepared_message_sent", null);
+                    h0 h0Var = b1Var.c;
+                    if (h0Var != null) {
+                        h0Var.c();
                     }
-                    AndroidUtilities.runOnUIThread(new ii1(25, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
+                    AndroidUtilities.runOnUIThread(new t8(6, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
                     break;
                 }
             case 5:
-                x xVar = (x) this.b;
+                yh.w wVar = (yh.w) this.b;
                 d4[] d4VarArr = (d4[]) this.c;
                 FrameLayout frameLayout = (FrameLayout) this.d;
                 View view = (View) obj;
@@ -94,19 +94,19 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 CharSequence replaceTags = AndroidUtilities.replaceTags(charSequence);
                 float x10 = ((View) ((View) view.getParent()).getParent()).getX() + ((View) view.getParent()).getX() + view.getX();
                 float y3 = ((View) ((View) view.getParent()).getParent()).getY() + ((View) view.getParent()).getY() + view.getY();
-                if (view instanceof cd) {
-                    Layout layout = ((cd) view).getLayout();
+                if (view instanceof bd) {
+                    Layout layout = ((bd) view).getLayout();
                     CharSequence text = layout.getText();
                     if (text instanceof Spanned) {
                         Spanned spanned = (Spanned) text;
-                        dd[] ddVarArr = (dd[]) spanned.getSpans(0, text.length(), dd.class);
-                        if (ddVarArr.length > 0 && (ddVar = ddVarArr[0]) != null) {
-                            x10 += layout.getPrimaryHorizontal(spanned.getSpanStart(ddVar)) + (ddVarArr[0].a() / 2);
+                        cd[] cdVarArr = (cd[]) spanned.getSpans(0, text.length(), cd.class);
+                        if (cdVarArr.length > 0 && (cdVar = cdVarArr[0]) != null) {
+                            x10 += layout.getPrimaryHorizontal(spanned.getSpanStart(cdVar)) + (cdVarArr[0].a() / 2);
                             y3 += layout.getLineTop(layout.getLineForOffset(r8));
                         }
                     }
                 }
-                d4 d4Var2 = new d4(xVar.getContext(), 3);
+                d4 d4Var2 = new d4(wVar.getContext(), 3);
                 d4VarArr[0] = d4Var2;
                 d4Var2.p(true);
                 d4Var2.k(11.0f, 8.0f, 11.0f, 7.0f);
@@ -117,28 +117,28 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 d4Var2.h = AndroidUtilities.dp(300.0f);
                 d4Var2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 d4Var2.m(0.0f, x10 - AndroidUtilities.dp(4.0f));
-                frameLayout.addView(d4Var2, x5.e(-1, 100, 55));
+                frameLayout.addView(d4Var2, a6.e(-1, 100, 55));
                 d4Var2.u();
                 break;
             case 6:
-                h4 h4Var = (h4) this.b;
-                of.e eVar = (of.e) this.c;
+                f4 f4Var = (f4) this.b;
+                pf.c cVar = (pf.c) this.c;
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.d;
-                eVar.b();
+                cVar.b();
                 if (((Boolean) obj).booleanValue()) {
-                    v0 v0Var = h4Var.f0;
+                    v0 v0Var = f4Var.f0;
                     if (v0Var != null) {
                         v0Var.run(tL_starGiftUnique);
                     }
-                    h4Var.dismiss();
+                    f4Var.dismiss();
                     break;
                 }
                 break;
             case 7:
-                yh.y.S((yh.y) this.b, (of.e) this.c, (b2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                z.S((z) this.b, (pf.c) this.c, (a2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                s3 s3Var = (s3) this.b;
+                r3 r3Var = (r3) this.b;
                 d4[] d4VarArr2 = (d4[]) this.c;
                 FrameLayout frameLayout2 = (FrameLayout) this.d;
                 View view2 = (View) obj;
@@ -150,19 +150,19 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 CharSequence replaceTags2 = AndroidUtilities.replaceTags(charSequence2);
                 float x11 = ((View) ((View) view2.getParent()).getParent()).getX() + ((View) view2.getParent()).getX() + view2.getX();
                 float y10 = ((View) ((View) view2.getParent()).getParent()).getY() + ((View) view2.getParent()).getY() + view2.getY();
-                if (view2 instanceof cd) {
-                    Layout layout2 = ((cd) view2).getLayout();
+                if (view2 instanceof bd) {
+                    Layout layout2 = ((bd) view2).getLayout();
                     CharSequence text2 = layout2.getText();
                     if (text2 instanceof Spanned) {
                         Spanned spanned2 = (Spanned) text2;
-                        dd[] ddVarArr2 = (dd[]) spanned2.getSpans(0, text2.length(), dd.class);
-                        if (ddVarArr2.length > 0 && (ddVar2 = ddVarArr2[0]) != null) {
-                            x11 += layout2.getPrimaryHorizontal(spanned2.getSpanStart(ddVar2)) + (ddVarArr2[0].a() / 2);
+                        cd[] cdVarArr2 = (cd[]) spanned2.getSpans(0, text2.length(), cd.class);
+                        if (cdVarArr2.length > 0 && (cdVar2 = cdVarArr2[0]) != null) {
+                            x11 += layout2.getPrimaryHorizontal(spanned2.getSpanStart(cdVar2)) + (cdVarArr2[0].a() / 2);
                             y10 += layout2.getLineTop(layout2.getLineForOffset(r8));
                         }
                     }
                 }
-                d4 d4Var4 = new d4(s3Var.getContext(), 3);
+                d4 d4Var4 = new d4(r3Var.getContext(), 3);
                 d4VarArr2[0] = d4Var4;
                 d4Var4.p(true);
                 d4Var4.k(11.0f, 8.0f, 11.0f, 7.0f);
@@ -173,7 +173,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 d4Var4.h = AndroidUtilities.dp(300.0f);
                 d4Var4.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 d4Var4.m(0.0f, x11 - AndroidUtilities.dp(4.0f));
-                frameLayout2.addView(d4Var4, x5.e(-1, 100, 55));
+                frameLayout2.addView(d4Var4, a6.e(-1, 100, 55));
                 d4Var4.u();
                 break;
         }

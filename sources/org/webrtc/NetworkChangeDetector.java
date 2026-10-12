@@ -2,11 +2,11 @@ package org.webrtc;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public interface NetworkChangeDetector {
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum ConnectionType {
         CONNECTION_UNKNOWN,
         CONNECTION_ETHERNET,
@@ -21,7 +21,7 @@ public interface NetworkChangeDetector {
         CONNECTION_NONE
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class IPAddress {
         public final byte[] address;
 
@@ -34,7 +34,7 @@ public interface NetworkChangeDetector {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class NetworkInformation {
         public final long handle;
         public final IPAddress[] ipAddresses;
@@ -42,11 +42,11 @@ public interface NetworkChangeDetector {
         public final ConnectionType type;
         public final ConnectionType underlyingTypeForVpn;
 
-        public NetworkInformation(String str, ConnectionType connectionType, ConnectionType connectionType2, long j3, IPAddress[] iPAddressArr) {
+        public NetworkInformation(String str, ConnectionType connectionType, ConnectionType connectionType2, long j10, IPAddress[] iPAddressArr) {
             this.name = str;
             this.type = connectionType;
             this.underlyingTypeForVpn = connectionType2;
-            this.handle = j3;
+            this.handle = j10;
             this.ipAddresses = iPAddressArr;
         }
 
@@ -71,13 +71,13 @@ public interface NetworkChangeDetector {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface Observer {
         void onConnectionTypeChanged(ConnectionType connectionType);
 
         void onNetworkConnect(NetworkInformation networkInformation);
 
-        void onNetworkDisconnect(long j3);
+        void onNetworkDisconnect(long j10);
 
         void onNetworkPreference(List<ConnectionType> list, int i10);
     }

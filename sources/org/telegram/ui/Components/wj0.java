@@ -1,45 +1,182 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.text.TextPaint;
-import android.text.style.LineHeightSpan;
-import android.text.style.MetricAffectingSpan;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.DispatchQueuePoolBackground;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class wj0 extends MetricAffectingSpan implements LineHeightSpan {
-    public xj0 a;
+public class wj0 extends yj0 {
+    public volatile RLottieNative U0;
+    public boolean V0;
+    public boolean W0;
+    public volatile boolean X0;
+    public boolean Y0;
+    public final int Z0;
+    public int a1;
 
-    @Override // android.text.style.LineHeightSpan
-    public final void chooseHeight(CharSequence charSequence, int i10, int i11, int i12, int i13, Paint.FontMetricsInt fontMetricsInt) {
-        xj0 xj0Var = this.a;
-        if (xj0Var.b) {
-            int i14 = xj0Var.f ? 7 : 2;
-            if (i10 <= xj0Var.c) {
-                fontMetricsInt.ascent -= AndroidUtilities.dp((xj0Var.n ? 2 : 0) + i14);
-                fontMetricsInt.top -= AndroidUtilities.dp((this.a.n ? 2 : 0) + i14);
-            }
-            if (i11 >= this.a.d) {
-                float f7 = i14;
-                fontMetricsInt.descent = AndroidUtilities.dp(f7) + fontMetricsInt.descent;
-                fontMetricsInt.bottom = AndroidUtilities.dp(f7) + fontMetricsInt.bottom;
-            }
+    public wj0(String str, int i10, int i11) {
+        super(i10, i11);
+        String readRes;
+        this.Z0 = -1;
+        this.J = 1;
+        if ("🎲".equals(str)) {
+            readRes = AndroidUtilities.readRes(R.raw.diceloop);
+            this.Z0 = 60;
+        } else {
+            readRes = "🎯".equals(str) ? AndroidUtilities.readRes(R.raw.dartloop) : null;
         }
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        if (textPaint == null) {
+        getPaint().setFlags(2);
+        if (TextUtils.isEmpty(readRes)) {
             return;
         }
-        textPaint.setTextSize(AndroidUtilities.dp(this.a.a ? 16.0f : SharedConfig.fontSize - 2));
+        this.m0 = RLottieNative.b(readRes, this.e, null, null);
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTextSize(AndroidUtilities.dp(this.a.a ? 16.0f : SharedConfig.fontSize - 2));
-        textPaint.setTextScaleX(this.a.a ? 1.1f : 1.0f);
+    @Override // org.telegram.ui.Components.yj0
+    public int B(Bitmap bitmap, boolean z10) {
+        RLottieNative rLottieNative;
+        int i10 = this.J;
+        if (i10 == 1) {
+            rLottieNative = this.m0;
+        } else if (i10 == 2) {
+            rLottieNative = this.U0;
+            if (this.X0) {
+                this.a0 = this.a1 - 1;
+            }
+        } else {
+            rLottieNative = this.m0;
+        }
+        return rLottieNative.c(this.a0, bitmap, z10) < 0 ? 2 : 1;
+    }
+
+    @Override // org.telegram.ui.Components.yj0
+    public void C(boolean z10) {
+        this.k0 = false;
+        this.l0 = true;
+        n();
+        l();
+        if (this.Y0 || this.V0) {
+            this.W0 = true;
+            return;
+        }
+        if (this.P != null || this.x0) {
+            this.V = true;
+            return;
+        }
+        D(z10);
+        zf.f fVar = this.B0;
+        if (fVar != null) {
+            RandomAccessFile randomAccessFile = fVar.s;
+            if (randomAccessFile != null) {
+                try {
+                    randomAccessFile.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                fVar.s = null;
+            }
+            fVar.r = true;
+            this.B0 = null;
+        }
+        E();
+    }
+
+    @Override // org.telegram.ui.Components.yj0
+    public final void D(boolean z10) {
+        RLottieNative rLottieNative = this.m0;
+        RLottieNative rLottieNative2 = this.U0;
+        this.m0 = null;
+        this.U0 = null;
+        if (rLottieNative == null && rLottieNative2 == null) {
+            return;
+        }
+        f60 f60Var = new f60(15, rLottieNative, rLottieNative2);
+        if (z10) {
+            DispatchQueuePoolBackground.execute(f60Var);
+        } else {
+            Utilities.globalQueue.postRunnable(f60Var);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.yj0
+    public void i() {
+        int i10 = this.J;
+        if (i10 != 1) {
+            if (i10 == 2) {
+                int i11 = this.a0 + 1;
+                if (i11 < this.a1) {
+                    this.a0 = i11;
+                    return;
+                } else {
+                    this.N = true;
+                    this.M++;
+                    return;
+                }
+            }
+            return;
+        }
+        int i12 = this.a0 + 1;
+        int i13 = this.Z0;
+        if (i13 == -1) {
+            i13 = this.e[0];
+        }
+        if (i12 < i13) {
+            this.a0 = i12;
+            return;
+        }
+        this.a0 = 0;
+        this.N = false;
+        if (this.U0 != null) {
+            this.J = 2;
+        }
+        if (this.y) {
+            this.x = null;
+            this.y = false;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.yj0
+    public int j() {
+        if (this.l0) {
+            return 3;
+        }
+        return (this.m0 == null || (this.J == 2 && this.U0 == null)) ? 2 : 1;
+    }
+
+    @Override // org.telegram.ui.Components.yj0
+    public void p() {
+        if (this.V) {
+            n();
+            if (this.P == null && this.m0 != null) {
+                D(true);
+            }
+        }
+        if (this.m0 == null && this.U0 == null && this.B0 == null) {
+            E();
+            return;
+        }
+        this.T = true;
+        if (!v()) {
+            stop();
+        }
+        if (this.k0) {
+            I();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.yj0
+    public final boolean w() {
+        return this.Y0;
+    }
+
+    @Override // org.telegram.ui.Components.yj0
+    public final boolean z() {
+        return false;
     }
 }

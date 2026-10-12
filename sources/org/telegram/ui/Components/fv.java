@@ -1,89 +1,38 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.webkit.WebView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.OrientationEventListener;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fv extends WebView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ KeyEvent.Callback c;
+public final class fv extends OrientationEventListener {
+    public final /* synthetic */ hv a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ fv(KeyEvent.Callback callback, Context context, Context context2, int i10) {
+    public fv(hv hvVar, Context context) {
         super(context);
-        this.a = i10;
-        this.c = callback;
-        this.b = context2;
+        this.a = hvVar;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                org.telegram.ui.ju0 ju0Var = (org.telegram.ui.ju0) this.c;
-                super.draw(canvas);
-                if (gh0.p0.f == this && ju0Var.h.getVisibility() == 0) {
-                    canvas.drawColor(-16777216);
-                    ju0Var.j(canvas, getWidth(), getHeight());
-                    break;
-                }
-                break;
-            default:
-                super.draw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.checkAndroidTheme(this.b, true);
-                super.onAttachedToWindow();
-                break;
-            default:
-                AndroidUtilities.checkAndroidTheme(this.b, true);
-                super.onAttachedToWindow();
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.checkAndroidTheme(this.b, false);
-                super.onDetachedFromWindow();
-                break;
-            default:
-                AndroidUtilities.checkAndroidTheme(this.b, false);
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
-
-    @Override // android.webkit.WebView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                lv lvVar = (lv) this.c;
-                boolean onTouchEvent = super.onTouchEvent(motionEvent);
-                if (onTouchEvent) {
-                    if (motionEvent.getAction() == 1) {
-                        lvVar.setDisableScroll(false);
-                    } else {
-                        lvVar.setDisableScroll(true);
-                    }
-                }
-                return onTouchEvent;
-            default:
-                return super.onTouchEvent(motionEvent);
+    @Override // android.view.OrientationEventListener
+    public final void onOrientationChanged(int i10) {
+        Activity activity;
+        hv hvVar = this.a;
+        ca1 ca1Var = hvVar.c;
+        if (hvVar.F != null && ca1Var.getVisibility() == 0 && (activity = hvVar.r) != null && ca1Var.T && hvVar.M) {
+            if (i10 >= 240 && i10 <= 300) {
+                hvVar.N = true;
+                return;
+            }
+            if (!hvVar.N || i10 <= 0) {
+                return;
+            }
+            if (i10 >= 330 || i10 <= 30) {
+                activity.setRequestedOrientation(hvVar.L);
+                hvVar.M = false;
+                hvVar.N = false;
+            }
         }
     }
 }

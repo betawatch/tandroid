@@ -1,22 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c81 implements View.OnLongClickListener {
-    public final /* synthetic */ TLRPC.TL_authorization a;
-    public final /* synthetic */ h81 b;
+public final class c81 extends g.o {
+    public final /* synthetic */ e81 c;
 
-    public c81(h81 h81Var, TLRPC.TL_authorization tL_authorization) {
-        this.b = h81Var;
-        this.a = tL_authorization;
+    public c81(e81 e81Var) {
+        this.c = e81Var;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
-        h81.o(this.b, this.a.country);
-        return true;
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        e81 e81Var = this.c;
+        org.telegram.ui.Components.zz zzVar = e81Var.X;
+        org.telegram.ui.Components.z61 z61Var = e81Var.d0;
+        if (z61Var == null) {
+            return zzVar.J;
+        }
+        org.telegram.ui.Components.l61 G = z61Var.G(i10 - 1);
+        return (G == null || (i11 = G.u) == -1) ? zzVar.J : i11;
     }
 }

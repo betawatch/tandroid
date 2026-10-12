@@ -1,31 +1,63 @@
 package y9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b implements ia.d {
-    public static final b a = new b();
-    public static final ia.c b = ia.c.c("pid");
-    public static final ia.c c = ia.c.c("processName");
-    public static final ia.c d = ia.c.c("reasonCode");
-    public static final ia.c e = ia.c.c("importance");
-    public static final ia.c f = ia.c.c("pss");
-    public static final ia.c g = ia.c.c("rss");
-    public static final ia.c h = ia.c.c("timestamp");
-    public static final ia.c i = ia.c.c("traceFile");
-    public static final ia.c j = ia.c.c("buildIdMappingForArch");
+public final class b extends l {
+    public final String b;
+    public final String c;
+    public final String d;
+    public final String e;
+    public final long f;
 
-    @Override // ia.a
-    public final void a(Object obj, Object obj2) {
-        ia.e eVar = (ia.e) obj2;
-        b0 b0Var = (b0) ((g1) obj);
-        eVar.e(b, b0Var.a);
-        eVar.a(c, b0Var.b);
-        eVar.e(d, b0Var.c);
-        eVar.e(e, b0Var.d);
-        eVar.f(f, b0Var.e);
-        eVar.f(g, b0Var.f);
-        eVar.f(h, b0Var.g);
-        eVar.a(i, b0Var.h);
-        eVar.a(j, b0Var.i);
+    public b(String str, String str2, String str3, String str4, long j10) {
+        if (str == null) {
+            throw new NullPointerException("Null rolloutId");
+        }
+        this.b = str;
+        if (str2 == null) {
+            throw new NullPointerException("Null parameterKey");
+        }
+        this.c = str2;
+        if (str3 == null) {
+            throw new NullPointerException("Null parameterValue");
+        }
+        this.d = str3;
+        if (str4 == null) {
+            throw new NullPointerException("Null variantId");
+        }
+        this.e = str4;
+        this.f = j10;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof l) {
+            b bVar = (b) ((l) obj);
+            if (this.b.equals(bVar.b) && this.c.equals(bVar.c) && this.d.equals(bVar.d) && this.e.equals(bVar.e) && this.f == bVar.f) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int hashCode = (((((((this.b.hashCode() ^ 1000003) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode()) * 1000003) ^ this.e.hashCode()) * 1000003;
+        long j10 = this.f;
+        return hashCode ^ ((int) (j10 ^ (j10 >>> 32)));
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("RolloutAssignment{rolloutId=");
+        sb2.append(this.b);
+        sb2.append(", parameterKey=");
+        sb2.append(this.c);
+        sb2.append(", parameterValue=");
+        sb2.append(this.d);
+        sb2.append(", variantId=");
+        sb2.append(this.e);
+        sb2.append(", templateVersion=");
+        return a1.g.r(sb2, this.f, "}");
     }
 }

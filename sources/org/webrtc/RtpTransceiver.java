@@ -7,14 +7,14 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpCapabilities;
 import org.webrtc.RtpParameters;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class RtpTransceiver {
     private RtpReceiver cachedReceiver;
     private RtpSender cachedSender;
     private long nativeRtpTransceiver;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum RtpTransceiverDirection {
         SEND_RECV(0),
         SEND_ONLY(1),
@@ -34,7 +34,7 @@ public class RtpTransceiver {
                     return rtpTransceiverDirection;
                 }
             }
-            throw new IllegalArgumentException(hg.c.h(i10, "Uknown native RtpTransceiverDirection type"));
+            throw new IllegalArgumentException(i2.d.i(i10, "Uknown native RtpTransceiverDirection type"));
         }
 
         public int getNativeIndex() {
@@ -42,7 +42,7 @@ public class RtpTransceiver {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class RtpTransceiverInit {
         private final RtpTransceiverDirection direction;
         private final List<RtpParameters.Encoding> sendEncodings;
@@ -84,10 +84,10 @@ public class RtpTransceiver {
         }
     }
 
-    public RtpTransceiver(long j3) {
-        this.nativeRtpTransceiver = j3;
-        this.cachedSender = nativeGetSender(j3);
-        this.cachedReceiver = nativeGetReceiver(j3);
+    public RtpTransceiver(long j10) {
+        this.nativeRtpTransceiver = j10;
+        this.cachedSender = nativeGetSender(j10);
+        this.cachedReceiver = nativeGetReceiver(j10);
     }
 
     private void checkRtpTransceiverExists() {
@@ -96,27 +96,27 @@ public class RtpTransceiver {
         }
     }
 
-    private static native RtpTransceiverDirection nativeCurrentDirection(long j3);
+    private static native RtpTransceiverDirection nativeCurrentDirection(long j10);
 
-    private static native RtpTransceiverDirection nativeDirection(long j3);
+    private static native RtpTransceiverDirection nativeDirection(long j10);
 
-    private static native MediaStreamTrack.MediaType nativeGetMediaType(long j3);
+    private static native MediaStreamTrack.MediaType nativeGetMediaType(long j10);
 
-    private static native String nativeGetMid(long j3);
+    private static native String nativeGetMid(long j10);
 
-    private static native RtpReceiver nativeGetReceiver(long j3);
+    private static native RtpReceiver nativeGetReceiver(long j10);
 
-    private static native RtpSender nativeGetSender(long j3);
+    private static native RtpSender nativeGetSender(long j10);
 
-    private static native void nativeSetCodecPreferences(long j3, List<RtpCapabilities.CodecCapability> list);
+    private static native void nativeSetCodecPreferences(long j10, List<RtpCapabilities.CodecCapability> list);
 
-    private static native boolean nativeSetDirection(long j3, RtpTransceiverDirection rtpTransceiverDirection);
+    private static native boolean nativeSetDirection(long j10, RtpTransceiverDirection rtpTransceiverDirection);
 
-    private static native void nativeStopInternal(long j3);
+    private static native void nativeStopInternal(long j10);
 
-    private static native void nativeStopStandard(long j3);
+    private static native void nativeStopStandard(long j10);
 
-    private static native boolean nativeStopped(long j3);
+    private static native boolean nativeStopped(long j10);
 
     public void dispose() {
         checkRtpTransceiverExists();

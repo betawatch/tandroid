@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class AppGlobalConfig {
     public final ConfigInt aicomposeToneExamplesNum;
@@ -18,6 +18,8 @@ public class AppGlobalConfig {
     public final ConfigInt aicomposeToneSavedLimitDefault;
     public final ConfigInt aicomposeToneSavedLimitPremium;
     public final ConfigInt aicomposeToneTitleLengthMax;
+    public final ConfigBoolean audioRecorderV2Disabled;
+    public final ConfigInt botAdditionalUsernamesLimit;
     public final ConfigStringSet botAllowedSuffixes;
     public final ConfigInt botsCreateLimitDefault;
     public final ConfigInt botsCreateLimitPremium;
@@ -84,11 +86,11 @@ public class AppGlobalConfig {
     public final ConfigLong tonSuggestedPostAmountMin = ofLong("ton_suggested_post_amount_min", 10000000);
     public final ConfigLong tonSuggestedPostAmountMax = ofLong("ton_suggested_post_amount_max", 10000000000000L);
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class ConfigBoolean {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public static class Internal implements ConfigInternal {
             private final boolean defaultValue;
             private final String name;
@@ -125,11 +127,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class ConfigDouble {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public static class Internal implements ConfigInternal {
             private final double defaultValue;
             private final String name;
@@ -169,11 +171,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class ConfigInt {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public static class Internal implements ConfigInternal {
             private final int defaultValue;
             private final String name;
@@ -214,18 +216,18 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface ConfigInternal {
         boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue);
 
         void load(SharedPreferences sharedPreferences);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class ConfigLong {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public static class Internal implements ConfigInternal {
             private final long defaultValue;
             private final String name;
@@ -240,9 +242,9 @@ public class AppGlobalConfig {
                 if (d == this.value) {
                     return false;
                 }
-                long j3 = (long) d;
-                this.value = j3;
-                editor.putLong(this.name, j3);
+                long j10 = (long) d;
+                this.value = j10;
+                editor.putLong(this.name, j10);
                 return true;
             }
 
@@ -251,9 +253,9 @@ public class AppGlobalConfig {
                 this.value = sharedPreferences.getLong(this.name, this.defaultValue);
             }
 
-            private Internal(String str, long j3) {
+            private Internal(String str, long j10) {
                 this.name = str;
-                this.defaultValue = j3;
+                this.defaultValue = j10;
             }
         }
 
@@ -261,16 +263,16 @@ public class AppGlobalConfig {
             return this.handler.value;
         }
 
-        private ConfigLong(String str, long j3) {
-            this.handler = new Internal(str, j3);
+        private ConfigLong(String str, long j10) {
+            this.handler = new Internal(str, j10);
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class ConfigString {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public static class Internal implements ConfigInternal {
             private final String defaultValue;
             private final String name;
@@ -315,11 +317,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class ConfigStringSet {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public static class Internal implements ConfigInternal {
             private final Set<String> defaultValue;
             private final String name;
@@ -367,7 +369,7 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class ConfigTime {
         private final ConfigLong.Internal handler;
         private final TimeUnit timeUnit;
@@ -376,8 +378,8 @@ public class AppGlobalConfig {
             return timeUnit.convert(this.handler.value, this.timeUnit);
         }
 
-        private ConfigTime(String str, TimeUnit timeUnit, long j3) {
-            this.handler = new ConfigLong.Internal(str, j3);
+        private ConfigTime(String str, TimeUnit timeUnit, long j10) {
+            this.handler = new ConfigLong.Internal(str, j10);
             this.timeUnit = timeUnit;
         }
     }
@@ -408,6 +410,7 @@ public class AppGlobalConfig {
         this.settingsDisplayPasskeys = ofBoolean("settings_display_passkeys", BuildVars.DEBUG_VERSION);
         this.disableBlurInLightTheme = ofBoolean("android_disable_blur_in_light_theme", false);
         this.disableBlurInDarkTheme = ofBoolean("android_disable_blur_in_dark_theme", false);
+        this.audioRecorderV2Disabled = ofBoolean("android_audio_recorder_v2_disabled", false);
         this.noForwardsRequestExpirePeriod = ofTime("no_forwards_request_expire_period", 86400L, timeUnit);
         this.pollClosePeriodMax = ofTime("poll_close_period_max", 2592000L, timeUnit);
         this.musicSearchUsername = ofString("music_search_username", null);
@@ -420,6 +423,7 @@ public class AppGlobalConfig {
         this.pollAnswerDeletePeriod = ofTime("poll_answer_delete_period", 300L, timeUnit);
         this.botsCreateLimitDefault = ofInt("bots_create_limit_default", 20);
         this.botsCreateLimitPremium = ofInt("bots_create_limit_premium", 40);
+        this.botAdditionalUsernamesLimit = ofInt("bot_additional_usernames_limit", 2);
         this.phoneCountryIso2 = ofString("phone_country_iso2", "en");
         this.aicomposeToneExamplesNum = ofInt("aicompose_tone_examples_num", 3);
         this.aicomposeToneTitleLengthMax = ofInt("aicompose_tone_title_length_max", 12);
@@ -470,8 +474,8 @@ public class AppGlobalConfig {
         return configInt;
     }
 
-    private ConfigLong ofLong(String str, long j3) {
-        ConfigLong configLong = new ConfigLong(str, j3);
+    private ConfigLong ofLong(String str, long j10) {
+        ConfigLong configLong = new ConfigLong(str, j10);
         this.map.put(str, configLong.handler);
         return configLong;
     }
@@ -488,8 +492,8 @@ public class AppGlobalConfig {
         return configStringSet;
     }
 
-    private ConfigTime ofTime(String str, long j3, TimeUnit timeUnit) {
-        ConfigTime configTime = new ConfigTime(str, timeUnit, j3);
+    private ConfigTime ofTime(String str, long j10, TimeUnit timeUnit) {
+        ConfigTime configTime = new ConfigTime(str, timeUnit, j10);
         this.map.put(str, configTime.handler);
         return configTime;
     }
@@ -512,8 +516,8 @@ public class AppGlobalConfig {
         while (it.hasNext()) {
             try {
                 it.next().load(sharedPreferences);
-            } catch (ClassCastException e7) {
-                FileLog.e(e7);
+            } catch (ClassCastException e) {
+                FileLog.e(e);
             }
         }
     }

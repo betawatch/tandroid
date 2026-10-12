@@ -1,19 +1,19 @@
 package com.google.android.recaptcha.internal;
 
-import hd.c;
-import hd.g;
+import id.c;
+import id.g;
 import java.util.Iterator;
 import java.util.List;
-import v7.z7;
+import v7.h8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzq {
     private final c zza;
 
     public zzq() {
         int i10 = zzby.zza;
-        this.zza = z7.a(zzp.zza);
+        this.zza = h8.a(zzp.zza);
     }
 
     private final zzi zzf() {
@@ -28,12 +28,12 @@ public final class zzq {
         return (zzzd) zzf.zzk();
     }
 
-    public final Object zzb(String str, long j3, jd.c cVar) {
-        return new zzhf(31, new zzl(this, str, j3, null), null);
+    public final Object zzb(String str, long j10, kd.c cVar) {
+        return new zzhf(31, new zzl(this, str, j10, null), null);
     }
 
-    public final Object zzc(long j3, zzxn zzxnVar, jd.c cVar) {
-        return new zzhf(30, new zzo(this, j3, zzxnVar, null), null);
+    public final Object zzc(long j10, zzxn zzxnVar, kd.c cVar) {
+        return new zzhf(30, new zzo(this, j10, zzxnVar, null), null);
     }
 
     public final List zzd() {

@@ -1,41 +1,27 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ BaseController c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ TopicsController b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ vk(BaseController baseController, Object obj, long j3, int i10) {
+    public /* synthetic */ vk(TopicsController topicsController, long j10, int i10) {
         this.a = i10;
-        this.c = baseController;
-        this.d = obj;
-        this.b = j3;
+        this.b = topicsController;
+        this.c = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((TopicsController) this.c).lambda$updateTopicsWithDeletedMessages$10((ArrayList) this.d, this.b);
-                break;
-            case 1:
-                ((TranslateController) this.c).lambda$setDialogTranslateTo$0(this.b, (String) this.d);
+                this.b.lambda$loadTopics$6(this.c);
                 break;
             default:
-                ((TranslateController) this.c).lambda$invalidateTranslation$9((MessageObject) this.d, this.b);
+                this.b.lambda$processTopics$8(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ vk(TranslateController translateController, long j3, String str) {
-        this.a = 1;
-        this.c = translateController;
-        this.b = j3;
-        this.d = str;
     }
 }

@@ -1,48 +1,94 @@
 package pi;
 
-import android.content.SharedPreferences;
+import android.content.Context;
+import android.util.SparseArray;
+import android.util.SparseIntArray;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class b {
-    public final String a;
-    public final Enum b;
-    public volatile boolean c;
-    public volatile Enum d;
+    public static SparseIntArray b;
+    public static final b c = new b();
+    public final SparseArray a;
 
-    public b(String str, Enum r22) {
-        this.a = str;
-        this.b = r22;
+    public b() {
+        this.a = new SparseArray();
     }
 
-    public final Enum a() {
-        if (!this.c) {
-            synchronized (this) {
-                try {
-                    if (!this.c) {
-                        SharedPreferences sharedPreferences = d.a;
-                        String str = this.a;
-                        Enum r22 = this.b;
-                        String string = sharedPreferences.getString(str, r22.name());
-                        if (string != null) {
-                            try {
-                                r22 = Enum.valueOf(r22.getDeclaringClass(), string);
-                            } catch (IllegalArgumentException unused) {
-                            }
-                        }
-                        this.d = r22;
-                        this.c = true;
-                    }
-                } finally {
+    public static SparseArray a(Context context, String str, SparseArray sparseArray) {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getAssets().open(str));
+        try {
+            SerializedData serializedData = new SerializedData(bufferedInputStream);
+            int readInt32 = serializedData.readInt32(true);
+            int i10 = 0;
+            if (sparseArray == null) {
+                sparseArray = new SparseArray(readInt32);
+                while (i10 < readInt32) {
+                    sparseArray.append(serializedData.readInt32(true), serializedData.readString(true));
+                    i10++;
+                }
+            } else {
+                while (i10 < readInt32) {
+                    sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
+                    i10++;
                 }
             }
+            bufferedInputStream.close();
+            return sparseArray;
+        } catch (Throwable th2) {
+            try {
+                bufferedInputStream.close();
+            } catch (Throwable th3) {
+                th2.addSuppressed(th3);
+            }
+            throw th2;
         }
-        return this.d;
     }
 
-    public final synchronized void b(Enum r32) {
-        this.d = r32;
-        this.c = true;
-        d.a.edit().putString(this.a, r32.name()).apply();
+    public final String b(String str) {
+        if (str == null) {
+            return null;
+        }
+        return (String) this.a.get(str.hashCode());
+    }
+
+    public final String c(Context context, String str, int i10) {
+        String b10 = str != null ? b(str) : null;
+        if (b10 != null || i10 == 0) {
+            return b10;
+        }
+        if (context != null && i10 != 0) {
+            if (b == null) {
+                try {
+                    BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().getAssets().open("string_resource_ids.bin"));
+                    try {
+                        SerializedData serializedData = new SerializedData(bufferedInputStream);
+                        int readInt32 = serializedData.readInt32(true);
+                        SparseIntArray sparseIntArray = new SparseIntArray(readInt32);
+                        for (int i11 = 0; i11 < readInt32; i11++) {
+                            sparseIntArray.append(serializedData.readInt32(true), serializedData.readInt32(true));
+                        }
+                        bufferedInputStream.close();
+                        b = sparseIntArray;
+                    } finally {
+                    }
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            int i12 = b.get(i10);
+            if (i12 != 0) {
+                return (String) this.a.get(i12);
+            }
+        }
+        return null;
+    }
+
+    public b(a aVar) {
+        SparseArray sparseArray = aVar.a;
+        this.a = sparseArray == null ? new SparseArray() : sparseArray;
     }
 }

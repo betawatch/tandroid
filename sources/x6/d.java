@@ -1,11 +1,10 @@
 package x6;
 
-import ae.x;
 import android.os.RemoteException;
 import h8.j;
 import i8.g;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d implements e {
     public final /* synthetic */ int a;
@@ -30,24 +29,24 @@ public final class d implements e {
     public final void b() {
         switch (this.a) {
             case 0:
-                aa.a aVar = this.b.a;
-                aVar.getClass();
+                androidx.biometric.e eVar = this.b.a;
+                eVar.getClass();
                 try {
-                    g gVar = (g) aVar.c;
+                    g gVar = (g) eVar.c;
                     gVar.R0(gVar.N0(), 12);
                     return;
-                } catch (RemoteException e7) {
-                    throw new x(e7);
+                } catch (RemoteException e) {
+                    throw new androidx.car.app.j(e);
                 }
             default:
-                aa.a aVar2 = this.b.a;
-                aVar2.getClass();
+                androidx.biometric.e eVar2 = this.b.a;
+                eVar2.getClass();
                 try {
-                    g gVar2 = (g) aVar2.c;
+                    g gVar2 = (g) eVar2.c;
                     gVar2.R0(gVar2.N0(), 3);
                     return;
-                } catch (RemoteException e10) {
-                    throw new x(e10);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
         }
     }

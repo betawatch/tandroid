@@ -1,28 +1,27 @@
 package n6;
 
-import java.util.Arrays;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class p implements com.google.android.gms.common.api.b {
-    public static final p b = new p(null);
-    public final String a;
+public final class p extends o6.a {
+    public static final Parcelable.Creator<p> CREATOR = new m8.h(11);
+    public final int a;
+    public List b;
 
-    public /* synthetic */ p(String str) {
-        this.a = str;
+    public p(int i10, List list) {
+        this.a = i10;
+        this.b = list;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof p) {
-            return l.l(this.a, ((p) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a});
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        w7.g0.p(parcel, 2, this.b);
+        w7.g0.r(parcel, q6);
     }
 }

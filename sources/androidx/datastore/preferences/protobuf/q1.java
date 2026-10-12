@@ -3,7 +3,7 @@ package androidx.datastore.preferences.protobuf;
 import java.lang.reflect.Field;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class q1 {
     public final Unsafe a;
@@ -20,47 +20,47 @@ public abstract class q1 {
         return this.a.arrayIndexScale(cls);
     }
 
-    public abstract boolean c(Object obj, long j3);
+    public abstract boolean c(Object obj, long j10);
 
-    public abstract byte d(Object obj, long j3);
+    public abstract byte d(Object obj, long j10);
 
-    public abstract double e(Object obj, long j3);
+    public abstract double e(Object obj, long j10);
 
-    public abstract float f(Object obj, long j3);
+    public abstract float f(Object obj, long j10);
 
-    public final int g(Object obj, long j3) {
-        return this.a.getInt(obj, j3);
+    public final int g(Object obj, long j10) {
+        return this.a.getInt(obj, j10);
     }
 
-    public final long h(Object obj, long j3) {
-        return this.a.getLong(obj, j3);
+    public final long h(Object obj, long j10) {
+        return this.a.getLong(obj, j10);
     }
 
-    public final Object i(Object obj, long j3) {
-        return this.a.getObject(obj, j3);
+    public final Object i(Object obj, long j10) {
+        return this.a.getObject(obj, j10);
     }
 
     public final long j(Field field) {
         return this.a.objectFieldOffset(field);
     }
 
-    public abstract void k(Object obj, long j3, boolean z10);
+    public abstract void k(Object obj, long j10, boolean z10);
 
-    public abstract void l(Object obj, long j3, byte b10);
+    public abstract void l(Object obj, long j10, byte b10);
 
-    public abstract void m(Object obj, long j3, double d);
+    public abstract void m(Object obj, long j10, double d);
 
-    public abstract void n(Object obj, long j3, float f7);
+    public abstract void n(Object obj, long j10, float f7);
 
-    public final void o(long j3, Object obj, int i10) {
-        this.a.putInt(obj, j3, i10);
+    public final void o(long j10, Object obj, int i10) {
+        this.a.putInt(obj, j10, i10);
     }
 
-    public final void p(Object obj, long j3, long j10) {
-        this.a.putLong(obj, j3, j10);
+    public final void p(Object obj, long j10, long j11) {
+        this.a.putLong(obj, j10, j11);
     }
 
-    public final void q(Object obj, long j3, Object obj2) {
-        this.a.putObject(obj, j3, obj2);
+    public final void q(Object obj, long j10, Object obj2) {
+        this.a.putObject(obj, j10, obj2);
     }
 }

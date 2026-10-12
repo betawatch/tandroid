@@ -1,34 +1,34 @@
 package j2;
 
-import b2.k1;
+import b2.p1;
 import j$.util.Objects;
-import u2.f0;
+import u2.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a {
     public final long a;
-    public final k1 b;
+    public final p1 b;
     public final int c;
-    public final f0 d;
+    public final g0 d;
     public final long e;
-    public final k1 f;
+    public final p1 f;
     public final int g;
-    public final f0 h;
+    public final g0 h;
     public final long i;
     public final long j;
 
-    public a(long j3, k1 k1Var, int i10, f0 f0Var, long j10, k1 k1Var2, int i11, f0 f0Var2, long j11, long j12) {
-        this.a = j3;
-        this.b = k1Var;
+    public a(long j10, p1 p1Var, int i10, g0 g0Var, long j11, p1 p1Var2, int i11, g0 g0Var2, long j12, long j13) {
+        this.a = j10;
+        this.b = p1Var;
         this.c = i10;
-        this.d = f0Var;
-        this.e = j10;
-        this.f = k1Var2;
+        this.d = g0Var;
+        this.e = j11;
+        this.f = p1Var2;
         this.g = i11;
-        this.h = f0Var2;
-        this.i = j11;
-        this.j = j12;
+        this.h = g0Var2;
+        this.i = j12;
+        this.j = j13;
     }
 
     public final boolean equals(Object obj) {

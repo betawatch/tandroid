@@ -1,58 +1,17 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.lang.ref.WeakReference;
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class j4 implements t0 {
-    public final WeakReference a;
-    public final i4 b = new i4(this);
+public final class j4 extends h4 {
+    public final /* synthetic */ k4 n;
 
-    public j4(h4 h4Var) {
-        this.a = new WeakReference(h4Var);
+    public j4(k4 k4Var) {
+        this.n = k4Var;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.t0
-    public final void b(Runnable runnable, Executor executor) {
-        this.b.b(runnable, executor);
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z10) {
-        h4 h4Var = (h4) this.a.get();
-        boolean cancel = this.b.cancel(z10);
-        if (!cancel || h4Var == null) {
-            return cancel;
-        }
-        h4Var.a = null;
-        h4Var.b = null;
-        h4Var.c.i(null);
-        return true;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.b.get();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return this.b.a instanceof j1;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return this.b.isDone();
-    }
-
-    public final String toString() {
-        return this.b.toString();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j3, TimeUnit timeUnit) {
-        return this.b.get(j3, timeUnit);
+    @Override // com.google.android.gms.internal.play_billing.h4
+    public final String c() {
+        i4 i4Var = (i4) this.n.a.get();
+        return i4Var == null ? "Completer object has been garbage collected, future will fail soon" : a1.g.p("tag=[", String.valueOf(i4Var.a), "]");
     }
 }

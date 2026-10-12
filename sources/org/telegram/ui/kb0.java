@@ -1,36 +1,25 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vb0 b;
+public final class kb0 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ LaunchActivity a;
 
-    public /* synthetic */ kb0(vb0 vb0Var, int i10) {
-        this.a = i10;
-        this.b = vb0Var;
+    public kb0(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                vb0 vb0Var = this.b;
-                vb0Var.r.b.requestFocus();
-                AndroidUtilities.showKeyboard(vb0Var.r.b);
-                break;
-            case 1:
-                vb0 vb0Var2 = this.b;
-                vb0Var2.r.b.clearFocus();
-                AndroidUtilities.hideKeyboard(vb0Var2.r.b);
-                break;
-            default:
-                of.f.s(this.b.getParentActivity(), LocaleController.getString(R.string.RequireMonthlyFeeInfoLink));
-                break;
-        }
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        LaunchActivity launchActivity = this.a;
+        launchActivity.getWindowManager().addCrossWindowBlurEnabledListener(launchActivity.d1);
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        LaunchActivity launchActivity = this.a;
+        launchActivity.getWindowManager().removeCrossWindowBlurEnabledListener(launchActivity.d1);
     }
 }

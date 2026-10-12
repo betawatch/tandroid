@@ -1,20 +1,37 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.content.DialogInterface;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class sz extends FrameLayout {
-    public vh.n a;
+public final /* synthetic */ class sz implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
 
-    public vh.n getSubtitleTextView() {
-        return this.a;
+    public /* synthetic */ sz(int i10, int i11, int[] iArr) {
+        this.a = i11;
+        this.b = i10;
+        this.c = iArr;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        int i10 = this.a;
+        int[] iArr = this.c;
+        int i11 = this.b;
+        switch (i10) {
+            case 0:
+                ArrayList arrayList = ExternalActionActivity.x;
+                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
+                break;
+            default:
+                Pattern pattern = LaunchActivity.B1;
+                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
+                break;
+        }
     }
 }

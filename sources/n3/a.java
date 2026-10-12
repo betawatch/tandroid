@@ -1,18 +1,18 @@
 package n3;
 
-import b2.m0;
-import b2.o0;
-import b2.r;
 import b2.r0;
-import b2.s;
+import b2.t0;
+import b2.w;
+import b2.w0;
+import b2.x;
 import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a implements o0 {
-    public static final s g;
-    public static final s h;
+public final class a implements t0 {
+    public static final x g;
+    public static final x h;
     public final String a;
     public final String b;
     public final long c;
@@ -21,24 +21,24 @@ public final class a implements o0 {
     public int f;
 
     static {
-        r rVar = new r();
-        rVar.q = r0.n("application/id3");
-        g = new s(rVar);
-        r rVar2 = new r();
-        rVar2.q = r0.n("application/x-scte35");
-        h = new s(rVar2);
+        w wVar = new w();
+        wVar.r = w0.n("application/id3");
+        g = new x(wVar);
+        w wVar2 = new w();
+        wVar2.r = w0.n("application/x-scte35");
+        h = new x(wVar2);
     }
 
-    public a(String str, String str2, long j3, long j10, byte[] bArr) {
+    public a(String str, String str2, long j10, long j11, byte[] bArr) {
         this.a = str;
         this.b = str2;
-        this.c = j3;
-        this.d = j10;
+        this.c = j10;
+        this.d = j11;
         this.e = bArr;
     }
 
-    @Override // b2.o0
-    public final s a() {
+    @Override // b2.t0
+    public final x a() {
         String str = this.a;
         str.getClass();
         switch (str) {
@@ -52,7 +52,7 @@ public final class a implements o0 {
         }
     }
 
-    @Override // b2.o0
+    @Override // b2.t0
     public final byte[] c() {
         if (a() != null) {
             return this.e;
@@ -79,10 +79,10 @@ public final class a implements o0 {
             int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
             String str2 = this.b;
             int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
-            long j3 = this.c;
-            int i10 = (hashCode2 + ((int) (j3 ^ (j3 >>> 32)))) * 31;
-            long j10 = this.d;
-            this.f = Arrays.hashCode(this.e) + ((i10 + ((int) (j10 ^ (j10 >>> 32)))) * 31);
+            long j10 = this.c;
+            int i10 = (hashCode2 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+            long j11 = this.d;
+            this.f = Arrays.hashCode(this.e) + ((i10 + ((int) (j11 ^ (j11 >>> 32)))) * 31);
         }
         return this.f;
     }
@@ -91,7 +91,7 @@ public final class a implements o0 {
         return "EMSG: scheme=" + this.a + ", id=" + this.d + ", durationMs=" + this.c + ", value=" + this.b;
     }
 
-    @Override // b2.o0
-    public final /* synthetic */ void b(m0 m0Var) {
+    @Override // b2.t0
+    public final /* synthetic */ void b(r0 r0Var) {
     }
 }

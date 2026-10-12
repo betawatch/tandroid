@@ -1,56 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.ScrollView;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n51 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
-    public final /* synthetic */ Context c;
+public final class n51 extends ScrollView {
+    public Drawable a;
+    public g6 b;
+    public boolean c;
 
-    public /* synthetic */ n51(Context context, org.telegram.ui.ActionBar.f3[] f3VarArr) {
-        this.a = 3;
-        this.c = context;
-        this.b = f3VarArr;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.f3 f3Var;
-        org.telegram.ui.ActionBar.n2 n2Var;
-        switch (this.a) {
-            case 0:
-                this.b[0].dismiss();
-                of.f.s(this.c, LocaleController.getString(R.string.CocoonFeature1TextLink));
-                break;
-            case 1:
-                this.b[0].dismiss();
-                of.f.u(this.c, LocaleController.getString(R.string.CocoonFeature3TextLink));
-                break;
-            case 2:
-                this.b[0].dismiss();
-                of.f.s(this.c, LocaleController.getString(R.string.CocoonFooterLink));
-                break;
-            default:
-                hx0 hx0Var = new hx0(this.c);
-                if (!AndroidUtilities.isTablet()) {
-                    org.telegram.ui.ActionBar.f3[] f3VarArr = this.b;
-                    if (!AndroidUtilities.hasDialogOnTop(f3VarArr[0].attachedFragment) && (f3Var = f3VarArr[0]) != null && (n2Var = f3Var.attachedFragment) != null) {
-                        hx0Var.makeAttached(n2Var);
-                    }
-                }
-                hx0Var.show();
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float d = this.b.d(canScrollVertically(-1) ? 1.0f : 0.0f, false) * 0.5f;
+        if (d > 0.0f) {
+            if (this.a == null) {
+                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
+            }
+            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
+            this.a.setAlpha((int) (d * 255.0f));
+            this.a.draw(canvas);
         }
     }
 
-    public /* synthetic */ n51(org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, int i10) {
-        this.a = i10;
-        this.b = f3VarArr;
-        this.c = context;
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
+        super.onNestedScroll(view, i10, i11, i12, i13);
+        boolean canScrollVertically = canScrollVertically(-1);
+        if (this.c != canScrollVertically) {
+            invalidate();
+            this.c = canScrollVertically;
+        }
     }
 }

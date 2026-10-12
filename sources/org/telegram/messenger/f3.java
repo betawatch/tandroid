@@ -1,25 +1,56 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import org.telegram.messenger.FileLoader;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Throwable b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ f3(int i10, Throwable th2) {
-        this.a = i10;
-        this.b = th2;
+    public /* synthetic */ f3(FileLoader.1 r22, boolean z10, String str, boolean z11, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, FileUploadOperation fileUploadOperation) {
+        this.e = r22;
+        this.c = z10;
+        this.b = str;
+        this.d = z11;
+        this.f = inputFile;
+        this.h = inputEncryptedFile;
+        this.n = bArr;
+        this.r = bArr2;
+        this.s = fileUploadOperation;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                FileLog.lambda$e$5(this.b);
+                ((FileLoader.1) this.e).lambda$didFinishUploadingFile$0(this.c, this.b, this.d, (TLRPC.InputFile) this.f, (TLRPC.InputEncryptedFile) this.h, (byte[]) this.n, (byte[]) this.r, (FileUploadOperation) this.s);
                 break;
             default:
-                FileLog.lambda$fatal$6(this.b);
+                ((MessagesController) this.e).lambda$openApp$501((org.telegram.ui.ActionBar.m2) this.f, (pf.c) this.h, (boolean[]) this.n, (TLRPC.User) this.r, this.b, this.c, this.d, (TL_bots.BotInfo[]) this.s);
                 break;
         }
+    }
+
+    public /* synthetic */ f3(MessagesController messagesController, org.telegram.ui.ActionBar.m2 m2Var, pf.c cVar, boolean[] zArr, TLRPC.User user, String str, boolean z10, boolean z11, TL_bots.BotInfo[] botInfoArr) {
+        this.e = messagesController;
+        this.f = m2Var;
+        this.h = cVar;
+        this.n = zArr;
+        this.r = user;
+        this.b = str;
+        this.c = z10;
+        this.d = z11;
+        this.s = botInfoArr;
     }
 }

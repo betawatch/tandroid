@@ -1,46 +1,49 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ah implements Utilities.Callback0Return {
+public final /* synthetic */ class ah implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a2[] b;
 
-    public /* synthetic */ ah(zn znVar, int i10) {
+    public /* synthetic */ ah(org.telegram.ui.ActionBar.a2[] a2VarArr, int i10) {
         this.a = i10;
-        this.b = znVar;
+        this.b = a2VarArr;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    public final Object run() {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.getClass();
-                return Boolean.valueOf(org.telegram.ui.Components.c21.c() && LiteMode.isEnabled(65536));
-            default:
-                if (LiteMode.isEnabled(65536) && org.telegram.ui.Components.c21.c()) {
-                    zn znVar = this.b;
-                    org.telegram.ui.Components.c21 c21Var = znVar.v0;
-                    if (c21Var == null || c21Var.e) {
-                        if (znVar.getParentActivity() != null && org.telegram.ui.Components.c21.c() && znVar.x0 != null && znVar.X0 != null) {
-                            org.telegram.ui.Components.c21 c21Var2 = znVar.v0;
-                            if (c21Var2 != null) {
-                                AndroidUtilities.removeFromParent(c21Var2);
-                            }
-                            org.telegram.ui.Components.c21 c21Var3 = new org.telegram.ui.Components.c21(znVar.getParentActivity(), new org.telegram.ui.ActionBar.p(27, znVar, r2));
-                            znVar.v0 = c21Var3;
-                            org.telegram.ui.Components.c21[] c21VarArr = {c21Var3};
-                            sm smVar = znVar.X0;
-                            smVar.addView(c21Var3, smVar.indexOfChild(znVar.x0) + 1, w7.x5.d(-1.0f, -1));
-                        }
-                    }
-                    return znVar.v0;
+                org.telegram.ui.ActionBar.a2[] a2VarArr = this.b;
+                try {
+                    a2VarArr[0].dismiss();
+                } catch (Throwable unused) {
                 }
-                return null;
+                a2VarArr[0] = null;
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.a2[] a2VarArr2 = this.b;
+                try {
+                    a2VarArr2[0].dismiss();
+                } catch (Throwable unused2) {
+                }
+                a2VarArr2[0] = null;
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new ah(this.b, 4));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new ah(this.b, 5));
+                break;
+            case 4:
+                this.b[0].dismiss();
+                break;
+            default:
+                this.b[0].dismiss();
+                break;
         }
     }
 }

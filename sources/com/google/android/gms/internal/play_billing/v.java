@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.play_billing;
 
 import j$.util.Objects;
-import v7.u5;
+import v7.v5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class v extends r {
     public static final v e = new v(0, new Object[0]);
@@ -17,14 +17,14 @@ public final class v extends r {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        u5.a(i10, this.d);
+        v5.a(i10, this.d);
         Object obj = this.c[i10];
         Objects.requireNonNull(obj);
         return obj;
     }
 
     @Override // com.google.android.gms.internal.play_billing.r, com.google.android.gms.internal.play_billing.o
-    public final int i(Object[] objArr) {
+    public final int h(Object[] objArr) {
         Object[] objArr2 = this.c;
         int i10 = this.d;
         System.arraycopy(objArr2, 0, objArr, 0, i10);
@@ -32,22 +32,22 @@ public final class v extends r {
     }
 
     @Override // com.google.android.gms.internal.play_billing.o
-    public final int n() {
+    public final int m() {
         return this.d;
     }
 
     @Override // com.google.android.gms.internal.play_billing.o
-    public final int o() {
+    public final int n() {
         return 0;
     }
 
     @Override // com.google.android.gms.internal.play_billing.o
-    public final boolean q() {
+    public final boolean p() {
         return false;
     }
 
     @Override // com.google.android.gms.internal.play_billing.o
-    public final Object[] r() {
+    public final Object[] q() {
         return this.c;
     }
 

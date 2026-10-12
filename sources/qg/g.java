@@ -1,60 +1,28 @@
 package qg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class g extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
-
-    public /* synthetic */ g(j jVar, int i10) {
-        this.a = i10;
-        this.b = jVar;
+public final class g extends l {
+    @Override // qg.m
+    public final int e() {
+        return R.drawable.photo_arrowshape;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                j jVar = this.b;
-                if (animator == jVar.a0) {
-                    jVar.a0 = null;
-                    break;
-                }
-                break;
-            case 1:
-                j jVar2 = this.b;
-                if (animator == jVar2.b0) {
-                    jVar2.b0 = null;
-                    break;
-                }
-                break;
-            case 2:
-                j jVar3 = this.b;
-                if (animator == jVar3.P) {
-                    jVar3.P = null;
-                    jVar3.O = 0.0f;
-                    break;
-                }
-                break;
-            case 3:
-                j jVar4 = this.b;
-                if (animator == jVar4.Q) {
-                    jVar4.Q = null;
-                    break;
-                }
-                break;
-            default:
-                j jVar5 = this.b;
-                if (!jVar5.l0) {
-                    AndroidUtilities.removeFromParent(jVar5.H);
-                    jVar5.H = null;
-                    break;
-                }
-                break;
-        }
+    @Override // qg.l
+    public final int m() {
+        return R.drawable.photo_arrowshape;
+    }
+
+    @Override // qg.l
+    public final String n() {
+        return LocaleController.getString(R.string.PaintArrow);
+    }
+
+    @Override // qg.l
+    public final int o() {
+        return 4;
     }
 }

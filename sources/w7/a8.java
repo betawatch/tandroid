@@ -1,44 +1,80 @@
 package w7;
 
-import android.os.Build;
-import android.os.Trace;
-import android.util.Log;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import android.os.Bundle;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class a8 {
-    public static long a;
-    public static Method b;
-
-    public static void a(String str) {
-        if (str.length() > 127) {
-            str = str.substring(0, 127);
-        }
-        Trace.beginSection(str);
-    }
-
-    public static boolean b() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            return w4.a.a();
-        }
+    public static b2.h a(String str, Bundle data) {
+        kotlin.jvm.internal.i.e(data, "data");
         try {
-            if (b == null) {
-                a = Trace.class.getField("TRACE_TAG_APP").getLong(null);
-                b = Trace.class.getMethod("isTagEnabled", Long.TYPE);
+            switch (str.hashCode()) {
+                case -1678407252:
+                    if (str.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
+                        try {
+                            String string = data.getString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON");
+                            kotlin.jvm.internal.i.b(string);
+                            v0.m mVar = new v0.m("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", data);
+                            if (string.length() != 0) {
+                                try {
+                                    new JSONObject(string);
+                                    return mVar;
+                                } catch (Exception unused) {
+                                }
+                            }
+                            throw new IllegalArgumentException("credentialJson must not be empty, and must be a valid JSON");
+                        } catch (Exception unused2) {
+                            throw new z0.a();
+                        }
+                    }
+                    throw new z0.a();
+                case -1072734346:
+                    if (str.equals("androidx.credentials.TYPE_RESTORE_CREDENTIAL")) {
+                        String string2 = data.getString("androidx.credentials.BUNDLE_KEY_GET_RESTORE_CREDENTIAL_RESPONSE");
+                        if (string2 == null) {
+                            throw new w0.k("The device does not contain a restore credential.");
+                        }
+                        v0.m mVar2 = new v0.m("androidx.credentials.TYPE_RESTORE_CREDENTIAL", data);
+                        if (string2.length() != 0) {
+                            try {
+                                new JSONObject(string2);
+                                return mVar2;
+                            } catch (Exception unused3) {
+                            }
+                        }
+                        throw new IllegalArgumentException("authenticationResponseJson must not be empty, and must be a valid JSON");
+                    }
+                    throw new z0.a();
+                case -543568185:
+                    if (str.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
+                        try {
+                            String string3 = data.getString("androidx.credentials.BUNDLE_KEY_ID");
+                            String string4 = data.getString("androidx.credentials.BUNDLE_KEY_PASSWORD");
+                            kotlin.jvm.internal.i.b(string3);
+                            kotlin.jvm.internal.i.b(string4);
+                            return new v0.m(string4, 2, data);
+                        } catch (Exception unused4) {
+                            throw new z0.a();
+                        }
+                    }
+                    throw new z0.a();
+                case -95037569:
+                    if (str.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
+                        try {
+                            String string5 = data.getString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON");
+                            kotlin.jvm.internal.i.b(string5);
+                            return new v0.m(string5, 3, data);
+                        } catch (Exception unused5) {
+                            throw new z0.a();
+                        }
+                    }
+                    throw new z0.a();
+                default:
+                    throw new z0.a();
             }
-            return ((Boolean) b.invoke(null, Long.valueOf(a))).booleanValue();
-        } catch (Exception e7) {
-            if (!(e7 instanceof InvocationTargetException)) {
-                Log.v("Trace", "Unable to call isTagEnabled via reflection", e7);
-                return false;
-            }
-            Throwable cause = e7.getCause();
-            if (cause instanceof RuntimeException) {
-                throw ((RuntimeException) cause);
-            }
-            throw new RuntimeException(cause);
+        } catch (z0.a unused6) {
+            return new v0.m(str, 0, data);
         }
     }
 }

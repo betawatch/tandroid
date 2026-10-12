@@ -10,7 +10,7 @@ import java.nio.FloatBuffer;
 import org.telegram.messenger.FileLog;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class GlGenericDrawer implements RendererCommon.GlDrawer {
     private static final String DEFAULT_VERTEX_SHADER_STRING = "varying vec2 tc;\nattribute vec4 in_pos;\nattribute vec4 in_tc;\nuniform mat4 tex_mat;\nvoid main() {\n  gl_Position = in_pos;\n  tc = (tex_mat * in_tc).xy;\n}\n";
@@ -38,14 +38,14 @@ public class GlGenericDrawer implements RendererCommon.GlDrawer {
     private float[] textureMatrix;
     private final String vertexShader;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface ShaderCallbacks {
         void onNewShader(GlShader glShader);
 
         void onPrepareShader(GlShader glShader, float[] fArr, int i10, int i11, int i12, int i13);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface TextureCallback {
         void run(Bitmap bitmap, int i10);
     }
@@ -137,8 +137,8 @@ public class GlGenericDrawer implements RendererCommon.GlDrawer {
                 this.texMatrixLocation[i10][i17] = glShader.getUniformLocation(TEXTURE_MATRIX_NAME);
                 this.inPosLocation[i10][i17] = glShader.getAttribLocation(INPUT_VERTEX_COORDINATE_NAME);
                 this.inTcLocation[i10][i17] = glShader.getAttribLocation(INPUT_TEXTURE_COORDINATE_NAME);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
                 return;
             }
         }

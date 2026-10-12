@@ -6,41 +6,41 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import androidx.fragment.app.f0;
-import androidx.fragment.app.k0;
+import androidx.fragment.app.d0;
+import androidx.fragment.app.i0;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h extends androidx.activity.result.f {
-    public final /* synthetic */ l h;
+    public final /* synthetic */ m h;
 
-    public h(l lVar) {
-        this.h = lVar;
+    public h(m mVar) {
+        this.h = mVar;
     }
 
     @Override // androidx.activity.result.f
-    public final void b(int i10, f0 f0Var, Object obj) {
-        e.a aVar;
+    public final void b(int i10, d0 d0Var, Object obj) {
+        a9.r rVar;
         Intent input;
         Bundle bundleExtra;
         Bundle bundle;
         int i11;
-        int i12 = f0Var.a;
-        l lVar = this.h;
+        int i12 = d0Var.a;
+        m mVar = this.h;
         switch (i12) {
             case 1:
                 String[] input2 = (String[]) obj;
                 kotlin.jvm.internal.i.e(input2, "input");
                 if (input2.length == 0) {
-                    aVar = new e.a(id.p.a);
+                    rVar = new a9.r(jd.p.a);
                     break;
                 } else {
                     for (String str : input2) {
-                        if (f0.c.b(lVar, str) == 0) {
+                        if (f0.c.b(mVar, str) == 0) {
                         }
                     }
-                    int a2 = id.r.a(input2.length);
+                    int a2 = jd.r.a(input2.length);
                     if (a2 < 16) {
                         a2 = 16;
                     }
@@ -48,18 +48,18 @@ public final class h extends androidx.activity.result.f {
                     for (String str2 : input2) {
                         linkedHashMap.put(str2, Boolean.TRUE);
                     }
-                    aVar = new e.a(linkedHashMap);
+                    rVar = new a9.r(linkedHashMap);
                     break;
                 }
             default:
-                aVar = null;
+                rVar = null;
                 break;
         }
-        if (aVar != null) {
-            new Handler(Looper.getMainLooper()).post(new g(this, i10, aVar, 0));
+        if (rVar != null) {
+            new Handler(Looper.getMainLooper()).post(new g(this, i10, rVar, 0));
             return;
         }
-        switch (f0Var.a) {
+        switch (d0Var.a) {
             case 0:
                 androidx.activity.result.g gVar = (androidx.activity.result.g) obj;
                 input = new Intent("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST");
@@ -74,7 +74,7 @@ public final class h extends androidx.activity.result.f {
                     }
                 }
                 input.putExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST", gVar);
-                if (k0.K(2)) {
+                if (i0.K(2)) {
                     Log.v("FragmentManager", "CreateIntent created the following intent: " + input);
                     break;
                 }
@@ -97,7 +97,7 @@ public final class h extends androidx.activity.result.f {
                 break;
         }
         if (input.getExtras() != null && input.getExtras().getClassLoader() == null) {
-            input.setExtrasClassLoader(lVar.getClassLoader());
+            input.setExtrasClassLoader(mVar.getClassLoader());
         }
         if (input.hasExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE")) {
             bundle = input.getBundleExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
@@ -111,24 +111,24 @@ public final class h extends androidx.activity.result.f {
             if (stringArrayExtra == null) {
                 stringArrayExtra = new String[0];
             }
-            e0.c.e(lVar, stringArrayExtra, i10);
+            e0.c.e(mVar, stringArrayExtra, i10);
             return;
         }
         if (!"androidx.activity.result.contract.action.INTENT_SENDER_REQUEST".equals(input.getAction())) {
-            lVar.startActivityForResult(input, i10, bundle2);
+            mVar.startActivityForResult(input, i10, bundle2);
             return;
         }
         androidx.activity.result.g gVar2 = (androidx.activity.result.g) input.getParcelableExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST");
         try {
             i11 = i10;
-        } catch (IntentSender.SendIntentException e7) {
-            e = e7;
+        } catch (IntentSender.SendIntentException e) {
+            e = e;
             i11 = i10;
         }
         try {
-            lVar.startIntentSenderForResult(gVar2.a, i11, gVar2.b, gVar2.c, gVar2.d, 0, bundle2);
-        } catch (IntentSender.SendIntentException e10) {
-            e = e10;
+            mVar.startIntentSenderForResult(gVar2.a, i11, gVar2.b, gVar2.c, gVar2.d, 0, bundle2);
+        } catch (IntentSender.SendIntentException e7) {
+            e = e7;
             new Handler(Looper.getMainLooper()).post(new g(this, i11, e, 1));
         }
     }

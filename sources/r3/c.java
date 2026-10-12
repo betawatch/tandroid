@@ -1,43 +1,26 @@
 package r3;
 
-import b2.m0;
-import b2.o0;
-import b2.s;
-import java.util.ArrayList;
+import b2.r0;
+import b2.t0;
+import b2.x;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class c implements o0 {
-    public final ArrayList a;
+public final class c implements t0 {
+    public final float a;
+    public final int b;
 
-    public c(ArrayList arrayList) {
-        this.a = arrayList;
-        boolean z10 = false;
-        if (!arrayList.isEmpty()) {
-            long j3 = ((b) arrayList.get(0)).b;
-            int i10 = 1;
-            while (true) {
-                if (i10 >= arrayList.size()) {
-                    break;
-                }
-                if (((b) arrayList.get(i10)).a < j3) {
-                    z10 = true;
-                    break;
-                } else {
-                    j3 = ((b) arrayList.get(i10)).b;
-                    i10++;
-                }
-            }
-        }
-        e2.d.b(!z10);
+    public c(float f7, int i10) {
+        this.a = f7;
+        this.b = i10;
     }
 
-    @Override // b2.o0
-    public final /* synthetic */ s a() {
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
         return null;
     }
 
-    @Override // b2.o0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }
@@ -46,21 +29,24 @@ public final class c implements o0 {
         if (this == obj) {
             return true;
         }
-        if (obj == null || c.class != obj.getClass()) {
-            return false;
+        if (obj != null && c.class == obj.getClass()) {
+            c cVar = (c) obj;
+            if (this.a == cVar.a && this.b == cVar.b) {
+                return true;
+            }
         }
-        return this.a.equals(((c) obj).a);
+        return false;
     }
 
     public final int hashCode() {
-        return this.a.hashCode();
+        return ((Float.valueOf(this.a).hashCode() + 527) * 31) + this.b;
     }
 
     public final String toString() {
-        return "SlowMotion: segments=" + this.a;
+        return "smta: captureFrameRate=" + this.a + ", svcTemporalLayerCount=" + this.b;
     }
 
-    @Override // b2.o0
-    public final /* synthetic */ void b(m0 m0Var) {
+    @Override // b2.t0
+    public final /* synthetic */ void b(r0 r0Var) {
     }
 }

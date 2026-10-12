@@ -1,30 +1,41 @@
 package rg;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class j1 extends View {
-    public final /* synthetic */ int a;
+    public int a;
+    public float b;
+    public final /* synthetic */ k1 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j1(Context context, int i10) {
+    public j1(k1 k1Var, Context context) {
         super(context);
-        this.a = i10;
+        this.c = k1Var;
+        setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+        setLayoutParams(new s4.o0(-2, 0));
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(68.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
-                break;
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        k1 k1Var = this.c;
+        k1Var.V2.setColor(this.a);
+        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
+        if (this.b != 0.0f) {
+            min -= (k1Var.W2.getStrokeWidth() + AndroidUtilities.dp(3.0f)) * this.b;
+        }
+        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
+        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
+        k1.y1(width, height, min, this.a, canvas);
+        if (this.b != 0.0f) {
+            k1Var.W2.setColor(this.a);
+            k1Var.W2.setAlpha(255);
+            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), k1Var.W2);
         }
     }
 }

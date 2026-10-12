@@ -1,36 +1,23 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q41 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
-    public final /* synthetic */ String c;
+public final class q41 extends x41 {
+    public final /* synthetic */ org.telegram.ui.wf T;
 
-    public /* synthetic */ q41(String str, int i10, Utilities.Callback2 callback2) {
-        this.a = i10;
-        this.b = callback2;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q41(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i10, TL_iv.RichMessage richMessage, org.telegram.ui.wf wfVar) {
+        super(activity, str, str2, null, inputPeer, i10, false, richMessage);
+        this.T = wfVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                Utilities.Callback2 callback2 = this.b;
-                if (callback2 != null) {
-                    callback2.run(this.c, Boolean.FALSE);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.run(null, this.c);
-                break;
-            default:
-                this.b.run(null, this.c);
-                break;
-        }
+    @Override // org.telegram.ui.Components.x41, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public final void dismiss() {
+        super.dismiss();
+        this.T.run();
     }
 }

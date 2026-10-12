@@ -1,6 +1,6 @@
 package c3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class v implements b0 {
     public final b0 a;
@@ -10,17 +10,22 @@ public abstract class v implements b0 {
     }
 
     @Override // c3.b0
-    public final boolean f() {
-        return this.a.f();
+    public final boolean d() {
+        return this.a.d();
     }
 
     @Override // c3.b0
-    public a0 j(long j3) {
-        return this.a.j(j3);
+    public final boolean e() {
+        return this.a.e();
     }
 
     @Override // c3.b0
-    public long l() {
-        return this.a.l();
+    public a0 f(long j10) {
+        return this.a.f(j10);
+    }
+
+    @Override // c3.b0
+    public long h() {
+        return this.a.h();
     }
 }

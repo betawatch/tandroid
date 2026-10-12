@@ -19,7 +19,7 @@ public class n implements Serializable, Iterable {
         this.b = bArr;
     }
 
-    public static n n(int i10, int i11, byte[] bArr) {
+    public static n m(int i10, int i11, byte[] bArr) {
         byte[] copyOfRange;
         switch (d.a) {
             case 0:
@@ -71,17 +71,21 @@ public class n implements Serializable, Iterable {
             throw new IllegalArgumentException(sb3.toString());
         }
         byte[] bArr = nVar.b;
-        int i12 = i() + size;
-        int i13 = i();
-        int i14 = nVar.i();
-        while (i13 < i12) {
-            if (this.b[i13] != bArr[i14]) {
+        int h = h() + size;
+        int h10 = h();
+        int h11 = nVar.h();
+        while (h10 < h) {
+            if (this.b[h10] != bArr[h11]) {
                 return false;
             }
-            i13++;
-            i14++;
+            h10++;
+            h11++;
         }
         return true;
+    }
+
+    public int h() {
+        return 0;
     }
 
     public final int hashCode() {
@@ -90,20 +94,16 @@ public class n implements Serializable, Iterable {
             return i10;
         }
         int size = size();
-        int i11 = i();
-        int i12 = size;
-        for (int i13 = i11; i13 < i11 + size; i13++) {
-            i12 = (i12 * 31) + this.b[i13];
+        int h = h();
+        int i11 = size;
+        for (int i12 = h; i12 < h + size; i12++) {
+            i11 = (i11 * 31) + this.b[i12];
         }
-        if (i12 == 0) {
-            i12 = 1;
+        if (i11 == 0) {
+            i11 = 1;
         }
-        this.a = i12;
-        return i12;
-    }
-
-    public int i() {
-        return 0;
+        this.a = i11;
+        return i11;
     }
 
     @Override // java.lang.Iterable
@@ -111,7 +111,7 @@ public class n implements Serializable, Iterable {
         return new androidx.datastore.preferences.protobuf.e(this);
     }
 
-    public byte o(int i10) {
+    public byte n(int i10) {
         return this.b[i10];
     }
 

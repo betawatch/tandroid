@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class f implements Iterable {
     public c a;
@@ -61,6 +61,14 @@ public class f implements Iterable {
         return false;
     }
 
+    public c h(Object obj) {
+        c cVar = this.a;
+        while (cVar != null && !cVar.a.equals(obj)) {
+            cVar = cVar.c;
+        }
+        return cVar;
+    }
+
     public final int hashCode() {
         Iterator it = iterator();
         int i10 = 0;
@@ -73,14 +81,6 @@ public class f implements Iterable {
         }
     }
 
-    public c i(Object obj) {
-        c cVar = this.a;
-        while (cVar != null && !cVar.a.equals(obj)) {
-            cVar = cVar.c;
-        }
-        return cVar;
-    }
-
     @Override // java.lang.Iterable
     public final Iterator iterator() {
         b bVar = new b(this.a, this.b, 0);
@@ -88,9 +88,9 @@ public class f implements Iterable {
         return bVar;
     }
 
-    public Object n(Object obj) {
-        c i10 = i(obj);
-        if (i10 == null) {
+    public Object m(Object obj) {
+        c h = h(obj);
+        if (h == null) {
             return null;
         }
         this.d--;
@@ -98,24 +98,24 @@ public class f implements Iterable {
         if (!weakHashMap.isEmpty()) {
             Iterator it = weakHashMap.keySet().iterator();
             while (it.hasNext()) {
-                ((e) it.next()).a(i10);
+                ((e) it.next()).a(h);
             }
         }
-        c cVar = i10.d;
+        c cVar = h.d;
         if (cVar != null) {
-            cVar.c = i10.c;
+            cVar.c = h.c;
         } else {
-            this.a = i10.c;
+            this.a = h.c;
         }
-        c cVar2 = i10.c;
+        c cVar2 = h.c;
         if (cVar2 != null) {
             cVar2.d = cVar;
         } else {
             this.b = cVar;
         }
-        i10.c = null;
-        i10.d = null;
-        return i10.b;
+        h.c = null;
+        h.d = null;
+        return h.b;
     }
 
     public final String toString() {

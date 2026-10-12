@@ -1,21 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hx implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nz b;
+import android.content.Context;
 
-    public /* synthetic */ hx(nz nzVar, int i10) {
-        this.a = i10;
-        this.b = nzVar;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class hx extends iz {
+    public final /* synthetic */ wz H;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hx(wz wzVar, Context context) {
+        super(wzVar, context, 0);
+        this.H = wzVar;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (f7 != getTranslationY()) {
+            super.setTranslationY(f7);
+            this.H.x0.invalidate();
         }
-        this.b.d();
     }
 }

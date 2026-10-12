@@ -123,7 +123,7 @@ public final class p implements Externalizable {
                 Duration duration = Duration.c;
                 long readLong = objectInput.readLong();
                 long readInt = objectInput.readInt();
-                return Duration.j(j$.com.android.tools.r8.a.O(readLong, j$.com.android.tools.r8.a.S(readInt, 1000000000L)), (int) j$.com.android.tools.r8.a.R(readInt, 1000000000L));
+                return Duration.j(j$.com.android.tools.r8.a.N(readLong, j$.com.android.tools.r8.a.R(readInt, 1000000000L)), (int) j$.com.android.tools.r8.a.Q(readInt, 1000000000L));
             case 2:
                 Instant instant = Instant.c;
                 return Instant.I(objectInput.readLong(), objectInput.readInt());

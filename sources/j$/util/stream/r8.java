@@ -28,12 +28,12 @@ public final class r8 extends v8 implements DoubleConsumer, j$.util.u0 {
 
     @Override // j$.util.stream.v8, j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.i(this, consumer);
+        j$.com.android.tools.r8.a.h(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.z(this, consumer);
+        return j$.com.android.tools.r8.a.y(this, consumer);
     }
 
     @Override // j$.util.d1

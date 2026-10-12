@@ -1,12 +1,12 @@
 package q3;
 
-import b2.m0;
+import b2.r0;
 import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a extends j {
+public final class a extends i {
     public final String b;
     public final String c;
     public final int d;
@@ -20,9 +20,9 @@ public final class a extends j {
         this.e = bArr;
     }
 
-    @Override // q3.j, b2.o0
-    public final void b(m0 m0Var) {
-        m0Var.a(this.d, this.e);
+    @Override // q3.i, b2.t0
+    public final void b(r0 r0Var) {
+        r0Var.a(this.d, this.e);
     }
 
     public final boolean equals(Object obj) {
@@ -46,7 +46,7 @@ public final class a extends j {
         return Arrays.hashCode(this.e) + ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31);
     }
 
-    @Override // q3.j
+    @Override // q3.i
     public final String toString() {
         return this.a + ": mimeType=" + this.b + ", description=" + this.c;
     }

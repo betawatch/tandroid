@@ -1,35 +1,78 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class cy implements ValueAnimator.AnimatorUpdateListener {
-    public int a;
+public final class cy extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
     public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ ty d;
+    public final /* synthetic */ yy c;
 
-    public cy(ty tyVar, float f7, boolean z10, float f10) {
-        this.d = tyVar;
+    public /* synthetic */ cy(yy yyVar, float f7, int i10) {
+        this.a = i10;
+        this.c = yyVar;
         this.b = f7;
-        this.c = f10;
-        this.a = (int) f7;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        ((Float) valueAnimator.getAnimatedValue()).getClass();
-        int lerp = (int) AndroidUtilities.lerp(this.b, this.c, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-        int i10 = lerp - this.a;
-        this.a = lerp;
-        ty tyVar = this.d;
-        tyVar.e0[0].a.scrollBy(0, i10);
-        View view = tyVar.fragmentView;
-        if (view != null) {
-            view.invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                yy yyVar = this.c;
+                yyVar.u3 = null;
+                int i10 = 0;
+                yyVar.O = false;
+                yyVar.Q = true;
+                yyVar.R = true;
+                yyVar.fragmentView.invalidate();
+                yyVar.x3 = -(AndroidUtilities.dp((yyVar.K ? 81 : 0) + 48) - this.b);
+                yyVar.e0[0].setTranslationY(0.0f);
+                while (true) {
+                    xy[] xyVarArr = yyVar.e0;
+                    if (i10 >= xyVarArr.length) {
+                        yyVar.fragmentView.requestLayout();
+                        oy oyVar = yyVar.X;
+                        if (oyVar != null && yyVar.b.f) {
+                            oyVar.r.requestFocus();
+                            AndroidUtilities.showKeyboard(yyVar.X.r);
+                            break;
+                        }
+                    } else {
+                        xy xyVar = xyVarArr[i10];
+                        if (xyVar != null) {
+                            xyVar.a.requestLayout();
+                        }
+                        i10++;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                yy yyVar2 = this.c;
+                yyVar2.u3 = null;
+                yyVar2.P = 0;
+                yyVar2.O = true;
+                yyVar2.x3 = AndroidUtilities.dp((yyVar2.K ? 81 : 0) + 48) - this.b;
+                yyVar2.e0[0].setTranslationY(0.0f);
+                int i11 = 0;
+                while (true) {
+                    xy[] xyVarArr2 = yyVar2.e0;
+                    if (i11 >= xyVarArr2.length) {
+                        yyVar2.E0.l(1.0f, false);
+                        yyVar2.fragmentView.requestLayout();
+                        break;
+                    } else {
+                        xy xyVar2 = xyVarArr2[i11];
+                        if (xyVar2 != null) {
+                            xyVar2.a.requestLayout();
+                        }
+                        i11++;
+                    }
+                }
         }
     }
 }

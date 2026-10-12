@@ -48,10 +48,10 @@ public final class m implements Iterator, y {
     public final void forEachRemaining(Consumer consumer) {
         switch (this.a) {
             case 0:
-                j$.com.android.tools.r8.a.M(this.b, consumer);
+                j$.com.android.tools.r8.a.L(this.b, consumer);
                 break;
             default:
-                j$.com.android.tools.r8.a.M(this.b, new j$.time.t(1, consumer));
+                j$.com.android.tools.r8.a.L(this.b, new j$.time.t(1, consumer));
                 break;
         }
     }

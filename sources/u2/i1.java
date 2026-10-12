@@ -1,80 +1,25 @@
 package u2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i1 implements b1 {
-    public int a;
-    public boolean b;
-    public final /* synthetic */ k1 c;
+public interface i1 {
+    i1 a(int i10, int i11);
 
-    public i1(k1 k1Var) {
-        this.c = k1Var;
-    }
+    int b();
 
-    @Override // u2.b1
-    public final void a() {
-        k1 k1Var = this.c;
-        if (k1Var.v) {
-            return;
-        }
-        k1Var.r.a();
-    }
+    i1 c(int i10);
 
-    public final void b() {
-        if (this.b) {
-            return;
-        }
-        k1 k1Var = this.c;
-        k1Var.e.l(b2.r0.h(k1Var.s.r), k1Var.s, 0, null, 0L);
-        this.b = true;
-    }
+    int d(int i10);
 
-    @Override // u2.b1
-    public final boolean e() {
-        return this.c.w;
-    }
+    int e(int i10);
 
-    @Override // u2.b1
-    public final int f(n4.x xVar, h2.h hVar, int i10) {
-        b();
-        k1 k1Var = this.c;
-        boolean z10 = k1Var.w;
-        if (z10 && k1Var.x == null) {
-            this.a = 2;
-        }
-        int i11 = this.a;
-        if (i11 == 2) {
-            hVar.addFlag(4);
-            return -4;
-        }
-        if ((i10 & 2) != 0 || i11 == 0) {
-            xVar.c = k1Var.s;
-            this.a = 1;
-            return -5;
-        }
-        if (!z10) {
-            return -3;
-        }
-        k1Var.x.getClass();
-        hVar.addFlag(1);
-        hVar.e = 0L;
-        if ((i10 & 4) == 0) {
-            hVar.b(k1Var.y);
-            hVar.c.put(k1Var.x, 0, k1Var.y);
-        }
-        if ((i10 & 1) == 0) {
-            this.a = 2;
-        }
-        return -4;
-    }
+    i1 f(int i10, int i11);
 
-    @Override // u2.b1
-    public final int j(long j3) {
-        b();
-        if (j3 <= 0 || this.a == 2) {
-            return 0;
-        }
-        this.a = 2;
-        return 1;
-    }
+    i1 g();
+
+    int getLength();
+
+    int h();
+
+    i1 i();
 }

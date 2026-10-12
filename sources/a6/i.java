@@ -1,140 +1,294 @@
 package a6;
 
-import a3.m0;
-import ai.e5;
-import ai.gc;
-import ai.h6;
-import ai.hc;
-import ai.i6;
-import ai.r4;
-import ai.r5;
+import a3.n0;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.RectF;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.SurfaceTexture;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.os.Parcel;
 import android.os.ResultReceiver;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Surface;
-import android.view.View;
 import android.view.Window;
-import android.webkit.WebView;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import androidx.biometric.e0;
-import androidx.fragment.app.g0;
+import androidx.fragment.app.e0;
+import androidx.fragment.app.i0;
 import androidx.lifecycle.a0;
-import b5.p;
-import ci.i0;
-import ci.nb;
+import b2.b2;
+import c3.k0;
+import c6.y;
+import c7.v;
 import com.android.billingclient.api.ProxyBillingActivityV2;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.internal.s;
-import com.google.android.gms.common.api.internal.v0;
-import com.google.android.gms.common.api.internal.x;
-import com.google.android.gms.internal.cast.v;
+import com.google.android.gms.internal.cast.d1;
+import com.google.android.gms.internal.cast.d2;
+import com.google.android.gms.internal.cast.p0;
+import com.google.android.gms.internal.cast.z;
+import com.google.android.gms.internal.cast.z4;
 import com.google.android.gms.internal.play_billing.u;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
-import ei.c5;
-import fb.n;
-import fi.s0;
-import fi.t0;
+import di.a7;
+import di.g0;
+import di.l0;
+import di.m;
+import di.y6;
+import e9.j1;
+import eb.n;
 import g.r;
 import g6.q;
-import gg.a2;
-import gg.j1;
-import i2.j0;
-import ii.e2;
-import ii.f6;
-import ii.i1;
-import ii.i2;
-import ii.k0;
-import ii.k3;
-import ii.l4;
-import ii.q3;
-import ii.r3;
-import ii.u3;
-import ii.v3;
-import ii.w3;
-import ii.w4;
-import ii.x3;
-import ii.z;
+import gb.o;
+import hg.z1;
+import ig.t0;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.nio.BufferOverflowException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.ReadOnlyBufferException;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.EnumMap;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
-import java.util.WeakHashMap;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import ji.h1;
+import ji.h2;
+import ji.j0;
+import ji.s3;
+import ji.x3;
+import ji.z0;
 import l.w;
-import lg.o;
-import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
-import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
-import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
+import n7.l1;
+import n7.m1;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.o9;
-import org.telegram.ui.Components.jh;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.yi;
-import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.l01;
-import org.telegram.ui.rz0;
-import org.telegram.ui.zn;
-import pg.m;
-import pg.s1;
-import pg.u0;
-import qg.v1;
-import v7.i5;
-import v7.z6;
+import org.telegram.ui.Components.e81;
+import org.telegram.ui.Components.h81;
+import org.telegram.ui.Components.lb0;
+import v7.c8;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i implements m0, s, gc, a0, androidx.activity.result.b, p, o, v1, v0, OnSuccessListener, SuccessContinuation, n, s0, w, a2, wi, k0, v3 {
+public final class i implements n0, s, a0, androidx.activity.result.b, OnSuccessListener, lb0, mg.e, e81, d9.k, SuccessContinuation, f6.a, w, o, n, z1, je.a, j0 {
     public static i c;
     public final /* synthetic */ int a;
     public Object b;
 
-    public /* synthetic */ i(int i10, boolean z10) {
+    public /* synthetic */ i(com.google.android.gms.common.api.j jVar, Object obj, int i10) {
         this.a = i10;
+        this.b = obj;
     }
 
-    public static com.google.android.gms.common.api.internal.p N(Looper looper, Object obj, String str) {
-        n6.l.i(obj, "Listener must not be null");
-        n6.l.i(looper, "Looper must not be null");
-        return new com.google.android.gms.common.api.internal.p(looper, obj, str);
+    public static int A(int i10, String str) {
+        int J = J(i10);
+        int s10 = s(str);
+        return M(s10) + s10 + J;
     }
 
-    public static synchronized i U(Context context) {
-        i a02;
-        synchronized (i.class) {
-            a02 = a0(context.getApplicationContext());
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v20 */
+    public static void D(CharSequence charSequence, ByteBuffer byteBuffer) {
+        int i10;
+        char charAt;
+        if (byteBuffer.isReadOnly()) {
+            throw new ReadOnlyBufferException();
         }
-        return a02;
+        char c10 = 57343;
+        int i11 = 0;
+        if (!byteBuffer.hasArray()) {
+            int length = charSequence.length();
+            while (i11 < length) {
+                char charAt2 = charSequence.charAt(i11);
+                char c11 = charAt2;
+                if (charAt2 >= 128) {
+                    if (charAt2 < 2048) {
+                        byteBuffer.put((byte) ((charAt2 >>> 6) | 960));
+                        c11 = (charAt2 & '?') | 128;
+                    } else {
+                        if (charAt2 >= 55296 && 57343 >= charAt2) {
+                            int i12 = i11 + 1;
+                            if (i12 != charSequence.length()) {
+                                char charAt3 = charSequence.charAt(i12);
+                                if (Character.isSurrogatePair(charAt2, charAt3)) {
+                                    int codePoint = Character.toCodePoint(charAt2, charAt3);
+                                    byteBuffer.put((byte) ((codePoint >>> 18) | 240));
+                                    byteBuffer.put((byte) (((codePoint >>> 12) & 63) | 128));
+                                    byteBuffer.put((byte) (((codePoint >>> 6) & 63) | 128));
+                                    byteBuffer.put((byte) ((codePoint & 63) | 128));
+                                    i11 = i12;
+                                } else {
+                                    i11 = i12;
+                                }
+                            }
+                            StringBuilder sb2 = new StringBuilder(39);
+                            sb2.append("Unpaired surrogate at index ");
+                            sb2.append(i11 - 1);
+                            throw new IllegalArgumentException(sb2.toString());
+                        }
+                        byteBuffer.put((byte) ((charAt2 >>> '\f') | 480));
+                        byteBuffer.put((byte) (((charAt2 >>> 6) & 63) | 128));
+                        byteBuffer.put((byte) ((charAt2 & '?') | 128));
+                        i11++;
+                    }
+                }
+                byteBuffer.put((byte) c11);
+                i11++;
+            }
+            return;
+        }
+        try {
+            byte[] array = byteBuffer.array();
+            int arrayOffset = byteBuffer.arrayOffset() + byteBuffer.position();
+            int remaining = byteBuffer.remaining();
+            int length2 = charSequence.length();
+            int i13 = remaining + arrayOffset;
+            while (i11 < length2) {
+                int i14 = i11 + arrayOffset;
+                if (i14 >= i13 || (charAt = charSequence.charAt(i11)) >= 128) {
+                    break;
+                }
+                array[i14] = (byte) charAt;
+                i11++;
+            }
+            if (i11 == length2) {
+                i10 = arrayOffset + length2;
+            } else {
+                i10 = arrayOffset + i11;
+                while (i11 < length2) {
+                    char charAt4 = charSequence.charAt(i11);
+                    if (charAt4 < 128 && i10 < i13) {
+                        array[i10] = (byte) charAt4;
+                        i10++;
+                    } else if (charAt4 < 2048 && i10 <= i13 - 2) {
+                        int i15 = i10 + 1;
+                        array[i10] = (byte) ((charAt4 >>> 6) | 960);
+                        i10 += 2;
+                        array[i15] = (byte) ((charAt4 & '?') | 128);
+                    } else {
+                        if ((charAt4 >= 55296 && c10 >= charAt4) || i10 > i13 - 3) {
+                            if (i10 > i13 - 4) {
+                                StringBuilder sb3 = new StringBuilder(37);
+                                sb3.append("Failed writing ");
+                                sb3.append(charAt4);
+                                sb3.append(" at index ");
+                                sb3.append(i10);
+                                throw new ArrayIndexOutOfBoundsException(sb3.toString());
+                            }
+                            int i16 = i11 + 1;
+                            if (i16 != charSequence.length()) {
+                                char charAt5 = charSequence.charAt(i16);
+                                if (Character.isSurrogatePair(charAt4, charAt5)) {
+                                    int codePoint2 = Character.toCodePoint(charAt4, charAt5);
+                                    array[i10] = (byte) ((codePoint2 >>> 18) | 240);
+                                    array[i10 + 1] = (byte) (((codePoint2 >>> 12) & 63) | 128);
+                                    int i17 = i10 + 3;
+                                    array[i10 + 2] = (byte) (((codePoint2 >>> 6) & 63) | 128);
+                                    i10 += 4;
+                                    array[i17] = (byte) ((codePoint2 & 63) | 128);
+                                    i11 = i16;
+                                } else {
+                                    i11 = i16;
+                                }
+                            }
+                            StringBuilder sb4 = new StringBuilder(39);
+                            sb4.append("Unpaired surrogate at index ");
+                            sb4.append(i11 - 1);
+                            throw new IllegalArgumentException(sb4.toString());
+                        }
+                        array[i10] = (byte) ((charAt4 >>> '\f') | 480);
+                        int i18 = i10 + 2;
+                        array[i10 + 1] = (byte) (((charAt4 >>> 6) & 63) | 128);
+                        i10 += 3;
+                        array[i18] = (byte) ((charAt4 & '?') | 128);
+                    }
+                    i11++;
+                    c10 = 57343;
+                }
+            }
+            byteBuffer.position(i10 - byteBuffer.arrayOffset());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            BufferOverflowException bufferOverflowException = new BufferOverflowException();
+            bufferOverflowException.initCause(e);
+            throw bufferOverflowException;
+        }
     }
 
-    public static synchronized i a0(Context context) {
+    public static int I(long j10) {
+        if (((-128) & j10) == 0) {
+            return 1;
+        }
+        if (((-16384) & j10) == 0) {
+            return 2;
+        }
+        if (((-2097152) & j10) == 0) {
+            return 3;
+        }
+        if (((-268435456) & j10) == 0) {
+            return 4;
+        }
+        if (((-34359738368L) & j10) == 0) {
+            return 5;
+        }
+        if (((-4398046511104L) & j10) == 0) {
+            return 6;
+        }
+        if (((-562949953421312L) & j10) == 0) {
+            return 7;
+        }
+        if (((-72057594037927936L) & j10) == 0) {
+            return 8;
+        }
+        return (j10 & Long.MIN_VALUE) == 0 ? 9 : 10;
+    }
+
+    public static int J(int i10) {
+        return M(i10 << 3);
+    }
+
+    public static int M(int i10) {
+        if ((i10 & (-128)) == 0) {
+            return 1;
+        }
+        if ((i10 & (-16384)) == 0) {
+            return 2;
+        }
+        if (((-2097152) & i10) == 0) {
+            return 3;
+        }
+        return (i10 & (-268435456)) == 0 ? 4 : 5;
+    }
+
+    public static synchronized i n(Context context) {
+        i p5;
+        synchronized (i.class) {
+            p5 = p(context.getApplicationContext());
+        }
+        return p5;
+    }
+
+    public static synchronized i p(Context context) {
         synchronized (i.class) {
             i iVar = c;
             if (iVar != null) {
@@ -146,444 +300,169 @@ public final class i implements m0, s, gc, a0, androidx.activity.result.b, p, o,
         }
     }
 
-    @Override // ii.k0
-    public void A(CharSequence charSequence) {
-        switch (this.a) {
-            case 27:
-                r3 r3Var = ((z) this.b).O;
-                if (r3Var != null) {
-                    r3Var.getClass();
-                    if (charSequence != null && charSequence.length() > 0) {
-                        r3Var.a.u4(charSequence.toString());
-                        break;
-                    }
-                }
-                break;
-            default:
-                q3 q3Var = ((w4) this.b).N;
-                if (q3Var != null) {
-                    q3Var.getClass();
-                    if (charSequence != null && charSequence.length() > 0) {
-                        q3Var.a.u4(charSequence.toString());
-                        break;
-                    }
-                }
-                break;
+    public static int s(CharSequence charSequence) {
+        int length = charSequence.length();
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < length && charSequence.charAt(i11) < 128) {
+            i11++;
         }
-    }
-
-    @Override // ii.v3
-    public void B() {
-        e2 e2Var = (e2) this.b;
-        e2.Z(e2Var, false, true);
-        int i10 = e2Var.I0;
-        e2Var.x0(i10 != 2 ? i10 : 0, true);
-    }
-
-    @Override // ii.k0
-    public n9 C() {
-        switch (this.a) {
-            case 27:
-                return (z) this.b;
-            default:
-                return (w4) this.b;
-        }
-    }
-
-    @Override // ii.v3
-    public p80 E(View view) {
-        return p80.H((e2) this.b, view);
-    }
-
-    @Override // ii.k0
-    public ii.a F() {
-        switch (this.a) {
-            case 27:
-                return ((z) this.b).a;
-            default:
-                return ((w4) this.b).a;
-        }
-    }
-
-    @Override // ii.k0
-    public boolean G() {
-        switch (this.a) {
-            case 27:
-                z zVar = (z) this.b;
-                r3 r3Var = zVar.O;
-                if (r3Var != null) {
-                    ii.a aVar = zVar.a;
-                    if (r3Var.a.T4()) {
-                    }
-                }
-                break;
-            default:
-                w4 w4Var = (w4) this.b;
-                q3 q3Var = w4Var.N;
-                if (q3Var != null) {
-                    ii.a aVar2 = w4Var.a;
-                    if (q3Var.a.T4()) {
-                    }
-                }
-                break;
-        }
-        return false;
-    }
-
-    @Override // ii.v3
-    public void H() {
-        e2 e2Var = (e2) this.b;
-        e2Var.z0();
-        e2Var.C0();
-    }
-
-    @Override // ii.k0
-    public void I(int i10, int i11) {
-        switch (this.a) {
-            case 27:
-                z zVar = (z) this.b;
-                r3 r3Var = zVar.O;
-                if (r3Var != null) {
-                    ii.a aVar = zVar.a;
-                    i2 i2Var = r3Var.a.H3;
-                    if (i2Var != null) {
-                        i2Var.f(i10, i11);
-                        break;
-                    }
-                }
-                break;
-            default:
-                w4 w4Var = (w4) this.b;
-                q3 q3Var = w4Var.N;
-                if (q3Var != null) {
-                    ii.a aVar2 = w4Var.a;
-                    i2 i2Var2 = q3Var.a.H3;
-                    if (i2Var2 != null) {
-                        i2Var2.f(i10, i11);
-                        break;
-                    }
-                }
-                break;
-        }
-    }
-
-    @Override // ii.v3
-    public void J(u3 u3Var, View view) {
-        e2 e2Var = (e2) this.b;
-        p80 H = p80.H(e2Var, view);
-        H.Q = true;
-        e2Var.x0 = l4.c(H, e2Var, e2Var.getParentActivity(), e2Var.getResourceProvider(), u3Var, false);
-    }
-
-    @Override // a3.m0
-    public void K() {
-        j0 j0Var = ((a3.n) this.b).W;
-        if (j0Var != null) {
-            j0Var.a();
-        }
-    }
-
-    public float L(ic.c cVar, ic.c cVar2) {
-        int i10 = (int) cVar.a;
-        int i11 = (int) cVar.b;
-        int i12 = (int) cVar2.a;
-        int i13 = (int) cVar2.b;
-        float T = T(i10, i11, i12, i13);
-        float T2 = T((int) cVar2.a, i13, (int) cVar.a, i11);
-        return Float.isNaN(T) ? T2 / 7.0f : Float.isNaN(T2) ? T / 7.0f : (T + T2) / 14.0f;
-    }
-
-    @Override // ii.k0
-    public void M() {
-        switch (this.a) {
-            case 27:
-                z zVar = (z) this.b;
-                r3 r3Var = zVar.O;
-                if (r3Var != null) {
-                    ii.a aVar = zVar.a;
-                    x3 x3Var = r3Var.a;
-                    i2 i2Var = x3Var.H3;
-                    if (i2Var != null) {
-                        i2Var.g();
-                    }
-                    x3Var.f3.onContentChanged();
-                    break;
-                }
-                break;
-            default:
-                w4 w4Var = (w4) this.b;
-                q3 q3Var = w4Var.N;
-                if (q3Var != null) {
-                    ii.a aVar2 = w4Var.a;
-                    x3 x3Var2 = q3Var.a;
-                    i2 i2Var2 = x3Var2.H3;
-                    if (i2Var2 != null) {
-                        i2Var2.g();
-                    }
-                    x3Var2.f3.onContentChanged();
-                    break;
-                }
-                break;
-        }
-    }
-
-    public ic.a O(float f7, float f10, int i10, int i11) {
-        ic.a b10;
-        ic.a b11;
-        int i12 = (int) (f10 * f7);
-        int max = Math.max(0, i10 - i12);
-        dc.b bVar = (dc.b) this.b;
-        int min = Math.min(bVar.a - 1, i10 + i12) - max;
-        float f11 = 3.0f * f7;
-        if (min < f11) {
-            throw cc.e.a();
-        }
-        int max2 = Math.max(0, i11 - i12);
-        int min2 = Math.min(bVar.b - 1, i11 + i12) - max2;
-        if (min2 < f11) {
-            throw cc.e.a();
-        }
-        dc.b bVar2 = (dc.b) this.b;
-        ic.b bVar3 = new ic.b(bVar2, max, max2, min, min2, f7);
-        int i13 = bVar3.e;
-        int i14 = bVar3.c;
-        int i15 = i13 + i14;
-        int i16 = bVar3.f;
-        int i17 = (i16 / 2) + bVar3.d;
-        int[] iArr = new int[3];
-        for (int i18 = 0; i18 < i16; i18++) {
-            int i19 = ((i18 & 1) == 0 ? (i18 + 1) / 2 : -((i18 + 1) / 2)) + i17;
-            iArr[0] = 0;
-            iArr[1] = 0;
-            iArr[2] = 0;
-            int i20 = i14;
-            while (i20 < i15 && !bVar2.b(i20, i19)) {
-                i20++;
-            }
-            int i21 = 0;
-            while (i20 < i15) {
-                if (!bVar2.b(i20, i19)) {
-                    if (i21 == 1) {
-                        i21++;
-                    }
-                    iArr[i21] = iArr[i21] + 1;
-                } else if (i21 == 1) {
-                    iArr[1] = iArr[1] + 1;
-                } else if (i21 != 2) {
-                    i21++;
-                    iArr[i21] = iArr[i21] + 1;
-                } else {
-                    if (bVar3.a(iArr) && (b11 = bVar3.b(i19, i20, iArr)) != null) {
-                        return b11;
-                    }
-                    iArr[0] = iArr[2];
-                    iArr[1] = 1;
-                    iArr[2] = 0;
-                    i21 = 1;
-                }
-                i20++;
-            }
-            if (bVar3.a(iArr) && (b10 = bVar3.b(i19, i15, iArr)) != null) {
-                return b10;
-            }
-        }
-        ArrayList arrayList = bVar3.b;
-        if (arrayList.isEmpty()) {
-            throw cc.e.a();
-        }
-        return (ic.a) arrayList.get(0);
-    }
-
-    @Override // ii.k0
-    public void Q() {
-        switch (this.a) {
-            case 27:
-                z zVar = (z) this.b;
-                r3 r3Var = zVar.O;
-                if (r3Var != null) {
-                    ii.a aVar = zVar.a;
-                    x3.P1(r3Var.a);
-                    break;
-                }
-                break;
-            default:
-                w4 w4Var = (w4) this.b;
-                q3 q3Var = w4Var.N;
-                if (q3Var != null) {
-                    ii.a aVar2 = w4Var.a;
-                    x3.P1(q3Var.a);
-                    break;
-                }
-                break;
-        }
-    }
-
-    public float R(int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        int i19;
-        i iVar;
-        int i20;
-        int i21 = 1;
-        boolean z10 = Math.abs(i13 - i11) > Math.abs(i12 - i10);
-        if (z10) {
-            i15 = i10;
-            i14 = i11;
-            i17 = i12;
-            i16 = i13;
-        } else {
-            i14 = i10;
-            i15 = i11;
-            i16 = i12;
-            i17 = i13;
-        }
-        int abs = Math.abs(i16 - i14);
-        int abs2 = Math.abs(i17 - i15);
-        int i22 = 2;
-        int i23 = (-abs) / 2;
-        int i24 = i14 < i16 ? 1 : -1;
-        int i25 = i15 < i17 ? 1 : -1;
-        int i26 = i16 + i24;
-        int i27 = i14;
-        int i28 = i15;
-        int i29 = 0;
+        int i12 = length;
         while (true) {
-            if (i27 == i26) {
-                i18 = i22;
+            if (i11 >= length) {
                 break;
             }
-            int i30 = z10 ? i28 : i27;
-            int i31 = z10 ? i27 : i28;
-            boolean z11 = z10;
-            if (i29 == i21) {
-                i19 = i21;
-                i20 = abs;
-                iVar = this;
+            char charAt = charSequence.charAt(i11);
+            if (charAt < 2048) {
+                i12 += (127 - charAt) >>> 31;
+                i11++;
             } else {
-                i19 = 0;
-                iVar = this;
-                i20 = abs;
-            }
-            if (i19 == ((dc.b) iVar.b).b(i30, i31)) {
-                if (i29 == 2) {
-                    return z6.b(i27, i28, i14, i15);
+                int length2 = charSequence.length();
+                while (i11 < length2) {
+                    char charAt2 = charSequence.charAt(i11);
+                    if (charAt2 < 2048) {
+                        i10 += (127 - charAt2) >>> 31;
+                    } else {
+                        i10 += 2;
+                        if (55296 <= charAt2 && charAt2 <= 57343) {
+                            if (Character.codePointAt(charSequence, i11) < 65536) {
+                                StringBuilder sb2 = new StringBuilder(39);
+                                sb2.append("Unpaired surrogate at index ");
+                                sb2.append(i11);
+                                throw new IllegalArgumentException(sb2.toString());
+                            }
+                            i11++;
+                        }
+                    }
+                    i11++;
                 }
-                i29++;
+                i12 += i10;
             }
-            i23 += abs2;
-            if (i23 > 0) {
-                if (i28 == i17) {
-                    i18 = 2;
-                    break;
-                }
-                i28 += i25;
-                i23 -= i20;
-            }
-            i27 += i24;
-            abs = i20;
-            z10 = z11;
-            i21 = 1;
-            i22 = 2;
         }
-        if (i29 == i18) {
-            return z6.b(i26, i17, i14, i15);
+        if (i12 >= length) {
+            return i12;
         }
-        return Float.NaN;
+        StringBuilder sb3 = new StringBuilder(54);
+        sb3.append("UTF-8 length does not fit in int: ");
+        sb3.append(i12 + 4294967296L);
+        throw new IllegalArgumentException(sb3.toString());
     }
 
-    public float T(int i10, int i11, int i12, int i13) {
-        float f7;
-        float f10;
-        dc.b bVar = (dc.b) this.b;
-        float R = R(i10, i11, i12, i13);
-        int i14 = i10 - (i12 - i10);
-        int i15 = 0;
-        if (i14 < 0) {
-            f7 = i10 / (i10 - i14);
-            i14 = 0;
-        } else {
-            int i16 = bVar.a;
-            if (i14 >= i16) {
-                float f11 = ((i16 - 1) - i10) / (i14 - i10);
-                int i17 = i16 - 1;
-                f7 = f11;
-                i14 = i17;
-            } else {
-                f7 = 1.0f;
-            }
-        }
-        float f12 = i11;
-        int i18 = (int) (f12 - ((i13 - i11) * f7));
-        if (i18 < 0) {
-            f10 = f12 / (i11 - i18);
-        } else {
-            int i19 = bVar.b;
-            if (i18 >= i19) {
-                f10 = ((i19 - 1) - i11) / (i18 - i11);
-                i15 = i19 - 1;
-            } else {
-                i15 = i18;
-                f10 = 1.0f;
-            }
-        }
-        return (R(i10, i11, (int) (((i14 - i10) * f10) + i10), i15) + R) - 1.0f;
+    public void B(int i10, int i11) {
+        z((i10 << 3) | i11);
     }
 
-    @Override // gg.a2
-    public /* synthetic */ a0.i V() {
+    @Override // ji.j0
+    public o9 C() {
+        s3 s3Var = ((z0) this.b).S;
+        if (s3Var == null) {
+            return null;
+        }
+        return s3Var.a.getTextSelectionHelper();
+    }
+
+    @Override // ji.j0
+    public void F(CharSequence charSequence) {
+        s3 s3Var = ((z0) this.b).S;
+        if (s3Var != null) {
+            s3Var.getClass();
+            if (charSequence == null || charSequence.length() <= 0) {
+                return;
+            }
+            s3Var.a.u4(charSequence.toString());
+        }
+    }
+
+    public void G(long j10) {
+        while (((-128) & j10) != 0) {
+            w((((int) j10) & 127) | 128);
+            j10 >>>= 7;
+        }
+        w((int) j10);
+    }
+
+    @Override // mg.e
+    public void H() {
+        ((l0) this.b).h.o();
+    }
+
+    @Override // hg.z1
+    public /* synthetic */ a0.h K() {
         return null;
     }
 
-    @Override // androidx.lifecycle.a0
-    public void X(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        e0 e0Var = (e0) this.b;
-        Handler handler = e0Var.A0;
-        r4 r4Var = e0Var.B0;
-        handler.removeCallbacks(r4Var);
-        TextView textView = e0Var.G0;
-        if (textView != null) {
-            textView.setText(charSequence);
-        }
-        handler.postDelayed(r4Var, 2000L);
+    @Override // ji.j0
+    public n9 L() {
+        return (z0) this.b;
     }
 
-    public synchronized void Y() {
-        synchronized (this) {
-            try {
-                b bVar = (b) this.b;
-                ReentrantLock reentrantLock = bVar.a;
-                reentrantLock.lock();
-                try {
-                    bVar.b.edit().clear().apply();
-                } finally {
-                    reentrantLock.unlock();
-                }
-            } catch (Throwable th2) {
-                throw th2;
+    @Override // mg.e
+    public void N0() {
+        ((l0) this.b).h.k();
+    }
+
+    @Override // ji.j0
+    public ji.a O() {
+        return ((z0) this.b).a;
+    }
+
+    @Override // mg.e
+    public void P0(float f7) {
+        ((l0) this.b).h.setRotation(f7);
+    }
+
+    @Override // ji.j0
+    public boolean Q() {
+        z0 z0Var = (z0) this.b;
+        s3 s3Var = z0Var.S;
+        if (s3Var == null) {
+            return false;
+        }
+        ji.a aVar = z0Var.a;
+        return s3Var.a.T4();
+    }
+
+    @Override // ji.j0
+    public void S(int i10, int i11) {
+        z0 z0Var = (z0) this.b;
+        s3 s3Var = z0Var.S;
+        if (s3Var != null) {
+            ji.a aVar = z0Var.a;
+            h2 h2Var = s3Var.a.H3;
+            if (h2Var != null) {
+                h2Var.f(i10, i11);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.wi
-    public /* synthetic */ boolean Y1() {
-        return false;
+    @Override // ji.j0
+    public void Z() {
+        z0 z0Var = (z0) this.b;
+        s3 s3Var = z0Var.S;
+        if (s3Var != null) {
+            ji.a aVar = z0Var.a;
+            x3 x3Var = s3Var.a;
+            h2 h2Var = x3Var.H3;
+            if (h2Var != null) {
+                h2Var.g();
+            }
+            x3Var.f3.onContentChanged();
+        }
     }
 
-    @Override // ai.gc
-    public void Z(long j3, int i10, e5 e5Var) {
-        rz0 rz0Var = (rz0) this.b;
-        int i11 = ProfileStoriesView.s0;
-        rz0Var.f(true, false);
-        e5Var.run();
+    @Override // ji.j0
+    public void a(h1 h1Var) {
+        s3 s3Var = ((z0) this.b).S;
+        if (s3Var != null) {
+            x3 x3Var = s3Var.a;
+            x3.N1(x3Var, h1Var);
+            x3Var.f3.c0(h1Var, true);
+        }
     }
 
-    @Override // fi.s0
-    public void a(long j3) {
-        ((fi.s) this.b).presentFragment(zn.W9(j3));
+    @Override // mg.e
+    public void a0() {
+        ((l0) this.b).h.a.g(1, true);
     }
 
     @Override // com.google.android.gms.common.api.internal.s
@@ -600,51 +479,73 @@ public final class i implements m0, s, gc, a0, androidx.activity.result.b, p, o,
                 obtain.writeInt(1);
                 cVar.writeToParcel(obtain, 0);
                 cVar2.F0(obtain, 1);
-                break;
-            default:
+                return;
+            case 7:
+                b7.b bVar = new b7.b(0, (TaskCompletionSource) obj2);
+                m1 m1Var = (m1) ((l1) obj).u();
+                v vVar = (v) this.b;
+                Parcel obtain2 = Parcel.obtain();
+                obtain2.writeInterfaceToken(m1Var.b);
+                int i11 = n7.j.a;
+                obtain2.writeStrongBinder(bVar);
+                obtain2.writeInt(1);
+                vVar.writeToParcel(obtain2, 0);
+                Parcel obtain3 = Parcel.obtain();
+                try {
+                    m1Var.a.transact(1, obtain2, obtain3, 0);
+                    obtain3.readException();
+                    return;
+                } finally {
+                    obtain2.recycle();
+                    obtain3.recycle();
+                }
+            case 20:
                 q qVar = new q(2, (TaskCompletionSource) obj2);
                 g6.i iVar = (g6.i) ((g6.s) obj).u();
                 String[] strArr = (String[]) this.b;
                 Parcel N0 = iVar.N0();
-                v.d(N0, qVar);
+                com.google.android.gms.internal.cast.v.d(N0, qVar);
                 N0.writeStringArray(strArr);
                 iVar.S0(N0, 7);
-                break;
-        }
-    }
-
-    @Override // ii.k0, ii.h1
-    public void c(i1 i1Var) {
-        switch (this.a) {
-            case 27:
-                r3 r3Var = ((z) this.b).O;
-                if (r3Var != null) {
-                    x3 x3Var = r3Var.a;
-                    x3.N1(x3Var, i1Var);
-                    x3Var.f3.r(i1Var, true);
-                    break;
-                }
-                break;
+                return;
             default:
-                q3 q3Var = ((w4) this.b).N;
-                if (q3Var != null) {
-                    x3 x3Var2 = q3Var.a;
-                    x3.N1(x3Var2, i1Var);
-                    x3Var2.f3.r(i1Var, true);
-                    break;
-                }
-                break;
+                i7.b bVar2 = (i7.b) this.b;
+                i7.a aVar = new i7.a((TaskCompletionSource) obj2);
+                i7.i iVar2 = (i7.i) ((i7.c) obj).u();
+                String str = bVar2.k;
+                Parcel J0 = iVar2.J0();
+                int i12 = i7.f.a;
+                J0.writeStrongBinder(aVar);
+                J0.writeString(str);
+                iVar2.K0(J0, 2);
+                return;
         }
     }
 
-    @Override // fi.s0
-    public void close() {
-        ((fi.s) this.b).finishFragment();
+    @Override // d9.k
+    public Object apply(Object obj) {
+        Map.Entry entry = (Map.Entry) obj;
+        e9.l1 l1Var = (e9.l1) this.b;
+        l1Var.getClass();
+        entry.getClass();
+        return new j1(entry, l1Var);
     }
 
-    @Override // b5.p
-    public WebViewProviderBoundaryInterface createWebView(WebView webView) {
-        return (WebViewProviderBoundaryInterface) te.b.a(WebViewProviderBoundaryInterface.class, ((WebViewProviderFactoryBoundaryInterface) this.b).createWebView(webView));
+    @Override // a3.n0
+    public void b() {
+        a3.n nVar = (a3.n) this.b;
+        if (nVar.r1 != null) {
+            nVar.R0(0, 1);
+        }
+    }
+
+    public void c(c3.j jVar) {
+        LinkedHashMap linkedHashMap = (LinkedHashMap) this.b;
+        long[] jArr = jVar.e;
+        if (jArr.length <= 0 || linkedHashMap.containsKey(Long.valueOf(jArr[0]))) {
+            return;
+        }
+        linkedHashMap.put(Long.valueOf(jVar.e[0]), jVar);
     }
 
     @Override // l.w
@@ -682,423 +583,326 @@ public final class i implements m0, s, gc, a0, androidx.activity.result.b, p, o,
         }
     }
 
-    @Override // gg.a2
-    public /* synthetic */ a0.i d0() {
-        return null;
-    }
-
-    @Override // ii.v3
-    public void e(w3 w3Var, View view) {
-        e2 e2Var = (e2) this.b;
-        p80 H = p80.H(e2Var, view);
-        H.Q = true;
-        e2Var.getParentActivity();
-        e2Var.getResourceProvider();
-        e2Var.x0 = l4.b(H, e2Var, w3Var, false);
-    }
-
-    @Override // ai.gc
-    public boolean e1(long j3, int i10, int i11, int i12, hc hcVar) {
-        ImageReceiver imageReceiver;
-        i6 i6Var;
-        i6 i6Var2;
-        hcVar.b = null;
-        hcVar.c = null;
-        rz0 rz0Var = (rz0) this.b;
-        l01 l01Var = rz0Var.h;
-        ArrayList arrayList = rz0Var.w;
-        if (rz0Var.N < 0.2f) {
-            hcVar.b = l01Var.getImageReceiver();
-            hcVar.c = null;
-            hcVar.a = l01Var;
-            hcVar.h = 0.0f;
-            hcVar.i = AndroidUtilities.displaySize.y;
-            hcVar.g = (View) rz0Var.getParent();
-            hcVar.d = rz0Var.y;
-            hcVar.n = true;
-            return true;
-        }
-        int i13 = 0;
-        while (true) {
-            if (i13 >= arrayList.size()) {
-                imageReceiver = null;
-                i6Var = null;
-                i6Var2 = null;
-                break;
-            }
-            i6 i6Var3 = (i6) arrayList.get(i13);
-            if (i6Var3.e < 1.0f || i6Var3.a != i11) {
-                i13++;
-            } else {
-                int i14 = i13 - 1;
-                int i15 = i13 - 2;
-                i6 d = ProfileStoriesView.d(i14 >= 0 ? (i6) arrayList.get(i14) : null, i15 >= 0 ? (i6) arrayList.get(i15) : null, i6Var3);
-                imageReceiver = i6Var3.b;
-                i6Var2 = d;
-                i6Var = i6Var3;
-            }
-        }
-        if (imageReceiver == null) {
-            return false;
-        }
-        hcVar.c = imageReceiver;
-        hcVar.b = null;
-        hcVar.a = rz0Var;
-        hcVar.h = 0.0f;
-        hcVar.i = AndroidUtilities.displaySize.y;
-        hcVar.g = (View) rz0Var.getParent();
-        if (i6Var == null || i6Var2 == null) {
-            hcVar.f = null;
-            return true;
-        }
-        hcVar.f = new h6(this, new RectF(i6Var.m), i6Var, new RectF(i6Var2.m), i6Var2);
-        return true;
-    }
-
-    @Override // ii.v3
-    public boolean f(float f7) {
-        boolean z10;
-        e2 e2Var = (e2) this.b;
-        FrameLayout frameLayout = e2Var.v0;
-        if (frameLayout != null) {
-            frameLayout.getLocationOnScreen(new int[2]);
-            if (f7 >= r3[1]) {
-                z10 = true;
-                e2.Z(e2Var, z10, true);
-                return z10;
-            }
-        }
-        z10 = false;
-        e2.Z(e2Var, z10, true);
-        return z10;
-    }
-
-    @Override // org.telegram.ui.Components.wi
-    public void f0(jh jhVar) {
-        int i10;
-        i10 = ((n2) ((hg.n) this.b)).currentAccount;
-        NotificationCenter.getInstance(i10).doOnIdle(jhVar);
-    }
-
-    @Override // ii.k0
-    public void g() {
-        switch (this.a) {
-            case 27:
-                z zVar = (z) this.b;
-                r3 r3Var = zVar.O;
-                if (r3Var != null) {
-                    x3.Q1(r3Var.a, zVar.a);
-                    break;
-                }
-                break;
-            default:
-                w4 w4Var = (w4) this.b;
-                q3 q3Var = w4Var.N;
-                if (q3Var != null) {
-                    x3.Q1(q3Var.a, w4Var.a);
-                    break;
-                }
-                break;
+    @Override // a3.n0
+    public void e() {
+        i2.l0 l0Var = ((a3.n) this.b).Y;
+        if (l0Var != null) {
+            l0Var.a();
         }
     }
 
-    @Override // qg.v1
-    public float get() {
-        nb nbVar = (nb) this.b;
-        int i10 = nbVar.F1;
-        m currentBrush = nbVar.O0.getCurrentBrush();
-        return currentBrush == null ? u0.e(i10).i : u0.e(i10).f(String.valueOf(m.a.indexOf(currentBrush)), currentBrush.d());
-    }
-
-    @Override // b5.p
-    public StaticsBoundaryInterface getStatics() {
-        return (StaticsBoundaryInterface) te.b.a(StaticsBoundaryInterface.class, ((WebViewProviderFactoryBoundaryInterface) this.b).getStatics());
-    }
-
-    @Override // gg.a2
-    public void h(int i10) {
-        ((j1) this.b).l();
-    }
-
-    @Override // ii.v3
-    public void i(f6 f6Var, String str) {
-        e2 e2Var = (e2) this.b;
-        if (e2Var.z0 == null) {
-            e2Var.z0 = new m.q3(new c5(this, 15), e2Var.getResourceProvider());
+    @Override // ji.j0
+    public void f() {
+        z0 z0Var = (z0) this.b;
+        s3 s3Var = z0Var.S;
+        if (s3Var != null) {
+            x3.Q1(s3Var.a, z0Var.a);
         }
-        e2Var.z0.f(f6Var, str);
     }
 
-    @Override // org.telegram.ui.Components.wi
-    public /* synthetic */ boolean i0() {
-        return false;
+    @Override // gb.o
+    public Object f2() {
+        Type type = (Type) this.b;
+        if (!(type instanceof ParameterizedType)) {
+            throw new eb.j("Invalid EnumMap type: " + type.toString());
+        }
+        Type type2 = ((ParameterizedType) type).getActualTypeArguments()[0];
+        if (type2 instanceof Class) {
+            return new EnumMap((Class) type2);
+        }
+        throw new eb.j("Invalid EnumMap type: " + type.toString());
+    }
+
+    public StringBuilder h() {
+        ff.a aVar = (ff.a) this.b;
+        if (!(aVar instanceof af.r)) {
+            return null;
+        }
+        StringBuilder sb2 = ((af.r) aVar).b.b;
+        if (sb2.length() == 0) {
+            return null;
+        }
+        return sb2;
     }
 
     @Override // androidx.activity.result.b
-    public void j(Object obj) {
+    public void i(Object obj) {
         switch (this.a) {
             case 5:
-                Map map = (Map) obj;
-                androidx.fragment.app.k0 k0Var = (androidx.fragment.app.k0) this.b;
-                ArrayList arrayList = new ArrayList(map.values());
-                int[] iArr = new int[arrayList.size()];
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    iArr[i10] = ((Boolean) arrayList.get(i10)).booleanValue() ? 0 : -1;
-                }
-                g0 g0Var = (g0) k0Var.F.pollFirst();
-                if (g0Var == null) {
-                    Log.w("FragmentManager", "No permissions were requested for " + this);
-                    break;
-                } else {
-                    String str = g0Var.a;
-                    if (k0Var.c.l(str) == null) {
-                        Log.w("FragmentManager", "Permission request result delivered for unknown Fragment " + str);
+                androidx.activity.result.a aVar = (androidx.activity.result.a) obj;
+                i0 i0Var = (i0) this.b;
+                e0 e0Var = (e0) i0Var.F.pollLast();
+                if (e0Var != null) {
+                    String str = e0Var.a;
+                    int i10 = e0Var.b;
+                    androidx.fragment.app.r f7 = i0Var.c.f(str);
+                    if (f7 != null) {
+                        f7.x(i10, aVar.a, aVar.b);
+                        break;
+                    } else {
+                        Log.w("FragmentManager", "Activity result delivered for unknown Fragment " + str);
                         break;
                     }
+                } else {
+                    Log.w("FragmentManager", "No Activities were started for result for " + this);
+                    break;
                 }
-                break;
             default:
                 ProxyBillingActivityV2 proxyBillingActivityV2 = (ProxyBillingActivityV2) this.b;
-                androidx.activity.result.a aVar = (androidx.activity.result.a) obj;
+                androidx.activity.result.a aVar2 = (androidx.activity.result.a) obj;
                 proxyBillingActivityV2.getClass();
-                Intent intent = aVar.b;
-                int i11 = aVar.a;
-                Bundle extras = intent == null ? null : intent.getExtras();
-                if (i11 != -1) {
-                    if (extras == null) {
-                        extras = new Bundle();
-                    }
-                    u.h("ProxyBillingActivityV2", "External offer flow finished with resultCode: " + i11);
-                    extras.putInt("INTERNAL_LOG_ERROR_REASON", 134);
-                    extras.putString("INTERNAL_LOG_ERROR_ADDITIONAL_DETAILS", "External offer flow finished with error resultCode: " + i11);
-                }
-                int i12 = u.e("ProxyBillingActivityV2", intent).a;
-                ResultReceiver resultReceiver = proxyBillingActivityV2.O;
+                Intent intent = aVar2.b;
+                int i11 = u.e("ProxyBillingActivityV2", intent).a;
+                ResultReceiver resultReceiver = proxyBillingActivityV2.N;
                 if (resultReceiver != null) {
-                    resultReceiver.send(i12, extras);
-                } else {
-                    u.h("ProxyBillingActivityV2", "External offer flow result receiver is null");
+                    resultReceiver.send(i11, intent == null ? null : intent.getExtras());
                 }
-                if (i12 != 0) {
-                    u.h("ProxyBillingActivityV2", "External offer flow finished with billing responseCode: " + i12);
+                int i12 = aVar2.a;
+                if (i12 != -1 || i11 != 0) {
+                    u.h("ProxyBillingActivityV2", "External offer dialog finished with resultCode: " + i12 + " and billing's responseCode: " + i11);
                 }
                 proxyBillingActivityV2.finish();
                 break;
         }
     }
 
-    @Override // ii.v3
+    public c3.j j() {
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        ArrayList arrayList3 = new ArrayList();
+        ArrayList arrayList4 = new ArrayList();
+        for (c3.j jVar : ((LinkedHashMap) this.b).values()) {
+            arrayList.add(jVar.b);
+            arrayList2.add(jVar.c);
+            arrayList3.add(jVar.d);
+            arrayList4.add(jVar.e);
+        }
+        int[][] iArr = (int[][]) arrayList.toArray(new int[arrayList.size()][]);
+        long j10 = 0;
+        for (int[] iArr2 : iArr) {
+            j10 += iArr2.length;
+        }
+        int i10 = (int) j10;
+        u6.c(j10, "the total number of elements (%s) in the arrays must fit in an int", j10 == ((long) i10));
+        int[] iArr3 = new int[i10];
+        int i11 = 0;
+        for (int[] iArr4 : iArr) {
+            System.arraycopy(iArr4, 0, iArr3, i11, iArr4.length);
+            i11 += iArr4.length;
+        }
+        return new c3.j(iArr3, c8.a((long[][]) arrayList2.toArray(new long[arrayList2.size()][])), c8.a((long[][]) arrayList3.toArray(new long[arrayList3.size()][])), c8.a((long[][]) arrayList4.toArray(new long[arrayList4.size()][])));
+    }
+
+    @Override // hg.z1
+    public /* synthetic */ a0.h j0() {
+        return null;
+    }
+
+    @Override // hg.z1
     public void k(int i10) {
-        ((e2) this.b).o0(74, i10);
+        AndroidUtilities.runOnUIThread(new t0(this, 0));
     }
 
-    @Override // ii.v3
-    public void l() {
-        e2 e2Var = (e2) this.b;
-        k3 k3Var = e2Var.P.l3;
-        e2Var.x0((k3Var != null && k3Var.x() && e2Var.P.D4()) ? 1 : 0, true);
-        e2Var.y0();
-        e2Var.w0();
+    @Override // mg.e
+    public boolean k0() {
+        l0 l0Var = (l0) this.b;
+        g0 g0Var = l0Var.h;
+        boolean m10 = g0Var.m(-90.0f);
+        g0Var.i();
+        l0Var.e.invalidate();
+        return m10;
     }
 
-    @Override // ii.v3
-    public void m() {
-        e2 e2Var = (e2) this.b;
-        e2Var.I0 = e2Var.K0;
-        e2.Z(e2Var, false, false);
-        e2Var.x0(2, true);
+    public eb.i l(Object obj) {
+        eb.g gVar = ((hb.a0) this.b).b;
+        gVar.getClass();
+        if (obj == null) {
+            return eb.k.a;
+        }
+        Class<?> cls = obj.getClass();
+        hb.n nVar = new hb.n();
+        gVar.f(obj, cls, nVar);
+        return nVar.u();
     }
 
-    @Override // fi.s0
-    public void n() {
-        fi.s sVar = (fi.s) this.b;
-        me.b bVar = sVar.a;
-        t0 t0Var = sVar.v;
-        bVar.a(t0Var.n && t0Var.l == 0, true);
-        sVar.d.W2.N(true);
+    @Override // org.telegram.ui.Components.lb0
+    public Paint.FontMetricsInt m() {
+        return ((m) this.b).f.getEditText().getPaint().getFontMetricsInt();
     }
 
-    @Override // com.google.android.gms.common.api.internal.v0
-    public void o(k6.a aVar) {
-        x xVar = (x) this.b;
-        xVar.o.lock();
-        try {
-            xVar.l = aVar;
-            x.l(xVar);
-        } finally {
-            xVar.o.unlock();
+    public synchronized void o() {
+        synchronized (this) {
+            try {
+                b bVar = (b) this.b;
+                ReentrantLock reentrantLock = bVar.a;
+                reentrantLock.lock();
+                try {
+                    bVar.b.edit().clear().apply();
+                } finally {
+                    reentrantLock.unlock();
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
     }
 
-    @Override // ii.v3
-    public void onContentChanged() {
-        e2 e2Var = (e2) this.b;
-        if (e2Var.y0 != null) {
-            boolean n32 = e2Var.P.n3();
-            e2Var.L0 = n32;
-            e2Var.y0.h(n32);
-            e2Var.y0.invalidate();
+    @Override // ji.j0
+    public void o0() {
+        z0 z0Var = (z0) this.b;
+        s3 s3Var = z0Var.S;
+        if (s3Var != null) {
+            ji.a aVar = z0Var.a;
+            x3.P1(s3Var.a);
         }
-        e2Var.C0();
-        Runnable runnable = e2Var.M0;
-        AndroidUtilities.cancelRunOnUIThread(runnable);
-        AndroidUtilities.runOnUIThread(runnable, 1000L);
     }
 
-    @Override // a3.m0
+    @Override // a3.n0
     public void onFirstFrameRendered() {
         a3.n nVar = (a3.n) this.b;
-        Surface surface = nVar.m1;
+        Surface surface = nVar.r1;
         if (surface != null) {
-            nVar.Y0.R(surface);
-            nVar.p1 = true;
+            nVar.b1.y(surface);
+            nVar.u1 = true;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.e81
+    public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
+    }
+
+    @Override // org.telegram.ui.Components.e81
+    public void onStateChanged(boolean z10, int i10) {
+        a7 a7Var = (a7) this.b;
+        y6 y6Var = a7Var.M;
+        h81 h81Var = a7Var.x;
+        if (h81Var == null) {
+            return;
+        }
+        if (h81Var.y()) {
+            AndroidUtilities.runOnUIThread(y6Var);
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(y6Var);
         }
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
     public void onSuccess(Object obj) {
-        ((d6.a) this.b).getClass();
-        i5.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
-    }
-
-    @Override // ii.v3
-    public void p(ii.a aVar) {
-        e2 e2Var = (e2) this.b;
-        if (aVar != null && (aVar.b instanceof TL_iv.pageBlockMap) && AndroidUtilities.isMapsInstalled(e2Var)) {
-            yi yiVar = new yi(e2Var.getParentActivity(), e2Var, false, false, false, e2Var.getResourceProvider());
-            yiVar.c2 = new qb.b(11);
-            yiVar.P = true;
-            yiVar.A1.setVisibility(8);
-            yiVar.w2 = new r5(e2Var, aVar, yiVar, 11);
-            yiVar.t1();
-            yiVar.show();
-        }
-    }
-
-    @Override // qg.v1
-    public void q0(float f7) {
-        nb nbVar = (nb) this.b;
-        u0.e(nbVar.F1).k(String.valueOf(m.a.indexOf(nbVar.O0.getCurrentBrush())), f7);
-        s1 s1Var = nbVar.A1;
-        s1Var.c = f7;
-        nbVar.D0(s1Var, null, false);
-    }
-
-    @Override // b5.p
-    public String[] s() {
-        return ((WebViewProviderFactoryBoundaryInterface) this.b).getSupportedFeatures();
-    }
-
-    @Override // gg.a2
-    public /* synthetic */ boolean s0(int i10) {
-        return true;
-    }
-
-    @Override // com.google.android.gms.tasks.SuccessContinuation
-    public Task then(Object obj) {
-        JSONObject jSONObject;
-        FileWriter fileWriter;
-        da.c cVar = (da.c) this.b;
-        da.a aVar = (da.a) cVar.f;
-        da.e eVar = (da.e) cVar.b;
-        String str = aVar.b;
-        FileWriter fileWriter2 = null;
-        try {
-            HashMap b10 = da.a.b(eVar);
-            aa.a aVar2 = new aa.a(str, b10);
-            aVar2.r("User-Agent", "Crashlytics Android SDK/18.6.0");
-            aVar2.r("X-CRASHLYTICS-DEVELOPER-TOKEN", "470fa2b4ae81cd56ecbcda9735803434cec591fa");
-            da.a.a(aVar2, eVar);
-            String str2 = "Requesting settings from " + str;
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", str2, null);
-            }
-            String str3 = "Settings query params were: " + b10;
-            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                Log.v("FirebaseCrashlytics", str3, null);
-            }
-            jSONObject = aVar.c(aVar2.i());
-        } catch (IOException e7) {
-            Log.e("FirebaseCrashlytics", "Settings request failed.", e7);
-            jSONObject = null;
-        }
-        if (jSONObject != null) {
-            da.b U = ((a4.l) cVar.c).U(jSONObject);
-            pb.c cVar2 = (pb.c) cVar.e;
-            long j3 = U.c;
-            cVar2.getClass();
-            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                Log.v("FirebaseCrashlytics", "Writing settings to cache file...", null);
-            }
-            try {
-                jSONObject.put("expires_at", j3);
-                fileWriter = new FileWriter((File) cVar2.b);
-                try {
-                    try {
-                        fileWriter.write(jSONObject.toString());
-                        fileWriter.flush();
-                    } catch (Exception e10) {
-                        e = e10;
-                        Log.e("FirebaseCrashlytics", "Failed to cache settings", e);
-                        w9.h.c(fileWriter, "Failed to close settings writer.");
-                        da.c.f("Loaded settings: ", jSONObject);
-                        String str4 = eVar.f;
-                        SharedPreferences.Editor edit = ((Context) cVar.a).getSharedPreferences("com.google.firebase.crashlytics", 0).edit();
-                        edit.putString("existing_instance_identifier", str4);
-                        edit.apply();
-                        ((AtomicReference) cVar.h).set(U);
-                        ((TaskCompletionSource) ((AtomicReference) cVar.i).get()).trySetResult(U);
-                        return Tasks.forResult(null);
-                    }
-                } catch (Throwable th2) {
-                    th = th2;
-                    fileWriter2 = fileWriter;
-                    w9.h.c(fileWriter2, "Failed to close settings writer.");
-                    throw th;
+        d2 d2Var;
+        d1 b10;
+        d6.a aVar = (d6.a) this.b;
+        Bundle bundle = (Bundle) obj;
+        if (p0.j) {
+            Context context = aVar.a;
+            g6.r rVar = aVar.f;
+            p0 p0Var = new p0(context, rVar, aVar.c, aVar.j, aVar.g);
+            int i10 = bundle.containsKey("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE") ? bundle.getInt("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE", 0) : (bundle.containsKey("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED") && bundle.getBoolean("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED", false)) ? 1 : 0;
+            boolean z10 = bundle.getBoolean("com.google.android.gms.cast.FLAG_CLIENT_FEATURE_USAGE_ANALYTICS_ENABLED", false);
+            if (i10 == 0) {
+                if (!z10) {
+                    return;
                 }
-            } catch (Exception e11) {
-                e = e11;
-                fileWriter = null;
-            } catch (Throwable th3) {
-                th = th3;
-                w9.h.c(fileWriter2, "Failed to close settings writer.");
-                throw th;
+                i10 = 0;
+                z10 = true;
             }
-            w9.h.c(fileWriter, "Failed to close settings writer.");
-            da.c.f("Loaded settings: ", jSONObject);
-            String str42 = eVar.f;
-            SharedPreferences.Editor edit2 = ((Context) cVar.a).getSharedPreferences("com.google.firebase.crashlytics", 0).edit();
-            edit2.putString("existing_instance_identifier", str42);
-            edit2.apply();
-            ((AtomicReference) cVar.h).set(U);
-            ((TaskCompletionSource) ((AtomicReference) cVar.i).get()).trySetResult(U);
+            String packageName = context.getPackageName();
+            Locale locale = Locale.ROOT;
+            String u10 = t8.b.u(packageName, ".client_cast_analytics_data");
+            p0Var.h = bundle.getLong("com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE") == 0 ? 1 : 2;
+            l5.s.b(context);
+            p0Var.g = l5.s.a().c(j5.a.e).a("CAST_SENDER_SDK", new i5.c("proto"), z.a);
+            if (bundle.containsKey("com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE")) {
+                p0Var.e = Long.valueOf(bundle.getLong("com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE"));
+            }
+            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(u10, 0);
+            if (i10 != 0) {
+                com.google.android.gms.common.api.internal.v b11 = com.google.android.gms.common.api.internal.w.b();
+                b11.c = new k0(rVar, new String[]{"com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", "com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON"});
+                b11.d = new k6.c[]{y.c};
+                b11.b = false;
+                b11.a = 8426;
+                Task e = rVar.e(0, b11.a());
+                j6.l lVar = new j6.l();
+                lVar.b = p0Var;
+                lVar.c = packageName;
+                lVar.a = i10;
+                lVar.d = sharedPreferences;
+                e.addOnSuccessListener(lVar);
+            }
+            if (z10) {
+                n6.l.h(sharedPreferences);
+                g6.b bVar = d2.i;
+                synchronized (d2.class) {
+                    try {
+                        if (d2.k == null) {
+                            d2.k = new d2(sharedPreferences, p0Var, packageName);
+                        }
+                        d2Var = d2.k;
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
+                }
+                String str = d2Var.c;
+                SharedPreferences sharedPreferences2 = d2Var.b;
+                HashSet hashSet = d2Var.f;
+                String string = sharedPreferences2.getString("feature_usage_sdk_version", null);
+                String string2 = sharedPreferences2.getString("feature_usage_package_name", null);
+                hashSet.clear();
+                HashSet hashSet2 = d2Var.g;
+                hashSet2.clear();
+                d2Var.h = 0L;
+                String str2 = d2.j;
+                if (str2.equals(string) && str.equals(string2)) {
+                    d2Var.h = sharedPreferences2.getLong("feature_usage_last_report_time", 0L);
+                    long currentTimeMillis = System.currentTimeMillis();
+                    HashSet hashSet3 = new HashSet();
+                    for (String str3 : sharedPreferences2.getAll().keySet()) {
+                        if (str3.startsWith("feature_usage_timestamp_")) {
+                            long j10 = sharedPreferences2.getLong(str3, 0L);
+                            if (j10 != 0 && currentTimeMillis - j10 > 1209600000) {
+                                hashSet3.add(str3);
+                            } else if (str3.startsWith("feature_usage_timestamp_reported_feature_")) {
+                                d1 b12 = d2.b(str3.substring(41));
+                                if (b12 != null) {
+                                    hashSet2.add(b12);
+                                    hashSet.add(b12);
+                                }
+                            } else if (str3.startsWith("feature_usage_timestamp_detected_feature_") && (b10 = d2.b(str3.substring(41))) != null) {
+                                hashSet.add(b10);
+                            }
+                        }
+                    }
+                    d2Var.c(hashSet3);
+                    n6.l.h(d2Var.e);
+                    n6.l.h(d2Var.d);
+                    d2Var.e.post(d2Var.d);
+                } else {
+                    HashSet hashSet4 = new HashSet();
+                    for (String str4 : sharedPreferences2.getAll().keySet()) {
+                        if (str4.startsWith("feature_usage_timestamp_")) {
+                            hashSet4.add(str4);
+                        }
+                    }
+                    hashSet4.add("feature_usage_last_report_time");
+                    d2Var.c(hashSet4);
+                    sharedPreferences2.edit().putString("feature_usage_sdk_version", str2).putString("feature_usage_package_name", str).apply();
+                }
+                d2.a(d1.h);
+            }
         }
-        return Tasks.forResult(null);
     }
 
-    @Override // com.google.android.gms.common.api.internal.v0
-    public void u(int i10) {
-        k6.a aVar;
-        x xVar = (x) this.b;
-        Lock lock = xVar.o;
-        lock.lock();
-        try {
-            if (!xVar.n && (aVar = xVar.m) != null && aVar.c()) {
-                xVar.n = true;
-                xVar.e.onConnectionSuspended(i10);
-                lock.unlock();
-            }
-            xVar.n = false;
-            x.k(xVar, i10);
-            lock.unlock();
-        } catch (Throwable th2) {
-            lock.unlock();
-            throw th2;
-        }
+    @Override // org.telegram.ui.Components.e81
+    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
+        return false;
+    }
+
+    @Override // a3.n0
+    public void onVideoSizeChanged(b2 b2Var) {
     }
 
     @Override // l.w
-    public boolean v(l.k kVar) {
+    public boolean q(l.k kVar) {
         Window.Callback callback;
         r rVar = (r) this.b;
         if (kVar != kVar.k() || !rVar.O || (callback = rVar.f.getCallback()) == null || rVar.Z) {
@@ -1108,82 +912,226 @@ public final class i implements m0, s, gc, a0, androidx.activity.result.b, p, o,
         return true;
     }
 
-    @Override // fb.n
-    public Object v2() {
-        Class cls = (Class) this.b;
+    @Override // f6.a
+    public void t(Bitmap bitmap) {
+        ((f6.h) this.b).e(bitmap, 3);
+    }
+
+    @Override // hg.z1
+    public /* synthetic */ boolean t0(int i10) {
+        return true;
+    }
+
+    @Override // com.google.android.gms.tasks.SuccessContinuation
+    public Task then(Object obj) {
+        JSONObject jSONObject;
+        FileWriter fileWriter;
+        ea.b bVar = (ea.b) this.b;
+        c5.j jVar = (c5.j) bVar.f;
+        ea.d dVar = (ea.d) bVar.b;
+        String str = jVar.a;
+        FileWriter fileWriter2 = null;
         try {
-            return fb.s.a.a(cls);
-        } catch (Exception e7) {
-            throw new RuntimeException("Unable to create instance of " + cls + ". Registering an InstanceCreator or a TypeAdapter for this type, or adding a no-args constructor may fix this problem.", e7);
-        }
-    }
-
-    @Override // lg.o
-    public void w() {
-        ((i0) this.b).d.invalidate();
-    }
-
-    @Override // a3.m0
-    public void x() {
-        a3.n nVar = (a3.n) this.b;
-        if (nVar.m1 != null) {
-            nVar.N0(0, 1);
-        }
-    }
-
-    @Override // gg.a2
-    public void x0(ArrayList arrayList) {
-        j1 j1Var = (j1) this.b;
-        String str = j1Var.Z;
-        if (str != null) {
-            j1Var.U(str, j1Var.c0, j1Var.d0, j1Var.b0, j1Var.a0);
-        }
-    }
-
-    @Override // ii.k0
-    public o9 y() {
-        switch (this.a) {
-            case 27:
-                r3 r3Var = ((z) this.b).O;
-                if (r3Var != null) {
-                    return r3Var.a.getTextSelectionHelper();
-                }
-                return null;
-            default:
-                q3 q3Var = ((w4) this.b).N;
-                if (q3Var != null) {
-                    return q3Var.a.getTextSelectionHelper();
-                }
-                return null;
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.v0
-    public void z(Bundle bundle) {
-        x xVar = (x) this.b;
-        xVar.o.lock();
-        try {
-            Bundle bundle2 = xVar.k;
-            if (bundle2 == null) {
-                xVar.k = bundle;
-            } else if (bundle != null) {
-                bundle2.putAll(bundle);
+            HashMap b10 = c5.j.b(dVar);
+            androidx.biometric.e eVar = new androidx.biometric.e(str, b10);
+            eVar.s("User-Agent", "Crashlytics Android SDK/18.6.0");
+            eVar.s("X-CRASHLYTICS-DEVELOPER-TOKEN", "470fa2b4ae81cd56ecbcda9735803434cec591fa");
+            c5.j.a(eVar, dVar);
+            String str2 = "Requesting settings from " + str;
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", str2, null);
             }
-            xVar.l = k6.a.e;
-            x.l(xVar);
-        } finally {
-            xVar.o.unlock();
+            String str3 = "Settings query params were: " + b10;
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                Log.v("FirebaseCrashlytics", str3, null);
+            }
+            jSONObject = jVar.c(eVar.l());
+        } catch (IOException e) {
+            Log.e("FirebaseCrashlytics", "Settings request failed.", e);
+            jSONObject = null;
+        }
+        if (jSONObject != null) {
+            ea.a q6 = ((k6.h) bVar.c).q(jSONObject);
+            qb.c cVar = (qb.c) bVar.e;
+            long j10 = q6.c;
+            cVar.getClass();
+            if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                Log.v("FirebaseCrashlytics", "Writing settings to cache file...", null);
+            }
+            try {
+                jSONObject.put("expires_at", j10);
+                fileWriter = new FileWriter((File) cVar.b);
+                try {
+                    try {
+                        fileWriter.write(jSONObject.toString());
+                        fileWriter.flush();
+                    } catch (Exception e7) {
+                        e = e7;
+                        Log.e("FirebaseCrashlytics", "Failed to cache settings", e);
+                        x9.h.c(fileWriter, "Failed to close settings writer.");
+                        ea.b.f("Loaded settings: ", jSONObject);
+                        String str4 = dVar.f;
+                        SharedPreferences.Editor edit = ((Context) bVar.a).getSharedPreferences("com.google.firebase.crashlytics", 0).edit();
+                        edit.putString("existing_instance_identifier", str4);
+                        edit.apply();
+                        ((AtomicReference) bVar.h).set(q6);
+                        ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).trySetResult(q6);
+                        return Tasks.forResult(null);
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    fileWriter2 = fileWriter;
+                    x9.h.c(fileWriter2, "Failed to close settings writer.");
+                    throw th;
+                }
+            } catch (Exception e10) {
+                e = e10;
+                fileWriter = null;
+            } catch (Throwable th3) {
+                th = th3;
+                x9.h.c(fileWriter2, "Failed to close settings writer.");
+                throw th;
+            }
+            x9.h.c(fileWriter, "Failed to close settings writer.");
+            ea.b.f("Loaded settings: ", jSONObject);
+            String str42 = dVar.f;
+            SharedPreferences.Editor edit2 = ((Context) bVar.a).getSharedPreferences("com.google.firebase.crashlytics", 0).edit();
+            edit2.putString("existing_instance_identifier", str42);
+            edit2.apply();
+            ((AtomicReference) bVar.h).set(q6);
+            ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).trySetResult(q6);
+        }
+        return Tasks.forResult(null);
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 22:
+                return "<" + ((String) this.b) + '>';
+            default:
+                return super.toString();
         }
     }
 
-    public /* synthetic */ i(g6.r rVar, String[] strArr) {
-        this.a = 22;
-        this.b = strArr;
+    public void u(int i10, String str) {
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        B(i10, 2);
+        try {
+            int M = M(str.length());
+            if (M != M(str.length() * 3)) {
+                z(s(str));
+                D(str, byteBuffer);
+                return;
+            }
+            int position = byteBuffer.position();
+            if (byteBuffer.remaining() < M) {
+                throw new z4(position + M, byteBuffer.limit());
+            }
+            byteBuffer.position(position + M);
+            D(str, byteBuffer);
+            int position2 = byteBuffer.position();
+            byteBuffer.position(position);
+            z((position2 - position) - M);
+            byteBuffer.position(position2);
+        } catch (BufferOverflowException e) {
+            z4 z4Var = new z4(byteBuffer.position(), byteBuffer.limit());
+            z4Var.initCause(e);
+            throw z4Var;
+        }
+    }
+
+    public void v(int i10, byte[] bArr) {
+        B(i10, 2);
+        z(bArr.length);
+        int length = bArr.length;
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        if (byteBuffer.remaining() < length) {
+            throw new z4(byteBuffer.position(), byteBuffer.limit());
+        }
+        byteBuffer.put(bArr, 0, length);
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void v0(Object obj) {
+        CharSequence charSequence = (CharSequence) obj;
+        androidx.biometric.q qVar = (androidx.biometric.q) this.b;
+        if (charSequence != null) {
+            if (qVar.R()) {
+                qVar.W(charSequence);
+            }
+            qVar.l0.d(null);
+        }
+    }
+
+    public void w(int i10) {
+        byte b10 = (byte) i10;
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        if (!byteBuffer.hasRemaining()) {
+            throw new z4(byteBuffer.position(), byteBuffer.limit());
+        }
+        byteBuffer.put(b10);
+    }
+
+    @Override // mg.e
+    public boolean x() {
+        l0 l0Var = (l0) this.b;
+        l0Var.e.invalidate();
+        return l0Var.h.j();
+    }
+
+    @Override // org.telegram.ui.Components.lb0
+    public void y(int i10, int i11, CharSequence charSequence, boolean z10) {
+        di.g gVar = ((m) this.b).f;
+        if (gVar == null) {
+            return;
+        }
+        try {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(gVar.getText());
+            spannableStringBuilder.replace(i10, i11 + i10, charSequence);
+            if (z10) {
+                Emoji.replaceEmoji(spannableStringBuilder, gVar.getEditText().getPaint().getFontMetricsInt(), false);
+            }
+            gVar.setText(spannableStringBuilder);
+            gVar.setSelection(i10 + charSequence.length());
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    public void z(int i10) {
+        while ((i10 & (-128)) != 0) {
+            w((i10 & 127) | 128);
+            i10 >>>= 7;
+        }
+        w(i10);
     }
 
     public /* synthetic */ i(Object obj, int i10) {
         this.a = i10;
         this.b = obj;
+    }
+
+    @Override // org.telegram.ui.Components.e81
+    public void onRenderedFirstFrame() {
+    }
+
+    @Override // org.telegram.ui.Components.e81
+    public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
+        rg.d2 d2Var = ((a7) this.b).w;
+        if (d2Var != null) {
+            float f10 = i10 / i11;
+            if (Math.abs(d2Var.y0 - f10) >= 1.0E-4f) {
+                d2Var.y0 = f10;
+                d2Var.requestLayout();
+            }
+        }
+    }
+
+    public i(byte[] bArr, int i10) {
+        this.a = 11;
+        ByteBuffer wrap = ByteBuffer.wrap(bArr, 0, i10);
+        this.b = wrap;
+        wrap.order(ByteOrder.LITTLE_ENDIAN);
     }
 
     public i(Context context) {
@@ -1205,71 +1153,43 @@ public final class i implements m0, s, gc, a0, androidx.activity.result.b, p, o,
     public i(int i10) {
         this.a = i10;
         switch (i10) {
-            case 8:
-                this.b = new e2.v(10);
-                break;
-            case 13:
-                this.b = Collections.newSetFromMap(new WeakHashMap());
+            case 24:
                 break;
             default:
-                this.b = new LinkedHashMap(0, 0.75f, true);
+                this.b = new LinkedHashMap();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.wi
-    public /* synthetic */ void B0() {
+    @Override // org.telegram.ui.Components.lb0
+    public /* synthetic */ void E(String str) {
     }
 
-    @Override // a3.m0
-    public void P() {
+    @Override // hg.z1
+    public /* synthetic */ void I0(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.Components.wi
-    public /* synthetic */ void P0() {
+    @Override // org.telegram.ui.Components.e81
+    public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // lg.o
-    public void W() {
+    @Override // org.telegram.ui.Components.e81
+    public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // ii.v3
-    public void q() {
+    @Override // org.telegram.ui.Components.e81
+    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
-    @Override // lg.o
-    public void D(boolean z10) {
+    @Override // org.telegram.ui.Components.e81
+    public void onError(h81 h81Var, Exception exc) {
     }
 
-    @Override // lg.o
-    public void S(boolean z10) {
+    @Override // org.telegram.ui.Components.lb0
+    public /* synthetic */ void g(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10) {
     }
 
-    @Override // org.telegram.ui.Components.wi
-    public /* synthetic */ void a1(Object obj) {
-    }
-
-    @Override // ai.gc
-    public /* synthetic */ void b(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.wi
-    public /* synthetic */ void p1(TLRPC.User user) {
-    }
-
-    @Override // ii.v3
-    public void t(int i10) {
-    }
-
-    @Override // ii.v3
-    public void r(i1 i1Var, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.wi
-    public /* synthetic */ void c2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
-    }
-
-    @Override // org.telegram.ui.Components.wi
-    public void I1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
+    @Override // org.telegram.ui.Components.lb0
+    public /* synthetic */ void r(TLRPC.TL_document tL_document, String str, Object obj) {
     }
 }

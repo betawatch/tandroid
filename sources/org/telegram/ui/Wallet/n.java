@@ -18,14 +18,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.t11;
-import org.telegram.ui.Components.u11;
+import org.telegram.ui.Components.p11;
+import org.telegram.ui.Components.q11;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.ft;
-import org.telegram.ui.g90;
+import org.telegram.ui.l90;
+import org.telegram.ui.mt;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -85,28 +85,28 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
         boolean z10 = false;
         switch (this.a) {
             case 0:
-                k0 k0Var = (k0) this.b;
-                b0 b0Var = (b0) this.c;
+                j0 j0Var = (j0) this.b;
+                a0 a0Var = (a0) this.c;
                 String str5 = (String) this.d;
                 Runnable runnable = (Runnable) this.e;
                 TL_toncenter.apiResponse apiresponse = (TL_toncenter.apiResponse) obj;
                 if (apiresponse != null) {
                     try {
-                        b0Var.b = Long.parseLong(new JSONObject(apiresponse.response.data).getString("balance"));
-                        if (k0Var.J.get(str5) == b0Var) {
-                            k0Var.f0(b0Var);
-                            k0Var.I();
+                        a0Var.b = Long.parseLong(new JSONObject(apiresponse.response.data).getString("balance"));
+                        if (j0Var.J.get(str5) == a0Var) {
+                            j0Var.f0(a0Var);
+                            j0Var.I();
                         }
-                    } catch (Exception e7) {
-                        k0.j("failed to get balance of " + str5, e7);
+                    } catch (Exception e) {
+                        j0.j("failed to get balance of " + str5, e);
                     }
                 }
                 runnable.run();
                 return;
             case 1:
-                k0 k0Var2 = (k0) this.b;
-                ft ftVar = (ft) this.c;
-                h0 h0Var = (h0) this.d;
+                j0 j0Var2 = (j0) this.b;
+                mt mtVar = (mt) this.c;
+                g0 g0Var = (g0) this.d;
                 byte[] bArr6 = (byte[]) this.e;
                 Vector vector = (Vector) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
@@ -114,33 +114,33 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                     if (tL_error == null || (str3 = tL_error.text) == null) {
                         str3 = "NULL_ERROR";
                     }
-                    k0.i("enable backup: didnt get backup holders: ".concat(str3));
+                    j0.i("enable backup: didnt get backup holders: ".concat(str3));
                     if (tL_error != null && (str4 = tL_error.text) != null) {
                         str = str4;
                     }
-                    ftVar.run(str);
+                    mtVar.run(str);
                     return;
                 }
                 int size = vector.objects.size();
                 if (size != 3) {
-                    k0.i("enable backup: expected three backup holders");
-                    ftVar.run("INVALID_BACKUP_HOLDERS_COUNT");
+                    j0.i("enable backup: expected three backup holders");
+                    mtVar.run("INVALID_BACKUP_HOLDERS_COUNT");
                     return;
                 }
                 byte[][] bArr7 = new byte[size][];
                 try {
-                    c10 = h0Var.c();
+                    c10 = g0Var.c();
                     try {
-                        bArr2 = k0.Q(c10);
-                    } catch (Exception e10) {
-                        e = e10;
+                        bArr2 = j0.Q(c10);
+                    } catch (Exception e7) {
+                        e = e7;
                         str2 = "NULL_ERROR";
                         bArr = c10;
                         bArr2 = null;
                         bArr3 = null;
                         try {
-                            k0.j("enable backup", e);
-                            ftVar.run(e.getMessage() == null ? str2 : e.getMessage());
+                            j0.j("enable backup", e);
+                            mtVar.run(e.getMessage() == null ? str2 : e.getMessage());
                             byte b10 = 0;
                             if (bArr != null) {
                             }
@@ -171,8 +171,8 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                         }
                         throw th;
                     }
-                } catch (Exception e11) {
-                    e = e11;
+                } catch (Exception e10) {
+                    e = e10;
                     str2 = "NULL_ERROR";
                     bArr = null;
                 } catch (Throwable th4) {
@@ -180,7 +180,7 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                     bArr = null;
                 }
                 try {
-                    bArr3 = k0.a0(bArr2, new SecureRandom());
+                    bArr3 = j0.a0(bArr2, new SecureRandom());
                     try {
                         try {
                         } catch (Throwable th5) {
@@ -199,8 +199,8 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                             }
                             throw th;
                         }
-                    } catch (Exception e12) {
-                        e = e12;
+                    } catch (Exception e11) {
+                        e = e11;
                         str2 = "NULL_ERROR";
                     }
                     try {
@@ -227,7 +227,7 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                                     length = i13;
                                     str = str6;
                                 }
-                                k0.E("enable backup: diagnostics sharesReconstructPaddedMnemonic=" + Arrays.equals(bArr2, bArr9));
+                                j0.E("enable backup: diagnostics sharesReconstructPaddedMnemonic=" + Arrays.equals(bArr2, bArr9));
                                 Arrays.fill(bArr9, (byte) 0);
                             } catch (Throwable th7) {
                                 th = th7;
@@ -392,21 +392,21 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                         }
                         for (int i19 = 0; i19 < size; i19++) {
                             if (bArr12[i19] == null) {
-                                k0.i("part " + i19 + " is null");
-                                ftVar.run("PART_" + i19 + "_NULL");
+                                j0.i("part " + i19 + " is null");
+                                mtVar.run("PART_" + i19 + "_NULL");
                                 return;
                             }
                         }
                         TL_wallet.enableBackup enablebackup = new TL_wallet.enableBackup();
                         enablebackup.parts = new ArrayList<>(Arrays.asList(bArr12));
                         enablebackup.new_public_key = bArr6;
-                        k0Var2.R(h0Var, false, new i((Object) k0Var2, (Object) ftVar, (Object) enablebackup, 7));
+                        j0Var2.R(g0Var, false, new i((Object) j0Var2, (Object) mtVar, (Object) enablebackup, 7));
                         return;
-                    } catch (Exception e13) {
-                        e = e13;
+                    } catch (Exception e12) {
+                        e = e12;
                         bArr = c10;
-                        k0.j("enable backup", e);
-                        ftVar.run(e.getMessage() == null ? str2 : e.getMessage());
+                        j0.j("enable backup", e);
+                        mtVar.run(e.getMessage() == null ? str2 : e.getMessage());
                         byte b102 = 0;
                         if (bArr != null) {
                             Arrays.fill(bArr, (byte) 0);
@@ -426,13 +426,13 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                         }
                         return;
                     }
-                } catch (Exception e14) {
-                    e = e14;
+                } catch (Exception e13) {
+                    e = e13;
                     str2 = "NULL_ERROR";
                     bArr = c10;
                     bArr3 = null;
-                    k0.j("enable backup", e);
-                    ftVar.run(e.getMessage() == null ? str2 : e.getMessage());
+                    j0.j("enable backup", e);
+                    mtVar.run(e.getMessage() == null ? str2 : e.getMessage());
                     byte b1022 = 0;
                     if (bArr != null) {
                     }
@@ -454,7 +454,7 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                 }
                 break;
             case 2:
-                ((k0) this.b).R((h0) this.c, true, new n((Utilities.Callback) this.d, (Utilities.Callback) obj2, (byte[]) this.e, (TLRPC.InputCheckPasswordSRP) obj, 3));
+                ((j0) this.b).R((g0) this.c, true, new n((Utilities.Callback) this.d, (Utilities.Callback) obj2, (byte[]) this.e, (TLRPC.InputCheckPasswordSRP) obj, 3));
                 return;
             case 3:
                 Utilities.Callback callback = (Utilities.Callback) this.b;
@@ -481,7 +481,7 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                 callback2.run(replacewallet);
                 return;
             case 4:
-                a0 a0Var = (a0) this.b;
+                z zVar = (z) this.b;
                 TL_wallet.nftItem nftitem = (TL_wallet.nftItem) this.c;
                 String str8 = (String) this.d;
                 Utilities.Callback2 callback22 = (Utilities.Callback2) this.e;
@@ -490,24 +490,24 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                 if (wallettransaction != null) {
                     wallettransaction.nft = nftitem;
                     wallettransaction.comment = str8;
-                    wallettransaction.date = ConnectionsManager.getInstance(a0Var.h.a).getCurrentTime();
+                    wallettransaction.date = ConnectionsManager.getInstance(zVar.h.a).getCurrentTime();
                 }
-                if (a0Var.a) {
+                if (zVar.a) {
                     return;
                 }
                 callback22.run(wallettransaction, str9);
                 return;
             case 5:
-                j0 j0Var = (j0) this.b;
+                i0 i0Var = (i0) this.b;
                 String str10 = (String) this.d;
                 String str11 = (String) this.c;
                 String str12 = (String) this.e;
                 TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
-                j0Var.getClass();
-                if (walletuseraddress == null || walletuseraddress.user_id == 0 || MessagesController.getInstance(j0Var.j.a).getUser(Long.valueOf(walletuseraddress.user_id)) == null) {
+                i0Var.getClass();
+                if (walletuseraddress == null || walletuseraddress.user_id == 0 || MessagesController.getInstance(i0Var.j.a).getUser(Long.valueOf(walletuseraddress.user_id)) == null) {
                     return;
                 }
-                ArrayList arrayList = j0Var.b;
+                ArrayList arrayList = i0Var.b;
                 int size2 = arrayList.size();
                 int i21 = 0;
                 while (i21 < size2) {
@@ -524,79 +524,79 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                     }
                 }
                 if (z10) {
-                    j0Var.h();
-                    j0Var.f();
+                    i0Var.h();
+                    i0Var.f();
                     return;
                 }
                 return;
             case 6:
-                ft ftVar2 = (ft) this.b;
-                h0 h0Var2 = (h0) this.c;
+                mt mtVar2 = (mt) this.b;
+                g0 g0Var2 = (g0) this.c;
                 z1 z1Var = (z1) this.d;
                 s1 s1Var = (s1) this.e;
                 TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (tonconnectchallenge == null || tL_error2 != null) {
-                    ftVar2.run(d2.x(tL_error2, "registerKey"));
+                    mtVar2.run(d2.x(tL_error2, "registerKey"));
                     return;
                 } else {
-                    Utilities.globalQueue.postRunnable(new g90(h0Var2, z1Var, tonconnectchallenge, ftVar2, s1Var, 27));
+                    Utilities.globalQueue.postRunnable(new l90(g0Var2, z1Var, tonconnectchallenge, mtVar2, s1Var, 27));
                     return;
                 }
             case 7:
                 d2 d2Var = (d2) this.b;
                 z1 z1Var2 = (z1) this.c;
-                h0 h0Var3 = (h0) this.d;
+                g0 g0Var3 = (g0) this.d;
                 Utilities.Callback callback3 = (Utilities.Callback) this.e;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
                 String str13 = (String) obj2;
                 if (sendtransfer != null && str13 == null && d2Var.y(z1Var2) && !d2Var.i(z1Var2)) {
-                    Utilities.globalQueue.postRunnable(new g90(d2Var, sendtransfer, z1Var2, callback3, h0Var3, 28));
+                    Utilities.globalQueue.postRunnable(new l90(d2Var, sendtransfer, z1Var2, callback3, g0Var3, 28));
                     return;
                 }
                 if (str13 == null) {
                     str13 = "Transfer unavailable or request expired";
                 }
-                d2Var.w(z1Var2, h0Var3, null, 0, str13, callback3);
+                d2Var.w(z1Var2, g0Var3, null, 0, str13, callback3);
                 return;
             case 8:
                 d2 d2Var2 = (d2) this.b;
                 z1 z1Var3 = (z1) this.c;
-                h0 h0Var4 = (h0) this.d;
-                ft ftVar3 = (ft) this.e;
+                g0 g0Var4 = (g0) this.d;
+                mt mtVar3 = (mt) this.e;
                 String str14 = (String) obj;
                 String str15 = (String) obj2;
                 if (str14 != null) {
                     try {
                         if (d2Var2.y(z1Var3) && !d2Var2.i(z1Var3)) {
-                            d2Var2.w(z1Var3, h0Var4, new JSONObject().put("internalBoc", str14), -1, null, ftVar3);
+                            d2Var2.w(z1Var3, g0Var4, new JSONObject().put("internalBoc", str14), -1, null, mtVar3);
                             return;
                         }
-                    } catch (JSONException e15) {
-                        d2Var2.w(z1Var3, h0Var4, null, 0, d2.h("sign message response", e15), ftVar3);
+                    } catch (JSONException e14) {
+                        d2Var2.w(z1Var3, g0Var4, null, 0, d2.h("sign message response", e14), mtVar3);
                         return;
                     }
                 }
                 str15 = "Request expired or wallet changed";
-                d2Var2.w(z1Var3, h0Var4, null, 0, str15, ftVar3);
+                d2Var2.w(z1Var3, g0Var4, null, 0, str15, mtVar3);
                 return;
             case 9:
                 boolean[] zArr = (boolean[]) this.b;
                 i2[] i2VarArr = (i2[]) this.c;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.d;
-                vh.n nVar = (vh.n) this.e;
+                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.d;
+                wh.n nVar = (wh.n) this.e;
                 String str16 = (String) obj;
                 String str17 = (String) obj2;
                 zArr[0] = false;
                 if (str17 != null) {
-                    new ad(i2VarArr[0].topBulletinContainer, e6Var).e0(str17, false);
+                    new zc(i2VarArr[0].topBulletinContainer, c6Var).e0(str17, false);
                     return;
                 }
                 nVar.setPadding(AndroidUtilities.dp(19.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(8.0f));
                 SpannableString spannableString = new SpannableString(str16);
-                t11 t11Var = new t11();
-                t11Var.a |= 256;
-                spannableString.setSpan(new u11(t11Var, 0), 0, spannableString.length(), 33);
+                p11 p11Var = new p11();
+                p11Var.a |= 256;
+                spannableString.setSpan(new q11(p11Var, 0), 0, spannableString.length(), 33);
                 nVar.setText(spannableString);
                 nVar.setTextIsSelectable(true);
                 nVar.setOnClickListener(null);
@@ -611,23 +611,23 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                 nVar.c((nVar.getWidth() / 2.0f) - nVar.getPaddingLeft(), ((nVar.getHeight() / 2.0f) - nVar.getPaddingTop()) + nVar.getScrollY());
                 return;
             default:
-                s8.Z((s8) this.c, (k0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
+                r8.Z((r8) this.c, (j0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
                 return;
         }
     }
 
-    public /* synthetic */ n(j0 j0Var, String str, String str2, String str3) {
+    public /* synthetic */ n(i0 i0Var, String str, String str2, String str3) {
         this.a = 5;
-        this.b = j0Var;
+        this.b = i0Var;
         this.d = str;
         this.c = str2;
         this.e = str3;
     }
 
-    public /* synthetic */ n(s8 s8Var, k0 k0Var, TLRPC.User user, String str) {
+    public /* synthetic */ n(r8 r8Var, j0 j0Var, TLRPC.User user, String str) {
         this.a = 10;
-        this.c = s8Var;
-        this.b = k0Var;
+        this.c = r8Var;
+        this.b = j0Var;
         this.e = user;
         this.d = str;
     }

@@ -1,36 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fl0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ il0 b;
+public interface fl0 {
+    boolean D();
 
-    public /* synthetic */ fl0(il0 il0Var, int i10) {
-        this.a = i10;
-        this.b = il0Var;
-    }
+    boolean i();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                if (this.b.a.getImageReceiver().getLottieAnimation() != null && !this.b.a.getImageReceiver().getLottieAnimation().k0 && !this.b.a.getImageReceiver().getLottieAnimation().y()) {
-                    this.b.a.getImageReceiver().getLottieAnimation().start();
-                }
-                this.b.E = false;
-                break;
-            default:
-                il0 il0Var = this.b;
-                kl0 kl0Var = il0Var.P;
-                try {
-                    il0Var.performHapticFeedback(0);
-                } catch (Exception unused) {
-                }
-                kl0Var.m0 = kl0Var.T.indexOf(il0Var.e);
-                kl0Var.l0 = il0Var.e;
-                kl0Var.invalidate();
-                break;
-        }
-    }
+    boolean n();
+
+    void r(View view, ah.i1 i1Var, boolean z10, boolean z11);
+
+    void w(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10);
+
+    void y();
 }

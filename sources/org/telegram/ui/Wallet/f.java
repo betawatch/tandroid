@@ -14,23 +14,23 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class f {
     public final int a;
-    public final k0 b;
+    public final j0 b;
     public boolean c;
     public TL_wallet.currencyRates d;
     public String e = "en";
     public String f;
 
-    public f(k0 k0Var) {
-        this.b = k0Var;
-        this.a = k0Var.a;
+    public f(j0 j0Var) {
+        this.b = j0Var;
+        this.a = j0Var.a;
         try {
             this.f = ApplicationLoader.applicationContext.getSharedPreferences("gram_wallet", 0).getString("currency", g());
-        } catch (Exception e7) {
-            FileLog.e("[gram-wallet] failed to load currency prefs", e7);
+        } catch (Exception e) {
+            FileLog.e("[gram-wallet] failed to load currency prefs", e);
         }
         if (TextUtils.equals(g(), "USD")) {
             return;

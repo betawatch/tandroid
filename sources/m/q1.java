@@ -3,7 +3,7 @@ package m;
 import android.widget.AbsListView;
 import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class q1 {
     public static final Field a;
@@ -13,8 +13,8 @@ public abstract class q1 {
         try {
             field = AbsListView.class.getDeclaredField("mIsChildViewEnabled");
             field.setAccessible(true);
-        } catch (NoSuchFieldException e7) {
-            e7.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
         }
         a = field;
     }

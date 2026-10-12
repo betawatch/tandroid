@@ -1,59 +1,95 @@
 package m4;
 
-import j$.util.Objects;
+import android.os.Bundle;
+import v7.q8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i0 implements q {
-    public final n4.z a;
+public final /* synthetic */ class i0 implements p0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q0 b;
 
-    public i0(n4.z zVar) {
-        this.a = zVar;
+    public /* synthetic */ i0(q0 q0Var, int i10) {
+        this.a = i10;
+        this.b = q0Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // m4.p0
+    public final void f(w wVar) {
+        int i10 = this.a;
+        q0 q0Var = this.b;
+        switch (i10) {
+            case 0:
+                q0Var.g.n(wVar);
+                break;
+            case 1:
+                f0 f0Var = q0Var.g;
+                if (f0Var.t.S0() != null) {
+                    pb.a aVar = f0Var.e;
+                    f0Var.s(wVar);
+                    aVar.getClass();
+                    q8.b(new t1(-6));
+                    break;
+                }
+                break;
+            case 2:
+                q0Var.g.t.V();
+                break;
+            case 3:
+                q0Var.g.t.E();
+                break;
+            case 4:
+                q0Var.g.t.I0();
+                break;
+            case 5:
+                q0Var.g.t.J0();
+                break;
+            case 6:
+                q0Var.g.g(wVar, true);
+                break;
+            case 7:
+                q0Var.g.t.b();
+                break;
+            case 8:
+                q0Var.g.t.stop();
+                break;
+            case 9:
+                f0 f0Var2 = q0Var.g;
+                n1 n1Var = f0Var2.t;
+                if (!e2.m0.c0(n1Var, f0Var2.p)) {
+                    if (n1Var != null && n1Var.o0(1)) {
+                        n1Var.e();
+                        break;
+                    }
+                } else {
+                    e2.m0.J(n1Var);
+                    break;
+                }
+                break;
+            case 10:
+                q0Var.g.t.H0();
+                break;
+            case 11:
+                q0Var.g.t.f0();
+                break;
+            default:
+                n1 n1Var2 = q0Var.g.t;
+                String str = e2.m0.a;
+                if (n1Var2 != null && n1Var2.o0(1)) {
+                    n1Var2.e();
+                    break;
+                }
+                break;
         }
-        if (obj == null || obj.getClass() != i0.class) {
-            return false;
-        }
-        return Objects.equals(this.a, ((i0) obj).a);
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.a);
+    public /* synthetic */ i0(q0 q0Var, b2.h1 h1Var) {
+        this.a = 1;
+        this.b = q0Var;
     }
 
-    @Override // m4.q
-    public final /* synthetic */ void f() {
-    }
-
-    @Override // m4.q
-    public final /* synthetic */ void b(int i10) {
-    }
-
-    @Override // m4.q
-    public final /* synthetic */ void a(int i10, l lVar) {
-    }
-
-    @Override // m4.q
-    public final /* synthetic */ void c(int i10, b2.x0 x0Var) {
-    }
-
-    @Override // m4.q
-    public final /* synthetic */ void d(int i10, h1 h1Var) {
-    }
-
-    @Override // m4.q
-    public final /* synthetic */ void i(int i10, l1 l1Var) {
-    }
-
-    @Override // m4.q
-    public final /* synthetic */ void e(int i10, k1 k1Var, boolean z10, boolean z11, int i11) {
-    }
-
-    @Override // m4.q
-    public final /* synthetic */ void g(int i10, d1 d1Var, b2.x0 x0Var, boolean z10, boolean z11) {
+    public /* synthetic */ i0(q0 q0Var, p1 p1Var, Bundle bundle) {
+        this.a = 0;
+        this.b = q0Var;
     }
 }

@@ -1,59 +1,32 @@
 package f9;
 
-import java.io.InputStream;
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import v7.v7;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class b {
-    static {
-        new a();
+public final class b extends d {
+    public final char[] e;
+
+    public b(a aVar) {
+        super(aVar, (Character) null);
+        this.e = new char[512];
+        char[] cArr = aVar.b;
+        u6.g(cArr.length == 16);
+        for (int i10 = 0; i10 < 256; i10++) {
+            char[] cArr2 = this.e;
+            cArr2[i10] = cArr[i10 >>> 4];
+            cArr2[i10 | 256] = cArr[i10 & 15];
+        }
     }
 
-    public static byte[] a(ArrayDeque arrayDeque, int i10) {
-        if (arrayDeque.isEmpty()) {
-            return new byte[0];
+    @Override // f9.d
+    public final void b(StringBuilder sb2, byte[] bArr, int i10) {
+        u6.n(0, i10, bArr.length);
+        for (int i11 = 0; i11 < i10; i11++) {
+            int i12 = bArr[i11] & 255;
+            char[] cArr = this.e;
+            sb2.append(cArr[i12]);
+            sb2.append(cArr[i12 | 256]);
         }
-        byte[] bArr = (byte[]) arrayDeque.remove();
-        if (bArr.length == i10) {
-            return bArr;
-        }
-        int length = i10 - bArr.length;
-        byte[] copyOf = Arrays.copyOf(bArr, i10);
-        while (length > 0) {
-            byte[] bArr2 = (byte[]) arrayDeque.remove();
-            int min = Math.min(length, bArr2.length);
-            System.arraycopy(bArr2, 0, copyOf, i10 - length, min);
-            length -= min;
-        }
-        return copyOf;
-    }
-
-    public static byte[] b(InputStream inputStream) {
-        inputStream.getClass();
-        ArrayDeque arrayDeque = new ArrayDeque(20);
-        int min = Math.min(8192, Math.max(128, Integer.highestOneBit(0) * 2));
-        int i10 = 0;
-        while (i10 < 2147483639) {
-            int min2 = Math.min(min, 2147483639 - i10);
-            byte[] bArr = new byte[min2];
-            arrayDeque.add(bArr);
-            int i11 = 0;
-            while (i11 < min2) {
-                int read = inputStream.read(bArr, i11, min2 - i11);
-                if (read == -1) {
-                    return a(arrayDeque, i10);
-                }
-                i11 += read;
-                i10 += read;
-            }
-            min = v7.e(min * (min < 4096 ? 4 : 2));
-        }
-        if (inputStream.read() == -1) {
-            return a(arrayDeque, 2147483639);
-        }
-        throw new OutOfMemoryError("input is too large to fit in a byte array");
     }
 }

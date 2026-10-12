@@ -1,34 +1,25 @@
 package org.telegram.ui.Components.voip;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.webrtc.RendererCommon;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class q implements RendererCommon.RendererEvents {
-    public final /* synthetic */ u a;
+public final class q extends TextView {
+    public final /* synthetic */ t a;
 
-    public q(u uVar) {
-        this.a = uVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q(t tVar, Context context) {
+        super(context);
+        this.a = tVar;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        int i10 = 0;
-        while (true) {
-            u uVar = this.a;
-            if (i10 >= uVar.m0.size()) {
-                uVar.m0.clear();
-                return;
-            } else {
-                AndroidUtilities.cancelRunOnUIThread((Runnable) uVar.m0.get(i10));
-                ((Runnable) uVar.m0.get(i10)).run();
-                i10++;
-            }
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (Math.abs(this.a.N.getAlpha() - 1.0f) > 0.001f) {
+            return false;
         }
-    }
-
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+        return super.onTouchEvent(motionEvent);
     }
 }

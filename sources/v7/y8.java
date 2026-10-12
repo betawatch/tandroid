@@ -1,7 +1,49 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.content.Context;
+import com.google.android.gms.tasks.Task;
+import java.util.HashMap;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface y8 {
-    void a(a5.a aVar);
+public final class y8 {
+    public static j9 j;
+    public static final d k;
+    public final String a;
+    public final String b;
+    public final w8 c;
+    public final rb.k d;
+    public final Task e;
+    public final Task f;
+    public final String g;
+    public final int h;
+    public final HashMap i = new HashMap();
+
+    static {
+        Object[] objArr = {"optional-module-barcode", "com.google.android.gms.vision.barcode"};
+        objArr[0].getClass();
+        objArr[1].getClass();
+        k = new d(objArr);
+    }
+
+    public y8(Context context, rb.k kVar, w8 w8Var, String str) {
+        new HashMap();
+        this.a = context.getPackageName();
+        this.b = rb.c.a(context);
+        this.d = kVar;
+        this.c = w8Var;
+        d9.b();
+        this.g = str;
+        rb.f a2 = rb.f.a();
+        c5.y yVar = new c5.y(this, 5);
+        a2.getClass();
+        this.e = rb.f.b(yVar);
+        rb.f a10 = rb.f.a();
+        kVar.getClass();
+        t7.p pVar = new t7.p(kVar, 1);
+        a10.getClass();
+        this.f = rb.f.b(pVar);
+        d dVar = k;
+        this.h = dVar.containsKey(str) ? y6.e.d(context, (String) dVar.get(str), false) : -1;
+    }
 }

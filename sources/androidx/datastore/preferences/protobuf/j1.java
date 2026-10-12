@@ -1,22 +1,22 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j1 {
-    public static boolean a(Object obj, a0.h hVar) {
-        int e7 = hVar.e();
-        int i10 = e7 >>> 3;
-        int i11 = e7 & 7;
+    public static boolean a(Object obj, e2.f fVar) {
+        int e = fVar.e();
+        int i10 = e >>> 3;
+        int i11 = e & 7;
         if (i11 == 0) {
-            ((i1) obj).c(i10 << 3, Long.valueOf(hVar.z()));
+            ((i1) obj).c(i10 << 3, Long.valueOf(fVar.z()));
             return true;
         }
         if (i11 == 1) {
-            ((i1) obj).c((i10 << 3) | 1, Long.valueOf(hVar.q()));
+            ((i1) obj).c((i10 << 3) | 1, Long.valueOf(fVar.q()));
             return true;
         }
         if (i11 == 2) {
-            ((i1) obj).c((i10 << 3) | 2, hVar.h());
+            ((i1) obj).c((i10 << 3) | 2, fVar.h());
             return true;
         }
         if (i11 != 3) {
@@ -26,15 +26,15 @@ public final class j1 {
             if (i11 != 5) {
                 throw b0.b();
             }
-            ((i1) obj).c((i10 << 3) | 5, Integer.valueOf(hVar.o()));
+            ((i1) obj).c((i10 << 3) | 5, Integer.valueOf(fVar.o()));
             return true;
         }
         i1 b10 = i1.b();
         int i12 = i10 << 3;
         int i13 = i12 | 4;
-        while (hVar.d() != Integer.MAX_VALUE && a(b10, hVar)) {
+        while (fVar.d() != Integer.MAX_VALUE && a(b10, fVar)) {
         }
-        if (i13 != hVar.e()) {
+        if (i13 != fVar.e()) {
             throw new b0("Protocol message end-group tag did not match expected tag.");
         }
         b10.e = false;

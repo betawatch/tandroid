@@ -1,40 +1,40 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import org.telegram.ui.Components.qm0;
-import org.telegram.ui.Components.qo;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.no;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class m6 extends ai.da {
+public final class m6 extends bi.m9 {
     public final /* synthetic */ int S = 0;
     public final /* synthetic */ View T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(o6 o6Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(e6Var, false);
+    public m6(o6 o6Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(c6Var, false);
         this.T = o6Var;
     }
 
-    @Override // ai.da
-    public final void f(long j3) {
+    @Override // bi.m9
+    public final void f(long j10) {
         switch (this.S) {
             case 0:
-                ((o6) this.T).b(j3);
+                ((o6) this.T).b(j10);
                 break;
             case 1:
                 xa xaVar = (xa) this.T;
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
                 if (R != null) {
                     R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(xaVar.getContext(), j3, ai.v9.a((qm0) xaVar.getParent()));
+                    R.getOrCreateStoryViewer().D(xaVar.getContext(), j10, bi.g9.a((mm0) xaVar.getParent()));
                     break;
                 }
                 break;
             default:
-                qo qoVar = (qo) this.T;
-                qoVar.H.getOrCreateStoryViewer().D(qoVar.getContext(), j3, new org.telegram.ui.Components.s(this, 25));
+                no noVar = (no) this.T;
+                noVar.H.getOrCreateStoryViewer().D(noVar.getContext(), j10, new org.telegram.ui.Components.s(this, 25));
                 break;
         }
     }
@@ -46,8 +46,8 @@ public final class m6 extends ai.da {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(qo qoVar) {
+    public m6(no noVar) {
         super(null, true);
-        this.T = qoVar;
+        this.T = noVar;
     }
 }

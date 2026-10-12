@@ -1,48 +1,47 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class m70 implements org.telegram.ui.ub0 {
-    public final /* synthetic */ n70 a;
+public final class m70 extends FrameLayout {
+    public final TextView a;
+    public final TextView b;
+    public final /* synthetic */ p70 c;
 
-    public m70(n70 n70Var) {
-        this.a = n70Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m70(p70 p70Var, Context context) {
+        super(context);
+        this.c = p70Var;
+        ImageView imageView = new ImageView(context);
+        imageView.setBackground(org.telegram.ui.ActionBar.g6.L(46, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.R7, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Y7, false)));
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setImageResource(R.drawable.large_income);
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        addView(imageView, w7.a6.a(46.0f, 13.0f, 0.0f, 0.0f, 0.0f, 46, 19));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        com.google.android.gms.internal.play_billing.k3.m(16.0f, 1, textView);
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
+        addView(textView, w7.a6.a(-2.0f, 72.0f, 9.0f, 0.0f, 0.0f, -1, 51));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.y6, false));
+        addView(textView2, w7.a6.a(-2.0f, 72.0f, 32.0f, 0.0f, 0.0f, -1, 51));
     }
 
-    @Override // org.telegram.ui.ub0
-    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
-        int i10;
-        org.telegram.ui.ib ibVar = this.a.a.c.j0;
-        if (ibVar != null) {
-            TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
-            TLRPC.TL_channelAdminLogEventActionExportedInviteEdit tL_channelAdminLogEventActionExportedInviteEdit = new TLRPC.TL_channelAdminLogEventActionExportedInviteEdit();
-            tL_channelAdminLogEventActionExportedInviteEdit.new_invite = tL_chatInviteExported;
-            tL_channelAdminLogEventActionExportedInviteEdit.prev_invite = tL_chatInviteExported;
-            tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteEdit;
-            tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
-            org.telegram.ui.vb vbVar = ibVar.a;
-            tL_channelAdminLogEvent.user_id = vbVar.getAccountInstance().getUserConfig().clientUserId;
-            i10 = ((org.telegram.ui.ActionBar.n2) vbVar).currentAccount;
-            if (new MessageObject(i10, tL_channelAdminLogEvent, (ArrayList<MessageObject>) vbVar.n0, (HashMap<String, ArrayList<MessageObject>>) vbVar.m0, vbVar.f, vbVar.T, true).contentType < 0) {
-                return;
-            }
-            vbVar.R0();
-            vbVar.E.l();
-            org.telegram.ui.vb.K0(vbVar);
-        }
-    }
-
-    @Override // org.telegram.ui.ub0
-    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
-    }
-
-    @Override // org.telegram.ui.ub0
-    public final void c(TLObject tLObject) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
     }
 }

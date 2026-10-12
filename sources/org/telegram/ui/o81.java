@@ -1,39 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o81 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
+public final class o81 extends org.telegram.ui.ActionBar.e3 {
+    public static final /* synthetic */ int e = 0;
+    public TLRPC.TL_authorization b;
+    public SessionsActivity c;
+    public org.telegram.ui.Components.bk0 d;
 
-    public /* synthetic */ o81(SessionsActivity sessionsActivity, int i10) {
-        this.a = i10;
-        this.b = sessionsActivity;
+    public static void n(o81 o81Var, String str) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(o81Var.getContext());
+        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Copy)}, new mg.j(12, o81Var, str));
+        alertDialog$Builder.o();
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    sessionsActivity.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
-                }
-            default:
-                SessionsActivity.W(this.b);
-                break;
-        }
+    public static void o(o81 o81Var) {
+        TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
+        TLRPC.TL_authorization tL_authorization = o81Var.b;
+        changeauthorizationsettings.encrypted_requests_disabled = tL_authorization.encrypted_requests_disabled;
+        changeauthorizationsettings.call_requests_disabled = tL_authorization.call_requests_disabled;
+        changeauthorizationsettings.flags = 3;
+        changeauthorizationsettings.hash = tL_authorization.hash;
+        ConnectionsManager.getInstance(o81Var.currentAccount).sendRequest(changeauthorizationsettings, new bi.g7(21));
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
+    public final void show() {
+        super.show();
+        this.d.d();
     }
 }

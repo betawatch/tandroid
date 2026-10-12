@@ -1,31 +1,22 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class mq extends z4.g {
-    public lq w0;
+public final class mq extends LinearLayout {
+    public final /* synthetic */ pq a;
 
-    public mq(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mq(pq pqVar, Context context) {
         super(context);
-        b(new kq((ti0) this));
+        this.a = pqVar;
     }
 
-    @Override // z4.g
-    @Deprecated
-    public void setAdapter(z4.a aVar) {
-        if (!(aVar instanceof lq)) {
-            throw new IllegalArgumentException();
-        }
-        setAdapter((lq) aVar);
-    }
-
-    public void setAdapter(lq lqVar) {
-        this.w0 = lqVar;
-        super.setAdapter((z4.a) lqVar);
-        if (lqVar != null) {
-            x(lqVar.j(), false);
-        }
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        pq.n(this.a);
     }
 }

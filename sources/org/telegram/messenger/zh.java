@@ -1,66 +1,37 @@
 package org.telegram.messenger;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.Window;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.ui.Components.h81;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zh implements Runnable {
+public final /* synthetic */ class zh implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ zh(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+    public /* synthetic */ zh(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.c = obj;
-        this.b = obj2;
-        this.d = obj3;
-        this.e = obj4;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ((SavedMessagesController) this.c).lambda$loadDialogs$2((TLObject) this.b, (ArrayList) this.d, (TLRPC.TL_error) this.e);
+                ((RichMessageLayout.SpoilerReveal) this.b).lambda$start$0((View) this.c, valueAnimator);
                 break;
             case 1:
-                ((SendMessagesHelper) this.c).lambda$performSendDelayedMessage$60((TLObject) this.b, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e);
-                break;
-            case 2:
-                ((SendMessagesHelper) this.c).lambda$sendMessage$22((TLRPC.TL_messages_forwardMessages) this.b, (ArrayList) this.d, (sj) this.e);
-                break;
-            case 3:
-                ((SendMessagesHelper) this.c).lambda$didReceivedNotification$4((SendMessagesHelper.DelayedMessage) this.b, (File) this.d, (MessageObject) this.e);
-                break;
-            case 4:
-                ((UnconfirmedAuthController) this.c).lambda$readCache$0((ArrayList) this.d, (HashSet) this.b, (ArrayList) this.e);
+                AndroidUtilities.lambda$setNavigationBarColor$23((AndroidUtilities.IntColorCallback) this.b, (Window) this.c, valueAnimator);
                 break;
             default:
-                ((UserNameResolver) this.c).lambda$resolve$0((String) this.d, (TLRPC.TL_error) this.e, (TLObject) this.b);
+                ((MediaController) this.b).lambda$cleanupPlayer$10((h81) this.c, valueAnimator);
                 break;
         }
-    }
-
-    public /* synthetic */ zh(String str, UserNameResolver userNameResolver, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 5;
-        this.c = userNameResolver;
-        this.d = str;
-        this.e = tL_error;
-        this.b = tLObject;
-    }
-
-    public /* synthetic */ zh(UnconfirmedAuthController unconfirmedAuthController, ArrayList arrayList, HashSet hashSet, ArrayList arrayList2) {
-        this.a = 4;
-        this.c = unconfirmedAuthController;
-        this.d = arrayList;
-        this.b = hashSet;
-        this.e = arrayList2;
     }
 }

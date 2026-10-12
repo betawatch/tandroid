@@ -1,35 +1,6 @@
 package androidx.biometric;
 
-import android.content.DialogInterface;
-import java.lang.ref.WeakReference;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class w implements DialogInterface.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final Object b;
-
-    public w(x xVar) {
-        this.b = new WeakReference(xVar);
-    }
-
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        switch (this.a) {
-            case 0:
-                WeakReference weakReference = (WeakReference) this.b;
-                if (weakReference.get() != null) {
-                    ((x) weakReference.get()).g(true);
-                    break;
-                }
-                break;
-            default:
-                ((e0) this.b).C0.g(true);
-                break;
-        }
-    }
-
-    public w(e0 e0Var) {
-        this.b = e0Var;
-    }
+public final class w extends v7.l {
 }

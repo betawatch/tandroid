@@ -1,24 +1,46 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class yz0 extends org.telegram.ui.Components.mr0 {
-    public final /* synthetic */ ProfileActivity b1;
+public final class yz0 extends ProfileStoriesView {
+    public final /* synthetic */ Context t0;
+    public final /* synthetic */ ProfileActivity u0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yz0(ProfileActivity profileActivity, Activity activity, String str, String str2) {
-        super(activity, null, str, false, str2, false, null);
-        this.b1 = profileActivity;
+    public yz0(ProfileActivity profileActivity, Context context, int i10, long j10, boolean z10, l0 l0Var, vz0 vz0Var, org.telegram.ui.ActionBar.c6 c6Var, Context context2) {
+        super(context, i10, j10, z10, l0Var, vz0Var, c6Var);
+        this.u0 = profileActivity;
+        this.t0 = context2;
     }
 
-    @Override // org.telegram.ui.Components.mr0
-    public final void S0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new rt0(this, iVar, i10, 22), 250L);
+    @Override // org.telegram.ui.Stories.ProfileStoriesView
+    public final void e(ya.c cVar) {
+        TL_stories.PeerStories peerStories;
+        TL_stories.PeerStories peerStories2;
+        ProfileActivity profileActivity = this.u0;
+        long a2 = profileActivity.a();
+        bi.x8 storiesController = profileActivity.getMessagesController().getStoriesController();
+        boolean I = storiesController.I(a2);
+        Context context = this.t0;
+        if (I || storiesController.K(a2) || storiesController.N(a2)) {
+            profileActivity.getOrCreateStoryViewer().D(context, a2, cVar);
+            return;
+        }
+        TLRPC.UserFull userFull = profileActivity.v2;
+        if (userFull != null && (peerStories2 = userFull.stories) != null && !peerStories2.stories.isEmpty() && profileActivity.e1 != profileActivity.getUserConfig().clientUserId) {
+            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.v2.stories, cVar);
+            return;
+        }
+        TLRPC.ChatFull chatFull = profileActivity.u2;
+        if (chatFull == null || (peerStories = chatFull.stories) == null || peerStories.stories.isEmpty()) {
+            profileActivity.K3();
+        } else {
+            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.u2.stories, cVar);
         }
     }
 }

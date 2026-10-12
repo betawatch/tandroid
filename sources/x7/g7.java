@@ -1,6 +1,6 @@
 package x7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g7 {
     public final Long a;
@@ -9,11 +9,11 @@ public final class g7 {
     public final Boolean d;
     public final Boolean e;
 
-    public /* synthetic */ g7(ci.u5 u5Var) {
-        this.a = (Long) u5Var.a;
-        this.b = (n7) u5Var.b;
-        this.c = (Boolean) u5Var.c;
-        this.d = (Boolean) u5Var.d;
-        this.e = (Boolean) u5Var.e;
+    public /* synthetic */ g7(com.google.android.gms.internal.cast.z5 z5Var) {
+        this.a = (Long) z5Var.b;
+        this.b = (n7) z5Var.c;
+        this.c = (Boolean) z5Var.a;
+        this.d = (Boolean) z5Var.d;
+        this.e = (Boolean) z5Var.e;
     }
 }

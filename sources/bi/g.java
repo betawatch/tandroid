@@ -1,617 +1,377 @@
 package bi;
 
-import ai.e9;
-import ai.v7;
-import ai.v8;
-import android.graphics.Canvas;
-import android.util.SparseArray;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Rect;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.text.TextUtils;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import ii.b2;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import di.fc;
+import di.kc;
+import di.oc;
+import di.uc;
 import java.util.ArrayList;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.bo0;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.f91;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.jo;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.k91;
-import org.telegram.ui.Components.lo;
-import org.telegram.ui.Components.n91;
-import org.telegram.ui.Components.o91;
-import org.telegram.ui.Components.p61;
-import org.telegram.ui.aw0;
-import org.telegram.ui.fc1;
-import org.telegram.ui.gp;
-import org.telegram.ui.hp;
-import org.telegram.ui.ip;
-import org.telegram.ui.oa;
-import org.telegram.ui.yv0;
-import s4.d1;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.LocationController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.voip.GroupCallMessagesController;
+import org.telegram.messenger.voip.VideoCapturerDevice;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.cl;
+import org.telegram.ui.Components.dl;
+import org.telegram.ui.Components.eg;
+import org.telegram.ui.Components.lg0;
+import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.qg0;
+import org.telegram.ui.Components.sc;
+import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.wh0;
+import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.zh0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.fo;
+import org.telegram.ui.hb1;
+import org.telegram.ui.ic0;
+import org.telegram.ui.n60;
+import org.telegram.ui.qi;
+import org.telegram.ui.vc;
+import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class g extends s4.w {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
+public final /* synthetic */ class g implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ g(Object obj, int i10) {
-        this.d = i10;
-        this.e = obj;
+    public /* synthetic */ g(Object obj, long j10, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = j10;
     }
 
-    @Override // s4.w
-    public void a(RecyclerView recyclerView, d1 d1Var) {
-        switch (this.d) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.ActionBar.c6 c6Var;
+        int i10 = this.a;
+        int i11 = 5;
+        org.telegram.ui.ActionBar.c6 c6Var2 = null;
+        r7 = 0;
+        int i12 = 0;
+        int i13 = 1;
+        long j10 = this.b;
+        Object obj = this.c;
+        switch (i10) {
             case 0:
-                super.a(recyclerView, d1Var);
-                d1Var.a.setPressed(false);
+                ((v) obj).s.e0(j10, false);
                 break;
             case 1:
-                super.a(recyclerView, d1Var);
-                d1Var.a.setPressed(false);
+                ((r3) obj).a.k0(j10 <= 0);
                 break;
             case 2:
-                super.a(recyclerView, d1Var);
-                View view = d1Var.a;
-                view.setPressed(false);
-                view.setBackground(null);
+                AndroidUtilities.runOnUIThread((z4) obj, Math.max(0L, 500 - (System.currentTimeMillis() - j10)));
                 break;
             case 3:
-                super.a(recyclerView, d1Var);
-                d1Var.a.setPressed(false);
-                break;
-            case 4:
-                k71 k71Var = (k71) this.e;
-                super.a(recyclerView, d1Var);
-                View view2 = d1Var.a;
-                view2.setPressed(false);
-                if (view2.getBackground() instanceof b2) {
-                    b2 b2Var = (b2) view2.getBackground();
-                    if (b2Var.c) {
-                        b2Var.c = false;
-                        b2Var.invalidateSelf();
-                    }
-                }
-                if (k71Var.B1()) {
-                    k71Var.G1(d1Var);
-                    view2.animate().scaleX(0.5f).scaleY(0.5f).setDuration(200L).setInterpolator(hs.h).start();
-                    break;
-                }
-                break;
-            case 5:
-            default:
-                super.a(recyclerView, d1Var);
-                break;
-            case 6:
-                super.a(recyclerView, d1Var);
-                d1Var.a.setPressed(false);
-                break;
-        }
-    }
-
-    @Override // s4.w
-    public final int e(RecyclerView recyclerView, d1 d1Var) {
-        switch (this.d) {
-            case 0:
-                u uVar = (u) this.e;
-                if (!uVar.W.G.C1 || !uVar.v.L(d1Var.b())) {
-                    break;
-                } else {
-                    uVar.f.setItemAnimator(uVar.n);
-                    break;
-                }
-            case 1:
-                if (d1Var.f != 1 || !((oa) d1Var.a).G) {
-                    break;
-                } else {
-                    break;
-                }
-                break;
-            case 2:
-                if (d1Var.f == 5) {
-                    break;
-                } else {
-                    break;
-                }
-            case 3:
-                int b10 = d1Var.b();
-                bo0 bo0Var = (bo0) this.e;
-                if (b10 >= bo0Var.v && d1Var.b() < bo0Var.w) {
-                    break;
-                } else {
-                    break;
-                }
-                break;
-            case 4:
-                k71 k71Var = (k71) this.e;
-                if (k71Var.a3 && k71Var.W2.H(d1Var.b()) >= 0) {
-                    int i10 = 15;
-                    if (k71Var.V2.o == 0) {
-                        if (!k71Var.Z2) {
-                            i10 = 12;
-                        }
-                    } else if (!k71Var.Z2) {
-                        i10 = 3;
-                    }
-                    break;
-                } else {
-                    break;
-                }
-                break;
-            case 5:
-                if (!((m2.t) ((n91) this.e).y).A(d1Var.b())) {
-                    break;
-                } else {
-                    break;
-                }
-            default:
-                if (d1Var.f != 5 || !r(d1Var.b())) {
-                    break;
-                } else {
-                    break;
-                }
-                break;
-        }
-        return s4.w.l(0, 0);
-    }
-
-    @Override // s4.w
-    public boolean k() {
-        switch (this.d) {
-            case 0:
-                return ((u) this.e).W.G.C1;
-            case 1:
-            case 2:
-            case 5:
-            default:
-                return super.k();
-            case 3:
-                return ((bo0) this.e).I.g();
-            case 4:
-                k71 k71Var = (k71) this.e;
-                return k71Var.a3 && k71Var.c3;
-            case 6:
-                return true;
-        }
-    }
-
-    @Override // s4.w
-    public void m(Canvas canvas, RecyclerView recyclerView, d1 d1Var, float f7, float f10, int i10, boolean z10) {
-        switch (this.d) {
-            case 4:
-                k71 k71Var = (k71) this.e;
-                if (i10 != 2 || z10 || !k71Var.B1()) {
-                    super.m(canvas, recyclerView, d1Var, f7, f10, i10, z10);
-                    if (i10 == 2 && z10) {
-                        k71Var.F1(d1Var);
+                org.telegram.ui.ActionBar.m2 d02 = hb1.d0(MessagesController.getInstance(((x8) obj).a).getChat(Long.valueOf(-j10)), true);
+                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+                if (R != null) {
+                    kc kcVar = kc.F2;
+                    if (kcVar != null && kcVar.d) {
+                        org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                        k2Var.a = true;
+                        R.showAsSheet(d02, k2Var);
+                        break;
+                    } else {
+                        R.presentFragment(d02);
                         break;
                     }
                 }
                 break;
-            case 5:
-                super.m(canvas, recyclerView, d1Var, f7, f10, i10, z10);
-                ((n91) this.e).invalidate();
-                break;
-            default:
-                super.m(canvas, recyclerView, d1Var, f7, f10, i10, z10);
-                break;
-        }
-    }
-
-    @Override // s4.w
-    public final boolean n(RecyclerView recyclerView, d1 d1Var, d1 d1Var2) {
-        ArrayList arrayList;
-        int i10;
-        int i11;
-        int i12;
-        switch (this.d) {
-            case 0:
-                m mVar = ((u) this.e).v;
-                if (!mVar.L(d1Var.b()) || !mVar.L(d1Var2.b())) {
-                    return false;
+            case 4:
+                MessagesStorage messagesStorage = ((k9) obj).b;
+                SQLiteDatabase database = messagesStorage.getDatabase();
+                try {
+                    Locale locale = Locale.US;
+                    database.executeFast("DELETE FROM stories WHERE dialog_id = " + j10).stepThis().dispose();
+                    break;
+                } catch (Throwable th2) {
+                    messagesStorage.checkSQLException(th2);
+                    return;
                 }
-                int b10 = d1Var.b();
-                int b11 = d1Var2.b();
-                ArrayList arrayList2 = mVar.n;
-                e9 e9Var = mVar.e;
-                if (e9Var != null && b10 >= 0 && b10 < e9Var.i.size() && b11 >= 0 && b11 < mVar.e.i.size()) {
-                    if (mVar.e instanceof v8) {
-                        arrayList = new ArrayList();
-                        for (int i13 = 0; i13 < mVar.e.i.size(); i13++) {
-                            arrayList.add(Integer.valueOf(((MessageObject) mVar.e.i.get(i13)).getId()));
+            case 5:
+                di.x9 x9Var = (di.x9) obj;
+                Context context = x9Var.getContext();
+                di.ea eaVar = x9Var.W;
+                org.telegram.ui.ActionBar.m2 m2Var = eaVar.attachedFragment;
+                c6Var = ((org.telegram.ui.ActionBar.e3) eaVar).resourcesProvider;
+                org.telegram.ui.Components.g5.R(context, m2Var, c6Var, new p1(x9Var, j10, i13));
+                break;
+            case 6:
+                kc kcVar2 = (kc) obj;
+                fc fcVar = kcVar2.F;
+                if (fcVar != null) {
+                    fcVar.f(true);
+                    kcVar2.F = null;
+                }
+                di.bc bcVar = kcVar2.x;
+                fc a2 = bcVar != null ? bcVar.a(j10) : null;
+                kcVar2.F = a2;
+                if (a2 != null) {
+                    kcVar2.J = a2.a;
+                    kcVar2.r.c();
+                    di.wb wbVar = kcVar2.h0;
+                    int i14 = kcVar2.J;
+                    if (i14 != 1 && i14 != 0) {
+                        i12 = -14737633;
+                    }
+                    wbVar.setBackgroundColor(i12);
+                    kcVar2.H.set(kcVar2.F.c);
+                    fc fcVar2 = kcVar2.F;
+                    kcVar2.G = fcVar2.b;
+                    fcVar2.e();
+                    if (SharedConfig.getDevicePerformanceClass() > 1) {
+                        LiteMode.isEnabled(LiteMode.FLAGS_CHAT);
+                    }
+                }
+                kcVar2.x = null;
+                Activity activity = kcVar2.b;
+                if (!(activity instanceof LaunchActivity)) {
+                    kcVar2.p(true);
+                    break;
+                } else {
+                    ((LaunchActivity) activity).z0.post(new di.ga(kcVar2, i11));
+                    break;
+                }
+            case 7:
+                oc ocVar = ((uc) obj).a;
+                if (ocVar != null) {
+                    ocVar.n(j10, false);
+                    break;
+                }
+                break;
+            case 8:
+                MessagesController.getInstance(r11.currentAccount).unlinkCommunity(j10, r11.e, new gi.t((gi.k0) obj, 1));
+                break;
+            case 9:
+                gi.t0 t0Var = (gi.t0) obj;
+                t0Var.i = null;
+                t0Var.g.l(j10);
+                t0Var.l++;
+                t0Var.a();
+                gi.s0 s0Var = t0Var.h;
+                if (s0Var != null) {
+                    s0Var.b();
+                    break;
+                }
+                break;
+            case 10:
+                hg.h0 h0Var = (hg.h0) obj;
+                h0Var.getClass();
+                try {
+                    MessagesStorage.getInstance(h0Var.s0).getDatabase().executeFast("DELETE FROM search_recent WHERE did = " + j10).stepThis().dispose();
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            case 11:
+                ji.r rVar = (ji.r) obj;
+                org.telegram.ui.Components.g5.L(rVar.b.f0.getParentActivity(), j10, new qb.c(rVar, 26), rVar.a);
+                break;
+            case 12:
+                ji.d2 d2Var = (ji.d2) obj;
+                org.telegram.ui.Components.g5.L(d2Var.getParentActivity(), j10, new qb.c(d2Var, 27), d2Var.getResourceProvider());
+                break;
+            case 13:
+                k2.u uVar = (k2.u) ((qf.b) obj).c;
+                String str = e2.m0.a;
+                j2.f fVar = ((i2.b0) uVar).a.s;
+                j2.a p5 = fVar.p();
+                fVar.q(p5, 1010, new j2.e(p5, j10));
+                break;
+            case 14:
+                ((LocationController) obj).lambda$removeSharingLocation$21(j10);
+                break;
+            case 15:
+                ((NotificationsController) obj).lambda$processIgnoreStories$20(j10);
+                break;
+            case 16:
+                ((GroupCallMessagesController) obj).lambda$pushMessageToList$6(j10);
+                break;
+            case 17:
+                ((VideoCapturerDevice) obj).lambda$init$3(j10);
+                break;
+            case 18:
+                ConnectionsManager.lambda$getHostByName$20((String) obj, j10);
+                break;
+            case 19:
+                org.telegram.ui.x3 x3Var = (org.telegram.ui.x3) obj;
+                if (x3Var != null) {
+                    x3Var.dismiss(true);
+                }
+                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                if (U != null) {
+                    U.presentFragment(new fo(t8.b.e(j10, "user_id")));
+                    break;
+                }
+                break;
+            case 20:
+                sc Q = zc.a0((org.telegram.ui.d7) obj).Q(R.raw.ic_delete, 36, LocaleController.formatString(R.string.CacheWasCleared, AndroidUtilities.formatFileSize(j10)));
+                Q.r = false;
+                Q.j();
+                break;
+            case 21:
+                eg egVar = (eg) obj;
+                egVar.getClass();
+                egVar.presentFragment(fo.W9(j10));
+                break;
+            case 22:
+                dl dlVar = (dl) obj;
+                vi viVar = dlVar.b;
+                if (dlVar.H || !dlVar.I0 || !dlVar.isShown()) {
+                    dlVar.L0 = null;
+                    break;
+                } else {
+                    li liVar = viVar.u1;
+                    org.telegram.ui.ActionBar.m2 m2Var2 = viVar.f0;
+                    if ((liVar.R() > AndroidUtilities.dp(20.0f) && !dlVar.y0 && !dlVar.H0) || SystemClock.uptimeMillis() >= j10) {
+                        dlVar.L0 = null;
+                        org.telegram.ui.ActionBar.c6 c6Var3 = dlVar.a;
+                        Context context2 = (m2Var2 == null || m2Var2.getParentActivity() == null) ? dlVar.getContext() : m2Var2.getParentActivity();
+                        if (context2 != null) {
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, c6Var3);
+                            String string = LocaleController.getString(R.string.WalletAddComment);
+                            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                            a2Var.R = string;
+                            ig.b1 b1Var = new ig.b1(dlVar, context2);
+                            b1Var.setTextSize(1, 18.0f);
+                            b1Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.j5, c6Var3));
+                            b1Var.setHintTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.t5, c6Var3));
+                            b1Var.setHint(LocaleController.getString(R.string.WalletCommentOptionalMessage));
+                            b1Var.setText(dlVar.p0);
+                            b1Var.setSelection(b1Var.length());
+                            b1Var.setInputType(147457);
+                            b1Var.setMaxLines(5);
+                            b1Var.setImeOptions(6);
+                            b1Var.setLineColors(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.k6, c6Var3), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.l6, c6Var3), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.p7, c6Var3));
+                            b1Var.setBackground(null);
+                            b1Var.setPadding(0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(48.0f), AndroidUtilities.dp(10.0f));
+                            org.telegram.ui.Cells.a2 a2Var2 = new org.telegram.ui.Cells.a2(context2, 1, c6Var3);
+                            a2Var2.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.i6, c6Var3), 7, AndroidUtilities.dp(12.0f)));
+                            a2Var2.e(LocaleController.getString(R.string.WalletMakeCommentPublic), "", !dlVar.q0 || dlVar.getPublicKey() == null, false, false);
+                            a2Var2.setMultiline(true);
+                            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) a2Var2.getCheckBoxView().getLayoutParams();
+                            layoutParams.topMargin = 0;
+                            layoutParams.gravity = (LocaleController.isRTL ? 5 : 3) | 16;
+                            a2Var2.getCheckBoxView().setLayoutParams(layoutParams);
+                            a2Var2.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(4.0f) : 0, AndroidUtilities.dp(12.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f));
+                            a2Var2.setEnabled(dlVar.getPublicKey() != null);
+                            a2Var2.setOnClickListener(new org.telegram.ui.Components.i1(a2Var2, 1));
+                            LinearLayout linearLayout = new LinearLayout(context2);
+                            linearLayout.setOrientation(1);
+                            linearLayout.addView(b1Var, w7.a6.k(24.0f, 4.0f, 24.0f, 4.0f, -1, -2));
+                            linearLayout.addView(a2Var2, w7.a6.t(-1, -2, 83, 8, 0, 8, 0));
+                            a2Var.G = 6;
+                            alertDialog$Builder.n(linearLayout);
+                            a2Var.a = AndroidUtilities.dp(292.0f);
+                            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.l2(13));
+                            alertDialog$Builder.k(LocaleController.getString(R.string.Add), new androidx.car.app.utils.a(dlVar, b1Var, a2Var2, 25));
+                            dlVar.Q0 = a2Var;
+                            a2Var.h0 = false;
+                            a2Var.setOnShowListener(new org.telegram.ui.Components.i2(i13, b1Var));
+                            a2Var.setOnDismissListener(new org.telegram.ui.Components.b1(dlVar, i11));
+                            a2Var.create();
+                            Window window = a2Var.getWindow();
+                            Rect rect = new Rect();
+                            viVar.getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);
+                            if (window != null && rect.height() > 0) {
+                                WindowManager.LayoutParams attributes = window.getAttributes();
+                                View decorView = window.getDecorView();
+                                int i15 = attributes.width;
+                                if (i15 <= 0) {
+                                    i15 = rect.width();
+                                }
+                                decorView.measure(View.MeasureSpec.makeMeasureSpec(i15, attributes.width > 0 ? TLObject.FLAG_30 : Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(rect.height(), TLObject.FLAG_31));
+                                attributes.gravity = 49;
+                                attributes.y = Math.max(0, (rect.height() - decorView.getMeasuredHeight()) / 2);
+                                window.setAttributes(attributes);
+                            }
+                            a2Var.show();
+                            View d = a2Var.d(-1);
+                            if ((d instanceof TextView) && !TextUtils.isEmpty(dlVar.p0)) {
+                                b1Var.addTextChangedListener(new cl(b1Var, (TextView) d));
+                                break;
+                            }
                         }
                     } else {
-                        arrayList = new ArrayList(mVar.e.g);
-                    }
-                    if (!mVar.r) {
-                        arrayList2.clear();
-                        arrayList2.addAll(arrayList);
-                        mVar.r = true;
-                    }
-                    MessageObject messageObject = (MessageObject) mVar.e.i.get(b10);
-                    arrayList.remove(Integer.valueOf(messageObject.getId()));
-                    arrayList.add(Utilities.clamp(b11, arrayList.size(), 0), Integer.valueOf(messageObject.getId()));
-                    mVar.e.C(arrayList, false);
-                    mVar.p(b10, b11);
-                }
-                return true;
-            case 1:
-                if (d1Var.f == d1Var2.f) {
-                    View view = d1Var2.a;
-                    if (!(view instanceof oa) || ((oa) view).G) {
-                        gp gpVar = ((hp) this.e).V2;
-                        int b12 = d1Var.b();
-                        int b13 = d1Var2.b();
-                        int i14 = b12 - 1;
-                        int i15 = b13 - 1;
-                        hp hpVar = gpVar.c;
-                        ip ipVar = hpVar.Y2;
-                        ArrayList arrayList3 = ipVar.N;
-                        if (i14 >= ipVar.N.size() || i15 >= arrayList3.size()) {
-                            return true;
-                        }
-                        if (b12 != b13) {
-                            hpVar.W2 = true;
-                        }
-                        TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList3.get(i14);
-                        arrayList3.set(i14, (TLRPC.TL_username) arrayList3.get(i15));
-                        arrayList3.set(i15, tL_username);
-                        gpVar.p(b12, b13);
-                        int size = arrayList3.size();
-                        if (b12 != size && b13 != size) {
-                            return true;
-                        }
-                        gpVar.n(b12, 3);
-                        gpVar.n(b13, 3);
-                        return true;
-                    }
-                }
-                return false;
-            case 2:
-                if (d1Var.f != d1Var2.f) {
-                    return false;
-                }
-                jo joVar = ((lo) this.e).r;
-                int b14 = d1Var.b();
-                int b15 = d1Var2.b();
-                lo loVar = joVar.d;
-                int i16 = loVar.t0;
-                qh.f fVar = loVar.l1;
-                int i17 = b14 - i16;
-                int i18 = b15 - i16;
-                if (i17 >= 0 && i18 >= 0 && i17 < (i10 = loVar.M) && i18 < i10) {
-                    qh.e b16 = fVar.b(i17);
-                    SparseArray sparseArray = fVar.a;
-                    sparseArray.put(i17, fVar.b(i18));
-                    sparseArray.put(i18, b16);
-                    CharSequence[] charSequenceArr = loVar.K;
-                    CharSequence charSequence = charSequenceArr[i17];
-                    charSequenceArr[i17] = charSequenceArr[i18];
-                    charSequenceArr[i18] = charSequence;
-                    boolean[] zArr = loVar.L;
-                    boolean z10 = zArr[i17];
-                    zArr[i17] = zArr[i18];
-                    zArr[i18] = z10;
-                    joVar.p(b14, b15);
-                }
-                return true;
-            case 3:
-                int b17 = d1Var2.b();
-                bo0 bo0Var = (bo0) this.e;
-                ArrayList arrayList4 = bo0Var.e;
-                if (b17 < bo0Var.v || d1Var2.b() >= bo0Var.w) {
-                    return false;
-                }
-                int b18 = d1Var.b();
-                int b19 = d1Var2.b();
-                int i19 = bo0Var.v;
-                int i20 = b18 - i19;
-                int i21 = b19 - i19;
-                arrayList4.indexOf(Integer.valueOf(i20));
-                arrayList4.get(b18 - bo0Var.v);
-                MessageObject messageObject2 = (MessageObject) arrayList4.get(i20);
-                MessageObject messageObject3 = (MessageObject) arrayList4.get(i21);
-                arrayList4.set(i20, messageObject3);
-                arrayList4.set(i21, messageObject2);
-                DownloadController.getInstance(bo0Var.d).swapLoadingPriority(messageObject2, messageObject3);
-                bo0Var.c.p(b18, b19);
-                return false;
-            case 4:
-                k71 k71Var = (k71) this.e;
-                c71 c71Var = k71Var.W2;
-                if (c71Var.H(d1Var.b()) < 0 || c71Var.H(d1Var.b()) != c71Var.H(d1Var2.b())) {
-                    return false;
-                }
-                int b20 = d1Var.b();
-                int b21 = d1Var2.b();
-                ArrayList arrayList5 = c71Var.x;
-                if (c71Var.L != null) {
-                    int H = c71Var.H(b20);
-                    int H2 = c71Var.H(b21);
-                    if (H >= 0 && H == H2) {
-                        boolean J = c71Var.J(b20);
-                        boolean J2 = c71Var.J(b21);
-                        arrayList5.add(b21, (p61) arrayList5.remove(b20));
-                        c71Var.p(b20, b21);
-                        if (c71Var.J(b21) != J) {
-                            c71Var.n(b21, 3);
-                        }
-                        if (c71Var.J(b20) != J2) {
-                            c71Var.n(b20, 3);
-                        }
-                        if (c71Var.K && (i11 = c71Var.J) != H) {
-                            c71Var.F(i11);
-                        }
-                        c71Var.K = true;
-                        c71Var.J = H;
-                    }
-                }
-                k71Var.I1();
-                return true;
-            case 5:
-                int b22 = d1Var.b();
-                int b23 = d1Var2.b();
-                n91 n91Var = (n91) this.e;
-                ArrayList arrayList6 = n91Var.h;
-                boolean z11 = false;
-                int i22 = 0;
-                z11 = false;
-                if (((m2.t) n91Var.y).A(b22) && ((m2.t) n91Var.y).A(b23)) {
-                    Utilities.swapItems(arrayList6, b22, b23);
-                    n91Var.x.p(b22, b23);
-                    ArrayList arrayList7 = new ArrayList();
-                    int size2 = arrayList6.size();
-                    while (i22 < size2) {
-                        Object obj = arrayList6.get(i22);
-                        i22++;
-                        arrayList7.add(Integer.valueOf(((k91) obj).a));
-                    }
-                    f91 f91Var = ((o91) ((m2.t) n91Var.y).b).L;
-                    z11 = true;
-                    z11 = true;
-                    if (f91Var != null) {
-                        f91Var.a(arrayList7);
-                    }
-                }
-                return z11;
-            default:
-                if (d1Var.f != d1Var2.f || !r(d1Var.b()) || !r(d1Var2.b())) {
-                    return false;
-                }
-                yv0 yv0Var = ((aw0) this.e).b;
-                int b24 = d1Var.b();
-                int b25 = d1Var2.b();
-                aw0 aw0Var = yv0Var.d;
-                int i23 = aw0Var.n0;
-                int i24 = b24 - i23;
-                int i25 = b25 - i23;
-                if (i24 >= 0 && i25 >= 0 && i24 < (i12 = aw0Var.y) && i25 < i12) {
-                    CharSequence[] charSequenceArr2 = aw0Var.v;
-                    CharSequence charSequence2 = charSequenceArr2[i24];
-                    charSequenceArr2[i24] = charSequenceArr2[i25];
-                    charSequenceArr2[i25] = charSequence2;
-                    int[] iArr = aw0Var.r;
-                    if (iArr != null) {
-                        int i26 = iArr[i24];
-                        iArr[i24] = iArr[i25];
-                        iArr[i25] = i26;
-                    }
-                    boolean[] zArr2 = aw0Var.w;
-                    boolean z12 = zArr2[i24];
-                    zArr2[i24] = zArr2[i25];
-                    zArr2[i25] = z12;
-                    yv0Var.p(b24, b25);
-                }
-                return true;
-        }
-    }
-
-    @Override // s4.w
-    public void o(RecyclerView recyclerView, d1 d1Var, d1 d1Var2, int i10, int i11, int i12) {
-        switch (this.d) {
-            case 4:
-                break;
-            default:
-                super.o(recyclerView, d1Var, d1Var2, i10, i11, i12);
-                break;
-        }
-    }
-
-    @Override // s4.w
-    public void p(d1 d1Var, int i10) {
-        ArrayList arrayList;
-        switch (this.d) {
-            case 0:
-                u uVar = (u) this.e;
-                j jVar = uVar.f;
-                if (d1Var != null) {
-                    jVar.d1(false);
-                }
-                if (i10 == 0) {
-                    m mVar = uVar.v;
-                    ArrayList arrayList2 = mVar.n;
-                    e9 e9Var = mVar.e;
-                    if (e9Var != null && mVar.r) {
-                        if (e9Var instanceof v8) {
-                            arrayList = new ArrayList();
-                            for (int i11 = 0; i11 < mVar.e.i.size(); i11++) {
-                                arrayList.add(Integer.valueOf(((MessageObject) mVar.e.i.get(i11)).getId()));
-                            }
-                        } else {
-                            arrayList = e9Var.g;
-                        }
-                        boolean z10 = arrayList2.size() != arrayList.size();
-                        if (!z10) {
-                            int i12 = 0;
-                            while (true) {
-                                if (i12 < arrayList2.size()) {
-                                    if (arrayList2.get(i12) != arrayList.get(i12)) {
-                                        z10 = true;
-                                    } else {
-                                        i12++;
-                                    }
-                                }
-                            }
-                        }
-                        if (z10) {
-                            mVar.e.C(arrayList, true);
-                        }
-                        mVar.r = false;
-                    }
-                    jVar.setItemAnimator(null);
-                    break;
-                } else {
-                    jVar.I0(false);
-                    if (d1Var != null) {
-                        d1Var.a.setPressed(true);
+                        dlVar.postDelayed(dlVar.L0, 32L);
                         break;
                     }
                 }
                 break;
-            case 1:
-                hp hpVar = (hp) this.e;
-                ip ipVar = hpVar.Y2;
-                if (i10 != 0) {
-                    ipVar.L = true;
-                    hpVar.I0(false);
-                    d1Var.a.setPressed(true);
-                    break;
-                } else {
-                    ipVar.L = false;
-                    if (hpVar.W2) {
-                        TLRPC.Chat chat = ipVar.X;
-                        ArrayList arrayList3 = ipVar.N;
-                        ArrayList arrayList4 = ipVar.M;
-                        if (chat != null) {
-                            hpVar.W2 = false;
-                            TLRPC.TL_channels_reorderUsernames tL_channels_reorderUsernames = new TLRPC.TL_channels_reorderUsernames();
-                            TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
-                            TLRPC.Chat chat2 = ipVar.X;
-                            tL_inputChannel.channel_id = chat2.id;
-                            tL_inputChannel.access_hash = chat2.access_hash;
-                            tL_channels_reorderUsernames.channel = tL_inputChannel;
-                            ArrayList<String> arrayList5 = new ArrayList<>();
-                            for (int i13 = 0; i13 < arrayList4.size(); i13++) {
-                                if (((TLRPC.TL_username) arrayList4.get(i13)).active) {
-                                    arrayList5.add(((TLRPC.TL_username) arrayList4.get(i13)).username);
-                                }
-                            }
-                            for (int i14 = 0; i14 < arrayList3.size(); i14++) {
-                                if (((TLRPC.TL_username) arrayList3.get(i14)).active) {
-                                    arrayList5.add(((TLRPC.TL_username) arrayList3.get(i14)).username);
-                                }
-                            }
-                            tL_channels_reorderUsernames.order = arrayList5;
-                            ipVar.getConnectionsManager().sendRequest(tL_channels_reorderUsernames, new v7(10));
-                            ipVar.X.usernames.clear();
-                            ipVar.X.usernames.addAll(arrayList4);
-                            ipVar.X.usernames.addAll(arrayList3);
-                            ipVar.getMessagesController().putChat(ipVar.X, true);
-                            break;
-                        }
-                    }
-                }
+            case 23:
+                qg0 qg0Var = (qg0) obj;
+                qg0Var.h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");
+                AndroidUtilities.runOnUIThread(new lg0(qg0Var, 1), 100L);
                 break;
-            case 2:
-                lo loVar = (lo) this.e;
-                fc1 fc1Var = loVar.s;
-                if (i10 != 0) {
-                    fc1Var.setItemAnimator(loVar.v);
-                    fc1Var.I0(false);
-                    d1Var.a.setPressed(true);
-                    d1Var.a.setBackgroundColor(i6.w0(i6.h5, loVar.a));
-                    break;
+            case 24:
+                zh0 zh0Var = (zh0) obj;
+                Activity activity2 = AndroidUtilities.getActivity();
+                org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
+                if (PhotoViewer.t1().R1() || (U2 != null && U2.hasShownSheet())) {
+                    c6Var2 = new b();
+                } else if (U2 != null) {
+                    c6Var2 = U2.getResourceProvider();
                 }
+                new zh.e7(activity2, c6Var2, this.b, 15, "", new wh0(zh0Var, 0), 0L).show();
                 break;
-            case 3:
-                if (i10 != 0) {
-                    ((bo0) this.e).b.I0(false);
-                    d1Var.a.setPressed(true);
-                    break;
-                }
+            case 25:
+                yy yyVar = (yy) obj;
+                yyVar.x4(true, true);
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(MessagesStorage.TopicKey.of(j10, 0L));
+                yyVar.C2.w(yyVar, arrayList, null, false, yyVar.J2, yyVar.K2, yyVar.L2, null);
                 break;
-            case 4:
-                k71 k71Var = (k71) this.e;
-                if (d1Var != null) {
-                    k71Var.d1(false);
-                }
-                if (i10 == 0) {
-                    c71 c71Var = k71Var.W2;
-                    if (c71Var.K) {
-                        c71Var.F(c71Var.J);
-                    }
-                    if (k71Var.b3 != null) {
-                        k71Var.E1();
-                        k71Var.b3 = null;
-                        break;
-                    }
-                } else {
-                    k71Var.I0(false);
-                    if (d1Var != null) {
-                        View view = d1Var.a;
-                        view.setPressed(true);
-                        if (view.getBackground() instanceof b2) {
-                            b2 b2Var = (b2) view.getBackground();
-                            if (!b2Var.c) {
-                                b2Var.c = true;
-                                b2Var.invalidateSelf();
-                            }
-                        }
-                        if (i10 == 2) {
-                            k71Var.b3 = d1Var;
-                            k71Var.H1(d1Var);
-                            break;
-                        }
-                    }
-                }
+            case 26:
+                ((n60) obj).n1(j10, false);
                 break;
-            case 6:
-                if (i10 != 0) {
-                    ((aw0) this.e).c.I0(false);
-                    d1Var.a.setPressed(true);
-                    break;
+            case 27:
+                ic0 ic0Var = (ic0) obj;
+                ic0Var.getClass();
+                ic0Var.presentFragment(fo.W9(j10));
+                break;
+            case 28:
+                fo foVar = ((qi) obj).e;
+                foVar.D7(true);
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", j10);
+                if (j10 == foVar.getUserConfig().getClientUserId()) {
+                    bundle.putBoolean("my_profile", true);
                 }
+                foVar.presentFragment(new ProfileActivity(bundle, null));
+                break;
+            default:
+                ((vc) obj).run(Long.valueOf(j10));
                 break;
         }
-    }
-
-    @Override // s4.w
-    public final void q(d1 d1Var) {
-        int i10 = this.d;
-    }
-
-    public boolean r(int i10) {
-        aw0 aw0Var = (aw0) this.e;
-        return !aw0Var.I || i10 - aw0Var.n0 >= aw0Var.x;
-    }
-
-    private final void t(d1 d1Var) {
-    }
-
-    private final void u(d1 d1Var) {
-    }
-
-    private final void v(d1 d1Var) {
-    }
-
-    private final void w(d1 d1Var) {
-    }
-
-    private final void x(d1 d1Var) {
-    }
-
-    private final void y(d1 d1Var) {
-    }
-
-    private final void z(d1 d1Var) {
-    }
-
-    private final void s(RecyclerView recyclerView, d1 d1Var, d1 d1Var2, int i10, int i11, int i12) {
     }
 }

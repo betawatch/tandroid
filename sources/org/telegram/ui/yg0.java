@@ -1,131 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class yg0 extends org.telegram.ui.Components.pm0 {
-    public final Context c;
-    public final /* synthetic */ zg0 d;
+public final /* synthetic */ class yg0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zg0 b;
+    public final /* synthetic */ pg0 c;
 
-    public yg0(zg0 zg0Var, Context context) {
-        this.d = zg0Var;
-        this.c = context;
+    public /* synthetic */ yg0(int i10, pg0 pg0Var, zg0 zg0Var) {
+        this.a = i10;
+        this.b = zg0Var;
+        this.c = pg0Var;
     }
 
-    @Override // org.telegram.ui.Components.pm0
-    public final boolean D(s4.d1 d1Var) {
-        int b10 = d1Var.b();
-        zg0 zg0Var = this.d;
-        return b10 == zg0Var.c || b10 == zg0Var.d || b10 == zg0Var.e || b10 == zg0Var.f || b10 == zg0Var.h || b10 == zg0Var.r;
-    }
-
-    @Override // s4.i0
-    public final int h() {
-        return this.d.v;
-    }
-
-    @Override // s4.i0
-    public final int j(int i10) {
-        zg0 zg0Var = this.d;
-        zg0Var.getClass();
-        if (i10 == 0) {
-            return 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        pg0 pg0Var = this.c;
+        zg0 zg0Var = this.b;
+        switch (i10) {
+            case 0:
+                int i11 = pg0.E;
+                pg0Var.a();
+                AndroidUtilities.runOnUIThread(new yg0(1, pg0Var, zg0Var), 150L);
+                break;
+            default:
+                ah0 ah0Var = zg0Var.a;
+                ah0Var.h(null);
+                RadialProgressView radialProgressView = ah0Var.V.N.d;
+                RadialProgressView radialProgressView2 = pg0Var.h.d;
+                radialProgressView.getClass();
+                radialProgressView.a = radialProgressView2.a;
+                radialProgressView.b = radialProgressView2.b;
+                radialProgressView.H = radialProgressView2.H;
+                radialProgressView.I = radialProgressView2.I;
+                radialProgressView.J = radialProgressView2.J;
+                radialProgressView.c = radialProgressView2.c;
+                radialProgressView.n = radialProgressView2.n;
+                radialProgressView.e = radialProgressView2.e;
+                radialProgressView.y = radialProgressView2.y;
+                radialProgressView.F = radialProgressView2.F;
+                radialProgressView.G = radialProgressView2.G;
+                radialProgressView.d = radialProgressView2.d;
+                radialProgressView.E = radialProgressView2.E;
+                radialProgressView.b(85L);
+                break;
         }
-        if (i10 == zg0Var.c || i10 == zg0Var.d || i10 == zg0Var.e || i10 == zg0Var.f || i10 == zg0Var.h) {
-            return 1;
-        }
-        if (i10 == zg0Var.n) {
-            return 2;
-        }
-        return i10 == zg0Var.r ? 3 : 4;
-    }
-
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
-        int i11 = d1Var.f;
-        View view = d1Var.a;
-        if (i11 == 0) {
-            org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-            if (i10 == 0) {
-                m4Var.setText(LocaleController.getString(R.string.AlternativeOptions));
-                return;
-            }
-            return;
-        }
-        zg0 zg0Var = this.d;
-        if (i11 != 1) {
-            if (i11 == 3) {
-                org.telegram.ui.Cells.ca caVar = (org.telegram.ui.Cells.ca) view;
-                if (i10 == zg0Var.r) {
-                    caVar.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.p7, false));
-                    caVar.b(LocaleController.getString(R.string.LogOutTitle), false);
-                    return;
-                }
-                return;
-            }
-            if (i11 != 4) {
-                return;
-            }
-            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
-            if (i10 == zg0Var.s) {
-                e9Var.setText(LocaleController.getString(R.string.LogOutInfo));
-                return;
-            }
-            return;
-        }
-        org.telegram.ui.Cells.d9 d9Var = (org.telegram.ui.Cells.d9) view;
-        if (i10 == zg0Var.c) {
-            d9Var.b(R.drawable.msg_contact_add, LocaleController.getString(R.string.AddAnotherAccount), LocaleController.getString(R.string.AddAnotherAccountInfo), true);
-            return;
-        }
-        if (i10 == zg0Var.d) {
-            d9Var.b(R.drawable.msg_permissions, LocaleController.getString(R.string.SetPasscode), LocaleController.getString(R.string.SetPasscodeInfo), true);
-            return;
-        }
-        if (i10 == zg0Var.e) {
-            d9Var.b(R.drawable.msg_clearcache, LocaleController.getString(R.string.ClearCache), LocaleController.getString(R.string.ClearCacheInfo), true);
-        } else if (i10 == zg0Var.f) {
-            d9Var.b(R.drawable.msg_newphone, LocaleController.getString(R.string.ChangePhoneNumber), LocaleController.getString(R.string.ChangePhoneNumberInfo), true);
-        } else if (i10 == zg0Var.h) {
-            d9Var.b(R.drawable.msg_help, LocaleController.getString(R.string.ContactSupport), LocaleController.getString(R.string.ContactSupportInfo), false);
-        }
-    }
-
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
-        View view;
-        Context context = this.c;
-        if (i10 == 0) {
-            FrameLayout m4Var = new org.telegram.ui.Cells.m4(context);
-            m4Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
-            frameLayout = m4Var;
-        } else {
-            if (i10 != 1) {
-                if (i10 == 2) {
-                    view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.c1) null);
-                } else if (i10 != 3) {
-                    view = new org.telegram.ui.Cells.e9(context);
-                    view.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.W0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.i6.b7));
-                } else {
-                    FrameLayout caVar = new org.telegram.ui.Cells.ca(context);
-                    caVar.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
-                    frameLayout = caVar;
-                }
-                return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
-            }
-            org.telegram.ui.Cells.d9 d9Var = new org.telegram.ui.Cells.d9(context);
-            d9Var.setMultilineDetail(true);
-            d9Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
-            frameLayout = d9Var;
-        }
-        view = frameLayout;
-        return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
     }
 }

@@ -1,469 +1,88 @@
 package hg;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import ci.rc;
-import java.util.ArrayList;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.l2;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.p61;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.UsersSelectActivity;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Cells.j2;
+import org.telegram.ui.Cells.n4;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b0 {
-    public final Context a;
-    public final int b;
-    public final e6 c;
-    public final n2 d;
-    public final Runnable e;
-    public int f;
-    public int g;
-    public boolean h;
-    public boolean i;
-    public final ArrayList j;
-    public final ArrayList k;
-    public TL_account.TL_businessBotRecipients l;
-    public int m;
-    public boolean n;
+public class b0 extends lm0 {
+    public final Context c;
+    public final int d;
+    public final boolean e;
+    public final boolean f;
+    public final c6 h;
 
-    public b0(n2 n2Var, Runnable runnable) {
-        this.j = new ArrayList();
-        this.k = new ArrayList();
-        this.m = -4;
-        this.a = n2Var.getContext();
-        this.b = n2Var.getCurrentAccount();
-        this.d = n2Var;
-        this.e = runnable;
-        this.c = n2Var.getResourceProvider();
+    public b0(int i10, Context context, c6 c6Var, boolean z10, boolean z11) {
+        this.e = z10;
+        this.c = context;
+        this.d = i10;
+        this.f = z11;
+        this.h = c6Var;
     }
 
-    public final void a(ArrayList arrayList, c71 c71Var, boolean z10) {
-        String str;
-        String str2;
-        c71Var.U();
-        int d = d();
-        str = "";
-        if (!this.h) {
-            if ((d & 1) != 0) {
-                str2 = org.telegram.messenger.q.g(R.string.FilterExistingChats, a1.g.v(!TextUtils.isEmpty("") ? ", " : ""));
-            } else {
-                str2 = "";
-            }
-            if ((d & 2) != 0) {
-                if (!TextUtils.isEmpty(str2)) {
-                    str2 = sc.v.v(str2, ", ");
-                }
-                str2 = org.telegram.messenger.q.g(R.string.FilterNewChats, a1.g.v(str2));
-            }
-            if ((d & 4) != 0) {
-                if (!TextUtils.isEmpty(str2)) {
-                    str2 = sc.v.v(str2, ", ");
-                }
-                str2 = org.telegram.messenger.q.g(R.string.FilterContacts, a1.g.v(str2));
-            }
-            if ((d & 8) != 0) {
-                if (!TextUtils.isEmpty(str2)) {
-                    str2 = sc.v.v(str2, ", ");
-                }
-                str2 = org.telegram.messenger.q.g(R.string.FilterNonContacts, a1.g.v(str2));
-            }
-            ArrayList arrayList2 = this.j;
-            if (!arrayList2.isEmpty()) {
-                if (TextUtils.isEmpty(str2)) {
-                    StringBuilder v = a1.g.v(str2);
-                    v.append(LocaleController.formatPluralStringComma("Chats", arrayList2.size()));
-                    str2 = v.toString();
-                } else {
-                    StringBuilder j3 = sc.v.j(str2, " + ");
-                    j3.append(arrayList2.size());
-                    str2 = j3.toString();
-                }
-            }
-            if (TextUtils.isEmpty(str2)) {
-                str2 = LocaleController.getString(R.string.BusinessChatsIncludedAdd2);
-            }
-            p61 f7 = p61.f(LocaleController.getString(R.string.BusinessChatsIncluded), str2, 101);
-            f7.g = z10;
-            arrayList.add(f7);
-        }
-        boolean z11 = this.i;
-        if (z11 || this.h) {
-            if (!z11 || this.h) {
-                if ((d & 1) != 0) {
-                    str = org.telegram.messenger.q.g(R.string.FilterExistingChats, a1.g.v(TextUtils.isEmpty("") ? "" : ", "));
-                }
-                if ((d & 2) != 0) {
-                    if (!TextUtils.isEmpty(str)) {
-                        str = sc.v.v(str, ", ");
-                    }
-                    str = org.telegram.messenger.q.g(R.string.FilterNewChats, a1.g.v(str));
-                }
-                if ((d & 4) != 0) {
-                    if (!TextUtils.isEmpty(str)) {
-                        str = sc.v.v(str, ", ");
-                    }
-                    str = org.telegram.messenger.q.g(R.string.FilterContacts, a1.g.v(str));
-                }
-                if ((d & 8) != 0) {
-                    if (!TextUtils.isEmpty(str)) {
-                        str = sc.v.v(str, ", ");
-                    }
-                    str = org.telegram.messenger.q.g(R.string.FilterNonContacts, a1.g.v(str));
-                }
-            }
-            ArrayList arrayList3 = this.k;
-            if (!arrayList3.isEmpty()) {
-                if (TextUtils.isEmpty(str)) {
-                    StringBuilder v9 = a1.g.v(str);
-                    v9.append(LocaleController.formatPluralStringComma("Chats", arrayList3.size()));
-                    str = v9.toString();
-                } else {
-                    StringBuilder j10 = sc.v.j(str, " + ");
-                    j10.append(arrayList3.size());
-                    str = j10.toString();
-                }
-            }
-            if (TextUtils.isEmpty(str)) {
-                str = LocaleController.getString(R.string.BusinessChatsExcludedAdd2);
-            }
-            p61 f10 = p61.f(LocaleController.getString(R.string.BusinessChatsExcluded), str, 103);
-            f10.g = z10;
-            arrayList.add(f10);
-        }
-        c71Var.T();
-    }
-
-    public final TL_account.TL_inputBusinessBotRecipients b() {
-        TL_account.TL_inputBusinessBotRecipients tL_inputBusinessBotRecipients = new TL_account.TL_inputBusinessBotRecipients();
-        int d = d();
-        tL_inputBusinessBotRecipients.flags = d & (-49);
-        tL_inputBusinessBotRecipients.existing_chats = (d & 1) != 0;
-        tL_inputBusinessBotRecipients.new_chats = (d & 2) != 0;
-        tL_inputBusinessBotRecipients.contacts = (d & 4) != 0;
-        tL_inputBusinessBotRecipients.non_contacts = (d & 8) != 0;
-        boolean z10 = this.h;
-        tL_inputBusinessBotRecipients.exclude_selected = z10;
-        ArrayList arrayList = this.k;
-        ArrayList arrayList2 = z10 ? arrayList : this.j;
-        if (!arrayList2.isEmpty()) {
-            MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-            tL_inputBusinessBotRecipients.flags |= 16;
-            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                TLRPC.InputUser inputUser = messagesController.getInputUser(((Long) arrayList2.get(i10)).longValue());
-                if (inputUser == null) {
-                    FileLog.e("businessRecipientsHelper: user not found " + arrayList2.get(i10));
-                } else {
-                    tL_inputBusinessBotRecipients.users.add(inputUser);
-                }
-            }
-        }
-        if (!this.h) {
-            MessagesController messagesController2 = MessagesController.getInstance(UserConfig.selectedAccount);
-            tL_inputBusinessBotRecipients.flags |= 64;
-            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                TLRPC.InputUser inputUser2 = messagesController2.getInputUser(((Long) arrayList.get(i11)).longValue());
-                if (inputUser2 == null) {
-                    FileLog.e("businessRecipientsHelper: user not found " + arrayList.get(i11));
-                } else {
-                    tL_inputBusinessBotRecipients.exclude_users.add(inputUser2);
-                }
-            }
-        }
-        return tL_inputBusinessBotRecipients;
-    }
-
-    public final TL_account.TL_businessBotRecipients c() {
-        TL_account.TL_businessBotRecipients tL_businessBotRecipients = new TL_account.TL_businessBotRecipients();
-        int d = d();
-        tL_businessBotRecipients.flags = d & (-49);
-        tL_businessBotRecipients.existing_chats = (d & 1) != 0;
-        tL_businessBotRecipients.new_chats = (d & 2) != 0;
-        tL_businessBotRecipients.contacts = (d & 4) != 0;
-        tL_businessBotRecipients.non_contacts = (d & 8) != 0;
-        boolean z10 = this.h;
-        tL_businessBotRecipients.exclude_selected = z10;
-        ArrayList arrayList = this.k;
-        ArrayList arrayList2 = z10 ? arrayList : this.j;
-        if (!arrayList2.isEmpty()) {
-            MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-            tL_businessBotRecipients.flags |= 16;
-            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                if (messagesController.getInputUser(((Long) arrayList2.get(i10)).longValue()) == null) {
-                    FileLog.e("businessRecipientsHelper: user not found " + arrayList2.get(i10));
-                } else {
-                    tL_businessBotRecipients.users.add((Long) arrayList2.get(i10));
-                }
-            }
-        }
-        if (!this.h) {
-            MessagesController messagesController2 = MessagesController.getInstance(UserConfig.selectedAccount);
-            tL_businessBotRecipients.flags |= 64;
-            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                if (messagesController2.getInputUser(((Long) arrayList.get(i11)).longValue()) == null) {
-                    FileLog.e("businessRecipientsHelper: user not found " + arrayList.get(i11));
-                } else {
-                    tL_businessBotRecipients.users.add((Long) arrayList.get(i11));
-                }
-            }
-        }
-        return tL_businessBotRecipients;
-    }
-
-    public final int d() {
-        return this.h ? this.g : this.f;
-    }
-
-    public final TL_account.TL_inputBusinessRecipients e() {
-        TL_account.TL_inputBusinessRecipients tL_inputBusinessRecipients = new TL_account.TL_inputBusinessRecipients();
-        int d = d();
-        tL_inputBusinessRecipients.flags = d & (-49);
-        tL_inputBusinessRecipients.existing_chats = (d & 1) != 0;
-        tL_inputBusinessRecipients.new_chats = (d & 2) != 0;
-        tL_inputBusinessRecipients.contacts = (d & 4) != 0;
-        tL_inputBusinessRecipients.non_contacts = (d & 8) != 0;
-        boolean z10 = this.h;
-        tL_inputBusinessRecipients.exclude_selected = z10;
-        ArrayList arrayList = z10 ? this.k : this.j;
-        if (!arrayList.isEmpty()) {
-            MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-            tL_inputBusinessRecipients.flags |= 16;
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                TLRPC.InputUser inputUser = messagesController.getInputUser(((Long) arrayList.get(i10)).longValue());
-                if (inputUser == null) {
-                    FileLog.e("businessRecipientsHelper: user not found " + arrayList.get(i10));
-                } else {
-                    tL_inputBusinessRecipients.users.add(inputUser);
-                }
-            }
-        }
-        return tL_inputBusinessRecipients;
-    }
-
-    public final TL_account.TL_businessRecipients f() {
-        TL_account.TL_businessRecipients tL_businessRecipients = new TL_account.TL_businessRecipients();
-        int d = d();
-        tL_businessRecipients.flags = d & (-49);
-        tL_businessRecipients.existing_chats = (d & 1) != 0;
-        tL_businessRecipients.new_chats = (d & 2) != 0;
-        tL_businessRecipients.contacts = (d & 4) != 0;
-        tL_businessRecipients.non_contacts = (d & 8) != 0;
-        boolean z10 = this.h;
-        tL_businessRecipients.exclude_selected = z10;
-        ArrayList arrayList = z10 ? this.k : this.j;
-        if (!arrayList.isEmpty()) {
-            MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
-            tL_businessRecipients.flags |= 16;
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                if (messagesController.getInputUser(((Long) arrayList.get(i10)).longValue()) == null) {
-                    FileLog.e("businessRecipientsHelper: user not found " + arrayList.get(i10));
-                } else {
-                    tL_businessRecipients.users.add((Long) arrayList.get(i10));
-                }
-            }
-        }
-        return tL_businessRecipients;
-    }
-
-    public final boolean g() {
-        TL_account.TL_businessBotRecipients tL_businessBotRecipients = this.l;
-        if (tL_businessBotRecipients == null || tL_businessBotRecipients.exclude_selected != this.h || (tL_businessBotRecipients.flags & (-49)) != d()) {
-            return true;
-        }
-        boolean z10 = this.h;
-        ArrayList arrayList = this.k;
-        ArrayList arrayList2 = z10 ? arrayList : this.j;
-        if (arrayList2.size() != this.l.users.size()) {
-            return true;
-        }
-        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            if (!this.l.users.contains(arrayList2.get(i10))) {
-                return true;
-            }
-        }
-        if (this.i && !this.h) {
-            if (arrayList.size() != this.l.exclude_users.size()) {
-                return true;
-            }
-            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                if (!this.l.exclude_users.contains(arrayList.get(i11))) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public final boolean h(p61 p61Var) {
-        int i10 = p61Var.d;
-        n2 n2Var = this.d;
-        boolean z10 = false;
-        int i11 = 1;
-        if (i10 == 101 || i10 == 103) {
-            boolean z11 = i10 == 101;
-            UsersSelectActivity usersSelectActivity = new UsersSelectActivity(d(), z11 ? this.j : this.k, z11);
-            usersSelectActivity.x = 2;
-            usersSelectActivity.G = false;
-            usersSelectActivity.F = (!this.i || this.h || z11) ? false : true;
-            usersSelectActivity.G = false;
-            if (!z11 && this.n) {
-                z10 = true;
-            }
-            usersSelectActivity.H = z10;
-            usersSelectActivity.n = new ai.k(i11, this, z11);
-            if (n2Var != null) {
-                n2Var.presentFragment(usersSelectActivity);
-                return true;
-            }
-            n2 U = LaunchActivity.U();
-            if (U == null) {
-                return true;
-            }
-            l2 l2Var = new l2();
-            l2Var.a = true;
-            U.showAsSheet(usersSelectActivity, l2Var);
-            return true;
-        }
-        Runnable runnable = this.e;
-        if (i10 == 102) {
-            runnable.run();
-            return true;
-        }
-        if (i10 == 104) {
-            runnable.run();
-            return true;
-        }
-        if (p61Var.a != 11) {
-            return false;
-        }
-        boolean z12 = p61Var.w;
-        String peerName = MessagesController.getInstance(this.b).getPeerName(p61Var.x);
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a, 0, this.c);
-        String string = LocaleController.getString(!z12 ? R.string.BusinessRecipientsRemoveExcludeTitle : R.string.BusinessRecipientsRemoveIncludeTitle);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.R = string;
-        b2Var.T = LocaleController.formatString(!z12 ? R.string.BusinessRecipientsRemoveExcludeMessage : R.string.BusinessRecipientsRemoveIncludeMessage, peerName);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new com.google.firebase.messaging.i(this, z12, p61Var, i11));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        if (n2Var != null) {
-            n2Var.showDialog(b2Var);
-            return true;
-        }
-        b2Var.show();
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
         return true;
     }
 
-    public final void i(TL_account.TL_businessBotRecipients tL_businessBotRecipients) {
-        this.i = true;
-        this.l = tL_businessBotRecipients;
-        ArrayList arrayList = this.j;
-        ArrayList arrayList2 = this.k;
-        if (tL_businessBotRecipients == null) {
-            this.h = true;
-            this.g = 0;
-            this.f = 0;
-            arrayList.clear();
-            arrayList2.clear();
-            return;
-        }
-        boolean z10 = tL_businessBotRecipients.exclude_selected;
-        this.h = z10;
-        if (z10) {
-            this.f = 0;
-            this.g = tL_businessBotRecipients.flags & (-49);
-            arrayList.clear();
-            arrayList2.clear();
-            arrayList2.addAll(this.l.users);
-            return;
-        }
-        this.f = tL_businessBotRecipients.flags & (-49);
-        this.g = 0;
-        arrayList.clear();
-        arrayList2.clear();
-        arrayList.addAll(this.l.users);
-        arrayList2.addAll(this.l.exclude_users);
+    @Override // s4.g0
+    public final int h() {
+        return MediaDataController.getInstance(this.d).hints.size();
     }
 
-    public final void j(TL_account.TL_businessRecipients tL_businessRecipients) {
-        this.i = false;
-        if (tL_businessRecipients != null) {
-            TL_account.TL_businessBotRecipients tL_businessBotRecipients = new TL_account.TL_businessBotRecipients();
-            this.l = tL_businessBotRecipients;
-            tL_businessBotRecipients.flags = tL_businessRecipients.flags;
-            tL_businessBotRecipients.existing_chats = tL_businessRecipients.existing_chats;
-            tL_businessBotRecipients.new_chats = tL_businessRecipients.new_chats;
-            tL_businessBotRecipients.contacts = tL_businessRecipients.contacts;
-            tL_businessBotRecipients.non_contacts = tL_businessRecipients.non_contacts;
-            tL_businessBotRecipients.exclude_selected = tL_businessRecipients.exclude_selected;
-            tL_businessBotRecipients.users = tL_businessRecipients.users;
+    @Override // s4.g0
+    public void v(s4.b1 b1Var, int i10) {
+        TLRPC.Chat chat;
+        n4 n4Var = (n4) b1Var.a;
+        int i11 = this.d;
+        TLRPC.TL_topPeer tL_topPeer = MediaDataController.getInstance(i11).hints.get(i10);
+        new TLRPC.TL_dialog();
+        TLRPC.Peer peer = tL_topPeer.peer;
+        long j10 = peer.user_id;
+        TLRPC.User user = null;
+        if (j10 != 0) {
+            user = MessagesController.getInstance(i11).getUser(Long.valueOf(tL_topPeer.peer.user_id));
+            chat = null;
         } else {
-            this.l = null;
+            long j11 = peer.channel_id;
+            if (j11 != 0) {
+                j10 = -j11;
+                chat = MessagesController.getInstance(i11).getChat(Long.valueOf(tL_topPeer.peer.channel_id));
+            } else {
+                long j12 = peer.chat_id;
+                if (j12 != 0) {
+                    j10 = -j12;
+                    chat = MessagesController.getInstance(i11).getChat(Long.valueOf(tL_topPeer.peer.chat_id));
+                } else {
+                    j10 = 0;
+                    chat = null;
+                }
+            }
         }
-        TL_account.TL_businessBotRecipients tL_businessBotRecipients2 = this.l;
-        ArrayList arrayList = this.j;
-        ArrayList arrayList2 = this.k;
-        if (tL_businessBotRecipients2 == null) {
-            this.h = true;
-            this.g = 0;
-            this.f = 0;
-            arrayList.clear();
-            arrayList2.clear();
-            return;
-        }
-        boolean z10 = tL_businessBotRecipients2.exclude_selected;
-        this.h = z10;
-        if (z10) {
-            this.f = 0;
-            this.g = tL_businessBotRecipients2.flags & (-49);
-            arrayList.clear();
-            arrayList2.clear();
-            arrayList2.addAll(this.l.users);
-            return;
-        }
-        this.f = tL_businessBotRecipients2.flags & (-49);
-        this.g = 0;
-        arrayList.clear();
-        arrayList2.clear();
-        arrayList.addAll(this.l.users);
-        arrayList2.addAll(this.l.exclude_users);
+        n4Var.setTag(Long.valueOf(j10));
+        n4Var.a(j10, user != null ? UserObject.getFirstName(user) : chat != null ? chat.monoforum ? og.d.i(chat, i11, false) : chat.title : "");
     }
 
-    public final boolean k(k71 k71Var) {
-        if (this.h || !this.j.isEmpty() || this.f != 0) {
-            return true;
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        boolean z10 = this.e;
+        n4 n4Var = new n4(this.c, this.h, z10);
+        if (this.f && !n4Var.x) {
+            n4Var.x = true;
+            NotificationCenter.getInstance(n4Var.h).listen(n4Var, NotificationCenter.userIsPremiumBlockedUpadted, new j2(n4Var, 1));
         }
-        BotWebViewVibrationEffect.APP_ERROR.vibrate();
-        View z12 = k71Var.z1(101);
-        int i10 = -this.m;
-        this.m = i10;
-        AndroidUtilities.shakeViewSpring(z12, i10);
-        k71Var.x0(k71Var.y1(101));
-        return false;
-    }
-
-    public b0(Context context, int i10, rc rcVar, e6 e6Var) {
-        this.j = new ArrayList();
-        this.k = new ArrayList();
-        this.m = -4;
-        this.a = context;
-        this.b = i10;
-        this.d = null;
-        this.e = rcVar;
-        this.c = e6Var;
+        n4Var.setLayoutParams(new s4.o0(AndroidUtilities.dp(80.0f), AndroidUtilities.dp(86.0f)));
+        return new wl0(n4Var);
     }
 }

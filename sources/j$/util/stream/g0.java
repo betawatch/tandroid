@@ -8,12 +8,12 @@ public final class g0 extends i0 implements i5 {
     public static final d0 d;
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.i0, j$.util.stream.j5
-    public final void accept(long j3) {
-        x(Long.valueOf(j3));
+    public final void accept(long j10) {
+        x(Long.valueOf(j10));
     }
 
     @Override // java.util.function.Supplier

@@ -1,265 +1,151 @@
 package m4;
 
-import android.graphics.Bitmap;
-import android.media.AudioAttributes;
-import android.net.Uri;
-import android.os.Build;
+import android.media.session.MediaSession;
 import android.os.Bundle;
-import m.f3;
+import android.os.Parcelable;
+import e9.m2;
+import e9.x1;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class k {
-    public static final /* synthetic */ int a = 0;
+public final class k {
+    public static final String l;
+    public static final String m;
+    public static final String n;
+    public static final String o;
+    public static final String p;
+    public static final String q;
+    public static final String r;
+    public static final String s;
+    public static final String t;
+    public static final String u;
+    public static final String v;
+    public static final String w;
+    public static final String x;
+    public static final String y;
+    public final n a;
+    public final q1 b;
+    public final b2.c1 c;
+    public final b2.c1 d;
+    public final Bundle e;
+    public final Bundle f;
+    public final l1 g;
+    public final e9.n0 h;
+    public final e9.n0 i;
+    public final MediaSession.Token j;
+    public final e9.n0 k;
 
     static {
-        int i10 = e9.m0.c;
-        Object[] objArr = new Object[32];
-        objArr[0] = "android.media.metadata.TITLE";
-        objArr[1] = "android.media.metadata.ARTIST";
-        objArr[2] = "android.media.metadata.DURATION";
-        objArr[3] = "android.media.metadata.ALBUM";
-        objArr[4] = "android.media.metadata.AUTHOR";
-        objArr[5] = "android.media.metadata.WRITER";
-        System.arraycopy(new String[]{"android.media.metadata.COMPOSER", "android.media.metadata.COMPILATION", "android.media.metadata.DATE", "android.media.metadata.YEAR", "android.media.metadata.GENRE", "android.media.metadata.TRACK_NUMBER", "android.media.metadata.NUM_TRACKS", "android.media.metadata.DISC_NUMBER", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.ART", "android.media.metadata.ART_URI", "android.media.metadata.ALBUM_ART", "android.media.metadata.ALBUM_ART_URI", "android.media.metadata.USER_RATING", "android.media.metadata.RATING", "android.media.metadata.DISPLAY_TITLE", "android.media.metadata.DISPLAY_SUBTITLE", "android.media.metadata.DISPLAY_DESCRIPTION", "android.media.metadata.DISPLAY_ICON", "android.media.metadata.DISPLAY_ICON_URI", "android.media.metadata.MEDIA_ID", "android.media.metadata.MEDIA_URI", "android.media.metadata.BT_FOLDER_TYPE", "android.media.metadata.ADVERTISEMENT", "android.media.metadata.DOWNLOAD_STATUS", "androidx.media3.session.EXTRAS_KEY_MEDIA_TYPE_COMPAT"}, 0, objArr, 6, 26);
-        e9.m0.u(32, objArr);
+        String str = e2.m0.a;
+        l = Integer.toString(0, 36);
+        m = Integer.toString(1, 36);
+        n = Integer.toString(2, 36);
+        o = Integer.toString(9, 36);
+        p = Integer.toString(14, 36);
+        q = Integer.toString(13, 36);
+        r = Integer.toString(3, 36);
+        s = Integer.toString(4, 36);
+        t = Integer.toString(5, 36);
+        u = Integer.toString(6, 36);
+        v = Integer.toString(11, 36);
+        w = Integer.toString(7, 36);
+        x = Integer.toString(8, 36);
+        Integer.toString(10, 36);
+        y = Integer.toString(12, 36);
     }
 
-    public static long a(int i10) {
-        switch (i10) {
-            case 0:
-                return 0L;
-            case 1:
-                return 1L;
-            case 2:
-                return 2L;
-            case 3:
-                return 3L;
-            case 4:
-                return 4L;
-            case 5:
-                return 5L;
-            case 6:
-                return 6L;
-            default:
-                throw new IllegalArgumentException(hg.c.h(i10, "Unrecognized FolderType: "));
-        }
+    public k(n nVar, e9.n0 n0Var, e9.n0 n0Var2, e9.n0 n0Var3, q1 q1Var, b2.c1 c1Var, b2.c1 c1Var2, Bundle bundle, Bundle bundle2, l1 l1Var, MediaSession.Token token) {
+        this.a = nVar;
+        this.h = n0Var;
+        this.i = n0Var2;
+        this.k = n0Var3;
+        this.b = q1Var;
+        this.c = c1Var;
+        this.d = c1Var2;
+        this.e = bundle;
+        this.f = bundle2;
+        this.g = l1Var;
+        this.j = token;
     }
 
-    public static n4.m b(b2.n0 n0Var, String str, Uri uri, long j3, Bitmap bitmap) {
-        Long l4;
-        l2.f fVar = new l2.f(5);
-        fVar.A("android.media.metadata.MEDIA_ID", str);
-        CharSequence charSequence = n0Var.a;
-        Bundle bundle = n0Var.I;
-        Integer num = n0Var.p;
-        Uri uri2 = n0Var.m;
-        if (charSequence != null) {
-            fVar.B(charSequence, "android.media.metadata.TITLE");
+    public final Bundle a(int i10) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(l, 1010001300);
+        bundle.putBinder(m, this.a.asBinder());
+        bundle.putParcelable(n, null);
+        e9.n0 n0Var = this.h;
+        boolean isEmpty = n0Var.isEmpty();
+        String str = o;
+        if (!isEmpty) {
+            ArrayList<? extends Parcelable> arrayList = new ArrayList<>(n0Var.size());
+            int size = n0Var.size();
+            int i11 = 0;
+            while (i11 < size) {
+                Object obj = n0Var.get(i11);
+                i11++;
+                arrayList.add(((e) obj).k(i10));
+            }
+            bundle.putParcelableArrayList(str, arrayList);
         }
-        CharSequence charSequence2 = n0Var.e;
-        if (charSequence2 != null) {
-            fVar.B(charSequence2, "android.media.metadata.DISPLAY_TITLE");
-        }
-        CharSequence charSequence3 = n0Var.f;
-        if (charSequence3 != null) {
-            fVar.B(charSequence3, "android.media.metadata.DISPLAY_SUBTITLE");
-        }
-        CharSequence charSequence4 = n0Var.g;
-        if (charSequence4 != null) {
-            fVar.B(charSequence4, "android.media.metadata.DISPLAY_DESCRIPTION");
-        }
-        CharSequence charSequence5 = n0Var.b;
-        if (charSequence5 != null) {
-            fVar.B(charSequence5, "android.media.metadata.ARTIST");
-        }
-        CharSequence charSequence6 = n0Var.c;
-        if (charSequence6 != null) {
-            fVar.B(charSequence6, "android.media.metadata.ALBUM");
-        }
-        CharSequence charSequence7 = n0Var.d;
-        if (charSequence7 != null) {
-            fVar.B(charSequence7, "android.media.metadata.ALBUM_ARTIST");
-        }
-        if (n0Var.t != null) {
-            fVar.y(r7.intValue(), "android.media.metadata.YEAR");
-        }
-        if (uri != null) {
-            fVar.A("android.media.metadata.MEDIA_URI", uri.toString());
-        }
-        if (uri2 != null) {
-            fVar.A("android.media.metadata.DISPLAY_ICON_URI", uri2.toString());
-            fVar.A("android.media.metadata.ALBUM_ART_URI", uri2.toString());
-            fVar.A("android.media.metadata.ART_URI", uri2.toString());
-        }
-        if (bitmap != null) {
-            fVar.v("android.media.metadata.DISPLAY_ICON", bitmap);
-            fVar.v("android.media.metadata.ALBUM_ART", bitmap);
-        }
-        if (num != null && num.intValue() != -1) {
-            fVar.y(a(num.intValue()), "android.media.metadata.BT_FOLDER_TYPE");
-        }
-        if (j3 == -9223372036854775807L && (l4 = n0Var.h) != null) {
-            j3 = l4.longValue();
-        }
-        if (j3 == -9223372036854775807L) {
-            j3 = -1;
-        }
-        fVar.y(j3, "android.media.metadata.DURATION");
-        n4.g0 d = d(n0Var.i);
-        if (d != null) {
-            fVar.z("android.media.metadata.USER_RATING", d);
-        }
-        n4.g0 d10 = d(n0Var.j);
-        if (d10 != null) {
-            fVar.z("android.media.metadata.RATING", d10);
-        }
-        if (n0Var.H != null) {
-            fVar.y(r6.intValue(), "androidx.media3.session.EXTRAS_KEY_MEDIA_TYPE_COMPAT");
-        }
-        if (bundle != null) {
-            for (String str2 : bundle.keySet()) {
-                Object obj = bundle.get(str2);
-                if (obj == null || (obj instanceof CharSequence)) {
-                    fVar.B((CharSequence) obj, str2);
-                } else if ((obj instanceof Byte) || (obj instanceof Short) || (obj instanceof Integer) || (obj instanceof Long)) {
-                    fVar.y(((Number) obj).longValue(), str2);
+        e9.n0 n0Var2 = this.i;
+        if (!n0Var2.isEmpty()) {
+            if (i10 >= 7) {
+                ArrayList<? extends Parcelable> arrayList2 = new ArrayList<>(n0Var2.size());
+                int size2 = n0Var2.size();
+                int i12 = 0;
+                while (i12 < size2) {
+                    Object obj2 = n0Var2.get(i12);
+                    i12++;
+                    arrayList2.add(((e) obj2).k(i10));
                 }
+                bundle.putParcelableArrayList(p, arrayList2);
+            } else {
+                x1 g10 = e.g(n0Var2);
+                ArrayList<? extends Parcelable> arrayList3 = new ArrayList<>(g10.d);
+                e9.l0 listIterator = g10.listIterator(0);
+                while (listIterator.hasNext()) {
+                    arrayList3.add(((e) listIterator.next()).k(i10));
+                }
+                bundle.putParcelableArrayList(str, arrayList3);
             }
         }
-        return new n4.m((Bundle) fVar.b);
-    }
-
-    public static b2.c1 c(n4.g0 g0Var) {
-        if (g0Var == null) {
-            return null;
-        }
-        float f7 = g0Var.b;
-        int i10 = g0Var.a;
-        switch (i10) {
-            case 1:
-                if (g0Var.b()) {
-                    return new b2.u(i10 == 1 && f7 == 1.0f);
-                }
-                return new b2.u();
-            case 2:
-                if (g0Var.b()) {
-                    return new b2.f1(i10 == 2 && f7 == 1.0f);
-                }
-                return new b2.f1();
-            case 3:
-                return g0Var.b() ? new b2.d1(3, g0Var.a()) : new b2.d1(3);
-            case 4:
-                return g0Var.b() ? new b2.d1(4, g0Var.a()) : new b2.d1(4);
-            case 5:
-                return g0Var.b() ? new b2.d1(5, g0Var.a()) : new b2.d1(5);
-            case 6:
-                if (!g0Var.b()) {
-                    return new b2.t0();
-                }
-                if (i10 != 6 || !g0Var.b()) {
-                    f7 = -1.0f;
-                }
-                return new b2.t0(f7);
-            default:
-                return null;
-        }
-    }
-
-    public static n4.g0 d(b2.c1 c1Var) {
-        if (c1Var != null) {
-            int f7 = f(c1Var);
-            if (!c1Var.b()) {
-                switch (f7) {
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                        return new n4.g0(f7, -1.0f);
-                    default:
-                        return null;
-                }
+        e9.n0 n0Var3 = this.k;
+        if (!n0Var3.isEmpty()) {
+            ArrayList<? extends Parcelable> arrayList4 = new ArrayList<>(n0Var3.size());
+            int size3 = n0Var3.size();
+            int i13 = 0;
+            while (i13 < size3) {
+                Object obj3 = n0Var3.get(i13);
+                i13++;
+                arrayList4.add(((e) obj3).k(i10));
             }
-            switch (f7) {
-                case 1:
-                    return new n4.g0(1, ((b2.u) c1Var).c ? 1.0f : 0.0f);
-                case 2:
-                    return new n4.g0(2, ((b2.f1) c1Var).c ? 1.0f : 0.0f);
-                case 3:
-                case 4:
-                case 5:
-                    return n4.g0.d(((b2.d1) c1Var).c, f7);
-                case 6:
-                    return n4.g0.c(((b2.t0) c1Var).b);
-            }
+            bundle.putParcelableArrayList(q, arrayList4);
         }
-        return null;
-    }
-
-    public static int e(b2.e eVar) {
-        f3 bVar = Build.VERSION.SDK_INT >= 26 ? new n4.b(2) : new f3(2);
-        AudioAttributes.Builder builder = (AudioAttributes.Builder) bVar.b;
-        builder.setContentType(eVar.a);
-        builder.setFlags(eVar.b);
-        bVar.q(eVar.c);
-        AudioAttributes audioAttributes = bVar.f().a;
-        audioAttributes.getClass();
-        int flags = audioAttributes.getFlags();
-        int usage = audioAttributes.getUsage();
-        if ((flags & 1) == 1) {
-            return 7;
+        q1 q1Var = this.b;
+        q1Var.getClass();
+        Bundle bundle2 = new Bundle();
+        ArrayList<? extends Parcelable> arrayList5 = new ArrayList<>();
+        m2 it = q1Var.a.iterator();
+        while (it.hasNext()) {
+            arrayList5.add(((p1) it.next()).a());
         }
-        if ((flags & 4) == 4) {
-            return 6;
+        bundle2.putParcelableArrayList(q1.b, arrayList5);
+        bundle.putBundle(r, bundle2);
+        String str2 = s;
+        b2.c1 c1Var = this.c;
+        bundle.putBundle(str2, c1Var.b());
+        String str3 = t;
+        b2.c1 c1Var2 = this.d;
+        bundle.putBundle(str3, c1Var2.b());
+        bundle.putBundle(u, this.e);
+        bundle.putBundle(v, this.f);
+        bundle.putBundle(w, this.g.e(w7.w.a(c1Var, c1Var2), false, false).f(i10));
+        bundle.putInt(x, 9);
+        MediaSession.Token token = this.j;
+        if (token != null) {
+            bundle.putParcelable(y, token);
         }
-        switch (usage) {
-            case 2:
-                return 0;
-            case 3:
-                return 8;
-            case 4:
-                return 4;
-            case 5:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
-                return 5;
-            case 6:
-                return 2;
-            case 11:
-                return 10;
-            case 12:
-            default:
-                return 3;
-            case 13:
-                return 1;
-        }
-    }
-
-    public static int f(b2.c1 c1Var) {
-        if (c1Var instanceof b2.u) {
-            return 1;
-        }
-        if (c1Var instanceof b2.f1) {
-            return 2;
-        }
-        if (!(c1Var instanceof b2.d1)) {
-            return c1Var instanceof b2.t0 ? 6 : 0;
-        }
-        int i10 = ((b2.d1) c1Var).b;
-        int i11 = 3;
-        if (i10 != 3) {
-            i11 = 4;
-            if (i10 != 4) {
-                i11 = 5;
-                if (i10 != 5) {
-                    return 0;
-                }
-            }
-        }
-        return i11;
+        return bundle;
     }
 }

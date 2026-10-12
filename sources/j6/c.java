@@ -10,7 +10,7 @@ import android.util.Log;
 import com.google.android.gms.internal.cast.a0;
 import java.util.regex.Matcher;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c extends a0 {
     public final /* synthetic */ a a;
@@ -85,9 +85,9 @@ public final class c extends a0 {
                         int i10 = 0;
                         while (true) {
                             try {
-                                a0.m mVar = aVar.a;
-                                if (i10 < mVar.c) {
-                                    aVar.d((String) mVar.e(i10), intent2.getExtras());
+                                a0.l lVar = aVar.a;
+                                if (i10 < lVar.c) {
+                                    aVar.d((String) lVar.e(i10), intent2.getExtras());
                                     i10++;
                                 }
                             } catch (Throwable th2) {

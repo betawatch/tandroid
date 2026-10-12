@@ -1,24 +1,58 @@
 package r0;
 
-import android.view.ScrollFeedbackProvider;
-import androidx.core.widget.NestedScrollView;
+import android.view.View;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class q implements r {
-    public final ScrollFeedbackProvider a;
+public final class q implements ViewTreeObserver.OnPreDrawListener, View.OnAttachStateChangeListener {
+    public final View a;
+    public ViewTreeObserver b;
+    public final Runnable c;
 
-    public q(NestedScrollView nestedScrollView) {
-        this.a = ScrollFeedbackProvider.createProvider(nestedScrollView);
+    public q(View view, Runnable runnable) {
+        this.a = view;
+        this.b = view.getViewTreeObserver();
+        this.c = runnable;
     }
 
-    @Override // r0.r
-    public final void onScrollLimit(int i10, int i11, int i12, boolean z10) {
-        this.a.onScrollLimit(i10, i11, i12, z10);
+    public static void a(View view, Runnable runnable) {
+        if (view == null) {
+            throw new NullPointerException("view == null");
+        }
+        q qVar = new q(view, runnable);
+        view.getViewTreeObserver().addOnPreDrawListener(qVar);
+        view.addOnAttachStateChangeListener(qVar);
     }
 
-    @Override // r0.r
-    public final void onScrollProgress(int i10, int i11, int i12, int i13) {
-        this.a.onScrollProgress(i10, i11, i12, i13);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        boolean isAlive = this.b.isAlive();
+        View view = this.a;
+        if (isAlive) {
+            this.b.removeOnPreDrawListener(this);
+        } else {
+            view.getViewTreeObserver().removeOnPreDrawListener(this);
+        }
+        view.removeOnAttachStateChangeListener(this);
+        this.c.run();
+        return true;
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        this.b = view.getViewTreeObserver();
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        boolean isAlive = this.b.isAlive();
+        View view2 = this.a;
+        if (isAlive) {
+            this.b.removeOnPreDrawListener(this);
+        } else {
+            view2.getViewTreeObserver().removeOnPreDrawListener(this);
+        }
+        view2.removeOnAttachStateChangeListener(this);
     }
 }

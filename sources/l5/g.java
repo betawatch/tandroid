@@ -1,16 +1,16 @@
 package l5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g implements ia.d {
+public final class g implements ja.d {
     public static final g a = new g();
-    public static final ia.c b = new ia.c("startMs", hg.c.m(hg.c.l(la.e.class, new la.a(1))));
-    public static final ia.c c = new ia.c("endMs", hg.c.m(hg.c.l(la.e.class, new la.a(2))));
+    public static final ja.c b = new ja.c("startMs", i2.d.n(i2.d.m(ma.e.class, new ma.a(1))));
+    public static final ja.c c = new ja.c("endMs", i2.d.n(i2.d.m(ma.e.class, new ma.a(2))));
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
         o5.g gVar = (o5.g) obj;
-        ia.e eVar = (ia.e) obj2;
+        ja.e eVar = (ja.e) obj2;
         eVar.f(b, gVar.a);
         eVar.f(c, gVar.b);
     }

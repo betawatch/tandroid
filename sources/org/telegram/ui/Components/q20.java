@@ -1,36 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.transition.Transition;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class q20 implements Transition.TransitionListener {
-    public final /* synthetic */ s20 a;
+public final class q20 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r20 b;
 
-    public q20(s20 s20Var) {
-        this.a = s20Var;
+    public /* synthetic */ q20(r20 r20Var, int i10) {
+        this.a = i10;
+        this.b = r20Var;
     }
 
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionCancel(Transition transition) {
-        this.a.E.unlock();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionEnd(Transition transition) {
-        this.a.E.unlock();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionStart(Transition transition) {
-        this.a.E.lock();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionPause(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionResume(Transition transition) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                r20 r20Var = this.b;
+                NotificationCenter.getInstance(r20Var.r.a).onAnimationFinish(r20Var.f);
+                r20Var.requestLayout();
+                break;
+            default:
+                r20 r20Var2 = this.b;
+                r20Var2.d = null;
+                r20Var2.a = null;
+                r20Var2.b = false;
+                break;
+        }
     }
 }

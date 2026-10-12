@@ -1,25 +1,25 @@
 package de;
 
-import org.telegram.tgnet.TLObject;
+import w7.d0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a extends ld.c {
-    public ee.g a;
-    public /* synthetic */ Object b;
-    public final /* synthetic */ m c;
-    public int d;
+public final class a {
+    public static final /* synthetic */ a[] a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(m mVar, ld.c cVar) {
-        super(cVar);
-        this.c = mVar;
+    static {
+        a[] aVarArr = {new a("SUSPEND", 0), new a("DROP_OLDEST", 1), new a("DROP_LATEST", 2)};
+        a = aVarArr;
+        d0.a(aVarArr);
     }
 
-    @Override // ld.a
-    public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.d |= TLObject.FLAG_31;
-        return this.c.z(null, this);
+    public static a valueOf(String str) {
+        return (a) Enum.valueOf(a.class, str);
+    }
+
+    public static a[] values() {
+        return (a[]) a.clone();
     }
 }

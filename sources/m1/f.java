@@ -1,6 +1,5 @@
 package m1;
 
-import ae.x;
 import androidx.datastore.preferences.protobuf.a1;
 import androidx.datastore.preferences.protobuf.b0;
 import androidx.datastore.preferences.protobuf.b1;
@@ -18,7 +17,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f extends w {
     private static final f DEFAULT_INSTANCE;
@@ -53,30 +52,30 @@ public final class f extends w {
             y0 y0Var = y0.c;
             y0Var.getClass();
             b1 a10 = y0Var.a(wVar.getClass());
-            a0.h hVar2 = hVar.b;
-            if (hVar2 == null) {
-                hVar2 = new a0.h();
-                hVar2.d = 0;
+            e2.f fVar2 = hVar.b;
+            if (fVar2 == null) {
+                fVar2 = new e2.f();
+                fVar2.d = 0;
                 Charset charset = z.a;
-                hVar2.c = hVar;
-                hVar.b = hVar2;
+                fVar2.c = hVar;
+                hVar.b = fVar2;
             }
-            a10.c(wVar, hVar2, a2);
-            a10.d(wVar);
+            a10.f(wVar, fVar2, a2);
+            a10.c(wVar);
             if (wVar.g()) {
                 return (f) wVar;
             }
-            throw new b0(new x().getMessage());
-        } catch (IOException e7) {
+            throw new b0(new androidx.car.app.j().getMessage());
+        } catch (IOException e) {
+            if (e.getCause() instanceof b0) {
+                throw ((b0) e.getCause());
+            }
+            throw new b0(e.getMessage());
+        } catch (RuntimeException e7) {
             if (e7.getCause() instanceof b0) {
                 throw ((b0) e7.getCause());
             }
-            throw new b0(e7.getMessage());
-        } catch (RuntimeException e10) {
-            if (e10.getCause() instanceof b0) {
-                throw ((b0) e10.getCause());
-            }
-            throw e10;
+            throw e7;
         }
     }
 

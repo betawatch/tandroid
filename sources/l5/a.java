@@ -1,21 +1,21 @@
 package l5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a implements ia.d {
+public final class a implements ja.d {
     public static final a a = new a();
-    public static final ia.c b = new ia.c("window", hg.c.m(hg.c.l(la.e.class, new la.a(1))));
-    public static final ia.c c = new ia.c("logSourceMetrics", hg.c.m(hg.c.l(la.e.class, new la.a(2))));
-    public static final ia.c d = new ia.c("globalMetrics", hg.c.m(hg.c.l(la.e.class, new la.a(3))));
-    public static final ia.c e = new ia.c("appNamespace", hg.c.m(hg.c.l(la.e.class, new la.a(4))));
+    public static final ja.c b = new ja.c("window", i2.d.n(i2.d.m(ma.e.class, new ma.a(1))));
+    public static final ja.c c = new ja.c("logSourceMetrics", i2.d.n(i2.d.m(ma.e.class, new ma.a(2))));
+    public static final ja.c d = new ja.c("globalMetrics", i2.d.n(i2.d.m(ma.e.class, new ma.a(3))));
+    public static final ja.c e = new ja.c("appNamespace", i2.d.n(i2.d.m(ma.e.class, new ma.a(4))));
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
         o5.a aVar = (o5.a) obj;
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, aVar.a);
-        eVar.a(c, aVar.b);
-        eVar.a(d, aVar.c);
-        eVar.a(e, aVar.d);
+        ja.e eVar = (ja.e) obj2;
+        eVar.d(b, aVar.a);
+        eVar.d(c, aVar.b);
+        eVar.d(d, aVar.c);
+        eVar.d(e, aVar.d);
     }
 }

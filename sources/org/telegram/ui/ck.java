@@ -1,63 +1,71 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ck implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-    public /* synthetic */ ck(zn znVar, int i10) {
-        this.a = i10;
-        this.b = znVar;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class ck extends ki.n {
+    public Runnable W;
+    public final /* synthetic */ fo X;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ck(fo foVar, fo foVar2, ak akVar, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(foVar2, akVar, c6Var);
+        this.X = foVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        zn znVar = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = zn.Hc;
-                znVar.c7();
-                break;
-            case 1:
-                zn.j2(znVar);
-                break;
-            case 2:
-                zn.j2(znVar);
-                break;
-            case 3:
-                int i12 = zn.Hc;
-                znVar.Qa();
-                break;
-            case 4:
-                int i13 = zn.Hc;
-                znVar.Qa();
-                break;
-            case 5:
-                int i14 = zn.Hc;
-                znVar.Qa();
-                break;
-            case 6:
-                int i15 = zn.Hc;
-                znVar.Qa();
-                break;
-            case 7:
-                int i16 = zn.Hc;
-                znVar.Qa();
-                break;
-            case 8:
-                int i17 = zn.Hc;
-                znVar.Qa();
-                break;
-            case 9:
-                int i18 = zn.Hc;
-                znVar.Qa();
-                break;
-            default:
-                int i19 = zn.Hc;
-                znVar.Qa();
-                break;
+    @Override // s4.k
+    public final void F() {
+        fo foVar = this.X;
+        if (foVar.H9 == -1) {
+            foVar.H9 = foVar.getNotificationCenter().setAnimationInProgress(foVar.H9, fo.Nc, false);
         }
+    }
+
+    @Override // ki.n, s4.k
+    public final void N() {
+        super.N();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.W = null;
+        }
+        bk bkVar = new bk(this, 1);
+        this.W = bkVar;
+        AndroidUtilities.runOnUIThread(bkVar);
+    }
+
+    @Override // ki.n
+    public final void W() {
+        fo foVar = this.X;
+        foVar.H9 = foVar.getNotificationCenter().setAnimationInProgress(foVar.H9, fo.Nc, false);
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.W = null;
+        }
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d("chatItemAnimator disable notifications");
+        }
+        org.telegram.ui.ActionBar.u2 u2Var = foVar.Y.getAdjustPanLayoutHelper().h;
+        AndroidUtilities.cancelRunOnUIThread(u2Var);
+        u2Var.run();
+        org.telegram.ui.Components.cf cfVar = foVar.Y.Y3;
+        AndroidUtilities.cancelRunOnUIThread(cfVar);
+        cfVar.run();
+    }
+
+    @Override // ki.n, s4.k, s4.l0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+        }
+        bk bkVar = new bk(this, 0);
+        this.W = bkVar;
+        AndroidUtilities.runOnUIThread(bkVar);
     }
 }

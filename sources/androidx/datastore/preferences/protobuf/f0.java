@@ -5,47 +5,47 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f0 extends h0 {
     public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
 
-    public static List d(long j3, Object obj, int i10) {
-        List list = (List) r1.d.i(obj, j3);
+    public static List d(long j10, Object obj, int i10) {
+        List list = (List) r1.d.i(obj, j10);
         if (list.isEmpty()) {
-            List d0Var = list instanceof e0 ? new d0(i10) : ((list instanceof x0) && (list instanceof y)) ? ((y) list).d(i10) : new ArrayList(i10);
-            r1.o(obj, j3, d0Var);
+            List d0Var = list instanceof e0 ? new d0(i10) : ((list instanceof x0) && (list instanceof y)) ? ((y) list).b(i10) : new ArrayList(i10);
+            r1.o(obj, j10, d0Var);
             return d0Var;
         }
         if (c.isAssignableFrom(list.getClass())) {
             ArrayList arrayList = new ArrayList(list.size() + i10);
             arrayList.addAll(list);
-            r1.o(obj, j3, arrayList);
+            r1.o(obj, j10, arrayList);
             return arrayList;
         }
         if (list instanceof m1) {
             d0 d0Var2 = new d0(list.size() + i10);
             d0Var2.addAll((m1) list);
-            r1.o(obj, j3, d0Var2);
+            r1.o(obj, j10, d0Var2);
             return d0Var2;
         }
         if ((list instanceof x0) && (list instanceof y)) {
             y yVar = (y) list;
             if (!((b) yVar).a) {
-                y d = yVar.d(list.size() + i10);
-                r1.o(obj, j3, d);
-                return d;
+                y b10 = yVar.b(list.size() + i10);
+                r1.o(obj, j10, b10);
+                return b10;
             }
         }
         return list;
     }
 
     @Override // androidx.datastore.preferences.protobuf.h0
-    public final void a(Object obj, long j3) {
+    public final void a(Object obj, long j10) {
         Object unmodifiableList;
-        List list = (List) r1.d.i(obj, j3);
+        List list = (List) r1.d.i(obj, j10);
         if (list instanceof e0) {
-            unmodifiableList = ((e0) list).j();
+            unmodifiableList = ((e0) list).i();
         } else {
             if (c.isAssignableFrom(list.getClass())) {
                 return;
@@ -60,13 +60,13 @@ public final class f0 extends h0 {
             }
             unmodifiableList = DesugarCollections.unmodifiableList(list);
         }
-        r1.o(obj, j3, unmodifiableList);
+        r1.o(obj, j10, unmodifiableList);
     }
 
     @Override // androidx.datastore.preferences.protobuf.h0
-    public final void b(Object obj, long j3, Object obj2) {
-        List list = (List) r1.d.i(obj2, j3);
-        List d = d(j3, obj, list.size());
+    public final void b(Object obj, long j10, Object obj2) {
+        List list = (List) r1.d.i(obj2, j10);
+        List d = d(j10, obj, list.size());
         int size = d.size();
         int size2 = list.size();
         if (size > 0 && size2 > 0) {
@@ -75,11 +75,11 @@ public final class f0 extends h0 {
         if (size > 0) {
             list = d;
         }
-        r1.o(obj, j3, list);
+        r1.o(obj, j10, list);
     }
 
     @Override // androidx.datastore.preferences.protobuf.h0
-    public final List c(Object obj, long j3) {
-        return d(j3, obj, 10);
+    public final List c(Object obj, long j10) {
+        return d(j10, obj, 10);
     }
 }

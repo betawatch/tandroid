@@ -1,96 +1,69 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface pt {
-    MessageObject A();
+public final class pt implements View.OnClickListener {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ tt c;
 
-    boolean B();
+    public pt(tt ttVar, ArrayList arrayList, boolean z10) {
+        this.c = ttVar;
+        this.a = arrayList;
+        this.b = z10;
+    }
 
-    void C(TLRPC.Document document);
-
-    boolean D();
-
-    boolean E(TLRPC.Document document);
-
-    void F(TLRPC.Document document);
-
-    String G(boolean z10);
-
-    void H(TLRPC.Document document);
-
-    boolean I();
-
-    boolean J();
-
-    void K();
-
-    void L();
-
-    void M(TLRPC.InputStickerSet inputStickerSet, boolean z10);
-
-    boolean N(TLRPC.Document document);
-
-    void O(String str);
-
-    Boolean P(TLRPC.Document document);
-
-    boolean Q();
-
-    long a();
-
-    boolean b();
-
-    boolean c();
-
-    TLRPC.TL_messageMediaPoll d();
-
-    boolean e(TLRPC.Document document);
-
-    void f(CharSequence charSequence, String str, ft ftVar);
-
-    boolean g();
-
-    TLRPC.PollAnswer h();
-
-    boolean i();
-
-    org.telegram.ui.Components.p80 j(ci.m6 m6Var);
-
-    void k(SendMessagesHelper.ImportingSticker importingSticker);
-
-    boolean l();
-
-    boolean m(int i10);
-
-    void n(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11);
-
-    void o(String str);
-
-    void p(TLRPC.Document document);
-
-    boolean q();
-
-    void r(TLRPC.Document document);
-
-    void s();
-
-    void t(int i10, int i11, Object obj, TLObject tLObject, boolean z10);
-
-    void u();
-
-    void v(TLRPC.Document document);
-
-    void w(TLRPC.StickerSet stickerSet, String str);
-
-    void x(TLObject tLObject, Object obj);
-
-    boolean y();
-
-    void z(String str);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        xt xtVar = this.c.a;
+        if (xtVar.w == null) {
+            return;
+        }
+        int intValue = ((Integer) view.getTag()).intValue();
+        ArrayList arrayList = this.a;
+        if (((Integer) arrayList.get(intValue)).intValue() == 0 || ((Integer) arrayList.get(intValue)).intValue() == 6) {
+            vt vtVar = xtVar.l;
+            if (vtVar != null) {
+                TLRPC.Document document = xtVar.W;
+                String str = xtVar.Y;
+                boolean z10 = true;
+                Object obj = xtVar.b0;
+                if (((Integer) arrayList.get(intValue)).intValue() != 0) {
+                    z10 = false;
+                }
+                vtVar.m(document, str, obj, z10, 0, 0);
+            }
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 1) {
+            vt vtVar2 = xtVar.l;
+            if (vtVar2 != null) {
+                vtVar2.M(xtVar.a0, xtVar.i);
+            }
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
+            MediaDataController.getInstance(xtVar.r).addRecentSticker(2, xtVar.b0, xtVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
+            TLRPC.Document document2 = xtVar.W;
+            Object obj2 = xtVar.b0;
+            String str2 = xtVar.Y;
+            vt vtVar3 = xtVar.l;
+            if (vtVar3 == null) {
+                return;
+            } else {
+                org.telegram.ui.Components.g5.K(xtVar.w, vtVar3.a(), new a1.d(vtVar3, document2, str2, obj2, 10));
+            }
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
+            MediaDataController.getInstance(xtVar.r).addRecentSticker(0, xtVar.b0, xtVar.W, (int) (System.currentTimeMillis() / 1000), true);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 5) {
+            xtVar.l.j(xtVar.X);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {
+            xtVar.l.o(xtVar.W);
+        } else if (((Integer) arrayList.get(intValue)).intValue() == 8) {
+            xtVar.l.F(xtVar.W);
+        }
+        xtVar.p();
+    }
 }

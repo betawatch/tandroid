@@ -1,32 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class yi implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ai.d9 b;
-    public final /* synthetic */ zn c;
-    public final /* synthetic */ zn d;
+public final class yi extends org.telegram.ui.Cells.x0 {
+    public final /* synthetic */ fo t2;
 
-    public yi(zn znVar, int i10, ai.d9 d9Var, zn znVar2) {
-        this.d = znVar;
-        this.a = i10;
-        this.b = d9Var;
-        this.c = znVar2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yi(Activity activity, org.telegram.ui.ActionBar.c6 c6Var, fo foVar) {
+        super(activity, c6Var, false);
+        this.t2 = foVar;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12;
-        int i13 = NotificationCenter.messagesDidLoad;
-        if (i10 == i13 && ((Integer) objArr[10]).intValue() == this.a) {
-            this.b.run();
-            AndroidUtilities.runOnUIThread(new i2.a0(this.c, i10, i11, objArr), 50L);
-            i12 = ((org.telegram.ui.ActionBar.n2) this.d).currentAccount;
-            NotificationCenter.getInstance(i12).removeObserver(this, i13);
-        }
+    @Override // org.telegram.ui.Cells.x0, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        float y3 = getY();
+        fo foVar = this.t2;
+        a0(foVar.R0.getY() + y3, foVar.X0.getBackgroundSizeY());
     }
 }

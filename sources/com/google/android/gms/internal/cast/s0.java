@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class s0 extends j0 {
     public static final s0 n = new s0(null, new Object[0], 0);
@@ -39,7 +39,7 @@ public final class s0 extends j0 {
                     if (obj4 instanceof byte[]) {
                         byte[] bArr = (byte[]) obj4;
                         int length = bArr.length - 1;
-                        int a2 = v7.n5.a(obj.hashCode());
+                        int a2 = v7.o5.a(obj.hashCode());
                         while (true) {
                             int i11 = a2 & length;
                             int i12 = bArr[i11] & 255;
@@ -55,7 +55,7 @@ public final class s0 extends j0 {
                     } else if (obj4 instanceof short[]) {
                         short[] sArr = (short[]) obj4;
                         int length2 = sArr.length - 1;
-                        int a10 = v7.n5.a(obj.hashCode());
+                        int a10 = v7.o5.a(obj.hashCode());
                         while (true) {
                             int i13 = a10 & length2;
                             char c10 = (char) sArr[i13];
@@ -71,7 +71,7 @@ public final class s0 extends j0 {
                     } else {
                         int[] iArr = (int[]) obj4;
                         int length3 = iArr.length - 1;
-                        int a11 = v7.n5.a(obj.hashCode());
+                        int a11 = v7.o5.a(obj.hashCode());
                         while (true) {
                             int i14 = a11 & length3;
                             int i15 = iArr[i14];

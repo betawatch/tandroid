@@ -1,31 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class up0 extends LinearLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+public final class up0 implements tb {
+    public final /* synthetic */ sc a;
+    public final /* synthetic */ gf b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public up0(Context context, int i10, int i11) {
-        super(context);
-        this.a = i10;
-        this.b = i11;
+    public up0(gf gfVar, sc scVar) {
+        this.b = gfVar;
+        this.a = scVar;
     }
 
-    @Override // android.view.View
-    public final int getSuggestedMinimumWidth() {
-        return AndroidUtilities.dp(260.0f);
+    @Override // org.telegram.ui.Components.tb
+    public final void c() {
+        this.b.G.remove(this.a);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), this.b), View.MeasureSpec.getMode(i11)));
+    @Override // org.telegram.ui.Components.tb
+    public final void d() {
+        this.b.G.add(this.a);
+    }
+
+    @Override // org.telegram.ui.Components.tb
+    public final /* synthetic */ void a(sc scVar) {
+    }
+
+    @Override // org.telegram.ui.Components.tb
+    public final /* synthetic */ void b() {
     }
 }

@@ -1,0 +1,174 @@
+package bi;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.view.KeyEvent;
+import android.view.View;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.PasskeysController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.zc;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.c90;
+import org.telegram.ui.lg1;
+import org.telegram.ui.n50;
+import org.telegram.ui.n60;
+import org.telegram.ui.ok0;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class f7 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ f7(KeyEvent.Callback callback, Object obj, int i10, Object obj2, int i11) {
+        this.a = i11;
+        this.c = callback;
+        this.d = obj;
+        this.b = i10;
+        this.e = obj2;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                j7.n((j7) this.c, (TLRPC.User) this.d, this.b, (org.telegram.ui.ActionBar.c6) this.e);
+                break;
+            case 1:
+                org.telegram.ui.ac.W((org.telegram.ui.ac) this.c, this.b, (ArrayList) this.d, (Integer) this.e);
+                break;
+            case 2:
+                int[] iArr = (int[]) this.c;
+                AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) this.d;
+                ok0 ok0Var = (ok0) this.e;
+                iArr[0] = ((Integer) view.getTag()).intValue();
+                SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(UserConfig.selectedAccount).edit();
+                int i10 = this.b;
+                if (i10 == 1) {
+                    edit.putInt("popupAll", iArr[0]);
+                } else if (i10 == 0) {
+                    edit.putInt("popupGroup", iArr[0]);
+                } else {
+                    edit.putInt("popupChannel", iArr[0]);
+                }
+                edit.commit();
+                alertDialog$Builder.a.L0.run();
+                ok0Var.run();
+                break;
+            case 3:
+                n60 n60Var = (n60) this.c;
+                ArrayList arrayList = (ArrayList) this.d;
+                TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) this.e;
+                int size = arrayList.size();
+                int i11 = this.b;
+                if (i11 < size) {
+                    TLRPC.GroupCallParticipant groupCallParticipant2 = (TLRPC.GroupCallParticipant) n60Var.a1.participants.f(MessageObject.getPeerId(groupCallParticipant.peer));
+                    if (groupCallParticipant2 != null) {
+                        groupCallParticipant = groupCallParticipant2;
+                    }
+                    n60Var.y1(groupCallParticipant, MessageObject.getPeerId(groupCallParticipant.peer), ((Integer) arrayList.get(i11)).intValue());
+                    n50 n50Var = n60Var.f3;
+                    if (n50Var == null) {
+                        if (((Integer) arrayList.get(i11)).intValue() != 9 && ((Integer) arrayList.get(i11)).intValue() != 10 && ((Integer) arrayList.get(i11)).intValue() != 11) {
+                            n60Var.e1(true);
+                            break;
+                        }
+                    } else {
+                        n50Var.dismiss();
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                di.d dVar = (di.d) this.c;
+                Context context = (Context) this.d;
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.e;
+                if (!dVar.N) {
+                    dVar.setLoading(true);
+                    int i12 = this.b;
+                    PasskeysController.create(context, i12, new fi.g1(dVar, context, e3Var, i12, 6));
+                    break;
+                }
+                break;
+            case 5:
+                ProfileActivity profileActivity = (ProfileActivity) this.c;
+                AtomicReference atomicReference = (AtomicReference) this.d;
+                String str = (String) this.e;
+                ((org.telegram.ui.ActionBar.m1) atomicReference.get()).dismiss();
+                try {
+                    AndroidUtilities.addToClipboard(str);
+                    if (this.b == profileActivity.O3) {
+                        zc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessHoursCopied)).j();
+                    } else {
+                        zc.a0(profileActivity).i(LocaleController.getString(R.string.BusinessLocationCopied)).j();
+                    }
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            case 6:
+                lg1 lg1Var = (lg1) this.c;
+                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.d;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout[] actionBarPopupWindow$ActionBarPopupWindowLayoutArr = (ActionBarPopupWindow$ActionBarPopupWindowLayout[]) this.e;
+                MessagesController messagesController = lg1Var.getMessagesController();
+                long j10 = -lg1Var.a;
+                if (!messagesController.isDialogMuted(j10, tL_forumTopic.id)) {
+                    actionBarPopupWindow$ActionBarPopupWindowLayoutArr[0].getSwipeBack().e(this.b);
+                    break;
+                } else {
+                    lg1Var.getNotificationsController().muteDialog(j10, tL_forumTopic.id, false);
+                    lg1Var.finishPreviewFragment();
+                    if (zc.a(lg1Var)) {
+                        zc.z(lg1Var, 4, 0, lg1Var.getResourceProvider()).j();
+                        break;
+                    }
+                }
+                break;
+            default:
+                di.d dVar2 = (di.d) this.c;
+                org.telegram.ui.ActionBar.e3 e3Var2 = (org.telegram.ui.ActionBar.e3) this.d;
+                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.e;
+                if (!dVar2.N) {
+                    dVar2.setLoading(true);
+                    org.telegram.ui.Wallet.o3 o3Var = new org.telegram.ui.Wallet.o3(dVar2, e3Var2, c6Var, 0);
+                    int i13 = this.b;
+                    org.telegram.ui.Wallet.j0 v = org.telegram.ui.Wallet.j0.v(i13);
+                    v.h0(new c90(i13, o3Var, v));
+                    break;
+                }
+                break;
+        }
+    }
+
+    public /* synthetic */ f7(Object obj, int i10, Object obj2, Object obj3, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
+        this.d = obj2;
+        this.e = obj3;
+    }
+
+    public /* synthetic */ f7(org.telegram.ui.ActionBar.m2 m2Var, Object obj, Serializable serializable, int i10, int i11) {
+        this.a = i11;
+        this.c = m2Var;
+        this.d = obj;
+        this.e = serializable;
+        this.b = i10;
+    }
+}

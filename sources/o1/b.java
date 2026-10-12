@@ -1,16 +1,15 @@
 package o1;
 
-import a0.m;
 import java.util.ArrayList;
-import m.f3;
+import ji.d4;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b {
     public static final ThreadLocal f = new ThreadLocal();
-    public la.h d;
-    public final m a = new m(0);
+    public li.k d;
+    public final a0.l a = new a0.l(0);
     public final ArrayList b = new ArrayList();
-    public final f3 c = new f3(this, 3);
+    public final d4 c = new d4(this, 8);
     public boolean e = false;
 }

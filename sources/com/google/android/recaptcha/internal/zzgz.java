@@ -1,21 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import ae.g0;
-import ae.x;
 import android.content.Context;
-import id.n;
-import id.u;
+import androidx.car.app.j;
+import be.f0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.Timer;
+import jd.u;
 import kotlin.jvm.internal.i;
-import v7.z7;
-import w7.h;
-import xd.c;
+import v7.h8;
+import w7.n;
+import yd.c;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -68,10 +67,10 @@ public final class zzgz implements zzgs {
                 if (iterator.hasNext()) {
                     u uVar = new u(iterator, null);
                     c cVar = new c();
-                    cVar.c = h.a(cVar, cVar, uVar);
+                    cVar.c = n.a(cVar, cVar, uVar);
                     it = cVar;
                 } else {
-                    it = n.a;
+                    it = jd.n.a;
                 }
                 while (it.hasNext()) {
                     arrayList.add((List) it.next());
@@ -114,7 +113,7 @@ public final class zzgz implements zzgs {
             } else if (i10 == 1) {
                 zzi.zzr(zzk.zzg());
             } else if (i10 != 2) {
-                throw new x();
+                throw new j();
             }
             arrayList.add(zzgpVar);
         }
@@ -124,7 +123,7 @@ public final class zzgz implements zzgs {
         byte[] zzd = ((zzwq) zzi.zzk()).zzd();
         try {
             int i11 = zzby.zza;
-            if (!((zzha) z7.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
+            if (!((zzha) h8.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
                 return;
             }
             zzgoVar.zza(arrayList);
@@ -144,7 +143,7 @@ public final class zzgz implements zzgs {
     public final void zza(zzzm zzzmVar) {
         try {
             int i10 = zzby.zza;
-            g0.q(((zzcr) z7.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
+            f0.q(((zzcr) h8.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
         } catch (Exception unused) {
         }
         zzh();

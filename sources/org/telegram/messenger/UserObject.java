@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class UserObject {
     public static final long ANONYMOUS = 2666000;
@@ -35,19 +35,19 @@ public class UserObject {
             if (!(requirementToContact instanceof TL_account.requirementToContactPaidMessages)) {
                 return false;
             }
-            long j3 = ((TL_account.requirementToContactPaidMessages) requirementToContact).stars_amount;
-            if (!user.contact_require_premium && user.send_paid_messages_stars == j3) {
+            long j10 = ((TL_account.requirementToContactPaidMessages) requirementToContact).stars_amount;
+            if (!user.contact_require_premium && user.send_paid_messages_stars == j10) {
                 return false;
             }
             user.contact_require_premium = false;
             user.flags2 |= 16384;
-            user.send_paid_messages_stars = j3;
+            user.send_paid_messages_stars = j10;
         }
         return true;
     }
 
-    public static boolean areGiftsDisabled(long j3) {
-        return areGiftsDisabled(MessagesController.getInstance(UserConfig.selectedAccount).getUserFull(j3));
+    public static boolean areGiftsDisabled(long j10) {
+        return areGiftsDisabled(MessagesController.getInstance(UserConfig.selectedAccount).getUserFull(j10));
     }
 
     public static boolean eq(TL_account.RequirementToContact requirementToContact, TL_account.RequirementToContact requirementToContact2) {
@@ -215,7 +215,7 @@ public class UserObject {
         if (removeRTL.length() != 0 || TextUtils.isEmpty(user.phone)) {
             return removeRTL;
         }
-        return bi.g(new StringBuilder("+"), user.phone, hf.b.c());
+        return yh.g(new StringBuilder("+"), user.phone, jf.b.c());
     }
 
     public static boolean hasFallbackPhoto(TLRPC.UserFull userFull) {
@@ -253,12 +253,12 @@ public class UserObject {
         return user != null && user.bot;
     }
 
-    public static boolean isBotForum(int i10, long j3) {
-        return isBotForum(MessagesController.getInstance(i10).getUser(Long.valueOf(j3)));
+    public static boolean isBotForum(int i10, long j10) {
+        return isBotForum(MessagesController.getInstance(i10).getUser(Long.valueOf(j10)));
     }
 
-    public static boolean isBotForumWithEditableTopics(int i10, long j3) {
-        return isBotForumWithEditableTopics(MessagesController.getInstance(i10).getUser(Long.valueOf(j3)));
+    public static boolean isBotForumWithEditableTopics(int i10, long j10) {
+        return isBotForumWithEditableTopics(MessagesController.getInstance(i10).getUser(Long.valueOf(j10)));
     }
 
     public static boolean isContact(TLRPC.User user) {
@@ -272,12 +272,12 @@ public class UserObject {
         return user == null || (user instanceof TLRPC.TL_userDeleted_old2) || (user instanceof TLRPC.TL_userEmpty) || user.deleted;
     }
 
-    public static boolean isReplyUser(long j3) {
-        return j3 == 708513 || j3 == REPLY_BOT;
+    public static boolean isReplyUser(long j10) {
+        return j10 == 708513 || j10 == REPLY_BOT;
     }
 
-    public static boolean isService(long j3) {
-        return j3 == 333000 || j3 == 777000 || j3 == 42777;
+    public static boolean isService(long j10) {
+        return j10 == 333000 || j10 == 777000 || j10 == 42777;
     }
 
     public static boolean isUserSelf(TLRPC.User user) {
@@ -330,8 +330,8 @@ public class UserObject {
         if (user == null) {
             return false;
         }
-        long j3 = user.id;
-        return j3 == 708513 || j3 == REPLY_BOT;
+        long j10 = user.id;
+        return j10 == 708513 || j10 == REPLY_BOT;
     }
 
     public static boolean isBotForum(TLRPC.User user) {
@@ -383,13 +383,13 @@ public class UserObject {
             if (!(requirementToContact instanceof TL_account.requirementToContactPaidMessages)) {
                 return false;
             }
-            long j3 = ((TL_account.requirementToContactPaidMessages) requirementToContact).stars_amount;
-            if (!userFull.contact_require_premium && userFull.send_paid_messages_stars == j3) {
+            long j10 = ((TL_account.requirementToContactPaidMessages) requirementToContact).stars_amount;
+            if (!userFull.contact_require_premium && userFull.send_paid_messages_stars == j10) {
                 return false;
             }
             userFull.contact_require_premium = false;
             userFull.flags2 |= 16384;
-            userFull.send_paid_messages_stars = j3;
+            userFull.send_paid_messages_stars = j10;
         }
         return true;
     }

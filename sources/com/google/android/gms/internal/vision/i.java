@@ -1,11 +1,11 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class i extends f1 {
     private static final l1 zzd = new h0(0);
     private static final i zze;
-    private static volatile k2 zzf;
+    private static volatile j2 zzf;
     private m1 zzc = f1.i();
 
     /* JADX WARN: Type inference failed for: r0v0, types: [com.google.android.gms.internal.vision.h0, com.google.android.gms.internal.vision.l1] */
@@ -15,38 +15,38 @@ public final class i extends f1 {
         f1.g(i.class, iVar);
     }
 
-    /* JADX WARN: Type inference failed for: r4v12, types: [com.google.android.gms.internal.vision.k2, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r4v12, types: [com.google.android.gms.internal.vision.j2, java.lang.Object] */
     @Override // com.google.android.gms.internal.vision.f1
     public final Object e(int i10) {
-        k2 k2Var;
+        j2 j2Var;
         switch (g0.a[i10 - 1]) {
             case 1:
                 return new i();
             case 2:
                 return new h(zze);
             case 3:
-                return new m2(zze, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001e", new Object[]{"zzc", i0.h});
+                return new l2(zze, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001e", new Object[]{"zzc", i0.h});
             case 4:
                 return zze;
             case 5:
-                k2 k2Var2 = zzf;
-                if (k2Var2 != null) {
-                    return k2Var2;
+                j2 j2Var2 = zzf;
+                if (j2Var2 != null) {
+                    return j2Var2;
                 }
                 synchronized (i.class) {
                     try {
-                        k2 k2Var3 = zzf;
-                        k2Var = k2Var3;
-                        if (k2Var3 == null) {
+                        j2 j2Var3 = zzf;
+                        j2Var = j2Var3;
+                        if (j2Var3 == null) {
                             ?? c1Var = new c1();
                             zzf = c1Var;
-                            k2Var = c1Var;
+                            j2Var = c1Var;
                         }
                     } catch (Throwable th2) {
                         throw th2;
                     }
                 }
-                return k2Var;
+                return j2Var;
             case 6:
                 return (byte) 1;
             case 7:

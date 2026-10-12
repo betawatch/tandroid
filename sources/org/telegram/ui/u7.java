@@ -1,43 +1,104 @@
 package org.telegram.ui;
 
-import java.util.List;
-import org.telegram.messenger.MessagesStorage;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class u7 implements MessagesStorage.BooleanCallback {
-    public final /* synthetic */ g8 a;
+public final class u7 extends k7 {
+    public final /* synthetic */ w7 n;
 
-    public u7(g8 g8Var) {
-        this.a = g8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u7(w7 w7Var) {
+        super(w7Var, 3);
+        this.n = w7Var;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public final void run(boolean z10) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        org.telegram.ui.ActionBar.d5 d5Var2;
-        org.telegram.ui.ActionBar.d5 d5Var3;
-        org.telegram.ui.ActionBar.d5 d5Var4;
-        g8 g8Var = this.a;
-        g8Var.finishFragment();
-        d5Var = ((org.telegram.ui.ActionBar.n2) g8Var).parentLayout;
-        if (d5Var != null) {
-            d5Var2 = ((org.telegram.ui.ActionBar.n2) g8Var).parentLayout;
-            if (d5Var2.getFragmentStack().size() >= 2) {
-                d5Var3 = ((org.telegram.ui.ActionBar.n2) g8Var).parentLayout;
-                List fragmentStack = d5Var3.getFragmentStack();
-                d5Var4 = ((org.telegram.ui.ActionBar.n2) g8Var).parentLayout;
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) fragmentStack.get(d5Var4.getFragmentStack().size() - 2);
-                if (n2Var instanceof zn) {
-                    ((zn) n2Var).V7(g8Var.P, g8Var.Q + 86400, z10);
-                    return;
-                }
-                return;
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        o7 o7Var = (o7) b1Var.a;
+        org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) o7Var.b.getChildAt(0);
+        ai.b bVar = ((q7) this.e.get(i10)).d;
+        boolean z10 = bVar == o7Var.getTag();
+        boolean z11 = i10 != this.e.size() - 1;
+        o7Var.setTag(bVar);
+        w7 w7Var = this.n;
+        if (bVar.f == null) {
+            TLRPC.TL_message tL_message = new TLRPC.TL_message();
+            tL_message.out = true;
+            tL_message.id = i10;
+            tL_message.peer_id = new TLRPC.TL_peerUser();
+            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+            tL_message.from_id = tL_peerUser;
+            TLRPC.Peer peer = tL_message.peer_id;
+            long clientUserId = UserConfig.getInstance(w7Var.d.getCurrentAccount()).getClientUserId();
+            tL_peerUser.user_id = clientUserId;
+            peer.user_id = clientUserId;
+            tL_message.date = (int) (System.currentTimeMillis() / 1000);
+            tL_message.message = "";
+            tL_message.attachPath = bVar.a.getPath();
+            TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
+            tL_message.media = tL_messageMediaDocument;
+            tL_messageMediaDocument.flags |= 3;
+            tL_messageMediaDocument.document = new TLRPC.TL_document();
+            tL_message.flags |= 768;
+            tL_message.dialog_id = bVar.b;
+            String fileExtension = FileLoader.getFileExtension(bVar.a);
+            TLRPC.Document document = tL_message.media.document;
+            document.id = 0L;
+            document.access_hash = 0L;
+            document.file_reference = new byte[0];
+            document.date = tL_message.date;
+            if (fileExtension.length() <= 0) {
+                fileExtension = "mp3";
             }
+            document.mime_type = "audio/".concat(fileExtension);
+            TLRPC.Document document2 = tL_message.media.document;
+            document2.size = bVar.c;
+            document2.dc_id = 0;
+            TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio = new TLRPC.TL_documentAttributeAudio();
+            if (bVar.e == null) {
+                ai.a aVar = new ai.a();
+                bVar.e = aVar;
+                aVar.a = true;
+                Utilities.globalQueue.postRunnable(new t1(w7Var, bVar, tL_documentAttributeAudio, 4));
+            }
+            tL_documentAttributeAudio.flags |= 3;
+            tL_message.media.document.attributes.add(tL_documentAttributeAudio);
+            TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
+            tL_documentAttributeFilename.file_name = bVar.a.getName();
+            tL_message.media.document.attributes.add(tL_documentAttributeFilename);
+            MessageObject messageObject = new MessageObject(w7Var.d.getCurrentAccount(), tL_message, false, false);
+            bVar.f = messageObject;
+            messageObject.mediaExists = true;
         }
-        zn znVar = g8Var.N;
-        if (znVar != null) {
-            znVar.V7(g8Var.P, g8Var.Q + 86400, z10);
+        j7Var.f(bVar.f, z11);
+        boolean z12 = bVar.e.a;
+        boolean z13 = !z12;
+        if (!z10) {
+            j7Var.g0 = !z12 ? 1.0f : 0.0f;
         }
+        if (j7Var.f0 != z13) {
+            j7Var.f0 = z13;
+            j7Var.invalidate();
+        }
+        o7Var.d = z11;
+        o7Var.c.setText(AndroidUtilities.formatFileSize(bVar.c));
+        o7Var.a.a(this.n.f.j.contains(bVar), z10);
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        o7 o7Var = new o7(this, viewGroup.getContext(), 1);
+        o7Var.e = 3;
+        t7 t7Var = new t7(this, viewGroup.getContext(), o7Var);
+        t7Var.setCheckForButtonPress(true);
+        o7Var.b.addView(t7Var);
+        return new org.telegram.ui.Components.wl0(o7Var);
     }
 }

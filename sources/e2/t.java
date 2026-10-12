@@ -1,18 +1,19 @@
 package e2;
 
-import java.lang.ref.WeakReference;
-import java.util.concurrent.Executor;
+import android.telephony.TelephonyCallback;
+import android.telephony.TelephonyDisplayInfo;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class t {
-    public final WeakReference a;
-    public final Executor b;
-    public final /* synthetic */ u c;
+public final class t extends TelephonyCallback implements TelephonyCallback.DisplayInfoListener {
+    public final w a;
 
-    public t(u uVar, y2.e eVar, Executor executor) {
-        this.c = uVar;
-        this.a = new WeakReference(eVar);
-        this.b = executor;
+    public t(w wVar) {
+        this.a = wVar;
+    }
+
+    public final void onDisplayInfoChanged(TelephonyDisplayInfo telephonyDisplayInfo) {
+        int overrideNetworkType = telephonyDisplayInfo.getOverrideNetworkType();
+        this.a.c(overrideNetworkType == 3 || overrideNetworkType == 4 || overrideNetworkType == 5 ? 10 : 5);
     }
 }

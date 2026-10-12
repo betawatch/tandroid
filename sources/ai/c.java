@@ -1,130 +1,230 @@
 package ai;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.bi;
-import org.telegram.ui.Components.hs;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.ui.w6;
+import org.telegram.ui.x6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class c extends FrameLayout {
-    public final ImageView a;
-    public final org.telegram.ui.Components.q6 b;
-    public final Paint c;
-    public final Paint d;
-    public boolean e;
-    public int f;
-    public float h;
-    public ValueAnimator n;
+public final class c {
+    public final boolean a;
+    public long k;
+    public boolean m;
+    public boolean n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public long r;
+    public long s;
+    public long t;
+    public long u;
+    public long v;
+    public ArrayList b = new ArrayList();
+    public final LongSparseArray c = new LongSparseArray();
+    public final ArrayList d = new ArrayList();
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public final HashSet i = new HashSet();
+    public final HashSet j = new HashSet();
+    public final HashSet l = new HashSet();
 
-    public c(Context context, dh.b bVar) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        this.h = 1.0f;
-        w7.z5.a(this);
-        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(false, true, true);
-        this.b = q6Var;
-        q6Var.u(-9866632);
-        q6Var.w(AndroidUtilities.dp(9.0f));
-        q6Var.setCallback(this);
-        q6Var.x(AndroidUtilities.getTypeface("fonts/num.otf"));
-        q6Var.J = true;
-        paint.setColor(-14670806);
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        FrameLayout frameLayout = new FrameLayout(context);
-        ah.l lVar = new ah.l();
-        lVar.a(bVar);
-        lVar.g.setColor(-14670806);
-        lVar.invalidateSelf();
-        lVar.f = AndroidUtilities.dp(1.0f);
-        frameLayout.setBackground(lVar);
-        addView(frameLayout, w7.x5.e(40, 40, 17));
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(R.drawable.menu_comments);
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        imageView.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
-        frameLayout.addView(imageView, w7.x5.e(20, 20, 17));
-        ImageView imageView2 = new ImageView(context);
-        this.a = imageView2;
-        imageView2.setImageResource(R.drawable.menu_comments_arrow);
-        imageView2.setColorFilter(new PorterDuffColorFilter(-2960428, mode));
-        frameLayout.addView(imageView2, w7.x5.e(20, 20, 17));
-        imageView2.setPivotX(AndroidUtilities.dp(10.27f));
-        imageView2.setPivotY(AndroidUtilities.dp(9.58f));
+    public c(boolean z10) {
+        this.a = z10;
     }
 
-    public final void a(boolean z10, boolean z11) {
-        if (z11 && this.e == z10) {
+    public final void a(int i10, boolean z10) {
+        if (this.a) {
+            if (!z10) {
+                if (i10 == 0) {
+                    this.m = false;
+                    return;
+                }
+                if (i10 == 1) {
+                    this.n = false;
+                    return;
+                }
+                if (i10 == 2) {
+                    this.o = false;
+                    return;
+                } else if (i10 == 3) {
+                    this.p = false;
+                    return;
+                } else {
+                    if (i10 == 4) {
+                        this.q = false;
+                        return;
+                    }
+                    return;
+                }
+            }
+            ArrayList arrayList = this.d;
+            if (i10 == 0) {
+                this.m = b(i10, arrayList);
+                return;
+            }
+            if (i10 == 1) {
+                this.n = b(i10, arrayList);
+                return;
+            }
+            if (i10 == 2) {
+                this.o = b(i10, this.e);
+                return;
+            }
+            if (i10 == 3) {
+                this.p = b(i10, this.f);
+            } else if (i10 == 4) {
+                this.q = b(i10, this.g);
+            } else if (i10 == 7) {
+                b(i10, this.h);
+            }
+        }
+    }
+
+    public final boolean b(int i10, ArrayList arrayList) {
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            if (((b) arrayList.get(i11)).d == i10 && !this.j.contains(arrayList.get(i11))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public final void c() {
+        if (this.a) {
             return;
         }
-        this.e = z10;
-        ImageView imageView = this.a;
-        if (z11) {
-            bi.t(imageView.animate().rotation(z10 ? 0.0f : 180.0f), hs.h, 420L);
-        } else {
-            imageView.setRotation(z10 ? 0.0f : 180.0f);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        super.dispatchDraw(canvas);
-        float f7 = this.h;
-        org.telegram.ui.Components.q6 q6Var = this.b;
-        float i10 = q6Var.i() * f7;
-        float max = Math.max(AndroidUtilities.dp(12.0f), q6Var.c() + AndroidUtilities.dp(6.0f));
-        canvas.save();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
-        canvas.scale(i10, i10, rectF.centerX(), rectF.centerY());
-        rectF.inset(-AndroidUtilities.dp(2.0f), -AndroidUtilities.dp(2.0f));
-        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.d);
-        rectF.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
-        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, this.c);
-        canvas.translate(((max - q6Var.c()) / 2.0f) + rectF.left, AndroidUtilities.dp(7.0f));
-        q6Var.draw(canvas);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    public void setCount(int i10) {
-        this.b.t(i10 <= 0 ? "" : LocaleController.formatNumber(i10, ','), true, true);
-        if (this.f != i10) {
-            ValueAnimator valueAnimator = this.n;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.n = null;
+        HashSet hashSet = this.i;
+        hashSet.clear();
+        HashSet hashSet2 = this.j;
+        Iterator it = hashSet2.iterator();
+        while (it.hasNext()) {
+            long j10 = ((b) it.next()).b;
+            if (j10 != 0) {
+                hashSet.add(Long.valueOf(j10));
             }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.n = ofFloat;
-            ofFloat.addUpdateListener(new a(this, 0));
-            this.n.addListener(new b(this, 0));
-            bi.l(2.5f, this.n);
-            this.n.setDuration(200L);
-            this.n.start();
-            this.f = i10;
         }
-        invalidate();
+        HashSet hashSet3 = this.l;
+        hashSet3.clear();
+        Iterator it2 = hashSet.iterator();
+        while (it2.hasNext()) {
+            w6 w6Var = (w6) this.c.get(((Long) it2.next()).longValue());
+            if (w6Var != null) {
+                SparseArray sparseArray = w6Var.d;
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= sparseArray.size()) {
+                        hashSet3.add(Long.valueOf(w6Var.a));
+                        break;
+                    }
+                    ArrayList arrayList = ((x6) sparseArray.valueAt(i10)).b;
+                    int size = arrayList.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        Object obj = arrayList.get(i11);
+                        i11++;
+                        if (!hashSet2.contains((b) obj)) {
+                            break;
+                        }
+                    }
+                    i10++;
+                }
+            }
+        }
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.b || super.verifyDrawable(drawable);
+    public final void d() {
+        this.k = 0L;
+        this.j.clear();
+        this.l.clear();
+    }
+
+    public final ArrayList e(int i10) {
+        if (i10 == 0 || i10 == 1) {
+            return this.d;
+        }
+        if (i10 == 2) {
+            return this.e;
+        }
+        if (i10 == 3) {
+            return this.f;
+        }
+        if (i10 == 4) {
+            return this.g;
+        }
+        if (i10 == 7) {
+            return this.h;
+        }
+        return null;
+    }
+
+    public final long f(int i10) {
+        if (i10 == 0) {
+            return this.r;
+        }
+        if (i10 == 1) {
+            return this.s;
+        }
+        if (i10 == 2) {
+            return this.t;
+        }
+        if (i10 == 3) {
+            return this.u;
+        }
+        if (i10 == 4) {
+            return this.v;
+        }
+        return -1L;
+    }
+
+    public final void g(b bVar, boolean z10) {
+        long j10 = bVar.c;
+        if (!z10) {
+            j10 = -j10;
+        }
+        int i10 = bVar.d;
+        if (i10 == 0) {
+            this.r += j10;
+            return;
+        }
+        if (i10 == 1) {
+            this.s += j10;
+            return;
+        }
+        if (i10 == 2) {
+            this.t += j10;
+        } else if (i10 == 3) {
+            this.u += j10;
+        } else if (i10 == 4) {
+            this.v += j10;
+        }
+    }
+
+    public final boolean h() {
+        if (this.d.isEmpty() && this.e.isEmpty() && this.f.isEmpty()) {
+            return this.a || this.b.isEmpty();
+        }
+        return false;
+    }
+
+    public final void i(b bVar) {
+        HashSet hashSet = this.j;
+        if (hashSet.contains(bVar)) {
+            hashSet.remove(bVar);
+            g(bVar, false);
+            this.k -= bVar.c;
+            a(bVar.d, false);
+        } else {
+            hashSet.add(bVar);
+            g(bVar, true);
+            this.k += bVar.c;
+            a(bVar.d, true);
+        }
+        c();
     }
 }

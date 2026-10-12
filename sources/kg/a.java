@@ -1,32 +1,17 @@
 package kg;
 
-import android.graphics.Paint;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.messenger.SegmentTree;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class a extends f {
-    public final e6 q;
-    public final Paint r;
-    public int s;
-
-    public a(jg.a aVar, e6 e6Var) {
-        super(aVar, false, null);
-        Paint paint = new Paint();
-        this.r = paint;
-        this.s = 0;
-        this.q = e6Var;
-        Paint paint2 = this.c;
-        Paint.Style style = Paint.Style.STROKE;
-        paint2.setStyle(style);
-        paint.setStyle(style);
-        this.c.setAntiAlias(false);
-    }
-
-    @Override // kg.f
-    public final void a() {
-        super.a();
-        this.s = i0.a.d(0.3f, i6.w0(i6.d6, this.q), this.m);
-    }
+public final class a {
+    public long[] a;
+    public SegmentTree b;
+    public String c;
+    public String d;
+    public int g;
+    public long e = 0;
+    public long f = Long.MAX_VALUE;
+    public int h = -16777216;
+    public int i = -1;
 }

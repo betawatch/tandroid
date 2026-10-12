@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class p1 extends Drawable implements Drawable.Callback {
     public Drawable a;
@@ -118,8 +118,8 @@ public final class p1 extends Drawable implements Drawable.Callback {
     }
 
     @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        scheduleSelf(runnable, j3);
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+        scheduleSelf(runnable, j10);
     }
 
     @Override // android.graphics.drawable.Drawable

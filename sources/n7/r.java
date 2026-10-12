@@ -1,6 +1,6 @@
 package n7;
 
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import j$.util.Map;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class r extends n implements NavigableMap, Map {
     public static final r f;
@@ -25,9 +25,9 @@ public final class r extends n implements NavigableMap, Map {
     public final transient r e;
 
     static {
-        z x10 = s.x(v.b);
+        z w9 = s.w(v.b);
         i iVar = m.b;
-        f = new r(x10, x.e, null);
+        f = new r(w9, x.e, null);
     }
 
     public r(z zVar, m mVar, r rVar) {
@@ -66,18 +66,18 @@ public final class r extends n implements NavigableMap, Map {
             Object[] objArr = {key};
             for (int i12 = 0; i12 < 1; i12++) {
                 if (objArr[i12] == null) {
-                    throw new NullPointerException(hg.c.h(i12, "at index "));
+                    throw new NullPointerException(i2.d.i(i12, "at index "));
                 }
             }
-            z zVar = new z(m.t(1, objArr), vVar);
+            z zVar = new z(m.s(1, objArr), vVar);
             Object[] objArr2 = {value};
             while (i11 < 1) {
                 if (objArr2[i11] == null) {
-                    throw new NullPointerException(hg.c.h(i11, "at index "));
+                    throw new NullPointerException(i2.d.i(i11, "at index "));
                 }
                 i11++;
             }
-            return new r(zVar, m.t(1, objArr2), null);
+            return new r(zVar, m.s(1, objArr2), null);
         }
         Object[] objArr3 = new Object[length];
         Object[] objArr4 = new Object[length];
@@ -93,7 +93,7 @@ public final class r extends n implements NavigableMap, Map {
                 i11++;
             }
         } else {
-            Arrays.sort(entryArr, 0, length, new fb.i(2));
+            Arrays.sort(entryArr, 0, length, new gb.j(2));
             Map.Entry entry3 = entryArr[0];
             Objects.requireNonNull(entry3);
             Object key3 = entry3.getKey();
@@ -112,22 +112,22 @@ public final class r extends n implements NavigableMap, Map {
                 objArr3[i10] = key4;
                 objArr4[i10] = value4;
                 if (vVar.compare(key3, key4) == 0) {
-                    throw new IllegalArgumentException(e2.j("Multiple entries with same key: ", String.valueOf(entry4), " and ", String.valueOf(entry5)));
+                    throw new IllegalArgumentException(k3.k("Multiple entries with same key: ", String.valueOf(entry4), " and ", String.valueOf(entry5)));
                 }
                 i10++;
                 key3 = key4;
             }
         }
-        return new r(new z(m.t(length, objArr3), vVar), m.t(length, objArr4), null);
+        return new r(new z(m.s(length, objArr3), vVar), m.s(length, objArr4), null);
     }
 
     public static r c(Comparator comparator) {
         if (v.b.equals(comparator)) {
             return f;
         }
-        z x10 = s.x(comparator);
+        z w9 = s.w(comparator);
         i iVar = m.b;
-        return new r(x10, x.e, null);
+        return new r(w9, x.e, null);
     }
 
     @Override // java.util.NavigableMap
@@ -153,7 +153,7 @@ public final class r extends n implements NavigableMap, Map {
     /* renamed from: d, reason: merged with bridge method [inline-methods] */
     public final r headMap(Object obj, boolean z10) {
         obj.getClass();
-        return g(0, this.c.y(obj, z10));
+        return g(0, this.c.x(obj, z10));
     }
 
     @Override // java.util.NavigableMap
@@ -170,7 +170,7 @@ public final class r extends n implements NavigableMap, Map {
         boolean isEmpty = isEmpty();
         z zVar = this.c;
         if (!isEmpty) {
-            return new r((z) zVar.descendingSet(), this.d.r(), this);
+            return new r((z) zVar.descendingSet(), this.d.q(), this);
         }
         Comparator comparator = zVar.d;
         return c((comparator instanceof w ? (w) comparator : new g(comparator)).a());
@@ -191,7 +191,7 @@ public final class r extends n implements NavigableMap, Map {
     /* renamed from: f, reason: merged with bridge method [inline-methods] */
     public final r tailMap(Object obj, boolean z10) {
         obj.getClass();
-        return g(this.c.z(obj, z10), this.d.size());
+        return g(this.c.y(obj, z10), this.d.size());
     }
 
     @Override // java.util.NavigableMap
@@ -199,7 +199,7 @@ public final class r extends n implements NavigableMap, Map {
         if (isEmpty()) {
             return null;
         }
-        return (Map.Entry) entrySet().t().get(0);
+        return (Map.Entry) entrySet().s().get(0);
     }
 
     @Override // java.util.SortedMap
@@ -230,7 +230,7 @@ public final class r extends n implements NavigableMap, Map {
             i10 = 0;
         }
         z zVar = this.c;
-        return i10 == i11 ? c(zVar.d) : new r(zVar.A(i10, i11), mVar.subList(i10, i11), null);
+        return i10 == i11 ? c(zVar.d) : new r(zVar.z(i10, i11), mVar.subList(i10, i11), null);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x000f, code lost:
@@ -286,7 +286,7 @@ public final class r extends n implements NavigableMap, Map {
         if (isEmpty()) {
             return null;
         }
-        return (Map.Entry) entrySet().t().get(this.d.size() - 1);
+        return (Map.Entry) entrySet().s().get(this.d.size() - 1);
     }
 
     @Override // java.util.SortedMap

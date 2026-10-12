@@ -1,31 +1,23 @@
 package e9;
 
-import java.util.Iterator;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class n1 implements Iterator {
-    public final Iterator a;
+public interface n1 {
+    Collection a();
 
-    public n1(Iterator it) {
-        it.getClass();
-        this.a = it;
-    }
+    Map b();
 
-    public abstract Object a(Object obj);
+    void clear();
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a.hasNext();
-    }
+    Collection get(Object obj);
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        return a(this.a.next());
-    }
+    Set keySet();
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.a.remove();
-    }
+    boolean remove(Object obj, Object obj2);
+
+    int size();
 }

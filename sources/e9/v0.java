@@ -1,50 +1,77 @@
 package e9;
 
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.NavigableMap;
-import java.util.SortedMap;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class v0 extends o implements Serializable {
-    public final transient Map d;
-    public transient int e;
-    public transient u0 f;
+public final class v0 extends y0 {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ w0 e;
 
-    public v0(Map map) {
-        if (!map.isEmpty()) {
-            throw new IllegalArgumentException();
-        }
-        this.d = map;
+    public /* synthetic */ v0(w0 w0Var, int i10) {
+        this.d = i10;
+        this.e = w0Var;
     }
 
-    @Override // e9.o
-    public final Map a() {
-        Map map = this.c;
-        if (map != null) {
-            return map;
+    @Override // e9.i0, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        switch (this.d) {
+            case 0:
+                if (!(obj instanceof t1)) {
+                    return false;
+                }
+                t1 t1Var = (t1) obj;
+                if (t1Var.a() <= 0) {
+                    return false;
+                }
+                return ((d2) this.e).e.b(t1Var.a) == t1Var.a();
+            default:
+                return ((d2) this.e).contains(obj);
         }
-        Map map2 = this.d;
-        Map fVar = map2 instanceof NavigableMap ? new f(this, (NavigableMap) map2) : map2 instanceof SortedMap ? new i(this, (SortedMap) map2) : new d(this, map2, 0);
-        this.c = fVar;
-        return fVar;
     }
 
-    public final void b() {
-        Map map = this.d;
-        Iterator it = map.values().iterator();
-        while (it.hasNext()) {
-            ((Collection) it.next()).clear();
+    @Override // e9.y0, java.util.Collection, java.util.Set
+    public int hashCode() {
+        switch (this.d) {
+            case 0:
+                return this.e.hashCode();
+            default:
+                return super.hashCode();
         }
-        map.clear();
-        this.e = 0;
     }
 
-    public final Collection c() {
-        return (List) this.f.get();
+    @Override // e9.i0
+    public final int m(int i10, Object[] objArr) {
+        return h().m(i10, objArr);
+    }
+
+    @Override // e9.i0
+    public final boolean q() {
+        switch (this.d) {
+            case 0:
+                this.e.getClass();
+                return false;
+            default:
+                return true;
+        }
+    }
+
+    @Override // e9.i0
+    /* renamed from: r */
+    public final m2 iterator() {
+        return h().listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        switch (this.d) {
+            case 0:
+                return this.e.s().size();
+            default:
+                return ((d2) this.e).e.c;
+        }
+    }
+
+    @Override // e9.y0
+    public final n0 v() {
+        return new z0(this);
     }
 }

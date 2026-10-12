@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import m.q3;
 import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Callable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class g implements Callable {
             }
         }
         if (z10) {
-            ((x9.f) q3Var.a).i((String) q3Var.c, str);
+            ((y9.f) q3Var.a).i((String) q3Var.c, str);
         }
         return null;
     }
@@ -51,14 +51,14 @@ public final /* synthetic */ class g implements Callable {
             case 1:
                 return a();
             default:
-                com.google.firebase.messaging.m mVar = (com.google.firebase.messaging.m) this.b;
-                ((AtomicReference) mVar.c).set(null);
-                synchronized (mVar) {
+                c2.b bVar = (c2.b) this.b;
+                ((AtomicReference) bVar.c).set(null);
+                synchronized (bVar) {
                     try {
-                        if (((AtomicMarkableReference) mVar.b).isMarked()) {
-                            map = ((x9.d) ((AtomicMarkableReference) mVar.b).getReference()).a();
-                            AtomicMarkableReference atomicMarkableReference = (AtomicMarkableReference) mVar.b;
-                            atomicMarkableReference.set((x9.d) atomicMarkableReference.getReference(), false);
+                        if (((AtomicMarkableReference) bVar.b).isMarked()) {
+                            map = ((y9.d) ((AtomicMarkableReference) bVar.b).getReference()).a();
+                            AtomicMarkableReference atomicMarkableReference = (AtomicMarkableReference) bVar.b;
+                            atomicMarkableReference.set((y9.d) atomicMarkableReference.getReference(), false);
                         } else {
                             map = null;
                         }
@@ -67,8 +67,8 @@ public final /* synthetic */ class g implements Callable {
                     }
                 }
                 if (map != null) {
-                    q3 q3Var = (q3) mVar.d;
-                    ((x9.f) q3Var.a).g((String) q3Var.c, map, mVar.a);
+                    q3 q3Var = (q3) bVar.d;
+                    ((y9.f) q3Var.a).g((String) q3Var.c, map, bVar.a);
                 }
                 return null;
         }

@@ -1,45 +1,83 @@
 package b2;
 
-import android.net.Uri;
-import j$.util.Objects;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class j0 {
+public final class j0 {
+    public static final j0 f = new j0(new i0());
+    public static final String g;
     public static final String h;
     public static final String i;
     public static final String j;
     public static final String k;
-    public static final String l;
-    public static final String m;
-    public static final String n;
-    public final Uri a;
-    public final String b;
-    public final String c;
-    public final int d;
-    public final int e;
-    public final String f;
-    public final String g;
+    public final long a;
+    public final long b;
+    public final long c;
+    public final float d;
+    public final float e;
 
     static {
-        String str = e2.d0.a;
-        h = Integer.toString(0, 36);
-        i = Integer.toString(1, 36);
-        j = Integer.toString(2, 36);
-        k = Integer.toString(3, 36);
-        l = Integer.toString(4, 36);
-        m = Integer.toString(5, 36);
-        n = Integer.toString(6, 36);
+        String str = e2.m0.a;
+        g = Integer.toString(0, 36);
+        h = Integer.toString(1, 36);
+        i = Integer.toString(2, 36);
+        j = Integer.toString(3, 36);
+        k = Integer.toString(4, 36);
     }
 
     public j0(i0 i0Var) {
-        this.a = (Uri) i0Var.c;
-        this.b = (String) i0Var.d;
-        this.c = (String) i0Var.e;
-        this.d = i0Var.a;
-        this.e = i0Var.b;
-        this.f = (String) i0Var.f;
-        this.g = (String) i0Var.g;
+        long j10 = i0Var.a;
+        long j11 = i0Var.b;
+        long j12 = i0Var.c;
+        float f7 = i0Var.d;
+        float f10 = i0Var.e;
+        this.a = j10;
+        this.b = j11;
+        this.c = j12;
+        this.d = f7;
+        this.e = f10;
+    }
+
+    public final i0 a() {
+        i0 i0Var = new i0();
+        i0Var.a = this.a;
+        i0Var.b = this.b;
+        i0Var.c = this.c;
+        i0Var.d = this.d;
+        i0Var.e = this.e;
+        return i0Var;
+    }
+
+    public final Bundle b() {
+        Bundle bundle = new Bundle();
+        j0 j0Var = f;
+        long j10 = j0Var.a;
+        long j11 = this.a;
+        if (j11 != j10) {
+            bundle.putLong(g, j11);
+        }
+        long j12 = j0Var.b;
+        long j13 = this.b;
+        if (j13 != j12) {
+            bundle.putLong(h, j13);
+        }
+        long j14 = j0Var.c;
+        long j15 = this.c;
+        if (j15 != j14) {
+            bundle.putLong(i, j15);
+        }
+        float f7 = j0Var.d;
+        float f10 = this.d;
+        if (f10 != f7) {
+            bundle.putFloat(j, f10);
+        }
+        float f11 = j0Var.e;
+        float f12 = this.e;
+        if (f12 != f11) {
+            bundle.putFloat(k, f12);
+        }
+        return bundle;
     }
 
     public final boolean equals(Object obj) {
@@ -50,18 +88,18 @@ public class j0 {
             return false;
         }
         j0 j0Var = (j0) obj;
-        return this.a.equals(j0Var.a) && Objects.equals(this.b, j0Var.b) && Objects.equals(this.c, j0Var.c) && this.d == j0Var.d && this.e == j0Var.e && Objects.equals(this.f, j0Var.f) && Objects.equals(this.g, j0Var.g);
+        return this.a == j0Var.a && this.b == j0Var.b && this.c == j0Var.c && this.d == j0Var.d && this.e == j0Var.e;
     }
 
     public final int hashCode() {
-        int hashCode = this.a.hashCode() * 31;
-        String str = this.b;
-        int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
-        String str2 = this.c;
-        int hashCode3 = (((((hashCode2 + (str2 == null ? 0 : str2.hashCode())) * 31) + this.d) * 31) + this.e) * 31;
-        String str3 = this.f;
-        int hashCode4 = (hashCode3 + (str3 == null ? 0 : str3.hashCode())) * 31;
-        String str4 = this.g;
-        return hashCode4 + (str4 != null ? str4.hashCode() : 0);
+        long j10 = this.a;
+        long j11 = this.b;
+        int i10 = ((((int) (j10 ^ (j10 >>> 32))) * 31) + ((int) (j11 ^ (j11 >>> 32)))) * 31;
+        long j12 = this.c;
+        int i11 = (i10 + ((int) ((j12 >>> 32) ^ j12))) * 31;
+        float f7 = this.d;
+        int floatToIntBits = (i11 + (f7 != 0.0f ? Float.floatToIntBits(f7) : 0)) * 31;
+        float f10 = this.e;
+        return floatToIntBits + (f10 != 0.0f ? Float.floatToIntBits(f10) : 0);
     }
 }

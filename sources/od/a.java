@@ -1,29 +1,38 @@
 package od;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.lang.reflect.Method;
+import kotlin.jvm.internal.i;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final Integer a;
+    public static final Method a;
 
     static {
-        Integer num;
-        Object obj;
-        Integer num2 = null;
-        try {
-            obj = Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
-        } catch (Throwable unused) {
-        }
-        if (obj instanceof Integer) {
-            num = (Integer) obj;
-            if (num != null && num.intValue() > 0) {
-                num2 = num;
+        Method method;
+        Method[] methods = Throwable.class.getMethods();
+        i.b(methods);
+        int length = methods.length;
+        int i10 = 0;
+        while (true) {
+            method = null;
+            if (i10 >= length) {
+                break;
             }
-            a = num2;
+            Method method2 = methods[i10];
+            if (i.a(method2.getName(), "addSuppressed")) {
+                Class<?>[] parameterTypes = method2.getParameterTypes();
+                i.d(parameterTypes, "getParameterTypes(...)");
+                if (i.a(parameterTypes.length == 1 ? parameterTypes[0] : null, Throwable.class)) {
+                    method = method2;
+                    break;
+                }
+            }
+            i10++;
         }
-        num = null;
-        if (num != null) {
-            num2 = num;
+        a = method;
+        int length2 = methods.length;
+        for (int i11 = 0; i11 < length2 && !i.a(methods[i11].getName(), "getSuppressed"); i11++) {
         }
-        a = num2;
     }
 }

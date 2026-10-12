@@ -1,31 +1,22 @@
 package w7;
 
-import android.os.Build;
-import android.text.TextUtils;
-import android.view.View;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class n {
-    public static void a(View view, CharSequence charSequence) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            m.n3.a(view, charSequence);
-            return;
+    /* JADX WARN: Multi-variable type inference failed */
+    public static kd.c a(kd.c cVar, kd.c cVar2, td.p pVar) {
+        kotlin.jvm.internal.i.e(pVar, "<this>");
+        if (pVar instanceof md.a) {
+            return ((md.a) pVar).create(cVar, cVar2);
         }
-        m.p3 p3Var = m.p3.v;
-        if (p3Var != null && p3Var.a == view) {
-            m.p3.b(null);
-        }
-        if (!TextUtils.isEmpty(charSequence)) {
-            new m.p3(view, charSequence);
-            return;
-        }
-        m.p3 p3Var2 = m.p3.w;
-        if (p3Var2 != null && p3Var2.a == view) {
-            p3Var2.a();
-        }
-        view.setOnLongClickListener(null);
-        view.setLongClickable(false);
-        view.setOnHoverListener(null);
+        kd.h context = cVar2.getContext();
+        return context == kd.i.a ? new ld.b(cVar2, cVar, pVar) : new ld.c(cVar2, context, pVar, cVar);
+    }
+
+    public static kd.c b(kd.c cVar) {
+        kd.c intercepted;
+        kotlin.jvm.internal.i.e(cVar, "<this>");
+        md.c cVar2 = cVar instanceof md.c ? (md.c) cVar : null;
+        return (cVar2 == null || (intercepted = cVar2.intercepted()) == null) ? cVar : intercepted;
     }
 }

@@ -1,402 +1,408 @@
 package j2;
 
+import ah.h0;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.util.SparseArray;
-import b2.b1;
-import b2.h1;
-import b2.j1;
-import b2.k1;
-import b2.n0;
+import b2.a1;
+import b2.b2;
+import b2.c1;
+import b2.d1;
+import b2.e1;
+import b2.f1;
+import b2.g1;
+import b2.m1;
+import b2.o1;
 import b2.p0;
-import b2.q1;
-import b2.s1;
+import b2.p1;
+import b2.s0;
 import b2.u0;
-import b2.v0;
-import b2.x0;
-import b2.x1;
-import b2.y0;
+import b2.u1;
+import b2.w1;
 import b2.z0;
-import com.google.firebase.messaging.n;
-import e2.d0;
-import e2.m;
-import e2.p;
-import e2.x;
-import e2.z;
-import e9.a1;
-import e9.f1;
-import e9.g0;
-import e9.i0;
-import e9.k0;
-import ei.c5;
-import hg.o1;
-import i2.s;
+import com.google.firebase.messaging.m;
+import e2.g0;
+import e2.i0;
+import e2.m0;
+import e2.o;
+import e2.r;
+import e9.c2;
+import e9.l0;
+import e9.n0;
+import e9.x1;
+import i2.a0;
+import i2.y;
 import java.io.IOException;
 import java.util.List;
+import n2.l;
 import org.telegram.messenger.MediaDataController;
-import u2.b0;
-import u2.f0;
-import u2.j0;
-import u2.t;
+import u2.c0;
+import u2.k0;
+import u2.u;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f implements z0, j0, n2.k {
-    public final x a;
-    public final h1 b;
-    public final j1 c;
-    public final n d;
+public final class f implements e1, k0, l {
+    public final g0 a;
+    public final m1 b;
+    public final o1 c;
+    public final m d;
     public final SparseArray e;
-    public p f;
-    public b1 h;
-    public z n;
+    public r f;
+    public g1 h;
+    public i0 n;
     public boolean r;
 
-    public f(x xVar) {
-        xVar.getClass();
-        this.a = xVar;
-        String str = d0.a;
+    public f(g0 g0Var) {
+        g0Var.getClass();
+        this.a = g0Var;
+        String str = m0.a;
         Looper myLooper = Looper.myLooper();
-        this.f = new p(myLooper == null ? Looper.getMainLooper() : myLooper, xVar, new o1(25));
-        h1 h1Var = new h1();
-        this.b = h1Var;
-        this.c = new j1();
-        n nVar = new n();
-        nVar.a = h1Var;
-        g0 g0Var = i0.b;
-        nVar.b = a1.e;
-        nVar.c = f1.h;
-        this.d = nVar;
+        this.f = new r((myLooper == null ? Looper.getMainLooper() : myLooper).getThread());
+        m1 m1Var = new m1();
+        this.b = m1Var;
+        this.c = new o1();
+        m mVar = new m();
+        mVar.a = m1Var;
+        l0 l0Var = n0.b;
+        mVar.b = x1.e;
+        mVar.c = c2.h;
+        this.d = mVar;
         this.e = new SparseArray();
     }
 
-    @Override // n2.k
-    public final void a(int i10, f0 f0Var, int i11) {
-        a o9 = o(i10, f0Var);
-        q(o9, 1022, new c(o9, i11, 12, (byte) 0));
+    @Override // n2.l
+    public final void a(int i10, u2.g0 g0Var, int i11) {
+        a o10 = o(i10, g0Var);
+        q(o10, 1022, new c(o10, i11, 25, (char) 0));
     }
 
-    @Override // n2.k
-    public final void b(int i10, f0 f0Var, Exception exc) {
-        a o9 = o(i10, f0Var);
-        q(o9, 1024, new c(o9, exc, 13));
+    @Override // n2.l
+    public final void b(int i10, u2.g0 g0Var, Exception exc) {
+        a o10 = o(i10, g0Var);
+        q(o10, 1024, new c(o10, exc, 26));
     }
 
-    @Override // u2.j0
-    public final void c(int i10, f0 f0Var, b0 b0Var) {
-        a o9 = o(i10, f0Var);
-        q(o9, 1005, new c(o9, b0Var, 21));
+    @Override // n2.l
+    public final void c(int i10, u2.g0 g0Var, oa.d dVar) {
+        a o10 = o(i10, g0Var);
+        q(o10, 1023, new e(o10, dVar, 12));
     }
 
-    @Override // u2.j0
-    public final void d(int i10, f0 f0Var, b0 b0Var) {
-        a o9 = o(i10, f0Var);
-        q(o9, 1004, new ah.b(21, o9, b0Var));
+    @Override // u2.k0
+    public final void d(int i10, u2.g0 g0Var, c0 c0Var) {
+        a o10 = o(i10, g0Var);
+        q(o10, 1005, new e(o10, c0Var, 4));
     }
 
-    @Override // u2.j0
-    public final void e(int i10, f0 f0Var, t tVar, b0 b0Var) {
-        a o9 = o(i10, f0Var);
-        q(o9, 1001, new c(o9, (Object) tVar, (Object) b0Var, 14));
+    @Override // u2.k0
+    public final void e(int i10, u2.g0 g0Var, c0 c0Var) {
+        a o10 = o(i10, g0Var);
+        q(o10, 1004, new h0(18, o10, c0Var));
     }
 
-    @Override // u2.j0
-    public final void f(int i10, f0 f0Var, t tVar, b0 b0Var, IOException iOException, boolean z10) {
-        a o9 = o(i10, f0Var);
-        q(o9, 1003, new c5(o9, tVar, b0Var, iOException, z10));
+    @Override // u2.k0
+    public final void f(int i10, u2.g0 g0Var, u uVar, c0 c0Var) {
+        a o10 = o(i10, g0Var);
+        q(o10, 1001, new c(o10, (Object) uVar, (Object) c0Var, 27));
     }
 
-    @Override // n2.k
-    public final void g(int i10, f0 f0Var) {
-        a o9 = o(i10, f0Var);
-        q(o9, 1027, new c(o9, 22));
+    @Override // u2.k0
+    public final void g(int i10, u2.g0 g0Var, u uVar, c0 c0Var, IOException iOException, boolean z10) {
+        a o10 = o(i10, g0Var);
+        q(o10, 1003, new f1.a(o10, uVar, c0Var, iOException, z10));
     }
 
-    @Override // u2.j0
-    public final void h(int i10, f0 f0Var, t tVar, b0 b0Var, int i11) {
-        a o9 = o(i10, f0Var);
-        q(o9, MediaDataController.MAX_STYLE_RUNS_COUNT, new c(o9, tVar, b0Var, i11));
+    @Override // n2.l
+    public final void h(int i10, u2.g0 g0Var) {
+        a o10 = o(i10, g0Var);
+        q(o10, 1027, new e(o10, 5));
     }
 
-    @Override // n2.k
-    public final void i(int i10, f0 f0Var) {
-        a o9 = o(i10, f0Var);
-        q(o9, 1025, new c(o9, 27));
+    @Override // u2.k0
+    public final void i(int i10, u2.g0 g0Var, u uVar, c0 c0Var, int i11) {
+        a o10 = o(i10, g0Var);
+        q(o10, MediaDataController.MAX_STYLE_RUNS_COUNT, new c(o10, uVar, c0Var, i11));
     }
 
-    @Override // u2.j0
-    public final void j(int i10, f0 f0Var, t tVar, b0 b0Var) {
-        a o9 = o(i10, f0Var);
-        q(o9, 1002, new c(o9, (Object) tVar, (Object) b0Var, 10));
+    @Override // n2.l
+    public final void j(int i10, u2.g0 g0Var) {
+        a o10 = o(i10, g0Var);
+        q(o10, 1025, new e(o10, 13));
     }
 
-    @Override // n2.k
-    public final void k(int i10, f0 f0Var) {
-        a o9 = o(i10, f0Var);
-        q(o9, 1023, new c(o9, 29));
+    @Override // u2.k0
+    public final void k(int i10, u2.g0 g0Var, u uVar, c0 c0Var) {
+        a o10 = o(i10, g0Var);
+        q(o10, 1002, new c(o10, (Object) uVar, (Object) c0Var, 23));
     }
 
     public final a l() {
-        return n((f0) this.d.d);
+        return n((u2.g0) this.d.d);
     }
 
-    public final a m(k1 k1Var, int i10, f0 f0Var) {
-        f0 f0Var2 = k1Var.p() ? null : f0Var;
+    public final a m(p1 p1Var, int i10, u2.g0 g0Var) {
+        u2.g0 g0Var2 = p1Var.p() ? null : g0Var;
         this.a.getClass();
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z10 = k1Var.equals(this.h.w0()) && i10 == this.h.l0();
-        long j3 = 0;
-        if (f0Var2 == null || !f0Var2.b()) {
+        boolean z10 = p1Var.equals(this.h.y0()) && i10 == this.h.n0();
+        long j10 = 0;
+        if (g0Var2 == null || !g0Var2.b()) {
             if (z10) {
-                j3 = this.h.a0();
-            } else if (!k1Var.p()) {
-                j3 = d0.d0(k1Var.m(i10, this.c, 0L).l);
+                j10 = this.h.a0();
+            } else if (!p1Var.p()) {
+                j10 = m0.h0(p1Var.m(i10, this.c, 0L).l);
             }
-        } else if (z10 && this.h.k0() == f0Var2.b && this.h.O() == f0Var2.c) {
-            j3 = this.h.J0();
+        } else if (z10 && this.h.m0() == g0Var2.b && this.h.N() == g0Var2.c) {
+            j10 = this.h.M0();
         }
-        return new a(elapsedRealtime, k1Var, i10, f0Var2, j3, this.h.w0(), this.h.l0(), (f0) this.d.d, this.h.J0(), this.h.r());
+        return new a(elapsedRealtime, p1Var, i10, g0Var2, j10, this.h.y0(), this.h.n0(), (u2.g0) this.d.d, this.h.M0(), this.h.q());
     }
 
-    public final a n(f0 f0Var) {
+    public final a n(u2.g0 g0Var) {
         this.h.getClass();
-        k1 k1Var = f0Var == null ? null : (k1) ((k0) this.d.c).get(f0Var);
-        if (f0Var != null && k1Var != null) {
-            return m(k1Var, k1Var.g(f0Var.a, this.b).c, f0Var);
+        p1 p1Var = g0Var == null ? null : (p1) ((c2) this.d.c).get(g0Var);
+        if (g0Var != null && p1Var != null) {
+            return m(p1Var, p1Var.g(g0Var.a, this.b).c, g0Var);
         }
-        int l02 = this.h.l0();
-        k1 w02 = this.h.w0();
-        if (l02 >= w02.o()) {
-            w02 = k1.a;
+        int n02 = this.h.n0();
+        p1 y02 = this.h.y0();
+        if (n02 >= y02.o()) {
+            y02 = p1.a;
         }
-        return m(w02, l02, null);
+        return m(y02, n02, null);
     }
 
-    public final a o(int i10, f0 f0Var) {
+    public final a o(int i10, u2.g0 g0Var) {
         this.h.getClass();
-        if (f0Var != null) {
-            return ((k1) ((k0) this.d.c).get(f0Var)) != null ? n(f0Var) : m(k1.a, i10, f0Var);
+        if (g0Var != null) {
+            return ((p1) ((c2) this.d.c).get(g0Var)) != null ? n(g0Var) : m(p1.a, i10, g0Var);
         }
-        k1 w02 = this.h.w0();
-        if (i10 >= w02.o()) {
-            w02 = k1.a;
+        p1 y02 = this.h.y0();
+        if (i10 >= y02.o()) {
+            y02 = p1.a;
         }
-        return m(w02, i10, null);
+        return m(y02, i10, null);
     }
 
-    @Override // b2.z0
-    public final void onAudioAttributesChanged(b2.e eVar) {
+    @Override // b2.e1
+    public final void onAudioAttributesChanged(b2.f fVar) {
         a p5 = p();
-        q(p5, 20, new o1(p5, eVar, 15));
+        q(p5, 20, new c(p5, fVar, 0));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onAudioSessionIdChanged(int i10) {
         a p5 = p();
-        q(p5, 21, new c(p5, i10, 18, (byte) 0));
+        q(p5, 21, new e(p5, i10, 0));
     }
 
-    @Override // b2.z0
-    public final void onAvailableCommandsChanged(x0 x0Var) {
+    @Override // b2.e1
+    public final void onAvailableCommandsChanged(c1 c1Var) {
         a l4 = l();
-        q(l4, 13, new e(2, l4, x0Var));
+        q(l4, 13, new e(l4, c1Var, 17));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onCues(List list) {
         a l4 = l();
-        q(l4, 27, new i2.z(l4, list));
+        q(l4, 27, new y(l4, list));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onIsLoadingChanged(boolean z10) {
         a l4 = l();
-        q(l4, 3, new c(l4, z10, 16));
+        q(l4, 3, new e(l4, z10, 1));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onIsPlayingChanged(boolean z10) {
         a l4 = l();
-        q(l4, 7, new o1(l4, z10));
+        q(l4, 7, new c(l4, z10));
     }
 
-    @Override // b2.z0
-    public final void onMediaItemTransition(b2.k0 k0Var, int i10) {
+    @Override // b2.e1
+    public final void onMediaItemTransition(p0 p0Var, int i10) {
         a l4 = l();
-        q(l4, 1, new e(l4, k0Var, i10));
+        q(l4, 1, new e(l4, p0Var, i10));
     }
 
-    @Override // b2.z0
-    public final void onMediaMetadataChanged(n0 n0Var) {
+    @Override // b2.e1
+    public final void onMediaMetadataChanged(s0 s0Var) {
         a l4 = l();
-        q(l4, 14, new c(l4, n0Var, 6));
+        q(l4, 14, new c(l4, s0Var, 20));
     }
 
-    @Override // b2.z0
-    public final void onMetadata(p0 p0Var) {
+    @Override // b2.e1
+    public final void onMetadata(u0 u0Var) {
         a l4 = l();
-        q(l4, 28, new o1(l4, p0Var, 16));
+        q(l4, 28, new c(l4, u0Var, 1));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onPlayWhenReadyChanged(boolean z10, int i10) {
         a l4 = l();
-        q(l4, 5, new o1(l4, z10, i10, 23));
+        q(l4, 5, new c(l4, z10, i10));
     }
 
-    @Override // b2.z0
-    public final void onPlaybackParametersChanged(v0 v0Var) {
+    @Override // b2.e1
+    public final void onPlaybackParametersChanged(a1 a1Var) {
         a l4 = l();
-        q(l4, 12, new o1(l4, v0Var, 12));
+        q(l4, 12, new fi.c2(l4, a1Var, 27));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onPlaybackStateChanged(int i10) {
         a l4 = l();
-        q(l4, 4, new o1(l4, i10, 26));
+        q(l4, 4, new c(l4, i10, 11, (char) 0));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onPlaybackSuppressionReasonChanged(int i10) {
         a l4 = l();
-        q(l4, 6, new o1(l4, i10, 19));
+        q(l4, 6, new c(l4, i10, 4, (char) 0));
     }
 
-    @Override // b2.z0
-    public final void onPlayerError(u0 u0Var) {
-        f0 f0Var;
-        a l4 = (!(u0Var instanceof i2.n) || (f0Var = ((i2.n) u0Var).E) == null) ? l() : n(f0Var);
-        q(l4, 10, new c5(l4, u0Var, 22));
+    @Override // b2.e1
+    public final void onPlayerError(z0 z0Var) {
+        u2.g0 g0Var;
+        a l4 = (!(z0Var instanceof i2.m) || (g0Var = ((i2.m) z0Var).E) == null) ? l() : n(g0Var);
+        q(l4, 10, new f1.a(l4, z0Var, 15));
     }
 
-    @Override // b2.z0
-    public final void onPlayerErrorChanged(u0 u0Var) {
-        f0 f0Var;
-        a l4 = (!(u0Var instanceof i2.n) || (f0Var = ((i2.n) u0Var).E) == null) ? l() : n(f0Var);
-        q(l4, 10, new o1(l4, u0Var, 21));
+    @Override // b2.e1
+    public final void onPlayerErrorChanged(z0 z0Var) {
+        u2.g0 g0Var;
+        a l4 = (!(z0Var instanceof i2.m) || (g0Var = ((i2.m) z0Var).E) == null) ? l() : n(g0Var);
+        q(l4, 10, new c(l4, z0Var, 6));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onPlayerStateChanged(boolean z10, int i10) {
         a l4 = l();
-        q(l4, -1, new o1(l4, z10, i10, 14));
+        q(l4, -1, new fi.c2(l4, z10, i10));
     }
 
-    @Override // b2.z0
-    public final void onPlaylistMetadataChanged(n0 n0Var) {
+    @Override // b2.e1
+    public final void onPlaylistMetadataChanged(s0 s0Var) {
         a l4 = l();
-        q(l4, 15, new c(l4, n0Var, 28));
+        q(l4, 15, new e(l4, s0Var, 14));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onPositionDiscontinuity(int i10) {
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onRepeatModeChanged(int i10) {
         a l4 = l();
-        q(l4, 8, new o1(l4, i10, 27));
+        q(l4, 8, new c(l4, i10, 12, (char) 0));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onShuffleModeEnabledChanged(boolean z10) {
         a l4 = l();
-        q(l4, 9, new e(l4, z10));
+        q(l4, 9, new e(l4, z10, 15));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onSkipSilenceEnabledChanged(boolean z10) {
         a p5 = p();
-        q(p5, 23, new c(p5, z10, 26));
+        q(p5, 23, new e(p5, z10, 8));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onSurfaceSizeChanged(int i10, int i11) {
         a p5 = p();
         q(p5, 24, new c(p5, i10, i11));
     }
 
-    @Override // b2.z0
-    public final void onTimelineChanged(k1 k1Var, int i10) {
-        b1 b1Var = this.h;
-        b1Var.getClass();
-        n nVar = this.d;
-        nVar.d = n.p(b1Var, (i0) nVar.b, (f0) nVar.e, (h1) nVar.a);
-        nVar.H(b1Var.w0());
+    @Override // b2.e1
+    public final void onTimelineChanged(p1 p1Var, int i10) {
+        g1 g1Var = this.h;
+        g1Var.getClass();
+        m mVar = this.d;
+        mVar.d = m.p(g1Var, (n0) mVar.b, (u2.g0) mVar.e, (m1) mVar.a);
+        mVar.H(g1Var.y0());
         a l4 = l();
-        q(l4, 0, new e(l4, i10));
+        q(l4, 0, new e(l4, i10, 18));
     }
 
-    @Override // b2.z0
-    public final void onTrackSelectionParametersChanged(q1 q1Var) {
+    @Override // b2.e1
+    public final void onTrackSelectionParametersChanged(u1 u1Var) {
         a l4 = l();
-        q(l4, 19, new c(l4, q1Var, 24));
+        q(l4, 19, new e(l4, u1Var, 7));
     }
 
-    @Override // b2.z0
-    public final void onTracksChanged(s1 s1Var) {
+    @Override // b2.e1
+    public final void onTracksChanged(w1 w1Var) {
         a l4 = l();
-        q(l4, 2, new o1(l4, s1Var, 22));
+        q(l4, 2, new c(l4, w1Var, 7));
     }
 
-    @Override // b2.z0
-    public final void onVideoSizeChanged(x1 x1Var) {
+    @Override // b2.e1
+    public final void onVideoSizeChanged(b2 b2Var) {
         a p5 = p();
-        q(p5, 25, new i2.b0(p5, x1Var));
+        q(p5, 25, new a0(p5, b2Var));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onVolumeChanged(float f7) {
         a p5 = p();
         q(p5, 22, new e(p5, f7));
     }
 
     public final a p() {
-        return n((f0) this.d.f);
+        return n((u2.g0) this.d.f);
     }
 
-    public final void q(a aVar, int i10, m mVar) {
+    public final void q(a aVar, int i10, o oVar) {
         this.e.put(i10, aVar);
-        this.f.e(i10, mVar);
+        this.f.e(i10, oVar);
     }
 
-    public final void r(i2.f0 f0Var, Looper looper) {
-        e2.d.g(this.h == null || ((i0) this.d.b).isEmpty());
-        f0Var.getClass();
-        this.h = f0Var;
+    public final void r(i2.h0 h0Var, Looper looper) {
+        u6.p(this.h == null || ((n0) this.d.b).isEmpty());
+        h0Var.getClass();
+        this.h = h0Var;
         this.n = this.a.a(looper, null);
-        p pVar = this.f;
-        this.f = new p(pVar.d, looper, pVar.a, new ah.b(20, this, f0Var), pVar.i);
+        r rVar = this.f;
+        h0 h0Var2 = new h0(17, this, h0Var);
+        rVar.getClass();
+        g0 g0Var = this.a;
+        u6.p(g0Var != null);
+        this.f = new r(rVar.d, looper, looper.getThread(), g0Var, h0Var2, rVar.i);
     }
 
-    @Override // b2.z0
-    public final void onPositionDiscontinuity(b2.a1 a1Var, b2.a1 a1Var2, int i10) {
+    @Override // b2.e1
+    public final void onPositionDiscontinuity(f1 f1Var, f1 f1Var2, int i10) {
         if (i10 == 1) {
             this.r = false;
         }
-        b1 b1Var = this.h;
-        b1Var.getClass();
-        n nVar = this.d;
-        nVar.d = n.p(b1Var, (i0) nVar.b, (f0) nVar.e, (h1) nVar.a);
+        g1 g1Var = this.h;
+        g1Var.getClass();
+        m mVar = this.d;
+        mVar.d = m.p(g1Var, (n0) mVar.b, (u2.g0) mVar.e, (m1) mVar.a);
         a l4 = l();
-        q(l4, 11, new s(l4, i10, a1Var, a1Var2));
+        q(l4, 11, new i2.r(l4, i10, f1Var, f1Var2));
     }
 
-    @Override // b2.z0
-    public final void onCues(d2.d dVar) {
+    @Override // b2.e1
+    public final void onCues(d2.c cVar) {
         a l4 = l();
-        q(l4, 27, new o1(l4, dVar, 28));
+        q(l4, 27, new c(l4, cVar, 13));
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onRenderedFirstFrame() {
     }
 
-    @Override // b2.z0
+    @Override // b2.e1
     public final void onLoadingChanged(boolean z10) {
     }
 
-    @Override // b2.z0
-    public final void onEvents(b1 b1Var, y0 y0Var) {
+    @Override // b2.e1
+    public final void onEvents(g1 g1Var, d1 d1Var) {
     }
 }

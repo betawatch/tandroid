@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.util.Log;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c0 extends l0 {
     public final /* synthetic */ int b = 0;
@@ -31,12 +31,12 @@ public final class c0 extends l0 {
             default:
                 g0 g0Var = (g0) obj2;
                 o8.h hVar = (o8.h) obj;
-                if (g0Var.h(0)) {
+                if (g0Var.i(0)) {
                     k6.a aVar = hVar.b;
                     if (!aVar.c()) {
                         if (g0Var.w && !aVar.b()) {
                             g0Var.a();
-                            g0Var.g();
+                            g0Var.h();
                             break;
                         } else {
                             g0Var.e(aVar);
@@ -64,7 +64,7 @@ public final class c0 extends l0 {
                             g0Var.E = m0Var;
                             g0Var.F = wVar.d;
                             g0Var.G = wVar.e;
-                            g0Var.g();
+                            g0Var.h();
                             break;
                         }
                     }

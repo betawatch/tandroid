@@ -1,66 +1,128 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
+import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.window.BackEvent;
+import android.window.OnBackAnimationCallback;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lb0 implements org.telegram.ui.Components.f5, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.vw0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vb0 b;
+public final class lb0 implements OnBackAnimationCallback {
+    public boolean b;
+    public boolean e;
+    public final /* synthetic */ LaunchActivity f;
+    public final AnimationNotificationsLocker a = new AnimationNotificationsLocker();
+    public boolean c = false;
+    public boolean d = false;
 
-    public /* synthetic */ lb0(vb0 vb0Var, int i10) {
-        this.a = i10;
-        this.b = vb0Var;
+    public lb0(LaunchActivity launchActivity) {
+        this.f = launchActivity;
     }
 
-    @Override // org.telegram.ui.Components.f5
-    public void J(int i10, int i11, boolean z10) {
-        this.b.V(i10);
+    public final void onBackCancelled() {
+        ActionBarLayout actionBarLayout;
+        this.c = false;
+        this.d = false;
+        if (this.b) {
+            this.a.unlock();
+            this.b = false;
+        }
+        if (AndroidUtilities.isTablet() || (actionBarLayout = this.f.q0) == null || !actionBarLayout.c1) {
+            return;
+        }
+        actionBarLayout.c1 = false;
+        actionBarLayout.e(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        vb0 vb0Var = this.b;
-        vb0Var.T.a(vb0Var.e);
-        vb0Var.finishFragment();
-    }
-
-    @Override // org.telegram.ui.Components.vw0
-    public void g(int i10) {
-        switch (this.a) {
-            case 2:
-                vb0 vb0Var = this.b;
-                if (i10 >= vb0Var.P.size()) {
-                    vb0Var.w.setText("");
-                    break;
-                } else {
-                    vb0Var.w.setText(LocaleController.formatDateAudio(vb0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
-                    break;
-                }
-            default:
-                vb0 vb0Var2 = this.b;
-                vb0Var2.F.clearFocus();
-                vb0Var2.O = true;
-                ArrayList arrayList = vb0Var2.R;
-                if (i10 < arrayList.size()) {
-                    vb0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
-                } else {
-                    vb0Var2.F.setText("");
-                }
-                vb0Var2.O = false;
-                break;
+    public final void onBackInvoked() {
+        this.d = true;
+        if (this.b) {
+            this.a.unlock();
+            this.b = false;
+        }
+        if (AndroidUtilities.isTablet()) {
+            this.f.onBackPressed();
+            return;
+        }
+        if (this.f.c0(true)) {
+            LaunchActivity launchActivity = this.f;
+            ActionBarLayout actionBarLayout = launchActivity.q0;
+            if (actionBarLayout == null) {
+                launchActivity.onBackPressed();
+            } else if (!actionBarLayout.c1) {
+                actionBarLayout.G();
+            } else {
+                actionBarLayout.c1 = false;
+                actionBarLayout.e(false);
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.vw0
-    public /* synthetic */ void l() {
-        int i10 = this.a;
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x004f, code lost:
+    
+        if (r1.T != false) goto L68;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onBackProgressed(BackEvent backEvent) {
+        ActionBarLayout actionBarLayout;
+        ActionBarLayout actionBarLayout2;
+        org.telegram.ui.ActionBar.r rVar;
+        if (this.c && this.d) {
+            return;
+        }
+        float progress = backEvent.getProgress();
+        if (!this.e && progress > 0.015f) {
+            this.e = true;
+            if (!AndroidUtilities.isTablet() && this.f.c0(false) && (actionBarLayout2 = this.f.q0) != null) {
+                float touchX = backEvent.getTouchX();
+                float touchY = backEvent.getTouchY();
+                Activity activity = actionBarLayout2.K0;
+                if (actionBarLayout2.T) {
+                    AnimatorSet animatorSet = actionBarLayout2.h1;
+                    if (animatorSet != null) {
+                        animatorSet.end();
+                        actionBarLayout2.h1 = null;
+                    }
+                }
+                if (!actionBarLayout2.d1 && !actionBarLayout2.c1 && !actionBarLayout2.a0 && !actionBarLayout2.Q && !actionBarLayout2.j() && actionBarLayout2.O0.size() > 1 && !actionBarLayout2.y() && ((rVar = actionBarLayout2.G) == null || !rVar.hasShownSheet())) {
+                    org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) t8.b.g(1, actionBarLayout2.O0);
+                    if (m2Var.onBackPressed(false) && !m2Var.hasShownSheet() && m2Var.canBeginSlide()) {
+                        actionBarLayout2.e1 = false;
+                        actionBarLayout2.d1 = true;
+                        actionBarLayout2.c1 = true;
+                        actionBarLayout2.g1 = touchX < ((float) AndroidUtilities.displaySize.x) / 2.0f;
+                        actionBarLayout2.f1 = touchY;
+                        actionBarLayout2.O();
+                        if (activity != null && activity.getCurrentFocus() != null) {
+                            AndroidUtilities.hideKeyboard(activity.getCurrentFocus());
+                        }
+                        m2Var.onBeginSlide();
+                        if (!this.b) {
+                            this.a.lock();
+                            this.b = true;
+                        }
+                    }
+                }
+            }
+        }
+        float max = Math.max(0.0f, progress - 0.015f) / 0.985f;
+        if (AndroidUtilities.isTablet() || (actionBarLayout = this.f.q0) == null || !actionBarLayout.c1) {
+            return;
+        }
+        float interpolation = org.telegram.ui.Components.es.l.getInterpolation(max) * AndroidUtilities.dp(56.0f);
+        actionBarLayout.e1 = max > 0.0f;
+        actionBarLayout.s.setTranslationX(interpolation);
+        actionBarLayout.setInnerTranslationX(interpolation);
     }
 
-    private final /* synthetic */ void a() {
-    }
-
-    private final /* synthetic */ void b() {
+    public final void onBackStarted(BackEvent backEvent) {
+        this.c = true;
+        this.d = false;
+        this.e = false;
     }
 }

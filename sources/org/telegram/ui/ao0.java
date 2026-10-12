@@ -1,34 +1,68 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.widget.FrameLayout;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ao0 implements to0 {
-    public final /* synthetic */ vo0 a;
+public final /* synthetic */ class ao0 implements OnCompleteListener, org.telegram.ui.ActionBar.z1, eu {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cp0 b;
 
-    public ao0(vo0 vo0Var) {
-        this.a = vo0Var;
+    public /* synthetic */ ao0(cp0 cp0Var, int i10) {
+        this.a = i10;
+        this.b = cp0Var;
     }
 
-    @Override // org.telegram.ui.to0
-    public final /* synthetic */ boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        return false;
+    @Override // org.telegram.ui.eu
+    public void a1(au auVar) {
+        switch (this.a) {
+            case 2:
+                cp0 cp0Var = this.b;
+                cp0Var.A0 = auVar;
+                cp0Var.f[4].setText(auVar.a);
+                break;
+            default:
+                cp0 cp0Var2 = this.b;
+                cp0Var2.A0 = auVar;
+                cp0Var2.f[4].setText(auVar.a);
+                cp0Var2.B0 = auVar.d;
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.to0
-    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
-        vo0 vo0Var = this.a;
-        vo0Var.I0 = tL_payments_validateRequestedInfo;
-        vo0Var.B0(tL_payments_validateRequestedInfo.info);
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                cp0 cp0Var = this.b;
+                cp0Var.I0(cp0Var.R0[0]);
+                break;
+            case 2:
+            default:
+                cp0 cp0Var2 = this.b;
+                cp0Var2.D0(true);
+                cp0Var2.z0();
+                break;
+            case 3:
+                this.b.A0(true);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.to0
-    public final /* synthetic */ void a(TL_account.Password password) {
-    }
-
-    @Override // org.telegram.ui.to0
-    public final /* synthetic */ void b() {
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        cp0 cp0Var = this.b;
+        cp0Var.getClass();
+        if (!task.isSuccessful()) {
+            FileLog.e("isReadyToPay failed", task.getException());
+            return;
+        }
+        FrameLayout frameLayout = cp0Var.O;
+        if (frameLayout != null) {
+            frameLayout.setVisibility(0);
+        }
     }
 }

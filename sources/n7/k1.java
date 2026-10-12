@@ -1,14 +1,16 @@
 package n7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import ji.w4;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k1 implements j1 {
-    public static final a9.r a;
+    public static final w4 a;
 
     static {
         int i10 = o.c;
         Object[] objArr = y.r;
         new b0("FIDO");
-        a = new a9.r(Boolean.FALSE);
+        a = new w4(Boolean.FALSE, 8);
     }
 }

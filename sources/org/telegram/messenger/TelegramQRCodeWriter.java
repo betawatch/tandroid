@@ -9,13 +9,14 @@ import android.graphics.RectF;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import com.google.firebase.messaging.r;
 import java.nio.charset.Charset;
 import java.nio.charset.UnsupportedCharsetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class TelegramQRCodeWriter {
     private static final int QUIET_ZONE_SIZE = 4;
@@ -23,7 +24,7 @@ public final class TelegramQRCodeWriter {
     private int imageBlockX;
     private int imageBloks;
     private int imageSize;
-    private jc.b input;
+    private kc.b input;
     private int sideQuadSize;
     private float[] radii = new float[8];
     public boolean includeSideQuads = true;
@@ -154,7 +155,7 @@ public final class TelegramQRCodeWriter {
             return false;
         }
         if ((i10 >= i14 || i11 < this.input.c - i14) && i10 >= 0 && i11 >= 0) {
-            jc.b bVar = this.input;
+            kc.b bVar = this.input;
             if (i10 < bVar.b && i11 < bVar.c && bVar.a(i10, i11) == 1) {
                 return true;
             }
@@ -162,7 +163,7 @@ public final class TelegramQRCodeWriter {
         return false;
     }
 
-    public Bitmap encode(String str, int i10, int i11, Map<cc.b, ?> map, Bitmap bitmap) {
+    public Bitmap encode(String str, int i10, int i11, Map<dc.b, ?> map, Bitmap bitmap) {
         return encode(str, i10, i11, map, bitmap, 1.0f, -1, -16777216);
     }
 
@@ -208,23 +209,23 @@ public final class TelegramQRCodeWriter {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Bitmap encode(String str, int i10, int i11, Map<cc.b, ?> map, Bitmap bitmap, float f7, int i12, int i13) {
+    public Bitmap encode(String str, int i10, int i11, Map<dc.b, ?> map, Bitmap bitmap, float f7, int i12, int i13) {
         int i14;
         boolean z10;
         boolean z11;
         boolean z12;
         Charset forName;
         int i15;
-        hc.e eVar;
+        ic.e eVar;
         int i16;
-        hc.f fVar;
+        ic.f fVar;
         int i17;
         int i18;
-        int e7;
+        int e;
         int i19;
-        hc.f fVar2;
-        dc.a aVar;
-        dc.c cVar;
+        ic.f fVar2;
+        ec.a aVar;
+        ec.c cVar;
         int i20;
         int i21;
         int i22;
@@ -253,25 +254,25 @@ public final class TelegramQRCodeWriter {
         if (i10 < 0 || i11 < 0) {
             throw new IllegalArgumentException("Requested dimensions are too small: " + i10 + 'x' + i11);
         }
-        hc.c cVar2 = hc.c.b;
+        ic.c cVar2 = ic.c.b;
         if (map != null) {
-            cc.b bVar = cc.b.a;
+            dc.b bVar = dc.b.a;
             if (map.containsKey(bVar)) {
-                cVar2 = hc.c.valueOf(map.get(bVar).toString());
+                cVar2 = ic.c.valueOf(map.get(bVar).toString());
             }
-            cc.b bVar2 = cc.b.c;
+            dc.b bVar2 = dc.b.c;
             if (map.containsKey(bVar2)) {
                 i14 = Integer.parseInt(map.get(bVar2).toString());
-                Charset charset = jc.c.b;
+                Charset charset = kc.c.b;
                 if (map != null) {
-                    cc.b bVar3 = cc.b.h;
+                    dc.b bVar3 = dc.b.h;
                     if (map.containsKey(bVar3) && Boolean.parseBoolean(map.get(bVar3).toString())) {
                         z10 = true;
                         if (map != null) {
-                            cc.b bVar4 = cc.b.f;
+                            dc.b bVar4 = dc.b.f;
                             if (map.containsKey(bVar4) && Boolean.parseBoolean(map.get(bVar4).toString())) {
                                 z11 = true;
-                                cc.b bVar5 = cc.b.b;
+                                dc.b bVar5 = dc.b.b;
                                 z12 = map == null && map.containsKey(bVar5);
                                 if (z12) {
                                     try {
@@ -282,10 +283,10 @@ public final class TelegramQRCodeWriter {
                                     int i27 = i14;
                                     if (!z11) {
                                         i15 = 2;
-                                        Charset charset2 = dc.h.b;
-                                        hc.e eVar2 = hc.e.h;
-                                        if (charset2 != null && charset2.equals(forName) && jc.c.b(str)) {
-                                            eVar = hc.e.r;
+                                        Charset charset2 = ec.g.b;
+                                        ic.e eVar2 = ic.e.h;
+                                        if (charset2 != null && charset2.equals(forName) && kc.c.b(str)) {
+                                            eVar = ic.e.r;
                                         } else {
                                             boolean z19 = false;
                                             boolean z20 = false;
@@ -294,7 +295,7 @@ public final class TelegramQRCodeWriter {
                                                 if (i28 < str.length()) {
                                                     char charAt = str.charAt(i28);
                                                     if (charAt < '0' || charAt > '9') {
-                                                        if ((charAt < '`' ? jc.c.a[charAt] : -1) == -1) {
+                                                        if ((charAt < '`' ? kc.c.a[charAt] : -1) == -1) {
                                                             break;
                                                         }
                                                         z19 = true;
@@ -303,15 +304,15 @@ public final class TelegramQRCodeWriter {
                                                     }
                                                     i28++;
                                                 } else if (z19) {
-                                                    eVar = hc.e.e;
+                                                    eVar = ic.e.e;
                                                 } else if (z20) {
-                                                    eVar = hc.e.d;
+                                                    eVar = ic.e.d;
                                                 }
                                             }
                                             eVar = eVar2;
                                         }
-                                        dc.a aVar2 = new dc.a();
-                                        if (eVar == eVar2 && z12 && (cVar = (dc.c) dc.c.d.get(forName.name())) != null) {
+                                        ec.a aVar2 = new ec.a();
+                                        if (eVar == eVar2 && z12 && (cVar = (ec.c) ec.c.d.get(forName.name())) != null) {
                                             i16 = 4;
                                             aVar2.b(7, 4);
                                             aVar2.b(cVar.a[0], 8);
@@ -322,32 +323,32 @@ public final class TelegramQRCodeWriter {
                                             aVar2.b(5, i16);
                                         }
                                         aVar2.b(eVar.b, i16);
-                                        dc.a aVar3 = new dc.a();
-                                        jc.c.a(str, eVar, aVar3, forName);
+                                        ec.a aVar3 = new ec.a();
+                                        kc.c.a(str, eVar, aVar3, forName);
                                         if (map != null) {
-                                            cc.b bVar6 = cc.b.d;
+                                            dc.b bVar6 = dc.b.d;
                                             if (map.containsKey(bVar6)) {
-                                                fVar = hc.f.c(Integer.parseInt(map.get(bVar6).toString()));
-                                                if (!jc.c.c(eVar.a(fVar) + aVar2.b + aVar3.b, fVar, cVar2)) {
-                                                    throw new cc.k("Data too big for requested version");
+                                                fVar = ic.f.c(Integer.parseInt(map.get(bVar6).toString()));
+                                                if (!kc.c.c(eVar.a(fVar) + aVar2.b + aVar3.b, fVar, cVar2)) {
+                                                    throw new r("Data too big for requested version");
                                                 }
-                                                dc.a aVar4 = new dc.a();
+                                                ec.a aVar4 = new ec.a();
                                                 i17 = aVar2.b;
                                                 aVar4.c(i17);
                                                 for (i18 = 0; i18 < i17; i18++) {
                                                     aVar4.a(aVar2.d(i18));
                                                 }
-                                                e7 = eVar != eVar2 ? aVar3.e() : str.length();
+                                                e = eVar != eVar2 ? aVar3.e() : str.length();
                                                 int a2 = eVar.a(fVar);
                                                 i19 = 1 << a2;
-                                                if (e7 < i19) {
+                                                if (e < i19) {
                                                     StringBuilder sb2 = new StringBuilder();
-                                                    sb2.append(e7);
+                                                    sb2.append(e);
                                                     sb2.append(" is bigger than ");
                                                     sb2.append(i19 - 1);
-                                                    throw new cc.k(sb2.toString());
+                                                    throw new r(sb2.toString());
                                                 }
-                                                aVar4.b(e7, a2);
+                                                aVar4.b(e, a2);
                                                 int i29 = aVar3.b;
                                                 aVar4.c(aVar4.b + i29);
                                                 for (int i30 = 0; i30 < i29; i30++) {
@@ -357,17 +358,17 @@ public final class TelegramQRCodeWriter {
                                                 aVar = aVar4;
                                             }
                                         }
-                                        int a10 = eVar.a(hc.f.c(1)) + aVar2.b + aVar3.b;
+                                        int a10 = eVar.a(ic.f.c(1)) + aVar2.b + aVar3.b;
                                         int i31 = 1;
                                         while (i31 <= 40) {
-                                            hc.f c12 = hc.f.c(i31);
-                                            if (jc.c.c(a10, c12, cVar2)) {
+                                            ic.f c12 = ic.f.c(i31);
+                                            if (kc.c.c(a10, c12, cVar2)) {
                                                 int a11 = eVar.a(c12) + aVar2.b + aVar3.b;
                                                 for (int i32 = 1; i32 <= 40; i32++) {
-                                                    hc.f c13 = hc.f.c(i32);
-                                                    if (jc.c.c(a11, c13, cVar2)) {
+                                                    ic.f c13 = ic.f.c(i32);
+                                                    if (kc.c.c(a11, c13, cVar2)) {
                                                         fVar = c13;
-                                                        dc.a aVar42 = new dc.a();
+                                                        ec.a aVar42 = new ec.a();
                                                         i17 = aVar2.b;
                                                         aVar42.c(i17);
                                                         while (i18 < i17) {
@@ -376,91 +377,91 @@ public final class TelegramQRCodeWriter {
                                                         }
                                                         int a22 = eVar.a(fVar);
                                                         i19 = 1 << a22;
-                                                        if (e7 < i19) {
+                                                        if (e < i19) {
                                                         }
                                                     } else {
                                                         cVar2 = cVar2;
                                                     }
                                                 }
-                                                throw new cc.k("Data too big");
+                                                throw new r("Data too big");
                                             }
                                             i31++;
                                             cVar2 = cVar2;
                                             a10 = a10;
                                         }
-                                        throw new cc.k("Data too big");
+                                        throw new r("Data too big");
                                     }
                                     if (forName.equals(charset)) {
                                         forName = null;
                                     }
-                                    com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m();
-                                    mVar.b = str;
-                                    mVar.a = z10;
-                                    mVar.c = new dc.e(str, forName);
-                                    mVar.d = cVar2;
-                                    hc.c cVar3 = (hc.c) mVar.d;
+                                    c2.b bVar7 = new c2.b();
+                                    bVar7.b = str;
+                                    bVar7.a = z10;
+                                    bVar7.c = new ec.d(str, forName);
+                                    bVar7.d = cVar2;
+                                    ic.c cVar3 = (ic.c) bVar7.d;
                                     i15 = 2;
-                                    hc.f[] fVarArr = {com.google.firebase.messaging.m.o(1), com.google.firebase.messaging.m.o(2), com.google.firebase.messaging.m.o(3)};
-                                    aa.a[] aVarArr = {mVar.j(fVarArr[0]), mVar.j(fVarArr[1]), mVar.j(fVarArr[2])};
+                                    ic.f[] fVarArr = {c2.b.o(1), c2.b.o(2), c2.b.o(3)};
+                                    androidx.biometric.e[] eVarArr = {bVar7.j(fVarArr[0]), bVar7.j(fVarArr[1]), bVar7.j(fVarArr[2])};
                                     int i33 = 0;
                                     int i34 = Integer.MAX_VALUE;
                                     int i35 = -1;
                                     for (int i36 = 3; i33 < i36; i36 = 3) {
-                                        aa.a aVar5 = aVarArr[i33];
-                                        int o9 = aVar5.o((hc.f) aVar5.c);
-                                        if (jc.c.c(o9, fVarArr[i33], cVar3) && o9 < i34) {
-                                            i34 = o9;
+                                        androidx.biometric.e eVar3 = eVarArr[i33];
+                                        int q6 = eVar3.q((ic.f) eVar3.c);
+                                        if (kc.c.c(q6, fVarArr[i33], cVar3) && q6 < i34) {
+                                            i34 = q6;
                                             i35 = i33;
                                         }
                                         i33++;
                                     }
                                     if (i35 < 0) {
-                                        throw new cc.k("Data too big for any version");
+                                        throw new r("Data too big for any version");
                                     }
-                                    aa.a aVar6 = aVarArr[i35];
-                                    aVar = new dc.a();
-                                    ArrayList arrayList = (ArrayList) aVar6.b;
+                                    androidx.biometric.e eVar4 = eVarArr[i35];
+                                    aVar = new ec.a();
+                                    ArrayList arrayList = (ArrayList) eVar4.b;
                                     int size = arrayList.size();
                                     int i37 = 0;
                                     while (i37 < size) {
                                         Object obj = arrayList.get(i37);
                                         int i38 = i37 + 1;
-                                        jc.f fVar3 = (jc.f) obj;
+                                        kc.f fVar3 = (kc.f) obj;
                                         int i39 = fVar3.c;
-                                        aa.a aVar7 = fVar3.e;
-                                        com.google.firebase.messaging.m mVar2 = (com.google.firebase.messaging.m) aVar7.d;
+                                        androidx.biometric.e eVar5 = fVar3.e;
+                                        c2.b bVar8 = (c2.b) eVar5.d;
                                         ArrayList arrayList2 = arrayList;
-                                        hc.e eVar3 = fVar3.a;
+                                        ic.e eVar6 = fVar3.a;
                                         int i40 = size;
-                                        aVar.b(eVar3.b, 4);
+                                        aVar.b(eVar6.b, 4);
                                         int i41 = fVar3.d;
                                         if (i41 > 0) {
-                                            aVar.b(fVar3.a(), eVar3.a((hc.f) aVar7.c));
+                                            aVar.b(fVar3.a(), eVar6.a((ic.f) eVar5.c));
                                         }
-                                        if (eVar3 == hc.e.n) {
-                                            aVar.b(((dc.c) dc.c.d.get(((dc.e) mVar2.c).a[i39].charset().name())).a[0], 8);
+                                        if (eVar6 == ic.e.n) {
+                                            aVar.b(((ec.c) ec.c.d.get(((ec.d) bVar8.c).a[i39].charset().name())).a[0], 8);
                                         } else if (i41 > 0) {
-                                            String str2 = (String) mVar2.b;
+                                            String str2 = (String) bVar8.b;
                                             int i42 = fVar3.b;
-                                            jc.c.a(str2.substring(i42, i41 + i42), eVar3, aVar, ((dc.e) mVar2.c).a[i39].charset());
+                                            kc.c.a(str2.substring(i42, i41 + i42), eVar6, aVar, ((ec.d) bVar8.c).a[i39].charset());
                                         }
                                         arrayList = arrayList2;
                                         size = i40;
                                         i37 = i38;
                                     }
-                                    fVar2 = (hc.f) aVar6.c;
-                                    c5.b0 b0Var = fVar2.c[cVar2.ordinal()];
+                                    fVar2 = (ic.f) eVar4.c;
+                                    c5.c0 c0Var = fVar2.c[cVar2.ordinal()];
                                     int i43 = fVar2.d;
-                                    int i44 = b0Var.b;
-                                    b2.q0[] q0VarArr = (b2.q0[]) b0Var.c;
+                                    int i44 = c0Var.b;
+                                    b2.v0[] v0VarArr = (b2.v0[]) c0Var.c;
                                     int i45 = 0;
-                                    for (b2.q0 q0Var : q0VarArr) {
-                                        i45 += q0Var.a;
+                                    for (b2.v0 v0Var : v0VarArr) {
+                                        i45 += v0Var.a;
                                     }
                                     int i46 = i43 - (i45 * i44);
                                     i20 = i46 * 8;
                                     if (aVar.b > i20) {
-                                        throw new cc.k("data bits cannot fit in the QR Code" + aVar.b + " > " + i20);
+                                        throw new r("data bits cannot fit in the QR Code" + aVar.b + " > " + i20);
                                     }
                                     for (int i47 = 0; i47 < 4 && aVar.b < i20; i47++) {
                                         aVar.a(false);
@@ -474,23 +475,23 @@ public final class TelegramQRCodeWriter {
                                             z21 = false;
                                         }
                                     }
-                                    int e10 = i46 - aVar.e();
+                                    int e7 = i46 - aVar.e();
                                     int i49 = 0;
-                                    while (i49 < e10) {
-                                        int i50 = e10;
+                                    while (i49 < e7) {
+                                        int i50 = e7;
                                         aVar.b((i49 & 1) == 0 ? 236 : 17, 8);
                                         i49++;
-                                        e10 = i50;
+                                        e7 = i50;
                                     }
                                     if (aVar.b != i20) {
-                                        throw new cc.k("Bits size does not equal capacity");
+                                        throw new r("Bits size does not equal capacity");
                                     }
                                     int i51 = 0;
-                                    for (b2.q0 q0Var2 : q0VarArr) {
-                                        i51 += q0Var2.a;
+                                    for (b2.v0 v0Var2 : v0VarArr) {
+                                        i51 += v0Var2.a;
                                     }
                                     if (aVar.e() != i46) {
-                                        throw new cc.k("Number of bits and data bytes does not match");
+                                        throw new r("Number of bits and data bytes does not match");
                                     }
                                     ArrayList arrayList3 = new ArrayList(i51);
                                     int i52 = 0;
@@ -502,7 +503,7 @@ public final class TelegramQRCodeWriter {
                                         int[] iArr = new int[i56];
                                         int[] iArr2 = new int[i56];
                                         if (i53 >= i51) {
-                                            throw new cc.k("Block ID too large");
+                                            throw new r("Block ID too large");
                                         }
                                         int i57 = i43 % i51;
                                         int i58 = i51 - i57;
@@ -512,13 +513,13 @@ public final class TelegramQRCodeWriter {
                                         int i62 = i59 - i60;
                                         int i63 = (i59 + 1) - i61;
                                         if (i62 != i63) {
-                                            throw new cc.k("EC bytes mismatch");
+                                            throw new r("EC bytes mismatch");
                                         }
                                         if (i51 != i58 + i57) {
-                                            throw new cc.k("RS blocks mismatch");
+                                            throw new r("RS blocks mismatch");
                                         }
                                         if (i43 != ((i61 + i63) * i57) + ((i60 + i62) * i58)) {
-                                            throw new cc.k("Total bytes mismatch");
+                                            throw new r("Total bytes mismatch");
                                         }
                                         if (i53 < i58) {
                                             c11 = 0;
@@ -563,11 +564,11 @@ public final class TelegramQRCodeWriter {
                                             i76 = i76;
                                         }
                                         int i78 = i76;
-                                        fc.a aVar8 = fc.a.h;
+                                        gc.a aVar5 = gc.a.h;
                                         ArrayList arrayList4 = new ArrayList();
-                                        dc.a aVar9 = aVar;
-                                        hc.c cVar4 = cVar2;
-                                        arrayList4.add(new fc.b(aVar8, new int[]{1}));
+                                        ec.a aVar6 = aVar;
+                                        ic.c cVar4 = cVar2;
+                                        arrayList4.add(new gc.b(aVar5, new int[]{1}));
                                         if (i75 == 0) {
                                             throw new IllegalArgumentException("No error correction bytes");
                                         }
@@ -576,21 +577,21 @@ public final class TelegramQRCodeWriter {
                                             throw new IllegalArgumentException("No data bytes provided");
                                         }
                                         if (i75 >= arrayList4.size()) {
-                                            fc.b bVar7 = (fc.b) hg.c.g(1, arrayList4);
+                                            gc.b bVar9 = (gc.b) i2.d.g(1, arrayList4);
                                             int size2 = arrayList4.size();
-                                            fc.b bVar8 = bVar7;
+                                            gc.b bVar10 = bVar9;
                                             while (size2 <= i75) {
                                                 int i80 = size2;
-                                                bVar8 = bVar8.g(new fc.b(aVar8, new int[]{1, aVar8.a[(i80 - 1) + aVar8.g]}));
-                                                arrayList4.add(bVar8);
+                                                bVar10 = bVar10.g(new gc.b(aVar5, new int[]{1, aVar5.a[(i80 - 1) + aVar5.g]}));
+                                                arrayList4.add(bVar10);
                                                 size2 = i80 + 1;
                                                 i43 = i43;
                                                 fVar2 = fVar2;
                                             }
                                         }
-                                        hc.f fVar4 = fVar2;
+                                        ic.f fVar4 = fVar2;
                                         int i81 = i43;
-                                        fc.b bVar9 = (fc.b) arrayList4.get(i75);
+                                        gc.b bVar11 = (gc.b) arrayList4.get(i75);
                                         int[] iArr4 = new int[i79];
                                         System.arraycopy(iArr3, 0, iArr4, 0, i79);
                                         if (i79 == 0) {
@@ -616,31 +617,31 @@ public final class TelegramQRCodeWriter {
                                                 int[] iArr6 = new int[length + i75];
                                                 int i84 = 0;
                                                 while (i84 < length) {
-                                                    iArr6[i84] = aVar8.c(iArr4[i84], 1);
+                                                    iArr6[i84] = aVar5.c(iArr4[i84], 1);
                                                     i84++;
                                                     iArr4 = iArr4;
                                                 }
-                                                fc.b bVar10 = new fc.b(aVar8, iArr6);
-                                                if (!aVar8.equals(bVar9.a)) {
+                                                gc.b bVar12 = new gc.b(aVar5, iArr6);
+                                                if (!aVar5.equals(bVar11.a)) {
                                                     throw new IllegalArgumentException("GenericGFPolys do not have same GenericGF field");
                                                 }
-                                                if (bVar9.e()) {
+                                                if (bVar11.e()) {
                                                     throw new IllegalArgumentException("Divide by 0");
                                                 }
-                                                fc.b bVar11 = aVar8.c;
-                                                int b10 = aVar8.b(bVar9.c(bVar9.d()));
-                                                while (bVar10.d() >= bVar9.d() && !bVar10.e()) {
-                                                    int d = bVar10.d() - bVar9.d();
-                                                    int c14 = aVar8.c(bVar10.c(bVar10.d()), b10);
+                                                gc.b bVar13 = aVar5.c;
+                                                int b10 = aVar5.b(bVar11.c(bVar11.d()));
+                                                while (bVar12.d() >= bVar11.d() && !bVar12.e()) {
+                                                    int d = bVar12.d() - bVar11.d();
+                                                    int c14 = aVar5.c(bVar12.c(bVar12.d()), b10);
                                                     int i85 = b10;
-                                                    fc.b h = bVar9.h(d, c14);
-                                                    bVar11 = bVar11.a(aVar8.a(d, c14));
-                                                    bVar10 = bVar10.a(h);
+                                                    gc.b h = bVar11.h(d, c14);
+                                                    bVar13 = bVar13.a(aVar5.a(d, c14));
+                                                    bVar12 = bVar12.a(h);
                                                     b10 = i85;
                                                 }
-                                                fc.b[] bVarArr = new fc.b[i15];
-                                                bVarArr[0] = bVar11;
-                                                bVarArr[1] = bVar10;
+                                                gc.b[] bVarArr = new gc.b[i15];
+                                                bVarArr[0] = bVar13;
+                                                bVarArr[1] = bVar12;
                                                 int[] iArr7 = bVarArr[1].b;
                                                 int length2 = i75 - iArr7.length;
                                                 for (int i86 = 0; i86 < length2; i86++) {
@@ -651,12 +652,12 @@ public final class TelegramQRCodeWriter {
                                                 for (int i87 = 0; i87 < i75; i87++) {
                                                     bArr3[i87] = (byte) iArr3[i64 + i87];
                                                 }
-                                                arrayList3.add(new jc.a(bArr2, bArr3));
+                                                arrayList3.add(new kc.a(bArr2, bArr3));
                                                 i55 = Math.max(i55, i64);
                                                 i52 = Math.max(i52, i75);
                                                 i54 += iArr[0];
                                                 i53 = i73 + 1;
-                                                aVar = aVar9;
+                                                aVar = aVar6;
                                                 i51 = i74;
                                                 i43 = i81;
                                                 cVar2 = cVar4;
@@ -669,22 +670,22 @@ public final class TelegramQRCodeWriter {
                                         if (i75 >= 0) {
                                         }
                                     }
-                                    hc.f fVar5 = fVar2;
-                                    hc.c cVar5 = cVar2;
+                                    ic.f fVar5 = fVar2;
+                                    ic.c cVar5 = cVar2;
                                     int i88 = i43;
                                     if (i46 != i54) {
-                                        throw new cc.k("Data bytes does not match offset");
+                                        throw new r("Data bytes does not match offset");
                                     }
-                                    dc.a aVar10 = new dc.a();
+                                    ec.a aVar7 = new ec.a();
                                     for (int i89 = 0; i89 < i55; i89++) {
                                         int size3 = arrayList3.size();
                                         int i90 = 0;
                                         while (i90 < size3) {
                                             Object obj2 = arrayList3.get(i90);
                                             i90++;
-                                            byte[] bArr4 = ((jc.a) obj2).a;
+                                            byte[] bArr4 = ((kc.a) obj2).a;
                                             if (i89 < bArr4.length) {
-                                                aVar10.b(bArr4[i89], 8);
+                                                aVar7.b(bArr4[i89], 8);
                                             }
                                         }
                                     }
@@ -694,42 +695,42 @@ public final class TelegramQRCodeWriter {
                                         while (i92 < size4) {
                                             Object obj3 = arrayList3.get(i92);
                                             i92++;
-                                            byte[] bArr5 = ((jc.a) obj3).b;
+                                            byte[] bArr5 = ((kc.a) obj3).b;
                                             if (i91 < bArr5.length) {
-                                                aVar10.b(bArr5[i91], 8);
+                                                aVar7.b(bArr5[i91], 8);
                                             }
                                         }
                                     }
-                                    if (i88 != aVar10.e()) {
-                                        StringBuilder j3 = hg.c.j(i88, "Interleaving error: ", " and ");
-                                        j3.append(aVar10.e());
-                                        j3.append(" differ.");
-                                        throw new cc.k(j3.toString());
+                                    if (i88 != aVar7.e()) {
+                                        StringBuilder k10 = i2.d.k(i88, "Interleaving error: ", " and ");
+                                        k10.append(aVar7.e());
+                                        k10.append(" differ.");
+                                        throw new r(k10.toString());
                                     }
                                     int i93 = (fVar5.a * 4) + 17;
-                                    jc.b bVar12 = new jc.b(i93, i93);
+                                    kc.b bVar14 = new kc.b(i93, i93);
                                     if (map != null) {
-                                        cc.b bVar13 = cc.b.e;
-                                        if (map.containsKey(bVar13)) {
-                                            i21 = Integer.parseInt(map.get(bVar13).toString());
+                                        dc.b bVar15 = dc.b.e;
+                                        if (map.containsKey(bVar15)) {
+                                            i21 = Integer.parseInt(map.get(bVar15).toString());
                                         }
                                     }
                                     i21 = -1;
-                                    int i94 = bVar12.c;
-                                    int i95 = bVar12.b;
+                                    int i94 = bVar14.c;
+                                    int i95 = bVar14.b;
                                     int i96 = -1;
                                     if (i21 == -1) {
                                         int i97 = Integer.MAX_VALUE;
                                         int i98 = 0;
                                         while (i98 < 8) {
-                                            hc.c cVar6 = cVar5;
-                                            jc.d.b(aVar10, cVar6, fVar5, i98, bVar12);
-                                            int a12 = jc.d.a(bVar12, false) + jc.d.a(bVar12, true);
+                                            ic.c cVar6 = cVar5;
+                                            kc.d.b(aVar7, cVar6, fVar5, i98, bVar14);
+                                            int a12 = kc.d.a(bVar14, false) + kc.d.a(bVar14, true);
                                             int i99 = 0;
                                             int i100 = 0;
                                             while (true) {
                                                 int i101 = i94 - 1;
-                                                bArr = bVar12.a;
+                                                bArr = bVar14.a;
                                                 if (i99 >= i101) {
                                                     break;
                                                 }
@@ -862,8 +863,8 @@ public final class TelegramQRCodeWriter {
                                         }
                                         i21 = i96;
                                     }
-                                    jc.d.b(aVar10, cVar5, fVar5, i21, bVar12);
-                                    this.input = bVar12;
+                                    kc.d.b(aVar7, cVar5, fVar5, i21, bVar14);
+                                    this.input = bVar14;
                                     for (int i125 = 0; i125 < i95 && has(i125, 0); i125++) {
                                         this.sideQuadSize++;
                                     }
@@ -1042,10 +1043,10 @@ public final class TelegramQRCodeWriter {
                                 int i272 = i14;
                                 if (!z11) {
                                 }
-                                c5.b0 b0Var2 = fVar2.c[cVar2.ordinal()];
+                                c5.c0 c0Var2 = fVar2.c[cVar2.ordinal()];
                                 int i432 = fVar2.d;
-                                int i442 = b0Var2.b;
-                                b2.q0[] q0VarArr2 = (b2.q0[]) b0Var2.c;
+                                int i442 = c0Var2.b;
+                                b2.v0[] v0VarArr2 = (b2.v0[]) c0Var2.c;
                                 int i452 = 0;
                                 while (r13 < r12) {
                                 }
@@ -1056,7 +1057,7 @@ public final class TelegramQRCodeWriter {
                             }
                         }
                         z11 = false;
-                        cc.b bVar52 = cc.b.b;
+                        dc.b bVar52 = dc.b.b;
                         if (map == null) {
                         }
                         if (z12) {
@@ -1066,10 +1067,10 @@ public final class TelegramQRCodeWriter {
                         int i2722 = i14;
                         if (!z11) {
                         }
-                        c5.b0 b0Var22 = fVar2.c[cVar2.ordinal()];
+                        c5.c0 c0Var22 = fVar2.c[cVar2.ordinal()];
                         int i4322 = fVar2.d;
-                        int i4422 = b0Var22.b;
-                        b2.q0[] q0VarArr22 = (b2.q0[]) b0Var22.c;
+                        int i4422 = c0Var22.b;
+                        b2.v0[] v0VarArr22 = (b2.v0[]) c0Var22.c;
                         int i4522 = 0;
                         while (r13 < r12) {
                         }
@@ -1083,7 +1084,7 @@ public final class TelegramQRCodeWriter {
                 if (map != null) {
                 }
                 z11 = false;
-                cc.b bVar522 = cc.b.b;
+                dc.b bVar522 = dc.b.b;
                 if (map == null) {
                 }
                 if (z12) {
@@ -1093,10 +1094,10 @@ public final class TelegramQRCodeWriter {
                 int i27222 = i14;
                 if (!z11) {
                 }
-                c5.b0 b0Var222 = fVar2.c[cVar2.ordinal()];
+                c5.c0 c0Var222 = fVar2.c[cVar2.ordinal()];
                 int i43222 = fVar2.d;
-                int i44222 = b0Var222.b;
-                b2.q0[] q0VarArr222 = (b2.q0[]) b0Var222.c;
+                int i44222 = c0Var222.b;
+                b2.v0[] v0VarArr222 = (b2.v0[]) c0Var222.c;
                 int i45222 = 0;
                 while (r13 < r12) {
                 }
@@ -1107,14 +1108,14 @@ public final class TelegramQRCodeWriter {
             }
         }
         i14 = 4;
-        Charset charset3 = jc.c.b;
+        Charset charset3 = kc.c.b;
         if (map != null) {
         }
         z10 = false;
         if (map != null) {
         }
         z11 = false;
-        cc.b bVar5222 = cc.b.b;
+        dc.b bVar5222 = dc.b.b;
         if (map == null) {
         }
         if (z12) {
@@ -1124,10 +1125,10 @@ public final class TelegramQRCodeWriter {
         int i272222 = i14;
         if (!z11) {
         }
-        c5.b0 b0Var2222 = fVar2.c[cVar2.ordinal()];
+        c5.c0 c0Var2222 = fVar2.c[cVar2.ordinal()];
         int i432222 = fVar2.d;
-        int i442222 = b0Var2222.b;
-        b2.q0[] q0VarArr2222 = (b2.q0[]) b0Var2222.c;
+        int i442222 = c0Var2222.b;
+        b2.v0[] v0VarArr2222 = (b2.v0[]) c0Var2222.c;
         int i452222 = 0;
         while (r13 < r12) {
         }

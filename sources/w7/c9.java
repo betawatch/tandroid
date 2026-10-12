@@ -1,79 +1,73 @@
 package w7;
 
-import java.util.List;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class c9 {
-    public static void a(z3.d dVar, int i10, e2.h hVar) {
-        long l4 = dVar.l(i10);
-        List p5 = dVar.p(l4);
-        if (p5.isEmpty()) {
-            return;
-        }
-        if (i10 == dVar.w() - 1) {
-            throw new IllegalStateException();
-        }
-        long l10 = dVar.l(i10 + 1) - dVar.l(i10);
-        if (l10 > 0) {
-            hVar.accept(new z3.a(l4, l10, p5));
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0059 A[LOOP:0: B:14:0x0053->B:16:0x0059, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0063  */
-    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x002a, code lost:
+    
+        if (r5 != (-1)) goto L15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x002c, code lost:
+    
+        d(r1, r7, r11);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x002f, code lost:
+    
+        return r2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0030, code lost:
+    
+        r12[r5] = (r12[r5] & r4) | (r7 & r10);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0038, code lost:
+    
+        return r2;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void b(z3.d dVar, z3.l lVar, e2.h hVar) {
-        int e7;
-        boolean z10;
-        int i10;
-        long j3 = lVar.a;
-        if (j3 == -9223372036854775807L) {
-            e7 = 0;
-        } else {
-            e7 = dVar.e(j3);
-            if (e7 == -1) {
-                e7 = dVar.w();
-            }
-            if (e7 > 0 && dVar.l(e7 - 1) == j3) {
-                e7--;
-            }
-        }
-        if (j3 != -9223372036854775807L && e7 < dVar.w()) {
-            List p5 = dVar.p(j3);
-            long l4 = dVar.l(e7);
-            if (!p5.isEmpty()) {
-                long j10 = lVar.a;
-                if (j10 < l4) {
-                    hVar.accept(new z3.a(j10, l4 - j10, p5));
-                    z10 = true;
-                    for (i10 = e7; i10 < dVar.w(); i10++) {
-                        a(dVar, i10, hVar);
+    public static int a(Object obj, Object obj2, int i10, Object obj3, int[] iArr, Object[] objArr, Object[] objArr2) {
+        int a2 = d9.a(obj);
+        int i11 = a2 & i10;
+        int b10 = b(i11, obj3);
+        if (b10 != 0) {
+            int i12 = ~i10;
+            int i13 = a2 & i12;
+            int i14 = -1;
+            while (true) {
+                int i15 = b10 - 1;
+                int i16 = iArr[i15];
+                int i17 = i16 & i10;
+                if ((i16 & i12) != i13 || !g9.a(obj, objArr[i15]) || (objArr2 != null && !g9.a(obj2, objArr2[i15]))) {
+                    if (i17 == 0) {
+                        break;
                     }
-                    if (lVar.b) {
-                        return;
-                    }
-                    if (z10) {
-                        e7--;
-                    }
-                    for (int i11 = 0; i11 < e7; i11++) {
-                        a(dVar, i11, hVar);
-                    }
-                    if (z10) {
-                        hVar.accept(new z3.a(dVar.l(e7), j3 - dVar.l(e7), dVar.p(j3)));
-                        return;
-                    }
-                    return;
+                    i14 = i15;
+                    b10 = i17;
                 }
             }
         }
-        z10 = false;
-        while (i10 < dVar.w()) {
+        return -1;
+    }
+
+    public static int b(int i10, Object obj) {
+        return obj instanceof byte[] ? ((byte[]) obj)[i10] & 255 : obj instanceof short[] ? (char) ((short[]) obj)[i10] : ((int[]) obj)[i10];
+    }
+
+    public static Object c(int i10) {
+        if (i10 < 2 || i10 > 1073741824 || Integer.highestOneBit(i10) != i10) {
+            throw new IllegalArgumentException(i2.d.i(i10, "must be power of 2 between 2^1 and 2^30: "));
         }
-        if (lVar.b) {
+        return i10 <= 256 ? new byte[i10] : i10 <= 65536 ? new short[i10] : new int[i10];
+    }
+
+    public static void d(int i10, int i11, Object obj) {
+        if (obj instanceof byte[]) {
+            ((byte[]) obj)[i10] = (byte) i11;
+        } else if (obj instanceof short[]) {
+            ((short[]) obj)[i10] = (short) i11;
+        } else {
+            ((int[]) obj)[i10] = i11;
         }
     }
 }

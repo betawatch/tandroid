@@ -1,29 +1,35 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import org.telegram.messenger.MediaController;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ MediaController.MediaLoader b;
 
-    public /* synthetic */ w6(MediaDataController mediaDataController, long j3, int i10) {
+    public /* synthetic */ w6(MediaController.MediaLoader mediaLoader, int i10) {
         this.a = i10;
-        this.b = mediaDataController;
-        this.c = j3;
+        this.b = mediaLoader;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadPinnedMessages$161(this.c);
+                this.b.lambda$start$1();
                 break;
             case 1:
-                this.b.lambda$increasePeerRaiting$157(this.c);
+                this.b.lambda$start$2();
+                break;
+            case 2:
+                this.b.lambda$copyFile$8();
+                break;
+            case 3:
+                this.b.lambda$checkIfFinished$3();
                 break;
             default:
-                this.b.lambda$clearBotKeyboard$195(this.c);
+                this.b.lambda$checkIfFinished$4();
                 break;
         }
     }

@@ -11,9 +11,8 @@ import l.j;
 import l.k;
 import l.m;
 import l.z;
-import la.h;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class ExpandedMenuView extends ListView implements j, z, AdapterView.OnItemClickListener {
     public static final int[] b = {R.attr.background, R.attr.divider};
@@ -44,21 +43,21 @@ public final class ExpandedMenuView extends ListView implements j, z, AdapterVie
     }
 
     @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i10, long j3) {
+    public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
         a((m) getAdapter().getItem(i10));
     }
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet);
         setOnItemClickListener(this);
-        h R = h.R(context, attributeSet, b, i10);
-        TypedArray typedArray = (TypedArray) R.c;
+        li.k P = li.k.P(context, attributeSet, b, i10);
+        TypedArray typedArray = (TypedArray) P.c;
         if (typedArray.hasValue(0)) {
-            setBackgroundDrawable(R.G(0));
+            setBackgroundDrawable(P.F(0));
         }
         if (typedArray.hasValue(1)) {
-            setDivider(R.G(1));
+            setDivider(P.F(1));
         }
-        R.S();
+        P.Q();
     }
 }

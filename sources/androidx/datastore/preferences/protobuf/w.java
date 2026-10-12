@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class w extends a {
     private static Map<Object, w> defaultInstanceMap = new ConcurrentHashMap();
@@ -24,8 +24,8 @@ public abstract class w extends a {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 wVar = defaultInstanceMap.get(cls);
-            } catch (ClassNotFoundException e7) {
-                throw new IllegalStateException("Class initialization cannot fail.", e7);
+            } catch (ClassNotFoundException e) {
+                throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
         if (wVar != null) {
@@ -42,10 +42,10 @@ public abstract class w extends a {
     public static Object f(Method method, w wVar, Object... objArr) {
         try {
             return method.invoke(wVar, objArr);
-        } catch (IllegalAccessException e7) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e7);
-        } catch (InvocationTargetException e10) {
-            Throwable cause = e10.getCause();
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
+        } catch (InvocationTargetException e7) {
+            Throwable cause = e7.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -65,7 +65,7 @@ public abstract class w extends a {
         if (this.memoizedSerializedSize == -1) {
             y0 y0Var = y0.c;
             y0Var.getClass();
-            this.memoizedSerializedSize = y0Var.a(getClass()).e(this);
+            this.memoizedSerializedSize = y0Var.a(getClass()).d(this);
         }
         return this.memoizedSerializedSize;
     }
@@ -106,9 +106,9 @@ public abstract class w extends a {
         }
         y0 y0Var = y0.c;
         y0Var.getClass();
-        boolean f7 = y0Var.a(getClass()).f(this);
+        boolean e = y0Var.a(getClass()).e(this);
         d(2);
-        return f7;
+        return e;
     }
 
     public final int hashCode() {

@@ -1,117 +1,24 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b40 extends FrameLayout {
-    public final Rect a;
-    public final RectF b;
-    public final Path c;
-    public final /* synthetic */ g60 d;
+public final class b40 extends s4.k {
+    public final /* synthetic */ n60 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b40(g60 g60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.d = g60Var;
-        this.a = new Rect();
-        this.b = new RectF();
-        this.c = new Path();
+    public b40(n60 n60Var) {
+        this.F = n60Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        View childAt;
-        org.telegram.ui.Components.voip.u uVar;
-        g60 g60Var = this.d;
-        a40 a40Var = g60Var.b;
-        if (g60Var.d2 != 1.0f) {
-            if (g60Var.X2 != null && g60Var.b3) {
-                canvas.save();
-                float measuredHeight = (g60Var.X2.getAvatarImageView().getMeasuredHeight() / 2.0f) * (getMeasuredHeight() / g60Var.X2.getAvatarImageView().getMeasuredHeight());
-                float f7 = (1.0f - g60Var.d2) * measuredHeight;
-                float dp = AndroidUtilities.dp(13.0f);
-                float f10 = g60Var.d2;
-                int i10 = (int) ((dp * f10) + f7);
-                int i11 = (int) ((1.0f - f10) * measuredHeight);
-                g60Var.X2.getAvatarWavesDrawable().a(canvas, g60Var.X2.getAvatarImageView().getMeasuredHeight() / 2, g60Var.X2.getAvatarImageView().getMeasuredHeight() / 2, this);
-                g60Var.X2.getAvatarImageView().getImageReceiver().setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                g60Var.X2.getAvatarImageView().r(i10, i10, i11, i11);
-                g60Var.X2.getAvatarImageView().getImageReceiver().draw(canvas);
-                g60Var.X2.getAvatarImageView().setRoundRadius(g60Var.X2.getAvatarImageView().getMeasuredHeight() / 2);
-                canvas.restore();
-            } else if (g60Var.a3 != null && g60Var.Z2 == null && g60Var.O2) {
-                canvas.save();
-                float measuredHeight2 = (g60Var.a3.getAvatarImageView().getMeasuredHeight() / 2.0f) * (getMeasuredHeight() / g60Var.a3.getAvatarImageView().getMeasuredHeight());
-                float f11 = (1.0f - g60Var.d2) * measuredHeight2;
-                float dp2 = AndroidUtilities.dp(13.0f);
-                float f12 = g60Var.d2;
-                int i12 = (int) ((dp2 * f12) + f11);
-                int i13 = (int) ((1.0f - f12) * measuredHeight2);
-                g60Var.a3.getAvatarImageView().getImageReceiver().setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                g60Var.a3.getAvatarImageView().r(i12, i12, i13, i13);
-                g60Var.a3.getAvatarImageView().getImageReceiver().draw(canvas);
-                g60Var.a3.getAvatarImageView().setRoundRadius(g60Var.a3.getAvatarImageView().getMeasuredHeight() / 2);
-                canvas.restore();
-            }
-        }
-        a40Var.setAlpha(g60Var.d2);
-        Path path = this.c;
-        path.reset();
-        float measuredHeight3 = getMeasuredHeight();
-        float measuredWidth = getMeasuredWidth();
-        RectF rectF = this.b;
-        rectF.set(0.0f, 0.0f, measuredHeight3, measuredWidth);
-        path.addRoundRect(rectF, new float[]{AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), 0.0f, 0.0f, 0.0f, 0.0f}, Path.Direction.CCW);
-        canvas.save();
-        canvas.clipPath(path);
-        if (a40Var.i1) {
-            for (int i14 = 0; i14 < a40Var.getChildCount(); i14++) {
-                childAt = a40Var.getChildAt(i14);
-                if (childAt instanceof org.telegram.ui.Components.qi0) {
-                    break;
-                }
-            }
-        }
-        childAt = null;
-        if (childAt != null && (uVar = g60Var.Z2) != null && uVar.v && !g60Var.F2) {
-            canvas.save();
-            Rect rect = this.a;
-            rect.setEmpty();
-            a40Var.getChildVisibleRect(childAt, rect, null);
-            int i15 = rect.left;
-            if (i15 < (-a40Var.getMeasuredWidth())) {
-                i15 += a40Var.getMeasuredWidth() * 2;
-            } else if (i15 > a40Var.getMeasuredWidth()) {
-                i15 -= a40Var.getMeasuredWidth() * 2;
-            }
-            canvas.translate(i15, 0.0f);
-            g60Var.Z2.draw(canvas);
-            canvas.restore();
-        }
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
         ViewGroup viewGroup;
-        super.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.f3) this.d).containerView;
+        n60 n60Var = this.F;
+        n60Var.Q.invalidate();
+        n60Var.a2.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.e3) n60Var).containerView;
         viewGroup.invalidate();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int min = Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + min, TLObject.FLAG_30));
+        n60.K0(n60Var);
     }
 }

@@ -22,12 +22,12 @@ public final class k6 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+        return j$.com.android.tools.r8.a.m(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+        return j$.com.android.tools.r8.a.o(this, i10);
     }
 
     public k6(t6 t6Var, int i10, int i11, int i12, int i13) {

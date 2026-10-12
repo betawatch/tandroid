@@ -1,18 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
+import android.animation.LayoutTransition;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class hl implements MessagesStorage.IntCallback {
-    public final /* synthetic */ zn a;
+public final class hl implements LayoutTransition.TransitionListener {
+    public gl a;
+    public int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.y c;
+    public final /* synthetic */ fo d;
 
-    public hl(zn znVar) {
-        this.a = znVar;
+    public hl(fo foVar, org.telegram.ui.ActionBar.y yVar) {
+        this.d = foVar;
+        this.c = yVar;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
-        this.a.L9(i10);
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        int i11 = this.b - 1;
+        this.b = i11;
+        if (i11 != 0 || this.a == null) {
+            return;
+        }
+        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
+        this.a = null;
+    }
+
+    /* JADX WARN: Type inference failed for: r1v5, types: [org.telegram.ui.gl] */
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        if (this.b == 0 && this.a == null) {
+            this.a = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.gl
+                @Override // android.view.ViewTreeObserver.OnPreDrawListener
+                public final boolean onPreDraw() {
+                    org.telegram.ui.ActionBar.k kVar;
+                    kVar = ((org.telegram.ui.ActionBar.m2) hl.this.d).actionBar;
+                    kVar.invalidate();
+                    return true;
+                }
+            };
+            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
+        }
+        this.b++;
     }
 }

@@ -1,32 +1,23 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class bx extends FrameLayout {
-    public final /* synthetic */ a00 a;
+public final class bx extends iz {
+    public final /* synthetic */ wz H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bx(a00 a00Var, Context context) {
-        super(context);
-        this.a = a00Var;
+    public bx(wz wzVar, Context context) {
+        super(wzVar, context, 2);
+        this.H = wzVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        a00 a00Var = this.a;
-        fx fxVar = a00Var.o0;
-        if (view != a00Var.h0) {
-            return super.drawChild(canvas, view, j3);
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            super.setTranslationY(f7);
+            this.H.g0.invalidate();
         }
-        canvas.save();
-        canvas.clipRect(0.0f, fxVar.getY() + fxVar.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
     }
 }

@@ -1,37 +1,18 @@
 package dc;
 
-import java.nio.charset.Charset;
-import java.nio.charset.UnsupportedCharsetException;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class h {
-    public static final Charset a = Charset.defaultCharset();
-    public static final Charset b;
-    public static final Charset c;
-    public static final boolean d;
+public abstract class h extends Exception {
+    public static final boolean a;
+    public static final StackTraceElement[] b;
 
     static {
-        Charset charset;
-        Charset charset2;
-        Charset charset3 = null;
-        try {
-            charset = Charset.forName("SJIS");
-        } catch (UnsupportedCharsetException unused) {
-            charset = null;
-        }
-        b = charset;
-        try {
-            charset2 = Charset.forName("GB2312");
-        } catch (UnsupportedCharsetException unused2) {
-            charset2 = null;
-        }
-        c = charset2;
-        try {
-            charset3 = Charset.forName("EUC_JP");
-        } catch (UnsupportedCharsetException unused3) {
-        }
-        Charset charset4 = b;
-        d = (charset4 != null && charset4.equals(a)) || (charset3 != null && charset3.equals(a));
+        a = System.getProperty("surefire.test.class.path") != null;
+        b = new StackTraceElement[0];
+    }
+
+    @Override // java.lang.Throwable
+    public final synchronized Throwable fillInStackTrace() {
+        return null;
     }
 }

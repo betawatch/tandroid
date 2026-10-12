@@ -1,0 +1,12 @@
+package org.telegram.messenger;
+
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ok implements Utilities.Callback {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        SendMessagesHelper.lambda$sendCallback$42((String) obj);
+    }
+}

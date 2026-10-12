@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class i1 extends w0 {
     public final TaskCompletionSource b;
@@ -31,13 +31,13 @@ public final class i1 extends w0 {
     public final void c(p0 p0Var) {
         try {
             h(p0Var);
-        } catch (DeadObjectException e7) {
+        } catch (DeadObjectException e) {
+            a(k1.e(e));
+            throw e;
+        } catch (RemoteException e7) {
             a(k1.e(e7));
-            throw e7;
-        } catch (RemoteException e10) {
-            a(k1.e(e10));
-        } catch (RuntimeException e11) {
-            this.b.trySetException(e11);
+        } catch (RuntimeException e10) {
+            this.b.trySetException(e10);
         }
     }
 
@@ -74,8 +74,8 @@ public final class i1 extends w0 {
     public final void h(p0 p0Var) {
         switch (this.c) {
             case 0:
-                e2.u uVar = ((b1) this.d).a;
-                ((s) ((r) uVar.e).c).accept(p0Var.b, this.b);
+                e2.w wVar = ((b1) this.d).a;
+                ((s) ((r) wVar.e).c).accept(p0Var.b, this.b);
                 n nVar = ((p) ((b1) this.d).a.c).c;
                 if (nVar != null) {
                     p0Var.f.put(nVar, (b1) this.d);

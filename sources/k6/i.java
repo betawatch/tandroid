@@ -4,16 +4,15 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import androidx.fragment.app.p;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class i extends p {
+public class i extends androidx.fragment.app.o {
     public Dialog A0;
     public DialogInterface.OnCancelListener B0;
     public AlertDialog C0;
 
-    @Override // androidx.fragment.app.p
+    @Override // androidx.fragment.app.o
     public final Dialog O() {
         Dialog dialog = this.A0;
         if (dialog != null) {
@@ -28,7 +27,7 @@ public class i extends p {
         return this.C0;
     }
 
-    @Override // androidx.fragment.app.p, android.content.DialogInterface.OnCancelListener
+    @Override // androidx.fragment.app.o, android.content.DialogInterface.OnCancelListener
     public final void onCancel(DialogInterface dialogInterface) {
         DialogInterface.OnCancelListener onCancelListener = this.B0;
         if (onCancelListener != null) {

@@ -6,32 +6,28 @@ import c3.o;
 import c3.p;
 import c3.q;
 import c3.s;
-import e2.v;
-import e9.a1;
-import e9.g0;
-import e9.i0;
+import e2.x;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
-    public final v b;
+    public final x b;
     public final d0 c;
 
     public a(int i10) {
         this.a = i10;
         switch (i10) {
             case 1:
-                this.b = new v(4);
-                this.c = new d0(-1, -1, "image/heif");
-                break;
-            case 2:
-                this.b = new v(4);
+                this.b = new x(4);
                 this.c = new d0(-1, -1, "image/webp");
                 break;
             default:
-                this.b = new v(4);
+                this.b = new x(4);
                 this.c = new d0(-1, -1, "image/avif");
                 break;
         }
@@ -43,39 +39,26 @@ public final class a implements o {
             case 0:
                 l lVar = (l) pVar;
                 lVar.v(4, false);
-                v vVar = this.b;
-                vVar.G(4);
-                lVar.h(vVar.a, 0, 4, false);
-                if (vVar.z() == 1718909296) {
-                    vVar.G(4);
-                    lVar.h(vVar.a, 0, 4, false);
-                    if (vVar.z() == 1635150182) {
-                    }
-                }
-                break;
-            case 1:
-                l lVar2 = (l) pVar;
-                lVar2.v(4, false);
-                v vVar2 = this.b;
-                vVar2.G(4);
-                lVar2.h(vVar2.a, 0, 4, false);
-                if (vVar2.z() == 1718909296) {
-                    vVar2.G(4);
-                    lVar2.h(vVar2.a, 0, 4, false);
-                    if (vVar2.z() == 1751476579) {
+                x xVar = this.b;
+                xVar.K(4);
+                lVar.j(xVar.a, 0, 4, false);
+                if (xVar.C() == 1718909296) {
+                    xVar.K(4);
+                    lVar.j(xVar.a, 0, 4, false);
+                    if (xVar.C() == 1635150182) {
                     }
                 }
                 break;
             default:
-                v vVar3 = this.b;
-                vVar3.G(4);
-                l lVar3 = (l) pVar;
-                lVar3.h(vVar3.a, 0, 4, false);
-                if (vVar3.z() == 1380533830) {
-                    lVar3.v(4, false);
-                    vVar3.G(4);
-                    lVar3.h(vVar3.a, 0, 4, false);
-                    if (vVar3.z() == 1464156752) {
+                x xVar2 = this.b;
+                xVar2.K(4);
+                l lVar2 = (l) pVar;
+                lVar2.j(xVar2.a, 0, 4, false);
+                if (xVar2.C() == 1380533830) {
+                    lVar2.v(4, false);
+                    xVar2.K(4);
+                    lVar2.j(xVar2.a, 0, 4, false);
+                    if (xVar2.C() == 1464156752) {
                     }
                 }
                 break;
@@ -84,55 +67,49 @@ public final class a implements o {
     }
 
     @Override // c3.o
-    public final o c() {
+    public final o b() {
         int i10 = this.a;
         return this;
     }
 
     @Override // c3.o
-    public final void g(q qVar) {
+    public final void c(q qVar) {
         switch (this.a) {
             case 0:
-                this.c.g(qVar);
-                break;
-            case 1:
-                this.c.g(qVar);
+                this.c.c(qVar);
                 break;
             default:
-                this.c.g(qVar);
+                this.c.c(qVar);
                 break;
         }
     }
 
     @Override // c3.o
-    public final void h(long j3, long j10) {
+    public final void d(long j10, long j11) {
         switch (this.a) {
             case 0:
-                this.c.h(j3, j10);
-                break;
-            case 1:
-                this.c.h(j3, j10);
+                this.c.d(j10, j11);
                 break;
             default:
-                this.c.h(j3, j10);
+                this.c.d(j10, j11);
                 break;
         }
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
     @Override // c3.o
-    public final List i() {
+    public final List e() {
         switch (this.a) {
         }
-        g0 g0Var = i0.b;
-        return a1.e;
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
     @Override // c3.o
-    public final int m(p pVar, s sVar) {
+    public final int f(p pVar, s sVar) {
         switch (this.a) {
         }
-        return this.c.m(pVar, sVar);
+        return this.c.f(pVar, sVar);
     }
 
     @Override // c3.o
@@ -140,12 +117,9 @@ public final class a implements o {
         int i10 = this.a;
     }
 
-    private final void b() {
+    private final void g() {
     }
 
-    private final void d() {
-    }
-
-    private final void e() {
+    private final void h() {
     }
 }

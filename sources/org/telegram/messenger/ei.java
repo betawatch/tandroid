@@ -1,30 +1,30 @@
 package org.telegram.messenger;
 
-import android.content.Context;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ei implements Runnable {
+public final /* synthetic */ class ei implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 d;
+    public final /* synthetic */ TLRPC.EncryptedChat c;
 
-    public /* synthetic */ ei(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public /* synthetic */ ei(SecretChatHelper secretChatHelper, TLRPC.EncryptedChat encryptedChat, int i10) {
         this.a = i10;
         this.b = secretChatHelper;
-        this.c = context;
-        this.d = b2Var;
+        this.c = encryptedChat;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$startSecretChat$27(this.c, this.d);
+                this.b.lambda$acceptSecretChat$22(this.c, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$startSecretChat$29(this.c, this.d);
+                this.b.lambda$acceptSecretChat$23(this.c, tLObject, tL_error);
                 break;
         }
     }

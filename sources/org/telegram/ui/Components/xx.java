@@ -1,16 +1,25 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class xx extends org.telegram.ui.zn {
-    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.n2
-    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        org.telegram.ui.ok okVar;
-        super.onTransitionAnimationEnd(z10, z11);
-        if (!z10 || (okVar = this.Y) == null) {
-            return;
-        }
-        okVar.q1();
-        this.Y.postDelayed(new nq(this, 13), 100L);
+public final class xx extends w7.b6 {
+    public final /* synthetic */ wz a;
+
+    public xx(wz wzVar) {
+        this.a = wzVar;
+    }
+
+    @Override // w7.b6
+    public final void a() {
+        wz wzVar = this.a;
+        wzVar.f0 = false;
+        wzVar.P.z1();
+    }
+
+    @Override // w7.b6
+    public final void b() {
+        wz wzVar = this.a;
+        wzVar.P.z1();
+        wzVar.f0 = true;
     }
 }

@@ -13,19 +13,20 @@ import android.os.Messenger;
 import android.util.Log;
 import android.util.SparseArray;
 import com.google.android.gms.internal.cast.a0;
-import i9.s;
+import com.google.firebase.messaging.r;
+import j9.u;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import n4.x;
+import n4.s;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j implements ServiceConnection {
     public int a = 0;
     public final Messenger b;
-    public x c;
+    public s c;
     public final ArrayDeque d;
     public final SparseArray e;
     public final /* synthetic */ l f;
@@ -51,7 +52,7 @@ public final class j implements ServiceConnection {
                         jVar.c();
                         Bundle data = message.getData();
                         if (data.getBoolean("unsupported", false)) {
-                            kVar.b(new cc.k("Not supported by GmsCore", null));
+                            kVar.b(new r("Not supported by GmsCore", null));
                             return true;
                         }
                         switch (kVar.e) {
@@ -60,7 +61,7 @@ public final class j implements ServiceConnection {
                                     kVar.c(null);
                                     return true;
                                 }
-                                kVar.b(new cc.k("Invalid response to one way request", null));
+                                kVar.b(new r("Invalid response to one way request", null));
                                 return true;
                             default:
                                 Bundle bundle = data.getBundle("data");
@@ -106,14 +107,14 @@ public final class j implements ServiceConnection {
             }
             this.a = 4;
             t6.a.a().b((Context) this.f.b, this);
-            cc.k kVar = new cc.k(str, securityException);
+            r rVar = new r(str, securityException);
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
-                ((k) it.next()).b(kVar);
+                ((k) it.next()).b(rVar);
             }
             this.d.clear();
             for (int i11 = 0; i11 < this.e.size(); i11++) {
-                ((k) this.e.valueAt(i11)).b(kVar);
+                ((k) this.e.valueAt(i11)).b(rVar);
             }
             this.e.clear();
         } catch (Throwable th2) {
@@ -172,8 +173,8 @@ public final class j implements ServiceConnection {
                 try {
                     a2 = t6.a.a();
                     context = (Context) this.f.b;
-                } catch (SecurityException e7) {
-                    e = e7;
+                } catch (SecurityException e) {
+                    e = e;
                 }
                 try {
                     if (a2.c(context, context.getClass().getName(), intent, this, 1, null)) {
@@ -181,8 +182,8 @@ public final class j implements ServiceConnection {
                     } else {
                         a("Unable to bind to service");
                     }
-                } catch (SecurityException e10) {
-                    e = e10;
+                } catch (SecurityException e7) {
+                    e = e7;
                     b("Unable to bind to service", e);
                     return true;
                 }
@@ -201,7 +202,7 @@ public final class j implements ServiceConnection {
         if (Log.isLoggable("MessengerIpcClient", 2)) {
             Log.v("MessengerIpcClient", "Service connected");
         }
-        ((ScheduledExecutorService) this.f.c).execute(new s(17, this, iBinder));
+        ((ScheduledExecutorService) this.f.c).execute(new u(17, this, iBinder));
     }
 
     @Override // android.content.ServiceConnection

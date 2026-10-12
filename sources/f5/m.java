@@ -1,27 +1,28 @@
 package f5;
 
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import w7.t6;
+import ji.w4;
+import w7.h7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ m2.t I;
-    public static final /* synthetic */ m2.t J;
-    public static final /* synthetic */ m2.t K;
-    public static final /* synthetic */ m2.t L;
-    public static final /* synthetic */ m2.t M;
-    public static final /* synthetic */ m2.t N;
-    public static final /* synthetic */ m2.t O;
-    public static final /* synthetic */ m2.t P;
-    public static final /* synthetic */ m2.t Q;
-    public static final /* synthetic */ m2.t R;
-    public static final /* synthetic */ m2.t S;
-    public static final /* synthetic */ m2.t T;
-    public static final /* synthetic */ m2.t U;
-    public static final /* synthetic */ m2.t V;
+    public static final /* synthetic */ w4 I;
+    public static final /* synthetic */ w4 J;
+    public static final /* synthetic */ w4 K;
+    public static final /* synthetic */ w4 L;
+    public static final /* synthetic */ w4 M;
+    public static final /* synthetic */ w4 N;
+    public static final /* synthetic */ w4 O;
+    public static final /* synthetic */ w4 P;
+    public static final /* synthetic */ w4 Q;
+    public static final /* synthetic */ w4 R;
+    public static final /* synthetic */ w4 S;
+    public static final /* synthetic */ w4 T;
+    public static final /* synthetic */ w4 U;
+    public static final /* synthetic */ w4 V;
     public int E;
     public int F;
     public int G;
@@ -32,13 +33,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public long n;
     public double r;
     public float s;
-    public qc.d v;
+    public rc.d v;
     public long w;
     public int x;
     public int y;
 
     static {
-        se.a aVar = new se.a(m.class, "MovieHeaderBox.java");
+        te.a aVar = new te.a(m.class, "MovieHeaderBox.java");
         I = aVar.e(aVar.d("getCreationTime", "com.coremedia.iso.boxes.MovieHeaderBox", "", "", "java.util.Date"));
         J = aVar.e(aVar.d("getModificationTime", "com.coremedia.iso.boxes.MovieHeaderBox", "", "", "java.util.Date"));
         R = aVar.e(aVar.d("setModificationTime", "com.coremedia.iso.boxes.MovieHeaderBox", "java.util.Date", "modificationTime", "void"));
@@ -74,13 +75,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = t6.b(e5.b.j(byteBuffer));
-            this.f = t6.b(e5.b.j(byteBuffer));
+            this.e = h7.b(e5.b.j(byteBuffer));
+            this.f = h7.b(e5.b.j(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.j(byteBuffer);
         } else {
-            this.e = t6.b(e5.b.i(byteBuffer));
-            this.f = t6.b(e5.b.i(byteBuffer));
+            this.e = h7.b(e5.b.i(byteBuffer));
+            this.f = h7.b(e5.b.i(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.i(byteBuffer);
         }
@@ -89,7 +90,7 @@ public final class m extends com.googlecode.mp4parser.c {
         e5.b.h(byteBuffer);
         e5.b.i(byteBuffer);
         e5.b.i(byteBuffer);
-        this.v = qc.d.a(byteBuffer);
+        this.v = rc.d.a(byteBuffer);
         this.x = byteBuffer.getInt();
         this.y = byteBuffer.getInt();
         this.E = byteBuffer.getInt();
@@ -103,13 +104,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(t6.a(this.e));
-            byteBuffer.putLong(t6.a(this.f));
+            byteBuffer.putLong(h7.a(this.e));
+            byteBuffer.putLong(h7.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) t6.a(this.e));
-            byteBuffer.putInt((int) t6.a(this.f));
+            byteBuffer.putInt((int) h7.a(this.e));
+            byteBuffer.putInt((int) h7.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }
@@ -135,31 +136,31 @@ public final class m extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = se.a.b(P, this, this);
+        com.google.firebase.messaging.s b10 = te.a.b(P, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("MovieHeaderBox[creationTime=");
-        e2.q(se.a.b(I, this, this));
+        k3.p(te.a.b(I, this, this));
         sb2.append(this.e);
         sb2.append(";modificationTime=");
-        e2.q(se.a.b(J, this, this));
+        k3.p(te.a.b(J, this, this));
         sb2.append(this.f);
         sb2.append(";timescale=");
-        e2.q(se.a.b(K, this, this));
+        k3.p(te.a.b(K, this, this));
         sb2.append(this.h);
         sb2.append(";duration=");
-        e2.q(se.a.b(L, this, this));
+        k3.p(te.a.b(L, this, this));
         sb2.append(this.n);
         sb2.append(";rate=");
-        e2.q(se.a.b(M, this, this));
+        k3.p(te.a.b(M, this, this));
         sb2.append(this.r);
         sb2.append(";volume=");
-        e2.q(se.a.b(N, this, this));
+        k3.p(te.a.b(N, this, this));
         sb2.append(this.s);
         sb2.append(";matrix=");
         sb2.append(this.v);
         sb2.append(";nextTrackId=");
-        e2.q(se.a.b(O, this, this));
-        return a1.g.s(sb2, this.w, "]");
+        k3.p(te.a.b(O, this, this));
+        return a1.g.r(sb2, this.w, "]");
     }
 }

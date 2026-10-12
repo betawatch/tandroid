@@ -10,41 +10,41 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class j implements ia.e {
+public final class j implements ja.e {
     public static final Charset f = Charset.forName("UTF-8");
-    public static final ia.c g = new ia.c("key", hg.c.m(sc.v.l(h.class, new e(1))));
-    public static final ia.c h = new ia.c("value", hg.c.m(sc.v.l(h.class, new e(2))));
+    public static final ja.c g = new ja.c("key", i2.d.n(t8.b.k(h.class, new e(1))));
+    public static final ja.c h = new ja.c("value", i2.d.n(t8.b.k(h.class, new e(2))));
     public static final i i = i.b;
     public OutputStream a;
     public final HashMap b;
     public final HashMap c;
-    public final ia.d d;
-    public final la.i e = new la.i(this, 1);
+    public final ja.d d;
+    public final ma.h e = new ma.h(this, 1);
 
-    public j(ByteArrayOutputStream byteArrayOutputStream, HashMap hashMap, HashMap hashMap2, ia.d dVar) {
+    public j(ByteArrayOutputStream byteArrayOutputStream, HashMap hashMap, HashMap hashMap2, ja.d dVar) {
         this.a = byteArrayOutputStream;
         this.b = hashMap;
         this.c = hashMap2;
         this.d = dVar;
     }
 
-    public static int i(ia.c cVar) {
+    public static int i(ja.c cVar) {
         h hVar = (h) cVar.b(h.class);
         if (hVar != null) {
             return ((e) hVar).a;
         }
-        throw new ia.b("Field has no @Protobuf config");
+        throw new ja.b("Field has no @Protobuf config");
     }
 
-    @Override // ia.e
-    public final ia.e a(ia.c cVar, Object obj) {
-        d(cVar, obj, true);
+    @Override // ja.e
+    public final /* synthetic */ ja.e a(ja.c cVar, boolean z10) {
+        h(cVar, z10 ? 1 : 0, true);
         return this;
     }
 
-    public final void b(ia.c cVar, double d, boolean z10) {
+    public final void b(ja.c cVar, double d, boolean z10) {
         if (z10 && d == 0.0d) {
             return;
         }
@@ -52,13 +52,7 @@ public final class j implements ia.e {
         this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putDouble(d).array());
     }
 
-    @Override // ia.e
-    public final /* synthetic */ ia.e c(ia.c cVar, boolean z10) {
-        h(cVar, z10 ? 1 : 0, true);
-        return this;
-    }
-
-    public final void d(ia.c cVar, Object obj, boolean z10) {
+    public final void c(ja.c cVar, Object obj, boolean z10) {
         if (obj == null) {
             return;
         }
@@ -76,7 +70,7 @@ public final class j implements ia.e {
         if (obj instanceof Collection) {
             Iterator it = ((Collection) obj).iterator();
             while (it.hasNext()) {
-                d(cVar, it.next(), false);
+                c(cVar, it.next(), false);
             }
             return;
         }
@@ -107,7 +101,7 @@ public final class j implements ia.e {
             }
             h hVar = (h) cVar.b(h.class);
             if (hVar == null) {
-                throw new ia.b("Field has no @Protobuf config");
+                throw new ja.b("Field has no @Protobuf config");
             }
             k(((e) hVar).a << 3);
             l(longValue);
@@ -127,18 +121,18 @@ public final class j implements ia.e {
             this.a.write(bArr);
             return;
         }
-        ia.d dVar = (ia.d) this.b.get(obj.getClass());
+        ja.d dVar = (ja.d) this.b.get(obj.getClass());
         if (dVar != null) {
             j(dVar, cVar, obj, z10);
             return;
         }
-        ia.f fVar = (ia.f) this.c.get(obj.getClass());
+        ja.f fVar = (ja.f) this.c.get(obj.getClass());
         if (fVar != null) {
-            la.i iVar = this.e;
-            iVar.b = false;
-            iVar.d = cVar;
-            iVar.c = z10;
-            fVar.a(obj, iVar);
+            ma.h hVar2 = this.e;
+            hVar2.b = false;
+            hVar2.d = cVar;
+            hVar2.c = z10;
+            fVar.a(obj, hVar2);
             return;
         }
         if (obj instanceof f) {
@@ -150,46 +144,52 @@ public final class j implements ia.e {
         }
     }
 
-    @Override // ia.e
-    public final /* synthetic */ ia.e e(ia.c cVar, int i10) {
-        h(cVar, i10, true);
+    @Override // ja.e
+    public final ja.e d(ja.c cVar, Object obj) {
+        c(cVar, obj, true);
         return this;
     }
 
-    @Override // ia.e
-    public final ia.e f(ia.c cVar, long j3) {
-        if (j3 == 0) {
-            return this;
-        }
-        h hVar = (h) cVar.b(h.class);
-        if (hVar == null) {
-            throw new ia.b("Field has no @Protobuf config");
-        }
-        k(((e) hVar).a << 3);
-        l(j3);
-        return this;
-    }
-
-    @Override // ia.e
-    public final ia.e g(ia.c cVar, double d) {
+    @Override // ja.e
+    public final ja.e e(ja.c cVar, double d) {
         b(cVar, d, true);
         return this;
     }
 
-    public final void h(ia.c cVar, int i10, boolean z10) {
+    @Override // ja.e
+    public final ja.e f(ja.c cVar, long j10) {
+        if (j10 == 0) {
+            return this;
+        }
+        h hVar = (h) cVar.b(h.class);
+        if (hVar == null) {
+            throw new ja.b("Field has no @Protobuf config");
+        }
+        k(((e) hVar).a << 3);
+        l(j10);
+        return this;
+    }
+
+    @Override // ja.e
+    public final /* synthetic */ ja.e g(ja.c cVar, int i10) {
+        h(cVar, i10, true);
+        return this;
+    }
+
+    public final void h(ja.c cVar, int i10, boolean z10) {
         if (z10 && i10 == 0) {
             return;
         }
         h hVar = (h) cVar.b(h.class);
         if (hVar == null) {
-            throw new ia.b("Field has no @Protobuf config");
+            throw new ja.b("Field has no @Protobuf config");
         }
         k(((e) hVar).a << 3);
         k(i10);
     }
 
-    public final void j(ia.d dVar, ia.c cVar, Object obj, boolean z10) {
-        la.b bVar = new la.b(1);
+    public final void j(ja.d dVar, ja.c cVar, Object obj, boolean z10) {
+        ma.b bVar = new ma.b(1);
         bVar.b = 0L;
         try {
             OutputStream outputStream = this.a;
@@ -197,13 +197,13 @@ public final class j implements ia.e {
             try {
                 dVar.a(obj, this);
                 this.a = outputStream;
-                long j3 = bVar.b;
+                long j10 = bVar.b;
                 bVar.close();
-                if (z10 && j3 == 0) {
+                if (z10 && j10 == 0) {
                     return;
                 }
                 k((i(cVar) << 3) | 2);
-                l(j3);
+                l(j10);
                 dVar.a(obj, this);
             } catch (Throwable th2) {
                 this.a = outputStream;
@@ -230,11 +230,11 @@ public final class j implements ia.e {
         this.a.write(i10 & 127);
     }
 
-    public final void l(long j3) {
-        while (((-128) & j3) != 0) {
-            this.a.write((((int) j3) & 127) | 128);
-            j3 >>>= 7;
+    public final void l(long j10) {
+        while (((-128) & j10) != 0) {
+            this.a.write((((int) j10) & 127) | 128);
+            j10 >>>= 7;
         }
-        this.a.write(((int) j3) & 127);
+        this.a.write(((int) j10) & 127);
     }
 }

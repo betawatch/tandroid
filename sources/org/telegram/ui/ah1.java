@@ -1,83 +1,98 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ah1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ih1 b;
+public final class ah1 extends org.telegram.ui.Components.lm0 {
+    public final Context c;
+    public final /* synthetic */ TwoStepVerificationActivity d;
 
-    public /* synthetic */ ah1(ih1 ih1Var, int i10) {
-        this.a = i10;
-        this.b = ih1Var;
+    public ah1(TwoStepVerificationActivity twoStepVerificationActivity, Context context) {
+        this.d = twoStepVerificationActivity;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ih1 ih1Var = this.b;
-                EditTextBoldCursor editTextBoldCursor = ih1Var.n;
-                if (editTextBoldCursor != null && editTextBoldCursor.getVisibility() == 0) {
-                    ih1Var.n.requestFocus();
-                    AndroidUtilities.showKeyboard(ih1Var.n);
-                    break;
-                }
-                break;
-            case 1:
-                ih1 ih1Var2 = this.b;
-                ce0 ce0Var = ih1Var2.w;
-                if (ce0Var != null && ce0Var.getVisibility() == 0) {
-                    ih1Var2.w.f[0].requestFocus();
-                    break;
-                }
-                break;
-            case 2:
-                int i10 = 0;
-                while (true) {
-                    es[] esVarArr = this.b.w.f;
-                    if (i10 >= esVarArr.length) {
-                        break;
-                    } else {
-                        esVarArr[i10].i(0.0f);
-                        i10++;
-                    }
-                }
-            case 3:
-                ih1 ih1Var3 = this.b;
-                EditTextBoldCursor editTextBoldCursor2 = ih1Var3.n;
-                if (editTextBoldCursor2 != null) {
-                    if (editTextBoldCursor2.length() != 0) {
-                        ih1Var3.f0[2].P(49);
-                        ih1Var3.f0[2].T(0.0f, false);
-                        ih1Var3.a.d();
-                        break;
-                    } else {
-                        ih1Var3.F0(true);
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                ih1 ih1Var4 = this.b;
-                if (ih1Var4.g0 != null) {
-                    ih1Var4.F0(false);
-                    break;
-                }
-                break;
-            case 5:
-                ih1.f0(this.b);
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new ah1(this.b, 7), 150L);
-                break;
-            default:
-                for (es esVar : this.b.w.f) {
-                    esVar.i(0.0f);
-                }
-                break;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        return b1Var.f == 0;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
+        if (twoStepVerificationActivity.G || twoStepVerificationActivity.I == null) {
+            return 0;
         }
+        return twoStepVerificationActivity.T;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
+        return (i10 == twoStepVerificationActivity.P || i10 == twoStepVerificationActivity.S) ? 1 : 0;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        int i11;
+        int i12;
+        int i13 = b1Var.f;
+        View view = b1Var.a;
+        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
+        if (i13 != 0) {
+            if (i13 != 1) {
+                return;
+            }
+            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
+            if (i10 == twoStepVerificationActivity.P) {
+                e9Var.setText(LocaleController.getString(R.string.SetAdditionalPasswordInfo));
+                return;
+            } else {
+                if (i10 == twoStepVerificationActivity.S) {
+                    e9Var.setText(LocaleController.getString(R.string.EnabledPasswordText));
+                    return;
+                }
+                return;
+            }
+        }
+        org.telegram.ui.Cells.ca caVar = (org.telegram.ui.Cells.ca) view;
+        int i14 = org.telegram.ui.ActionBar.g6.G6;
+        caVar.setTag(Integer.valueOf(i14));
+        caVar.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i14, false));
+        i11 = twoStepVerificationActivity.changePasswordRow;
+        if (i10 == i11) {
+            caVar.b(LocaleController.getString(R.string.ChangePassword), true);
+            return;
+        }
+        if (i10 == twoStepVerificationActivity.O) {
+            caVar.b(LocaleController.getString(R.string.SetAdditionalPassword), true);
+            return;
+        }
+        i12 = twoStepVerificationActivity.turnPasswordOffRow;
+        if (i10 == i12) {
+            caVar.b(LocaleController.getString(R.string.TurnPasswordOff), true);
+        } else if (i10 == twoStepVerificationActivity.R) {
+            caVar.b(LocaleController.getString(R.string.ChangeRecoveryEmail), false);
+        } else if (i10 == twoStepVerificationActivity.Q) {
+            caVar.b(LocaleController.getString(R.string.SetRecoveryEmail), false);
+        }
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View caVar;
+        Context context = this.c;
+        if (i10 != 0) {
+            caVar = new org.telegram.ui.Cells.e9(context);
+        } else {
+            caVar = new org.telegram.ui.Cells.ca(context);
+            caVar.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
+        }
+        return new org.telegram.ui.Components.wl0(caVar);
     }
 }

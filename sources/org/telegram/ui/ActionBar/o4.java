@@ -1,37 +1,23 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class o4 extends ArrayAdapter {
-    public final /* synthetic */ u4 a;
+public final class o4 implements View.OnClickListener {
+    public final /* synthetic */ t4 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o4(u4 u4Var, Context context) {
-        super(context, 0);
-        this.a = u4Var;
+    public o4(t4 t4Var) {
+        this.a = t4Var;
     }
 
-    @Override // android.widget.ArrayAdapter, android.widget.Adapter
-    public final View getView(int i10, View view, ViewGroup viewGroup) {
-        u4 u4Var = this.a;
-        com.google.firebase.messaging.p pVar = u4Var.q;
-        MenuItem menuItem = (MenuItem) getItem(i10);
-        int width = u4Var.I.getWidth();
-        if (view != null) {
-            int i11 = pVar.a;
-            w4.e(view, menuItem, ((u4) pVar.e).Q.j != null);
-        } else {
-            view = w4.b(((u4) pVar.e).Q, (Context) pVar.c, menuItem, true, false, false);
-            int i12 = pVar.b;
-            view.setPadding(i12, 0, i12, 0);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        MenuItem.OnMenuItemClickListener onMenuItemClickListener;
+        if (!(view.getTag() instanceof MenuItem) || (onMenuItemClickListener = this.a.K) == null) {
+            return;
         }
-        view.setMinimumWidth(width);
-        return view;
+        onMenuItemClickListener.onMenuItemClick((MenuItem) view.getTag());
     }
 }

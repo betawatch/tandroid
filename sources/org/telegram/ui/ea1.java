@@ -1,15 +1,63 @@
 package org.telegram.ui;
 
 import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ea1 extends org.telegram.ui.Cells.c8 {
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (getTranslationY() != 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
+public final class ea1 implements ch.a {
+    public final RectF a = new RectF();
+    public final /* synthetic */ z8 b;
+    public final /* synthetic */ hb1 c;
+
+    public ea1(hb1 hb1Var, z8 z8Var) {
+        this.c = hb1Var;
+        this.b = z8Var;
+    }
+
+    @Override // ch.a
+    public final void e(bh.a aVar, RectF rectF) {
+        aVar.a = true;
+    }
+
+    @Override // ch.a
+    public final void f(Canvas canvas, RectF rectF) {
+        bh.l lVar;
+        View view;
+        ic icVar;
+        hb1 hb1Var = this.c;
+        hb1Var.fragmentView.getMeasuredWidth();
+        hb1Var.fragmentView.getMeasuredHeight();
+        canvas.drawColor(hb1Var.getThemedColor(org.telegram.ui.ActionBar.g6.d6));
+        for (int i10 = 0; i10 < 3; i10++) {
+            if (i10 == 0) {
+                lVar = hb1Var.T;
+                view = hb1Var.S;
+            } else if (i10 != 1 || (icVar = hb1Var.j0) == null) {
+                qe qeVar = hb1Var.k0;
+                if (qeVar != null) {
+                    lVar = qeVar.b1;
+                    view = qeVar;
+                } else {
+                    lVar = null;
+                    view = null;
+                }
+            } else {
+                lVar = icVar.G;
+                view = icVar;
+            }
+            if (lVar != null && view != null) {
+                z8 z8Var = this.b;
+                RectF rectF2 = this.a;
+                ih.j.c(view, z8Var, rectF2);
+                if (rectF2.right > 0.0f) {
+                    hb1Var.fragmentView.getMeasuredWidth();
+                }
+                canvas.save();
+                lVar.f(canvas, rectF);
+                canvas.restore();
+            }
         }
-        super.onDraw(canvas);
     }
 }

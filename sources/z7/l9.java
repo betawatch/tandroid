@@ -7,15 +7,15 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class l9 extends e9.l1 {
-    public final /* synthetic */ e9.d b;
+public final class l9 extends e9.j2 {
+    public final /* synthetic */ e9.e b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l9(e9.d dVar) {
+    public l9(e9.e eVar) {
         super(2);
-        this.b = dVar;
+        this.b = eVar;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -41,7 +41,7 @@ public final class l9 extends e9.l1 {
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public final Iterator iterator() {
-        return new e9.c(this.b, (char) 0);
+        return new e9.d(this.b, (char) 0);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -69,11 +69,11 @@ public final class l9 extends e9.l1 {
         return true;
     }
 
-    @Override // e9.l1, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // e9.j2, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean removeAll(Collection collection) {
         try {
             if (collection != null) {
-                return w7.h9.a(this, collection);
+                return w7.f9.a(this, collection);
             }
             throw null;
         } catch (UnsupportedOperationException unused) {
@@ -86,7 +86,7 @@ public final class l9 extends e9.l1 {
         }
     }
 
-    @Override // e9.l1, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // e9.j2, java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean retainAll(Collection collection) {
         int ceil;
         try {
@@ -100,7 +100,7 @@ public final class l9 extends e9.l1 {
                 ceil = size < 1073741824 ? (int) Math.ceil(size / 0.75d) : ConnectionsManager.DEFAULT_DATACENTER_ID;
             } else {
                 if (size < 0) {
-                    throw new IllegalArgumentException(hg.c.h(size, "expectedSize cannot be negative but was: "));
+                    throw new IllegalArgumentException(i2.d.i(size, "expectedSize cannot be negative but was: "));
                 }
                 ceil = size + 1;
             }

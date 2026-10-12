@@ -1,33 +1,22 @@
 package s4;
 
-import android.util.SparseArray;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class v0 {
-    public final SparseArray a = new SparseArray();
-    public int b = 0;
+public final class v0 extends i1.c {
+    public static final Parcelable.Creator<v0> CREATOR = new i1.b(3);
+    public Parcelable c;
 
-    public final void a() {
-        int i10 = 0;
-        while (true) {
-            SparseArray sparseArray = this.a;
-            if (i10 >= sparseArray.size()) {
-                return;
-            }
-            ((u0) sparseArray.valueAt(i10)).a.clear();
-            i10++;
-        }
+    public v0(Parcel parcel, ClassLoader classLoader) {
+        super(parcel, classLoader);
+        this.c = parcel.readParcelable(classLoader == null ? n0.class.getClassLoader() : classLoader);
     }
 
-    public final u0 b(int i10) {
-        SparseArray sparseArray = this.a;
-        u0 u0Var = (u0) sparseArray.get(i10);
-        if (u0Var != null) {
-            return u0Var;
-        }
-        u0 u0Var2 = new u0();
-        sparseArray.put(i10, u0Var2);
-        return u0Var2;
+    @Override // i1.c, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        super.writeToParcel(parcel, i10);
+        parcel.writeParcelable(this.c, 0);
     }
 }

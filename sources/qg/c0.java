@@ -1,31 +1,51 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import org.telegram.ui.bu0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c0 extends pg.e1 {
-    public final /* synthetic */ Bitmap E;
-    public final /* synthetic */ bu0 F;
+public final class c0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ u0 a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ m c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ d0 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(bu0 bu0Var, Context context, pg.s0 s0Var, Bitmap bitmap, Bitmap bitmap2) {
-        super(context, s0Var, bitmap, null, null);
-        this.F = bu0Var;
-        this.E = bitmap2;
+    public c0(d0 d0Var, u0 u0Var, float f7, m mVar, boolean z10, Runnable runnable) {
+        this.f = d0Var;
+        this.a = u0Var;
+        this.b = f7;
+        this.c = mVar;
+        this.d = z10;
+        this.e = runnable;
     }
 
-    @Override // pg.e1
-    public final void g(pg.m mVar) {
-        int indexOf = pg.m.a.indexOf(mVar);
-        int i10 = indexOf + 1;
-        if (i10 <= 1 || this.E != null) {
-            indexOf = i10;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        b1 b1Var;
+        d0 d0Var = this.f;
+        d0Var.x = null;
+        r0 r0Var = new r0(new u0[]{this.a});
+        c1 c1Var = d0Var.a;
+        int currentColor = c1Var.getCurrentColor();
+        float f7 = this.b * 1.0f;
+        r0Var.c = currentColor;
+        r0Var.d = f7;
+        m mVar = this.c;
+        r0Var.e = mVar;
+        mVar.getClass();
+        int currentColor2 = mVar instanceof d ? -1 : c1Var.getCurrentColor();
+        q0 painting = c1Var.getPainting();
+        boolean z10 = this.d;
+        painting.c(r0Var, currentColor2, z10, null);
+        if (z10 && (b1Var = c1Var.a) != null) {
+            b1Var.e();
         }
-        bu0 bu0Var = this.F;
-        bu0Var.t1.b(indexOf);
-        bu0Var.b(mVar);
+        Runnable runnable = this.e;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 }

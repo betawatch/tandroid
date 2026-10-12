@@ -1,54 +1,68 @@
 package e9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.util.AbstractMap;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class m1 extends m0 {
-    public final transient Object d;
+public final class m1 extends AbstractMap {
+    public final Map a;
+    public final l1 b;
 
-    public m1(Object obj) {
-        obj.getClass();
-        this.d = obj;
+    public m1(Map map, l1 l1Var) {
+        map.getClass();
+        this.a = map;
+        this.b = l1Var;
     }
 
-    @Override // e9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.equals(obj);
+    @Override // java.util.AbstractMap, java.util.Map
+    public final void clear() {
+        this.a.clear();
     }
 
-    @Override // e9.m0, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.d.hashCode();
+    @Override // java.util.AbstractMap, java.util.Map
+    public final boolean containsKey(Object obj) {
+        return this.a.containsKey(obj);
     }
 
-    @Override // e9.m0, e9.d0
-    public final i0 i() {
-        return i0.z(this.d);
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Set entrySet() {
+        return new c(this, 1);
     }
 
-    @Override // e9.d0
-    public final int n(int i10, Object[] objArr) {
-        objArr[i10] = this.d;
-        return i10 + 1;
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Object get(Object obj) {
+        Map map = this.a;
+        Object obj2 = map.get(obj);
+        if (obj2 != null || map.containsKey(obj)) {
+            return this.b.e(obj, obj2);
+        }
+        return null;
     }
 
-    @Override // e9.d0
-    public final boolean r() {
-        return false;
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Set keySet() {
+        return this.a.keySet();
     }
 
-    @Override // e9.d0
-    /* renamed from: s */
-    public final o1 iterator() {
-        return new p0(this.d);
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Object remove(Object obj) {
+        Map map = this.a;
+        if (map.containsKey(obj)) {
+            return this.b.e(obj, map.remove(obj));
+        }
+        return null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractMap, java.util.Map
     public final int size() {
-        return 1;
+        return this.a.size();
     }
 
-    @Override // java.util.AbstractCollection
-    public final String toString() {
-        return "[" + this.d.toString() + ']';
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Collection values() {
+        return new o((AbstractMap) this, 3);
     }
 }

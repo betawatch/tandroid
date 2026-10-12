@@ -1,109 +1,81 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class qa extends FrameLayout {
-    public final org.telegram.ui.Components.ea0 a;
-    public final org.telegram.ui.Cells.y1 b;
-    public Integer c;
-    public ValueAnimator d;
-    public final /* synthetic */ ra e;
+public final class qa extends s4.v {
+    public final /* synthetic */ va d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qa(ra raVar, Activity activity) {
-        super(activity);
-        this.e = raVar;
-        raVar.F = this;
-        setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(17.0f));
-        setClipChildren(false);
-        org.telegram.ui.Components.ea0 ea0Var = new org.telegram.ui.Components.ea0(activity, null);
-        this.a = ea0Var;
-        ea0Var.setTextSize(1, 15.0f);
-        int i10 = org.telegram.ui.ActionBar.i6.F6;
-        ea0Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i10, false));
-        ea0Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        int i11 = org.telegram.ui.ActionBar.i6.J6;
-        ea0Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.x0(null, i11, false));
-        int i12 = org.telegram.ui.ActionBar.i6.K6;
-        ea0Var.setHighlightColor(org.telegram.ui.ActionBar.i6.x0(null, i12, false));
-        ea0Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
-        org.telegram.ui.Cells.y1 y1Var = new org.telegram.ui.Cells.y1(this, activity, 2);
-        raVar.G = y1Var;
-        this.b = y1Var;
-        y1Var.setTextSize(1, 15.0f);
-        y1Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i10, false));
-        y1Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        y1Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.x0(null, i11, false));
-        y1Var.setHighlightColor(org.telegram.ui.ActionBar.i6.x0(null, i12, false));
-        y1Var.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
-        addView(ea0Var, w7.x5.e(-1, -2, 48));
-        addView(y1Var, w7.x5.e(-1, -2, 48));
-        if (raVar.x == 0) {
-            org.telegram.ui.Cells.c1.o(R.string.UsernameHelp, ea0Var);
-            return;
-        }
-        String string = LocaleController.getString(R.string.BotUsernameHelp);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
-        int indexOf = string.indexOf(42);
-        int lastIndexOf = string.lastIndexOf(42);
-        if (indexOf != -1 && lastIndexOf != -1 && indexOf != lastIndexOf) {
-            spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
-            spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.t61("https://fragment.com", (org.telegram.ui.Components.t11) null), indexOf, lastIndexOf - 1, 33);
-        }
-        ea0Var.setText(spannableStringBuilder);
+    public qa(va vaVar) {
+        this.d = vaVar;
     }
 
-    public static void a(final qa qaVar) {
-        org.telegram.ui.Components.ea0 ea0Var = qaVar.a;
-        org.telegram.ui.Cells.y1 y1Var = qaVar.b;
-        if (y1Var.getVisibility() == 0) {
-            y1Var.measure(View.MeasureSpec.makeMeasureSpec((qaVar.getMeasuredWidth() - qaVar.getPaddingLeft()) - qaVar.getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
+        super.a(recyclerView, b1Var);
+        View view = b1Var.a;
+        view.setPressed(false);
+        view.setTag(R.id.dragging, null);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
+        return (b1Var.f == 4 && ((sa) b1Var.a).G) ? s4.v.l(3, 0) : s4.v.l(0, 0);
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
+        if (b1Var.f != b1Var2.f) {
+            return false;
         }
-        ValueAnimator valueAnimator = qaVar.d;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
+        View view = b1Var2.a;
+        if ((view instanceof sa) && !((sa) view).G) {
+            return false;
         }
-        Integer num = qaVar.c;
-        final int measuredHeight = num == null ? qaVar.getMeasuredHeight() : num.intValue();
-        final int height = ea0Var.getHeight() + AndroidUtilities.dp(27.0f) + ((y1Var.getVisibility() != 0 || TextUtils.isEmpty(y1Var.getText())) ? 0 : AndroidUtilities.dp(8.0f) + y1Var.getMeasuredHeight());
-        final float translationY = ea0Var.getTranslationY();
-        final float dp = (y1Var.getVisibility() != 0 || TextUtils.isEmpty(y1Var.getText())) ? 0.0f : AndroidUtilities.dp(8.0f) + y1Var.getMeasuredHeight();
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        qaVar.d = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.pa
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                qa qaVar2 = qa.this;
-                qaVar2.getClass();
-                float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
-                qaVar2.a.setTranslationY(AndroidUtilities.lerp(translationY, dp, floatValue));
-                qaVar2.c = Integer.valueOf(AndroidUtilities.lerp(measuredHeight, height, floatValue));
-                qaVar2.requestLayout();
+        ma maVar = this.d.c;
+        int b10 = b1Var.b();
+        int b11 = b1Var2.b();
+        int i10 = b10 - 4;
+        int i11 = b11 - 4;
+        va vaVar = maVar.c;
+        ArrayList arrayList = vaVar.v;
+        if (i10 < arrayList.size() && i11 < arrayList.size()) {
+            if (b10 != b11) {
+                vaVar.d = true;
             }
-        });
-        qaVar.d.setDuration(200L);
-        qaVar.d.setInterpolator(org.telegram.ui.Components.hs.h);
-        qaVar.d.start();
+            TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList.get(i10);
+            arrayList.set(i10, (TLRPC.TL_username) arrayList.get(i11));
+            arrayList.set(i11, tL_username);
+            maVar.p(b10, b11);
+            int size = arrayList.size() + 3;
+            if (b10 == size || b11 == size) {
+                maVar.n(b10, 3);
+                maVar.n(b11, 3);
+            }
+        }
+        return true;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        Integer num = this.c;
-        if (num != null) {
-            i11 = View.MeasureSpec.makeMeasureSpec(num.intValue(), TLObject.FLAG_30);
+    @Override // s4.v
+    public final void p(s4.b1 b1Var, int i10) {
+        va vaVar = this.d;
+        if (i10 == 0) {
+            va.Y(vaVar);
+        } else {
+            vaVar.b.I0(false);
+            b1Var.a.setPressed(true);
         }
-        super.onMeasure(i10, i11);
+        if (b1Var != null) {
+            b1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+        }
+    }
+
+    @Override // s4.v
+    public final void q(s4.b1 b1Var) {
     }
 }

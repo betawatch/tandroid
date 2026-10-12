@@ -1,7 +1,77 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.content.SharedPreferences;
+import java.io.File;
+import java.util.ArrayList;
+import org.json.JSONObject;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface z5 {
-    void e();
+public final class z5 {
+    public String a = "";
+    public String b = "";
+    public String c = "";
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public boolean i;
+    public boolean j;
+    public float k;
+    public long l;
+    public long m;
+    public long n;
+    public boolean o;
+    public f6 p;
+    public e6 q;
+    public float r;
+    public ArrayList s;
+    public TLRPC.WallPaper t;
+
+    public static void a(z5 z5Var) {
+        ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit().remove(z5Var.b()).commit();
+        new File(ApplicationLoader.getFilesDirFixed(), z5Var.a).delete();
+        new File(ApplicationLoader.getFilesDirFixed(), z5Var.b).delete();
+    }
+
+    public final String b() {
+        if (this.q == null) {
+            return a1.g.s(new StringBuilder(), this.p.a, "_owp");
+        }
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.p.a);
+        sb2.append("_");
+        return a1.g.n(this.q.a, "_owp", sb2);
+    }
+
+    public final void c() {
+        try {
+            String b10 = b();
+            SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit();
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("wall", this.a);
+            jSONObject.put("owall", this.b);
+            jSONObject.put("pColor", this.d);
+            jSONObject.put("pGrColor", this.e);
+            jSONObject.put("pGrColor2", this.f);
+            jSONObject.put("pGrColor3", this.g);
+            jSONObject.put("pGrAngle", this.h);
+            String str = this.c;
+            if (str == null) {
+                str = "";
+            }
+            jSONObject.put("wallSlug", str);
+            jSONObject.put("wBlur", this.i);
+            jSONObject.put("wMotion", this.j);
+            jSONObject.put("pIntensity", this.k);
+            edit.putString(b10, jSONObject.toString());
+            edit.commit();
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
+    }
 }

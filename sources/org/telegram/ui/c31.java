@@ -1,56 +1,46 @@
 package org.telegram.ui;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import java.util.ArrayList;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MrzRecognizer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c31 implements org.telegram.ui.ActionBar.j6 {
-    public boolean a = false;
-    public final /* synthetic */ d31 b;
+public final class c31 implements y9 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
 
-    public c31(d31 d31Var) {
-        this.b = d31Var;
+    public c31(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
+        this.a = i10;
+        this.b = m2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j6
-    public final void a(float f7) {
-        ArrayList arrayList;
-        d31 d31Var = this.b;
-        if (f7 == 0.0f && !this.a) {
-            org.telegram.ui.Components.aq aqVar = d31Var.b;
-            if (aqVar != null && (arrayList = aqVar.d) != null) {
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((org.telegram.ui.Components.bq) obj).c = d31Var.M ? 1 : 0;
-                }
-            }
-            if (!d31Var.Q) {
-                org.telegram.ui.Components.aq aqVar2 = d31Var.b;
-                for (int i11 = 0; i11 < aqVar2.h(); i11++) {
-                    ((org.telegram.ui.Components.bq) aqVar2.d.get(i11)).getClass();
-                }
-            }
-            this.a = true;
-        }
-        d31Var.E.setColorFilter(new PorterDuffColorFilter(d31Var.d.getThemedColor(org.telegram.ui.ActionBar.i6.Oh), PorterDuff.Mode.SRC_IN));
-        if (d31Var.Q) {
-            org.telegram.ui.Components.aq aqVar3 = d31Var.b;
-            for (int i12 = 0; i12 < aqVar3.h(); i12++) {
-                ((org.telegram.ui.Components.bq) aqVar3.d.get(i12)).getClass();
-            }
-        }
-        if (f7 == 1.0f && this.a) {
-            d31Var.Q = false;
-            this.a = false;
-        }
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ String I0() {
+        return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.j6
-    public final void b() {
+    @Override // org.telegram.ui.y9
+    public final void K(String str) {
+        String b10 = pf.d.b(str);
+        if (TextUtils.isEmpty(b10)) {
+            AndroidUtilities.runOnUIThread(new b31(0));
+            return;
+        }
+        MessagesController.getInstance(this.a).getUserNameResolver().resolve(b10, new v3(this.b, 21));
+    }
+
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ boolean e1(String str, o9 o9Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ void W0(MrzRecognizer.Result result) {
+    }
+
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ void onDismiss() {
     }
 }

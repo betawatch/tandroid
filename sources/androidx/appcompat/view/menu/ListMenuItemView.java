@@ -22,11 +22,10 @@ import java.util.WeakHashMap;
 import l.k;
 import l.m;
 import l.y;
-import la.h;
 import org.telegram.messenger.beta.R;
-import r0.i0;
+import r0.j0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class ListMenuItemView extends LinearLayout implements y, AbsListView.SelectionBoundsAdjuster {
     public final boolean E;
@@ -178,7 +177,7 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
     @Override // android.view.View
     public final void onFinishInflate() {
         super.onFinishInflate();
-        WeakHashMap weakHashMap = i0.a;
+        WeakHashMap weakHashMap = j0.a;
         setBackground(this.s);
         TextView textView = (TextView) findViewById(R.id.title);
         this.d = textView;
@@ -353,16 +352,16 @@ public class ListMenuItemView extends LinearLayout implements y, AbsListView.Sel
 
     public ListMenuItemView(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet);
-        h R = h.R(getContext(), attributeSet, a.r, i10);
-        this.s = R.G(5);
-        TypedArray typedArray = (TypedArray) R.c;
+        li.k P = li.k.P(getContext(), attributeSet, a.r, i10);
+        this.s = P.F(5);
+        TypedArray typedArray = (TypedArray) P.c;
         this.v = typedArray.getResourceId(1, -1);
         this.x = typedArray.getBoolean(7, false);
         this.w = context;
-        this.y = R.G(8);
+        this.y = P.F(8);
         TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
         this.E = obtainStyledAttributes.hasValue(0);
-        R.S();
+        P.Q();
         obtainStyledAttributes.recycle();
     }
 }

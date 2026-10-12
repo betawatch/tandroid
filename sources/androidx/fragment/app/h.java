@@ -1,53 +1,14 @@
 package androidx.fragment.app;
 
 import android.animation.AnimatorSet;
-import android.content.Context;
-import android.os.Build;
-import android.util.Log;
-import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class h extends u0 {
-    public final f b;
-    public AnimatorSet c;
+public final class h {
+    public static final h a = new h();
 
-    public h(f fVar) {
-        this.b = fVar;
-    }
-
-    @Override // androidx.fragment.app.u0
-    public final void a(ViewGroup container) {
-        kotlin.jvm.internal.i.e(container, "container");
-        AnimatorSet animatorSet = this.c;
-        animatorSet.getClass();
-        animatorSet.start();
-        if (k0.K(2)) {
-            Log.v("FragmentManager", "Animator from operation " + ((Object) null) + " has started.");
-        }
-    }
-
-    @Override // androidx.fragment.app.u0
-    public final void b(androidx.activity.b backEvent, ViewGroup container) {
-        kotlin.jvm.internal.i.e(backEvent, "backEvent");
-        kotlin.jvm.internal.i.e(container, "container");
-        this.c.getClass();
-        if (Build.VERSION.SDK_INT >= 34) {
-            throw null;
-        }
-    }
-
-    @Override // androidx.fragment.app.u0
-    public final void c(ViewGroup container) {
-        kotlin.jvm.internal.i.e(container, "container");
-        f fVar = this.b;
-        if (fVar.a()) {
-            return;
-        }
-        Context context = container.getContext();
-        kotlin.jvm.internal.i.d(context, "context");
-        pf.b b10 = fVar.b(context);
-        this.c = b10 != null ? (AnimatorSet) b10.c : null;
-        throw null;
+    public final long a(AnimatorSet animatorSet) {
+        kotlin.jvm.internal.i.e(animatorSet, "animatorSet");
+        return animatorSet.getTotalDuration();
     }
 }

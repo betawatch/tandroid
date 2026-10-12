@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import ae.g0;
 import android.app.Application;
+import be.f0;
 import com.google.android.gms.tasks.Task;
-import jd.c;
+import kd.c;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzdz {
     private static zzeh zza;
@@ -21,12 +21,12 @@ public final class zzdz {
         return zzehVar;
     }
 
-    public static final Object zzb(Application application, String str, long j3, c cVar) {
-        return zzeh.zzd(zza(application), str, j3, null, null, cVar, 12, null);
+    public static final Object zzb(Application application, String str, long j10, c cVar) {
+        return zzeh.zzd(zza(application), str, j10, null, null, cVar, 12, null);
     }
 
-    public static final Task zzc(Application application, String str, long j3) {
-        return zzbv.zza(g0.c(zza(application).zza().zza(), new zzdx(application, str, j3, null)));
+    public static final Task zzc(Application application, String str, long j10) {
+        return zzbv.zza(f0.c(zza(application).zza().zza(), new zzdx(application, str, j10, null)));
     }
 
     public static final Object zzd(Application application, String str, c cVar) {
@@ -34,6 +34,6 @@ public final class zzdz {
     }
 
     public static final Task zze(Application application, String str) {
-        return zzbv.zza(g0.c(zza(application).zza().zza(), new zzdy(application, str, null)));
+        return zzbv.zza(f0.c(zza(application).zza().zza(), new zzdy(application, str, null)));
     }
 }

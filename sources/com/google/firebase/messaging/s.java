@@ -1,46 +1,48 @@
 package com.google.firebase.messaging;
 
-import ae.h1;
-import ae.k2;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.graphics.Typeface;
-import android.os.SystemClock;
+import android.os.Bundle;
+import android.os.Message;
 import android.util.Log;
-import android.util.Pair;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.fragment.app.i0;
+import androidx.fragment.app.l0;
+import androidx.fragment.app.o0;
+import be.f0;
+import be.g1;
+import be.j2;
+import com.google.android.gms.internal.cast.z5;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import e9.a1;
-import e9.g0;
-import e9.i0;
-import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
+import di.f4;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import java.util.zip.Inflater;
+import ji.w4;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Wallet.n5;
-import u2.o1;
-import y9.w0;
-import y9.x0;
+import org.telegram.ui.Wallet.m5;
+import w7.a6;
+import z9.t0;
+import z9.z0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class s implements z3.m {
+public final class s {
     public static s f;
     public final /* synthetic */ int a;
     public Object b;
@@ -52,7 +54,40 @@ public final class s implements z3.m {
         this.a = i10;
     }
 
-    public static synchronized s c() {
+    public static final Message a(s sVar, ArrayList arrayList, int i10) {
+        Object obj;
+        ArrayList arrayList2 = new ArrayList();
+        int size = arrayList.size();
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj2 = arrayList.get(i11);
+            i11++;
+            if (((Message) obj2).what == i10) {
+                arrayList2.add(obj2);
+            }
+        }
+        Iterator it = arrayList2.iterator();
+        if (it.hasNext()) {
+            Object next = it.next();
+            if (it.hasNext()) {
+                long when = ((Message) next).getWhen();
+                do {
+                    Object next2 = it.next();
+                    long when2 = ((Message) next2).getWhen();
+                    if (when < when2) {
+                        next = next2;
+                        when = when2;
+                    }
+                } while (it.hasNext());
+            }
+            obj = next;
+        } else {
+            obj = null;
+        }
+        return (Message) obj;
+    }
+
+    public static synchronized s j() {
         s sVar;
         synchronized (s.class) {
             try {
@@ -67,348 +102,107 @@ public final class s implements z3.m {
         return sVar;
     }
 
-    public static void g(long j3, HashMap hashMap) {
-        ArrayList arrayList = new ArrayList();
-        for (Map.Entry entry : hashMap.entrySet()) {
-            if (((Long) entry.getValue()).longValue() <= j3) {
-                arrayList.add(entry.getKey());
+    public void b(androidx.fragment.app.r rVar) {
+        if (((ArrayList) this.b).contains(rVar)) {
+            throw new IllegalStateException("Fragment already added: " + rVar);
+        }
+        synchronized (((ArrayList) this.b)) {
+            ((ArrayList) this.b).add(rVar);
+        }
+        rVar.v = true;
+    }
+
+    public t0 c() {
+        String str = ((String) this.b) == null ? " processName" : "";
+        if (((Integer) this.d) == null) {
+            str = str.concat(" pid");
+        }
+        if (((Integer) this.e) == null) {
+            str = t8.b.u(str, " importance");
+        }
+        if (((Boolean) this.c) == null) {
+            str = t8.b.u(str, " defaultProcess");
+        }
+        if (str.isEmpty()) {
+            return new t0((String) this.b, ((Integer) this.d).intValue(), ((Integer) this.e).intValue(), ((Boolean) this.c).booleanValue());
+        }
+        throw new IllegalStateException("Missing required properties:".concat(str));
+    }
+
+    public z0 d() {
+        String str = ((Integer) this.d) == null ? " platform" : "";
+        if (((String) this.b) == null) {
+            str = str.concat(" version");
+        }
+        if (((String) this.e) == null) {
+            str = t8.b.u(str, " buildVersion");
+        }
+        if (((Boolean) this.c) == null) {
+            str = t8.b.u(str, " jailbroken");
+        }
+        if (str.isEmpty()) {
+            return new z0(((Integer) this.d).intValue(), (String) this.b, (String) this.e, ((Boolean) this.c).booleanValue());
+        }
+        throw new IllegalStateException("Missing required properties:".concat(str));
+    }
+
+    public androidx.fragment.app.r e(String str) {
+        o0 o0Var = (o0) ((HashMap) this.c).get(str);
+        if (o0Var != null) {
+            return o0Var.c;
+        }
+        return null;
+    }
+
+    public androidx.fragment.app.r f(String str) {
+        for (o0 o0Var : ((HashMap) this.c).values()) {
+            if (o0Var != null) {
+                androidx.fragment.app.r rVar = o0Var.c;
+                if (!str.equals(rVar.e)) {
+                    rVar = rVar.L.c.f(str);
+                }
+                if (rVar != null) {
+                    return rVar;
+                }
             }
         }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            hashMap.remove(arrayList.get(i10));
-        }
+        return null;
     }
 
-    @Override // z3.m
-    public int O() {
-        switch (this.a) {
-        }
-        return 2;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01f6  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x01fc  */
-    @Override // z3.m
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void P(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
-        int[] iArr;
-        int i12;
-        d2.b bVar;
-        int i13;
-        int i14;
-        int i15;
-        d2.b bVar2;
-        int i16;
-        int A;
-        int i17;
-        d2.b bVar3;
-        a1 a1Var;
-        Rect rect;
-        int i18 = 4;
-        int i19 = 0;
-        int i20 = 2;
-        int i21 = 1;
-        switch (this.a) {
-            case 2:
-                int i22 = 3;
-                c4.a aVar = (c4.a) this.d;
-                e2.v vVar = (e2.v) this.c;
-                e2.v vVar2 = (e2.v) this.b;
-                vVar2.H(i10 + i11, bArr);
-                vVar2.J(i10);
-                if (((Inflater) this.e) == null) {
-                    this.e = new Inflater();
-                }
-                if (e2.d0.N(vVar2, vVar, (Inflater) this.e)) {
-                    vVar2.H(vVar.c, vVar.a);
-                }
-                aVar.d = 0;
-                int[] iArr2 = aVar.b;
-                e2.v vVar3 = aVar.a;
-                aVar.e = 0;
-                aVar.f = 0;
-                aVar.g = 0;
-                aVar.h = 0;
-                aVar.i = 0;
-                vVar3.G(0);
-                aVar.c = false;
-                ArrayList arrayList = new ArrayList();
-                while (vVar2.a() >= i22) {
-                    int i23 = vVar2.c;
-                    int x10 = vVar2.x();
-                    int D = vVar2.D();
-                    int i24 = vVar2.b + D;
-                    if (i24 > i23) {
-                        vVar2.J(i23);
-                        iArr = iArr2;
-                        i17 = i21;
-                        bVar2 = null;
-                        i13 = i19;
-                    } else {
-                        char c10 = 128;
-                        if (x10 != 128) {
-                            switch (x10) {
-                                case 20:
-                                    if (D % 5 == i20) {
-                                        vVar2.K(i20);
-                                        Arrays.fill(iArr2, i19);
-                                        int i25 = D / 5;
-                                        int i26 = i19;
-                                        while (i26 < i25) {
-                                            int x11 = vVar2.x();
-                                            double x12 = vVar2.x();
-                                            double x13 = vVar2.x() - 128;
-                                            int[] iArr3 = iArr2;
-                                            double x14 = vVar2.x() - 128;
-                                            iArr3[x11] = e2.d0.h((int) ((x14 * 1.772d) + x12), 0, 255) | (vVar2.x() << 24) | (e2.d0.h((int) ((1.402d * x13) + x12), 0, 255) << 16) | (e2.d0.h((int) ((x12 - (0.34414d * x14)) - (x13 * 0.71414d)), 0, 255) << 8);
-                                            i26++;
-                                            c10 = c10;
-                                            i25 = i25;
-                                            iArr2 = iArr3;
-                                            i21 = 1;
-                                        }
-                                        iArr = iArr2;
-                                        boolean z10 = i21;
-                                        aVar.c = z10;
-                                        i16 = z10;
-                                        break;
-                                    }
-                                    iArr = iArr2;
-                                    i16 = i21;
-                                case 21:
-                                    if (D >= 4) {
-                                        vVar2.K(3);
-                                        int i27 = D - 4;
-                                        if (((128 & vVar2.x()) != 0 ? i21 : i19) != 0) {
-                                            if (i27 >= 7 && (A = vVar2.A()) >= 4) {
-                                                aVar.h = vVar2.D();
-                                                aVar.i = vVar2.D();
-                                                vVar3.G(A - 4);
-                                                i27 = D - 11;
-                                            }
-                                        }
-                                        int i28 = vVar3.b;
-                                        int i29 = vVar3.c;
-                                        if (i28 < i29 && i27 > 0) {
-                                            int min = Math.min(i27, i29 - i28);
-                                            vVar2.h(i28, min, vVar3.a);
-                                            vVar3.J(i28 + min);
-                                        }
-                                    }
-                                    iArr = iArr2;
-                                    i16 = i21;
-                                    break;
-                                case 22:
-                                    if (D >= 19) {
-                                        aVar.d = vVar2.D();
-                                        aVar.e = vVar2.D();
-                                        vVar2.K(11);
-                                        aVar.f = vVar2.D();
-                                        aVar.g = vVar2.D();
-                                    }
-                                default:
-                                    iArr = iArr2;
-                                    i16 = i21;
-                                    break;
-                            }
-                            i13 = 0;
-                            bVar = null;
-                            i12 = i16;
-                        } else {
-                            iArr = iArr2;
-                            i12 = i21;
-                            if (aVar.d == 0 || aVar.e == 0 || aVar.h == 0 || aVar.i == 0 || (i14 = vVar3.c) == 0 || vVar3.b != i14 || !aVar.c) {
-                                bVar = null;
-                            } else {
-                                vVar3.J(0);
-                                int i30 = aVar.h * aVar.i;
-                                int[] iArr4 = new int[i30];
-                                int i31 = 0;
-                                while (i31 < i30) {
-                                    int x15 = vVar3.x();
-                                    if (x15 != 0) {
-                                        i15 = i31 + 1;
-                                        iArr4[i31] = iArr[x15];
-                                    } else {
-                                        int x16 = vVar3.x();
-                                        if (x16 != 0) {
-                                            i15 = ((x16 & 64) == 0 ? x16 & 63 : ((x16 & 63) << 8) | vVar3.x()) + i31;
-                                            Arrays.fill(iArr4, i31, i15, (x16 & 128) == 0 ? iArr[0] : iArr[vVar3.x()]);
-                                        }
-                                    }
-                                    i31 = i15;
-                                }
-                                Bitmap createBitmap = Bitmap.createBitmap(iArr4, aVar.h, aVar.i, Bitmap.Config.ARGB_8888);
-                                float f7 = aVar.f;
-                                float f10 = aVar.d;
-                                float f11 = f7 / f10;
-                                float f12 = aVar.g;
-                                float f13 = aVar.e;
-                                bVar = new d2.b(null, null, null, createBitmap, f12 / f13, 0, 0, f11, 0, TLObject.FLAG_31, -3.4028235E38f, aVar.h / f10, aVar.i / f13, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
-                            }
-                            i13 = 0;
-                            aVar.d = 0;
-                            aVar.e = 0;
-                            aVar.f = 0;
-                            aVar.g = 0;
-                            aVar.h = 0;
-                            aVar.i = 0;
-                            vVar3.G(0);
-                            aVar.c = false;
-                        }
-                        vVar2.J(i24);
-                        bVar2 = bVar;
-                        i17 = i12;
-                    }
-                    if (bVar2 != null) {
-                        arrayList.add(bVar2);
-                    }
-                    i19 = i13;
-                    iArr2 = iArr;
-                    i20 = 2;
-                    i22 = 3;
-                    i21 = i17;
-                }
-                hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, arrayList));
-                break;
-            default:
-                e2.v vVar4 = (e2.v) this.b;
-                vVar4.H(i10 + i11, bArr);
-                vVar4.J(i10);
-                e2.v vVar5 = (e2.v) this.c;
-                h4.a aVar2 = (h4.a) this.d;
-                if (((Inflater) this.e) == null) {
-                    this.e = new Inflater();
-                }
-                if (e2.d0.N(vVar4, vVar5, (Inflater) this.e)) {
-                    vVar4.H(vVar5.c, vVar5.a);
-                }
-                aVar2.c = false;
-                aVar2.g = null;
-                aVar2.h = -1;
-                aVar2.i = -1;
-                int a2 = vVar4.a();
-                if (a2 >= 2 && vVar4.D() == a2) {
-                    int[] iArr5 = aVar2.d;
-                    if (iArr5 != null && aVar2.b) {
-                        vVar4.K(vVar4.D() - 2);
-                        int D2 = vVar4.D();
-                        int[] iArr6 = aVar2.a;
-                        while (vVar4.b < D2 && vVar4.a() > 0) {
-                            switch (vVar4.x()) {
-                                case 3:
-                                    if (vVar4.a() < 2) {
-                                        break;
-                                    } else {
-                                        int x17 = vVar4.x();
-                                        int x18 = vVar4.x();
-                                        iArr6[3] = h4.a.a(x17 >> 4, iArr5);
-                                        iArr6[2] = h4.a.a(x17 & 15, iArr5);
-                                        iArr6[1] = h4.a.a(x18 >> 4, iArr5);
-                                        iArr6[0] = h4.a.a(x18 & 15, iArr5);
-                                        aVar2.c = true;
-                                        i18 = 4;
-                                    }
-                                case 4:
-                                    if (vVar4.a() >= 2 && aVar2.c) {
-                                        int x19 = vVar4.x();
-                                        int x20 = vVar4.x();
-                                        iArr6[3] = h4.a.c(iArr6[3], x19 >> 4);
-                                        iArr6[2] = h4.a.c(iArr6[2], x19 & 15);
-                                        iArr6[1] = h4.a.c(iArr6[1], x20 >> 4);
-                                        iArr6[0] = h4.a.c(iArr6[0], x20 & 15);
-                                        i18 = 4;
-                                    }
-                                    break;
-                                case 5:
-                                    if (vVar4.a() < 6) {
-                                        break;
-                                    } else {
-                                        int x21 = vVar4.x();
-                                        int x22 = vVar4.x();
-                                        int i32 = (x21 << i18) | (x22 >> 4);
-                                        int x23 = ((x22 & 15) << 8) | vVar4.x();
-                                        int x24 = vVar4.x();
-                                        int x25 = vVar4.x();
-                                        aVar2.g = new Rect(i32, (x24 << 4) | (x25 >> 4), x23 + 1, (((x25 & 15) << 8) | vVar4.x()) + 1);
-                                        i18 = 4;
-                                    }
-                                case 6:
-                                    if (vVar4.a() < i18) {
-                                        break;
-                                    } else {
-                                        aVar2.h = vVar4.D();
-                                        aVar2.i = vVar4.D();
-                                    }
-                            }
-                        }
-                    }
-                    if (aVar2.d != null && aVar2.b && aVar2.c && (rect = aVar2.g) != null && aVar2.h != -1 && aVar2.i != -1 && rect.width() >= 2 && aVar2.g.height() >= 2) {
-                        Rect rect2 = aVar2.g;
-                        int[] iArr7 = new int[rect2.height() * rect2.width()];
-                        a4.g gVar = new a4.g();
-                        vVar4.J(aVar2.h);
-                        gVar.p(vVar4);
-                        aVar2.b(gVar, true, rect2, iArr7);
-                        vVar4.J(aVar2.i);
-                        gVar.p(vVar4);
-                        aVar2.b(gVar, false, rect2, iArr7);
-                        bVar3 = new d2.b(null, null, null, Bitmap.createBitmap(iArr7, rect2.width(), rect2.height(), Bitmap.Config.ARGB_8888), rect2.top / aVar2.f, 0, 0, rect2.left / aVar2.e, 0, TLObject.FLAG_31, -3.4028235E38f, rect2.width() / aVar2.e, rect2.height() / aVar2.f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
-                        if (bVar3 == null) {
-                            a1Var = i0.z(bVar3);
-                        } else {
-                            g0 g0Var = i0.b;
-                            a1Var = a1.e;
-                        }
-                        hVar.accept(new z3.a(-9223372036854775807L, 5000000L, a1Var));
-                        break;
-                    }
-                }
-                bVar3 = null;
-                if (bVar3 == null) {
-                }
-                hVar.accept(new z3.a(-9223372036854775807L, 5000000L, a1Var));
-                break;
-        }
-    }
-
-    public ArrayList a(List list) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        HashMap hashMap = (HashMap) this.b;
-        g(elapsedRealtime, hashMap);
-        HashMap hashMap2 = (HashMap) this.c;
-        g(elapsedRealtime, hashMap2);
+    public ArrayList g() {
         ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            m2.b bVar = (m2.b) list.get(i10);
-            if (!hashMap.containsKey(bVar.b) && !hashMap2.containsKey(Integer.valueOf(bVar.c))) {
-                arrayList.add(bVar);
+        for (o0 o0Var : ((HashMap) this.c).values()) {
+            if (o0Var != null) {
+                arrayList.add(o0Var);
             }
         }
         return arrayList;
     }
 
-    public w0 b() {
-        String str = ((x0) this.c) == null ? " rolloutVariant" : "";
-        if (((String) this.b) == null) {
-            str = str.concat(" parameterKey");
+    public ArrayList h() {
+        ArrayList arrayList = new ArrayList();
+        for (o0 o0Var : ((HashMap) this.c).values()) {
+            if (o0Var != null) {
+                arrayList.add(o0Var.c);
+            } else {
+                arrayList.add(null);
+            }
         }
-        if (((String) this.d) == null) {
-            str = sc.v.v(str, " parameterValue");
-        }
-        if (((Long) this.e) == null) {
-            str = sc.v.v(str, " templateVersion");
-        }
-        if (str.isEmpty()) {
-            return new w0((x0) this.c, (String) this.b, (String) this.d, ((Long) this.e).longValue());
-        }
-        throw new IllegalStateException("Missing required properties:".concat(str));
+        return arrayList;
     }
 
-    public boolean d(Context context) {
+    public List i() {
+        ArrayList arrayList;
+        if (((ArrayList) this.b).isEmpty()) {
+            return Collections.EMPTY_LIST;
+        }
+        synchronized (((ArrayList) this.b)) {
+            arrayList = new ArrayList((ArrayList) this.b);
+        }
+        return arrayList;
+    }
+
+    public boolean k(Context context) {
         if (((Boolean) this.d) == null) {
             this.d = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.ACCESS_NETWORK_STATE") == 0);
         }
@@ -418,7 +212,7 @@ public final class s implements z3.m {
         return ((Boolean) this.d).booleanValue();
     }
 
-    public boolean e(Context context) {
+    public boolean l(Context context) {
         if (((Boolean) this.c) == null) {
             this.c = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.WAKE_LOCK") == 0);
         }
@@ -426,6 +220,30 @@ public final class s implements z3.m {
             Log.d("FirebaseMessaging", "Missing Permission: android.permission.WAKE_LOCK this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
         }
         return ((Boolean) this.c).booleanValue();
+    }
+
+    public void m(o0 o0Var) {
+        androidx.fragment.app.r rVar = o0Var.c;
+        String str = rVar.e;
+        HashMap hashMap = (HashMap) this.c;
+        if (hashMap.get(str) != null) {
+            return;
+        }
+        hashMap.put(rVar.e, o0Var);
+        if (i0.K(2)) {
+            Log.v("FragmentManager", "Added fragment to active set " + rVar);
+        }
+    }
+
+    public void n(o0 o0Var) {
+        HashMap hashMap = (HashMap) this.c;
+        androidx.fragment.app.r rVar = o0Var.c;
+        if (rVar.S) {
+            ((l0) this.e).f(rVar);
+        }
+        if (hashMap.get(rVar.e) == o0Var && ((o0) hashMap.put(rVar.e, null)) != null && i0.K(2)) {
+            Log.v("FragmentManager", "Removed fragment from active set " + rVar);
+        }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:99:0x0269, code lost:
@@ -437,67 +255,67 @@ public final class s implements z3.m {
     /* JADX WARN: Removed duplicated region for block: B:58:0x0169  */
     /* JADX WARN: Removed duplicated region for block: B:64:0x0181  */
     /* JADX WARN: Removed duplicated region for block: B:71:0x020d  */
-    /* JADX WARN: Type inference failed for: r2v19, types: [ce.h, fe.d, fe.t] */
+    /* JADX WARN: Type inference failed for: r2v19, types: [de.h, ge.d, ge.t] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void f(k1.k kVar) {
-        ce.b bVar;
-        da.a aVar;
+    public void o(k1.k kVar) {
+        de.b bVar;
+        a6.i iVar;
         int i10;
         int i11;
         boolean z10;
         k1.k kVar2;
-        ce.h hVar;
-        da.a aVar2;
-        long j3;
+        de.h hVar;
+        a6.i iVar2;
+        long j10;
         boolean z11;
         int i12;
         int i13;
         Object obj;
         Object a2;
-        long j10;
-        ce.h hVar2;
+        long j11;
+        de.h hVar2;
         k1.k kVar3;
         AtomicLongFieldUpdater atomicLongFieldUpdater;
-        ce.c cVar;
+        de.c cVar;
         k1.k kVar4 = kVar;
-        ce.b bVar2 = (ce.b) this.d;
+        de.b bVar2 = (de.b) this.d;
         bVar2.getClass();
-        AtomicLongFieldUpdater atomicLongFieldUpdater2 = ce.b.b;
+        AtomicLongFieldUpdater atomicLongFieldUpdater2 = de.b.b;
         boolean z12 = false;
         boolean z13 = true;
-        long j11 = 1152921504606846975L;
+        long j12 = 1152921504606846975L;
         boolean z14 = bVar2.i(atomicLongFieldUpdater2.get(bVar2), false) ? false : !bVar2.a(r2 & 1152921504606846975L);
-        Object obj2 = ce.g.a;
+        Object obj2 = de.g.a;
         if (z14) {
             obj = obj2;
         } else {
-            da.a aVar3 = ce.d.j;
-            ce.h hVar3 = (ce.h) ce.b.f.get(bVar2);
+            a6.i iVar3 = de.d.j;
+            de.h hVar3 = (de.h) de.b.f.get(bVar2);
             while (true) {
                 long andIncrement = atomicLongFieldUpdater2.getAndIncrement(bVar2);
-                long j12 = andIncrement & j11;
+                long j13 = andIncrement & j12;
                 boolean i14 = bVar2.i(andIncrement, z12);
-                int i15 = ce.d.b;
-                long j13 = i15;
-                long j14 = j11;
-                long j15 = j12 / j13;
-                int i16 = (int) (j12 % j13);
-                if (hVar3.c != j15) {
-                    AtomicLongFieldUpdater atomicLongFieldUpdater3 = ce.b.c;
-                    AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ce.b.f;
-                    ce.h hVar4 = ce.d.a;
-                    ce.c cVar2 = ce.c.a;
+                int i15 = de.d.b;
+                long j14 = i15;
+                long j15 = j12;
+                long j16 = j13 / j14;
+                int i16 = (int) (j13 % j14);
+                if (hVar3.c != j16) {
+                    AtomicLongFieldUpdater atomicLongFieldUpdater3 = de.b.c;
+                    AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = de.b.f;
+                    de.h hVar4 = de.d.a;
+                    de.c cVar2 = de.c.a;
                     while (true) {
-                        a2 = fe.a.a(hVar3, j15, cVar2);
-                        if (!fe.a.d(a2)) {
-                            fe.t b10 = fe.a.b(a2);
+                        a2 = ge.a.a(hVar3, j16, cVar2);
+                        if (!ge.a.d(a2)) {
+                            ge.t b10 = ge.a.b(a2);
                             while (true) {
-                                fe.t tVar = (fe.t) atomicReferenceFieldUpdater.get(bVar2);
+                                ge.t tVar = (ge.t) atomicReferenceFieldUpdater.get(bVar2);
                                 z10 = z13;
-                                j10 = j15;
-                                aVar = aVar3;
+                                j11 = j16;
+                                iVar = iVar3;
                                 cVar = cVar2;
                                 if (tVar.c >= b10.c) {
                                     break;
@@ -510,9 +328,9 @@ public final class s implements z3.m {
                                         if (b10.f()) {
                                             b10.e();
                                         }
-                                        aVar3 = aVar;
+                                        iVar3 = iVar;
                                         z13 = z10;
-                                        j15 = j10;
+                                        j16 = j11;
                                         cVar2 = cVar;
                                     }
                                 }
@@ -522,20 +340,20 @@ public final class s implements z3.m {
                             }
                         } else {
                             z10 = z13;
-                            j10 = j15;
-                            aVar = aVar3;
+                            j11 = j16;
+                            iVar = iVar3;
                             break;
                         }
-                        aVar3 = aVar;
+                        iVar3 = iVar;
                         z13 = z10;
-                        j15 = j10;
+                        j16 = j11;
                         cVar2 = cVar;
                     }
-                    if (fe.a.d(a2)) {
+                    if (ge.a.d(a2)) {
                         bVar2.c();
-                        if (hVar3.c * ce.d.b < atomicLongFieldUpdater3.get(bVar2)) {
+                        if (hVar3.c * de.d.b < atomicLongFieldUpdater3.get(bVar2)) {
                             hVar3.b();
-                            ce.h hVar5 = hVar3;
+                            de.h hVar5 = hVar3;
                             bVar = bVar2;
                             hVar2 = hVar5;
                             i10 = i15;
@@ -546,19 +364,19 @@ public final class s implements z3.m {
                                 hVar = kVar3;
                             } else {
                                 if (i14) {
-                                    obj = new ce.e(bVar.f());
+                                    obj = new de.e(bVar.f());
                                     break;
                                 }
-                                ce.b bVar3 = bVar;
+                                de.b bVar3 = bVar;
                                 hVar3 = hVar2;
                                 bVar2 = bVar3;
-                                aVar3 = aVar;
-                                j11 = j14;
+                                iVar3 = iVar;
+                                j12 = j15;
                                 z13 = z10;
                                 z12 = false;
                             }
                         } else {
-                            ce.h hVar6 = hVar3;
+                            de.h hVar6 = hVar3;
                             bVar = bVar2;
                             hVar2 = hVar6;
                             i10 = i15;
@@ -569,18 +387,18 @@ public final class s implements z3.m {
                             }
                         }
                     } else {
-                        ?? r22 = (ce.h) fe.a.b(a2);
-                        long j16 = r22.c;
-                        if (j16 > j10) {
-                            long j17 = ce.d.b * j16;
-                            AtomicLongFieldUpdater atomicLongFieldUpdater4 = ce.b.b;
+                        ?? r22 = (de.h) ge.a.b(a2);
+                        long j17 = r22.c;
+                        if (j17 > j11) {
+                            long j18 = de.d.b * j17;
+                            AtomicLongFieldUpdater atomicLongFieldUpdater4 = de.b.b;
                             int i17 = i15;
                             int i18 = i16;
                             while (true) {
-                                long j18 = atomicLongFieldUpdater4.get(bVar2);
-                                long j19 = j18 & j14;
-                                if (j19 >= j17) {
-                                    ce.h hVar7 = hVar3;
+                                long j19 = atomicLongFieldUpdater4.get(bVar2);
+                                long j20 = j19 & j15;
+                                if (j20 >= j18) {
+                                    de.h hVar7 = hVar3;
                                     bVar = bVar2;
                                     hVar2 = hVar7;
                                     atomicLongFieldUpdater = atomicLongFieldUpdater3;
@@ -589,8 +407,8 @@ public final class s implements z3.m {
                                     i10 = i17;
                                     break;
                                 }
-                                ce.b bVar4 = bVar2;
-                                long j20 = j17;
+                                de.b bVar4 = bVar2;
+                                long j21 = j18;
                                 AtomicLongFieldUpdater atomicLongFieldUpdater5 = atomicLongFieldUpdater4;
                                 i11 = i18;
                                 kVar2 = null;
@@ -598,7 +416,7 @@ public final class s implements z3.m {
                                 hVar2 = hVar3;
                                 atomicLongFieldUpdater = atomicLongFieldUpdater3;
                                 bVar = bVar4;
-                                if (ce.b.b.compareAndSet(bVar, j18, (((int) (j18 >> 60)) << 60) + j19)) {
+                                if (de.b.b.compareAndSet(bVar, j19, (((int) (j19 >> 60)) << 60) + j20)) {
                                     break;
                                 }
                                 hVar3 = hVar2;
@@ -607,16 +425,16 @@ public final class s implements z3.m {
                                 i17 = i10;
                                 atomicLongFieldUpdater4 = atomicLongFieldUpdater5;
                                 i18 = i11;
-                                j17 = j20;
+                                j18 = j21;
                             }
-                            if (j16 * ce.d.b < atomicLongFieldUpdater.get(bVar)) {
+                            if (j17 * de.d.b < atomicLongFieldUpdater.get(bVar)) {
                                 r22.b();
                             }
                             kVar3 = kVar2;
                             if (kVar3 == null) {
                             }
                         } else {
-                            ce.h hVar8 = hVar3;
+                            de.h hVar8 = hVar3;
                             bVar = bVar2;
                             hVar2 = hVar8;
                             i10 = i15;
@@ -628,9 +446,9 @@ public final class s implements z3.m {
                         }
                     }
                 } else {
-                    ce.h hVar9 = hVar3;
+                    de.h hVar9 = hVar3;
                     bVar = bVar2;
-                    aVar = aVar3;
+                    iVar = iVar3;
                     i10 = i15;
                     i11 = i16;
                     z10 = z13;
@@ -640,25 +458,25 @@ public final class s implements z3.m {
                 hVar.n(i11, kVar4);
                 if (i14) {
                     bVar2 = bVar;
-                    aVar2 = aVar;
-                    j3 = j12;
+                    iVar2 = iVar;
+                    j10 = j13;
                     z11 = i14;
-                    i12 = 2;
-                    i13 = bVar2.p(hVar, i11, kVar4, j3, aVar2, z11);
+                    i12 = 5;
+                    i13 = bVar2.p(hVar, i11, kVar4, j10, iVar2, z11);
                 } else {
                     bVar2 = bVar;
-                    aVar2 = aVar;
-                    j3 = j12;
+                    iVar2 = iVar;
+                    j10 = j13;
                     z11 = i14;
                     k1.k kVar5 = kVar2;
-                    i12 = 2;
+                    i12 = 5;
                     Object l4 = hVar.l(i11);
                     if (l4 == null) {
-                        if (bVar2.a(j3)) {
-                            if (hVar.k(i11, kVar5, ce.d.d)) {
+                        if (bVar2.a(j10)) {
+                            if (hVar.k(i11, kVar5, de.d.d)) {
                                 z13 = z10;
                                 i13 = z13;
-                                Object obj3 = hd.i.a;
+                                Object obj3 = id.i.a;
                                 if (i13 == 0) {
                                     hVar.b();
                                     break;
@@ -666,57 +484,57 @@ public final class s implements z3.m {
                                 if (i13 == z13) {
                                     break;
                                 }
-                                if (i13 != i12) {
+                                if (i13 != 2) {
                                     if (i13 == 3) {
                                         throw new IllegalStateException("unexpected");
                                     }
                                     if (i13 != 4) {
-                                        if (i13 == 5) {
+                                        if (i13 == i12) {
                                             hVar.b();
                                         }
                                         kVar4 = kVar;
                                         hVar3 = hVar;
-                                        aVar3 = aVar2;
-                                        j11 = j14;
+                                        iVar3 = iVar2;
+                                        j12 = j15;
                                         z12 = false;
                                     } else {
-                                        if (j3 < ce.b.c.get(bVar2)) {
+                                        if (j10 < de.b.c.get(bVar2)) {
                                             hVar.b();
                                         }
-                                        obj = new ce.e(bVar2.f());
+                                        obj = new de.e(bVar2.f());
                                     }
                                 } else if (z11) {
                                     hVar.i();
-                                    obj = new ce.e(bVar2.f());
+                                    obj = new de.e(bVar2.f());
                                 } else {
-                                    k2 k2Var = aVar2 instanceof k2 ? (k2) aVar2 : null;
-                                    if (k2Var != null) {
-                                        k2Var.b(hVar, i11 + i10);
+                                    j2 j2Var = iVar2 instanceof j2 ? (j2) iVar2 : null;
+                                    if (j2Var != null) {
+                                        j2Var.a(hVar, i11 + i10);
                                     }
                                     hVar.i();
                                     obj = obj2;
                                 }
                             }
-                        } else if (aVar2 == null) {
+                        } else if (iVar2 == null) {
                             i13 = 3;
-                        } else if (hVar.k(i11, kVar5, aVar2)) {
+                        } else if (hVar.k(i11, kVar5, iVar2)) {
                             i13 = 2;
                         }
                         z13 = z10;
-                        i13 = bVar2.p(hVar, i11, kVar4, j3, aVar2, z11);
-                        Object obj32 = hd.i.a;
+                        i13 = bVar2.p(hVar, i11, kVar4, j10, iVar2, z11);
+                        Object obj32 = id.i.a;
                         if (i13 == 0) {
                         }
                     } else {
-                        if (l4 instanceof k2) {
+                        if (l4 instanceof j2) {
                             hVar.n(i11, kVar5);
                             if (bVar2.m(l4, kVar4)) {
-                                hVar.o(i11, ce.d.i);
+                                hVar.o(i11, de.d.i);
                                 z13 = z10;
                                 i13 = 0;
                             } else {
-                                da.a aVar4 = ce.d.k;
-                                if (hVar.f.getAndSet((i11 * 2) + 1, aVar4) != aVar4) {
+                                a6.i iVar4 = de.d.k;
+                                if (hVar.f.getAndSet((i11 * 2) + 1, iVar4) != iVar4) {
                                     z13 = z10;
                                     hVar.m(i11, z13);
                                 } else {
@@ -724,127 +542,167 @@ public final class s implements z3.m {
                                 }
                                 i13 = 5;
                             }
-                            Object obj322 = hd.i.a;
+                            Object obj322 = id.i.a;
                             if (i13 == 0) {
                             }
                         }
                         z13 = z10;
-                        i13 = bVar2.p(hVar, i11, kVar4, j3, aVar2, z11);
-                        Object obj3222 = hd.i.a;
+                        i13 = bVar2.p(hVar, i11, kVar4, j10, iVar2, z11);
+                        Object obj3222 = id.i.a;
                         if (i13 == 0) {
                         }
                     }
                 }
                 z13 = z10;
-                Object obj32222 = hd.i.a;
+                Object obj32222 = id.i.a;
                 if (i13 == 0) {
                 }
             }
         }
-        i12 = 2;
-        if (obj instanceof ce.e) {
-            Throwable th2 = ((ce.e) obj).a;
+        i12 = 5;
+        if (obj instanceof de.e) {
+            Throwable th2 = ((de.e) obj).a;
             if (th2 != null) {
                 throw th2;
             }
-            throw new b2.v("Channel was closed normally");
+            throw new b2.a0("Channel was closed normally");
         }
-        if (obj instanceof ce.f) {
+        if (obj instanceof de.f) {
             throw new IllegalStateException("Check failed.");
         }
         if (((AtomicInteger) this.e).getAndIncrement() == 0) {
-            ae.g0.q((ae.d0) this.b, new bb.i(this, null, i12));
+            f0.q((be.c0) this.b, new ab.l(this, null, i12));
         }
     }
 
-    public m2.b j(List list) {
-        m2.b bVar;
-        HashMap hashMap = (HashMap) this.d;
-        ArrayList a2 = a(list);
-        if (a2.size() < 2) {
-            return (m2.b) e9.q.k(a2, null);
+    public df.f p(String str) {
+        if (str == null) {
+            throw new NullPointerException("input must not be null");
         }
-        Collections.sort(a2, new a4.d(20));
-        ArrayList arrayList = new ArrayList();
+        af.h hVar = new af.h((ArrayList) this.b, (ef.b) this.d, (ArrayList) this.c);
         int i10 = 0;
-        int i11 = ((m2.b) a2.get(0)).c;
-        int i12 = 0;
         while (true) {
-            if (i12 >= a2.size()) {
+            int length = str.length();
+            int i11 = i10;
+            while (true) {
+                if (i11 >= length) {
+                    i11 = -1;
+                    break;
+                }
+                char charAt = str.charAt(i11);
+                if (charAt == '\n' || charAt == '\r') {
+                    break;
+                }
+                i11++;
+            }
+            if (i11 == -1) {
                 break;
             }
-            m2.b bVar2 = (m2.b) a2.get(i12);
-            if (i11 == bVar2.c) {
-                arrayList.add(new Pair(bVar2.b, Integer.valueOf(bVar2.d)));
-                i12++;
-            } else if (arrayList.size() == 1) {
-                return (m2.b) a2.get(0);
+            hVar.i(str.substring(i10, i11));
+            i10 = i11 + 1;
+            if (i10 < str.length() && str.charAt(i11) == '\r' && str.charAt(i10) == '\n') {
+                i10 = i11 + 2;
             }
         }
-        m2.b bVar3 = (m2.b) hashMap.get(arrayList);
-        if (bVar3 != null) {
-            return bVar3;
+        if (str.length() > 0 && (i10 == 0 || i10 < str.length())) {
+            hVar.i(str.substring(i10));
         }
-        List subList = a2.subList(0, arrayList.size());
-        int i13 = 0;
-        for (int i14 = 0; i14 < subList.size(); i14++) {
-            i13 += ((m2.b) subList.get(i14)).d;
+        hVar.f(hVar.n);
+        ef.a x10 = hVar.j.x(new qf.b(3, hVar.k, hVar.m));
+        Iterator it = hVar.o.iterator();
+        while (it.hasNext()) {
+            ((ff.a) it.next()).g(x10);
         }
-        int nextInt = ((Random) this.e).nextInt(i13);
-        int i15 = 0;
-        while (true) {
-            if (i10 >= subList.size()) {
-                bVar = (m2.b) e9.q.l(subList);
-                break;
+        df.f fVar = (df.f) hVar.l.b;
+        Iterator it2 = ((ArrayList) this.e).iterator();
+        if (it2.hasNext()) {
+            throw a1.g.j(it2);
+        }
+        return fVar;
+    }
+
+    public void q(Message message) {
+        LinkedBlockingDeque linkedBlockingDeque = (LinkedBlockingDeque) this.d;
+        if (!linkedBlockingDeque.offer(message)) {
+            Log.d("SessionLifecycleClient", "Failed to enqueue message " + message.what + ". Dropping.");
+            return;
+        }
+        Log.d("SessionLifecycleClient", "Queued message " + message.what + ". Queue size " + linkedBlockingDeque.size());
+    }
+
+    public void r(int i10) {
+        ArrayList arrayList = new ArrayList();
+        ((LinkedBlockingDeque) this.d).drainTo(arrayList);
+        Message obtain = Message.obtain(null, i10, 0, 0);
+        kotlin.jvm.internal.i.d(obtain, "obtain(null, messageCode, 0, 0)");
+        arrayList.add(obtain);
+        f0.q(f0.b((kd.h) this.b), new ab.l(this, arrayList, null, 2));
+    }
+
+    public Bundle s(String str, Bundle bundle) {
+        HashMap hashMap = (HashMap) this.d;
+        return bundle != null ? (Bundle) hashMap.put(str, bundle) : (Bundle) hashMap.remove(str);
+    }
+
+    public void t(View view) {
+        bi.j2 j2Var = (bi.j2) this.e;
+        if (((View) this.c) == view) {
+            return;
+        }
+        u(null);
+        View view2 = (View) this.c;
+        if (view2 != null) {
+            view2.removeOnAttachStateChangeListener(j2Var);
+        }
+        if (view != null) {
+            view.addOnAttachStateChangeListener(j2Var);
+            if (view.isAttachedToWindow()) {
+                u(view.getViewTreeObserver());
             }
-            bVar = (m2.b) subList.get(i10);
-            i15 += bVar.d;
-            if (nextInt < i15) {
-                break;
-            }
-            i10++;
         }
-        hashMap.put(arrayList, bVar);
-        return bVar;
-    }
-
-    public Task k(Callable callable) {
-        Task continueWith;
-        synchronized (this.d) {
-            continueWith = ((Task) this.c).continueWith((Executor) this.b, new m2.t(callable, 21));
-            this.c = continueWith.continueWith((Executor) this.b, new ob.a(25));
-        }
-        return continueWith;
-    }
-
-    public Task l(Callable callable) {
-        Task continueWithTask;
-        synchronized (this.d) {
-            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new m2.t(callable, 21));
-            this.c = continueWithTask.continueWith((Executor) this.b, new ob.a(25));
-        }
-        return continueWithTask;
-    }
-
-    @Override // z3.m
-    public /* synthetic */ void reset() {
-        int i10 = this.a;
-    }
-
-    @Override // z3.m
-    public /* synthetic */ z3.d s(int i10, int i11, byte[] bArr) {
-        switch (this.a) {
-        }
-        return sc.v.a(this, bArr, i11);
+        this.c = view;
     }
 
     public String toString() {
         switch (this.a) {
             case 10:
-                return ((m2.t) this.e).toString();
+                return ((w4) this.e).toString();
             default:
                 return super.toString();
         }
+    }
+
+    public void u(ViewTreeObserver viewTreeObserver) {
+        f4 f4Var = (f4) this.b;
+        ViewTreeObserver viewTreeObserver2 = (ViewTreeObserver) this.d;
+        if (viewTreeObserver2 == viewTreeObserver) {
+            return;
+        }
+        if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
+            ((ViewTreeObserver) this.d).removeOnGlobalLayoutListener(f4Var);
+        }
+        if (viewTreeObserver != null) {
+            viewTreeObserver.addOnGlobalLayoutListener(f4Var);
+        }
+        this.d = viewTreeObserver;
+    }
+
+    public Task v(Callable callable) {
+        Task continueWith;
+        synchronized (this.d) {
+            continueWith = ((Task) this.c).continueWith((Executor) this.b, new u9.d(callable));
+            this.c = continueWith.continueWith((Executor) this.b, new rb.b(26));
+        }
+        return continueWith;
+    }
+
+    public Task w(Callable callable) {
+        Task continueWithTask;
+        synchronized (this.d) {
+            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new u9.d(callable));
+            this.c = continueWithTask.continueWith((Executor) this.b, new rb.b(26));
+        }
+        return continueWithTask;
     }
 
     public /* synthetic */ s(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
@@ -855,18 +713,53 @@ public final class s implements z3.m {
         this.e = obj4;
     }
 
-    public s(ae.d0 d0Var, je.g gVar, k1.m mVar) {
+    public s(f4 f4Var) {
+        this.a = 11;
+        this.e = new bi.j2(this, 11);
+        this.b = f4Var;
+    }
+
+    public s(be.c0 c0Var, k1.m mVar, k1.n nVar) {
         this.a = 5;
-        this.b = d0Var;
-        this.c = mVar;
-        ce.a[] aVarArr = ce.a.a;
-        this.d = new ce.b(ConnectionsManager.DEFAULT_DATACENTER_ID);
+        this.b = c0Var;
+        this.c = nVar;
+        de.a[] aVarArr = de.a.a;
+        this.d = new de.b(ConnectionsManager.DEFAULT_DATACENTER_ID);
         this.e = new AtomicInteger(0);
-        h1 h1Var = (h1) d0Var.c().get(ae.c0.b);
-        if (h1Var == null) {
+        g1 g1Var = (g1) c0Var.c().get(be.b0.b);
+        if (g1Var == null) {
             return;
         }
-        h1Var.invokeOnCompletion(new be.d(1, gVar, this));
+        g1Var.invokeOnCompletion(new ce.d(1, mVar, this));
+    }
+
+    public s(z5 z5Var) {
+        int i10 = 3;
+        this.a = 3;
+        ArrayList arrayList = (ArrayList) z5Var.b;
+        LinkedHashSet linkedHashSet = (LinkedHashSet) z5Var.d;
+        LinkedHashSet linkedHashSet2 = af.h.p;
+        ArrayList arrayList2 = new ArrayList();
+        arrayList2.addAll(arrayList);
+        Iterator it = linkedHashSet.iterator();
+        while (it.hasNext()) {
+            arrayList2.add(af.h.q.get((Class) it.next()));
+        }
+        this.b = arrayList2;
+        ef.b bVar = (n4.s) z5Var.e;
+        bVar = bVar == null ? new pb.a(8) : bVar;
+        this.d = bVar;
+        this.e = (ArrayList) z5Var.a;
+        ArrayList arrayList3 = (ArrayList) z5Var.c;
+        this.c = arrayList3;
+        bVar.x(new qf.b(i10, arrayList3, Collections.EMPTY_MAP));
+    }
+
+    public s(kd.h hVar) {
+        this.a = 1;
+        this.b = hVar;
+        this.d = new LinkedBlockingDeque(20);
+        this.e = new a9.d(this, 1);
     }
 
     public s(ExecutorService executorService) {
@@ -875,109 +768,12 @@ public final class s implements z3.m {
         this.d = new Object();
         this.e = new ThreadLocal();
         this.b = executorService;
-        executorService.execute(new n5(this, 10));
+        executorService.execute(new m5(this, 11));
     }
 
-    public s(List list) {
-        int i10;
-        this.a = 4;
-        this.b = new e2.v();
-        this.c = new e2.v();
-        h4.a aVar = new h4.a();
-        this.d = aVar;
-        String trim = new String((byte[]) list.get(0), StandardCharsets.UTF_8).trim();
-        String str = e2.d0.a;
-        for (String str2 : trim.split("\\r?\\n", -1)) {
-            if (str2.startsWith("palette: ")) {
-                String[] split = str2.substring(9).split(",", -1);
-                aVar.d = new int[split.length];
-                for (int i11 = 0; i11 < split.length; i11++) {
-                    int[] iArr = aVar.d;
-                    try {
-                        i10 = Integer.parseInt(split[i11].trim(), 16);
-                    } catch (RuntimeException unused) {
-                        i10 = 0;
-                    }
-                    iArr[i11] = i10;
-                }
-            } else if (str2.startsWith("size: ")) {
-                String[] split2 = str2.substring(6).trim().split("x", -1);
-                if (split2.length == 2) {
-                    try {
-                        aVar.e = Integer.parseInt(split2[0]);
-                        aVar.f = Integer.parseInt(split2[1]);
-                        aVar.b = true;
-                    } catch (RuntimeException e7) {
-                        e2.a.o("VobsubParser", "Parsing IDX failed", e7);
-                    }
-                }
-            }
-        }
-    }
-
-    private final /* synthetic */ void h() {
-    }
-
-    private final /* synthetic */ void i() {
-    }
-
-    public s(Typeface typeface, p1.b bVar) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        this.a = 1;
-        this.e = typeface;
-        this.b = bVar;
-        this.d = new androidx.emoji2.text.r(1024);
-        int a2 = bVar.a(6);
-        if (a2 != 0) {
-            int i14 = a2 + bVar.a;
-            i10 = ((ByteBuffer) bVar.d).getInt(((ByteBuffer) bVar.d).getInt(i14) + i14);
-        } else {
-            i10 = 0;
-        }
-        this.c = new char[i10 * 2];
-        int a10 = bVar.a(6);
-        if (a10 != 0) {
-            int i15 = a10 + bVar.a;
-            i11 = ((ByteBuffer) bVar.d).getInt(((ByteBuffer) bVar.d).getInt(i15) + i15);
-        } else {
-            i11 = 0;
-        }
-        for (int i16 = 0; i16 < i11; i16++) {
-            androidx.emoji2.text.n nVar = new androidx.emoji2.text.n(this, i16);
-            p1.a b10 = nVar.b();
-            int a11 = b10.a(4);
-            Character.toChars(a11 != 0 ? ((ByteBuffer) b10.d).getInt(a11 + b10.a) : 0, (char[]) this.c, i16 * 2);
-            p1.a b11 = nVar.b();
-            int a12 = b11.a(16);
-            if (a12 != 0) {
-                int i17 = a12 + b11.a;
-                i12 = ((ByteBuffer) b11.d).getInt(((ByteBuffer) b11.d).getInt(i17) + i17);
-            } else {
-                i12 = 0;
-            }
-            if (i12 > 0) {
-                androidx.emoji2.text.r rVar = (androidx.emoji2.text.r) this.d;
-                p1.a b12 = nVar.b();
-                int a13 = b12.a(16);
-                if (a13 != 0) {
-                    int i18 = a13 + b12.a;
-                    i13 = ((ByteBuffer) b12.d).getInt(((ByteBuffer) b12.d).getInt(i18) + i18);
-                } else {
-                    i13 = 0;
-                }
-                rVar.a(nVar, 0, i13 - 1);
-            } else {
-                throw new IllegalArgumentException("invalid metadata codepoint length");
-            }
-        }
-    }
-
-    public s(m2.t tVar, Object obj, Object obj2, Object[] objArr) {
+    public s(w4 w4Var, Object obj, Object obj2, Object[] objArr) {
         this.a = 10;
-        this.e = tVar;
+        this.e = w4Var;
         this.b = obj;
         this.c = obj2;
         this.d = objArr;
@@ -987,16 +783,9 @@ public final class s implements z3.m {
         this.a = i10;
         switch (i10) {
             case 2:
-                this.b = new e2.v();
-                this.c = new e2.v();
-                this.d = new c4.a();
-                break;
-            case 6:
-                Random random = new Random();
-                this.d = new HashMap();
-                this.e = random;
-                this.b = new HashMap();
+                this.b = new ArrayList();
                 this.c = new HashMap();
+                this.d = new HashMap();
                 break;
             default:
                 this.b = null;
@@ -1007,12 +796,30 @@ public final class s implements z3.m {
         }
     }
 
-    public s(o1 o1Var, boolean[] zArr) {
-        this.a = 11;
-        this.b = o1Var;
-        this.c = zArr;
-        int i10 = o1Var.a;
-        this.d = new boolean[i10];
-        this.e = new boolean[i10];
+    public s(lg.e eVar) {
+        this.a = 6;
+        LinearLayout linearLayout = new LinearLayout(eVar.getContext());
+        this.e = linearLayout;
+        linearLayout.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f));
+        if (eVar.E) {
+            TextView textView = new TextView(eVar.getContext());
+            this.d = textView;
+            linearLayout.addView(textView);
+            textView.getLayoutParams().width = AndroidUtilities.dp(36.0f);
+            textView.setVisibility(8);
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setTextSize(1, 13.0f);
+        }
+        TextView textView2 = new TextView(eVar.getContext());
+        this.c = textView2;
+        linearLayout.addView(textView2, a6.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
+        org.telegram.ui.Components.a6 a6Var = new org.telegram.ui.Components.a6(eVar.getContext());
+        this.b = a6Var;
+        linearLayout.addView(a6Var, a6.n(-1, -2));
+        textView2.setGravity(8388611);
+        a6Var.setGravity(8388613);
+        a6Var.setTypeface(AndroidUtilities.bold());
+        a6Var.setTextSize(1, 13.0f);
+        textView2.setTextSize(1, 13.0f);
     }
 }

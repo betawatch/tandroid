@@ -1,37 +1,47 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class f1 extends View {
-    public final Paint a;
+public final class f1 {
+    public final l a;
     public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public boolean l;
 
-    public f1(Context context) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+    public f1(l lVar) {
+        this.a = lVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        Paint paint = this.a;
-        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, -4.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 0.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 3.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, -7.0f, this.b)), paint);
-        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 3.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(5.33f, 7.0f, this.b)), (getWidth() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, -4.0f, this.b)), (getHeight() / 2.0f) + AndroidUtilities.dp(AndroidUtilities.lerp(-5.33f, 0.0f, this.b)), paint);
-    }
-
-    public void setProgress(float f7) {
-        this.b = f7;
-        invalidate();
+    public final void a(RectF rectF) {
+        l lVar = this.a;
+        if (lVar.o() == 4) {
+            float f7 = this.b;
+            float f10 = this.k;
+            float f11 = this.c;
+            rectF.set(f7 - f10, f11 - f10, f7 + f10, f11 + f10);
+            rectF.union(this.d, this.e);
+            rectF.union(this.i, this.j);
+        } else {
+            float max = Math.max(Math.abs(this.d), Math.abs(this.e));
+            float f12 = this.b;
+            float f13 = max * 1.42f;
+            float f14 = this.c;
+            rectF.set(f12 - f13, f14 - f13, f12 + f13, f14 + f13);
+            if (lVar.o() == 3) {
+                rectF.union(this.i, this.j);
+            }
+        }
+        float f15 = (-this.f) - 3.0f;
+        rectF.inset(f15, f15);
     }
 }

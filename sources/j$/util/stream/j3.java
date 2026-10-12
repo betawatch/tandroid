@@ -30,7 +30,7 @@ public final class j3 extends i3 implements v1 {
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.j5
@@ -60,21 +60,21 @@ public final class j3 extends i3 implements v1 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j3) {
+    public final void o(long j10) {
         long[] jArr = this.a;
-        if (j3 != jArr.length) {
-            throw new IllegalStateException(String.format("Begin size %d is not equal to fixed size %d", Long.valueOf(j3), Integer.valueOf(jArr.length)));
+        if (j10 != jArr.length) {
+            throw new IllegalStateException(String.format("Begin size %d is not equal to fixed size %d", Long.valueOf(j10), Integer.valueOf(jArr.length)));
         }
         this.b = 0;
     }
 
     @Override // j$.util.stream.j5
-    public final void accept(long j3) {
+    public final void accept(long j10) {
         int i10 = this.b;
         long[] jArr = this.a;
         if (i10 < jArr.length) {
             this.b = i10 + 1;
-            jArr[i10] = j3;
+            jArr[i10] = j10;
             return;
         }
         throw new IllegalStateException(String.format("Accept exceeded fixed size of %d", Integer.valueOf(jArr.length)));

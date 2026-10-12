@@ -88,8 +88,8 @@ public abstract class z0 extends a implements IntStream {
     }
 
     @Override // j$.util.stream.t3
-    public final w1 A0(long j3, IntFunction intFunction) {
-        return t3.s0(j3);
+    public final w1 A0(long j10, IntFunction intFunction) {
+        return t3.s0(j10);
     }
 
     @Override // j$.util.stream.BaseStream
@@ -174,19 +174,19 @@ public abstract class z0 extends a implements IntStream {
     }
 
     @Override // j$.util.stream.IntStream
-    public final IntStream limit(long j3) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException(Long.toString(j3));
+    public final IntStream limit(long j10) {
+        if (j10 < 0) {
+            throw new IllegalArgumentException(Long.toString(j10));
         }
-        return t3.x0(this, 0L, j3);
+        return t3.x0(this, 0L, j10);
     }
 
     @Override // j$.util.stream.IntStream
-    public final IntStream skip(long j3) {
-        if (j3 >= 0) {
-            return j3 == 0 ? this : t3.x0(this, j3, -1L);
+    public final IntStream skip(long j10) {
+        if (j10 >= 0) {
+            return j10 == 0 ? this : t3.x0(this, j10, -1L);
         }
-        throw new IllegalArgumentException(Long.toString(j3));
+        throw new IllegalArgumentException(Long.toString(j10));
     }
 
     @Override // j$.util.stream.IntStream
@@ -230,8 +230,8 @@ public abstract class z0 extends a implements IntStream {
 
     @Override // j$.util.stream.IntStream
     public final j$.util.b0 average() {
-        long j3 = ((long[]) collect(new n(27), new n(28), new n(29)))[0];
-        return j3 > 0 ? new j$.util.b0(r0[1] / j3) : j$.util.b0.c;
+        long j10 = ((long[]) collect(new n(27), new n(28), new n(29)))[0];
+        return j10 > 0 ? new j$.util.b0(r0[1] / j10) : j$.util.b0.c;
     }
 
     @Override // j$.util.stream.IntStream

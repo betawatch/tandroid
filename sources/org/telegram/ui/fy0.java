@@ -1,157 +1,111 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fy0 extends org.telegram.ui.Components.pm0 {
-    public final Context c;
-    public final /* synthetic */ gy0 d;
+public final class fy0 extends FrameLayout {
+    public org.telegram.ui.Components.x9 a;
+    public org.telegram.ui.Cells.u1 b;
+    public Drawable c;
+    public Drawable d;
+    public org.telegram.ui.Components.v40 e;
+    public MessageObject f;
 
-    public fy0(gy0 gy0Var, Context context) {
-        this.d = gy0Var;
-        this.c = context;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.e.e(this.b, null, 0, 0, false);
     }
 
-    @Override // org.telegram.ui.Components.pm0
-    public final boolean D(s4.d1 d1Var) {
-        int i10 = d1Var.f;
-        return i10 == 0 || i10 == 2 || i10 == 4;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // s4.i0
-    public final int h() {
-        return this.d.e;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.b.invalidate();
     }
 
-    @Override // s4.i0
-    public final int j(int i10) {
-        gy0 gy0Var = this.d;
-        if (i10 == gy0Var.w) {
-            return 4;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.ui.Components.x9 x9Var = this.a;
+        if (x9Var != null) {
+            x9Var.dispose();
+            this.a = null;
         }
-        if (i10 == gy0Var.n) {
-            return 3;
-        }
-        if (i10 == gy0Var.f) {
-            return 2;
-        }
-        return (i10 == gy0Var.h || i10 == gy0Var.v) ? 1 : 0;
     }
 
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
-        String string;
-        gy0 gy0Var = this.d;
-        int i11 = gy0Var.y;
-        int i12 = d1Var.f;
-        View view = d1Var.a;
-        if (i12 == 0) {
-            org.telegram.ui.Cells.b5 b5Var = (org.telegram.ui.Cells.b5) view;
-            if (i11 != 1) {
-                throw null;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Drawable drawable = this.d;
+        Drawable t02 = org.telegram.ui.ActionBar.g6.t0();
+        if (t02 != null && this.c != t02) {
+            org.telegram.ui.Components.x9 x9Var = this.a;
+            if (x9Var != null) {
+                x9Var.dispose();
+                this.a = null;
             }
-            long keyAt = gy0Var.getMessagesController().blockePeers.keyAt(i10 - gy0Var.r);
-            b5Var.setTag(Long.valueOf(keyAt));
-            if (keyAt <= 0) {
-                TLRPC.Chat chat = gy0Var.getMessagesController().getChat(Long.valueOf(-keyAt));
-                if (chat != null) {
-                    int i13 = chat.participants_count;
-                    b5Var.b(chat, null, i13 != 0 ? LocaleController.formatPluralString("Members", i13, new Object[0]) : chat.has_geo ? LocaleController.getString(R.string.MegaLocation) : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.MegaPrivate) : LocaleController.getString(R.string.MegaPublic), i10 != gy0Var.s - 1);
-                    return;
-                }
-                return;
-            }
-            TLRPC.User user = gy0Var.getMessagesController().getUser(Long.valueOf(keyAt));
-            if (user != null) {
-                if (user.bot) {
-                    string = LocaleController.getString(R.string.Bot).substring(0, 1).toUpperCase() + LocaleController.getString(R.string.Bot).substring(1);
-                } else {
-                    String str = user.phone;
-                    string = (str == null || str.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.bi.g(new StringBuilder("+"), user.phone, hf.b.c());
-                }
-                b5Var.b(user, null, string, i10 != gy0Var.s - 1);
-                return;
-            }
-            return;
+            this.c = t02;
         }
-        if (i12 == 1) {
-            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
-            if (i10 != gy0Var.h) {
-                if (i10 == gy0Var.v) {
-                    e9Var.setFixedSize(12);
-                    e9Var.setText("");
-                    return;
-                }
-                return;
-            }
-            if (i11 == 1) {
-                e9Var.setFixedSize(0);
-                e9Var.setText(LocaleController.getString(R.string.BlockedUsersInfo));
-                return;
+        Drawable drawable2 = this.c;
+        if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.cd0)) {
+            drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            Drawable drawable3 = this.c;
+            if (drawable3 instanceof org.telegram.ui.Components.y9) {
+                this.a = ((org.telegram.ui.Components.y9) drawable3).c(canvas, this);
             } else {
-                e9Var.setFixedSize(8);
-                e9Var.setText(null);
-                return;
+                drawable3.draw(canvas);
             }
-        }
-        if (i12 == 2) {
-            org.telegram.ui.Cells.y4 y4Var = (org.telegram.ui.Cells.y4) view;
-            y4Var.a(org.telegram.ui.ActionBar.i6.v6, org.telegram.ui.ActionBar.i6.u6);
-            if (i11 == 1) {
-                y4Var.b(LocaleController.getString(R.string.BlockUser), R.drawable.msg_contact_add, 5, false);
-                return;
+        } else if (drawable2 instanceof BitmapDrawable) {
+            if (((BitmapDrawable) drawable2).getTileModeX() == Shader.TileMode.REPEAT) {
+                canvas.save();
+                float f7 = 2.0f / AndroidUtilities.density;
+                canvas.scale(f7, f7);
+                this.c.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f7), (int) Math.ceil(getMeasuredHeight() / f7));
             } else {
-                LocaleController.getString(R.string.PrivacyAddAnException);
-                throw null;
+                int measuredHeight = getMeasuredHeight();
+                float max = Math.max(getMeasuredWidth() / this.c.getIntrinsicWidth(), measuredHeight / this.c.getIntrinsicHeight());
+                int ceil = (int) Math.ceil(this.c.getIntrinsicWidth() * max);
+                int ceil2 = (int) Math.ceil(this.c.getIntrinsicHeight() * max);
+                int measuredWidth = (getMeasuredWidth() - ceil) / 2;
+                int i10 = (measuredHeight - ceil2) / 2;
+                canvas.save();
+                canvas.clipRect(0, 0, ceil, getMeasuredHeight());
+                this.c.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
             }
-        }
-        if (i12 != 3) {
-            return;
-        }
-        org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-        if (i10 == gy0Var.n) {
-            if (i11 == 1) {
-                m4Var.setText(LocaleController.formatPluralString("BlockedUsersCount", gy0Var.getMessagesController().totalBlockedCount, new Object[0]));
-            } else {
-                m4Var.setText(LocaleController.getString(R.string.PrivacyExceptions));
-            }
-        }
-    }
-
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
-        FrameLayout e9Var;
-        if (i10 != 0) {
-            Context context = this.c;
-            if (i10 == 1) {
-                e9Var = new org.telegram.ui.Cells.e9(context);
-            } else if (i10 == 2) {
-                e9Var = new org.telegram.ui.Cells.y4(context);
-            } else if (i10 != 4) {
-                org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(this.c, org.telegram.ui.ActionBar.i6.L6, 21, 11, false, null);
-                m4Var.setHeight(43);
-                frameLayout = m4Var;
-            } else {
-                org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(viewGroup.getContext());
-                r8Var.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
-                r8Var.e(-1, org.telegram.ui.ActionBar.i6.p7);
-                frameLayout = r8Var;
-            }
-            frameLayout = e9Var;
+            this.c.draw(canvas);
+            canvas.restore();
         } else {
-            org.telegram.ui.Cells.b5 b5Var = new org.telegram.ui.Cells.b5(7, 6, this.c, null, true);
-            b5Var.setDelegate(new hq0(this, 9));
-            frameLayout = b5Var;
+            super.onDraw(canvas);
         }
-        return new org.telegram.ui.Components.am0(frameLayout);
+        drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        drawable.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchSetPressed(boolean z10) {
     }
 }

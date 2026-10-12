@@ -8,12 +8,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.ft;
-import org.telegram.ui.wb0;
-import org.telegram.ui.ze;
+import org.telegram.ui.bc0;
+import org.telegram.ui.ff;
+import org.telegram.ui.mt;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -40,7 +39,7 @@ public final /* synthetic */ class g1 implements Utilities.Callback2 {
         switch (this.a) {
             case 0:
                 d2 d2Var = this.b;
-                wb0 wb0Var = (wb0) this.d;
+                bc0 bc0Var = (bc0) this.d;
                 String str = this.c;
                 String str2 = (String) this.e;
                 String str3 = (String) this.f;
@@ -49,7 +48,7 @@ public final /* synthetic */ class g1 implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 d2Var.getClass();
                 if (tL_error != null || tonconnectsession2 == null) {
-                    wb0Var.run(null, d2.x(tL_error, "createSession"));
+                    bc0Var.run(null, d2.x(tL_error, "createSession"));
                     break;
                 } else {
                     ArrayList arrayList = d2Var.d;
@@ -63,7 +62,7 @@ public final /* synthetic */ class g1 implements Utilities.Callback2 {
                         if (tonconnectsession3.id == tonconnectsession2.id && (tonconnectsession3.manifest != null || tonconnectsession3.manifest_error != null || tonconnectsession3.closed || tonconnectsession3.closing)) {
                             tonconnectsession = tonconnectsession3;
                             d2Var.n(tonconnectsession);
-                            wb0Var.run(new y1(tonconnectsession, str, str2, str3, str4), null);
+                            bc0Var.run(new y1(tonconnectsession, str, str2, str3, str4), null);
                             break;
                         } else {
                             size = i11;
@@ -71,13 +70,13 @@ public final /* synthetic */ class g1 implements Utilities.Callback2 {
                     }
                     tonconnectsession = tonconnectsession2;
                     d2Var.n(tonconnectsession);
-                    wb0Var.run(new y1(tonconnectsession, str, str2, str3, str4), null);
+                    bc0Var.run(new y1(tonconnectsession, str, str2, str3, str4), null);
                 }
                 break;
             case 1:
                 d2 d2Var2 = this.b;
-                ft ftVar = (ft) this.d;
-                h0 h0Var = (h0) this.e;
+                mt mtVar = (mt) this.d;
+                g0 g0Var = (g0) this.e;
                 TL_wallet.tonConnectSession tonconnectsession4 = (TL_wallet.tonConnectSession) this.f;
                 String str5 = this.c;
                 byte[] bArr = (byte[]) this.g;
@@ -85,72 +84,72 @@ public final /* synthetic */ class g1 implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 d2Var2.getClass();
                 if (tL_error2 == null && tonconnectnexteventid != null) {
-                    Utilities.globalQueue.postRunnable(new ze((Object) d2Var2, (Object) h0Var, (Object) tonconnectsession4, str5, (Object) bArr, (Object) tonconnectnexteventid, (Object) ftVar, 7));
+                    Utilities.globalQueue.postRunnable(new ff((Object) d2Var2, (Object) g0Var, (Object) tonconnectsession4, str5, (Object) bArr, (Object) tonconnectnexteventid, (Object) mtVar, 7));
                     break;
                 } else {
-                    ftVar.run(d2.x(tL_error2, "getNextEventId"));
+                    mtVar.run(d2.x(tL_error2, "getNextEventId"));
                     break;
                 }
             case 2:
                 d2 d2Var3 = this.b;
-                ai.m0 m0Var = (ai.m0) this.d;
+                bi.f0 f0Var = (bi.f0) this.d;
                 TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) this.e;
                 String str6 = this.c;
                 byte[] bArr2 = (byte[]) this.f;
                 JSONArray jSONArray = (JSONArray) this.g;
                 TL_wallet.tonConnectSession tonconnectsession5 = (TL_wallet.tonConnectSession) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                k0 k0Var = d2Var3.b;
+                j0 j0Var = d2Var3.b;
                 if (tL_error3 == null && tonconnectsession5 != null) {
-                    if (tonconnectsession5.id != tL_urlAuthResultRequest.tc_session_id || !tL_urlAuthResultRequest.tc_client_id.equals(tonconnectsession5.dapp_client_id) || tonconnectsession5.closed || tonconnectsession5.closing || tonconnectsession5.nonce == null || !TextUtils.equals(str6, k0Var.r()) || !Arrays.equals(bArr2, k0Var.w())) {
-                        m0Var.run(null, "Wallet or TON Connect session changed. Open the request again.");
+                    if (tonconnectsession5.id != tL_urlAuthResultRequest.tc_session_id || !tL_urlAuthResultRequest.tc_client_id.equals(tonconnectsession5.dapp_client_id) || tonconnectsession5.closed || tonconnectsession5.closing || tonconnectsession5.nonce == null || !TextUtils.equals(str6, j0Var.r()) || !Arrays.equals(bArr2, j0Var.w())) {
+                        f0Var.run(null, "Wallet or TON Connect session changed. Open the request again.");
                         break;
                     } else {
-                        k0Var.x(new pr(d2Var3, m0Var, tonconnectsession5, str6, bArr2, jSONArray, tL_urlAuthResultRequest, 2), true, false);
+                        j0Var.x(new a1(d2Var3, f0Var, tonconnectsession5, str6, bArr2, jSONArray, tL_urlAuthResultRequest), true, false);
                         break;
                     }
                 } else {
-                    m0Var.run(null, d2.x(tL_error3, "createSession"));
+                    f0Var.run(null, d2.x(tL_error3, "createSession"));
                     break;
                 }
             default:
                 d2 d2Var4 = this.b;
-                ft ftVar2 = (ft) this.d;
+                mt mtVar2 = (mt) this.d;
                 TL_wallet.tonConnectSession tonconnectsession6 = (TL_wallet.tonConnectSession) this.e;
                 String str7 = this.c;
                 byte[] bArr3 = (byte[]) this.f;
                 y1 y1Var = (y1) this.g;
-                h0 h0Var2 = (h0) obj;
+                g0 g0Var2 = (g0) obj;
                 String str8 = (String) obj2;
                 d2Var4.getClass();
-                if (str8 == null && h0Var2 != null) {
-                    h0 b10 = h0Var2.b();
-                    Utilities.globalQueue.postRunnable(new ze((Object) d2Var4, (Object) b10, (Object) tonconnectsession6, str7, (Object) bArr3, (Object) y1Var, (Object) new ft(28, b10, ftVar2), 9));
+                if (str8 == null && g0Var2 != null) {
+                    g0 b10 = g0Var2.b();
+                    Utilities.globalQueue.postRunnable(new ff((Object) d2Var4, (Object) b10, (Object) tonconnectsession6, str7, (Object) bArr3, (Object) y1Var, (Object) new mt(28, b10, mtVar2), 9));
                     break;
                 } else {
                     if (str8 == null) {
                         str8 = "Recovery phrase is unavailable";
                     }
-                    ftVar2.run(str8);
+                    mtVar2.run(str8);
                     break;
                 }
         }
     }
 
-    public /* synthetic */ g1(d2 d2Var, ft ftVar, h0 h0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr) {
+    public /* synthetic */ g1(d2 d2Var, mt mtVar, g0 g0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr) {
         this.a = 1;
         this.b = d2Var;
-        this.d = ftVar;
-        this.e = h0Var;
+        this.d = mtVar;
+        this.e = g0Var;
         this.f = tonconnectsession;
         this.c = str;
         this.g = bArr;
     }
 
-    public /* synthetic */ g1(d2 d2Var, wb0 wb0Var, String str, String str2, String str3, String str4) {
+    public /* synthetic */ g1(d2 d2Var, bc0 bc0Var, String str, String str2, String str3, String str4) {
         this.a = 0;
         this.b = d2Var;
-        this.d = wb0Var;
+        this.d = bc0Var;
         this.c = str;
         this.e = str2;
         this.f = str3;

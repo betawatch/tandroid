@@ -1,24 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ct implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ht b;
+    public final /* synthetic */ dt b;
 
-    public /* synthetic */ ct(ht htVar, int i10) {
+    public /* synthetic */ ct(dt dtVar, int i10) {
         this.a = i10;
-        this.b = htVar;
+        this.b = dtVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.W(false);
+                dt dtVar = this.b;
+                dtVar.c = false;
+                dtVar.b.run();
+                ArrayList arrayList = dtVar.h;
+                if (arrayList.isEmpty() || System.currentTimeMillis() - dtVar.f > 3600000) {
+                    arrayList.clear();
+                    dtVar.e = false;
+                    dtVar.g = null;
+                    dtVar.a();
+                    break;
+                }
                 break;
             default:
-                this.b.N(true);
+                this.b.i = false;
                 break;
         }
     }

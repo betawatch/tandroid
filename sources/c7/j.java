@@ -14,7 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j extends l {
     public static final Parcelable.Creator<j> CREATOR = new r0(16);
@@ -25,14 +25,14 @@ public final class j extends l {
 
     public j(byte[] bArr, byte[] bArr2, byte[] bArr3, String[] strArr) {
         n6.l.h(bArr);
-        n7.s0 t10 = n7.s0.t(bArr.length, bArr);
+        n7.s0 s10 = n7.s0.s(bArr.length, bArr);
         n6.l.h(bArr2);
-        n7.s0 t11 = n7.s0.t(bArr2.length, bArr2);
+        n7.s0 s11 = n7.s0.s(bArr2.length, bArr2);
         n6.l.h(bArr3);
-        n7.s0 t12 = n7.s0.t(bArr3.length, bArr3);
-        this.a = t10;
-        this.b = t11;
-        this.c = t12;
+        n7.s0 s12 = n7.s0.s(bArr3.length, bArr3);
+        this.a = s10;
+        this.b = s11;
+        this.c = s12;
         n6.l.h(strArr);
         this.d = strArr;
     }
@@ -48,11 +48,11 @@ public final class j extends l {
             JSONObject jSONObject = new JSONObject();
             n7.s0 s0Var = this.b;
             if (s0Var != null) {
-                jSONObject.put("clientDataJSON", u6.b.c(s0Var.u()));
+                jSONObject.put("clientDataJSON", u6.b.c(s0Var.t()));
             }
             n7.s0 s0Var2 = this.c;
             if (s0Var2 != null) {
-                jSONObject.put("attestationObject", u6.b.c(s0Var2.u()));
+                jSONObject.put("attestationObject", u6.b.c(s0Var2.t()));
             }
             JSONArray jSONArray = new JSONArray();
             for (int i10 = 0; i10 < strArr.length; i10++) {
@@ -65,13 +65,13 @@ public final class j extends l {
             jSONObject.put("transports", jSONArray);
             try {
                 try {
-                    c1 c1Var = (c1) ((n7.z0) c1.d(s0Var2.u()).b(n7.z0.class)).b.get(new a1("authData"));
+                    c1 c1Var = (c1) ((n7.z0) c1.d(s0Var2.t()).b(n7.z0.class)).b.get(new a1("authData"));
                     if (c1Var == null) {
                         throw new IllegalArgumentException("attestation object missing authData");
                     }
                     n7.s0 s0Var3 = ((n7.w0) c1Var.b(n7.w0.class)).a;
                     byte[] bArr2 = s0Var3.b;
-                    ByteBuffer asReadOnlyBuffer = ByteBuffer.wrap(bArr2, 0, s0Var3.p()).asReadOnlyBuffer();
+                    ByteBuffer asReadOnlyBuffer = ByteBuffer.wrap(bArr2, 0, s0Var3.o()).asReadOnlyBuffer();
                     try {
                         asReadOnlyBuffer.position(asReadOnlyBuffer.position() + 32);
                         if ((asReadOnlyBuffer.get() & 64) == 0) {
@@ -83,8 +83,8 @@ public final class j extends l {
                         try {
                             try {
                                 int position = asReadOnlyBuffer.position();
-                                int s10 = n7.s0.s(position, bArr2.length, s0Var3.p());
-                                e1 e1Var = new e1((s10 == 0 ? n7.s0.c : new n7.r0(bArr2, position, s10)).r());
+                                int r10 = n7.s0.r(position, bArr2.length, s0Var3.o());
+                                e1 e1Var = new e1((r10 == 0 ? n7.s0.c : new n7.r0(bArr2, position, r10)).q());
                                 try {
                                     n7.r rVar = ((n7.z0) n7.a.k(e1Var).b(n7.z0.class)).b;
                                     c1 c1Var2 = (c1) rVar.get(new n7.y0(3L));
@@ -93,16 +93,16 @@ public final class j extends l {
                                         throw new IllegalArgumentException("COSE key missing required fields");
                                     }
                                     try {
-                                        long j3 = ((n7.y0) c1Var2.b(n7.y0.class)).a;
-                                        long j10 = ((n7.y0) c1Var3.b(n7.y0.class)).a;
+                                        long j10 = ((n7.y0) c1Var2.b(n7.y0.class)).a;
+                                        long j11 = ((n7.y0) c1Var3.b(n7.y0.class)).a;
                                         byte[] bArr3 = null;
-                                        if (j10 != 1) {
-                                            if (j10 == 2) {
-                                                j10 = 2;
+                                        if (j11 != 1) {
+                                            if (j11 == 2) {
+                                                j11 = 2;
                                             }
                                             bArr = bArr3;
-                                            jSONObject.put("authenticatorData", u6.b.c(s0Var3.u()));
-                                            jSONObject.put("publicKeyAlgorithm", j3);
+                                            jSONObject.put("authenticatorData", u6.b.c(s0Var3.t()));
+                                            jSONObject.put("publicKeyAlgorithm", j10);
                                             if (bArr != null) {
                                                 jSONObject.put("publicKey", Base64.encodeToString(bArr, 11));
                                             }
@@ -112,8 +112,8 @@ public final class j extends l {
                                         if (c1Var4 == null) {
                                             throw new IllegalArgumentException("COSE key missing required fields");
                                         }
-                                        long j11 = ((n7.y0) c1Var4.b(n7.y0.class)).a;
-                                        if (j10 == 2 && j11 == 1) {
+                                        long j12 = ((n7.y0) c1Var4.b(n7.y0.class)).a;
+                                        if (j11 == 2 && j12 == 1) {
                                             c1 c1Var5 = (c1) rVar.get(new n7.y0(-2L));
                                             c1 c1Var6 = (c1) rVar.get(new n7.y0(-3L));
                                             if (c1Var5 == null || c1Var6 == null) {
@@ -124,8 +124,8 @@ public final class j extends l {
                                             if (s0Var4.b.length != 32 || s0Var5.b.length != 32) {
                                                 throw new IllegalArgumentException("COSE coordinates are the wrong size");
                                             }
-                                            bArr3 = n7.a.j(Base64.decode("MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE", 0), s0Var4.u(), s0Var5.u());
-                                        } else if (j10 == 1 && j11 == 6) {
+                                            bArr3 = n7.a.j(Base64.decode("MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE", 0), s0Var4.t(), s0Var5.t());
+                                        } else if (j11 == 1 && j12 == 6) {
                                             c1 c1Var7 = (c1) rVar.get(new n7.y0(-2L));
                                             if (c1Var7 == null) {
                                                 throw new IllegalArgumentException("COSE key missing required fields");
@@ -134,16 +134,16 @@ public final class j extends l {
                                             if (s0Var6.b.length != 32) {
                                                 throw new IllegalArgumentException("COSE coordinates are the wrong size");
                                             }
-                                            bArr3 = n7.a.j(Base64.decode("MCowBQYDK2VwAyEA", 0), s0Var6.u());
+                                            bArr3 = n7.a.j(Base64.decode("MCowBQYDK2VwAyEA", 0), s0Var6.t());
                                         }
                                         bArr = bArr3;
-                                        jSONObject.put("authenticatorData", u6.b.c(s0Var3.u()));
-                                        jSONObject.put("publicKeyAlgorithm", j3);
+                                        jSONObject.put("authenticatorData", u6.b.c(s0Var3.t()));
+                                        jSONObject.put("publicKeyAlgorithm", j10);
                                         if (bArr != null) {
                                         }
                                         return jSONObject;
-                                    } catch (b1 e7) {
-                                        throw new IllegalArgumentException("COSE key ill-formed", e7);
+                                    } catch (b1 e) {
+                                        throw new IllegalArgumentException("COSE key ill-formed", e);
                                     }
                                 } finally {
                                     try {
@@ -151,29 +151,29 @@ public final class j extends l {
                                     } catch (IOException unused) {
                                     }
                                 }
-                            } catch (n7.x0 e10) {
-                                e = e10;
+                            } catch (n7.x0 e7) {
+                                e = e7;
                                 throw new IllegalArgumentException("failed to parse COSE key", e);
                             }
-                        } catch (b1 e11) {
-                            e = e11;
+                        } catch (b1 e10) {
+                            e = e10;
                             throw new IllegalArgumentException("failed to parse COSE key", e);
                         }
-                    } catch (IllegalArgumentException e12) {
-                        throw new IllegalArgumentException("ill-formed authenticator data", e12);
+                    } catch (IllegalArgumentException e11) {
+                        throw new IllegalArgumentException("ill-formed authenticator data", e11);
                     }
-                } catch (b1 e13) {
-                    throw new IllegalArgumentException("authData value has wrong type", e13);
+                } catch (b1 e12) {
+                    throw new IllegalArgumentException("authData value has wrong type", e12);
                 }
-            } catch (b1 e14) {
+            } catch (b1 e13) {
+                e = e13;
+                throw new IllegalArgumentException("failed to parse attestation object", e);
+            } catch (n7.x0 e14) {
                 e = e14;
                 throw new IllegalArgumentException("failed to parse attestation object", e);
-            } catch (n7.x0 e15) {
-                e = e15;
-                throw new IllegalArgumentException("failed to parse attestation object", e);
             }
-        } catch (JSONException e16) {
-            throw new RuntimeException("Error encoding AuthenticatorAttestationResponse to JSON object", e16);
+        } catch (JSONException e15) {
+            throw new RuntimeException("Error encoding AuthenticatorAttestationResponse to JSON object", e15);
         }
     }
 
@@ -190,25 +190,25 @@ public final class j extends l {
     }
 
     public final String toString() {
-        la.h hVar = new la.h(getClass().getSimpleName());
+        li.k kVar = new li.k(getClass().getSimpleName());
         n7.k0 k0Var = n7.m0.d;
-        byte[] u10 = this.a.u();
-        hVar.a0(k0Var.c(u10.length, u10), "keyHandle");
-        byte[] u11 = this.b.u();
-        hVar.a0(k0Var.c(u11.length, u11), "clientDataJSON");
-        byte[] u12 = this.c.u();
-        hVar.a0(k0Var.c(u12.length, u12), "attestationObject");
-        hVar.a0(Arrays.toString(this.d), "transports");
-        return hVar.toString();
+        byte[] t10 = this.a.t();
+        kVar.Y(k0Var.c(t10.length, t10), "keyHandle");
+        byte[] t11 = this.b.t();
+        kVar.Y(k0Var.c(t11.length, t11), "clientDataJSON");
+        byte[] t12 = this.c.t();
+        kVar.Y(k0Var.c(t12.length, t12), "attestationObject");
+        kVar.Y(Arrays.toString(this.d), "transports");
+        return kVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.d0.q(parcel, 20293);
-        w7.d0.c(parcel, 2, this.a.u());
-        w7.d0.c(parcel, 3, this.b.u());
-        w7.d0.c(parcel, 4, this.c.u());
-        w7.d0.m(parcel, 5, this.d);
-        w7.d0.r(parcel, q6);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.c(parcel, 2, this.a.t());
+        w7.g0.c(parcel, 3, this.b.t());
+        w7.g0.c(parcel, 4, this.c.t());
+        w7.g0.m(parcel, 5, this.d);
+        w7.g0.r(parcel, q6);
     }
 }

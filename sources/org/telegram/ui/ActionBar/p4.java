@@ -1,23 +1,25 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.MenuItem;
-import android.view.View;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.ImageButton;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class p4 implements View.OnClickListener {
-    public final /* synthetic */ u4 a;
+public final class p4 extends ImageButton {
+    public final /* synthetic */ t4 a;
 
-    public p4(u4 u4Var) {
-        this.a = u4Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p4(t4 t4Var, Context context) {
+        super(context);
+        this.a = t4Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        MenuItem.OnMenuItemClickListener onMenuItemClickListener;
-        if (!(view.getTag() instanceof MenuItem) || (onMenuItemClickListener = this.a.K) == null) {
-            return;
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (this.a.N) {
+            return false;
         }
-        onMenuItemClickListener.onMenuItemClick((MenuItem) view.getTag());
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

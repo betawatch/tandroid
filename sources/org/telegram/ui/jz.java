@@ -1,27 +1,35 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class jz extends org.telegram.ui.Components.o61 {
-    public static final /* synthetic */ int a = 0;
+public final class jz {
+    public float a;
+    public float b;
+    public boolean c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public boolean h;
+    public boolean i;
+    public ah.e j;
+    public long k;
+    public boolean l;
+    public boolean m;
+    public boolean n;
+    public float o;
+    public int p;
+    public TLRPC.Document q;
+    public final ImageReceiver r;
+    public String s;
 
-    static {
-        org.telegram.ui.Components.o61.setup(new jz());
-    }
-
-    @Override // org.telegram.ui.Components.o61
-    public final void bindView(View view, org.telegram.ui.Components.p61 p61Var, boolean z10, org.telegram.ui.Components.c71 c71Var, org.telegram.ui.Components.k71 k71Var) {
-        kz kzVar = (kz) view;
-        kzVar.b.setOnClickListener((View.OnClickListener) p61Var.G);
-        kzVar.e.setOnClickListener((View.OnClickListener) p61Var.H);
-        kzVar.a(p61Var.e, false);
-    }
-
-    @Override // org.telegram.ui.Components.o61
-    public final View createView(Context context, org.telegram.ui.Components.qm0 qm0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new kz(context, e6Var);
+    public jz() {
+        ImageReceiver imageReceiver = new ImageReceiver();
+        this.r = imageReceiver;
+        imageReceiver.setAllowLoadingOnAttachedOnly(true);
+        imageReceiver.setAllowDrawWhileCacheGenerating(true);
     }
 }

@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
 import javax.net.SocketFactory;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f0 {
     public final int a;
@@ -24,18 +24,18 @@ public final class f0 {
     }
 
     public Socket a(InetAddress[] inetAddressArr) {
-        sc.h hVar = new sc.h();
+        tc.h hVar = new tc.h();
         ArrayList arrayList = new ArrayList(inetAddressArr.length);
         int i10 = 0;
-        c5.b0 b0Var = null;
+        c5.c0 c0Var = null;
         int i11 = 0;
         for (InetAddress inetAddress : inetAddressArr) {
             int i12 = this.b;
             if ((i12 != 2 || (inetAddress instanceof Inet4Address)) && (i12 != 3 || (inetAddress instanceof Inet6Address))) {
                 int i13 = i11 + this.c;
-                c5.b0 b0Var2 = new c5.b0(i13, 10);
-                arrayList.add(new sc.t(hVar, (SocketFactory) this.d, new InetSocketAddress(inetAddress, ((sc.a) this.e).b), this.a, b0Var, b0Var2));
-                b0Var = b0Var2;
+                c5.c0 c0Var2 = new c5.c0(i13, 11);
+                arrayList.add(new tc.t(hVar, (SocketFactory) this.d, new InetSocketAddress(inetAddress, ((tc.a) this.e).b), this.a, c0Var, c0Var2));
+                c0Var = c0Var2;
                 i11 = i13;
             }
         }
@@ -46,7 +46,7 @@ public final class f0 {
         while (i10 < size) {
             Object obj = arrayList2.get(i10);
             i10++;
-            ((sc.t) obj).start();
+            ((tc.t) obj).start();
         }
         ((CountDownLatch) hVar.a).await();
         Socket socket = (Socket) hVar.c;
@@ -57,7 +57,7 @@ public final class f0 {
         if (exc != null) {
             throw exc;
         }
-        throw new sc.w(44, "No viable interface to connect");
+        throw new tc.v(44, "No viable interface to connect");
     }
 
     public void b() {
@@ -73,14 +73,14 @@ public final class f0 {
     }
 
     public f0(int i10, int i11, int i12) {
-        this.d = i10 != Integer.MIN_VALUE ? a1.g.n(i10, "/") : "";
+        this.d = i10 != Integer.MIN_VALUE ? a1.g.m(i10, "/") : "";
         this.a = i11;
         this.b = i12;
         this.c = TLObject.FLAG_31;
         this.e = "";
     }
 
-    public f0(SocketFactory socketFactory, sc.a aVar, int i10, int i11, int i12) {
+    public f0(SocketFactory socketFactory, tc.a aVar, int i10, int i11, int i12) {
         this.d = socketFactory;
         this.e = aVar;
         this.a = i10;

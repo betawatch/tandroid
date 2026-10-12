@@ -1,50 +1,46 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MrzRecognizer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsCustomSettingsActivity b;
-    public final /* synthetic */ vk0 c;
-    public final /* synthetic */ View d;
+public final class hk0 implements y9 {
+    public final /* synthetic */ ik0 a;
 
-    public /* synthetic */ hk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, vk0 vk0Var, View view, int i10, int i11) {
-        this.a = i11;
-        this.b = notificationsCustomSettingsActivity;
-        this.c = vk0Var;
-        this.d = view;
+    public hk0(ik0 ik0Var) {
+        this.a = ik0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.k0(this.c, this.d, false);
-                break;
-            case 1:
-                this.b.e0(this.c, this.d);
-                break;
-            case 2:
-                NotificationsCustomSettingsActivity.X(this.b, this.c, this.d);
-                break;
-            case 3:
-                NotificationsCustomSettingsActivity.V(this.b, this.c, this.d);
-                break;
-            case 4:
-                this.b.e0(this.c, this.d);
-                break;
-            default:
-                this.b.k0(this.c, this.d, true);
-                break;
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ String I0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.y9
+    public final void K(String str) {
+        int i10;
+        String b10 = pf.d.b(str);
+        if (TextUtils.isEmpty(b10)) {
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ve(27));
+        } else {
+            i10 = ((org.telegram.ui.ActionBar.e3) this.a).currentAccount;
+            MessagesController.getInstance(i10).getUserNameResolver().resolve(b10, new bi.f(18));
         }
     }
 
-    public /* synthetic */ hk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, vk0 vk0Var, View view, boolean z10, int i10) {
-        this.a = i10;
-        this.b = notificationsCustomSettingsActivity;
-        this.c = vk0Var;
-        this.d = view;
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ boolean e1(String str, o9 o9Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ void W0(MrzRecognizer.Result result) {
+    }
+
+    @Override // org.telegram.ui.y9
+    public final /* synthetic */ void onDismiss() {
     }
 }

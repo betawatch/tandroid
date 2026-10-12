@@ -27,10 +27,10 @@ public abstract class b extends d {
         Spliterator trySplit;
         Spliterator spliterator = this.b;
         long estimateSize = spliterator.estimateSize();
-        long j3 = this.c;
-        if (j3 == 0) {
-            j3 = d.e(estimateSize);
-            this.c = j3;
+        long j10 = this.c;
+        if (j10 == 0) {
+            j10 = d.e(estimateSize);
+            this.c = j10;
         }
         AtomicReference atomicReference = this.h;
         boolean z10 = false;
@@ -56,7 +56,7 @@ public abstract class b extends d {
                 obj = bVar.h();
                 break;
             }
-            if (estimateSize <= j3 || (trySplit = spliterator.trySplit()) == null) {
+            if (estimateSize <= j10 || (trySplit = spliterator.trySplit()) == null) {
                 break;
             }
             b bVar3 = (b) bVar.c(trySplit);

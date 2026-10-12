@@ -1,72 +1,54 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fe extends org.telegram.ui.Components.f91 {
-    public final Context a;
-    public final int b;
-    public final int c;
-    public final org.telegram.ui.ActionBar.e6 d;
-    public final ArrayList e = new ArrayList();
-    public final /* synthetic */ ge f;
+public final class fe extends org.telegram.ui.Components.yd0 {
+    public final /* synthetic */ int L;
+    public final /* synthetic */ Object M;
 
-    public fe(ge geVar, Context context, int i10, long j3, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.f = geVar;
-        this.a = context;
-        this.b = i10;
-        this.c = i11;
-        this.d = e6Var;
-        i();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ fe(Object obj, Context context, int i10) {
+        super(context, null);
+        this.L = i10;
+        this.M = obj;
     }
 
-    @Override // org.telegram.ui.Components.f91
-    public final View d(int i10) {
-        return new ee(this.f, this.a, i10, this.b, this.c, new ai.p8(this, i10, 18), this.d);
-    }
-
-    @Override // org.telegram.ui.Components.f91
-    public final int e() {
-        return this.e.size();
-    }
-
-    @Override // org.telegram.ui.Components.f91
-    public final CharSequence g(int i10) {
-        int h = h(i10);
-        return h != 0 ? h != 1 ? "" : LocaleController.getString(R.string.MonetizationTransactionsTON) : LocaleController.getString(R.string.MonetizationTransactionsStars);
-    }
-
-    @Override // org.telegram.ui.Components.f91
-    public final int h(int i10) {
-        if (i10 < 0) {
-            return 1;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.L) {
+            case 0:
+                qe qeVar = (qe) this.M;
+                org.telegram.ui.Components.h71 h71Var = qeVar.a1;
+                gi.o oVar = qeVar.Y0;
+                if (oVar != null && !oVar.isFocusable()) {
+                    oVar.setFocusable(true);
+                    oVar.setFocusableInTouchMode(true);
+                    int y12 = h71Var.y1(3);
+                    if (y12 >= 0 && y12 < h71Var.W2.x.size()) {
+                        h71Var.B0();
+                        h71Var.x0(y12);
+                    }
+                    oVar.requestFocus();
+                }
+                break;
+            default:
+                zh.g gVar = (zh.g) this.M;
+                gi.o oVar2 = gVar.Q;
+                if (oVar2 != null && !oVar2.isFocusable()) {
+                    gVar.Q.setFocusable(true);
+                    gVar.Q.setFocusableInTouchMode(true);
+                    int y13 = gVar.e.y1(1);
+                    if (y13 >= 0 && y13 < gVar.e.W2.x.size()) {
+                        gVar.e.B0();
+                        gVar.e.x0(y13);
+                    }
+                    gVar.Q.requestFocus();
+                }
+                break;
         }
-        ArrayList arrayList = this.e;
-        if (i10 >= arrayList.size()) {
-            return 1;
-        }
-        return ((org.telegram.ui.Components.p61) arrayList.get(i10)).z;
-    }
-
-    public final void i() {
-        ArrayList arrayList = this.e;
-        arrayList.clear();
-        ge geVar = this.f;
-        if (!geVar.h.isEmpty()) {
-            arrayList.add(org.telegram.ui.Components.p61.C(1));
-        }
-        if (geVar.n.isEmpty()) {
-            return;
-        }
-        arrayList.add(org.telegram.ui.Components.p61.C(0));
-    }
-
-    @Override // org.telegram.ui.Components.f91
-    public final void b(View view, int i10, int i11) {
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

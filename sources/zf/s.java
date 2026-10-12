@@ -1,0 +1,48 @@
+package zf;
+
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.AbstractMap;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_ephemeral;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class s extends r {
+    public final void b(int i10, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i11) {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i12 = 0;
+        while (i12 < size) {
+            Object obj = arrayList.get(i12);
+            i12++;
+            TLRPC.TL_message b10 = v.b((TL_ephemeral.EphemeralMessage) obj);
+            int i13 = i10;
+            ConcurrentHashMap concurrentHashMap3 = concurrentHashMap;
+            ConcurrentHashMap concurrentHashMap4 = concurrentHashMap2;
+            MessageObject messageObject = new MessageObject(i13, (TLRPC.Message) b10, (AbstractMap<Long, TLRPC.User>) concurrentHashMap3, (AbstractMap<Long, TLRPC.Chat>) concurrentHashMap4, true, true);
+            long dialogId = MessageObject.getDialogId(b10);
+            if (i11 != 0) {
+                b10.edit_date = i11;
+                b10.flags |= 32768;
+            }
+            a0.h hVar = this.b;
+            TLRPC.TL_messages_messages tL_messages_messages = (TLRPC.TL_messages_messages) hVar.f(dialogId);
+            if (tL_messages_messages == null) {
+                tL_messages_messages = new TLRPC.TL_messages_messages();
+                hVar.k(tL_messages_messages, dialogId);
+            }
+            tL_messages_messages.messages.add(b10);
+            a0.h hVar2 = this.c;
+            ArrayList arrayList2 = (ArrayList) hVar2.f(dialogId);
+            if (arrayList2 == null) {
+                arrayList2 = org.telegram.messenger.q.k(dialogId, hVar2);
+            }
+            arrayList2.add(messageObject);
+            i10 = i13;
+            concurrentHashMap = concurrentHashMap3;
+            concurrentHashMap2 = concurrentHashMap4;
+        }
+    }
+}

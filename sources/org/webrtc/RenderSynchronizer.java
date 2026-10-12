@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class RenderSynchronizer {
     private static final float DEFAULT_TARGET_FPS = 30.0f;
@@ -25,7 +25,7 @@ public final class RenderSynchronizer {
     private boolean renderWindowOpen;
     private final long targetFrameIntervalNanos;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface Listener {
         void onRenderWindowClose();
 
@@ -38,7 +38,7 @@ public final class RenderSynchronizer {
         this.targetFrameIntervalNanos = Math.round(TimeUnit.SECONDS.toNanos(1L) / f7);
         Handler handler = new Handler(Looper.getMainLooper());
         this.mainThreadHandler = handler;
-        handler.post(new n(this, 1));
+        handler.post(new o(this, 1));
         Logging.d(TAG, "Created");
     }
 
@@ -58,11 +58,11 @@ public final class RenderSynchronizer {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$registerListener$1() {
-        this.choreographer.postFrameCallback(new o(this));
+        this.choreographer.postFrameCallback(new p(this));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void onDisplayRefreshCycleBegin(long j3) {
+    public void onDisplayRefreshCycleBegin(long j10) {
         synchronized (this.lock) {
             try {
                 if (this.listeners.isEmpty()) {
@@ -70,12 +70,12 @@ public final class RenderSynchronizer {
                     this.isListening = false;
                     return;
                 }
-                this.choreographer.postFrameCallback(new o(this));
-                long j10 = j3 - this.lastOpenedTimeNanos;
-                long j11 = j3 - this.lastRefreshTimeNanos;
-                this.lastRefreshTimeNanos = j3;
-                if (Math.abs(j10 - this.targetFrameIntervalNanos) < Math.abs((j10 - this.targetFrameIntervalNanos) + j11)) {
-                    this.lastOpenedTimeNanos = j3;
+                this.choreographer.postFrameCallback(new p(this));
+                long j11 = j10 - this.lastOpenedTimeNanos;
+                long j12 = j10 - this.lastRefreshTimeNanos;
+                this.lastRefreshTimeNanos = j10;
+                if (Math.abs(j11 - this.targetFrameIntervalNanos) < Math.abs((j11 - this.targetFrameIntervalNanos) + j12)) {
+                    this.lastOpenedTimeNanos = j10;
                     openRenderWindow();
                 } else if (this.renderWindowOpen) {
                     closeRenderWindow();
@@ -108,7 +108,7 @@ public final class RenderSynchronizer {
                 if (!this.isListening) {
                     Logging.d(TAG, "First listener, subscribing to frame callbacks");
                     this.isListening = true;
-                    this.mainThreadHandler.post(new n(this, 0));
+                    this.mainThreadHandler.post(new o(this, 0));
                 }
             } catch (Throwable th2) {
                 throw th2;

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m1 extends AbstractList implements e0, RandomAccess {
     public final d0 a;
@@ -17,18 +17,18 @@ public final class m1 extends AbstractList implements e0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.e0
-    public final void g(g gVar) {
+    public final void e(g gVar) {
         throw new UnsupportedOperationException();
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.e0
+    public final List g() {
+        return DesugarCollections.unmodifiableList(this.a.b);
     }
 
     @Override // java.util.AbstractList, java.util.List
     public final Object get(int i10) {
         return (String) this.a.get(i10);
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.e0
-    public final List h() {
-        return DesugarCollections.unmodifiableList(this.a.b);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
@@ -39,7 +39,7 @@ public final class m1 extends AbstractList implements e0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.e0
-    public final Object l(int i10) {
+    public final Object k(int i10) {
         return this.a.b.get(i10);
     }
 
@@ -56,7 +56,7 @@ public final class m1 extends AbstractList implements e0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.e0
-    public final e0 j() {
+    public final e0 i() {
         return this;
     }
 }

@@ -2,38 +2,71 @@ package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class y01 extends ReplacementSpan {
-    public float a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Paint d;
+    public final /* synthetic */ int a;
+    public int b;
+    public final Object c;
 
-    public y01(int i10, Paint paint, String str) {
-        this.b = str;
-        this.c = i10;
-        this.d = paint;
+    public y01(int i10) {
+        this.a = 0;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.b = i10;
+        paint.setColor(org.telegram.ui.ActionBar.g6.m1(0.3f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.nd, false)));
+    }
+
+    public void a(int i10) {
+        org.telegram.ui.bq0 bq0Var = (org.telegram.ui.bq0) this.c;
+        if (bq0Var != null) {
+            bq0Var.a = i10 / 2.0f;
+            bq0Var.d();
+            this.b = i10;
+        }
     }
 
     @Override // android.text.style.ReplacementSpan
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        float f10 = (i12 + i14) / 2.0f;
-        float dp = AndroidUtilities.dp(19.0f);
-        paint.setColor(this.c);
-        float f11 = dp / 2.0f;
-        canvas.drawRoundRect(f7, f10 - f11, f7 + this.a + AndroidUtilities.dp(11.33f), f10 + f11, f11, f11, this.d);
-        canvas.drawText(this.b, AndroidUtilities.dpf2(5.66f) + f7, i14 - AndroidUtilities.dp(6.0f), paint);
+        switch (this.a) {
+            case 0:
+                float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.33f);
+                float dp2 = AndroidUtilities.dp(6.66f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                float f10 = dp2 / 2.0f;
+                rectF.set(f7, dp - f10, this.b + f7, dp + f10);
+                canvas.drawRoundRect(rectF, f10, f10, (Paint) this.c);
+                break;
+            default:
+                org.telegram.ui.bq0 bq0Var = (org.telegram.ui.bq0) this.c;
+                if (bq0Var != null) {
+                    int i15 = (i12 + i14) / 2;
+                    int i16 = this.b;
+                    bq0Var.setBounds((int) (AndroidUtilities.dp(3.0f) + f7), i15 - this.b, (int) (f7 + AndroidUtilities.dp(5.0f) + i16), i15 + i16);
+                    bq0Var.draw(canvas);
+                    break;
+                }
+                break;
+        }
     }
 
     @Override // android.text.style.ReplacementSpan
     public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        float dpf2 = AndroidUtilities.dpf2(11.33f);
-        float measureText = paint.measureText(this.b);
-        this.a = measureText;
-        return (int) (dpf2 + measureText);
+        switch (this.a) {
+            case 0:
+                return this.b;
+            default:
+                return AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(3.0f) + this.b;
+        }
+    }
+
+    public y01(boolean z10, int i10, int i11) {
+        this.a = 1;
+        this.b = AndroidUtilities.dp(21.0f);
+        this.c = z10 ? org.telegram.ui.bq0.c(i10, i11) : org.telegram.ui.bq0.a(i10, i11);
     }
 }

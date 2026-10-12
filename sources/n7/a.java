@@ -13,11 +13,12 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static volatile cc.k b;
+    public static volatile com.google.firebase.messaging.r b;
     public static final Object a = new Object();
     public static final a1 c = new a1("id");
     public static final a1 d = new a1(TeXSymbolParser.TYPE_ATTR);
@@ -85,48 +86,48 @@ public abstract class a {
         int length;
         int length2;
         int indexOf;
-        String i10;
+        String j10;
+        int i10 = 0;
         int i11 = 0;
-        int i12 = 0;
         while (true) {
             length = objArr.length;
-            if (i12 >= length) {
+            if (i11 >= length) {
                 break;
             }
-            Object obj = objArr[i12];
+            Object obj = objArr[i11];
             if (obj == null) {
-                i10 = "null";
+                j10 = BuildConfig.BETA_URL;
             } else {
                 try {
-                    i10 = obj.toString();
-                } catch (Exception e7) {
+                    j10 = obj.toString();
+                } catch (Exception e) {
                     String D = a1.g.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e7);
-                    i10 = org.telegram.ui.Cells.c1.i("<", D, " threw ", e7.getClass().getName(), ">");
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
+                    j10 = org.telegram.ui.Cells.d0.j("<", D, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i12] = i10;
-            i12++;
+            objArr[i11] = j10;
+            i11++;
         }
         StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i13 = 0;
+        int i12 = 0;
         while (true) {
             length2 = objArr.length;
-            if (i11 >= length2 || (indexOf = str.indexOf("%s", i13)) == -1) {
+            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
                 break;
             }
-            sb2.append((CharSequence) str, i13, indexOf);
-            sb2.append(objArr[i11]);
-            i11++;
-            i13 = indexOf + 2;
+            sb2.append((CharSequence) str, i12, indexOf);
+            sb2.append(objArr[i10]);
+            i10++;
+            i12 = indexOf + 2;
         }
-        sb2.append((CharSequence) str, i13, str.length());
-        if (i11 < length2) {
+        sb2.append((CharSequence) str, i12, str.length());
+        if (i10 < length2) {
             sb2.append(" [");
-            sb2.append(objArr[i11]);
-            for (int i14 = i11 + 1; i14 < objArr.length; i14++) {
+            sb2.append(objArr[i10]);
+            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
                 sb2.append(", ");
-                sb2.append(objArr[i14]);
+                sb2.append(objArr[i13]);
             }
             sb2.append(']');
         }
@@ -134,15 +135,15 @@ public abstract class a {
     }
 
     public static String d(s0 s0Var) {
-        StringBuilder sb2 = new StringBuilder(s0Var.p());
-        for (int i10 = 0; i10 < s0Var.p(); i10++) {
-            byte i11 = s0Var.i(i10);
-            if (i11 == 34) {
+        StringBuilder sb2 = new StringBuilder(s0Var.o());
+        for (int i10 = 0; i10 < s0Var.o(); i10++) {
+            byte h = s0Var.h(i10);
+            if (h == 34) {
                 sb2.append("\\\"");
-            } else if (i11 == 39) {
+            } else if (h == 39) {
                 sb2.append("\\'");
-            } else if (i11 != 92) {
-                switch (i11) {
+            } else if (h != 92) {
+                switch (h) {
                     case 7:
                         sb2.append("\\a");
                         break;
@@ -165,14 +166,14 @@ public abstract class a {
                         sb2.append("\\r");
                         break;
                     default:
-                        if (i11 < 32 || i11 > 126) {
+                        if (h < 32 || h > 126) {
                             sb2.append('\\');
-                            sb2.append((char) (((i11 >>> 6) & 3) + 48));
-                            sb2.append((char) (((i11 >>> 3) & 7) + 48));
-                            sb2.append((char) ((i11 & 7) + 48));
+                            sb2.append((char) (((h >>> 6) & 3) + 48));
+                            sb2.append((char) (((h >>> 3) & 7) + 48));
+                            sb2.append((char) ((h & 7) + 48));
                             break;
                         } else {
-                            sb2.append((char) i11);
+                            sb2.append((char) h);
                             break;
                         }
                         break;
@@ -191,7 +192,7 @@ public abstract class a {
                 c10 = c("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
+                    throw new IllegalArgumentException(i2.d.i(i11, "negative size: "));
                 }
                 c10 = c("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -204,22 +205,22 @@ public abstract class a {
             throw new NullPointerException("null key in entry: null=".concat(String.valueOf(obj2)));
         }
         if (obj2 == null) {
-            throw new NullPointerException(a1.g.q("null value in entry: ", obj.toString(), "=null"));
+            throw new NullPointerException(a1.g.p("null value in entry: ", obj.toString(), "=null"));
         }
     }
 
-    public static final void g(StringBuilder sb2, Iterator it, na.d dVar) {
+    public static final void g(StringBuilder sb2, Iterator it, sb.a aVar) {
         if (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            sb2.append(na.d.J3(entry.getKey()));
+            sb2.append(sb.a.u2(entry.getKey()));
             sb2.append(" : ");
-            sb2.append(na.d.J3(entry.getValue()));
+            sb2.append(sb.a.u2(entry.getValue()));
             while (it.hasNext()) {
                 sb2.append(",\n  ");
                 Map.Entry entry2 = (Map.Entry) it.next();
-                sb2.append(na.d.J3(entry2.getKey()));
+                sb2.append(sb.a.u2(entry2.getKey()));
                 sb2.append(" : ");
-                sb2.append(na.d.J3(entry2.getValue()));
+                sb2.append(sb.a.u2(entry2.getValue()));
             }
         }
     }
@@ -291,7 +292,7 @@ public abstract class a {
                             c1VarArr[i10] = k(e1Var);
                             i10++;
                         }
-                        return new u0(m.u(c1VarArr));
+                        return new u0(m.t(c1VarArr));
                     }
                     if (b10 != -96) {
                         if (b10 == -64) {
@@ -307,10 +308,10 @@ public abstract class a {
                         }
                         if (b10 == 64) {
                             e1Var.h((byte) 64);
-                            byte[] j3 = e1Var.j();
-                            int length = j3.length;
+                            byte[] j10 = e1Var.j();
+                            int length = j10.length;
                             l(b11, length);
-                            return new w0(s0.t(length, j3));
+                            return new w0(s0.s(length, j10));
                         }
                         if (b10 == 96) {
                             e1Var.h((byte) 96);
@@ -326,7 +327,7 @@ public abstract class a {
                     }
                     l(b11, c10);
                     int i11 = (int) c10;
-                    pf.b[] bVarArr = new pf.b[i11];
+                    n6.o[] oVarArr = new n6.o[i11];
                     c1 c1Var = null;
                     int i12 = 0;
                     while (i12 < c10) {
@@ -334,53 +335,53 @@ public abstract class a {
                         if (c1Var != null && k10.compareTo(c1Var) <= 0) {
                             throw new z4("Keys in CBOR Map not in strictly ascending natural order:\nPrevious key: " + c1Var.toString() + "\nCurrent key: " + k10.toString());
                         }
-                        bVarArr[i12] = new pf.b(k10, k(e1Var), false, 29);
+                        oVarArr[i12] = new n6.o(1, k10, k(e1Var));
                         i12++;
                         c1Var = k10;
                     }
                     TreeMap treeMap = new TreeMap();
                     while (i10 < i11) {
-                        pf.b bVar = bVarArr[i10];
-                        if (treeMap.containsKey((c1) bVar.b)) {
+                        n6.o oVar = oVarArr[i10];
+                        if (treeMap.containsKey((c1) oVar.b)) {
                             throw new z4("Attempted to add duplicate key to canonical CBOR Map.");
                         }
-                        treeMap.put((c1) bVar.b, (c1) bVar.c);
+                        treeMap.put((c1) oVar.b, (c1) oVar.c);
                         i10++;
                     }
                     return new z0(r.b(treeMap));
-                } catch (IOException | RuntimeException e7) {
-                    e = e7;
+                } catch (IOException | RuntimeException e) {
+                    e = e;
                     throw new x0(e);
                 }
-            } catch (RuntimeException e10) {
-                e = e10;
+            } catch (RuntimeException e7) {
+                e = e7;
                 throw new x0(e);
             }
-        } catch (IOException e11) {
-            throw new x0(e11);
+        } catch (IOException e10) {
+            throw new x0(e10);
         }
     }
 
-    public static final void l(byte b10, long j3) {
+    public static final void l(byte b10, long j10) {
         switch (b10) {
             case 24:
-                if (j3 < 24) {
-                    throw new z4(org.telegram.ui.Cells.c1.h(j3, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
+                if (j10 < 24) {
+                    throw new z4(org.telegram.ui.Cells.d0.i(j10, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
                 }
                 return;
             case 25:
-                if (j3 < 256) {
-                    throw new z4(org.telegram.ui.Cells.c1.h(j3, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
+                if (j10 < 256) {
+                    throw new z4(org.telegram.ui.Cells.d0.i(j10, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
                 }
                 return;
             case 26:
-                if (j3 < 65536) {
-                    throw new z4(org.telegram.ui.Cells.c1.h(j3, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
+                if (j10 < 65536) {
+                    throw new z4(org.telegram.ui.Cells.d0.i(j10, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
                 }
                 return;
             case 27:
-                if (j3 < 4294967296L) {
-                    throw new z4(org.telegram.ui.Cells.c1.h(j3, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
+                if (j10 < 4294967296L) {
+                    throw new z4(org.telegram.ui.Cells.d0.i(j10, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
                 }
                 return;
             default:
@@ -401,6 +402,6 @@ public abstract class a {
         if (i11 >= 0) {
             return c("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
+        throw new IllegalArgumentException(i2.d.i(i11, "negative size: "));
     }
 }

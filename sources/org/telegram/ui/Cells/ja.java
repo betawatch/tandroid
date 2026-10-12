@@ -9,14 +9,14 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.gm0;
+import org.telegram.ui.Components.bq;
+import org.telegram.ui.Components.cm0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ja implements gm0, yf.m, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, eq, Utilities.Callback2Return {
+public final /* synthetic */ class ja implements cm0, zf.n, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, bq, Utilities.Callback2Return {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -25,64 +25,64 @@ public final /* synthetic */ class ja implements gm0, yf.m, ImageReceiver.ImageR
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.eq
-    public void a() {
-        switch (this.a) {
-            case 4:
-                n4 n4Var = (n4) this.b;
-                float progress = 1.0f - (n4Var.v.getProgress() * 0.143f);
-                org.telegram.ui.Components.y9 y9Var = n4Var.a;
-                y9Var.setScaleX(progress);
-                y9Var.setScaleY(progress);
-                n4Var.invalidate();
-                break;
-            default:
-                g7 g7Var = (g7) this.b;
-                float progress2 = 1.0f - (g7Var.d.getProgress() * 0.143f);
-                org.telegram.ui.Components.y9 y9Var2 = g7Var.a;
-                y9Var2.setScaleX(progress2);
-                y9Var2.setScaleY(progress2);
-                g7Var.invalidate();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.gm0
-    public boolean d(int i10, View view) {
+    @Override // org.telegram.ui.Components.cm0
+    public boolean a(int i10, View view) {
         na naVar = (na) this.b;
         naVar.getClass();
         naVar.A1(((ThemesHorizontalListCell$InnerThemeView) view).b);
         return true;
     }
 
+    @Override // org.telegram.ui.Components.bq
+    public void b() {
+        switch (this.a) {
+            case 4:
+                n4 n4Var = (n4) this.b;
+                float progress = 1.0f - (n4Var.v.getProgress() * 0.143f);
+                org.telegram.ui.Components.z9 z9Var = n4Var.a;
+                z9Var.setScaleX(progress);
+                z9Var.setScaleY(progress);
+                n4Var.invalidate();
+                break;
+            default:
+                g7 g7Var = (g7) this.b;
+                float progress2 = 1.0f - (g7Var.d.getProgress() * 0.143f);
+                org.telegram.ui.Components.z9 z9Var2 = g7Var.a;
+                z9Var2.setScaleX(progress2);
+                z9Var2.setScaleY(progress2);
+                g7Var.invalidate();
+                break;
+        }
+    }
+
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        ck0 lottieAnimation;
-        t0 t0Var;
+        yj0 lottieAnimation;
+        u0 u0Var;
         int v;
         MessageObject messageObject;
         switch (this.a) {
             case 2:
-                w0 w0Var = (w0) this.b;
-                if (z10 && (lottieAnimation = w0Var.I.getLottieAnimation()) != null) {
-                    MessageObject messageObject2 = w0Var.P0;
+                x0 x0Var = (x0) this.b;
+                if (z10 && (lottieAnimation = x0Var.I.getLottieAnimation()) != null) {
+                    MessageObject messageObject2 = x0Var.P0;
                     if (messageObject2 != null && !messageObject2.playedGiftAnimation) {
                         messageObject2.playedGiftAnimation = true;
                         lottieAnimation.N(0, false, false);
-                        AndroidUtilities.runOnUIThread(new r0(lottieAnimation, 0));
-                        if (messageObject2.wasUnread || w0Var.L1) {
+                        AndroidUtilities.runOnUIThread(new s0(lottieAnimation, 0));
+                        if (messageObject2.wasUnread || x0Var.L1) {
                             messageObject2.wasUnread = false;
-                            w0Var.L1 = false;
+                            x0Var.L1 = false;
                             try {
-                                w0Var.performHapticFeedback(3, 2);
+                                x0Var.performHapticFeedback(3, 2);
                             } catch (Exception unused) {
                             }
-                            if (w0Var.getContext() instanceof LaunchActivity) {
-                                ((LaunchActivity) w0Var.getContext()).x0.c(false);
+                            if (x0Var.getContext() instanceof LaunchActivity) {
+                                ((LaunchActivity) x0Var.getContext()).x0.c(false);
                             }
-                            TLRPC.VideoSize videoSize = w0Var.I1;
-                            if (videoSize != null && (t0Var = w0Var.f1) != null) {
-                                t0Var.m1(w0Var, w0Var.H1, videoSize);
+                            TLRPC.VideoSize videoSize = x0Var.I1;
+                            if (videoSize != null && (u0Var = x0Var.f1) != null) {
+                                u0Var.c1(x0Var, x0Var.H1, videoSize);
                                 break;
                             }
                         }
@@ -107,7 +107,7 @@ public final /* synthetic */ class ja implements gm0, yf.m, ImageReceiver.ImageR
                     int dominantColor = AndroidUtilities.getDominantColor(imageReceiver3.getBitmap());
                     t7Var.a = dominantColor;
                     CheckBoxBase checkBoxBase = t7Var.P;
-                    if (checkBoxBase != null && checkBoxBase.x != (v = org.telegram.ui.ActionBar.i6.v(dominantColor, org.telegram.ui.ActionBar.i6.m1(0.25f, -1)))) {
+                    if (checkBoxBase != null && checkBoxBase.x != (v = org.telegram.ui.ActionBar.g6.v(dominantColor, org.telegram.ui.ActionBar.g6.m1(0.25f, -1)))) {
                         checkBoxBase.x = v;
                         checkBoxBase.b();
                         break;
@@ -120,23 +120,23 @@ public final /* synthetic */ class ja implements gm0, yf.m, ImageReceiver.ImageR
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
         int i11 = this.a;
-        org.telegram.messenger.i5.a(this, i10, str, drawable);
+        org.telegram.messenger.l5.a(this, i10, str, drawable);
     }
 
-    @Override // yf.m
-    public void e(long j3) {
-        ((l) this.b).b(j3);
+    @Override // zf.n
+    public void e(long j10) {
+        ((l) this.b).b(j10);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
         int i10 = this.a;
-        org.telegram.messenger.i5.b(this, imageReceiver);
+        org.telegram.messenger.l5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2Return
     public Object run(Object obj, Object obj2) {
-        return (CharSequence) ((ei.c) this.b).run((Integer) obj2);
+        return (CharSequence) ((fi.c) this.b).run((Integer) obj2);
     }
 
     @Override // org.telegram.messenger.FlagSecureReason.FlagSecureCondition

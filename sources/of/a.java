@@ -1,53 +1,49 @@
 package of;
 
-import android.content.Context;
-import android.net.Uri;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.i4;
+import com.google.firebase.messaging.d;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final class a extends d {
+    public final long d;
 
-    public /* synthetic */ a(e eVar, b2[] b2VarArr, int i10, Uri uri, Context context, boolean z10) {
-        this.d = eVar;
-        this.e = b2VarArr;
-        this.b = i10;
-        this.f = uri;
-        this.g = context;
-        this.c = z10;
+    public a(InputStream inputStream, long j10, long j11) {
+        super(inputStream, j10);
+        this.d = j10 + j11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new c((e) this.d, (b2[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new c((i4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (MessageObject) this.f, this.c, (String) this.g));
-                break;
+    public final long e() {
+        return this.d - this.b;
+    }
+
+    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
+    public final int read() {
+        if (this.b == this.d) {
+            return -1;
         }
+        return super.read();
     }
 
-    public /* synthetic */ a(i4 i4Var, int i10, TLRPC.WebPage webPage, MessageObject messageObject, boolean z10, String str) {
-        this.d = i4Var;
-        this.b = i10;
-        this.e = webPage;
-        this.f = messageObject;
-        this.c = z10;
-        this.g = str;
+    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
+    public final long skip(long j10) {
+        long j11 = this.b;
+        long j12 = j11 + j10;
+        long j13 = this.d;
+        if (j12 > j13) {
+            j10 = (int) (j13 - j11);
+        }
+        return super.skip(j10);
+    }
+
+    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        long j10 = this.b;
+        long j11 = i11 + j10;
+        long j12 = this.d;
+        if (j11 <= j12 || (i11 = (int) (j12 - j10)) != 0) {
+            return super.read(bArr, i10, i11);
+        }
+        return -1;
     }
 }

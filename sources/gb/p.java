@@ -1,47 +1,24 @@
 package gb;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class p implements db.v {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class p extends t {
+    public final /* synthetic */ Method b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ p(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public p(Method method, Object obj) {
+        this.b = method;
+        this.c = obj;
     }
 
-    @Override // db.v
-    public final db.u create(db.g gVar, kb.a aVar) {
-        switch (this.a) {
-            case 0:
-                if (aVar.a == Number.class) {
-                    return (q) this.b;
-                }
-                return null;
-            case 1:
-                if (aVar.a == Object.class) {
-                    return new r(gVar, (db.t) this.b);
-                }
-                return null;
-            default:
-                Class cls = aVar.a;
-                if (cls == Calendar.class || cls == GregorianCalendar.class) {
-                    return (s0) this.b;
-                }
-                return null;
+    @Override // gb.t
+    public final Object a(Class cls) {
+        String x10 = qf.b.x(cls);
+        if (x10 == null) {
+            return this.b.invoke(this.c, cls);
         }
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 2:
-                return "Factory[type=" + Calendar.class.getName() + "+" + GregorianCalendar.class.getName() + ",adapter=" + ((s0) this.b) + "]";
-            default:
-                return super.toString();
-        }
+        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(x10));
     }
 }

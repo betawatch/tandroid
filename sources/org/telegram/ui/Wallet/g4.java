@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class g4 implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class g4 implements NotificationCenter.NotificationCenterDelegate {
         TL_wallet.walletTransaction[] wallettransactionArr;
         TL_wallet.walletTransaction wallettransaction;
         if (i10 == NotificationCenter.walletUpdate || i10 == NotificationCenter.walletTransactionsUpdate) {
-            ArrayList arrayList = k0.v(this.a).z().c;
+            ArrayList arrayList = j0.v(this.a).z().c;
             int size = arrayList.size();
             int i12 = 0;
             while (true) {
@@ -35,7 +35,7 @@ public final class g4 implements NotificationCenter.NotificationCenterDelegate {
                 i12++;
                 wallettransaction = (TL_wallet.walletTransaction) obj;
                 TL_wallet.walletTransaction wallettransaction2 = wallettransactionArr[0];
-                if (wallettransaction == wallettransaction2 || k0.d0(wallettransaction2, wallettransaction)) {
+                if (wallettransaction == wallettransaction2 || j0.d0(wallettransaction2, wallettransaction)) {
                     break;
                 }
             }

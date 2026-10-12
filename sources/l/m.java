@@ -15,9 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
-import v7.s7;
+import ji.h5;
+import v7.q7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m implements l0.a {
     public n A;
@@ -73,7 +74,7 @@ public final class m implements l0.a {
         this.n.p(true);
         n nVar2 = this.A;
         if (nVar2 != null) {
-            nVar2.b = new a4.l(this, 27);
+            nVar2.b = new h5(this, 2);
             nVar2.a.setVisibilityListener(nVar2);
         }
         return this;
@@ -194,7 +195,7 @@ public final class m implements l0.a {
         if (i10 == 0) {
             return null;
         }
-        Drawable b10 = s7.b(this.n.a, i10);
+        Drawable b10 = q7.b(this.n.a, i10);
         this.m = 0;
         this.l = b10;
         return d(b10);

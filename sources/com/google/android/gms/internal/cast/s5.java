@@ -7,9 +7,9 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class s5 extends u4 implements RandomAccess, j5, d6 {
+public final class s5 extends u4 implements RandomAccess, j5, e6 {
     public static final s5 d = new s5(new long[0], 0, false);
     public long[] b;
     public int c;
@@ -24,9 +24,9 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
     public final void add(int i10, Object obj) {
         int i11;
         long longValue = ((Long) obj).longValue();
-        i();
+        h();
         if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(a1.g.m(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a1.g.l(i10, this.c, "Index:", ", Size:"));
         }
         int i12 = i10 + 1;
         long[] jArr = this.b;
@@ -45,7 +45,7 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
 
     @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean addAll(Collection collection) {
-        i();
+        h();
         Charset charset = l5.a;
         collection.getClass();
         if (!(collection instanceof s5)) {
@@ -99,7 +99,7 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
 
     @Override // java.util.AbstractList, java.util.List
     public final /* synthetic */ Object get(int i10) {
-        n(i10);
+        m(i10);
         return Long.valueOf(this.b[i10]);
     }
 
@@ -107,9 +107,9 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
     public final int hashCode() {
         int i10 = 1;
         for (int i11 = 0; i11 < this.c; i11++) {
-            long j3 = this.b[i11];
+            long j10 = this.b[i11];
             Charset charset = l5.a;
-            i10 = (i10 * 31) + ((int) (j3 ^ (j3 >>> 32)));
+            i10 = (i10 * 31) + ((int) (j10 ^ (j10 >>> 32)));
         }
         return i10;
     }
@@ -129,29 +129,29 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
         return -1;
     }
 
-    public final void n(int i10) {
+    public final void m(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(a1.g.m(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a1.g.l(i10, this.c, "Index:", ", Size:"));
         }
     }
 
     @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.List
     public final /* bridge */ /* synthetic */ Object remove(int i10) {
-        i();
-        n(i10);
+        h();
+        m(i10);
         long[] jArr = this.b;
-        long j3 = jArr[i10];
+        long j10 = jArr[i10];
         if (i10 < this.c - 1) {
             System.arraycopy(jArr, i10 + 1, jArr, i10, (r3 - i10) - 1);
         }
         this.c--;
         ((AbstractList) this).modCount++;
-        return Long.valueOf(j3);
+        return Long.valueOf(j10);
     }
 
     @Override // java.util.AbstractList
     public final void removeRange(int i10, int i11) {
-        i();
+        h();
         if (i11 < i10) {
             throw new IndexOutOfBoundsException("toIndex < fromIndex");
         }
@@ -164,12 +164,12 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
     @Override // java.util.AbstractList, java.util.List
     public final /* bridge */ /* synthetic */ Object set(int i10, Object obj) {
         long longValue = ((Long) obj).longValue();
-        i();
-        n(i10);
+        h();
+        m(i10);
         long[] jArr = this.b;
-        long j3 = jArr[i10];
+        long j10 = jArr[i10];
         jArr[i10] = longValue;
-        return Long.valueOf(j3);
+        return Long.valueOf(j10);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -188,7 +188,7 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
     @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final /* bridge */ /* synthetic */ boolean add(Object obj) {
         long longValue = ((Long) obj).longValue();
-        i();
+        h();
         int i10 = this.c;
         long[] jArr = this.b;
         if (i10 == jArr.length) {

@@ -11,9 +11,9 @@ import com.google.android.gms.internal.cast.m0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import w7.d0;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f extends o6.a {
     public static final Parcelable.Creator<f> CREATOR;
@@ -36,7 +36,7 @@ public final class f extends o6.a {
     public final int S;
     public final int T;
     public final int U;
-    public final q V;
+    public final p V;
     public final boolean W;
     public final boolean X;
     public final ArrayList a;
@@ -59,19 +59,19 @@ public final class f extends o6.a {
         Object[] objArr = {MediaIntentReceiver.ACTION_TOGGLE_PLAYBACK, MediaIntentReceiver.ACTION_STOP_CASTING};
         for (int i10 = 0; i10 < 2; i10++) {
             if (objArr[i10] == null) {
-                throw new NullPointerException(hg.c.h(i10, "at index "));
+                throw new NullPointerException(i2.d.i(i10, "at index "));
             }
         }
-        Y = h0.r(2, objArr);
+        Y = h0.q(2, objArr);
         Z = new int[]{0, 1};
         CREATOR = new i(0);
     }
 
-    public f(List list, int[] iArr, long j3, String str, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, int i20, int i21, int i22, int i23, int i24, int i25, int i26, int i27, int i28, int i29, int i30, int i31, int i32, int i33, int i34, int i35, int i36, IBinder iBinder, boolean z10, boolean z11) {
-        q qVar;
+    public f(List list, int[] iArr, long j10, String str, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, int i20, int i21, int i22, int i23, int i24, int i25, int i26, int i27, int i28, int i29, int i30, int i31, int i32, int i33, int i34, int i35, int i36, IBinder iBinder, boolean z10, boolean z11) {
+        p pVar;
         this.a = new ArrayList(list);
         this.b = Arrays.copyOf(iArr, iArr.length);
-        this.c = j3;
+        this.c = j10;
         this.d = str;
         this.e = i10;
         this.f = i11;
@@ -103,83 +103,83 @@ public final class f extends o6.a {
         this.W = z10;
         this.X = z11;
         if (iBinder == null) {
-            qVar = null;
+            pVar = null;
         } else {
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.INotificationActionsProvider");
-            qVar = queryLocalInterface instanceof q ? (q) queryLocalInterface : new q(iBinder, "com.google.android.gms.cast.framework.media.INotificationActionsProvider", 1);
+            pVar = queryLocalInterface instanceof p ? (p) queryLocalInterface : new p(iBinder, "com.google.android.gms.cast.framework.media.INotificationActionsProvider", 1);
         }
-        this.V = qVar;
+        this.V = pVar;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.n(parcel, 2, this.a);
+        int q6 = g0.q(parcel, 20293);
+        g0.n(parcel, 2, this.a);
         int[] iArr = this.b;
-        d0.g(parcel, 3, Arrays.copyOf(iArr, iArr.length));
-        d0.s(parcel, 4, 8);
+        g0.g(parcel, 3, Arrays.copyOf(iArr, iArr.length));
+        g0.s(parcel, 4, 8);
         parcel.writeLong(this.c);
-        d0.l(parcel, 5, this.d);
-        d0.s(parcel, 6, 4);
+        g0.l(parcel, 5, this.d);
+        g0.s(parcel, 6, 4);
         parcel.writeInt(this.e);
-        d0.s(parcel, 7, 4);
+        g0.s(parcel, 7, 4);
         parcel.writeInt(this.f);
-        d0.s(parcel, 8, 4);
+        g0.s(parcel, 8, 4);
         parcel.writeInt(this.h);
-        d0.s(parcel, 9, 4);
+        g0.s(parcel, 9, 4);
         parcel.writeInt(this.n);
-        d0.s(parcel, 10, 4);
+        g0.s(parcel, 10, 4);
         parcel.writeInt(this.r);
-        d0.s(parcel, 11, 4);
+        g0.s(parcel, 11, 4);
         parcel.writeInt(this.s);
-        d0.s(parcel, 12, 4);
+        g0.s(parcel, 12, 4);
         parcel.writeInt(this.v);
-        d0.s(parcel, 13, 4);
+        g0.s(parcel, 13, 4);
         parcel.writeInt(this.w);
-        d0.s(parcel, 14, 4);
+        g0.s(parcel, 14, 4);
         parcel.writeInt(this.x);
-        d0.s(parcel, 15, 4);
+        g0.s(parcel, 15, 4);
         parcel.writeInt(this.y);
-        d0.s(parcel, 16, 4);
+        g0.s(parcel, 16, 4);
         parcel.writeInt(this.E);
-        d0.s(parcel, 17, 4);
+        g0.s(parcel, 17, 4);
         parcel.writeInt(this.F);
-        d0.s(parcel, 18, 4);
+        g0.s(parcel, 18, 4);
         parcel.writeInt(this.G);
-        d0.s(parcel, 19, 4);
+        g0.s(parcel, 19, 4);
         parcel.writeInt(this.H);
-        d0.s(parcel, 20, 4);
+        g0.s(parcel, 20, 4);
         parcel.writeInt(this.I);
-        d0.s(parcel, 21, 4);
+        g0.s(parcel, 21, 4);
         parcel.writeInt(this.J);
-        d0.s(parcel, 22, 4);
+        g0.s(parcel, 22, 4);
         parcel.writeInt(this.K);
-        d0.s(parcel, 23, 4);
+        g0.s(parcel, 23, 4);
         parcel.writeInt(this.L);
-        d0.s(parcel, 24, 4);
+        g0.s(parcel, 24, 4);
         parcel.writeInt(this.M);
-        d0.s(parcel, 25, 4);
+        g0.s(parcel, 25, 4);
         parcel.writeInt(this.N);
-        d0.s(parcel, 26, 4);
+        g0.s(parcel, 26, 4);
         parcel.writeInt(this.O);
-        d0.s(parcel, 27, 4);
+        g0.s(parcel, 27, 4);
         parcel.writeInt(this.P);
-        d0.s(parcel, 28, 4);
+        g0.s(parcel, 28, 4);
         parcel.writeInt(this.Q);
-        d0.s(parcel, 29, 4);
+        g0.s(parcel, 29, 4);
         parcel.writeInt(this.R);
-        d0.s(parcel, 30, 4);
+        g0.s(parcel, 30, 4);
         parcel.writeInt(this.S);
-        d0.s(parcel, 31, 4);
+        g0.s(parcel, 31, 4);
         parcel.writeInt(this.T);
-        d0.s(parcel, 32, 4);
+        g0.s(parcel, 32, 4);
         parcel.writeInt(this.U);
-        q qVar = this.V;
-        d0.f(parcel, 33, qVar == null ? null : qVar.b);
-        d0.s(parcel, 34, 4);
+        p pVar = this.V;
+        g0.f(parcel, 33, pVar == null ? null : pVar.b);
+        g0.s(parcel, 34, 4);
         parcel.writeInt(this.W ? 1 : 0);
-        d0.s(parcel, 35, 4);
+        g0.s(parcel, 35, 4);
         parcel.writeInt(this.X ? 1 : 0);
-        d0.r(parcel, q6);
+        g0.r(parcel, q6);
     }
 }

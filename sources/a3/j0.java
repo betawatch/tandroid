@@ -1,45 +1,46 @@
 package a3;
 
-import ei.c5;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pf.b b;
-    public final /* synthetic */ i2.g c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ n4.s b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ j0(pf.b bVar, i2.g gVar, int i10) {
-        this.a = i10;
-        this.b = bVar;
-        this.c = gVar;
+    public /* synthetic */ j0(n4.s sVar, int i10, long j10) {
+        this.b = sVar;
+        this.d = i10;
+        this.c = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        int i11 = this.d;
+        long j10 = this.c;
+        n4.s sVar = this.b;
+        switch (i10) {
             case 0:
-                pf.b bVar = this.b;
-                i2.g gVar = this.c;
-                l0 l0Var = (l0) bVar.c;
-                String str = e2.d0.a;
-                j2.f fVar = ((i2.c0) l0Var).a.s;
-                j2.a p5 = fVar.p();
-                fVar.q(p5, 1015, new j2.c(p5, gVar, 20));
+                m0 m0Var = (m0) sVar.c;
+                String str = e2.m0.a;
+                j2.f fVar = ((i2.b0) m0Var).a.s;
+                j2.a n10 = fVar.n((u2.g0) fVar.d.e);
+                fVar.q(n10, 1018, new j2.c(n10, i11, j10));
                 break;
             default:
-                pf.b bVar2 = this.b;
-                i2.g gVar2 = this.c;
-                synchronized (gVar2) {
-                }
-                l0 l0Var2 = (l0) bVar2.c;
-                String str2 = e2.d0.a;
-                i2.f0 f0Var = ((i2.c0) l0Var2).a;
-                j2.f fVar2 = f0Var.s;
-                j2.a n10 = fVar2.n((u2.f0) fVar2.d.e);
-                fVar2.q(n10, 1020, new c5(n10, gVar2, 24));
-                f0Var.Q = null;
+                m0 m0Var2 = (m0) sVar.c;
+                String str2 = e2.m0.a;
+                j2.f fVar2 = ((i2.b0) m0Var2).a.s;
+                j2.a n11 = fVar2.n((u2.g0) fVar2.d.e);
+                fVar2.q(n11, 1021, new j2.c(n11, j10, i11));
                 break;
         }
+    }
+
+    public /* synthetic */ j0(n4.s sVar, long j10, int i10) {
+        this.b = sVar;
+        this.c = j10;
+        this.d = i10;
     }
 }

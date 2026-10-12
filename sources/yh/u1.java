@@ -1,78 +1,34 @@
 package yh;
 
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.ns0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u1 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
+public final /* synthetic */ class u1 implements ne.d, Utilities.Callback2Return {
+    public final /* synthetic */ ns0 a;
 
-    public /* synthetic */ u1(s3 s3Var, int i10) {
-        this.a = i10;
-        this.b = s3Var;
+    public /* synthetic */ u1(ns0 ns0Var) {
+        this.a = ns0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        TLRPC.Message message;
-        switch (this.a) {
-            case 0:
-                s3 s3Var = this.b;
-                s3Var.getClass();
-                if (((Boolean) obj).booleanValue()) {
-                    s3Var.skipDismissAnimation();
-                }
-                s3Var.dismiss();
-                break;
-            case 1:
-                TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) obj;
-                s3 s3Var2 = this.b;
-                s3Var2.getClass();
-                if (stargiftupgradepreview != null) {
-                    s3Var2.i1 = stargiftupgradepreview.sample_attributes;
-                    s3Var2.j1 = stargiftupgradepreview.prices;
-                    s3Var2.k1 = stargiftupgradepreview.next_prices;
-                    s3Var2.c2();
-                    break;
-                }
-                break;
-            case 2:
-                this.b.dismiss(((Boolean) obj).booleanValue());
-                break;
-            default:
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
-                s3 s3Var3 = this.b;
-                s3Var3.L0 = false;
-                s3Var3.M0 = true;
-                if (savedStarGift != null) {
-                    s3Var3.g1 = Boolean.valueOf(savedStarGift.unsaved);
-                    MessageObject messageObject = s3Var3.F0;
-                    if (messageObject != null && (message = messageObject.messageOwner) != null) {
-                        TLRPC.MessageAction messageAction = message.action;
-                        if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
-                            TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
-                            boolean z10 = tL_messageActionStarGiftUnique.saved;
-                            boolean z11 = !savedStarGift.unsaved;
-                            if (z10 != z11) {
-                                tL_messageActionStarGiftUnique.saved = z11;
-                            }
-                        } else if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
-                            TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction;
-                            boolean z12 = tL_messageActionStarGift.saved;
-                            boolean z13 = !savedStarGift.unsaved;
-                            if (z12 != z13) {
-                                tL_messageActionStarGift.saved = z13;
-                            }
-                        }
-                        s3Var3.k2(messageObject, null);
-                        break;
-                    }
-                }
-                break;
+    @Override // ne.d
+    public void p(int i10, float f7, float f10, ne.e eVar) {
+        this.a.l();
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback2Return
+    public Object run(Object obj, Object obj2) {
+        ns0 ns0Var = this.a;
+        ns0Var.i();
+        if (((Integer) obj).intValue() != -1) {
+            return Boolean.FALSE;
         }
+        ns0Var.h(null, new r1(ns0Var, 0));
+        return Boolean.TRUE;
+    }
+
+    @Override // ne.d
+    public /* synthetic */ void C(float f7, int i10) {
     }
 }

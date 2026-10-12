@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class g6 {
     public View a;
@@ -20,12 +20,12 @@ public final class g6 {
     public long j;
     public float k;
 
-    public g6(long j3, TimeInterpolator timeInterpolator) {
+    public g6(long j10, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        hs hsVar = hs.f;
+        es esVar = es.f;
         this.a = null;
-        this.g = j3;
+        this.g = j10;
         this.h = timeInterpolator;
         this.e = true;
     }
@@ -36,7 +36,7 @@ public final class g6 {
 
     public final float b() {
         if (this.i) {
-            return w7.o.a(((SystemClock.elapsedRealtime() - this.j) - this.f) / this.g, 0.0f, 1.0f);
+            return w7.s.a(((SystemClock.elapsedRealtime() - this.j) - this.f) / this.g, 0.0f, 1.0f);
         }
         return 0.0f;
     }
@@ -44,7 +44,7 @@ public final class g6 {
     public final float c() {
         if (this.i) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            float a2 = w7.o.a(((elapsedRealtime - this.j) - this.f) / this.g, 0.0f, 1.0f);
+            float a2 = w7.s.a(((elapsedRealtime - this.j) - this.f) / this.g, 0.0f, 1.0f);
             if (elapsedRealtime - this.j >= this.f) {
                 TimeInterpolator timeInterpolator = this.h;
                 if (timeInterpolator == null) {
@@ -92,13 +92,13 @@ public final class g6 {
         return d(z10 ? 1.0f : 0.0f, z11);
     }
 
-    public g6(long j3, long j10, TimeInterpolator timeInterpolator) {
+    public g6(long j10, long j11, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        hs hsVar = hs.f;
+        es esVar = es.f;
         this.a = null;
-        this.f = j3;
-        this.g = j10;
+        this.f = j10;
+        this.g = j11;
         this.h = timeInterpolator;
         this.e = true;
     }
@@ -106,28 +106,28 @@ public final class g6 {
     public g6(View view) {
         this.f = 0L;
         this.g = 200L;
-        this.h = hs.f;
+        this.h = es.f;
         this.a = view;
         this.e = true;
     }
 
-    public g6(View view, long j3, TimeInterpolator timeInterpolator) {
+    public g6(View view, long j10, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        hs hsVar = hs.f;
+        es esVar = es.f;
         this.a = view;
-        this.g = j3;
+        this.g = j10;
         this.h = timeInterpolator;
         this.e = true;
     }
 
-    public g6(View view, long j3, long j10, TimeInterpolator timeInterpolator) {
+    public g6(View view, long j10, long j11, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        hs hsVar = hs.f;
+        es esVar = es.f;
         this.a = view;
-        this.f = j3;
-        this.g = j10;
+        this.f = j10;
+        this.g = j11;
         this.h = timeInterpolator;
         this.e = true;
     }
@@ -135,54 +135,54 @@ public final class g6 {
     public g6(Runnable runnable) {
         this.f = 0L;
         this.g = 200L;
-        this.h = hs.f;
+        this.h = es.f;
         this.b = runnable;
         this.e = true;
     }
 
-    public g6(Runnable runnable, long j3, TimeInterpolator timeInterpolator) {
+    public g6(Runnable runnable, long j10, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        hs hsVar = hs.f;
+        es esVar = es.f;
         this.b = runnable;
-        this.g = j3;
+        this.g = j10;
         this.h = timeInterpolator;
         this.e = true;
     }
 
-    public g6(Runnable runnable, long j3, TimeInterpolator timeInterpolator, int i10) {
+    public g6(Runnable runnable, long j10, TimeInterpolator timeInterpolator, int i10) {
         this.f = 0L;
         this.g = 200L;
-        hs hsVar = hs.f;
+        es esVar = es.f;
         this.b = runnable;
         this.f = 0L;
-        this.g = j3;
+        this.g = j10;
         this.h = timeInterpolator;
         this.e = true;
     }
 
-    public g6(float f7, View view, long j3, long j10, TimeInterpolator timeInterpolator) {
+    public g6(float f7, View view, long j10, long j11, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        hs hsVar = hs.f;
+        es esVar = es.f;
         this.a = view;
         this.d = f7;
         this.c = f7;
-        this.f = j3;
-        this.g = j10;
+        this.f = j10;
+        this.g = j11;
         this.h = timeInterpolator;
         this.e = false;
     }
 
-    public g6(float f7, Runnable runnable, long j3, long j10, TimeInterpolator timeInterpolator) {
+    public g6(float f7, Runnable runnable, long j10, long j11, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        hs hsVar = hs.f;
+        es esVar = es.f;
         this.b = runnable;
         this.d = f7;
         this.c = f7;
-        this.f = j3;
-        this.g = j10;
+        this.f = j10;
+        this.g = j11;
         this.h = timeInterpolator;
         this.e = false;
     }

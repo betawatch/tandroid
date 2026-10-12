@@ -5,9 +5,9 @@ import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.vk0;
+import org.telegram.ui.Components.rk0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a = 1;
@@ -17,12 +17,12 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ b(HorizontalScrollView horizontalScrollView, float f7, float f10, vk0 vk0Var, vk0 vk0Var2) {
+    public /* synthetic */ b(HorizontalScrollView horizontalScrollView, float f7, float f10, rk0 rk0Var, rk0 rk0Var2) {
         this.d = horizontalScrollView;
         this.b = f7;
         this.c = f10;
-        this.e = vk0Var;
-        this.f = vk0Var2;
+        this.e = rk0Var;
+        this.f = rk0Var2;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -61,14 +61,14 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
                 break;
             default:
                 HorizontalScrollView horizontalScrollView = (HorizontalScrollView) this.d;
-                vk0 vk0Var = (vk0) this.e;
-                vk0 vk0Var2 = (vk0) this.f;
+                rk0 rk0Var = (rk0) this.e;
+                rk0 rk0Var2 = (rk0) this.f;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float f15 = this.c;
                 float f16 = this.b;
-                horizontalScrollView.setScrollX((int) com.google.android.gms.internal.vision.e2.y(f15, f16, floatValue3, f16));
-                vk0Var.setOutlineProgress(1.0f - floatValue3);
-                vk0Var2.setOutlineProgress(floatValue3);
+                horizontalScrollView.setScrollX((int) com.google.android.gms.internal.play_billing.k3.y(f15, f16, floatValue3, f16));
+                rk0Var.setOutlineProgress(1.0f - floatValue3);
+                rk0Var2.setOutlineProgress(floatValue3);
                 break;
         }
     }

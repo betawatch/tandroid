@@ -1,67 +1,120 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.app.Activity;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l51 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k71 b;
+public final class l51 extends FrameLayout {
+    public float a;
+    public final boolean b;
+    public final boolean c;
+    public boolean d;
+    public int e;
+    public final o1.j f;
+    public final o1.k h;
+    public final v0 n;
+    public final /* synthetic */ SecretMediaViewer r;
 
-    public /* synthetic */ l51(k71 k71Var, int i10) {
-        this.a = i10;
-        this.b = k71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l51(SecretMediaViewer secretMediaViewer, Activity activity) {
+        super(activity);
+        this.r = secretMediaViewer;
+        this.a = 1.0f;
+        this.b = true;
+        this.c = true;
+        o1.j jVar = new o1.j(0.0f);
+        this.f = jVar;
+        o1.k kVar = new o1.k(jVar);
+        kVar.u = org.telegram.ui.Cells.d0.k(0.0f, 750.0f, 1.0f);
+        kVar.b(new yd0(this, 5));
+        this.h = kVar;
+        this.n = new v0("progress", 6);
+        setWillNotDraw(false);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                k71 k71Var = this.b;
-                k71Var.getClass();
-                k71Var.E(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 1:
-                this.b.m();
-                break;
-            case 2:
-                k71 k71Var2 = this.b;
-                View view = k71Var2.t0;
-                if (view != null) {
-                    view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                }
-                int v = org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G8, k71Var2.Z0), i0.a.k(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
-                View view2 = k71Var2.m0;
-                if (view2 != null) {
-                    view2.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
-                }
-                org.telegram.ui.Components.ao aoVar = k71Var2.n0;
-                if (aoVar != null) {
-                    aoVar.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));
-                    break;
-                }
-                break;
-            default:
-                k71 k71Var3 = this.b;
-                e61 e61Var = k71Var3.a0;
-                float floatValue = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k71Var3.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(8.0f));
-                View view3 = k71Var3.m0;
-                if (view3 != null) {
-                    view3.setAlpha(floatValue);
-                }
-                org.telegram.ui.Components.ao aoVar2 = k71Var3.n0;
-                if (aoVar2 != null) {
-                    aoVar2.setAlpha(floatValue * floatValue);
-                }
-                e61Var.setAlpha(floatValue);
-                e61Var.invalidate();
-                k71Var3.invalidate();
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.f.a = 0.0f;
+        this.e = 0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        SecretMediaViewer secretMediaViewer = this.r;
+        secretMediaViewer.Q.h(secretMediaViewer.y != null ? r3.n() / secretMediaViewer.y.p() : 0.0f, false);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x002a, code lost:
+    
+        if (r12 == (-9223372036854775807L)) goto L6;
+     */
+    @Override // android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i10, int i11) {
+        long j10;
+        this.d = true;
+        SecretMediaViewer secretMediaViewer = this.r;
+        ((FrameLayout.LayoutParams) secretMediaViewer.S.getLayoutParams()).rightMargin = AndroidUtilities.dp(12.0f);
+        this.d = false;
+        super.onMeasure(i10, i11);
+        j51 j51Var = secretMediaViewer.y;
+        if (j51Var != null) {
+            j10 = j51Var.p();
         }
+        j10 = 0;
+        int ceil = (int) Math.ceil(secretMediaViewer.S.getPaint().measureText(String.format(Locale.ROOT, "%1$s / %1$s", (j10 / 1000) / 60 > 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Long.valueOf(r5 / 60), Long.valueOf(r5 % 60), Long.valueOf(r12 % 60)) : String.format(Locale.ROOT, "%02d:%02d", Long.valueOf(r5), Long.valueOf(r12 % 60)))));
+        o1.k kVar = this.h;
+        kVar.c();
+        int i12 = this.e;
+        o1.j jVar = this.f;
+        if (i12 != 0) {
+            float f7 = ceil;
+            if (jVar.a != f7) {
+                kVar.u.i = f7;
+                kVar.h();
+                this.e = ceil;
+            }
+        }
+        org.telegram.ui.Components.j81 j81Var = secretMediaViewer.Q;
+        int D = org.telegram.messenger.q.D(16.0f, getMeasuredWidth(), ceil);
+        int measuredHeight = getMeasuredHeight();
+        j81Var.h = D;
+        j81Var.i = measuredHeight;
+        View view = j81Var.v;
+        if (view != null) {
+            view.invalidate();
+        }
+        jVar.a = ceil;
+        this.e = ceil;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.a < 1.0f) {
+            return false;
+        }
+        SecretMediaViewer secretMediaViewer = this.r;
+        if (secretMediaViewer.Q.e(motionEvent.getX() - AndroidUtilities.dp(2.0f), motionEvent.getY(), motionEvent.getAction())) {
+            getParent().requestDisallowInterceptTouchEvent(true);
+            secretMediaViewer.R.invalidate();
+        }
+        return true;
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.d) {
+            return;
+        }
+        super.requestLayout();
     }
 }

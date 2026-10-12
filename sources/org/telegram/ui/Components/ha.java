@@ -3,68 +3,124 @@ package org.telegram.ui.Components;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ha implements Runnable {
-    public boolean a;
-    public int b;
-    public int c;
-    public final /* synthetic */ ia d;
+public final class ha {
+    public DispatchQueue a;
+    public final int b;
+    public final View c;
+    public final di.p6 d;
+    public Bitmap[] e;
+    public Bitmap[] f;
+    public Bitmap[] g;
+    public Canvas[] h;
+    public Canvas[] i;
+    public Canvas[] j;
+    public boolean k;
+    public float m;
+    public boolean n;
+    public boolean o;
+    public int q;
+    public int r;
+    public int s;
+    public boolean t;
+    public float u;
+    public final Paint x;
+    public final org.telegram.ui.ActionBar.c6 y;
+    public boolean l = true;
+    public boolean p = true;
+    public ga v = new ga(this);
+    public final Paint w = new Paint(2);
 
-    public ha(ia iaVar) {
-        this.d = iaVar;
+    public ha(View view, di.p6 p6Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        Paint paint = new Paint();
+        this.x = paint;
+        this.b = 1;
+        this.c = view;
+        this.d = p6Var;
+        this.y = c6Var;
+        paint.setColor(-16777216);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Bitmap bitmap;
-        ia iaVar = this.d;
-        Paint paint = iaVar.w;
-        if (iaVar.f == null) {
-            iaVar.f = new Bitmap[2];
-            iaVar.i = new Canvas[2];
+    public final void a() {
+        Bitmap[] bitmapArr = this.g;
+        if (bitmapArr == null) {
+            bitmapArr = new Bitmap[2];
+            this.g = bitmapArr;
+            this.h = new Canvas[2];
         }
-        int i10 = (int) (this.b / 15.0f);
-        int i11 = 0;
-        while (i11 < 2) {
-            int i12 = (int) ((i11 == 0 ? iaVar.s : this.c) / 15.0f);
-            Bitmap bitmap2 = iaVar.f[i11];
-            if (bitmap2 != null && ((bitmap2.getHeight() != i12 || iaVar.f[i11].getWidth() != i10) && (bitmap = iaVar.f[i11]) != null)) {
-                bitmap.recycle();
-                iaVar.f[i11] = null;
+        if (this.e == null) {
+            this.e = new Bitmap[2];
+            this.j = new Canvas[2];
+        }
+        this.v.a = true;
+        this.v = new ga(this);
+        for (int i10 = 0; i10 < 2; i10++) {
+            di.p6 p6Var = this.d;
+            int measuredHeight = p6Var.getMeasuredHeight();
+            int measuredWidth = p6Var.getMeasuredWidth();
+            int dp = AndroidUtilities.dp(200.0f) + AndroidUtilities.statusBarHeight;
+            this.s = dp;
+            if (i10 != 0) {
+                dp = measuredHeight;
             }
-            System.currentTimeMillis();
-            Bitmap[] bitmapArr = iaVar.f;
-            if (bitmapArr[i11] == null) {
-                try {
-                    bitmapArr[i11] = Bitmap.createBitmap(i10, i12, Bitmap.Config.ARGB_8888);
-                    iaVar.i[i11] = new Canvas(iaVar.f[i11]);
-                    iaVar.i[i11].scale(i10 / iaVar.e[i11].getWidth(), i12 / iaVar.e[i11].getHeight());
-                } catch (Throwable th2) {
-                    FileLog.e(th2);
+            Bitmap bitmap = bitmapArr[i10];
+            if (bitmap == null || bitmap.getHeight() != dp || bitmapArr[i10].getWidth() != p6Var.getMeasuredWidth()) {
+                DispatchQueue dispatchQueue = this.a;
+                if (dispatchQueue != null) {
+                    dispatchQueue.cleanupQueue();
                 }
-            }
-            if (i11 == 1) {
-                iaVar.f[i11].eraseColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.d6, iaVar.y));
-            } else {
-                iaVar.f[i11].eraseColor(0);
-            }
-            paint.setAlpha(255);
-            Utilities.stackBlurBitmap(iaVar.e[i11], 15);
-            Canvas canvas = iaVar.i[i11];
-            if (canvas != null) {
-                canvas.drawBitmap(iaVar.e[i11], 0.0f, 0.0f, paint);
-            }
-            if (this.a) {
-                return;
-            } else {
-                i11++;
+                Bitmap[] bitmapArr2 = this.e;
+                int i11 = (int) (measuredWidth / 15.0f);
+                Bitmap.Config config = Bitmap.Config.ARGB_8888;
+                bitmapArr2[i10] = Bitmap.createBitmap(i11, (int) (dp / 15.0f), config);
+                org.telegram.ui.ActionBar.c6 c6Var = this.y;
+                if (i10 == 1) {
+                    this.e[i10].eraseColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, c6Var));
+                }
+                this.j[i10] = new Canvas(this.e[i10]);
+                if (i10 == 0) {
+                    measuredHeight = this.s;
+                }
+                this.g[i10] = Bitmap.createBitmap(i11, (int) (measuredHeight / 15.0f), config);
+                this.h[i10] = new Canvas(this.g[i10]);
+                this.h[i10].scale(this.g[i10].getWidth() / this.e[i10].getWidth(), this.g[i10].getHeight() / this.e[i10].getHeight());
+                this.j[i10].save();
+                this.j[i10].scale(0.06666667f, 0.06666667f, 0.0f, 0.0f);
+                View view = this.c;
+                Drawable background = view.getBackground();
+                if (background == null) {
+                    background = c6Var instanceof org.telegram.ui.co ? ((org.telegram.ui.co) c6Var).d() : org.telegram.ui.ActionBar.g6.t0();
+                }
+                view.setTag(67108867, Integer.valueOf(i10));
+                if (i10 == 0) {
+                    this.j[i10].translate(0.0f, -this.u);
+                    view.draw(this.j[i10]);
+                }
+                if (i10 == 1) {
+                    Rect bounds = background.getBounds();
+                    background.setBounds(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+                    background.draw(this.j[i10]);
+                    background.setBounds(bounds);
+                    view.draw(this.j[i10]);
+                }
+                view.setTag(67108867, null);
+                this.j[i10].restore();
+                Utilities.stackBlurBitmap(this.e[i10], 15);
+                Paint paint = this.w;
+                paint.setAlpha(255);
+                if (i10 == 1) {
+                    this.g[i10].eraseColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, c6Var));
+                }
+                this.h[i10].drawBitmap(this.e[i10], 0.0f, 0.0f, paint);
             }
         }
-        AndroidUtilities.runOnUIThread(new rg(this, 12));
     }
 }

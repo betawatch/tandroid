@@ -52,7 +52,7 @@ public final /* synthetic */ class k1 implements java.util.stream.LongStream {
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalDouble average() {
-        return j$.com.android.tools.r8.a.J(this.a.average());
+        return j$.com.android.tools.r8.a.I(this.a.average());
     }
 
     @Override // java.util.stream.LongStream
@@ -99,12 +99,12 @@ public final /* synthetic */ class k1 implements java.util.stream.LongStream {
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalLong findAny() {
-        return j$.com.android.tools.r8.a.L(this.a.findAny());
+        return j$.com.android.tools.r8.a.K(this.a.findAny());
     }
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalLong findFirst() {
-        return j$.com.android.tools.r8.a.L(this.a.findFirst());
+        return j$.com.android.tools.r8.a.K(this.a.findFirst());
     }
 
     @Override // java.util.stream.LongStream
@@ -141,8 +141,8 @@ public final /* synthetic */ class k1 implements java.util.stream.LongStream {
     }
 
     @Override // java.util.stream.LongStream
-    public final /* synthetic */ java.util.stream.LongStream limit(long j3) {
-        return f(this.a.limit(j3));
+    public final /* synthetic */ java.util.stream.LongStream limit(long j10) {
+        return f(this.a.limit(j10));
     }
 
     @Override // java.util.stream.LongStream
@@ -167,12 +167,12 @@ public final /* synthetic */ class k1 implements java.util.stream.LongStream {
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalLong max() {
-        return j$.com.android.tools.r8.a.L(this.a.max());
+        return j$.com.android.tools.r8.a.K(this.a.max());
     }
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalLong min() {
-        return j$.com.android.tools.r8.a.L(this.a.min());
+        return j$.com.android.tools.r8.a.K(this.a.min());
     }
 
     @Override // java.util.stream.LongStream
@@ -203,13 +203,13 @@ public final /* synthetic */ class k1 implements java.util.stream.LongStream {
     }
 
     @Override // java.util.stream.LongStream
-    public final /* synthetic */ long reduce(long j3, LongBinaryOperator longBinaryOperator) {
-        return this.a.reduce(j3, longBinaryOperator);
+    public final /* synthetic */ long reduce(long j10, LongBinaryOperator longBinaryOperator) {
+        return this.a.reduce(j10, longBinaryOperator);
     }
 
     @Override // java.util.stream.LongStream
     public final /* synthetic */ OptionalLong reduce(LongBinaryOperator longBinaryOperator) {
-        return j$.com.android.tools.r8.a.L(this.a.reduce(longBinaryOperator));
+        return j$.com.android.tools.r8.a.K(this.a.reduce(longBinaryOperator));
     }
 
     /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.LongStream] */
@@ -224,8 +224,8 @@ public final /* synthetic */ class k1 implements java.util.stream.LongStream {
     }
 
     @Override // java.util.stream.LongStream
-    public final /* synthetic */ java.util.stream.LongStream skip(long j3) {
-        return f(this.a.skip(j3));
+    public final /* synthetic */ java.util.stream.LongStream skip(long j10) {
+        return f(this.a.skip(j10));
     }
 
     @Override // java.util.stream.LongStream

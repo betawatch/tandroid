@@ -1,17 +1,17 @@
 package k5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g implements ia.d {
+public final class g implements ja.d {
     public static final g a = new g();
-    public static final ia.c b = ia.c.c("networkType");
-    public static final ia.c c = ia.c.c("mobileSubtype");
+    public static final ja.c b = ja.c.c("networkType");
+    public static final ja.c c = ja.c.c("mobileSubtype");
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
-        ia.e eVar = (ia.e) obj2;
+        ja.e eVar = (ja.e) obj2;
         n nVar = (n) ((v) obj);
-        eVar.a(b, nVar.a);
-        eVar.a(c, nVar.b);
+        eVar.d(b, nVar.a);
+        eVar.d(c, nVar.b);
     }
 }

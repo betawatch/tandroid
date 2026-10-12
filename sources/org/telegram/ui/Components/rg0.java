@@ -1,75 +1,8 @@
 package org.telegram.ui.Components;
 
-import android.webkit.JavascriptInterface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class rg0 {
-    public final /* synthetic */ org.telegram.ui.ju0 a;
-
-    public rg0(org.telegram.ui.ju0 ju0Var) {
-        this.a = ju0Var;
-    }
-
-    @JavascriptInterface
-    public void onPlayerError(String str) {
-        AndroidUtilities.runOnUIThread(new nd(this, Integer.parseInt(str), 5));
-    }
-
-    @JavascriptInterface
-    public void onPlayerLoaded() {
-        AndroidUtilities.runOnUIThread(new pg0(this, 0));
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyBufferedPosition(float f7) {
-        this.a.J = f7;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyCurrentPosition(int i10) {
-        this.a.I = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyDuration(int i10) {
-        int i11 = i10 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-        org.telegram.ui.ju0 ju0Var = this.a;
-        ju0Var.H = i11;
-        String str = ju0Var.s;
-        if (str != null) {
-            sg0.a(ju0Var, str);
-            ju0Var.s = null;
-        }
-    }
-
-    @JavascriptInterface
-    public void onPlayerStateChange(String str) {
-        int parseInt = Integer.parseInt(str);
-        org.telegram.ui.ju0 ju0Var = this.a;
-        boolean z10 = ju0Var.G;
-        boolean z11 = false;
-        int i10 = 1;
-        ju0Var.G = parseInt == 1 || parseInt == 3;
-        ju0Var.b(z10);
-        if (parseInt != 0) {
-            if (parseInt == 1) {
-                z11 = true;
-            } else if (parseInt != 2) {
-                if (parseInt == 3) {
-                    z11 = true;
-                    i10 = 2;
-                }
-            }
-            i10 = 3;
-        } else {
-            i10 = 4;
-        }
-        if (i10 == 3 && ju0Var.h.getVisibility() != 4) {
-            AndroidUtilities.runOnUIThread(new pg0(this, 1), 300L);
-        }
-        AndroidUtilities.runOnUIThread(new i2.g0(this, z11, i10, 1));
-    }
+public final class rg0 extends FrameLayout {
 }

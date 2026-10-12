@@ -1,25 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class z70 implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 a;
-    public final /* synthetic */ d80 b;
+public abstract class z70 {
+    public String F;
+    public int G;
+    public org.telegram.ui.ActionBar.m1 H;
+    public org.telegram.ui.ActionBar.e3 I;
+    public org.telegram.ui.Components.ea0 b;
+    public d3 d;
+    public int e;
+    public View f;
+    public boolean h;
+    public TLRPC.Chat n;
+    public boolean r;
+    public View s;
+    public org.telegram.ui.Components.ha0 v;
+    public VideoPlayerHolderBase w;
+    public z2 x;
+    public int a = 0;
+    public final org.telegram.ui.Components.aa0 c = new org.telegram.ui.Components.aa0();
+    public final a0.h y = new a0.h();
+    public ArrayList E = new ArrayList();
 
-    public z70(d80 d80Var, org.telegram.ui.ActionBar.b2 b2Var) {
-        this.b = d80Var;
-        this.a = b2Var;
-    }
+    public abstract int a();
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.reloadInterface) {
-            this.a.dismiss();
-            NotificationCenter.getGlobalInstance().removeObserver(this, i10);
-            AndroidUtilities.runOnUIThread(new uz(this, 13), 100L);
-        }
-    }
+    public abstract int b();
+
+    public abstract void c(i4 i4Var, org.telegram.ui.Components.l11 l11Var);
+
+    public abstract boolean d(TL_iv.PageBlock pageBlock, i4 i4Var);
 }

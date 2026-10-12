@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Process;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class XiaomiUtilities {
     public static final int OP_ACCESS_XIAOMI_ACCOUNT = 10015;
@@ -57,8 +57,8 @@ public class XiaomiUtilities {
             AppOpsManager appOpsManager = (AppOpsManager) ApplicationLoader.applicationContext.getSystemService("appops");
             Class cls = Integer.TYPE;
             return ((Integer) AppOpsManager.class.getMethod("checkOpNoThrow", cls, cls, String.class).invoke(appOpsManager, Integer.valueOf(i10), Integer.valueOf(Process.myUid()), ApplicationLoader.applicationContext.getPackageName())).intValue() == 0;
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
             return true;
         }
     }

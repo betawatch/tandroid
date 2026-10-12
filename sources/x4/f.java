@@ -1,9 +1,9 @@
 package x4;
 
 import android.animation.TypeEvaluator;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f implements TypeEvaluator {
     public static final f a = new f();
@@ -20,10 +20,10 @@ public final class f implements TypeEvaluator {
         float pow4 = (float) Math.pow(((intValue2 >> 16) & 255) / 255.0f, 2.2d);
         float pow5 = (float) Math.pow(((intValue2 >> 8) & 255) / 255.0f, 2.2d);
         float pow6 = (float) Math.pow((intValue2 & 255) / 255.0f, 2.2d);
-        float y3 = e2.y(f11, f10, f7, f10);
-        float y10 = e2.y(pow4, pow, f7, pow);
-        float y11 = e2.y(pow5, pow2, f7, pow2);
-        float y12 = e2.y(pow6, pow3, f7, pow3);
+        float y3 = k3.y(f11, f10, f7, f10);
+        float y10 = k3.y(pow4, pow, f7, pow);
+        float y11 = k3.y(pow5, pow2, f7, pow2);
+        float y12 = k3.y(pow6, pow3, f7, pow3);
         float pow7 = ((float) Math.pow(y10, 0.45454545454545453d)) * 255.0f;
         float pow8 = ((float) Math.pow(y11, 0.45454545454545453d)) * 255.0f;
         return Integer.valueOf(Math.round(((float) Math.pow(y12, 0.45454545454545453d)) * 255.0f) | (Math.round(pow7) << 16) | (Math.round(y3 * 255.0f) << 24) | (Math.round(pow8) << 8));

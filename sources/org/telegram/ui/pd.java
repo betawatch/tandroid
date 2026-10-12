@@ -1,104 +1,60 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.EditText;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pd implements View.OnFocusChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class pd extends org.telegram.ui.Components.bk0 {
+    public final /* synthetic */ int r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ pd(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pd(Object obj, Context context, int i10) {
+        super(context);
+        this.r = i10;
+        this.s = obj;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z10) {
-        switch (this.a) {
+    @Override // android.view.View
+    public void invalidate(int i10, int i11, int i12, int i13) {
+        switch (this.r) {
             case 0:
-                zd zdVar = ((ke) this.b).U0;
-                float f7 = z10 ? 1.0f : 0.0f;
-                zdVar.b(f7, f7, true);
+                super.invalidate(i10, i11, i12, i13);
+                ((sd) this.s).f.invalidate();
                 break;
             case 1:
-                ty tyVar = (ty) this.b;
-                if (z10) {
-                    tyVar.Y.b(true);
-                    break;
-                }
+            default:
+                super.invalidate(i10, i11, i12, i13);
                 break;
             case 2:
-                wg0 wg0Var = ((fe0) this.b).W;
-                if (z10) {
-                    wg0Var.c.setEditText((EditText) view);
-                    wg0Var.c.setDispatchBackWhenEmpty(true);
-                    break;
-                }
+                super.invalidate(i10, i11, i12, i13);
+                ((p70) this.s).e.invalidate();
                 break;
             case 3:
-                org.telegram.ui.Components.zd0 zd0Var = (org.telegram.ui.Components.zd0) this.b;
-                float f10 = z10 ? 1.0f : 0.0f;
-                zd0Var.b(f10, f10, true);
+                super.invalidate(i10, i11, i12, i13);
+                ((mf0) this.s).h.invalidate();
                 break;
-            case 4:
-                org.telegram.ui.Components.zd0 zd0Var2 = ((oe0) this.b).x;
-                float f11 = z10 ? 1.0f : 0.0f;
-                zd0Var2.b(f11, f11, true);
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        switch (this.r) {
+            case 0:
+                super.invalidate();
+                ((sd) this.s).f.invalidate();
                 break;
-            case 5:
-                org.telegram.ui.Components.zd0 zd0Var3 = ((we0) this.b).b;
-                float f12 = z10 ? 1.0f : 0.0f;
-                zd0Var3.b(f12, f12, true);
+            case 1:
+                super.invalidate();
+                ((org.telegram.ui.Components.e30) this.s).invalidate();
                 break;
-            case 6:
-                wg0 wg0Var2 = ((ze0) this.b).y;
-                if (z10) {
-                    wg0Var2.c.setEditText((EditText) view);
-                    wg0Var2.c.setDispatchBackWhenEmpty(true);
-                    break;
-                }
+            case 2:
+                super.invalidate();
+                ((p70) this.s).e.invalidate();
                 break;
-            case 7:
-                org.telegram.ui.Components.zd0 zd0Var4 = ((kf0) this.b).a;
-                float f13 = z10 ? 1.0f : 0.0f;
-                zd0Var4.b(f13, f13, true);
-                break;
-            case 8:
-                wg0 wg0Var3 = ((zf0) this.b).s0;
-                if (z10) {
-                    wg0Var3.c.setEditText((EditText) view);
-                    wg0Var3.c.setDispatchBackWhenEmpty(true);
-                    break;
-                }
-                break;
-            case 9:
-                org.telegram.ui.Components.zd0 zd0Var5 = ((vg0) this.b).e;
-                float f14 = z10 ? 1.0f : 0.0f;
-                zd0Var5.b(f14, f14, true);
-                break;
-            case 10:
-                org.telegram.ui.Components.zd0 zd0Var6 = ((PasscodeActivity) this.b).f;
-                float f15 = z10 ? 1.0f : 0.0f;
-                zd0Var6.b(f15, f15, true);
-                break;
-            case 11:
-                ce1 ce1Var = (ce1) this.b;
-                if (!z10) {
-                    ce1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
-                    break;
-                } else {
-                    ce1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
-                    break;
-                }
             default:
-                org.telegram.ui.Components.zd0 zd0Var7 = ((TwoStepVerificationActivity) this.b).v;
-                float f16 = z10 ? 1.0f : 0.0f;
-                zd0Var7.b(f16, f16, true);
+                super.invalidate();
+                ((mf0) this.s).h.invalidate();
                 break;
         }
     }

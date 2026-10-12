@@ -1,72 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class eg implements Runnable {
-    public final /* synthetic */ MessageObject a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ TL_keyboard.KeyboardButtonProto c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ TLRPC.User e;
-    public final /* synthetic */ ChatActivityEnterView f;
+public final class eg extends org.telegram.ui.fo {
+    public boolean Qc;
+    public final /* synthetic */ TLRPC.User Rc;
+    public final /* synthetic */ TLRPC.User Sc;
+    public final /* synthetic */ long Tc;
 
-    public eg(ChatActivityEnterView chatActivityEnterView, MessageObject messageObject, long j3, TL_keyboard.KeyboardButtonProto keyboardButtonProto, MessageObject messageObject2, TLRPC.User user) {
-        this.f = chatActivityEnterView;
-        this.a = messageObject;
-        this.b = j3;
-        this.c = keyboardButtonProto;
-        this.d = messageObject2;
-        this.e = user;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eg(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j10) {
+        super(bundle);
+        this.Rc = user;
+        this.Sc = user2;
+        this.Tc = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        org.telegram.ui.zn znVar = chatActivityEnterView.P2;
-        if (chatActivityEnterView.m1.R() > AndroidUtilities.dp(20.0f) || chatActivityEnterView.r0()) {
-            chatActivityEnterView.k0(false);
-            AndroidUtilities.hideKeyboard(chatActivityEnterView);
-            AndroidUtilities.runOnUIThread(this, 150L);
+    @Override // org.telegram.ui.fo, org.telegram.ui.ActionBar.m2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Qc) {
             return;
         }
-        if (znVar == null) {
-            return;
-        }
-        int i10 = chatActivityEnterView.Q;
-        long j3 = this.a.messageOwner.dialog_id;
-        TL_keyboard.KeyboardButtonProto keyboardButtonProto = this.c;
-        String text = keyboardButtonProto.getText();
-        String url = keyboardButtonProto.getUrl();
-        boolean c10 = zf.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
-        MessageObject messageObject = this.d;
-        ei.e5 b10 = ei.e5.b(i10, j3, this.b, text, url, c10 ? 1 : 0, messageObject != null ? messageObject.messageOwner.id : 0, znVar == null ? 0L : znVar.S8(), null, false, null, null, 0, false, false);
-        LaunchActivity launchActivity = LaunchActivity.G1;
-        if (launchActivity != null && launchActivity.P() != null && LaunchActivity.G1.P().k(b10) != null) {
-            ei.c0 c0Var = chatActivityEnterView.l0;
-            if (c0Var != null) {
-                c0Var.setOpened(false);
-                return;
-            }
-            return;
-        }
-        TLRPC.User user = this.e;
-        String restrictionReason = user == null ? null : MessagesController.getInstance(chatActivityEnterView.Q).getRestrictionReason(user.restriction_reason);
-        if (!TextUtils.isEmpty(restrictionReason)) {
-            MessagesController.getInstance(chatActivityEnterView.Q);
-            MessagesController.showCantOpenAlert(znVar, restrictionReason);
-        } else {
-            ei.k3 k3Var = new ei.k3(chatActivityEnterView.getContext(), chatActivityEnterView.W3);
-            k3Var.k0 = chatActivityEnterView.O2;
-            k3Var.t(znVar, b10);
-            k3Var.show();
-        }
+        this.Qc = true;
+        zc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Rc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Sc)), new bi.g(this, this.Tc, 21)), R.raw.contact_check).j();
     }
 }

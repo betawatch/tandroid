@@ -1,73 +1,53 @@
 package org.telegram.ui.Components;
 
+import android.view.KeyEvent;
 import android.view.View;
-import java.util.ArrayList;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fo0 implements em0 {
-    public final /* synthetic */ int a;
+public final class fo0 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ eo0 a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ TLRPC.Reaction c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a2[] d;
+    public final /* synthetic */ View e;
 
-    public /* synthetic */ fo0(Object obj, int i10, org.telegram.ui.ActionBar.n2 n2Var, int i11) {
-        this.a = i11;
-        this.d = obj;
+    public fo0(eo0 eo0Var, int i10, TLRPC.Reaction reaction, org.telegram.ui.ActionBar.a2[] a2VarArr, View view) {
+        this.a = eo0Var;
         this.b = i10;
-        this.c = n2Var;
+        this.c = reaction;
+        this.d = a2VarArr;
+        this.e = view;
     }
 
-    @Override // org.telegram.ui.Components.em0
-    public final void d(int i10, View view) {
-        switch (this.a) {
-            case 0:
-                no0 no0Var = (no0) this.d;
-                ArrayList arrayList = no0Var.r;
-                ai.w0 w0Var = no0Var.d;
-                if (i10 >= 0 && i10 < arrayList.size()) {
-                    if (!UserConfig.getInstance(this.b).isPremium()) {
-                        new rg.y0(this.c, 24, true).show();
-                        break;
-                    } else {
-                        long j3 = ((ko0) arrayList.get(i10)).a.h;
-                        if (no0Var.f(no0Var.h == j3 ? null : ((ko0) arrayList.get(i10)).a)) {
-                            int i11 = 0;
-                            while (i11 < w0Var.getChildCount()) {
-                                if (w0Var.getChildAt(i11) == view) {
-                                    if (i11 <= 1) {
-                                        w0Var.v0(-AndroidUtilities.dp(i11 == 0 ? 90.0f : 50.0f), 0, null);
-                                    } else if (i11 >= w0Var.getChildCount() - 2) {
-                                        w0Var.v0(AndroidUtilities.dp(i11 == w0Var.getChildCount() - 1 ? 80.0f : 50.0f), 0, null);
-                                    }
-                                }
-                                i11++;
-                            }
-                            w0Var.M(new org.telegram.ui.ir(3));
-                            if (no0Var.h != j3) {
-                                no0Var.h = j3;
-                                ((mo0) view).a(true, true);
-                                break;
-                            } else {
-                                no0Var.h = 0L;
-                                break;
-                            }
-                        }
-                    }
-                }
-                break;
-            default:
-                rg.l1 l1Var = (rg.l1) this.d;
-                if (view instanceof org.telegram.ui.uw0) {
-                    org.telegram.ui.uw0 uw0Var = (org.telegram.ui.uw0) view;
-                    PremiumPreviewFragment.q0(this.b, uw0Var.f.a);
-                    l1Var.showDialog(new rg.y0(this.c, uw0Var.f.a, false));
-                    break;
-                }
-                break;
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        if (i10 != 6) {
+            return false;
         }
+        eo0 eo0Var = this.a;
+        String obj = eo0Var.getText().toString();
+        if (obj.length() > 12) {
+            AndroidUtilities.shakeView(eo0Var);
+            return true;
+        }
+        MessagesController.getInstance(this.b).renameSavedReactionTag(ah.i1.d(this.c), obj);
+        org.telegram.ui.ActionBar.a2[] a2VarArr = this.d;
+        org.telegram.ui.ActionBar.a2 a2Var = a2VarArr[0];
+        if (a2Var != null) {
+            a2Var.dismiss();
+        }
+        if (a2VarArr[0] == ko0.H) {
+            ko0.H = null;
+        }
+        View view = this.e;
+        if (view != null) {
+            view.requestFocus();
+        }
+        return true;
     }
 }

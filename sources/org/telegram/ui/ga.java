@@ -1,46 +1,58 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ga implements org.telegram.ui.Components.em0 {
-    public final /* synthetic */ ra a;
+public final /* synthetic */ class ga implements DialogInterface.OnCancelListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public ga(ra raVar) {
-        this.a = raVar;
+    public /* synthetic */ ga(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.em0
-    public final void d(int i10, View view) {
-        boolean z10 = view instanceof oa;
-        ra raVar = this.a;
-        if (!z10) {
-            if (view instanceof la) {
-                raVar.e0(true);
-                return;
-            }
-            return;
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                ConnectionsManager.getInstance(((va) this.c).currentAccount).cancelRequest(this.b, true);
+                break;
+            case 1:
+                ((qn) this.c).a.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 2:
+                zo zoVar = (zo) this.c;
+                zoVar.N0 = false;
+                zoVar.b = null;
+                zoVar.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 3:
+                ((ChatActivityEnterView) this.c).P2.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 4:
+                ConnectionsManager.getInstance(((org.telegram.ui.Components.ry) this.c).c.a.F.c1).cancelRequest(this.b, true);
+                break;
+            case 5:
+                ((n60) this.c).d.getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 6:
+                ConnectionsManager.getInstance(((LanguageSelectActivity) this.c).currentAccount).cancelRequest(this.b, true);
+                break;
+            case 7:
+                ((nd0) this.c).getConnectionsManager().cancelRequest(this.b, true);
+                break;
+            case 8:
+                ConnectionsManager.getInstance(((he1) this.c).currentAccount).cancelRequest(this.b, true);
+                break;
+            default:
+                ConnectionsManager.getInstance(((zh.p) this.c).a).cancelRequest(this.b, true);
+                break;
         }
-        oa oaVar = (oa) view;
-        TLRPC.TL_username tL_username = oaVar.v;
-        if (tL_username == null || oaVar.r) {
-            return;
-        }
-        if (tL_username.editable && raVar.x == 0) {
-            raVar.b.x0(0);
-            raVar.e0(true);
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(raVar.getParentActivity(), 0, raVar.getResourceProvider());
-        alertDialog$Builder.a.R = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLink : R.string.UsernameActivateLink);
-        alertDialog$Builder.a.T = LocaleController.getString(tL_username.active ? R.string.UsernameDeactivateLinkProfileMessage : R.string.UsernameActivateLinkProfileMessage);
-        alertDialog$Builder.k(LocaleController.getString(tL_username.active ? R.string.Hide : R.string.Show), new ea(this, tL_username, i10, view, 0));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m4.q0(26));
-        alertDialog$Builder.o();
     }
 }

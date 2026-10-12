@@ -128,10 +128,10 @@ public final class s extends b implements Collection {
     @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
     public final j$.util.Spliterator spliterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
-        long j3 = concurrentHashMap.j();
+        long j10 = concurrentHashMap.j();
         l[] lVarArr = concurrentHashMap.a;
         int length = lVarArr == null ? 0 : lVarArr.length;
-        return new j(lVarArr, length, 0, length, j3 < 0 ? 0L : j3, 1);
+        return new j(lVarArr, length, 0, length, j10 < 0 ? 0L : j10, 1);
     }
 
     @Override // java.lang.Iterable, j$.util.Collection

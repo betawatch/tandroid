@@ -1,133 +1,168 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class yz extends pm0 {
-    public final boolean c;
-    public final /* synthetic */ a00 d;
+public final class yz extends FrameLayout {
+    public static final /* synthetic */ int h = 0;
+    public final org.telegram.ui.ActionBar.c6 a;
+    public final TextView b;
+    public final View c;
+    public final bk0 d;
+    public boolean e;
+    public int f;
 
-    public yz(a00 a00Var, boolean z10) {
-        this.d = a00Var;
-        this.c = z10;
+    public yz(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context);
+        this.a = c6Var;
+        View radialProgressView = new RadialProgressView(context, null);
+        addView(radialProgressView, w7.a6.d(-2.0f, -2));
+        this.c = radialProgressView;
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        linearLayout.setGravity(1);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        linearLayout.setOrientation(1);
+        bk0 bk0Var = new bk0(context);
+        this.d = bk0Var;
+        bk0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        bk0Var.setImportantForAccessibility(2);
+        bk0Var.setVisibility(8);
+        linearLayout.addView(bk0Var, w7.a6.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 20.0f);
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.c7, c6Var));
+        textView.setGravity(1);
+        textView.setText(LocaleController.getString(R.string.NoResult));
+        linearLayout.addView(textView, w7.a6.q(-2, -2, 17));
+        addView(linearLayout, w7.a6.d(-2.0f, -2));
+        AndroidUtilities.updateViewVisibilityAnimated(textView, false, 2.0f, false);
+        AndroidUtilities.updateViewVisibilityAnimated(radialProgressView, false, 1.0f, false);
+        setOnTouchListener(new ci.d(18));
     }
 
-    @Override // org.telegram.ui.Components.pm0
-    public final boolean D(s4.d1 d1Var) {
-        return true;
-    }
-
-    @Override // s4.i0
-    public final int h() {
-        boolean z10 = this.c;
-        a00 a00Var = this.d;
-        return (z10 ? a00Var.n1 : a00Var.m1).size();
-    }
-
-    @Override // s4.i0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
-        ArrayList<TLRPC.Document> arrayList;
-        ImageLocation forSticker;
-        y9 y9Var = (y9) d1Var.a;
-        a00 a00Var = this.d;
-        boolean z10 = this.c;
-        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) (z10 ? a00Var.n1 : a00Var.m1).get(i10);
-        y9Var.setTag(stickerSetCovered);
-        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
-            arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
-        } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-            TLRPC.TL_messages_stickerSet stickerSet = MediaDataController.getInstance(a00Var.c1).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), false);
-            arrayList = stickerSet == null ? null : stickerSet.documents;
-        } else {
-            arrayList = stickerSetCovered.covers;
+    public final void a(int i10, int i11, int i12) {
+        int i13 = i10 != 0 ? 0 : 8;
+        bk0 bk0Var = this.d;
+        bk0Var.setVisibility(i13);
+        if (i10 != 0) {
+            bk0Var.f(i10, i11, i12, null);
+            bk0Var.d();
         }
-        TLRPC.Document document = stickerSetCovered.cover;
-        if (document == null) {
-            if (arrayList == null || arrayList.isEmpty()) {
-                document = null;
-            } else {
-                if (stickerSetCovered.set != null) {
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11).id == stickerSetCovered.set.thumb_document_id) {
-                            document = arrayList.get(i11);
-                            break;
-                        }
+    }
+
+    public final void b() {
+        AndroidUtilities.updateViewVisibilityAnimated(this.b, false, 0.9f, true);
+        AndroidUtilities.updateViewVisibilityAnimated(this.c, true, 1.0f, true);
+    }
+
+    public final void c() {
+        AndroidUtilities.updateViewVisibilityAnimated(this.b, true, 0.9f, true);
+        AndroidUtilities.updateViewVisibilityAnimated(this.c, false, 1.0f, true);
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int measuredHeight;
+        int paddingTop;
+        this.e = true;
+        int i14 = i12 - i10;
+        int i15 = i13 - i11;
+        int childCount = getChildCount();
+        for (int i16 = 0; i16 < childCount; i16++) {
+            View childAt = getChildAt(i16);
+            if (childAt.getVisibility() != 8) {
+                int measuredWidth = (i14 - childAt.getMeasuredWidth()) / 2;
+                View view = this.c;
+                if (childAt == view && (view instanceof f10)) {
+                    measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
+                    paddingTop = getPaddingTop();
+                } else {
+                    int i17 = this.f;
+                    if (i17 == 2) {
+                        measuredHeight = (AndroidUtilities.dp(100.0f) - childAt.getMeasuredHeight()) / 2;
+                        paddingTop = getPaddingTop();
+                    } else if (i17 == 1) {
+                        measuredHeight = ((i15 / 2) - childAt.getMeasuredHeight()) / 2;
+                        paddingTop = getPaddingTop();
+                    } else {
+                        measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
+                        paddingTop = getPaddingTop();
                     }
                 }
-                document = null;
-                if (document == null) {
-                    document = arrayList.get(0);
-                }
+                int i18 = paddingTop + measuredHeight;
+                childAt.layout(measuredWidth, i18, childAt.getMeasuredWidth() + measuredWidth, childAt.getMeasuredHeight() + i18);
             }
         }
-        if (document == null) {
+        this.e = false;
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.e) {
             return;
         }
-        if (z10) {
-            y9Var.setColorFilter(MessageObject.isTextColorEmoji(document) ? org.telegram.ui.ActionBar.i6.o0(a00Var.Z1) : null);
-        }
-        TLObject closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(stickerSetCovered.set.thumbs, 90);
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(stickerSetCovered.set.thumbs, org.telegram.ui.ActionBar.i6.c7, 0.2f);
-        if (svgThumb != null) {
-            svgThumb.overrideWidthAndHeight(512, 512);
-        }
-        if (closestPhotoSizeWithSize == null || MessageObject.isVideoSticker(document)) {
-            closestPhotoSizeWithSize = document;
-        }
-        boolean z11 = closestPhotoSizeWithSize instanceof TLRPC.Document;
-        if (z11) {
-            forSticker = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document);
-        } else if (!(closestPhotoSizeWithSize instanceof TLRPC.PhotoSize)) {
-            return;
-        } else {
-            forSticker = ImageLocation.getForSticker((TLRPC.PhotoSize) closestPhotoSizeWithSize, document, stickerSetCovered.set.thumb_version);
-        }
-        if (forSticker == null) {
-            return;
-        }
-        String str = !LiteMode.isEnabled(z10 ? LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD : 1) ? "30_30_firstframe" : "30_30";
-        if (z11 && (MessageObject.isAnimatedStickerDocument(document, true) || MessageObject.isVideoSticker(document))) {
-            if (svgThumb != null) {
-                y9Var.n(ImageLocation.getForDocument(document), str, svgThumb, stickerSetCovered);
-                return;
-            } else {
-                y9Var.j(ImageLocation.getForDocument(document), str, forSticker, null, 0, stickerSetCovered);
-                return;
-            }
-        }
-        String str2 = str;
-        ImageLocation imageLocation = forSticker;
-        if (imageLocation.imageType == 1) {
-            y9Var.i(imageLocation, str2, "tgs", svgThumb, stickerSetCovered);
-        } else {
-            y9Var.i(imageLocation, null, "webp", svgThumb, stickerSetCovered);
+        super.requestLayout();
+    }
+
+    public void setProgressBarColor(int i10) {
+        View view = this.c;
+        if (view instanceof RadialProgressView) {
+            ((RadialProgressView) view).setProgressColor(i10);
         }
     }
 
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        xz xzVar = new xz(this, this.d.getContext());
-        xzVar.s(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
-        xzVar.setLayerNum(1);
-        xzVar.setAspectFit(true);
-        xzVar.setLayoutParams(new s4.q0(AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f)));
-        return new am0(xzVar);
+    public void setShowAtCenter(boolean z10) {
+        this.f = z10 ? 1 : 0;
+    }
+
+    public void setShowAtTop(boolean z10) {
+        this.f = z10 ? 2 : 0;
+    }
+
+    public void setText(String str) {
+        this.b.setText(str);
+    }
+
+    public void setTextColor(int i10) {
+        this.b.setTextColor(i10);
+    }
+
+    public void setTextSize(int i10) {
+        this.b.setTextSize(1, i10);
+    }
+
+    public void setTopImage(int i10) {
+        TextView textView = this.b;
+        if (i10 == 0) {
+            textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
+            return;
+        }
+        Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
+        if (mutate != null) {
+            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.c7, this.a), PorterDuff.Mode.MULTIPLY));
+        }
+        textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
+        textView.setCompoundDrawablePadding(AndroidUtilities.dp(1.0f));
     }
 }

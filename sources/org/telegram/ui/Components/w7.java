@@ -1,53 +1,51 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class w7 extends qm0 {
-    public boolean V2;
-    public final /* synthetic */ l8 W2;
+public final class w7 extends nd {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w7(l8 l8Var, Context context) {
-        super(context, null);
-        this.W2 = l8Var;
+    public /* synthetic */ w7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
+        super(context);
+        this.b = i10;
+        this.c = notificationCenterDelegate;
     }
 
-    @Override // org.telegram.ui.Components.qm0
-    public final boolean E0(float f7) {
-        l8 l8Var = this.W2;
-        return f7 < l8Var.E.getY() - ((float) l8Var.n.getTop());
-    }
-
-    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        l8 l8Var = this.W2;
-        int i14 = l8Var.s0;
-        if (i14 != -1 && !l8Var.c.n0) {
-            this.V2 = true;
-            l8Var.r.h1(i14, l8Var.t0 - l8Var.n.getPaddingTop());
-            super.onLayout(false, i10, i11, i12, i13);
-            this.V2 = false;
-            l8Var.s0 = -1;
-            return;
+    @Override // org.telegram.ui.Components.nd
+    public final void c(boolean z10) {
+        switch (this.b) {
+            case 0:
+                m8 m8Var = (m8) this.c;
+                m8Var.d();
+                org.telegram.ui.cs csVar = m8Var.O;
+                if (csVar != null) {
+                    csVar.a(b5.d.u());
+                    break;
+                }
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.c;
+                org.telegram.ui.ActionBar.e1 e1Var = photoViewer.F0;
+                if (e1Var != null) {
+                    e1Var.d(z10);
+                    photoViewer.F0.setSelectorColor(z10 ? 259241196 : 268435455);
+                }
+                h81 h81Var = photoViewer.F2;
+                if (h81Var != null) {
+                    h81Var.O(b5.d.u() || photoViewer.r);
+                }
+                org.telegram.ui.cs csVar2 = photoViewer.w0;
+                if (csVar2 != null) {
+                    csVar2.a(b5.d.u());
+                    break;
+                }
+                break;
         }
-        if (l8Var.r0) {
-            l8Var.r0 = false;
-            this.V2 = true;
-            if (l8Var.x0(true)) {
-                super.onLayout(false, i10, i11, i12, i13);
-            }
-            this.V2 = false;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.V2) {
-            return;
-        }
-        super.requestLayout();
     }
 }

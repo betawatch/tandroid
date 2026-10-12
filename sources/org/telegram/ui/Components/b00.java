@@ -1,56 +1,159 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
+import android.util.SparseArray;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b00 extends ReplacementSpan {
-    public final /* synthetic */ int a;
+public class b00 extends s4.b0 {
+    public final SparseArray I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public final RecyclerView N;
+    public boolean O;
+    public boolean P;
+    public final boolean Q;
+    public boolean R;
+    public int S;
+    public final boolean T;
 
-    public /* synthetic */ b00(int i10) {
-        this.a = i10;
+    public b00(mm0 mm0Var, int i10) {
+        this.I = new SparseArray();
+        this.J = -1;
+        this.P = true;
+        this.Q = true;
+        this.T = true;
+        this.N = mm0Var;
+        this.M = i10;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int i15 = this.a;
+    @Override // s4.n0
+    public final void P(View view) {
+        if (this.T) {
+            RecyclerView recyclerView = this.N;
+            View F = recyclerView.F(view);
+            if ((F == null ? null : recyclerView.T(F)).b() == B() - 1) {
+                ((ViewGroup.MarginLayoutParams) ((s4.o0) view.getLayoutParams())).height = Math.max(this.J, 0);
+            }
+        }
+        super.P(view);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                return (int) paint.measureText(charSequence, i10, i11);
-            case 1:
-                return AndroidUtilities.dp(16.0f);
-            case 2:
-                return AndroidUtilities.dp(12.0f);
-            case 3:
-                return AndroidUtilities.dp(12.0f);
-            default:
-                return AndroidUtilities.dp(16.0f);
+    @Override // s4.n0
+    public final void Q() {
+        this.I.clear();
+        p1();
+    }
+
+    @Override // s4.n0
+    public final void V(RecyclerView recyclerView, int i10, int i11) {
+        p1();
+    }
+
+    @Override // s4.n0
+    public final void W(RecyclerView recyclerView) {
+        this.I.clear();
+        p1();
+    }
+
+    @Override // s4.n0
+    public final void X(RecyclerView recyclerView, int i10, int i11) {
+        p1();
+    }
+
+    @Override // s4.n0
+    public final void Y(RecyclerView recyclerView, int i10, int i11) {
+        p1();
+    }
+
+    @Override // s4.n0
+    public final void Z() {
+        p1();
+    }
+
+    @Override // s4.n0
+    public final void a0(RecyclerView recyclerView, int i10, int i11, Object obj) {
+        p1();
+        p1();
+    }
+
+    @Override // s4.n0
+    public final void d0(qf.e eVar, s4.y0 y0Var, int i10, int i11) {
+        int i12 = this.K;
+        this.L = View.MeasureSpec.getSize(i10);
+        int size = View.MeasureSpec.getSize(i11);
+        this.K = size;
+        if (i12 != size) {
+            p1();
+        }
+        super.d0(eVar, y0Var, i10, i11);
+    }
+
+    @Override // s4.b0, s4.n0
+    public final boolean e() {
+        return this.Q;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void p1() {
+        RecyclerView recyclerView;
+        s4.g0 adapter;
+        if (this.K > 0 && (adapter = (recyclerView = this.N).getAdapter()) != null) {
+            int h = adapter.h() - 1;
+            int i10 = 0;
+            int i11 = 0;
+            for (int i12 = this.O; i12 < h; i12++) {
+                int j10 = adapter.j(i12);
+                SparseArray sparseArray = this.I;
+                s4.b1 b1Var = (s4.b1) sparseArray.get(j10, null);
+                if (b1Var == null) {
+                    b1Var = adapter.d(recyclerView, j10);
+                    View view = b1Var.a;
+                    sparseArray.put(j10, b1Var);
+                    if (view.getLayoutParams() == null) {
+                        view.setLayoutParams(n());
+                    }
+                }
+                View view2 = b1Var.a;
+                if (this.P) {
+                    adapter.v(b1Var, i12);
+                }
+                s4.o0 o0Var = (s4.o0) view2.getLayoutParams();
+                view2.measure(s4.n0.s(d(), this.L, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) o0Var).leftMargin + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin, ((ViewGroup.MarginLayoutParams) o0Var).width), s4.n0.s(this.Q, this.K, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) o0Var).topMargin + ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) o0Var).height));
+                i10 += view2.getMeasuredHeight();
+                if (i12 == 0) {
+                    i11 = view2.getMeasuredHeight();
+                }
+                if (this.R) {
+                    if (i10 >= this.K + i11) {
+                        break;
+                    }
+                } else {
+                    if (i10 >= this.K) {
+                        break;
+                    }
+                }
+            }
+            if (this.R) {
+                this.J = Math.max(this.S, (((this.K - i10) - this.M) - recyclerView.getPaddingBottom()) + i11);
+            } else {
+                this.J = Math.max(this.S, ((this.K - i10) - this.M) - recyclerView.getPaddingBottom());
+            }
         }
     }
 
-    public /* synthetic */ b00(boolean z10) {
-        this.a = 0;
-    }
-
-    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void d(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-    }
-
-    private final void e(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    public b00(int i10, int i11, mm0 mm0Var) {
+        super(1, false);
+        this.I = new SparseArray();
+        this.J = -1;
+        this.P = true;
+        this.Q = true;
+        this.T = true;
+        this.N = mm0Var;
+        this.M = i10;
     }
 }

@@ -1,11 +1,10 @@
 package g6;
 
-import ai.r4;
 import android.os.Looper;
 import com.google.android.gms.internal.cast.a0;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class o {
     public static final Object i = new Object();
@@ -13,55 +12,55 @@ public final class o {
     public final long b;
     public final String c;
     public n g;
-    public r4 h;
+    public androidx.activity.i h;
     public long e = -1;
     public long f = 0;
     public final a0 d = new a0(Looper.getMainLooper(), 0);
 
-    public o(long j3, String str) {
-        this.b = j3;
+    public o(long j10, String str) {
+        this.b = j10;
         this.c = str;
         this.a = new b("RequestTracker", str);
     }
 
-    public final void a(long j3, n nVar) {
+    public final void a(long j10, n nVar) {
         n nVar2;
-        long j10;
         long j11;
+        long j12;
         long currentTimeMillis = System.currentTimeMillis();
         Object obj = i;
         synchronized (obj) {
             nVar2 = this.g;
-            j10 = this.e;
-            j11 = this.f;
-            this.e = j3;
+            j11 = this.e;
+            j12 = this.f;
+            this.e = j10;
             this.g = nVar;
             this.f = currentTimeMillis;
         }
         if (nVar2 != null) {
-            nVar2.n(this.c, j10, j11, currentTimeMillis);
+            nVar2.j(this.c, j11, j12, currentTimeMillis);
         }
         synchronized (obj) {
             try {
-                r4 r4Var = this.h;
-                if (r4Var != null) {
-                    this.d.removeCallbacks(r4Var);
+                androidx.activity.i iVar = this.h;
+                if (iVar != null) {
+                    this.d.removeCallbacks(iVar);
                 }
-                r4 r4Var2 = new r4(this, 20);
-                this.h = r4Var2;
-                this.d.postDelayed(r4Var2, this.b);
+                androidx.activity.i iVar2 = new androidx.activity.i(this, 20);
+                this.h = iVar2;
+                this.d.postDelayed(iVar2, this.b);
             } catch (Throwable th2) {
                 throw th2;
             }
         }
     }
 
-    public final void b(long j3, int i10, l lVar) {
+    public final void b(long j10, int i10, l lVar) {
         synchronized (i) {
             try {
-                if (c(j3)) {
+                if (c(j10)) {
                     Locale locale = Locale.ROOT;
-                    e("request " + j3 + " completed", i10, lVar);
+                    e("request " + j10 + " completed", i10, lVar);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -69,12 +68,12 @@ public final class o {
         }
     }
 
-    public final boolean c(long j3) {
+    public final boolean c(long j10) {
         boolean z10;
         synchronized (i) {
-            long j10 = this.e;
+            long j11 = this.e;
             z10 = false;
-            if (j10 != -1 && j10 == j3) {
+            if (j11 != -1 && j11 == j10) {
                 z10 = true;
             }
         }
@@ -98,14 +97,14 @@ public final class o {
                     long currentTimeMillis = System.currentTimeMillis();
                     n nVar = this.g;
                     n6.l.h(nVar);
-                    nVar.w(this.c, this.e, i10, obj, this.f, currentTimeMillis);
+                    nVar.v(this.c, this.e, i10, obj, this.f, currentTimeMillis);
                 }
                 this.e = -1L;
                 this.g = null;
                 synchronized (obj2) {
-                    r4 r4Var = this.h;
-                    if (r4Var != null) {
-                        this.d.removeCallbacks(r4Var);
+                    androidx.activity.i iVar = this.h;
+                    if (iVar != null) {
+                        this.d.removeCallbacks(iVar);
                         this.h = null;
                     }
                 }

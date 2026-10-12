@@ -12,12 +12,12 @@ public abstract class o7 extends q7 implements j$.util.d1 {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+        return j$.com.android.tools.r8.a.m(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+        return j$.com.android.tools.r8.a.o(this, i10);
     }
 
     @Override // j$.util.Spliterator
@@ -25,52 +25,52 @@ public abstract class o7 extends q7 implements j$.util.d1 {
         throw new IllegalStateException();
     }
 
-    public o7(j$.util.d1 d1Var, long j3, long j10) {
-        super(d1Var, j3, j10, 0L, Math.min(d1Var.estimateSize(), j10));
+    public o7(j$.util.d1 d1Var, long j10, long j11) {
+        super(d1Var, j10, j11, 0L, Math.min(d1Var.estimateSize(), j11));
     }
 
     @Override // j$.util.d1
     public final boolean tryAdvance(Object obj) {
-        long j3;
+        long j10;
         Objects.requireNonNull(obj);
-        long j10 = this.e;
-        long j11 = this.a;
-        if (j11 >= j10) {
+        long j11 = this.e;
+        long j12 = this.a;
+        if (j12 >= j11) {
             return false;
         }
         while (true) {
-            j3 = this.d;
-            if (j11 <= j3) {
+            j10 = this.d;
+            if (j12 <= j10) {
                 break;
             }
             ((j$.util.d1) this.c).tryAdvance(b());
             this.d++;
         }
-        if (j3 >= this.e) {
+        if (j10 >= this.e) {
             return false;
         }
-        this.d = j3 + 1;
+        this.d = j10 + 1;
         return ((j$.util.d1) this.c).tryAdvance(obj);
     }
 
     @Override // j$.util.d1
     public final void forEachRemaining(Object obj) {
         Objects.requireNonNull(obj);
-        long j3 = this.e;
-        long j10 = this.a;
-        if (j10 >= j3) {
+        long j10 = this.e;
+        long j11 = this.a;
+        if (j11 >= j10) {
             return;
         }
-        long j11 = this.d;
-        if (j11 >= j3) {
+        long j12 = this.d;
+        if (j12 >= j10) {
             return;
         }
-        if (j11 >= j10 && ((j$.util.d1) this.c).estimateSize() + j11 <= this.b) {
+        if (j12 >= j11 && ((j$.util.d1) this.c).estimateSize() + j12 <= this.b) {
             ((j$.util.d1) this.c).forEachRemaining(obj);
             this.d = this.e;
             return;
         }
-        while (j10 > this.d) {
+        while (j11 > this.d) {
             ((j$.util.d1) this.c).tryAdvance(b());
             this.d++;
         }

@@ -1,23 +1,23 @@
 package w7;
 
-import android.net.Uri;
-import java.util.Collections;
-import java.util.Map;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class k {
-    public static g2.m a(m2.m mVar, String str, m2.j jVar, int i10) {
-        Map map = Collections.EMPTY_MAP;
-        Uri m10 = e2.a.m(str, jVar.c);
-        long j3 = jVar.a;
-        long j10 = jVar.b;
-        String a2 = mVar.a();
-        if (a2 == null) {
-            a2 = e2.a.m(((m2.b) mVar.b.get(0)).a, jVar.c).toString();
+    public static kd.f a(kd.f fVar, kd.g key) {
+        kotlin.jvm.internal.i.e(key, "key");
+        if (kotlin.jvm.internal.i.a(fVar.getKey(), key)) {
+            return fVar;
         }
-        String str2 = a2;
-        e2.d.i(m10, "The uri must be set.");
-        return new g2.m(m10, 1, null, e9.f1.h, j3, j10, str2, i10);
+        return null;
+    }
+
+    public static kd.h b(kd.f fVar, kd.g key) {
+        kotlin.jvm.internal.i.e(key, "key");
+        return kotlin.jvm.internal.i.a(fVar.getKey(), key) ? kd.i.a : fVar;
+    }
+
+    public static kd.h c(kd.f fVar, kd.h context) {
+        kotlin.jvm.internal.i.e(context, "context");
+        return context == kd.i.a ? fVar : (kd.h) context.fold(fVar, new b1.e(5));
     }
 }

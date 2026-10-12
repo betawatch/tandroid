@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class x2 {
     public static final x2 f = new x2(0, new int[0], new Object[0], false);
@@ -44,8 +44,8 @@ public final class x2 {
                     int i16 = i14 << 3;
                     l1 l1Var = (l1) this.c[i12];
                     int b12 = m1.b(i16);
-                    int o9 = l1Var.o();
-                    i11 = m1.b(o9) + o9 + b12 + i11;
+                    int n10 = l1Var.n();
+                    i11 = m1.b(n10) + n10 + b12 + i11;
                 } else if (i15 == 3) {
                     int b13 = m1.b(i14 << 3);
                     b10 = b13 + b13;

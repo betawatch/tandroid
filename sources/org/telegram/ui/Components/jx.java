@@ -1,44 +1,58 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class jx extends s4.s {
-    public final /* synthetic */ a00 Q;
+public final class jx extends FrameLayout {
+    public final Paint a;
+    public final /* synthetic */ wz b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jx(a00 a00Var) {
-        super(5);
-        this.Q = a00Var;
+    public jx(wz wzVar, Context context) {
+        super(context);
+        this.b = wzVar;
+        this.a = new Paint();
     }
 
-    @Override // s4.s, s4.d0, s4.p0
-    public final int o0(int i10, pf.e eVar, s4.a1 a1Var) {
-        int o02 = super.o0(i10, eVar, a1Var);
-        a00 a00Var = this.Q;
-        if (o02 != 0 && a00Var.D0.getScrollState() == 1) {
-            a00Var.X1 = false;
-            a00Var.Y();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        wz wzVar = this.b;
+        ix ixVar = wzVar.B0;
+        float dp = AndroidUtilities.dp(50.0f) * wzVar.t1.p();
+        if (dp > getMeasuredHeight()) {
+            return;
         }
-        if (a00Var.T0 == null) {
-            gg.f1 f1Var = new gg.f1(a00Var, a00Var.c1, a00Var.t1.a(), a00Var.t1.f(), 1);
-            a00Var.T0 = f1Var;
-            f1Var.a();
+        canvas.save();
+        if (dp != 0.0f) {
+            canvas.clipRect(0.0f, dp, getMeasuredWidth(), getMeasuredHeight());
         }
-        a00Var.T0.b();
-        return o02;
+        int A = wzVar.A(org.telegram.ui.ActionBar.g6.He);
+        Paint paint = this.a;
+        paint.setColor(A);
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), ixVar.getExpandedOffset() + AndroidUtilities.dp(36.0f), paint);
+        super.dispatchDraw(canvas);
+        if (ixVar.s != null) {
+            canvas.save();
+            float f7 = ixVar.c0 - ixVar.d0;
+            float f10 = ixVar.v;
+            if (f10 > 0.0f) {
+                f7 = ((ixVar.s.getX() - ixVar.getScrollX()) * ixVar.v) + ((1.0f - f10) * f7);
+            }
+            canvas.translate(f7, 0.0f);
+            ixVar.s.draw(canvas);
+            canvas.restore();
+        }
+        canvas.restore();
     }
 
-    @Override // s4.d0, s4.p0
-    public final void v0(RecyclerView recyclerView, s4.a1 a1Var, int i10) {
-        try {
-            ji.o oVar = new ji.o(recyclerView.getContext(), 2);
-            oVar.a = i10;
-            w0(oVar);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-        }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.b.Y();
     }
 }

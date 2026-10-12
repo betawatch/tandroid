@@ -3,13 +3,13 @@ package com.googlecode.mp4parser;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
-import w7.s6;
+import w7.g7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class a implements f5.b {
     static final /* synthetic */ boolean $assertionsDisabled = false;
-    private static qc.c LOG = qc.c.a(a.class);
+    private static rc.c LOG = rc.c.a(a.class);
     private ByteBuffer content;
     long contentStartPosition;
     f dataSource;
@@ -61,8 +61,8 @@ public abstract class a implements f5.b {
                 try {
                     LOG.b("mem mapping " + getType());
                     throw null;
-                } catch (IOException e7) {
-                    throw new RuntimeException(e7);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
                 }
             }
         } catch (Throwable th2) {
@@ -85,7 +85,7 @@ public abstract class a implements f5.b {
             writableByteChannel.write((ByteBuffer) this.content.position(0));
             return;
         }
-        ByteBuffer allocate3 = ByteBuffer.allocate(s6.a(getSize()));
+        ByteBuffer allocate3 = ByteBuffer.allocate(g7.a(getSize()));
         a(allocate3);
         getContent(allocate3);
         ByteBuffer byteBuffer = this.deadBytes;
@@ -112,21 +112,21 @@ public abstract class a implements f5.b {
     }
 
     public String getPath() {
-        return qc.e.a(this, "");
+        return rc.e.a(this, "");
     }
 
     @Override // f5.b
     public long getSize() {
-        long j3;
+        long j10;
         if (!this.isRead) {
-            j3 = this.memMapSize;
+            j10 = this.memMapSize;
         } else if (this.isParsed) {
-            j3 = getContentSize();
+            j10 = getContentSize();
         } else {
             ByteBuffer byteBuffer = this.content;
-            j3 = byteBuffer != null ? byteBuffer.limit() : 0;
+            j10 = byteBuffer != null ? byteBuffer.limit() : 0;
         }
-        return j3 + (j3 >= 4294967288L ? 8 : 0) + 8 + ("uuid".equals(getType()) ? 16 : 0) + (this.deadBytes != null ? r0.limit() : 0);
+        return j10 + (j10 >= 4294967288L ? 8 : 0) + 8 + ("uuid".equals(getType()) ? 16 : 0) + (this.deadBytes != null ? r0.limit() : 0);
     }
 
     @Override // f5.b
@@ -142,11 +142,11 @@ public abstract class a implements f5.b {
         return this.isParsed;
     }
 
-    public void parse(f fVar, ByteBuffer byteBuffer, long j3, e5.a aVar) {
+    public void parse(f fVar, ByteBuffer byteBuffer, long j10, e5.a aVar) {
         long position = fVar.position();
         this.contentStartPosition = position;
         this.offset = position - byteBuffer.remaining();
-        this.memMapSize = j3;
+        this.memMapSize = j10;
         fVar.position();
         fVar.position();
         this.isRead = false;

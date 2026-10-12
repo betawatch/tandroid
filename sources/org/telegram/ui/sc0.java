@@ -1,53 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.IMapsProvider;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sc0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hd0 b;
-    public final /* synthetic */ IMapsProvider.IMapView c;
+    public final /* synthetic */ nd0 b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ sc0(hd0 hd0Var, IMapsProvider.IMapView iMapView, int i10) {
+    public /* synthetic */ sc0(nd0 nd0Var, boolean z10, int i10) {
         this.a = i10;
-        this.b = hd0Var;
-        this.c = iMapView;
+        this.b = nd0Var;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                hd0 hd0Var = this.b;
-                IMapsProvider.IMapView iMapView = this.c;
-                if (hd0Var.K != null && hd0Var.getParentActivity() != null) {
-                    try {
-                        iMapView.onCreate(null);
-                        ApplicationLoader.getMapsProvider().initializeMaps(ApplicationLoader.applicationContext);
-                        hd0Var.K.getMapAsync(new tc0(hd0Var, 0));
-                        hd0Var.u0 = true;
-                        if (hd0Var.v0) {
-                            hd0Var.K.onResume();
-                            break;
-                        }
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                        return;
-                    }
+                boolean z10 = this.c;
+                nd0 nd0Var = this.b;
+                if (!z10) {
+                    nd0Var.b.setVisibility(8);
+                    break;
+                } else {
+                    nd0Var.getClass();
+                    break;
                 }
-                break;
             default:
-                hd0 hd0Var2 = this.b;
-                IMapsProvider.IMapView iMapView2 = this.c;
-                try {
-                    iMapView2.onCreate(null);
-                } catch (Exception unused) {
-                }
-                AndroidUtilities.runOnUIThread(new sc0(hd0Var2, iMapView2, 0));
+                this.b.r0(this.c);
                 break;
         }
     }

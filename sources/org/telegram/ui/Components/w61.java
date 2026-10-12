@@ -1,37 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class w61 extends t61 {
-    public final int e;
-    public final t11 f;
+public final class w61 extends FrameLayout {
+    public int a;
+    public boolean b;
 
-    public w61(String str, int i10, t11 t11Var) {
-        super(str, (t11) null);
-        this.e = i10;
-        this.f = t11Var;
-    }
-
-    @Override // org.telegram.ui.Components.t61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        int i10 = this.e;
-        if (i10 == 3) {
-            textPaint.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.J6, false));
-        } else if (i10 == 2) {
-            textPaint.setColor(-1);
-        } else if (i10 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.hc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.gc, false));
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12 = this.a;
+        View view = getParent() instanceof View ? (View) getParent() : null;
+        if (this.b && view != null) {
+            i12 = view.getPaddingBottom() + view.getPaddingTop() + i12;
         }
-        t11 t11Var = this.f;
-        if (t11Var != null) {
-            t11Var.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
+        if (view != null && view.getMeasuredHeight() > 0) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(view.getMeasuredHeight() - i12, TLObject.FLAG_30));
+            return;
         }
+        if (View.MeasureSpec.getMode(i11) != 0) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11) - i12, TLObject.FLAG_30));
+            return;
+        }
+        int size = View.MeasureSpec.getSize(i11);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30);
+        measureChildren(makeMeasureSpec, i11);
+        int i13 = 0;
+        for (int i14 = 0; i14 < getChildCount(); i14++) {
+            i13 = Math.max(i13, getChildAt(i14).getMeasuredHeight());
+        }
+        if (size > 0) {
+            i13 = Math.min(i13, size - i12);
+        }
+        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30));
     }
 }

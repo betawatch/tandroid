@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import java.util.Arrays;
 import w7.v8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c1 extends o6.a {
     public static final Parcelable.Creator<c1> CREATOR = new n0(10);
@@ -47,25 +47,25 @@ public final class c1 extends o6.a {
     public final String toString() {
         String valueOf = String.valueOf(this.h);
         String valueOf2 = String.valueOf(this.c);
-        StringBuilder x10 = a1.g.x("AppParcelable{title='", this.b, "', developerName='", this.d, "', formattedPrice='");
-        x10.append(this.e);
-        x10.append("', starRating=");
-        x10.append(this.f);
-        x10.append(", wearDetails=");
-        a1.g.A(x10, valueOf, ", deepLinkUri='", this.a, "', icon=");
-        return a1.g.t(x10, valueOf2, "}");
+        StringBuilder w9 = a1.g.w("AppParcelable{title='", this.b, "', developerName='", this.d, "', formattedPrice='");
+        w9.append(this.e);
+        w9.append("', starRating=");
+        w9.append(this.f);
+        w9.append(", wearDetails=");
+        a1.g.A(w9, valueOf, ", deepLinkUri='", this.a, "', icon=");
+        return a1.g.s(w9, valueOf2, "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.d0.q(parcel, 20293);
-        w7.d0.l(parcel, 1, this.a);
-        w7.d0.l(parcel, 2, this.b);
-        w7.d0.k(parcel, 3, this.c, i10);
-        w7.d0.l(parcel, 4, this.d);
-        w7.d0.l(parcel, 5, this.e);
-        w7.d0.e(parcel, 6, this.f);
-        w7.d0.k(parcel, 7, this.h, i10);
-        w7.d0.r(parcel, q6);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.l(parcel, 1, this.a);
+        w7.g0.l(parcel, 2, this.b);
+        w7.g0.k(parcel, 3, this.c, i10);
+        w7.g0.l(parcel, 4, this.d);
+        w7.g0.l(parcel, 5, this.e);
+        w7.g0.e(parcel, 6, this.f);
+        w7.g0.k(parcel, 7, this.h, i10);
+        w7.g0.r(parcel, q6);
     }
 }

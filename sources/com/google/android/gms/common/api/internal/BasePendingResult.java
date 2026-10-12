@@ -11,15 +11,15 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
-import v7.f5;
+import v7.g5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends f5 {
+public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends g5 {
     public static final n1 n = new n1(0);
     public final g b;
     public final WeakReference c;
-    public e6.r f;
+    public e6.q f;
     public com.google.android.gms.common.api.q h;
     public Status i;
     public volatile boolean j;
@@ -44,13 +44,13 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
                 if (dataHolder != null) {
                     dataHolder.close();
                 }
-            } catch (RuntimeException e7) {
-                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(qVar)), e7);
+            } catch (RuntimeException e) {
+                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(qVar)), e);
             }
         }
     }
 
-    @Override // v7.f5
+    @Override // v7.g5
     public final void b(com.google.android.gms.common.api.o oVar) {
         synchronized (this.a) {
             try {
@@ -124,7 +124,7 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         }
     }
 
-    public final void i(e6.r rVar) {
+    public final void i(e6.q qVar) {
         synchronized (this.a) {
             try {
                 n6.l.j("Result has already been consumed.", !this.j);
@@ -133,11 +133,11 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
                 }
                 if (g()) {
                     g gVar = this.b;
-                    com.google.android.gms.common.api.q j3 = j();
+                    com.google.android.gms.common.api.q j10 = j();
                     gVar.getClass();
-                    gVar.sendMessage(gVar.obtainMessage(1, new Pair(rVar, j3)));
+                    gVar.sendMessage(gVar.obtainMessage(1, new Pair(qVar, j10)));
                 } else {
-                    this.f = rVar;
+                    this.f = qVar;
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -165,16 +165,16 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
 
     public final void k(com.google.android.gms.common.api.q qVar) {
         this.h = qVar;
-        this.i = qVar.i();
+        this.i = qVar.h();
         this.d.countDown();
         if (this.k) {
             this.f = null;
         } else {
-            e6.r rVar = this.f;
-            if (rVar != null) {
+            e6.q qVar2 = this.f;
+            if (qVar2 != null) {
                 g gVar = this.b;
                 gVar.removeMessages(2);
-                gVar.sendMessage(gVar.obtainMessage(1, new Pair(rVar, j())));
+                gVar.sendMessage(gVar.obtainMessage(1, new Pair(qVar2, j())));
             } else if (this.h instanceof x8.e) {
                 this.resultGuardian = new o1(this);
             }

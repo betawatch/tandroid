@@ -4,7 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.FilterInputStream;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class m1 extends FilterInputStream {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class m1 extends FilterInputStream {
         while (i11 < i10) {
             int read = read(bArr, i11, i10 - i11);
             if (read <= 0) {
-                throw new sc.j(i11);
+                throw new tc.j(i11);
             }
             i11 += read;
         }
@@ -46,7 +46,7 @@ public final class m1 extends FilterInputStream {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public sc.y c() {
+    public tc.x c() {
         int i10;
         byte b10;
         byte[] bArr;
@@ -61,13 +61,13 @@ public final class m1 extends FilterInputStream {
             int i11 = b11 & 15;
             byte b12 = bArr2[1];
             boolean z14 = (b12 & 128) != 0;
-            long j3 = b12 & Byte.MAX_VALUE;
-            if (j3 != 126) {
-                if (j3 == 127) {
+            long j10 = b12 & Byte.MAX_VALUE;
+            if (j10 != 126) {
+                if (j10 == 127) {
                     b(8, bArr2);
                     byte b13 = bArr2[0];
                     if ((b13 & 128) != 0) {
-                        throw new sc.w(21, "The payload length of a frame is invalid.");
+                        throw new tc.v(21, "The payload length of a frame is invalid.");
                     }
                     i10 = ((bArr2[6] & 255) << 8) | ((bArr2[1] & 255) << 48) | ((b13 & 255) << 56) | ((bArr2[2] & 255) << 40) | ((bArr2[3] & 255) << 32) | ((bArr2[4] & 255) << 24) | ((bArr2[5] & 255) << 16);
                     b10 = bArr2[7];
@@ -79,15 +79,15 @@ public final class m1 extends FilterInputStream {
                     bArr = new byte[4];
                     b(4, bArr);
                 }
-                if (2147483647L >= j3) {
+                if (2147483647L >= j10) {
                     try {
-                        skip(j3);
+                        skip(j10);
                     } catch (IOException unused) {
                     }
-                    throw new sc.w(22, "The payload length of a frame exceeds the maximum array size in Java.");
+                    throw new tc.v(22, "The payload length of a frame exceeds the maximum array size in Java.");
                 }
-                if (j3 != 0) {
-                    int i12 = (int) j3;
+                if (j10 != 0) {
+                    int i12 = (int) j10;
                     try {
                         byte[] bArr4 = new byte[i12];
                         b(i12, bArr4);
@@ -97,38 +97,38 @@ public final class m1 extends FilterInputStream {
                             }
                         }
                         bArr3 = bArr4;
-                    } catch (OutOfMemoryError e7) {
+                    } catch (OutOfMemoryError e) {
                         try {
-                            skip(j3);
+                            skip(j10);
                         } catch (IOException unused2) {
                         }
-                        throw new sc.w(23, "OutOfMemoryError occurred during a trial to allocate a memory area for a frame's payload: " + e7.getMessage(), e7);
+                        throw new tc.v(23, "OutOfMemoryError occurred during a trial to allocate a memory area for a frame's payload: " + e.getMessage(), e);
                     }
                 }
-                sc.y yVar = new sc.y();
-                yVar.a = z10;
-                yVar.b = z11;
-                yVar.c = z12;
-                yVar.d = z13;
-                yVar.e = i11;
-                yVar.f = z14;
-                yVar.c(bArr3);
-                return yVar;
+                tc.x xVar = new tc.x();
+                xVar.a = z10;
+                xVar.b = z11;
+                xVar.c = z12;
+                xVar.d = z13;
+                xVar.e = i11;
+                xVar.f = z14;
+                xVar.c(bArr3);
+                return xVar;
             }
             b(2, bArr2);
             i10 = (bArr2[0] & 255) << 8;
             b10 = bArr2[1];
-            j3 = i10 | (b10 & 255);
+            j10 = i10 | (b10 & 255);
             byte[] bArr32 = null;
             if (z14) {
             }
-            if (2147483647L >= j3) {
+            if (2147483647L >= j10) {
             }
-        } catch (sc.j e10) {
-            if (e10.b == 0) {
-                throw new sc.l(48, "No more WebSocket frame from the server.");
+        } catch (tc.j e7) {
+            if (e7.b == 0) {
+                throw new tc.l(48, "No more WebSocket frame from the server.");
             }
-            throw e10;
+            throw e7;
         }
     }
 

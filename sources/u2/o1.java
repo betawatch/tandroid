@@ -1,66 +1,37 @@
 package u2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class o1 {
-    public static final o1 d = new o1(new b2.l1[0]);
-    public static final String e;
-    public final int a;
-    public final e9.a1 b;
-    public int c;
+public final class o1 implements d1 {
+    public final d1 a;
+    public final long b;
 
-    static {
-        String str = e2.d0.a;
-        e = Integer.toString(0, 36);
+    public o1(d1 d1Var, long j10) {
+        this.a = d1Var;
+        this.b = j10;
     }
 
-    public o1(b2.l1... l1VarArr) {
-        e9.a1 w10 = e9.i0.w(l1VarArr);
-        this.b = w10;
-        this.a = l1VarArr.length;
-        int i10 = 0;
-        while (i10 < w10.d) {
-            int i11 = i10 + 1;
-            for (int i12 = i11; i12 < w10.d; i12++) {
-                if (((b2.l1) w10.get(i10)).equals(w10.get(i12))) {
-                    e2.a.f("TrackGroupArray", "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
-                }
-            }
-            i10 = i11;
+    @Override // u2.d1
+    public final void d() {
+        this.a.d();
+    }
+
+    @Override // u2.d1
+    public final boolean e() {
+        return this.a.e();
+    }
+
+    @Override // u2.d1
+    public final int f(qf.b bVar, h2.h hVar, int i10) {
+        int f7 = this.a.f(bVar, hVar, i10);
+        if (f7 == -4) {
+            hVar.e += this.b;
         }
+        return f7;
     }
 
-    public final b2.l1 a(int i10) {
-        return (b2.l1) this.b.get(i10);
-    }
-
-    public final int b(b2.l1 l1Var) {
-        int indexOf = this.b.indexOf(l1Var);
-        if (indexOf >= 0) {
-            return indexOf;
-        }
-        return -1;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || o1.class != obj.getClass()) {
-            return false;
-        }
-        o1 o1Var = (o1) obj;
-        return this.a == o1Var.a && this.b.equals(o1Var.b);
-    }
-
-    public final int hashCode() {
-        if (this.c == 0) {
-            this.c = this.b.hashCode();
-        }
-        return this.c;
-    }
-
-    public final String toString() {
-        return this.b.toString();
+    @Override // u2.d1
+    public final int m(long j10) {
+        return this.a.m(j10 - this.b);
     }
 }

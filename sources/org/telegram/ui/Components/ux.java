@@ -1,69 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ux extends i61 {
-    public final /* synthetic */ a00 b;
+public final class ux extends FrameLayout {
+    public final /* synthetic */ wz a;
 
-    public ux(a00 a00Var) {
-        this.b = a00Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ux(wz wzVar, Context context) {
+        super(context);
+        this.a = wzVar;
     }
 
-    @Override // org.telegram.ui.Components.i61
-    public final boolean a() {
-        return this.b.t1.b();
-    }
-
-    @Override // org.telegram.ui.Components.i61
-    public final String[] b() {
-        return this.b.W0;
-    }
-
-    @Override // org.telegram.ui.Components.i61
-    public final boolean c() {
-        return this.b.t1.c();
-    }
-
-    @Override // org.telegram.ui.Components.i61
-    public final boolean d(b61 b61Var, MotionEvent motionEvent) {
-        org.telegram.ui.rt q6 = org.telegram.ui.rt.q();
-        a00 a00Var = this.b;
-        a00Var.getMeasuredHeight();
-        return q6.r(motionEvent, b61Var, a00Var.g2, a00Var.Z1);
-    }
-
-    @Override // org.telegram.ui.Components.i61
-    public final boolean e(b61 b61Var, j jVar, MotionEvent motionEvent) {
-        org.telegram.ui.rt q6 = org.telegram.ui.rt.q();
-        a00 a00Var = this.b;
-        a00Var.getMeasuredHeight();
-        return q6.s(motionEvent, b61Var, jVar, a00Var.g2, a00Var.Z1);
-    }
-
-    @Override // org.telegram.ui.Components.i61
-    public final void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
-        this.b.t1.m(null, document, null, obj, null, z10, i10);
-    }
-
-    @Override // org.telegram.ui.Components.i61
-    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
-        a00 a00Var = this.b;
-        a00Var.t1.r(stickerSetCovered);
-        if (z10) {
-            a00Var.X(true);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        wz wzVar = this.a;
+        zx zxVar = wzVar.I;
+        vw vwVar = wzVar.V;
+        iy iyVar = wzVar.P;
+        if (view != iyVar && view != vwVar) {
+            return super.drawChild(canvas, view, j10);
         }
-    }
-
-    @Override // org.telegram.ui.Components.i61
-    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
-        this.b.t1.h(stickerSetCovered);
-    }
-
-    @Override // org.telegram.ui.Components.i61
-    public final void i(String[] strArr) {
-        this.b.W0 = strArr;
+        canvas.save();
+        float y3 = zxVar.getY() + zxVar.getMeasuredHeight() + 1.0f;
+        if (view == iyVar && vwVar != null) {
+            y3 = Math.max(y3, vwVar.getY() + vwVar.getMeasuredHeight() + 1.0f);
+        }
+        canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * wzVar.b.e), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restore();
+        return drawChild;
     }
 }

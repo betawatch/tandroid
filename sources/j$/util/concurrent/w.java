@@ -19,22 +19,22 @@ public final class w implements u0 {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.i(this, consumer);
+        j$.com.android.tools.r8.a.h(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+        return j$.com.android.tools.r8.a.m(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+        return j$.com.android.tools.r8.a.o(this, i10);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.z(this, consumer);
+        return j$.com.android.tools.r8.a.y(this, consumer);
     }
 
     @Override // j$.util.Spliterator
@@ -42,9 +42,9 @@ public final class w implements u0 {
         throw new IllegalStateException();
     }
 
-    public w(long j3, long j10, double d, double d10) {
-        this.a = j3;
-        this.b = j10;
+    public w(long j10, long j11, double d, double d10) {
+        this.a = j10;
+        this.b = j11;
         this.c = d;
         this.d = d10;
     }
@@ -52,13 +52,13 @@ public final class w implements u0 {
     @Override // j$.util.u0, j$.util.d1, j$.util.Spliterator
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
     public final w trySplit() {
-        long j3 = this.a;
-        long j10 = (this.b + j3) >>> 1;
-        if (j10 <= j3) {
+        long j10 = this.a;
+        long j11 = (this.b + j10) >>> 1;
+        if (j11 <= j10) {
             return null;
         }
-        this.a = j10;
-        return new w(j3, j10, this.c, this.d);
+        this.a = j11;
+        return new w(j10, j11, this.c, this.d);
     }
 
     @Override // j$.util.Spliterator
@@ -69,27 +69,27 @@ public final class w implements u0 {
     @Override // j$.util.d1
     public final boolean tryAdvance(DoubleConsumer doubleConsumer) {
         doubleConsumer.getClass();
-        long j3 = this.a;
-        if (j3 >= this.b) {
+        long j10 = this.a;
+        if (j10 >= this.b) {
             return false;
         }
         doubleConsumer.accept(ThreadLocalRandom.current().a(this.c, this.d));
-        this.a = j3 + 1;
+        this.a = j10 + 1;
         return true;
     }
 
     @Override // j$.util.d1
     public final void forEachRemaining(DoubleConsumer doubleConsumer) {
         doubleConsumer.getClass();
-        long j3 = this.a;
-        long j10 = this.b;
-        if (j3 < j10) {
-            this.a = j10;
+        long j10 = this.a;
+        long j11 = this.b;
+        if (j10 < j11) {
+            this.a = j11;
             ThreadLocalRandom current = ThreadLocalRandom.current();
             do {
                 doubleConsumer.accept(current.a(this.c, this.d));
-                j3++;
-            } while (j3 < j10);
+                j10++;
+            } while (j10 < j11);
         }
     }
 }

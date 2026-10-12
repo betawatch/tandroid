@@ -6,7 +6,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j1 extends w0 {
     public final w b;
@@ -37,13 +37,13 @@ public final class j1 extends w0 {
     public final void c(p0 p0Var) {
         TaskCompletionSource taskCompletionSource = this.c;
         try {
-            this.b.f(p0Var.b, taskCompletionSource);
-        } catch (DeadObjectException e7) {
-            throw e7;
-        } catch (RemoteException e10) {
-            a(k1.e(e10));
-        } catch (RuntimeException e11) {
-            taskCompletionSource.trySetException(e11);
+            this.b.c(p0Var.b, taskCompletionSource);
+        } catch (DeadObjectException e) {
+            throw e;
+        } catch (RemoteException e7) {
+            a(k1.e(e7));
+        } catch (RuntimeException e10) {
+            taskCompletionSource.trySetException(e10);
         }
     }
 
@@ -63,6 +63,6 @@ public final class j1 extends w0 {
 
     @Override // com.google.android.gms.common.api.internal.w0
     public final k6.c[] g(p0 p0Var) {
-        return (k6.c[]) this.b.c;
+        return this.b.a;
     }
 }

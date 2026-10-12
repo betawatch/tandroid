@@ -1,47 +1,43 @@
 package org.telegram.ui.web;
 
-import java.util.HashSet;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.bb1;
-import org.telegram.ui.zn;
-import yh.p7;
+import android.app.Activity;
+import bi.n9;
+import ji.d4;
+import org.json.JSONObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.z9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+public final class d0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ n9 a;
+    public final /* synthetic */ b1 b;
 
-    public /* synthetic */ d0(Object obj, long j3, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = j3;
+    public d0(b1 b1Var, n9 n9Var) {
+        this.b = b1Var;
+        this.a = n9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                e0 e0Var = (e0) this.c;
-                e0Var.getClass();
-                e0Var.presentFragment(zn.W9(this.b));
-                break;
-            case 1:
-                tg.z0 z0Var = (tg.z0) this.c;
-                HashSet hashSet = z0Var.e0;
-                hashSet.remove(Long.valueOf(this.b));
-                z0Var.Y.b(true, hashSet, new tg.t0(z0Var, 5), null);
-                z0Var.c0(true, false);
-                break;
-            case 2:
-                ad.a0((p7) this.c).M(LocaleController.getString(R.string.Gift2ConvertedTitle), LocaleController.formatPluralStringComma("Gift2Converted", (int) this.b), R.raw.stars_topup).k(true);
-                break;
-            default:
-                ad.a0((bb1) this.c).M(LocaleController.getString(R.string.Gift2ConvertedTitle), LocaleController.formatPluralStringComma("Gift2ConvertedChannel", (int) this.b), R.raw.stars_topup).k(true);
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.onRequestPermissionResultReceived;
+        if (i10 == i12) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == 5000) {
+                NotificationCenter.getGlobalInstance().removeObserver(this, i12);
+                int i13 = iArr[0];
+                b1 b1Var = this.b;
+                if (i13 != 0) {
+                    b1Var.x(this.a, "scan_qr_popup_closed", new JSONObject());
+                } else {
+                    Activity activity = b1Var.W;
+                    if (activity == null) {
+                        return;
+                    }
+                    b1Var.g0 = z9.e0(activity, false, 3, new d4(b1Var, 16));
+                }
+            }
         }
     }
 }

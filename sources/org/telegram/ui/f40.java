@@ -1,45 +1,29 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class f40 implements lh.a {
-    public final /* synthetic */ g60 a;
+public final class f40 extends v4 {
+    public final /* synthetic */ n60 U;
 
-    public f40(g60 g60Var) {
-        this.a = g60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f40(n60 n60Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.U = n60Var;
     }
 
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-        if (R == null) {
-            return;
+    @Override // org.telegram.ui.v4, org.telegram.ui.Components.ki0
+    public final void c() {
+        n60 n60Var = this.U;
+        AccountInstance accountInstance = n60Var.d;
+        g40 g40Var = n60Var.b;
+        long dialogId = g40Var.getDialogId();
+        if (dialogId > 0) {
+            TLRPC.User user = accountInstance.getMessagesController().getUser(Long.valueOf(dialogId));
+            g40Var.H(null, ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 0), ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 1), false);
         }
-        boolean z10 = R instanceof ProfileActivity;
-        g60 g60Var = this.a;
-        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
-            g60Var.dismiss();
-            return;
-        }
-        int Q0 = g60Var.Q0();
-        Bundle bundle = new Bundle();
-        long j3 = groupCallMessage.fromId;
-        if (j3 > 0) {
-            bundle.putLong("user_id", j3);
-        } else {
-            bundle.putLong("chat_id", -j3);
-        }
-        boolean z11 = true;
-        if (groupCallMessage.fromId == g60Var.d.getUserConfig().getClientUserId()) {
-            bundle.putBoolean("my_profile", true);
-        }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (Q0 > 0 && Q0 != Integer.MAX_VALUE) {
-            z11 = false;
-        }
-        R.presentFragment(profileActivity, false, z11);
-        g60Var.dismiss();
     }
 }

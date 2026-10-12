@@ -1,30 +1,15 @@
 package x9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e implements i {
-    public static final ob.a c = new ob.a(26);
-    public final Object a;
-    public Object b;
+public final class e {
+    public final String a;
+    public final String b;
+    public final String c;
 
-    public e(ba.c cVar) {
-        this.a = cVar;
-        this.b = c;
-    }
-
-    @Override // x9.i
-    public void a(h hVar, int i10) {
-        int[] iArr = (int[]) this.b;
-        try {
-            hVar.read((byte[]) this.a, iArr[0], i10);
-            iArr[0] = iArr[0] + i10;
-        } finally {
-            hVar.close();
-        }
-    }
-
-    public e(byte[] bArr, int[] iArr) {
-        this.a = bArr;
-        this.b = iArr;
+    public e(String str, String str2, String str3) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
     }
 }

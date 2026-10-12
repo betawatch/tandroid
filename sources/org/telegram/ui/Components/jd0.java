@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class jd0 extends Drawable {
     public id0 a;
@@ -49,12 +49,12 @@ public final class jd0 extends Drawable {
         canvas.drawCircle(centerX, centerY, dp, paint);
         long currentTimeMillis = System.currentTimeMillis();
         canvas.save();
-        long j3 = this.e;
-        canvas.rotate((((currentTimeMillis - j3) % 1500.0f) * 360.0f) / 1500.0f, bounds.centerX(), bounds.centerY());
+        long j10 = this.e;
+        canvas.rotate((((currentTimeMillis - j10) % 1500.0f) * 360.0f) / 1500.0f, bounds.centerX(), bounds.centerY());
         canvas.drawLine(bounds.centerX(), bounds.centerY(), bounds.centerX(), bounds.centerY() - AndroidUtilities.dp(3.0f), paint);
         canvas.restore();
         canvas.save();
-        canvas.rotate((((currentTimeMillis - j3) % 4500.0f) * 360.0f) / 4500.0f, bounds.centerX(), bounds.centerY());
+        canvas.rotate((((currentTimeMillis - j10) % 4500.0f) * 360.0f) / 4500.0f, bounds.centerX(), bounds.centerY());
         canvas.drawLine(bounds.centerX(), bounds.centerY(), AndroidUtilities.dp(2.3f) + bounds.centerX(), bounds.centerY(), paint);
         canvas.restore();
     }

@@ -1,50 +1,38 @@
 package e9;
 
-import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Comparator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a0 extends y0 implements Serializable {
-    public final Comparator[] a;
+public final class a0 extends b0 {
+    public final int d;
 
-    public a0(p pVar, p pVar2) {
-        this.a = new Comparator[]{pVar, pVar2};
+    public a0(int i10) {
+        this.d = i10;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int i10 = 0;
-        while (true) {
-            Comparator[] comparatorArr = this.a;
-            if (i10 >= comparatorArr.length) {
-                return 0;
-            }
-            int compare = comparatorArr[i10].compare(obj, obj2);
-            if (compare != 0) {
-                return compare;
-            }
-            i10++;
-        }
+    @Override // e9.b0
+    public final int e() {
+        return this.d;
     }
 
-    @Override // java.util.Comparator
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof a0) {
-            return Arrays.equals(this.a, ((a0) obj).a);
-        }
-        return false;
+    @Override // e9.b0
+    public final b0 a(int i10, int i11) {
+        return this;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(this.a);
+    @Override // e9.b0
+    public final b0 c(boolean z10, boolean z11) {
+        return this;
     }
 
-    public final String toString() {
-        return a1.g.t(new StringBuilder("Ordering.compound("), Arrays.toString(this.a), ")");
+    @Override // e9.b0
+    public final b0 d(boolean z10, boolean z11) {
+        return this;
+    }
+
+    @Override // e9.b0
+    public final b0 b(Object obj, Object obj2, Comparator comparator) {
+        return this;
     }
 }

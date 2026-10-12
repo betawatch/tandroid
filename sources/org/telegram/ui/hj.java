@@ -1,36 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class hj extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ zn o;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hj(zn znVar, fj fjVar) {
-        super(fjVar, -2, -2);
-        this.o = znVar;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class hj implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
+
+    public /* synthetic */ hj(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
+        this.a = i10;
+        this.b = m2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        zn znVar = this.o;
-        if (znVar.Q8 != this) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                fo foVar = (fo) this.b;
+                foVar.la = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                foVar.X0.invalidate();
+                break;
+            case 1:
+                yy yyVar = (yy) this.b;
+                yyVar.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = yyVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            default:
+                ((ce1) this.b).x0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
-        znVar.Q8 = null;
-        znVar.T8 = null;
-        znVar.S8 = null;
-        znVar.z0.R = true;
-        if (znVar.R8) {
-            znVar.j8(false, true, 0.0f);
-        } else {
-            znVar.R8 = true;
-        }
-        ok okVar = znVar.Y;
-        if (okVar == null || okVar.getEditField() == null) {
-            return;
-        }
-        znVar.Y.getEditField().setAllowDrawCursor(true);
     }
 }

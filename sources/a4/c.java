@@ -1,7 +1,7 @@
 package a4;
 
 import androidx.car.app.navigation.model.Maneuver;
-import e2.v;
+import e2.x;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,7 +11,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c extends k {
     public final int i;
@@ -35,7 +35,7 @@ public final class c extends k {
     public static final int[] E = {193, 201, 211, 218, 220, 252, 8216, 161, 42, 39, 8212, 169, 8480, 8226, 8220, 8221, 192, 194, 199, 200, 202, VoIPService.ID_INCOMING_CALL_PRENOTIFICATION, 235, 206, 207, 239, 212, 217, 249, 219, 171, 187};
     public static final int[] F = {195, 227, 205, 204, 236, 210, 242, 213, 245, 123, 125, 92, 94, 95, 124, 126, 196, 228, 214, 246, 223, 165, 164, 9474, 197, 229, 216, 248, 9484, 9488, 9492, 9496};
     public static final boolean[] G = {false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false};
-    public final v h = new v();
+    public final x h = new x();
     public final ArrayList m = new ArrayList();
     public b n = new b(0, 4);
     public int w = 0;
@@ -53,7 +53,7 @@ public final class c extends k {
             this.k = 0;
             this.j = 1;
         } else if (i10 != 4) {
-            e2.a.n("Cea608Decoder", "Invalid channel. Defaulting to CC1.");
+            e2.a.l("Cea608Decoder", "Invalid channel. Defaulting to CC1.");
             this.k = 0;
             this.j = 0;
         } else {
@@ -67,11 +67,11 @@ public final class c extends k {
     }
 
     @Override // a4.k
-    public final l f() {
+    public final k6.h f() {
         List list = this.o;
         this.p = list;
         list.getClass();
-        return new l(list, 0);
+        return new k6.h(list, 1);
     }
 
     @Override // a4.k, h2.e
@@ -104,11 +104,11 @@ public final class c extends k {
         byteBuffer.getClass();
         byte[] array = byteBuffer.array();
         int limit = byteBuffer.limit();
-        v vVar = this.h;
-        vVar.H(limit, array);
+        x xVar = this.h;
+        xVar.L(limit, array);
         boolean z11 = false;
         while (true) {
-            int a2 = vVar.a();
+            int a2 = xVar.a();
             int i10 = this.i;
             if (a2 < i10) {
                 if (z11) {
@@ -122,17 +122,17 @@ public final class c extends k {
                 }
                 return;
             }
-            int x10 = i10 == 2 ? -4 : vVar.x();
-            int x11 = vVar.x();
-            int x12 = vVar.x();
-            if ((x10 & 2) == 0 && (x10 & 1) == this.j) {
-                byte b10 = (byte) (x11 & 127);
-                byte b11 = (byte) (x12 & 127);
+            int A2 = i10 == 2 ? -4 : xVar.A();
+            int A3 = xVar.A();
+            int A4 = xVar.A();
+            if ((A2 & 2) == 0 && (A2 & 1) == this.j) {
+                byte b10 = (byte) (A3 & 127);
+                byte b11 = (byte) (A4 & 127);
                 if (b10 != 0 || b11 != 0) {
                     boolean z12 = this.s;
-                    if ((x10 & 4) == 4) {
+                    if ((A2 & 4) == 4) {
                         boolean[] zArr = G;
-                        if (zArr[x11] && zArr[x12]) {
+                        if (zArr[A3] && zArr[A4]) {
                             z10 = true;
                             this.s = z10;
                             if (z10 || (b10 & 240) != 16) {
@@ -311,28 +311,28 @@ public final class c extends k {
 
     @Override // a4.k, h2.e
     /* renamed from: h */
-    public final z3.j c() {
-        z3.j jVar;
-        z3.j c10 = super.c();
+    public final z3.k c() {
+        z3.k kVar;
+        z3.k c10 = super.c();
         if (c10 != null) {
             return c10;
         }
-        long j3 = this.l;
-        if (j3 == -9223372036854775807L) {
+        long j10 = this.l;
+        if (j10 == -9223372036854775807L) {
             return null;
         }
-        long j10 = this.y;
-        if (j10 == -9223372036854775807L || this.e - j10 < j3 || (jVar = (z3.j) this.b.pollFirst()) == null) {
+        long j11 = this.y;
+        if (j11 == -9223372036854775807L || this.e - j11 < j10 || (kVar = (z3.k) this.b.pollFirst()) == null) {
             return null;
         }
         this.o = Collections.EMPTY_LIST;
         this.y = -9223372036854775807L;
-        l f7 = f();
-        long j11 = this.e;
-        jVar.timeUs = j11;
-        jVar.a = f7;
-        jVar.b = j11;
-        return jVar;
+        k6.h f7 = f();
+        long j12 = this.e;
+        kVar.timeUs = j12;
+        kVar.a = f7;
+        kVar.b = j12;
+        return kVar;
     }
 
     @Override // a4.k

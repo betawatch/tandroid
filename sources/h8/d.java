@@ -1,6 +1,5 @@
 package h8;
 
-import ae.x;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -9,7 +8,7 @@ import android.os.StrictMode;
 import android.widget.FrameLayout;
 import n6.l;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class d extends FrameLayout {
     private final j zza;
@@ -24,9 +23,9 @@ public abstract class d extends FrameLayout {
         l.e("getMapAsync() must be called on the main thread");
         l.i(fVar, "callback must not be null.");
         j jVar = this.zza;
-        aa.a aVar = jVar.a;
-        if (aVar != null) {
-            aVar.n(fVar);
+        androidx.biometric.e eVar = jVar.a;
+        if (eVar != null) {
+            eVar.p(fVar);
         } else {
             jVar.h.add(fVar);
         }
@@ -49,76 +48,76 @@ public abstract class d extends FrameLayout {
 
     public void onDestroy() {
         j jVar = this.zza;
-        aa.a aVar = jVar.a;
-        if (aVar == null) {
+        androidx.biometric.e eVar = jVar.a;
+        if (eVar == null) {
             jVar.b(1);
             return;
         }
         try {
-            i8.g gVar = (i8.g) aVar.c;
+            i8.g gVar = (i8.g) eVar.c;
             gVar.R0(gVar.N0(), 5);
-        } catch (RemoteException e7) {
-            throw new x(e7);
+        } catch (RemoteException e) {
+            throw new androidx.car.app.j(e);
         }
     }
 
     public void onEnterAmbient(Bundle bundle) {
         l.e("onEnterAmbient() must be called on the main thread");
-        aa.a aVar = this.zza.a;
-        if (aVar != null) {
-            aVar.getClass();
+        androidx.biometric.e eVar = this.zza.a;
+        if (eVar != null) {
+            eVar.getClass();
             try {
                 Bundle bundle2 = new Bundle();
                 i8.d.c(bundle, bundle2);
-                i8.g gVar = (i8.g) aVar.c;
+                i8.g gVar = (i8.g) eVar.c;
                 Parcel N0 = gVar.N0();
                 s7.b.b(N0, bundle2);
                 gVar.R0(N0, 10);
                 i8.d.c(bundle2, bundle);
-            } catch (RemoteException e7) {
-                throw new x(e7);
+            } catch (RemoteException e) {
+                throw new androidx.car.app.j(e);
             }
         }
     }
 
     public void onExitAmbient() {
         l.e("onExitAmbient() must be called on the main thread");
-        aa.a aVar = this.zza.a;
-        if (aVar != null) {
-            aVar.getClass();
+        androidx.biometric.e eVar = this.zza.a;
+        if (eVar != null) {
+            eVar.getClass();
             try {
-                i8.g gVar = (i8.g) aVar.c;
+                i8.g gVar = (i8.g) eVar.c;
                 gVar.R0(gVar.N0(), 11);
-            } catch (RemoteException e7) {
-                throw new x(e7);
+            } catch (RemoteException e) {
+                throw new androidx.car.app.j(e);
             }
         }
     }
 
     public void onLowMemory() {
-        aa.a aVar = this.zza.a;
-        if (aVar != null) {
+        androidx.biometric.e eVar = this.zza.a;
+        if (eVar != null) {
             try {
-                i8.g gVar = (i8.g) aVar.c;
+                i8.g gVar = (i8.g) eVar.c;
                 gVar.R0(gVar.N0(), 6);
-            } catch (RemoteException e7) {
-                throw new x(e7);
+            } catch (RemoteException e) {
+                throw new androidx.car.app.j(e);
             }
         }
     }
 
     public void onPause() {
         j jVar = this.zza;
-        aa.a aVar = jVar.a;
-        if (aVar == null) {
+        androidx.biometric.e eVar = jVar.a;
+        if (eVar == null) {
             jVar.b(5);
             return;
         }
         try {
-            i8.g gVar = (i8.g) aVar.c;
+            i8.g gVar = (i8.g) eVar.c;
             gVar.R0(gVar.N0(), 4);
-        } catch (RemoteException e7) {
-            throw new x(e7);
+        } catch (RemoteException e) {
+            throw new androidx.car.app.j(e);
         }
     }
 
@@ -130,8 +129,8 @@ public abstract class d extends FrameLayout {
 
     public void onSaveInstanceState(Bundle bundle) {
         j jVar = this.zza;
-        aa.a aVar = jVar.a;
-        if (aVar == null) {
+        androidx.biometric.e eVar = jVar.a;
+        if (eVar == null) {
             Bundle bundle2 = jVar.b;
             if (bundle2 != null) {
                 bundle.putAll(bundle2);
@@ -142,7 +141,7 @@ public abstract class d extends FrameLayout {
         try {
             Bundle bundle3 = new Bundle();
             i8.d.c(bundle, bundle3);
-            i8.g gVar = (i8.g) aVar.c;
+            i8.g gVar = (i8.g) eVar.c;
             Parcel N0 = gVar.N0();
             s7.b.b(N0, bundle3);
             Parcel M0 = gVar.M0(N0, 7);
@@ -151,8 +150,8 @@ public abstract class d extends FrameLayout {
             }
             M0.recycle();
             i8.d.c(bundle3, bundle);
-        } catch (RemoteException e7) {
-            throw new x(e7);
+        } catch (RemoteException e) {
+            throw new androidx.car.app.j(e);
         }
     }
 
@@ -164,16 +163,16 @@ public abstract class d extends FrameLayout {
 
     public void onStop() {
         j jVar = this.zza;
-        aa.a aVar = jVar.a;
-        if (aVar == null) {
+        androidx.biometric.e eVar = jVar.a;
+        if (eVar == null) {
             jVar.b(4);
             return;
         }
         try {
-            i8.g gVar = (i8.g) aVar.c;
+            i8.g gVar = (i8.g) eVar.c;
             gVar.R0(gVar.N0(), 13);
-        } catch (RemoteException e7) {
-            throw new x(e7);
+        } catch (RemoteException e) {
+            throw new androidx.car.app.j(e);
         }
     }
 }

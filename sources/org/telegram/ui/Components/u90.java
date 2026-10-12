@@ -1,21 +1,23 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class u90 extends oj0 {
-    public final /* synthetic */ x90 n;
+public final class u90 extends n9 {
+    public final /* synthetic */ bi.i7 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u90(x90 x90Var, Context context, String str, String str2, String str3) {
-        super(context, str, str2, str3, false);
-        this.n = x90Var;
+    public u90(bi.i7 i7Var, Context context) {
+        super(context, false);
+        this.e = i7Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        this.n.E = null;
+    @Override // org.telegram.ui.Components.n9, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, ((w90) this.e.d).w) == 0 ? 0 : com.google.android.gms.internal.play_billing.k3.v(r4, 1, 20, 32)), TLObject.FLAG_30), i11);
     }
 }

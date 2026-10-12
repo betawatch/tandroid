@@ -12,9 +12,9 @@ import m.v1;
 import m.w1;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import r0.i0;
+import r0.j0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class AlertDialogLayout extends w1 {
     public AlertDialogLayout(Context context) {
@@ -22,7 +22,7 @@ public class AlertDialogLayout extends w1 {
     }
 
     public static int i(View view) {
-        WeakHashMap weakHashMap = i0.a;
+        WeakHashMap weakHashMap = j0.a;
         int minimumHeight = view.getMinimumHeight();
         if (minimumHeight > 0) {
             return minimumHeight;
@@ -67,10 +67,10 @@ public class AlertDialogLayout extends w1 {
                 if (i20 < 0) {
                     i20 = i18;
                 }
-                WeakHashMap weakHashMap = i0.a;
+                WeakHashMap weakHashMap = j0.a;
                 int absoluteGravity = Gravity.getAbsoluteGravity(i20, getLayoutDirection()) & 7;
                 if (absoluteGravity == 1) {
-                    z11 = hg.c.z(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin;
+                    z11 = i2.d.z(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin;
                     i14 = ((LinearLayout.LayoutParams) v1Var).rightMargin;
                 } else if (absoluteGravity != 5) {
                     i15 = ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft;

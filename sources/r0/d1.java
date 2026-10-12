@@ -1,44 +1,43 @@
 package r0;
 
-import android.view.DisplayCutout;
 import android.view.WindowInsets;
-import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class d1 extends c1 {
-    public d1(k1 k1Var, WindowInsets windowInsets) {
-        super(k1Var, windowInsets);
+    public i0.b n;
+
+    public d1(l1 l1Var, WindowInsets windowInsets) {
+        super(l1Var, windowInsets);
+        this.n = null;
     }
 
-    @Override // r0.h1
-    public k1 a() {
-        return k1.h(null, this.c.consumeDisplayCutout());
+    @Override // r0.i1
+    public l1 b() {
+        return l1.h(null, this.c.consumeStableInsets());
     }
 
-    @Override // r0.h1
-    public i e() {
-        DisplayCutout displayCutout = this.c.getDisplayCutout();
-        if (displayCutout == null) {
-            return null;
+    @Override // r0.i1
+    public l1 c() {
+        return l1.h(null, this.c.consumeSystemWindowInsets());
+    }
+
+    @Override // r0.i1
+    public final i0.b i() {
+        if (this.n == null) {
+            WindowInsets windowInsets = this.c;
+            this.n = i0.b.b(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
         }
-        return new i(displayCutout);
+        return this.n;
     }
 
-    @Override // r0.b1, r0.h1
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof d1)) {
-            return false;
-        }
-        d1 d1Var = (d1) obj;
-        return Objects.equals(this.c, d1Var.c) && Objects.equals(this.g, d1Var.g) && b1.B(this.h, d1Var.h);
+    @Override // r0.i1
+    public boolean n() {
+        return this.c.isConsumed();
     }
 
-    @Override // r0.h1
-    public int hashCode() {
-        return this.c.hashCode();
+    @Override // r0.i1
+    public void s(i0.b bVar) {
+        this.n = bVar;
     }
 }

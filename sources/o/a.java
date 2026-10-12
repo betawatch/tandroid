@@ -2,20 +2,20 @@ package o;
 
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a extends f {
     public final HashMap e = new HashMap();
 
     @Override // o.f
-    public final c i(Object obj) {
+    public final c h(Object obj) {
         return (c) this.e.get(obj);
     }
 
     @Override // o.f
-    public final Object n(Object obj) {
-        Object n10 = super.n(obj);
+    public final Object m(Object obj) {
+        Object m10 = super.m(obj);
         this.e.remove(obj);
-        return n10;
+        return m10;
     }
 }

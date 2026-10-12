@@ -1,25 +1,24 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class f0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] b;
+import java.util.List;
+import org.telegram.messenger.BillingController;
 
-    public /* synthetic */ f0(org.telegram.ui.ActionBar.b2[] b2VarArr, int i10) {
-        this.a = i10;
-        this.b = b2VarArr;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class f0 implements BillingController.ProductDetailsResponseListenerLegacy, c5.q {
+    public final /* synthetic */ BillingController a;
+
+    public /* synthetic */ f0(BillingController billingController) {
+        this.a = billingController;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                BillingController.lambda$onPurchasesUpdatedInternal$6(this.b);
-                break;
-            default:
-                BillingController.lambda$onPurchasesUpdatedInternal$5(this.b);
-                break;
-        }
+    @Override // c5.q
+    public void b(c5.i iVar, List list) {
+        this.a.onPurchasesUpdated(iVar, list);
+    }
+
+    @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
+    public void onProductDetailsResponse(c5.i iVar, List list) {
+        this.a.onQueriedPremiumProductDetails(iVar, list);
     }
 }

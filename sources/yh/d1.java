@@ -1,51 +1,26 @@
 package yh;
 
-import android.view.View;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.q5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d1 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
-    public final /* synthetic */ int c;
+public final class d1 extends q5 {
+    public final /* synthetic */ e1 M;
 
-    public /* synthetic */ d1(s3 s3Var, int i10, int i11) {
-        this.a = i11;
-        this.b = s3Var;
-        this.c = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d1(e1 e1Var, ViewGroup viewGroup, int i10) {
+        super(i10, viewGroup);
+        this.M = e1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                s3 s3Var = this.b;
-                int i10 = this.c;
-                s3Var.S0 = i10;
-                d2 d2Var = s3Var.Z;
-                d2Var.D(d2Var.getCurrentPosition() + (i10 > s3Var.H1() ? 1 : -1));
-                break;
-            case 1:
-                s3 s3Var2 = this.b;
-                int i11 = this.c;
-                s3Var2.S0 = i11;
-                d2 d2Var2 = s3Var2.Z;
-                d2Var2.D(d2Var2.getCurrentPosition() + (i11 > s3Var2.H1() ? 1 : -1));
-                break;
-            case 2:
-                s3 s3Var3 = this.b;
-                int i12 = this.c;
-                s3Var3.S0 = i12;
-                d2 d2Var3 = s3Var3.Z;
-                d2Var3.D(d2Var3.getCurrentPosition() + (i12 > s3Var3.H1() ? 1 : -1));
-                break;
-            default:
-                s3 s3Var4 = this.b;
-                int i13 = this.c;
-                s3Var4.S0 = i13;
-                d2 d2Var4 = s3Var4.Z;
-                d2Var4.D(d2Var4.getCurrentPosition() + (i13 > s3Var4.H1() ? 1 : -1));
-                break;
+    @Override // org.telegram.ui.Components.q5, org.telegram.ui.Components.y5
+    public final void invalidate() {
+        super.invalidate();
+        Drawable drawable = this.M;
+        if (drawable.getCallback() != null) {
+            drawable.getCallback().invalidateDrawable(drawable);
         }
     }
 }

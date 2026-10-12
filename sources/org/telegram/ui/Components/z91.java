@@ -1,74 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.view.TextureView;
+import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class z91 extends WebView {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Object b;
+public interface z91 {
+    TextureView a(View view, boolean z10, float f7, int i10, boolean z11);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z91(org.telegram.ui.vo0 vo0Var, Context context) {
-        super(context);
-        this.b = vo0Var;
-    }
+    void b();
 
-    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.checkAndroidTheme((Context) this.b, true);
-                super.onAttachedToWindow();
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
-        }
-    }
+    void c(float f7);
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.checkAndroidTheme((Context) this.b, false);
-                super.onDetachedFromWindow();
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
+    void d();
 
-    @Override // android.webkit.WebView, android.widget.AbsoluteLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                super.onMeasure(i10, i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
+    void e(ca1 ca1Var, boolean z10);
 
-    @Override // android.webkit.WebView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                ((ViewGroup) ((org.telegram.ui.vo0) this.b).fragmentView).requestDisallowInterceptTouchEvent(true);
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
+    TextureView f(View view, boolean z10, int i10, int i11, boolean z11);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z91(Context context, Context context2) {
-        super(context);
-        this.b = context2;
-    }
+    ViewGroup g();
+
+    boolean h();
+
+    void i(boolean z10, u91 u91Var, float f7, boolean z11);
 }

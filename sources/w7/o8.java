@@ -1,23 +1,64 @@
 package w7;
 
-import android.content.Context;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class o8 {
-    public static q9.a a(String str, String str2) {
-        xa.a aVar = new xa.a(str, str2);
-        b2.i0 a2 = q9.a.a(xa.a.class);
-        a2.b = 1;
-        a2.f = new m4.w(aVar, 18);
-        return a2.b();
-    }
-
-    public static q9.a b(String str, j2.e eVar) {
-        b2.i0 a2 = q9.a.a(xa.a.class);
-        a2.b = 1;
-        a2.a(q9.j.a(Context.class));
-        a2.f = new qg.x1(14, str, eVar);
-        return a2.b();
+    public static String a(String str, Object... objArr) {
+        int length;
+        int length2;
+        int indexOf;
+        String sb2;
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            length = objArr.length;
+            if (i11 >= length) {
+                break;
+            }
+            Object obj = objArr[i11];
+            if (obj == null) {
+                sb2 = BuildConfig.BETA_URL;
+            } else {
+                try {
+                    sb2 = obj.toString();
+                } catch (Exception e) {
+                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
+                    StringBuilder v = a1.g.v("<", str2, " threw ");
+                    v.append(e.getClass().getName());
+                    v.append(">");
+                    sb2 = v.toString();
+                }
+            }
+            objArr[i11] = sb2;
+            i11++;
+        }
+        StringBuilder sb3 = new StringBuilder((length * 16) + str.length());
+        int i12 = 0;
+        while (true) {
+            length2 = objArr.length;
+            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
+                break;
+            }
+            sb3.append((CharSequence) str, i12, indexOf);
+            sb3.append(objArr[i10]);
+            i10++;
+            i12 = indexOf + 2;
+        }
+        sb3.append((CharSequence) str, i12, str.length());
+        if (i10 < length2) {
+            sb3.append(" [");
+            sb3.append(objArr[i10]);
+            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
+                sb3.append(", ");
+                sb3.append(objArr[i13]);
+            }
+            sb3.append(']');
+        }
+        return sb3.toString();
     }
 }

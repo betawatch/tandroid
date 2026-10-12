@@ -1,6 +1,6 @@
 package b5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class l extends b {
     public final /* synthetic */ int e;
@@ -15,7 +15,7 @@ public final class l extends b {
     public final boolean b() {
         switch (this.e) {
             case 0:
-                if (!super.b() || !com.google.android.gms.internal.cast.o.a("MULTI_PROCESS")) {
+                if (!super.b() || !a.a.a("MULTI_PROCESS")) {
                     return false;
                 }
                 boolean z10 = a5.b.a;
@@ -24,7 +24,7 @@ public final class l extends b {
                 }
                 throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
             default:
-                if (com.google.android.gms.internal.cast.o.a("MULTI_PROFILE")) {
+                if (a.a.a("MULTI_PROFILE")) {
                     return super.b();
                 }
                 return false;

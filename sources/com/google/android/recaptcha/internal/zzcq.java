@@ -1,19 +1,19 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.Context;
-import id.g;
-import id.i;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import vd.b;
-import vd.c;
-import yd.j;
+import jd.g;
+import jd.i;
+import wd.b;
+import wd.c;
+import zd.j;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzcq implements zzbt {
     private final Context zza;
@@ -65,9 +65,9 @@ public final class zzcq implements zzbt {
             b bVar = (b) it;
             boolean z10 = bVar.d;
             if (!z10) {
-                ArrayList o9 = g.o(arrayList);
-                Collections.shuffle(o9);
-                String h = g.h(o9.subList(0, 8), "", null, null, null, 62);
+                ArrayList o10 = g.o(arrayList);
+                Collections.shuffle(o10);
+                String h = g.h(o10.subList(0, 8), "", null, null, null, 62);
                 Context context = this.zza;
                 String str3 = this.zzb;
                 File file = new File(context.getCacheDir(), str3.concat(String.valueOf(h)));

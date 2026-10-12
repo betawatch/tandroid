@@ -22,16 +22,16 @@ public final class w1 extends n1 implements Cloneable {
     public boolean y;
 
     @Override // com.google.android.gms.internal.clearcut.n1
-    public final void b(xa.d dVar) {
+    public final void a(a6.i iVar) {
         String str = this.w;
         String str2 = this.r;
         String str3 = this.n;
         String str4 = this.h;
         byte[] bArr = this.e;
-        long j3 = this.a;
-        if (j3 != 0) {
-            dVar.B(1, 0);
-            dVar.E(j3);
+        long j10 = this.a;
+        if (j10 != 0) {
+            iVar.B(1, 0);
+            iVar.G(j10);
         }
         x1[] x1VarArr = this.d;
         if (x1VarArr != null && x1VarArr.length > 0) {
@@ -47,41 +47,41 @@ public final class w1 extends n1 implements Cloneable {
         }
         byte[] bArr2 = m1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            dVar.t(4, bArr);
+            iVar.v(4, bArr);
         }
         if (!Arrays.equals(this.f, bArr2)) {
-            dVar.t(6, this.f);
+            iVar.v(6, this.f);
         }
         if (str4 != null && !str4.equals("")) {
-            dVar.r(8, str4);
+            iVar.u(8, str4);
         }
         int i11 = this.c;
         if (i11 != 0) {
-            dVar.B(11, 0);
+            iVar.B(11, 0);
             if (i11 >= 0) {
-                dVar.x(i11);
+                iVar.z(i11);
             } else {
-                dVar.E(i11);
+                iVar.G(i11);
             }
         }
         if (str3 != null && !str3.equals("")) {
-            dVar.r(13, str3);
+            iVar.u(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            dVar.r(14, str2);
+            iVar.u(14, str2);
         }
-        long j10 = this.s;
-        if (j10 != 180000) {
-            dVar.B(15, 0);
-            dVar.E((j10 >> 63) ^ (j10 << 1));
+        long j11 = this.s;
+        if (j11 != 180000) {
+            iVar.B(15, 0);
+            iVar.G((j11 >> 63) ^ (j11 << 1));
         }
-        long j11 = this.b;
-        if (j11 != 0) {
-            dVar.B(17, 0);
-            dVar.E(j11);
+        long j12 = this.b;
+        if (j12 != 0) {
+            iVar.B(17, 0);
+            iVar.G(j12);
         }
         if (!Arrays.equals(this.v, bArr2)) {
-            dVar.t(18, this.v);
+            iVar.v(18, this.v);
         }
         int[] iArr = this.x;
         if (iArr != null && iArr.length > 0) {
@@ -92,23 +92,23 @@ public final class w1 extends n1 implements Cloneable {
                     break;
                 }
                 int i13 = iArr2[i12];
-                dVar.B(20, 0);
+                iVar.B(20, 0);
                 if (i13 >= 0) {
-                    dVar.x(i13);
+                    iVar.z(i13);
                 } else {
-                    dVar.E(i13);
+                    iVar.G(i13);
                 }
                 i12++;
             }
         }
         if (str != null && !str.equals("")) {
-            dVar.r(24, str);
+            iVar.u(24, str);
         }
         boolean z10 = this.y;
         if (z10) {
-            dVar.B(25, 0);
+            iVar.B(25, 0);
             byte b10 = z10 ? (byte) 1 : (byte) 0;
-            ByteBuffer byteBuffer = (ByteBuffer) dVar.b;
+            ByteBuffer byteBuffer = (ByteBuffer) iVar.b;
             if (!byteBuffer.hasRemaining()) {
                 throw new z4(byteBuffer.position(), byteBuffer.limit());
             }
@@ -137,8 +137,8 @@ public final class w1 extends n1 implements Cloneable {
                 w1Var.x = (int[]) iArr.clone();
             }
             return w1Var;
-        } catch (CloneNotSupportedException e7) {
-            throw new AssertionError(e7);
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
         }
     }
 
@@ -193,10 +193,10 @@ public final class w1 extends n1 implements Cloneable {
 
     public final int hashCode() {
         int hashCode = (w1.class.getName().hashCode() + 527) * 31;
-        long j3 = this.a;
-        int i10 = (hashCode + ((int) (j3 ^ (j3 >>> 32)))) * 31;
-        long j10 = this.b;
-        int i11 = ((((i10 + ((int) (j10 ^ (j10 >>> 32)))) * 29791) + this.c) * 29791) + 1237;
+        long j10 = this.a;
+        int i10 = (hashCode + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+        long j11 = this.b;
+        int i11 = ((((i10 + ((int) (j11 ^ (j11 >>> 32)))) * 29791) + this.c) * 29791) + 1237;
         x1[] x1VarArr = this.d;
         Object obj = o1.a;
         int i12 = 0;
@@ -211,8 +211,8 @@ public final class w1 extends n1 implements Cloneable {
         int hashCode4 = (hashCode3 + (str2 == null ? 0 : str2.hashCode())) * 961;
         String str3 = this.r;
         int hashCode5 = str3 == null ? 0 : str3.hashCode();
-        long j11 = this.s;
-        int hashCode6 = (Arrays.hashCode(this.v) + ((((hashCode4 + hashCode5) * 31) + ((int) ((j11 >>> 32) ^ j11))) * 961)) * 31;
+        long j12 = this.s;
+        int hashCode6 = (Arrays.hashCode(this.v) + ((((hashCode4 + hashCode5) * 31) + ((int) ((j12 >>> 32) ^ j12))) * 961)) * 31;
         String str4 = this.w;
         int hashCode7 = (hashCode6 + (str4 == null ? 0 : str4.hashCode())) * 961;
         int[] iArr = this.x;

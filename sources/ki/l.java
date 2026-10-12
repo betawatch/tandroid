@@ -1,16 +1,12 @@
 package ki;
 
-import android.media.MediaCodec;
-import java.nio.ByteBuffer;
+import b2.v0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class l {
-    public final ByteBuffer a;
-    public final MediaCodec.BufferInfo b;
-
-    public l(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
-        this.a = byteBuffer;
-        this.b = bufferInfo;
-    }
+public final class l extends v0 {
+    public float c;
+    public float d;
+    public float e;
+    public float f;
 }

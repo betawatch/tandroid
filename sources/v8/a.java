@@ -11,7 +11,7 @@ import com.google.android.gms.tasks.Task;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final long a = TimeUnit.MINUTES.toMillis(10);
@@ -49,9 +49,9 @@ public abstract class a {
         } else {
             try {
                 createPendingResult.send(i11);
-            } catch (PendingIntent.CanceledException e7) {
+            } catch (PendingIntent.CanceledException e) {
                 if (Log.isLoggable("AutoResolveHelper", 6)) {
-                    Log.e("AutoResolveHelper", "Exception sending pending result", e7);
+                    Log.e("AutoResolveHelper", "Exception sending pending result", e);
                 }
             }
         }

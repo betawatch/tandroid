@@ -1,80 +1,47 @@
 package org.telegram.messenger;
 
-import android.app.Activity;
-import java.util.HashMap;
-import org.telegram.ui.Components.ef0;
-import org.telegram.ui.Components.tn;
-import org.telegram.ui.ft;
-import org.telegram.ui.gk0;
-import org.telegram.ui.ty;
-import org.telegram.ui.yv;
+import java.text.Collator;
+import java.util.Comparator;
+import org.telegram.messenger.ContactsController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o1 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class o1 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Collator b;
 
-    public /* synthetic */ o1(ContactsController contactsController, HashMap hashMap, boolean z10, boolean z11, boolean z12) {
-        this.e = contactsController;
-        this.f = hashMap;
-        this.b = z10;
-        this.c = z11;
-        this.d = z12;
+    public /* synthetic */ o1(Collator collator, int i10) {
+        this.a = i10;
+        this.b = collator;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$buildContactsSectionsArrays$44;
+        int lambda$mergePhonebookAndTelegramContacts$38;
+        int lambda$mergePhonebookAndTelegramContacts$39;
+        int lambda$processLoadedContacts$31;
+        int lambda$processLoadedContacts$32;
+        int lambda$updateUnregisteredContacts$42;
         switch (this.a) {
             case 0:
-                ((ContactsController) this.e).lambda$syncPhoneBookByAlert$7((HashMap) this.f, this.b, this.c, this.d);
-                break;
+                lambda$buildContactsSectionsArrays$44 = ContactsController.lambda$buildContactsSectionsArrays$44(this.b, (String) obj, (String) obj2);
+                return lambda$buildContactsSectionsArrays$44;
+            case 1:
+                lambda$mergePhonebookAndTelegramContacts$38 = ContactsController.lambda$mergePhonebookAndTelegramContacts$38(this.b, obj, obj2);
+                return lambda$mergePhonebookAndTelegramContacts$38;
+            case 2:
+                lambda$mergePhonebookAndTelegramContacts$39 = ContactsController.lambda$mergePhonebookAndTelegramContacts$39(this.b, (String) obj, (String) obj2);
+                return lambda$mergePhonebookAndTelegramContacts$39;
+            case 3:
+                lambda$processLoadedContacts$31 = ContactsController.lambda$processLoadedContacts$31(this.b, (String) obj, (String) obj2);
+                return lambda$processLoadedContacts$31;
+            case 4:
+                lambda$processLoadedContacts$32 = ContactsController.lambda$processLoadedContacts$32(this.b, (String) obj, (String) obj2);
+                return lambda$processLoadedContacts$32;
             default:
-                ty tyVar = (ty) this.e;
-                Activity activity = (Activity) this.f;
-                if (tyVar.getParentActivity() != null) {
-                    tyVar.t2 = false;
-                    boolean z10 = this.b;
-                    boolean z11 = this.c;
-                    boolean z12 = this.d;
-                    if (z10 || z11 || z12) {
-                        tyVar.A0 = true;
-                        if (!z10 || !gk0.p(activity)) {
-                            if (!z11 || !tyVar.U1 || !tyVar.getUserConfig().syncContacts || !activity.shouldShowRequestPermissionRationale("android.permission.READ_CONTACTS")) {
-                                if (!z12 || !activity.shouldShowRequestPermissionRationale("android.permission.WRITE_EXTERNAL_STORAGE")) {
-                                    tyVar.h3(true);
-                                    break;
-                                } else if (activity instanceof org.telegram.ui.h5) {
-                                    org.telegram.ui.ActionBar.b2 v = ((org.telegram.ui.h5) activity).v(R.raw.permission_request_folder, LocaleController.getString(R.string.PermissionStorageWithHint));
-                                    tyVar.T1 = v;
-                                    tyVar.showDialog(v);
-                                    break;
-                                }
-                            } else {
-                                org.telegram.ui.ActionBar.b2 b2Var = org.telegram.ui.Components.g5.v(activity, new yv(tyVar, 0)).a;
-                                tyVar.T1 = b2Var;
-                                tyVar.showDialog(b2Var);
-                                break;
-                            }
-                        } else {
-                            ef0.e(new String[]{"android.permission.POST_NOTIFICATIONS"}, new tn(1, new ft(2, tyVar, activity)));
-                            break;
-                        }
-                    }
-                }
-                break;
+                lambda$updateUnregisteredContacts$42 = ContactsController.lambda$updateUnregisteredContacts$42(this.b, (ContactsController.Contact) obj, (ContactsController.Contact) obj2);
+                return lambda$updateUnregisteredContacts$42;
         }
-    }
-
-    public /* synthetic */ o1(ty tyVar, boolean z10, boolean z11, boolean z12, Activity activity) {
-        this.e = tyVar;
-        this.b = z10;
-        this.c = z11;
-        this.d = z12;
-        this.f = activity;
     }
 }

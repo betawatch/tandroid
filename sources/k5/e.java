@@ -1,27 +1,27 @@
 package k5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e implements ia.d {
+public final class e implements ja.d {
     public static final e a = new e();
-    public static final ia.c b = ia.c.c("eventTimeMs");
-    public static final ia.c c = ia.c.c("eventCode");
-    public static final ia.c d = ia.c.c("eventUptimeMs");
-    public static final ia.c e = ia.c.c("sourceExtension");
-    public static final ia.c f = ia.c.c("sourceExtensionJsonProto3");
-    public static final ia.c g = ia.c.c("timezoneOffsetSeconds");
-    public static final ia.c h = ia.c.c("networkConnectionInfo");
+    public static final ja.c b = ja.c.c("eventTimeMs");
+    public static final ja.c c = ja.c.c("eventCode");
+    public static final ja.c d = ja.c.c("eventUptimeMs");
+    public static final ja.c e = ja.c.c("sourceExtension");
+    public static final ja.c f = ja.c.c("sourceExtensionJsonProto3");
+    public static final ja.c g = ja.c.c("timezoneOffsetSeconds");
+    public static final ja.c h = ja.c.c("networkConnectionInfo");
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
-        ia.e eVar = (ia.e) obj2;
+        ja.e eVar = (ja.e) obj2;
         k kVar = (k) ((r) obj);
         eVar.f(b, kVar.a);
-        eVar.a(c, kVar.b);
+        eVar.d(c, kVar.b);
         eVar.f(d, kVar.c);
-        eVar.a(e, kVar.d);
-        eVar.a(f, kVar.e);
+        eVar.d(e, kVar.d);
+        eVar.d(f, kVar.e);
         eVar.f(g, kVar.f);
-        eVar.a(h, kVar.g);
+        eVar.d(h, kVar.g);
     }
 }

@@ -1,11 +1,11 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class s1 extends r0 {
     public final /* synthetic */ int c;
 
-    public static int m(long j3, byte[] bArr, int i10, int i11) {
+    public static int m(long j10, byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             r0 r0Var = u1.a;
             if (i10 > -12) {
@@ -14,10 +14,10 @@ public final class s1 extends r0 {
             return i10;
         }
         if (i11 == 1) {
-            return u1.c(i10, r1.f(j3, bArr));
+            return u1.c(i10, r1.f(j10, bArr));
         }
         if (i11 == 2) {
-            return u1.d(i10, r1.f(j3, bArr), r1.f(j3 + 1, bArr));
+            return u1.d(i10, r1.f(j10, bArr), r1.f(j10 + 1, bArr));
         }
         throw new AssertionError();
     }
@@ -181,9 +181,9 @@ public final class s1 extends r0 {
         int i12;
         int i13;
         char charAt;
-        long j3;
         long j10;
         long j11;
+        long j12;
         int i14;
         char charAt2;
         switch (this.c) {
@@ -242,50 +242,50 @@ public final class s1 extends r0 {
                 }
                 return i17;
             default:
-                long j12 = i10;
-                long j13 = i11 + j12;
+                long j13 = i10;
+                long j14 = i11 + j13;
                 int length2 = str.length();
                 if (length2 > i11 || bArr.length - i11 < i10) {
                     throw new ArrayIndexOutOfBoundsException("Failed writing " + str.charAt(length2 - 1) + " at index " + (i10 + i11));
                 }
                 int i22 = 0;
                 while (true) {
-                    j3 = 1;
+                    j10 = 1;
                     if (i22 < length2 && (charAt2 = str.charAt(i22)) < 128) {
-                        r1.j(bArr, j12, (byte) charAt2);
+                        r1.j(bArr, j13, (byte) charAt2);
                         i22++;
-                        j12 = 1 + j12;
+                        j13 = 1 + j13;
                     }
                 }
                 if (i22 != length2) {
                     while (i22 < length2) {
                         char charAt5 = str.charAt(i22);
-                        if (charAt5 < 128 && j12 < j13) {
-                            r1.j(bArr, j12, (byte) charAt5);
-                            j11 = j13;
-                            j10 = j3;
-                            j12 += j3;
-                        } else if (charAt5 >= 2048 || j12 > j13 - 2) {
-                            j10 = j3;
-                            if ((charAt5 >= 55296 && 57343 >= charAt5) || j12 > j13 - 3) {
-                                j11 = j13;
-                                if (j12 > j11 - 4) {
+                        if (charAt5 < 128 && j13 < j14) {
+                            r1.j(bArr, j13, (byte) charAt5);
+                            j12 = j14;
+                            j11 = j10;
+                            j13 += j10;
+                        } else if (charAt5 >= 2048 || j13 > j14 - 2) {
+                            j11 = j10;
+                            if ((charAt5 >= 55296 && 57343 >= charAt5) || j13 > j14 - 3) {
+                                j12 = j14;
+                                if (j13 > j12 - 4) {
                                     if (55296 <= charAt5 && charAt5 <= 57343 && ((i14 = i22 + 1) == length2 || !Character.isSurrogatePair(charAt5, str.charAt(i14)))) {
                                         throw new t1(i22, length2);
                                     }
-                                    throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt5 + " at index " + j12);
+                                    throw new ArrayIndexOutOfBoundsException("Failed writing " + charAt5 + " at index " + j13);
                                 }
                                 int i23 = i22 + 1;
                                 if (i23 != length2) {
                                     char charAt6 = str.charAt(i23);
                                     if (Character.isSurrogatePair(charAt5, charAt6)) {
                                         int codePoint2 = Character.toCodePoint(charAt5, charAt6);
-                                        r1.j(bArr, j12, (byte) ((codePoint2 >>> 18) | 240));
-                                        r1.j(bArr, j12 + j10, (byte) (((codePoint2 >>> 12) & 63) | 128));
-                                        long j14 = j12 + 3;
-                                        r1.j(bArr, j12 + 2, (byte) (((codePoint2 >>> 6) & 63) | 128));
-                                        j12 += 4;
-                                        r1.j(bArr, j14, (byte) ((codePoint2 & 63) | 128));
+                                        r1.j(bArr, j13, (byte) ((codePoint2 >>> 18) | 240));
+                                        r1.j(bArr, j13 + j11, (byte) (((codePoint2 >>> 12) & 63) | 128));
+                                        long j15 = j13 + 3;
+                                        r1.j(bArr, j13 + 2, (byte) (((codePoint2 >>> 6) & 63) | 128));
+                                        j13 += 4;
+                                        r1.j(bArr, j15, (byte) ((codePoint2 & 63) | 128));
                                         i22 = i23;
                                     } else {
                                         i22 = i23;
@@ -293,33 +293,33 @@ public final class s1 extends r0 {
                                 }
                                 throw new t1(i22 - 1, length2);
                             }
-                            r1.j(bArr, j12, (byte) ((charAt5 >>> '\f') | 480));
-                            j11 = j13;
-                            long j15 = j12 + 2;
-                            r1.j(bArr, j12 + j10, (byte) (((charAt5 >>> 6) & 63) | 128));
-                            j12 += 3;
-                            r1.j(bArr, j15, (byte) ((charAt5 & '?') | 128));
-                        } else {
-                            j10 = j3;
-                            long j16 = j12 + j10;
-                            r1.j(bArr, j12, (byte) ((charAt5 >>> 6) | 960));
-                            j12 += 2;
+                            r1.j(bArr, j13, (byte) ((charAt5 >>> '\f') | 480));
+                            j12 = j14;
+                            long j16 = j13 + 2;
+                            r1.j(bArr, j13 + j11, (byte) (((charAt5 >>> 6) & 63) | 128));
+                            j13 += 3;
                             r1.j(bArr, j16, (byte) ((charAt5 & '?') | 128));
-                            j11 = j13;
+                        } else {
+                            j11 = j10;
+                            long j17 = j13 + j11;
+                            r1.j(bArr, j13, (byte) ((charAt5 >>> 6) | 960));
+                            j13 += 2;
+                            r1.j(bArr, j17, (byte) ((charAt5 & '?') | 128));
+                            j12 = j14;
                         }
                         i22++;
-                        j3 = j10;
-                        j13 = j11;
+                        j10 = j11;
+                        j14 = j12;
                     }
                 }
-                return (int) j12;
+                return (int) j13;
         }
     }
 
     @Override // androidx.datastore.preferences.protobuf.r0
     public final int i(int i10, int i11, byte[] bArr) {
         int i12;
-        long j3;
+        long j10;
         byte b10;
         int i13;
         int i14 = i10;
@@ -393,21 +393,21 @@ public final class s1 extends r0 {
                     throw new ArrayIndexOutOfBoundsException(String.format("Array length=%d, index=%d, limit=%d", Integer.valueOf(bArr.length), Integer.valueOf(i14), Integer.valueOf(i11)));
                 }
                 byte b16 = 0;
-                long j10 = i14;
-                int i20 = (int) (i11 - j10);
+                long j11 = i14;
+                int i20 = (int) (i11 - j11);
                 if (i20 < 16) {
                     i12 = 0;
-                    j3 = j10;
+                    j10 = j11;
                 } else {
                     i12 = 0;
-                    j3 = j10;
-                    long j11 = j3;
+                    j10 = j11;
+                    long j12 = j10;
                     while (true) {
                         if (i12 < i20) {
-                            long j12 = j11 + 1;
-                            if (r1.f(j11, bArr) >= 0) {
+                            long j13 = j12 + 1;
+                            if (r1.f(j12, bArr) >= 0) {
                                 i12++;
-                                j11 = j12;
+                                j12 = j13;
                             }
                         } else {
                             i12 = i20;
@@ -415,18 +415,18 @@ public final class s1 extends r0 {
                     }
                 }
                 int i21 = i20 - i12;
-                long j13 = j3 + i12;
+                long j14 = j10 + i12;
                 while (true) {
                     byte b17 = b16;
                     while (true) {
                         if (i21 > 0) {
-                            long j14 = j13 + 1;
-                            b17 = r1.f(j13, bArr);
+                            long j15 = j14 + 1;
+                            b17 = r1.f(j14, bArr);
                             if (b17 >= 0) {
                                 i21--;
-                                j13 = j14;
+                                j14 = j15;
                             } else {
-                                j13 = j14;
+                                j14 = j15;
                             }
                         }
                     }
@@ -442,41 +442,41 @@ public final class s1 extends r0 {
                         if (b17 < b12) {
                             return -1;
                         }
-                        long j15 = j13 + 1;
-                        if (r1.f(j13, bArr) > -65) {
+                        long j16 = j14 + 1;
+                        if (r1.f(j14, bArr) > -65) {
                             return -1;
                         }
                         b10 = b16;
                         i13 = i19;
-                        j13 = j15;
+                        j14 = j16;
                     } else if (b17 >= -16) {
                         b10 = b16;
                         i13 = i19;
                         if (i22 < 3) {
-                            return m(j13, bArr, b17, i22);
+                            return m(j14, bArr, b17, i22);
                         }
                         i21 -= 4;
-                        long j16 = j13 + 1;
-                        byte f7 = r1.f(j13, bArr);
+                        long j17 = j14 + 1;
+                        byte f7 = r1.f(j14, bArr);
                         if (f7 > -65 || (((f7 + 112) + (b17 << 28)) >> 30) != 0) {
                             return -1;
                         }
-                        long j17 = j13 + 2;
-                        if (r1.f(j16, bArr) > -65) {
+                        long j18 = j14 + 2;
+                        if (r1.f(j17, bArr) > -65) {
                             return -1;
                         }
-                        j13 += 3;
-                        if (r1.f(j17, bArr) > -65) {
+                        j14 += 3;
+                        if (r1.f(j18, bArr) > -65) {
                             return -1;
                         }
                     } else {
                         if (i22 < i19) {
-                            return m(j13, bArr, b17, i22);
+                            return m(j14, bArr, b17, i22);
                         }
                         i21 -= 3;
                         i13 = i19;
-                        long j18 = j13 + 1;
-                        byte f10 = r1.f(j13, bArr);
+                        long j19 = j14 + 1;
+                        byte f10 = r1.f(j14, bArr);
                         if (f10 > -65) {
                             return -1;
                         }
@@ -487,8 +487,8 @@ public final class s1 extends r0 {
                         if (b17 == -19 && f10 >= b11) {
                             return -1;
                         }
-                        j13 += 2;
-                        if (r1.f(j18, bArr) > -65) {
+                        j14 += 2;
+                        if (r1.f(j19, bArr) > -65) {
                             return -1;
                         }
                     }

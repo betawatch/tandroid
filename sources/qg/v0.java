@@ -1,50 +1,68 @@
 package qg;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.au0;
+import android.graphics.PointF;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class v0 implements pg.d1 {
-    public final /* synthetic */ w0 a;
+public final class v0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public double g;
+    public int h;
+    public int i;
+    public ByteBuffer j;
 
-    public v0(w0 w0Var) {
-        this.a = w0Var;
-    }
-
-    @Override // pg.d1
-    public final void a() {
-        w0 w0Var = this.a;
-        w0Var.e.animate().alpha(1.0f).setDuration(320L).setUpdateListener(new org.telegram.ui.Components.voip.r0(w0Var, 8)).setInterpolator(hs.h);
-    }
-
-    @Override // pg.d1
-    public final boolean d() {
+    public final boolean a(PointF pointF, float f7, float f10, float f11, int i10) {
+        if ((i10 != -1 && i10 >= this.i) || this.j.position() == this.j.limit()) {
+            d();
+            return false;
+        }
+        if (i10 != -1) {
+            this.j.position(i10 * 20);
+        }
+        this.j.putFloat(pointF.x);
+        this.j.putFloat(pointF.y);
+        this.j.putFloat(f7);
+        this.j.putFloat(f10);
+        this.j.putFloat(f11);
         return true;
     }
 
-    @Override // pg.d1
-    public final void e() {
-        w0 w0Var = this.a;
-        w0Var.b.a.e();
-        w0Var.w.setViewHidden(false);
-        PhotoViewer photoViewer = ((au0) w0Var).K;
-        Drawable[] drawableArr = PhotoViewer.U8;
-        photoViewer.X2(true, true);
+    public final void b(int i10) {
+        int i11 = this.h + i10;
+        if (i11 > this.i || this.j == null) {
+            d();
+        }
+        this.h = i11;
     }
 
-    @Override // pg.d1
-    public final void f() {
-        this.a.w.setViewHidden(true);
-    }
-
-    @Override // pg.d1
-    public final /* synthetic */ void b() {
-    }
-
-    @Override // pg.d1
     public final void c() {
+        this.h = 0;
+        if (this.j != null) {
+            return;
+        }
+        this.i = 256;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(256 * 5 * 4);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
+    }
+
+    public final void d() {
+        if (this.j != null) {
+            this.j = null;
+        }
+        int max = Math.max(this.i * 2, 256);
+        this.i = max;
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(max * 20);
+        this.j = allocateDirect;
+        allocateDirect.order(ByteOrder.nativeOrder());
+        this.j.position(0);
     }
 }

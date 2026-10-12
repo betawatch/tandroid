@@ -1,67 +1,79 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.drawable.BitmapDrawable;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class jg0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kg0 b;
+public final class jg0 extends tg.n {
+    public final /* synthetic */ int f0;
 
-    public /* synthetic */ jg0(kg0 kg0Var, int i10) {
-        this.a = i10;
-        this.b = kg0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ jg0(Context context, int i10, int i11, int i12) {
+        super(context, i10, i11);
+        this.f0 = i12;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
-                    this.b.h.requestFocus();
-                    break;
-                }
+    @Override // tg.n
+    public void n() {
+        switch (this.f0) {
+            case 4:
                 break;
             default:
-                kg0 kg0Var = this.b;
-                if (kg0Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) kg0Var.getParent()).removeView(kg0Var);
-                }
-                kg0Var.c.setVisibility(0);
+                super.n();
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
+    @Override // tg.n, android.view.TextureView, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.f0) {
             case 0:
-                kg0 kg0Var = this.b;
-                kg0Var.c.setVisibility(8);
-                int measuredWidth = (int) (kg0Var.b.getMeasuredWidth() / 10.0f);
-                int measuredHeight = (int) (kg0Var.b.getMeasuredHeight() / 10.0f);
-                Bitmap createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(createBitmap);
-                canvas.scale(0.1f, 0.1f);
-                canvas.drawColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
-                kg0Var.b.draw(canvas);
-                Utilities.stackBlurBitmap(createBitmap, Math.max(8, Math.max(measuredWidth, measuredHeight) / ImageReceiver.DEFAULT_CROSSFADE_DURATION));
-                kg0Var.d.setBackground(new BitmapDrawable(kg0Var.getContext().getResources(), createBitmap));
-                kg0Var.d.setAlpha(0.0f);
-                kg0Var.d.setVisibility(0);
-                kg0Var.b.addView(kg0Var);
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 2:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 3:
+                super.onAttachedToWindow();
+                setPaused(false);
                 break;
             default:
-                super.onAnimationStart(animator);
+                super.onAttachedToWindow();
                 break;
         }
+    }
+
+    @Override // tg.n, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.f0) {
+            case 0:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 1:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 2:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 3:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    private final void p() {
     }
 }

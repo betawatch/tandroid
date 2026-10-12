@@ -1,68 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.support.SparseLongArray;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class dc implements jl0 {
-    public final /* synthetic */ ec a;
+public final class dc extends ac implements NotificationCenter.NotificationCenterDelegate {
+    public final bc d;
+    public SparseLongArray e;
+    public final org.telegram.ui.ActionBar.m2 f;
+    public final int h;
+    public sc n;
 
-    public dc(ec ecVar) {
-        this.a = ecVar;
+    public dc(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
+        super(m2Var.getContext(), m2Var.getResourceProvider());
+        this.f = m2Var;
+        this.h = i10;
+        this.b.setLayoutParams(w7.a6.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
+        this.a.setLayoutParams(w7.a6.h(56.0f, 48.0f, 8388659));
+        bc bcVar = new bc(this, m2Var, getContext(), m2Var.getCurrentAccount(), m2Var.getResourceProvider());
+        this.d = bcVar;
+        bcVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(0.0f));
+        this.d.setDelegate(new cc(this));
+        this.d.setTop(true);
+        this.d.setClipChildren(false);
+        this.d.setClipToPadding(false);
+        this.d.setVisibility(0);
+        this.d.setBubbleOffset(-AndroidUtilities.dp(80.0f));
+        this.d.setHint(LocaleController.getString(R.string.SavedTagReactionsHint));
+        addView(this.d, w7.a6.a(92.5f, 0.0f, 36.0f, 0.0f, 0.0f, -2, 1));
+        this.d.p(null, null, true);
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public final void m(View view, zg.n0 n0Var, boolean z10, boolean z11) {
-        ec ecVar = this.a;
-        org.telegram.ui.ActionBar.n2 n2Var = ecVar.f;
-        if (ecVar.e == null) {
-            return;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.savedMessagesForwarded) {
+            this.e = (SparseLongArray) objArr[0];
         }
-        boolean z12 = (n2Var instanceof org.telegram.ui.zn) && ((org.telegram.ui.zn) n2Var).a() == UserConfig.getInstance(n2Var.getCurrentAccount()).getClientUserId();
-        int i10 = 0;
-        for (int i11 = 0; i11 < ecVar.e.size(); i11++) {
-            int keyAt = ecVar.e.keyAt(i11);
-            TLRPC.Message message = new TLRPC.Message();
-            message.dialog_id = n2Var.getUserConfig().getClientUserId();
-            message.id = keyAt;
-            MessageObject messageObject = new MessageObject(n2Var.getCurrentAccount(), message, false, false);
-            ArrayList<zg.n0> arrayList = new ArrayList<>();
-            arrayList.add(n0Var);
-            n2Var.getSendMessagesHelper().sendReaction(messageObject, arrayList, n0Var, false, false, ecVar.f, null);
-            i10 = message.id;
+    }
+
+    public final void f() {
+        if (this.d.getReactionsWindow() != null) {
+            this.d.e();
+            if (this.d.getReactionsWindow().a != null) {
+                this.d.getReactionsWindow().a.animate().alpha(0.0f).setDuration(180L).start();
+            }
         }
-        ecVar.f();
-        tc.e();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.bj(this, n0Var, !z12, n2Var.getCurrentAccount(), i10), 300L);
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public final /* synthetic */ boolean o() {
-        return true;
+    @Override // org.telegram.ui.Components.wb
+    public int getMeasuredBackgroundHeight() {
+        return AndroidUtilities.dp(30.0f) + this.b.getMeasuredHeight();
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public final /* synthetic */ boolean q() {
-        return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getInstance(UserConfig.selectedAccount).addObserver(this, NotificationCenter.savedMessagesForwarded);
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public final /* synthetic */ boolean v() {
-        return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(UserConfig.selectedAccount).removeObserver(this, NotificationCenter.savedMessagesForwarded);
     }
 
-    @Override // org.telegram.ui.Components.jl0
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.Components.jl0
-    public final /* synthetic */ void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public void setBulletin(sc scVar) {
+        this.n = scVar;
     }
 }

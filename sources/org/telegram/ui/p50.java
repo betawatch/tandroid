@@ -1,106 +1,106 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Dialog;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Matrix;
+import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.os.Build;
-import android.os.Bundle;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class p50 extends Dialog {
-    public final ai.o4 a;
-    public final q50 b;
-    public Bitmap c;
-    public Paint d;
-    public BitmapShader e;
-    public final Matrix f;
-    public float h;
-    public ValueAnimator n;
-    public boolean r;
+public final class p50 implements org.telegram.ui.Components.fl0 {
+    public final Path a = new Path();
+    public final Paint b;
+    public final /* synthetic */ n60 c;
 
-    public p50(Context context, q50 q50Var) {
-        super(context, R.style.TransparentDialog);
-        this.f = new Matrix();
-        this.b = q50Var;
-        q50Var.setVisibility(4);
-        AndroidUtilities.makeGlobalBlurBitmap(new ft(4, this, q50Var), 14.0f);
-        ai.o4 o4Var = new ai.o4(this, context, q50Var);
-        this.a = o4Var;
-        o4Var.setOnClickListener(new a(this, 28));
+    public p50(n60 n60Var) {
+        this.c = n60Var;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setColor(-14603467);
     }
 
-    public final void b(float f7, o50 o50Var) {
-        ValueAnimator valueAnimator = this.n;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.n = null;
+    @Override // org.telegram.ui.Components.fl0
+    public final boolean D() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public final boolean i() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public final /* synthetic */ boolean n() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public final void r(View view, ah.i1 i1Var, boolean z10, boolean z11) {
+        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
+        String str = i1Var.f;
+        if (str == null) {
+            str = "👍";
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
-        this.n = ofFloat;
-        ofFloat.addUpdateListener(new c3(this, 16));
-        this.n.addListener(new ai.u2(this, f7, o50Var, 3));
-        this.n.setDuration(420L);
-        this.n.setInterpolator(org.telegram.ui.Components.hs.h);
-        this.n.start();
-    }
-
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        if (this.r) {
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        tL_textWithEntities.text = str;
+        long j10 = i1Var.g;
+        if (j10 != 0) {
+            tL_messageEntityCustomEmoji.document_id = j10;
+            tL_messageEntityCustomEmoji.offset = 0;
+            tL_messageEntityCustomEmoji.length = str.length();
+            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
+        }
+        n60 n60Var = this.c;
+        n60Var.B1(tL_textWithEntities);
+        m40 m40Var = n60Var.H;
+        if (m40Var.m()) {
+            m40Var.j();
+        } else {
+            m40Var.d();
+        }
+        ah.t0 reactionsWindow = n60Var.K.getReactionsWindow();
+        if (reactionsWindow == null || reactionsWindow.q) {
             return;
         }
-        this.r = true;
-        b(0.0f, new o50(this, 0));
-        try {
-            WindowManager.LayoutParams attributes = getWindow().getAttributes();
-            attributes.flags |= 16;
-            getWindow().setAttributes(attributes);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        n60Var.K.getReactionsWindow().e();
+        n60Var.K.n();
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public final void w(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+        Paint paint = this.b;
+        if (f7 > 0.0f) {
+            canvas.drawRoundRect(rectF, f7, f7, paint);
+        } else {
+            canvas.drawRect(rectF, paint);
+        }
+        if (Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
+            return;
+        }
+        n60 n60Var = this.c;
+        if (n60Var.Q2 != null) {
+            canvas.save();
+            if (f7 > 0.0f) {
+                Path path = this.a;
+                path.rewind();
+                path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
+                path.close();
+                canvas.clipPath(path);
+            } else {
+                canvas.clipRect(rectF);
+            }
+            canvas.translate(-n60Var.K.getX(), -n60Var.K.getY());
+            float f12 = n60Var.R2;
+            canvas.scale(f12, f12);
+            canvas.drawRenderNode(n60Var.Q2);
+            canvas.restore();
         }
     }
 
-    @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Window window = getWindow();
-        window.setWindowAnimations(R.style.DialogNoAnimation);
-        setContentView(this.a, new ViewGroup.LayoutParams(-1, -1));
-        WindowManager.LayoutParams attributes = window.getAttributes();
-        attributes.width = -1;
-        attributes.height = -1;
-        attributes.gravity = 119;
-        attributes.dimAmount = 0.0f;
-        int i10 = attributes.flags & (-3);
-        attributes.softInputMode = 48;
-        attributes.flags = (-2013069056) | i10;
-        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
-            attributes.flags = i10 | (-2013060864);
-            AndroidUtilities.logFlagSecure();
-        }
-        attributes.flags |= 1152;
-        if (Build.VERSION.SDK_INT >= 28) {
-            attributes.layoutInDisplayCutoutMode = 1;
-        }
-        window.setAttributes(attributes);
-    }
-
-    @Override // android.app.Dialog
-    public final void show() {
-        super.show();
-        b(1.0f, null);
-        AndroidUtilities.runOnUIThread(new o50(this, 1), 16L);
+    @Override // org.telegram.ui.Components.fl0
+    public final /* synthetic */ void y() {
     }
 }

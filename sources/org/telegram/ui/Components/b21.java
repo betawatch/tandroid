@@ -1,48 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Matrix;
-import android.view.View;
-import java.util.ArrayList;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b21 {
-    public final View a;
-    public final ArrayList b;
-    public final Runnable c;
-    public Runnable d;
-    public final Bitmap e;
-    public final Matrix f;
-    public float g;
+public final class b21 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ThemeEditorView b;
 
-    public b21(View view, Runnable runnable) {
-        this.g = 1.0f;
-        this.a = view;
-        this.b = null;
-        this.c = null;
-        this.d = runnable;
-        this.e = null;
-        this.f = null;
+    public /* synthetic */ b21(ThemeEditorView themeEditorView, int i10) {
+        this.a = i10;
+        this.b = themeEditorView;
     }
 
-    public b21(ArrayList arrayList, gg.t tVar) {
-        this.g = 1.0f;
-        this.a = null;
-        this.b = arrayList;
-        this.c = null;
-        this.d = tVar;
-        this.e = null;
-        this.f = null;
-    }
-
-    public b21(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
-        this.g = 1.0f;
-        this.a = null;
-        this.b = null;
-        this.c = runnable;
-        this.d = runnable2;
-        this.f = matrix;
-        this.e = bitmap;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ThemeEditorView themeEditorView = this.b;
+                z11 z11Var = themeEditorView.a;
+                if (z11Var != null) {
+                    z11Var.setBackground(null);
+                    themeEditorView.h.removeView(themeEditorView.a);
+                    break;
+                }
+                break;
+            default:
+                ThemeEditorView themeEditorView2 = this.b;
+                org.telegram.ui.ActionBar.g6.s1(themeEditorView2.m, true, false, false);
+                themeEditorView2.a();
+                break;
+        }
     }
 }

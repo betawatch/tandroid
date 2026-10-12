@@ -1,8 +1,8 @@
 package w7;
 
-import org.telegram.ui.Components.xz0;
+import org.telegram.ui.Components.tz0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class pa implements i5.e {
     public static pa b;
@@ -23,7 +23,7 @@ public final class pa implements i5.e {
         }
     }
 
-    public void a(ja.a aVar) {
+    public void a(ka.a aVar) {
         aVar.a(k7.class, g3.a);
         aVar.a(l9.class, m5.a);
         aVar.a(l7.class, h3.a);
@@ -69,13 +69,13 @@ public final class pa implements i5.e {
         aVar.a(q8.class, p4.a);
         aVar.a(f9.class, d5.a);
         aVar.a(r9.class, s5.a);
-        aVar.a(xz0.class, u1.a);
+        aVar.a(b6.class, u1.a);
         aVar.a(z5.class, s1.a);
         aVar.a(y5.class, r1.a);
         aVar.a(a6.class, t1.a);
-        aVar.a(c6.class, w1.a);
-        aVar.a(b6.class, v1.a);
-        aVar.a(d6.class, x1.a);
+        aVar.a(d6.class, w1.a);
+        aVar.a(c6.class, v1.a);
+        aVar.a(tz0.class, x1.a);
         aVar.a(e6.class, y1.a);
         aVar.a(f6.class, z1.a);
         aVar.a(g6.class, a2.a);

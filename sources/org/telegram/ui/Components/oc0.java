@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class oc0 extends s4.i0 {
+public final class oc0 extends s4.g0 {
     public final /* synthetic */ pc0 c;
 
     public oc0(pc0 pc0Var) {
@@ -19,7 +19,7 @@ public final class oc0 extends s4.i0 {
     }
 
     public static int D(org.telegram.ui.Cells.u1 u1Var, int i10, boolean z10) {
-        int C;
+        int c10;
         ArrayList<MessageObject.TextLayoutBlock> arrayList;
         CharSequence charSequence;
         float lineBottom;
@@ -33,11 +33,11 @@ public final class oc0 extends s4.i0 {
                     int i11 = u1Var.r0;
                     CharSequence charSequence2 = messageObject.messageText;
                     ArrayList<MessageObject.TextLayoutBlock> arrayList2 = messageObject.textLayoutBlocks;
-                    C = u1Var.t1 ? org.telegram.messenger.q.C(10.0f, u1Var.m2, i11) : i11;
+                    c10 = u1Var.t1 ? org.telegram.messenger.yh.c(10.0f, u1Var.m2, i11) : i11;
                     arrayList = arrayList2;
                     charSequence = charSequence2;
                 } else {
-                    C = (int) u1Var.q4;
+                    c10 = (int) u1Var.q4;
                     charSequence = messageObject.caption;
                     arrayList = textLayoutBlocks.textLayoutBlocks;
                 }
@@ -49,10 +49,10 @@ public final class oc0 extends s4.i0 {
                         int i13 = textLayoutBlock.charactersOffset;
                         if (i10 > i13) {
                             if (i10 - i13 > charSequence3.length() - 1) {
-                                lineBottom = C + ((int) (textLayoutBlock.textYOffset(arrayList, t1Var) + textLayoutBlock.padTop + textLayoutBlock.height));
+                                lineBottom = c10 + ((int) (textLayoutBlock.textYOffset(arrayList, t1Var) + textLayoutBlock.padTop + textLayoutBlock.height));
                             } else {
                                 int lineForOffset = staticLayout.getLineForOffset(i10 - textLayoutBlock.charactersOffset);
-                                lineBottom = (z10 ? staticLayout.getLineBottom(lineForOffset) : staticLayout.getLineTop(lineForOffset)) + textLayoutBlock.textYOffset(arrayList, t1Var) + C + textLayoutBlock.padTop;
+                                lineBottom = (z10 ? staticLayout.getLineBottom(lineForOffset) : staticLayout.getLineTop(lineForOffset)) + textLayoutBlock.textYOffset(arrayList, t1Var) + c10 + textLayoutBlock.padTop;
                             }
                             return (int) lineBottom;
                         }
@@ -63,7 +63,7 @@ public final class oc0 extends s4.i0 {
         return 0;
     }
 
-    @Override // s4.i0
+    @Override // s4.g0
     public final int h() {
         MessagePreviewParams.Messages messages = this.c.r;
         if (messages == null) {
@@ -72,21 +72,21 @@ public final class oc0 extends s4.i0 {
         return messages.previewMessages.size();
     }
 
-    @Override // s4.i0
+    @Override // s4.g0
     public final int j(int i10) {
         return 0;
     }
 
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
         pc0 pc0Var = this.c;
-        ic0 ic0Var = pc0Var.f;
+        hc0 hc0Var = pc0Var.f;
         int i11 = pc0Var.a;
         MessagePreviewParams.Messages messages = pc0Var.r;
-        if (messages != null && d1Var.f == 0) {
-            org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) d1Var.a;
+        if (messages != null && b1Var.f == 0) {
+            org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) b1Var.a;
             u1Var.setInvalidateSpoilersParent(messages.hasSpoilers);
-            u1Var.Z3(ic0Var.getMeasuredWidth(), ic0Var.getMeasuredHeight());
+            u1Var.Z3(hc0Var.getMeasuredWidth(), hc0Var.getMeasuredHeight());
             int id2 = u1Var.getMessageObject() != null ? u1Var.getMessageObject().getId() : 0;
             if (i11 == 2) {
                 pc0Var.c0.d.checkCurrentLink(pc0Var.r.previewMessages.get(i10));
@@ -95,7 +95,7 @@ public final class oc0 extends s4.i0 {
             MessagePreviewParams.Messages messages2 = pc0Var.r;
             u1Var.X3(messageObject, messages2.groupedMessagesMap.get(messages2.previewMessages.get(i10).getGroupId()), true, true, false, false);
             if (i11 == 1) {
-                u1Var.setDelegate(new rb.a(16));
+                u1Var.setDelegate(new oa.d(17));
             }
             if (pc0Var.r.previewMessages.size() > 1) {
                 u1Var.J3(i11 == 1, false);
@@ -107,8 +107,8 @@ public final class oc0 extends s4.i0 {
         }
     }
 
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
         Context context = viewGroup.getContext();
         pc0 pc0Var = this.c;
         vc0 vc0Var = pc0Var.c0;
@@ -116,20 +116,20 @@ public final class oc0 extends s4.i0 {
         mc0Var.setClipChildren(false);
         mc0Var.setClipToPadding(false);
         mc0Var.setDelegate(new nc0(this));
-        return new am0(mc0Var);
+        return new wl0(mc0Var);
     }
 
-    @Override // s4.i0
-    public final void y(s4.d1 d1Var) {
+    @Override // s4.g0
+    public final void y(s4.b1 b1Var) {
         int i10;
         MessageObject c10;
         pc0 pc0Var = this.c;
-        hc0 hc0Var = pc0Var.e;
+        gc0 gc0Var = pc0Var.e;
         vc0 vc0Var = pc0Var.c0;
         if (pc0Var.r == null || (i10 = pc0Var.a) == 1) {
             return;
         }
-        View view = d1Var.a;
+        View view = b1Var.a;
         if (view instanceof org.telegram.ui.Cells.u1) {
             org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
             if (i10 != 0) {
@@ -143,9 +143,9 @@ public final class oc0 extends s4.i0 {
             if (messagePreviewParams.isSecret || messagePreviewParams.quote == null || u1Var.getMessageObject() == null || (c10 = pc0Var.c(null)) == null) {
                 return;
             }
-            if ((u1Var.getMessageObject() == c10 || u1Var.getMessageObject().getId() == c10.getId()) && !hc0Var.x()) {
+            if ((u1Var.getMessageObject() == c10 || u1Var.getMessageObject().getId() == c10.getId()) && !gc0Var.x()) {
                 MessagePreviewParams messagePreviewParams2 = vc0Var.d;
-                hc0Var.Z(u1Var, messagePreviewParams2.quoteStart, messagePreviewParams2.quoteEnd);
+                gc0Var.Z(u1Var, messagePreviewParams2.quoteStart, messagePreviewParams2.quoteEnd);
                 if (pc0Var.b0) {
                     pc0Var.L = D(u1Var, vc0Var.d.quoteStart, false);
                     pc0Var.M = D(u1Var, vc0Var.d.quoteEnd, true);

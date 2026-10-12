@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class u implements Cloneable {
     public final w a;
@@ -23,7 +23,7 @@ public abstract class u implements Cloneable {
         if (b10.g()) {
             return b10;
         }
-        throw new ae.x();
+        throw new androidx.car.app.j();
     }
 
     public final w b() {
@@ -34,7 +34,7 @@ public abstract class u implements Cloneable {
         wVar.getClass();
         y0 y0Var = y0.c;
         y0Var.getClass();
-        y0Var.a(wVar.getClass()).d(wVar);
+        y0Var.a(wVar.getClass()).c(wVar);
         this.c = true;
         return this.b;
     }

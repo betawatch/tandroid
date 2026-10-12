@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class ContactsLoadingObserver {
     private final Callback callback;
@@ -12,11 +12,11 @@ public final class ContactsLoadingObserver {
     private final int currentAccount;
     private final Handler handler;
     private final NotificationCenter notificationCenter;
-    private final NotificationCenter.NotificationCenterDelegate observer = new x1(this, 0);
+    private final NotificationCenter.NotificationCenterDelegate observer = new z1(this, 0);
     private final Runnable releaseRunnable;
     private boolean released;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface Callback {
         void onResult(boolean z10);
     }
@@ -25,7 +25,7 @@ public final class ContactsLoadingObserver {
         this.callback = callback;
         int i10 = UserConfig.selectedAccount;
         this.currentAccount = i10;
-        this.releaseRunnable = new f1(this, 17);
+        this.releaseRunnable = new h1(this, 16);
         this.contactsController = ContactsController.getInstance(i10);
         this.notificationCenter = NotificationCenter.getInstance(i10);
         this.handler = new Handler(Looper.myLooper());
@@ -43,8 +43,8 @@ public final class ContactsLoadingObserver {
         onContactsLoadingStateUpdated(this.currentAccount, true);
     }
 
-    public static void observe(Callback callback, long j3) {
-        new ContactsLoadingObserver(callback).start(j3);
+    public static void observe(Callback callback, long j10) {
+        new ContactsLoadingObserver(callback).start(j10);
     }
 
     private boolean onContactsLoadingStateUpdated(int i10, boolean z10) {
@@ -75,11 +75,11 @@ public final class ContactsLoadingObserver {
         this.released = true;
     }
 
-    public void start(long j3) {
+    public void start(long j10) {
         if (onContactsLoadingStateUpdated(this.currentAccount, false)) {
             return;
         }
         this.notificationCenter.addObserver(this.observer, NotificationCenter.contactsDidLoad);
-        this.handler.postDelayed(this.releaseRunnable, j3);
+        this.handler.postDelayed(this.releaseRunnable, j10);
     }
 }

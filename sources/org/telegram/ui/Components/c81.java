@@ -1,61 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.view.TextureView;
-import java.util.ArrayList;
+import android.net.Uri;
+import java.util.Map;
+import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c81 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class c81 implements g2.h {
+    public final g2.h a;
+    public final long b;
 
-    public /* synthetic */ c81(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public c81(ExtendedDefaultDataSource extendedDefaultDataSource, long j10) {
+        this.a = extendedDefaultDataSource;
+        this.b = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                k81 k81Var = (k81) this.b;
-                i2.f0 f0Var = k81Var.d;
-                if (f0Var != null) {
-                    TextureView textureView = k81Var.n;
-                    f0Var.D1();
-                    if (textureView != null && textureView == f0Var.V) {
-                        f0Var.D1();
-                        f0Var.q1();
-                        f0Var.v1(null);
-                        f0Var.o1(0, 0);
-                    }
-                    k81Var.d.x1(k81Var.n);
-                    ArrayList arrayList = k81Var.N;
-                    if (arrayList != null) {
-                        k81Var.F(arrayList, k81Var.O);
-                    } else if (k81Var.U) {
-                        k81Var.G(k81Var.Q, k81Var.S, k81Var.R, k81Var.T);
-                    } else {
-                        k81Var.D(k81Var.Q, k81Var.S);
-                    }
-                    k81Var.C();
-                    break;
-                }
-                break;
-            case 1:
-                k81 k81Var2 = ((j81) this.b).f;
-                k81Var2.a0.removeCallbacksAndMessages(null);
-                k81Var2.K.onVisualizerUpdate(false, true, null);
-                break;
-            case 2:
-                ((m81) this.b).g = false;
-                break;
-            case 3:
-                ((ha1) ((ki.d) ((org.telegram.ui.Cells.da) this.b).b).b).v.b();
-                break;
-            default:
-                ((ca1) this.b).d(false, true);
-                break;
-        }
+    @Override // g2.h
+    public final void addTransferListener(g2.c0 c0Var) {
+        this.a.addTransferListener(c0Var);
+    }
+
+    @Override // g2.h
+    public final void close() {
+        this.a.close();
+    }
+
+    @Override // g2.h
+    public final Map getResponseHeaders() {
+        return this.a.getResponseHeaders();
+    }
+
+    @Override // g2.h
+    public final Uri getUri() {
+        return this.a.getUri();
+    }
+
+    @Override // g2.h
+    public final long open(g2.m mVar) {
+        g2.l a2 = mVar.a();
+        a2.b = mVar.e + this.b;
+        return this.a.open(a2.d());
+    }
+
+    @Override // b2.p
+    public final int read(byte[] bArr, int i10, int i11) {
+        return this.a.read(bArr, i10, i11);
     }
 }

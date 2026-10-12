@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m0 extends d2 implements o0 {
     public CharSequence S;
@@ -29,26 +29,26 @@ public final class m0 extends d2 implements o0 {
     }
 
     @Override // m.o0
-    public final CharSequence d() {
+    public final CharSequence e() {
         return this.S;
     }
 
     @Override // m.o0
-    public final void h(CharSequence charSequence) {
+    public final void i(CharSequence charSequence) {
         this.S = charSequence;
     }
 
     @Override // m.o0
-    public final void k(int i10) {
+    public final void l(int i10) {
         this.V = i10;
     }
 
     @Override // m.o0
-    public final void l(int i10, int i11) {
+    public final void m(int i10, int i11) {
         ViewTreeObserver viewTreeObserver;
         x xVar = this.O;
         boolean isShowing = xVar.isShowing();
-        q();
+        r();
         xVar.setInputMethodMode(2);
         g();
         r1 r1Var = this.c;
@@ -68,18 +68,18 @@ public final class m0 extends d2 implements o0 {
         if (isShowing || (viewTreeObserver = p0Var.getViewTreeObserver()) == null) {
             return;
         }
-        androidx.mediarouter.app.j jVar = new androidx.mediarouter.app.j(this, 4);
-        viewTreeObserver.addOnGlobalLayoutListener(jVar);
-        xVar.setOnDismissListener(new l0(this, jVar));
+        androidx.mediarouter.app.i iVar = new androidx.mediarouter.app.i(this, 4);
+        viewTreeObserver.addOnGlobalLayoutListener(iVar);
+        xVar.setOnDismissListener(new l0(this, iVar));
     }
 
     @Override // m.d2, m.o0
-    public final void n(ListAdapter listAdapter) {
-        super.n(listAdapter);
+    public final void o(ListAdapter listAdapter) {
+        super.o(listAdapter);
         this.T = (j0) listAdapter;
     }
 
-    public final void q() {
+    public final void r() {
         int i10;
         p0 p0Var = this.W;
         Rect rect = p0Var.n;
@@ -103,11 +103,11 @@ public final class m0 extends d2 implements o0 {
             if (a2 > i12) {
                 a2 = i12;
             }
-            p(Math.max(a2, (width - paddingLeft) - paddingRight));
+            q(Math.max(a2, (width - paddingLeft) - paddingRight));
         } else if (i11 == -1) {
-            p((width - paddingLeft) - paddingRight);
+            q((width - paddingLeft) - paddingRight);
         } else {
-            p(i11);
+            q(i11);
         }
         this.f = t3.a(p0Var) ? (((width - paddingRight) - this.e) - this.V) + i10 : paddingLeft + this.V + i10;
     }

@@ -1,82 +1,68 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class of implements org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, uo0 {
+public final /* synthetic */ class of implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ fo b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ of(int i10, Runnable runnable) {
-        this.a = i10;
-        this.b = runnable;
+    public /* synthetic */ of(fo foVar, int i10, int i11) {
+        this.a = i11;
+        this.b = foVar;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.uo0
-    public void a(int i10) {
-        int i11 = this.a;
-        Runnable runnable = this.b;
-        switch (i11) {
-            case 9:
-                Pattern pattern = LaunchActivity.B1;
-                if (i10 == 1) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                if (i10 == 1) {
-                    runnable.run();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Cells.u1 u1Var;
+        MessageObject messageObject;
         switch (this.a) {
             case 0:
-                this.b.run();
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 1:
-                this.b.run();
+                this.b.j(this.c, 0, false, 0, true, 0);
                 break;
-            default:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+            case 2:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
-        }
-    }
-
-    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
-    public boolean run(TLRPC.TL_error tL_error) {
-        switch (this.a) {
             case 3:
-                this.b.run();
+                fo foVar = this.b;
+                ak akVar = foVar.x0;
+                if (akVar != null) {
+                    int childCount = akVar.getChildCount();
+                    for (int i10 = 0; i10 < childCount; i10++) {
+                        View childAt = foVar.x0.getChildAt(i10);
+                        if ((childAt instanceof org.telegram.ui.Cells.u1) && (messageObject = (u1Var = (org.telegram.ui.Cells.u1) childAt).getMessageObject()) != null && messageObject.equals(foVar.G3)) {
+                            u1Var.g4(this.c, true, true);
+                        }
+                    }
+                }
+                foVar.G3 = null;
                 break;
             case 4:
-                this.b.run();
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             case 5:
-                this.b.run();
+                fo.a0(this.b, this.c);
                 break;
             case 6:
-                this.b.run();
+                this.b.actionBar.setSubtitle(LocaleController.formatPluralString("messages", this.c, new Object[0]));
                 break;
             case 7:
-                this.b.run();
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+            case 8:
+                fo.j1(this.b, this.c);
                 break;
             default:
-                this.b.run();
+                fo.f1(this.b, this.c);
                 break;
         }
-        return true;
     }
 }

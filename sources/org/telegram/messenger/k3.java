@@ -1,30 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ FileRefController b;
-    public final /* synthetic */ TLRPC.TL_messages_sendMultiMedia c;
-    public final /* synthetic */ Object[] d;
+    public final /* synthetic */ FilePathDatabase b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ CountDownLatch e;
 
-    public /* synthetic */ k3(FileRefController fileRefController, TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia, Object[] objArr, int i10) {
+    public /* synthetic */ k3(FilePathDatabase filePathDatabase, String str, boolean[] zArr, CountDownLatch countDownLatch, int i10) {
         this.a = i10;
-        this.b = fileRefController;
-        this.c = tL_messages_sendMultiMedia;
-        this.d = objArr;
+        this.b = filePathDatabase;
+        this.c = str;
+        this.d = zArr;
+        this.e = countDownLatch;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onUpdateObjectReference$30(this.c, this.d);
+                this.b.lambda$isLocallyCreated$8(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$sendErrorToObject$41(this.c, this.d);
+                this.b.lambda$hasAnotherRefOnFile$4(this.c, this.d, this.e);
                 break;
         }
     }

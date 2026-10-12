@@ -1,18 +1,18 @@
 package p3;
 
-import b2.m0;
-import b2.o0;
-import b2.s;
-import com.google.android.gms.internal.vision.e2;
-import e2.d;
+import b2.r0;
+import b2.t0;
+import b2.x;
+import com.google.android.gms.internal.play_billing.k3;
 import j$.util.Objects;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b implements o0 {
+public final class b implements t0 {
     public final int a;
     public final String b;
     public final String c;
@@ -21,7 +21,7 @@ public final class b implements o0 {
     public final int f;
 
     public b(int i10, String str, String str2, String str3, boolean z10, int i11) {
-        d.b(i11 == -1 || i11 > 0);
+        u6.g(i11 == -1 || i11 > 0);
         this.a = i10;
         this.b = str;
         this.c = str2;
@@ -68,11 +68,11 @@ public final class b implements o0 {
                     z10 = true;
                 } else {
                     try {
-                        e2.a.n("IcyHeaders", "Invalid bitrate: " + str4);
+                        e2.a.l("IcyHeaders", "Invalid bitrate: " + str4);
                         z10 = false;
                         i11 = -1;
                     } catch (NumberFormatException unused) {
-                        e2.s("Invalid bitrate header: ", str4, "IcyHeaders");
+                        k3.r("Invalid bitrate header: ", str4, "IcyHeaders");
                         z10 = false;
                         i10 = i11;
                         list = (List) map.get("icy-genre");
@@ -140,11 +140,11 @@ public final class b implements o0 {
                     i12 = parseInt;
                 } else {
                     try {
-                        e2.a.n("IcyHeaders", "Invalid metadata interval: " + str5);
+                        e2.a.l("IcyHeaders", "Invalid metadata interval: " + str5);
                         z12 = z10;
                     } catch (NumberFormatException unused3) {
                         i12 = parseInt;
-                        e2.s("Invalid metadata interval: ", str5, "IcyHeaders");
+                        k3.r("Invalid metadata interval: ", str5, "IcyHeaders");
                         int i132 = i12;
                         if (z10) {
                         }
@@ -161,24 +161,24 @@ public final class b implements o0 {
         return null;
     }
 
-    @Override // b2.o0
-    public final /* synthetic */ s a() {
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
         return null;
     }
 
-    @Override // b2.o0
-    public final void b(m0 m0Var) {
+    @Override // b2.t0
+    public final void b(r0 r0Var) {
         String str = this.c;
         if (str != null) {
-            m0Var.F = str;
+            r0Var.G = str;
         }
         String str2 = this.b;
         if (str2 != null) {
-            m0Var.D = str2;
+            r0Var.E = str2;
         }
     }
 
-    @Override // b2.o0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }

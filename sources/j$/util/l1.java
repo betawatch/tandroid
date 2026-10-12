@@ -8,22 +8,22 @@ import java.util.function.DoubleConsumer;
 public final class l1 extends j$.com.android.tools.r8.a implements u0 {
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.i(this, consumer);
+        j$.com.android.tools.r8.a.h(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+        return j$.com.android.tools.r8.a.m(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+        return j$.com.android.tools.r8.a.o(this, i10);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.z(this, consumer);
+        return j$.com.android.tools.r8.a.y(this, consumer);
     }
 
     @Override // j$.com.android.tools.r8.a, j$.util.d1, j$.util.Spliterator

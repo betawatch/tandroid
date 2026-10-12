@@ -8,7 +8,7 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import androidx.appcompat.view.menu.ListMenuItemView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class i2 extends r1 {
     public e2 E;
@@ -48,11 +48,11 @@ public final class i2 extends r1 {
             if (mVar != item) {
                 l.k kVar = hVar.a;
                 if (mVar != null) {
-                    this.E.z(kVar, mVar);
+                    this.E.d(kVar, mVar);
                 }
                 this.F = item;
                 if (item != null) {
-                    this.E.n0(kVar, item);
+                    this.E.s(kVar, item);
                 }
             }
         }

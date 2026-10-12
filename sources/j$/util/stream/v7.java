@@ -16,12 +16,12 @@ public final class v7 extends x7 implements Spliterator, Consumer {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+        return j$.com.android.tools.r8.a.m(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+        return j$.com.android.tools.r8.a.o(this, i10);
     }
 
     @Override // j$.util.Spliterator
@@ -66,17 +66,17 @@ public final class v7 extends x7 implements Spliterator, Consumer {
                 } else {
                     c7Var.a = 0;
                 }
-                long j3 = 0;
+                long j10 = 0;
                 while (spliterator.tryAdvance(c7Var)) {
-                    j3++;
-                    if (j3 >= i10) {
+                    j10++;
+                    if (j10 >= i10) {
                         break;
                     }
                 }
-                if (j3 == 0) {
+                if (j10 == 0) {
                     return;
                 }
-                long a2 = a(j3);
+                long a2 = a(j10);
                 for (int i11 = 0; i11 < a2; i11++) {
                     consumer.x(c7Var.b[i11]);
                 }

@@ -1,18 +1,16 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class s8 {
-    public static long a(e2.v vVar, int i10, int i11) {
-        vVar.J(i10);
-        if (vVar.a() < 5) {
-            return -9223372036854775807L;
+    public static void a(int i10, int i11, int i12) {
+        if (i10 < 0 || i11 > i12) {
+            StringBuilder l4 = i2.d.l("fromIndex: ", i10, ", toIndex: ", i11, ", size: ");
+            l4.append(i12);
+            throw new IndexOutOfBoundsException(l4.toString());
         }
-        int j3 = vVar.j();
-        if ((8388608 & j3) != 0 || ((2096896 & j3) >> 8) != i11 || (j3 & 32) == 0 || vVar.x() < 7 || vVar.a() < 7 || (vVar.x() & 16) != 16) {
-            return -9223372036854775807L;
+        if (i10 > i11) {
+            throw new IllegalArgumentException(a1.g.l(i10, i11, "fromIndex: ", " > toIndex: "));
         }
-        vVar.h(0, 6, new byte[6]);
-        return ((r0[0] & 255) << 25) | ((r0[1] & 255) << 17) | ((r0[2] & 255) << 9) | ((r0[3] & 255) << 1) | ((255 & r0[4]) >> 7);
     }
 }

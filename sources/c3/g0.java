@@ -1,36 +1,27 @@
 package c3;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g0 {
-    public final int a;
-    public final byte[] b;
-    public final int c;
-    public final int d;
+public final class g0 extends v {
+    public final /* synthetic */ b0 b;
+    public final /* synthetic */ ad.d c;
 
-    public g0(int i10, int i11, int i12, byte[] bArr) {
-        this.a = i10;
-        this.b = bArr;
-        this.c = i11;
-        this.d = i12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g0(ad.d dVar, b0 b0Var, b0 b0Var2) {
+        super(b0Var);
+        this.c = dVar;
+        this.b = b0Var2;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && g0.class == obj.getClass()) {
-            g0 g0Var = (g0) obj;
-            if (this.a == g0Var.a && this.c == g0Var.c && this.d == g0Var.d && Arrays.equals(this.b, g0Var.b)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((((Arrays.hashCode(this.b) + (this.a * 31)) * 31) + this.c) * 31) + this.d;
+    @Override // c3.v, c3.b0
+    public final a0 f(long j10) {
+        a0 f7 = this.b.f(j10);
+        c0 c0Var = f7.a;
+        long j11 = c0Var.a;
+        long j12 = c0Var.b;
+        long j13 = this.c.b;
+        c0 c0Var2 = new c0(j11, j12 + j13);
+        c0 c0Var3 = f7.b;
+        return new a0(c0Var2, new c0(c0Var3.a, c0Var3.b + j13));
     }
 }

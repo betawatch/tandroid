@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import com.google.android.gms.internal.vision.e2;
-import id.f;
-import id.h;
-import id.i;
-import id.o;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import jd.f;
+import jd.h;
+import jd.i;
+import jd.o;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzju implements zzjt {
     public static final zzju zza = new zzju();
@@ -67,7 +67,7 @@ public final class zzju implements zzjt {
             ArrayList arrayList3 = new ArrayList(iArr.length);
             int length6 = iArr.length;
             while (i10 < length6) {
-                i10 = e2.e(iArr[i10], i10, 1, arrayList3);
+                i10 = k3.f(iArr[i10], i10, 1, arrayList3);
             }
             return arrayList3;
         }

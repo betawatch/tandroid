@@ -1,47 +1,53 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vi implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wi b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.kl0 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ zg.n0 n;
+public final class vi extends org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ org.telegram.ui.Components.gl0 o;
+    public final /* synthetic */ fo p;
 
-    public /* synthetic */ vi(wi wiVar, int i10, boolean z10, org.telegram.ui.Components.kl0 kl0Var, float f7, float f10, zg.n0 n0Var, int i11) {
-        this.a = i11;
-        this.b = wiVar;
-        this.c = i10;
-        this.d = z10;
-        this.e = kl0Var;
-        this.f = f7;
-        this.h = f10;
-        this.n = n0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vi(fo foVar, ib ibVar, org.telegram.ui.Components.gl0 gl0Var) {
+        super(ibVar, -2, -2);
+        this.p = foVar;
+        this.o = gl0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new vi(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
-                break;
-            default:
-                zn znVar = this.b.s;
-                org.telegram.ui.Cells.a0 t82 = znVar.t8(this.c, true);
-                if (this.d) {
-                    i10 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
-                    zg.j0.d(znVar, this.e, t82, null, this.f, this.h, this.n, i10, 1);
-                    zg.j0.f();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.m1
+    public final void d(boolean z10) {
+        super.d(true);
+        org.telegram.ui.Components.gl0 gl0Var = this.o;
+        if (gl0Var != null) {
+            gl0Var.d();
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        fo foVar = this.p;
+        if (foVar.Q8 != this) {
+            return;
+        }
+        org.telegram.ui.Components.sc scVar = org.telegram.ui.Components.sc.w;
+        org.telegram.ui.Components.sc scVar2 = foVar.n1;
+        if (scVar == scVar2 && scVar2 != null) {
+            scVar2.b();
+            foVar.n1 = null;
+        }
+        foVar.Q8 = null;
+        foVar.T8 = null;
+        foVar.S8 = null;
+        foVar.z0.R = true;
+        if (foVar.R8) {
+            foVar.j8(false, true, 0.0f);
+        } else {
+            foVar.R8 = true;
+        }
+        sk skVar = foVar.Y;
+        if (skVar == null || skVar.getEditField() == null) {
+            return;
+        }
+        foVar.Y.getEditField().setAllowDrawCursor(true);
     }
 }

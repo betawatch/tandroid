@@ -38,10 +38,10 @@ public final class q0 extends CountedCompleter {
     public final void compute() {
         Spliterator trySplit;
         Spliterator spliterator = this.b;
-        long j3 = this.c;
+        long j10 = this.c;
         boolean z10 = false;
         q0 q0Var = this;
-        while (spliterator.estimateSize() > j3 && (trySplit = spliterator.trySplit()) != null) {
+        while (spliterator.estimateSize() > j10 && (trySplit = spliterator.trySplit()) != null) {
             q0 q0Var2 = new q0(q0Var, trySplit, q0Var.f);
             q0 q0Var3 = new q0(q0Var, spliterator, q0Var2);
             q0Var.addToPendingCount(1);

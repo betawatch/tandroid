@@ -4,11 +4,12 @@ import android.net.Uri;
 import android.system.ErrnoException;
 import android.system.OsConstants;
 import android.text.TextUtils;
+import e2.m0;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class t extends c {
     public RandomAccessFile a;
@@ -25,8 +26,8 @@ public final class t extends c {
                 if (randomAccessFile != null) {
                     randomAccessFile.close();
                 }
-            } catch (IOException e7) {
-                throw new s(e7, 2000);
+            } catch (IOException e) {
+                throw new s(e, 2000);
             }
         } finally {
             this.a = null;
@@ -45,7 +46,7 @@ public final class t extends c {
     @Override // g2.h
     public final long open(m mVar) {
         Uri uri = mVar.a;
-        long j3 = mVar.e;
+        long j10 = mVar.e;
         this.b = uri;
         transferInitializing(mVar);
         try {
@@ -54,58 +55,58 @@ public final class t extends c {
             RandomAccessFile randomAccessFile = new RandomAccessFile(path, "r");
             this.a = randomAccessFile;
             try {
-                randomAccessFile.seek(j3);
-                long j10 = mVar.f;
-                if (j10 == -1) {
-                    j10 = this.a.length() - j3;
+                randomAccessFile.seek(j10);
+                long j11 = mVar.f;
+                if (j11 == -1) {
+                    j11 = this.a.length() - j10;
                 }
-                this.c = j10;
-                if (j10 < 0) {
+                this.c = j11;
+                if (j11 < 0) {
                     throw new s(null, null, 2008);
                 }
                 this.d = true;
                 transferStarted(mVar);
                 return this.c;
-            } catch (IOException e7) {
-                throw new s(e7, 2000);
+            } catch (IOException e) {
+                throw new s(e, 2000);
             }
-        } catch (FileNotFoundException e10) {
+        } catch (FileNotFoundException e7) {
             if (TextUtils.isEmpty(uri.getQuery()) && TextUtils.isEmpty(uri.getFragment())) {
-                throw new s(e10, ((e10.getCause() instanceof ErrnoException) && ((ErrnoException) e10.getCause()).errno == OsConstants.EACCES) ? 2006 : 2005);
+                throw new s(e7, ((e7.getCause() instanceof ErrnoException) && ((ErrnoException) e7.getCause()).errno == OsConstants.EACCES) ? 2006 : 2005);
             }
             String path2 = uri.getPath();
             String query = uri.getQuery();
             String fragment = uri.getFragment();
-            StringBuilder x10 = a1.g.x("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
-            x10.append(fragment);
-            throw new s(x10.toString(), e10, 1004);
-        } catch (SecurityException e11) {
-            throw new s(e11, 2006);
-        } catch (RuntimeException e12) {
-            throw new s(e12, 2000);
+            StringBuilder w9 = a1.g.w("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
+            w9.append(fragment);
+            throw new s(w9.toString(), e7, 1004);
+        } catch (SecurityException e10) {
+            throw new s(e10, 2006);
+        } catch (RuntimeException e11) {
+            throw new s(e11, 2000);
         }
     }
 
-    @Override // b2.k
+    @Override // b2.p
     public final int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;
         }
-        long j3 = this.c;
-        if (j3 == 0) {
+        long j10 = this.c;
+        if (j10 == 0) {
             return -1;
         }
         try {
             RandomAccessFile randomAccessFile = this.a;
-            String str = e2.d0.a;
-            int read = randomAccessFile.read(bArr, i10, (int) Math.min(j3, i11));
+            String str = m0.a;
+            int read = randomAccessFile.read(bArr, i10, (int) Math.min(j10, i11));
             if (read > 0) {
                 this.c -= read;
                 bytesTransferred(read);
             }
             return read;
-        } catch (IOException e7) {
-            throw new s(e7, 2000);
+        } catch (IOException e) {
+            throw new s(e, 2000);
         }
     }
 }

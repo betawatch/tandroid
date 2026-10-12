@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class p2 {
     public long a;
@@ -68,7 +68,7 @@ public final class p2 {
     public final boolean a() {
         Integer num;
         int i10;
-        long j3;
+        long j10;
         boolean z10;
         boolean z11;
         TLRPC.DraftMessage draft;
@@ -85,10 +85,10 @@ public final class p2 {
         TLRPC.Dialog dialog = (TLRPC.Dialog) MessagesController.getInstance(i11).dialogs_dict.f(s2Var.H0);
         if (dialog == null) {
             if (s2Var.j1 == 3) {
-                long j10 = this.a;
-                long j11 = s2Var.H0;
-                if (j10 != j11) {
-                    this.a = j11;
+                long j11 = this.a;
+                long j12 = s2Var.H0;
+                if (j11 != j12) {
+                    this.a = j12;
                     return true;
                 }
             }
@@ -96,25 +96,25 @@ public final class p2 {
         }
         MessageObject messageObject = s2Var.f1;
         int hashCode = messageObject == null ? 0 : s2Var.f1.hashCode() + messageObject.getId();
-        long j12 = dialog.read_inbox_max_id + (dialog.read_outbox_max_id << 8) + ((dialog.unread_count + (dialog.unread_mark ? -1 : 0)) << 16) + (dialog.unread_reactions_count > 0 ? 262144 : 0) + (dialog.unread_mentions_count > 0 ? TLObject.FLAG_19 : 0) + (dialog.unread_poll_votes_count > 0 ? TLObject.FLAG_21 : 0);
+        long j13 = dialog.read_inbox_max_id + (dialog.read_outbox_max_id << 8) + ((dialog.unread_count + (dialog.unread_mark ? -1 : 0)) << 16) + (dialog.unread_reactions_count > 0 ? 262144 : 0) + (dialog.unread_mentions_count > 0 ? TLObject.FLAG_19 : 0) + (dialog.unread_poll_votes_count > 0 ? TLObject.FLAG_21 : 0);
         if (s2Var.Q()) {
             int[] forumUnreadCount = MessagesController.getInstance(i11).getTopicsController().getForumUnreadCount(-s2Var.H0);
             if (forumUnreadCount[2] > 0) {
-                j12 |= 1048576;
+                j13 |= 1048576;
             }
             if (forumUnreadCount[4] > 0) {
-                j12 |= 4194304;
+                j13 |= 4194304;
             }
         }
         if (!s2Var.Q() && (s2Var.N0 || s2Var.P)) {
             MessagesController messagesController = MessagesController.getInstance(i11);
-            long j13 = s2Var.H0;
+            long j14 = s2Var.H0;
             topicId3 = s2Var.getTopicId();
-            if (!TextUtils.isEmpty(messagesController.getPrintingString(j13, topicId3, true))) {
+            if (!TextUtils.isEmpty(messagesController.getPrintingString(j14, topicId3, true))) {
                 MessagesController messagesController2 = MessagesController.getInstance(i11);
-                long j14 = s2Var.H0;
+                long j15 = s2Var.H0;
                 topicId4 = s2Var.getTopicId();
-                num = messagesController2.getPrintingStringType(j14, topicId4);
+                num = messagesController2.getPrintingStringType(j15, topicId4);
                 int measuredWidth = s2Var.getMeasuredWidth() + (s2Var.getMeasuredHeight() << 16);
                 if (s2Var.Q()) {
                     ArrayList<TLRPC.TL_forumTopic> topics = MessagesController.getInstance(i11).getTopicsController().getTopics(-s2Var.H0);
@@ -122,7 +122,7 @@ public final class p2 {
                     if (i10 == -1) {
                     }
                     if (!s2Var.P) {
-                        j3 = j12;
+                        j10 = j13;
                         z10 = false;
                         if (s2Var.N0) {
                             z11 = MediaDataController.getInstance(i11).getDraftVoice(s2Var.H0, 0L) != null;
@@ -142,7 +142,7 @@ public final class p2 {
                             this.a = s2Var.H0;
                             this.b = hashCode;
                             this.d = dialog.isFolder;
-                            this.e = j3;
+                            this.e = j10;
                             this.g = num;
                             this.h = measuredWidth;
                             this.f = r52;
@@ -169,7 +169,7 @@ public final class p2 {
                         this.a = s2Var.H0;
                         this.b = hashCode;
                         this.d = dialog.isFolder;
-                        this.e = j3;
+                        this.e = j10;
                         this.g = num;
                         this.h = measuredWidth;
                         this.f = r52;
@@ -180,19 +180,19 @@ public final class p2 {
                         return true;
                     }
                     MediaDataController mediaDataController = MediaDataController.getInstance(i11);
-                    long j15 = s2Var.H0;
+                    long j16 = s2Var.H0;
                     topicId = s2Var.getTopicId();
                     z10 = false;
-                    z11 = mediaDataController.getDraftVoice(j15, (long) topicId) != null;
+                    z11 = mediaDataController.getDraftVoice(j16, (long) topicId) != null;
                     if (z11) {
-                        j3 = j12;
+                        j10 = j13;
                         draft = null;
                     } else {
                         MediaDataController mediaDataController2 = MediaDataController.getInstance(i11);
-                        long j16 = s2Var.H0;
+                        long j17 = s2Var.H0;
                         topicId2 = s2Var.getTopicId();
-                        j3 = j12;
-                        draft = mediaDataController2.getDraft(j16, topicId2);
+                        j10 = j13;
+                        draft = mediaDataController2.getDraft(j17, topicId2);
                     }
                     if (draft != null) {
                     }
@@ -206,7 +206,7 @@ public final class p2 {
                     TLRPC.Chat chat22 = s2Var.g2;
                     z12 = (chat22 == null && chat22.call_active && chat22.call_not_empty) ? true : z10;
                     isTranslatingDialog = MessagesController.getInstance(i11).getTranslateController().isTranslatingDialog(s2Var.H0);
-                    if (this.h != measuredWidth && this.b == hashCode && this.c == isTranslatingDialog && this.a == s2Var.H0 && this.d == dialog.isFolder && this.e == j3 && Objects.equals(this.g, num) && this.i == i10 && r52 == this.f && this.j == s2Var.A3 && this.k == z12 && s2Var.k2 == z11) {
+                    if (this.h != measuredWidth && this.b == hashCode && this.c == isTranslatingDialog && this.a == s2Var.H0 && this.d == dialog.isFolder && this.e == j10 && Objects.equals(this.g, num) && this.i == i10 && r52 == this.f && this.j == s2Var.A3 && this.k == z12 && s2Var.k2 == z11) {
                         return z10;
                     }
                     if (this.a != s2Var.H0) {
@@ -236,7 +236,7 @@ public final class p2 {
                     this.a = s2Var.H0;
                     this.b = hashCode;
                     this.d = dialog.isFolder;
-                    this.e = j3;
+                    this.e = j10;
                     this.g = num;
                     this.h = measuredWidth;
                     this.f = r52;

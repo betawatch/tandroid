@@ -1,36 +1,43 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ea implements RequestDelegate {
+public final /* synthetic */ class ea implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ MessagesController b;
 
-    public /* synthetic */ ea(BaseController baseController, int i10, int i11) {
-        this.a = i11;
-        this.b = baseController;
-        this.c = i10;
+    public /* synthetic */ ea(MessagesController messagesController, int i10) {
+        this.a = i10;
+        this.b = messagesController;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$migrateDialogs$215(this.c, tLObject, tL_error);
+                this.b.lambda$updateWebBrowserSettings$520((TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$loadPinnedDialogs$366(this.c, tLObject, tL_error);
+                this.b.lambda$removeWebBrowserException$518((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$loadGlobalNotificationsSettings$200(this.c, tLObject, tL_error);
+                this.b.lambda$addWebBrowserException$516((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 3:
+                this.b.lambda$loadStakeDiceInfo$510((TLRPC.EmojiGameInfo) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 4:
+                this.b.lambda$deleteReactionsFromMessage$131((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 5:
+                this.b.lambda$loadWebBrowserConfig$512((Long) obj, (TL_account.TL_webBrowserSettings) obj2);
                 break;
             default:
-                ((ContactsController) this.b).lambda$loadPrivacySettings$65(this.c, tLObject, tL_error);
+                this.b.lambda$clearAllWebBrowserExceptions$519((TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

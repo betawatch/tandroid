@@ -4,9 +4,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class m extends p {
+public final class m extends o {
     public final /* synthetic */ int r;
     public final /* synthetic */ double s;
     public final /* synthetic */ h t;
@@ -19,12 +19,12 @@ public final class m extends p {
         this.s = d;
     }
 
-    @Override // e6.p
+    @Override // e6.o
     public final void n() {
         switch (this.r) {
             case 0:
                 g6.m mVar = this.t.c;
-                g6.n o9 = o();
+                g6.n o10 = o();
                 mVar.getClass();
                 double d = this.s;
                 if (Double.isInfinite(d) || Double.isNaN(d)) {
@@ -42,11 +42,11 @@ public final class m extends p {
                 } catch (JSONException unused) {
                 }
                 mVar.c(b10, jSONObject.toString());
-                mVar.n.a(b10, o9);
+                mVar.n.a(b10, o10);
                 return;
             default:
                 g6.m mVar2 = this.t.c;
-                g6.n o10 = o();
+                g6.n o11 = o();
                 double d10 = this.s;
                 if (mVar2.f == null) {
                     throw new g6.k();
@@ -62,7 +62,7 @@ public final class m extends p {
                 } catch (JSONException unused2) {
                 }
                 mVar2.c(b11, jSONObject3.toString());
-                mVar2.u.a(b11, o10);
+                mVar2.u.a(b11, o11);
                 return;
         }
     }

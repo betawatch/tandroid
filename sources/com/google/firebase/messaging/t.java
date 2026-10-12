@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class t {
     public static final long d = TimeUnit.DAYS.toMillis(7);
@@ -14,21 +14,21 @@ public final class t {
     public final String b;
     public final long c;
 
-    public t(long j3, String str, String str2) {
+    public t(long j10, String str, String str2) {
         this.a = str;
         this.b = str2;
-        this.c = j3;
+        this.c = j10;
     }
 
-    public static String a(long j3, String str, String str2) {
+    public static String a(long j10, String str, String str2) {
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("token", str);
             jSONObject.put("appVersion", str2);
-            jSONObject.put("timestamp", j3);
+            jSONObject.put("timestamp", j10);
             return jSONObject.toString();
-        } catch (JSONException e7) {
-            Log.w("FirebaseMessaging", "Failed to encode token: " + e7);
+        } catch (JSONException e) {
+            Log.w("FirebaseMessaging", "Failed to encode token: " + e);
             return null;
         }
     }
@@ -43,8 +43,8 @@ public final class t {
         try {
             JSONObject jSONObject = new JSONObject(str);
             return new t(jSONObject.getLong("timestamp"), jSONObject.getString("token"), jSONObject.getString("appVersion"));
-        } catch (JSONException e7) {
-            Log.w("FirebaseMessaging", "Failed to parse token: " + e7);
+        } catch (JSONException e) {
+            Log.w("FirebaseMessaging", "Failed to parse token: " + e);
             return null;
         }
     }

@@ -1,73 +1,58 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class am0 implements View.OnTouchListener {
+public final /* synthetic */ class am0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ nn0 b;
+    public final /* synthetic */ PasskeysActivity b;
 
-    public /* synthetic */ am0(nn0 nn0Var, int i10) {
+    public /* synthetic */ am0(PasskeysActivity passkeysActivity, int i10) {
         this.a = i10;
-        this.b = nn0Var;
+        this.b = passkeysActivity;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         int i10 = this.a;
-        int i11 = 2;
-        nn0 nn0Var = this.b;
+        PasskeysActivity passkeysActivity = this.b;
         switch (i10) {
             case 0:
-                if (nn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        zt ztVar = new zt(null, false);
-                        ztVar.r = new rw(24, nn0Var, view);
-                        nn0Var.presentFragment(ztVar);
-                    }
-                    break;
+                ArrayList arrayList = (ArrayList) obj;
+                ArrayList arrayList2 = passkeysActivity.b;
+                passkeysActivity.addPasskeyRow = -1;
+                String string = LocaleController.getString(R.string.PasskeyTopInfo);
+                int i11 = R.raw.passkey;
+                org.telegram.ui.Components.l61 l61Var = new org.telegram.ui.Components.l61(2);
+                l61Var.l = string;
+                l61Var.k = i11;
+                arrayList.add(l61Var);
+                for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i12);
+                    t60 t60Var = new t60(passkeysActivity, 14);
+                    int i13 = bm0.a;
+                    org.telegram.ui.Components.l61 J = org.telegram.ui.Components.l61.J(bm0.class);
+                    J.G = passkey;
+                    J.D = t60Var;
+                    arrayList.add(J);
                 }
-                break;
-            case 1:
-                if (nn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(nn0Var.getParentActivity());
-                        String string = LocaleController.getString(R.string.PassportSelectGender);
-                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                        b2Var.R = string;
-                        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.PassportMale), LocaleController.getString(R.string.PassportFemale)}, new tv(nn0Var, i11));
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Cancel), null);
-                        nn0Var.showDialog(b2Var);
-                    }
-                    break;
+                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().config.passkeysAccountPasskeysMax.get()) {
+                    passkeysActivity.addPasskeyRow = arrayList.size();
+                    org.telegram.ui.Components.l61 c10 = org.telegram.ui.Components.l61.c(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd));
+                    c10.q = true;
+                    arrayList.add(c10);
                 }
-                break;
-            case 2:
-                if (nn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        zt ztVar2 = new zt(null, false);
-                        ztVar2.r = new bm0(nn0Var, i11);
-                        nn0Var.presentFragment(ztVar2);
-                    }
-                    break;
-                }
+                arrayList.add(org.telegram.ui.Components.l61.B(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new yk0(passkeysActivity, 2)), true)));
                 break;
             default:
-                if (nn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        zt ztVar3 = new zt(null, false);
-                        ztVar3.r = new bm0(nn0Var, 3);
-                        nn0Var.presentFragment(ztVar3);
-                    }
-                    break;
-                }
+                PasskeysActivity.U(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);
                 break;
         }
-        return true;
     }
 }

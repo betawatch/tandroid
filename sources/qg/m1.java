@@ -1,15 +1,57 @@
 package qg;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface m1 {
-    void D();
+public final class m1 extends o1 {
+    public final /* synthetic */ int f;
+    public final /* synthetic */ l1 g;
+    public final /* synthetic */ p1 h;
 
-    void a();
+    public /* synthetic */ m1(p1 p1Var, l1 l1Var, int i10) {
+        this.f = i10;
+        this.h = p1Var;
+        this.g = l1Var;
+    }
 
-    void f();
+    @Override // qg.o1
+    public final void a() {
+        switch (this.f) {
+            case 0:
+                f1 f1Var = this.h.h;
+                float f7 = f1Var.i;
+                float f10 = f1Var.j;
+                this.d = f7;
+                this.e = f10;
+                break;
+            default:
+                f1 f1Var2 = this.h.h;
+                float f11 = f1Var2.d;
+                float f12 = f1Var2.e;
+                this.d = f11;
+                this.e = f12;
+                break;
+        }
+    }
 
-    void g(int i10);
-
-    void t();
+    @Override // qg.o1
+    public final void b(float f7, float f10) {
+        switch (this.f) {
+            case 0:
+                f1 f1Var = this.h.h;
+                f1Var.i = f7;
+                f1Var.j = f10;
+                this.d = f7;
+                this.e = f10;
+                this.g.a();
+                break;
+            default:
+                f1 f1Var2 = this.h.h;
+                f1Var2.d = f7;
+                f1Var2.e = f10;
+                this.d = f7;
+                this.e = f10;
+                this.g.a();
+                break;
+        }
+    }
 }

@@ -1,78 +1,68 @@
 package androidx.activity.result;
 
-import androidx.fragment.app.f0;
+import androidx.fragment.app.d0;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Proxy;
 import java.util.HashMap;
-import t7.o;
-import t7.q;
-import t7.r;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c {
-    public static r e;
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
-    public final /* synthetic */ f0 c;
+    public final /* synthetic */ d0 c;
     public final /* synthetic */ f d;
 
-    public /* synthetic */ c(f fVar, String str, f0 f0Var, int i10) {
+    public /* synthetic */ c(f fVar, String str, d0 d0Var, int i10) {
         this.a = i10;
         this.d = fVar;
         this.b = str;
-        this.c = f0Var;
+        this.c = d0Var;
     }
 
-    public static synchronized q b(o oVar) {
-        q qVar;
-        synchronized (c.class) {
-            try {
-                if (e == null) {
-                    e = new r(0);
-                }
-                qVar = (q) e.O0(oVar);
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    public static Object a(Class cls, InvocationHandler invocationHandler) {
+        if (invocationHandler == null) {
+            return null;
         }
-        return qVar;
+        return cls.cast(Proxy.newProxyInstance(c.class.getClassLoader(), new Class[]{cls}, invocationHandler));
     }
 
-    public final void a(Object obj) {
+    public final void b(Object obj) {
         switch (this.a) {
             case 0:
                 f fVar = this.d;
                 HashMap hashMap = fVar.b;
                 String str = this.b;
                 Integer num = (Integer) hashMap.get(str);
-                f0 f0Var = this.c;
+                d0 d0Var = this.c;
                 if (num != null) {
                     fVar.d.add(str);
                     try {
-                        fVar.b(num.intValue(), f0Var, obj);
+                        fVar.b(num.intValue(), d0Var, obj);
                         return;
-                    } catch (Exception e7) {
+                    } catch (Exception e) {
                         fVar.d.remove(str);
-                        throw e7;
+                        throw e;
                     }
                 }
-                throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + f0Var + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
+                throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + d0Var + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
             default:
                 f fVar2 = this.d;
                 HashMap hashMap2 = fVar2.b;
                 String str2 = this.b;
                 Integer num2 = (Integer) hashMap2.get(str2);
-                f0 f0Var2 = this.c;
+                d0 d0Var2 = this.c;
                 if (num2 != null) {
                     fVar2.d.add(str2);
                     try {
-                        fVar2.b(num2.intValue(), f0Var2, obj);
+                        fVar2.b(num2.intValue(), d0Var2, obj);
                         return;
-                    } catch (Exception e10) {
+                    } catch (Exception e7) {
                         fVar2.d.remove(str2);
-                        throw e10;
+                        throw e7;
                     }
                 }
-                throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + f0Var2 + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
+                throw new IllegalStateException("Attempting to launch an unregistered ActivityResultLauncher with contract " + d0Var2 + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().");
         }
     }
 }

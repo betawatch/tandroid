@@ -1,6 +1,28 @@
 package x7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class ka extends a9.a {
+public final class ka extends a9.a implements ma {
+    public final ja V0(x6.b bVar, oa oaVar) {
+        ja jaVar;
+        Parcel N0 = N0();
+        int i10 = y.a;
+        N0.writeStrongBinder(bVar);
+        N0.writeInt(1);
+        oaVar.writeToParcel(N0, 0);
+        Parcel P0 = P0(N0, 1);
+        IBinder readStrongBinder = P0.readStrongBinder();
+        if (readStrongBinder == null) {
+            jaVar = null;
+        } else {
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.mlkit.vision.label.aidls.IImageLabeler");
+            jaVar = queryLocalInterface instanceof ja ? (ja) queryLocalInterface : new ja(readStrongBinder, "com.google.mlkit.vision.label.aidls.IImageLabeler", 10);
+        }
+        P0.recycle();
+        return jaVar;
+    }
 }

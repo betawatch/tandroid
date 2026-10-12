@@ -8,8 +8,9 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import java.util.ArrayList;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f {
     public static final boolean[] A;
@@ -64,7 +65,7 @@ public final class f {
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0023  */
     /* JADX WARN: Removed duplicated region for block: B:12:0x0028  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x002e  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x002d  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x002a  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0025  */
     /*
@@ -72,20 +73,20 @@ public final class f {
     */
     public static int c(int i10, int i11, int i12, int i13) {
         int i14;
-        e2.d.c(i10, 4);
-        e2.d.c(i11, 4);
-        e2.d.c(i12, 4);
-        e2.d.c(i13, 4);
+        u6.j(i10, 4);
+        u6.j(i11, 4);
+        u6.j(i12, 4);
+        u6.j(i13, 4);
         if (i13 != 0 && i13 != 1) {
             if (i13 == 2) {
                 i14 = 127;
             } else if (i13 == 3) {
                 i14 = 0;
             }
-            return Color.argb(i14, i10 <= 1 ? 255 : 0, i11 <= 1 ? 255 : 0, i12 <= 1 ? 0 : 255);
+            return Color.argb(i14, i10 <= 1 ? 255 : 0, i11 <= 1 ? 255 : 0, i12 > 1 ? 255 : 0);
         }
         i14 = 255;
-        return Color.argb(i14, i10 <= 1 ? 255 : 0, i11 <= 1 ? 255 : 0, i12 <= 1 ? 0 : 255);
+        return Color.argb(i14, i10 <= 1 ? 255 : 0, i11 <= 1 ? 255 : 0, i12 > 1 ? 255 : 0);
     }
 
     public final void a(char c10) {

@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class HevcDecoderConfigurationRecord {
     int avgFrameRate;
@@ -39,7 +39,7 @@ public class HevcDecoderConfigurationRecord {
     int reserved5 = 31;
     List<Array> arrays = new ArrayList();
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class Array {
         public boolean array_completeness;
         public List<byte[]> nalUnits;
@@ -86,7 +86,7 @@ public class HevcDecoderConfigurationRecord {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class H265NalUnitHeader {
         public int forbiddenZeroFlag;
         public int nalUnitType;
@@ -190,9 +190,9 @@ public class HevcDecoderConfigurationRecord {
                     arrayList.add(byteBuffer.duplicate());
                     byteBuffer.position(2);
                     ByteBuffer slice = byteBuffer.slice();
-                    qc.b bVar = new qc.b();
+                    rc.b bVar = new rc.b();
                     bVar.a = slice;
-                    sequenceParameterSetRbsp = new SequenceParameterSetRbsp(new kc.a(Channels.newInputStream(bVar)));
+                    sequenceParameterSetRbsp = new SequenceParameterSetRbsp(new lc.a(Channels.newInputStream(bVar)));
                     break;
                 case 34:
                     arrayList2.add(byteBuffer.duplicate());
@@ -297,10 +297,10 @@ public class HevcDecoderConfigurationRecord {
 
     public int hashCode() {
         int i10 = ((((((this.configurationVersion * 31) + this.general_profile_space) * 31) + (this.general_tier_flag ? 1 : 0)) * 31) + this.general_profile_idc) * 31;
-        long j3 = this.general_profile_compatibility_flags;
-        int i11 = (i10 + ((int) (j3 ^ (j3 >>> 32)))) * 31;
-        long j10 = this.general_constraint_indicator_flags;
-        int i12 = (((((((((((((((((((((((((((((((((i11 + ((int) (j10 ^ (j10 >>> 32)))) * 31) + this.general_level_idc) * 31) + this.reserved1) * 31) + this.min_spatial_segmentation_idc) * 31) + this.reserved2) * 31) + this.parallelismType) * 31) + this.reserved3) * 31) + this.chromaFormat) * 31) + this.reserved4) * 31) + this.bitDepthLumaMinus8) * 31) + this.reserved5) * 31) + this.bitDepthChromaMinus8) * 31) + this.avgFrameRate) * 31) + this.constantFrameRate) * 31) + this.numTemporalLayers) * 31) + (this.temporalIdNested ? 1 : 0)) * 31) + this.lengthSizeMinusOne) * 31;
+        long j10 = this.general_profile_compatibility_flags;
+        int i11 = (i10 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+        long j11 = this.general_constraint_indicator_flags;
+        int i12 = (((((((((((((((((((((((((((((((((i11 + ((int) (j11 ^ (j11 >>> 32)))) * 31) + this.general_level_idc) * 31) + this.reserved1) * 31) + this.min_spatial_segmentation_idc) * 31) + this.reserved2) * 31) + this.parallelismType) * 31) + this.reserved3) * 31) + this.chromaFormat) * 31) + this.reserved4) * 31) + this.bitDepthLumaMinus8) * 31) + this.reserved5) * 31) + this.bitDepthChromaMinus8) * 31) + this.avgFrameRate) * 31) + this.constantFrameRate) * 31) + this.numTemporalLayers) * 31) + (this.temporalIdNested ? 1 : 0)) * 31) + this.lengthSizeMinusOne) * 31;
         List<Array> list = this.arrays;
         return i12 + (list != null ? list.hashCode() : 0);
     }
@@ -420,16 +420,16 @@ public class HevcDecoderConfigurationRecord {
         this.frame_only_constraint_flag = z10;
     }
 
-    public void setGeneral_constraint_indicator_flags(long j3) {
-        this.general_constraint_indicator_flags = j3;
+    public void setGeneral_constraint_indicator_flags(long j10) {
+        this.general_constraint_indicator_flags = j10;
     }
 
     public void setGeneral_level_idc(int i10) {
         this.general_level_idc = i10;
     }
 
-    public void setGeneral_profile_compatibility_flags(long j3) {
-        this.general_profile_compatibility_flags = j3;
+    public void setGeneral_profile_compatibility_flags(long j10) {
+        this.general_profile_compatibility_flags = j10;
     }
 
     public void setGeneral_profile_idc(int i10) {
@@ -554,21 +554,21 @@ public class HevcDecoderConfigurationRecord {
         e5.b.r(this.configurationVersion, byteBuffer);
         byteBuffer.put((byte) (((this.general_profile_space << 6) + (this.general_tier_flag ? 32 : 0) + this.general_profile_idc) & 255));
         byteBuffer.putInt((int) this.general_profile_compatibility_flags);
-        long j3 = this.general_constraint_indicator_flags;
+        long j10 = this.general_constraint_indicator_flags;
         if (this.frame_only_constraint_flag) {
-            j3 |= 140737488355328L;
+            j10 |= 140737488355328L;
         }
         if (this.non_packed_constraint_flag) {
-            j3 |= 70368744177664L;
+            j10 |= 70368744177664L;
         }
         if (this.interlaced_source_flag) {
-            j3 |= 35184372088832L;
+            j10 |= 35184372088832L;
         }
         if (this.progressive_source_flag) {
-            j3 |= 17592186044416L;
+            j10 |= 17592186044416L;
         }
-        e5.b.p((int) ((281474976710655L & j3) >> 32), byteBuffer);
-        byteBuffer.putInt((int) (j3 & 4294967295L));
+        e5.b.p((int) ((281474976710655L & j10) >> 32), byteBuffer);
+        byteBuffer.putInt((int) (j10 & 4294967295L));
         byteBuffer.put((byte) (this.general_level_idc & 255));
         e5.b.p((this.reserved1 << 12) + this.min_spatial_segmentation_idc, byteBuffer);
         byteBuffer.put((byte) (((this.reserved2 << 2) + this.parallelismType) & 255));

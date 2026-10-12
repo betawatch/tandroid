@@ -1,60 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import java.util.ArrayList;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wy0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ com.google.firebase.messaging.n b;
-    public final /* synthetic */ int c;
-
-    public /* synthetic */ wy0(com.google.firebase.messaging.n nVar, int i10, int i11) {
-        this.a = i11;
-        this.b = nVar;
-        this.c = i10;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = (ArrayList) this.b.d;
-                Float f7 = (Float) valueAnimator.getAnimatedValue();
-                f7.getClass();
-                arrayList.set(this.c, f7);
-                break;
-            case 1:
-                ArrayList arrayList2 = (ArrayList) this.b.e;
-                Float f10 = (Float) valueAnimator.getAnimatedValue();
-                f10.getClass();
-                arrayList2.set(this.c, f10);
-                break;
-            case 2:
-                ArrayList arrayList3 = (ArrayList) this.b.f;
-                Float f11 = (Float) valueAnimator.getAnimatedValue();
-                f11.getClass();
-                arrayList3.set(this.c, f11);
-                break;
-            case 3:
-                ArrayList arrayList4 = (ArrayList) this.b.d;
-                Float f12 = (Float) valueAnimator.getAnimatedValue();
-                f12.getClass();
-                arrayList4.set(this.c, f12);
-                break;
-            case 4:
-                ArrayList arrayList5 = (ArrayList) this.b.e;
-                Float f13 = (Float) valueAnimator.getAnimatedValue();
-                f13.getClass();
-                arrayList5.set(this.c, f13);
-                break;
-            default:
-                ArrayList arrayList6 = (ArrayList) this.b.f;
-                Float f14 = (Float) valueAnimator.getAnimatedValue();
-                f14.getClass();
-                arrayList6.set(this.c, f14);
-                break;
-        }
+public final class wy0 extends EditTextBoldCursor {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

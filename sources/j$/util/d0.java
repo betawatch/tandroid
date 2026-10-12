@@ -11,9 +11,9 @@ public final class d0 {
         this.b = 0L;
     }
 
-    public d0(long j3) {
+    public d0(long j10) {
         this.a = true;
-        this.b = j3;
+        this.b = j10;
     }
 
     public final boolean equals(Object obj) {
@@ -33,8 +33,8 @@ public final class d0 {
         if (!this.a) {
             return 0;
         }
-        long j3 = this.b;
-        return (int) (j3 ^ (j3 >>> 32));
+        long j10 = this.b;
+        return (int) (j10 ^ (j10 >>> 32));
     }
 
     public final String toString() {

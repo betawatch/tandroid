@@ -1,18 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-import ae.d0;
-import ae.s;
-import ae.t;
-import hd.i;
-import jd.c;
-import kd.a;
-import ld.j;
-import sd.p;
-import v7.a8;
+import be.c0;
+import be.s;
+import be.t;
+import kd.c;
+import ld.a;
+import md.i;
+import td.p;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-final class zzfs extends j implements p {
+final class zzfs extends i implements p {
     int zza;
     final /* synthetic */ zzgb zzb;
 
@@ -22,22 +21,22 @@ final class zzfs extends j implements p {
         this.zzb = zzgbVar;
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final c create(Object obj, c cVar) {
         return new zzfs(this.zzb, cVar);
     }
 
-    @Override // sd.p
+    @Override // td.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfs) create((d0) obj, (c) obj2)).invokeSuspend(i.a);
+        return ((zzfs) create((c0) obj, (c) obj2)).invokeSuspend(id.i.a);
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final Object invokeSuspend(Object obj) {
         s sVar;
         a aVar = a.a;
         int i10 = this.zza;
-        a8.b(obj);
+        i8.b(obj);
         if (i10 == 0) {
             sVar = this.zzb.zzb;
             this.zza = 1;
@@ -45,6 +44,6 @@ final class zzfs extends j implements p {
                 return aVar;
             }
         }
-        return i.a;
+        return id.i.a;
     }
 }

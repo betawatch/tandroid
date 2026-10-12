@@ -1,84 +1,44 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import java.util.ArrayList;
+import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class qh0 extends s4.o {
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public final SparseIntArray i = new SparseIntArray();
-    public final SparseIntArray j = new SparseIntArray();
-    public final ArrayList k = new ArrayList();
-    public final ArrayList l = new ArrayList();
-    public final /* synthetic */ zh0 m;
+public final /* synthetic */ class qh0 implements org.telegram.ui.Components.cm0, org.telegram.ui.ActionBar.z1 {
+    public final /* synthetic */ ei0 a;
 
-    public qh0(zh0 zh0Var) {
-        this.m = zh0Var;
+    public /* synthetic */ qh0(ei0 ei0Var) {
+        this.a = ei0Var;
     }
 
-    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
-        if (i11 >= 0) {
-            sparseIntArray.put(i11, i10);
+    @Override // org.telegram.ui.Components.cm0
+    public boolean a(int i10, View view) {
+        ei0 ei0Var = this.a;
+        if ((i10 < ei0Var.y || i10 >= ei0Var.E) && (i10 < ei0Var.H || i10 >= ei0Var.I)) {
+            return false;
+        }
+        ((bi0) view).x.callOnClick();
+        try {
+            view.performHapticFeedback(0, 2);
+            return true;
+        } catch (Exception unused) {
+            return true;
         }
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11);
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        int i12;
-        int i13;
-        int i14 = this.c;
-        zh0 zh0Var = this.m;
-        if (((i10 >= i14 && i10 < this.d) || (i10 >= this.e && i10 < this.f)) && ((i11 >= (i13 = zh0Var.y) && i11 < zh0Var.E) || (i11 >= zh0Var.H && i11 < zh0Var.I))) {
-            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i11 < i13 || i11 >= zh0Var.E) ? (TLRPC.TL_chatInviteExported) zh0Var.j0.get(i11 - zh0Var.H) : (TLRPC.TL_chatInviteExported) zh0Var.i0.get(i11 - i13);
-            int i15 = this.c;
-            return ((i10 < i15 || i10 >= this.d) ? (TLRPC.TL_chatInviteExported) this.l.get(i10 - this.e) : (TLRPC.TL_chatInviteExported) this.k.get(i10 - i15)).link.equals(tL_chatInviteExported.link);
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        TLRPC.TL_messages_deleteRevokedExportedChatInvites tL_messages_deleteRevokedExportedChatInvites = new TLRPC.TL_messages_deleteRevokedExportedChatInvites();
+        ei0 ei0Var = this.a;
+        tL_messages_deleteRevokedExportedChatInvites.peer = ei0Var.getMessagesController().getInputPeer(-ei0Var.n);
+        long j10 = ei0Var.f;
+        if (j10 == ei0Var.getUserConfig().getClientUserId()) {
+            tL_messages_deleteRevokedExportedChatInvites.admin_id = ei0Var.getMessagesController().getInputUser(ei0Var.getUserConfig().getCurrentUser());
+        } else {
+            tL_messages_deleteRevokedExportedChatInvites.admin_id = ei0Var.getMessagesController().getInputUser(j10);
         }
-        int i16 = this.g;
-        if (i10 >= i16 && i10 < this.h && i11 >= (i12 = zh0Var.U) && i11 < zh0Var.V) {
-            return i10 - i16 == i11 - i12;
-        }
-        int i17 = this.i.get(i10, -1);
-        return i17 >= 0 && i17 == this.j.get(i11, -1);
-    }
-
-    @Override // s4.o
-    public final int d() {
-        return this.m.X;
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b;
-    }
-
-    public final void f(SparseIntArray sparseIntArray) {
-        sparseIntArray.clear();
-        zh0 zh0Var = this.m;
-        g(1, zh0Var.r, sparseIntArray);
-        g(2, zh0Var.s, sparseIntArray);
-        g(3, zh0Var.v, sparseIntArray);
-        g(4, zh0Var.w, sparseIntArray);
-        g(5, zh0Var.x, sparseIntArray);
-        g(6, zh0Var.L, sparseIntArray);
-        g(7, zh0Var.N, sparseIntArray);
-        g(8, zh0Var.O, sparseIntArray);
-        g(9, zh0Var.Q, sparseIntArray);
-        g(10, zh0Var.R, sparseIntArray);
-        g(11, zh0Var.S, sparseIntArray);
-        g(12, zh0Var.P, sparseIntArray);
-        g(13, zh0Var.F, sparseIntArray);
+        ei0Var.c0 = true;
+        ei0Var.getConnectionsManager().sendRequest(tL_messages_deleteRevokedExportedChatInvites, new nh0(ei0Var, 1));
     }
 }

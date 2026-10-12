@@ -1,62 +1,42 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
+import android.location.Address;
+import android.location.Geocoder;
+import java.util.List;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class zb1 extends View {
-    public static final /* synthetic */ int c = 0;
-    public final Paint a;
-    public int[] b;
+public final /* synthetic */ class zb1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ThemeActivity b;
 
-    public zb1(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new int[7];
+    public /* synthetic */ zb1(ThemeActivity themeActivity, int i10) {
+        this.a = i10;
+        this.b = themeActivity;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = getMeasuredWidth() * 0.5f;
-        float measuredHeight = getMeasuredHeight() * 0.5f;
-        float dp = AndroidUtilities.dp(5.0f);
-        float dp2 = AndroidUtilities.dp(20.0f) - dp;
-        Paint.Style style = Paint.Style.FILL;
-        Paint paint = this.a;
-        paint.setStyle(style);
-        int i10 = 0;
-        paint.setColor(this.b[0]);
-        canvas.drawCircle(measuredWidth, measuredHeight, dp, paint);
-        double d = 0.0d;
-        while (i10 < 6) {
-            float sin = (((float) Math.sin(d)) * dp2) + measuredWidth;
-            float cos = measuredHeight - (((float) Math.cos(d)) * dp2);
-            i10++;
-            paint.setColor(this.b[i10]);
-            canvas.drawCircle(sin, cos, dp, paint);
-            d += 1.0471975511965976d;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ThemeActivity themeActivity = this.b;
+                themeActivity.b.e1(new vb1(themeActivity, 0), 700, true);
+                break;
+            default:
+                ThemeActivity themeActivity2 = this.b;
+                String str = null;
+                try {
+                    List<Address> fromLocation = new Geocoder(ApplicationLoader.applicationContext, Locale.getDefault()).getFromLocation(org.telegram.ui.ActionBar.g6.x, org.telegram.ui.ActionBar.g6.y, 1);
+                    if (fromLocation.size() > 0) {
+                        str = fromLocation.get(0).getLocality();
+                    }
+                } catch (Exception unused) {
+                }
+                AndroidUtilities.runOnUIThread(new hz0(25, themeActivity2, str));
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setText(LocaleController.getString("ColorPickerMainColor", R.string.ColorPickerMainColor));
-        accessibilityNodeInfo.setClassName(Button.class.getName());
-        accessibilityNodeInfo.setEnabled(true);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30));
     }
 }

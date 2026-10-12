@@ -1,26 +1,33 @@
 package dc;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d {
-    public final String a;
-    public final List b;
-    public final String c;
-    public Integer d;
-    public na.d e;
-    public final int f;
-    public final int g;
-    public final int h;
+public abstract class d {
+    public final int a;
+    public final int b;
 
-    public d(byte[] bArr, String str, ArrayList arrayList, String str2, int i10, int i11, int i12) {
-        this.a = str;
-        this.b = arrayList;
-        this.c = str2;
-        this.f = i11;
-        this.g = i10;
-        this.h = i12;
+    public d(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
+    }
+
+    public abstract byte[] a();
+
+    public abstract byte[] b(int i10, byte[] bArr);
+
+    public final String toString() {
+        int i10 = this.a;
+        byte[] bArr = new byte[i10];
+        int i11 = this.b;
+        StringBuilder sb2 = new StringBuilder((i10 + 1) * i11);
+        for (int i12 = 0; i12 < i11; i12++) {
+            bArr = b(i12, bArr);
+            for (int i13 = 0; i13 < i10; i13++) {
+                int i14 = bArr[i13] & 255;
+                sb2.append(i14 < 64 ? '#' : i14 < 128 ? '+' : i14 < 192 ? '.' : ' ');
+            }
+            sb2.append('\n');
+        }
+        return sb2.toString();
     }
 }

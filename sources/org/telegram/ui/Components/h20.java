@@ -1,65 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Typeface;
 import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class h20 extends f8 {
-    public final /* synthetic */ Context E;
-    public final /* synthetic */ FragmentContextView F;
-    public final /* synthetic */ int y;
+public final class h20 implements qe.a {
+    public final ViewGroup a;
+    public final mh.c b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h20(FragmentContextView fragmentContextView, Context context, Context context2, int i10) {
-        super(context);
-        this.y = i10;
-        this.F = fragmentContextView;
-        this.E = context2;
+    public h20(bi.i5 i5Var, GroupCallMessage groupCallMessage) {
+        mh.c cVar = new mh.c(i5Var.getContext());
+        this.b = cVar;
+        cVar.setBackgroundColor(i0.a.k(-16777216, 34));
+        wh.n nVar = cVar.v;
+        nVar.setMaxLines(1);
+        nVar.setSingleLine(true);
+        nVar.setEllipsize(TextUtils.TruncateAt.END);
+        cVar.set(groupCallMessage);
+        cVar.setAlpha(0.0f);
+        this.a = i5Var;
+        i5Var.addView(cVar);
     }
 
-    @Override // org.telegram.ui.Components.f8
-    public final TextView a() {
-        switch (this.y) {
-            case 0:
-                TextView textView = new TextView(this.E);
-                textView.setMaxLines(1);
-                textView.setLines(1);
-                textView.setSingleLine(true);
-                textView.setEllipsize(TextUtils.TruncateAt.END);
-                textView.setTextSize(1, 15.0f);
-                textView.setGravity(19);
-                FragmentContextView fragmentContextView = this.F;
-                int i10 = fragmentContextView.U;
-                if (i10 == 0 || i10 == 2) {
-                    textView.setGravity(19);
-                    textView.setTypeface(Typeface.DEFAULT);
-                    textView.setTextSize(1, 15.0f);
-                } else if (i10 == 4) {
-                    textView.setGravity(51);
-                    textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.t7, fragmentContextView.q0));
-                    textView.setTypeface(AndroidUtilities.bold());
-                    textView.setTextSize(1, 15.0f);
-                } else if (i10 == 1 || i10 == 3) {
-                    textView.setGravity(19);
-                    textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.A7, fragmentContextView.q0));
-                    textView.setTypeface(AndroidUtilities.bold());
-                    textView.setTextSize(1, 14.0f);
-                }
-                return textView;
-            default:
-                TextView textView2 = new TextView(this.E);
-                textView2.setMaxLines(1);
-                textView2.setLines(1);
-                textView2.setSingleLine(true);
-                textView2.setEllipsize(TextUtils.TruncateAt.END);
-                textView2.setGravity(3);
-                textView2.setTextSize(1, 13.0f);
-                textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.x7, this.F.q0));
-                return textView2;
-        }
+    @Override // qe.a
+    public final void a() {
+        this.a.removeView(this.b);
     }
 }

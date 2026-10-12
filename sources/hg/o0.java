@@ -1,102 +1,114 @@
 package hg;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.ih1;
-import org.telegram.ui.zn;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.cr;
+import org.telegram.ui.Components.z9;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class o0 extends FrameLayout {
+    public static final /* synthetic */ int f = 0;
+    public final c6 a;
+    public final z9 b;
+    public final TextView c;
+    public cr d;
+    public p0 e;
 
-    public /* synthetic */ o0(u0 u0Var, int[] iArr, ArrayList arrayList, boolean z10, TLRPC.User user) {
-        this.a = 0;
-        this.d = u0Var;
-        this.e = iArr;
-        this.b = arrayList;
-        this.c = z10;
-        this.f = user;
+    public o0(Context context, c6 c6Var) {
+        super(context);
+        this.a = c6Var;
+        z9 z9Var = new z9(context);
+        this.b = z9Var;
+        addView(z9Var, a6.d(30.0f, 30));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 14.0f);
+        addView(textView, a6.a(-2.0f, 36.0f, 0.0f, 14.0f, 0.0f, -2, 16));
+        a();
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new r0((u0) this.d, tL_error, tLObject, (int[]) this.e, (ArrayList) this.b, this.c, (TLRPC.User) this.f));
-                break;
-            case 1:
-                ((ContactsController) this.d).lambda$deleteContact$57((ArrayList) this.b, (ArrayList) this.e, this.c, (String) this.f, tLObject, tL_error);
-                break;
-            case 2:
-                ((SendMessagesHelper) this.d).lambda$requestUrlAuth$40((TLRPC.TL_messages_requestUrlAuth) this.e, (zn) this.b, (String) this.f, this.c, tLObject, tL_error);
-                break;
-            case 3:
-                ((SendMessagesHelper) this.d).lambda$sendEditRichMessageRequest$29(this.c, (MessageObject) this.e, (TLRPC.TL_messages_editMessage) this.b, (n2) this.f, tLObject, tL_error);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new r0((ih1) this.d, tL_error, this.c, tLObject, (byte[]) this.e, (String) this.b, (TL_account.passwordInputSettings) this.f));
-                break;
-            default:
-                wh.l lVar = (wh.l) this.d;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
-                TLRPC.User user = (TLRPC.User) this.f;
-                TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = (TLRPC.TL_messages_hideChatJoinRequest) this.b;
-                if (tL_error == null) {
-                    MessagesController.getInstance(lVar.k).lambda$processUpdates$377((TLRPC.TL_updates) tLObject, false);
-                }
-                AndroidUtilities.runOnUIThread(new r0(lVar, tL_error, tLObject, tL_chatInviteImporter, this.c, user, tL_messages_hideChatJoinRequest));
-                break;
+    public final void a() {
+        int dp = AndroidUtilities.dp(28.0f);
+        int i10 = g6.ci;
+        c6 c6Var = this.a;
+        setBackground(g6.c0(dp, g6.w0(i10, c6Var)));
+        this.c.setTextColor(g6.w0(g6.G6, c6Var));
+        cr crVar = this.d;
+        if (crVar != null) {
+            if (this.e.d == 7) {
+                g6.w1(crVar, g6.w0(g6.Oh, c6Var), false);
+                g6.w1(this.d, g6.w0(g6.Sh, c6Var), true);
+            } else {
+                g6.w1(crVar, g6.w0(g6.Oh, c6Var), false);
+                g6.w1(this.d, g6.w0(g6.Sh, c6Var), true);
+            }
         }
     }
 
-    public /* synthetic */ o0(Object obj, Object obj2, Object obj3, Object obj4, boolean z10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = z10;
-        this.e = obj2;
-        this.b = obj3;
-        this.f = obj4;
-    }
-
-    public /* synthetic */ o0(ContactsController contactsController, ArrayList arrayList, ArrayList arrayList2, boolean z10, String str) {
-        this.a = 1;
-        this.d = contactsController;
-        this.b = arrayList;
-        this.e = arrayList2;
-        this.c = z10;
-        this.f = str;
-    }
-
-    public /* synthetic */ o0(SendMessagesHelper sendMessagesHelper, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, zn znVar, String str, boolean z10) {
-        this.a = 2;
-        this.d = sendMessagesHelper;
-        this.e = tL_messages_requestUrlAuth;
-        this.b = znVar;
-        this.f = str;
-        this.c = z10;
-    }
-
-    public /* synthetic */ o0(wh.l lVar, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
-        this.a = 5;
-        this.d = lVar;
-        this.e = tL_chatInviteImporter;
-        this.c = z10;
-        this.f = user;
-        this.b = tL_messages_hideChatJoinRequest;
+    public void setData(p0 p0Var) {
+        this.e = p0Var;
+        z9 z9Var = this.b;
+        z9Var.getImageReceiver().clearImage();
+        int i10 = p0Var.d;
+        String str = p0Var.c;
+        TextView textView = this.c;
+        c6 c6Var = this.a;
+        if (i10 == 7) {
+            cr M = g6.M(AndroidUtilities.dp(32.0f), R.drawable.chats_archive);
+            this.d = M;
+            int dp = AndroidUtilities.dp(16.0f);
+            int dp2 = AndroidUtilities.dp(16.0f);
+            M.e = dp;
+            M.f = dp2;
+            g6.w1(this.d, g6.w0(g6.Oh, c6Var), false);
+            g6.w1(this.d, g6.w0(g6.Sh, c6Var), true);
+            z9Var.setImageDrawable(this.d);
+            textView.setText(str);
+            return;
+        }
+        cr M2 = g6.M(AndroidUtilities.dp(32.0f), p0Var.a);
+        this.d = M2;
+        int i11 = g6.Oh;
+        g6.w1(M2, g6.w0(i11, c6Var), false);
+        cr crVar = this.d;
+        int i12 = g6.Sh;
+        g6.w1(crVar, g6.w0(i12, c6Var), true);
+        if (p0Var.d == 4) {
+            TLObject tLObject = p0Var.f;
+            if (tLObject instanceof TLRPC.User) {
+                TLRPC.User user = (TLRPC.User) tLObject;
+                if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id == user.id) {
+                    cr M3 = g6.M(AndroidUtilities.dp(32.0f), R.drawable.chats_saved);
+                    int dp3 = AndroidUtilities.dp(16.0f);
+                    int dp4 = AndroidUtilities.dp(16.0f);
+                    M3.e = dp3;
+                    M3.f = dp4;
+                    g6.w1(M3, g6.w0(i11, c6Var), false);
+                    g6.w1(M3, g6.w0(i12, c6Var), true);
+                    z9Var.setImageDrawable(M3);
+                } else {
+                    z9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(16.0f));
+                    z9Var.getImageReceiver().setForUserOrChat(user, this.d);
+                }
+            } else if (tLObject instanceof TLRPC.Chat) {
+                TLRPC.Chat chat = (TLRPC.Chat) tLObject;
+                z9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(ChatObject.isCommunity(chat) ? 10.0f : 16.0f));
+                z9Var.getImageReceiver().setForUserOrChat(chat, this.d);
+            }
+        } else {
+            z9Var.setImageDrawable(this.d);
+        }
+        textView.setText(str);
     }
 }

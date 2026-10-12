@@ -24,7 +24,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public class b6 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -92,10 +92,10 @@ public class b6 extends ReplacementSpan {
 
     public static boolean c(Layout layout, int i10, int i11) {
         if (layout.getText() instanceof Spanned) {
-            u11[] u11VarArr = (u11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), u11.class);
-            for (int i12 = 0; u11VarArr != null && i12 < u11VarArr.length; i12++) {
-                u11 u11Var = u11VarArr[i12];
-                if (u11Var != null && u11Var.c()) {
+            q11[] q11VarArr = (q11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), q11.class);
+            for (int i12 = 0; q11VarArr != null && i12 < q11VarArr.length; i12++) {
+                q11 q11Var = q11VarArr[i12];
+                if (q11Var != null && q11Var.c()) {
                     return true;
                 }
             }
@@ -124,7 +124,7 @@ public class b6 extends ReplacementSpan {
         return cloneSpans(charSequence, -1, null);
     }
 
-    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, x5 x5Var, float f7, List<vh.g> list, float f10, float f11, float f12, float f13) {
+    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, x5 x5Var, float f7, List<wh.g> list, float f10, float f11, float f12, float f13) {
         drawAnimatedEmojis(canvas, layout, x5Var, f7, list, f10, f11, f12, f13, null);
     }
 
@@ -207,7 +207,7 @@ public class b6 extends ReplacementSpan {
             ofFloat.addUpdateListener(new u5(this, f12, f11, f14, f10, 0));
             this.moveAnimator.addListener(new v5(this, 2));
             this.moveAnimator.setDuration(140L);
-            this.moveAnimator.setInterpolator(hs.f);
+            this.moveAnimator.setInterpolator(es.f);
             this.moveAnimator.start();
             return;
         }
@@ -255,7 +255,7 @@ public class b6 extends ReplacementSpan {
             });
             this.scaleAnimator.addListener(new v5(this, i11));
             this.scaleAnimator.setDuration(130L);
-            this.scaleAnimator.setInterpolator(hs.f);
+            this.scaleAnimator.setInterpolator(es.f);
             this.scaleAnimator.start();
         } else if (this.isRemoved) {
             this.isRemoved = false;
@@ -287,7 +287,7 @@ public class b6 extends ReplacementSpan {
                 }
             });
             this.scaleAnimator.addListener(new v5(this, i10));
-            this.scaleAnimator.setInterpolator(hs.f);
+            this.scaleAnimator.setInterpolator(es.f);
             this.scaleAnimator.setDuration(130L);
             this.scaleAnimator.start();
         }
@@ -414,7 +414,7 @@ public class b6 extends ReplacementSpan {
         return cloneSpans(charSequence, i10, null);
     }
 
-    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, x5 x5Var, float f7, List<vh.g> list, float f10, float f11, float f12, float f13, ColorFilter colorFilter) {
+    public static void drawAnimatedEmojis(Canvas canvas, Layout layout, x5 x5Var, float f7, List<wh.g> list, float f10, float f11, float f12, float f13, ColorFilter colorFilter) {
         boolean z10;
         if (canvas == null || layout == null || x5Var == null) {
             return;
@@ -480,7 +480,7 @@ public class b6 extends ReplacementSpan {
                                     }
                                 }
                             } else if (s5Var2.k != null) {
-                                s5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.i6.v3 : colorFilter);
+                                s5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.g6.v3 : colorFilter);
                                 w5Var.f.q(currentTimeMillis);
                                 float extraScale2 = w5Var.d.getExtraScale();
                                 if (extraScale2 != 1.0f || w5Var.d.invert) {
@@ -489,9 +489,9 @@ public class b6 extends ReplacementSpan {
                                     s5 s5Var3 = w5Var.f;
                                     Rect rect2 = w5Var.e;
                                     float f17 = w5Var.s * f13;
-                                    ai.m4 m4Var = s5Var3.k;
-                                    if (m4Var != null) {
-                                        m4Var.setImageCoords(rect2);
+                                    bi.b4 b4Var = s5Var3.k;
+                                    if (b4Var != null) {
+                                        b4Var.setImageCoords(rect2);
                                         s5Var3.k.setAlpha(f17);
                                         s5Var3.k.draw(canvas);
                                     }
@@ -500,9 +500,9 @@ public class b6 extends ReplacementSpan {
                                     s5 s5Var4 = w5Var.f;
                                     Rect rect3 = w5Var.e;
                                     float f18 = w5Var.s * f13;
-                                    ai.m4 m4Var2 = s5Var4.k;
-                                    if (m4Var2 != null) {
-                                        m4Var2.setImageCoords(rect3);
+                                    bi.b4 b4Var2 = s5Var4.k;
+                                    if (b4Var2 != null) {
+                                        b4Var2.setImageCoords(rect3);
                                         s5Var4.k.setAlpha(f18);
                                         s5Var4.k.draw(canvas);
                                     }
@@ -597,8 +597,8 @@ public class b6 extends ReplacementSpan {
         this.cacheType = i11;
     }
 
-    public b6(long j3, Paint.FontMetricsInt fontMetricsInt) {
-        this(j3, 1.2f, fontMetricsInt);
+    public b6(long j10, Paint.FontMetricsInt fontMetricsInt) {
+        this(j10, 1.2f, fontMetricsInt);
     }
 
     public static void release(View view, x5 x5Var) {
@@ -610,7 +610,7 @@ public class b6 extends ReplacementSpan {
         }
     }
 
-    public b6(long j3, float f7, Paint.FontMetricsInt fontMetricsInt) {
+    public b6(long j10, float f7, Paint.FontMetricsInt fontMetricsInt) {
         this.extraScale = 1.0f;
         this.full = false;
         this.top = false;
@@ -618,7 +618,7 @@ public class b6 extends ReplacementSpan {
         this.size = AndroidUtilities.dp(20.0f);
         this.cacheType = -1;
         this.recordPositions = true;
-        this.documentId = j3;
+        this.documentId = j10;
         this.scale = f7;
         this.fontMetrics = fontMetricsInt;
         if (fontMetricsInt != null) {
@@ -722,9 +722,9 @@ public class b6 extends ReplacementSpan {
                                 if (document != null) {
                                     w5Var2.f = s5.m(UserConfig.selectedAccount, i13, document);
                                 } else {
-                                    long j3 = b6Var.documentId;
-                                    if (j3 != 0) {
-                                        w5Var2.f = s5.n(UserConfig.selectedAccount, j3, null, i13);
+                                    long j10 = b6Var.documentId;
+                                    if (j10 != 0) {
+                                        w5Var2.f = s5.n(UserConfig.selectedAccount, j10, null, i13);
                                     }
                                 }
                             }

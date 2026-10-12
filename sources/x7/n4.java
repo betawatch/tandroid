@@ -1,23 +1,23 @@
 package x7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class n4 implements ia.d {
+public final class n4 implements ja.d {
     public static final n4 a = new n4();
-    public static final ia.c b = new ia.c("inferenceCommonLogEvent", hg.c.m(sc.v.n(c0.class, new z(1))));
-    public static final ia.c c = new ia.c("options", hg.c.m(sc.v.n(c0.class, new z(2))));
-    public static final ia.c d = new ia.c("imageInfo", hg.c.m(sc.v.n(c0.class, new z(3))));
-    public static final ia.c e = new ia.c("labelCount", hg.c.m(sc.v.n(c0.class, new z(4))));
-    public static final ia.c f = new ia.c("highestConfidence", hg.c.m(sc.v.n(c0.class, new z(5))));
+    public static final ja.c b = new ja.c("inferenceCommonLogEvent", i2.d.n(t8.b.m(c0.class, new z(1))));
+    public static final ja.c c = new ja.c("options", i2.d.n(t8.b.m(c0.class, new z(2))));
+    public static final ja.c d = new ja.c("imageInfo", i2.d.n(t8.b.m(c0.class, new z(3))));
+    public static final ja.c e = new ja.c("labelCount", i2.d.n(t8.b.m(c0.class, new z(4))));
+    public static final ja.c f = new ja.c("highestConfidence", i2.d.n(t8.b.m(c0.class, new z(5))));
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
         f8 f8Var = (f8) obj;
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, f8Var.a);
-        eVar.a(c, f8Var.b);
-        eVar.a(d, f8Var.c);
-        eVar.a(e, null);
-        eVar.a(f, null);
+        ja.e eVar = (ja.e) obj2;
+        eVar.d(b, f8Var.a);
+        eVar.d(c, f8Var.b);
+        eVar.d(d, f8Var.c);
+        eVar.d(e, null);
+        eVar.d(f, null);
     }
 }

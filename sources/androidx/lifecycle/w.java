@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -17,12 +17,12 @@ public abstract class w {
         try {
             kotlin.jvm.internal.i.d(constructor.newInstance(sVar), "{\n            constructo…tance(`object`)\n        }");
             throw new ClassCastException();
-        } catch (IllegalAccessException e7) {
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (InstantiationException e7) {
             throw new RuntimeException(e7);
-        } catch (InstantiationException e10) {
+        } catch (InvocationTargetException e10) {
             throw new RuntimeException(e10);
-        } catch (InvocationTargetException e11) {
-            throw new RuntimeException(e11);
         }
     }
 
@@ -49,7 +49,7 @@ public abstract class w {
                     kotlin.jvm.internal.i.d(name, "this as java.lang.String).substring(startIndex)");
                 }
                 kotlin.jvm.internal.i.d(name, "if (fullPackage.isEmpty(…g(fullPackage.length + 1)");
-                String concat = yd.j.g(name, ".", "_").concat("_LifecycleAdapter");
+                String concat = zd.j.g(name, ".", "_").concat("_LifecycleAdapter");
                 if (fullPackage.length() != 0) {
                     concat = fullPackage + '.' + concat;
                 }
@@ -59,12 +59,12 @@ public abstract class w {
                 }
             } catch (ClassNotFoundException unused) {
                 constructor = null;
-            } catch (NoSuchMethodException e7) {
-                throw new RuntimeException(e7);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
             }
             HashMap hashMap2 = b;
             if (constructor != null) {
-                hashMap2.put(cls, id.h.b(constructor));
+                hashMap2.put(cls, jd.h.b(constructor));
             } else {
                 d dVar = d.c;
                 HashMap hashMap3 = dVar.b;
@@ -89,8 +89,8 @@ public abstract class w {
                             }
                             i11++;
                         }
-                    } catch (NoClassDefFoundError e10) {
-                        throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e10);
+                    } catch (NoClassDefFoundError e7) {
+                        throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e7);
                     }
                 }
                 if (!z10) {

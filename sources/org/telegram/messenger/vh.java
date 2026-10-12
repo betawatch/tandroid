@@ -1,36 +1,28 @@
 package org.telegram.messenger;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.Window;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.ui.Components.k81;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class vh implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class vh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ vh(int i10, Object obj, Object obj2) {
+    public /* synthetic */ vh(int i10, long j10, String str, String str2) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = str;
+        this.c = str2;
+        this.d = j10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((RichMessageLayout.SpoilerReveal) this.b).lambda$start$0((View) this.c, valueAnimator);
-                break;
-            case 1:
-                AndroidUtilities.lambda$setNavigationBarColor$23((AndroidUtilities.IntColorCallback) this.b, (Window) this.c, valueAnimator);
+                PushListenerController.lambda$processRemoteMessage$6(this.b, this.c, this.d);
                 break;
             default:
-                ((MediaController) this.b).lambda$cleanupPlayer$10((k81) this.c, valueAnimator);
+                PushListenerController.lambda$processRemoteMessage$7(this.b, this.c, this.d);
                 break;
         }
     }

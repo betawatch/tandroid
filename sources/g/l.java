@@ -1,13 +1,13 @@
 package g;
 
-import ai.sb;
 import android.app.Activity;
 import android.window.OnBackInvokedCallback;
 import android.window.OnBackInvokedDispatcher;
+import fi.c2;
 import j$.util.Objects;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class l {
     public static OnBackInvokedDispatcher a(Activity activity) {
@@ -16,12 +16,12 @@ public abstract class l {
 
     public static OnBackInvokedCallback b(Object obj, r rVar) {
         Objects.requireNonNull(rVar);
-        sb sbVar = new sb(rVar, 3);
-        d2.c.c(obj).registerOnBackInvokedCallback(MediaController.VIDEO_BITRATE_480, sbVar);
-        return sbVar;
+        androidx.activity.r rVar2 = new androidx.activity.r(rVar, 3);
+        c2.e(obj).registerOnBackInvokedCallback(MediaController.VIDEO_BITRATE_480, rVar2);
+        return rVar2;
     }
 
     public static void c(Object obj, Object obj2) {
-        d2.c.c(obj).unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj2);
+        c2.e(obj).unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj2);
     }
 }

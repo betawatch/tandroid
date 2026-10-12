@@ -1,60 +1,27 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.os.StatFs;
-import java.io.File;
-import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u80 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ LanguageSelectActivity b;
 
-    public /* synthetic */ u80(LaunchActivity launchActivity, int i10, int i11) {
-        this.a = i11;
-        this.b = launchActivity;
-        this.c = i10;
+    public /* synthetic */ u80(LanguageSelectActivity languageSelectActivity, int i10) {
+        this.a = i10;
+        this.b = languageSelectActivity;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        File directory;
-        int i10 = this.a;
-        int i11 = this.c;
-        LaunchActivity launchActivity = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                Pattern pattern = LaunchActivity.B1;
-                if (UserConfig.getInstance(launchActivity.O).isClientActivated()) {
-                    try {
-                        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-                        if ((((i11 == 2 || i11 == 1) && Math.abs(launchActivity.w1 - System.currentTimeMillis()) > 240000) || Math.abs(globalMainSettings.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (directory = FileLoader.getDirectory(4)) != null) {
-                            StatFs statFs = new StatFs(directory.getAbsolutePath());
-                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
-                            if (i11 > 0 || availableBlocksLong < 52428800) {
-                                if (i11 > 0) {
-                                    launchActivity.w1 = System.currentTimeMillis();
-                                }
-                                globalMainSettings.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
-                                AndroidUtilities.runOnUIThread(new f90(launchActivity, 6));
-                                break;
-                            }
-                        }
-                    } catch (Throwable unused) {
-                        return;
-                    }
-                }
+                LanguageSelectActivity.Y(this.b);
+                break;
+            case 1:
+                LanguageSelectActivity.W(this.b);
                 break;
             default:
-                Pattern pattern2 = LaunchActivity.B1;
-                ConnectionsManager.getInstance(launchActivity.O).cancelRequest(i11, true);
+                this.b.a.l();
                 break;
         }
     }

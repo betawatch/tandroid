@@ -1,46 +1,31 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wa implements bh.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class wa implements Runnable {
+    public final /* synthetic */ ac a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ View e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
 
-    public /* synthetic */ wa(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ wa(ac acVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, View view, float f7, float f10) {
+        this.a = acVar;
+        this.b = arrayList;
+        this.c = arrayList2;
+        this.d = arrayList3;
+        this.e = view;
+        this.f = f7;
+        this.h = f10;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // bh.a
-    public final void b(ah.a aVar, RectF rectF) {
-        switch (this.a) {
-        }
-        aVar.a = true;
-    }
-
-    @Override // bh.a
-    public final void f(Canvas canvas, RectF rectF) {
-        switch (this.a) {
-            case 0:
-                ((sb) this.b).Z(canvas, rectF);
-                break;
-            case 1:
-                aq0 aq0Var = (aq0) this.b;
-                k0 k0Var = aq0Var.d;
-                lp0 lp0Var = aq0Var.h.b;
-                gh.d.a(lp0Var, canvas, rectF, lp0Var, k0Var);
-                lp0 lp0Var2 = aq0Var.n.b;
-                gh.d.a(lp0Var2, canvas, rectF, lp0Var2, k0Var);
-                break;
-            default:
-                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-                org.telegram.ui.Components.qm0 qm0Var = premiumPreviewFragment.a;
-                gh.d.a(qm0Var, canvas, rectF, qm0Var, premiumPreviewFragment.d0);
-                break;
-        }
+    @Override // java.lang.Runnable
+    public final void run() {
+        ac.V(this.a, this.b, this.c, this.d, this.e, this.f, this.h);
     }
 }

@@ -1,20 +1,35 @@
 package fe;
 
-import java.lang.reflect.Method;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
+import td.p;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class c {
-    public static final Method a;
+public final class c implements kd.h {
+    public final Throwable a;
+    public final /* synthetic */ kd.h b;
 
-    static {
-        Method method;
-        try {
-            method = ScheduledThreadPoolExecutor.class.getMethod("setRemoveOnCancelPolicy", Boolean.TYPE);
-        } catch (Throwable unused) {
-            method = null;
-        }
-        a = method;
+    public c(Throwable th2, kd.h hVar) {
+        this.a = th2;
+        this.b = hVar;
+    }
+
+    @Override // kd.h
+    public final Object fold(Object obj, p pVar) {
+        return this.b.fold(obj, pVar);
+    }
+
+    @Override // kd.h
+    public final kd.f get(kd.g gVar) {
+        return this.b.get(gVar);
+    }
+
+    @Override // kd.h
+    public final kd.h minusKey(kd.g gVar) {
+        return this.b.minusKey(gVar);
+    }
+
+    @Override // kd.h
+    public final kd.h plus(kd.h hVar) {
+        return this.b.plus(hVar);
     }
 }

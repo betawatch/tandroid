@@ -8,7 +8,7 @@ import java.util.Arrays;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class t extends s {
     public final ArrayList Q;
@@ -36,11 +36,11 @@ public abstract class t extends s {
     
         if (r24.f != (-1)) goto L88;
      */
-    @Override // s4.s, s4.d0
+    @Override // s4.s, s4.b0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void Z0(pf.e eVar, a1 a1Var, b0 b0Var, a0 a0Var) {
+    public final void Z0(qf.e eVar, y0 y0Var, z zVar, k2.k kVar) {
         boolean z10;
         int i10;
         int i11;
@@ -55,28 +55,28 @@ public abstract class t extends s {
         boolean z12;
         View c10;
         boolean z13;
-        pf.e eVar2 = eVar;
-        a1 a1Var2 = a1Var;
+        qf.e eVar2 = eVar;
+        y0 y0Var2 = y0Var;
         int i19 = this.q.i();
         int i20 = 0;
         boolean z14 = true;
-        boolean z15 = b0Var.e == 1;
-        a0Var.a = 0;
-        int i21 = b0Var.d;
+        boolean z15 = zVar.e == 1;
+        kVar.a = 0;
+        int i21 = zVar.d;
         boolean z16 = this.v;
         Rect rect = this.P;
         ArrayList arrayList = this.Q;
         int i22 = -1;
-        if (z16 && b0Var.f != -1 && B1(i21) && m(b0Var.d + 1) == null) {
-            if (B1(b0Var.d + 1)) {
-                b0Var.d += 3;
+        if (z16 && zVar.f != -1 && B1(i21) && m(zVar.d + 1) == null) {
+            if (B1(zVar.d + 1)) {
+                zVar.d += 3;
             } else {
-                b0Var.d += 2;
+                zVar.d += 2;
             }
-            int i23 = b0Var.d;
+            int i23 = zVar.d;
             int i24 = i23;
             while (i24 > i21) {
-                View c11 = b0Var.c(eVar2);
+                View c11 = zVar.c(eVar2);
                 if (c11 != null) {
                     arrayList.add(c11);
                     if (i24 != i23) {
@@ -84,8 +84,8 @@ public abstract class t extends s {
                         w1(c11, i19, false);
                         z13 = z14;
                         int b10 = this.q.b(c11);
-                        b0Var.b -= b10;
-                        b0Var.c += b10;
+                        zVar.b -= b10;
+                        zVar.c += b10;
                         i24--;
                         z14 = z13;
                     }
@@ -95,7 +95,7 @@ public abstract class t extends s {
                 z14 = z13;
             }
             z10 = z14;
-            b0Var.d = i23;
+            zVar.d = i23;
         } else {
             z10 = true;
         }
@@ -104,35 +104,35 @@ public abstract class t extends s {
             int i25 = this.J;
             boolean z18 = !arrayList.isEmpty();
             int i26 = i20;
-            while (i26 < this.J && b0Var.b(a1Var2) && i25 > 0) {
-                int i27 = b0Var.d;
-                i25 -= v1(i27, eVar2, a1Var2);
+            while (i26 < this.J && zVar.b(y0Var2) && i25 > 0) {
+                int i27 = zVar.d;
+                i25 -= v1(i27, eVar2, y0Var2);
                 if (i25 < 0) {
                     break;
                 }
                 if (arrayList.isEmpty()) {
-                    c10 = b0Var.c(eVar2);
+                    c10 = zVar.c(eVar2);
                 } else {
                     c10 = (View) arrayList.get(i20);
                     arrayList.remove(i20);
-                    b0Var.d--;
+                    zVar.d--;
                 }
                 if (c10 == null) {
                     break;
                 }
                 this.L[i26] = c10;
                 i26++;
-                if (b0Var.f == i22 && i25 <= 0 && B1(i27)) {
+                if (zVar.f == i22 && i25 <= 0 && B1(i27)) {
                     z18 = z10;
                 }
                 i20 = 0;
             }
-            p1(i26, eVar2, a1Var2, z15);
+            p1(i26, eVar2, y0Var2, z15);
             float f7 = 0.0f;
             int i28 = 0;
             for (int i29 = 0; i29 < i26; i29++) {
                 View view = this.L[i29];
-                if (b0Var.k == null) {
+                if (zVar.k == null) {
                     if (z15) {
                         z12 = false;
                         a(view, -1, false);
@@ -167,7 +167,7 @@ public abstract class t extends s {
                     Rect rect2 = rVar.b;
                     i17 = i30;
                     i18 = i19;
-                    x1(p0.s(false, this.K[rVar.f], TLObject.FLAG_30, rect2.left + rect2.right + ((ViewGroup.MarginLayoutParams) rVar).leftMargin + ((ViewGroup.MarginLayoutParams) rVar).rightMargin, ((ViewGroup.MarginLayoutParams) rVar).width), View.MeasureSpec.makeMeasureSpec(i28 - (((rect2.top + rect2.bottom) + ((ViewGroup.MarginLayoutParams) rVar).topMargin) + ((ViewGroup.MarginLayoutParams) rVar).bottomMargin), TLObject.FLAG_30), view2, true);
+                    x1(n0.s(false, this.K[rVar.f], TLObject.FLAG_30, rect2.left + rect2.right + ((ViewGroup.MarginLayoutParams) rVar).leftMargin + ((ViewGroup.MarginLayoutParams) rVar).rightMargin, ((ViewGroup.MarginLayoutParams) rVar).width), View.MeasureSpec.makeMeasureSpec(i28 - (((rect2.top + rect2.bottom) + ((ViewGroup.MarginLayoutParams) rVar).topMargin) + ((ViewGroup.MarginLayoutParams) rVar).bottomMargin), TLObject.FLAG_30), view2, true);
                 } else {
                     i17 = i30;
                     i18 = i19;
@@ -182,15 +182,15 @@ public abstract class t extends s {
             } else {
                 i10 = -1;
             }
-            if (C1 || b0Var.f != 1) {
-                if (b0Var.f == -1) {
-                    int i32 = b0Var.b - a0Var.a;
+            if (C1 || zVar.f != 1) {
+                if (zVar.f == -1) {
+                    int i32 = zVar.b - kVar.a;
                     int i33 = i32 - i28;
                     i12 = i32;
                     i13 = this.m;
                     i11 = i33;
                 } else {
-                    int i34 = a0Var.a + b0Var.b;
+                    int i34 = kVar.a + zVar.b;
                     i11 = i34;
                     i12 = i34 + i28;
                     i13 = 0;
@@ -203,25 +203,25 @@ public abstract class t extends s {
                     int c13 = this.q.c(view3);
                     int i37 = i36;
                     boolean z19 = z15;
-                    if (b0Var.f == -1) {
+                    if (zVar.f == -1) {
                         i35 -= c13;
                     }
                     int i38 = c13 + i35;
-                    p0.O(view3, i35, i11, i38, i12);
-                    if (b0Var.f == 1) {
+                    n0.O(view3, i35, i11, i38, i12);
+                    if (zVar.f == 1) {
                         i35 = i38;
                     }
                     if (rVar2.a.j() || rVar2.a.m()) {
-                        a0Var.c = true;
+                        kVar.c = true;
                     }
-                    a0Var.d |= view3.hasFocusable();
+                    kVar.d |= view3.hasFocusable();
                     i36 = i37 + 1;
                     z15 = z19;
                 }
                 boolean z20 = z15;
-                a0Var.a += i28;
+                kVar.a += i28;
                 Arrays.fill(this.L, (Object) null);
-                a1Var2 = a1Var;
+                y0Var2 = y0Var;
                 z10 = true;
                 z17 = z18;
                 i19 = i31;
@@ -230,13 +230,13 @@ public abstract class t extends s {
                 i22 = -1;
                 eVar2 = eVar;
             }
-            if (b0Var.f == i10) {
-                int i39 = b0Var.b - a0Var.a;
+            if (zVar.f == i10) {
+                int i39 = zVar.b - kVar.a;
                 i16 = i39 - i28;
                 i14 = i39;
                 i15 = 0;
             } else {
-                int i40 = a0Var.a + b0Var.b;
+                int i40 = kVar.a + zVar.b;
                 i14 = i40 + i28;
                 i15 = this.m;
                 i16 = i40;
@@ -246,19 +246,19 @@ public abstract class t extends s {
                 r rVar3 = (r) view4.getLayoutParams();
                 int c14 = this.q.c(view4);
                 int i42 = i15;
-                int i43 = b0Var.f == 1 ? i42 - c14 : i42;
+                int i43 = zVar.f == 1 ? i42 - c14 : i42;
                 int i44 = c14 + i43;
-                p0.O(view4, i43, i16, i44, i14);
-                i15 = b0Var.f == -1 ? i44 : i43;
+                n0.O(view4, i43, i16, i44, i14);
+                i15 = zVar.f == -1 ? i44 : i43;
                 if (rVar3.a.j() || rVar3.a.m()) {
-                    a0Var.c = true;
+                    kVar.c = true;
                 }
-                a0Var.d |= view4.hasFocusable();
+                kVar.d |= view4.hasFocusable();
             }
             boolean z202 = z15;
-            a0Var.a += i28;
+            kVar.a += i28;
             Arrays.fill(this.L, (Object) null);
-            a1Var2 = a1Var;
+            y0Var2 = y0Var;
             z10 = true;
             z17 = z18;
             i19 = i31;
@@ -269,13 +269,13 @@ public abstract class t extends s {
         }
     }
 
-    @Override // s4.d0, s4.p0
+    @Override // s4.b0, s4.n0
     public final boolean e() {
         return this.R;
     }
 
-    @Override // s4.d0
-    public final void e1(pf.e eVar, int i10, int i11) {
+    @Override // s4.b0
+    public final void e1(qf.e eVar, int i10, int i11) {
         if (i10 < 0) {
             return;
         }
@@ -283,7 +283,7 @@ public abstract class t extends s {
         if (!this.v) {
             for (int i12 = 0; i12 < r10; i12++) {
                 View q6 = q(i12);
-                if (q6.getBottom() + ((ViewGroup.MarginLayoutParams) ((q0) q6.getLayoutParams())).bottomMargin <= i10) {
+                if (q6.getBottom() + ((ViewGroup.MarginLayoutParams) ((o0) q6.getLayoutParams())).bottomMargin <= i10) {
                     if (q6.getHeight() + q6.getTop() <= i10) {
                     }
                 }
@@ -295,7 +295,7 @@ public abstract class t extends s {
         int i13 = r10 - 1;
         for (int i14 = i13; i14 >= 0; i14--) {
             View q10 = q(i14);
-            if (q10.getBottom() + ((ViewGroup.MarginLayoutParams) ((q0) q10.getLayoutParams())).bottomMargin <= i10) {
+            if (q10.getBottom() + ((ViewGroup.MarginLayoutParams) ((o0) q10.getLayoutParams())).bottomMargin <= i10) {
                 if (q10.getHeight() + q10.getTop() <= i10) {
                 }
             }
@@ -321,6 +321,6 @@ public abstract class t extends s {
         r rVar = (r) view.getLayoutParams();
         Rect rect = rVar.b;
         int i11 = rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) rVar).topMargin + ((ViewGroup.MarginLayoutParams) rVar).bottomMargin;
-        x1(p0.s(false, this.K[rVar.f], i10, rect.left + rect.right + ((ViewGroup.MarginLayoutParams) rVar).leftMargin + ((ViewGroup.MarginLayoutParams) rVar).rightMargin, ((ViewGroup.MarginLayoutParams) rVar).width), p0.s(true, this.q.k(), this.l, i11, ((ViewGroup.MarginLayoutParams) rVar).height), view, z10);
+        x1(n0.s(false, this.K[rVar.f], i10, rect.left + rect.right + ((ViewGroup.MarginLayoutParams) rVar).leftMargin + ((ViewGroup.MarginLayoutParams) rVar).rightMargin, ((ViewGroup.MarginLayoutParams) rVar).width), n0.s(true, this.q.k(), this.l, i11, ((ViewGroup.MarginLayoutParams) rVar).height), view, z10);
     }
 }

@@ -1,36 +1,43 @@
 package org.telegram.ui;
 
-import android.graphics.Outline;
-import android.graphics.Rect;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class f61 extends ViewOutlineProvider {
-    public final Rect a = new Rect();
-    public final /* synthetic */ Integer b;
-    public final /* synthetic */ k71 c;
+public final class f61 extends s4.s {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ r71 R;
 
-    public f61(k71 k71Var, Integer num) {
-        this.c = k71Var;
-        this.b = num;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ f61(r71 r71Var, int i10) {
+        super(40);
+        this.Q = i10;
+        this.R = r71Var;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        float width = (this.b == null ? view.getWidth() / 2.0f : r0.intValue()) + AndroidUtilities.dp(20.0f);
-        float width2 = (view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight();
-        float height = (view.getHeight() - view.getPaddingBottom()) - view.getPaddingTop();
-        k71 k71Var = this.c;
-        boolean n10 = k71Var.n();
-        Rect rect = this.a;
-        if (n10) {
-            rect.set((int) ((width - (k71Var.a1 * width)) + view.getPaddingLeft()), (int) com.google.android.gms.internal.vision.e2.y(1.0f, k71Var.b1, AndroidUtilities.dp(k71Var.d1), com.google.android.gms.internal.vision.e2.y(1.0f, k71Var.b1, height, view.getPaddingTop())), (int) (((width2 - width) * k71Var.a1) + view.getPaddingLeft() + width), (int) com.google.android.gms.internal.vision.e2.y(1.0f, k71Var.b1, AndroidUtilities.dp(k71Var.d1), view.getPaddingTop() + height));
-        } else {
-            rect.set((int) ((width - (k71Var.a1 * width)) + view.getPaddingLeft()), view.getPaddingTop(), (int) (((width2 - width) * k71Var.a1) + view.getPaddingLeft() + width), (int) ((height * k71Var.b1) + view.getPaddingTop()));
+    @Override // s4.b0, s4.n0
+    public final void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
+        switch (this.Q) {
+            case 0:
+                try {
+                    di.l1 l1Var = new di.l1(this, recyclerView.getContext(), 3);
+                    l1Var.a = i10;
+                    w0(l1Var);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+            default:
+                try {
+                    di.l1 l1Var2 = new di.l1(this, recyclerView.getContext(), 5);
+                    l1Var2.a = i10;
+                    w0(l1Var2);
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
+                }
         }
-        outline.setRoundRect(rect, AndroidUtilities.dp(12.0f));
     }
 }

@@ -4,7 +4,7 @@ import com.google.android.gms.internal.cast.z4;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class u2 {
     public static final t1 a;
@@ -46,8 +46,8 @@ public abstract class u2 {
         w1 w1Var = (w1) list;
         if (!z10) {
             while (i11 < w1Var.c) {
-                int n10 = w1Var.n(i11);
-                m1Var.n(i10, (n10 >> 31) ^ (n10 + n10));
+                int m10 = w1Var.m(i11);
+                m1Var.n(i10, (m10 >> 31) ^ (m10 + m10));
                 i11++;
             }
             return;
@@ -55,13 +55,13 @@ public abstract class u2 {
         m1Var.m(i10, 2);
         int i14 = 0;
         for (int i15 = 0; i15 < w1Var.c; i15++) {
-            int n11 = w1Var.n(i15);
-            i14 += m1.b((n11 >> 31) ^ (n11 + n11));
+            int m11 = w1Var.m(i15);
+            i14 += m1.b((m11 >> 31) ^ (m11 + m11));
         }
         m1Var.o(i14);
         while (i11 < w1Var.c) {
-            int n12 = w1Var.n(i11);
-            m1Var.o((n12 >> 31) ^ (n12 + n12));
+            int m12 = w1Var.m(i11);
+            m1Var.o((m12 >> 31) ^ (m12 + m12));
             i11++;
         }
     }
@@ -126,7 +126,7 @@ public abstract class u2 {
         w1 w1Var = (w1) list;
         if (!z10) {
             while (i11 < w1Var.c) {
-                m1Var.n(i10, w1Var.n(i11));
+                m1Var.n(i10, w1Var.m(i11));
                 i11++;
             }
             return;
@@ -134,11 +134,11 @@ public abstract class u2 {
         m1Var.m(i10, 2);
         int i14 = 0;
         for (int i15 = 0; i15 < w1Var.c; i15++) {
-            i14 += m1.b(w1Var.n(i15));
+            i14 += m1.b(w1Var.m(i15));
         }
         m1Var.o(i14);
         while (i11 < w1Var.c) {
-            m1Var.o(w1Var.n(i11));
+            m1Var.o(w1Var.m(i11));
             i11++;
         }
     }
@@ -195,7 +195,7 @@ public abstract class u2 {
         w1 w1Var = (w1) list;
         int i12 = 0;
         while (i10 < size) {
-            i12 += m1.c(w1Var.n(i10));
+            i12 += m1.c(w1Var.m(i10));
             i10++;
         }
         return i12;
@@ -234,7 +234,7 @@ public abstract class u2 {
         w1 w1Var = (w1) list;
         int i12 = 0;
         while (i10 < size) {
-            i12 += m1.c(w1Var.n(i10));
+            i12 += m1.c(w1Var.m(i10));
             i10++;
         }
         return i12;
@@ -276,8 +276,8 @@ public abstract class u2 {
         w1 w1Var = (w1) list;
         int i12 = 0;
         while (i10 < size) {
-            int n10 = w1Var.n(i10);
-            i12 += m1.b((n10 >> 31) ^ (n10 + n10));
+            int m10 = w1Var.m(i10);
+            i12 += m1.b((m10 >> 31) ^ (m10 + m10));
             i10++;
         }
         return i12;
@@ -319,7 +319,7 @@ public abstract class u2 {
         w1 w1Var = (w1) list;
         int i12 = 0;
         while (i10 < size) {
-            i12 += m1.b(w1Var.n(i10));
+            i12 += m1.b(w1Var.m(i10));
             i10++;
         }
         return i12;
@@ -410,13 +410,13 @@ public abstract class u2 {
                         m1Var.b[i12] = booleanValue;
                         m1Var.d = i13;
                         i11++;
-                    } catch (IndexOutOfBoundsException e7) {
-                        e = e7;
+                    } catch (IndexOutOfBoundsException e) {
+                        e = e;
                         i12 = i13;
                         throw new z4(i12, m1Var.c, 1, e);
                     }
-                } catch (IndexOutOfBoundsException e10) {
-                    e = e10;
+                } catch (IndexOutOfBoundsException e7) {
+                    e = e7;
                 }
             }
             return;
@@ -437,13 +437,13 @@ public abstract class u2 {
                     m1Var.b[i16] = booleanValue2;
                     m1Var.d = i17;
                     i11++;
-                } catch (IndexOutOfBoundsException e11) {
-                    e = e11;
+                } catch (IndexOutOfBoundsException e10) {
+                    e = e10;
                     i16 = i17;
                     throw new z4(i16, m1Var.c, 1, e);
                 }
-            } catch (IndexOutOfBoundsException e12) {
-                e = e12;
+            } catch (IndexOutOfBoundsException e11) {
+                e = e11;
             }
         }
     }
@@ -506,7 +506,7 @@ public abstract class u2 {
         w1 w1Var = (w1) list;
         if (!z10) {
             while (i11 < w1Var.c) {
-                m1Var.j(i10, w1Var.n(i11));
+                m1Var.j(i10, w1Var.m(i11));
                 i11++;
             }
             return;
@@ -514,11 +514,11 @@ public abstract class u2 {
         m1Var.m(i10, 2);
         int i14 = 0;
         for (int i15 = 0; i15 < w1Var.c; i15++) {
-            i14 += m1.c(w1Var.n(i15));
+            i14 += m1.c(w1Var.m(i15));
         }
         m1Var.o(i14);
         while (i11 < w1Var.c) {
-            m1Var.k(w1Var.n(i11));
+            m1Var.k(w1Var.m(i11));
             i11++;
         }
     }
@@ -553,7 +553,7 @@ public abstract class u2 {
         w1 w1Var = (w1) list;
         if (!z10) {
             while (i11 < w1Var.c) {
-                m1Var.f(i10, w1Var.n(i11));
+                m1Var.f(i10, w1Var.m(i11));
                 i11++;
             }
             return;
@@ -561,12 +561,12 @@ public abstract class u2 {
         m1Var.m(i10, 2);
         int i14 = 0;
         for (int i15 = 0; i15 < w1Var.c; i15++) {
-            w1Var.n(i15);
+            w1Var.m(i15);
             i14 += 4;
         }
         m1Var.o(i14);
         while (i11 < w1Var.c) {
-            m1Var.g(w1Var.n(i11));
+            m1Var.g(w1Var.m(i11));
             i11++;
         }
     }
@@ -658,7 +658,7 @@ public abstract class u2 {
         w1 w1Var = (w1) list;
         if (!z10) {
             while (i11 < w1Var.c) {
-                m1Var.j(i10, w1Var.n(i11));
+                m1Var.j(i10, w1Var.m(i11));
                 i11++;
             }
             return;
@@ -666,11 +666,11 @@ public abstract class u2 {
         m1Var.m(i10, 2);
         int i14 = 0;
         for (int i15 = 0; i15 < w1Var.c; i15++) {
-            i14 += m1.c(w1Var.n(i15));
+            i14 += m1.c(w1Var.m(i15));
         }
         m1Var.o(i14);
         while (i11 < w1Var.c) {
-            m1Var.k(w1Var.n(i11));
+            m1Var.k(w1Var.m(i11));
             i11++;
         }
     }
@@ -733,7 +733,7 @@ public abstract class u2 {
         w1 w1Var = (w1) list;
         if (!z10) {
             while (i11 < w1Var.c) {
-                m1Var.f(i10, w1Var.n(i11));
+                m1Var.f(i10, w1Var.m(i11));
                 i11++;
             }
             return;
@@ -741,12 +741,12 @@ public abstract class u2 {
         m1Var.m(i10, 2);
         int i14 = 0;
         for (int i15 = 0; i15 < w1Var.c; i15++) {
-            w1Var.n(i15);
+            w1Var.m(i15);
             i14 += 4;
         }
         m1Var.o(i14);
         while (i11 < w1Var.c) {
-            m1Var.g(w1Var.n(i11));
+            m1Var.g(w1Var.m(i11));
             i11++;
         }
     }

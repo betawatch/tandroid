@@ -12,7 +12,7 @@ import java.util.Iterator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class q0 extends o6.a {
     public static final Parcelable.Creator<q0> CREATOR = new w.a(23);
@@ -81,7 +81,7 @@ public final class q0 extends o6.a {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static byte[] d(byte[] bArr) {
-        c2.a aVar;
+        c5.f fVar;
         n7.e0 e0Var;
         int i10 = n7.h0.a;
         n7.i0 i0Var = n7.g0.a;
@@ -90,28 +90,28 @@ public final class q0 extends o6.a {
         try {
             if (i0Var.h) {
                 try {
-                    aVar = new c2.a((MessageDigest) messageDigest.clone(), i11);
+                    fVar = new c5.f((MessageDigest) messageDigest.clone(), i11);
                 } catch (CloneNotSupportedException unused) {
                 }
-                MessageDigest messageDigest2 = (MessageDigest) aVar.c;
+                MessageDigest messageDigest2 = (MessageDigest) fVar.c;
                 byte[] bArr2 = b;
                 bArr2.getClass();
                 int length = bArr2.length;
-                if (!aVar.a) {
+                if (!fVar.b) {
                     throw new IllegalStateException("Cannot re-use a Hasher after calling hash() on it");
                 }
                 messageDigest2.update(bArr2, 0, length);
                 bArr.getClass();
                 int length2 = bArr.length;
-                if (aVar.a) {
+                if (fVar.b) {
                     throw new IllegalStateException("Cannot re-use a Hasher after calling hash() on it");
                 }
                 messageDigest2.update(bArr, 0, length2);
-                if (aVar.a) {
+                if (fVar.b) {
                     throw new IllegalStateException("Cannot re-use a Hasher after calling hash() on it");
                 }
-                aVar.a = true;
-                int i12 = aVar.b;
+                fVar.b = true;
+                int i12 = fVar.a;
                 if (i12 == messageDigest2.getDigestLength()) {
                     byte[] digest = messageDigest2.digest();
                     char[] cArr = n7.f0.a;
@@ -123,15 +123,15 @@ public final class q0 extends o6.a {
                 }
                 return (byte[]) e0Var.b.clone();
             }
-            aVar = new c2.a(MessageDigest.getInstance(messageDigest.getAlgorithm()), i11);
-            MessageDigest messageDigest22 = (MessageDigest) aVar.c;
+            fVar = new c5.f(MessageDigest.getInstance(messageDigest.getAlgorithm()), i11);
+            MessageDigest messageDigest22 = (MessageDigest) fVar.c;
             byte[] bArr22 = b;
             bArr22.getClass();
             int length3 = bArr22.length;
-            if (!aVar.a) {
+            if (!fVar.b) {
             }
-        } catch (NoSuchAlgorithmException e7) {
-            throw new AssertionError(e7);
+        } catch (NoSuchAlgorithmException e) {
+            throw new AssertionError(e);
         }
     }
 
@@ -189,15 +189,15 @@ public final class q0 extends o6.a {
                 }
             }
             return "PrfExtension{" + jSONObject.toString() + "}";
-        } catch (JSONException e7) {
-            return a1.g.q("PrfExtension{Exception:", e7.getMessage(), "}");
+        } catch (JSONException e) {
+            return a1.g.p("PrfExtension{Exception:", e.getMessage(), "}");
         }
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.d0.q(parcel, 20293);
-        w7.d0.d(parcel, 1, this.a);
-        w7.d0.r(parcel, q6);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.d(parcel, 1, this.a);
+        w7.g0.r(parcel, q6);
     }
 }

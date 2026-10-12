@@ -1,15 +1,15 @@
 package i2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class q0 {
-    public final j2.k a;
-    public final long b;
-    public final float c;
+    public final b2.p1 a;
+    public final int b;
+    public final long c;
 
-    public q0(j2.k kVar, long j3, float f7, boolean z10, long j10) {
-        this.a = kVar;
-        this.b = j3;
-        this.c = f7;
+    public q0(b2.p1 p1Var, int i10, long j10) {
+        this.a = p1Var;
+        this.b = i10;
+        this.c = j10;
     }
 }

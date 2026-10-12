@@ -2,22 +2,22 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import v7.y5;
+import v7.z5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class l0 extends x0 implements t0 {
     public static final Object d = new Object();
     public static final s0 e = new s0(w0.class, 0);
     public static final boolean f;
-    public static final y5 h;
+    public static final z5 h;
     public volatile Object a;
     public volatile f0 b;
     public volatile k0 c;
 
     static {
         boolean z10;
-        y5 i0Var;
+        z5 i0Var;
         Throwable th2;
         Throwable th3;
         try {
@@ -53,10 +53,10 @@ public abstract class l0 extends x0 implements t0 {
         h = i0Var;
         if (th2 != null) {
             s0 s0Var = e;
-            Logger b10 = s0Var.b();
+            Logger c10 = s0Var.c();
             Level level = Level.SEVERE;
-            b10.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th3);
-            s0Var.b().logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "AtomicReferenceFieldUpdaterAtomicHelper is broken!", th2);
+            c10.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th3);
+            s0Var.c().logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "AtomicReferenceFieldUpdaterAtomicHelper is broken!", th2);
         }
     }
 

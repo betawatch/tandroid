@@ -1,9 +1,10 @@
 package b4;
 
 import android.text.TextUtils;
-import v7.r6;
+import v7.s6;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b {
     public final int a;
@@ -25,7 +26,7 @@ public final class b {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static b a(String str) {
         char c10;
-        e2.d.b(str.startsWith("Format:"));
+        u6.g(str.startsWith("Format:"));
         String[] split = TextUtils.split(str.substring(7), ",");
         int i10 = -1;
         int i11 = -1;
@@ -33,39 +34,39 @@ public final class b {
         int i13 = -1;
         int i14 = -1;
         for (int i15 = 0; i15 < split.length; i15++) {
-            String b10 = r6.b(split[i15].trim());
-            b10.getClass();
-            switch (b10.hashCode()) {
+            String c11 = s6.c(split[i15].trim());
+            c11.getClass();
+            switch (c11.hashCode()) {
                 case 100571:
-                    if (b10.equals("end")) {
+                    if (c11.equals("end")) {
                         c10 = 0;
                         break;
                     }
                     c10 = 65535;
                     break;
                 case 3556653:
-                    if (b10.equals("text")) {
+                    if (c11.equals("text")) {
                         c10 = 1;
                         break;
                     }
                     c10 = 65535;
                     break;
                 case 102749521:
-                    if (b10.equals("layer")) {
+                    if (c11.equals("layer")) {
                         c10 = 2;
                         break;
                     }
                     c10 = 65535;
                     break;
                 case 109757538:
-                    if (b10.equals("start")) {
+                    if (c11.equals("start")) {
                         c10 = 3;
                         break;
                     }
                     c10 = 65535;
                     break;
                 case 109780401:
-                    if (b10.equals("style")) {
+                    if (c11.equals("style")) {
                         c10 = 4;
                         break;
                     }

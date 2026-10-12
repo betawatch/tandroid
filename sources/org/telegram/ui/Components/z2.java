@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import j$.time.YearMonth;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z2 implements Runnable {
     public final /* synthetic */ ud0 a;
@@ -35,8 +35,8 @@ public final /* synthetic */ class z2 implements Runnable {
             ud0Var2.setMinValue(1);
             try {
                 ud0Var2.setMaxValue(YearMonth.of(2024, ud0Var3.getValue() + 1).lengthOfMonth());
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
                 ud0Var2.setMaxValue(31);
             }
             ud0Var3.setMinValue(0);
@@ -47,8 +47,8 @@ public final /* synthetic */ class z2 implements Runnable {
             ud0Var2.setMinValue(1);
             try {
                 ud0Var2.setMaxValue(YearMonth.of(ud0Var.getValue(), ud0Var3.getValue() + 1).lengthOfMonth());
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e7) {
+                FileLog.e(e7);
                 ud0Var2.setMaxValue(31);
             }
             ud0Var3.setMinValue(0);
@@ -66,8 +66,8 @@ public final /* synthetic */ class z2 implements Runnable {
         ud0Var2.setMinValue(1);
         try {
             ud0Var2.setMaxValue(YearMonth.of(ud0Var.getValue(), ud0Var3.getValue() + 1).lengthOfMonth());
-        } catch (Exception e11) {
-            FileLog.e(e11);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             ud0Var2.setMaxValue(31);
         }
     }

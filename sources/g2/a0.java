@@ -6,13 +6,14 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.text.TextUtils;
+import e2.m0;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a0 extends c {
     public final Context a;
@@ -48,8 +49,8 @@ public final class a0 extends c {
                         if (assetFileDescriptor != null) {
                             assetFileDescriptor.close();
                         }
-                    } catch (IOException e7) {
-                        throw new z(null, e7, 2000);
+                    } catch (IOException e) {
+                        throw new z(null, e, 2000);
                     }
                 } finally {
                     this.c = null;
@@ -58,8 +59,8 @@ public final class a0 extends c {
                         transferEnded();
                     }
                 }
-            } catch (IOException e10) {
-                throw new z(null, e10, 2000);
+            } catch (IOException e7) {
+                throw new z(null, e7, 2000);
             }
         } catch (Throwable th2) {
             this.d = null;
@@ -75,8 +76,8 @@ public final class a0 extends c {
                         transferEnded();
                     }
                     throw th2;
-                } catch (IOException e11) {
-                    throw new z(null, e11, 2000);
+                } catch (IOException e10) {
+                    throw new z(null, e10, 2000);
                 }
             } finally {
                 this.c = null;
@@ -106,8 +107,8 @@ public final class a0 extends c {
         this.b = mVar;
         transferInitializing(mVar);
         Uri uri = mVar.a;
-        long j3 = mVar.f;
-        long j10 = mVar.e;
+        long j10 = mVar.f;
+        long j11 = mVar.e;
         Uri normalizeScheme = uri.normalizeScheme();
         boolean equals = TextUtils.equals("rawresource", normalizeScheme.getScheme());
         Context context = this.a;
@@ -137,8 +138,8 @@ public final class a0 extends c {
             } else {
                 try {
                     resourcesForApplication = context.getPackageManager().getResourcesForApplication(packageName);
-                } catch (PackageManager.NameNotFoundException e7) {
-                    throw new z("Package in android.resource:// URI not found. Check http://g.co/dev/packagevisibility.", e7, 2005);
+                } catch (PackageManager.NameNotFoundException e) {
+                    throw new z("Package in android.resource:// URI not found. Check http://g.co/dev/packagevisibility.", e, 2005);
                 }
             }
             if (path.matches("\\d+")) {
@@ -166,12 +167,12 @@ public final class a0 extends c {
             FileInputStream fileInputStream = new FileInputStream(this.c.getFileDescriptor());
             this.d = fileInputStream;
             try {
-                if (length != -1 && j10 > length) {
+                if (length != -1 && j11 > length) {
                     throw new z(null, null, 2008);
                 }
                 long startOffset = this.c.getStartOffset();
-                long skip = fileInputStream.skip(startOffset + j10) - startOffset;
-                if (skip != j10) {
+                long skip = fileInputStream.skip(startOffset + j11) - startOffset;
+                if (skip != j11) {
                     throw new z(null, null, 2008);
                 }
                 if (length == -1) {
@@ -186,50 +187,50 @@ public final class a0 extends c {
                         }
                     }
                 } else {
-                    long j11 = length - skip;
-                    this.e = j11;
-                    if (j11 < 0) {
+                    long j12 = length - skip;
+                    this.e = j12;
+                    if (j12 < 0) {
                         throw new j(2008);
                     }
                 }
-                if (j3 != -1) {
-                    long j12 = this.e;
-                    this.e = j12 == -1 ? j3 : Math.min(j12, j3);
+                if (j10 != -1) {
+                    long j13 = this.e;
+                    this.e = j13 == -1 ? j10 : Math.min(j13, j10);
                 }
                 this.f = true;
                 transferStarted(mVar);
-                return j3 != -1 ? j3 : this.e;
-            } catch (z e10) {
-                throw e10;
-            } catch (IOException e11) {
-                throw new z(null, e11, 2000);
+                return j10 != -1 ? j10 : this.e;
+            } catch (z e7) {
+                throw e7;
+            } catch (IOException e10) {
+                throw new z(null, e10, 2000);
             }
-        } catch (Resources.NotFoundException e12) {
-            throw new z(null, e12, 2005);
+        } catch (Resources.NotFoundException e11) {
+            throw new z(null, e11, 2005);
         }
     }
 
-    @Override // b2.k
+    @Override // b2.p
     public final int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;
         }
-        long j3 = this.e;
-        if (j3 != 0) {
-            if (j3 != -1) {
+        long j10 = this.e;
+        if (j10 != 0) {
+            if (j10 != -1) {
                 try {
-                    i11 = (int) Math.min(j3, i11);
-                } catch (IOException e7) {
-                    throw new z(null, e7, 2000);
+                    i11 = (int) Math.min(j10, i11);
+                } catch (IOException e) {
+                    throw new z(null, e, 2000);
                 }
             }
             FileInputStream fileInputStream = this.d;
-            String str = e2.d0.a;
+            String str = m0.a;
             int read = fileInputStream.read(bArr, i10, i11);
             if (read != -1) {
-                long j10 = this.e;
-                if (j10 != -1) {
-                    this.e = j10 - read;
+                long j11 = this.e;
+                if (j11 != -1) {
+                    this.e = j11 - read;
                 }
                 bytesTransferred(read);
                 return read;

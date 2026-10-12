@@ -7,14 +7,13 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.util.Log;
 import android.util.SparseArray;
-import b2.s;
-import e2.d0;
-import e2.v;
+import e2.m0;
+import e2.x;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d implements w3.c {
+public final class d implements w3.b {
     public int a;
     public int b;
     public final Object c;
@@ -24,20 +23,20 @@ public final class d implements w3.c {
         this.c = context;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int a() {
         return this.a;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int b() {
         return this.b;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int c() {
         int i10 = this.a;
-        return i10 == -1 ? ((v) this.c).B() : i10;
+        return i10 == -1 ? ((x) this.c).E() : i10;
     }
 
     public int d() {
@@ -89,9 +88,9 @@ public final class d implements w3.c {
         PackageInfo packageInfo;
         if (this.a == 0) {
             try {
-                packageInfo = w6.b.a((Context) this.c).d(0, "com.google.android.gms");
-            } catch (PackageManager.NameNotFoundException e7) {
-                Log.w("Metadata", "Failed to find package ".concat(e7.toString()));
+                packageInfo = w6.b.a((Context) this.c).e(0, "com.google.android.gms");
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.w("Metadata", "Failed to find package ".concat(e.toString()));
                 packageInfo = null;
             }
             if (packageInfo != null) {
@@ -148,19 +147,19 @@ public final class d implements w3.c {
         this.c = sparseArray;
     }
 
-    public d(f2.e eVar, s sVar) {
-        v vVar = eVar.c;
-        this.c = vVar;
-        vVar.J(12);
-        int B = vVar.B();
-        if ("audio/raw".equals(sVar.r)) {
-            int s10 = d0.s(sVar.L) * sVar.J;
-            if (B == 0 || B % s10 != 0) {
-                e2.a.n("BoxParsers", "Audio sample size mismatch. stsd sample size: " + s10 + ", stsz sample size: " + B);
-                B = s10;
+    public d(f2.d dVar, b2.x xVar) {
+        x xVar2 = dVar.c;
+        this.c = xVar2;
+        xVar2.N(12);
+        int E = xVar2.E();
+        if ("audio/raw".equals(xVar.s)) {
+            int u10 = m0.u(xVar.M) * xVar.K;
+            if (E % u10 != 0) {
+                e2.a.l("BoxParsers", "Audio sample size mismatch. stsd sample size: " + u10 + ", stsz sample size: " + E);
+                E = u10;
             }
         }
-        this.a = B == 0 ? -1 : B;
-        this.b = vVar.B();
+        this.a = E == 0 ? -1 : E;
+        this.b = xVar2.E();
     }
 }

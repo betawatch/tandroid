@@ -1,96 +1,55 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b60 extends Drawable {
-    public final Paint a;
-    public final Paint b;
-    public long c;
-    public float d;
-    public int e;
-    public boolean f;
-    public View g;
+public final class b60 extends s4.k {
+    public float F;
+    public ValueAnimator G;
+    public final HashSet H = new HashSet();
+    public final HashSet I = new HashSet();
+    public float J;
+    public float K;
+    public final /* synthetic */ n60 L;
 
-    public b60() {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Paint(1);
-        this.d = 1.0f;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
+    public b60(n60 n60Var) {
+        this.L = n60Var;
     }
 
-    public final void a(ImageView imageView) {
-        this.g = imageView;
+    @Override // s4.k, s4.l0
+    public final void g() {
+        super.g();
+        this.I.clear();
+        this.H.clear();
+        this.K = Float.MAX_VALUE;
+        this.L.Q.invalidate();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float centerX = getBounds().centerX();
-        float centerY = getBounds().centerY();
-        canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(10.0f), this.a);
-        int i10 = this.f ? -1147527 : -1;
-        Paint paint = this.b;
-        paint.setColor(i10);
-        paint.setAlpha((int) (this.d * 255.0f));
-        canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(5.0f), paint);
-        if (this.f) {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j3 = elapsedRealtime - this.c;
-            if (j3 > 17) {
-                j3 = 17;
-            }
-            this.c = elapsedRealtime;
-            int i11 = this.e;
-            if (i11 == 0) {
-                float f7 = (j3 / 2000.0f) + this.d;
-                this.d = f7;
-                if (f7 >= 1.0f) {
-                    this.d = 1.0f;
-                    this.e = 1;
-                }
-            } else if (i11 == 1) {
-                float f10 = this.d - (j3 / 2000.0f);
-                this.d = f10;
-                if (f10 < 0.5f) {
-                    this.d = 0.5f;
-                    this.e = 0;
-                }
-            }
-            this.g.invalidate();
+    @Override // s4.k, s4.l0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.q.isEmpty();
+        ValueAnimator valueAnimator = this.G;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.G = null;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+        if (!isEmpty || !isEmpty2 || !isEmpty3) {
+            this.F = 0.0f;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.G = ofFloat;
+            ofFloat.addUpdateListener(new e3(this, 17));
+            this.G.addListener(new org.telegram.ui.Components.u61(this, 26));
+            this.G.setDuration(350L);
+            this.G.setInterpolator(org.telegram.ui.Components.es.f);
+            this.G.start();
+            n60 n60Var = this.L;
+            n60Var.Q.invalidate();
+            n60Var.a2.invalidate();
+        }
+        super.m();
     }
 }

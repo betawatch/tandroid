@@ -1,138 +1,34 @@
 package d2;
 
-import android.content.pm.ShortcutManager;
-import android.window.OnBackInvokedDispatcher;
-import ci.u5;
-import com.google.firebase.datatransport.TransportRegistrar;
-import ei.j4;
-import ei.k3;
-import ei.o4;
-import org.telegram.messenger.GenericProvider;
-import org.telegram.messenger.LiteMode;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.jw0;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.lw0;
+import bi.w2;
+import e2.m0;
+import e9.l0;
+import e9.n0;
+import e9.r;
+import e9.s1;
+import e9.x1;
+import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements d9.e, dh.d, jw0, kw0, GenericProvider, q9.d, a2 {
-    public final /* synthetic */ int a;
+public final class c {
+    public static final r c = new r(new w2(10), s1.b);
+    public static final c d;
+    public static final String e;
+    public static final String f;
+    public final x1 a;
+    public final long b;
 
-    public /* synthetic */ c(int i10) {
-        this.a = i10;
+    static {
+        l0 l0Var = n0.b;
+        d = new c(0L, x1.e);
+        String str = m0.a;
+        e = Integer.toString(0, 36);
+        f = Integer.toString(1, 36);
     }
 
-    public static /* bridge */ /* synthetic */ ShortcutManager a(Object obj) {
-        return (ShortcutManager) obj;
-    }
-
-    public static /* bridge */ /* synthetic */ OnBackInvokedDispatcher c(Object obj) {
-        return (OnBackInvokedDispatcher) obj;
-    }
-
-    public static /* bridge */ /* synthetic */ Class d() {
-        return ShortcutManager.class;
-    }
-
-    @Override // d9.e, i5.e
-    public Object apply(Object obj) {
-        return Integer.valueOf(((b) obj).r);
-    }
-
-    @Override // org.telegram.ui.Components.kw0
-    public void b(Object obj, float f7) {
-        switch (this.a) {
-            case 17:
-                k3 k3Var = (k3) obj;
-                k3Var.b = f7;
-                k3Var.e.invalidate();
-                k3Var.W.setAlpha(f7);
-                k3Var.F();
-                k3Var.D();
-                break;
-            case 18:
-            default:
-                ((o4) obj).setSwipeOffsetY(f7);
-                break;
-            case 19:
-                ((j4) obj).setLoadProgress(f7);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
-        b2Var.dismiss();
-    }
-
-    @Override // dh.d
-    public int g(e6 e6Var, boolean z10) {
-        switch (this.a) {
-            case 1:
-                return eh.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.w0(i6.d6, e6Var), i6.w0(i6.Sd, e6Var));
-            case 2:
-                if (!LiteMode.isEnabled(256)) {
-                    return i6.x0(null, i6.G8, false);
-                }
-                return i6.m1(z10 ? 0.85f : 0.825f, i6.x0(null, i6.G8, false));
-            case 3:
-                return eh.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.w0(i6.d6, e6Var), i6.w0(i6.Zk, e6Var));
-            case 4:
-                return i6.m1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.w0(i6.Fi, e6Var));
-            case 5:
-                return 855638016;
-            case 6:
-                return TLObject.FLAG_30;
-            case 7:
-                return i6.m1(0.075f, -16777216);
-            case 8:
-                return i6.m1(0.88f, i6.w0(i6.d6, e6Var));
-            case 9:
-                return i6.m1(z10 ? 0.85f : 0.825f, i6.x0(null, i6.G8, false));
-            case 10:
-                return eh.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.w0(i6.d6, e6Var), i6.w0(i6.Yk, e6Var));
-            case 11:
-                return i6.m1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.w0(i6.d6, e6Var));
-            case 12:
-                return i6.m1(0.78f, i6.w0(i6.h5, e6Var));
-            case 13:
-                return i6.m1(0.7f, i6.w0(i6.d6, e6Var));
-            case 14:
-                LiteMode.isEnabled(262144);
-                return 0;
-            default:
-                return i6.m1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, i6.w0(i6.d6, e6Var));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jw0
-    public float get(Object obj) {
-        switch (this.a) {
-            case 16:
-                return ((k3) obj).b;
-            case 17:
-            default:
-                return ((o4) obj).getSwipeOffsetY();
-            case 18:
-                return ((j4) obj).c;
-        }
-    }
-
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        lw0 lw0Var = o4.b0;
-        return Boolean.FALSE;
-    }
-
-    @Override // q9.d
-    public Object y0(u5 u5Var) {
-        i5.f lambda$getComponents$0;
-        lambda$getComponents$0 = TransportRegistrar.lambda$getComponents$0(u5Var);
-        return lambda$getComponents$0;
+    public c(long j10, List list) {
+        this.a = n0.A(c, list);
+        this.b = j10;
     }
 }

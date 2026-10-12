@@ -2,16 +2,16 @@ package androidx.fragment.app;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e extends u0 {
+public final class e extends s0 {
     public final f b;
 
     public e(f fVar) {
         this.b = fVar;
     }
 
-    @Override // androidx.fragment.app.u0
+    @Override // androidx.fragment.app.s0
     public final void a(ViewGroup container) {
         kotlin.jvm.internal.i.e(container, "container");
         if (this.b.a()) {

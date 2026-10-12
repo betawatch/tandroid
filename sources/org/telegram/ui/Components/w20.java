@@ -1,156 +1,547 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Rect;
-import android.util.Property;
+import android.os.Build;
+import android.os.SystemClock;
 import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ScrollView;
-import java.util.ArrayList;
+import android.view.VelocityTracker;
+import android.view.ViewConfiguration;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class w20 extends ScrollView {
+public final class w20 {
+    public static final int x;
+    public static final int y;
     public final int a;
-    public final a0.i b;
-    public final ArrayList c;
-    public final v20 d;
-    public int e;
-    public t20 f;
-    public boolean h;
-    public int n;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final ab.o0 f;
+    public final v20 g;
+    public u20 h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
+    public boolean l;
+    public boolean m;
+    public MotionEvent n;
+    public MotionEvent o;
+    public MotionEvent p;
+    public boolean q;
+    public float r;
+    public float s;
+    public float t;
+    public float u;
+    public boolean v;
+    public VelocityTracker w;
 
-    public w20(Context context, int i10) {
-        super(context);
-        this.b = new a0.i();
-        this.c = new ArrayList();
-        this.a = i10;
-        v20 v20Var = new v20(this, context);
-        this.d = v20Var;
-        setVerticalScrollBarEnabled(false);
-        addView(v20Var, w7.x5.d(-2.0f, -1));
+    static {
+        ViewConfiguration.getLongPressTimeout();
+        x = ViewConfiguration.getTapTimeout();
+        y = ViewConfiguration.getDoubleTapTimeout();
     }
 
-    public void a(d40 d40Var) {
-        v20 v20Var = this.d;
-        ArrayList arrayList = v20Var.c;
-        w20 w20Var = v20Var.r;
-        w20Var.c.add(d40Var);
-        if (!d40Var.d) {
-            w20Var.b.k(d40Var, d40Var.getUid());
-        }
-        AnimatorSet animatorSet = v20Var.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            v20Var.a.setupEndValues();
-            v20Var.a.cancel();
-        }
-        v20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        v20Var.a = animatorSet2;
-        animatorSet2.addListener(new u20(v20Var, 1));
-        v20Var.a.setDuration(150L);
-        v20Var.d = d40Var;
-        arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(v20Var.d, (Property<d40, Float>) View.SCALE_X, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(v20Var.d, (Property<d40, Float>) View.SCALE_Y, 0.01f, 1.0f));
-        arrayList.add(ObjectAnimator.ofFloat(v20Var.d, (Property<d40, Float>) View.ALPHA, 0.0f, 1.0f));
-        v20Var.addView(d40Var);
+    public w20(Context context, PhotoViewer photoViewer) {
+        this(context, (v20) photoViewer);
     }
 
-    public void b() {
-        v20 v20Var = this.d;
-        ArrayList arrayList = v20Var.c;
-        w20 w20Var = v20Var.r;
-        w20Var.h = true;
-        ArrayList arrayList2 = w20Var.c;
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        arrayList2.clear();
-        ArrayList arrayList4 = v20Var.e;
-        arrayList4.clear();
-        arrayList4.addAll(arrayList3);
-        for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-            ((d40) arrayList3.get(i10)).setOnClickListener(null);
-        }
-        AnimatorSet animatorSet = v20Var.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            v20Var.a.setupEndValues();
-            v20Var.a.cancel();
-        }
-        v20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        v20Var.a = animatorSet2;
-        animatorSet2.addListener(new ai.z(26, v20Var, arrayList3));
-        arrayList.clear();
-        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-            d40 d40Var = (d40) arrayList3.get(i11);
-            arrayList.add(ObjectAnimator.ofFloat(d40Var, (Property<d40, Float>) View.SCALE_X, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(d40Var, (Property<d40, Float>) View.SCALE_Y, 1.0f, 0.01f));
-            arrayList.add(ObjectAnimator.ofFloat(d40Var, (Property<d40, Float>) View.ALPHA, 1.0f, 0.0f));
-        }
-        v20Var.requestLayout();
-    }
-
-    public void c(d40 d40Var) {
-        v20 v20Var = this.d;
-        ArrayList arrayList = v20Var.e;
-        ArrayList arrayList2 = v20Var.c;
-        w20 w20Var = v20Var.r;
-        w20Var.h = true;
-        if (!d40Var.d) {
-            w20Var.b.l(d40Var.getUid());
-        }
-        w20Var.c.remove(d40Var);
-        d40Var.setOnClickListener(null);
-        AnimatorSet animatorSet = v20Var.a;
-        if (animatorSet != null) {
-            animatorSet.setupEndValues();
-            v20Var.a.cancel();
-        }
-        v20Var.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        v20Var.a = animatorSet2;
-        animatorSet2.addListener(new ai.z(25, v20Var, d40Var));
-        v20Var.a.setDuration(150L);
-        arrayList.clear();
-        arrayList.add(d40Var);
-        arrayList2.clear();
-        arrayList2.add(ObjectAnimator.ofFloat(d40Var, (Property<d40, Float>) View.SCALE_X, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(d40Var, (Property<d40, Float>) View.SCALE_Y, 1.0f, 0.01f));
-        arrayList2.add(ObjectAnimator.ofFloat(d40Var, (Property<d40, Float>) View.ALPHA, 1.0f, 0.0f));
-        v20Var.requestLayout();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+    /* JADX WARN: Code restructure failed: missing block: B:189:0x042f, code lost:
+    
+        if (java.lang.Math.sqrt(java.lang.Math.pow(((org.telegram.messenger.AndroidUtilities.displaySize.y + org.telegram.messenger.AndroidUtilities.statusBarHeight) / 2.0f) - r4.getY(), 2.0d) + java.lang.Math.pow((org.telegram.messenger.AndroidUtilities.displaySize.x / 2.0f) - r4.getX(), 2.0d)) < org.telegram.messenger.AndroidUtilities.dp(40.0f)) goto L234;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:213:0x049e, code lost:
+    
+        if (r2 > r4) goto L246;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:215:0x048e, code lost:
+    
+        if (r1 > r4) goto L240;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x04ce  */
+    /* JADX WARN: Removed duplicated region for block: B:197:0x04e5  */
+    /* JADX WARN: Removed duplicated region for block: B:233:0x037d  */
+    /* JADX WARN: Removed duplicated region for block: B:239:0x03c0  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean a(MotionEvent motionEvent) {
+        v20 v20Var;
+        ab.o0 o0Var;
+        boolean z10;
+        MotionEvent motionEvent2;
+        MotionEvent motionEvent3;
+        long j10;
+        long j11;
+        boolean z11;
+        boolean z12;
+        boolean z13;
+        org.telegram.ui.pu0 pu0Var;
+        MessageObject messageObject;
+        org.telegram.ui.pu0 pu0Var2;
+        u20 u20Var;
+        boolean z14;
+        boolean onScroll;
+        int i10;
+        boolean z15;
         int action = motionEvent.getAction();
-        float f7 = this.e;
-        float y3 = motionEvent.getY();
-        if (action != 0 || y3 <= f7) {
-            return super.dispatchTouchEvent(motionEvent);
+        MotionEvent motionEvent4 = this.o;
+        if (motionEvent4 != null) {
+            motionEvent4.recycle();
         }
-        return false;
-    }
-
-    public ViewGroup getSpansContainer() {
-        return this.d;
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        if (this.h) {
-            this.h = false;
+        this.o = MotionEvent.obtain(motionEvent);
+        if (this.w == null) {
+            this.w = VelocityTracker.obtain();
+        }
+        this.w.addMovement(motionEvent);
+        int i11 = action & 255;
+        boolean z16 = i11 == 6;
+        int actionIndex = z16 ? motionEvent.getActionIndex() : -1;
+        int pointerCount = motionEvent.getPointerCount();
+        float f7 = 0.0f;
+        float f10 = 0.0f;
+        for (int i12 = 0; i12 < pointerCount; i12++) {
+            if (actionIndex != i12) {
+                f7 += motionEvent.getX(i12);
+                f10 += motionEvent.getY(i12);
+            }
+        }
+        float f11 = z16 ? pointerCount - 1 : pointerCount;
+        float f12 = f7 / f11;
+        float f13 = f10 / f11;
+        v20 v20Var2 = this.g;
+        ab.o0 o0Var2 = this.f;
+        if (i11 != 0) {
+            if (i11 == 1) {
+                boolean z17 = false;
+                this.i = false;
+                v20Var2.b1();
+                MotionEvent obtain = MotionEvent.obtain(motionEvent);
+                if (!this.q) {
+                    if (this.k) {
+                        o0Var2.removeMessages(3);
+                        this.k = false;
+                    } else if (this.l) {
+                        boolean onSingleTapUp = v20Var2.onSingleTapUp(motionEvent);
+                        if (this.j && (u20Var = this.h) != null) {
+                            ((PhotoViewer) u20Var).a2(motionEvent);
+                        }
+                        z17 = onSingleTapUp;
+                    } else {
+                        VelocityTracker velocityTracker = this.w;
+                        int pointerId = motionEvent.getPointerId(0);
+                        velocityTracker.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.e);
+                        float yVelocity = velocityTracker.getYVelocity(pointerId);
+                        float xVelocity = velocityTracker.getXVelocity(pointerId);
+                        if (Math.abs(yVelocity) > this.d || Math.abs(xVelocity) > this.d) {
+                            z17 = v20Var2.onFling(this.n, motionEvent, xVelocity, yVelocity);
+                        }
+                    }
+                    z17 = false;
+                }
+                MotionEvent motionEvent5 = this.p;
+                if (motionEvent5 != null) {
+                    motionEvent5.recycle();
+                }
+                this.p = obtain;
+                VelocityTracker velocityTracker2 = this.w;
+                if (velocityTracker2 != null) {
+                    velocityTracker2.recycle();
+                    this.w = null;
+                }
+                this.q = false;
+                this.j = false;
+                o0Var2.removeMessages(1);
+                o0Var2.removeMessages(2);
+                return z17;
+            }
+            if (i11 != 2) {
+                if (i11 == 3) {
+                    o0Var2.removeMessages(1);
+                    o0Var2.removeMessages(2);
+                    o0Var2.removeMessages(3);
+                    this.w.recycle();
+                    this.w = null;
+                    this.q = false;
+                    this.i = false;
+                    this.l = false;
+                    this.m = false;
+                    this.j = false;
+                    this.k = false;
+                    return false;
+                }
+                if (i11 == 5) {
+                    this.r = f12;
+                    this.t = f12;
+                    this.s = f13;
+                    this.u = f13;
+                    o0Var2.removeMessages(1);
+                    o0Var2.removeMessages(2);
+                    o0Var2.removeMessages(3);
+                    this.q = false;
+                    this.l = false;
+                    this.m = false;
+                    this.j = false;
+                    this.k = false;
+                    return false;
+                }
+                if (i11 == 6) {
+                    this.r = f12;
+                    this.t = f12;
+                    this.s = f13;
+                    this.u = f13;
+                    this.w.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT, this.e);
+                    int actionIndex2 = motionEvent.getActionIndex();
+                    int pointerId2 = motionEvent.getPointerId(actionIndex2);
+                    float xVelocity2 = this.w.getXVelocity(pointerId2);
+                    float yVelocity2 = this.w.getYVelocity(pointerId2);
+                    for (int i13 = 0; i13 < pointerCount; i13++) {
+                        if (i13 != actionIndex2) {
+                            int pointerId3 = motionEvent.getPointerId(i13);
+                            if ((this.w.getYVelocity(pointerId3) * yVelocity2) + (this.w.getXVelocity(pointerId3) * xVelocity2) < 0.0f) {
+                                this.w.clear();
+                                return false;
+                            }
+                        }
+                    }
+                }
+            } else if (!this.k) {
+                int i14 = Build.VERSION.SDK_INT;
+                int i15 = 29;
+                int classification = i14 >= 29 ? motionEvent.getClassification() : 0;
+                boolean hasMessages = o0Var2.hasMessages(2);
+                float f14 = this.r - f12;
+                float f15 = this.s - f13;
+                if (this.q) {
+                    onScroll = false;
+                    z14 = hasMessages;
+                } else {
+                    if (this.l) {
+                        int i16 = (int) (f12 - this.t);
+                        int i17 = (int) (f13 - this.u);
+                        int i18 = (i17 * i17) + (i16 * i16);
+                        boolean z18 = i14 >= 29 && classification == 1;
+                        int i19 = this.a;
+                        if (hasMessages && z18) {
+                            if (i18 > i19) {
+                                o0Var2.removeMessages(2);
+                                i10 = i18;
+                                z14 = hasMessages;
+                                o0Var2.sendMessageDelayed(o0Var2.obtainMessage(2, 0, 0), (long) (ViewConfiguration.getLongPressTimeout() * 2.0f));
+                            } else {
+                                i10 = i18;
+                                z14 = hasMessages;
+                            }
+                            i19 = (int) (i19 * 4.0f);
+                        } else {
+                            i10 = i18;
+                            z14 = hasMessages;
+                        }
+                        int i20 = i10;
+                        if (i20 > i19) {
+                            onScroll = v20Var2.onScroll(this.n, motionEvent, f14, f15);
+                            this.r = f12;
+                            this.s = f13;
+                            z15 = false;
+                            this.l = false;
+                            o0Var2.removeMessages(3);
+                            o0Var2.removeMessages(1);
+                            o0Var2.removeMessages(2);
+                        } else {
+                            z15 = false;
+                            onScroll = false;
+                        }
+                        if (i20 > this.b) {
+                            this.m = z15;
+                        }
+                    } else {
+                        z14 = hasMessages;
+                        if (Math.abs(f14) >= 1.0f || Math.abs(f15) >= 1.0f) {
+                            onScroll = v20Var2.onScroll(this.n, motionEvent, f14, f15);
+                            this.r = f12;
+                            this.s = f13;
+                        } else {
+                            onScroll = false;
+                        }
+                    }
+                    i15 = 29;
+                }
+                if (i14 >= i15 && classification == 2 && z14) {
+                    o0Var2.removeMessages(2);
+                    o0Var2.sendMessage(o0Var2.obtainMessage(2, 0, 0));
+                }
+                return onScroll;
+            }
             return false;
         }
-        rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.q.C(20.0f, this.n, rect.top);
-        rect.bottom = org.telegram.messenger.q.C(50.0f, this.n, rect.bottom);
-        return super.requestChildRectangleOnScreen(view, rect, z10);
+        this.j = false;
+        u20 u20Var2 = this.h;
+        if (u20Var2 != null) {
+            PhotoViewer photoViewer = (PhotoViewer) u20Var2;
+            if (photoViewer.N0.getVisibility() != 0) {
+                boolean[] zArr = photoViewer.w1;
+                if (!zArr[0] && !zArr[1]) {
+                    float x10 = motionEvent.getX();
+                    if ((x10 < Math.min(135, photoViewer.e0.getMeasuredWidth() / 8) || x10 > photoViewer.e0.getMeasuredWidth() - r4) && (messageObject = photoViewer.T4) != null && ((!messageObject.isVideo() && ((pu0Var2 = photoViewer.f0) == null || !pu0Var2.x)) || SystemClock.elapsedRealtime() - photoViewer.u1 < 500 || !photoViewer.q0(motionEvent))) {
+                        this.j = true;
+                    }
+                }
+            }
+            boolean hasMessages2 = o0Var2.hasMessages(3);
+            if (hasMessages2) {
+                o0Var2.removeMessages(3);
+            }
+            MotionEvent motionEvent6 = this.n;
+            int i21 = y;
+            if (motionEvent6 == null || (motionEvent3 = this.p) == null || !hasMessages2 || !this.m) {
+                v20Var = v20Var2;
+            } else {
+                long eventTime = motionEvent.getEventTime() - motionEvent3.getEventTime();
+                if (eventTime <= i21 && eventTime >= 40) {
+                    int x11 = ((int) motionEvent6.getX()) - ((int) motionEvent.getX());
+                    int y3 = ((int) motionEvent6.getY()) - ((int) motionEvent.getY());
+                    if ((y3 * y3) + (x11 * x11) < this.c) {
+                        this.q = true;
+                        u20 u20Var3 = this.h;
+                        MotionEvent motionEvent7 = this.n;
+                        PhotoViewer photoViewer2 = (PhotoViewer) u20Var3;
+                        if ((photoViewer2.F2 != null || ((pu0Var = photoViewer2.f0) != null && pu0Var.x)) && photoViewer2.l3) {
+                            long o12 = photoViewer2.o1();
+                            j10 = 0;
+                            long A1 = photoViewer2.A1();
+                            float x12 = motionEvent7.getX();
+                            int k12 = photoViewer2.k1(photoViewer2.u4) / 3;
+                            float f16 = k12 * 2;
+                            if (photoViewer2.q0(motionEvent7)) {
+                                long j12 = x12 >= f16 ? o12 + 10000 : x12 < ((float) k12) ? o12 - 10000 : o12;
+                                if (o12 != j12) {
+                                    if (j12 > A1) {
+                                        j11 = A1;
+                                    } else {
+                                        if (j12 < 0) {
+                                            z11 = j12 >= -9000;
+                                            j11 = 0;
+                                            if (z11) {
+                                                v20Var = v20Var2;
+                                            } else {
+                                                photoViewer2.z1.e(true);
+                                                photoViewer2.z1.d(x12 < ((float) k12));
+                                                z71 z71Var = photoViewer2.z1;
+                                                v20Var = v20Var2;
+                                                long j13 = z71Var.o + 10000;
+                                                z71Var.o = j13;
+                                                z71Var.p = LocaleController.formatPluralString("Seconds", (int) (j13 / 1000), new Object[0]);
+                                                photoViewer2.t2(j11);
+                                                photoViewer2.e0.invalidate();
+                                                photoViewer2.q3.h(j11 / A1, true);
+                                                photoViewer2.r3.invalidate();
+                                            }
+                                            o0Var = o0Var2;
+                                            z12 = true;
+                                            this.h.getClass();
+                                            z10 = z12;
+                                            this.r = f12;
+                                            this.t = f12;
+                                            this.s = f13;
+                                            this.u = f13;
+                                            motionEvent2 = this.n;
+                                            if (motionEvent2 != null) {
+                                                motionEvent2.recycle();
+                                            }
+                                            this.n = MotionEvent.obtain(motionEvent);
+                                            this.l = true;
+                                            this.m = true;
+                                            this.i = true;
+                                            this.k = false;
+                                            if (this.v) {
+                                                o0Var.removeMessages(2);
+                                                o0Var.sendMessageDelayed(o0Var.obtainMessage(2, 0, 0), ViewConfiguration.getLongPressTimeout());
+                                            }
+                                            o0Var.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
+                                            return v20Var.onDown(motionEvent) | z10;
+                                        }
+                                        j11 = j12;
+                                    }
+                                    z11 = true;
+                                    if (z11) {
+                                    }
+                                    o0Var = o0Var2;
+                                    z12 = true;
+                                    this.h.getClass();
+                                    z10 = z12;
+                                    this.r = f12;
+                                    this.t = f12;
+                                    this.s = f13;
+                                    this.u = f13;
+                                    motionEvent2 = this.n;
+                                    if (motionEvent2 != null) {
+                                    }
+                                    this.n = MotionEvent.obtain(motionEvent);
+                                    this.l = true;
+                                    this.m = true;
+                                    this.i = true;
+                                    this.k = false;
+                                    if (this.v) {
+                                    }
+                                    o0Var.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
+                                    return v20Var.onDown(motionEvent) | z10;
+                                }
+                            }
+                            v20Var = v20Var2;
+                        } else {
+                            v20Var = v20Var2;
+                            j10 = 0;
+                        }
+                        if (photoViewer2.I6 && ((photoViewer2.a6 != 1.0f || (photoViewer2.Y5 == 0.0f && photoViewer2.X5 == 0.0f)) && photoViewer2.n6 == j10 && photoViewer2.n4 == 0)) {
+                            org.telegram.ui.gv0 gv0Var = photoViewer2.W0[0];
+                            if (gv0Var == null || !gv0Var.p || gv0Var.h == -1) {
+                                o0Var = o0Var2;
+                            } else {
+                                o0Var = o0Var2;
+                            }
+                            if (photoViewer2.a6 == 1.0f) {
+                                float b10 = org.telegram.messenger.yh.b(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2));
+                                float b11 = org.telegram.messenger.yh.b(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.i1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.i1() / 2));
+                                photoViewer2.w3(3.0f);
+                                float f17 = photoViewer2.E6;
+                                if (b10 >= f17) {
+                                    f17 = photoViewer2.F6;
+                                }
+                                b10 = f17;
+                                float f18 = photoViewer2.G6;
+                                if (b11 >= f18) {
+                                    f18 = photoViewer2.H6;
+                                }
+                                b11 = f18;
+                                z13 = true;
+                                photoViewer2.j0(3.0f, b10, b11, true);
+                            } else {
+                                z13 = true;
+                                photoViewer2.j0(1.0f, 0.0f, 0.0f, true);
+                            }
+                            photoViewer2.O6 = z13;
+                            photoViewer2.E1();
+                            z12 = true;
+                            this.h.getClass();
+                            z10 = z12;
+                            this.r = f12;
+                            this.t = f12;
+                            this.s = f13;
+                            this.u = f13;
+                            motionEvent2 = this.n;
+                            if (motionEvent2 != null) {
+                            }
+                            this.n = MotionEvent.obtain(motionEvent);
+                            this.l = true;
+                            this.m = true;
+                            this.i = true;
+                            this.k = false;
+                            if (this.v) {
+                            }
+                            o0Var.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
+                            return v20Var.onDown(motionEvent) | z10;
+                        }
+                        o0Var = o0Var2;
+                        z12 = false;
+                        this.h.getClass();
+                        z10 = z12;
+                        this.r = f12;
+                        this.t = f12;
+                        this.s = f13;
+                        this.u = f13;
+                        motionEvent2 = this.n;
+                        if (motionEvent2 != null) {
+                        }
+                        this.n = MotionEvent.obtain(motionEvent);
+                        this.l = true;
+                        this.m = true;
+                        this.i = true;
+                        this.k = false;
+                        if (this.v) {
+                        }
+                        o0Var.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
+                        return v20Var.onDown(motionEvent) | z10;
+                    }
+                }
+                v20Var = v20Var2;
+            }
+            o0Var = o0Var2;
+            o0Var.sendEmptyMessageDelayed(3, i21);
+            z10 = false;
+            this.r = f12;
+            this.t = f12;
+            this.s = f13;
+            this.u = f13;
+            motionEvent2 = this.n;
+            if (motionEvent2 != null) {
+            }
+            this.n = MotionEvent.obtain(motionEvent);
+            this.l = true;
+            this.m = true;
+            this.i = true;
+            this.k = false;
+            if (this.v) {
+            }
+            o0Var.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
+            return v20Var.onDown(motionEvent) | z10;
+        }
+        v20Var = v20Var2;
+        o0Var = o0Var2;
+        z10 = false;
+        this.r = f12;
+        this.t = f12;
+        this.s = f13;
+        this.u = f13;
+        motionEvent2 = this.n;
+        if (motionEvent2 != null) {
+        }
+        this.n = MotionEvent.obtain(motionEvent);
+        this.l = true;
+        this.m = true;
+        this.i = true;
+        this.k = false;
+        if (this.v) {
+        }
+        o0Var.sendEmptyMessageAtTime(1, this.n.getDownTime() + x);
+        return v20Var.onDown(motionEvent) | z10;
     }
 
-    public void setDelegate(t20 t20Var) {
-        this.f = t20Var;
+    public final void b() {
+        this.v = false;
+    }
+
+    public w20(Context context, v20 v20Var) {
+        int scaledTouchSlop;
+        int i10;
+        int i11;
+        this.f = new ab.o0(this, 8);
+        this.g = v20Var;
+        if (v20Var instanceof u20) {
+            this.h = (u20) v20Var;
+        }
+        this.v = true;
+        if (context == null) {
+            i10 = ViewConfiguration.getTouchSlop();
+            this.d = ViewConfiguration.getMinimumFlingVelocity();
+            this.e = ViewConfiguration.getMaximumFlingVelocity();
+            i11 = 100;
+            scaledTouchSlop = i10;
+        } else {
+            ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
+            int scaledTouchSlop2 = viewConfiguration.getScaledTouchSlop();
+            scaledTouchSlop = viewConfiguration.getScaledTouchSlop();
+            int scaledDoubleTapSlop = viewConfiguration.getScaledDoubleTapSlop();
+            this.d = viewConfiguration.getScaledMinimumFlingVelocity();
+            this.e = viewConfiguration.getScaledMaximumFlingVelocity();
+            i10 = scaledTouchSlop2;
+            i11 = scaledDoubleTapSlop;
+        }
+        this.a = i10 * i10;
+        this.b = scaledTouchSlop * scaledTouchSlop;
+        this.c = i11 * i11;
     }
 }

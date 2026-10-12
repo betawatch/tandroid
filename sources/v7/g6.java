@@ -1,7 +1,56 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g6 {
-    public final Float a;
+public abstract class g6 {
+    public static String a(com.google.android.gms.internal.play_billing.l1 l1Var) {
+        StringBuilder sb2 = new StringBuilder(l1Var.n());
+        for (int i10 = 0; i10 < l1Var.n(); i10++) {
+            byte h = l1Var.h(i10);
+            if (h == 34) {
+                sb2.append("\\\"");
+            } else if (h == 39) {
+                sb2.append("\\'");
+            } else if (h != 92) {
+                switch (h) {
+                    case 7:
+                        sb2.append("\\a");
+                        break;
+                    case 8:
+                        sb2.append("\\b");
+                        break;
+                    case 9:
+                        sb2.append("\\t");
+                        break;
+                    case 10:
+                        sb2.append("\\n");
+                        break;
+                    case 11:
+                        sb2.append("\\v");
+                        break;
+                    case 12:
+                        sb2.append("\\f");
+                        break;
+                    case 13:
+                        sb2.append("\\r");
+                        break;
+                    default:
+                        if (h < 32 || h > 126) {
+                            sb2.append('\\');
+                            sb2.append((char) (((h >>> 6) & 3) + 48));
+                            sb2.append((char) (((h >>> 3) & 7) + 48));
+                            sb2.append((char) ((h & 7) + 48));
+                            break;
+                        } else {
+                            sb2.append((char) h);
+                            break;
+                        }
+                        break;
+                }
+            } else {
+                sb2.append("\\\\");
+            }
+        }
+        return sb2.toString();
+    }
 }

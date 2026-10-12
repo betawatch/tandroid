@@ -1,32 +1,8 @@
 package n4;
 
-import android.util.SparseIntArray;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d {
-    static {
-        SparseIntArray sparseIntArray = new SparseIntArray();
-        sparseIntArray.put(5, 1);
-        sparseIntArray.put(6, 2);
-        sparseIntArray.put(7, 2);
-        sparseIntArray.put(8, 1);
-        sparseIntArray.put(9, 1);
-        sparseIntArray.put(10, 1);
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof d) {
-            throw null;
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        throw null;
-    }
-
-    public final String toString() {
-        throw null;
-    }
+public interface d extends IInterface {
 }

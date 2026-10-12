@@ -9,14 +9,14 @@ import android.graphics.Bitmap;
 import android.media.AudioRecord;
 import android.net.Uri;
 import android.util.Log;
+import e0.f0;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.Callable;
 import org.webrtc.audio.WebRtcAudioRecord;
-import v7.j7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Callable {
     public final /* synthetic */ int a;
@@ -41,27 +41,27 @@ public final /* synthetic */ class h implements Callable {
             case 0:
                 Context context = (Context) this.b;
                 Intent intent = (Intent) this.c;
-                s c10 = s.c();
-                c10.getClass();
+                s j10 = s.j();
+                j10.getClass();
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
                     Log.d("FirebaseMessaging", "Starting service");
                 }
-                ((ArrayDeque) c10.e).offer(intent);
+                ((ArrayDeque) j10.e).offer(intent);
                 Intent intent2 = new Intent("com.google.firebase.MESSAGING_EVENT");
                 intent2.setPackage(context.getPackageName());
-                synchronized (c10) {
+                synchronized (j10) {
                     try {
-                        str = (String) c10.b;
+                        str = (String) j10.b;
                         if (str == null) {
                             ResolveInfo resolveService = context.getPackageManager().resolveService(intent2, 0);
                             if (resolveService != null && (serviceInfo = resolveService.serviceInfo) != null) {
                                 if (context.getPackageName().equals(serviceInfo.packageName) && (str2 = serviceInfo.name) != null) {
                                     if (str2.startsWith(".")) {
-                                        c10.b = context.getPackageName() + serviceInfo.name;
+                                        j10.b = context.getPackageName() + serviceInfo.name;
                                     } else {
-                                        c10.b = serviceInfo.name;
+                                        j10.b = serviceInfo.name;
                                     }
-                                    str = (String) c10.b;
+                                    str = (String) j10.b;
                                 }
                                 Log.e("FirebaseMessaging", "Error resolving target intent service, skipping classname enforcement. Resolved service was: " + serviceInfo.packageName + "/" + serviceInfo.name);
                                 str = null;
@@ -79,8 +79,8 @@ public final /* synthetic */ class h implements Callable {
                     intent2.setClassName(context.getPackageName(), str);
                 }
                 try {
-                    if (c10.e(context)) {
-                        startService = c0.d(context, intent2);
+                    if (j10.l(context)) {
+                        startService = b0.d(context, intent2);
                     } else {
                         startService = context.startService(intent2);
                         Log.d("FirebaseMessaging", "Missing wake lock permission, service start may be delayed");
@@ -91,23 +91,26 @@ public final /* synthetic */ class h implements Callable {
                     } else {
                         i10 = -1;
                     }
-                } catch (IllegalStateException e7) {
-                    Log.e("FirebaseMessaging", "Failed to start service while in background: " + e7);
+                } catch (IllegalStateException e) {
+                    Log.e("FirebaseMessaging", "Failed to start service while in background: " + e);
                     i10 = 402;
-                } catch (SecurityException e10) {
-                    Log.e("FirebaseMessaging", "Error while delivering the message to the serviceIntent", e10);
+                } catch (SecurityException e7) {
+                    Log.e("FirebaseMessaging", "Error while delivering the message to the serviceIntent", e7);
                     i10 = 401;
                 }
                 return Integer.valueOf(i10);
             case 1:
                 g2.i iVar = (g2.i) this.b;
                 byte[] bArr = (byte[]) this.c;
-                return j7.a(bArr.length, iVar.c, bArr);
+                boolean z10 = iVar.d;
+                Bitmap a2 = f0.a(bArr.length, iVar.c, bArr);
+                return z10 ? f0.c(a2) : a2;
             case 2:
                 g2.i iVar2 = (g2.i) this.b;
                 Uri uri = (Uri) this.c;
                 g2.h createDataSource = iVar2.b.createDataSource();
                 int i11 = iVar2.c;
+                boolean z11 = iVar2.d;
                 try {
                     g2.m mVar = new g2.m(uri, 1, null, Collections.EMPTY_MAP, 0L, -1L, null, 0);
                     g2.n nVar = (g2.n) createDataSource;
@@ -125,9 +128,12 @@ public final /* synthetic */ class h implements Callable {
                         }
                     }
                     byte[] copyOf = Arrays.copyOf(bArr2, i13);
-                    Bitmap a2 = j7.a(copyOf.length, i11, copyOf);
+                    Bitmap a10 = f0.a(copyOf.length, i11, copyOf);
+                    if (z11) {
+                        a10 = f0.c(a10);
+                    }
                     nVar.close();
-                    return a2;
+                    return a10;
                 } catch (Throwable th2) {
                     ((g2.n) createDataSource).close();
                     throw th2;

@@ -34,7 +34,7 @@ public final class m4 implements o4, i5 {
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.j5
@@ -51,8 +51,8 @@ public final class m4 implements o4, i5 {
         t3.H(this, l4);
     }
 
-    public m4(long j3, LongBinaryOperator longBinaryOperator) {
-        this.b = j3;
+    public m4(long j10, LongBinaryOperator longBinaryOperator) {
+        this.b = j10;
         this.c = longBinaryOperator;
     }
 
@@ -62,13 +62,13 @@ public final class m4 implements o4, i5 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j3) {
+    public final void o(long j10) {
         this.a = this.b;
     }
 
     @Override // j$.util.stream.j5
-    public final void accept(long j3) {
-        this.a = this.c.applyAsLong(this.a, j3);
+    public final void accept(long j10) {
+        this.a = this.c.applyAsLong(this.a, j10);
     }
 
     @Override // java.util.function.Supplier

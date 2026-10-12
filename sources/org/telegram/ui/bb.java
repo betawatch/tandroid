@@ -1,48 +1,89 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
-import j$.util.function.Predicate$-CC;
-import java.util.function.Predicate;
-import org.telegram.messenger.MessageObject;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bb implements Predicate {
+public final /* synthetic */ class bb implements RequestDelegate {
     public final /* synthetic */ int a;
+    public final /* synthetic */ ac b;
 
-    public /* synthetic */ bb(int i10) {
+    public /* synthetic */ bb(ac acVar, int i10) {
         this.a = i10;
+        this.b = acVar;
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
-        }
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                return ((String) obj) != null;
+                if (tLObject != null) {
+                    final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults = (TLRPC.TL_channels_adminLogResults) tLObject;
+                    final int i10 = 1;
+                    final ac acVar = this.b;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ya
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i10) {
+                                case 0:
+                                    ac.U(acVar, tL_channels_adminLogResults);
+                                    break;
+                                default:
+                                    ac.Y(acVar, tL_channels_adminLogResults);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
+                break;
             case 1:
-                return !((MessageObject) obj).isEphemeral();
+                ac acVar2 = this.b;
+                acVar2.getClass();
+                if (tLObject instanceof Vector) {
+                    ArrayList<T> arrayList = ((Vector) tLObject).objects;
+                    ArrayList<TLRPC.User> arrayList2 = new ArrayList<>();
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        if (arrayList.get(i11) instanceof TLRPC.User) {
+                            arrayList2.add((TLRPC.User) arrayList.get(i11));
+                        }
+                    }
+                    acVar2.getMessagesController().putUsers(arrayList2, false);
+                    break;
+                }
+                break;
             case 2:
-                return Objects.nonNull((TLObject) obj);
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.j(29, this.b, tLObject));
+                break;
+            case 3:
+                if (tLObject != null) {
+                    final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults2 = (TLRPC.TL_channels_adminLogResults) tLObject;
+                    final int i12 = 0;
+                    final ac acVar3 = this.b;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ya
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i12) {
+                                case 0:
+                                    ac.U(acVar3, tL_channels_adminLogResults2);
+                                    break;
+                                default:
+                                    ac.Y(acVar3, tL_channels_adminLogResults2);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
+                break;
             default:
-                return !((TL_stars.StarGift) obj).auction;
+                AndroidUtilities.runOnUIThread(new t1(this.b, tL_error, tLObject, 9));
+                break;
         }
     }
 }

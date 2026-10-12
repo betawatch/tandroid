@@ -4,7 +4,7 @@ import java.lang.Character;
 import java.net.URL;
 import java.net.URLClassLoader;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class URLAlphabetRegistration implements AlphabetRegistration {
     private Character.UnicodeBlock[] blocks;
@@ -39,8 +39,8 @@ public class URLAlphabetRegistration implements AlphabetRegistration {
             return alphabetRegistration;
         } catch (ClassNotFoundException unused) {
             throw new AlphabetRegistrationException("Class at " + this.url + " cannot be got.");
-        } catch (Exception e7) {
-            throw new AlphabetRegistrationException("Problem in loading the class at " + this.url + " :\n" + e7.getMessage());
+        } catch (Exception e) {
+            throw new AlphabetRegistrationException("Problem in loading the class at " + this.url + " :\n" + e.getMessage());
         }
     }
 

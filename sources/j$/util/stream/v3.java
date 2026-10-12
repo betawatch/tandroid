@@ -35,7 +35,7 @@ public final class v3 extends p4 implements o4, i5 {
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.j5
@@ -58,13 +58,13 @@ public final class v3 extends p4 implements o4, i5 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j3) {
+    public final void o(long j10) {
         this.a = this.b.get();
     }
 
     @Override // j$.util.stream.j5
-    public final void accept(long j3) {
-        this.c.accept(this.a, j3);
+    public final void accept(long j10) {
+        this.c.accept(this.a, j10);
     }
 
     public v3(Supplier supplier, ObjLongConsumer objLongConsumer, o oVar) {

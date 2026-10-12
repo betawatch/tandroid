@@ -12,7 +12,7 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a implements g2.h {
     public final g2.h a;
@@ -58,21 +58,17 @@ public final class a implements g2.h {
                 cipher.init(2, new SecretKeySpec(this.b, "AES"), new IvParameterSpec(this.c));
                 g2.k kVar = new g2.k(this.a, mVar);
                 this.d = new CipherInputStream(kVar, cipher);
-                if (kVar.d) {
-                    return -1L;
-                }
-                kVar.a.open(kVar.b);
-                kVar.d = true;
+                kVar.a();
                 return -1L;
-            } catch (InvalidAlgorithmParameterException | InvalidKeyException e7) {
-                throw new RuntimeException(e7);
+            } catch (InvalidAlgorithmParameterException | InvalidKeyException e) {
+                throw new RuntimeException(e);
             }
-        } catch (NoSuchAlgorithmException | NoSuchPaddingException e10) {
-            throw new RuntimeException(e10);
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException e7) {
+            throw new RuntimeException(e7);
         }
     }
 
-    @Override // b2.k
+    @Override // b2.p
     public final int read(byte[] bArr, int i10, int i11) {
         this.d.getClass();
         int read = this.d.read(bArr, i10, i11);

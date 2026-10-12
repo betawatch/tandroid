@@ -5,8 +5,9 @@ import android.media.metrics.LogSessionId;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContentInfo;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j implements r0.d, r0.f {
     public final /* synthetic */ int a = 0;
@@ -52,7 +53,7 @@ public final class j implements r0.d, r0.f {
         LogSessionId logSessionId2;
         LogSessionId logSessionId3 = (LogSessionId) this.b;
         logSessionId2 = LogSessionId.LOG_SESSION_ID_NONE;
-        e2.d.g(logSessionId3.equals(logSessionId2));
+        u6.p(logSessionId3.equals(logSessionId2));
         this.b = logSessionId;
     }
 

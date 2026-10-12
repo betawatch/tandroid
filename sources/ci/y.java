@@ -1,67 +1,505 @@
 package ci;
 
+import ah.c0;
+import ah.p0;
 import android.animation.ValueAnimator;
-import android.app.Activity;
+import android.content.Context;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import android.view.View;
 import android.widget.FrameLayout;
+import bi.f8;
+import bi.w8;
+import bi.x8;
+import di.k8;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.hs;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Cells.t7;
+import org.telegram.ui.Components.br;
+import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.j91;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.ms0;
+import org.telegram.ui.Components.vi;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class y extends FrameLayout {
-    public final v a;
-    public t b;
-    public Utilities.Callback c;
-    public float d;
-    public boolean e;
-    public ValueAnimator f;
+public abstract class y extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+    public static LongSparseArray E;
+    public static LongSparseArray F;
+    public final m2 a;
+    public final int b;
+    public final c6 c;
+    public final long d;
+    public final f8 e;
+    public final ArrayList f;
+    public final ArrayList h;
+    public final a n;
+    public final j91 r;
+    public Boolean s;
+    public int v;
+    public float w;
+    public ValueAnimator x;
+    public int y;
 
-    public y(Activity activity, w2 w2Var) {
-        super(activity);
-        v vVar = new v(this, activity);
-        this.a = vVar;
-        vVar.setAdapter(new w(this, activity, w2Var));
-        vVar.setLayoutManager(new s4.d0(0, false));
-        vVar.setClipToPadding(false);
-        vVar.setVisibility(8);
-        vVar.setWillNotDraw(false);
-        vVar.setOnItemClickListener(new ai.g(this, 2));
-        addView(vVar, w7.x5.d(56.0f, -1));
+    public y(Context context, m2 m2Var, long j10) {
+        super(context);
+        this.f = new ArrayList();
+        this.h = new ArrayList();
+        this.s = null;
+        this.v = AndroidUtilities.displaySize.y;
+        this.y = Utilities.clamp(SharedConfig.storiesColumnsCount, 6, 2);
+        this.a = m2Var;
+        int currentAccount = m2Var.getCurrentAccount();
+        this.b = currentAccount;
+        c6 resourceProvider = m2Var.getResourceProvider();
+        this.c = resourceProvider;
+        this.d = j10;
+        setBackgroundColor(g6.v(g6.w0(g6.d6, resourceProvider), g6.m1(0.04f, g6.w0(g6.G6, resourceProvider))));
+        if (F == null) {
+            F = new LongSparseArray();
+        }
+        long j11 = currentAccount;
+        LongSparseArray longSparseArray = (LongSparseArray) F.get(j11);
+        if (longSparseArray == null) {
+            LongSparseArray longSparseArray2 = F;
+            LongSparseArray longSparseArray3 = new LongSparseArray();
+            longSparseArray2.put(j11, longSparseArray3);
+            longSparseArray = longSparseArray3;
+        }
+        f8 f8Var = (f8) longSparseArray.get(j10);
+        if (f8Var == null) {
+            f8 f8Var2 = new f8(currentAccount, j10, "", null);
+            longSparseArray.put(j10, f8Var2);
+            f8Var = f8Var2;
+        }
+        this.e = f8Var;
+        ms0 ms0Var = (ms0) this;
+        a aVar = new a(ms0Var, context);
+        this.n = aVar;
+        aVar.setAllowDisallowInterceptTouch(true);
+        aVar.setAdapter(new b(ms0Var, context));
+        addView(aVar, a6.e(-1, -1, 119));
+        j91 n10 = aVar.n(9, true);
+        this.r = n10;
+        n10.r = 12;
+        n10.setPreTabClick(new a1.c(ms0Var, 13));
+        addView(n10, a6.e(-1, 42, 48));
+        i(false);
     }
 
-    public final void a(boolean z10, boolean z11) {
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        if (this.e == z10) {
+    public final void a(String str) {
+        m2 m2Var = this.a;
+        if (m2Var == null || m2Var.getParentActivity() == null) {
             return;
         }
-        this.e = z10;
-        v vVar = this.a;
-        if (!z11) {
-            this.d = z10 ? 1.0f : 0.0f;
-            vVar.invalidate();
-            vVar.setVisibility(z10 ? 0 : 8);
+        vi viVar = new vi(m2Var.getParentActivity(), this.a, false, false, false, this.c);
+        viVar.N1(1, false);
+        viVar.W0 = true;
+        viVar.V0 = false;
+        viVar.m1.setText(LocaleController.getString(R.string.ChoosePhotoOrVideo));
+        viVar.j0.f0();
+        viVar.c2 = new c(this, viVar, str);
+        viVar.t1();
+        viVar.show();
+    }
+
+    public final void b(String str) {
+        f8 f8Var;
+        TLRPC.MessageMedia messageMedia;
+        if (TextUtils.isEmpty(str)) {
             return;
         }
-        vVar.setVisibility(0);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
-        this.f = ofFloat;
-        ofFloat.addUpdateListener(new ai.a(this, 16));
-        this.f.addListener(new ai.n(r0, this, z10));
-        this.f.setInterpolator(hs.h);
-        this.f.setDuration(340L);
-        this.f.start();
+        this.e.G.remove(str);
+        this.h.remove(str);
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.f;
+            if (i10 >= arrayList.size()) {
+                f8Var = null;
+                break;
+            }
+            f8Var = (f8) arrayList.get(i10);
+            if (f8Var != null && TextUtils.equals(f8Var.E, str)) {
+                break;
+            } else {
+                i10++;
+            }
+        }
+        if (f8Var != null) {
+            ArrayList arrayList2 = f8Var.i;
+            TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
+            int i11 = this.b;
+            deletepreviewmedia.bot = MessagesController.getInstance(i11).getInputUser(this.d);
+            deletepreviewmedia.lang_code = str;
+            for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                TL_stories.StoryItem storyItem = ((MessageObject) arrayList2.get(i12)).storyItem;
+                if (storyItem != null && (messageMedia = storyItem.media) != null) {
+                    deletepreviewmedia.media.add(MessagesController.toInputMedia(messageMedia));
+                }
+            }
+            ConnectionsManager.getInstance(i11).sendRequest(deletepreviewmedia, null);
+        }
+        i(true);
+        this.r.d(-1, 0);
     }
 
-    public void setOnLayoutClick(Utilities.Callback<t> callback) {
-        this.c = callback;
+    public abstract boolean c(MessageObject messageObject);
+
+    public final boolean d() {
+        f8 f8Var;
+        View currentView = this.n.getCurrentView();
+        if (!(currentView instanceof t) || (f8Var = ((t) currentView).a) == null) {
+            return true;
+        }
+        ArrayList arrayList = f8Var.i;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            if (!c((MessageObject) arrayList.get(i10))) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    public void setSelected(t tVar) {
-        this.b = tVar;
-        AndroidUtilities.updateVisibleRows(this.a);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.storiesListUpdated;
+        a aVar = this.n;
+        int i13 = 0;
+        if (i10 != i12) {
+            if (i10 == NotificationCenter.storiesUpdated) {
+                i(true);
+                View[] viewPages = aVar.getViewPages();
+                int length = viewPages.length;
+                while (i13 < length) {
+                    View view = viewPages[i13];
+                    if (view instanceof t) {
+                        ((t) view).v.l();
+                    }
+                    i13++;
+                }
+                return;
+            }
+            return;
+        }
+        Object obj = objArr[0];
+        f8 f8Var = this.e;
+        if (obj == f8Var) {
+            i(true);
+            View[] viewPages2 = aVar.getViewPages();
+            int length2 = viewPages2.length;
+            while (i13 < length2) {
+                View view2 = viewPages2[i13];
+                if (view2 instanceof t) {
+                    t tVar = (t) view2;
+                    if (tVar.a == f8Var) {
+                        tVar.v.l();
+                    }
+                }
+                i13++;
+            }
+            return;
+        }
+        if (this.f.indexOf(obj) >= 0) {
+            View[] viewPages3 = aVar.getViewPages();
+            for (View view3 : viewPages3) {
+                if (view3 instanceof t) {
+                    t tVar2 = (t) view3;
+                    if (tVar2.a == objArr[0]) {
+                        tVar2.v.l();
+                    }
+                }
+            }
+        }
+    }
+
+    public abstract boolean e(MessageObject messageObject);
+
+    public final void f() {
+        f8 f8Var;
+        View currentView = this.n.getCurrentView();
+        if (!(currentView instanceof t) || (f8Var = ((t) currentView).a) == null) {
+            return;
+        }
+        ArrayList arrayList = f8Var.i;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            if (!c((MessageObject) arrayList.get(i10))) {
+                e((MessageObject) arrayList.get(i10));
+            }
+        }
+    }
+
+    public abstract boolean g(MessageObject messageObject);
+
+    public String getBotPreviewsSubtitle() {
+        int i10;
+        int i11;
+        TLRPC.MessageMedia messageMedia;
+        StringBuilder sb2 = new StringBuilder();
+        View currentView = this.n.getCurrentView();
+        if (currentView instanceof t) {
+            f8 f8Var = ((t) currentView).a;
+            if (f8Var != null) {
+                ArrayList arrayList = f8Var.i;
+                i10 = 0;
+                i11 = 0;
+                for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                    MessageObject messageObject = (MessageObject) arrayList.get(i12);
+                    TL_stories.StoryItem storyItem = messageObject.storyItem;
+                    if (storyItem != null && (messageMedia = storyItem.media) != null) {
+                        if (MessageObject.isVideoDocument(messageMedia.document)) {
+                            i11++;
+                        } else if (messageObject.storyItem.media.photo != null) {
+                            i10++;
+                        }
+                    }
+                }
+            } else {
+                i10 = 0;
+                i11 = 0;
+            }
+            if (i10 == 0 && i11 == 0) {
+                return LocaleController.getString(R.string.BotPreviewEmpty);
+            }
+            if (i10 > 0) {
+                sb2.append(LocaleController.formatPluralString("Images", i10, new Object[0]));
+            }
+            if (i11 > 0) {
+                if (sb2.length() > 0) {
+                    sb2.append(", ");
+                }
+                sb2.append(LocaleController.formatPluralString("Videos", i11, new Object[0]));
+            }
+        }
+        return sb2.toString();
+    }
+
+    public String getCurrentLang() {
+        View view;
+        f8 f8Var;
+        a aVar = this.n;
+        View[] viewPages = aVar.getViewPages();
+        if (Math.abs(aVar.getCurrentPosition() - aVar.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
+            view = viewPages[0];
+        }
+        if (!(view instanceof t) || (f8Var = ((t) view).a) == null) {
+            return null;
+        }
+        return f8Var.E;
+    }
+
+    public f8 getCurrentList() {
+        f8 f8Var;
+        View currentView = this.n.getCurrentView();
+        if (!(currentView instanceof t) || (f8Var = ((t) currentView).a) == null) {
+            return null;
+        }
+        return f8Var;
+    }
+
+    public mm0 getCurrentListView() {
+        View currentView = this.n.getCurrentView();
+        if (currentView instanceof t) {
+            return ((t) currentView).f;
+        }
+        return null;
+    }
+
+    public int getItemsCount() {
+        f8 f8Var;
+        View currentView = this.n.getCurrentView();
+        if (!(currentView instanceof t) || (f8Var = ((t) currentView).a) == null) {
+            return 0;
+        }
+        return f8Var.i.size();
+    }
+
+    public int getStartedTrackingX() {
+        return 0;
+    }
+
+    public final void h() {
+        f8 f8Var;
+        View currentView = this.n.getCurrentView();
+        if (!(currentView instanceof t) || (f8Var = ((t) currentView).a) == null) {
+            return;
+        }
+        ArrayList arrayList = f8Var.i;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            if (c((MessageObject) arrayList.get(i10))) {
+                g((MessageObject) arrayList.get(i10));
+            }
+        }
+    }
+
+    public final void i(boolean z10) {
+        f8 f8Var;
+        k8 k8Var;
+        ArrayList arrayList = new ArrayList(this.e.G);
+        ArrayList arrayList2 = this.h;
+        int size = arrayList2.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList2.get(i10);
+            i10++;
+            String str = (String) obj;
+            if (!arrayList.contains(str)) {
+                arrayList.add(str);
+            }
+        }
+        x8 storiesController = MessagesController.getInstance(this.b).getStoriesController();
+        long j10 = this.d;
+        ArrayList E2 = storiesController.E(j10);
+        if (E2 != null) {
+            int size2 = E2.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = E2.get(i11);
+                i11++;
+                w8 w8Var = (w8) obj2;
+                if (w8Var != null && (k8Var = w8Var.c) != null && k8Var.J0 == j10 && !TextUtils.isEmpty(k8Var.K0) && !arrayList.contains(k8Var.K0)) {
+                    arrayList.add(k8Var.K0);
+                }
+            }
+        }
+        ArrayList arrayList3 = this.f;
+        ArrayList arrayList4 = new ArrayList(arrayList3);
+        arrayList3.clear();
+        int size3 = arrayList.size();
+        int i12 = 0;
+        while (i12 < size3) {
+            Object obj3 = arrayList.get(i12);
+            i12++;
+            String str2 = (String) obj3;
+            int i13 = 0;
+            while (true) {
+                if (i13 >= arrayList4.size()) {
+                    f8Var = null;
+                    break;
+                } else {
+                    if (TextUtils.equals(((f8) arrayList4.get(i13)).E, str2)) {
+                        f8Var = (f8) arrayList4.get(i13);
+                        break;
+                    }
+                    i13++;
+                }
+            }
+            if (f8Var == null) {
+                f8 f8Var2 = new f8(this.b, this.d, str2, null);
+                f8Var2.H(null);
+                f8Var = f8Var2;
+            }
+            arrayList3.add(f8Var);
+        }
+        a aVar = this.n;
+        aVar.o(true);
+        SpannableString spannableString = new SpannableString(org.telegram.messenger.q.h(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
+        br brVar = new br(R.drawable.msg_filled_plus, 0);
+        brVar.setScale(0.9f, 0.9f);
+        brVar.spaceScaleX = 0.85f;
+        spannableString.setSpan(brVar, 0, 1, 33);
+        j91 j91Var = this.r;
+        j91Var.a(-1, spannableString);
+        j91Var.x.l();
+        boolean z11 = arrayList3.size() + 1 > 1;
+        Boolean bool = this.s;
+        if (bool == null || bool.booleanValue() != z11) {
+            ValueAnimator valueAnimator = this.x;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.s = Boolean.valueOf(z11);
+            if (!z10) {
+                this.w = z11 ? 1.0f : 0.0f;
+                j91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
+                aVar.setTranslationY(AndroidUtilities.dp(z11 ? 42.0f : 0.0f));
+                return;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, z11 ? 1.0f : 0.0f);
+            this.x = ofFloat;
+            ofFloat.addUpdateListener(new c0(this, 15));
+            this.x.addListener(new p0(5, this, z11));
+            this.x.setDuration(320L);
+            this.x.setInterpolator(es.h);
+            this.x.start();
+        }
+    }
+
+    public final void j() {
+        View currentView = this.n.getCurrentView();
+        if (currentView instanceof t) {
+            t tVar = (t) currentView;
+            i iVar = tVar.f;
+            for (int i10 = 0; i10 < iVar.getChildCount(); i10++) {
+                View childAt = iVar.getChildAt(i10);
+                if (childAt instanceof t7) {
+                    t7 t7Var = (t7) childAt;
+                    t7Var.i(tVar.W.c(t7Var.getMessageObject()), true);
+                }
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (E == null) {
+            E = new LongSparseArray();
+        }
+        LongSparseArray longSparseArray = E;
+        int i10 = this.b;
+        LongSparseArray longSparseArray2 = (LongSparseArray) longSparseArray.get(i10);
+        if (longSparseArray2 == null) {
+            LongSparseArray longSparseArray3 = new LongSparseArray();
+            E.put(i10, longSparseArray3);
+            longSparseArray2 = longSparseArray3;
+        }
+        longSparseArray2.put(this.d, this);
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesListUpdated);
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesUpdated);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (E == null) {
+            E = new LongSparseArray();
+        }
+        LongSparseArray longSparseArray = E;
+        int i10 = this.b;
+        LongSparseArray longSparseArray2 = (LongSparseArray) longSparseArray.get(i10);
+        if (longSparseArray2 != null) {
+            longSparseArray2.remove(this.d);
+        }
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.storiesListUpdated);
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.storiesUpdated);
+    }
+
+    public void setVisibleHeight(int i10) {
+        this.v = i10;
+        View[] viewPages = this.n.getViewPages();
+        if (viewPages != null) {
+            for (View view : viewPages) {
+                if (view instanceof t) {
+                    ((t) view).setVisibleHeight(i10);
+                }
+            }
+        }
     }
 }

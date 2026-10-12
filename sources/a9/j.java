@@ -2,7 +2,7 @@ package a9;
 
 import com.google.android.gms.internal.play_billing.s1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j extends k {
     public final transient int c;
@@ -22,22 +22,22 @@ public final class j extends k {
     }
 
     @Override // a9.h
+    public final int m() {
+        return this.e.n() + this.c + this.d;
+    }
+
+    @Override // a9.h
     public final int n() {
-        return this.e.o() + this.c + this.d;
+        return this.e.n() + this.c;
     }
 
     @Override // a9.h
-    public final int o() {
-        return this.e.o() + this.c;
-    }
-
-    @Override // a9.h
-    public final Object[] p() {
-        return this.e.p();
+    public final Object[] o() {
+        return this.e.o();
     }
 
     @Override // a9.k, java.util.List
-    /* renamed from: q, reason: merged with bridge method [inline-methods] */
+    /* renamed from: p, reason: merged with bridge method [inline-methods] */
     public final k subList(int i10, int i11) {
         s1.b(i10, i11, this.d);
         int i12 = this.c;

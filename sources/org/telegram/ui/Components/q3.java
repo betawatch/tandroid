@@ -5,9 +5,9 @@ import android.os.Vibrator;
 import android.text.Spanned;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class q3 extends wq {
+public final class q3 extends tq {
     public final /* synthetic */ Context b;
     public final /* synthetic */ NumberTextView c;
 
@@ -18,7 +18,7 @@ public final class q3 extends wq {
         this.c = numberTextView;
     }
 
-    @Override // org.telegram.ui.Components.wq, android.text.InputFilter
+    @Override // org.telegram.ui.Components.tq, android.text.InputFilter
     public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
         CharSequence filter = super.filter(charSequence, i10, i11, spanned, i12, i13);
         if (filter != null && charSequence != null && filter.length() != charSequence.length()) {

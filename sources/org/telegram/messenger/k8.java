@@ -1,49 +1,51 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.messenger.support.LongSparseIntArray;
+import java.util.HashSet;
+import org.telegram.messenger.Timer;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k8 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ BaseController h;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ a0.h d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ BaseController f;
+    public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ k8(MediaDataController mediaDataController, boolean z10, ArrayList arrayList, int i10, long j3, int i11, Runnable runnable) {
-        this.h = mediaDataController;
-        this.f = z10;
-        this.b = arrayList;
-        this.d = i10;
-        this.c = j3;
-        this.e = i11;
-        this.n = runnable;
+    public /* synthetic */ k8(MediaDataController mediaDataController, Timer.Task task, Timer timer, ArrayList arrayList, long j10, a0.h hVar, Runnable runnable) {
+        this.f = mediaDataController;
+        this.h = task;
+        this.n = timer;
+        this.c = arrayList;
+        this.b = j10;
+        this.d = hVar;
+        this.e = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.h).lambda$processLoadedStickers$107(this.f, this.b, this.d, this.c, this.e, (Runnable) this.n);
+                ((MediaDataController) this.f).lambda$loadReplyMessagesForMessages$171((Timer.Task) this.h, (Timer) this.n, this.c, this.b, this.d, this.e);
                 break;
             default:
-                ((NotificationsController) this.h).lambda$processReadMessages$22((LongSparseIntArray) this.n, this.b, this.c, this.d, this.e, this.f);
+                ((TopicsController) this.f).lambda$reloadTopics$13((TLRPC.TL_messages_savedDialogs) this.h, this.b, this.c, this.d, (HashSet) this.n, this.e);
                 break;
         }
     }
 
-    public /* synthetic */ k8(NotificationsController notificationsController, LongSparseIntArray longSparseIntArray, ArrayList arrayList, long j3, int i10, int i11, boolean z10) {
-        this.h = notificationsController;
-        this.n = longSparseIntArray;
-        this.b = arrayList;
-        this.c = j3;
-        this.d = i10;
-        this.e = i11;
-        this.f = z10;
+    public /* synthetic */ k8(TopicsController topicsController, TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j10, ArrayList arrayList, a0.h hVar, HashSet hashSet, Runnable runnable) {
+        this.f = topicsController;
+        this.h = tL_messages_savedDialogs;
+        this.b = j10;
+        this.c = arrayList;
+        this.d = hVar;
+        this.n = hashSet;
+        this.e = runnable;
     }
 }

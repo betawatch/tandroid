@@ -1,40 +1,58 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.text.TextPaint;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e41 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ String d;
+public final class e41 extends Drawable {
+    public final yj0 a;
+    public int b;
+    public final TextPaint c;
 
-    public /* synthetic */ e41(String str, MessageObject messageObject, long j3, int i10) {
-        this.a = i10;
-        this.b = messageObject;
-        this.c = j3;
-        this.d = str;
+    public e41(TextPaint textPaint) {
+        ah.f1 f1Var = new ah.f1(this, 6);
+        this.c = textPaint;
+        float textSize = textPaint.getTextSize() * 0.89f;
+        yj0 yj0Var = new yj0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
+        this.a = yj0Var;
+        yj0Var.setCallback(f1Var);
+        yj0Var.K(1);
+        yj0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
+        yj0Var.J(true);
+        yj0Var.start();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        String str = this.d;
-        long j3 = this.c;
-        MessageObject messageObject = this.b;
-        switch (i10) {
-            case 0:
-                NotificationCenter notificationCenter = NotificationCenter.getInstance(messageObject.currentAccount);
-                int i11 = NotificationCenter.voiceTranscriptionUpdate;
-                Long valueOf = Long.valueOf(j3);
-                Boolean bool = Boolean.TRUE;
-                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, messageObject, valueOf, str, bool, bool);
-                break;
-            default:
-                j41.g(messageObject, j3, str);
-                break;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int color = this.c.getColor();
+        int i10 = this.b;
+        yj0 yj0Var = this.a;
+        if (color != i10) {
+            yj0Var.Z = true;
+            yj0Var.Q(color, "Comp 1");
+            yj0Var.o();
+            yj0Var.J(true);
+            yj0Var.V(0L);
+            this.b = color;
         }
+        yj0Var.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

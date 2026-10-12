@@ -1,68 +1,73 @@
 package m4;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import android.view.Surface;
+import android.view.View;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Components.bm0;
+import org.telegram.ui.Components.mu;
+import org.telegram.ui.Components.nu;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t0 implements Runnable {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class t0 implements e2.j, mu, bm0 {
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
 
-    public /* synthetic */ t0(b1 b1Var, r rVar, h1 h1Var, b0 b0Var, int i10, int i11, a1 a1Var) {
-        this.d = b1Var;
-        this.e = rVar;
-        this.f = h1Var;
-        this.h = b0Var;
-        this.b = i10;
-        this.c = i11;
-        this.n = a1Var;
+    public /* synthetic */ t0(j1 j1Var, Surface surface, int i10, int i11) {
+        this.c = j1Var;
+        this.d = surface;
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                b1 b1Var = (b1) this.d;
-                r rVar = (r) this.e;
-                h1 h1Var = (h1) this.f;
-                b0 b0Var = (b0) this.h;
-                a1 a1Var = (a1) this.n;
-                oi.f fVar = b1Var.b;
-                if (fVar.A(rVar)) {
-                    int i10 = this.b;
-                    if (h1Var == null) {
-                        if (!fVar.C(rVar, this.c)) {
-                            b1.N0(b0Var, rVar, i10, new l1(-4));
-                            break;
-                        }
-                    } else if (!fVar.D(rVar, h1Var)) {
-                        b1.N0(b0Var, rVar, i10, new l1(-4));
-                        break;
-                    }
-                    a1Var.h(b0Var, rVar, i10);
-                    break;
-                }
-                break;
-            default:
-                ((MediaDataController) this.d).lambda$toggleStickerSet$108((boolean[]) this.e, (TLRPC.StickerSet) this.f, this.b, this.c, (TLRPC.TL_messages_stickerSet) this.h, (Runnable) this.n);
-                break;
+    @Override // e2.j
+    public void accept(Object obj) {
+        j1 j1Var = (j1) this.c;
+        Surface surface = (Surface) this.d;
+        n1 n1Var = (n1) obj;
+        ((f0) j1Var.a.get()).getClass();
+        if (surface == null) {
+            n1Var.T(null);
+            j1Var.i = null;
+        } else {
+            i1 i1Var = new i1(surface, this.a, this.b);
+            j1Var.i = i1Var;
+            n1Var.T(i1Var);
         }
     }
 
-    public /* synthetic */ t0(MediaDataController mediaDataController, boolean[] zArr, TLRPC.StickerSet stickerSet, int i10, int i11, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, Runnable runnable) {
-        this.d = mediaDataController;
-        this.e = zArr;
-        this.f = stickerSet;
-        this.b = i10;
-        this.c = i11;
-        this.h = tL_messages_stickerSet;
-        this.n = runnable;
+    @Override // org.telegram.ui.Components.bm0
+    public /* synthetic */ boolean c1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.bm0
+    public void d(float f7, float f10, int i10, View view) {
+        ug.m1.R((ug.m1) this.c, this.a, (c6) this.d, this.b, view);
+    }
+
+    @Override // org.telegram.ui.Components.mu
+    public void run(String str) {
+        nu.k((nu) this.c, this.a, this.b, (Runnable) this.d, str);
+    }
+
+    public /* synthetic */ t0(nu nuVar, int i10, int i11, Runnable runnable) {
+        this.c = nuVar;
+        this.a = i10;
+        this.b = i11;
+        this.d = runnable;
+    }
+
+    public /* synthetic */ t0(ug.m1 m1Var, int i10, c6 c6Var, int i11) {
+        this.c = m1Var;
+        this.a = i10;
+        this.d = c6Var;
+        this.b = i11;
+    }
+
+    @Override // org.telegram.ui.Components.bm0
+    public /* synthetic */ void p0(View view, float f7, float f10) {
     }
 }

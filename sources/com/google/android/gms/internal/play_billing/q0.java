@@ -2,9 +2,9 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import v7.v5;
+import v7.w5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class q0 implements Runnable {
     public final t0 a;
@@ -32,7 +32,7 @@ public final class q0 implements Runnable {
             boolean z11 = false;
             Future future = t0Var;
             if (!isDone) {
-                throw new IllegalStateException(v5.a("Future was expected to be done: %s", t0Var));
+                throw new IllegalStateException(w5.a("Future was expected to be done: %s", t0Var));
             }
             while (true) {
                 try {
@@ -53,30 +53,30 @@ public final class q0 implements Runnable {
             }
             Integer num = (Integer) obj;
             int intValue = num.intValue();
-            c5.d0 d0Var = (c5.d0) lVar.d;
+            c5.e0 e0Var = (c5.e0) lVar.d;
             if (intValue <= 0) {
                 ((Runnable) lVar.c).run();
                 return;
             }
             int i10 = lVar.a;
             int intValue2 = num.intValue();
-            d0Var.getClass();
-            c5.h a2 = c5.g0.a(intValue2, "Billing override value was set by a license tester.");
-            d0Var.F(93, i10, a2);
+            e0Var.getClass();
+            c5.i a2 = c5.h0.a(intValue2, "Billing override value was set by a license tester.");
+            e0Var.F(93, i10, a2);
             ((q0.a) lVar.b).accept(a2);
-        } catch (ExecutionException e7) {
-            lVar.j(e7.getCause());
+        } catch (ExecutionException e) {
+            lVar.j(e.getCause());
         } catch (Throwable th3) {
             lVar.j(th3);
         }
     }
 
     public final String toString() {
-        aa.a aVar = new aa.a(q0.class.getSimpleName(), 11);
+        androidx.biometric.e eVar = new androidx.biometric.e(q0.class.getSimpleName(), 9);
         k kVar = new k();
-        ((k) aVar.d).b = kVar;
-        aVar.d = kVar;
+        ((k) eVar.d).b = kVar;
+        eVar.d = kVar;
         kVar.a = this.b;
-        return aVar.toString();
+        return eVar.toString();
     }
 }

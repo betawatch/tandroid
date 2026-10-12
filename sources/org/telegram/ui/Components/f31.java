@@ -1,77 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class f31 extends View {
-    public final g31 a;
-    public Utilities.Callback b;
-    public final org.telegram.ui.ActionBar.e6 c;
-    public int d;
+public final /* synthetic */ class f31 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y31 b;
 
-    public f31(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.c = e6Var;
-        g31 g31Var = new g31(i10, this, e6Var, false);
-        this.a = g31Var;
-        g31Var.r = new or0(this, 18);
+    public /* synthetic */ f31(y31 y31Var, int i10) {
+        this.a = i10;
+        this.b = y31Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        org.telegram.ui.ActionBar.e6 e6Var = this.c;
-        if (e6Var != null) {
-            e6Var.m(0.0f, 0.0f, getMeasuredWidth(), this.d);
-        } else {
-            org.telegram.ui.ActionBar.i6.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                y31 y31Var = this.b;
+                o31 o31Var = y31Var.G;
+                o31Var.x1(true);
+                m31 m31Var = y31Var.s;
+                m31Var.x1(true);
+                y31Var.J.a(true, true);
+                AndroidUtilities.updateVisibleRows(m31Var);
+                AndroidUtilities.updateVisibleRows(o31Var);
+                break;
+            default:
+                y31 y31Var2 = this.b;
+                if (y31Var2.k()) {
+                    y31Var2.l();
+                    break;
+                }
+                break;
         }
-        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(33.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
-    }
-
-    public void set(MessageObject messageObject) {
-        g31 g31Var = this.a;
-        g31Var.e(messageObject);
-        if (isAttachedToWindow()) {
-            g31Var.a();
-        }
-    }
-
-    public void setBackgroundHeight(int i10) {
-        this.d = i10;
-    }
-
-    public void setOnTopicClickListener(Utilities.Callback<Long> callback) {
-        this.b = callback;
     }
 }

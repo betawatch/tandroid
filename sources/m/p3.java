@@ -20,7 +20,7 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class p3 implements View.OnLongClickListener, View.OnHoverListener, View.OnAttachStateChangeListener {
     public static p3 v;
@@ -82,7 +82,7 @@ public final class p3 implements View.OnLongClickListener, View.OnHoverListener,
         this.a = view;
         this.b = charSequence;
         ViewConfiguration viewConfiguration = ViewConfiguration.get(view.getContext());
-        Method method = r0.j0.a;
+        Method method = r0.k0.a;
         this.c = Build.VERSION.SDK_INT >= 28 ? b5.d.o(viewConfiguration) : viewConfiguration.getScaledTouchSlop() / 2;
         this.s = true;
         view.setOnLongClickListener(this);
@@ -132,9 +132,9 @@ public final class p3 implements View.OnLongClickListener, View.OnHoverListener,
         int i12;
         int i13;
         long longPressTimeout;
-        long j3;
         long j10;
-        WeakHashMap weakHashMap = r0.i0.a;
+        long j11;
+        WeakHashMap weakHashMap = r0.j0.a;
         View view = this.a;
         if (view.isAttachedToWindow()) {
             b(null);
@@ -256,20 +256,20 @@ public final class p3 implements View.OnLongClickListener, View.OnHoverListener,
             ((WindowManager) context2.getSystemService("window")).addView(view2, layoutParams2);
             view.addOnAttachStateChangeListener(this);
             if (this.r) {
-                j10 = 2500;
+                j11 = 2500;
             } else {
                 if ((view.getWindowSystemUiVisibility() & 1) == i13) {
                     longPressTimeout = ViewConfiguration.getLongPressTimeout();
-                    j3 = 3000;
+                    j10 = 3000;
                 } else {
                     longPressTimeout = ViewConfiguration.getLongPressTimeout();
-                    j3 = 15000;
+                    j10 = 15000;
                 }
-                j10 = j3 - longPressTimeout;
+                j11 = j10 - longPressTimeout;
             }
             o3 o3Var = this.e;
             view.removeCallbacks(o3Var);
-            view.postDelayed(o3Var, j10);
+            view.postDelayed(o3Var, j11);
         }
     }
 

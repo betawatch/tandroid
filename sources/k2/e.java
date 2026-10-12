@@ -1,31 +1,84 @@
 package k2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.content.Context;
+import android.content.IntentFilter;
+import android.media.AudioDeviceInfo;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.provider.Settings;
+import e9.x1;
+import java.util.List;
+import ji.m5;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e {
-    public static final e d = new ac.d().a();
-    public final boolean a;
-    public final boolean b;
-    public final boolean c;
+    public final Context a;
+    public final m5 b;
+    public final Handler c;
+    public final c d;
+    public final androidx.mediarouter.app.f e;
+    public final d f;
+    public z2.d g;
+    public b h;
+    public AudioDeviceInfo i;
+    public b2.f j;
+    public boolean k;
 
-    public e(ac.d dVar) {
-        this.a = dVar.a;
-        this.b = dVar.b;
-        this.c = dVar.c;
+    public e(Context context, m5 m5Var, b2.f fVar, AudioDeviceInfo audioDeviceInfo) {
+        Context applicationContext = context.getApplicationContext();
+        this.a = applicationContext;
+        this.b = m5Var;
+        this.j = fVar;
+        this.i = audioDeviceInfo;
+        String str = e2.m0.a;
+        Looper myLooper = Looper.myLooper();
+        Handler handler = new Handler(myLooper == null ? Looper.getMainLooper() : myLooper, null);
+        this.c = handler;
+        this.d = new c(this);
+        this.e = new androidx.mediarouter.app.f(this, 5);
+        x1 x1Var = b.e;
+        String str2 = Build.MANUFACTURER;
+        Uri uriFor = (str2.equals("Amazon") || str2.equals("Xiaomi")) ? Settings.Global.getUriFor("external_surround_sound_enabled") : null;
+        this.f = uriFor != null ? new d(this, handler, applicationContext.getContentResolver(), uriFor) : null;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final List a() {
+        z2.d dVar;
+        if (Build.VERSION.SDK_INT >= 32 && (dVar = this.g) != null) {
+            return dVar.b();
         }
-        if (obj == null || e.class != obj.getClass()) {
-            return false;
-        }
-        e eVar = (e) obj;
-        return this.a == eVar.a && this.b == eVar.b && this.c == eVar.c;
+        e9.l0 l0Var = e9.n0.b;
+        return x1.e;
     }
 
-    public final int hashCode() {
-        return ((this.a ? 1 : 0) << 2) + ((this.b ? 1 : 0) << 1) + (this.c ? 1 : 0);
+    public final void b(b bVar) {
+        if (!this.k || bVar.equals(this.h)) {
+            return;
+        }
+        this.h = bVar;
+        j0 j0Var = (j0) this.b.b;
+        j0Var.f();
+        b bVar2 = j0Var.h;
+        if (bVar2 == null || bVar.equals(bVar2)) {
+            return;
+        }
+        j0Var.h = bVar;
+        e2.r rVar = j0Var.f;
+        if (rVar != null) {
+            rVar.e(-1, new j2.e(29));
+        }
+    }
+
+    public final void c() {
+        List a2 = a();
+        b2.f fVar = this.j;
+        AudioDeviceInfo audioDeviceInfo = this.i;
+        x1 x1Var = b.e;
+        IntentFilter intentFilter = new IntentFilter("android.media.action.HDMI_AUDIO_PLUG");
+        Context context = this.a;
+        b(b.b(context, context.registerReceiver(null, intentFilter), fVar, audioDeviceInfo, a2));
     }
 }

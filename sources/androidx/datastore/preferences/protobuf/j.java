@@ -3,7 +3,7 @@ package androidx.datastore.preferences.protobuf;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j extends r0 {
     public static final Logger h = Logger.getLogger(j.class.getName());
@@ -24,25 +24,25 @@ public final class j extends r0 {
         this.g = lVar;
     }
 
-    public static int A(long j3) {
+    public static int A(long j10) {
         int i10;
-        if (((-128) & j3) == 0) {
+        if (((-128) & j10) == 0) {
             return 1;
         }
-        if (j3 < 0) {
+        if (j10 < 0) {
             return 10;
         }
-        if (((-34359738368L) & j3) != 0) {
-            j3 >>>= 28;
+        if (((-34359738368L) & j10) != 0) {
+            j10 >>>= 28;
             i10 = 6;
         } else {
             i10 = 2;
         }
-        if (((-2097152) & j3) != 0) {
+        if (((-2097152) & j10) != 0) {
             i10 += 2;
-            j3 >>>= 14;
+            j10 >>>= 14;
         }
-        return (j3 & (-16384)) != 0 ? i10 + 1 : i10;
+        return (j10 & (-16384)) != 0 ? i10 + 1 : i10;
     }
 
     public static int r(int i10, g gVar) {
@@ -159,7 +159,7 @@ public final class j extends r0 {
 
     public final void H(g gVar) {
         T(gVar.size());
-        l(gVar.n(), gVar.size(), gVar.b);
+        l(gVar.m(), gVar.size(), gVar.b);
     }
 
     public final void I(int i10, int i11) {
@@ -173,15 +173,15 @@ public final class j extends r0 {
         m(i10);
     }
 
-    public final void K(int i10, long j3) {
+    public final void K(int i10, long j10) {
         C(18);
         o(i10, 1);
-        n(j3);
+        n(j10);
     }
 
-    public final void L(long j3) {
+    public final void L(long j10) {
         C(8);
-        n(j3);
+        n(j10);
     }
 
     public final void M(int i10, int i11) {
@@ -245,22 +245,22 @@ public final class j extends r0 {
                     p(b10);
                     this.f = u1.a.f(str, bArr2, this.f, b10);
                 }
-            } catch (t1 e7) {
+            } catch (t1 e) {
                 this.f = i12;
-                throw e7;
-            } catch (ArrayIndexOutOfBoundsException e10) {
-                throw new i(e10);
+                throw e;
+            } catch (ArrayIndexOutOfBoundsException e7) {
+                throw new i(e7);
             }
-        } catch (t1 e11) {
-            h.log(Level.WARNING, "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e11);
+        } catch (t1 e10) {
+            h.log(Level.WARNING, "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e10);
             byte[] bytes = str.getBytes(z.a);
             try {
                 T(bytes.length);
                 l(0, bytes.length, bytes);
-            } catch (i e12) {
-                throw e12;
-            } catch (IndexOutOfBoundsException e13) {
-                throw new i(e13);
+            } catch (i e11) {
+                throw e11;
+            } catch (IndexOutOfBoundsException e12) {
+                throw new i(e12);
             }
         }
     }
@@ -280,15 +280,15 @@ public final class j extends r0 {
         p(i10);
     }
 
-    public final void U(int i10, long j3) {
+    public final void U(int i10, long j10) {
         C(20);
         o(i10, 0);
-        q(j3);
+        q(j10);
     }
 
-    public final void V(long j3) {
+    public final void V(long j10) {
         C(10);
-        q(j3);
+        q(j10);
     }
 
     @Override // androidx.datastore.preferences.protobuf.r0
@@ -312,32 +312,32 @@ public final class j extends r0 {
         bArr[i14] = (byte) ((i10 >> 24) & 255);
     }
 
-    public final void n(long j3) {
+    public final void n(long j10) {
         int i10 = this.f;
         int i11 = i10 + 1;
         this.f = i11;
         byte[] bArr = this.d;
-        bArr[i10] = (byte) (j3 & 255);
+        bArr[i10] = (byte) (j10 & 255);
         int i12 = i10 + 2;
         this.f = i12;
-        bArr[i11] = (byte) ((j3 >> 8) & 255);
+        bArr[i11] = (byte) ((j10 >> 8) & 255);
         int i13 = i10 + 3;
         this.f = i13;
-        bArr[i12] = (byte) ((j3 >> 16) & 255);
+        bArr[i12] = (byte) ((j10 >> 16) & 255);
         int i14 = i10 + 4;
         this.f = i14;
-        bArr[i13] = (byte) (255 & (j3 >> 24));
+        bArr[i13] = (byte) (255 & (j10 >> 24));
         int i15 = i10 + 5;
         this.f = i15;
-        bArr[i14] = (byte) (((int) (j3 >> 32)) & 255);
+        bArr[i14] = (byte) (((int) (j10 >> 32)) & 255);
         int i16 = i10 + 6;
         this.f = i16;
-        bArr[i15] = (byte) (((int) (j3 >> 40)) & 255);
+        bArr[i15] = (byte) (((int) (j10 >> 40)) & 255);
         int i17 = i10 + 7;
         this.f = i17;
-        bArr[i16] = (byte) (((int) (j3 >> 48)) & 255);
+        bArr[i16] = (byte) (((int) (j10 >> 48)) & 255);
         this.f = i10 + 8;
-        bArr[i17] = (byte) (((int) (j3 >> 56)) & 255);
+        bArr[i17] = (byte) (((int) (j10 >> 56)) & 255);
     }
 
     public final void o(int i10, int i11) {
@@ -370,29 +370,29 @@ public final class j extends r0 {
         bArr[i14] = (byte) i10;
     }
 
-    public final void q(long j3) {
+    public final void q(long j10) {
         boolean z10 = i;
         byte[] bArr = this.d;
         if (z10) {
-            while ((j3 & (-128)) != 0) {
+            while ((j10 & (-128)) != 0) {
                 int i10 = this.f;
                 this.f = i10 + 1;
-                r1.j(bArr, i10, (byte) ((((int) j3) & 127) | 128));
-                j3 >>>= 7;
+                r1.j(bArr, i10, (byte) ((((int) j10) & 127) | 128));
+                j10 >>>= 7;
             }
             int i11 = this.f;
             this.f = i11 + 1;
-            r1.j(bArr, i11, (byte) j3);
+            r1.j(bArr, i11, (byte) j10);
             return;
         }
-        while ((j3 & (-128)) != 0) {
+        while ((j10 & (-128)) != 0) {
             int i12 = this.f;
             this.f = i12 + 1;
-            bArr[i12] = (byte) ((((int) j3) & 127) | 128);
-            j3 >>>= 7;
+            bArr[i12] = (byte) ((((int) j10) & 127) | 128);
+            j10 >>>= 7;
         }
         int i13 = this.f;
         this.f = i13 + 1;
-        bArr[i13] = (byte) j3;
+        bArr[i13] = (byte) j10;
     }
 }

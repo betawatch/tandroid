@@ -1,85 +1,49 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_aicompose;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class oe implements Runnable {
+public final /* synthetic */ class oe implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ oe(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
+    public /* synthetic */ oe(Object obj, int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = arrayList;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$markMessagesAsDeletedInternal$230(this.c);
+                MessagesController.5.lambda$getRemote$0((Utilities.Callback4) this.b, (TL_account.WebBrowserSettings) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                this.b.lambda$markVoiceMessageContentAsRead$216(this.c);
+                ((AiTonesController) this.b).lambda$request$0((TL_aicompose.Tones) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                this.b.lambda$emptyMessagesMedia$96(this.c);
+                ((ChatThemeController) this.b).lambda$setDialogTheme$4((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 3:
-                this.b.lambda$emptyMessagesMedia$97(this.c);
+                ((GiftAuctionController) this.b).lambda$requestUserAuctions$10((TL_payments.StarGiftActiveAuctions) obj, (TLRPC.TL_error) obj2);
                 break;
             case 4:
-                this.b.lambda$loadUserInfo$128(this.c);
+                ((MediaDataController) this.b).lambda$loadHints$148((TLRPC.contacts_TopPeers) obj, (TLRPC.TL_error) obj2);
                 break;
             case 5:
-                this.b.lambda$replaceMessageIfExists$233(this.c);
+                MessagesController.lambda$getNextReactionMentionInternal$3((q0.a) this.b, (TLRPC.messages_Messages) obj, (TLRPC.TL_error) obj2);
                 break;
             case 6:
-                this.b.lambda$markMessagesAsDeletedByRandoms$220(this.c);
-                break;
-            case 7:
-                this.b.lambda$deleteFromDownloadQueue$183(this.c);
-                break;
-            case 8:
-                this.b.lambda$deleteContacts$147(this.c);
-                break;
-            case 9:
-                this.b.lambda$updateMessageVerifyFlags$195(this.c);
-                break;
-            case 10:
-                this.b.lambda$putMessagesInternal$198(this.c);
-                break;
-            case 11:
-                this.b.lambda$putMessagesInternal$197(this.c);
-                break;
-            case 12:
-                this.b.lambda$markMessagesAsDeletedByRandoms$221(this.c);
-                break;
-            case 13:
-                this.b.lambda$markMessagesAsDeletedInternal$224(this.c);
-                break;
-            case 14:
-                this.b.lambda$markMessagesAsDeletedInternal$227(this.c);
-                break;
-            case 15:
-                this.b.lambda$onReactionsUpdate$105(this.c);
-                break;
-            case 16:
-                this.b.lambda$deleteDialog$88(this.c);
-                break;
-            case 17:
-                this.b.lambda$saveDialogFiltersOrder$75(this.c);
-                break;
-            case 18:
-                this.b.lambda$putMessages$236(this.c);
-                break;
-            case 19:
-                this.b.lambda$putMessages$237(this.c);
+                MessagesController.lambda$createCommunity$254((Utilities.Callback2) this.b, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$putWebPages$187(this.c);
+                ((SendMessagesHelper) this.b).lambda$deletePollOption$30((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

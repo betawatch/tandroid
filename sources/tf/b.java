@@ -1,58 +1,286 @@
 package tf;
 
-import android.app.PictureInPictureParams;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.os.Build;
-import android.util.Rational;
+import android.graphics.Bitmap;
+import android.util.Log;
+import android.view.View;
+import com.google.android.gms.internal.cast.p;
+import com.google.android.gms.internal.cast.z5;
+import j$.util.Objects;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.gd;
+import rh.j;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b {
-    public final Rect a = new Rect();
-    public final Point b = new Point();
+public final /* synthetic */ class b {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e b;
 
-    public final PictureInPictureParams.Builder a() {
-        int i10;
-        PictureInPictureParams.Builder builder = new PictureInPictureParams.Builder();
-        Point point = this.b;
-        int i11 = point.x;
-        if (i11 <= 0 || (i10 = point.y) <= 0) {
-            builder.setAspectRatio(null);
-            if (Build.VERSION.SDK_INT >= 33) {
-                builder.setExpandedAspectRatio(null);
-            }
-        } else {
-            double d = i11 / i10;
-            Rational rational = d < 0.45d ? new Rational(45, 100) : d > 2.35d ? new Rational(235, 100) : new Rational(point.x, point.y);
-            builder.setAspectRatio(rational);
-            if (Build.VERSION.SDK_INT >= 33) {
-                builder.setExpandedAspectRatio(rational);
-            }
-        }
-        Rect rect = this.a;
-        if (rect.isEmpty()) {
-            builder.setSourceRectHint(null);
-            return builder;
-        }
-        builder.setSourceRectHint(rect);
-        return builder;
+    public /* synthetic */ b(e eVar, int i10) {
+        this.a = i10;
+        this.b = eVar;
     }
 
-    public final boolean b() {
-        if (this.a.isEmpty()) {
-            return false;
+    public final void a(boolean z10) {
+        Bitmap bitmap;
+        switch (this.a) {
+            case 0:
+                final int i10 = 2;
+                final e eVar = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: tf.c
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Bitmap bitmap2;
+                        switch (i10) {
+                            case 0:
+                                e eVar2 = eVar;
+                                if (eVar2.a == 4) {
+                                    eVar2.j.a.q().removeView(eVar2.f);
+                                    eVar2.i = null;
+                                    eVar2.f = null;
+                                    eVar2.g = null;
+                                    f fVar = eVar2.e;
+                                    if (fVar != null) {
+                                        fVar.b();
+                                        eVar2.e = null;
+                                    }
+                                    f fVar2 = eVar2.d;
+                                    if (fVar2 != null) {
+                                        fVar2.b();
+                                        eVar2.d = null;
+                                    }
+                                    z5 z5Var = eVar2.h;
+                                    if (((gd) z5Var.e) != null) {
+                                        ((View) z5Var.b).setBackground(null);
+                                        z5Var.e = null;
+                                    }
+                                    if (((gd) z5Var.d) == null && ((gd) z5Var.e) == null && (bitmap2 = (Bitmap) z5Var.a) != null) {
+                                        bitmap2.recycle();
+                                        z5Var.a = null;
+                                    }
+                                    eVar2.a = 0;
+                                    Log.i("PIP_DEBUG", "[HANDLER] detach");
+                                    if (eVar2.n) {
+                                        eVar2.g();
+                                        break;
+                                    }
+                                } else {
+                                    FileLog.e("[PIP_DEBUG] wrong pip state STATE_PRE_DETACHED_2: " + eVar2.a);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                e eVar3 = eVar;
+                                if (eVar3.a == 1) {
+                                    Log.i("PIP_DEBUG", "[HANDLER] attach");
+                                    eVar3.h.z();
+                                    eVar3.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar3, 2), 400L));
+                                    eVar3.a = 2;
+                                    if (!eVar3.n) {
+                                        eVar3.h();
+                                        break;
+                                    }
+                                } else {
+                                    FileLog.e("[PIP_DEBUG] wrong pip state STATE_PRE_ATTACHED: " + eVar3.a);
+                                    break;
+                                }
+                                break;
+                            default:
+                                e eVar4 = eVar;
+                                rf.d dVar = eVar4.j;
+                                if (eVar4.a == 3) {
+                                    dVar.g.b(new p(ApplicationLoader.applicationHandler, new b(eVar4, 3), 400L));
+                                    eVar4.f.invalidate();
+                                    eVar4.a = 4;
+                                    AndroidUtilities.doOnPreDraw(dVar.j, new p(ApplicationLoader.applicationHandler, new b(eVar4, 4), 300L));
+                                    Log.i("PIP_DEBUG", "[HANDLER] pre detach 2");
+                                    break;
+                                } else {
+                                    FileLog.e("[PIP_DEBUG] wrong pip state STATE_PRE_DETACHED_1: " + eVar4.a);
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+            case 1:
+                final int i11 = 1;
+                final e eVar2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: tf.c
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Bitmap bitmap2;
+                        switch (i11) {
+                            case 0:
+                                e eVar22 = eVar2;
+                                if (eVar22.a == 4) {
+                                    eVar22.j.a.q().removeView(eVar22.f);
+                                    eVar22.i = null;
+                                    eVar22.f = null;
+                                    eVar22.g = null;
+                                    f fVar = eVar22.e;
+                                    if (fVar != null) {
+                                        fVar.b();
+                                        eVar22.e = null;
+                                    }
+                                    f fVar2 = eVar22.d;
+                                    if (fVar2 != null) {
+                                        fVar2.b();
+                                        eVar22.d = null;
+                                    }
+                                    z5 z5Var = eVar22.h;
+                                    if (((gd) z5Var.e) != null) {
+                                        ((View) z5Var.b).setBackground(null);
+                                        z5Var.e = null;
+                                    }
+                                    if (((gd) z5Var.d) == null && ((gd) z5Var.e) == null && (bitmap2 = (Bitmap) z5Var.a) != null) {
+                                        bitmap2.recycle();
+                                        z5Var.a = null;
+                                    }
+                                    eVar22.a = 0;
+                                    Log.i("PIP_DEBUG", "[HANDLER] detach");
+                                    if (eVar22.n) {
+                                        eVar22.g();
+                                        break;
+                                    }
+                                } else {
+                                    FileLog.e("[PIP_DEBUG] wrong pip state STATE_PRE_DETACHED_2: " + eVar22.a);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                e eVar3 = eVar2;
+                                if (eVar3.a == 1) {
+                                    Log.i("PIP_DEBUG", "[HANDLER] attach");
+                                    eVar3.h.z();
+                                    eVar3.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar3, 2), 400L));
+                                    eVar3.a = 2;
+                                    if (!eVar3.n) {
+                                        eVar3.h();
+                                        break;
+                                    }
+                                } else {
+                                    FileLog.e("[PIP_DEBUG] wrong pip state STATE_PRE_ATTACHED: " + eVar3.a);
+                                    break;
+                                }
+                                break;
+                            default:
+                                e eVar4 = eVar2;
+                                rf.d dVar = eVar4.j;
+                                if (eVar4.a == 3) {
+                                    dVar.g.b(new p(ApplicationLoader.applicationHandler, new b(eVar4, 3), 400L));
+                                    eVar4.f.invalidate();
+                                    eVar4.a = 4;
+                                    AndroidUtilities.doOnPreDraw(dVar.j, new p(ApplicationLoader.applicationHandler, new b(eVar4, 4), 300L));
+                                    Log.i("PIP_DEBUG", "[HANDLER] pre detach 2");
+                                    break;
+                                } else {
+                                    FileLog.e("[PIP_DEBUG] wrong pip state STATE_PRE_DETACHED_1: " + eVar4.a);
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+            case 2:
+                z5 z5Var = this.b.h;
+                if (((gd) z5Var.e) != null) {
+                    ((View) z5Var.b).setBackground(null);
+                    z5Var.e = null;
+                }
+                if (((gd) z5Var.d) == null && ((gd) z5Var.e) == null && (bitmap = (Bitmap) z5Var.a) != null) {
+                    bitmap.recycle();
+                    z5Var.a = null;
+                }
+                Log.i("PIP_DEBUG", "[HANDLER] on new source render first frame " + z10);
+                break;
+            case 3:
+                Log.i("PIP_DEBUG", "[HANDLER] on old source render first frame " + z10);
+                z5 z5Var2 = this.b.h;
+                Objects.requireNonNull(z5Var2);
+                AndroidUtilities.runOnUIThread(new j(z5Var2, 8));
+                break;
+            default:
+                final int i12 = 0;
+                final e eVar3 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: tf.c
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Bitmap bitmap2;
+                        switch (i12) {
+                            case 0:
+                                e eVar22 = eVar3;
+                                if (eVar22.a == 4) {
+                                    eVar22.j.a.q().removeView(eVar22.f);
+                                    eVar22.i = null;
+                                    eVar22.f = null;
+                                    eVar22.g = null;
+                                    f fVar = eVar22.e;
+                                    if (fVar != null) {
+                                        fVar.b();
+                                        eVar22.e = null;
+                                    }
+                                    f fVar2 = eVar22.d;
+                                    if (fVar2 != null) {
+                                        fVar2.b();
+                                        eVar22.d = null;
+                                    }
+                                    z5 z5Var3 = eVar22.h;
+                                    if (((gd) z5Var3.e) != null) {
+                                        ((View) z5Var3.b).setBackground(null);
+                                        z5Var3.e = null;
+                                    }
+                                    if (((gd) z5Var3.d) == null && ((gd) z5Var3.e) == null && (bitmap2 = (Bitmap) z5Var3.a) != null) {
+                                        bitmap2.recycle();
+                                        z5Var3.a = null;
+                                    }
+                                    eVar22.a = 0;
+                                    Log.i("PIP_DEBUG", "[HANDLER] detach");
+                                    if (eVar22.n) {
+                                        eVar22.g();
+                                        break;
+                                    }
+                                } else {
+                                    FileLog.e("[PIP_DEBUG] wrong pip state STATE_PRE_DETACHED_2: " + eVar22.a);
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                e eVar32 = eVar3;
+                                if (eVar32.a == 1) {
+                                    Log.i("PIP_DEBUG", "[HANDLER] attach");
+                                    eVar32.h.z();
+                                    eVar32.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar32, 2), 400L));
+                                    eVar32.a = 2;
+                                    if (!eVar32.n) {
+                                        eVar32.h();
+                                        break;
+                                    }
+                                } else {
+                                    FileLog.e("[PIP_DEBUG] wrong pip state STATE_PRE_ATTACHED: " + eVar32.a);
+                                    break;
+                                }
+                                break;
+                            default:
+                                e eVar4 = eVar3;
+                                rf.d dVar = eVar4.j;
+                                if (eVar4.a == 3) {
+                                    dVar.g.b(new p(ApplicationLoader.applicationHandler, new b(eVar4, 3), 400L));
+                                    eVar4.f.invalidate();
+                                    eVar4.a = 4;
+                                    AndroidUtilities.doOnPreDraw(dVar.j, new p(ApplicationLoader.applicationHandler, new b(eVar4, 4), 300L));
+                                    Log.i("PIP_DEBUG", "[HANDLER] pre detach 2");
+                                    break;
+                                } else {
+                                    FileLog.e("[PIP_DEBUG] wrong pip state STATE_PRE_DETACHED_1: " + eVar4.a);
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
         }
-        Point point = this.b;
-        return point.x > 0 && point.y > 0;
-    }
-
-    public final boolean c(int i10, int i11) {
-        Point point = this.b;
-        if (point.x == i10 && point.y == i11) {
-            return false;
-        }
-        point.set(i10, i11);
-        return true;
     }
 }

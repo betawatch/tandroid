@@ -12,17 +12,17 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public abstract class c3 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public int a;
-    public org.telegram.ui.Components.y9 b;
+    public org.telegram.ui.Components.z9 b;
     public TextView c;
     public TextView d;
     public TextView e;
 
     public final void a() {
-        org.telegram.ui.Components.y9 y9Var = this.b;
+        org.telegram.ui.Components.z9 z9Var = this.b;
         int i10 = this.a;
         TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
         if (stickerSetByName == null) {
@@ -32,15 +32,15 @@ public abstract class c3 extends LinearLayout implements NotificationCenter.Noti
         TLRPC.Document document = (tL_messages_stickerSet == null || 1 >= tL_messages_stickerSet.documents.size()) ? null : tL_messages_stickerSet.documents.get(1);
         if (document == null) {
             MediaDataController.getInstance(i10).loadStickersByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, false, tL_messages_stickerSet == null);
-            y9Var.getImageReceiver().clearImage();
+            z9Var.getImageReceiver().clearImage();
             return;
         }
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.i6.a7, 0.2f);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.g6.a7, 0.2f);
         if (svgThumb != null) {
             svgThumb.overrideWidthAndHeight(512, 512);
         }
         this.b.i(ImageLocation.getForDocument(document), "130_130", "tgs", svgThumb, tL_messages_stickerSet);
-        y9Var.getImageReceiver().setAutoRepeat(2);
+        z9Var.getImageReceiver().setAutoRepeat(2);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

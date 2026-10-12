@@ -1,54 +1,52 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mh1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final class mh1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ oh1 a;
 
-    public /* synthetic */ mh1(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
-        this.f = obj5;
-        this.g = obj6;
+    public mh1(oh1 oh1Var) {
+        this.a = oh1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new ii.k((UserInfoActivity) this.b, tL_error, (TLObject) this.c, (TL_account.TL_birthday) this.d, (TLRPC.UserFull) this.e, tLObject, (int[]) this.f, (ArrayList) this.g));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new ii.k(tL_error, (tg.v) this.b, tLObject, (List) this.c, (c5.h) this.d, (tg.v) this.e, (org.telegram.ui.ActionBar.n2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.g, 7));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new ii.k(tL_error, (Utilities.Callback) this.b, tLObject, (List) this.c, (c5.h) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.n2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.g, 8));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (qh.r) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.f, (List) this.g, tL_error, 9));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (org.telegram.ui.Components.f90) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGift) this.f, (List) this.g, tL_error, 10));
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        org.telegram.ui.ActionBar.b5 b5Var;
+        oh1 oh1Var = this.a;
+        if (i10 == -1) {
+            if (oh1Var.G >= 0) {
+                b5Var = ((org.telegram.ui.ActionBar.m2) oh1Var).parentLayout;
+                if (b5Var.getFragmentStack().size() == 1) {
+                    oh1Var.I0();
+                    return;
+                }
+            }
+            oh1Var.finishFragment();
+            return;
+        }
+        if (i10 == 1) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(oh1Var.getParentActivity());
+            TL_account.Password password = oh1Var.U;
+            String string = (password == null || !password.has_password) ? LocaleController.getString(R.string.CancelPasswordQuestion) : LocaleController.getString(R.string.CancelEmailQuestion);
+            String string2 = LocaleController.getString(R.string.CancelEmailQuestionTitle);
+            String string3 = LocaleController.getString(R.string.Abort);
+            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+            a2Var.T = string;
+            a2Var.R = string2;
+            alertDialog$Builder.k(string3, new nq0(this, 23));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            org.telegram.ui.ActionBar.a2 a2Var2 = alertDialog$Builder.a;
+            oh1Var.showDialog(a2Var2);
+            TextView textView = (TextView) a2Var2.d(-1);
+            if (textView != null) {
+                textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.q7, false));
+            }
         }
     }
 }

@@ -1,12 +1,32 @@
 package w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class l8 {
-    public static boolean a(Object obj, Object obj2) {
-        if (obj != obj2) {
-            return obj != null && obj.equals(obj2);
+    public static boolean a(e9.j2 j2Var, Collection collection) {
+        collection.getClass();
+        if (collection instanceof x7.r) {
+            collection = ((x7.r) collection).zza();
         }
-        return true;
+        boolean z10 = false;
+        if (!(collection instanceof Set) || collection.size() <= j2Var.size()) {
+            Iterator it = collection.iterator();
+            while (it.hasNext()) {
+                z10 |= j2Var.remove(it.next());
+            }
+            return z10;
+        }
+        Iterator<E> it2 = j2Var.iterator();
+        while (it2.hasNext()) {
+            if (collection.contains(it2.next())) {
+                it2.remove();
+                z10 = true;
+            }
+        }
+        return z10;
     }
 }

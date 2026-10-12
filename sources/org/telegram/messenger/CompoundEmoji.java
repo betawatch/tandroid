@@ -15,15 +15,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class CompoundEmoji {
     public static List<String> skinTones = Arrays.asList("🏻", "🏼", "🏽", "🏾", "🏿");
     private static Paint placeholderPaint = new Paint(2);
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class DrawableInfo {
         private static final SparseArray<Bitmap> bitmaps = new SparseArray<>();
         private static final ArrayList<Integer> loading = new ArrayList<>();
@@ -79,7 +79,7 @@ public class CompoundEmoji {
                 return;
             }
             arrayList.add(Integer.valueOf(this.hash));
-            Utilities.globalQueue.postRunnable(new f1(this, 0));
+            Utilities.globalQueue.postRunnable(new h1(this, 0));
         }
 
         public DrawableInfo updateSkin(int i10) {
@@ -171,7 +171,7 @@ public class CompoundEmoji {
         return compoundEmojiDrawable;
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class CompoundEmojiDrawable extends Emoji.EmojiDrawable {
         private static Paint paint = new Paint(2);
         private static Rect rect = new Rect();
@@ -230,7 +230,7 @@ public class CompoundEmoji {
             }
             if (this.newLeft != null) {
                 if (this.leftUpdateT == null) {
-                    this.leftUpdateT = new org.telegram.ui.Components.g6(0.0f, new f1(this, 16), 0L, 320L, hs.g);
+                    this.leftUpdateT = new org.telegram.ui.Components.g6(0.0f, new h1(this, 15), 0L, 320L, es.g);
                 }
                 float d = this.leftUpdateT.d(1.0f, false);
                 drawDrawableInfo(canvas, this.newLeft, drawRect, Math.min(1.0f, d * 1.5f));
@@ -247,7 +247,7 @@ public class CompoundEmoji {
                 return;
             }
             if (this.rightUpdateT == null) {
-                this.rightUpdateT = new org.telegram.ui.Components.g6(0.0f, new f1(this, 16), 0L, 320L, hs.g);
+                this.rightUpdateT = new org.telegram.ui.Components.g6(0.0f, new h1(this, 15), 0L, 320L, es.g);
             }
             float d10 = this.rightUpdateT.d(1.0f, false);
             drawDrawableInfo(canvas, this.newRight, drawRect, Math.min(1.0f, 1.5f * d10));

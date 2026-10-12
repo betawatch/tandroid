@@ -1,69 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c61 extends e00 {
-    public final /* synthetic */ l61 Y;
+public final class c61 implements ry0 {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ h61 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c61(l61 l61Var, int i10, b61 b61Var) {
-        super(5, i10, b61Var);
-        this.Y = l61Var;
+    public c61(h61 h61Var, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = h61Var;
+        this.a = inputStickerSet;
     }
 
-    @Override // org.telegram.ui.Components.e00
-    public final boolean D1() {
-        l61 l61Var = this.Y;
-        return l61Var.n.getAdapter() == l61Var.v;
-    }
-
-    @Override // s4.d0
-    public final boolean Y0() {
-        return LocaleController.isRTL;
-    }
-
-    @Override // s4.s, s4.d0, s4.p0
-    public final int o0(int i10, pf.e eVar, s4.a1 a1Var) {
-        int i11;
-        View m10;
-        l61 l61Var = this.Y;
-        if (l61Var.N) {
-            return super.o0(i10, eVar, a1Var);
-        }
-        int i12 = 0;
-        if (l61Var.L != null) {
-            return 0;
-        }
-        if (l61Var.M) {
-            while (true) {
-                i11 = 1;
-                if (i12 >= r()) {
-                    break;
+    @Override // org.telegram.ui.Components.ry0
+    public final void a() {
+        h61 h61Var = this.b;
+        s4.g0 adapter = h61Var.n.getAdapter();
+        g61 g61Var = h61Var.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i10 = 0;
+        if (adapter == g61Var) {
+            while (i10 < g61Var.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) g61Var.e.get(i10);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    g61Var.F(stickerSetCovered, null);
+                    return;
                 }
-                b61 b61Var = l61Var.n;
-                View q6 = q(i12);
-                b61Var.getClass();
-                int R = RecyclerView.R(q6);
-                if (R < 1) {
-                    i11 = R;
-                    break;
-                }
-                i12++;
+                i10++;
             }
-            if (i11 == 0 && (m10 = l61Var.r.m(i11)) != null && m10.getTop() - i10 > AndroidUtilities.dp(58.0f)) {
-                i10 = m10.getTop() - AndroidUtilities.dp(58.0f);
-            }
+            return;
         }
-        return super.o0(i10, eVar, a1Var);
-    }
-
-    @Override // s4.s, s4.d0, s4.p0
-    public final boolean y0() {
-        return false;
+        hg.e2 e2Var = h61Var.v;
+        ArrayList arrayList = e2Var.E;
+        while (i10 < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                e2Var.F(stickerSetCovered2, null);
+                return;
+            }
+            i10++;
+        }
     }
 }

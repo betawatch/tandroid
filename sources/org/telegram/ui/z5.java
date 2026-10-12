@@ -1,30 +1,355 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.CacheByChatsController;
+import android.app.Activity;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
+import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class z5 extends og.a {
-    public final CacheByChatsController.KeepMediaException c;
+public final class z5 extends v20 implements NotificationCenter.NotificationCenterDelegate {
+    public final long P;
+    public final int Q;
+    public TL_stories.TL_premium_boostsStatus R;
+    public ChannelBoostsController.CanApplyBoost S;
+    public ScrollSlidingTextTabStrip T;
+    public final ArrayList U;
+    public final ArrayList V;
+    public boolean W;
+    public int X;
+    public boolean Y;
+    public int Z;
+    public final ArrayList a0;
+    public int b0;
+    public LimitPreviewView c0;
+    public final s5 d0;
+    public boolean e0;
+    public LinearLayout f0;
+    public final TLRPC.Chat g0;
+    public String h0;
+    public String i0;
+    public int j0;
+    public int k0;
+    public int l0;
+    public int m0;
 
-    public z5(int i10, CacheByChatsController.KeepMediaException keepMediaException) {
-        super(i10, false);
-        this.c = keepMediaException;
+    public z5(long j10) {
+        int i10 = UserConfig.selectedAccount;
+        this.Q = i10;
+        this.U = new ArrayList();
+        this.V = new ArrayList();
+        this.a0 = new ArrayList();
+        this.b0 = 0;
+        this.d0 = new s5(this);
+        this.h0 = "";
+        this.i0 = "";
+        this.j0 = 5;
+        this.k0 = 5;
+        this.P = j10;
+        this.g0 = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
     }
 
-    public final boolean equals(Object obj) {
-        CacheByChatsController.KeepMediaException keepMediaException;
-        if (this == obj) {
-            return true;
+    public static void y0(z5 z5Var, Context context, View view, int i10) {
+        long j10 = z5Var.P;
+        if (view instanceof zg.b) {
+            zg.b bVar = (zg.b) view;
+            TL_stories.Boost boost = bVar.getBoost();
+            boolean z10 = boost.giveaway;
+            if (!z10 || boost.stars <= 0) {
+                boolean z11 = boost.gift;
+                if (((z11 || z10) && boost.user_id >= 0) || boost.unclaimed) {
+                    TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = new TLRPC.TL_payments_checkedGiftCode();
+                    tL_payments_checkedGiftCode.giveaway_msg_id = boost.giveaway_msg_id;
+                    tL_payments_checkedGiftCode.to_id = boost.user_id;
+                    tL_payments_checkedGiftCode.from_id = MessagesController.getInstance(UserConfig.selectedAccount).getPeer(-z5Var.g0.id);
+                    int i11 = boost.date;
+                    tL_payments_checkedGiftCode.date = i11;
+                    tL_payments_checkedGiftCode.via_giveaway = boost.giveaway;
+                    int i12 = boost.expires - i11;
+                    tL_payments_checkedGiftCode.days = i12 / 86400;
+                    tL_payments_checkedGiftCode.months = (i12 / 30) / 86400;
+                    if (boost.unclaimed) {
+                        tL_payments_checkedGiftCode.to_id = -1L;
+                        tL_payments_checkedGiftCode.flags = -1;
+                    } else {
+                        tL_payments_checkedGiftCode.boost = boost;
+                    }
+                    new ug.c0(z5Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
+                } else if (z10 && boost.user_id == -1) {
+                    org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(z5Var.getParentActivity(), z5Var.getResourceProvider());
+                    acVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
+                    acVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
+                    acVar.b.setSingleLine(false);
+                    acVar.b.setMaxLines(2);
+                    org.telegram.ui.Components.sc.g(z5Var, acVar, 2750).j();
+                } else if (!z11 && !z10) {
+                    z5Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
+                }
+            } else {
+                zh.p7.f1(context, z5Var.Q, z5Var.P, boost, z5Var.getResourceProvider());
+            }
         }
-        if (obj == null || z5.class != obj.getClass()) {
-            return false;
+        if (view instanceof org.telegram.ui.Cells.r8) {
+            ug.n.n(z5Var, z5Var.resourceProvider, j10, null);
         }
-        z5 z5Var = (z5) obj;
-        if (this.a != z5Var.a) {
-            return false;
+        if (view instanceof zg.c) {
+            ug.n.n(z5Var, z5Var.resourceProvider, j10, ((zg.c) view).getPrepaidGiveaway());
         }
-        CacheByChatsController.KeepMediaException keepMediaException2 = this.c;
-        return keepMediaException2 == null || (keepMediaException = z5Var.c) == null || keepMediaException2.dialogId == keepMediaException.dialogId;
+        if (((y5) z5Var.a0.get(i10)).a == 9) {
+            z5Var.F0(Boolean.valueOf(z5Var.b0 == 1));
+        }
+    }
+
+    public final void D0(CountDownLatch countDownLatch, p5 p5Var) {
+        TL_stories.TL_premium_getBoostsList tL_premium_getBoostsList = new TL_stories.TL_premium_getBoostsList();
+        tL_premium_getBoostsList.limit = this.k0;
+        tL_premium_getBoostsList.offset = this.h0;
+        int i10 = this.Q;
+        tL_premium_getBoostsList.peer = MessagesController.getInstance(i10).getInputPeer(this.P);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_premium_getBoostsList, new n5(this, countDownLatch, p5Var, 0), 2);
+    }
+
+    public final void E0(CountDownLatch countDownLatch, p5 p5Var) {
+        TL_stories.TL_premium_getBoostsList tL_premium_getBoostsList = new TL_stories.TL_premium_getBoostsList();
+        tL_premium_getBoostsList.limit = this.j0;
+        tL_premium_getBoostsList.gifts = true;
+        tL_premium_getBoostsList.offset = this.i0;
+        int i10 = this.Q;
+        tL_premium_getBoostsList.peer = MessagesController.getInstance(i10).getInputPeer(this.P);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_premium_getBoostsList, new n5(this, countDownLatch, p5Var, 1), 2);
+    }
+
+    public final void F0(Boolean bool) {
+        if (this.e0) {
+            return;
+        }
+        this.e0 = true;
+        if (bool == null) {
+            Utilities.globalQueue.postRunnable(new p5(this, 1));
+        } else if (bool.booleanValue()) {
+            E0(null, new p5(this, 2));
+        } else {
+            D0(null, new p5(this, 3));
+        }
+    }
+
+    public final void G0(boolean z10) {
+        if (getParentActivity() == null) {
+            return;
+        }
+        if (this.c0 == null) {
+            LimitPreviewView limitPreviewView = new LimitPreviewView(getParentActivity(), R.drawable.filled_limit_boost, 0, this.resourceProvider, 0);
+            this.c0 = limitPreviewView;
+            limitPreviewView.c0 = true;
+            limitPreviewView.setDarkGradientProvider(new b1(this, 5));
+        }
+        if (this.c0.getParent() != null) {
+            ((ViewGroup) this.c0.getParent()).removeView(this.c0);
+        }
+        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.R;
+        if (tL_premium_boostsStatus != null) {
+            this.c0.e(tL_premium_boostsStatus, false);
+            if (z10) {
+                this.c0.setAlpha(0.0f);
+                this.c0.animate().alpha(1.0f).start();
+            }
+        }
+        TLRPC.Chat chat = this.g0;
+        String string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingBoostForChannels : R.string.BoostingBoostForGroups);
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingBoostForChannelsInfo : R.string.BoostingBoostForGroupsInfo));
+        t5 t5Var = new t5(getParentActivity());
+        t5Var.addView(this.R != null ? this.c0 : new View(t5Var.getContext()), w7.a6.a(this.R != null ? -2.0f : 110.0f, 8.0f, 46.0f, 8.0f, 33.0f, -1, 0));
+        m0(string, replaceTags, t5Var, new w5(this, getParentActivity()));
+    }
+
+    public final void H0(boolean z10) {
+        ArrayList arrayList = this.a0;
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        arrayList.clear();
+        arrayList.add(new y5(14, false));
+        if (this.R != null) {
+            arrayList.add(new y5(16, LocaleController.getString(R.string.StatisticOverview)));
+            arrayList.add(new y5(0, false));
+            arrayList.add(new y5(2, false));
+            if (this.R.prepaid_giveaways.size() > 0) {
+                arrayList.add(new y5(12, LocaleController.getString(R.string.BoostingPreparedGiveaways)));
+                int i10 = 0;
+                while (i10 < this.R.prepaid_giveaways.size()) {
+                    TL_stories.PrepaidGiveaway prepaidGiveaway = this.R.prepaid_giveaways.get(i10);
+                    boolean z11 = i10 == this.R.prepaid_giveaways.size() - 1;
+                    y5 y5Var = new y5(11, true);
+                    y5Var.e = prepaidGiveaway;
+                    y5Var.f = z11;
+                    arrayList.add(y5Var);
+                    i10++;
+                }
+                arrayList.add(new y5(6, LocaleController.getString(R.string.BoostingSelectPaidGiveaway)));
+            }
+            arrayList.add(new y5(13, LocaleController.getString(R.string.Boosters)));
+            int i11 = this.b0;
+            TLRPC.Chat chat = this.g0;
+            if (i11 == 0) {
+                ArrayList arrayList3 = this.U;
+                if (arrayList3.isEmpty()) {
+                    arrayList.add(new y5(8, false));
+                    arrayList.add(new y5(2, false));
+                } else {
+                    int i12 = 0;
+                    while (i12 < arrayList3.size()) {
+                        arrayList.add(new y5((TL_stories.Boost) arrayList3.get(i12), i12 == arrayList3.size() - 1 && !this.W, this.b0));
+                        i12++;
+                    }
+                    if (this.W) {
+                        arrayList.add(new y5(9, true));
+                    } else {
+                        arrayList.add(new y5(7, false));
+                    }
+                    arrayList.add(new y5(6, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostersInfoDescription : R.string.BoostersInfoGroupDescription)));
+                }
+            } else {
+                ArrayList arrayList4 = this.V;
+                if (arrayList4.isEmpty()) {
+                    arrayList.add(new y5(8, false));
+                    arrayList.add(new y5(2, false));
+                } else {
+                    int i13 = 0;
+                    while (i13 < arrayList4.size()) {
+                        arrayList.add(new y5((TL_stories.Boost) arrayList4.get(i13), i13 == arrayList4.size() - 1 && !this.Y, this.b0));
+                        i13++;
+                    }
+                    if (this.Y) {
+                        arrayList.add(new y5(9, true));
+                    } else {
+                        arrayList.add(new y5(7, false));
+                    }
+                    arrayList.add(new y5(6, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostersInfoDescription : R.string.BoostersInfoGroupDescription)));
+                }
+            }
+            arrayList.add(new y5(1, LocaleController.getString(R.string.LinkForBoosting)));
+            arrayList.add(new y5(3, this.R.boost_url));
+            if (MessagesController.getInstance(this.Q).giveawayGiftsPurchaseAvailable && ChatObject.hasAdminRights(chat)) {
+                arrayList.add(new y5(6, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingShareThisLink : R.string.BoostingShareThisLinkGroup)));
+                arrayList.add(new y5(10, true));
+                arrayList.add(new y5(6, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingGetMoreBoosts2 : R.string.BoostingGetMoreBoostsGroup)));
+            } else {
+                arrayList.add(new y5(6, ""));
+            }
+            arrayList.add(new y5(15, false));
+        }
+        s5 s5Var = this.d0;
+        if (z10) {
+            s5Var.E(arrayList2, arrayList);
+        } else {
+            s5Var.l();
+        }
+    }
+
+    @Override // org.telegram.ui.v20, org.telegram.ui.ActionBar.m2
+    public final View createView(Context context) {
+        View createView = super.createView(context);
+        G0(false);
+        s4.k kVar = new s4.k();
+        kVar.m = false;
+        kVar.C = false;
+        this.c.setItemAnimator(kVar);
+        this.c.setOnItemClickListener(new bi.z5(3, this, context));
+        Activity parentActivity = getParentActivity();
+        LinearLayout linearLayout = new LinearLayout(parentActivity);
+        this.f0 = linearLayout;
+        linearLayout.setOrientation(1);
+        this.f0.addView(new bi.f2(parentActivity), w7.a6.t(100, 100, 17, 0, 120, 0, 0));
+        ((ViewGroup) this.fragmentView).addView(this.f0, w7.a6.e(-1, -2, 17));
+        this.f0.setAlpha(0.0f);
+        if (this.R == null) {
+            this.f0.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
+            getMessagesController().getBoostsController().getBoostsStats(this.P, new q5(this, 1));
+        } else {
+            this.f0.setVisibility(8);
+            F0(null);
+        }
+        H0(false);
+        return createView;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 != NotificationCenter.boostByChannelCreated) {
+            if (i10 == NotificationCenter.chatWasBoostedByUser) {
+                if (this.P == ((Long) objArr[2]).longValue()) {
+                    this.R = (TL_stories.TL_premium_boostsStatus) objArr[0];
+                    this.S = (ChannelBoostsController.CanApplyBoost) objArr[1];
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        TLRPC.Chat chat = (TLRPC.Chat) objArr[0];
+        boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
+        List fragmentStack = getParentLayout().getFragmentStack();
+        org.telegram.ui.ActionBar.m2 m2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.m2) t8.b.g(2, fragmentStack) : null;
+        if (m2Var instanceof zo) {
+            ((ActionBarLayout) getParentLayout()).a0(m2Var, false);
+        }
+        List fragmentStack2 = getParentLayout().getFragmentStack();
+        org.telegram.ui.ActionBar.m2 m2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.m2) t8.b.g(2, fragmentStack2) : null;
+        if (!booleanValue) {
+            finishFragment();
+            if ((m2Var2 instanceof ProfileActivity) || (m2Var2 instanceof fo)) {
+                ug.j.f(m2Var2, chat, false);
+                return;
+            }
+            return;
+        }
+        org.telegram.ui.ActionBar.m2 m2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.m2) t8.b.g(3, fragmentStack2) : null;
+        if (m2Var2 instanceof ProfileActivity) {
+            ((ActionBarLayout) getParentLayout()).a0(m2Var2, false);
+        }
+        finishFragment();
+        if (m2Var3 instanceof fo) {
+            ug.j.f(m2Var3, chat, true);
+        }
+        if (m2Var2 instanceof fo) {
+            ug.j.f(m2Var2, chat, true);
+        }
+    }
+
+    @Override // org.telegram.ui.v20
+    public final s4.g0 n0() {
+        return this.d0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final boolean onFragmentCreate() {
+        getNotificationCenter().addObserver(this, NotificationCenter.boostByChannelCreated);
+        getNotificationCenter().addObserver(this, NotificationCenter.chatWasBoostedByUser);
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void onFragmentDestroy() {
+        getNotificationCenter().removeObserver(this, NotificationCenter.boostByChannelCreated);
+        getNotificationCenter().removeObserver(this, NotificationCenter.chatWasBoostedByUser);
+        super.onFragmentDestroy();
     }
 }

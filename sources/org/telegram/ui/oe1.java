@@ -1,71 +1,88 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import android.widget.EditText;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class oe1 extends org.telegram.ui.ActionBar.g5 {
-    public boolean f = false;
-    public final /* synthetic */ ue1 h;
+public final class oe1 implements org.telegram.ui.Components.fl0 {
+    public final /* synthetic */ fo a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ org.telegram.ui.Components.gl0 c;
+    public final /* synthetic */ se1 d;
 
-    public oe1(ue1 ue1Var) {
-        this.h = ue1Var;
+    public oe1(se1 se1Var, fo foVar, MessageObject messageObject, org.telegram.ui.Components.gl0 gl0Var) {
+        this.d = se1Var;
+        this.a = foVar;
+        this.b = messageObject;
+        this.c = gl0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void m() {
-        ue1 ue1Var = this.h;
-        if (ue1Var.a.getVisibility() != 0) {
-            ue1Var.a.setVisibility(0);
-            ue1Var.a.setAlpha(0.0f);
-        }
-        ue1Var.r.setVisibility(8);
-        ue1Var.d.l();
-        ue1Var.a.animate().alpha(1.0f).setDuration(150L).setListener(null).start();
-        ue1Var.s.animate().alpha(0.0f).setDuration(150L).setListener(new ne1(this, 0)).start();
-        this.f = false;
+    @Override // org.telegram.ui.Components.fl0
+    public final /* synthetic */ boolean D() {
+        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
-    public final void q(EditText editText) {
-        String obj = editText.getText().toString();
-        te1 te1Var = this.h.e;
-        if (te1Var.e != null) {
-            Utilities.searchQueue.cancelRunnable(te1Var.e);
-            te1Var.e = null;
-        }
-        if (TextUtils.isEmpty(obj)) {
-            te1Var.c.clear();
-            te1Var.d.clear();
-            te1Var.l();
-            te1Var.h.r.setVisibility(8);
-        } else {
-            int i10 = te1Var.f + 1;
-            te1Var.f = i10;
-            DispatchQueue dispatchQueue = Utilities.searchQueue;
-            se1 se1Var = new se1(te1Var, obj, i10, 0);
-            te1Var.e = se1Var;
-            dispatchQueue.postRunnable(se1Var, 300L);
-        }
-        if (this.f || TextUtils.isEmpty(obj)) {
-            if (this.f && TextUtils.isEmpty(obj)) {
-                m();
-                return;
+    @Override // org.telegram.ui.Components.fl0
+    public final /* synthetic */ boolean i() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public final /* synthetic */ boolean n() {
+        return false;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
+    @Override // org.telegram.ui.Components.fl0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void r(View view, ah.i1 i1Var, boolean z10, boolean z11) {
+        float f7;
+        ah.j1 j1Var;
+        ah.g1 l4;
+        float f10;
+        int i10;
+        float f11;
+        int id2 = this.b.getId();
+        fo foVar = this.a;
+        org.telegram.ui.Cells.a0 t82 = foVar.t8(id2, true);
+        float f12 = 0.0f;
+        if (t82 instanceof org.telegram.ui.Cells.u1) {
+            ah.j1 j1Var2 = ((org.telegram.ui.Cells.u1) t82).N;
+            ah.g1 l10 = j1Var2.l(i1Var);
+            if (l10 == null) {
+                f11 = 0.0f;
+                f7 = f11;
+                foVar.eb(t82, this.b, this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
+                this.d.c(false);
             }
-            return;
+            f12 = j1Var2.c + l10.x + (l10.A / 2.0f);
+            f10 = j1Var2.d + l10.y;
+            i10 = l10.B;
+        } else if (!(t82 instanceof org.telegram.ui.Cells.x0) || (l4 = (j1Var = ((org.telegram.ui.Cells.x0) t82).E0).l(i1Var)) == null) {
+            f7 = 0.0f;
+            foVar.eb(t82, this.b, this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
+            this.d.c(false);
+        } else {
+            f12 = j1Var.c + l4.x + (l4.A / 2.0f);
+            f10 = j1Var.d + l4.y;
+            i10 = l4.B;
         }
-        if (this.h.s.getVisibility() != 0) {
-            this.h.s.setVisibility(0);
-            this.h.s.setAlpha(0.0f);
-        }
-        this.h.a.animate().alpha(0.0f).setDuration(150L).setListener(new ne1(this, 1)).start();
-        this.h.e.d.clear();
-        this.h.e.c.clear();
-        this.h.e.l();
-        this.h.s.animate().setListener(null).alpha(1.0f).setDuration(150L).start();
-        this.f = true;
+        f11 = f10 + (i10 / 2.0f);
+        f7 = f11;
+        foVar.eb(t82, this.b, this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
+        this.d.c(false);
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public final /* synthetic */ void y() {
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public final /* synthetic */ void w(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

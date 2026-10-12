@@ -96,12 +96,12 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional findAny() {
-            return j$.com.android.tools.r8.a.E(this.a.findAny());
+            return j$.com.android.tools.r8.a.D(this.a.findAny());
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional findFirst() {
-            return j$.com.android.tools.r8.a.E(this.a.findFirst());
+            return j$.com.android.tools.r8.a.D(this.a.findFirst());
         }
 
         @Override // j$.util.stream.Stream
@@ -129,8 +129,8 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ Stream limit(long j3) {
-            return convert(this.a.limit(j3));
+        public final /* synthetic */ Stream limit(long j10) {
+            return convert(this.a.limit(j10));
         }
 
         @Override // j$.util.stream.Stream
@@ -155,12 +155,12 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional max(Comparator comparator) {
-            return j$.com.android.tools.r8.a.E(this.a.max(comparator));
+            return j$.com.android.tools.r8.a.D(this.a.max(comparator));
         }
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional min(Comparator comparator) {
-            return j$.com.android.tools.r8.a.E(this.a.min(comparator));
+            return j$.com.android.tools.r8.a.D(this.a.min(comparator));
         }
 
         @Override // j$.util.stream.Stream
@@ -190,7 +190,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // j$.util.stream.Stream
         public final /* synthetic */ Optional reduce(BinaryOperator binaryOperator) {
-            return j$.com.android.tools.r8.a.E(this.a.reduce(binaryOperator));
+            return j$.com.android.tools.r8.a.D(this.a.reduce(binaryOperator));
         }
 
         @Override // j$.util.stream.Stream
@@ -209,8 +209,8 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ Stream skip(long j3) {
-            return convert(this.a.skip(j3));
+        public final /* synthetic */ Stream skip(long j10) {
+            return convert(this.a.skip(j10));
         }
 
         @Override // j$.util.stream.Stream
@@ -330,12 +330,12 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional findAny() {
-            return j$.com.android.tools.r8.a.I(Stream.this.findAny());
+            return j$.com.android.tools.r8.a.H(Stream.this.findAny());
         }
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional findFirst() {
-            return j$.com.android.tools.r8.a.I(Stream.this.findFirst());
+            return j$.com.android.tools.r8.a.H(Stream.this.findFirst());
         }
 
         @Override // java.util.stream.Stream
@@ -383,8 +383,8 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.Stream limit(long j3) {
-            return convert(Stream.this.limit(j3));
+        public final /* synthetic */ java.util.stream.Stream limit(long j10) {
+            return convert(Stream.this.limit(j10));
         }
 
         @Override // java.util.stream.Stream
@@ -409,12 +409,12 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional max(Comparator comparator) {
-            return j$.com.android.tools.r8.a.I(Stream.this.max(comparator));
+            return j$.com.android.tools.r8.a.H(Stream.this.max(comparator));
         }
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional min(Comparator comparator) {
-            return j$.com.android.tools.r8.a.I(Stream.this.min(comparator));
+            return j$.com.android.tools.r8.a.H(Stream.this.min(comparator));
         }
 
         @Override // java.util.stream.Stream
@@ -449,7 +449,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
         @Override // java.util.stream.Stream
         public final /* synthetic */ java.util.Optional reduce(BinaryOperator binaryOperator) {
-            return j$.com.android.tools.r8.a.I(Stream.this.reduce(binaryOperator));
+            return j$.com.android.tools.r8.a.H(Stream.this.reduce(binaryOperator));
         }
 
         @Override // java.util.stream.BaseStream
@@ -458,8 +458,8 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.Stream skip(long j3) {
-            return convert(Stream.this.skip(j3));
+        public final /* synthetic */ java.util.stream.Stream skip(long j10) {
+            return convert(Stream.this.skip(j10));
         }
 
         @Override // java.util.stream.Stream
@@ -529,7 +529,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     void forEachOrdered(Consumer consumer);
 
-    Stream<T> limit(long j3);
+    Stream<T> limit(long j10);
 
     <R> Stream<R> map(Function<? super T, ? extends R> function);
 
@@ -555,7 +555,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     Object reduce(Object obj, BinaryOperator binaryOperator);
 
-    Stream skip(long j3);
+    Stream skip(long j10);
 
     Stream sorted();
 

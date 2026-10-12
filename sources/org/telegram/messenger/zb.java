@@ -1,65 +1,49 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zb implements RequestDelegate {
+public final /* synthetic */ class zb implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ MessagesController b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ boolean g;
-    public final /* synthetic */ Object h;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ zb(int i10, int i11, long j3, long j10, MessagesController messagesController, TLRPC.InputPeer inputPeer, boolean z10) {
+    public /* synthetic */ zb(MessagesController messagesController, long j10, long j11, ArrayList arrayList) {
         this.b = messagesController;
-        this.c = j3;
-        this.f = j10;
-        this.d = i10;
-        this.e = i11;
-        this.g = z10;
-        this.h = inputPeer;
+        this.c = j10;
+        this.e = j11;
+        this.d = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$deleteDialog$141(this.c, this.f, this.d, this.e, this.g, (TLRPC.InputPeer) this.h, tLObject, tL_error);
+                this.b.lambda$checkUnreadPollVotesInternal2$434(this.c, this.e, 0, this.d);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$deleteMessagesRange$469(this.c, this.d, this.e, this.f, this.g, (Runnable) this.h, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$422(this.c, this.d, this.e);
                 break;
             default:
-                VoIPGroupNotification.lambda$request$1(this.d, this.c, this.f, this.e, this.g, (Context) this.b, (String) this.h, tLObject, tL_error);
+                this.b.lambda$deleteMessagesByPush$369(this.d, this.c, this.e);
                 break;
         }
     }
 
-    public /* synthetic */ zb(Context context, int i10, long j3, String str, long j10, int i11, boolean z10) {
-        this.d = i10;
-        this.c = j3;
-        this.f = j10;
-        this.e = i11;
-        this.g = z10;
-        this.b = context;
-        this.h = str;
+    public /* synthetic */ zb(MessagesController messagesController, long j10, ArrayList arrayList, long j11) {
+        this.b = messagesController;
+        this.c = j10;
+        this.d = arrayList;
+        this.e = j11;
     }
 
-    public /* synthetic */ zb(MessagesController messagesController, long j3, int i10, int i11, long j10, boolean z10, Runnable runnable) {
+    public /* synthetic */ zb(MessagesController messagesController, ArrayList arrayList, long j10, long j11) {
         this.b = messagesController;
-        this.c = j3;
-        this.d = i10;
-        this.e = i11;
-        this.f = j10;
-        this.g = z10;
-        this.h = runnable;
+        this.d = arrayList;
+        this.c = j10;
+        this.e = j11;
     }
 }

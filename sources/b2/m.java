@@ -1,34 +1,24 @@
 package b2;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class m implements Parcelable.Creator {
-    public final /* synthetic */ int a;
+public final class m {
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public final byte[] a;
+    public final j b = new j(this);
+    public k c;
+    public l d;
 
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        switch (this.a) {
-            case 0:
-                return new o(parcel);
-            case 1:
-                return new n(parcel);
-            default:
-                return new e1(parcel);
-        }
+    static {
+        String str = e2.m0.a;
+        e = Integer.toString(0, 36);
+        f = Integer.toString(1, 36);
+        g = Integer.toString(2, 36);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i10) {
-        switch (this.a) {
-            case 0:
-                return new o[i10];
-            case 1:
-                return new n[i10];
-            default:
-                return new e1[i10];
-        }
+    public m(byte[] bArr) {
+        this.a = bArr;
     }
 }

@@ -5,11 +5,11 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h {
     public int a;
-    public a0.h b;
+    public e2.f b;
     public final FileInputStream c;
     public final byte[] d;
     public int e;
@@ -142,10 +142,10 @@ public final class h {
         this.e = 0;
         this.g = 0;
         while (i13 < i10) {
-            long j3 = i10 - i13;
+            long j10 = i10 - i13;
             try {
-                long skip = fileInputStream.skip(j3);
-                if (skip < 0 || skip > j3) {
+                long skip = fileInputStream.skip(j10);
+                if (skip < 0 || skip > j10) {
                     throw new IllegalStateException(fileInputStream.getClass() + "#skip returned invalid result: " + skip + "\nThe InputStream implementation is buggy.");
                 }
                 if (skip == 0) {
@@ -184,7 +184,7 @@ public final class h {
         int i12 = i11 + i10;
         int i13 = this.e;
         if (i12 <= i13) {
-            throw new IllegalStateException(hg.c.i(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(i2.d.j(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i14 = this.i;
         if (i10 <= (ConnectionsManager.DEFAULT_DATACENTER_ID - i14) - i11 && i14 + i11 + i10 <= this.j) {
@@ -282,9 +282,9 @@ public final class h {
     }
 
     public final byte[] n(int i10) {
-        byte[] o9 = o(i10);
-        if (o9 != null) {
-            return o9;
+        byte[] o10 = o(i10);
+        if (o10 != null) {
+            return o10;
         }
         int i11 = this.g;
         int i12 = this.e;
@@ -454,10 +454,10 @@ public final class h {
     }
 
     public final long t() {
-        long j3;
         long j10;
         long j11;
         long j12;
+        long j13;
         int i10 = this.g;
         int i11 = this.e;
         if (i11 != i10) {
@@ -472,78 +472,78 @@ public final class h {
                 int i13 = i10 + 2;
                 int i14 = (bArr[i12] << 7) ^ b10;
                 if (i14 < 0) {
-                    j3 = i14 ^ (-128);
+                    j10 = i14 ^ (-128);
                 } else {
                     int i15 = i10 + 3;
                     int i16 = (bArr[i13] << 14) ^ i14;
                     if (i16 >= 0) {
-                        j3 = i16 ^ 16256;
+                        j10 = i16 ^ 16256;
                         i13 = i15;
                     } else {
                         int i17 = i10 + 4;
                         int i18 = i16 ^ (bArr[i15] << 21);
                         if (i18 < 0) {
-                            j12 = (-2080896) ^ i18;
+                            j13 = (-2080896) ^ i18;
                         } else {
-                            long j13 = i18;
+                            long j14 = i18;
                             i13 = i10 + 5;
-                            long j14 = j13 ^ (bArr[i17] << 28);
-                            if (j14 >= 0) {
-                                j11 = 266354560;
+                            long j15 = j14 ^ (bArr[i17] << 28);
+                            if (j15 >= 0) {
+                                j12 = 266354560;
                             } else {
                                 i17 = i10 + 6;
-                                long j15 = j14 ^ (bArr[i13] << 35);
-                                if (j15 < 0) {
-                                    j10 = -34093383808L;
+                                long j16 = j15 ^ (bArr[i13] << 35);
+                                if (j16 < 0) {
+                                    j11 = -34093383808L;
                                 } else {
                                     i13 = i10 + 7;
-                                    j14 = j15 ^ (bArr[i17] << 42);
-                                    if (j14 >= 0) {
-                                        j11 = 4363953127296L;
+                                    j15 = j16 ^ (bArr[i17] << 42);
+                                    if (j15 >= 0) {
+                                        j12 = 4363953127296L;
                                     } else {
                                         i17 = i10 + 8;
-                                        j15 = j14 ^ (bArr[i13] << 49);
-                                        if (j15 < 0) {
-                                            j10 = -558586000294016L;
+                                        j16 = j15 ^ (bArr[i13] << 49);
+                                        if (j16 < 0) {
+                                            j11 = -558586000294016L;
                                         } else {
                                             i13 = i10 + 9;
-                                            long j16 = (j15 ^ (bArr[i17] << 56)) ^ 71499008037633920L;
-                                            if (j16 < 0) {
+                                            long j17 = (j16 ^ (bArr[i17] << 56)) ^ 71499008037633920L;
+                                            if (j17 < 0) {
                                                 int i19 = i10 + 10;
                                                 if (bArr[i13] >= 0) {
                                                     i13 = i19;
                                                 }
                                             }
-                                            j3 = j16;
+                                            j10 = j17;
                                         }
                                     }
                                 }
-                                j12 = j10 ^ j15;
+                                j13 = j11 ^ j16;
                             }
-                            j3 = j11 ^ j14;
+                            j10 = j12 ^ j15;
                         }
                         i13 = i17;
-                        j3 = j12;
+                        j10 = j13;
                     }
                 }
                 this.g = i13;
-                return j3;
+                return j10;
             }
         }
         return u();
     }
 
     public final long u() {
-        long j3 = 0;
+        long j10 = 0;
         for (int i10 = 0; i10 < 64; i10 += 7) {
             if (this.g == this.e) {
                 D(1);
             }
             int i11 = this.g;
             this.g = i11 + 1;
-            j3 |= (r3 & Byte.MAX_VALUE) << i10;
+            j10 |= (r3 & Byte.MAX_VALUE) << i10;
             if ((this.d[i11] & 128) == 0) {
-                return j3;
+                return j10;
             }
         }
         throw b0.c();

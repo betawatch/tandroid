@@ -1,82 +1,68 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FlagSecureReason;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wh implements FlagSecureReason.FlagSecureCondition, nv0, r0.n, yf.a0, org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ zn a;
+public final /* synthetic */ class wh implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fo b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ TLRPC.TL_error e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ MessageObject h;
+    public final /* synthetic */ TLRPC.TL_messages_getDiscussionMessage n;
+    public final /* synthetic */ TLRPC.Chat r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ MessageObject v;
 
-    public /* synthetic */ wh(zn znVar) {
-        this.a = znVar;
+    public /* synthetic */ wh(fo foVar, int i10, TLObject tLObject, TLRPC.TL_error tL_error, int i11, MessageObject messageObject, TLRPC.TL_messages_getDiscussionMessage tL_messages_getDiscussionMessage, TLRPC.Chat chat, int i12, MessageObject messageObject2, int i13) {
+        this.a = i13;
+        this.b = foVar;
+        this.c = i10;
+        this.d = tLObject;
+        this.e = tL_error;
+        this.f = i11;
+        this.h = messageObject;
+        this.n = tL_messages_getDiscussionMessage;
+        this.r = chat;
+        this.s = i12;
+        this.v = messageObject2;
     }
 
-    @Override // r0.n
-    public r0.k1 M0(View view, r0.k1 k1Var) {
-        zn znVar = this.a;
-        r0.k1 z82 = znVar.z8(k1Var);
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(z82, false);
-        int i10 = defaultWindowInsets.a;
-        int i11 = defaultWindowInsets.c;
-        if (znVar.Ua != i10 || znVar.Va != i11) {
-            znVar.Ua = i10;
-            znVar.Va = i11;
-            znVar.X0.requestLayout();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                fo foVar = this.b;
+                foVar.k8(new wh(foVar, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v, 1));
+                break;
+            default:
+                fo foVar2 = this.b;
+                if (this.c == foVar2.fc) {
+                    foVar2.hc = -1;
+                    TLObject tLObject = this.d;
+                    if (tLObject == null) {
+                        if ("CHANNEL_PRIVATE".equals(this.e.text)) {
+                            MessagesController.showCantOpenAlert(foVar2, LocaleController.getString(R.string.ChannelCantOpenBannedByAdmin));
+                            foVar2.ic = 0;
+                            foVar2.jc = false;
+                            foVar2.x0.f1();
+                            break;
+                        }
+                    } else {
+                        foVar2.mc = (TLRPC.messages_Messages) tLObject;
+                    }
+                    foVar2.Ca(foVar2.lc, foVar2.mc, this.f, this.h, this.n, this.r, this.s, this.v);
+                    break;
+                }
+                break;
         }
-        znVar.v.k(z82);
-        ai.f0 f0Var = znVar.K3;
-        if (f0Var != null) {
-            f0Var.setPadding(i10, 0, i11, 0);
-        }
-        znVar.q7();
-        znVar.u7();
-        znVar.u9();
-        boolean p5 = z82.a.p(8);
-        if (znVar.Ta != p5) {
-            znVar.Ta = p5;
-            znVar.X0.S();
-        }
-        ci.h1 h1Var = znVar.q1;
-        if (h1Var != null) {
-            r0.i0.b(h1Var, z82);
-        }
-        return r0.k1.b;
-    }
-
-    @Override // yf.a0
-    public void a(int i10) {
-        zn.X0(this.a, i10);
-    }
-
-    @Override // org.telegram.ui.nv0
-    public void b(float[] fArr) {
-        zn znVar = this.a;
-        fArr[1] = znVar.x0.getBottom() - znVar.Ba;
-        fArr[0] = (znVar.x0.getTop() + znVar.s9) - AndroidUtilities.dp(4.0f);
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        zn znVar = this.a;
-        znVar.getClass();
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            znVar.getParentActivity().startActivity(intent);
-        } catch (Exception e7) {
-            FileLog.e(e7);
-        }
-    }
-
-    @Override // org.telegram.messenger.FlagSecureReason.FlagSecureCondition
-    public boolean run() {
-        zn znVar = this.a;
-        return znVar.h != null || znVar.D9();
     }
 }

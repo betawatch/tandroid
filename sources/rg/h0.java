@@ -1,25 +1,123 @@
 package rg;
 
 import android.content.Context;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.hu0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class h0 extends LimitPreviewView {
-    public final /* synthetic */ i0 m0;
+public final class h0 extends d {
+    public final Paint h;
+    public long n;
+    public float r;
+    public float s;
+    public final /* synthetic */ hu0 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(i0 i0Var, Context context, int i10, int i11, int i12, float f7, e6 e6Var) {
-        super(context, i10, i11, i12, f7, e6Var);
-        this.m0 = i0Var;
+    public h0(hu0 hu0Var, Context context, g0 g0Var) {
+        super(context, g0Var);
+        this.v = hu0Var;
+        Paint paint = new Paint();
+        this.h = paint;
+        setWillNotDraw(false);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(-1);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00ac  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0076  */
     @Override // android.view.View
-    public final void invalidate() {
-        if (this.m0.e.f0) {
-            return;
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        int i10;
+        int i11;
+        float f7;
+        Canvas canvas2;
+        float f10;
+        super.onDraw(canvas);
+        long min = Math.min(16L, System.currentTimeMillis() - this.n);
+        this.n = System.currentTimeMillis();
+        hu0 hu0Var = this.v;
+        j jVar = hu0Var.S0;
+        if (jVar == null || jVar.r || !jVar.n) {
+            i10 = 0;
+            i11 = 0;
+        } else {
+            i10 = jVar.getStickyX();
+            i11 = hu0Var.S0.getStickyY();
         }
-        super.invalidate();
+        if (i10 != 0) {
+            float f11 = this.r;
+            if (f11 != 1.0f) {
+                this.r = Math.min(1.0f, (min / 150.0f) + f11);
+                invalidate();
+                if (i11 != 0) {
+                    float f12 = this.s;
+                    if (f12 != 1.0f) {
+                        this.s = Math.min(1.0f, (min / 150.0f) + f12);
+                        invalidate();
+                        f7 = this.s;
+                        Paint paint = this.h;
+                        if (f7 != 0.0f) {
+                            paint.setAlpha((int) (f7 * 255.0f));
+                            float measuredHeight = getMeasuredHeight() / 2.0f;
+                            canvas2 = canvas;
+                            canvas2.drawLine(0.0f, measuredHeight, getMeasuredWidth(), measuredHeight, paint);
+                        } else {
+                            canvas2 = canvas;
+                        }
+                        f10 = this.r;
+                        if (f10 != 0.0f) {
+                            paint.setAlpha((int) (f10 * 255.0f));
+                            float measuredWidth = getMeasuredWidth() / 2.0f;
+                            canvas2.drawLine(measuredWidth, 0.0f, measuredWidth, getMeasuredHeight(), paint);
+                            return;
+                        }
+                        return;
+                    }
+                }
+                if (i11 == 0) {
+                    float f13 = this.s;
+                    if (f13 != 0.0f) {
+                        this.s = Math.max(0.0f, f13 - (min / 150.0f));
+                        invalidate();
+                    }
+                }
+                f7 = this.s;
+                Paint paint2 = this.h;
+                if (f7 != 0.0f) {
+                }
+                f10 = this.r;
+                if (f10 != 0.0f) {
+                }
+            }
+        }
+        if (i10 == 0) {
+            float f14 = this.r;
+            if (f14 != 0.0f) {
+                this.r = Math.max(0.0f, f14 - (min / 150.0f));
+                invalidate();
+            }
+        }
+        if (i11 != 0) {
+        }
+        if (i11 == 0) {
+        }
+        f7 = this.s;
+        Paint paint22 = this.h;
+        if (f7 != 0.0f) {
+        }
+        f10 = this.r;
+        if (f10 != 0.0f) {
+        }
     }
 }

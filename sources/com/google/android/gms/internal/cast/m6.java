@@ -1,28 +1,58 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.Iterator;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class m6 implements Iterator {
-    public final Iterator a;
+public final class m6 implements ListIterator {
+    public final ListIterator a;
 
-    public m6(n6 n6Var) {
-        this.a = n6Var.a.iterator();
+    public m6(o6 o6Var, int i10) {
+        this.a = o6Var.a.listIterator(i10);
     }
 
-    @Override // java.util.Iterator
+    @Override // java.util.ListIterator
+    public final /* synthetic */ void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
     public final boolean hasNext() {
         return this.a.hasNext();
     }
 
-    @Override // java.util.Iterator
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.a.hasPrevious();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
     public final /* bridge */ /* synthetic */ Object next() {
         return (String) this.a.next();
     }
 
-    @Override // java.util.Iterator
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.a.nextIndex();
+    }
+
+    @Override // java.util.ListIterator
+    public final /* bridge */ /* synthetic */ Object previous() {
+        return (String) this.a.previous();
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.a.previousIndex();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
     public final void remove() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator
+    public final /* synthetic */ void set(Object obj) {
         throw new UnsupportedOperationException();
     }
 }

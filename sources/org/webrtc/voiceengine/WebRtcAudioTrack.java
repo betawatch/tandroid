@@ -13,7 +13,7 @@ import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.ThreadUtils;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class WebRtcAudioTrack {
     private static final long AUDIO_TRACK_THREAD_JOIN_TIMEOUT_MS = 2000;
@@ -36,13 +36,13 @@ public class WebRtcAudioTrack {
     private final long nativeAudioTrack;
     private final ThreadUtils.ThreadChecker threadChecker;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum AudioTrackStartErrorCode {
         AUDIO_TRACK_START_EXCEPTION,
         AUDIO_TRACK_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public class AudioTrackThread extends Thread {
         private volatile boolean keepAlive;
         private long lastPlaybackHeadPosition;
@@ -101,8 +101,8 @@ public class WebRtcAudioTrack {
                     if (nanoTime > 0) {
                         try {
                             Thread.sleep(nanoTime / 1000000, (int) (nanoTime % 1000000));
-                        } catch (InterruptedException e7) {
-                            FileLog.e(e7);
+                        } catch (InterruptedException e) {
+                            FileLog.e(e);
                         }
                     } else {
                         this.targetTimeNs = System.nanoTime();
@@ -116,8 +116,8 @@ public class WebRtcAudioTrack {
                 try {
                     WebRtcAudioTrack.this.audioTrack.stop();
                     Logging.d(WebRtcAudioTrack.TAG, "AudioTrack.stop is done.");
-                } catch (Exception e10) {
-                    Logging.e(WebRtcAudioTrack.TAG, "AudioTrack.stop failed: " + e10.getMessage());
+                } catch (Exception e7) {
+                    Logging.e(WebRtcAudioTrack.TAG, "AudioTrack.stop failed: " + e7.getMessage());
                 }
             }
         }
@@ -128,7 +128,7 @@ public class WebRtcAudioTrack {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface ErrorCallback {
         void onWebRtcAudioTrackError(String str);
 
@@ -137,7 +137,7 @@ public class WebRtcAudioTrack {
         void onWebRtcAudioTrackStartError(AudioTrackStartErrorCode audioTrackStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     @Deprecated
     public interface WebRtcAudioTrackErrorCallback {
         void onWebRtcAudioTrackError(String str);
@@ -154,12 +154,12 @@ public class WebRtcAudioTrack {
         streamType = 0;
     }
 
-    public WebRtcAudioTrack(long j3) {
+    public WebRtcAudioTrack(long j10) {
         ThreadUtils.ThreadChecker threadChecker = new ThreadUtils.ThreadChecker();
         this.threadChecker = threadChecker;
         threadChecker.checkIsOnValidThread();
         Logging.d(TAG, "ctor" + WebRtcAudioUtils.getThreadInfo());
-        this.nativeAudioTrack = j3;
+        this.nativeAudioTrack = j10;
         this.audioManager = (AudioManager) ContextUtils.getApplicationContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
     }
 
@@ -244,8 +244,8 @@ public class WebRtcAudioTrack {
             logMainParameters();
             logMainParametersExtended();
             return minBufferSize;
-        } catch (IllegalArgumentException e7) {
-            reportWebRtcAudioTrackInitError(e7.getMessage());
+        } catch (IllegalArgumentException e) {
+            reportWebRtcAudioTrackInitError(e.getMessage());
             releaseAudioResources();
             return -1;
         }
@@ -284,10 +284,10 @@ public class WebRtcAudioTrack {
         }
     }
 
-    private native void nativeCacheDirectBufferAddress(ByteBuffer byteBuffer, long j3);
+    private native void nativeCacheDirectBufferAddress(ByteBuffer byteBuffer, long j10);
 
     /* JADX INFO: Access modifiers changed from: private */
-    public native void nativeGetPlayoutData(int i10, long j3);
+    public native void nativeGetPlayoutData(int i10, long j10);
 
     private void releaseAudioResources() {
         Logging.e(TAG, "releaseAudioResources", new Exception());
@@ -394,8 +394,8 @@ public class WebRtcAudioTrack {
             reportWebRtcAudioTrackStartError(AudioTrackStartErrorCode.AUDIO_TRACK_START_STATE_MISMATCH, "AudioTrack.play failed - incorrect state :" + this.audioTrack.getPlayState());
             releaseAudioResources();
             return false;
-        } catch (IllegalStateException e7) {
-            reportWebRtcAudioTrackStartError(AudioTrackStartErrorCode.AUDIO_TRACK_START_EXCEPTION, "AudioTrack.play failed: " + e7.getMessage());
+        } catch (IllegalStateException e) {
+            reportWebRtcAudioTrackStartError(AudioTrackStartErrorCode.AUDIO_TRACK_START_EXCEPTION, "AudioTrack.play failed: " + e.getMessage());
             releaseAudioResources();
             return false;
         }

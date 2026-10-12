@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class g9 extends FrameLayout {
     public TextView a;
@@ -92,7 +92,7 @@ public final class g9 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.d) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
         }
     }
 

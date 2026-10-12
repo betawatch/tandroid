@@ -1,6 +1,7 @@
 package j$.util.stream;
 
 import j$.util.function.Consumer$-CC;
+import j$.util.function.IntConsumer$-CC;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
@@ -14,10 +15,10 @@ public final /* synthetic */ class h7 implements h5 {
         this.b = intConsumer;
     }
 
-    private final /* synthetic */ void a(long j3) {
+    private final /* synthetic */ void a(long j10) {
     }
 
-    private final /* synthetic */ void b(long j3) {
+    private final /* synthetic */ void b(long j10) {
     }
 
     private final /* synthetic */ void c() {
@@ -51,7 +52,7 @@ public final /* synthetic */ class h7 implements h5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j3) {
+    public final /* synthetic */ void accept(long j10) {
         switch (this.a) {
             case 0:
                 t3.K();
@@ -84,7 +85,7 @@ public final /* synthetic */ class h7 implements h5 {
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
         switch (this.a) {
         }
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
     @Override // j$.util.stream.j5
@@ -93,7 +94,7 @@ public final /* synthetic */ class h7 implements h5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j3) {
+    public final /* synthetic */ void o(long j10) {
         int i10 = this.a;
     }
 

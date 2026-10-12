@@ -1,59 +1,43 @@
 package b2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class s1 {
-    public static final s1 b;
-    public static final String c;
-    public final e9.i0 a;
+    public static final s1 d = new s1(new af.l(1));
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public final int a;
+    public final boolean b;
+    public final boolean c;
 
     static {
-        e9.g0 g0Var = e9.i0.b;
-        b = new s1(e9.a1.e);
-        String str = e2.d0.a;
-        c = Integer.toString(0, 36);
+        String str = e2.m0.a;
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
+        g = Integer.toString(3, 36);
     }
 
-    public s1(e9.a1 a1Var) {
-        this.a = e9.i0.v(a1Var);
-    }
-
-    public final boolean a(int i10) {
-        int i11 = 0;
-        while (true) {
-            e9.i0 i0Var = this.a;
-            if (i11 >= i0Var.size()) {
-                return false;
-            }
-            r1 r1Var = (r1) i0Var.get(i11);
-            boolean[] zArr = r1Var.e;
-            int length = zArr.length;
-            int i12 = 0;
-            while (true) {
-                if (i12 >= length) {
-                    break;
-                }
-                if (!zArr[i12]) {
-                    i12++;
-                } else if (r1Var.b.c == i10) {
-                    return true;
-                }
-            }
-            i11++;
-        }
+    public s1(af.l lVar) {
+        this.a = lVar.a;
+        this.b = lVar.b;
+        this.c = lVar.c;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj == null || s1.class != obj.getClass()) {
-            return false;
+        if (obj != null && s1.class == obj.getClass()) {
+            s1 s1Var = (s1) obj;
+            if (this.a == s1Var.a && this.b == s1Var.b && this.c == s1Var.c) {
+                return true;
+            }
         }
-        return this.a.equals(((s1) obj).a);
+        return false;
     }
 
     public final int hashCode() {
-        return this.a.hashCode();
+        return ((((this.a + 31) * 31) + (this.b ? 1 : 0)) * 31) + (this.c ? 1 : 0);
     }
 }

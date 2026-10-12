@@ -21,7 +21,7 @@ import java.util.Random;
 import java.util.TimeZone;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class r {
     public int a;
@@ -79,7 +79,7 @@ public final class r {
         n6.l.a("Must set holder", ((p) this.e) != null);
         n nVar = ((p) this.e).c;
         n6.l.i(nVar, "Key must not be null");
-        return new g1(new e2.u(this, (p) this.e, (k6.c[]) this.f, this.b, this.a), new g1(this, nVar));
+        return new g1(new e2.w(this, (p) this.e, (k6.c[]) this.f, this.b, this.a), new g1(this, nVar));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x016b  */
@@ -87,7 +87,7 @@ public final class r {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void b() {
-        List e7;
+        List e;
         String str;
         String str2;
         int i10;
@@ -116,7 +116,7 @@ public final class r {
             }
             if (str3 != null) {
                 if (context == null) {
-                    e7 = Collections.EMPTY_LIST;
+                    e = Collections.EMPTY_LIST;
                 } else {
                     ConcurrentHashMap concurrentHashMap = b2.e;
                     com.google.android.gms.internal.clearcut.d dVar = (com.google.android.gms.internal.clearcut.d) concurrentHashMap.get(str3);
@@ -130,9 +130,9 @@ public final class r {
                             dVar = fVar;
                         }
                     }
-                    e7 = ((t1) dVar.a()).e();
+                    e = ((t1) dVar.a()).e();
                 }
-                Iterator it = e7.iterator();
+                Iterator it = e.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         break;
@@ -181,8 +181,8 @@ public final class r {
                         try {
                             parseLong = Long.parseLong(str.substring(i10, indexOf2));
                             parseLong2 = Long.parseLong(str.substring(indexOf2 + 1));
-                        } catch (NumberFormatException e10) {
-                            Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e10);
+                        } catch (NumberFormatException e7) {
+                            Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e7);
                         }
                         if (parseLong < 0 || parseLong2 < 0) {
                             StringBuilder sb2 = new StringBuilder(72);
@@ -214,7 +214,7 @@ public final class r {
                                 c10.a(2);
                             }
                             if (!z11) {
-                                throw new ae.x();
+                                throw new androidx.car.app.j();
                             }
                             s1Var = (s1) c10;
                             if (s1Var != null) {

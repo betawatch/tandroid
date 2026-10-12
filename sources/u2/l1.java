@@ -1,92 +1,47 @@
 package u2;
 
-import android.net.Uri;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.Arrays;
+import v7.k7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class l1 extends a {
-    public final g2.m h;
-    public final g2.g i;
-    public final b2.s j;
-    public final rb.a l;
-    public final h1 n;
-    public final b2.k0 o;
-    public g2.c0 p;
-    public final long k = -9223372036854775807L;
-    public final boolean m = true;
+public final class l1 implements y2.i {
+    public final g2.m a;
+    public final g2.b0 b;
+    public byte[] c;
 
-    public l1(b2.j0 j0Var, pf.b bVar, rb.a aVar) {
-        b2.f0 f0Var;
-        this.i = bVar;
-        this.l = aVar;
-        boolean z10 = true;
-        b2.y yVar = new b2.y();
-        b2.b0 b0Var = new b2.b0();
-        List list = Collections.EMPTY_LIST;
-        e9.a1 a1Var = e9.a1.e;
-        b2.d0 d0Var = new b2.d0();
-        b2.g0 g0Var = b2.g0.d;
-        Uri uri = Uri.EMPTY;
-        String uri2 = j0Var.a.toString();
-        uri2.getClass();
-        e9.i0 v = e9.i0.v(e9.i0.z(j0Var));
-        if (b0Var.b != null && b0Var.a == null) {
-            z10 = false;
+    public l1(g2.h hVar, g2.m mVar) {
+        u.g.getAndIncrement();
+        this.a = mVar;
+        this.b = new g2.b0(hVar);
+    }
+
+    @Override // y2.i
+    public final void a() {
+        g2.b0 b0Var = this.b;
+        b0Var.b = 0L;
+        try {
+            b0Var.open(this.a);
+            int i10 = 0;
+            while (i10 != -1) {
+                int i11 = (int) b0Var.b;
+                byte[] bArr = this.c;
+                if (bArr == null) {
+                    this.c = new byte[1024];
+                } else if (i11 == bArr.length) {
+                    this.c = Arrays.copyOf(bArr, bArr.length * 2);
+                }
+                byte[] bArr2 = this.c;
+                i10 = b0Var.read(bArr2, i11, bArr2.length - i11);
+            }
+            k7.a(b0Var);
+        } catch (Throwable th2) {
+            k7.a(b0Var);
+            throw th2;
         }
-        e2.d.g(z10);
-        if (uri != null) {
-            f0Var = new b2.f0(uri, null, b0Var.a != null ? new b2.c0(b0Var) : null, null, list, null, v, -9223372036854775807L);
-        } else {
-            f0Var = null;
-        }
-        b2.k0 k0Var = new b2.k0(uri2, new b2.a0(yVar), f0Var, new b2.e0(d0Var), b2.n0.K, g0Var);
-        this.o = k0Var;
-        b2.r rVar = new b2.r();
-        String str = j0Var.b;
-        rVar.q = b2.r0.n(str == null ? "text/x-unknown" : str);
-        rVar.d = j0Var.c;
-        rVar.e = j0Var.d;
-        rVar.f = j0Var.e;
-        rVar.b = j0Var.f;
-        String str2 = j0Var.g;
-        rVar.a = str2 != null ? str2 : null;
-        this.j = new b2.s(rVar);
-        Map map = Collections.EMPTY_MAP;
-        Uri uri3 = j0Var.a;
-        e2.d.i(uri3, "The uri must be set.");
-        this.h = new g2.m(uri3, 1, null, map, 0L, -1L, null, 1);
-        this.n = new h1(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, 0L, 0L, true, false, false, null, k0Var, null);
     }
 
-    @Override // u2.a
-    public final d0 c(f0 f0Var, y2.d dVar, long j3) {
-        return new k1(this.h, this.i, this.p, this.j, this.k, this.l, b(f0Var), this.m, null);
-    }
-
-    @Override // u2.a
-    public final b2.k0 i() {
-        return this.o;
-    }
-
-    @Override // u2.a
-    public final void m(g2.c0 c0Var) {
-        this.p = c0Var;
-        n(this.n);
-    }
-
-    @Override // u2.a
-    public final void o(d0 d0Var) {
-        ((k1) d0Var).r.e(null);
-    }
-
-    @Override // u2.a
-    public final void k() {
-    }
-
-    @Override // u2.a
-    public final void q() {
+    @Override // y2.i
+    public final void J() {
     }
 }

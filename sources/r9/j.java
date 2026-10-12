@@ -1,35 +1,64 @@
 package r9;
 
-import android.os.Handler;
-import android.os.Looper;
-import java.util.concurrent.Executor;
+import w7.f7;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class j implements Executor {
-    public static final j a;
-    public static final Handler b;
-    public static final /* synthetic */ j[] c;
+public final class j {
+    public final r a;
+    public final int b;
+    public final int c;
 
-    static {
-        j jVar = new j("INSTANCE", 0);
-        a = jVar;
-        c = new j[]{jVar};
-        b = new Handler(Looper.getMainLooper());
+    public j(int i10, int i11, Class cls) {
+        this(r.a(cls), i10, i11);
     }
 
-    public static j valueOf(String str) {
-        return (j) Enum.valueOf(j.class, str);
+    public static j a(Class cls) {
+        return new j(1, 0, cls);
     }
 
-    public static j[] values() {
-        return (j[]) c.clone();
+    public static j b(r rVar) {
+        return new j(rVar, 1, 0);
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        b.post(runnable);
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof j)) {
+            return false;
+        }
+        j jVar = (j) obj;
+        return this.a.equals(jVar.a) && this.b == jVar.b && this.c == jVar.c;
+    }
+
+    public final int hashCode() {
+        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c;
+    }
+
+    public final String toString() {
+        String str;
+        StringBuilder sb2 = new StringBuilder("Dependency{anInterface=");
+        sb2.append(this.a);
+        sb2.append(", type=");
+        int i10 = this.b;
+        sb2.append(i10 == 1 ? "required" : i10 == 0 ? "optional" : "set");
+        sb2.append(", injection=");
+        int i11 = this.c;
+        if (i11 == 0) {
+            str = "direct";
+        } else if (i11 == 1) {
+            str = "provider";
+        } else {
+            if (i11 != 2) {
+                throw new AssertionError(i2.d.i(i11, "Unsupported injection: "));
+            }
+            str = "deferred";
+        }
+        return a1.g.s(sb2, str, "}");
+    }
+
+    public j(r rVar, int i10, int i11) {
+        f7.a(rVar, "Null dependency anInterface.");
+        this.a = rVar;
+        this.b = i10;
+        this.c = i11;
     }
 }

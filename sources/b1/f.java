@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import androidx.fragment.app.a0;
+import bi.la;
 import java.util.concurrent.Executor;
-import sd.l;
+import td.l;
 import v0.i;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements l {
     public final /* synthetic */ int a;
@@ -24,16 +24,16 @@ public final /* synthetic */ class f implements l {
         this.c = obj2;
     }
 
-    @Override // sd.l
+    @Override // td.l
     public final Object invoke(Object obj) {
         switch (this.a) {
             case 0:
                 Executor executor = (Executor) this.b;
                 i iVar = (i) this.c;
-                w0.i e7 = (w0.i) obj;
-                kotlin.jvm.internal.i.e(e7, "e");
-                executor.execute(new h(iVar, e7, 1));
-                return hd.i.a;
+                w0.i e = (w0.i) obj;
+                kotlin.jvm.internal.i.e(e, "e");
+                executor.execute(new h(iVar, e, 1));
+                return id.i.a;
             case 1:
                 CancellationSignal cancellationSignal = (CancellationSignal) this.b;
                 c1.e eVar = (c1.e) this.c;
@@ -49,11 +49,11 @@ public final /* synthetic */ class f implements l {
                     } catch (Exception unused) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
                         if (!a1.h.a(cancellationSignal)) {
-                            eVar.f().execute(new a0(eVar, 4));
+                            eVar.f().execute(new la(eVar, 6));
                         }
                     }
                 }
-                return hd.i.a;
+                return id.i.a;
             default:
                 CancellationSignal cancellationSignal2 = (CancellationSignal) this.b;
                 d1.e eVar2 = (d1.e) this.c;
@@ -79,7 +79,7 @@ public final /* synthetic */ class f implements l {
                         }
                     }
                 }
-                return hd.i.a;
+                return id.i.a;
         }
     }
 }

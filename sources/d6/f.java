@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Parcel;
 import android.os.RemoteException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class f {
     public static final g6.b b = new g6.b("Session", null);
@@ -14,8 +14,8 @@ public abstract class f {
         x xVar;
         try {
             xVar = com.google.android.gms.internal.cast.e.b(context).X0(str, str2, new j(this));
-        } catch (RemoteException | d e7) {
-            com.google.android.gms.internal.cast.e.a.a(e7, "Unable to call %s on %s.", "newSessionImpl", com.google.android.gms.internal.cast.g.class.getSimpleName());
+        } catch (RemoteException | d e) {
+            com.google.android.gms.internal.cast.e.a.a(e, "Unable to call %s on %s.", "newSessionImpl", com.google.android.gms.internal.cast.g.class.getSimpleName());
             xVar = null;
         }
         this.a = xVar;
@@ -31,8 +31,8 @@ public abstract class f {
                 String readString = P0.readString();
                 P0.recycle();
                 return readString;
-            } catch (RemoteException e7) {
-                b.a(e7, "Unable to call %s on %s.", "getSessionId", x.class.getSimpleName());
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "getSessionId", x.class.getSimpleName());
             }
         }
         return null;
@@ -49,8 +49,8 @@ public abstract class f {
                 boolean z10 = P0.readInt() != 0;
                 P0.recycle();
                 return z10;
-            } catch (RemoteException e7) {
-                b.a(e7, "Unable to call %s on %s.", "isConnected", x.class.getSimpleName());
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "isConnected", x.class.getSimpleName());
             }
         }
         return false;
@@ -67,8 +67,8 @@ public abstract class f {
                 boolean z10 = P0.readInt() != 0;
                 P0.recycle();
                 return z10;
-            } catch (RemoteException e7) {
-                b.a(e7, "Unable to call %s on %s.", "isConnecting", x.class.getSimpleName());
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "isConnecting", x.class.getSimpleName());
             }
         }
         return false;
@@ -84,8 +84,8 @@ public abstract class f {
             Parcel N0 = vVar.N0();
             N0.writeInt(i10);
             vVar.R0(N0, 13);
-        } catch (RemoteException e7) {
-            b.a(e7, "Unable to call %s on %s.", "notifySessionEnded", x.class.getSimpleName());
+        } catch (RemoteException e) {
+            b.a(e, "Unable to call %s on %s.", "notifySessionEnded", x.class.getSimpleName());
         }
     }
 
@@ -105,8 +105,8 @@ public abstract class f {
                     P02.recycle();
                     return readInt2;
                 }
-            } catch (RemoteException e7) {
-                b.a(e7, "Unable to call %s on %s.", "getSessionStartType", x.class.getSimpleName());
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "getSessionStartType", x.class.getSimpleName());
             }
         }
         return 0;
@@ -121,8 +121,8 @@ public abstract class f {
                 x6.a K0 = x6.b.K0(P0.readStrongBinder());
                 P0.recycle();
                 return K0;
-            } catch (RemoteException e7) {
-                b.a(e7, "Unable to call %s on %s.", "getWrappedObject", x.class.getSimpleName());
+            } catch (RemoteException e) {
+                b.a(e, "Unable to call %s on %s.", "getWrappedObject", x.class.getSimpleName());
             }
         }
         return null;

@@ -1,38 +1,41 @@
 package ci;
 
-import org.telegram.messenger.Utilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o implements Utilities.Callback {
+public final /* synthetic */ class o implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bc b;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ o(bc bcVar, int i10) {
+    public /* synthetic */ o(int i10, Runnable runnable) {
         this.a = i10;
-        this.b = bcVar;
+        this.b = runnable;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        Integer num = (Integer) obj;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                int intValue = num.intValue();
-                bc bcVar = this.b;
-                bcVar.setPeriod(intValue);
-                Utilities.Callback callback = bcVar.B1;
-                if (callback != null) {
-                    callback.run(num);
-                    break;
-                }
+                this.b.run();
+                break;
+            case 1:
+                this.b.run();
+                break;
+            case 2:
+                this.b.run();
+                break;
+            case 3:
+                this.b.run();
+                break;
+            case 4:
+                this.b.run();
+                break;
+            case 5:
+                this.b.run();
                 break;
             default:
-                Utilities.Callback callback2 = this.b.C1;
-                if (callback2 != null) {
-                    callback2.run(num);
-                    break;
-                }
+                this.b.run();
                 break;
         }
     }

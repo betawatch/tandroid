@@ -1,27 +1,27 @@
 package k5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f implements ia.d {
+public final class f implements ja.d {
     public static final f a = new f();
-    public static final ia.c b = ia.c.c("requestTimeMs");
-    public static final ia.c c = ia.c.c("requestUptimeMs");
-    public static final ia.c d = ia.c.c("clientInfo");
-    public static final ia.c e = ia.c.c("logSource");
-    public static final ia.c f = ia.c.c("logSourceName");
-    public static final ia.c g = ia.c.c("logEvent");
-    public static final ia.c h = ia.c.c("qosTier");
+    public static final ja.c b = ja.c.c("requestTimeMs");
+    public static final ja.c c = ja.c.c("requestUptimeMs");
+    public static final ja.c d = ja.c.c("clientInfo");
+    public static final ja.c e = ja.c.c("logSource");
+    public static final ja.c f = ja.c.c("logSourceName");
+    public static final ja.c g = ja.c.c("logEvent");
+    public static final ja.c h = ja.c.c("qosTier");
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
-        ia.e eVar = (ia.e) obj2;
+        ja.e eVar = (ja.e) obj2;
         l lVar = (l) ((s) obj);
         eVar.f(b, lVar.a);
         eVar.f(c, lVar.b);
-        eVar.a(d, lVar.c);
-        eVar.a(e, lVar.d);
-        eVar.a(f, lVar.e);
-        eVar.a(g, lVar.f);
-        eVar.a(h, w.a);
+        eVar.d(d, lVar.c);
+        eVar.d(e, lVar.d);
+        eVar.d(f, lVar.e);
+        eVar.d(g, lVar.f);
+        eVar.d(h, w.a);
     }
 }

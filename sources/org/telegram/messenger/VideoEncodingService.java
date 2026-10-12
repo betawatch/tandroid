@@ -7,7 +7,7 @@ import e0.r;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class VideoEncodingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static VideoEncodingService instance;
@@ -58,8 +58,8 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             try {
                 ApplicationLoader.applicationContext.startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) VideoEncodingService.class));
                 return;
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
                 return;
             }
         }
@@ -125,7 +125,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
             if (i10 == NotificationCenter.fileUploaded || i10 == NotificationCenter.fileUploadFailed) {
                 String str3 = (String) objArr[0];
                 if (i11 == this.currentAccount && (str = this.currentPath) != null && str.equals(str3)) {
-                    AndroidUtilities.runOnUIThread(new vl(this, 0));
+                    AndroidUtilities.runOnUIThread(new xl(this, 0));
                     return;
                 }
                 return;
@@ -191,7 +191,7 @@ public class VideoEncodingService extends Service implements NotificationCenter.
         } catch (Throwable th2) {
             FileLog.e(th2);
         }
-        AndroidUtilities.runOnUIThread(new vl(this, 1));
+        AndroidUtilities.runOnUIThread(new xl(this, 1));
         return 2;
     }
 }

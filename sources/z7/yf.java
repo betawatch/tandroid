@@ -1,6 +1,6 @@
 package z7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class yf {
     public static t7.r a;
@@ -12,7 +12,7 @@ public abstract class yf {
                 if (a == null) {
                     a = new t7.r(4);
                 }
-                wfVar = (wf) a.O0(sfVar);
+                wfVar = (wf) a.R0(sfVar);
             } catch (Throwable th2) {
                 throw th2;
             }

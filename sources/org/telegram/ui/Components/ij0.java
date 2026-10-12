@@ -1,79 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ij0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jj0 b;
+public final class ij0 extends Drawable {
+    public Path a;
+    public Paint b;
+    public float c;
 
-    public /* synthetic */ ij0(jj0 jj0Var, int i10) {
-        this.a = i10;
-        this.b = jj0Var;
+    public final void a() {
+        int dp = AndroidUtilities.dp(18.0f);
+        Path path = this.a;
+        path.reset();
+        float f7 = dp >> 1;
+        path.moveTo(f7, AndroidUtilities.dpf2(4.98f));
+        path.lineTo(AndroidUtilities.dpf2(4.95f), AndroidUtilities.dpf2(9.0f));
+        path.lineTo(dp - AndroidUtilities.dpf2(4.95f), AndroidUtilities.dpf2(9.0f));
+        path.lineTo(f7, AndroidUtilities.dpf2(4.98f));
+        Paint paint = this.b;
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
+        this.c = AndroidUtilities.density;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                jj0 jj0Var = this.b;
-                AnimatorSet animatorSet = jj0Var.s;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    jj0Var.s = null;
-                    jj0Var.getClass();
-                    break;
-                }
-                break;
-            case 2:
-                jj0 jj0Var2 = this.b;
-                AnimatorSet animatorSet2 = jj0Var2.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    jj0Var2.s = null;
-                    jj0Var2.getClass();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = this.b;
+        if (this.c != AndroidUtilities.density) {
+            a();
         }
+        canvas.save();
+        canvas.translate(getBounds().left, getBounds().top);
+        canvas.drawPath(this.a, paint);
+        canvas.drawRect(AndroidUtilities.dpf2(7.56f), AndroidUtilities.dpf2(8.0f), AndroidUtilities.dp(18.0f) - AndroidUtilities.dpf2(7.56f), AndroidUtilities.dpf2(11.1f), paint);
+        canvas.restore();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        jj0 jj0Var = this.b;
-        switch (i10) {
-            case 0:
-                AnimatorSet animatorSet = jj0Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    jj0Var.h = null;
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            case 1:
-                AnimatorSet animatorSet2 = jj0Var.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    jj0Var.s = null;
-                    if (jj0Var.w) {
-                        jj0Var.setLayerType(0, null);
-                    }
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            default:
-                AnimatorSet animatorSet3 = jj0Var.s;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    jj0Var.s = null;
-                    AndroidUtilities.runOnUIThread(new bd0(this, 14));
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(18.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

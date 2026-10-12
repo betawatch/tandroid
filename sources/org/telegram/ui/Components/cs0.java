@@ -1,80 +1,72 @@
 package org.telegram.ui.Components;
 
-import java.util.Collections;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cs0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bw0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a2[] b;
+    public final /* synthetic */ int c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ cs0(bw0 bw0Var, TLRPC.TL_error tL_error, int i10, int i11, TLObject tLObject, int i12) {
+    public /* synthetic */ cs0(org.telegram.ui.ActionBar.a2[] a2VarArr, int i10, int i11, int i12) {
         this.a = i12;
-        this.b = bw0Var;
-        this.c = tL_error;
-        this.d = i10;
-        this.e = i11;
-        this.f = tLObject;
+        this.b = a2VarArr;
+        this.c = i10;
+        this.d = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                bw0 bw0Var = this.b;
-                NotificationCenter.getInstance(bw0Var.v1.getCurrentAccount()).doOnIdle(new cs0(bw0Var, this.c, this.d, this.e, this.f, 1));
+                org.telegram.ui.ActionBar.a2[] a2VarArr = this.b;
+                org.telegram.ui.ActionBar.a2 a2Var = a2VarArr[0];
+                if (a2Var != null) {
+                    final int i10 = 0;
+                    final int i11 = this.c;
+                    final int i12 = this.d;
+                    a2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.is0
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i10) {
+                                case 0:
+                                    ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
+                                    break;
+                                default:
+                                    ConnectionsManager.getInstance(i11).cancelRequest(i12, true);
+                                    break;
+                            }
+                        }
+                    });
+                    a2VarArr[0].show();
+                    break;
+                }
                 break;
             default:
-                bw0 bw0Var2 = this.b;
-                qv0[] qv0VarArr = bw0Var2.t1;
-                if (this.c == null) {
-                    int i10 = this.e;
-                    qv0 qv0Var = qv0VarArr[i10];
-                    if (this.d == qv0Var.p) {
-                        TLRPC.TL_messages_searchResultsPositions tL_messages_searchResultsPositions = (TLRPC.TL_messages_searchResultsPositions) this.f;
-                        qv0Var.e.clear();
-                        int size = tL_messages_searchResultsPositions.positions.size();
-                        int i11 = 0;
-                        for (int i12 = 0; i12 < size; i12++) {
-                            TLRPC.TL_searchResultPosition tL_searchResultPosition = tL_messages_searchResultsPositions.positions.get(i12);
-                            int i13 = tL_searchResultPosition.date;
-                            if (i13 != 0) {
-                                zu0 zu0Var = new zu0();
-                                zu0Var.c = i13;
-                                zu0Var.d = tL_searchResultPosition.msg_id;
-                                zu0Var.b = tL_searchResultPosition.offset;
-                                zu0Var.a = LocaleController.formatYearMont(i13, true);
-                                qv0VarArr[i10].e.add(zu0Var);
+                org.telegram.ui.ActionBar.a2[] a2VarArr2 = this.b;
+                org.telegram.ui.ActionBar.a2 a2Var2 = a2VarArr2[0];
+                if (a2Var2 != null) {
+                    final int i13 = 1;
+                    final int i14 = this.c;
+                    final int i15 = this.d;
+                    a2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Components.is0
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i13) {
+                                case 0:
+                                    ConnectionsManager.getInstance(i14).cancelRequest(i15, true);
+                                    break;
+                                default:
+                                    ConnectionsManager.getInstance(i14).cancelRequest(i15, true);
+                                    break;
                             }
                         }
-                        Collections.sort(qv0VarArr[i10].e, new org.telegram.ui.gf(17));
-                        qv0 qv0Var2 = qv0VarArr[i10];
-                        qv0Var2.f[0] = tL_messages_searchResultsPositions.count;
-                        qv0Var2.h = true;
-                        if (!qv0Var2.e.isEmpty()) {
-                            while (true) {
-                                uu0[] uu0VarArr = bw0Var2.k0;
-                                if (i11 < uu0VarArr.length) {
-                                    uu0 uu0Var = uu0VarArr[i11];
-                                    if (uu0Var.F == i10) {
-                                        uu0Var.b = true;
-                                        bw0Var2.o1(uu0Var, true);
-                                    }
-                                    i11++;
-                                }
-                            }
-                        }
-                        bw0Var2.H.l();
-                        break;
-                    }
+                    });
+                    a2VarArr2[0].show();
+                    break;
                 }
                 break;
         }

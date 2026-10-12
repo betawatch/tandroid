@@ -1,277 +1,62 @@
 package androidx.fragment.app;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.util.AttributeSet;
-import android.view.MenuItem;
-import android.view.View;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.concurrent.CopyOnWriteArraySet;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.Transformation;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class v extends androidx.activity.l implements e0.b {
-    public boolean L;
-    public boolean M;
-    public final xa.d J = new xa.d(new u(this), 4);
-    public final androidx.lifecycle.v K = new androidx.lifecycle.v(this);
-    public boolean N = true;
+public final class v extends AnimationSet implements Runnable {
+    public final ViewGroup a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
 
-    public v() {
-        ((m.p) this.e.d).f("android:support:lifecycle", new androidx.activity.e(this, 1));
-        final int i10 = 0;
-        o(new q0.a(this) { // from class: androidx.fragment.app.t
-            public final /* synthetic */ v b;
+    public v(Animation animation, ViewGroup viewGroup) {
+        super(false);
+        this.d = true;
+        this.a = viewGroup;
+        addAnimation(animation);
+        viewGroup.post(this);
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // q0.a
-            public final void accept(Object obj) {
-                switch (i10) {
-                    case 0:
-                        this.b.J.o();
-                        break;
-                    default:
-                        this.b.J.o();
-                        break;
-                }
-            }
-        });
-        final int i11 = 1;
-        this.E.add(new q0.a(this) { // from class: androidx.fragment.app.t
-            public final /* synthetic */ v b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // q0.a
-            public final void accept(Object obj) {
-                switch (i11) {
-                    case 0:
-                        this.b.J.o();
-                        break;
-                    default:
-                        this.b.J.o();
-                        break;
-                }
-            }
-        });
-        androidx.activity.f fVar = new androidx.activity.f(this, 1);
-        com.google.android.gms.internal.cast.d0 d0Var = this.b;
-        d0Var.getClass();
-        if (((androidx.activity.l) d0Var.c) != null) {
-            fVar.a();
+    @Override // android.view.animation.AnimationSet, android.view.animation.Animation
+    public final boolean getTransformation(long j10, Transformation transformation) {
+        this.d = true;
+        if (this.b) {
+            return !this.c;
         }
-        ((CopyOnWriteArraySet) d0Var.b).add(fVar);
-    }
-
-    public static boolean t(k0 k0Var) {
-        boolean z10 = false;
-        for (s sVar : k0Var.c.u()) {
-            if (sVar != null) {
-                u uVar = sVar.K;
-                if ((uVar == null ? null : uVar.e) != null) {
-                    z10 |= t(sVar.l());
-                }
-                if (sVar.d0.c.compareTo(androidx.lifecycle.n.d) >= 0) {
-                    sVar.d0.g();
-                    z10 = true;
-                }
-            }
+        if (!super.getTransformation(j10, transformation)) {
+            this.b = true;
+            r0.q.a(this.a, this);
         }
-        return z10;
+        return true;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x003a, code lost:
-    
-        if (r0.equals("--list-dumpables") == false) goto L37;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x004a, code lost:
-    
-        if (android.os.Build.VERSION.SDK_INT < 33) goto L37;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0043, code lost:
-    
-        if (r0.equals("--dump-dumpable") == false) goto L37;
-     */
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    @Override // android.app.Activity
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        super.dump(str, fileDescriptor, printWriter, strArr);
-        if (strArr != null && strArr.length != 0) {
-            String str2 = strArr[0];
-            switch (str2.hashCode()) {
-                case -645125871:
-                    if (str2.equals("--translation") && Build.VERSION.SDK_INT >= 31) {
-                    }
-                    break;
-                case 100470631:
-                    break;
-                case 472614934:
-                    break;
-                case 1159329357:
-                    if (str2.equals("--contentcapture") && Build.VERSION.SDK_INT >= 29) {
-                    }
-                    break;
-                case 1455016274:
-                    if (str2.equals("--autofill") && Build.VERSION.SDK_INT >= 26) {
-                    }
-                    break;
-            }
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10 = this.b;
+        ViewGroup viewGroup = this.a;
+        if (z10 || !this.d) {
+            viewGroup.endViewTransition(null);
+            this.c = true;
+        } else {
+            this.d = false;
+            viewGroup.post(this);
         }
-        printWriter.print(str);
-        printWriter.print("Local FragmentActivity ");
-        printWriter.print(Integer.toHexString(System.identityHashCode(this)));
-        printWriter.println(" State:");
-        String str3 = str + "  ";
-        printWriter.print(str3);
-        printWriter.print("mCreated=");
-        printWriter.print(this.L);
-        printWriter.print(" mResumed=");
-        printWriter.print(this.M);
-        printWriter.print(" mStopped=");
-        printWriter.print(this.N);
-        if (getApplication() != null) {
-            new n6.t(this, f()).F(str3, printWriter);
+    }
+
+    @Override // android.view.animation.Animation
+    public final boolean getTransformation(long j10, Transformation transformation, float f7) {
+        this.d = true;
+        if (this.b) {
+            return !this.c;
         }
-        ((u) this.J.b).d.w(str, fileDescriptor, printWriter, strArr);
-    }
-
-    @Override // androidx.activity.l, android.app.Activity
-    public void onActivityResult(int i10, int i11, Intent intent) {
-        this.J.o();
-        super.onActivityResult(i10, i11, intent);
-    }
-
-    @Override // androidx.activity.l, e0.f, android.app.Activity
-    public void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        this.K.e(androidx.lifecycle.m.ON_CREATE);
-        l0 l0Var = ((u) this.J.b).d;
-        l0Var.H = false;
-        l0Var.I = false;
-        l0Var.O.i = false;
-        l0Var.u(1);
-    }
-
-    @Override // android.app.Activity, android.view.LayoutInflater.Factory2
-    public final View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
-        x xVar = (x) ((u) this.J.b).d.f.onCreateView(view, str, context, attributeSet);
-        return xVar == null ? super.onCreateView(view, str, context, attributeSet) : xVar;
-    }
-
-    @Override // android.app.Activity
-    public void onDestroy() {
-        super.onDestroy();
-        ((u) this.J.b).d.l();
-        this.K.e(androidx.lifecycle.m.ON_DESTROY);
-    }
-
-    @Override // androidx.activity.l, android.app.Activity, android.view.Window.Callback
-    public final boolean onMenuItemSelected(int i10, MenuItem menuItem) {
-        if (super.onMenuItemSelected(i10, menuItem)) {
-            return true;
+        if (!super.getTransformation(j10, transformation, f7)) {
+            this.b = true;
+            r0.q.a(this.a, this);
         }
-        if (i10 == 6) {
-            return ((u) this.J.b).d.j();
-        }
-        return false;
-    }
-
-    @Override // android.app.Activity
-    public void onPause() {
-        super.onPause();
-        this.M = false;
-        ((u) this.J.b).d.u(5);
-        this.K.e(androidx.lifecycle.m.ON_PAUSE);
-    }
-
-    @Override // android.app.Activity
-    public final void onPostResume() {
-        super.onPostResume();
-        this.K.e(androidx.lifecycle.m.ON_RESUME);
-        l0 l0Var = ((u) this.J.b).d;
-        l0Var.H = false;
-        l0Var.I = false;
-        l0Var.O.i = false;
-        l0Var.u(7);
-    }
-
-    @Override // androidx.activity.l, android.app.Activity
-    public void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
-        this.J.o();
-        super.onRequestPermissionsResult(i10, strArr, iArr);
-    }
-
-    @Override // android.app.Activity
-    public void onResume() {
-        xa.d dVar = this.J;
-        dVar.o();
-        super.onResume();
-        this.M = true;
-        ((u) dVar.b).d.A(true);
-    }
-
-    @Override // android.app.Activity
-    public void onStart() {
-        xa.d dVar = this.J;
-        dVar.o();
-        u uVar = (u) dVar.b;
-        super.onStart();
-        this.N = false;
-        if (!this.L) {
-            this.L = true;
-            l0 l0Var = uVar.d;
-            l0Var.H = false;
-            l0Var.I = false;
-            l0Var.O.i = false;
-            l0Var.u(4);
-        }
-        uVar.d.A(true);
-        this.K.e(androidx.lifecycle.m.ON_START);
-        l0 l0Var2 = uVar.d;
-        l0Var2.H = false;
-        l0Var2.I = false;
-        l0Var2.O.i = false;
-        l0Var2.u(5);
-    }
-
-    @Override // android.app.Activity
-    public final void onStateNotSaved() {
-        this.J.o();
-    }
-
-    @Override // android.app.Activity
-    public void onStop() {
-        super.onStop();
-        this.N = true;
-        while (t(s())) {
-        }
-        l0 l0Var = ((u) this.J.b).d;
-        l0Var.I = true;
-        l0Var.O.i = true;
-        l0Var.u(4);
-        this.K.e(androidx.lifecycle.m.ON_STOP);
-    }
-
-    public final l0 s() {
-        return ((u) this.J.b).d;
-    }
-
-    @Override // android.app.Activity, android.view.LayoutInflater.Factory
-    public final View onCreateView(String str, Context context, AttributeSet attributeSet) {
-        x xVar = (x) ((u) this.J.b).d.f.onCreateView(null, str, context, attributeSet);
-        return xVar == null ? super.onCreateView(str, context, attributeSet) : xVar;
+        return true;
     }
 }

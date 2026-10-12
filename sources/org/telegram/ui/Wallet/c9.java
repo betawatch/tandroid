@@ -19,29 +19,29 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.b71;
 import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.f71;
-import org.telegram.ui.Components.p61;
-import org.telegram.ui.Components.y9;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.z9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class c9 extends f71 implements NotificationCenter.NotificationCenterDelegate {
+public final class c9 extends c71 implements NotificationCenter.NotificationCenterDelegate {
     public static void Y(c9 c9Var, TL_wallet.tonConnectSession tonconnectsession, Utilities.Callback callback) {
-        d2 d2Var = k0.v(c9Var.currentAccount).g;
+        d2 d2Var = j0.v(c9Var.currentAccount).g;
         d2Var.getClass();
         AndroidUtilities.runOnUIThread(new k(d2Var, tonconnectsession, callback, 4));
     }
 
-    @Override // org.telegram.ui.Components.f71
-    public final void U(ArrayList arrayList, c71 c71Var) {
-        d2 d2Var = k0.v(this.currentAccount).g;
+    @Override // org.telegram.ui.Components.c71
+    public final void U(ArrayList arrayList, z61 z61Var) {
+        d2 d2Var = j0.v(this.currentAccount).g;
         if (!d2Var.d.isEmpty()) {
-            com.google.android.gms.internal.vision.e2.n(R.string.WalletActiveConnections, arrayList);
+            i2.d.o(R.string.WalletActiveConnections, arrayList);
         }
         ArrayList arrayList2 = d2Var.d;
         int size = arrayList2.size();
@@ -50,88 +50,88 @@ public final class c9 extends f71 implements NotificationCenter.NotificationCent
             Object obj = arrayList2.get(i10);
             i10++;
             int i11 = a9.a;
-            p61 J = p61.J(a9.class);
+            l61 J = l61.J(a9.class);
             J.G = (TL_wallet.tonConnectSession) obj;
             arrayList.add(J);
         }
-        hg.c.n(R.string.WalletConnectedAppsInfo, arrayList);
+        i2.d.y(R.string.WalletConnectedAppsInfo, arrayList);
     }
 
-    @Override // org.telegram.ui.Components.f71
+    @Override // org.telegram.ui.Components.c71
     public final CharSequence V() {
         return LocaleController.getString(R.string.WalletConnectedApps);
     }
 
-    @Override // org.telegram.ui.Components.f71
-    public final void W(p61 p61Var, View view) {
+    @Override // org.telegram.ui.Components.c71
+    public final void W(l61 l61Var, View view) {
         TLRPC.WebDocument webDocument;
-        Object obj = p61Var.G;
+        Object obj = l61Var.G;
         if (obj instanceof TL_wallet.tonConnectSession) {
             TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj;
             Activity parentActivity = getParentActivity();
-            org.telegram.ui.ActionBar.e6 resourceProvider = getResourceProvider();
-            z6 z6Var = new z6(5, this, tonconnectsession);
-            LinearLayout e7 = org.telegram.messenger.q.e(parentActivity, 1);
+            org.telegram.ui.ActionBar.c6 resourceProvider = getResourceProvider();
+            y6 y6Var = new y6(5, this, tonconnectsession);
+            LinearLayout f7 = org.telegram.messenger.q.f(parentActivity, 1);
             FrameLayout frameLayout = new FrameLayout(parentActivity);
             ImageView imageView = new ImageView(parentActivity);
             imageView.setImageResource(R.drawable.ic_ab_close);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setBackground(org.telegram.ui.ActionBar.i6.g0(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.i6, resourceProvider), 1, -1));
-            int i10 = org.telegram.ui.ActionBar.i6.G6;
-            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(i10, resourceProvider), PorterDuff.Mode.SRC_IN));
-            w7.z5.a(imageView);
-            frameLayout.addView(imageView, w7.x5.a(48.0f, 4.0f, 0.0f, 0.0f, 0.0f, 48, 51));
-            y9 y9Var = new y9(parentActivity);
-            y9Var.setRoundRadius(AndroidUtilities.dp(38.0f));
+            imageView.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.i6, resourceProvider), 1, -1));
+            int i10 = org.telegram.ui.ActionBar.g6.G6;
+            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i10, resourceProvider), PorterDuff.Mode.SRC_IN));
+            w7.c6.a(imageView);
+            frameLayout.addView(imageView, w7.a6.a(48.0f, 4.0f, 0.0f, 0.0f, 0.0f, 48, 51));
+            z9 z9Var = new z9(parentActivity);
+            z9Var.setRoundRadius(AndroidUtilities.dp(38.0f));
             TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession.manifest;
             if (tonconnectmanifest != null && (webDocument = tonconnectmanifest.icon) != null) {
-                y9Var.n(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), "76_76", null, tonconnectsession.manifest);
+                z9Var.n(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), "76_76", null, tonconnectsession.manifest);
             }
-            frameLayout.addView(y9Var, w7.x5.a(76.0f, 0.0f, 32.0f, 0.0f, 0.0f, 76, 49));
-            e7.addView(frameLayout, w7.x5.n(-1, -2));
+            frameLayout.addView(z9Var, w7.a6.a(76.0f, 0.0f, 32.0f, 0.0f, 0.0f, 76, 49));
+            f7.addView(frameLayout, w7.a6.n(-1, -2));
             TextView textView = new TextView(parentActivity);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setTextSize(1, 20.0f);
             textView.setGravity(17);
             TL_wallet.tonConnectManifest tonconnectmanifest2 = tonconnectsession.manifest;
             textView.setText(tonconnectmanifest2 != null ? tonconnectmanifest2.name : LocaleController.getString(R.string.WalletConnectedApp));
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(i10, resourceProvider));
-            e7.addView(textView, w7.x5.t(-2, -2, 49, 36, 16, 36, 0));
+            textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, resourceProvider));
+            f7.addView(textView, w7.a6.t(-2, -2, 49, 36, 16, 36, 0));
             TL_wallet.tonConnectManifest tonconnectmanifest3 = tonconnectsession.manifest;
             String hostAuthority = AndroidUtilities.getHostAuthority(tonconnectmanifest3 != null ? tonconnectmanifest3.url : null);
             if (!TextUtils.isEmpty(hostAuthority)) {
                 TextView textView2 = new TextView(parentActivity);
-                bi.k(14.0f, 1, textView2);
-                textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.Oh, resourceProvider));
+                yh.k(14.0f, 1, textView2);
+                textView2.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, resourceProvider));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 spannableStringBuilder.append((CharSequence) hostAuthority);
                 textView2.setText(spannableStringBuilder);
-                e7.addView(textView2, w7.x5.t(-2, -2, 49, 36, 6, 36, 0));
+                f7.addView(textView2, w7.a6.t(-2, -2, 49, 36, 6, 36, 0));
             }
             TextView textView3 = new TextView(parentActivity);
             textView3.setTextSize(1, 14.0f);
             textView3.setGravity(17);
             textView3.setText(LocaleController.getString(R.string.WalletConnectedAppInfo));
-            textView3.setTextColor(org.telegram.ui.ActionBar.i6.w0(i10, resourceProvider));
-            e7.addView(textView3, w7.x5.t(-2, -2, 49, 36, 16, 36, 28));
-            ci.d dVar = new ci.d(parentActivity, resourceProvider, true);
+            textView3.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, resourceProvider));
+            f7.addView(textView3, w7.a6.t(-2, -2, 49, 36, 16, 36, 28));
+            di.d dVar = new di.d(parentActivity, resourceProvider, true);
             dVar.setRoundRadius(24);
             dVar.setText(LocaleController.getString(R.string.WalletDisconnect));
-            dVar.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.q7, resourceProvider));
-            e7.addView(dVar, w7.x5.t(-1, 44, 1, 16, 0, 16, 16));
-            i2 i2Var = new i2(parentActivity, e7, resourceProvider);
+            dVar.setColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.q7, resourceProvider));
+            f7.addView(dVar, w7.a6.t(-1, 44, 1, 16, 0, 16, 16));
+            i2 i2Var = new i2(parentActivity, f7, resourceProvider);
             i2Var.show();
             imageView.setOnClickListener(new e1(i2Var, 1));
-            dVar.setOnClickListener(new e7(dVar, z6Var, i2Var, resourceProvider));
+            dVar.setOnClickListener(new d7(dVar, y6Var, i2Var, resourceProvider));
         }
     }
 
-    @Override // org.telegram.ui.Components.f71
-    public final boolean X(p61 p61Var, View view) {
+    @Override // org.telegram.ui.Components.c71
+    public final boolean X(l61 l61Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.f71, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.Components.c71, org.telegram.ui.ActionBar.m2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         this.actionBar.setAdaptiveBackground(this.a);
@@ -142,31 +142,31 @@ public final class c9 extends f71 implements NotificationCenter.NotificationCent
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        e71 e71Var;
-        if (i10 != NotificationCenter.walletUpdate || (e71Var = this.a) == null) {
+        b71 b71Var;
+        if (i10 != NotificationCenter.walletUpdate || (b71Var = this.a) == null) {
             return;
         }
-        e71Var.W2.N(true);
+        b71Var.W2.N(true);
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final boolean onFragmentCreate() {
         getNotificationCenter().addObserver(this, NotificationCenter.walletUpdate);
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onFragmentDestroy() {
         getNotificationCenter().removeObserver(this, NotificationCenter.walletUpdate);
         super.onFragmentDestroy();
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.ActionBar.m2
     public final void onInsets(int i10, int i11, int i12, int i13) {
         this.a.setPadding(0, 0, 0, i13);
         this.a.setClipToPadding(false);

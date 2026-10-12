@@ -1,112 +1,63 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.content.Context;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class i7 extends e7 {
-    public final ArrayList f;
-    public final /* synthetic */ r7 h;
+public final class i7 extends org.telegram.ui.Components.c91 {
+    public org.telegram.ui.ActionBar.m1 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 c;
+    public final /* synthetic */ w7 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i7(r7 r7Var) {
-        super(0);
-        this.h = r7Var;
-        this.f = new ArrayList();
+    public i7(w7 w7Var, Context context, org.telegram.ui.ActionBar.m2 m2Var) {
+        this.d = w7Var;
+        this.b = context;
+        this.c = m2Var;
     }
 
-    @Override // org.telegram.ui.Components.pm0
-    public final boolean D(s4.d1 d1Var) {
-        return true;
-    }
-
-    @Override // org.telegram.ui.e7
-    public final void F() {
-        ArrayList arrayList = this.f;
-        arrayList.clear();
-        ArrayList arrayList2 = this.e;
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        r7 r7Var = this.h;
-        if (r7Var.f != null) {
-            for (int i10 = 0; i10 < r7Var.f.b.size(); i10++) {
-                r6 r6Var = (r6) r7Var.f.b.get(i10);
-                l7 l7Var = new l7(1, true);
-                l7Var.c = r6Var;
-                arrayList2.add(l7Var);
-            }
-        }
-        E(arrayList, arrayList2);
-    }
-
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
-        String dialogPhotoTitle;
-        if (d1Var.f != 1) {
-            return;
-        }
-        x6 x6Var = (x6) d1Var.a;
-        ArrayList arrayList = this.e;
-        r6 r6Var = ((l7) arrayList.get(i10)).c;
-        r7 r7Var = this.h;
-        TLObject userOrChat = r7Var.d.getMessagesController().getUserOrChat(r6Var.a);
-        r6 r6Var2 = x6Var.a;
-        boolean z10 = r6Var2 != null && r6Var2.a == r6Var.a;
-        if (r6Var.a == Long.MAX_VALUE) {
-            dialogPhotoTitle = LocaleController.getString(R.string.CacheOtherChats);
-            x6Var.getImageView().getAvatarDrawable().g(14);
-            x6Var.getImageView().e(null, x6Var.getImageView().getAvatarDrawable());
+    @Override // org.telegram.ui.Components.c91
+    public final void b(View view, int i10, int i11) {
+        org.telegram.ui.Components.mm0 mm0Var = (org.telegram.ui.Components.mm0) view;
+        ArrayList arrayList = this.d.e;
+        mm0Var.setAdapter(((v7) arrayList.get(i10)).c);
+        if (((v7) arrayList.get(i10)).b == 1 || ((v7) arrayList.get(i10)).b == 4) {
+            view.getContext();
+            mm0Var.setLayoutManager(new s4.s(3));
         } else {
-            dialogPhotoTitle = DialogObject.setDialogPhotoTitle(x6Var.getImageView(), userOrChat);
+            view.getContext();
+            mm0Var.setLayoutManager(new s4.b0());
         }
-        x6Var.a = r6Var;
-        x6Var.getImageView().setRoundRadius(AndroidUtilities.dp(((userOrChat instanceof TLRPC.Chat) && ((TLRPC.Chat) userOrChat).forum) ? 12.0f : 19.0f));
-        String formatFileSize = AndroidUtilities.formatFileSize(r6Var.c);
-        boolean z11 = i10 < arrayList.size() - 1;
-        org.telegram.ui.Components.r6 r6Var3 = x6Var.d;
-        TextView textView = x6Var.c;
-        textView.setText(Emoji.replaceEmoji(dialogPhotoTitle, textView.getPaint().getFontMetricsInt(), false));
-        if (formatFileSize != null) {
-            r6Var3.c(formatFileSize, false, true);
-            r6Var3.setVisibility(0);
-        } else {
-            r6Var3.setVisibility(4);
-        }
-        x6Var.f = z11;
-        x6Var.setWillNotDraw(!z11);
-        x6Var.requestLayout();
-        boolean contains = r7Var.f.l.contains(Long.valueOf(r6Var.a));
-        org.telegram.ui.Components.dq dqVar = x6Var.n;
-        if (dqVar != null || contains) {
-            if (dqVar == null) {
-                org.telegram.ui.Components.dq dqVar2 = new org.telegram.ui.Components.dq(x6Var.getContext(), 21, x6Var.b);
-                x6Var.n = dqVar2;
-                dqVar2.b(-1, org.telegram.ui.ActionBar.i6.d6, org.telegram.ui.ActionBar.i6.k7);
-                x6Var.n.setDrawUnchecked(false);
-                x6Var.n.setDrawBackgroundAsArc(3);
-                x6Var.addView(x6Var.n, w7.x5.a(24.0f, 38.0f, 25.0f, 38.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 48));
-            }
-            x6Var.n.a(contains, z10);
-        }
+        mm0Var.setTag(Integer.valueOf(((v7) arrayList.get(i10)).b));
     }
 
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        x6 x6Var = null;
-        if (i10 == 1) {
-            x6 x6Var2 = new x6(this.h.getContext(), null);
-            x6Var2.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
-            x6Var = x6Var2;
-        }
-        return new org.telegram.ui.Components.am0(x6Var);
+    @Override // org.telegram.ui.Components.c91
+    public final View d(int i10) {
+        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(this.b, null);
+        s4.k kVar = (s4.k) mm0Var.getItemAnimator();
+        kVar.C = false;
+        kVar.m = false;
+        mm0Var.setClipToPadding(false);
+        mm0Var.setPadding(0, 0, 0, this.d.s);
+        mm0Var.setOnItemClickListener(new h7(this, mm0Var));
+        mm0Var.setOnItemLongClickListener(new f7(this, mm0Var, this.c, 0));
+        return mm0Var;
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final int e() {
+        return this.d.e.size();
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final int f(int i10) {
+        return ((v7) this.d.e.get(i10)).b;
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final CharSequence g(int i10) {
+        return ((v7) this.d.e.get(i10)).a;
     }
 }

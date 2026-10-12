@@ -9,9 +9,9 @@ import android.graphics.drawable.RippleDrawable;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-import v7.s7;
+import v7.q7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class v extends ImageView {
     public final e2.c a;
@@ -21,15 +21,15 @@ public class v extends ImageView {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public v(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet, i10);
-        b3.a(context);
+        c3.a(context);
         this.c = false;
-        a3.a(this, getContext());
+        b3.a(this, getContext());
         e2.c cVar = new e2.c(this);
         this.a = cVar;
         cVar.f(attributeSet, i10);
         a5.a aVar = new a5.a(this);
         this.b = aVar;
-        aVar.t(attributeSet, i10);
+        aVar.u(attributeSet, i10);
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -41,7 +41,7 @@ public class v extends ImageView {
         }
         a5.a aVar = this.b;
         if (aVar != null) {
-            aVar.c();
+            aVar.d();
         }
     }
 
@@ -62,21 +62,21 @@ public class v extends ImageView {
     }
 
     public ColorStateList getSupportImageTintList() {
-        c3 c3Var;
+        d3 d3Var;
         a5.a aVar = this.b;
-        if (aVar == null || (c3Var = (c3) aVar.d) == null) {
+        if (aVar == null || (d3Var = (d3) aVar.d) == null) {
             return null;
         }
-        return (ColorStateList) c3Var.c;
+        return (ColorStateList) d3Var.c;
     }
 
     public PorterDuff.Mode getSupportImageTintMode() {
-        c3 c3Var;
+        d3 d3Var;
         a5.a aVar = this.b;
-        if (aVar == null || (c3Var = (c3) aVar.d) == null) {
+        if (aVar == null || (d3Var = (d3) aVar.d) == null) {
             return null;
         }
-        return (PorterDuff.Mode) c3Var.d;
+        return (PorterDuff.Mode) d3Var.d;
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -107,7 +107,7 @@ public class v extends ImageView {
         super.setImageBitmap(bitmap);
         a5.a aVar = this.b;
         if (aVar != null) {
-            aVar.c();
+            aVar.d();
         }
     }
 
@@ -119,7 +119,7 @@ public class v extends ImageView {
         }
         super.setImageDrawable(drawable);
         if (aVar != null) {
-            aVar.c();
+            aVar.d();
             if (this.c) {
                 return;
             }
@@ -142,7 +142,7 @@ public class v extends ImageView {
         if (aVar != null) {
             ImageView imageView = (ImageView) aVar.c;
             if (i10 != 0) {
-                Drawable b10 = s7.b(imageView.getContext(), i10);
+                Drawable b10 = q7.b(imageView.getContext(), i10);
                 if (b10 != null) {
                     l1.a(b10);
                 }
@@ -150,7 +150,7 @@ public class v extends ImageView {
             } else {
                 imageView.setImageDrawable(null);
             }
-            aVar.c();
+            aVar.d();
         }
     }
 
@@ -159,7 +159,7 @@ public class v extends ImageView {
         super.setImageURI(uri);
         a5.a aVar = this.b;
         if (aVar != null) {
-            aVar.c();
+            aVar.d();
         }
     }
 
@@ -180,26 +180,26 @@ public class v extends ImageView {
     public void setSupportImageTintList(ColorStateList colorStateList) {
         a5.a aVar = this.b;
         if (aVar != null) {
-            if (((c3) aVar.d) == null) {
-                aVar.d = new c3();
+            if (((d3) aVar.d) == null) {
+                aVar.d = new d3();
             }
-            c3 c3Var = (c3) aVar.d;
-            c3Var.c = colorStateList;
-            c3Var.b = true;
-            aVar.c();
+            d3 d3Var = (d3) aVar.d;
+            d3Var.c = colorStateList;
+            d3Var.b = true;
+            aVar.d();
         }
     }
 
     public void setSupportImageTintMode(PorterDuff.Mode mode) {
         a5.a aVar = this.b;
         if (aVar != null) {
-            if (((c3) aVar.d) == null) {
-                aVar.d = new c3();
+            if (((d3) aVar.d) == null) {
+                aVar.d = new d3();
             }
-            c3 c3Var = (c3) aVar.d;
-            c3Var.d = mode;
-            c3Var.a = true;
-            aVar.c();
+            d3 d3Var = (d3) aVar.d;
+            d3Var.d = mode;
+            d3Var.a = true;
+            aVar.d();
         }
     }
 }

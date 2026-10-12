@@ -10,7 +10,7 @@ import org.webrtc.PeerConnection;
 import org.webrtc.audio.AudioDeviceModule;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class PeerConnectionFactory {
     private static final String TAG = "PeerConnectionFactory";
@@ -28,7 +28,7 @@ public class PeerConnectionFactory {
     private volatile ThreadInfo signalingThread;
     private volatile ThreadInfo workerThread;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class Builder {
         private AudioDecoderFactoryFactory audioDecoderFactoryFactory;
         private AudioDeviceModule audioDeviceModule;
@@ -136,7 +136,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class InitializationOptions {
         final Context applicationContext;
         final boolean enableInternalTracer;
@@ -146,7 +146,7 @@ public class PeerConnectionFactory {
         final NativeLibraryLoader nativeLibraryLoader;
         final String nativeLibraryName;
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public static class Builder {
             private final Context applicationContext;
             private boolean enableInternalTracer;
@@ -206,7 +206,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class Options {
         public static final int ADAPTER_TYPE_ANY = 32;
         public static final int ADAPTER_TYPE_CELLULAR = 4;
@@ -232,7 +232,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class ThreadInfo {
         final Thread thread;
         final int tid;
@@ -247,12 +247,12 @@ public class PeerConnectionFactory {
         }
     }
 
-    public PeerConnectionFactory(long j3) {
+    public PeerConnectionFactory(long j10) {
         checkInitializeHasBeenCalled();
-        if (j3 == 0) {
+        if (j10 == 0) {
             throw new RuntimeException("Failed to initialize PeerConnectionFactory!");
         }
-        this.nativeFactory = j3;
+        this.nativeFactory = j10;
     }
 
     public static Builder builder() {
@@ -305,32 +305,32 @@ public class PeerConnectionFactory {
         nativeInitializeInternalTracer();
     }
 
-    private static native long nativeCreateAudioSource(long j3, MediaConstraints mediaConstraints);
+    private static native long nativeCreateAudioSource(long j10, MediaConstraints mediaConstraints);
 
-    private static native long nativeCreateAudioTrack(long j3, String str, long j10);
+    private static native long nativeCreateAudioTrack(long j10, String str, long j11);
 
-    private static native long nativeCreateLocalMediaStream(long j3, String str);
+    private static native long nativeCreateLocalMediaStream(long j10, String str);
 
-    private static native long nativeCreatePeerConnection(long j3, PeerConnection.RTCConfiguration rTCConfiguration, MediaConstraints mediaConstraints, long j10, SSLCertificateVerifier sSLCertificateVerifier);
+    private static native long nativeCreatePeerConnection(long j10, PeerConnection.RTCConfiguration rTCConfiguration, MediaConstraints mediaConstraints, long j11, SSLCertificateVerifier sSLCertificateVerifier);
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static native PeerConnectionFactory nativeCreatePeerConnectionFactory(Context context, Options options, long j3, long j10, long j11, VideoEncoderFactory videoEncoderFactory, VideoDecoderFactory videoDecoderFactory, long j12, long j13, long j14, long j15, long j16);
+    public static native PeerConnectionFactory nativeCreatePeerConnectionFactory(Context context, Options options, long j10, long j11, long j12, VideoEncoderFactory videoEncoderFactory, VideoDecoderFactory videoDecoderFactory, long j13, long j14, long j15, long j16, long j17);
 
-    private static native long nativeCreateVideoSource(long j3, boolean z10, boolean z11);
+    private static native long nativeCreateVideoSource(long j10, boolean z10, boolean z11);
 
-    private static native long nativeCreateVideoTrack(long j3, String str, long j10);
+    private static native long nativeCreateVideoTrack(long j10, String str, long j11);
 
     private static native void nativeDeleteLoggable();
 
     private static native String nativeFindFieldTrialsFullName(String str);
 
-    private static native void nativeFreeFactory(long j3);
+    private static native void nativeFreeFactory(long j10);
 
-    private static native long nativeGetNativePeerConnectionFactory(long j3);
+    private static native long nativeGetNativePeerConnectionFactory(long j10);
 
-    private static native RtpCapabilities nativeGetRtpReceiverCapabilities(long j3, MediaStreamTrack.MediaType mediaType);
+    private static native RtpCapabilities nativeGetRtpReceiverCapabilities(long j10, MediaStreamTrack.MediaType mediaType);
 
-    private static native RtpCapabilities nativeGetRtpSenderCapabilities(long j3, MediaStreamTrack.MediaType mediaType);
+    private static native RtpCapabilities nativeGetRtpSenderCapabilities(long j10, MediaStreamTrack.MediaType mediaType);
 
     private static native void nativeInitializeAndroidGlobals();
 
@@ -344,11 +344,11 @@ public class PeerConnectionFactory {
 
     private static native void nativeShutdownInternalTracer();
 
-    private static native boolean nativeStartAecDump(long j3, int i10, int i11);
+    private static native boolean nativeStartAecDump(long j10, int i10, int i11);
 
     private static native boolean nativeStartInternalTracingCapture(String str);
 
-    private static native void nativeStopAecDump(long j3);
+    private static native void nativeStopAecDump(long j10);
 
     private static native void nativeStopInternalTracingCapture();
 

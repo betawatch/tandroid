@@ -3,14 +3,14 @@ package q2;
 import android.graphics.Bitmap;
 import h2.j;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a extends j {
     public Bitmap a;
-    public final /* synthetic */ b b;
+    public final /* synthetic */ c b;
 
-    public a(b bVar) {
-        this.b = bVar;
+    public a(c cVar) {
+        this.b = cVar;
     }
 
     @Override // h2.j, h2.a

@@ -33,10 +33,10 @@ public final class t {
         Collections.sort(arrayList, u.b);
     }
 
-    public final String a(long j3, TextStyle textStyle) {
+    public final String a(long j10, TextStyle textStyle) {
         Map map = (Map) this.a.get(textStyle);
         if (map != null) {
-            return (String) map.get(Long.valueOf(j3));
+            return (String) map.get(Long.valueOf(j10));
         }
         return null;
     }

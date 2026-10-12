@@ -1,19 +1,23 @@
 package y9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a implements ia.d {
+public final class a implements ja.d {
     public static final a a = new a();
-    public static final ia.c b = ia.c.c("arch");
-    public static final ia.c c = ia.c.c("libraryName");
-    public static final ia.c d = ia.c.c("buildId");
+    public static final ja.c b = ja.c.c("rolloutId");
+    public static final ja.c c = ja.c.c("parameterKey");
+    public static final ja.c d = ja.c.c("parameterValue");
+    public static final ja.c e = ja.c.c("variantId");
+    public static final ja.c f = ja.c.c("templateVersion");
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
-        ia.e eVar = (ia.e) obj2;
-        c0 c0Var = (c0) ((f1) obj);
-        eVar.a(b, c0Var.a);
-        eVar.a(c, c0Var.b);
-        eVar.a(d, c0Var.c);
+        ja.e eVar = (ja.e) obj2;
+        b bVar = (b) ((l) obj);
+        eVar.d(b, bVar.b);
+        eVar.d(c, bVar.c);
+        eVar.d(d, bVar.d);
+        eVar.d(e, bVar.e);
+        eVar.f(f, bVar.f);
     }
 }

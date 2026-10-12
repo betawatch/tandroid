@@ -1,61 +1,69 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.ScrollView;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class vz extends FrameLayout {
-    public FrameLayout a;
-    public org.telegram.ui.ActionBar.j5 b;
-    public org.telegram.ui.ActionBar.j5 c;
-    public ImageView d;
-    public ci.g9 e;
-    public ai.q4 f;
-    public ai.q4 h;
-    public TextView n;
-    public org.telegram.ui.ActionBar.n2 r;
-    public String s;
-    public float v;
-    public ValueAnimator w;
-    public org.telegram.ui.ActionBar.n1 x;
-    public float[] y;
+public final /* synthetic */ class vz implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h00 b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v0, types: [android.widget.FrameLayout] */
-    /* JADX WARN: Type inference failed for: r3v1, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r3v9, types: [android.view.View] */
-    public static void a(FrameLayout frameLayout, FrameLayout frameLayout2, float[] fArr) {
-        float f7 = 0.0f;
-        float f10 = 0.0f;
-        while (frameLayout != frameLayout2) {
-            float y3 = frameLayout.getY() + f7;
-            f10 += frameLayout.getX();
-            if (frameLayout instanceof ScrollView) {
-                y3 -= frameLayout.getScrollY();
-            }
-            f7 = y3;
-            if (!(frameLayout.getParent() instanceof View)) {
-                break;
-            }
-            frameLayout = (View) frameLayout.getParent();
-            if (!(frameLayout instanceof ViewGroup)) {
-                return;
-            }
-        }
-        fArr[0] = f10 - frameLayout2.getPaddingLeft();
-        fArr[1] = f7 - frameLayout2.getPaddingTop();
+    public /* synthetic */ vz(h00 h00Var, int i10) {
+        this.a = i10;
+        this.b = h00Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(127.0f), TLObject.FLAG_30));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final h00 h00Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.uz
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                h00 h00Var2 = h00Var;
+                                h00Var2.F = 0;
+                                if (tL_error == null) {
+                                    org.telegram.messenger.q.r(R.string.FilterInviteNameEdited, org.telegram.ui.Components.zc.a0(h00Var2), R.raw.contact_check, 36);
+                                    break;
+                                }
+                                break;
+                            default:
+                                h00.U(h00Var, tL_error);
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 1;
+                final h00 h00Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.uz
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                h00 h00Var22 = h00Var2;
+                                h00Var22.F = 0;
+                                if (tL_error == null) {
+                                    org.telegram.messenger.q.r(R.string.FilterInviteNameEdited, org.telegram.ui.Components.zc.a0(h00Var22), R.raw.contact_check, 36);
+                                    break;
+                                }
+                                break;
+                            default:
+                                h00.U(h00Var2, tL_error);
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
     }
 }

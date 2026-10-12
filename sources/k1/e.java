@@ -3,11 +3,11 @@ package k1;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import v7.a8;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e extends ld.j implements sd.p {
+public final class e extends md.i implements td.p {
     public Iterator a;
     public Object b;
     public int c;
@@ -16,32 +16,32 @@ public final class e extends ld.j implements sd.p {
     public final /* synthetic */ ArrayList f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(List list, ArrayList arrayList, jd.c cVar) {
+    public e(List list, ArrayList arrayList, kd.c cVar) {
         super(2, cVar);
         this.e = list;
         this.f = arrayList;
     }
 
-    @Override // ld.a
-    public final jd.c create(Object obj, jd.c cVar) {
+    @Override // md.a
+    public final kd.c create(Object obj, kd.c cVar) {
         e eVar = new e(this.e, this.f, cVar);
         eVar.d = obj;
         return eVar;
     }
 
-    @Override // sd.p
+    @Override // td.p
     public final Object invoke(Object obj, Object obj2) {
-        return ((e) create(obj, (jd.c) obj2)).invokeSuspend(hd.i.a);
+        return ((e) create(obj, (kd.c) obj2)).invokeSuspend(id.i.a);
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final Object invokeSuspend(Object obj) {
         Iterator it;
         List list;
-        kd.a aVar = kd.a.a;
+        ld.a aVar = ld.a.a;
         int i10 = this.c;
         if (i10 == 0) {
-            a8.b(obj);
+            i8.b(obj);
             obj = this.d;
             it = this.e.iterator();
             list = this.f;
@@ -49,7 +49,7 @@ public final class e extends ld.j implements sd.p {
             Object obj2 = this.b;
             Iterator it2 = this.a;
             List list2 = (List) this.d;
-            a8.b(obj);
+            i8.b(obj);
             if (((Boolean) obj).booleanValue()) {
                 list2.add(new d(1, null));
                 this.d = list2;
@@ -67,7 +67,7 @@ public final class e extends ld.j implements sd.p {
             }
             it = this.a;
             list = (List) this.d;
-            a8.b(obj);
+            i8.b(obj);
         }
         if (!it.hasNext()) {
             return obj;

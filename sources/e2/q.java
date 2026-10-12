@@ -1,56 +1,28 @@
 package e2;
 
-import java.util.NoSuchElementException;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class q implements w3.c {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public Object e;
+public final class q {
+    public final Object a;
+    public b2.u b = new b2.u();
+    public boolean c;
+    public boolean d;
 
-    @Override // w3.c
-    public int a() {
-        return -1;
+    public q(Object obj) {
+        this.a = obj;
     }
 
-    @Override // w3.c
-    public int b() {
-        return this.a;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || q.class != obj.getClass()) {
+            return false;
+        }
+        return this.a.equals(((q) obj).a);
     }
 
-    @Override // w3.c
-    public int c() {
-        v vVar = (v) this.e;
-        int i10 = this.b;
-        if (i10 == 8) {
-            return vVar.x();
-        }
-        if (i10 == 16) {
-            return vVar.D();
-        }
-        int i11 = this.c;
-        this.c = i11 + 1;
-        if (i11 % 2 != 0) {
-            return this.d & 15;
-        }
-        int x10 = vVar.x();
-        this.d = x10;
-        return (x10 & 240) >> 4;
-    }
-
-    public long d() {
-        int i10 = this.c;
-        if (i10 == 0) {
-            throw new NoSuchElementException();
-        }
-        long[] jArr = (long[]) this.e;
-        int i11 = this.a;
-        long j3 = jArr[i11];
-        this.a = this.d & (i11 + 1);
-        this.c = i10 - 1;
-        return j3;
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

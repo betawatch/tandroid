@@ -5,17 +5,17 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.g60;
-import org.telegram.ui.l60;
+import org.telegram.ui.n60;
+import org.telegram.ui.s60;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class l extends FrameLayout {
     public int a;
-    public l60 b;
-    public u c;
+    public s60 b;
+    public t c;
     public ChatObject.VideoParticipant d;
     public boolean e;
     public final boolean f;
@@ -33,7 +33,7 @@ public abstract class l extends FrameLayout {
         return this.d;
     }
 
-    public u getRenderer() {
+    public t getRenderer() {
         return this.c;
     }
 
@@ -55,13 +55,13 @@ public abstract class l extends FrameLayout {
             ((View) getParent()).getMeasuredWidth();
             super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(this.b.F(), TLObject.FLAG_30));
         } else {
-            float f7 = g60.F3 ? 3.0f : 2.0f;
-            float B = bi.B(14.0f, 2, AndroidUtilities.displaySize.x) + (g60.F3 ? -AndroidUtilities.dp(90.0f) : 0);
-            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) ((g60.G3 ? B / 2.0f : B / f7) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
+            float f7 = n60.F3 ? 3.0f : 2.0f;
+            float C = yh.C(14.0f, 2, AndroidUtilities.displaySize.x) + (n60.F3 ? -AndroidUtilities.dp(90.0f) : 0);
+            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) ((n60.G3 ? C / 2.0f : C / f7) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
         }
     }
 
-    public void setRenderer(u uVar) {
-        this.c = uVar;
+    public void setRenderer(t tVar) {
+        this.c = tVar;
     }
 }

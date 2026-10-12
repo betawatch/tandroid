@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import java.util.Arrays;
 import n7.k1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class u extends o6.a {
     public static final Parcelable.Creator<u> CREATOR = new w.a(25);
@@ -19,16 +19,16 @@ public final class u extends o6.a {
     public final String n;
 
     public u(String str, String str2, byte[] bArr, j jVar, i iVar, k kVar, g gVar, String str3) {
-        n7.s0 t10 = bArr == null ? null : n7.s0.t(bArr.length, bArr);
+        n7.s0 s10 = bArr == null ? null : n7.s0.s(bArr.length, bArr);
         boolean z10 = false;
         n6.l.a("Must provide a response object.", (jVar != null && iVar == null && kVar == null) || (jVar == null && iVar != null && kVar == null) || (jVar == null && iVar == null && kVar != null));
-        if (kVar != null || (str != null && t10 != null)) {
+        if (kVar != null || (str != null && s10 != null)) {
             z10 = true;
         }
         n6.l.a("Must provide id and rawId if not an error response.", z10);
         this.a = str;
         this.b = str2;
-        this.c = t10;
+        this.c = s10;
         this.d = jVar;
         this.e = iVar;
         this.f = kVar;
@@ -50,24 +50,24 @@ public final class u extends o6.a {
 
     public final String toString() {
         n7.s0 s0Var = this.c;
-        String c10 = u6.b.c(s0Var == null ? null : s0Var.u());
+        String c10 = u6.b.c(s0Var == null ? null : s0Var.t());
         String valueOf = String.valueOf(this.d);
         String valueOf2 = String.valueOf(this.e);
         String valueOf3 = String.valueOf(this.f);
         String valueOf4 = String.valueOf(this.h);
-        StringBuilder x10 = a1.g.x("PublicKeyCredential{\n id='", this.a, "', \n type='", this.b, "', \n rawId=");
-        a1.g.A(x10, c10, ", \n registerResponse=", valueOf, ", \n signResponse=");
-        a1.g.A(x10, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
-        x10.append(valueOf4);
-        x10.append(", \n authenticatorAttachment='");
-        x10.append(this.n);
-        x10.append("'}");
-        return x10.toString();
+        StringBuilder w9 = a1.g.w("PublicKeyCredential{\n id='", this.a, "', \n type='", this.b, "', \n rawId=");
+        a1.g.A(w9, c10, ", \n registerResponse=", valueOf, ", \n signResponse=");
+        a1.g.A(w9, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
+        w9.append(valueOf4);
+        w9.append(", \n authenticatorAttachment='");
+        w9.append(this.n);
+        w9.append("'}");
+        return w9.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        k1.a.b();
+        k1.a.Y();
         throw null;
     }
 }

@@ -1,29 +1,31 @@
 package com.google.firebase.sessions;
 
-import ae.b0;
+import ab.c0;
+import ab.g0;
+import ab.k0;
+import ab.m;
+import ab.m0;
+import ab.o;
+import ab.r0;
+import ab.s0;
+import ab.t;
 import android.content.Context;
+import b2.n0;
+import be.a0;
 import com.google.firebase.components.ComponentRegistrar;
 import i5.f;
 import java.util.List;
-import k9.h;
 import kotlin.jvm.internal.i;
-import m2.t;
-import m9.a;
-import m9.b;
-import q9.j;
-import q9.r;
-import qa.d;
-import w7.o8;
-import za.a0;
-import za.e0;
-import za.i0;
-import za.k0;
-import za.m;
-import za.o;
-import za.o0;
-import za.p0;
+import l9.h;
+import n9.a;
+import n9.b;
+import qb.c;
+import r9.j;
+import r9.r;
+import ra.d;
+import w7.w8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
 
@@ -38,89 +40,89 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
     private static final r firebaseInstallationsApi = r.a(d.class);
 
     @Deprecated
-    private static final r backgroundDispatcher = new r(a.class, b0.class);
+    private static final r backgroundDispatcher = new r(a.class, a0.class);
 
     @Deprecated
-    private static final r blockingDispatcher = new r(b.class, b0.class);
+    private static final r blockingDispatcher = new r(b.class, a0.class);
 
     @Deprecated
     private static final r transportFactory = r.a(f.class);
 
     @Deprecated
-    private static final r sessionFirelogPublisher = r.a(e0.class);
+    private static final r sessionFirelogPublisher = r.a(g0.class);
 
     @Deprecated
-    private static final r sessionGenerator = r.a(k0.class);
+    private static final r sessionGenerator = r.a(m0.class);
 
     @Deprecated
-    private static final r sessionsSettings = r.a(bb.h.class);
+    private static final r sessionsSettings = r.a(cb.h.class);
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final m getComponents$lambda-0(q9.b bVar) {
-        Object g10 = bVar.g(firebaseApp);
-        i.d(g10, "container[firebaseApp]");
-        Object g11 = bVar.g(sessionsSettings);
-        i.d(g11, "container[sessionsSettings]");
-        Object g12 = bVar.g(backgroundDispatcher);
-        i.d(g12, "container[backgroundDispatcher]");
-        return new m((h) g10, (bb.h) g11, (jd.h) g12);
+    public static final m getComponents$lambda-0(r9.b bVar) {
+        Object e = bVar.e(firebaseApp);
+        i.d(e, "container[firebaseApp]");
+        Object e7 = bVar.e(sessionsSettings);
+        i.d(e7, "container[sessionsSettings]");
+        Object e10 = bVar.e(backgroundDispatcher);
+        i.d(e10, "container[backgroundDispatcher]");
+        return new m((h) e, (cb.h) e7, (kd.h) e10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final k0 getComponents$lambda-1(q9.b bVar) {
-        return new k0();
+    public static final m0 getComponents$lambda-1(r9.b bVar) {
+        return new m0();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final e0 getComponents$lambda-2(q9.b bVar) {
-        Object g10 = bVar.g(firebaseApp);
-        i.d(g10, "container[firebaseApp]");
-        Object g11 = bVar.g(firebaseInstallationsApi);
-        i.d(g11, "container[firebaseInstallationsApi]");
-        Object g12 = bVar.g(sessionsSettings);
-        i.d(g12, "container[sessionsSettings]");
-        pa.b d = bVar.d(transportFactory);
-        i.d(d, "container.getProvider(transportFactory)");
-        t tVar = new t(d, 24);
-        Object g13 = bVar.g(backgroundDispatcher);
-        i.d(g13, "container[backgroundDispatcher]");
-        return new i0((h) g10, (d) g11, (bb.h) g12, tVar, (jd.h) g13);
+    public static final g0 getComponents$lambda-2(r9.b bVar) {
+        Object e = bVar.e(firebaseApp);
+        i.d(e, "container[firebaseApp]");
+        Object e7 = bVar.e(firebaseInstallationsApi);
+        i.d(e7, "container[firebaseInstallationsApi]");
+        Object e10 = bVar.e(sessionsSettings);
+        i.d(e10, "container[sessionsSettings]");
+        qa.b g10 = bVar.g(transportFactory);
+        i.d(g10, "container.getProvider(transportFactory)");
+        c cVar = new c(g10, 2);
+        Object e11 = bVar.e(backgroundDispatcher);
+        i.d(e11, "container[backgroundDispatcher]");
+        return new k0((h) e, (d) e7, (cb.h) e10, cVar, (kd.h) e11);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final bb.h getComponents$lambda-3(q9.b bVar) {
-        Object g10 = bVar.g(firebaseApp);
-        i.d(g10, "container[firebaseApp]");
-        Object g11 = bVar.g(blockingDispatcher);
-        i.d(g11, "container[blockingDispatcher]");
-        Object g12 = bVar.g(backgroundDispatcher);
-        i.d(g12, "container[backgroundDispatcher]");
-        Object g13 = bVar.g(firebaseInstallationsApi);
-        i.d(g13, "container[firebaseInstallationsApi]");
-        return new bb.h((h) g10, (jd.h) g11, (jd.h) g12, (d) g13);
+    public static final cb.h getComponents$lambda-3(r9.b bVar) {
+        Object e = bVar.e(firebaseApp);
+        i.d(e, "container[firebaseApp]");
+        Object e7 = bVar.e(blockingDispatcher);
+        i.d(e7, "container[blockingDispatcher]");
+        Object e10 = bVar.e(backgroundDispatcher);
+        i.d(e10, "container[backgroundDispatcher]");
+        Object e11 = bVar.e(firebaseInstallationsApi);
+        i.d(e11, "container[firebaseInstallationsApi]");
+        return new cb.h((h) e, (kd.h) e7, (kd.h) e10, (d) e11);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final za.t getComponents$lambda-4(q9.b bVar) {
-        h hVar = (h) bVar.g(firebaseApp);
+    public static final t getComponents$lambda-4(r9.b bVar) {
+        h hVar = (h) bVar.e(firebaseApp);
         hVar.a();
         Context context = hVar.a;
         i.d(context, "container[firebaseApp].applicationContext");
-        Object g10 = bVar.g(backgroundDispatcher);
-        i.d(g10, "container[backgroundDispatcher]");
-        return new a0(context, (jd.h) g10);
+        Object e = bVar.e(backgroundDispatcher);
+        i.d(e, "container[backgroundDispatcher]");
+        return new c0(context, (kd.h) e);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final o0 getComponents$lambda-5(q9.b bVar) {
-        Object g10 = bVar.g(firebaseApp);
-        i.d(g10, "container[firebaseApp]");
-        return new p0((h) g10);
+    public static final r0 getComponents$lambda-5(r9.b bVar) {
+        Object e = bVar.e(firebaseApp);
+        i.d(e, "container[firebaseApp]");
+        return new s0((h) e);
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<q9.a> getComponents() {
-        b2.i0 a2 = q9.a.a(m.class);
+    public List<r9.a> getComponents() {
+        n0 a2 = r9.a.a(m.class);
         a2.d = LIBRARY_NAME;
         r rVar = firebaseApp;
         a2.a(j.b(rVar));
@@ -128,14 +130,14 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         a2.a(j.b(rVar2));
         r rVar3 = backgroundDispatcher;
         a2.a(j.b(rVar3));
-        a2.f = new xa.b(17);
+        a2.f = new aa.a(7);
         a2.c(2);
-        q9.a b10 = a2.b();
-        b2.i0 a10 = q9.a.a(k0.class);
+        r9.a b10 = a2.b();
+        n0 a10 = r9.a.a(m0.class);
         a10.d = "session-generator";
-        a10.f = new xa.b(18);
-        q9.a b11 = a10.b();
-        b2.i0 a11 = q9.a.a(e0.class);
+        a10.f = new aa.a(8);
+        r9.a b11 = a10.b();
+        n0 a11 = r9.a.a(g0.class);
         a11.d = "session-publisher";
         a11.a(new j(rVar, 1, 0));
         r rVar4 = firebaseInstallationsApi;
@@ -143,26 +145,26 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         a11.a(new j(rVar2, 1, 0));
         a11.a(new j(transportFactory, 1, 1));
         a11.a(new j(rVar3, 1, 0));
-        a11.f = new xa.b(19);
-        q9.a b12 = a11.b();
-        b2.i0 a12 = q9.a.a(bb.h.class);
+        a11.f = new aa.a(9);
+        r9.a b12 = a11.b();
+        n0 a12 = r9.a.a(cb.h.class);
         a12.d = "sessions-settings";
         a12.a(new j(rVar, 1, 0));
         a12.a(j.b(blockingDispatcher));
         a12.a(new j(rVar3, 1, 0));
         a12.a(new j(rVar4, 1, 0));
-        a12.f = new xa.b(20);
-        q9.a b13 = a12.b();
-        b2.i0 a13 = q9.a.a(za.t.class);
+        a12.f = new aa.a(10);
+        r9.a b13 = a12.b();
+        n0 a13 = r9.a.a(t.class);
         a13.d = "sessions-datastore";
         a13.a(new j(rVar, 1, 0));
         a13.a(new j(rVar3, 1, 0));
-        a13.f = new xa.b(21);
-        q9.a b14 = a13.b();
-        b2.i0 a14 = q9.a.a(o0.class);
+        a13.f = new aa.a(11);
+        r9.a b14 = a13.b();
+        n0 a14 = r9.a.a(r0.class);
         a14.d = "sessions-service-binder";
         a14.a(new j(rVar, 1, 0));
-        a14.f = new xa.b(22);
-        return id.h.c(b10, b11, b12, b13, b14, a14.b(), o8.a(LIBRARY_NAME, "1.2.0"));
+        a14.f = new aa.a(12);
+        return jd.h.c(b10, b11, b12, b13, b14, a14.b(), w8.a(LIBRARY_NAME, "1.2.0"));
     }
 }

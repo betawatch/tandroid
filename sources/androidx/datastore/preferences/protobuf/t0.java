@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class t0 implements b1 {
     public final a a;
@@ -27,19 +27,7 @@ public final class t0 implements b1 {
     }
 
     @Override // androidx.datastore.preferences.protobuf.b1
-    public final void c(Object obj, a0.h hVar, m mVar) {
-        this.b.getClass();
-        w wVar = (w) obj;
-        if (wVar.unknownFields == i1.f) {
-            wVar.unknownFields = i1.b();
-        }
-        this.c.getClass();
-        obj.getClass();
-        throw new ClassCastException();
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.b1
-    public final void d(Object obj) {
+    public final void c(Object obj) {
         this.b.getClass();
         ((w) obj).unknownFields.e = false;
         this.c.getClass();
@@ -48,7 +36,7 @@ public final class t0 implements b1 {
     }
 
     @Override // androidx.datastore.preferences.protobuf.b1
-    public final int e(a aVar) {
+    public final int d(a aVar) {
         this.b.getClass();
         i1 i1Var = ((w) aVar).unknownFields;
         int i10 = i1Var.d;
@@ -65,10 +53,22 @@ public final class t0 implements b1 {
     }
 
     @Override // androidx.datastore.preferences.protobuf.b1
-    public final boolean f(Object obj) {
+    public final boolean e(Object obj) {
         this.c.getClass();
         a1.g.z(obj);
         throw null;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.b1
+    public final void f(Object obj, e2.f fVar, m mVar) {
+        this.b.getClass();
+        w wVar = (w) obj;
+        if (wVar.unknownFields == i1.f) {
+            wVar.unknownFields = i1.b();
+        }
+        this.c.getClass();
+        obj.getClass();
+        throw new ClassCastException();
     }
 
     @Override // androidx.datastore.preferences.protobuf.b1

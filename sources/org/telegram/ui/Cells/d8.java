@@ -13,56 +13,56 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class d8 extends FrameLayout {
-    public org.telegram.ui.Components.y9 a;
+    public org.telegram.ui.Components.z9 a;
     public TLRPC.Document b;
     public Object c;
     public long d;
     public boolean e;
     public float f;
     public boolean h;
-    public rg.c1 n;
+    public sg.c1 n;
     public boolean r;
     public boolean s;
-    public org.telegram.ui.ActionBar.e6 v;
+    public org.telegram.ui.ActionBar.c6 v;
 
     static {
         new AccelerateInterpolator(0.5f);
     }
 
     @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
         boolean z10;
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        org.telegram.ui.Components.y9 y9Var = this.a;
-        if (view == y9Var && (((z10 = this.e) && this.f != 0.8f) || (!z10 && this.f != 1.0f))) {
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        org.telegram.ui.Components.z9 z9Var = this.a;
+        if (view == z9Var && (((z10 = this.e) && this.f != 0.8f) || (!z10 && this.f != 1.0f))) {
             long currentTimeMillis = System.currentTimeMillis();
-            long j10 = currentTimeMillis - this.d;
+            long j11 = currentTimeMillis - this.d;
             this.d = currentTimeMillis;
             if (this.e) {
                 float f7 = this.f;
                 if (f7 != 0.8f) {
-                    float f10 = f7 - (j10 / 400.0f);
+                    float f10 = f7 - (j11 / 400.0f);
                     this.f = f10;
                     if (f10 < 0.8f) {
                         this.f = 0.8f;
                     }
-                    y9Var.setScaleX(this.f);
-                    y9Var.setScaleY(this.f);
-                    y9Var.invalidate();
+                    z9Var.setScaleX(this.f);
+                    z9Var.setScaleY(this.f);
+                    z9Var.invalidate();
                     invalidate();
                 }
             }
-            float f11 = (j10 / 400.0f) + this.f;
+            float f11 = (j11 / 400.0f) + this.f;
             this.f = f11;
             if (f11 > 1.0f) {
                 this.f = 1.0f;
             }
-            y9Var.setScaleX(this.f);
-            y9Var.setScaleY(this.f);
-            y9Var.invalidate();
+            z9Var.setScaleX(this.f);
+            z9Var.setScaleY(this.f);
+            z9Var.invalidate();
             invalidate();
         }
         return drawChild;
@@ -73,13 +73,13 @@ public final class d8 extends FrameLayout {
     }
 
     public MessageObject.SendAnimationData getSendAnimationData() {
-        org.telegram.ui.Components.y9 y9Var = this.a;
-        ImageReceiver imageReceiver = y9Var.getImageReceiver();
+        org.telegram.ui.Components.z9 z9Var = this.a;
+        ImageReceiver imageReceiver = z9Var.getImageReceiver();
         if (!imageReceiver.hasNotThumb()) {
             return null;
         }
         MessageObject.SendAnimationData sendAnimationData = new MessageObject.SendAnimationData();
-        y9Var.getLocationInWindow(new int[2]);
+        z9Var.getLocationInWindow(new int[2]);
         sendAnimationData.x = imageReceiver.getCenterX() + r3[0];
         sendAnimationData.y = imageReceiver.getCenterY() + r3[1];
         sendAnimationData.width = imageReceiver.getImageWidth();
@@ -106,9 +106,9 @@ public final class d8 extends FrameLayout {
             }
         }
         if (str != null) {
-            StringBuilder j3 = sc.v.j(str, " ");
-            j3.append(LocaleController.getString(R.string.AttachSticker));
-            accessibilityNodeInfo.setText(j3.toString());
+            StringBuilder i11 = t8.b.i(str, " ");
+            i11.append(LocaleController.getString(R.string.AttachSticker));
+            accessibilityNodeInfo.setText(i11.toString());
         } else {
             accessibilityNodeInfo.setText(LocaleController.getString(R.string.AttachSticker));
         }
@@ -126,10 +126,10 @@ public final class d8 extends FrameLayout {
 
     @Override // android.view.View
     public void setPressed(boolean z10) {
-        org.telegram.ui.Components.y9 y9Var = this.a;
-        if (y9Var.getImageReceiver().getPressed() != z10) {
-            y9Var.getImageReceiver().setPressed(z10 ? 1 : 0);
-            y9Var.invalidate();
+        org.telegram.ui.Components.z9 z9Var = this.a;
+        if (z9Var.getImageReceiver().getPressed() != z10) {
+            z9Var.getImageReceiver().setPressed(z10 ? 1 : 0);
+            z9Var.invalidate();
         }
         super.setPressed(z10);
     }

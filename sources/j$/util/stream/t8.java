@@ -23,17 +23,17 @@ public final class t8 extends v8 implements LongConsumer, j$.util.a1 {
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.v8, j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.k(this, consumer);
+        j$.com.android.tools.r8.a.j(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.B(this, consumer);
+        return j$.com.android.tools.r8.a.A(this, consumer);
     }
 
     @Override // j$.util.d1
@@ -43,9 +43,9 @@ public final class t8 extends v8 implements LongConsumer, j$.util.a1 {
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j3) {
+    public final void accept(long j10) {
         this.d = (this.d + 1) & 63;
-        this.e = j3;
+        this.e = j10;
     }
 
     @Override // j$.util.stream.v8

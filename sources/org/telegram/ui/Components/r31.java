@@ -1,34 +1,32 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class r31 extends s4.t0 {
+public final /* synthetic */ class r31 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c41 b;
+    public final /* synthetic */ t31 b;
 
-    public /* synthetic */ r31(c41 c41Var, int i10) {
+    public /* synthetic */ r31(t31 t31Var, int i10) {
         this.a = i10;
-        this.b = c41Var;
+        this.b = t31Var;
     }
 
-    @Override // s4.t0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                c41 c41Var = this.b;
-                if (c41Var.k()) {
-                    c41Var.l();
-                    break;
-                }
+                bi.d4 d4Var = this.b.f;
+                d4Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                d4Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                d4Var.invalidate();
                 break;
             default:
-                c41 c41Var2 = this.b;
-                if (c41Var2.k()) {
-                    c41Var2.l();
-                    break;
-                }
+                t31 t31Var = this.b;
+                t31Var.getClass();
+                t31Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t31Var.h();
                 break;
         }
     }

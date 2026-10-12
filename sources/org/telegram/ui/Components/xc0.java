@@ -6,7 +6,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xc0 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -14,8 +14,8 @@ public final /* synthetic */ class xc0 implements View.OnClickListener {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ xc0(org.telegram.ui.nt ntVar, ArrayList arrayList, boolean z10) {
-        this.c = ntVar;
+    public /* synthetic */ xc0(org.telegram.ui.tt ttVar, ArrayList arrayList, boolean z10) {
+        this.c = ttVar;
         this.d = arrayList;
         this.b = z10;
     }
@@ -24,12 +24,12 @@ public final /* synthetic */ class xc0 implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.c;
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.c;
                 Runnable runnable = (Runnable) this.d;
-                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
                 if (R != null) {
                     R.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
-                    f3Var.dismiss();
+                    e3Var.dismiss();
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -37,34 +37,34 @@ public final /* synthetic */ class xc0 implements View.OnClickListener {
                 }
                 break;
             default:
-                org.telegram.ui.nt ntVar = (org.telegram.ui.nt) this.c;
+                org.telegram.ui.tt ttVar = (org.telegram.ui.tt) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
-                org.telegram.ui.rt rtVar = ntVar.a;
-                if (rtVar.w != null && rtVar.l != null) {
+                org.telegram.ui.xt xtVar = ttVar.a;
+                if (xtVar.w != null && xtVar.l != null) {
                     int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
                     if (intValue == 0) {
-                        rtVar.l.C(rtVar.W);
+                        xtVar.l.C(xtVar.W);
                     } else if (intValue == 1) {
-                        rtVar.l.v(rtVar.W);
+                        xtVar.l.v(xtVar.W);
                     } else if (intValue == 2) {
-                        rtVar.l.v(null);
+                        xtVar.l.v(null);
                     } else if (intValue == 3) {
-                        rtVar.l.H(rtVar.W);
+                        xtVar.l.H(xtVar.W);
                     } else if (intValue == 4) {
-                        rtVar.l.r(rtVar.W);
+                        xtVar.l.q(xtVar.W);
                     } else if (intValue == 5) {
-                        MediaDataController.getInstance(rtVar.r).addRecentSticker(2, rtVar.b0, rtVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+                        MediaDataController.getInstance(xtVar.r).addRecentSticker(2, xtVar.b0, xtVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
                     }
-                    rtVar.p();
+                    xtVar.p();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ xc0(boolean z10, org.telegram.ui.ActionBar.f3 f3Var, Runnable runnable) {
+    public /* synthetic */ xc0(boolean z10, org.telegram.ui.ActionBar.e3 e3Var, Runnable runnable) {
         this.b = z10;
-        this.c = f3Var;
+        this.c = e3Var;
         this.d = runnable;
     }
 }

@@ -1,44 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class to extends AnimatorListenerAdapter {
+public final /* synthetic */ class to implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uo b;
+    public final /* synthetic */ wo b;
+    public final /* synthetic */ TLRPC.Document c;
 
-    public /* synthetic */ to(uo uoVar, int i10) {
+    public /* synthetic */ to(wo woVar, TLRPC.Document document, int i10) {
         this.a = i10;
-        this.b = uoVar;
+        this.b = woVar;
+        this.c = document;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.Q = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                uo uoVar = this.b;
-                if (uoVar.Q == animator) {
-                    uoVar.getSubtitleTextView().setVisibility(4);
-                    uoVar.Q = null;
+                vo voVar = this.b.d;
+                if (voVar != null) {
+                    voVar.d(this.c);
                     break;
                 }
                 break;
             default:
-                this.b.Q = null;
+                vo voVar2 = this.b.d;
+                if (voVar2 != null) {
+                    voVar2.d(this.c);
+                    break;
+                }
                 break;
         }
     }

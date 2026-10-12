@@ -1,14 +1,23 @@
 package w7;
 
-import java.util.Locale;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class w8 {
-    public static int a(int i10) {
-        if (i10 >= 100 || i10 < 0) {
-            return i10;
-        }
-        return Integer.parseInt(String.format(Locale.US, "%s%02d", com.google.android.gms.internal.vision.e2.i(2, 0, String.valueOf(qb.b.I3().get(1))), Integer.valueOf(i10)));
+    public static r9.a a(String str, String str2) {
+        ya.a aVar = new ya.a(str, str2);
+        b2.n0 a2 = r9.a.a(ya.a.class);
+        a2.b = 1;
+        a2.f = new ji.m5(aVar, 27);
+        return a2.b();
+    }
+
+    public static r9.a b(String str, k2.y0 y0Var) {
+        b2.n0 a2 = r9.a.a(ya.a.class);
+        a2.b = 1;
+        a2.a(r9.j.a(Context.class));
+        a2.f = new org.telegram.ui.web.c0(18, str, y0Var);
+        return a2.b();
     }
 }

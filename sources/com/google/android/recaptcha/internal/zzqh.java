@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
 import a1.g;
-import hg.c;
+import i2.d;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 final class zzqh extends zzqk {
     private final int zzc;
@@ -21,9 +21,9 @@ final class zzqh extends zzqk {
             return ((zzqk) this).zza[i10];
         }
         if (i10 < 0) {
-            throw new ArrayIndexOutOfBoundsException(c.h(i10, "Index < 0: "));
+            throw new ArrayIndexOutOfBoundsException(d.i(i10, "Index < 0: "));
         }
-        throw new ArrayIndexOutOfBoundsException(g.m(i10, i11, "Index > length: ", ", "));
+        throw new ArrayIndexOutOfBoundsException(g.l(i10, i11, "Index > length: ", ", "));
     }
 
     @Override // com.google.android.recaptcha.internal.zzqk, com.google.android.recaptcha.internal.zzqm

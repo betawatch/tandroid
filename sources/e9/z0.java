@@ -1,70 +1,38 @@
 package e9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import v7.u6;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class z0 extends c0 {
-    public static final z0 r = new z0();
-    public final transient Object d;
-    public final transient Object[] e;
-    public final transient int f;
-    public final transient int h;
-    public final transient z0 n;
+public final class z0 extends n0 {
+    public final /* synthetic */ v0 c;
 
-    public z0() {
-        this.d = null;
-        this.e = new Object[0];
-        this.f = 0;
-        this.h = 0;
-        this.n = this;
+    public z0(v0 v0Var) {
+        this.c = v0Var;
     }
 
-    @Override // e9.k0
-    public final c1 b() {
-        return new c1(this, this.e, this.f, this.h);
-    }
-
-    @Override // e9.k0
-    public final d1 c() {
-        return new d1(this, new e1(this.f, this.h, this.e));
-    }
-
-    @Override // e9.k0, java.util.Map
-    public final Object get(Object obj) {
-        Object g10 = f1.g(this.d, this.e, this.h, this.f, obj);
-        if (g10 == null) {
-            return null;
+    @Override // java.util.List
+    public final Object get(int i10) {
+        v0 v0Var = this.c;
+        switch (v0Var.d) {
+            case 0:
+                u1 u1Var = ((d2) v0Var.e).e;
+                u6.j(i10, u1Var.c);
+                return new t1(u1Var, i10);
+            default:
+                u1 u1Var2 = ((d2) v0Var.e).e;
+                u6.j(i10, u1Var2.c);
+                return u1Var2.a[i10];
         }
-        return g10;
     }
 
-    @Override // java.util.Map
+    @Override // e9.i0
+    public final boolean q() {
+        return this.c.q();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.h;
-    }
-
-    public z0(int i10, Object[] objArr) {
-        this.e = objArr;
-        this.h = i10;
-        this.f = 0;
-        int t10 = i10 >= 2 ? m0.t(i10) : 0;
-        Object f7 = f1.f(objArr, i10, t10, 0);
-        if (!(f7 instanceof Object[])) {
-            this.d = f7;
-            Object f10 = f1.f(objArr, i10, t10, 1);
-            if (!(f10 instanceof Object[])) {
-                this.n = new z0(f10, objArr, i10, this);
-                return;
-            }
-            throw ((j0) ((Object[]) f10)[2]).a();
-        }
-        throw ((j0) ((Object[]) f7)[2]).a();
-    }
-
-    public z0(Object obj, Object[] objArr, int i10, z0 z0Var) {
-        this.d = obj;
-        this.e = objArr;
-        this.f = 1;
-        this.h = i10;
-        this.n = z0Var;
+        return this.c.size();
     }
 }

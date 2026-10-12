@@ -1,25 +1,11 @@
 package p4;
 
-import android.os.Bundle;
-import android.util.Log;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class o0 {
-    public final /* synthetic */ p0 a;
+public interface o0 {
+    void a(n0 n0Var);
 
-    public o0(p0 p0Var) {
-        this.a = p0Var;
-    }
+    int b();
 
-    public static void a(String str, Bundle bundle) {
-        Log.d("MediaRouteProviderProxy", "Error: " + str + ", data: " + bundle);
-    }
-
-    public final void b(Bundle bundle) {
-        String string = bundle.getString("groupableTitle");
-        p0 p0Var = this.a;
-        p0Var.g = string;
-        p0Var.h = bundle.getString("transferableTitle");
-    }
+    void c();
 }

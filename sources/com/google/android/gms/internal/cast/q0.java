@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class q0 extends k0 {
     public final transient s0 d;
@@ -19,8 +19,8 @@ public final class q0 extends k0 {
     }
 
     @Override // com.google.android.gms.internal.cast.e0
-    public final int i(Object[] objArr) {
-        return this.e.i(objArr);
+    public final int h(Object[] objArr) {
+        return this.e.h(objArr);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set

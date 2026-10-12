@@ -1,28 +1,39 @@
 package kd;
 
-import w7.v;
+import td.p;
+import w7.k;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a {
-    public static final a a;
-    public static final /* synthetic */ a[] b;
+public abstract class a implements f {
+    public final g a;
 
-    static {
-        a aVar = new a("COROUTINE_SUSPENDED", 0);
-        a = aVar;
-        a[] aVarArr = {aVar, new a("UNDECIDED", 1), new a("RESUMED", 2)};
-        b = aVarArr;
-        v.a(aVarArr);
+    public a(g gVar) {
+        this.a = gVar;
     }
 
-    public static a valueOf(String str) {
-        return (a) Enum.valueOf(a.class, str);
+    @Override // kd.h
+    public final Object fold(Object obj, p pVar) {
+        return pVar.invoke(obj, this);
     }
 
-    public static a[] values() {
-        return (a[]) b.clone();
+    @Override // kd.h
+    public f get(g gVar) {
+        return k.a(this, gVar);
+    }
+
+    @Override // kd.f
+    public final g getKey() {
+        return this.a;
+    }
+
+    @Override // kd.h
+    public h minusKey(g gVar) {
+        return k.b(this, gVar);
+    }
+
+    @Override // kd.h
+    public final h plus(h hVar) {
+        return k.c(this, hVar);
     }
 }

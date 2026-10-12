@@ -1,238 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.content.res.Configuration;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.view.MotionEvent;
-import android.view.View;
+import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class w51 extends sw0 {
-    public ValueAnimator A0;
-    public float B0;
-    public final float[] C0;
-    public boolean D0;
-    public final /* synthetic */ x51 E0;
-    public final Paint w0;
-    public boolean x0;
-    public boolean y0;
-    public boolean z0;
+public final class w51 extends zn0 {
+    public final /* synthetic */ h61 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w51(x51 x51Var, Context context) {
-        super(context, null);
-        int i10;
-        int i11;
-        this.E0 = x51Var;
-        this.w0 = new Paint(1);
-        this.x0 = false;
-        this.y0 = false;
-        this.z0 = false;
-        this.B0 = 0.0f;
-        this.C0 = new float[8];
-        setWillNotDraw(false);
-        i10 = ((org.telegram.ui.ActionBar.f3) x51Var).backgroundPaddingLeft;
-        i11 = ((org.telegram.ui.ActionBar.f3) x51Var).backgroundPaddingLeft;
-        setPadding(i10, 0, i11, 0);
-        setDelegate(new v51(this));
+    public w51(h61 h61Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, 14.0f, c6Var);
+        this.h = h61Var;
     }
 
-    public final float Z() {
-        x51 x51Var = this.E0;
-        return Math.min(1.0f, Math.max(0.0f, x51Var.f / (x51Var.b * 2.0f)));
-    }
-
-    @Override // org.telegram.ui.Components.sw0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        int i10;
-        int i11;
-        x51 x51Var = this.E0;
-        l61 l61Var = x51Var.e;
-        int i12 = x51Var.b;
-        GradientDrawable gradientDrawable = x51Var.c;
-        float Z = Z();
-        boolean z10 = Z == 0.0f && !x51Var.isDismissed();
-        if (this.z0 != z10) {
-            ValueAnimator valueAnimator = this.A0;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.z0 = z10;
-            ValueAnimator valueAnimator2 = this.A0;
-            if (valueAnimator2 == null) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.B0, z10 ? 1.0f : 0.0f);
-                this.A0 = ofFloat;
-                ofFloat.addUpdateListener(new u51(0, this));
-                this.A0.setDuration(200L);
-            } else {
-                valueAnimator2.setFloatValues(this.B0, z10 ? 1.0f : 0.0f);
-            }
-            this.A0.start();
+    @Override // org.telegram.ui.Components.zn0
+    public final void a(String str) {
+        hg.e2 e2Var = this.h.v;
+        hg.c2 c2Var = e2Var.S;
+        int i10 = e2Var.c;
+        if (e2Var.N != 0) {
+            ConnectionsManager.getInstance(i10).cancelRequest(e2Var.N, true);
+            e2Var.N = 0;
         }
-        boolean z11 = this.B0 > 0.5f;
-        if (this.D0 != z11) {
-            this.D0 = z11;
-            boolean z12 = AndroidUtilities.computePerceivedBrightness(x51Var.getThemedColor(org.telegram.ui.ActionBar.i6.h5)) > 0.721f;
-            boolean z13 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.i6.v(x51Var.getThemedColor(org.telegram.ui.ActionBar.i6.s8), 855638016)) > 0.721f;
-            if (!z11) {
-                z12 = z13;
-            }
-            AndroidUtilities.setLightStatusBar(x51Var.getWindow(), z12);
+        if (e2Var.O != 0) {
+            ConnectionsManager.getInstance(i10).cancelRequest(e2Var.O, true);
+            e2Var.O = 0;
         }
-        if (this.B0 > 0.0f) {
-            int themedColor = x51Var.getThemedColor(org.telegram.ui.ActionBar.i6.h5);
-            Paint paint = this.w0;
-            paint.setColor(themedColor);
-            int max = (int) Math.max(0.0f, l61Var.getTranslationY() + (AndroidUtilities.statusBarHeight - i12) + ((1.0f - Z()) * i12) + x51Var.f + AndroidUtilities.dp(24.0f));
-            i10 = ((org.telegram.ui.ActionBar.f3) x51Var).backgroundPaddingLeft;
-            float lerp = AndroidUtilities.lerp(max, -AndroidUtilities.statusBarHeight, this.B0);
-            int measuredWidth = getMeasuredWidth();
-            i11 = ((org.telegram.ui.ActionBar.f3) x51Var).backgroundPaddingLeft;
-            float f7 = measuredWidth - i11;
-            float f10 = max;
-            canvas2 = canvas;
-            canvas2.drawRect(i10, lerp, f7, f10, paint);
+        if (TextUtils.isEmpty(str)) {
+            e2Var.R = null;
+            e2Var.F.clear();
+            e2Var.I.clear();
+            e2Var.E.clear();
+            e2Var.e.b(false);
+            e2Var.l();
         } else {
-            canvas2 = canvas;
+            e2Var.R = str.toLowerCase();
         }
-        super.dispatchDraw(canvas);
-        canvas2.save();
-        canvas2.translate(0.0f, (l61Var.getTranslationY() + AndroidUtilities.statusBarHeight) - i12);
-        int dp = AndroidUtilities.dp(36.0f);
-        int dp2 = AndroidUtilities.dp(4.0f);
-        int i13 = (int) ((1.0f - Z) * dp2 * 2.0f);
-        gradientDrawable.setCornerRadius(AndroidUtilities.dp(2.0f));
-        gradientDrawable.setColor(i0.a.k(x51Var.getThemedColor(org.telegram.ui.ActionBar.i6.Ii), (int) (Color.alpha(r5) * Z)));
-        gradientDrawable.setBounds((getWidth() - dp) / 2, org.telegram.messenger.q.C(10.0f, x51Var.f, i13), (getWidth() + dp) / 2, AndroidUtilities.dp(10.0f) + x51Var.f + i13 + dp2);
-        gradientDrawable.draw(canvas2);
-        canvas2.restore();
-    }
-
-    @Override // android.view.View
-    public final float getTranslationY() {
-        return this.E0.e.getTranslationY();
-    }
-
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        AndroidUtilities.runOnUIThread(new or0(this, 25), 200L);
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Drawable drawable;
-        int i10;
-        Drawable drawable2;
-        int i11;
-        int i12;
-        x51 x51Var = this.E0;
-        GradientDrawable gradientDrawable = x51Var.c;
-        x51.o(x51Var);
-        super.onDraw(canvas);
-        float Z = Z();
-        int i13 = x51Var.b;
-        int i14 = (int) ((1.0f - Z) * i13);
-        int i15 = AndroidUtilities.statusBarHeight - i13;
-        canvas.save();
-        canvas.translate(0.0f, x51Var.e.getTranslationY() + i15);
-        drawable = ((org.telegram.ui.ActionBar.f3) x51Var).shadowDrawable;
-        int i16 = x51Var.f;
-        i10 = ((org.telegram.ui.ActionBar.f3) x51Var).backgroundPaddingTop;
-        drawable.setBounds(0, (i16 - i10) + i14, getMeasuredWidth(), getMeasuredHeight() + (i15 < 0 ? -i15 : 0));
-        drawable2 = ((org.telegram.ui.ActionBar.f3) x51Var).shadowDrawable;
-        drawable2.draw(canvas);
-        if (Z > 0.0f && Z < 1.0f) {
-            float dp = AndroidUtilities.dp(12.0f) * Z;
-            gradientDrawable.setColor(x51Var.getThemedColor(org.telegram.ui.ActionBar.i6.h5));
-            float[] fArr = this.C0;
-            fArr[3] = dp;
-            fArr[2] = dp;
-            fArr[1] = dp;
-            fArr[0] = dp;
-            gradientDrawable.setCornerRadii(fArr);
-            i11 = ((org.telegram.ui.ActionBar.f3) x51Var).backgroundPaddingLeft;
-            int i17 = x51Var.f + i14;
-            int width = getWidth();
-            i12 = ((org.telegram.ui.ActionBar.f3) x51Var).backgroundPaddingLeft;
-            gradientDrawable.setBounds(i11, i17, width - i12, AndroidUtilities.dp(24.0f) + x51Var.f + i14);
-            gradientDrawable.draw(canvas);
-        }
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            x51 x51Var = this.E0;
-            if (x51Var.f != 0 && motionEvent.getY() < x51Var.f) {
-                x51Var.dismiss();
-                return true;
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.sw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15;
-        x51 x51Var = this.E0;
-        l61 l61Var = x51Var.e;
-        int i16 = AndroidUtilities.statusBarHeight;
-        int size = View.MeasureSpec.getSize(getMeasuredHeight()) - i16;
-        int R = R();
-        int i17 = (int) ((size + R) * 0.2f);
-        this.y0 = true;
-        if (R > AndroidUtilities.dp(20.0f)) {
-            l61Var.a(true);
-            x51Var.setAllowNestedScroll(false);
-            this.x0 = true;
-        } else {
-            l61Var.a(false);
-            x51Var.setAllowNestedScroll(true);
-            this.x0 = false;
-        }
-        l61Var.setContentViewPaddingTop(i17);
-        if (getPaddingTop() != i16) {
-            i14 = ((org.telegram.ui.ActionBar.f3) x51Var).backgroundPaddingLeft;
-            i15 = ((org.telegram.ui.ActionBar.f3) x51Var).backgroundPaddingLeft;
-            setPadding(i14, i16, i15, 0);
-        }
-        this.y0 = false;
-        super.onLayout(z10, i10, i11, i12, i13);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.E0.isDismissed() && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.y0) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        this.E0.e.setTranslationY(f7);
-        invalidate();
+        AndroidUtilities.cancelRunOnUIThread(c2Var);
+        AndroidUtilities.runOnUIThread(c2Var, 300L);
     }
 }

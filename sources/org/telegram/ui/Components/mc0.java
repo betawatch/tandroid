@@ -4,14 +4,14 @@ import android.content.Context;
 import org.telegram.messenger.ChatMessageSharedResources;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class mc0 extends org.telegram.ui.Cells.u1 {
     public final /* synthetic */ oc0 Ge;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mc0(oc0 oc0Var, Context context, int i10, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, i10, false, chatMessageSharedResources, e6Var);
+    public mc0(oc0 oc0Var, Context context, int i10, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, i10, false, chatMessageSharedResources, c6Var);
         this.Ge = oc0Var;
     }
 

@@ -1,76 +1,42 @@
 package v7;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Typeface;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.io.File;
-import java.io.InputStream;
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class d8 {
-    public d8() {
-        new ConcurrentHashMap();
-    }
+public final class d8 {
+    public String a;
+    public String b;
+    public String c;
+    public String d;
+    public String e;
+    public Object f;
+    public Object g;
+    public Object h;
+    public Integer i;
+    public Object j;
+    public Serializable k;
 
-    public abstract Typeface a(Context context, h0.e eVar, Resources resources, int i10);
-
-    public abstract Typeface b(Context context, o0.h[] hVarArr, int i10);
-
-    public Typeface c(Context context, List list, int i10) {
-        throw new IllegalStateException("createFromFontInfoWithFallback must only be called on API 29+");
-    }
-
-    public Typeface d(Context context, InputStream inputStream) {
-        File d = g8.d(context);
-        if (d == null) {
-            return null;
+    public z9.a0 a() {
+        String str = this.a == null ? " sdkVersion" : "";
+        if (this.b == null) {
+            str = str.concat(" gmpAppId");
         }
-        try {
-            if (g8.c(inputStream, d)) {
-                return Typeface.createFromFile(d.getPath());
-            }
-            return null;
-        } catch (RuntimeException unused) {
-            return null;
-        } finally {
-            d.delete();
+        if (this.i == null) {
+            str = t8.b.u(str, " platform");
         }
-    }
-
-    public Typeface e(Context context, Resources resources, int i10, String str, int i11) {
-        File d = g8.d(context);
-        if (d == null) {
-            return null;
+        if (this.c == null) {
+            str = t8.b.u(str, " installationUuid");
         }
-        try {
-            if (g8.b(d, resources, i10)) {
-                return Typeface.createFromFile(d.getPath());
-            }
-            return null;
-        } catch (RuntimeException unused) {
-            return null;
-        } finally {
-            d.delete();
+        if (((String) this.k) == null) {
+            str = t8.b.u(str, " buildVersion");
         }
-    }
-
-    public o0.h f(o0.h[] hVarArr, int i10) {
-        new ob.a(10);
-        int i11 = (i10 & 1) == 0 ? 400 : 700;
-        boolean z10 = (i10 & 2) != 0;
-        o0.h hVar = null;
-        int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        for (o0.h hVar2 : hVarArr) {
-            int abs = (Math.abs(hVar2.c - i11) * 2) + (hVar2.d == z10 ? 0 : 1);
-            if (hVar == null || i12 > abs) {
-                hVar = hVar2;
-                i12 = abs;
-            }
+        if (((String) this.f) == null) {
+            str = t8.b.u(str, " displayVersion");
         }
-        return hVar;
+        if (str.isEmpty()) {
+            return new z9.a0(this.a, this.b, this.i.intValue(), this.c, this.d, this.e, (String) this.k, (String) this.f, (z9.d2) this.g, (z9.j1) this.h, (z9.g1) this.j);
+        }
+        throw new IllegalStateException("Missing required properties:".concat(str));
     }
 }

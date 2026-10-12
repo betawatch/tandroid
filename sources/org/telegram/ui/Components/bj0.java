@@ -2,7 +2,11 @@ package org.telegram.ui.Components;
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class bj0 extends FrameLayout {
+public final class bj0 extends FrameLayout {
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
 }

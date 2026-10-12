@@ -1,58 +1,152 @@
 package org.telegram.ui.Wallet;
 
 import android.app.AlertDialog;
+import android.app.KeyguardManager;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.hardware.biometrics.BiometricPrompt;
 import android.hardware.fingerprint.FingerprintManager;
+import android.os.CancellationSignal;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class u0 extends FingerprintManager.AuthenticationCallback {
-    public final /* synthetic */ v0 a;
+public final class u0 {
+    public final CountDownLatch a = new CountDownLatch(1);
+    public volatile boolean b;
+    public String c;
+    public String d;
+    public LaunchActivity e;
+    public boolean f;
+    public int g;
+    public CancellationSignal h;
+    public AlertDialog i;
 
-    public u0(v0 v0Var) {
-        this.a = v0Var;
-    }
-
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationError(int i10, CharSequence charSequence) {
-        v0 v0Var = this.a;
-        if (!v0Var.f() || v0Var.f) {
+    public final void a() {
+        if (this.f || !f()) {
             return;
         }
-        if (i10 == 5) {
-            v0Var.c("AUTH_CANCELED");
-        } else {
-            v0Var.a();
+        this.f = true;
+        e();
+        try {
+            KeyguardManager keyguardManager = (KeyguardManager) this.e.getSystemService("keyguard");
+            Intent intent = null;
+            if (keyguardManager != null) {
+                intent = keyguardManager.createConfirmDeviceCredentialIntent(LocaleController.getString(R.string.WalletUnlock), null);
+            }
+            if (intent == null) {
+                c("AUTH_UNAVAILABLE");
+                return;
+            }
+            int i10 = w7.i6.a;
+            int i11 = i10 + 1;
+            w7.i6.a = i11;
+            this.g = i10;
+            if (i11 > 22399) {
+                w7.i6.a = 22336;
+            }
+            this.e.startActivityForResult(intent, i10);
+        } catch (Exception e) {
+            FileLog.e(e);
+            c("AUTH_UNAVAILABLE");
         }
     }
 
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationFailed() {
-        AlertDialog alertDialog;
-        v0 v0Var = this.a;
-        if (!v0Var.f() || (alertDialog = v0Var.i) == null) {
+    public final void b() {
+        FingerprintManager fingerprintManager = (FingerprintManager) this.e.getSystemService("fingerprint");
+        if (fingerprintManager == null || !fingerprintManager.isHardwareDetected() || !fingerprintManager.hasEnrolledFingerprints()) {
+            a();
             return;
         }
-        alertDialog.setMessage(LocaleController.getString(R.string.WalletFingerprintRetry));
+        this.h = new CancellationSignal();
+        final int i10 = 0;
+        final int i11 = 1;
+        this.i = new AlertDialog.Builder(this.e).setTitle(LocaleController.getString(R.string.WalletUnlock)).setMessage(LocaleController.getString(R.string.WalletTouchFingerprint)).setNegativeButton(LocaleController.getString(R.string.Cancel), new DialogInterface.OnClickListener(this) { // from class: org.telegram.ui.Wallet.q0
+            public final /* synthetic */ u0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.content.DialogInterface.OnClickListener
+            public final void onClick(DialogInterface dialogInterface, int i12) {
+                switch (i10) {
+                    case 0:
+                        this.b.c("AUTH_CANCELED");
+                        break;
+                    default:
+                        this.b.a();
+                        break;
+                }
+            }
+        }).setPositiveButton(LocaleController.getString(R.string.WalletUseDevicePasscode), new DialogInterface.OnClickListener(this) { // from class: org.telegram.ui.Wallet.q0
+            public final /* synthetic */ u0 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.content.DialogInterface.OnClickListener
+            public final void onClick(DialogInterface dialogInterface, int i12) {
+                switch (i11) {
+                    case 0:
+                        this.b.c("AUTH_CANCELED");
+                        break;
+                    default:
+                        this.b.a();
+                        break;
+                }
+            }
+        }).setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.Wallet.r0
+            @Override // android.content.DialogInterface.OnCancelListener
+            public final void onCancel(DialogInterface dialogInterface) {
+                u0.this.c("AUTH_CANCELED");
+            }
+        }).show();
+        fingerprintManager.authenticate(null, this.h, 0, new t0(this), new Handler(Looper.getMainLooper()));
     }
 
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationHelp(int i10, CharSequence charSequence) {
-        AlertDialog alertDialog;
-        v0 v0Var = this.a;
-        if (!v0Var.f() || (alertDialog = v0Var.i) == null) {
+    public final void c(String str) {
+        CountDownLatch countDownLatch = this.a;
+        if (countDownLatch.getCount() == 0) {
             return;
         }
-        alertDialog.setMessage(charSequence);
+        this.c = str;
+        countDownLatch.countDown();
     }
 
-    @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
-    public final void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult authenticationResult) {
-        v0 v0Var = this.a;
-        if (v0Var.f) {
-            return;
+    public final void d() {
+        this.h = new CancellationSignal();
+        new BiometricPrompt.Builder(this.e).setTitle(LocaleController.getString(R.string.WalletUnlock)).setAllowedAuthenticators(32783).build().authenticate(this.h, this.e.getMainExecutor(), new s0(this));
+    }
+
+    public final void e() {
+        try {
+            CancellationSignal cancellationSignal = this.h;
+            if (cancellationSignal != null) {
+                cancellationSignal.cancel();
+            }
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        v0Var.c(null);
+        try {
+            AlertDialog alertDialog = this.i;
+            if (alertDialog != null) {
+                alertDialog.dismiss();
+            }
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+        this.i = null;
+    }
+
+    public final boolean f() {
+        return (this.b || this.a.getCount() == 0) ? false : true;
     }
 }

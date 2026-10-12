@@ -21,13 +21,13 @@ import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class GoogleLocationProvider implements ILocationServiceProvider {
     private g8.a locationProviderClient;
     private g8.i settingsClient;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class GoogleApiClientImpl implements ILocationServiceProvider.IMapApiClient {
         private com.google.android.gms.common.api.m apiClient;
 
@@ -46,32 +46,32 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class GoogleLocationRequest implements ILocationServiceProvider.ILocationRequest {
         private LocationRequest request;
 
         @Override // org.telegram.messenger.ILocationServiceProvider.ILocationRequest
-        public void setFastestInterval(long j3) {
+        public void setFastestInterval(long j10) {
             LocationRequest locationRequest = this.request;
             locationRequest.getClass();
-            n6.l.c(j3 >= 0, "illegal fastest interval: %d", Long.valueOf(j3));
-            locationRequest.c = j3;
+            n6.l.c(j10 >= 0, "illegal fastest interval: %d", Long.valueOf(j10));
+            locationRequest.c = j10;
         }
 
         @Override // org.telegram.messenger.ILocationServiceProvider.ILocationRequest
-        public void setInterval(long j3) {
+        public void setInterval(long j10) {
             LocationRequest locationRequest = this.request;
             locationRequest.getClass();
-            n6.l.a("intervalMillis must be greater than or equal to 0", j3 >= 0);
-            long j10 = locationRequest.c;
-            long j11 = locationRequest.b;
-            if (j10 == j11 / 6) {
-                locationRequest.c = j3 / 6;
+            n6.l.a("intervalMillis must be greater than or equal to 0", j10 >= 0);
+            long j11 = locationRequest.c;
+            long j12 = locationRequest.b;
+            if (j11 == j12 / 6) {
+                locationRequest.c = j10 / 6;
             }
-            if (locationRequest.r == j11) {
-                locationRequest.r = j3;
+            if (locationRequest.r == j12) {
+                locationRequest.r = j10;
             }
-            locationRequest.b = j3;
+            locationRequest.b = j10;
         }
 
         @Override // org.telegram.messenger.ILocationServiceProvider.ILocationRequest
@@ -104,8 +104,8 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         try {
             task.getResult(com.google.android.gms.common.api.f.class);
             aVar.accept(0);
-        } catch (com.google.android.gms.common.api.f e7) {
-            int statusCode = e7.getStatusCode();
+        } catch (com.google.android.gms.common.api.f e) {
+            int statusCode = e.getStatusCode();
             if (statusCode == 6) {
                 aVar.accept(1);
             } else {
@@ -136,10 +136,10 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         g8.e eVar = new g8.e(arrayList, false, false);
         r7.c cVar = (r7.c) iVar;
         cVar.getClass();
-        com.google.android.gms.common.api.internal.v e7 = com.google.android.gms.common.api.internal.w.e();
-        e7.c = new m.f3(eVar, 16);
-        e7.a = 2426;
-        cVar.e(0, e7.a()).addOnCompleteListener(new h4(aVar, 1));
+        com.google.android.gms.common.api.internal.v b10 = com.google.android.gms.common.api.internal.w.b();
+        b10.c = new l2.f(eVar, 15);
+        b10.a = 2426;
+        cVar.e(0, b10.a()).addOnCompleteListener(new k4(aVar, 1));
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
@@ -151,10 +151,10 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
     public void getLastLocation(q0.a aVar) {
         r7.c cVar = (r7.c) this.locationProviderClient;
         cVar.getClass();
-        com.google.android.gms.common.api.internal.v e7 = com.google.android.gms.common.api.internal.w.e();
-        e7.c = r7.a.c;
-        e7.a = 2414;
-        cVar.e(0, e7.a()).addOnCompleteListener(new h4(aVar, 0));
+        com.google.android.gms.common.api.internal.v b10 = com.google.android.gms.common.api.internal.w.b();
+        b10.c = r7.a.c;
+        b10.a = 2414;
+        cVar.e(0, b10.a()).addOnCompleteListener(new k4(aVar, 0));
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
@@ -162,7 +162,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         com.google.android.gms.common.api.e eVar = g8.d.a;
         com.google.android.gms.common.api.i iVar = com.google.android.gms.common.api.i.c;
         com.google.android.gms.common.api.e eVar2 = r7.c.k;
-        com.google.android.gms.common.api.a aVar = com.google.android.gms.common.api.b.t;
+        com.google.android.gms.common.api.a aVar = com.google.android.gms.common.api.b.p;
         this.locationProviderClient = new r7.c(context, eVar2, aVar, iVar);
         this.settingsClient = new r7.c(context, eVar2, aVar, iVar);
     }
@@ -213,7 +213,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
                 iAPIConnectionCallbacks.onConnectionSuspended(i10);
             }
         });
-        arrayList2.add(new com.google.android.gms.common.api.l() { // from class: org.telegram.messenger.g4
+        arrayList2.add(new com.google.android.gms.common.api.l() { // from class: org.telegram.messenger.j4
             @Override // com.google.android.gms.common.api.l
             public final void onConnectionFailed(k6.a aVar) {
                 ILocationServiceProvider.IAPIOnConnectionFailedListener.this.onConnectionFailed();
@@ -244,7 +244,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
                     boolean equals = hashSet.equals(hashSet2);
                     String str = eVar3.c;
                     if (!equals) {
-                        throw new IllegalStateException(a1.g.q("Must not set scopes in GoogleApiClient.Builder when using ", str, ". Set account in GoogleSignInOptions.Builder instead."));
+                        throw new IllegalStateException(a1.g.p("Must not set scopes in GoogleApiClient.Builder when using ", str, ". Set account in GoogleSignInOptions.Builder instead."));
                     }
                 }
                 com.google.android.gms.common.api.internal.j0 j0Var = new com.google.android.gms.common.api.internal.j0(context2, new ReentrantLock(), looper, q3Var2, fVar5, arrayList, arrayList2, fVar6, com.google.android.gms.common.api.internal.j0.f(fVar6.values(), true), arrayList4);
@@ -330,14 +330,17 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
             mainLooper = Looper.myLooper();
             n6.l.i(mainLooper, "invalid null looper");
         }
-        com.google.android.gms.common.api.internal.p N = a6.i.N(mainLooper, cVar, g8.c.class.getSimpleName());
-        androidx.activity.n nVar = new androidx.activity.n(cVar2, N);
-        org.telegram.ui.ActionBar.b5 b5Var = new org.telegram.ui.ActionBar.b5(nVar, locationRequest, false, 13);
+        com.google.android.gms.common.api.internal.p m10 = k6.h.m(mainLooper, cVar, g8.c.class.getSimpleName());
+        androidx.activity.o oVar = new androidx.activity.o();
+        oVar.c = cVar2;
+        oVar.a = true;
+        oVar.b = m10;
+        n6.o oVar2 = new n6.o(14, oVar, locationRequest);
         r rVar = new r();
         rVar.b = true;
-        rVar.c = b5Var;
-        rVar.d = nVar;
-        rVar.e = N;
+        rVar.c = oVar2;
+        rVar.d = oVar;
+        rVar.e = m10;
         rVar.a = 2436;
         cVar2.b(rVar.a());
     }

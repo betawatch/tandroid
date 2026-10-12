@@ -1,409 +1,46 @@
 package n4;
 
-import android.os.Binder;
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.IInterface;
+import android.media.session.MediaSession;
 import android.os.Parcel;
-import android.os.SystemClock;
-import androidx.car.app.navigation.model.Maneuver;
-import java.lang.ref.WeakReference;
-import java.util.AbstractCollection;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class q extends Binder implements h {
-    public static final /* synthetic */ int b = 0;
-    public final WeakReference a;
+public final class q implements Parcelable {
+    public static final Parcelable.Creator<q> CREATOR = new m8.h(5);
+    public final h a;
+    public final long b;
+    public MediaSession.QueueItem c;
 
-    public q(r rVar) {
-        attachInterface(this, "android.support.v4.media.session.IMediaSession");
-        this.a = new WeakReference(rVar);
+    public q(h hVar, long j10) {
+        if (j10 == -1) {
+            throw new IllegalArgumentException("Id cannot be QueueItem.UNKNOWN_ID");
+        }
+        this.a = hVar;
+        this.b = j10;
+        this.c = null;
     }
 
-    public final void F0(f fVar) {
-        r rVar = (r) this.a.get();
-        if (rVar == null || fVar == null) {
-            return;
-        }
-        rVar.f.register(fVar, new z("android.media.session.MediaController", Binder.getCallingPid(), Binder.getCallingUid()));
-        synchronized (rVar.d) {
-        }
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0258  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0242  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0245  */
-    /* JADX WARN: Type inference failed for: r7v8, types: [n4.f] */
-    @Override // android.os.Binder
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
-        long j3;
-        AbstractCollection abstractCollection;
-        int i12;
-        Bundle bundle;
-        if (i10 == 1598968902) {
-            parcel2.getClass();
-            parcel2.writeString("android.support.v4.media.session.IMediaSession");
-            return true;
-        }
-        f fVar = null;
-        r7 = null;
-        Bundle bundle2 = null;
-        f0 f0Var = null;
-        e eVar = null;
-        switch (i10) {
-            case 1:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readString();
-                if (parcel.readInt() != 0) {
-                }
-                if (parcel.readInt() != 0) {
-                    v.CREATOR.createFromParcel(parcel);
-                }
-                throw new AssertionError();
-            case 2:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                if (parcel.readInt() != 0) {
-                }
-                throw new AssertionError();
-            case 3:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                IBinder readStrongBinder = parcel.readStrongBinder();
-                if (readStrongBinder != null) {
-                    IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("android.support.v4.media.session.IMediaControllerCallback");
-                    if (queryLocalInterface == null || !(queryLocalInterface instanceof f)) {
-                        e eVar2 = new e();
-                        eVar2.a = readStrongBinder;
-                        fVar = eVar2;
-                    } else {
-                        fVar = (f) queryLocalInterface;
-                    }
-                }
-                F0(fVar);
-                parcel2.getClass();
-                parcel2.writeNoException();
-                return true;
-            case 4:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                IBinder readStrongBinder2 = parcel.readStrongBinder();
-                if (readStrongBinder2 != null) {
-                    IInterface queryLocalInterface2 = readStrongBinder2.queryLocalInterface("android.support.v4.media.session.IMediaControllerCallback");
-                    if (queryLocalInterface2 == null || !(queryLocalInterface2 instanceof f)) {
-                        e eVar3 = new e();
-                        eVar3.a = readStrongBinder2;
-                        eVar = eVar3;
-                    } else {
-                        eVar = (f) queryLocalInterface2;
-                    }
-                }
-                r rVar = (r) this.a.get();
-                if (rVar != null && eVar != null) {
-                    rVar.f.unregister(eVar);
-                    Binder.getCallingPid();
-                    Binder.getCallingUid();
-                    synchronized (rVar.d) {
-                    }
-                }
-                parcel2.getClass();
-                parcel2.writeNoException();
-                return true;
-            case 5:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 6:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 7:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 8:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 9:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 10:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 11:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readInt();
-                parcel.readInt();
-                parcel.readString();
-                throw new AssertionError();
-            case 12:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readInt();
-                parcel.readInt();
-                parcel.readString();
-                throw new AssertionError();
-            case 13:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 14:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readString();
-                if (parcel.readInt() != 0) {
-                }
-                throw new AssertionError();
-            case 15:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readString();
-                if (parcel.readInt() != 0) {
-                }
-                throw new AssertionError();
-            case 16:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                if (parcel.readInt() != 0) {
-                }
-                if (parcel.readInt() != 0) {
-                }
-                throw new AssertionError();
-            case 17:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readLong();
-                throw new AssertionError();
-            case 18:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 19:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 20:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 21:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 22:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 23:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 24:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readLong();
-                throw new AssertionError();
-            case 25:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                if (parcel.readInt() != 0) {
-                    g0.CREATOR.createFromParcel(parcel);
-                }
-                throw new AssertionError();
-            case 26:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readString();
-                if (parcel.readInt() != 0) {
-                }
-                throw new AssertionError();
-            case 27:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 28:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                r rVar2 = (r) this.a.get();
-                if (rVar2 != null) {
-                    f0Var = rVar2.g;
-                    m mVar = rVar2.i;
-                    if (f0Var != null) {
-                        float f7 = f0Var.d;
-                        long j10 = f0Var.n;
-                        int i13 = f0Var.a;
-                        long j11 = f0Var.b;
-                        if (j11 != -1 && ((i13 == 3 || i13 == 4 || i13 == 5) && j10 > 0)) {
-                            long elapsedRealtime = SystemClock.elapsedRealtime();
-                            long j12 = ((long) (f7 * (elapsedRealtime - j10))) + j11;
-                            if (mVar != null) {
-                                Bundle bundle3 = mVar.a;
-                                if (bundle3.containsKey("android.media.metadata.DURATION")) {
-                                    j3 = bundle3.getLong("android.media.metadata.DURATION", 0L);
-                                    long j13 = (j3 >= 0 || j12 <= j3) ? j12 >= 0 ? 0L : j12 : j3;
-                                    ArrayList arrayList = new ArrayList();
-                                    long j14 = f0Var.c;
-                                    long j15 = f0Var.e;
-                                    int i14 = f0Var.f;
-                                    CharSequence charSequence = f0Var.h;
-                                    abstractCollection = f0Var.r;
-                                    if (abstractCollection != null) {
-                                        arrayList.addAll(abstractCollection);
-                                    }
-                                    f0Var = new f0(f0Var.a, j13, j14, f0Var.d, j15, i14, charSequence, elapsedRealtime, arrayList, f0Var.s, f0Var.v);
-                                }
-                            }
-                            j3 = -1;
-                            if (j3 >= 0) {
-                            }
-                            ArrayList arrayList2 = new ArrayList();
-                            long j142 = f0Var.c;
-                            long j152 = f0Var.e;
-                            int i142 = f0Var.f;
-                            CharSequence charSequence2 = f0Var.h;
-                            abstractCollection = f0Var.r;
-                            if (abstractCollection != null) {
-                            }
-                            f0Var = new f0(f0Var.a, j13, j142, f0Var.d, j152, i142, charSequence2, elapsedRealtime, arrayList2, f0Var.s, f0Var.v);
-                        }
-                    }
-                }
-                parcel2.getClass();
-                parcel2.writeNoException();
-                if (f0Var == null) {
-                    parcel2.writeInt(0);
-                    return true;
-                }
-                parcel2.writeInt(1);
-                f0Var.writeToParcel(parcel2, 1);
-                return true;
-            case 29:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel2.getClass();
-                parcel2.writeNoException();
-                parcel2.writeTypedList(null);
-                return true;
-            case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 32:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel2.getClass();
-                parcel2.writeNoException();
-                parcel2.writeInt(0);
-                return true;
-            case 33:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                throw new AssertionError();
-            case 34:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readString();
-                if (parcel.readInt() != 0) {
-                }
-                throw new AssertionError();
-            case 35:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readString();
-                if (parcel.readInt() != 0) {
-                }
-                throw new AssertionError();
-            case 36:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                if (parcel.readInt() != 0) {
-                }
-                if (parcel.readInt() != 0) {
-                }
-                throw new AssertionError();
-            case 37:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                r rVar3 = (r) this.a.get();
-                i12 = rVar3 != null ? rVar3.j : -1;
-                parcel2.getClass();
-                parcel2.writeNoException();
-                parcel2.writeInt(i12);
-                return true;
-            case 38:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel2.getClass();
-                parcel2.writeNoException();
-                parcel2.writeInt(0);
-                return true;
-            case Maneuver.TYPE_DESTINATION /* 39 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readInt();
-                throw new AssertionError();
-            case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readInt();
-                parcel2.getClass();
-                parcel2.writeNoException();
-                return true;
-            case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                if (parcel.readInt() != 0) {
-                    l.CREATOR.createFromParcel(parcel);
-                }
-                throw new AssertionError();
-            case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                if (parcel.readInt() != 0) {
-                    l.CREATOR.createFromParcel(parcel);
-                }
-                parcel.readInt();
-                throw new AssertionError();
-            case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                if (parcel.readInt() != 0) {
-                    l.CREATOR.createFromParcel(parcel);
-                }
-                throw new AssertionError();
-            case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readInt();
-                throw new AssertionError();
-            case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel2.getClass();
-                parcel2.writeNoException();
-                parcel2.writeInt(0);
-                return true;
-            case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readInt();
-                throw new AssertionError();
-            case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                r rVar4 = (r) this.a.get();
-                i12 = rVar4 != null ? rVar4.k : -1;
-                parcel2.getClass();
-                parcel2.writeNoException();
-                parcel2.writeInt(i12);
-                return true;
-            case 48:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readInt();
-                throw new AssertionError();
-            case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                parcel.readFloat();
-                throw new AssertionError();
-            case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                r rVar5 = (r) this.a.get();
-                if (rVar5 != null && (bundle = rVar5.e) != null) {
-                    bundle2 = new Bundle(bundle);
-                }
-                parcel2.getClass();
-                parcel2.writeNoException();
-                if (bundle2 == null) {
-                    parcel2.writeInt(0);
-                    return true;
-                }
-                parcel2.writeInt(1);
-                bundle2.writeToParcel(parcel2, 1);
-                return true;
-            case 51:
-                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
-                if (parcel.readInt() != 0) {
-                    g0.CREATOR.createFromParcel(parcel);
-                }
-                if (parcel.readInt() != 0) {
-                }
-                throw new AssertionError();
-            default:
-                return super.onTransact(i10, parcel, parcel2, i11);
-        }
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("MediaSession.QueueItem { Description=");
+        sb2.append(this.a);
+        sb2.append(", Id=");
+        return a1.g.r(sb2, this.b, " }");
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        this.a.writeToParcel(parcel, i10);
+        parcel.writeLong(this.b);
+    }
+
+    public q(Parcel parcel) {
+        this.a = h.CREATOR.createFromParcel(parcel);
+        this.b = parcel.readLong();
     }
 }

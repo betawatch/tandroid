@@ -1,264 +1,60 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class uu0 implements cv0 {
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean A() {
-        return false;
+public final class uu0 extends rg.e2 {
+    public final Path o0;
+    public boolean p0;
+    public final org.telegram.ui.Components.g6 q0;
+    public final /* synthetic */ PhotoViewer r0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uu0(PhotoViewer photoViewer) {
+        super(photoViewer.p5, photoViewer.E, photoViewer.v2, photoViewer.b0);
+        this.r0 = photoViewer;
+        this.o0 = new Path();
+        this.q0 = new org.telegram.ui.Components.g6(this, 0L, 420L, org.telegram.ui.Components.es.h);
     }
 
-    @Override // org.telegram.ui.cv0
-    public CharSequence C(int i10) {
-        return null;
+    public final void m(boolean z10, boolean z11) {
+        this.p0 = z10;
+        if (!z11) {
+            this.q0.f(z10, true);
+        }
+        invalidate();
     }
 
-    @Override // org.telegram.ui.cv0
-    public ev0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return null;
+    @Override // rg.e2, di.d, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        Path path = this.o0;
+        path.rewind();
+        path.addRoundRect(this.i0, AndroidUtilities.dp(this.m0), AndroidUtilities.dp(this.m0), Path.Direction.CW);
+        canvas.clipPath(path);
+        canvas.translate(-getX(), -getY());
+        PhotoViewer photoViewer = this.r0;
+        if (this == photoViewer.v5 || this == photoViewer.w5) {
+            canvas.translate(-photoViewer.u5.getX(), -photoViewer.u5.getY());
+        }
+        photoViewer.T0(canvas, this.h0, -13948117, 855638016, false, true, false);
+        float e = this.q0.e(this.p0);
+        if (e > 0.0f) {
+            canvas.drawColor(org.telegram.ui.ActionBar.g6.m1(e, -1));
+        }
+        setTextColor(i0.a.d(e, -1, -16777216));
+        canvas.restore();
+        super.onDraw(canvas);
     }
 
-    @Override // org.telegram.ui.cv0
-    public int H() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean J() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean K() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean M() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean N() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean O() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean P() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public int Q(Object obj) {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public int R(int i10) {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean S() {
-        return !(this instanceof ul);
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean T() {
-        return !(this instanceof wl);
-    }
-
-    @Override // org.telegram.ui.cv0
-    public MessageObject U() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean Y() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ long a() {
-        return 0L;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public String a0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean b() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public CharSequence b0(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public ArrayList c() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean g() {
-        return !(this instanceof ul);
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean h() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public ImageReceiver.BitmapHolder j(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public int k(int i10, VideoEditedInfo videoEditedInfo) {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean l() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean p() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean r() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean t() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean u() {
-        return !(this instanceof org.telegram.ui.Components.om);
-    }
-
-    @Override // org.telegram.ui.cv0
-    public HashMap v() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ boolean w() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean x(int i10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public int y() {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.cv0
-    public boolean z() {
-        return !(this instanceof org.telegram.ui.Components.zh);
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void B(int i10) {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void D() {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ void F(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void G() {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ void I() {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void L(VideoEditedInfo videoEditedInfo) {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ void V() {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void W(int i10) {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ void X(int i10) {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void Z(int i10) {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void d() {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void e(CharSequence charSequence) {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ void i() {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ void m() {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void n() {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void f(String str, String str2, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.cv0
-    public void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+    @Override // android.view.View
+    public final void onDrawForeground(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.o0);
+        super.onDrawForeground(canvas);
+        canvas.restore();
     }
 }

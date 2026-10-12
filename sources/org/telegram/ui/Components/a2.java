@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a2 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -22,15 +22,15 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ a2(FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.f3 f3Var, FrameLayout frameLayout2, int[] iArr, String[] strArr, int[] iArr2, org.telegram.ui.ActionBar.n5 n5Var) {
+    public /* synthetic */ a2(FrameLayout frameLayout, org.telegram.ui.ActionBar.c6 c6Var, org.telegram.ui.ActionBar.e3 e3Var, FrameLayout frameLayout2, int[] iArr, String[] strArr, int[] iArr2, org.telegram.ui.p6 p6Var) {
         this.c = frameLayout;
-        this.e = e6Var;
-        this.f = f3Var;
+        this.e = c6Var;
+        this.f = e3Var;
         this.d = frameLayout2;
         this.b = iArr;
         this.n = strArr;
         this.h = iArr2;
-        this.r = n5Var;
+        this.r = p6Var;
     }
 
     @Override // android.view.View.OnClickListener
@@ -39,17 +39,17 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 FrameLayout frameLayout = (FrameLayout) this.c;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.e;
-                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.f;
+                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.e;
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.f;
                 FrameLayout frameLayout2 = (FrameLayout) this.d;
                 String[] strArr = (String[]) this.n;
                 int[] iArr = (int[]) this.h;
                 Runnable runnable2 = (Runnable) this.r;
                 if (!UserConfig.getInstance(UserConfig.selectedAccount).isPremium()) {
-                    new ad(frameLayout, e6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.MessageScheduledRepeatPremium), new ai.f(22))).j();
+                    new zc(frameLayout, c6Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.MessageScheduledRepeatPremium), new ah.j(23))).j();
                     break;
                 } else {
-                    p80 F = p80.F(f3Var.container, e6Var, frameLayout2);
+                    m80 F = m80.F(e3Var.container, c6Var, frameLayout2);
                     int i10 = 0;
                     while (true) {
                         int[] iArr2 = this.b;
@@ -69,24 +69,24 @@ public final /* synthetic */ class a2 implements View.OnClickListener {
                 ud0 ud0Var2 = (ud0) this.e;
                 ud0 ud0Var3 = (ud0) this.f;
                 ud0 ud0Var4 = (ud0) this.h;
-                mu muVar = (mu) this.n;
-                org.telegram.ui.ActionBar.a3 a3Var = (org.telegram.ui.ActionBar.a3) this.r;
+                iu iuVar = (iu) this.n;
+                org.telegram.ui.ActionBar.z2 z2Var = (org.telegram.ui.ActionBar.z2) this.r;
                 zArr[0] = false;
-                ru.j((ru) muVar.c, muVar.a, muVar.b, (int) (g5.b(null, ud0Var, ud0Var2, ud0Var3, ud0Var4) / 1000), this.b[0]);
-                runnable = a3Var.a.dismissRunnable;
+                nu.j((nu) iuVar.c, iuVar.a, iuVar.b, (int) (g5.b(null, ud0Var, ud0Var2, ud0Var3, ud0Var4) / 1000), this.b[0]);
+                runnable = z2Var.a.dismissRunnable;
                 runnable.run();
                 break;
         }
     }
 
-    public /* synthetic */ a2(boolean[] zArr, ud0 ud0Var, ud0 ud0Var2, ud0 ud0Var3, ud0 ud0Var4, mu muVar, int[] iArr, org.telegram.ui.ActionBar.a3 a3Var) {
+    public /* synthetic */ a2(boolean[] zArr, ud0 ud0Var, ud0 ud0Var2, ud0 ud0Var3, ud0 ud0Var4, iu iuVar, int[] iArr, org.telegram.ui.ActionBar.z2 z2Var) {
         this.c = zArr;
         this.d = ud0Var;
         this.e = ud0Var2;
         this.f = ud0Var3;
         this.h = ud0Var4;
-        this.n = muVar;
+        this.n = iuVar;
         this.b = iArr;
-        this.r = a3Var;
+        this.r = z2Var;
     }
 }

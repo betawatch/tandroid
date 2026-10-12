@@ -1,92 +1,127 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import android.content.Intent;
+import android.text.TextUtils;
+import android.util.Base64;
+import android.widget.TextView;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class l21 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n21 b;
+public final class l21 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ ProxyListActivity b;
 
-    public /* synthetic */ l21(n21 n21Var, int i10) {
-        this.a = i10;
-        this.b = n21Var;
+    public l21(ProxyListActivity proxyListActivity, Context context) {
+        this.b = proxyListActivity;
+        this.a = context;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                this.b.U(true);
-                break;
-            case 1:
-                n21 n21Var = this.b;
-                if (!n21Var.K) {
-                    EditTextBoldCursor editTextBoldCursor = n21Var.a[1];
-                    int selectionStart = editTextBoldCursor.getSelectionStart();
-                    String obj = editTextBoldCursor.getText().toString();
-                    StringBuilder sb2 = new StringBuilder(obj.length());
-                    int i10 = 0;
-                    while (i10 < obj.length()) {
-                        int i11 = i10 + 1;
-                        String substring = obj.substring(i10, i11);
-                        if ("0123456789".contains(substring)) {
-                            sb2.append(substring);
-                        }
-                        i10 = i11;
-                    }
-                    n21Var.K = true;
-                    int intValue = Utilities.parseInt((CharSequence) sb2.toString()).intValue();
-                    if (intValue < 0 || intValue > 65535 || !obj.equals(sb2.toString())) {
-                        if (intValue < 0) {
-                            editTextBoldCursor.setText("0");
-                        } else if (intValue > 65535) {
-                            editTextBoldCursor.setText("65535");
-                        } else {
-                            editTextBoldCursor.setText(sb2.toString());
-                        }
-                    } else if (selectionStart >= 0) {
-                        editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
-                    }
-                    n21Var.K = false;
-                    n21Var.U(true);
-                    break;
-                }
-                break;
-            default:
-                this.b.U(true);
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        ProxyListActivity proxyListActivity = this.b;
+        ArrayList arrayList = proxyListActivity.F;
+        if (i10 == -1) {
+            if (arrayList.isEmpty()) {
+                proxyListActivity.finishFragment();
+                return;
+            } else {
+                proxyListActivity.a.F();
+                return;
+            }
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
+        int i11 = 1;
+        if (i10 == 0) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(proxyListActivity.getParentActivity());
+            alertDialog$Builder.a.T = LocaleController.getString(arrayList.size() > 1 ? R.string.DeleteProxyMultiConfirm : R.string.DeleteProxyConfirm);
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.DeleteProxyTitle);
+            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new nq0(this, 13));
+            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+            proxyListActivity.showDialog(a2Var);
+            TextView textView = (TextView) a2Var.d(-1);
+            if (textView != null) {
+                textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.q7, false));
+                return;
+            }
+            return;
+        }
+        if (i10 != 1) {
+            return;
+        }
+        StringBuilder sb2 = new StringBuilder();
+        int size = arrayList.size();
+        int i12 = 0;
+        while (i12 < size) {
+            Object obj = arrayList.get(i12);
+            i12++;
+            SharedConfig.ProxyInfo proxyInfo = (SharedConfig.ProxyInfo) obj;
+            if (sb2.length() > 0) {
+                sb2.append("\n\n");
+            }
+            qi.a aVar = proxyInfo.settings;
+            String str = aVar.e;
+            String str2 = aVar.d;
+            String str3 = aVar.b;
+            String str4 = aVar.f;
+            int i13 = aVar.a;
+            int c10 = m1.j.c(i13);
+            StringBuilder sb3 = c10 != i11 ? c10 != 2 ? new StringBuilder("https://t.me/socks?") : new StringBuilder("https://t.me/webproxy?") : new StringBuilder("https://t.me/proxy?");
+            try {
+                sb3.append("server=");
+                sb3.append(URLEncoder.encode(str3, "UTF-8"));
+                if (i13 != 3) {
+                    sb3.append("&port=");
+                    sb3.append(aVar.c);
+                }
+                if (!TextUtils.isEmpty(str2)) {
+                    sb3.append("&user=");
+                    sb3.append(URLEncoder.encode(str2, "UTF-8"));
+                }
+                if (!TextUtils.isEmpty(str)) {
+                    sb3.append("&pass=");
+                    sb3.append(URLEncoder.encode(str, "UTF-8"));
+                }
+                if (!TextUtils.isEmpty(str4)) {
+                    if (i13 == 3) {
+                        if ((str3 != null && str3.indexOf(47) >= 0) && qi.a.g(str4)) {
+                            int length = str4.length() / 2;
+                            byte[] bArr = new byte[length];
+                            for (int i14 = 0; i14 < length; i14++) {
+                                int i15 = i14 * 2;
+                                bArr[i14] = (byte) (Character.digit(str4.charAt(i15 + 1), 16) | (Character.digit(str4.charAt(i15), 16) << 4));
+                            }
+                            byte[] bArr2 = new byte[length + 1];
+                            bArr2[0] = 112;
+                            System.arraycopy(bArr, 0, bArr2, 1, length);
+                            str4 = Base64.encodeToString(bArr2, 11);
+                        }
+                    }
+                    sb3.append("&secret=");
+                    sb3.append(URLEncoder.encode(str4, "UTF-8"));
+                }
+            } catch (UnsupportedEncodingException unused) {
+            }
+            sb2.append(sb3.toString());
+            i11 = 1;
+        }
+        Intent intent = new Intent("android.intent.action.SEND");
+        intent.setType("text/plain");
+        intent.putExtra("android.intent.extra.TEXT", sb2.toString());
+        Intent createChooser = Intent.createChooser(intent, LocaleController.getString(arrayList.size() > 1 ? R.string.ShareLinks : R.string.ShareLink));
+        createChooser.setFlags(TLObject.FLAG_28);
+        this.a.startActivity(createChooser);
+        m21 m21Var = proxyListActivity.a;
+        if (m21Var != null) {
+            m21Var.F();
+        }
     }
 }

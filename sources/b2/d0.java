@@ -1,11 +1,12 @@
 package b2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d0 {
-    public long a = -9223372036854775807L;
-    public long b = -9223372036854775807L;
-    public long c = -9223372036854775807L;
-    public float d = -3.4028235E38f;
-    public float e = -3.4028235E38f;
+    public long a;
+    public long b = Long.MIN_VALUE;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
 }

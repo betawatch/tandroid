@@ -1,57 +1,44 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import org.telegram.messenger.Utilities;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ze1 extends FrameLayout {
-    public ValueAnimator a;
-    public boolean b;
-    public float c;
+public final class ze1 extends org.telegram.ui.Components.lm0 {
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public ye1 e;
+    public int f;
+    public final /* synthetic */ af1 h;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7 = ((1.0f - this.c) * 0.2f) + 0.8f;
-        canvas.save();
-        canvas.scale(f7, f7, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-        if (isPressed()) {
-            float f10 = this.c;
-            if (f10 != 1.0f) {
-                this.c = Utilities.clamp(f10 + 0.16f, 1.0f, 0.0f);
-                invalidate();
-            }
-        }
+    public ze1(af1 af1Var) {
+        this.h = af1Var;
     }
 
-    @Override // android.view.View
-    public final void setPressed(boolean z10) {
-        ValueAnimator valueAnimator;
-        super.setPressed(z10);
-        if (this.b != z10) {
-            this.b = z10;
-            invalidate();
-            if (z10 && (valueAnimator = this.a) != null) {
-                valueAnimator.removeAllListeners();
-                this.a.cancel();
-            }
-            if (z10) {
-                return;
-            }
-            float f7 = this.c;
-            if (f7 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
-                this.a = ofFloat;
-                ofFloat.addUpdateListener(new y11(this, 16));
-                this.a.addListener(new ep0(this, 24));
-                org.telegram.messenger.bi.l(5.0f, this.a);
-                this.a.setDuration(350L);
-                this.a.start();
-            }
-        }
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        return true;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.c.size();
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        ArrayList arrayList = this.c;
+        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i10);
+        String str = (String) this.d.get(i10);
+        org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) b1Var.a;
+        g4Var.e(chat, chat.title, str, i10 != arrayList.size() - 1);
+        g4Var.c(this.h.w.contains(Long.valueOf(chat.id)), false);
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.g4(1, 0, viewGroup.getContext(), false));
     }
 }

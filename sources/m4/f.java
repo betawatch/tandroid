@@ -1,53 +1,65 @@
 package m4;
 
-import android.os.Bundle;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f {
-    public static final String f;
-    public static final String g;
-    public static final String h;
-    public static final String i;
-    public static final String j;
-    public static final String k;
-    public final int a;
-    public final int b;
-    public final String c;
-    public final int d;
-    public final Bundle e;
+public final /* synthetic */ class f implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f0 b;
+    public final /* synthetic */ w c;
 
-    static {
-        String str = e2.d0.a;
-        f = Integer.toString(0, 36);
-        g = Integer.toString(1, 36);
-        h = Integer.toString(2, 36);
-        i = Integer.toString(3, 36);
-        j = Integer.toString(4, 36);
-        k = Integer.toString(5, 36);
-    }
-
-    public f(int i10, int i11, String str, int i12, Bundle bundle, int i13) {
+    public /* synthetic */ f(f0 f0Var, w wVar, int i10) {
         this.a = i10;
-        this.b = i11;
-        this.c = str;
-        this.d = i12;
-        this.e = bundle;
+        this.b = f0Var;
+        this.c = wVar;
     }
 
-    public static f a(Bundle bundle) {
-        int i10 = bundle.getInt(f, 0);
-        int i11 = bundle.getInt(j, 0);
-        String string = bundle.getString(g);
-        string.getClass();
-        String str = h;
-        e2.d.b(bundle.containsKey(str));
-        int i12 = bundle.getInt(str);
-        Bundle bundle2 = bundle.getBundle(i);
-        int i13 = bundle.getInt(k, 0);
-        if (bundle2 == null) {
-            bundle2 = Bundle.EMPTY;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                f0 f0Var = this.b;
+                if (!f0Var.j()) {
+                    if (f0Var.x) {
+                        w wVar = this.c;
+                        if (!f0.k(wVar)) {
+                            if (f0Var.i(wVar)) {
+                                f0Var.x = false;
+                            }
+                        }
+                    }
+                    f0Var.e.getClass();
+                    break;
+                }
+                break;
+            case 1:
+                this.b.g.O0(this.c, TLObject.FLAG_31, 1, j1.Q0(new k2.y0(15)));
+                break;
+            case 2:
+                this.b.g.O0(this.c, TLObject.FLAG_31, 9, j1.Q0(new k2.y0(24)));
+                break;
+            case 3:
+                this.b.g.O0(this.c, TLObject.FLAG_31, 7, j1.Q0(new k2.y0(20)));
+                break;
+            case 4:
+                this.b.g.O0(this.c, TLObject.FLAG_31, 12, j1.Q0(new k2.y0(23)));
+                break;
+            case 5:
+                this.b.g.O0(this.c, TLObject.FLAG_31, 11, j1.Q0(new k2.y0(19)));
+                break;
+            case 6:
+                this.b.g.O0(this.c, TLObject.FLAG_31, 3, j1.Q0(new w0(0)));
+                break;
+            case 7:
+                this.b.g.O0(this.c, TLObject.FLAG_31, 1, j1.Q0(new k2.y0(15)));
+                break;
+            case 8:
+                this.b.g.M0(this.c, TLObject.FLAG_31);
+                break;
+            default:
+                this.b.g.M0(this.c, TLObject.FLAG_31);
+                break;
         }
-        return new f(i10, i11, string, i12, bundle2, i13);
     }
 }

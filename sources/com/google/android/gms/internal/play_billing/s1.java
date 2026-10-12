@@ -9,7 +9,7 @@ import java.util.ServiceConfigurationError;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class s1 {
     public static void a(int i10, int i11) {
@@ -19,7 +19,7 @@ public abstract class s1 {
                 a2 = e6.e.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
+                    throw new IllegalArgumentException(i2.d.i(i11, "negative size: "));
                 }
                 a2 = e6.e.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -40,7 +40,7 @@ public abstract class s1 {
         if (i11 >= 0) {
             return e6.e.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
+        throw new IllegalArgumentException(i2.d.i(i11, "negative size: "));
     }
 
     public static o1 d() {
@@ -59,15 +59,15 @@ public abstract class s1 {
                 try {
                     a1.g.z(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
                     throw null;
-                } catch (IllegalAccessException e7) {
+                } catch (IllegalAccessException e) {
+                    throw new IllegalStateException(e);
+                } catch (InvocationTargetException e7) {
                     throw new IllegalStateException(e7);
-                } catch (InvocationTargetException e10) {
-                    throw new IllegalStateException(e10);
                 }
-            } catch (InstantiationException e11) {
+            } catch (InstantiationException e10) {
+                throw new IllegalStateException(e10);
+            } catch (NoSuchMethodException e11) {
                 throw new IllegalStateException(e11);
-            } catch (NoSuchMethodException e12) {
-                throw new IllegalStateException(e12);
             }
         } catch (ClassNotFoundException unused) {
             try {
@@ -79,8 +79,8 @@ public abstract class s1 {
                             throw null;
                         }
                         throw new ClassCastException();
-                    } catch (ServiceConfigurationError e13) {
-                        Logger.getLogger(m1.class.getName()).logp(Level.SEVERE, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", "Unable to load ".concat(o1.class.getSimpleName()), (Throwable) e13);
+                    } catch (ServiceConfigurationError e12) {
+                        Logger.getLogger(m1.class.getName()).logp(Level.SEVERE, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", "Unable to load ".concat(o1.class.getSimpleName()), (Throwable) e12);
                     }
                 }
                 if (arrayList.size() == 1) {
@@ -91,12 +91,12 @@ public abstract class s1 {
                 }
                 try {
                     return (o1) o1.class.getMethod("combine", Collection.class).invoke(null, arrayList);
-                } catch (IllegalAccessException e14) {
+                } catch (IllegalAccessException e13) {
+                    throw new IllegalStateException(e13);
+                } catch (NoSuchMethodException e14) {
                     throw new IllegalStateException(e14);
-                } catch (NoSuchMethodException e15) {
+                } catch (InvocationTargetException e15) {
                     throw new IllegalStateException(e15);
-                } catch (InvocationTargetException e16) {
-                    throw new IllegalStateException(e16);
                 }
             } catch (Throwable th2) {
                 throw new ServiceConfigurationError(th2.getMessage(), th2);

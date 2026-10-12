@@ -1,25 +1,41 @@
 package v7;
 
+import android.content.ComponentName;
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class y6 {
-    public static SharedPreferences a;
-
-    public static SharedPreferences a(Context context) {
-        SharedPreferences sharedPreferences;
-        synchronized (SharedPreferences.class) {
-            try {
-                if (a == null) {
-                    a = (SharedPreferences) w7.f0.a(new c5.x(context, 1));
-                }
-                sharedPreferences = a;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    public static Intent a(Context context, ComponentName componentName) {
+        String b10 = b(context, componentName);
+        if (b10 == null) {
+            return null;
         }
-        return sharedPreferences;
+        ComponentName componentName2 = new ComponentName(componentName.getPackageName(), b10);
+        return b(context, componentName2) == null ? Intent.makeMainActivity(componentName2) : new Intent().setComponent(componentName2);
+    }
+
+    public static String b(Context context, ComponentName componentName) {
+        String string;
+        PackageManager packageManager = context.getPackageManager();
+        int i10 = Build.VERSION.SDK_INT;
+        ActivityInfo activityInfo = packageManager.getActivityInfo(componentName, i10 >= 29 ? 269222528 : i10 >= 24 ? 787072 : 640);
+        String str = activityInfo.parentActivityName;
+        if (str != null) {
+            return str;
+        }
+        Bundle bundle = activityInfo.metaData;
+        if (bundle == null || (string = bundle.getString("android.support.PARENT_ACTIVITY")) == null) {
+            return null;
+        }
+        if (string.charAt(0) != '.') {
+            return string;
+        }
+        return context.getPackageName() + string;
     }
 }

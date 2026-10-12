@@ -1,69 +1,27 @@
 package v3;
 
-import c3.a0;
-import c3.c0;
-import e2.d0;
+import c3.t;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g implements f {
-    public final long[] a;
-    public final long[] b;
-    public final long c;
-    public final long d;
-    public final long e;
-    public final int f;
-
-    public g(long[] jArr, long[] jArr2, long j3, long j10, long j11, int i10) {
-        this.a = jArr;
-        this.b = jArr2;
-        this.c = j3;
-        this.d = j10;
-        this.e = j11;
-        this.f = i10;
+public final class g extends t implements h {
+    @Override // v3.h
+    public final long a() {
+        return -1L;
     }
 
-    @Override // v3.f
-    public final long b(long j3) {
-        return this.a[d0.e(this.b, j3, true)];
+    @Override // v3.h
+    public final long b(long j10) {
+        return 0L;
     }
 
-    @Override // v3.f
-    public final long d() {
-        return this.e;
+    @Override // v3.h
+    public final long c() {
+        return 0L;
     }
 
-    @Override // v3.f
-    public final long e() {
-        return this.d;
-    }
-
-    @Override // c3.b0
-    public final boolean f() {
-        return true;
-    }
-
-    @Override // c3.b0
-    public final a0 j(long j3) {
-        long[] jArr = this.a;
-        int e7 = d0.e(jArr, j3, true);
-        long j10 = jArr[e7];
-        long[] jArr2 = this.b;
-        c0 c0Var = new c0(j10, jArr2[e7]);
-        if (j10 >= j3 || e7 == jArr.length - 1) {
-            return new a0(c0Var, c0Var);
-        }
-        int i10 = e7 + 1;
-        return new a0(c0Var, new c0(jArr[i10], jArr2[i10]));
-    }
-
-    @Override // v3.f
-    public final int k() {
-        return this.f;
-    }
-
-    @Override // c3.b0
-    public final long l() {
-        return this.c;
+    @Override // v3.h
+    public final int g() {
+        return -2147483647;
     }
 }

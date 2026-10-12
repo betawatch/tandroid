@@ -1,208 +1,107 @@
 package fi;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.text.Editable;
-import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import ii.f6;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.CodeHighlighting;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.cd;
-import org.telegram.ui.Components.cy0;
-import org.telegram.ui.Components.dd;
-import org.telegram.ui.Components.iw;
-import org.telegram.ui.Components.tc;
-import org.telegram.ui.Components.x21;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.m70;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.b6;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class m0 extends FrameLayout {
+    public final wh.n a;
+    public final ImageView b;
+    public final TL_keyboard.KeyboardButton c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public boolean h;
+    public final /* synthetic */ o0 n;
 
-    public /* synthetic */ m0(Object obj, int i10, Object obj2, Object obj3, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-        this.d = obj2;
-        this.e = obj3;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10 = this.a;
-        int i11 = 0;
-        int i12 = this.b;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        switch (i10) {
-            case 0:
-                n2 n2Var = (n2) obj4;
-                TLRPC.Chat chat = (TLRPC.Chat) obj3;
-                long j3 = ((TLRPC.Chat) obj2).id;
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                boolean isChannel = ChatObject.isChannel(chat);
-                int i13 = this.b;
-                if (isChannel) {
-                    long j10 = chat.id;
-                    MessagesController.getInstance(i13).linkCommunity(-j10, j3, booleanValue, new o0(n2Var, j10, i11));
-                    break;
-                } else {
-                    b2 b2Var = new b2(n2Var.getContext(), 3, null);
-                    b2Var.q(250L);
-                    MessagesController.getInstance(i13).convertToMegaGroup(n2Var.getParentActivity(), chat.id, n2Var, new n0(b2Var, n2Var, i13, j3, booleanValue));
-                    break;
-                }
-            case 1:
-                f6 f6Var = (f6) obj4;
-                ii.a aVar = (ii.a) obj3;
-                String str = (String) obj2;
-                SpannableString spannableString = (SpannableString) obj;
-                if (i12 == f6Var.I && f6Var.x == aVar) {
-                    Editable text = f6Var.f.getText();
-                    if (TextUtils.equals(str, text)) {
-                        for (CodeHighlighting.ColorSpan colorSpan : (CodeHighlighting.ColorSpan[]) text.getSpans(0, text.length(), CodeHighlighting.ColorSpan.class)) {
-                            text.removeSpan(colorSpan);
-                        }
-                        CodeHighlighting.ColorSpan[] colorSpanArr = (CodeHighlighting.ColorSpan[]) spannableString.getSpans(0, spannableString.length(), CodeHighlighting.ColorSpan.class);
-                        int length = text.length();
-                        while (i11 < colorSpanArr.length) {
-                            int spanStart = spannableString.getSpanStart(colorSpanArr[i11]);
-                            int spanEnd = spannableString.getSpanEnd(colorSpanArr[i11]);
-                            if (spanStart >= 0 && spanEnd <= length && spanStart < spanEnd) {
-                                text.setSpan(colorSpanArr[i11], spanStart, spanEnd, 33);
-                            }
-                            i11++;
-                        }
-                        f6Var.H = str;
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                iw iwVar = (iw) obj4;
-                int[] iArr = (int[]) obj3;
-                ArrayList arrayList = (ArrayList) obj2;
-                n2 n2Var2 = iwVar.c;
-                iArr[0] = iArr[0] + 1;
-                if (((Boolean) obj).booleanValue()) {
-                    iArr[1] = iArr[1] + 1;
-                }
-                if (iArr[0] == i12 && iArr[1] > 0) {
-                    iwVar.dismiss();
-                    tc.g(n2Var2, new cy0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
-                    break;
-                }
-                break;
-            case 3:
-                LaunchActivity launchActivity = (LaunchActivity) obj4;
-                m70 m70Var = (m70) obj3;
-                Long l4 = (Long) obj2;
-                TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
-                Pattern pattern = LaunchActivity.B1;
-                try {
-                    m70Var.run();
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                }
-                LaunchActivity.R();
-                if (tL_storyAlbum == null) {
-                    ad X = ad.X();
-                    if (X != null) {
-                        org.telegram.messenger.q.q(R.string.StoryAlbumNotFound, X, R.raw.story_bomb2, 36);
-                        break;
-                    }
-                } else {
-                    Bundle bundle = new Bundle();
-                    if (l4.longValue() > 0) {
-                        bundle.putLong("user_id", l4.longValue());
-                        bundle.putBoolean("my_profile", l4.longValue() == UserConfig.getInstance(launchActivity.O).getClientUserId());
-                    } else {
-                        bundle.putLong("chat_id", -l4.longValue());
-                    }
-                    bundle.putInt("open_story_album_id", i12);
-                    launchActivity.p0(new ProfileActivity(bundle, null));
-                    break;
-                }
-                break;
-            case 4:
-                PhotoViewer photoViewer = (PhotoViewer) obj4;
-                TranslateController translateController = (TranslateController) obj3;
-                MessageObject messageObject = (MessageObject) obj2;
-                String str2 = (String) obj;
-                if (i12 == photoViewer.Q4) {
-                    photoViewer.o5 = str2;
-                    if (!translateController.isContextTranslateEnabled() || !translateController.canTranslatePhoto(messageObject, photoViewer.o5)) {
-                        photoViewer.o0.r(19);
-                        photoViewer.o0.r(20);
-                        break;
-                    } else if (photoViewer.n5) {
-                        photoViewer.o0.K(20);
-                        photoViewer.o0.r(19);
-                        break;
-                    } else {
-                        photoViewer.o0.K(19);
-                        photoViewer.o0.r(20);
-                        break;
-                    }
-                }
-                break;
-            default:
-                cd cdVar = (cd) obj4;
-                Context context = (Context) obj3;
-                e6 e6Var = (e6) obj2;
-                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
-                if (savedStarGift != null) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(cdVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) dd.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new x21(this.b, context, e6Var, savedStarGift, 20), e6Var, null));
-                    cdVar.setText(spannableStringBuilder);
-                    break;
-                }
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m0(o0 o0Var, Context context, TL_keyboard.KeyboardButton keyboardButton) {
+        super(context);
+        this.n = o0Var;
+        this.c = keyboardButton;
+        wh.n nVar = new wh.n(context);
+        this.a = nVar;
+        nVar.r = false;
+        nVar.setTextSize(1, 14.0f);
+        nVar.setTypeface(AndroidUtilities.bold());
+        NotificationCenter.listenEmojiLoading(nVar);
+        addView(nVar, a6.e(-2, -2, 17));
+        NotificationCenter.listenEmojiLoading(nVar);
+        setTag(keyboardButton);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = keyboardButton.style;
+        if (keyboardButtonStyle != null && keyboardButtonStyle.icon != 0) {
+            spannableStringBuilder.append((CharSequence) "* ");
+            spannableStringBuilder.setSpan(new b6(keyboardButton.style.icon, nVar.getPaint().getFontMetricsInt()), 0, 1, 33);
         }
+        spannableStringBuilder.append(Emoji.replaceEmoji(keyboardButton.text, nVar.getPaint().getFontMetricsInt(), false));
+        ImageView imageView = new ImageView(getContext());
+        this.b = imageView;
+        imageView.setColorFilter(g6.w0(g6.Xe, o0Var.a));
+        if (ag.c.b(keyboardButton)) {
+            imageView.setImageResource(R.drawable.bot_webview);
+            imageView.setVisibility(0);
+        } else {
+            imageView.setVisibility(8);
+        }
+        addView(imageView, a6.a(12.0f, 0.0f, 8.0f, 8.0f, 0.0f, 12, 53));
+        nVar.setText(spannableStringBuilder);
     }
 
-    public /* synthetic */ m0(iw iwVar, int[] iArr, int i10, ArrayList arrayList) {
-        this.a = 2;
-        this.c = iwVar;
-        this.d = iArr;
-        this.b = i10;
-        this.e = arrayList;
-    }
-
-    public /* synthetic */ m0(LaunchActivity launchActivity, m70 m70Var, Long l4, int i10) {
-        this.a = 3;
-        this.c = launchActivity;
-        this.d = m70Var;
-        this.e = l4;
-        this.b = i10;
+    public final void a() {
+        int i10;
+        int i11;
+        int m12;
+        int h;
+        int dp = AndroidUtilities.dp(21.0f);
+        int dp2 = AndroidUtilities.dp(11.0f);
+        int i12 = g6.Ye;
+        c6 c6Var = this.n.a;
+        int w02 = g6.w0(i12, c6Var);
+        int w03 = g6.w0(g6.Ze, c6Var);
+        int w04 = g6.w0(g6.Xe, c6Var);
+        TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = this.c.style;
+        if (keyboardButtonStyle != null) {
+            if (keyboardButtonStyle.bg_primary) {
+                m12 = g6.m1(0.8f, g6.w0(g6.dl, c6Var));
+                h = i0.a.h(g6.w0(g6.i6, c6Var), m12);
+            } else if (keyboardButtonStyle.bg_danger) {
+                m12 = g6.m1(0.8f, g6.w0(g6.el, c6Var));
+                h = i0.a.h(g6.w0(g6.i6, c6Var), m12);
+            } else if (keyboardButtonStyle.bg_success) {
+                m12 = g6.m1(0.8f, g6.w0(g6.fl, c6Var));
+                h = i0.a.h(g6.w0(g6.i6, c6Var), m12);
+            }
+            i10 = m12;
+            i11 = h;
+            w04 = -1;
+            this.b.setColorFilter(w04);
+            this.a.setTextColor(w04);
+            boolean z10 = this.d;
+            int i13 = (z10 || !this.e) ? dp2 : dp;
+            boolean z11 = this.f;
+            setBackground(g6.j0(i13, (z11 || !this.e) ? dp2 : dp, (z11 || !this.h) ? dp2 : dp, (z10 || !this.h) ? dp2 : dp, i10, i11, i11));
+        }
+        i10 = w02;
+        i11 = w03;
+        this.b.setColorFilter(w04);
+        this.a.setTextColor(w04);
+        boolean z102 = this.d;
+        if (z102) {
+        }
+        boolean z112 = this.f;
+        setBackground(g6.j0(i13, (z112 || !this.e) ? dp2 : dp, (z112 || !this.h) ? dp2 : dp, (z102 || !this.h) ? dp2 : dp, i10, i11, i11));
     }
 }

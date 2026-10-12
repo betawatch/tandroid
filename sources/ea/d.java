@@ -1,0 +1,29 @@
+package ea;
+
+import x9.v;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class d {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final v e;
+    public final String f;
+    public final String g;
+    public final String h;
+    public final int i;
+
+    public d(String str, String str2, String str3, String str4, v vVar, String str5, String str6, String str7, int i10) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = str4;
+        this.e = vVar;
+        this.f = str5;
+        this.g = str6;
+        this.h = str7;
+        this.i = i10;
+    }
+}

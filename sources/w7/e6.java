@@ -1,27 +1,31 @@
 package w7;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.jb0;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.da0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class e6 {
-    public static boolean a(jb0 jb0Var) {
-        Context context = ApplicationLoader.applicationContext;
-        int componentEnabledSetting = context.getPackageManager().getComponentEnabledSetting(jb0Var.a(context));
-        return componentEnabledSetting == 1 || (componentEnabledSetting == 0 && jb0Var == jb0.h);
+    public static da0 a(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.c6 c6Var) {
+        int i11 = org.telegram.ui.ActionBar.g6.gc;
+        da0 da0Var = new da0(context, null);
+        da0Var.setTextSize(1, f7);
+        da0Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
+        da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
+        if (z10) {
+            da0Var.setTypeface(AndroidUtilities.bold());
+        }
+        return da0Var;
     }
 
-    public static void b(jb0 jb0Var) {
-        Context context = ApplicationLoader.applicationContext;
-        PackageManager packageManager = context.getPackageManager();
-        jb0[] values = jb0.values();
-        int length = values.length;
-        for (int i10 = 0; i10 < length; i10++) {
-            jb0 jb0Var2 = values[i10];
-            packageManager.setComponentEnabledSetting(jb0Var2.a(context), jb0Var2 == jb0Var ? 1 : 2, 1);
+    public static TextView b(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.c6 c6Var) {
+        TextView g10 = org.telegram.messenger.q.g(context, 1, f7);
+        g10.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
+        if (z10) {
+            g10.setTypeface(AndroidUtilities.bold());
         }
+        return g10;
     }
 }

@@ -1,22 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class em extends org.telegram.ui.Cells.h0 {
-    public final /* synthetic */ mm L;
+public final class em extends av0 {
+    public final /* synthetic */ fo a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public em(mm mmVar, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, i10, e6Var);
-        this.L = mmVar;
+    public em(fo foVar) {
+        this.a = foVar;
     }
 
-    @Override // org.telegram.ui.Cells.h0
-    public final int getSideMenuWidth() {
-        zn znVar = this.L.Q;
-        int i10 = zn.Hc;
-        return znVar.W8();
+    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    public final kv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return fo.E1(this.a, messageObject, fileLocation, i10, z10, false);
+    }
+
+    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    public final boolean K() {
+        return true;
     }
 }

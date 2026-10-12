@@ -1,74 +1,72 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class le implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ long c;
+public final class le extends org.telegram.ui.Components.c91 {
+    public final Context a;
+    public final int b;
+    public final int c;
+    public final org.telegram.ui.ActionBar.c6 d;
+    public final ArrayList e = new ArrayList();
+    public final /* synthetic */ me f;
 
-    public /* synthetic */ le(long j3, zn znVar) {
-        this.a = 7;
-        this.c = j3;
-        this.b = znVar;
+    public le(me meVar, Context context, int i10, long j10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
+        this.f = meVar;
+        this.a = context;
+        this.b = i10;
+        this.c = i11;
+        this.d = c6Var;
+        i();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                r0.getMediaDataController().loadBotInfo(this.c, r1, true, this.b.classGuid);
-                break;
-            case 1:
-                this.b.getMessagesController().loadFullChat(this.c, 0, true);
-                break;
-            case 2:
-                zn znVar = this.b;
-                LongSparseIntArray longSparseIntArray = znVar.M5;
-                long j3 = this.c;
-                longSparseIntArray.put(j3, 0);
-                org.telegram.ui.Components.c41 c41Var = znVar.R1;
-                if (c41Var != null) {
-                    c41Var.setAllTopicsHidden(false);
-                }
-                if (j3 == znVar.d4) {
-                    znVar.A0.O(false);
-                    break;
-                }
-                break;
-            case 3:
-                zn znVar2 = this.b;
-                znVar2.getClass();
-                znVar2.presentFragment(zn.W9(this.c));
-                break;
-            case 4:
-                zn znVar3 = this.b;
-                znVar3.getClass();
-                znVar3.presentFragment(ProfileActivity.m4(this.c));
-                break;
-            case 5:
-                zn znVar4 = this.b;
-                org.telegram.ui.Components.tc v = org.telegram.ui.Components.ad.v(znVar4.getParentActivity(), znVar4, null, 1, this.c, 1, znVar4.getThemedColor(org.telegram.ui.ActionBar.i6.Fi), znVar4.getThemedColor(org.telegram.ui.ActionBar.i6.Hi), 5000, true, null);
-                v.k = true;
-                v.k(true);
-                break;
-            case 6:
-                org.telegram.ui.Components.ad.a0(this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) this.c)), R.raw.stars_topup).k(true);
-                break;
-            default:
-                this.b.presentFragment(new ProfileActivity(sc.v.f(this.c, "user_id"), null));
-                break;
+    @Override // org.telegram.ui.Components.c91
+    public final View d(int i10) {
+        return new ke(this.f, this.a, i10, this.b, this.c, new ah.g(this, i10, 19), this.d);
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final int e() {
+        return this.e.size();
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final CharSequence g(int i10) {
+        int h = h(i10);
+        return h != 0 ? h != 1 ? "" : LocaleController.getString(R.string.MonetizationTransactionsTON) : LocaleController.getString(R.string.MonetizationTransactionsStars);
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final int h(int i10) {
+        if (i10 < 0) {
+            return 1;
         }
+        ArrayList arrayList = this.e;
+        if (i10 >= arrayList.size()) {
+            return 1;
+        }
+        return ((org.telegram.ui.Components.l61) arrayList.get(i10)).z;
     }
 
-    public /* synthetic */ le(zn znVar, long j3, int i10) {
-        this.a = i10;
-        this.b = znVar;
-        this.c = j3;
+    public final void i() {
+        ArrayList arrayList = this.e;
+        arrayList.clear();
+        me meVar = this.f;
+        if (!meVar.h.isEmpty()) {
+            arrayList.add(org.telegram.ui.Components.l61.C(1));
+        }
+        if (meVar.n.isEmpty()) {
+            return;
+        }
+        arrayList.add(org.telegram.ui.Components.l61.C(0));
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final void b(View view, int i10, int i11) {
     }
 }

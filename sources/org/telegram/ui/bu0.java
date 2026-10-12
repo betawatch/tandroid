@@ -1,28 +1,55 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Bitmap;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class bu0 extends qg.m0 {
-    public final /* synthetic */ PhotoViewer o2;
+public final class bu0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cu0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bu0(PhotoViewer photoViewer, Context context, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, MediaController.CropState cropState, ir0 ir0Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, activity, i10, bitmap, bitmap2, i11, arrayList, cropState, ir0Var, e6Var);
-        this.o2 = photoViewer;
+    public bu0(cu0 cu0Var, int i10) {
+        this.b = cu0Var;
+        this.a = i10;
     }
 
-    @Override // qg.m0
-    public final int getPKeyboardHeight() {
-        ci.h4 h4Var = this.o2.K1;
-        if (h4Var != null) {
-            return h4Var.l;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        if (this.b.b.k8) {
+            PhotoViewer photoViewer = this.b.b;
+            if (photoViewer.r1) {
+                photoViewer.B3();
+            }
         }
-        return 0;
+        if (this.a == 3) {
+            PhotoViewer photoViewer2 = this.b.b;
+            photoViewer2.G2(photoViewer2.P4, false, true, true);
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        PhotoViewer photoViewer = this.b.b;
+        photoViewer.P0.setVisibility(0);
+        if (photoViewer.E3()) {
+            photoViewer.n0.setVisibility(0);
+        } else {
+            photoViewer.S0.setVisibility(0);
+        }
+        photoViewer.F.setVisibility(0);
+        if (photoViewer.i2) {
+            yu0 yu0Var = photoViewer.Q1;
+            yu0Var.setVisibility(yu0Var.getTag() != null ? 0 : 4);
+        }
+        if (photoViewer.d2 || photoViewer.e2) {
+            return;
+        }
+        int i10 = photoViewer.c2;
+        if ((i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.g7.size() > 1)) && !photoViewer.f4) {
+            photoViewer.N0.setVisibility(0);
+            photoViewer.O0.setVisibility(0);
+            photoViewer.s3();
+        }
     }
 }

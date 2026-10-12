@@ -6,36 +6,36 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.hs;
+import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class m extends FrameLayout implements me.k {
-    public final e6 a;
-    public final com.google.firebase.messaging.m b;
-    public final me.l c;
+public abstract class m extends FrameLayout implements ne.k {
+    public final c6 a;
+    public final c2.b b;
+    public final ne.l c;
 
-    public m(Context context, e6 e6Var, com.google.firebase.messaging.m mVar) {
+    public m(Context context, c6 c6Var, c2.b bVar) {
         super(context);
-        this.c = new me.l(this, hs.h, 350L);
-        this.a = e6Var;
-        this.b = mVar;
+        this.c = new ne.l(this, es.h, 350L);
+        this.a = c6Var;
+        this.b = bVar;
     }
 
-    public final void b(CharSequence charSequence) {
+    public final void a(CharSequence charSequence) {
         boolean z10;
         CharSequence charSequence2;
         boolean isEmpty = TextUtils.isEmpty(charSequence);
-        me.l lVar = this.c;
+        ne.l lVar = this.c;
         if (isEmpty) {
-            lVar.a.r(null, true);
+            lVar.a.q(null, true);
             return;
         }
         int indexOf = TextUtils.indexOf(charSequence, "...");
-        com.google.firebase.messaging.m mVar = this.b;
+        c2.b bVar = this.b;
         if (indexOf >= 0) {
             SpannableString valueOf = SpannableString.valueOf(charSequence);
-            mVar.A(valueOf, indexOf);
+            bVar.A(valueOf, indexOf);
             z10 = true;
             charSequence2 = valueOf;
         } else {
@@ -43,24 +43,36 @@ public abstract class m extends FrameLayout implements me.k {
             charSequence2 = charSequence;
         }
         l lVar2 = new l(this, getContext());
-        int i10 = i6.gl;
-        e6 e6Var = this.a;
-        lVar2.setTextColor(i6.w0(i10, e6Var));
-        lVar2.setLinkTextColor(i6.w0(i10, e6Var));
+        int i10 = g6.gl;
+        c6 c6Var = this.a;
+        lVar2.setTextColor(g6.w0(i10, c6Var));
+        lVar2.setLinkTextColor(g6.w0(i10, c6Var));
         lVar2.setTextSize(1, 14.0f);
         lVar2.setAlpha(0.0f);
         lVar2.setText(charSequence2);
         if (z10) {
-            mVar.c(lVar2);
+            bVar.c(lVar2);
         }
-        addView(lVar2, w7.x5.d(-2.0f, -2));
-        lVar.i(lVar2, true);
+        addView(lVar2, w7.a6.d(-2.0f, -2));
+        lVar.h(lVar2, true);
     }
 
-    public void c(me.l lVar) {
+    public final void b() {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            me.g gVar = (me.g) it.next();
+            ne.g gVar = (ne.g) it.next();
+            l lVar = (l) gVar.a;
+            int i10 = g6.gl;
+            c6 c6Var = this.a;
+            lVar.setTextColor(g6.w0(i10, c6Var));
+            ((l) gVar.a).setLinkTextColor(g6.w0(i10, c6Var));
+        }
+    }
+
+    public void e(ne.l lVar) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            ne.g gVar = (ne.g) it.next();
             float c10 = gVar.c();
             Object obj = gVar.a;
             float lerp = AndroidUtilities.lerp(0.85f, 1.0f, c10);
@@ -72,23 +84,11 @@ public abstract class m extends FrameLayout implements me.k {
         }
     }
 
-    public final void d() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            me.g gVar = (me.g) it.next();
-            l lVar = (l) gVar.a;
-            int i10 = i6.gl;
-            e6 e6Var = this.a;
-            lVar.setTextColor(i6.w0(i10, e6Var));
-            ((l) gVar.a).setLinkTextColor(i6.w0(i10, e6Var));
-        }
-    }
-
     public float getTotalVisibility() {
         return this.c.a.d.c.a;
     }
 
-    @Override // me.k
-    public final /* synthetic */ void a() {
+    @Override // ne.k
+    public final /* synthetic */ void c() {
     }
 }

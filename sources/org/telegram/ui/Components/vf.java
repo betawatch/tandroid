@@ -1,35 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.util.Property;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class vf extends AnimatorListenerAdapter {
-    public final /* synthetic */ ChatActivityEnterView a;
-
-    public vf(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+public final class vf extends Property {
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((ChatActivityEnterView.RecordCircle) obj).getScale());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        a91 a91Var = chatActivityEnterView.f1;
-        if (a91Var != null) {
-            a91Var.setVisibility(8);
-        }
-        ll0 ll0Var = chatActivityEnterView.h1;
-        if (ll0Var != null) {
-            ll0Var.setVisibility(8);
-        }
-        chatActivityEnterView.p4 = 0.0f;
-        chatActivityEnterView.v0();
-        chatActivityEnterView.n0();
-        ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.N1;
-        if (recordCircle != null) {
-            recordCircle.d();
-        }
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        ((ChatActivityEnterView.RecordCircle) obj).setScale(((Float) obj2).floatValue());
     }
 }

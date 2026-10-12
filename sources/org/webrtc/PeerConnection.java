@@ -12,7 +12,7 @@ import org.webrtc.DataChannel;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.RtpTransceiver;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class PeerConnection {
     private final List<MediaStream> localStreams;
@@ -21,7 +21,7 @@ public class PeerConnection {
     private List<RtpSender> senders;
     private List<RtpTransceiver> transceivers;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum AdapterType {
         UNKNOWN(0),
         ETHERNET(1),
@@ -53,26 +53,26 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum BundlePolicy {
         BALANCED,
         MAXBUNDLE,
         MAXCOMPAT
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum CandidateNetworkPolicy {
         ALL,
         LOW_COST
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum ContinualGatheringPolicy {
         GATHER_ONCE,
         GATHER_CONTINUALLY
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum IceConnectionState {
         NEW,
         CHECKING,
@@ -87,7 +87,7 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum IceGatheringState {
         NEW,
         GATHERING,
@@ -98,7 +98,7 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class IceServer {
         public final String hostname;
         public final String password;
@@ -111,7 +111,7 @@ public class PeerConnection {
         public final List<String> urls;
         public final String username;
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public static class Builder {
             private String hostname;
             private String password;
@@ -277,7 +277,7 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum IceTransportsType {
         NONE,
         RELAY,
@@ -285,13 +285,13 @@ public class PeerConnection {
         ALL
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum KeyType {
         RSA,
         ECDSA
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface Observer {
         void onAddStream(MediaStream mediaStream);
 
@@ -328,7 +328,7 @@ public class PeerConnection {
         void onTrack(RtpTransceiver rtpTransceiver);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum PeerConnectionState {
         NEW,
         CONNECTING,
@@ -342,14 +342,14 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum PortPrunePolicy {
         NO_PRUNE,
         PRUNE_BASED_ON_PRIORITY,
         KEEP_FIRST_READY
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class RTCConfiguration {
         public RtcCertificatePem certificate;
         public List<IceServer> iceServers;
@@ -554,19 +554,19 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum RtcpMuxPolicy {
         NEGOTIATE,
         REQUIRE
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum SdpSemantics {
         PLAN_B,
         UNIFIED_PLAN
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum SignalingState {
         STABLE,
         HAVE_LOCAL_OFFER,
@@ -580,13 +580,13 @@ public class PeerConnection {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum TcpCandidatePolicy {
         ENABLED,
         DISABLED
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum TlsCertPolicy {
         TLS_CERT_POLICY_SECURE,
         TLS_CERT_POLICY_INSECURE_NO_CHECK
@@ -604,13 +604,13 @@ public class PeerConnection {
 
     private native void nativeAddIceCandidateWithObserver(String str, int i10, String str2, AddIceObserver addIceObserver);
 
-    private native boolean nativeAddLocalStream(long j3);
+    private native boolean nativeAddLocalStream(long j10);
 
-    private native RtpSender nativeAddTrack(long j3, List<String> list);
+    private native RtpSender nativeAddTrack(long j10, List<String> list);
 
     private native RtpTransceiver nativeAddTransceiverOfType(MediaStreamTrack.MediaType mediaType, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit);
 
-    private native RtpTransceiver nativeAddTransceiverWithTrack(long j3, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit);
+    private native RtpTransceiver nativeAddTransceiverWithTrack(long j10, RtpTransceiver.RtpTransceiverInit rtpTransceiverInit);
 
     private native void nativeClose();
 
@@ -626,7 +626,7 @@ public class PeerConnection {
 
     private native RtpSender nativeCreateSender(String str, String str2);
 
-    private static native void nativeFreeOwnedPeerConnection(long j3);
+    private static native void nativeFreeOwnedPeerConnection(long j10);
 
     private native RtcCertificatePem nativeGetCertificate();
 
@@ -648,17 +648,17 @@ public class PeerConnection {
 
     private native void nativeNewGetStats(RTCStatsCollectorCallback rTCStatsCollectorCallback);
 
-    private native void nativeNewGetStatsReceiver(long j3, RTCStatsCollectorCallback rTCStatsCollectorCallback);
+    private native void nativeNewGetStatsReceiver(long j10, RTCStatsCollectorCallback rTCStatsCollectorCallback);
 
-    private native void nativeNewGetStatsSender(long j3, RTCStatsCollectorCallback rTCStatsCollectorCallback);
+    private native void nativeNewGetStatsSender(long j10, RTCStatsCollectorCallback rTCStatsCollectorCallback);
 
-    private native boolean nativeOldGetStats(StatsObserver statsObserver, long j3);
+    private native boolean nativeOldGetStats(StatsObserver statsObserver, long j10);
 
     private native boolean nativeRemoveIceCandidates(IceCandidate[] iceCandidateArr);
 
-    private native void nativeRemoveLocalStream(long j3);
+    private native void nativeRemoveLocalStream(long j10);
 
-    private native boolean nativeRemoveTrack(long j3);
+    private native boolean nativeRemoveTrack(long j10);
 
     private native void nativeRestartIce();
 
@@ -874,12 +874,12 @@ public class PeerConnection {
         nativeStopRtcEventLog();
     }
 
-    public PeerConnection(long j3) {
+    public PeerConnection(long j10) {
         this.localStreams = new ArrayList();
         this.senders = new ArrayList();
         this.receivers = new ArrayList();
         this.transceivers = new ArrayList();
-        this.nativePeerConnection = j3;
+        this.nativePeerConnection = j10;
     }
 
     public void addIceCandidate(IceCandidate iceCandidate, AddIceObserver addIceObserver) {

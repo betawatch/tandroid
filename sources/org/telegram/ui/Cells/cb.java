@@ -9,11 +9,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public abstract class cb extends FrameLayout {
     public int a;
@@ -44,7 +44,7 @@ public abstract class cb extends FrameLayout {
                 this.v = context.getResources().getDrawable(R.drawable.background_selected).mutate();
                 Paint paint2 = new Paint();
                 this.s = paint2;
-                paint2.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Lh, false));
+                paint2.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Lh, false));
                 return;
             }
             bb bbVar = new bb(this, context);
@@ -64,7 +64,7 @@ public abstract class cb extends FrameLayout {
 
     public final void c(int i10, boolean z10, boolean z11) {
         bb bbVar = this.c[i10];
-        ai.z5 z5Var = bbVar.a;
+        bi.k5 k5Var = bbVar.a;
         CheckBox checkBox = bbVar.c;
         if (checkBox.getVisibility() != 0) {
             checkBox.setVisibility(0);
@@ -78,13 +78,13 @@ public abstract class cb extends FrameLayout {
         if (z11) {
             AnimatorSet animatorSet2 = new AnimatorSet();
             bbVar.f = animatorSet2;
-            animatorSet2.playTogether(ObjectAnimator.ofFloat(z5Var, "scaleX", z10 ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(z5Var, "scaleY", z10 ? 0.8875f : 1.0f));
+            animatorSet2.playTogether(ObjectAnimator.ofFloat(k5Var, "scaleX", z10 ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(k5Var, "scaleY", z10 ? 0.8875f : 1.0f));
             bbVar.f.setDuration(200L);
-            bbVar.f.addListener(new ai.n(25, bbVar, z10));
+            bbVar.f.addListener(new ah.p0(26, bbVar, z10));
             bbVar.f.start();
         } else {
-            z5Var.setScaleX(z10 ? 0.8875f : 1.0f);
-            z5Var.setScaleY(z10 ? 0.8875f : 1.0f);
+            k5Var.setScaleX(z10 ? 0.8875f : 1.0f);
+            k5Var.setScaleY(z10 ? 0.8875f : 1.0f);
         }
         bbVar.invalidate();
     }
@@ -138,7 +138,7 @@ public abstract class cb extends FrameLayout {
             int measuredWidth = bbVarArr[i14].getMeasuredWidth();
             bb bbVar = bbVarArr[i14];
             bbVar.layout(dp, dp2, dp + measuredWidth, bbVar.getMeasuredHeight() + dp2);
-            dp = org.telegram.messenger.q.C(6.0f, measuredWidth, dp);
+            dp = yh.c(6.0f, measuredWidth, dp);
         }
     }
 
@@ -146,12 +146,12 @@ public abstract class cb extends FrameLayout {
     public final void onMeasure(int i10, int i11) {
         int i12 = 0;
         if (this.d == 1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), bi.C(6.0f, this.a, TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), yh.D(6.0f, this.a, TLObject.FLAG_30));
             setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
             return;
         }
         int size = View.MeasureSpec.getSize(i10);
-        int dp = size - AndroidUtilities.dp(hg.c.f(this.d, 1, 6, 28));
+        int dp = size - AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(this.d, 1, 6, 28));
         int i13 = dp / this.d;
         int i14 = this.h;
         int dp2 = (i14 == 0 || i14 == 2 || i14 == 3) ? AndroidUtilities.dp(180.0f) : i13;

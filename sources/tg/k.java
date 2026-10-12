@@ -1,126 +1,50 @@
 package tg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.o91;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class k extends o91 {
-    public final Path T;
-    public final Paint U;
-    public boolean V;
-    public boolean W;
-    public final boolean a0;
-    public final /* synthetic */ z0 b0;
-    public final /* synthetic */ e6 c0;
-    public final /* synthetic */ a0 d0;
-    public final /* synthetic */ m e0;
+public final class k extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(m mVar, Context context, z0 z0Var, e6 e6Var, a0 a0Var) {
-        super(context, null);
-        this.e0 = mVar;
-        this.b0 = z0Var;
-        this.c0 = e6Var;
-        this.d0 = a0Var;
-        this.T = new Path();
-        this.U = new Paint(1);
-        this.a0 = AndroidUtilities.isTablet();
+    public /* synthetic */ k(n nVar, int i10) {
+        this.a = i10;
+        this.b = nVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7;
-        m mVar = this.e0;
-        k kVar = mVar.b;
-        int w02 = i6.w0(i6.h5, this.c0);
-        Paint paint = this.U;
-        paint.setColor(w02);
-        if (!this.V) {
-            if (this.a0 || mVar.d) {
-                canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            }
-            super.dispatchDraw(canvas);
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                n nVar = this.b;
+                nVar.b.d = 0.0f;
+                nVar.a0 = null;
+                nVar.k(nVar.L);
+                break;
+            case 1:
+                super.onAnimationEnd(animator);
+                n nVar2 = this.b;
+                nVar2.b.d = 0.0f;
+                nVar2.a0 = null;
+                nVar2.k(nVar2.L);
+                break;
+            case 2:
+                super.onAnimationEnd(animator);
+                n nVar3 = this.b;
+                nVar3.b.d = 0.0f;
+                nVar3.a0 = null;
+                nVar3.k(nVar3.L);
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                n nVar4 = this.b;
+                nVar4.b.d = 0.0f;
+                nVar4.a0 = null;
+                nVar4.k(nVar4.L);
+                break;
         }
-        int i10 = -AndroidUtilities.dp(16.0f);
-        a0 a0Var = this.d0;
-        int dp = AndroidUtilities.dp(10.0f) + Math.max(i10, a0Var.s0 - (a0Var.e.getVisibility() == 0 ? AndroidUtilities.dp(16.0f) + AndroidUtilities.statusBarHeight : 0));
-        z0 z0Var = this.b0;
-        int max = Math.max(0, z0Var.t0 - (z0Var.m0.c == 1.0f ? AndroidUtilities.statusBarHeight : 0));
-        int abs = Math.abs(dp - max);
-        if (kVar.getCurrentPosition() == 0) {
-            float positionAnimated = kVar.getPositionAnimated() * abs;
-            f7 = dp < max ? dp + positionAnimated : dp - positionAnimated;
-        } else {
-            float positionAnimated2 = (1.0f - kVar.getPositionAnimated()) * abs;
-            f7 = max < dp ? max + positionAnimated2 : max - positionAnimated2;
-        }
-        int i11 = (int) f7;
-        float dp2 = AndroidUtilities.dp(14.0f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, i11, getWidth(), AndroidUtilities.dp(8.0f) + getHeight());
-        canvas.drawRoundRect(rectF, dp2, dp2, paint);
-        canvas.save();
-        Path path = this.T;
-        path.rewind();
-        path.addRoundRect(rectF, dp2, dp2, Path.Direction.CW);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.o91
-    public final float getAvailableTranslationX() {
-        return (this.a0 || this.e0.d) ? getMeasuredWidth() : super.getAvailableTranslationX();
-    }
-
-    @Override // org.telegram.ui.Components.o91
-    public final boolean i(MotionEvent motionEvent) {
-        return this.e0.b.getCurrentPosition() == 1;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        boolean z11 = this.W;
-        m mVar = this.e0;
-        if (z11 != mVar.isKeyboardVisible()) {
-            boolean isKeyboardVisible = mVar.isKeyboardVisible();
-            this.W = isKeyboardVisible;
-            if (isKeyboardVisible) {
-                this.b0.Y(true);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.o91
-    public final void u() {
-        this.V = false;
-        this.e0.b.invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.o91
-    public final void w(boolean z10) {
-        m mVar = this.e0;
-        k kVar = mVar.b;
-        float positionAnimated = kVar.getPositionAnimated();
-        if (positionAnimated <= 0.0f || positionAnimated >= 1.0f) {
-            this.V = false;
-        } else if (!this.V) {
-            this.V = true;
-            if (mVar.isKeyboardVisible()) {
-                AndroidUtilities.hideKeyboard(mVar.c.getContainerView());
-            }
-        }
-        kVar.invalidate();
     }
 }

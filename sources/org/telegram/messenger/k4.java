@@ -1,31 +1,28 @@
 package org.telegram.messenger;
 
-import android.view.MotionEvent;
-import org.telegram.messenger.GoogleMapsProvider;
-import org.telegram.messenger.IMapsProvider;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k4 implements IMapsProvider.ICallableMethod {
+public final /* synthetic */ class k4 implements OnCompleteListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ GoogleMapsProvider.GoogleMapView.1 b;
+    public final /* synthetic */ q0.a b;
 
-    public /* synthetic */ k4(GoogleMapsProvider.GoogleMapView.1 r12, int i10) {
+    public /* synthetic */ k4(q0.a aVar, int i10) {
         this.a = i10;
-        this.b = r12;
+        this.b = aVar;
     }
 
-    @Override // org.telegram.messenger.IMapsProvider.ICallableMethod
-    public final Object call(Object obj) {
-        Boolean lambda$dispatchTouchEvent$0;
-        Boolean lambda$onInterceptTouchEvent$1;
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
         switch (this.a) {
             case 0:
-                lambda$dispatchTouchEvent$0 = this.b.lambda$dispatchTouchEvent$0((MotionEvent) obj);
-                return lambda$dispatchTouchEvent$0;
+                GoogleLocationProvider.lambda$getLastLocation$0(this.b, task);
+                break;
             default:
-                lambda$onInterceptTouchEvent$1 = this.b.lambda$onInterceptTouchEvent$1((MotionEvent) obj);
-                return lambda$onInterceptTouchEvent$1;
+                GoogleLocationProvider.lambda$checkLocationSettings$1(this.b, task);
+                break;
         }
     }
 }

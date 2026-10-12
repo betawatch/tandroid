@@ -1,93 +1,215 @@
 package xh;
 
-import android.content.Context;
-import android.os.Bundle;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import bi.a0;
+import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.eb;
-import org.telegram.ui.Components.o7;
-import org.telegram.ui.Components.pm0;
-import org.telegram.ui.Components.qm0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import w7.x5;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.m9;
+import org.telegram.ui.xe;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes4.dex */
-public final class d extends eb {
-    public static final /* synthetic */ int a0 = 0;
-    public final List X;
-    public final GiftAuctionController.Auction Y;
-    public c71 Z;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class d {
+    public final m2 a;
+    public final TLRPC.Chat b;
+    public final int c;
+    public FrameLayout d;
+    public a0 e;
+    public LinearLayout f;
+    public TextView g;
+    public ImageView h;
+    public b i;
+    public TLRPC.ChatFull j;
+    public int k;
+    public int l = -1;
+    public c m;
 
-    public d(Context context, e6 e6Var, GiftAuctionController.Auction auction, List list) {
-        super(context, null, false, false, 2, e6Var);
-        this.Y = auction;
-        this.X = list;
-        this.v = 0.2f;
-        this.L = false;
-        this.K = AndroidUtilities.dp(12.0f);
-        this.e.setTitle(B());
-        fixNavigationBar();
-        this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new o7(3));
-        this.d.setOverScrollMode(2);
-        ci.d dVar = new ci.d(context, e6Var, true);
-        dVar.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 15));
-        dVar.g(LocaleController.getString(R.string.OK), false, true);
-        FrameLayout.LayoutParams a2 = x5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 80);
-        int i10 = a2.leftMargin;
-        int i11 = this.backgroundPaddingLeft;
-        a2.leftMargin = i10 + i11;
-        a2.rightMargin += i11;
-        this.containerView.addView(dVar, a2);
-        this.Z.N(false);
+    public d(TLRPC.Chat chat, m2 m2Var) {
+        this.a = m2Var;
+        this.b = chat;
+        this.c = m2Var.getCurrentAccount();
     }
 
-    public static void Q(d dVar, TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift) {
-        long peerDialogId = DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer);
-        dVar.dismiss();
-        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-        if (U == null || UserObject.isService(peerDialogId)) {
+    public final void a(boolean z10, boolean z11) {
+        if (z10 == (this.d.getVisibility() == 0)) {
             return;
         }
-        Bundle bundle = new Bundle();
-        if (peerDialogId > 0) {
-            bundle.putLong("user_id", peerDialogId);
-            if (peerDialogId == UserConfig.getInstance(dVar.currentAccount).getClientUserId()) {
-                bundle.putBoolean("my_profile", true);
+        if (z10) {
+            int i10 = this.l;
+            m2 m2Var = this.a;
+            TLRPC.Chat chat = this.b;
+            if (i10 == -1 && chat != null) {
+                this.l = m2Var.getMessagesController().getChatPendingRequestsOnClosed(chat.id);
             }
-        } else {
-            bundle.putLong("chat_id", -peerDialogId);
+            int i11 = this.k;
+            int i12 = this.l;
+            if (i11 == i12) {
+                return;
+            }
+            if (i12 != 0 && chat != null) {
+                m2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
+            }
         }
-        bundle.putBoolean("open_gifts", true);
-        U.presentFragment(new ProfileActivity(bundle, null));
+        c cVar = this.m;
+        if (cVar != null) {
+            cVar.f(z10, z11);
+        }
     }
 
-    @Override // org.telegram.ui.Components.eb
-    public final CharSequence B() {
-        List list = this.X;
-        if (list == null) {
-            return null;
-        }
-        return LocaleController.formatPluralString("Gift2AuctionsAcquiredGifts", list.size(), new Object[0]);
+    public final void b(ArrayList arrayList) {
+        arrayList.add(new i6(this.g, 4, null, null, null, null, g6.fe));
+        arrayList.add(new i6(this.h, 8, null, null, null, null, g6.de));
     }
 
-    @Override // org.telegram.ui.Components.eb
-    public final pm0 x(qm0 qm0Var) {
-        c71 c71Var = new c71(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 11), this.resourcesProvider);
-        this.Z = c71Var;
-        c71Var.r = false;
-        return c71Var;
+    public final FrameLayout c() {
+        if (this.d == null) {
+            m2 m2Var = this.a;
+            FrameLayout frameLayout = new FrameLayout(m2Var.getParentActivity());
+            this.d = frameLayout;
+            frameLayout.setBackground(g6.L0(false));
+            final int i10 = 0;
+            this.d.setOnClickListener(new View.OnClickListener(this) { // from class: xh.a
+                public final /* synthetic */ d b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    switch (i10) {
+                        case 0:
+                            d dVar = this.b;
+                            m2 m2Var2 = dVar.a;
+                            if (dVar.i == null) {
+                                dVar.i = new b(dVar, m2Var2, dVar.b.id);
+                            }
+                            m2Var2.showDialog(dVar.i);
+                            break;
+                        default:
+                            d dVar2 = this.b;
+                            dVar2.a.getMessagesController().setChatPendingRequestsOnClose(dVar2.b.id, dVar2.k);
+                            dVar2.l = dVar2.k;
+                            dVar2.a(false, true);
+                            break;
+                    }
+                }
+            });
+            LinearLayout linearLayout = new LinearLayout(m2Var.getParentActivity());
+            this.f = linearLayout;
+            linearLayout.setOrientation(0);
+            this.d.addView(this.f, a6.a(-1.0f, 0.0f, 0.0f, 100.0f, 0.0f, -1, 48));
+            a0 a0Var = new a0(1, m2Var.getParentActivity(), false);
+            this.e = a0Var;
+            a0Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
+            m9 m9Var = this.e.a;
+            for (int i11 = 0; i11 < m9Var.c.length; i11++) {
+                m9Var.l(0, null, 0);
+            }
+            this.f.addView(this.e, a6.a(-1.0f, 8.0f, 0.0f, 10.0f, 0.0f, -2, 48));
+            TextView textView = new TextView(m2Var.getParentActivity());
+            this.g = textView;
+            textView.setEllipsize(TextUtils.TruncateAt.END);
+            this.g.setGravity(16);
+            this.g.setSingleLine();
+            this.g.setText((CharSequence) null);
+            this.g.setTextColor(m2Var.getThemedColor(g6.fe));
+            this.g.setTypeface(AndroidUtilities.bold());
+            this.f.addView(this.g, a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
+            ImageView imageView = new ImageView(m2Var.getParentActivity());
+            this.h = imageView;
+            imageView.setBackground(g6.g0(m2Var.getThemedColor(g6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
+            this.h.setColorFilter(new PorterDuffColorFilter(m2Var.getThemedColor(g6.de), PorterDuff.Mode.MULTIPLY));
+            this.h.setContentDescription(LocaleController.getString(R.string.Close));
+            this.h.setImageResource(R.drawable.miniplayer_close);
+            this.h.setScaleType(ImageView.ScaleType.CENTER);
+            final int i12 = 1;
+            this.h.setOnClickListener(new View.OnClickListener(this) { // from class: xh.a
+                public final /* synthetic */ d b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    switch (i12) {
+                        case 0:
+                            d dVar = this.b;
+                            m2 m2Var2 = dVar.a;
+                            if (dVar.i == null) {
+                                dVar.i = new b(dVar, m2Var2, dVar.b.id);
+                            }
+                            m2Var2.showDialog(dVar.i);
+                            break;
+                        default:
+                            d dVar2 = this.b;
+                            dVar2.a.getMessagesController().setChatPendingRequestsOnClose(dVar2.b.id, dVar2.k);
+                            dVar2.l = dVar2.k;
+                            dVar2.a(false, true);
+                            break;
+                    }
+                }
+            });
+            this.d.addView(this.h, a6.a(-1.0f, 0.0f, 0.0f, 4.0f, 0.0f, 36, 53));
+            TLRPC.ChatFull chatFull = this.j;
+            if (chatFull != null) {
+                e(chatFull.requests_pending, chatFull.recent_requesters, false);
+            }
+        }
+        return this.d;
+    }
+
+    public final void d(xe xeVar) {
+        this.m = xeVar;
+    }
+
+    public final void e(int i10, List list, boolean z10) {
+        if (this.d == null) {
+            return;
+        }
+        m2 m2Var = this.a;
+        if (i10 <= 0) {
+            TLRPC.Chat chat = this.b;
+            if (chat != null) {
+                m2Var.getMessagesController().setChatPendingRequestsOnClose(chat.id, 0);
+                this.l = 0;
+            }
+            a(false, z10);
+            this.k = 0;
+            return;
+        }
+        if (this.k != i10) {
+            this.k = i10;
+            this.g.setText(LocaleController.formatPluralString("JoinUsersRequests", i10, new Object[0]));
+            a(true, z10);
+            if (list == null || list.isEmpty()) {
+                return;
+            }
+            int min = Math.min(3, list.size());
+            for (int i11 = 0; i11 < min; i11++) {
+                TLRPC.User user = m2Var.getMessagesController().getUser((Long) list.get(i11));
+                if (user != null) {
+                    this.e.b(i11, user, this.c);
+                }
+            }
+            this.e.setCount(min);
+            this.e.a(true);
+        }
     }
 }

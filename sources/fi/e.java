@@ -1,79 +1,56 @@
 package fi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Components.y9;
-import w7.x5;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class e extends FrameLayout implements z5 {
-    public final y9 a;
-    public final e6 b;
-    public final TextView c;
-    public final TextView d;
+public final /* synthetic */ class e implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l b;
 
-    public e(Context context, e6 e6Var) {
-        super(context);
-        this.b = e6Var;
-        y9 y9Var = new y9(context);
-        this.a = y9Var;
-        y9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(y9Var, x5.a(72.0f, 0.0f, 36.0f, 0.0f, 0.0f, 72, 49));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 20.0f);
-        textView.setGravity(17);
-        addView(textView, x5.a(-2.0f, 24.0f, 123.0f, 24.0f, 0.0f, -1, 49));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(17);
-        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, x5.a(-2.0f, 32.0f, 157.0f, 32.0f, 0.0f, -1, 49));
-        e();
+    public /* synthetic */ e(l lVar, int i10) {
+        this.a = i10;
+        this.b = lVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        Drawable drawable = i6.S0;
-        y9 y9Var = this.a;
-        yf.p.a(canvas, drawable, (y9Var.getWidth() / 2.0f) + y9Var.getLeft(), (y9Var.getHeight() / 2.0f) + y9Var.getTop(), y9Var.getHeight());
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void e() {
-        int i10 = i6.G6;
-        e6 e6Var = this.b;
-        this.c.setTextColor(i6.w0(i10, e6Var));
-        this.d.setTextColor(i6.w0(i6.z6, e6Var));
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(218.0f), TLObject.FLAG_30));
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.d.setText(charSequence);
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                l lVar = this.b;
+                lVar.T.f(lVar.Y.end_date == 0 ? null : yg.l.f((r2 - lVar.getConnectionsManager().getCurrentTime()) * 1000), true);
+                if (lVar.Y.end_date != 0 && lVar.b0) {
+                    AndroidUtilities.runOnUIThread(lVar.V, 1000L);
+                    break;
+                }
+                break;
+            case 1:
+                TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
+                l lVar2 = this.b;
+                updatestarrefprogram.bot = lVar2.getMessagesController().getInputUser(lVar2.P);
+                TL_payments.starRefProgram starrefprogram = lVar2.Y;
+                updatestarrefprogram.commission_permille = starrefprogram.commission_permille;
+                int i10 = starrefprogram.duration_months;
+                updatestarrefprogram.duration_months = i10;
+                if (i10 > 0) {
+                    updatestarrefprogram.flags |= 1;
+                    starrefprogram.duration_months = i10 | 1;
+                } else {
+                    updatestarrefprogram.flags &= -2;
+                    starrefprogram.duration_months = i10 & (-2);
+                }
+                org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(lVar2.getParentActivity(), 3, null);
+                a2Var.q(150L);
+                lVar2.getConnectionsManager().sendRequest(updatestarrefprogram, new b(lVar2, a2Var, 1));
+                break;
+            default:
+                l lVar3 = this.b;
+                pf.d.s(lVar3.getParentActivity(), LocaleController.getString((lVar3.W || lVar3.Y.end_date != 0) ? R.string.AffiliateProgramUpdateInfoLink : R.string.AffiliateProgramStartInfoLink));
+                break;
+        }
     }
 }

@@ -8,13 +8,13 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class r1 extends androidx.fragment.app.s implements m {
+public final class r1 extends androidx.fragment.app.r implements m {
     public static final WeakHashMap l0 = new WeakHashMap();
     public final a5.a k0 = new a5.a(1, (byte) 0);
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void A() {
         this.U = true;
         a5.a aVar = this.k0;
@@ -25,7 +25,7 @@ public final class r1 extends androidx.fragment.app.s implements m {
         }
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void F() {
         this.U = true;
         a5.a aVar = this.k0;
@@ -36,12 +36,12 @@ public final class r1 extends androidx.fragment.app.s implements m {
         }
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void G(Bundle bundle) {
-        this.k0.F(bundle);
+        this.k0.H(bundle);
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void H() {
         this.U = true;
         a5.a aVar = this.k0;
@@ -52,7 +52,7 @@ public final class r1 extends androidx.fragment.app.s implements m {
         }
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void I() {
         this.U = true;
         a5.a aVar = this.k0;
@@ -65,7 +65,7 @@ public final class r1 extends androidx.fragment.app.s implements m {
 
     @Override // com.google.android.gms.common.api.internal.m
     public final void a(String str, l lVar) {
-        this.k0.C(str, lVar);
+        this.k0.E(str, lVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.m
@@ -73,7 +73,7 @@ public final class r1 extends androidx.fragment.app.s implements m {
         return (l) cls.cast(((Map) this.k0.c).get(str));
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void i(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         super.i(str, fileDescriptor, printWriter, strArr);
         Iterator it = ((Map) this.k0.c).values().iterator();
@@ -82,7 +82,7 @@ public final class r1 extends androidx.fragment.app.s implements m {
         }
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void x(int i10, int i11, Intent intent) {
         super.x(i10, i11, intent);
         Iterator it = ((Map) this.k0.c).values().iterator();
@@ -91,9 +91,9 @@ public final class r1 extends androidx.fragment.app.s implements m {
         }
     }
 
-    @Override // androidx.fragment.app.s
+    @Override // androidx.fragment.app.r
     public final void z(Bundle bundle) {
         super.z(bundle);
-        this.k0.E(bundle);
+        this.k0.G(bundle);
     }
 }

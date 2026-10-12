@@ -9,12 +9,12 @@ import java.util.function.IntConsumer;
 public final class i7 extends x6 implements j$.util.x0 {
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.j(this, consumer);
+        j$.com.android.tools.r8.a.i(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.A(this, consumer);
+        return j$.com.android.tools.r8.a.z(this, consumer);
     }
 
     @Override // j$.util.stream.x6
@@ -53,12 +53,12 @@ public final class i7 extends x6 implements j$.util.x0 {
         boolean a2 = a();
         if (a2) {
             o6 o6Var = (o6) this.h;
-            long j3 = this.g;
-            int k10 = o6Var.k(j3);
+            long j10 = this.g;
+            int k10 = o6Var.k(j10);
             if (o6Var.c == 0 && k10 == 0) {
-                i10 = ((int[]) o6Var.e)[(int) j3];
+                i10 = ((int[]) o6Var.e)[(int) j10];
             } else {
-                i10 = ((int[][]) o6Var.f)[k10][(int) (j3 - o6Var.d[k10])];
+                i10 = ((int[][]) o6Var.f)[k10][(int) (j10 - o6Var.d[k10])];
             }
             intConsumer.accept(i10);
         }

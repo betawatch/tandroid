@@ -17,9 +17,9 @@ import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.Map;
-import v7.g8;
+import v7.z7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class h extends f {
     public final Class f;
@@ -48,8 +48,8 @@ public class h extends f {
             method5 = cls2.getMethod("abortCreation", null);
             method = m(cls2);
             cls = cls2;
-        } catch (ClassNotFoundException | NoSuchMethodException e7) {
-            Log.e("TypefaceCompatApi26Impl", "Unable to collect necessary methods for class ".concat(e7.getClass().getName()), e7);
+        } catch (ClassNotFoundException | NoSuchMethodException e) {
+            Log.e("TypefaceCompatApi26Impl", "Unable to collect necessary methods for class ".concat(e.getClass().getName()), e);
             method = null;
             constructor = null;
             method2 = null;
@@ -71,7 +71,7 @@ public class h extends f {
         return cls.getMethod("addFontFromAssetManager", AssetManager.class, String.class, cls2, Boolean.TYPE, cls2, cls2, cls2, FontVariationAxis[].class);
     }
 
-    @Override // i0.f, v7.d8
+    @Override // i0.f, v7.y7
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         Object obj;
         Method method = this.h;
@@ -114,13 +114,13 @@ public class h extends f {
 
     /* JADX WARN: Removed duplicated region for block: B:39:0x00a2  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x009e A[SYNTHETIC] */
-    @Override // i0.f, v7.d8
+    @Override // i0.f, v7.y7
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Typeface b(Context context, o0.h[] hVarArr, int i10) {
         Object obj;
-        Typeface j3;
+        Typeface j10;
         boolean z10;
         boolean z11;
         Method method;
@@ -140,7 +140,7 @@ public class h extends f {
                         if (hVar.e == 0) {
                             Uri uri = hVar.a;
                             if (!hashMap.containsKey(uri)) {
-                                hashMap.put(uri, g8.e(context, uri));
+                                hashMap.put(uri, z7.e(context, uri));
                             }
                         }
                     }
@@ -198,8 +198,8 @@ public class h extends f {
                                 z13 = z13;
                             } else if (!z13) {
                                 method3.invoke(obj, null);
-                            } else if (k(obj) && (j3 = j(obj)) != null) {
-                                return Typeface.create(j3, i10);
+                            } else if (k(obj) && (j10 = j(obj)) != null) {
+                                return Typeface.create(j10, i10);
                             }
                         }
                     }
@@ -224,7 +224,7 @@ public class h extends f {
         return null;
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public final Typeface e(Context context, Resources resources, int i10, String str, int i11) {
         Object obj;
         Method method = this.h;

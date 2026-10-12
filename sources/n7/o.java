@@ -5,13 +5,13 @@ import java.util.Arrays;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class o extends h implements Set, j$.util.Set {
     public static final /* synthetic */ int c = 0;
     public transient m b;
 
-    public static o r(int i10, Object... objArr) {
+    public static o q(int i10, Object... objArr) {
         if (i10 == 0) {
             return y.s;
         }
@@ -20,15 +20,15 @@ public abstract class o extends h implements Set, j$.util.Set {
             Objects.requireNonNull(obj);
             return new b0(obj);
         }
-        int s10 = s(i10);
-        Object[] objArr2 = new Object[s10];
-        int i11 = s10 - 1;
+        int r10 = r(i10);
+        Object[] objArr2 = new Object[r10];
+        int i11 = r10 - 1;
         int i12 = 0;
         int i13 = 0;
         for (int i14 = 0; i14 < i10; i14++) {
             Object obj2 = objArr[i14];
             if (obj2 == null) {
-                throw new NullPointerException(hg.c.h(i14, "at index "));
+                throw new NullPointerException(i2.d.i(i14, "at index "));
             }
             int hashCode = obj2.hashCode();
             int rotateLeft = (int) (Integer.rotateLeft((int) (hashCode * (-862048943)), 15) * 461845907);
@@ -53,8 +53,8 @@ public abstract class o extends h implements Set, j$.util.Set {
             Objects.requireNonNull(obj4);
             return new b0(obj4);
         }
-        if (s(i13) < s10 / 2) {
-            return r(i13, objArr);
+        if (r(i13) < r10 / 2) {
+            return q(i13, objArr);
         }
         if (i13 <= 0) {
             objArr = Arrays.copyOf(objArr, i13);
@@ -62,7 +62,7 @@ public abstract class o extends h implements Set, j$.util.Set {
         return new y(i12, i11, i13, objArr, objArr2);
     }
 
-    public static int s(int i10) {
+    public static int r(int i10) {
         int max = Math.max(i10, 2);
         if (max >= 751619276) {
             if (max < 1073741824) {
@@ -107,19 +107,19 @@ public abstract class o extends h implements Set, j$.util.Set {
         return a.b(this);
     }
 
-    public m t() {
+    public m s() {
         m mVar = this.b;
         if (mVar != null) {
             return mVar;
         }
-        m u10 = u();
-        this.b = u10;
-        return u10;
+        m t10 = t();
+        this.b = t10;
+        return t10;
     }
 
-    public m u() {
+    public m t() {
         Object[] array = toArray(h.a);
         i iVar = m.b;
-        return m.t(array.length, array);
+        return m.s(array.length, array);
     }
 }

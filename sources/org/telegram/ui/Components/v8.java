@@ -1,31 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class v8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g9 b;
+public final class v8 extends org.telegram.ui.ActionBar.e3 {
+    public final /* synthetic */ h9 b;
 
-    public /* synthetic */ v8(g9 g9Var, int i10) {
-        this.a = i10;
-        this.b = g9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v8(h9 h9Var, Activity activity) {
+        super(activity, true);
+        this.b = h9Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                this.b.f = false;
-                break;
-            default:
-                g9 g9Var = this.b;
-                g9Var.i0(g9Var.F ? 1.0f : 0.0f, false);
-                g9Var.F = false;
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public final void dismiss() {
+        super.dismiss();
+        h9 h9Var = this.b;
+        h9Var.J.x1(h9Var.Y);
+        h9Var.f = true;
+        h9Var.fragmentView.invalidate();
+        h9Var.e.animate().setListener(new l6(this, 3)).alpha(0.0f).setDuration(200L).start();
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        h9 h9Var = this.b;
+        AndroidUtilities.requestAdjustResize(h9Var.getParentActivity(), h9Var.getClassGuid());
+        h9Var.S = null;
     }
 }

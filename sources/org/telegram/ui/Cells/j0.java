@@ -1,57 +1,26 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.Components.kp0;
-import org.telegram.ui.xc1;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class j0 extends kp0 {
-    public final /* synthetic */ int l0;
+public final class j0 extends FrameLayout {
+    public TextView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j0(int i10, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
-        super(context, e6Var, z10);
-        this.l0 = i10;
+    public TextView getTextView() {
+        return this.a;
     }
 
-    @Override // org.telegram.ui.Components.kp0, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.l0) {
-            case 0:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-            case 1:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-            case 2:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-            default:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-        }
-        return d(motionEvent);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j0(Context context) {
-        super(context);
-        this.l0 = 1;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(Context context, xc1 xc1Var) {
-        super(context, xc1Var, false);
-        this.l0 = 3;
+    public void setText(String str) {
+        this.a.setText(str);
     }
 }

@@ -1,62 +1,30 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class pm extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z b;
-    public final /* synthetic */ qm c;
+public final class pm extends org.telegram.ui.Components.u6 {
+    public final /* synthetic */ qm b;
 
-    public /* synthetic */ pm(qm qmVar, org.telegram.ui.ActionBar.z zVar, int i10) {
-        this.a = i10;
-        this.c = qmVar;
-        this.b = zVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pm(qm qmVar) {
+        super("alpha", 0);
+        this.b = qmVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        switch (this.a) {
-            case 0:
-                kVar = ((org.telegram.ui.ActionBar.n2) this.c.c).actionBar;
-                kVar.setMenuOffsetSuppressed(false);
-                break;
-            default:
-                qm qmVar = this.c;
-                zn znVar = qmVar.c;
-                znVar.i0.f(8);
-                this.b.r(0.0f);
-                kVar2 = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
-                kVar2.setMenuOffsetSuppressed(false);
-                qmVar.b = false;
-                break;
+    @Override // org.telegram.ui.Components.u6
+    public final void c(Object obj, float f7) {
+        ((MessageObject.SendAnimationData) obj).timeAlpha = f7;
+        View view = this.b.b.Q.fragmentView;
+        if (view != null) {
+            view.invalidate();
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        switch (this.a) {
-            case 0:
-                zn znVar = this.c.c;
-                kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
-                kVar.setMenuOffsetSuppressed(true);
-                zn.S3(znVar);
-                znVar.i0.f(0);
-                this.b.r(AndroidUtilities.dp(48.0f));
-                break;
-            default:
-                qm qmVar = this.c;
-                kVar2 = ((org.telegram.ui.ActionBar.n2) qmVar.c).actionBar;
-                kVar2.setMenuOffsetSuppressed(true);
-                qmVar.b = true;
-                break;
-        }
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((MessageObject.SendAnimationData) obj).timeAlpha);
     }
 }

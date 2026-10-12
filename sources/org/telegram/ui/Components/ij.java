@@ -3,31 +3,24 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ij extends o61 {
-    public static final /* synthetic */ int a = 0;
+public final class ij extends s4.c0 {
+    public final /* synthetic */ ci.k r;
 
-    static {
-        o61.setup(new ij());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ij(ci.k kVar, Context context) {
+        super(context);
+        this.r = kVar;
     }
 
-    @Override // org.telegram.ui.Components.o61
-    public final void bindView(View view, p61 p61Var, boolean z10, c71 c71Var, k71 k71Var) {
-        jj jjVar = (jj) view;
-        CharSequence charSequence = p61Var.l;
-        CharSequence charSequence2 = p61Var.m;
-        jjVar.b.setText(charSequence);
-        jjVar.c.setText(charSequence2);
+    @Override // s4.c0
+    public final int k(int i10, View view) {
+        return org.telegram.messenger.q.C(7.0f, ((kj) this.r.R).n.getPaddingTop(), super.k(i10, view));
     }
 
-    @Override // org.telegram.ui.Components.o61
-    public final View createView(Context context, qm0 qm0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new jj(context, e6Var);
-    }
-
-    @Override // org.telegram.ui.Components.o61
-    public final boolean isShadow() {
-        return true;
+    @Override // s4.c0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

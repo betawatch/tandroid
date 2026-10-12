@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.util.DisplayMetrics;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class NotchInfoUtils {
     private static final String BOTTOM_MARKER = "@bottom";
@@ -15,7 +15,7 @@ public class NotchInfoUtils {
     private static final String LEFT_MARKER = "@left";
     private static final String RIGHT_MARKER = "@right";
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class NotchInfo {
         public RectF bounds;
         public int gravity;
@@ -56,13 +56,13 @@ public class NotchInfoUtils {
             }
             boolean endsWith = trim.endsWith(DP_MARKER);
             if (endsWith) {
-                trim = com.google.android.gms.internal.vision.e2.i(3, 0, trim);
+                trim = com.google.android.gms.internal.play_billing.k3.j(3, 0, trim);
             }
             if (trim.contains(BOTTOM_MARKER)) {
                 trim = trim.split(BOTTOM_MARKER, 2)[0].trim();
             }
             try {
-                i0.d[] c10 = v7.c8.c(trim);
+                i0.d[] c10 = v7.x7.c(trim);
                 Path path = new Path();
                 i0.d.b(c10, path);
                 Matrix matrix = new Matrix();

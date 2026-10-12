@@ -1,125 +1,48 @@
 package gi;
 
-import android.content.Context;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import com.google.android.gms.internal.vision.e2;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.bi;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Components.qc0;
-import w7.x5;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.l61;
+import r0.l1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class j extends LinearLayout implements z5 {
-    public final e6 a;
-    public final qc0 b;
-    public final FrameLayout c;
-    public final ImageView d;
-    public final TextView e;
-    public final TextView f;
-    public final boolean h;
-    public boolean n;
+public final /* synthetic */ class j implements Utilities.Callback5, Utilities.Callback5Return, r0.o, MessagesStorage.BooleanCallback {
+    public final /* synthetic */ p a;
 
-    public j(Context context, e6 e6Var, boolean z10) {
-        super(context);
-        this.a = e6Var;
-        this.h = z10;
-        setOrientation(0);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.c = frameLayout;
-        qc0 qc0Var = new qc0(1);
-        this.b = qc0Var;
-        frameLayout.setBackground(qc0Var);
-        ImageView imageView = new ImageView(context);
-        this.d = imageView;
-        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        frameLayout.addView(imageView, x5.e(24, 24, 17));
-        LinearLayout e7 = bi.e(context, 1);
-        TextView textView = new TextView(context);
-        this.e = textView;
-        textView.setTextSize(1, 16.0f);
-        TextView h = e2.h(e7, textView, x5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
-        this.f = h;
-        h.setGravity(17);
-        h.setMinWidth(AndroidUtilities.dp(20.66f));
-        h.setPadding(AndroidUtilities.dp(6.33f), 0, AndroidUtilities.dp(6.33f), 0);
-        h.setTextSize(1, 16.0f);
-        if (LocaleController.isRTL) {
-            addView(h, x5.j(13.33f, 0.0f));
-            addView(e7, x5.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
-            addView(frameLayout, x5.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
-        } else {
-            addView(frameLayout, x5.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
-            addView(e7, x5.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
-            addView(h, x5.j(0.0f, 13.33f));
-        }
-        e();
-        setUnreadMode(true);
+    public /* synthetic */ j(p pVar) {
+        this.a = pVar;
     }
 
-    public final void a(int i10, int i11, int i12, CharSequence charSequence, CharSequence charSequence2, boolean z10) {
-        this.c.setVisibility(i12 != 0 ? 0 : 8);
-        this.e.setTranslationX(i12 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
-        this.b.b(i10, i11);
-        this.d.setImageResource(i12);
-        setTitle(charSequence);
-        setValue(charSequence2);
-        setUnreadMode(z10);
+    @Override // r0.o
+    public l1 Q0(View view, l1 l1Var) {
+        i0.b f7 = l1Var.a.f(519);
+        this.a.d.setPadding(0, f7.b, 0, f7.d);
+        return l1.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void e() {
-        int i10 = i6.G6;
-        e6 e6Var = this.a;
-        this.e.setTextColor(i6.w0(i10, e6Var));
-        int w02 = i6.w0(this.n ? i6.W8 : i6.n6, e6Var);
-        TextView textView = this.f;
-        textView.setTextColor(w02);
-        textView.setBackground(this.n ? i6.c0(AndroidUtilities.dp(10.33f), i6.w0(i6.U8, e6Var)) : null);
-        this.b.b = e6Var != null ? e6Var.a() : i6.I.q();
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(p.U(this.a, (l61) obj, (View) obj2));
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        p.V(this.a, (l61) obj);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.h ? 44.0f : 50.0f), TLObject.FLAG_30));
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.e.setText(charSequence);
-    }
-
-    public void setUnreadMode(boolean z10) {
-        if (this.n != z10) {
-            this.n = z10;
-            float f7 = z10 ? 13.0f : 16.0f;
-            TextView textView = this.f;
-            textView.setTextSize(1, f7);
-            textView.setTypeface(z10 ? AndroidUtilities.bold() : null);
-            int i10 = z10 ? i6.W8 : i6.n6;
-            e6 e6Var = this.a;
-            textView.setTextColor(i6.w0(i10, e6Var));
-            textView.setBackground(z10 ? i6.c0(AndroidUtilities.dp(10.33f), i6.w0(i6.U8, e6Var)) : null);
-        }
-    }
-
-    public void setValue(CharSequence charSequence) {
-        int i10 = !TextUtils.isEmpty(charSequence) ? 0 : 8;
-        TextView textView = this.f;
-        textView.setVisibility(i10);
-        textView.setText(charSequence);
+    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
+    public void run(boolean z10) {
+        p pVar = this.a;
+        pVar.finishFragment();
+        pVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-pVar.b), null, pVar.H, Boolean.valueOf(z10));
     }
 }

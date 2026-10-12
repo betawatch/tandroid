@@ -1,84 +1,52 @@
 package org.telegram.ui;
 
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fj0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lj0 b;
-
-    public /* synthetic */ fj0(lj0 lj0Var, int i10) {
-        this.a = i10;
-        this.b = lj0Var;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final lj0 lj0Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ej0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                lj0.U(lj0Var, tL_error, tLObject);
-                                break;
-                            case 1:
-                                lj0.W(lj0Var, tL_error, tLObject);
-                                break;
-                            default:
-                                lj0.V(lj0Var, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                final int i11 = 1;
-                final lj0 lj0Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ej0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                lj0.U(lj0Var2, tL_error, tLObject);
-                                break;
-                            case 1:
-                                lj0.W(lj0Var2, tL_error, tLObject);
-                                break;
-                            default:
-                                lj0.V(lj0Var2, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i12 = 2;
-                final lj0 lj0Var3 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ej0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                lj0.U(lj0Var3, tL_error, tLObject);
-                                break;
-                            case 1:
-                                lj0.W(lj0Var3, tL_error, tLObject);
-                                break;
-                            default:
-                                lj0.V(lj0Var3, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
+public final class fj0 extends s4.m0 {
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
+        org.telegram.ui.Cells.u1 u1Var;
+        MessageObject.GroupedMessages currentMessagesGroup;
+        MessageObject.GroupedMessagePosition currentPosition;
+        int i10 = 0;
+        rect.bottom = 0;
+        if (!(view instanceof org.telegram.ui.Cells.u1) || (currentMessagesGroup = (u1Var = (org.telegram.ui.Cells.u1) view).getCurrentMessagesGroup()) == null || (currentPosition = u1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+            return;
         }
+        Point point = AndroidUtilities.displaySize;
+        float max = Math.max(point.x, point.y) * 0.5f;
+        int extraInsetHeight = u1Var.getExtraInsetHeight();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= currentPosition.siblingHeights.length) {
+                break;
+            }
+            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
+            i11++;
+        }
+        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
+        int size = currentMessagesGroup.posArray.size();
+        while (true) {
+            if (i10 < size) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
+                byte b10 = groupedMessagePosition.minY;
+                byte b11 = currentPosition.minY;
+                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
+                    round = org.telegram.messenger.q.C(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
+                    break;
+                }
+                i10++;
+            } else {
+                break;
+            }
+        }
+        rect.bottom = -round;
     }
 }

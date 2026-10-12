@@ -1,30 +1,30 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class in implements Utilities.Callback {
+public final /* synthetic */ class in implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ lo b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ io b;
 
-    public /* synthetic */ in(lo loVar, int i10, int i11) {
-        this.a = i11;
-        this.b = loVar;
-        this.c = i10;
+    public /* synthetic */ in(io ioVar, int i10) {
+        this.a = i10;
+        this.b = ioVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.h0(this.c, (qh.e) obj);
+                io ioVar = this.b;
+                ioVar.getClass();
+                ioVar.E.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                lo loVar = this.b;
-                loVar.getClass();
-                loVar.h0(this.c, new rh.e((String) obj));
+                io ioVar2 = this.b;
+                ioVar2.getClass();
+                ioVar2.E.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

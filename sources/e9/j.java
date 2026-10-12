@@ -4,45 +4,62 @@ import java.util.Comparator;
 import java.util.SortedMap;
 import java.util.SortedSet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class j extends e implements SortedSet {
-    public final /* synthetic */ v0 d;
+public class j extends e implements SortedMap {
+    public SortedSet f;
+    public final /* synthetic */ p1 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(v0 v0Var, SortedMap sortedMap) {
-        super(v0Var, sortedMap);
-        this.d = v0Var;
+    public j(p1 p1Var, SortedMap sortedMap) {
+        super(p1Var, sortedMap, 0);
+        this.h = p1Var;
     }
 
-    @Override // java.util.SortedSet
+    public SortedSet b() {
+        return new k(this.h, d());
+    }
+
+    @Override // e9.e, java.util.AbstractMap, java.util.Map
+    /* renamed from: c, reason: merged with bridge method [inline-methods] */
+    public SortedSet keySet() {
+        SortedSet sortedSet = this.f;
+        if (sortedSet != null) {
+            return sortedSet;
+        }
+        SortedSet b10 = b();
+        this.f = b10;
+        return b10;
+    }
+
+    @Override // java.util.SortedMap
     public final Comparator comparator() {
-        return i().comparator();
+        return d().comparator();
     }
 
-    @Override // java.util.SortedSet
-    public final Object first() {
-        return i().firstKey();
-    }
-
-    public SortedSet headSet(Object obj) {
-        return new j(this.d, i().headMap(obj));
-    }
-
-    public SortedMap i() {
+    public SortedMap d() {
         return (SortedMap) this.b;
     }
 
-    @Override // java.util.SortedSet
-    public final Object last() {
-        return i().lastKey();
+    @Override // java.util.SortedMap
+    public final Object firstKey() {
+        return d().firstKey();
     }
 
-    public SortedSet subSet(Object obj, Object obj2) {
-        return new j(this.d, i().subMap(obj, obj2));
+    public SortedMap headMap(Object obj) {
+        return new j(this.h, d().headMap(obj));
     }
 
-    public SortedSet tailSet(Object obj) {
-        return new j(this.d, i().tailMap(obj));
+    @Override // java.util.SortedMap
+    public final Object lastKey() {
+        return d().lastKey();
+    }
+
+    public SortedMap subMap(Object obj, Object obj2) {
+        return new j(this.h, d().subMap(obj, obj2));
+    }
+
+    public SortedMap tailMap(Object obj) {
+        return new j(this.h, d().tailMap(obj));
     }
 }

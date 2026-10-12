@@ -1,63 +1,15 @@
 package i2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class q1 {
-    public static final q1 c;
-    public static final q1 d;
-    public static final q1 e;
-    public final long a;
-    public final long b;
+    public static final q1 c = new q1(0, false);
+    public final int a;
+    public final boolean b;
 
-    static {
-        q1 q1Var = new q1(0L, 0L);
-        c = q1Var;
-        d = new q1(Long.MAX_VALUE, Long.MAX_VALUE);
-        new q1(Long.MAX_VALUE, 0L);
-        new q1(0L, Long.MAX_VALUE);
-        e = q1Var;
-    }
-
-    public q1(long j3, long j10) {
-        e2.d.b(j3 >= 0);
-        e2.d.b(j10 >= 0);
-        this.a = j3;
-        this.b = j10;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:27:0x005c A[RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final long a(long j3, long j10, long j11) {
-        long j12 = this.a;
-        long j13 = this.b;
-        if (j12 == 0 && j13 == 0) {
-            return j3;
-        }
-        String str = e2.d0.a;
-        long j14 = j3 - j12;
-        if (((j12 ^ j3) & (j3 ^ j14)) < 0) {
-            j14 = Long.MIN_VALUE;
-        }
-        long j15 = j3 + j13;
-        if (((j13 ^ j15) & (j3 ^ j15)) < 0) {
-            j15 = Long.MAX_VALUE;
-        }
-        boolean z10 = false;
-        boolean z11 = j14 <= j10 && j10 <= j15;
-        if (j14 <= j11 && j11 <= j15) {
-            z10 = true;
-        }
-        if (!z11 || !z10) {
-            if (!z11) {
-                return z10 ? j11 : j14;
-            }
-            return j10;
-        }
-        if (Math.abs(j10 - j3) <= Math.abs(j11 - j3)) {
-            return j10;
-        }
+    public q1(int i10, boolean z10) {
+        this.a = i10;
+        this.b = z10;
     }
 
     public final boolean equals(Object obj) {
@@ -74,6 +26,6 @@ public final class q1 {
     }
 
     public final int hashCode() {
-        return (((int) this.a) * 31) + ((int) this.b);
+        return (this.a << 1) + (this.b ? 1 : 0);
     }
 }

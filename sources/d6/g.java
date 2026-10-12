@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.util.Log;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g {
     public static final g6.b c = new g6.b("SessionManager", null);
@@ -25,8 +25,8 @@ public final class g {
             Parcel N0 = yVar.N0();
             com.google.android.gms.internal.cast.v.d(N0, zVar);
             yVar.R0(N0, 2);
-        } catch (RemoteException e7) {
-            c.a(e7, "Unable to call %s on %s.", "addSessionManagerListener", y.class.getSimpleName());
+        } catch (RemoteException e) {
+            c.a(e, "Unable to call %s on %s.", "addSessionManagerListener", y.class.getSimpleName());
         }
     }
 
@@ -41,8 +41,8 @@ public final class g {
             N0.writeInt(1);
             N0.writeInt(z10 ? 1 : 0);
             yVar.R0(N0, 6);
-        } catch (RemoteException e7) {
-            bVar.a(e7, "Unable to call %s on %s.", "endCurrentSession", y.class.getSimpleName());
+        } catch (RemoteException e) {
+            bVar.a(e, "Unable to call %s on %s.", "endCurrentSession", y.class.getSimpleName());
         }
     }
 
@@ -63,8 +63,8 @@ public final class g {
             x6.a K0 = x6.b.K0(P0.readStrongBinder());
             P0.recycle();
             return (f) x6.b.L0(K0);
-        } catch (RemoteException e7) {
-            c.a(e7, "Unable to call %s on %s.", "getWrappedCurrentSession", y.class.getSimpleName());
+        } catch (RemoteException e) {
+            c.a(e, "Unable to call %s on %s.", "getWrappedCurrentSession", y.class.getSimpleName());
             return null;
         }
     }

@@ -1,28 +1,30 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gg implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
 
-    public /* synthetic */ gg(MessagesStorage messagesStorage, int i10, boolean z10, long j3) {
+    public /* synthetic */ gg(MessagesStorage messagesStorage, ArrayList arrayList, ArrayList arrayList2, int i10) {
         this.a = i10;
         this.b = messagesStorage;
-        this.c = j3;
-        this.d = z10;
+        this.c = arrayList;
+        this.d = arrayList2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$setDialogUnread$248(this.c, this.d);
+                this.b.lambda$setDialogsPinned$252(this.c, this.d);
                 break;
             default:
-                this.b.lambda$setDialogViewThreadAsMessages$249(this.c, this.d);
+                this.b.lambda$loadTopics$50(this.c, this.d);
                 break;
         }
     }

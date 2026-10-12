@@ -1,111 +1,88 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lj0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nj0 b;
+public final class lj0 {
+    public final g6 a;
+    public final r6 b;
+    public final int c;
+    public boolean d;
+    public final qj0 e;
+    public final ad f;
+    public final Paint g = new Paint(1);
+    public boolean h;
 
-    public /* synthetic */ lj0(nj0 nj0Var, int i10) {
-        this.a = i10;
-        this.b = nj0Var;
+    public lj0(View view) {
+        this.a = new g6(view, 350L, es.h);
+        this.e = new qj0(view);
+        this.f = new ad(view);
+        r6 r6Var = new r6(false, false, false);
+        this.b = r6Var;
+        r6Var.w(AndroidUtilities.dp(11.0f));
+        r6Var.r(true, true);
+        r6Var.setCallback(view);
+        r6Var.M = (int) (AndroidUtilities.displaySize.x * 0.3f);
+        this.d = false;
+        r6Var.t(LocaleController.getString(R.string.QuoteCollapse), false, true);
+        String string = LocaleController.getString(R.string.QuoteExpand);
+        TextPaint textPaint = r6Var.a;
+        this.c = (int) Math.ceil(Math.max(textPaint.measureText(string), textPaint.measureText(LocaleController.getString(R.string.QuoteCollapse))));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nj0 nj0Var = this.b;
-                nj0Var.v = floatValue;
-                org.telegram.ui.Cells.s2 s2Var = nj0Var.H;
-                if (s2Var != null) {
-                    s2Var.invalidate();
-                }
-                qm0 qm0Var = nj0Var.I;
-                if (qm0Var != null) {
-                    qm0Var.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nj0 nj0Var2 = this.b;
-                nj0Var2.w = floatValue2;
-                org.telegram.ui.Cells.s2 s2Var2 = nj0Var2.H;
-                if (s2Var2 != null) {
-                    s2Var2.invalidate();
-                }
-                qm0 qm0Var2 = nj0Var2.I;
-                if (qm0Var2 != null) {
-                    qm0Var2.invalidate();
-                    break;
-                }
-                break;
-            case 2:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nj0 nj0Var3 = this.b;
-                nj0Var3.p = floatValue3;
-                org.telegram.ui.Cells.s2 s2Var3 = nj0Var3.H;
-                if (s2Var3 != null) {
-                    s2Var3.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nj0 nj0Var4 = this.b;
-                nj0Var4.o = floatValue4;
-                org.telegram.ui.Cells.s2 s2Var4 = nj0Var4.H;
-                if (s2Var4 != null) {
-                    s2Var4.invalidate();
-                    break;
-                }
-                break;
-            case 4:
-                float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nj0 nj0Var5 = this.b;
-                nj0Var5.x = floatValue5;
-                org.telegram.ui.Cells.s2 s2Var5 = nj0Var5.H;
-                if (s2Var5 != null) {
-                    s2Var5.invalidate();
-                    break;
-                }
-                break;
-            case 5:
-                nj0 nj0Var6 = this.b;
-                nj0Var6.getClass();
-                nj0Var6.e(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                org.telegram.ui.Cells.s2 s2Var6 = nj0Var6.H;
-                if (s2Var6 != null) {
-                    s2Var6.invalidate();
-                    break;
-                }
-                break;
-            case 6:
-                nj0 nj0Var7 = this.b;
-                nj0Var7.getClass();
-                nj0Var7.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nj0Var7.F = true;
-                org.telegram.ui.Cells.s2 s2Var7 = nj0Var7.H;
-                if (s2Var7 != null) {
-                    s2Var7.invalidate();
-                    break;
-                }
-                break;
-            default:
-                nj0 nj0Var8 = this.b;
-                nj0Var8.getClass();
-                nj0Var8.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nj0Var8.F = false;
-                org.telegram.ui.Cells.s2 s2Var8 = nj0Var8.H;
-                if (s2Var8 != null) {
-                    s2Var8.invalidate();
-                    break;
-                }
-                break;
+    public final void a(Canvas canvas, RectF rectF, float f7, float f10, int i10, boolean z10, boolean z11) {
+        boolean z12 = this.d;
+        r6 r6Var = this.b;
+        if (z10 != z12) {
+            this.d = z10;
+            r6Var.t(LocaleController.getString(z10 ? R.string.QuoteExpand : R.string.QuoteCollapse), true, true);
         }
+        int c10 = (int) (r6Var.c() + AndroidUtilities.dp(23.66f));
+        float dp = AndroidUtilities.dp(17.66f);
+        rectF.set(f7 - c10, f10 - dp, f7, f10);
+        float a2 = this.f.a(0.02f) * this.a.e(z11);
+        if (a2 > 0.0f) {
+            int k10 = i0.a.k(i10, 30);
+            Paint paint = this.g;
+            paint.setColor(k10);
+            canvas.save();
+            canvas.scale(a2, a2, f7, f10);
+            float f11 = dp / 2.0f;
+            canvas.drawRoundRect(rectF, f11, f11, paint);
+            r6Var.setBounds((int) (rectF.left + AndroidUtilities.dp(6.0f)), (int) rectF.top, (int) (rectF.right - AndroidUtilities.dp(17.66f)), (int) rectF.bottom);
+            r6Var.u(i10);
+            r6Var.draw(canvas);
+            float dp2 = AndroidUtilities.dp(14.0f);
+            int dp3 = (int) ((rectF.right - AndroidUtilities.dp(3.33f)) - dp2);
+            float f12 = dp2 / 2.0f;
+            int centerY = (int) ((rectF.centerY() - f12) + AndroidUtilities.dp(0.33f));
+            int dp4 = (int) (rectF.right - AndroidUtilities.dp(3.33f));
+            int centerY2 = (int) (rectF.centerY() + f12 + AndroidUtilities.dp(0.33f));
+            qj0 qj0Var = this.e;
+            qj0Var.setBounds(dp3, centerY, dp4, centerY2);
+            Paint paint2 = qj0Var.b;
+            paint2.setColor(i10);
+            paint2.setAlpha(qj0Var.d);
+            boolean z13 = !z10;
+            if (qj0Var.e != z13) {
+                qj0Var.e = z13;
+                qj0Var.a.invalidate();
+            }
+            qj0Var.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    public final void b(boolean z10) {
+        this.h = z10;
+        this.f.c(z10);
     }
 }

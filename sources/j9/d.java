@@ -1,0 +1,78 @@
+package j9;
+
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import v7.p8;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class d extends p8 {
+    public final AtomicReferenceFieldUpdater a;
+    public final AtomicReferenceFieldUpdater b;
+    public final AtomicReferenceFieldUpdater c;
+    public final AtomicReferenceFieldUpdater d;
+    public final AtomicReferenceFieldUpdater e;
+
+    public d(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater4, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater5) {
+        this.a = atomicReferenceFieldUpdater;
+        this.b = atomicReferenceFieldUpdater2;
+        this.c = atomicReferenceFieldUpdater3;
+        this.d = atomicReferenceFieldUpdater4;
+        this.e = atomicReferenceFieldUpdater5;
+    }
+
+    @Override // v7.p8
+    public final boolean a(o oVar, c cVar, c cVar2) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        do {
+            atomicReferenceFieldUpdater = this.d;
+            if (atomicReferenceFieldUpdater.compareAndSet(oVar, cVar, cVar2)) {
+                return true;
+            }
+        } while (atomicReferenceFieldUpdater.get(oVar) == cVar);
+        return false;
+    }
+
+    @Override // v7.p8
+    public final boolean b(o oVar, Object obj, Object obj2) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        do {
+            atomicReferenceFieldUpdater = this.e;
+            if (atomicReferenceFieldUpdater.compareAndSet(oVar, obj, obj2)) {
+                return true;
+            }
+        } while (atomicReferenceFieldUpdater.get(oVar) == obj);
+        return false;
+    }
+
+    @Override // v7.p8
+    public final boolean c(o oVar, n nVar, n nVar2) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
+        do {
+            atomicReferenceFieldUpdater = this.c;
+            if (atomicReferenceFieldUpdater.compareAndSet(oVar, nVar, nVar2)) {
+                return true;
+            }
+        } while (atomicReferenceFieldUpdater.get(oVar) == nVar);
+        return false;
+    }
+
+    @Override // v7.p8
+    public final c d(o oVar) {
+        return (c) this.d.getAndSet(oVar, c.d);
+    }
+
+    @Override // v7.p8
+    public final n e(o oVar) {
+        return (n) this.c.getAndSet(oVar, n.c);
+    }
+
+    @Override // v7.p8
+    public final void f(n nVar, n nVar2) {
+        this.b.lazySet(nVar, nVar2);
+    }
+
+    @Override // v7.p8
+    public final void g(n nVar, Thread thread) {
+        this.a.lazySet(nVar, thread);
+    }
+}

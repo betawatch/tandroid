@@ -22,11 +22,11 @@ import android.view.textclassifier.TextClassifier;
 import android.widget.EditText;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import w7.s7;
+import w7.w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class s extends EditText implements r0.o, u0.k {
+public final class s extends EditText implements r0.p, u0.k {
     public final e2.c a;
     public final w0 b;
     public final y c;
@@ -37,8 +37,8 @@ public final class s extends EditText implements r0.o, u0.k {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public s(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, R.attr.editTextStyle);
-        b3.a(context);
-        a3.a(this, getContext());
+        c3.a(context);
+        b3.a(this, getContext());
         e2.c cVar = new e2.c(this);
         this.a = cVar;
         cVar.f(attributeSet, R.attr.editTextStyle);
@@ -79,7 +79,7 @@ public final class s extends EditText implements r0.o, u0.k {
         return this.f;
     }
 
-    @Override // r0.o
+    @Override // r0.p
     public final r0.g a(r0.g gVar) {
         this.d.getClass();
         return u0.j.a(this, gVar);
@@ -100,7 +100,7 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return s7.d(super.getCustomSelectionActionModeCallback());
+        return w7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -139,14 +139,14 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        String[] e7;
+        String[] e;
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
-        w7.m.a(editorInfo, onCreateInputConnection, this);
-        if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e7 = r0.i0.e(this)) != null) {
-            t0.b.b(editorInfo, e7);
-            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new r5.d(this, 3));
+        w7.q.a(editorInfo, onCreateInputConnection, this);
+        if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e = r0.j0.e(this)) != null) {
+            t0.c.b(editorInfo, e);
+            onCreateInputConnection = t0.g.a(onCreateInputConnection, editorInfo, new rg.b0(this, 7));
         }
         return this.e.c(onCreateInputConnection, editorInfo);
     }
@@ -156,7 +156,7 @@ public final class s extends EditText implements r0.o, u0.k {
         Activity activity;
         int i10 = Build.VERSION.SDK_INT;
         boolean z10 = false;
-        if (i10 < 31 && i10 >= 24 && dragEvent.getLocalState() == null && r0.i0.e(this) != null) {
+        if (i10 < 31 && i10 >= 24 && dragEvent.getLocalState() == null && r0.j0.e(this) != null) {
             Context context = getContext();
             while (true) {
                 if (!(context instanceof ContextWrapper)) {
@@ -185,7 +185,7 @@ public final class s extends EditText implements r0.o, u0.k {
     public final boolean onTextContextMenuItem(int i10) {
         r0.d dVar;
         int i11 = Build.VERSION.SDK_INT;
-        if (i11 >= 31 || r0.i0.e(this) == null || !(i10 == 16908322 || i10 == 16908337)) {
+        if (i11 >= 31 || r0.j0.e(this) == null || !(i10 == 16908322 || i10 == 16908337)) {
             return super.onTextContextMenuItem(i10);
         }
         ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
@@ -200,7 +200,7 @@ public final class s extends EditText implements r0.o, u0.k {
                 dVar = eVar;
             }
             dVar.c(i10 == 16908322 ? 0 : 1);
-            r0.i0.h(this, dVar.build());
+            r0.j0.h(this, dVar.build());
         }
         return true;
     }
@@ -243,7 +243,7 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(s7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(w7.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

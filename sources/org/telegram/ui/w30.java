@@ -1,23 +1,33 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class w30 extends s4.t0 {
-    public final /* synthetic */ g60 a;
+public final class w30 extends org.telegram.ui.Components.g8 {
+    public final /* synthetic */ n60 E;
+    public final /* synthetic */ Activity y;
 
-    public w30(g60 g60Var) {
-        this.a = g60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w30(n60 n60Var, LaunchActivity launchActivity, Activity activity) {
+        super(launchActivity);
+        this.E = n60Var;
+        this.y = activity;
     }
 
-    @Override // s4.t0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        g60 g60Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) g60Var).containerView;
-        viewGroup.invalidate();
-        g60Var.a2.invalidate();
+    @Override // org.telegram.ui.Components.g8
+    public final TextView a() {
+        TextView textView = new TextView(this.y);
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.hg, false));
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(51);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setOnClickListener(new xv(9, this, textView));
+        return textView;
     }
 }

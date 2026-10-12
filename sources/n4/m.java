@@ -1,76 +1,186 @@
 package n4;
 
-import android.media.MediaMetadata;
+import android.os.Binder;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
 import android.os.Parcel;
-import android.os.Parcelable;
+import android.os.SystemClock;
+import java.lang.ref.WeakReference;
+import java.util.AbstractCollection;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class m implements Parcelable {
-    public static final Parcelable.Creator<m> CREATOR;
-    public static final a0.f c;
-    public static final String[] d;
-    public final Bundle a;
-    public MediaMetadata b;
+public final class m extends Binder implements d {
+    public static final /* synthetic */ int b = 0;
+    public final WeakReference a;
 
-    static {
-        a0.f fVar = new a0.f(0);
-        c = fVar;
-        fVar.put("android.media.metadata.TITLE", 1);
-        fVar.put("android.media.metadata.ARTIST", 1);
-        fVar.put("android.media.metadata.DURATION", 0);
-        fVar.put("android.media.metadata.ALBUM", 1);
-        fVar.put("android.media.metadata.AUTHOR", 1);
-        fVar.put("android.media.metadata.WRITER", 1);
-        fVar.put("android.media.metadata.COMPOSER", 1);
-        fVar.put("android.media.metadata.COMPILATION", 1);
-        fVar.put("android.media.metadata.DATE", 1);
-        fVar.put("android.media.metadata.YEAR", 0);
-        fVar.put("android.media.metadata.GENRE", 1);
-        fVar.put("android.media.metadata.TRACK_NUMBER", 0);
-        fVar.put("android.media.metadata.NUM_TRACKS", 0);
-        fVar.put("android.media.metadata.DISC_NUMBER", 0);
-        fVar.put("android.media.metadata.ALBUM_ARTIST", 1);
-        fVar.put("android.media.metadata.ART", 2);
-        fVar.put("android.media.metadata.ART_URI", 1);
-        fVar.put("android.media.metadata.ALBUM_ART", 2);
-        fVar.put("android.media.metadata.ALBUM_ART_URI", 1);
-        fVar.put("android.media.metadata.USER_RATING", 3);
-        fVar.put("android.media.metadata.RATING", 3);
-        fVar.put("android.media.metadata.DISPLAY_TITLE", 1);
-        fVar.put("android.media.metadata.DISPLAY_SUBTITLE", 1);
-        fVar.put("android.media.metadata.DISPLAY_DESCRIPTION", 1);
-        fVar.put("android.media.metadata.DISPLAY_ICON", 2);
-        fVar.put("android.media.metadata.DISPLAY_ICON_URI", 1);
-        fVar.put("android.media.metadata.MEDIA_ID", 1);
-        fVar.put("android.media.metadata.BT_FOLDER_TYPE", 0);
-        fVar.put("android.media.metadata.MEDIA_URI", 1);
-        fVar.put("android.media.metadata.ADVERTISEMENT", 0);
-        fVar.put("android.media.metadata.DOWNLOAD_STATUS", 0);
-        d = new String[]{"android.media.metadata.TITLE", "android.media.metadata.ARTIST", "android.media.metadata.ALBUM", "android.media.metadata.ALBUM_ARTIST", "android.media.metadata.WRITER", "android.media.metadata.AUTHOR", "android.media.metadata.COMPOSER", "android.media.metadata.DISPLAY_SUBTITLE", "android.media.metadata.DISPLAY_DESCRIPTION"};
-        CREATOR = new m8.h(4);
+    public m(n nVar) {
+        attachInterface(this, "android.support.v4.media.session.IMediaSession");
+        this.a = new WeakReference(nVar);
     }
 
-    public m(Bundle bundle) {
-        Bundle bundle2 = new Bundle(bundle);
-        this.a = bundle2;
-        x.Q(bundle2);
+    public final void F0(b bVar) {
+        n nVar = (n) this.a.get();
+        if (nVar == null || bVar == null) {
+            return;
+        }
+        nVar.f.register(bVar, new t("android.media.session.MediaController", Binder.getCallingPid(), Binder.getCallingUid()));
+        synchronized (nVar.d) {
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v8, types: [n4.b] */
+    @Override // android.os.Binder
+    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+        int i12;
+        Bundle bundle;
+        b bVar = null;
+        r5 = null;
+        Bundle bundle2 = null;
+        y yVar = null;
+        a aVar = null;
+        if (i10 == 3) {
+            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
+            IBinder readStrongBinder = parcel.readStrongBinder();
+            if (readStrongBinder != null) {
+                IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("android.support.v4.media.session.IMediaControllerCallback");
+                if (queryLocalInterface == null || !(queryLocalInterface instanceof b)) {
+                    a aVar2 = new a();
+                    aVar2.a = readStrongBinder;
+                    bVar = aVar2;
+                } else {
+                    bVar = (b) queryLocalInterface;
+                }
+            }
+            F0(bVar);
+            parcel2.getClass();
+            parcel2.writeNoException();
+            return true;
+        }
+        if (i10 == 4) {
+            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
+            IBinder readStrongBinder2 = parcel.readStrongBinder();
+            if (readStrongBinder2 != null) {
+                IInterface queryLocalInterface2 = readStrongBinder2.queryLocalInterface("android.support.v4.media.session.IMediaControllerCallback");
+                if (queryLocalInterface2 == null || !(queryLocalInterface2 instanceof b)) {
+                    a aVar3 = new a();
+                    aVar3.a = readStrongBinder2;
+                    aVar = aVar3;
+                } else {
+                    aVar = (b) queryLocalInterface2;
+                }
+            }
+            n nVar = (n) this.a.get();
+            if (nVar != null && aVar != null) {
+                nVar.f.unregister(aVar);
+                Binder.getCallingPid();
+                Binder.getCallingUid();
+                synchronized (nVar.d) {
+                }
+            }
+            parcel2.getClass();
+            parcel2.writeNoException();
+            return true;
+        }
+        if (i10 == 28) {
+            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
+            n nVar2 = (n) this.a.get();
+            if (nVar2 != null) {
+                yVar = nVar2.g;
+                i iVar = nVar2.i;
+                if (yVar != null) {
+                    float f7 = yVar.d;
+                    long j10 = yVar.n;
+                    int i13 = yVar.a;
+                    long j11 = yVar.b;
+                    long j12 = -1;
+                    if (j11 != -1 && ((i13 == 3 || i13 == 4 || i13 == 5) && j10 > 0)) {
+                        long elapsedRealtime = SystemClock.elapsedRealtime();
+                        long j13 = ((long) (f7 * (elapsedRealtime - j10))) + j11;
+                        if (iVar != null) {
+                            Bundle bundle3 = iVar.a;
+                            if (bundle3.containsKey("android.media.metadata.DURATION")) {
+                                j12 = bundle3.getLong("android.media.metadata.DURATION", 0L);
+                            }
+                        }
+                        long j14 = (j12 < 0 || j13 <= j12) ? j13 < 0 ? 0L : j13 : j12;
+                        ArrayList arrayList = new ArrayList();
+                        long j15 = yVar.c;
+                        long j16 = yVar.e;
+                        int i14 = yVar.f;
+                        CharSequence charSequence = yVar.h;
+                        AbstractCollection abstractCollection = yVar.r;
+                        if (abstractCollection != null) {
+                            arrayList.addAll(abstractCollection);
+                        }
+                        yVar = new y(yVar.a, j14, j15, yVar.d, j16, i14, charSequence, elapsedRealtime, arrayList, yVar.s, yVar.v);
+                    }
+                }
+            }
+            parcel2.getClass();
+            parcel2.writeNoException();
+            if (yVar == null) {
+                parcel2.writeInt(0);
+                return true;
+            }
+            parcel2.writeInt(1);
+            yVar.writeToParcel(parcel2, 1);
+            return true;
+        }
+        if (i10 == 37) {
+            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
+            n nVar3 = (n) this.a.get();
+            i12 = nVar3 != null ? nVar3.j : -1;
+            parcel2.getClass();
+            parcel2.writeNoException();
+            parcel2.writeInt(i12);
+            return true;
+        }
+        if (i10 == 45) {
+            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
+            parcel2.getClass();
+            parcel2.writeNoException();
+            parcel2.writeInt(0);
+            return true;
+        }
+        if (i10 == 47) {
+            parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
+            n nVar4 = (n) this.a.get();
+            i12 = nVar4 != null ? nVar4.k : -1;
+            parcel2.getClass();
+            parcel2.writeNoException();
+            parcel2.writeInt(i12);
+            return true;
+        }
+        if (i10 != 50) {
+            if (i10 != 1598968902) {
+                return super.onTransact(i10, parcel, parcel2, i11);
+            }
+            parcel2.getClass();
+            parcel2.writeString("android.support.v4.media.session.IMediaSession");
+            return true;
+        }
+        parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
+        n nVar5 = (n) this.a.get();
+        if (nVar5 != null && (bundle = nVar5.e) != null) {
+            bundle2 = new Bundle(bundle);
+        }
+        parcel2.getClass();
+        parcel2.writeNoException();
+        if (bundle2 == null) {
+            parcel2.writeInt(0);
+            return true;
+        }
+        parcel2.writeInt(1);
+        bundle2.writeToParcel(parcel2, 1);
+        return true;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeBundle(this.a);
-    }
-
-    public m(Parcel parcel) {
-        Bundle readBundle = parcel.readBundle(x.class.getClassLoader());
-        readBundle.getClass();
-        this.a = readBundle;
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
     }
 }

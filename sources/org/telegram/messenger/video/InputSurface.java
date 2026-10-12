@@ -8,7 +8,7 @@ import android.opengl.EGLExt;
 import android.opengl.EGLSurface;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class InputSurface {
     private static final int EGL_OPENGL_ES2_BIT = 4;
@@ -88,8 +88,8 @@ public class InputSurface {
         this.mSurface = null;
     }
 
-    public void setPresentationTime(long j3) {
-        EGLExt.eglPresentationTimeANDROID(this.mEGLDisplay, this.mEGLSurface, j3);
+    public void setPresentationTime(long j10) {
+        EGLExt.eglPresentationTimeANDROID(this.mEGLDisplay, this.mEGLSurface, j10);
     }
 
     public boolean swapBuffers() {

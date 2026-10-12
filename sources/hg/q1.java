@@ -1,64 +1,42 @@
 package hg;
 
-import android.app.Activity;
-import ci.k4;
-import ei.c5;
 import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.dt;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class q1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ z1 a;
+public final class q1 implements z1 {
+    public final /* synthetic */ dt a;
 
-    public q1(z1 z1Var) {
-        this.a = z1Var;
+    public q1(dt dtVar) {
+        this.a = dtVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        int i11;
-        int i12;
-        e6 e6Var;
-        z1 z1Var = this.a;
-        ArrayList arrayList = z1Var.b;
-        if (i10 == -1) {
-            if (arrayList.isEmpty()) {
-                z1Var.finishFragment();
-                return;
-            } else {
-                z1.X(z1Var);
-                return;
-            }
+    @Override // hg.z1
+    public final /* synthetic */ a0.h K() {
+        return null;
+    }
+
+    @Override // hg.z1
+    public final a0.h j0() {
+        return null;
+    }
+
+    @Override // hg.z1
+    public final void k(int i10) {
+        dt dtVar = this.a;
+        dtVar.l();
+        if (i10 != 0) {
+            dtVar.F();
         }
-        if (i10 != 1) {
-            if (i10 == 2) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(z1Var.getParentActivity(), 0, z1Var.getResourceProvider());
-                alertDialog$Builder.a.R = LocaleController.formatPluralString("BusinessRepliesDeleteTitle", arrayList.size(), new Object[0]);
-                alertDialog$Builder.a.T = LocaleController.formatPluralString("BusinessRepliesDeleteMessage", arrayList.size(), new Object[0]);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new c5(this, 5));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                z1Var.showDialog(alertDialog$Builder.a);
-                return;
-            }
-            return;
-        }
-        if (arrayList.size() != 1) {
-            return;
-        }
-        int intValue = ((Integer) arrayList.get(0)).intValue();
-        i11 = ((n2) z1Var).currentAccount;
-        b2 c10 = c2.f(i11).c(intValue);
-        if (c10 == null) {
-            return;
-        }
-        Activity parentActivity = z1Var.getParentActivity();
-        i12 = ((n2) z1Var).currentAccount;
-        e6Var = ((n2) z1Var).resourceProvider;
-        z1.d0(parentActivity, i12, null, c10, e6Var, new k4(this, intValue, 2));
+    }
+
+    @Override // hg.z1
+    public final /* synthetic */ boolean t0(int i10) {
+        return true;
+    }
+
+    @Override // hg.z1
+    public final /* synthetic */ void I0(ArrayList arrayList) {
     }
 }

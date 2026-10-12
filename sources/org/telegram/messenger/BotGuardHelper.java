@@ -7,23 +7,23 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class BotGuardHelper extends BaseController {
     private static volatile BotGuardHelper[] Instance = new BotGuardHelper[4];
     private final LongSparseLongArray queryIdToBotId;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class GuardBotDecisionResultNotification {
         public final long dialogId;
         public final long guardBotId;
         public final long queryId;
         public final TLRPC.JoinChatBotResult result;
 
-        public GuardBotDecisionResultNotification(long j3, long j10, long j11, TLRPC.JoinChatBotResult joinChatBotResult) {
-            this.dialogId = j3;
-            this.guardBotId = j10;
-            this.queryId = j11;
+        public GuardBotDecisionResultNotification(long j10, long j11, long j12, TLRPC.JoinChatBotResult joinChatBotResult) {
+            this.dialogId = j10;
+            this.guardBotId = j11;
+            this.queryId = j12;
             this.result = joinChatBotResult;
         }
     }
@@ -56,24 +56,24 @@ public class BotGuardHelper extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$openGuardBotWebApp$0(long j3, long j10, long j11) {
-        openGuardBotWebApp(j3, j10, j11, true);
-        SharedPrefsHelper.setWebViewConfirmShown(this.currentAccount, j10, true);
+    public /* synthetic */ void lambda$openGuardBotWebApp$0(long j10, long j11, long j12) {
+        openGuardBotWebApp(j10, j11, j12, true);
+        SharedPrefsHelper.setWebViewConfirmShown(this.currentAccount, j11, true);
     }
 
-    public void closeGuardBotWebApp(long j3, long j10, TLRPC.JoinChatBotResult joinChatBotResult) {
-        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.guardBotDecisionResult, new GuardBotDecisionResultNotification(j3, this.queryIdToBotId.get(j10, 0L), j10, joinChatBotResult));
-        HashSet hashSet = ei.k3.W0;
+    public void closeGuardBotWebApp(long j10, long j11, TLRPC.JoinChatBotResult joinChatBotResult) {
+        getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.guardBotDecisionResult, new GuardBotDecisionResultNotification(j10, this.queryIdToBotId.get(j11, 0L), j11, joinChatBotResult));
+        HashSet hashSet = fi.k3.W0;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();
             while (it.hasNext()) {
-                ei.k3 k3Var = (ei.k3) it.next();
-                ei.e5 e5Var = k3Var.v0;
+                fi.k3 k3Var = (fi.k3) it.next();
+                fi.e5 e5Var = k3Var.v0;
                 if (e5Var != null && e5Var.g == 5) {
-                    long j11 = e5Var.b;
-                    if (j11 == j3 || j11 == 0) {
+                    long j12 = e5Var.b;
+                    if (j12 == j10 || j12 == 0) {
                         TLObject tLObject = e5Var.q;
-                        if ((tLObject instanceof TLRPC.TL_webViewResultUrl) && ((TLRPC.TL_webViewResultUrl) tLObject).query_id == j10) {
+                        if ((tLObject instanceof TLRPC.TL_webViewResultUrl) && ((TLRPC.TL_webViewResultUrl) tLObject).query_id == j11) {
                             k3Var.k(false);
                             return;
                         }
@@ -83,30 +83,30 @@ public class BotGuardHelper extends BaseController {
         }
     }
 
-    public void openGuardBotWebApp(long j3, long j10, long j11) {
-        openGuardBotWebApp(j3, j10, j11, false);
+    public void openGuardBotWebApp(long j10, long j11, long j12) {
+        openGuardBotWebApp(j10, j11, j12, false);
     }
 
-    private void openGuardBotWebApp(long j3, long j10, long j11, boolean z10) {
-        org.telegram.ui.ActionBar.n2 R;
+    private void openGuardBotWebApp(long j10, long j11, long j12, boolean z10) {
+        org.telegram.ui.ActionBar.m2 R;
         if (LaunchActivity.G1 == null || (R = LaunchActivity.R()) == null) {
             return;
         }
-        TLRPC.User user = getMessagesController().getUser(Long.valueOf(j10));
+        TLRPC.User user = getMessagesController().getUser(Long.valueOf(j11));
         if (!z10) {
-            if (SharedPrefsHelper.isWebViewConfirmShown(this.currentAccount, j10) || getMessagesController().whitelistedBots.contains(Long.valueOf(j10))) {
-                openGuardBotWebApp(j3, j10, j11, true);
+            if (SharedPrefsHelper.isWebViewConfirmShown(this.currentAccount, j11) || getMessagesController().whitelistedBots.contains(Long.valueOf(j11))) {
+                openGuardBotWebApp(j10, j11, j12, true);
                 return;
             } else {
-                org.telegram.ui.Components.g5.n(R, user, new m0(this, j3, j10, j11, 0), new w1(8));
+                org.telegram.ui.Components.g5.n(R, user, new n0(this, j10, j11, j12, 0), new y1(8));
                 return;
             }
         }
-        this.queryIdToBotId.put(j11, j10);
-        org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
-        ei.e5 b10 = ei.e5.b(this.currentAccount, j3, j10, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
-        b10.d = j11;
-        ei.k3 k3Var = new ei.k3(LaunchActivity.G1, null);
+        this.queryIdToBotId.put(j12, j11);
+        org.telegram.ui.ActionBar.m2 R2 = LaunchActivity.R();
+        fi.e5 b10 = fi.e5.b(this.currentAccount, j10, j11, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
+        b10.d = j12;
+        fi.k3 k3Var = new fi.k3(LaunchActivity.G1, null);
         k3Var.x(false);
         k3Var.A0 = true;
         k3Var.k0 = LaunchActivity.G1;

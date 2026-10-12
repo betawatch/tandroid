@@ -1,13 +1,16 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface ny {
-    boolean C();
-
-    boolean K(ty tyVar);
-
-    boolean w(ty tyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var);
+public final class ny extends org.telegram.ui.Components.r5 {
+    @Override // org.telegram.ui.Components.r5, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(1.0f));
+        super.draw(canvas);
+        canvas.restore();
+    }
 }

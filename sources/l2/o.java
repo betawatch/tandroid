@@ -1,69 +1,67 @@
 package l2;
 
 import android.os.Handler;
-import b2.p0;
-import b2.s;
-import b2.s0;
-import c3.g0;
+import b2.u0;
+import b2.x;
+import b2.x0;
 import c3.h0;
-import e2.d0;
-import e2.v;
-import n4.x;
-import org.telegram.ui.Components.mp0;
-import u2.a1;
+import c3.i0;
+import e2.m0;
+import org.telegram.ui.Components.ip0;
+import u2.c1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class o implements h0 {
-    public final a1 a;
-    public final x b = new x(19, false);
+public final class o implements i0 {
+    public final c1 a;
+    public final qf.b b = new qf.b(24);
     public final l3.a c = new l3.a();
     public long d = -9223372036854775807L;
     public final /* synthetic */ p e;
 
-    public o(p pVar, y2.d dVar) {
+    public o(p pVar, androidx.biometric.e eVar) {
         this.e = pVar;
-        this.a = new a1(dVar, null, null);
+        this.a = new c1(eVar, null, null);
     }
 
-    @Override // c3.h0
-    public final int a(b2.k kVar, int i10, boolean z10) {
-        return e(kVar, i10, z10);
+    @Override // c3.i0
+    public final int a(b2.p pVar, int i10, boolean z10) {
+        return f(pVar, i10, z10);
     }
 
-    @Override // c3.h0
-    public final void b(s sVar) {
-        this.a.b(sVar);
+    @Override // c3.i0
+    public final void b(x xVar) {
+        this.a.b(xVar);
     }
 
-    @Override // c3.h0
-    public final void c(long j3, int i10, int i11, int i12, g0 g0Var) {
-        long i13;
-        long j10;
-        this.a.c(j3, i10, i11, i12, g0Var);
-        while (this.a.x(false)) {
+    @Override // c3.i0
+    public final void c(long j10, int i10, int i11, int i12, h0 h0Var) {
+        long j11;
+        long j12;
+        this.a.c(j10, i10, i11, i12, h0Var);
+        while (this.a.A(false)) {
             l3.a aVar = this.c;
             aVar.clear();
-            if (this.a.C(this.b, aVar, 0, false) == -4) {
-                aVar.c();
+            if (this.a.F(this.b, aVar, 0, false) == -4) {
+                aVar.e();
             } else {
                 aVar = null;
             }
             if (aVar != null) {
-                long j11 = aVar.e;
-                p0 a2 = this.e.c.a(aVar);
+                long j13 = aVar.e;
+                u0 a2 = this.e.c.a(aVar);
                 if (a2 != null) {
                     n3.a aVar2 = (n3.a) a2.a[0];
                     String str = aVar2.a;
                     String str2 = aVar2.b;
                     if ("urn:mpeg:dash:event:2012".equals(str) && ("1".equals(str2) || "2".equals(str2) || "3".equals(str2))) {
                         try {
-                            j10 = d0.S(d0.p(aVar2.e));
-                        } catch (s0 unused) {
-                            j10 = -9223372036854775807L;
+                            j12 = m0.V(m0.r(aVar2.e));
+                        } catch (x0 unused) {
+                            j12 = -9223372036854775807L;
                         }
-                        if (j10 != -9223372036854775807L) {
-                            n nVar = new n(j11, j10);
+                        if (j12 != -9223372036854775807L) {
+                            n nVar = new n(j13, j12);
                             Handler handler = this.e.d;
                             handler.sendMessage(handler.obtainMessage(1, nVar));
                         }
@@ -71,31 +69,35 @@ public final class o implements h0 {
                 }
             }
         }
-        a1 a1Var = this.a;
-        mp0 mp0Var = a1Var.a;
-        synchronized (a1Var) {
-            int i14 = a1Var.s;
-            i13 = i14 == 0 ? -1L : a1Var.i(i14);
+        c1 c1Var = this.a;
+        ip0 ip0Var = c1Var.a;
+        synchronized (c1Var) {
+            int i13 = c1Var.s;
+            j11 = i13 == 0 ? -1L : c1Var.j(i13);
         }
-        mp0Var.b(i13);
+        ip0Var.b(j11);
     }
 
-    @Override // c3.h0
-    public final void d(int i10, v vVar) {
-        f(vVar, i10, 0);
+    @Override // c3.i0
+    public final void d(int i10, e2.x xVar) {
+        g(xVar, i10, 0);
     }
 
-    @Override // c3.h0
-    public final int e(b2.k kVar, int i10, boolean z10) {
-        a1 a1Var = this.a;
-        a1Var.getClass();
-        return a1Var.e(kVar, i10, z10);
+    @Override // c3.i0
+    public final int f(b2.p pVar, int i10, boolean z10) {
+        c1 c1Var = this.a;
+        c1Var.getClass();
+        return c1Var.f(pVar, i10, z10);
     }
 
-    @Override // c3.h0
-    public final void f(v vVar, int i10, int i11) {
-        a1 a1Var = this.a;
-        a1Var.getClass();
-        a1Var.f(vVar, i10, 0);
+    @Override // c3.i0
+    public final void g(e2.x xVar, int i10, int i11) {
+        c1 c1Var = this.a;
+        c1Var.getClass();
+        c1Var.g(xVar, i10, 0);
+    }
+
+    @Override // c3.i0
+    public final /* synthetic */ void e(long j10) {
     }
 }

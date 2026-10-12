@@ -9,8 +9,9 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public static final Parcelable.Creator<a> CREATOR = new v(0);
@@ -28,17 +29,17 @@ public final class a extends o6.a {
     public final t w;
     public final JSONObject x;
 
-    public a(String str, String str2, long j3, String str3, String str4, String str5, String str6, String str7, String str8, long j10, String str9, t tVar) {
+    public a(String str, String str2, long j10, String str3, String str4, String str5, String str6, String str7, String str8, long j11, String str9, t tVar) {
         this.a = str;
         this.b = str2;
-        this.c = j3;
+        this.c = j10;
         this.d = str3;
         this.e = str4;
         this.f = str5;
         this.h = str6;
         this.n = str7;
         this.r = str8;
-        this.s = j10;
+        this.s = j11;
         this.v = str9;
         this.w = tVar;
         if (TextUtils.isEmpty(str6)) {
@@ -47,9 +48,9 @@ public final class a extends o6.a {
         }
         try {
             this.x = new JSONObject(str6);
-        } catch (JSONException e7) {
+        } catch (JSONException e) {
             Locale locale = Locale.ROOT;
-            Log.w("AdBreakClipInfo", "Error creating AdBreakClipInfo: " + e7.getMessage());
+            Log.w("AdBreakClipInfo", "Error creating AdBreakClipInfo: " + e.getMessage());
             this.h = null;
             this.x = new JSONObject();
         }
@@ -59,12 +60,12 @@ public final class a extends o6.a {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("id", this.a);
-            long j3 = this.c;
+            long j10 = this.c;
             Pattern pattern = g6.a.a;
-            jSONObject.put("duration", j3 / 1000.0d);
-            long j10 = this.s;
-            if (j10 != -1) {
-                jSONObject.put("whenSkippable", j10 / 1000.0d);
+            jSONObject.put("duration", j10 / 1000.0d);
+            long j11 = this.s;
+            if (j11 != -1) {
+                jSONObject.put("whenSkippable", j11 / 1000.0d);
             }
             String str = this.n;
             if (str != null) {
@@ -124,21 +125,21 @@ public final class a extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.d0.q(parcel, 20293);
-        w7.d0.l(parcel, 2, this.a);
-        w7.d0.l(parcel, 3, this.b);
-        w7.d0.s(parcel, 4, 8);
+        int q6 = g0.q(parcel, 20293);
+        g0.l(parcel, 2, this.a);
+        g0.l(parcel, 3, this.b);
+        g0.s(parcel, 4, 8);
         parcel.writeLong(this.c);
-        w7.d0.l(parcel, 5, this.d);
-        w7.d0.l(parcel, 6, this.e);
-        w7.d0.l(parcel, 7, this.f);
-        w7.d0.l(parcel, 8, this.h);
-        w7.d0.l(parcel, 9, this.n);
-        w7.d0.l(parcel, 10, this.r);
-        w7.d0.s(parcel, 11, 8);
+        g0.l(parcel, 5, this.d);
+        g0.l(parcel, 6, this.e);
+        g0.l(parcel, 7, this.f);
+        g0.l(parcel, 8, this.h);
+        g0.l(parcel, 9, this.n);
+        g0.l(parcel, 10, this.r);
+        g0.s(parcel, 11, 8);
         parcel.writeLong(this.s);
-        w7.d0.l(parcel, 12, this.v);
-        w7.d0.k(parcel, 13, this.w, i10);
-        w7.d0.r(parcel, q6);
+        g0.l(parcel, 12, this.v);
+        g0.k(parcel, 13, this.w, i10);
+        g0.r(parcel, q6);
     }
 }

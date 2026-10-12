@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import hg.c;
+import i2.d;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
-import sc.v;
+import t8.b;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 final class zztu {
     private static final char[] zza;
@@ -25,9 +25,9 @@ final class zztu {
     }
 
     public static String zza(zzts zztsVar, String str) {
-        StringBuilder j3 = v.j("# ", str);
-        zzd(zztsVar, j3, 0);
-        return j3.toString();
+        StringBuilder i10 = b.i("# ", str);
+        zzd(zztsVar, i10, 0);
+        return i10.toString();
     }
 
     public static void zzb(StringBuilder sb2, int i10, String str, Object obj) {
@@ -194,7 +194,7 @@ final class zztu {
             Iterator zzf = ((zzsk) zztsVar).zzb.zzf();
             while (zzf.hasNext()) {
                 Map.Entry entry2 = (Map.Entry) zzf.next();
-                zzb(sb2, i10, c.i(((zzsl) entry2.getKey()).zza, "[", "]"), entry2.getValue());
+                zzb(sb2, i10, d.j(((zzsl) entry2.getKey()).zza, "[", "]"), entry2.getValue());
             }
         }
         zzuw zzuwVar = ((zzsn) zztsVar).zzc;

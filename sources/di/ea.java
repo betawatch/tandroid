@@ -1,0 +1,721 @@
+package di;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.view.MotionEvent;
+import android.view.View;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.i61;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes4.dex */
+public final class ea extends org.telegram.ui.ActionBar.e3 implements NotificationCenter.NotificationCenterDelegate {
+    public static final /* synthetic */ int d0 = 0;
+    public boolean E;
+    public boolean F;
+    public boolean G;
+    public int H;
+    public int I;
+    public final ArrayList J;
+    public boolean K;
+    public boolean L;
+    public int M;
+    public int N;
+    public boolean O;
+    public HashMap P;
+    public int Q;
+    public final Paint R;
+    public ArrayList S;
+    public g9 T;
+    public Utilities.Callback U;
+    public m9 V;
+    public Utilities.Callback W;
+    public ha X;
+    public final boolean Y;
+    public boolean Z;
+    public boolean a0;
+    public h1 b;
+    public BitmapDrawable b0;
+    public TLRPC.InputPeer c;
+    public ga c0;
+    public final ArrayList d;
+    public final HashMap e;
+    public int f;
+    public final ArrayList h;
+    public final ArrayList n;
+    public final HashMap r;
+    public int s;
+    public final HashSet v;
+    public boolean w;
+    public boolean x;
+    public boolean y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r14v0 */
+    /* JADX WARN: Type inference failed for: r14v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r14v6 */
+    /* JADX WARN: Type inference failed for: r23v1, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r2v20, types: [android.content.SharedPreferences] */
+    /* JADX WARN: Type inference failed for: r5v15 */
+    /* JADX WARN: Type inference failed for: r5v16, types: [int] */
+    /* JADX WARN: Type inference failed for: r5v20 */
+    public ea(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(1, context, c6Var, true);
+        boolean z10;
+        char c10;
+        boolean z11 = true;
+        ArrayList arrayList = new ArrayList();
+        this.d = arrayList;
+        HashMap hashMap = new HashMap();
+        this.e = hashMap;
+        char c11 = 0;
+        this.f = 0;
+        ArrayList arrayList2 = new ArrayList();
+        this.h = arrayList2;
+        ArrayList arrayList3 = new ArrayList();
+        this.n = arrayList3;
+        HashMap hashMap2 = new HashMap();
+        this.r = hashMap2;
+        this.s = 0;
+        this.v = new HashSet();
+        this.w = true;
+        this.x = true;
+        this.y = false;
+        this.E = true;
+        this.F = true;
+        this.G = false;
+        this.H = 0;
+        this.I = 1;
+        this.J = new ArrayList();
+        this.M = 1;
+        this.N = 4;
+        this.P = new HashMap();
+        this.Q = 86400;
+        this.R = new Paint(1);
+        this.Y = true;
+        this.Z = false;
+        this.Q = i10;
+        String string = MessagesController.getInstance(this.currentAccount).getMainSettings().getString("story_prv_contacts", null);
+        if (string != null) {
+            String[] split = string.split(",");
+            arrayList3.clear();
+            for (String str : split) {
+                try {
+                    arrayList3.add(Long.valueOf(Long.parseLong(str)));
+                } catch (Exception unused) {
+                }
+            }
+        }
+        String string2 = MessagesController.getInstance(this.currentAccount).getMainSettings().getString("story_prv_grpcontacts", null);
+        if (string2 != null) {
+            String[] split2 = string2.split(";");
+            hashMap2.clear();
+            int i11 = 0;
+            while (i11 < split2.length) {
+                String[] split3 = split2[i11].split(",");
+                if (split3.length > 0) {
+                    try {
+                        long parseLong = Long.parseLong(split3[c11]);
+                        z10 = z11;
+                        ArrayList arrayList4 = new ArrayList();
+                        c10 = c11;
+                        for (?? r52 = z10; r52 < split3.length; r52++) {
+                            arrayList4.add(Long.valueOf(Long.parseLong(split3[r52])));
+                        }
+                        hashMap2.put(Long.valueOf(parseLong), arrayList4);
+                    } catch (Exception unused2) {
+                    }
+                    i11++;
+                    c11 = c10;
+                    z11 = z10;
+                }
+                z10 = z11;
+                c10 = c11;
+                i11++;
+                c11 = c10;
+                z11 = z10;
+            }
+        }
+        boolean z12 = z11;
+        ?? r23 = c11;
+        String string3 = MessagesController.getInstance(this.currentAccount).getMainSettings().getString("story_prv_everyoneexcept", null);
+        if (string3 != null) {
+            String[] split4 = string3.split(",");
+            arrayList.clear();
+            for (int i12 = r23 == true ? 1 : 0; i12 < split4.length; i12++) {
+                try {
+                    arrayList.add(Long.valueOf(Long.parseLong(split4[i12])));
+                } catch (Exception unused3) {
+                }
+            }
+        }
+        String string4 = MessagesController.getInstance(this.currentAccount).getMainSettings().getString("story_prv_grpeveryoneexcept", null);
+        if (string4 != null) {
+            String[] split5 = string4.split(";");
+            hashMap.clear();
+            for (int i13 = r23 == true ? 1 : 0; i13 < split5.length; i13++) {
+                String[] split6 = split5[i13].split(",");
+                if (split6.length > 0) {
+                    try {
+                        long parseLong2 = Long.parseLong(split6[r23 == true ? 1 : 0]);
+                        ArrayList arrayList5 = new ArrayList();
+                        for (?? r14 = z12; r14 < split6.length; r14++) {
+                            arrayList5.add(Long.valueOf(Long.parseLong(split6[r14])));
+                        }
+                        hashMap.put(Long.valueOf(parseLong2), arrayList5);
+                    } catch (Exception unused4) {
+                    }
+                }
+            }
+        }
+        String string5 = MessagesController.getInstance(this.currentAccount).getMainSettings().getString("story_prv_excluded", null);
+        if (string5 != null) {
+            String[] split7 = string5.split(",");
+            arrayList2.clear();
+            for (int i14 = r23 == true ? 1 : 0; i14 < split7.length; i14++) {
+                try {
+                    arrayList2.add(Long.valueOf(Long.parseLong(split7[i14])));
+                } catch (Exception unused5) {
+                }
+            }
+        }
+        this.s = m1(arrayList3, hashMap2).size();
+        this.f = m1(arrayList, hashMap).size();
+        this.x = !MessagesController.getInstance(this.currentAccount).getMainSettings().getBoolean("story_noforwards", r23);
+        this.y = MessagesController.getInstance(this.currentAccount).getMainSettings().getBoolean("story_keep", z12);
+        k1(context);
+        this.b.setAdapter(new y8(this, context, 0));
+        MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
+        messagesStorage.getStorageQueue().postRunnable(new x6(11, this, messagesStorage));
+        MessagesController.getInstance(this.currentAccount).getStoriesController().P();
+        MessagesController.getInstance(this.currentAccount).getStoriesController().R();
+    }
+
+    public static ArrayList K0(ea eaVar) {
+        ArrayList i12 = eaVar.i1();
+        int i10 = 0;
+        while (i10 < i12.size()) {
+            TLObject tLObject = (TLObject) i12.get(i10);
+            if ((tLObject instanceof TLRPC.User) && !((TLRPC.User) tLObject).close_friend) {
+                i12.remove(i10);
+                i10--;
+            }
+            i10++;
+        }
+        return i12;
+    }
+
+    public static ArrayList Z0(ea eaVar) {
+        TLRPC.Chat chat;
+        ArrayList arrayList = new ArrayList();
+        MessagesController messagesController = MessagesController.getInstance(eaVar.currentAccount);
+        ArrayList<TLRPC.Dialog> allDialogs = messagesController.getAllDialogs();
+        for (int i10 = 0; i10 < allDialogs.size(); i10++) {
+            TLRPC.Dialog dialog = allDialogs.get(i10);
+            if (messagesController.canAddToForward(dialog)) {
+                if (DialogObject.isUserDialog(dialog.id)) {
+                    TLRPC.User user = messagesController.getUser(Long.valueOf(dialog.id));
+                    if (user != null && !user.bot && user.id != 777000 && !UserObject.isUserSelf(user)) {
+                        arrayList.add(user);
+                    }
+                } else if (DialogObject.isChatDialog(dialog.id) && (chat = messagesController.getChat(Long.valueOf(-dialog.id))) != null && !ChatObject.isForum(chat)) {
+                    arrayList.add(chat);
+                }
+            }
+        }
+        return arrayList;
+    }
+
+    public static ArrayList a1(ea eaVar, boolean z10, boolean z11) {
+        TLRPC.User user;
+        TLRPC.Chat chat;
+        MessagesController messagesController = MessagesController.getInstance(eaVar.currentAccount);
+        HashMap hashMap = new HashMap();
+        ArrayList arrayList = new ArrayList();
+        ArrayList<TLRPC.Dialog> allDialogs = messagesController.getAllDialogs();
+        ConcurrentHashMap<Long, TLRPC.TL_contact> concurrentHashMap = ContactsController.getInstance(eaVar.currentAccount).contactsDict;
+        if (concurrentHashMap == null || concurrentHashMap.isEmpty()) {
+            if (!eaVar.a0) {
+                ContactsController.getInstance(eaVar.currentAccount).loadContacts(false, 0L);
+            }
+            eaVar.a0 = true;
+        }
+        for (int i10 = 0; i10 < allDialogs.size(); i10++) {
+            TLRPC.Dialog dialog = allDialogs.get(i10);
+            if (DialogObject.isUserDialog(dialog.id)) {
+                TLRPC.User user2 = messagesController.getUser(Long.valueOf(dialog.id));
+                if (user2 != null && !user2.bot && user2.id != 777000 && !UserObject.isUserSelf(user2) && !user2.deleted && (!z10 || (concurrentHashMap != null && concurrentHashMap.get(Long.valueOf(user2.id)) != null))) {
+                    hashMap.put(Long.valueOf(user2.id), Boolean.TRUE);
+                    arrayList.add(user2);
+                }
+            } else if (z11 && DialogObject.isChatDialog(dialog.id) && (chat = messagesController.getChat(Long.valueOf(-dialog.id))) != null && !ChatObject.isChannelAndNotMegaGroup(chat)) {
+                hashMap.put(Long.valueOf(-chat.id), Boolean.TRUE);
+                arrayList.add(chat);
+            }
+        }
+        if (concurrentHashMap != null) {
+            Iterator<Map.Entry<Long, TLRPC.TL_contact>> it = concurrentHashMap.entrySet().iterator();
+            while (it.hasNext()) {
+                Long key = it.next().getKey();
+                key.getClass();
+                if (!hashMap.containsKey(key) && (user = messagesController.getUser(key)) != null && !user.bot && user.id != 777000 && !UserObject.isUserSelf(user)) {
+                    arrayList.add(user);
+                    hashMap.put(Long.valueOf(user.id), Boolean.TRUE);
+                }
+            }
+        }
+        return arrayList;
+    }
+
+    public static int e1(ea eaVar, TLRPC.Chat chat) {
+        Integer num;
+        int i10;
+        TLRPC.ChatFull chatFull = MessagesController.getInstance(eaVar.currentAccount).getChatFull(chat.id);
+        if (chatFull != null && (i10 = chatFull.participants_count) > 0) {
+            return i10;
+        }
+        HashMap hashMap = eaVar.P;
+        return (hashMap == null || (num = (Integer) hashMap.get(Long.valueOf(chat.id))) == null) ? chat.participants_count : num.intValue();
+    }
+
+    public static HashSet m1(ArrayList arrayList, HashMap hashMap) {
+        HashSet hashSet = new HashSet();
+        if (arrayList != null) {
+            hashSet.addAll(arrayList);
+        }
+        if (hashMap != null) {
+            Iterator it = hashMap.values().iterator();
+            while (it.hasNext()) {
+                hashSet.addAll((ArrayList) it.next());
+            }
+        }
+        return hashSet;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3
+    public final boolean canDismissWithSwipe() {
+        View currentView = this.b.getCurrentView();
+        if (currentView instanceof x9) {
+            return ((x9) currentView).S;
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3
+    public final boolean canSwipeToBack(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        h1 h1Var = this.b;
+        if (h1Var == null) {
+            return;
+        }
+        int i12 = 0;
+        if (i10 == NotificationCenter.contactsDidLoad) {
+            View[] viewPages = h1Var.getViewPages();
+            View view = viewPages[0];
+            if (view instanceof x9) {
+                ((x9) view).g(true);
+            }
+            View view2 = viewPages[1];
+            if (view2 instanceof x9) {
+                ((x9) view2).g(true);
+                return;
+            }
+            return;
+        }
+        if (i10 != NotificationCenter.storiesBlocklistUpdate) {
+            if (i10 == NotificationCenter.storiesSendAsUpdate) {
+                View[] viewPages2 = h1Var.getViewPages();
+                while (i12 < viewPages2.length) {
+                    View view3 = viewPages2[i12];
+                    if (view3 instanceof x9) {
+                        x9 x9Var = (x9) view3;
+                        if (x9Var.a == 0) {
+                            x9Var.g(true);
+                        }
+                    }
+                    i12++;
+                }
+                return;
+            }
+            return;
+        }
+        View[] viewPages3 = h1Var.getViewPages();
+        while (i12 < viewPages3.length) {
+            View view4 = viewPages3[i12];
+            if (view4 instanceof x9) {
+                x9 x9Var2 = (x9) view4;
+                int i13 = x9Var2.a;
+                if (i13 == 6) {
+                    x9Var2.a(true);
+                } else if (i13 == 0) {
+                    x9Var2.g(true);
+                }
+            }
+            i12++;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public final void dismiss() {
+        ca caVar;
+        Utilities.Callback callback = this.U;
+        ArrayList arrayList = this.h;
+        HashMap hashMap = this.e;
+        ArrayList arrayList2 = this.d;
+        HashMap hashMap2 = this.r;
+        ArrayList arrayList3 = this.n;
+        if (callback != null) {
+            int i10 = this.N;
+            if (i10 == 3) {
+                caVar = new ca(this.N, this.currentAccount, new ArrayList(m1(arrayList3, hashMap2)));
+                ArrayList arrayList4 = caVar.c;
+                arrayList4.clear();
+                arrayList4.addAll(arrayList3);
+                HashMap hashMap3 = caVar.d;
+                hashMap3.clear();
+                hashMap3.putAll(hashMap2);
+            } else if (i10 == 4) {
+                caVar = new ca(this.N, this.currentAccount, new ArrayList(m1(arrayList2, hashMap)));
+                ArrayList arrayList5 = caVar.c;
+                arrayList5.clear();
+                arrayList5.addAll(arrayList2);
+                HashMap hashMap4 = caVar.d;
+                hashMap4.clear();
+                hashMap4.putAll(hashMap);
+            } else {
+                caVar = i10 == 2 ? new ca(i10, this.currentAccount, arrayList) : new ca(i10, this.currentAccount, (ArrayList) null);
+            }
+            this.U.run(caVar);
+            this.U = null;
+        }
+        org.telegram.ui.Components.sc.h(this.container);
+        StringBuilder sb2 = new StringBuilder();
+        for (Map.Entry entry : hashMap2.entrySet()) {
+            if (sb2.length() > 0) {
+                sb2.append(";");
+            }
+            sb2.append(entry.getKey());
+            sb2.append(",");
+            sb2.append(TextUtils.join(",", (Iterable) entry.getValue()));
+        }
+        StringBuilder sb3 = new StringBuilder();
+        for (Map.Entry entry2 : hashMap.entrySet()) {
+            if (sb3.length() > 0) {
+                sb3.append(";");
+            }
+            sb3.append(entry2.getKey());
+            sb3.append(",");
+            sb3.append(TextUtils.join(",", (Iterable) entry2.getValue()));
+        }
+        MessagesController.getInstance(this.currentAccount).getMainSettings().edit().putString("story_prv_everyoneexcept", TextUtils.join(",", arrayList2)).putString("story_prv_grpeveryoneexcept", sb3.toString()).putString("story_prv_contacts", TextUtils.join(",", arrayList3)).putString("story_prv_grpcontacts", sb2.toString()).putString("story_prv_excluded", TextUtils.join(",", arrayList)).putBoolean("story_noforwards", !this.x).putBoolean("story_keep", this.y).apply();
+        super.dismiss();
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3
+    public final void dismissInternal() {
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.contactsDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.storiesBlocklistUpdate);
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.storiesSendAsUpdate);
+        super.dismissInternal();
+    }
+
+    public final void f1(boolean z10) {
+        this.E = z10;
+        h1 h1Var = this.b;
+        if (h1Var != null) {
+            for (View view : h1Var.getViewPages()) {
+                if (view instanceof x9) {
+                    ((x9) view).e(false);
+                }
+            }
+        }
+    }
+
+    public final void g1() {
+        q9 q9Var;
+        for (View view : this.b.getViewPages()) {
+            if ((view instanceof x9) && (q9Var = ((x9) view).x) != null) {
+                AndroidUtilities.hideKeyboard(q9Var.a);
+            }
+        }
+    }
+
+    public final void h1(ca caVar, Runnable runnable, boolean z10) {
+        ArrayList arrayList = new ArrayList();
+        if (this.S != null) {
+            MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
+            for (int i10 = 0; i10 < this.S.size(); i10++) {
+                String str = (String) this.S.get(i10);
+                TLObject userOrChat = messagesController.getUserOrChat(str);
+                if (userOrChat instanceof TLRPC.User) {
+                    TLRPC.User user = (TLRPC.User) userOrChat;
+                    TLRPC.User user2 = messagesController.getUser(Long.valueOf(user.id));
+                    if (user2 != null) {
+                        user = user2;
+                    }
+                    if (!user.bot && !caVar.b(user)) {
+                        arrayList.add(str);
+                    }
+                }
+            }
+        }
+        if (arrayList.isEmpty() || z10) {
+            View view = this.b.getViewPages()[0];
+            d dVar = view instanceof x9 ? ((x9) view).v : null;
+            if (dVar != null) {
+                dVar.setLoading(true);
+            }
+            g9 g9Var = this.T;
+            if (g9Var != null) {
+                g9Var.e(caVar, this.w, this.x, this.y, this.G, this.c, this.H, new x6(13, dVar, runnable), new x8(dVar, 0));
+                return;
+            } else {
+                runnable.run();
+                return;
+            }
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        for (int i11 = 0; i11 < Math.min(2, arrayList.size()); i11++) {
+            if (i11 > 0) {
+                spannableStringBuilder.append((CharSequence) ", ");
+            }
+            SpannableString spannableString = new SpannableString("@" + ((String) arrayList.get(i11)));
+            spannableString.setSpan(new i61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+            spannableStringBuilder.append((CharSequence) spannableString);
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.resourcesProvider);
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.StoryRestrictions);
+        alertDialog$Builder.a.T = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.StoryRestrictionsInfo), spannableStringBuilder);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Proceed), new androidx.car.app.utils.a(this, caVar, runnable, 6));
+        org.telegram.messenger.q.q(R.string.Cancel, alertDialog$Builder, null);
+    }
+
+    public final ArrayList i1() {
+        TLRPC.User user;
+        ArrayList arrayList = new ArrayList();
+        ArrayList<TLRPC.TL_contact> arrayList2 = ContactsController.getInstance(this.currentAccount).contacts;
+        if (arrayList2 == null || arrayList2.isEmpty()) {
+            ContactsController.getInstance(this.currentAccount).loadContacts(false, 0L);
+        }
+        MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
+        if (arrayList2 != null) {
+            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                TLRPC.TL_contact tL_contact = arrayList2.get(i10);
+                if (tL_contact != null && (user = messagesController.getUser(Long.valueOf(tL_contact.user_id))) != null && !UserObject.isUserSelf(user) && !user.bot && user.id != 777000) {
+                    arrayList.add(user);
+                }
+            }
+        }
+        return arrayList;
+    }
+
+    public final bi.x8 j1() {
+        return MessagesController.getInstance(this.currentAccount).getStoriesController();
+    }
+
+    public final void k1(Context context) {
+        org.telegram.ui.Components.sc.a(this.container, new z8(0));
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.contactsDidLoad);
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesBlocklistUpdate);
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesSendAsUpdate);
+        int i10 = org.telegram.ui.ActionBar.g6.h5;
+        this.R.setColor(org.telegram.ui.ActionBar.g6.w0(i10, this.resourcesProvider));
+        fixNavigationBar(org.telegram.ui.ActionBar.g6.w0(i10, this.resourcesProvider));
+        this.containerView = new f9(this, context);
+        h1 h1Var = new h1(this, context, 1);
+        this.b = h1Var;
+        int i11 = this.backgroundPaddingLeft;
+        h1Var.setPadding(i11, 0, i11, 0);
+        this.containerView.addView(this.b, w7.a6.e(-1, -1, 119));
+    }
+
+    public final void l1(boolean z10) {
+        this.Z = z10;
+        h1 h1Var = this.b;
+        if (h1Var != null) {
+            for (View view : h1Var.getViewPages()) {
+                if (view instanceof x9) {
+                    x9 x9Var = (x9) view;
+                    x9Var.g(false);
+                    x9Var.e(false);
+                }
+            }
+        }
+    }
+
+    public final void n1(int i10) {
+        this.I = i10;
+        h1 h1Var = this.b;
+        if (h1Var != null) {
+            for (View view : h1Var.getViewPages()) {
+                if (view instanceof x9) {
+                    ((x9) view).e(false);
+                }
+            }
+        }
+    }
+
+    public final void o1(Bitmap bitmap) {
+        this.b0 = bitmap == null ? null : new BitmapDrawable(bitmap);
+        h1 h1Var = this.b;
+        if (h1Var != null) {
+            for (View view : h1Var.getViewPages()) {
+                if (view instanceof x9) {
+                    x9 x9Var = (x9) view;
+                    x9Var.g(false);
+                    x9Var.e(false);
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
+    public final void onBackPressed() {
+        if (this.b.getCurrentPosition() <= 0) {
+            super.onBackPressed();
+            return;
+        }
+        g1();
+        this.b.D(r0.getCurrentPosition() - 1);
+    }
+
+    public final void p1() {
+        this.K = true;
+        View[] viewPages = this.b.getViewPages();
+        View view = viewPages[0];
+        if (view instanceof x9) {
+            x9 x9Var = (x9) view;
+            x9Var.b(x9Var.a);
+        }
+        View view2 = viewPages[1];
+        if (view2 instanceof x9) {
+            x9 x9Var2 = (x9) view2;
+            x9Var2.b(x9Var2.a);
+        }
+    }
+
+    public final void q1(TLRPC.InputPeer inputPeer) {
+        this.c = inputPeer;
+        this.v.clear();
+        View[] viewPages = this.b.getViewPages();
+        View view = viewPages[0];
+        if (view instanceof x9) {
+            x9 x9Var = (x9) view;
+            x9Var.b(x9Var.a);
+        }
+        View view2 = viewPages[1];
+        if (view2 instanceof x9) {
+            x9 x9Var2 = (x9) view2;
+            x9Var2.b(x9Var2.a);
+        }
+    }
+
+    public final void r1(ca caVar) {
+        if (caVar == null) {
+            return;
+        }
+        HashMap hashMap = caVar.d;
+        int i10 = caVar.a;
+        ArrayList arrayList = caVar.c;
+        this.N = i10;
+        if (i10 == 2) {
+            ArrayList arrayList2 = this.h;
+            arrayList2.clear();
+            arrayList2.addAll(arrayList);
+        } else if (i10 == 3) {
+            ArrayList arrayList3 = this.n;
+            arrayList3.clear();
+            arrayList3.addAll(arrayList);
+            HashMap hashMap2 = this.r;
+            hashMap2.clear();
+            hashMap2.putAll(hashMap);
+            this.s = m1(arrayList3, hashMap2).size();
+        } else if (i10 == 4) {
+            ArrayList arrayList4 = this.d;
+            arrayList4.clear();
+            arrayList4.addAll(arrayList);
+            HashMap hashMap3 = this.e;
+            hashMap3.clear();
+            hashMap3.putAll(hashMap);
+            this.f = m1(arrayList4, hashMap3).size();
+        }
+        if (i10 == 5) {
+            this.O = true;
+            this.M = 5;
+            ArrayList arrayList5 = this.J;
+            arrayList5.clear();
+            arrayList5.addAll(caVar.f);
+            this.b.setPosition(1);
+        }
+        View[] viewPages = this.b.getViewPages();
+        View view = viewPages[0];
+        if (view instanceof x9) {
+            x9 x9Var = (x9) view;
+            x9Var.b(x9Var.a);
+        }
+        View view2 = viewPages[1];
+        if (view2 instanceof x9) {
+            x9 x9Var2 = (x9) view2;
+            x9Var2.b(x9Var2.a);
+        }
+    }
+
+    public ea(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(1, context, c6Var, true);
+        this.d = new ArrayList();
+        this.e = new HashMap();
+        this.f = 0;
+        this.h = new ArrayList();
+        this.n = new ArrayList();
+        this.r = new HashMap();
+        this.s = 0;
+        this.v = new HashSet();
+        this.w = true;
+        this.x = true;
+        this.y = false;
+        this.E = true;
+        this.F = true;
+        this.G = false;
+        this.H = 0;
+        this.I = 1;
+        this.J = new ArrayList();
+        this.M = 1;
+        this.N = 4;
+        this.P = new HashMap();
+        this.Q = 86400;
+        this.R = new Paint(1);
+        this.Y = true;
+        this.Z = false;
+        k1(context);
+        this.b.setAdapter(new y8(this, context, 1));
+    }
+}

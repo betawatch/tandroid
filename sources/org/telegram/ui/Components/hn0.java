@@ -1,36 +1,100 @@
 package org.telegram.ui.Components;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.KeyEvent;
 import android.view.View;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hn0 implements View.OnClickListener {
+public final class hn0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ on0 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    public /* synthetic */ hn0(on0 on0Var, int i10) {
+    public /* synthetic */ hn0(KeyEvent.Callback callback, boolean z10, float f7, int i10) {
         this.a = i10;
-        this.b = on0Var;
+        this.d = callback;
+        this.b = z10;
+        this.c = f7;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 1:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 2:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
-                break;
-            case 3:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
+                kn0 kn0Var = (kn0) this.d;
+                ic1 ic1Var = kn0Var.e;
+                kn0Var.h0 = null;
+                boolean z10 = this.b;
+                kn0Var.i0 = z10 ? 1.0f : 0.0f;
+                for (int i10 = 0; i10 < ic1Var.getChildCount(); i10++) {
+                    ic1Var.getChildAt(i10).invalidate();
+                }
+                ic1Var.invalidate();
+                kn0Var.p();
+                if (!z10) {
+                    float childCount = kn0Var.k0 * ic1Var.getChildCount();
+                    float scrollX = kn0Var.getScrollX();
+                    float f7 = this.c;
+                    float childCount2 = (scrollX + f7) / (kn0Var.j0 * ic1Var.getChildCount());
+                    float measuredWidth = (childCount - kn0Var.getMeasuredWidth()) / childCount;
+                    if (childCount2 > measuredWidth) {
+                        f7 = 0.0f;
+                        childCount2 = measuredWidth;
+                    }
+                    float f10 = childCount * childCount2;
+                    if (f10 - f7 < 0.0f) {
+                        f10 = f7;
+                    }
+                    kn0Var.l0 = (kn0Var.getScrollX() + f7) - f10;
+                    int i11 = (int) (f10 - f7);
+                    kn0Var.m0 = i11;
+                    if (i11 < 0) {
+                        kn0Var.m0 = 0;
+                    }
+                    for (int i12 = 0; i12 < ic1Var.getChildCount(); i12++) {
+                        View childAt = ic1Var.getChildAt(i12);
+                        if (childAt instanceof by0) {
+                            ((by0) childAt).setExpanded(false);
+                        }
+                        childAt.getLayoutParams().width = AndroidUtilities.dp(33.0f);
+                    }
+                    kn0Var.g0 = false;
+                    kn0Var.getLayoutParams().height = AndroidUtilities.dp(36.0f);
+                    ic1Var.requestLayout();
+                    break;
+                }
                 break;
             default:
-                this.b.f.a(((Integer) view.getTag(R.id.index_tag)).intValue());
+                super.onAnimationEnd(animator);
+                if (!this.b) {
+                    super/*android.app.Dialog*/.dismiss();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                super.onAnimationStart(animator);
+                xh.j jVar = ((xh.k) this.d).y;
+                jVar.setVisibility(0);
+                if (this.b) {
+                    float f7 = this.c;
+                    jVar.setScaleX(f7);
+                    jVar.setScaleY(f7);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

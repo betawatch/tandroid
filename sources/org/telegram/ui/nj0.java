@@ -1,46 +1,90 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nj0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sj0 b;
+public final class nj0 extends ra1 {
+    public final /* synthetic */ oj0 v;
 
-    public /* synthetic */ nj0(sj0 sj0Var, int i10) {
-        this.a = i10;
-        this.b = sj0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nj0(oj0 oj0Var, Context context, int i10, jg.f fVar, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, i10, fVar, c6Var);
+        this.v = oj0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                sj0 sj0Var = this.b;
-                rj0 rj0Var = sj0Var.q0;
-                HashSet hashSet = sj0Var.d0;
-                if (hashSet.size() != 0 && rj0Var != null) {
-                    ArrayList arrayList = new ArrayList();
-                    for (TLRPC.User user : sj0Var.i0.values()) {
-                        if (hashSet.contains(Long.valueOf(user.id))) {
-                            arrayList.add(Long.valueOf(user.id));
-                        }
-                    }
-                    rj0Var.a(arrayList);
-                    sj0Var.dismiss();
-                    break;
-                }
-                break;
-            default:
-                sj0 sj0Var2 = this.b;
-                sj0Var2.d0.clear();
-                sj0Var2.Y.d.b(true);
-                sj0Var2.V(true, false);
-                break;
+    @Override // org.telegram.ui.ra1
+    public final void c() {
+        int i10;
+        int i11;
+        int i12;
+        qj0 qj0Var = this.v.d;
+        if (this.r.c > 0) {
+            return;
         }
+        performClick();
+        jg.g gVar = this.b;
+        if (gVar.t0.G) {
+            long selectedDate = gVar.getSelectedDate();
+            if (this.s == 4) {
+                ta1 ta1Var = this.r;
+                ta1Var.e = new kg.e(ta1Var.d, selectedDate);
+                g(false);
+                return;
+            }
+            if (this.r.g == null) {
+                return;
+            }
+            f();
+            String str = this.r.g + "_" + selectedDate;
+            kg.b bVar = (kg.b) qj0Var.v.get(str);
+            if (bVar != null) {
+                this.r.e = bVar;
+                g(false);
+                return;
+            }
+            TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
+            tL_loadAsyncGraph.token = this.r.g;
+            if (selectedDate != 0) {
+                tL_loadAsyncGraph.x = selectedDate;
+                tL_loadAsyncGraph.flags |= 1;
+            }
+            gb1 gb1Var = new gb1();
+            qj0Var.w = gb1Var;
+            qj0Var.f.getClass();
+            gb1Var.a = RecyclerView.R(this);
+            gVar.t0.d(true, false);
+            i10 = ((org.telegram.ui.ActionBar.m2) qj0Var).currentAccount;
+            int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new fa(this, str, gb1Var, 25), null, null, 0, qj0Var.a.stats_dc, 1, true);
+            i11 = ((org.telegram.ui.ActionBar.m2) qj0Var).currentAccount;
+            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
+            i12 = ((org.telegram.ui.ActionBar.m2) qj0Var).classGuid;
+            connectionsManager.bindRequestToGuid(sendRequest, i12);
+        }
+    }
+
+    @Override // org.telegram.ui.ra1
+    public final void f() {
+        oj0 oj0Var = this.v;
+        qj0 qj0Var = oj0Var.d;
+        gb1 gb1Var = qj0Var.w;
+        if (gb1Var != null) {
+            gb1Var.b = true;
+        }
+        int childCount = qj0Var.f.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = oj0Var.d.f.getChildAt(i10);
+            if (childAt instanceof ra1) {
+                ((ra1) childAt).b.t0.d(false, true);
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ra1
+    public final void b(ta1 ta1Var) {
     }
 }

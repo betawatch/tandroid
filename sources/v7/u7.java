@@ -1,7 +1,24 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class u7 {
-    public static i8.a a;
+    public static final Object a(ge.s sVar, ge.s sVar2, td.p pVar) {
+        Object vVar;
+        Object B;
+        try {
+            kotlin.jvm.internal.s.a(2, pVar);
+            vVar = pVar.invoke(sVar2, sVar);
+        } catch (Throwable th2) {
+            vVar = new be.v(th2, false);
+        }
+        ld.a aVar = ld.a.a;
+        if (vVar == aVar || (B = sVar.B(vVar)) == be.f0.e) {
+            return aVar;
+        }
+        if (B instanceof be.v) {
+            throw ((be.v) B).a;
+        }
+        return be.f0.u(B);
+    }
 }

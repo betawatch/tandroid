@@ -1,26 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x61 implements Runnable {
+public final /* synthetic */ class x61 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.c6 b;
+    public final /* synthetic */ a71 b;
 
-    public /* synthetic */ x61(org.telegram.ui.Cells.c6 c6Var, int i10) {
+    public /* synthetic */ x61(a71 a71Var, int i10) {
         this.a = i10;
-        this.b = c6Var;
+        this.b = a71Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.showKeyboard(((b61) this.b.d).h);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a71 a71Var = this.b;
+                a71Var.N = floatValue;
+                a71Var.V.h0.invalidate();
+                break;
+            case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a71 a71Var2 = this.b;
+                a71Var2.N = floatValue2;
+                a71Var2.V.h0.invalidate();
                 break;
             default:
-                this.b.requestFocus();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a71 a71Var3 = this.b;
+                a71Var3.N = floatValue3;
+                a71Var3.V.h0.invalidate();
                 break;
         }
     }

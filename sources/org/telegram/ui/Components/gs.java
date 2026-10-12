@@ -1,93 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class gs extends Drawable {
-    public final Drawable a;
-    public final Drawable b;
-    public float c;
-    public float d = 255.0f;
-    public ValueAnimator e;
+public final class gs extends ImageView {
+    public final /* synthetic */ int a = 1;
+    public Object b;
+    public final /* synthetic */ ViewGroup c;
 
-    public gs(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
-        if (drawable != null) {
-            drawable.setCallback(new fs(this, 0));
-        }
-        if (drawable2 != null) {
-            drawable2.setCallback(new fs(this, 1));
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gs(is isVar, Context context, ji.d4 d4Var) {
+        super(context);
+        this.c = isVar;
+        this.b = d4Var;
     }
 
-    public final void a(float f7) {
-        ValueAnimator valueAnimator = this.e;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.c, f7);
-        this.e = ofFloat;
-        ofFloat.addUpdateListener(new m6(this, 16));
-        this.e.setDuration((long) (Math.abs(this.c - f7) * 200.0f));
-        this.e.setInterpolator(hs.f);
-        this.e.start();
-    }
-
-    public final void b(float f7) {
-        this.c = f7;
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int i10 = (int) ((1.0f - this.c) * this.d);
-        Drawable drawable = this.a;
-        drawable.setAlpha(i10);
-        int i11 = (int) (this.d * this.c);
-        Drawable drawable2 = this.b;
-        drawable2.setAlpha(i11);
-        if (i10 > 0) {
-            drawable.draw(canvas);
-        }
-        if (i11 > 0) {
-            drawable2.draw(canvas);
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                is isVar = (is) this.c;
+                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (isVar.n || isVar.f)) {
+                    isVar.n = false;
+                    isVar.f = false;
+                    removeCallbacks(isVar.r);
+                    removeCallbacks(isVar.h);
+                }
+                super.onTouchEvent(motionEvent);
+                return ((GestureDetector) ((ji.d4) this.b).b).onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.a.setBounds(rect);
-        this.b.setBounds(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gs(gl0 gl0Var, Context context) {
+        super(context);
+        this.c = gl0Var;
     }
 }

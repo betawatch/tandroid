@@ -1,44 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class q40 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s40 b;
+public final class q40 extends FrameLayout {
+    public final int a;
+    public final org.telegram.ui.ActionBar.c6 b;
+    public ArrayList c;
+    public final FrameLayout d;
+    public final h71 e;
+    public final z61 f;
+    public Utilities.Callback h;
 
-    public /* synthetic */ q40(s40 s40Var, int i10) {
+    public q40(int i10, Activity activity, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(activity);
         this.a = i10;
-        this.b = s40Var;
+        this.b = c6Var;
+        h71 h71Var = new h71(activity, i10, 0, false, new d(this, 15), new p40(this), new p40(this), c6Var);
+        this.e = h71Var;
+        h71Var.setClipToPadding(false);
+        z61 z61Var = (z61) h71Var.getAdapter();
+        this.f = z61Var;
+        z61Var.r = false;
+        addView(h71Var, -1, -1);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.d = frameLayout;
+        ImageView imageView = new ImageView(activity);
+        int i11 = org.telegram.ui.ActionBar.g6.m6;
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i11, c6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.large_hashtags);
+        frameLayout.addView(imageView, w7.a6.e(56, 56, 49));
+        TextView textView = new TextView(activity);
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
+        org.telegram.messenger.yh.l(R.string.HashtagSearchPlaceholder, textView, 17);
+        frameLayout.addView(textView, w7.a6.a(-2.0f, 0.0f, 56.0f, 0.0f, 0.0f, -2, 81));
+        addView(frameLayout, w7.a6.e(210, -2, 17));
+        h71Var.setEmptyView(frameLayout);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.ao aoVar;
-        ai.w0 w0Var;
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s40 s40Var = this.b;
-                s40Var.w = floatValue;
-                s40Var.e.setTranslationY(floatValue * AndroidUtilities.dp(48.0f));
-                s40Var.e.setPadding(0, 0, 0, (int) (s40Var.w * AndroidUtilities.dp(48.0f)));
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s40 s40Var2 = this.b;
-                s40Var2.E = floatValue2;
-                s40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, floatValue2));
-                s40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, s40Var2.E));
-                org.telegram.ui.jk jkVar = s40Var2.f;
-                if (jkVar != null && (aoVar = jkVar.a) != null && (w0Var = aoVar.L3) != null) {
-                    w0Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, s40Var2.E));
-                    s40Var2.f.a.L3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, s40Var2.E));
-                }
-                s40Var2.h.setAlpha(s40Var2.E);
-                break;
-        }
+    public void setOnHashtagClickListener(Utilities.Callback<String> callback) {
+        this.h = callback;
+    }
+
+    public void setOnScrollListener(s4.r0 r0Var) {
+        this.e.j(r0Var);
     }
 }

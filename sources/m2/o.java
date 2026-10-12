@@ -2,24 +2,24 @@ package m2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class o extends n {
     public final List j;
 
-    public o(j jVar, long j3, long j10, long j11, long j12, List list, long j13, List list2, long j14, long j15) {
-        super(jVar, j3, j10, j11, j12, list, j13, j14, j15);
+    public o(j jVar, long j10, long j11, long j12, long j13, List list, long j14, List list2, long j15, long j16) {
+        super(jVar, j10, j11, j12, j13, list, j14, j15, j16);
         this.j = list2;
     }
 
     @Override // m2.n
-    public final long d(long j3) {
+    public final long d(long j10) {
         return this.j.size();
     }
 
     @Override // m2.n
-    public final j h(k kVar, long j3) {
-        return (j) this.j.get((int) (j3 - this.d));
+    public final j h(k kVar, long j10) {
+        return (j) this.j.get((int) (j10 - this.d));
     }
 
     @Override // m2.n

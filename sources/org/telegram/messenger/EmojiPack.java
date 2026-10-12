@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class EmojiPack {
     private static final String ASSET_NAME = "emoji.pack";
@@ -44,7 +44,7 @@ public final class EmojiPack {
     private final int[] rootIds;
     private final byte[][] rootMaps;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class Holder {
         static final EmojiPack INSTANCE = open();
 
@@ -54,14 +54,14 @@ public final class EmojiPack {
         private static EmojiPack open() {
             try {
                 return new EmojiPack();
-            } catch (IOException e7) {
-                throw new IllegalStateException("Unable to open emoji.pack", e7);
+            } catch (IOException e) {
+                throw new IllegalStateException("Unable to open emoji.pack", e);
             }
         }
     }
 
     private static IllegalStateException damaged(String str) {
-        return new IllegalStateException(sc.v.i("Damaged emoji.pack: ", str));
+        return new IllegalStateException(t8.b.h("Damaged emoji.pack: ", str));
     }
 
     private Bitmap decode(int i10) {
@@ -365,8 +365,8 @@ public final class EmojiPack {
                     throw damaged("Truncated DEFLATE stream");
                 }
                 i12 += inflate;
-            } catch (DataFormatException e7) {
-                throw new IllegalStateException("Damaged EPK3 DEFLATE stream", e7);
+            } catch (DataFormatException e) {
+                throw new IllegalStateException("Damaged EPK3 DEFLATE stream", e);
             }
         }
         if (!this.inflater.finished() && (this.inflater.inflate(this.indices, 0, 1) != 0 || !this.inflater.finished())) {
@@ -422,9 +422,9 @@ public final class EmojiPack {
         for (int i12 = 0; i12 < 8; i12++) {
             if (this.rootIds[i12] == i10) {
                 long[] jArr = this.rootAges;
-                long j3 = this.age + 1;
-                this.age = j3;
-                jArr[i12] = j3;
+                long j10 = this.age + 1;
+                this.age = j10;
+                jArr[i12] = j10;
                 return this.rootMaps[i12];
             }
             long[] jArr2 = this.rootAges;
@@ -440,9 +440,9 @@ public final class EmojiPack {
         decodeIndices(i10, bArr[i11]);
         this.rootIds[i11] = i10;
         long[] jArr3 = this.rootAges;
-        long j10 = this.age + 1;
-        this.age = j10;
-        jArr3[i11] = j10;
+        long j11 = this.age + 1;
+        this.age = j11;
+        jArr3[i11] = j11;
         return this.rootMaps[i11];
     }
 
@@ -489,7 +489,7 @@ public final class EmojiPack {
             int u16 = u16(entry + 2);
             int i15 = this.emojiCount;
             if ((i14 >= i15 && u16 != NO_MASK) || (i14 < i15 && u16 != NO_MASK && find(u16, i15, this.count) < 0)) {
-                throw new IOException(hg.c.h(i14, "Invalid mask reference at record "));
+                throw new IOException(i2.d.i(i14, "Invalid mask reference at record "));
             }
             int i16 = this.buffer.getInt(entry + 4);
             int u162 = u16(entry + 8);
@@ -548,16 +548,16 @@ public final class EmojiPack {
                                 }
                             }
                         }
-                        throw new IOException(hg.c.h(i18, "Invalid palette at record "));
+                        throw new IOException(i2.d.i(i18, "Invalid palette at record "));
                     }
                     i11 = i18;
                     if (u165 != 0 || u8(i17) != 0 || u83 != 0 || (u8(entry + 19) & 127) != 0 || u163 != NO_MASK || u164 != NO_MASK) {
-                        throw new IOException(hg.c.h(i11, "Invalid full image record "));
+                        throw new IOException(i2.d.i(i11, "Invalid full image record "));
                     }
                     i14 = i11 + 1;
                 }
             }
-            throw new IOException(hg.c.h(i10, "Invalid EPK3 record "));
+            throw new IOException(i2.d.i(i10, "Invalid EPK3 record "));
         }
     }
 

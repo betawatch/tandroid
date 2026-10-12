@@ -1,181 +1,115 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.animation.ValueAnimator;
+import android.text.TextUtils;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class lx0 extends View {
-    public final z9 a;
-    public final jx0 b;
-    public final g6 c;
-    public boolean d;
-    public kx0 e;
-    public boolean f;
-    public boolean h;
+public final class lx0 extends lm0 {
+    public int c;
+    public final /* synthetic */ ux0 d;
 
-    public lx0(Context context) {
-        super(context);
-        jx0 jx0Var = new jx0();
-        jx0Var.c = -16777216;
-        jx0Var.d = -1;
-        this.b = jx0Var;
-        g6 g6Var = new g6(new ix0(this, 0), 380L, hs.h);
-        this.c = g6Var;
-        z9 z9Var = new z9(context);
-        this.a = z9Var;
-        z9Var.setCallback(this);
-        this.d = false;
-        g6Var.d(0.0f, false);
-        a();
+    public lx0(ux0 ux0Var) {
+        this.d = ux0Var;
     }
 
-    public final void a() {
-        boolean z10 = this.h && this.f;
-        this.d = z10;
-        this.c.e(z10);
-        setEnabled(this.d);
-        setClickable(this.d);
-        invalidate();
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        return b1Var.f == 1;
     }
 
-    public final void b(MessagesController.PeerColor peerColor) {
-        this.b.a(peerColor);
-        invalidate();
-    }
-
-    public float getVisibilityFactor() {
-        return this.c.c;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.getClass();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.getClass();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float e7 = this.c.e(this.d);
-        int A = org.telegram.messenger.bi.A(24.0f, getMeasuredWidth(), 2);
-        int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2;
-        canvas.save();
-        canvas.translate(A, measuredHeight);
-        canvas.scale(e7, e7, 0.0f, AndroidUtilities.dp(12.0f));
-        int dp = AndroidUtilities.dp(24.0f);
-        int dp2 = AndroidUtilities.dp(24.0f);
-        z9 z9Var = this.a;
-        z9Var.setBounds(0, 0, dp, dp2);
-        jx0 jx0Var = this.b;
-        int i10 = jx0Var.c;
-        if (z9Var.f != i10) {
-            z9Var.f = i10;
-            if (z9Var.c != null) {
-                z9Var.d.setColorFilter(i10, PorterDuff.Mode.MULTIPLY);
-                z9Var.invalidateSelf();
+    @Override // s4.g0
+    public final int h() {
+        ux0 ux0Var = this.d;
+        qx0[] qx0VarArr = ux0Var.W2;
+        int length = (qx0VarArr == null ? 0 : qx0VarArr.length) + 1;
+        if (length != this.c) {
+            di.ab abVar = ux0Var.j3;
+            if (abVar != null) {
+                abVar.requestLayout();
             }
+            this.c = length;
         }
-        int i11 = jx0Var.d;
-        if (z9Var.e != i11) {
-            z9Var.e = i11;
-            Drawable drawable = z9Var.c;
-            if (drawable != null) {
-                drawable.setColorFilter(i11, PorterDuff.Mode.MULTIPLY);
-                z9Var.invalidateSelf();
-            }
-        }
-        int i12 = jx0Var.c | (-16777216);
-        if (z9Var.h != i12) {
-            z9Var.h = i12;
-            z9Var.b.v(i12, false);
-            z9Var.invalidateSelf();
-        }
-        z9Var.draw(canvas);
-        canvas.restore();
+        return length;
     }
 
-    public void set(TL_stars.Tl_starsRating tl_starsRating) {
-        int b10;
-        this.f = tl_starsRating != null;
-        a();
-        if (tl_starsRating == null) {
+    @Override // s4.g0
+    public final int j(int i10) {
+        return i10 == 0 ? 0 : 1;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        ux0 ux0Var;
+        qx0[] qx0VarArr;
+        if (b1Var.f != 1 || (qx0VarArr = (ux0Var = this.d).W2) == null) {
             return;
         }
-        int i10 = tl_starsRating.level;
-        z9 z9Var = this.a;
-        if (z9Var.r != i10 || z9Var.c == null || z9Var.d == null) {
-            z9Var.b.t(i10 >= 0 ? Integer.toString(i10) : "!", true, true);
-            z9Var.r = i10;
-            if (i10 < 0) {
-                b10 = 18;
-            } else {
-                b10 = w7.o.b(i10 <= 10 ? i10 - 1 : (i10 / 10) + 8, 0, 17);
-            }
-            Context context = z9Var.a;
-            if (z9Var.n != b10 || z9Var.c == null || z9Var.d == null) {
-                int i11 = b10 * 2;
-                Drawable mutate = context.getResources().getDrawable(z9.s[i11]).mutate();
-                z9Var.c = mutate;
-                int i12 = z9Var.e;
-                PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                mutate.setColorFilter(i12, mode);
-                Drawable mutate2 = context.getResources().getDrawable(z9.s[i11 + 1]).mutate();
-                z9Var.d = mutate2;
-                mutate2.setColorFilter(z9Var.f, mode);
-                z9Var.n = b10;
-                Drawable drawable = z9Var.c;
-                if (drawable != null) {
-                    drawable.setBounds(z9Var.getBounds());
-                }
-                Drawable drawable2 = z9Var.d;
-                if (drawable2 != null) {
-                    drawable2.setBounds(z9Var.getBounds());
-                }
-            }
-            z9Var.invalidateSelf();
+        int i11 = i10 - 1;
+        qx0 qx0Var = qx0VarArr[i11];
+        final px0 px0Var = (px0) b1Var.a;
+        boolean z10 = ux0Var.k3 == i11;
+        px0Var.getClass();
+        if (!TextUtils.isEmpty(qx0Var.d)) {
+            px0Var.setContentDescription(qx0Var.d);
+        } else if (TextUtils.isEmpty(qx0Var.a)) {
+            px0Var.setContentDescription(null);
+        } else {
+            px0Var.setContentDescription(qx0Var.a);
         }
-        StringBuilder sb2 = new StringBuilder();
-        org.telegram.ui.Cells.c1.l(R.string.AccDescrProfileRatingLevel, " ", sb2);
-        sb2.append(tl_starsRating.level);
-        setContentDescription(sb2.toString());
-        invalidate();
+        ValueAnimator valueAnimator = px0Var.G;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            px0Var.G = null;
+        }
+        px0Var.setImageResource(0);
+        px0Var.a();
+        final boolean B1 = px0Var.H.B1();
+        px0Var.w = false;
+        px0Var.y = 1.0f;
+        s5.h(UserConfig.selectedAccount).b(qx0Var.c, new p5() { // from class: org.telegram.ui.Components.nx0
+            @Override // org.telegram.ui.Components.p5
+            public final void a(TLRPC.Document document) {
+                boolean z11 = !B1;
+                px0 px0Var2 = px0.this;
+                px0Var2.setOnlyLastFrame(z11);
+                px0Var2.g(24, 24, document);
+                px0Var2.d();
+            }
+        });
+        AndroidUtilities.runOnUIThread(new lr0(px0Var, 10), 60L);
+        px0Var.l(z10, false);
+        px0Var.setAlpha(ux0Var.m3);
+        px0Var.setScaleX(ux0Var.m3);
+        px0Var.setScaleY(ux0Var.m3);
+        px0Var.j();
     }
 
-    public void setDelegate(kx0 kx0Var) {
-        this.e = kx0Var;
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        px0 px0Var;
+        ux0 ux0Var = this.d;
+        if (i10 == 0) {
+            di.ab abVar = new di.ab(this, ux0Var.getContext(), 25);
+            ux0Var.j3 = abVar;
+            px0Var = abVar;
+        } else {
+            px0Var = new px0(ux0Var, ux0Var.getContext());
+        }
+        return new wl0(px0Var);
     }
 
-    public void setParentExpanded(float f7) {
-        jx0 jx0Var = this.b;
-        jx0Var.e = f7;
-        jx0Var.a(jx0Var.a);
-        invalidate();
-    }
-
-    public void setResourcesProvider(org.telegram.ui.ActionBar.e6 e6Var) {
-        this.b.b = e6Var;
-    }
-
-    public void setVisibility(boolean z10) {
-        this.h = z10;
-        a();
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || drawable == this.a;
+    @Override // s4.g0
+    public final void y(s4.b1 b1Var) {
+        if (b1Var.f == 1) {
+            px0 px0Var = (px0) b1Var.a;
+            px0Var.l(this.d.k3 == b1Var.b() - 1, false);
+            px0Var.j();
+        }
     }
 }

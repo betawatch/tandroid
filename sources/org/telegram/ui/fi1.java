@@ -1,132 +1,173 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.animation.LinearInterpolator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.ImageView;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fi1 implements Runnable {
+public final class fi1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wi1 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ fi1(wi1 wi1Var, int i10) {
+    public /* synthetic */ fi1(Object obj, int i10) {
         this.a = i10;
-        this.b = wi1Var;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        boolean z10;
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
             case 0:
-                this.b.u0.b();
+                gi1 gi1Var = (gi1) obj;
+                gi1Var.d = null;
+                gi1Var.a = null;
+                gi1Var.b = false;
+                gi1Var.f.c.setAllowDrawCursor(true);
                 break;
             case 1:
-                this.b.u0.b();
+                ((org.telegram.ui.Wallet.x2) obj).K = null;
                 break;
             case 2:
-                this.b.u0.b();
+                ((org.telegram.ui.Wallet.d3) obj).f();
                 break;
             case 3:
-                this.b.u0.b();
+                org.telegram.ui.Wallet.x4 x4Var = (org.telegram.ui.Wallet.x4) obj;
+                x4Var.h = false;
+                x4Var.n = null;
+                x4Var.b.setLayerType(0, null);
                 break;
             case 4:
-                org.telegram.ui.Components.voip.u1 u1Var = this.b.Z;
-                u1Var.c0 = false;
-                u1Var.invalidate();
+                org.telegram.ui.Wallet.c5 c5Var = (org.telegram.ui.Wallet.c5) obj;
+                c5Var.J = 0.0f;
+                c5Var.K = 0.0f;
+                c5Var.R = null;
                 break;
             case 5:
-                wi1 wi1Var = this.b;
-                wi1Var.q0 = wi1Var.p0;
-                wi1Var.G();
+                org.telegram.ui.Wallet.o5 o5Var = (org.telegram.ui.Wallet.o5) obj;
+                org.telegram.ui.Wallet.j5 j5Var = o5Var.f0;
+                j5Var.d = 0.0f;
+                j5Var.i = 0.0f;
+                o5Var.o0 = null;
                 break;
             case 6:
-                this.b.A();
+                org.telegram.ui.Wallet.b6 b6Var = (org.telegram.ui.Wallet.b6) obj;
+                b6Var.I = null;
+                b6Var.i0 = 1.0f;
+                b6Var.h0 = 0.0f;
+                b6Var.g0 = 0.0f;
+                b6Var.e();
                 break;
             case 7:
-                int[] iArr = new int[2];
-                wi1 wi1Var2 = this.b;
-                wi1Var2.e0.getLocationOnScreen(iArr);
-                int i10 = iArr[0];
-                int i11 = iArr[1];
-                wi1Var2.e.getLocationOnScreen(iArr);
-                wi1Var2.e.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
-                wi1Var2.e.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                wi1Var2.h.getLocationOnScreen(iArr);
-                wi1Var2.h.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
-                wi1Var2.h.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                wi1Var2.f.getLocationOnScreen(iArr);
-                wi1Var2.f.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
-                wi1Var2.f.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                wi1Var2.n.getLocationOnScreen(iArr);
-                wi1Var2.n.setTranslationX((((wi1Var2.e0.getWidth() + i10) - iArr[0]) - AndroidUtilities.dp(49.0f)) - AndroidUtilities.dp(60.0f));
-                wi1Var2.n.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                wi1Var2.n.setAlpha(1.0f);
-                wi1Var2.e.setAlpha(1.0f);
-                wi1Var2.h.setAlpha(1.0f);
-                wi1Var2.f.setAlpha(1.0f);
-                long j3 = 200;
-                wi1Var2.n.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j3).start();
-                wi1Var2.e.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j3).start();
-                wi1Var2.h.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j3).start();
-                wi1Var2.f.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j3).start();
+                org.telegram.ui.Wallet.h8 h8Var = (org.telegram.ui.Wallet.h8) obj;
+                h8Var.h = null;
+                h8Var.c.setVisibility(h8Var.v ? 4 : 0);
+                h8Var.e.setVisibility(h8Var.w ? 0 : 4);
                 break;
             case 8:
-                this.b.u0.b();
+                org.telegram.ui.Components.mg0 mg0Var = (org.telegram.ui.Components.mg0) obj;
+                ((yj1) mg0Var.b).getClass();
+                ((yj1) mg0Var.b).c.setVisibility(4);
                 break;
             case 9:
-                if (SharedConfig.callEncryptionHintDisplayedCount < 2) {
-                    SharedConfig.incrementCallEncryptionHintDisplayed(1);
-                    wi1 wi1Var3 = this.b;
-                    wi1Var3.O0.setTranslationY(wi1Var3.N.getY() + AndroidUtilities.dp(36.0f));
-                    wi1Var3.O0.u();
-                    break;
-                }
+                ((org.telegram.ui.web.b1) obj).s.setVisibility(8);
                 break;
             case 10:
-                this.b.u0.b();
+                qg.d0 d0Var = (qg.d0) obj;
+                d0Var.a.getPainting().c(null, d0Var.a.getCurrentColor(), true, null);
+                d0Var.r = null;
                 break;
             case 11:
-                wi1 wi1Var4 = this.b;
-                wi1Var4.u0.setAlpha(1.0f);
-                wi1Var4.u0.invalidate();
-                ValueAnimator j10 = wi1Var4.j(true);
-                wi1Var4.H.setAlpha(0.0f);
-                wi1Var4.I.setAlpha(0.0f);
-                wi1Var4.N.setAlpha(0.0f);
-                wi1Var4.X.setAlpha(0.0f);
-                wi1Var4.j0.setAlpha(0.0f);
-                wi1Var4.h0.setAlpha(0.0f);
-                wi1Var4.i0.setAlpha(0.0f);
-                wi1Var4.K.setAlpha(0.0f);
-                wi1Var4.M0.setAlpha(0.0f);
-                wi1Var4.Y.b0 = true;
-                AndroidUtilities.runOnUIThread(new ii1(0, wi1Var4, j10), 32L);
+                super.onAnimationEnd(animator);
+                rg.n0 n0Var = (rg.n0) obj;
+                ImageView imageView = n0Var.c;
+                n0Var.c = n0Var.d;
+                n0Var.d = imageView;
+                imageView.bringToFront();
+                n0Var.d.setVisibility(8);
+                n0Var.h = null;
                 break;
             case 12:
-                wi1 wi1Var5 = this.b;
-                wi1Var5.R0 = false;
-                org.telegram.ui.Components.voip.d3 d3Var = wi1Var5.N0;
-                boolean z10 = d3Var != null && d3Var.V;
-                if (wi1Var5.z0 && wi1Var5.x0 && !wi1Var5.C0 && !z10) {
-                    wi1Var5.K0 = System.currentTimeMillis();
-                    wi1Var5.z(false);
-                    wi1Var5.q0 = wi1Var5.p0;
-                    wi1Var5.G();
+                rg.t1 t1Var = (rg.t1) obj;
+                if (animator == t1Var.r) {
+                    t1Var.f = t1Var.h;
+                    t1Var.h = -1;
+                    t1Var.r = null;
                     break;
                 }
                 break;
-            default:
-                wi1 wi1Var6 = this.b;
-                if (wi1Var6.p0 == 3) {
-                    wi1Var6.y.b(true, false);
-                    org.telegram.ui.Components.voip.c3 c3Var = wi1Var6.v;
-                    if (!c3Var.R) {
-                        c3Var.R = true;
-                        break;
+            case 13:
+                sg.q0 q0Var = (sg.q0) obj;
+                q0Var.n = q0Var.h ? 1.0f : 0.0f;
+                q0Var.e();
+                break;
+            case 14:
+                sg.a2 a2Var = (sg.a2) ((di.c0) obj).b;
+                a2Var.F = true;
+                a2Var.invalidate();
+                break;
+            case 15:
+                tg.f fVar = (tg.f) ((tg.e) obj).b;
+                int i11 = tg.f.K;
+                fVar.d();
+                break;
+            case 16:
+                tg.f fVar2 = (tg.f) obj;
+                fVar2.d = null;
+                fVar2.e();
+                break;
+            case 17:
+                super.onAnimationEnd(animator);
+                tg.n nVar = ((tg.i) obj).b;
+                nVar.b.d = 0.0f;
+                nVar.a0 = null;
+                nVar.k(nVar.L);
+                break;
+            case 18:
+                ug.b bVar = (ug.b) obj;
+                bVar.b = 1.0f;
+                bVar.invalidate();
+                break;
+            case 19:
+                wh.g gVar = (wh.g) obj;
+                Iterator it = gVar.h.iterator();
+                while (it.hasNext()) {
+                    wh.c cVar = (wh.c) it.next();
+                    if (gVar.c.size() < gVar.d) {
+                        gVar.c.push(cVar);
                     }
+                    it.remove();
                 }
+                Runnable runnable = gVar.q;
+                if (runnable != null) {
+                    runnable.run();
+                    gVar.q = null;
+                }
+                gVar.r = null;
+                gVar.invalidateSelf();
+                break;
+            case 20:
+                ((yh.i0) obj).b.w.setVisibility(8);
+                break;
+            case 21:
+                zh.l2 l2Var = (zh.l2) obj;
+                l2Var.E = 1.0f;
+                l2Var.F = -1;
+                zh.k2 k2Var = l2Var.H;
+                if (k2Var != null && (z10 = k2Var.l) && z10) {
+                    k2Var.l = false;
+                    k2Var.b();
+                }
+                l2Var.G = null;
+                break;
+            default:
+                y00 y00Var = ((zh.d7) obj).c;
+                y00Var.setScaleX(1.0f);
+                y00Var.setScaleY(1.0f);
                 break;
         }
     }

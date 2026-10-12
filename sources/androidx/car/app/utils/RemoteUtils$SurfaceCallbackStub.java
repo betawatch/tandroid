@@ -1,19 +1,18 @@
 package androidx.car.app.utils;
 
-import a3.k0;
+import a3.l0;
 import android.graphics.Rect;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.ISurfaceCallback;
-import androidx.car.app.n;
 import androidx.lifecycle.o;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
     private final o mLifecycle;
-    private final n mSurfaceCallback;
+    private final androidx.car.app.o mSurfaceCallback;
 
-    public RemoteUtils$SurfaceCallbackStub(o oVar, n nVar) {
+    public RemoteUtils$SurfaceCallbackStub(o oVar, androidx.car.app.o oVar2) {
         this.mLifecycle = oVar;
     }
 
@@ -59,48 +58,48 @@ class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onClick(float f7, float f10) {
-        h.a(new k0(this.mLifecycle, new d(this, f7, f10, 0), "onClick", 9));
+        j.a(new l0(this.mLifecycle, new f(this, f7, f10, 0), "onClick", 1));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onFling(float f7, float f10) {
-        h.a(new k0(this.mLifecycle, new d(this, f7, f10, 2), "onFling", 9));
+        j.a(new l0(this.mLifecycle, new f(this, f7, f10, 2), "onFling", 1));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onScale(final float f7, final float f10, final float f11) {
-        h.a(new k0(this.mLifecycle, new a() { // from class: androidx.car.app.utils.f
-            @Override // androidx.car.app.utils.a
+        j.a(new l0(this.mLifecycle, new c() { // from class: androidx.car.app.utils.h
+            @Override // androidx.car.app.utils.c
             public final Object a() {
                 Object lambda$onScale$6;
                 lambda$onScale$6 = RemoteUtils$SurfaceCallbackStub.this.lambda$onScale$6(f7, f10, f11);
                 return lambda$onScale$6;
             }
-        }, "onScale", 9));
+        }, "onScale", 1));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onScroll(float f7, float f10) {
-        h.a(new k0(this.mLifecycle, new d(this, f7, f10, 1), "onScroll", 9));
+        j.a(new l0(this.mLifecycle, new f(this, f7, f10, 1), "onScroll", 1));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onStableAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback) {
-        g.c(this.mLifecycle, iOnDoneCallback, "onStableAreaChanged", new e(this, rect, 1));
+        i.c(this.mLifecycle, iOnDoneCallback, "onStableAreaChanged", new g(this, rect, 1));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onSurfaceAvailable(w.b bVar, IOnDoneCallback iOnDoneCallback) {
-        g.c(this.mLifecycle, iOnDoneCallback, "onSurfaceAvailable", new c(this, bVar, 1));
+        i.c(this.mLifecycle, iOnDoneCallback, "onSurfaceAvailable", new e(this, bVar, 1));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onSurfaceDestroyed(w.b bVar, IOnDoneCallback iOnDoneCallback) {
-        g.c(this.mLifecycle, iOnDoneCallback, "onSurfaceDestroyed", new c(this, bVar, 0));
+        i.c(this.mLifecycle, iOnDoneCallback, "onSurfaceDestroyed", new e(this, bVar, 0));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onVisibleAreaChanged(Rect rect, IOnDoneCallback iOnDoneCallback) {
-        g.c(this.mLifecycle, iOnDoneCallback, "onVisibleAreaChanged", new e(this, rect, 0));
+        i.c(this.mLifecycle, iOnDoneCallback, "onVisibleAreaChanged", new g(this, rect, 0));
     }
 }

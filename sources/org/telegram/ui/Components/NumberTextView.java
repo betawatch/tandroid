@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -74,16 +74,15 @@ public class NumberTextView extends View {
         ArrayList arrayList2 = this.a;
         arrayList.addAll(arrayList2);
         arrayList2.clear();
-        int i12 = 0;
         if (this.h) {
             Locale locale = Locale.US;
-            sb2 = hg.c.h(this.f, "#");
-            sb3 = hg.c.h(i10, "#");
+            sb2 = i2.d.i(this.f, "#");
+            sb3 = i2.d.i(i10, "#");
         } else {
             Locale locale2 = Locale.US;
-            int i13 = this.f;
+            int i12 = this.f;
             StringBuilder sb4 = new StringBuilder();
-            sb4.append(i13);
+            sb4.append(i12);
             sb2 = sb4.toString();
             StringBuilder sb5 = new StringBuilder();
             sb5.append(i10);
@@ -97,38 +96,38 @@ public class NumberTextView extends View {
         this.f = i10;
         float f10 = 0.0f;
         this.e = 0.0f;
-        int i14 = 0;
-        while (i14 < sb3.length()) {
-            int i15 = i14 + 1;
-            String substring = sb3.substring(i14, i15);
-            String substring2 = (arrayList.isEmpty() || i14 >= sb2.length()) ? null : sb2.substring(i14, i15);
+        int i13 = 0;
+        while (i13 < sb3.length()) {
+            int i14 = i13 + 1;
+            String substring = sb3.substring(i13, i14);
+            String substring2 = (arrayList.isEmpty() || i13 >= sb2.length()) ? null : sb2.substring(i13, i14);
             if (z12 || substring2 == null || !substring2.equals(substring)) {
                 if (z12 && substring2 == null) {
-                    i11 = i15;
+                    i11 = i14;
                     f7 = f10;
                     str = substring;
                     arrayList.add(new StaticLayout("", textPaint, 0, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
                 } else {
                     f7 = f10;
-                    i11 = i15;
+                    i11 = i14;
                     str = substring;
                 }
                 arrayList2.add(new StaticLayout(str, textPaint, (int) Math.ceil(textPaint.measureText(str)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
             } else {
-                arrayList2.add((StaticLayout) arrayList.get(i14));
-                arrayList.set(i14, null);
+                arrayList2.add((StaticLayout) arrayList.get(i13));
+                arrayList.set(i13, null);
                 f7 = f10;
-                i11 = i15;
+                i11 = i14;
             }
             f10 = f7;
-            i14 = i11;
+            i13 = i11;
         }
         float f11 = f10;
         if (z10 && !arrayList.isEmpty()) {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, f11);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new vd0(this, i12));
+            this.d.addListener(new k90(this, 3));
             this.d.start();
         }
         invalidate();
@@ -252,6 +251,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(wd0 wd0Var) {
+    public void setOnTextWidthProgressChangedListener(vd0 vd0Var) {
     }
 }

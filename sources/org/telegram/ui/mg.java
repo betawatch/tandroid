@@ -1,62 +1,50 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class mg implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.tl.TL_keyboard;
 
-    public /* synthetic */ mg(zn znVar, int i10) {
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class mg implements View.OnLongClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ mg(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
         this.a = i10;
-        this.b = znVar;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
         switch (this.a) {
             case 0:
-                Integer num = (Integer) obj;
-                zn znVar = this.b;
-                znVar.getClass();
-                if (num.intValue() != 0) {
-                    znVar.Fc(true);
-                    znVar.F(num.intValue(), 0, 0, 0, false, true);
-                    break;
-                } else {
-                    znVar.l1 = 0;
-                    znVar.Fc(true);
-                    znVar.getMessagesController().markReactionsAsRead(znVar.T5, znVar.d());
-                    break;
+                fo foVar = (fo) this.b;
+                TL_keyboard.KeyboardInlineButton keyboardInlineButton = (TL_keyboard.KeyboardInlineButton) this.c;
+                MessageObject messageObject = (MessageObject) this.d;
+                bi.f4 f4Var = (bi.f4) this.e;
+                TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) ag.c.a(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class);
+                if (foVar.getParentActivity() == null) {
+                    return false;
                 }
-            case 1:
-                Integer num2 = (Integer) obj;
-                zn znVar2 = this.b;
-                znVar2.getClass();
-                if (num2.intValue() != 0) {
-                    int i10 = znVar2.m1 - 1;
-                    znVar2.m1 = i10;
-                    if (i10 <= 0) {
-                        znVar2.getMessagesController().markPollVotesAsRead(znVar2.T5, znVar2.d());
-                    }
-                    znVar2.Ec(true);
-                    znVar2.F(num2.intValue(), 0, 0, 0, false, true);
-                    break;
-                } else {
-                    znVar2.m1 = 0;
-                    znVar2.Ec(true);
-                    znVar2.getMessagesController().markPollVotesAsRead(znVar2.T5, znVar2.d());
-                    break;
+                if ((foVar.O0.getVisibility() == 0 && tL_inlineButtonTypeUrl == null && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) && !ag.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) || tL_inlineButtonTypeUrl == null) {
+                    return false;
                 }
+                foVar.ea(null, tL_inlineButtonTypeUrl.url, true, null, messageObject);
+                try {
+                    f4Var.performHapticFeedback(0, 1);
+                } catch (Exception unused) {
+                }
+                return true;
             default:
-                zn znVar3 = this.b;
-                znVar3.getClass();
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                znVar3.f7 = booleanValue;
-                if (!booleanValue) {
-                    znVar3.v8();
-                    break;
-                }
-                break;
+                return org.telegram.ui.Components.vi.r((org.telegram.ui.Components.vi) this.b, (Context) this.c, (org.telegram.ui.ActionBar.c6) this.d, (org.telegram.ui.ActionBar.m2) this.e, view);
         }
     }
 }

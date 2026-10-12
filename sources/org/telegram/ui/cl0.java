@@ -1,107 +1,189 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import java.util.Arrays;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cl0 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class cl0 extends org.telegram.ui.Components.lm0 {
+    public final /* synthetic */ fl0 c;
 
-    public /* synthetic */ cl0(org.telegram.ui.web.b1 b1Var, boolean[] zArr, ai.ea eaVar, String str) {
-        this.a = 1;
-        this.c = b1Var;
-        this.b = zArr;
-        this.d = eaVar;
-        this.e = str;
+    public cl0(fl0 fl0Var) {
+        this.c = fl0Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) this.c;
-                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.d;
-                org.telegram.ui.ActionBar.f3[] f3VarArr2 = (org.telegram.ui.ActionBar.f3[]) this.e;
-                this.b[0] = true;
-                TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = inputtonconnectoauthsessionArr[0];
-                if (inputtonconnectoauthsession != null) {
-                    Arrays.fill(inputtonconnectoauthsession.challenge_answer, (byte) 0);
-                    inputtonconnectoauthsessionArr[0] = null;
-                }
-                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
-                if (f3Var != null) {
-                    f3Var.dismiss();
-                    f3VarArr[0] = null;
-                }
-                ml0.a = null;
-                org.telegram.ui.ActionBar.f3 f3Var2 = f3VarArr2[0];
-                if (f3Var2 != null) {
-                    f3Var2.dismiss();
-                    f3VarArr2[0] = null;
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.c;
-                ai.ea eaVar = (ai.ea) this.d;
-                String str = (String) this.e;
-                b1Var.getClass();
-                boolean[] zArr = this.b;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    b1Var.x(eaVar, "requested_chat_failed", org.telegram.ui.web.b1.A(str, "req_id"));
-                    break;
-                }
-                break;
-            case 2:
-                Utilities.Callback callback = (Utilities.Callback) this.c;
-                boolean[] zArr2 = (boolean[]) this.d;
-                Utilities.Callback2 callback2 = (Utilities.Callback2) this.e;
-                if (callback != null && !this.b[0]) {
-                    callback.run(Boolean.FALSE);
-                    if (!zArr2[0]) {
-                        callback2.run("cancelled", 0L);
-                        zArr2[0] = true;
-                        break;
-                    }
-                }
-                break;
-            default:
-                Utilities.Callback callback3 = (Utilities.Callback) this.c;
-                boolean[] zArr3 = (boolean[]) this.d;
-                Utilities.Callback callback4 = (Utilities.Callback) this.e;
-                if (callback3 != null && !this.b[0]) {
-                    callback3.run(Boolean.FALSE);
-                    if (!zArr3[0] && callback4 != null) {
-                        callback4.run("cancelled");
-                        zArr3[0] = true;
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        int i10 = b1Var.f;
+        return i10 == 0 || i10 == 2;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.c.n;
+    }
+
+    @Override // s4.g0
+    public final long i(int i10) {
+        dl0 dl0Var;
+        fl0 fl0Var = this.c;
+        int i11 = fl0Var.E;
+        if (i10 < i11 || i10 >= fl0Var.F) {
+            int i12 = fl0Var.r;
+            dl0Var = (i10 < i12 || i10 >= fl0Var.s) ? null : (dl0) fl0Var.a.get(i10 - i12);
+        } else {
+            dl0Var = (dl0) fl0Var.b.get(i10 - i11);
         }
+        if (dl0Var != null) {
+            return dl0Var.c;
+        }
+        fl0Var.getClass();
+        if (i10 == 0) {
+            return 1L;
+        }
+        if (i10 == fl0Var.y) {
+            return 2L;
+        }
+        if (i10 == fl0Var.v) {
+            return 3L;
+        }
+        if (i10 == fl0Var.w) {
+            return 4L;
+        }
+        if (i10 == fl0Var.x) {
+            return 5L;
+        }
+        throw new RuntimeException();
     }
 
-    public /* synthetic */ cl0(yh.m5 m5Var, Utilities.Callback callback, boolean[] zArr, boolean[] zArr2, Object obj, int i10) {
-        this.a = i10;
-        this.c = callback;
-        this.b = zArr;
-        this.d = zArr2;
-        this.e = obj;
+    @Override // s4.g0
+    public final int j(int i10) {
+        fl0 fl0Var = this.c;
+        if (i10 >= fl0Var.E && i10 < fl0Var.F) {
+            return 0;
+        }
+        fl0Var.getClass();
+        if (i10 == 0 || i10 == fl0Var.y) {
+            return 1;
+        }
+        if (i10 == fl0Var.v) {
+            return 2;
+        }
+        return (i10 == fl0Var.w || i10 == fl0Var.x) ? 3 : 0;
     }
 
-    public /* synthetic */ cl0(boolean[] zArr, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, org.telegram.ui.ActionBar.f3[] f3VarArr, org.telegram.ui.ActionBar.f3[] f3VarArr2) {
-        this.a = 0;
-        this.b = zArr;
-        this.c = inputtonconnectoauthsessionArr;
-        this.d = f3VarArr;
-        this.e = f3VarArr2;
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        fl0 fl0Var = this.c;
+        org.telegram.ui.ActionBar.c6 c6Var = fl0Var.h;
+        int i11 = b1Var.f;
+        View view = b1Var.a;
+        if (i11 == 0) {
+            el0 el0Var = (el0) view;
+            int i12 = fl0Var.E;
+            dl0 dl0Var = (i10 < i12 || i10 >= fl0Var.F) ? null : (dl0) fl0Var.b.get(i10 - i12);
+            int i13 = fl0Var.r;
+            if (i10 >= i13 && i10 < fl0Var.s) {
+                dl0Var = (dl0) fl0Var.a.get(i10 - i13);
+            }
+            if (dl0Var != null) {
+                boolean z10 = el0Var.e == dl0Var;
+                boolean z11 = dl0Var == fl0Var.H;
+                boolean z12 = fl0Var.J.get(dl0Var.c) != null;
+                el0Var.e = dl0Var;
+                el0Var.a.setText(dl0Var.f);
+                el0Var.d = i10 != fl0Var.F - 1;
+                el0Var.b.a(z11, z10);
+                el0Var.c.a(z12, z10);
+                return;
+            }
+            return;
+        }
+        if (i11 == 1) {
+            org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
+            if (i10 == 0) {
+                m4Var.setText(LocaleController.getString(R.string.TelegramTones));
+                return;
+            } else {
+                if (i10 == fl0Var.y) {
+                    m4Var.setText(LocaleController.getString(R.string.SystemTones));
+                    return;
+                }
+                return;
+            }
+        }
+        if (i11 != 2) {
+            return;
+        }
+        org.telegram.ui.Cells.g2 g2Var = (org.telegram.ui.Cells.g2) view;
+        Drawable drawable = g2Var.getContext().getResources().getDrawable(R.drawable.poll_add_circle);
+        Drawable drawable2 = g2Var.getContext().getResources().getDrawable(R.drawable.poll_add_plus);
+        int w02 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.N6, c6Var);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
+        drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.k7, c6Var), mode));
+        org.telegram.ui.Components.cr crVar = new org.telegram.ui.Components.cr(drawable, drawable2);
+        g2Var.a.l(LocaleController.getString(R.string.UploadSound), false);
+        g2Var.b.setImageDrawable(crVar);
+        g2Var.c = false;
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        org.telegram.ui.ActionBar.c6 c6Var = this.c.h;
+        Context context = viewGroup.getContext();
+        if (i10 == 0) {
+            el0 el0Var = new el0(context);
+            RadioButton radioButton = new RadioButton(context);
+            el0Var.b = radioButton;
+            radioButton.setSize(AndroidUtilities.dp(20.0f));
+            radioButton.b(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.g7, c6Var), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h7, c6Var));
+            boolean z10 = LocaleController.isRTL;
+            el0Var.addView(radioButton, w7.a6.a(22.0f, z10 ? 0 : 20, 0.0f, z10 ? 20 : 0, 0.0f, 22, (z10 ? 5 : 3) | 16));
+            org.telegram.ui.Components.aq aqVar = new org.telegram.ui.Components.aq(context, 24, c6Var);
+            el0Var.c = aqVar;
+            int i11 = org.telegram.ui.ActionBar.g6.d6;
+            aqVar.b(-1, i11, org.telegram.ui.ActionBar.g6.k7);
+            aqVar.setDrawUnchecked(false);
+            aqVar.setDrawBackgroundAsArc(3);
+            boolean z11 = LocaleController.isRTL;
+            el0Var.addView(aqVar, w7.a6.a(26.0f, z11 ? 0 : 18, 0.0f, z11 ? 18 : 0, 0.0f, 26, (z11 ? 5 : 3) | 16));
+            aqVar.a(true, false);
+            TextView textView = new TextView(context);
+            el0Var.a = textView;
+            org.telegram.messenger.yh.n(org.telegram.ui.ActionBar.g6.G6, c6Var, textView, 1, 16.0f);
+            textView.setLines(1);
+            textView.setMaxLines(1);
+            textView.setSingleLine(true);
+            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+            boolean z12 = LocaleController.isRTL;
+            el0Var.addView(textView, w7.a6.a(-2.0f, z12 ? 23 : 61, 0.0f, z12 ? 61 : 23, 0.0f, -2, (z12 ? 5 : 3) | 16));
+            el0Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
+            view = el0Var;
+        } else if (i10 == 2) {
+            org.telegram.ui.Cells.g2 g2Var = new org.telegram.ui.Cells.g2(context, 70, c6Var);
+            g2Var.d = 61;
+            g2Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, c6Var));
+            view = g2Var;
+        } else if (i10 != 3) {
+            org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context, c6Var);
+            m4Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, c6Var));
+            view = m4Var;
+        } else {
+            view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
+        }
+        return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
     }
 }

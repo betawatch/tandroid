@@ -1,25 +1,33 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class kr extends org.telegram.ui.Components.e30 {
-    public final /* synthetic */ tr b;
+public final class kr implements qq {
+    public final /* synthetic */ TLObject a;
+    public final /* synthetic */ yr b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kr(tr trVar, Activity activity, tr trVar2) {
-        super(activity, trVar2);
-        this.b = trVar;
+    public kr(yr yrVar, TLObject tLObject) {
+        this.b = yrVar;
+        this.a = tLObject;
     }
 
-    @Override // org.telegram.ui.Components.e30
-    public final void p() {
-        tr trVar = this.b;
-        trVar.getMessagesController().convertToGigaGroup(trVar.getParentActivity(), trVar.r, trVar, new z0(this, 24));
+    @Override // org.telegram.ui.qq
+    public final void a(TLRPC.User user) {
+        yr.c0(this.b, user);
     }
 
-    @Override // org.telegram.ui.Components.e30
-    public final void o() {
+    @Override // org.telegram.ui.qq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLObject tLObject = this.a;
+        if (tLObject instanceof TLRPC.ChannelParticipant) {
+            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
+            channelParticipant.admin_rights = tL_chatAdminRights;
+            channelParticipant.banned_rights = tL_chatBannedRights;
+            channelParticipant.rank = str;
+            yr.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
+        }
     }
 }

@@ -16,10 +16,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import o6.a;
-import org.telegram.ui.Cells.c1;
-import w7.d0;
+import org.telegram.ui.Cells.d0;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class CastDevice extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CastDevice> CREATOR = new v(22);
@@ -50,8 +50,8 @@ public class CastDevice extends a implements ReflectedParcelable {
         if (!TextUtils.isEmpty(str2)) {
             try {
                 this.c = InetAddress.getByName(str2);
-            } catch (UnknownHostException e7) {
-                Log.i("CastDevice", "Unable to convert host address (" + this.b + ") to ipaddress: " + e7.getMessage());
+            } catch (UnknownHostException e) {
+                Log.i("CastDevice", "Unable to convert host address (" + this.b + ") to ipaddress: " + e.getMessage());
             }
         }
         this.d = str3 == null ? "" : str3;
@@ -135,35 +135,35 @@ public class CastDevice extends a implements ReflectedParcelable {
             int length = str.length();
             str = length <= 2 ? length == 2 ? "xx" : "x" : String.format(locale, "%c%d%c", Character.valueOf(str.charAt(0)), Integer.valueOf(length - 2), Character.valueOf(str.charAt(length - 1)));
         }
-        return c1.i("\"", str, "\" (", this.a, ")");
+        return d0.j("\"", str, "\" (", this.a, ")");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.l(parcel, 2, this.a);
-        d0.l(parcel, 3, this.b);
-        d0.l(parcel, 4, this.d);
-        d0.l(parcel, 5, this.e);
-        d0.l(parcel, 6, this.f);
-        d0.s(parcel, 7, 4);
+        int q6 = g0.q(parcel, 20293);
+        g0.l(parcel, 2, this.a);
+        g0.l(parcel, 3, this.b);
+        g0.l(parcel, 4, this.d);
+        g0.l(parcel, 5, this.e);
+        g0.l(parcel, 6, this.f);
+        g0.s(parcel, 7, 4);
         parcel.writeInt(this.h);
-        d0.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
-        d0.s(parcel, 9, 4);
+        g0.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
+        g0.s(parcel, 9, 4);
         parcel.writeInt(this.r);
-        d0.s(parcel, 10, 4);
+        g0.s(parcel, 10, 4);
         parcel.writeInt(this.s);
-        d0.l(parcel, 11, this.v);
-        d0.l(parcel, 12, this.w);
-        d0.s(parcel, 13, 4);
+        g0.l(parcel, 11, this.v);
+        g0.l(parcel, 12, this.w);
+        g0.s(parcel, 13, 4);
         parcel.writeInt(this.x);
-        d0.l(parcel, 14, this.y);
-        d0.c(parcel, 15, this.E);
-        d0.l(parcel, 16, this.F);
-        d0.s(parcel, 17, 4);
+        g0.l(parcel, 14, this.y);
+        g0.c(parcel, 15, this.E);
+        g0.l(parcel, 16, this.F);
+        g0.s(parcel, 17, 4);
         parcel.writeInt(this.G ? 1 : 0);
-        d0.k(parcel, 18, d(), i10);
-        d0.i(parcel, 19, this.I);
-        d0.r(parcel, q6);
+        g0.k(parcel, 18, d(), i10);
+        g0.i(parcel, 19, this.I);
+        g0.r(parcel, q6);
     }
 }

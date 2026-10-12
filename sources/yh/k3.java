@@ -1,108 +1,69 @@
 package yh;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.j20;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.br;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class k3 extends FrameLayout {
-    public final w0 a;
-    public final j3 b;
-    public final j3 c;
-    public final j3 d;
-    public boolean e;
-    public final j20 f;
-    public final RectF h;
+public final class k3 extends TextView {
+    public final br a;
 
-    public k3(Context context, org.telegram.ui.ActionBar.e6 e6Var, w0 w0Var) {
+    public k3(Context context, c6 c6Var) {
         super(context);
-        this.f = new j20();
-        this.h = new RectF();
-        this.a = w0Var;
-        j3 j3Var = new j3(context, e6Var);
-        this.b = j3Var;
-        j3 j3Var2 = new j3(context, e6Var);
-        this.c = j3Var2;
-        j3 j3Var3 = new j3(context, e6Var);
-        this.d = j3Var3;
-        addView(j3Var, w7.x5.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
-        addView(j3Var2, w7.x5.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
-        addView(j3Var3, w7.x5.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
+        int w02 = g6.w0(g6.y8, c6Var);
+        setTextColor(w02);
+        setBackground(g6.a0(g6.m1(0.08f, w02), g6.m1(0.15f, w02), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f)));
+        setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), 0);
+        setGravity(17);
+        setTypeface(AndroidUtilities.bold());
+        w7.c6.a(this);
+        br brVar = new br(R.drawable.arrows_select, 0);
+        this.a = brVar;
+        brVar.spaceScaleX = 0.8f;
+        brVar.translate(0.0f, AndroidUtilities.dp(1.0f));
     }
 
-    public final void a(a3 a3Var, float f7, boolean z10, a3 a3Var2, float f10, boolean z11, a3 a3Var3, float f11, boolean z12) {
-        w0 w0Var = this.a;
-        j3 j3Var = this.b;
-        if (a3Var != null) {
-            if (z10) {
-                f7 = Math.max(0.5f, f7);
-            }
-            j3Var.setVisibility(0);
-            j3Var.e(a3Var.a, a3Var.b, w0Var);
-            j3Var.setTranslationY(AndroidUtilities.dp(36.0f) * ((f7 - 0.5f) / 1.5f));
-        } else {
-            j3Var.setVisibility(4);
-        }
-        j3 j3Var2 = this.c;
-        if (a3Var2 != null) {
-            float f12 = f10;
-            if (z11) {
-                f12 = Math.max(0.5f, f12);
-            }
-            float f13 = (f12 - 0.5f) / 1.5f;
-            j3Var2.setVisibility(0);
-            j3Var2.e(a3Var2.a, a3Var2.b, w0Var);
-            j3Var2.setTranslationY(AndroidUtilities.dp(36.0f) * f13);
-            if (z11 && f13 <= 0.0f && !this.e) {
-                this.e = true;
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new org.telegram.ui.Components.voip.r0(j3Var2, 23));
-                ofFloat.setDuration(180L);
-                ofFloat.start();
-            }
-        } else {
-            j3Var2.setVisibility(4);
-        }
-        j3 j3Var3 = this.d;
-        if (a3Var3 == null) {
-            j3Var3.setVisibility(4);
-            return;
-        }
-        float f14 = f11;
-        if (z12) {
-            f14 = Math.max(0.5f, f14);
-        }
-        j3Var3.setVisibility(0);
-        j3Var3.e(a3Var3.a, a3Var3.b, w0Var);
-        j3Var3.setTranslationY(AndroidUtilities.dp(36.0f) * ((f14 - 0.5f) / 1.5f));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        super.dispatchDraw(canvas);
-        canvas.save();
-        float width = getWidth();
-        float dp = AndroidUtilities.dp(8.0f);
-        RectF rectF = this.h;
-        rectF.set(0.0f, 0.0f, width, dp);
-        j20 j20Var = this.f;
-        j20Var.b(canvas, rectF, 1, 1.0f);
-        rectF.set(0.0f, getHeight() - AndroidUtilities.dp(8.0f), getWidth(), getHeight());
-        j20Var.b(canvas, rectF, 3, 1.0f);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(37.66f), TLObject.FLAG_30));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLObject.FLAG_30));
+    }
+
+    public void setSorting(s3 s3Var) {
+        br brVar;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("v ");
+        if (s3Var == s3.c) {
+            brVar = new br(R.drawable.mini_gift_sorting_date, 0);
+            spannableStringBuilder.setSpan(brVar, 0, 1, 33);
+            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.ResellGiftFilterSortDateShort));
+        } else if (s3Var == s3.b) {
+            brVar = new br(R.drawable.mini_gift_sorting_price, 0);
+            spannableStringBuilder.setSpan(brVar, 0, 1, 33);
+            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.ResellGiftFilterSortPriceShort));
+        } else if (s3Var == s3.d) {
+            brVar = new br(R.drawable.mini_gift_sorting_num, 0);
+            spannableStringBuilder.setSpan(brVar, 0, 1, 33);
+            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.ResellGiftFilterSortNumberShort));
+        } else {
+            brVar = null;
+        }
+        if (brVar != null) {
+            brVar.translate(0.0f, AndroidUtilities.dp(1.0f));
+        }
+        setText(spannableStringBuilder);
+    }
+
+    public void setValue(CharSequence charSequence) {
+        SpannableStringBuilder append = new SpannableStringBuilder(charSequence).append((CharSequence) " v");
+        append.setSpan(this.a, append.length() - 1, append.length(), 33);
+        setText(append);
     }
 }

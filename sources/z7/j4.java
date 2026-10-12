@@ -1,15 +1,15 @@
 package z7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class j4 implements ia.d {
+public final class j4 implements ja.d {
     public static final j4 a = new j4();
 
     static {
-        sc.v.t(sc.v.o(w.class, sc.v.s(14, sc.v.o(w.class, sc.v.s(13, sc.v.o(w.class, sc.v.s(12, sc.v.o(w.class, sc.v.s(11, sc.v.o(w.class, sc.v.s(10, sc.v.o(w.class, sc.v.s(9, sc.v.o(w.class, sc.v.s(8, sc.v.o(w.class, sc.v.s(7, sc.v.o(w.class, sc.v.s(6, sc.v.o(w.class, sc.v.s(5, sc.v.o(w.class, sc.v.s(4, sc.v.o(w.class, sc.v.s(3, sc.v.o(w.class, sc.v.s(2, sc.v.o(w.class, new s(1)))))))))))))))))))))))))))));
+        t8.b.s(t8.b.n(w.class, t8.b.r(14, t8.b.n(w.class, t8.b.r(13, t8.b.n(w.class, t8.b.r(12, t8.b.n(w.class, t8.b.r(11, t8.b.n(w.class, t8.b.r(10, t8.b.n(w.class, t8.b.r(9, t8.b.n(w.class, t8.b.r(8, t8.b.n(w.class, t8.b.r(7, t8.b.n(w.class, t8.b.r(6, t8.b.n(w.class, t8.b.r(5, t8.b.n(w.class, t8.b.r(4, t8.b.n(w.class, t8.b.r(3, t8.b.n(w.class, t8.b.r(2, t8.b.n(w.class, new s(1)))))))))))))))))))))))))))));
     }
 
-    @Override // ia.a
+    @Override // ja.a
     public final /* synthetic */ void a(Object obj, Object obj2) {
         if (obj != null) {
             throw new ClassCastException();

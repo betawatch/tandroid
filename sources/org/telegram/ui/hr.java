@@ -1,65 +1,90 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class hr implements lr {
-    public final /* synthetic */ tr a;
+public final class hr implements qq {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean[] e;
+    public final /* synthetic */ yr f;
 
-    public hr(tr trVar) {
-        this.a = trVar;
+    public hr(yr yrVar, int i10, long j10, int i11, boolean z10, boolean[] zArr) {
+        this.f = yrVar;
+        this.a = i10;
+        this.b = j10;
+        this.c = i11;
+        this.d = z10;
+        this.e = zArr;
     }
 
-    @Override // org.telegram.ui.lr
+    @Override // org.telegram.ui.qq
     public final void a(TLRPC.User user) {
-        tr.c0(this.a, user);
+        yr.c0(this.f, user);
     }
 
-    @Override // org.telegram.ui.lr
-    public final void b(long j3) {
-        tr trVar = this.a;
-        ArrayList arrayList = trVar.F;
-        a0.i iVar = trVar.K;
-        TLRPC.User user = trVar.getMessagesController().getUser(Long.valueOf(j3));
-        if (user != null) {
-            AndroidUtilities.runOnUIThread(new sg(26, this, user), 200L);
-        }
-        if (iVar.f(j3) == null) {
-            mr w02 = trVar.w0();
-            TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
-            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-            tL_channelParticipantAdmin.peer = tL_peerUser;
-            tL_peerUser.user_id = user.id;
-            tL_channelParticipantAdmin.date = trVar.getConnectionsManager().getCurrentTime();
-            tL_channelParticipantAdmin.promoted_by = trVar.getAccountInstance().getUserConfig().clientUserId;
-            arrayList.add(tL_channelParticipantAdmin);
-            iVar.k(tL_channelParticipantAdmin, user.id);
-            Collections.sort(arrayList, new gf(4));
-            trVar.A0(w02);
-        }
-    }
-
-    @Override // org.telegram.ui.lr
-    public final void c(long j3, TLObject tLObject) {
-        tr trVar = this.a;
-        ArrayList arrayList = trVar.F;
-        a0.i iVar = trVar.K;
-        if (tLObject == null || iVar.f(j3) != null) {
+    @Override // org.telegram.ui.qq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        yr yrVar = this.f;
+        ArrayList arrayList = yrVar.F;
+        long j10 = this.b;
+        int i11 = this.a;
+        if (i11 != 0) {
+            if (i11 == 1 && i10 == 0) {
+                yrVar.v0(j10);
+                return;
+            }
             return;
         }
-        mr w02 = trVar.w0();
-        arrayList.add(tLObject);
-        iVar.k(tLObject, j3);
-        Collections.sort(arrayList, new gf(4));
-        trVar.A0(w02);
-    }
-
-    @Override // org.telegram.ui.lr
-    public final /* synthetic */ void d(long j3) {
+        int i12 = 0;
+        while (true) {
+            if (i12 >= arrayList.size()) {
+                break;
+            }
+            TLObject tLObject = (TLObject) arrayList.get(i12);
+            if (tLObject instanceof TLRPC.ChannelParticipant) {
+                if (MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer) == j10) {
+                    TLRPC.ChannelParticipant tL_channelParticipantAdmin = i10 == 1 ? new TLRPC.TL_channelParticipantAdmin() : new TLRPC.TL_channelParticipant();
+                    tL_channelParticipantAdmin.admin_rights = tL_chatAdminRights;
+                    tL_channelParticipantAdmin.banned_rights = tL_chatBannedRights;
+                    tL_channelParticipantAdmin.inviter_id = yrVar.getUserConfig().getClientUserId();
+                    if (j10 > 0) {
+                        TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                        tL_channelParticipantAdmin.peer = tL_peerUser;
+                        tL_peerUser.user_id = j10;
+                    } else {
+                        TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+                        tL_channelParticipantAdmin.peer = tL_peerChannel;
+                        tL_peerChannel.channel_id = -j10;
+                    }
+                    tL_channelParticipantAdmin.date = this.c;
+                    tL_channelParticipantAdmin.flags |= 4;
+                    tL_channelParticipantAdmin.rank = str;
+                    arrayList.set(i12, tL_channelParticipantAdmin);
+                }
+            } else if (tLObject instanceof TLRPC.ChatParticipant) {
+                TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) tLObject;
+                TLRPC.ChatParticipant tL_chatParticipantAdmin = i10 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
+                tL_chatParticipantAdmin.user_id = chatParticipant.user_id;
+                tL_chatParticipantAdmin.date = chatParticipant.date;
+                tL_chatParticipantAdmin.inviter_id = chatParticipant.inviter_id;
+                int indexOf = yrVar.s.participants.participants.indexOf(chatParticipant);
+                if (indexOf >= 0) {
+                    yrVar.s.participants.participants.set(indexOf, tL_chatParticipantAdmin);
+                }
+                yrVar.r0();
+            }
+            i12++;
+        }
+        if (i10 != 1 || this.d) {
+            return;
+        }
+        this.e[0] = true;
     }
 }

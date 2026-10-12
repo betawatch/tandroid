@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public class ClippingImageView extends View {
     public static final float[] Q = new float[8];
@@ -198,8 +198,8 @@ public class ClippingImageView extends View {
             canvas.clipRect(this.b / scaleY, this.d / scaleY, getWidth() - (this.c / scaleY), getHeight() - (this.a / scaleY));
             try {
                 canvas.drawBitmap(this.v.bitmap, matrix2, this.s);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
         canvas.restore();

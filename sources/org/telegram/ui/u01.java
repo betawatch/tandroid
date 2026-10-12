@@ -1,21 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class u01 extends org.telegram.ui.Cells.j5 {
-    public final /* synthetic */ y01 v;
+public final /* synthetic */ class u01 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f11 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u01(y01 y01Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(18, 70, context, e6Var, false);
-        this.v = y01Var;
+    public /* synthetic */ u01(f11 f11Var, int i10) {
+        this.a = i10;
+        this.b = f11Var;
     }
 
-    @Override // org.telegram.ui.Cells.j5
-    public final int a(int i10) {
-        this.v.e.getClass();
-        return i10;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                f11 f11Var = this.b;
+                ProfileActivity profileActivity = f11Var.e;
+                TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1));
+                MessagesController messagesController = profileActivity.getMessagesController();
+                ProfileActivity profileActivity2 = f11Var.e;
+                messagesController.openApp(profileActivity2, user, null, profileActivity2.getClassGuid(), null);
+                break;
+            default:
+                ProfileActivity profileActivity3 = this.b.e;
+                profileActivity3.O4 = !profileActivity3.O4;
+                if (!profileActivity3.N4) {
+                    profileActivity3.N4 = true;
+                }
+                profileActivity3.F4();
+                view.requestLayout();
+                profileActivity3.d.m(profileActivity3.O3);
+                int i10 = profileActivity3.U5;
+                if (i10 >= 0) {
+                    profileActivity3.c.h1(i10, profileActivity3.V5 - profileActivity3.a.getPaddingTop());
+                    break;
+                }
+                break;
+        }
     }
 }

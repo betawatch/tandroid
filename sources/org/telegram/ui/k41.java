@@ -1,50 +1,116 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class k41 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l41 b;
+public final class k41 extends org.telegram.ui.Components.lm0 {
+    public final Context c;
+    public final boolean d;
+    public final /* synthetic */ l41 e;
 
-    public /* synthetic */ k41(l41 l41Var, int i10) {
-        this.a = i10;
-        this.b = l41Var;
+    public k41(l41 l41Var, Context context, boolean z10) {
+        this.e = l41Var;
+        this.c = context;
+        this.d = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                l41 l41Var = this.b;
-                if (l41Var.h != null) {
-                    l41Var.h = null;
-                    l41Var.e = 0.0f;
-                    l41Var.g();
-                    l41Var.n.unlock();
-                    ux uxVar = l41Var.a;
-                    if (uxVar != null) {
-                        uxVar.onPause();
-                        l41Var.a.onFragmentDestroy();
-                        l41Var.removeAllViews();
-                        l41Var.a = null;
-                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-                    }
-                    l41Var.d(false);
-                    break;
-                }
-                break;
-            default:
-                l41 l41Var2 = this.b;
-                if (l41Var2.h != null) {
-                    l41Var2.h = null;
-                    l41Var2.d(true);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        return b1Var.f == 0;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        boolean z10 = this.d;
+        l41 l41Var = this.e;
+        if (!z10) {
+            return l41Var.h.size() + (l41Var.e >= 0 ? 1 : 0);
         }
+        ArrayList arrayList = l41Var.f;
+        if (arrayList == null) {
+            return 0;
+        }
+        return arrayList.size();
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        return (!this.d && i10 == this.e.e) ? 1 : 0;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0031, code lost:
+    
+        if (r8 == (r3.f.size() - 1)) goto L16;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0033, code lost:
+    
+        r8 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0057, code lost:
+    
+        if (r8 == (r3.h.size() - 1)) goto L16;
+     */
+    @Override // s4.g0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(s4.b1 b1Var, int i10) {
+        boolean z10;
+        int i11 = b1Var.f;
+        View view = b1Var.a;
+        if (i11 != 0) {
+            if (i11 != 1) {
+                return;
+            }
+            return;
+        }
+        org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
+        boolean z11 = this.d;
+        l41 l41Var = this.e;
+        TranslateController.Language language = null;
+        if (!z11) {
+            int i12 = l41Var.e;
+            if (i12 >= 0 && i10 > i12) {
+                i10--;
+            }
+            if (i10 >= 0 && i10 < l41Var.h.size()) {
+                language = (TranslateController.Language) l41Var.h.get(i10);
+            }
+            z10 = false;
+        } else if (i10 >= 0 && i10 < l41Var.f.size()) {
+            language = (TranslateController.Language) l41Var.f.get(i10);
+        }
+        if (language == null) {
+            return;
+        }
+        String str = language.ownDisplayName;
+        if (str == null) {
+            str = language.displayName;
+        }
+        x8Var.b(str, language.displayName, false, !z10);
+        x8Var.setChecked(l41Var.r.contains(language.code));
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        Context context = this.c;
+        if (i10 == 0) {
+            view = new org.telegram.ui.Cells.x8(context);
+        } else if (i10 != 2) {
+            view = new org.telegram.ui.Cells.b7(context, (org.telegram.ui.Cells.d0) null);
+        } else {
+            org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context);
+            m4Var.setText(LocaleController.getString(R.string.ChooseLanguages));
+            view = m4Var;
+        }
+        return new org.telegram.ui.Components.wl0(view);
     }
 }

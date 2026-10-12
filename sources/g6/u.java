@@ -4,7 +4,7 @@ import com.google.android.gms.internal.cast.a0;
 import java.util.concurrent.atomic.AtomicReference;
 import n6.b0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class u extends g {
     public final AtomicReference b;
@@ -56,7 +56,7 @@ public final class u extends g {
             return;
         }
         v.n0.b("Receive (type=text, ns=%s) %s", str, str2);
-        this.c.post(new c5.v(vVar, str, str2, 6));
+        this.c.post(new c5.w(vVar, str, str2, 6));
     }
 
     @Override // g6.h
@@ -69,12 +69,12 @@ public final class u extends g {
     }
 
     @Override // g6.h
-    public final void Y(long j3) {
+    public final void Y(long j10) {
         v vVar = (v) this.b.get();
         if (vVar == null) {
             return;
         }
-        v.G(vVar, j3, 0);
+        v.G(vVar, j10, 0);
     }
 
     @Override // g6.h
@@ -107,7 +107,7 @@ public final class u extends g {
             return;
         }
         v.n0.b("onDeviceStatusChanged", new Object[0]);
-        this.c.post(new i9.s(15, vVar, dVar));
+        this.c.post(new j9.u(14, vVar, dVar));
     }
 
     @Override // g6.h
@@ -117,7 +117,7 @@ public final class u extends g {
             return;
         }
         v.n0.b("onApplicationStatusChanged", new Object[0]);
-        this.c.post(new i9.s(16, vVar, cVar));
+        this.c.post(new j9.u(15, vVar, cVar));
     }
 
     @Override // g6.h
@@ -145,12 +145,12 @@ public final class u extends g {
     }
 
     @Override // g6.h
-    public final void zzm(int i10, long j3) {
+    public final void zzm(int i10, long j10) {
         v vVar = (v) this.b.get();
         if (vVar == null) {
             return;
         }
-        v.G(vVar, j3, i10);
+        v.G(vVar, j10, i10);
     }
 
     @Override // g6.h

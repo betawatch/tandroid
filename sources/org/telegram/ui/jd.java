@@ -1,60 +1,48 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class jd extends org.telegram.ui.Components.fk0 {
-    public final /* synthetic */ int r;
-    public final /* synthetic */ Object s;
+public final /* synthetic */ class jd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sd b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ jd(Object obj, Context context, int i10) {
-        super(context);
-        this.r = i10;
-        this.s = obj;
+    public /* synthetic */ jd(sd sdVar, int i10) {
+        this.a = i10;
+        this.b = sdVar;
     }
 
-    @Override // android.view.View
-    public void invalidate(int i10, int i11, int i12, int i13) {
-        switch (this.r) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                super.invalidate(i10, i11, i12, i13);
-                ((md) this.s).f.invalidate();
+                sd sdVar = this.b;
+                sdVar.j0 = true;
+                sdVar.h0();
                 break;
             case 1:
-            default:
-                super.invalidate(i10, i11, i12, i13);
+                sd sdVar2 = this.b;
+                sdVar2.x = null;
+                sdVar2.y = null;
+                sdVar2.l0 = null;
+                sdVar2.m0 = null;
+                sdVar2.o0 = null;
+                sdVar2.n0 = null;
+                sdVar2.p0 = 0.0d;
+                sdVar2.e0(false, true);
+                sdVar2.e.h(null, null, sdVar2.s, null);
+                sdVar2.h.setAnimation(sdVar2.J);
+                sdVar2.J.M(0);
                 break;
             case 2:
-                super.invalidate(i10, i11, i12, i13);
-                ((j70) this.s).e.invalidate();
-                break;
-            case 3:
-                super.invalidate(i10, i11, i12, i13);
-                ((gf0) this.s).h.invalidate();
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        switch (this.r) {
-            case 0:
-                super.invalidate();
-                ((md) this.s).f.invalidate();
-                break;
-            case 1:
-                super.invalidate();
-                ((org.telegram.ui.Components.i30) this.s).invalidate();
-                break;
-            case 2:
-                super.invalidate();
-                ((j70) this.s).e.invalidate();
+                this.b.g0(true);
                 break;
             default:
-                super.invalidate();
-                ((gf0) this.s).h.invalidate();
+                sd sdVar3 = this.b;
+                sdVar3.j0 = true;
+                if (sdVar3.w.length() > 0) {
+                    sdVar3.d0(sdVar3.w.getText().toString());
+                }
+                sdVar3.h0();
                 break;
         }
     }

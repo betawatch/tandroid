@@ -4,10 +4,11 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.Handler;
 import android.os.HandlerThread;
-import i2.j0;
+import i2.l0;
 import java.util.ArrayDeque;
+import ji.w4;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f extends MediaCodec.Callback {
     public final HandlerThread b;
@@ -19,10 +20,10 @@ public final class f extends MediaCodec.Callback {
     public long l;
     public boolean m;
     public IllegalStateException n;
-    public l2.f o;
+    public w4 o;
     public final Object a = new Object();
-    public final a0.h d = new a0.h();
-    public final a0.h e = new a0.h();
+    public final e2.f d = new e2.f();
+    public final e2.f e = new e2.f();
     public final ArrayDeque f = new ArrayDeque();
     public final ArrayDeque g = new ArrayDeque();
 
@@ -35,15 +36,34 @@ public final class f extends MediaCodec.Callback {
         if (!arrayDeque.isEmpty()) {
             this.i = (MediaFormat) arrayDeque.getLast();
         }
-        a0.h hVar = this.d;
-        hVar.b = hVar.a;
-        a0.h hVar2 = this.e;
-        hVar2.b = hVar2.a;
+        e2.f fVar = this.d;
+        fVar.b = fVar.a;
+        e2.f fVar2 = this.e;
+        fVar2.b = fVar2.a;
         this.f.clear();
         arrayDeque.clear();
     }
 
-    public final void b(IllegalStateException illegalStateException) {
+    public final void b() {
+        IllegalStateException illegalStateException = this.n;
+        if (illegalStateException != null) {
+            this.n = null;
+            throw illegalStateException;
+        }
+        MediaCodec.CodecException codecException = this.j;
+        if (codecException != null) {
+            this.j = null;
+            throw codecException;
+        }
+        MediaCodec.CryptoException cryptoException = this.k;
+        if (cryptoException == null) {
+            return;
+        }
+        this.k = null;
+        throw cryptoException;
+    }
+
+    public final void c(IllegalStateException illegalStateException) {
         synchronized (this.a) {
             this.n = illegalStateException;
         }
@@ -65,19 +85,19 @@ public final class f extends MediaCodec.Callback {
 
     @Override // android.media.MediaCodec.Callback
     public final void onInputBufferAvailable(MediaCodec mediaCodec, int i10) {
-        j0 j0Var;
+        l0 l0Var;
         synchronized (this.a) {
             this.d.a(i10);
-            l2.f fVar = this.o;
-            if (fVar != null && (j0Var = ((s) fVar.b).W) != null) {
-                j0Var.a();
+            w4 w4Var = this.o;
+            if (w4Var != null && (l0Var = ((r) w4Var.b).Y) != null) {
+                l0Var.a();
             }
         }
     }
 
     @Override // android.media.MediaCodec.Callback
     public final void onOutputBufferAvailable(MediaCodec mediaCodec, int i10, MediaCodec.BufferInfo bufferInfo) {
-        j0 j0Var;
+        l0 l0Var;
         synchronized (this.a) {
             try {
                 MediaFormat mediaFormat = this.i;
@@ -88,9 +108,9 @@ public final class f extends MediaCodec.Callback {
                 }
                 this.e.a(i10);
                 this.f.add(bufferInfo);
-                l2.f fVar = this.o;
-                if (fVar != null && (j0Var = ((s) fVar.b).W) != null) {
-                    j0Var.a();
+                w4 w4Var = this.o;
+                if (w4Var != null && (l0Var = ((r) w4Var.b).Y) != null) {
+                    l0Var.a();
                 }
             } catch (Throwable th2) {
                 throw th2;

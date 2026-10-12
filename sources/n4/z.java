@@ -1,38 +1,79 @@
 package n4;
 
-import android.os.Build;
-import android.text.TextUtils;
+import android.media.Rating;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class z {
-    public b0 a;
+public final class z implements Parcelable {
+    public static final Parcelable.Creator<z> CREATOR = new m8.h(9);
+    public final int a;
+    public final float b;
+    public Rating c;
 
-    public z(String str, int i10, int i11) {
-        if (str == null) {
-            throw new NullPointerException("package shouldn't be null");
+    public z(int i10, float f7) {
+        this.a = i10;
+        this.b = f7;
+    }
+
+    public static z c(float f7) {
+        if (f7 >= 0.0f && f7 <= 100.0f) {
+            return new z(6, f7);
         }
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException("packageName should be nonempty");
-        }
-        if (Build.VERSION.SDK_INT >= 28) {
-            this.a = new a0(str, i10, i11);
+        e2.a.c("Rating", "Invalid percentage-based rating value");
+        return null;
+    }
+
+    public static z d(float f7, int i10) {
+        float f10;
+        if (i10 == 3) {
+            f10 = 3.0f;
+        } else if (i10 == 4) {
+            f10 = 4.0f;
         } else {
-            this.a = new b0(str, i10, i11);
+            if (i10 != 5) {
+                e2.a.c("Rating", "Invalid rating style (" + i10 + ") for a star rating");
+                return null;
+            }
+            f10 = 5.0f;
         }
+        if (f7 >= 0.0f && f7 <= f10) {
+            return new z(i10, f7);
+        }
+        e2.a.c("Rating", "Trying to set out of range star-based rating");
+        return null;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final float a() {
+        int i10 = this.a;
+        if ((i10 == 3 || i10 == 4 || i10 == 5) && b()) {
+            return this.b;
         }
-        if (obj instanceof z) {
-            return this.a.equals(((z) obj).a);
-        }
-        return false;
+        return -1.0f;
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
+    public final boolean b() {
+        return this.b >= 0.0f;
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return this.a;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("Rating:style=");
+        sb2.append(this.a);
+        sb2.append(" rating=");
+        float f7 = this.b;
+        sb2.append(f7 < 0.0f ? "unrated" : String.valueOf(f7));
+        return sb2.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeInt(this.a);
+        parcel.writeFloat(this.b);
     }
 }

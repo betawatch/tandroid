@@ -1,54 +1,48 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
 import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.tc;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.ns0;
+import zh.e5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ ns0 b;
 
-    public /* synthetic */ s1(s3 s3Var, String str, int i10) {
+    public /* synthetic */ s1(ns0 ns0Var, int i10) {
         this.a = i10;
-        this.b = s3Var;
-        this.c = str;
+        this.b = ns0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                s3.j1(this.b, this.c);
+                this.b.a();
                 break;
             case 1:
-                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 2:
-                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 3:
-                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 4:
-                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 5:
-                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 6:
-                of.f.u(r0.getContext(), MessagesController.getInstance(this.b.currentAccount).tonBlockchainExplorerUrl + this.c);
-                break;
-            case 7:
-                AndroidUtilities.addToClipboard(this.c);
-                tc k10 = this.b.getBulletinFactory().k(false);
-                k10.t = true;
-                k10.j();
+                this.b.setReorderingCollections(true);
                 break;
             default:
-                s3.p0(this.b, this.c);
+                e5 e5Var = this.b.e;
+                e5Var.getClass();
+                TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
+                int i10 = e5Var.a;
+                reorderstargiftcollections.peer = MessagesController.getInstance(i10).getInputPeer(e5Var.b);
+                ArrayList arrayList = e5Var.e;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj = arrayList.get(i11);
+                    i11++;
+                    reorderstargiftcollections.order.add(Integer.valueOf(((TL_stars.TL_starGiftCollection) obj).collection_id));
+                }
+                ConnectionsManager.getInstance(i10).sendRequest(reorderstargiftcollections, null);
+                e5Var.j();
                 break;
         }
     }

@@ -1,27 +1,25 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class l81 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
-    public final /* synthetic */ boolean c;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ l81(SessionsActivity sessionsActivity, boolean z10, int i10) {
-        this.a = i10;
-        this.b = sessionsActivity;
-        this.c = z10;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class l81 implements View.OnClickListener {
+    public final /* synthetic */ n81 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ o81 c;
+
+    public l81(o81 o81Var, n81 n81Var, TLRPC.TL_authorization tL_authorization) {
+        this.c = o81Var;
+        this.a = n81Var;
+        this.b = tL_authorization;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.k0(this.c);
-                break;
-            default:
-                this.b.k0(this.c);
-                break;
-        }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        this.a.d.c(!r0.h, true);
+        this.b.call_requests_disabled = !r4.d.h;
+        o81.o(this.c);
     }
 }

@@ -1,24 +1,24 @@
 package p3;
 
-import b2.p0;
+import b2.u0;
 import java.nio.ByteBuffer;
 import java.nio.charset.CharacterCodingException;
 import java.nio.charset.CharsetDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import v7.r6;
-import w7.l;
+import v7.s6;
+import w7.m;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a extends l {
+public final class a extends m {
     public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
     public final CharsetDecoder a = StandardCharsets.UTF_8.newDecoder();
     public final CharsetDecoder b = StandardCharsets.ISO_8859_1.newDecoder();
 
-    @Override // w7.l
-    public final p0 b(l3.a aVar, ByteBuffer byteBuffer) {
+    @Override // w7.m
+    public final u0 b(l3.a aVar, ByteBuffer byteBuffer) {
         String str;
         CharsetDecoder charsetDecoder = this.b;
         CharsetDecoder charsetDecoder2 = this.a;
@@ -47,7 +47,7 @@ public final class a extends l {
         byte[] bArr = new byte[byteBuffer.limit()];
         byteBuffer.get(bArr);
         if (str == null) {
-            return new p0(new c(null, null, bArr));
+            return new u0(new c(null, null, bArr));
         }
         Matcher matcher = c.matcher(str);
         String str3 = null;
@@ -55,15 +55,15 @@ public final class a extends l {
             String group = matcher.group(1);
             String group2 = matcher.group(2);
             if (group != null) {
-                String b10 = r6.b(group);
-                b10.getClass();
-                if (b10.equals("streamurl")) {
+                String c10 = s6.c(group);
+                c10.getClass();
+                if (c10.equals("streamurl")) {
                     str3 = group2;
-                } else if (b10.equals("streamtitle")) {
+                } else if (c10.equals("streamtitle")) {
                     str2 = group2;
                 }
             }
         }
-        return new p0(new c(str2, str3, bArr));
+        return new u0(new c(str2, str3, bArr));
     }
 }

@@ -1,12 +1,12 @@
 package v7;
 
 import w7.pa;
-import x7.ja;
+import x7.ia;
 import z7.zf;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a9 implements pa.b {
+public final /* synthetic */ class a9 implements qa.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ l5.q b;
 
@@ -15,7 +15,7 @@ public final /* synthetic */ class a9 implements pa.b {
         this.b = qVar;
     }
 
-    @Override // pa.b
+    @Override // qa.b
     public final Object get() {
         switch (this.a) {
             case 0:
@@ -27,9 +27,9 @@ public final /* synthetic */ class a9 implements pa.b {
             case 3:
                 return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), pa.d);
             case 4:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), ja.e);
+                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), ia.e);
             case 5:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), ja.d);
+                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), ia.d);
             case 6:
                 return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), zf.e);
             default:

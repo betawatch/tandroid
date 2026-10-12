@@ -1,34 +1,45 @@
 package te;
 
-import android.os.Build;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Proxy;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static Object a(Class cls, InvocationHandler invocationHandler) {
-        if (invocationHandler == null) {
-            return null;
-        }
-        return cls.cast(Proxy.newProxyInstance(b.class.getClassLoader(), new Class[]{cls}, invocationHandler));
+public final class b {
+    public static final b e;
+    public boolean a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+
+    static {
+        b bVar = new b();
+        bVar.a = true;
+        bVar.b = true;
+        bVar.c = false;
+        bVar.d = false;
+        e = bVar;
+        bVar.a = true;
+        bVar.b = true;
+        bVar.c = false;
+        bVar.d = false;
     }
 
-    public static boolean b(int i10) {
-        return (i10 & 32768) != 0;
-    }
-
-    public static boolean c(int i10) {
-        if (i10 == 15 || i10 == 255) {
-            return true;
+    public static String a(String str, Class cls, boolean z10) {
+        if (cls == null) {
+            return "ANONYMOUS";
         }
-        if (i10 == 32768) {
-            return Build.VERSION.SDK_INT >= 30;
+        if (cls.isArray()) {
+            Class<?> componentType = cls.getComponentType();
+            StringBuffer stringBuffer = new StringBuffer();
+            stringBuffer.append(a(componentType.getName(), componentType, z10));
+            stringBuffer.append("[]");
+            return stringBuffer.toString();
         }
-        if (i10 != 32783) {
-            return i10 == 33023 || i10 == 0;
+        if (!z10) {
+            return str.replace('$', '.');
         }
-        int i11 = Build.VERSION.SDK_INT;
-        return i11 < 28 || i11 > 29;
+        int lastIndexOf = str.lastIndexOf(46);
+        if (lastIndexOf != -1) {
+            str = str.substring(lastIndexOf + 1);
+        }
+        return str.replace('$', '.');
     }
 }

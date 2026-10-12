@@ -1,37 +1,35 @@
 package pi;
 
-import android.content.SharedPreferences;
+import android.util.SparseArray;
+import bi.s6;
+import j$.util.Comparator$-CC;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class a {
-    public final String a;
-    public volatile boolean b;
-    public volatile boolean c;
-    public volatile boolean d;
+    public SparseArray a;
 
-    public a(String str) {
-        this.a = str;
-    }
-
-    public final void a() {
-        if (this.b) {
+    public final void a(HashMap hashMap) {
+        if (this.a != null) {
+            for (Map.Entry entry : hashMap.entrySet()) {
+                this.a.put(((String) entry.getKey()).hashCode(), (String) entry.getValue());
+            }
             return;
         }
-        synchronized (this) {
-            if (!this.b) {
-                SharedPreferences sharedPreferences = d.a;
-                this.c = sharedPreferences.contains(this.a);
-                this.d = sharedPreferences.getBoolean(this.a, true);
-                this.b = true;
-            }
+        this.a = new SparseArray(hashMap.size());
+        ArrayList arrayList = new ArrayList(hashMap.entrySet());
+        Collections.sort(arrayList, Comparator$-CC.comparingInt(new s6(13)));
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            Map.Entry entry2 = (Map.Entry) obj;
+            this.a.append(((String) entry2.getKey()).hashCode(), (String) entry2.getValue());
         }
-    }
-
-    public final synchronized void b(boolean z10) {
-        this.d = z10;
-        this.c = true;
-        this.b = true;
-        d.a.edit().putBoolean(this.a, z10).apply();
     }
 }

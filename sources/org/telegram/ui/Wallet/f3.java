@@ -2,50 +2,50 @@ package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a5 b;
+    public final /* synthetic */ z4 b;
 
-    public /* synthetic */ f3(a5 a5Var, int i10) {
+    public /* synthetic */ f3(z4 z4Var, int i10) {
         this.a = i10;
-        this.b = a5Var;
+        this.b = z4Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                a5 a5Var = this.b;
-                a5Var.S.post(new f3(a5Var, 8));
+                z4 z4Var = this.b;
+                z4Var.S.post(new f3(z4Var, 8));
                 break;
             case 1:
-                a5.e0(this.b);
+                z4.e0(this.b);
                 break;
             case 2:
-                a5 a5Var2 = this.b;
-                a5Var2.getClass();
-                a5Var2.presentFragment(new l7());
+                z4 z4Var2 = this.b;
+                z4Var2.getClass();
+                z4Var2.presentFragment(new k7());
                 break;
             case 3:
-                a5 a5Var3 = this.b;
-                a5Var3.getClass();
-                a5Var3.presentFragment(new di.i());
+                z4 z4Var3 = this.b;
+                z4Var3.getClass();
+                z4Var3.presentFragment(new ei.i());
                 break;
             case 4:
-                a5 a5Var4 = this.b;
-                c0 c0Var = a5Var4.A0;
-                boolean z10 = (c0Var == null || c0Var.a.isEmpty()) ? false : true;
-                if (a5Var4.g0 != z10) {
-                    a5Var4.w0(z10);
+                z4 z4Var4 = this.b;
+                b0 b0Var = z4Var4.A0;
+                boolean z10 = (b0Var == null || b0Var.a.isEmpty()) ? false : true;
+                if (z4Var4.g0 != z10) {
+                    z4Var4.w0(z10);
                 }
-                e71 e71Var = a5Var4.a;
-                if (e71Var != null && e71Var.W2 != null) {
-                    a5Var4.F0(true);
+                b71 b71Var = z4Var4.a;
+                if (b71Var != null && b71Var.W2 != null) {
+                    z4Var4.F0(true);
                     break;
                 }
                 break;
@@ -56,25 +56,25 @@ public final /* synthetic */ class f3 implements Runnable {
                 this.b.p0();
                 break;
             case 7:
-                ad.a0(this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                zc.a0(this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
             case 8:
-                a5 a5Var5 = this.b;
-                if (a5Var5.S.isAttachedToWindow()) {
-                    if (!a5Var5.a.canScrollVertically(-1)) {
-                        a5Var5.a.V2.h1(0, 0);
+                z4 z4Var5 = this.b;
+                if (z4Var5.S.isAttachedToWindow()) {
+                    if (!z4Var5.a.canScrollVertically(-1)) {
+                        z4Var5.a.V2.h1(0, 0);
                     }
-                    a5Var5.S.requestLayout();
+                    z4Var5.S.requestLayout();
                     break;
                 }
                 break;
             case 9:
-                a5 a5Var6 = this.b;
-                a5Var6.G = false;
-                a5Var6.E.invalidate();
+                z4 z4Var6 = this.b;
+                z4Var6.G = false;
+                z4Var6.E.invalidate();
                 break;
             case 10:
-                a5.b0(this.b);
+                z4.b0(this.b);
                 break;
             case 11:
                 this.b.C0();

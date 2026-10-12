@@ -1,48 +1,67 @@
 package r3;
 
-import a1.g;
-import e2.d0;
-import j$.util.Objects;
-import java.util.Locale;
+import b2.r0;
+import b2.t0;
+import b2.x;
+import java.util.ArrayList;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b {
-    public final long a;
-    public final long b;
-    public final int c;
+public final class b implements t0 {
+    public final ArrayList a;
 
-    public b(long j3, long j10, int i10) {
-        e2.d.b(j3 < j10);
-        this.a = j3;
-        this.b = j10;
-        this.c = i10;
+    public b(ArrayList arrayList) {
+        this.a = arrayList;
+        boolean z10 = false;
+        if (!arrayList.isEmpty()) {
+            long j10 = ((a) arrayList.get(0)).b;
+            int i10 = 1;
+            while (true) {
+                if (i10 >= arrayList.size()) {
+                    break;
+                }
+                if (((a) arrayList.get(i10)).a < j10) {
+                    z10 = true;
+                    break;
+                } else {
+                    j10 = ((a) arrayList.get(i10)).b;
+                    i10++;
+                }
+            }
+        }
+        u6.g(!z10);
+    }
+
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
+        return null;
+    }
+
+    @Override // b2.t0
+    public final /* synthetic */ byte[] c() {
+        return null;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj != null && b.class == obj.getClass()) {
-            b bVar = (b) obj;
-            if (this.a == bVar.a && this.b == bVar.b && this.c == bVar.c) {
-                return true;
-            }
+        if (obj == null || b.class != obj.getClass()) {
+            return false;
         }
-        return false;
+        return this.a.equals(((b) obj).a);
     }
 
     public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b), Integer.valueOf(this.c));
+        return this.a.hashCode();
     }
 
     public final String toString() {
-        String str = d0.a;
-        Locale locale = Locale.US;
-        StringBuilder u10 = g.u(this.a, "Segment: startTimeMs=", ", endTimeMs=");
-        u10.append(this.b);
-        u10.append(", speedDivisor=");
-        u10.append(this.c);
-        return u10.toString();
+        return "SlowMotion: segments=" + this.a;
+    }
+
+    @Override // b2.t0
+    public final /* synthetic */ void b(r0 r0Var) {
     }
 }

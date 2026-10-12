@@ -1,60 +1,32 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
+import android.view.MotionEvent;
 import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class p21 extends pm0 {
-    public Context c;
-    public ArrayList d;
+public final class p21 extends EditTextBoldCursor {
+    public final /* synthetic */ r21 b;
 
-    @Override // org.telegram.ui.Components.pm0
-    public final boolean D(s4.d1 d1Var) {
-        return true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p21(r21 r21Var, Context context) {
+        super(context);
+        this.b = r21Var;
     }
 
-    @Override // s4.i0
-    public final int h() {
-        ArrayList arrayList = this.d;
-        if (arrayList.isEmpty()) {
-            return 0;
-        }
-        return arrayList.size() + 1;
-    }
-
-    @Override // s4.i0
-    public final int j(int i10) {
-        return i10 == 0 ? 1 : 0;
-    }
-
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
-        if (d1Var.f == 0) {
-            org.telegram.ui.ActionBar.k6 k6Var = (org.telegram.ui.ActionBar.k6) ((ArrayList) this.d.get(i10 - 1)).get(0);
-            int c10 = k6Var.f == org.telegram.ui.ActionBar.i6.Nd ? 0 : k6Var.c();
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) d1Var.a;
-            z8Var.a.setText(org.telegram.ui.ActionBar.g5.i(k6Var.f));
-            z8Var.b = c10;
-            z8Var.setWillNotDraw(c10 == 0);
-            z8Var.invalidate();
-        }
-    }
-
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        View z8Var;
-        Context context = this.c;
-        if (i10 != 0) {
-            z8Var = new View(context);
-            z8Var.setLayoutParams(new s4.q0(-1, AndroidUtilities.dp(56.0f)));
-        } else {
-            z8Var = new org.telegram.ui.Cells.z8(context);
-            z8Var.setLayoutParams(new s4.q0(-1, -2));
-        }
-        return new am0(z8Var);
+    @Override // org.telegram.ui.Components.pu, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        ViewGroup viewGroup;
+        MotionEvent obtain = MotionEvent.obtain(motionEvent);
+        float rawX = obtain.getRawX();
+        float rawY = obtain.getRawY();
+        ThemeEditorView.EditorAlert editorAlert = this.b.c;
+        viewGroup = ((org.telegram.ui.ActionBar.e3) editorAlert).containerView;
+        obtain.setLocation(rawX, rawY - viewGroup.getTranslationY());
+        editorAlert.c.dispatchTouchEvent(obtain);
+        obtain.recycle();
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

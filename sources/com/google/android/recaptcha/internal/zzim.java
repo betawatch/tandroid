@@ -1,21 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import ae.c0;
-import ae.d0;
-import ae.h1;
-import hd.i;
-import id.g;
+import be.b0;
+import be.c0;
+import be.g1;
 import java.util.List;
-import jd.c;
-import kd.a;
-import ld.j;
-import sd.l;
-import sd.p;
-import v7.a8;
+import jd.g;
+import kd.c;
+import ld.a;
+import md.i;
+import td.l;
+import td.p;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-final class zzim extends j implements p {
+final class zzim extends i implements p {
     public static final /* synthetic */ int zze = 0;
     int zza;
     final /* synthetic */ zziz zzb;
@@ -31,29 +30,29 @@ final class zzim extends j implements p {
         this.zzd = zzipVar;
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final c create(Object obj, c cVar) {
         zzim zzimVar = new zzim(this.zzb, this.zzc, this.zzd, cVar);
         zzimVar.zzf = obj;
         return zzimVar;
     }
 
-    @Override // sd.p
+    @Override // td.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzim) create((d0) obj, (c) obj2)).invokeSuspend(i.a);
+        return ((zzim) create((c0) obj, (c) obj2)).invokeSuspend(id.i.a);
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final Object invokeSuspend(Object obj) {
         Object zzh;
         a aVar = a.a;
         int i10 = this.zza;
-        i iVar = i.a;
-        a8.b(obj);
+        id.i iVar = id.i.a;
+        i8.b(obj);
         if (i10 != 0) {
             return iVar;
         }
-        d0 d0Var = (d0) this.zzf;
+        c0 c0Var = (c0) this.zzf;
         while (true) {
             zziz zzizVar = this.zzb;
             if (zzizVar.zza() < 0) {
@@ -61,20 +60,20 @@ final class zzim extends j implements p {
             }
             List list = this.zzc;
             if (zzizVar.zza() < list.size()) {
-                h1 h1Var = (h1) d0Var.c().get(c0.b);
-                if (!(h1Var != null ? h1Var.isActive() : true)) {
+                g1 g1Var = (g1) c0Var.c().get(b0.b);
+                if (!(g1Var != null ? g1Var.isActive() : true)) {
                     break;
                 }
                 zzzu zzzuVar = (zzzu) list.get(zzizVar.zza());
                 try {
                     zzip.zzf(this.zzd, zzzuVar, zzizVar);
-                } catch (Exception e7) {
+                } catch (Exception e) {
                     zzzuVar.zzk();
                     new Integer(zzzuVar.zzg());
                     List zzj = zzzuVar.zzj();
                     final zzip zzipVar = this.zzd;
                     g.h(zzj, null, null, null, new l(zzipVar) { // from class: com.google.android.recaptcha.internal.zzil
-                        @Override // sd.l
+                        @Override // td.l
                         public final Object invoke(Object obj2) {
                             kotlin.jvm.internal.i.b((zzzt) obj2);
                             return "";
@@ -82,7 +81,7 @@ final class zzim extends j implements p {
                     }, 31);
                     zziz zzizVar2 = this.zzb;
                     this.zza = 1;
-                    zzh = zzipVar.zzh(e7, zzizVar2, this);
+                    zzh = zzipVar.zzh(e, zzizVar2, this);
                     if (zzh == aVar) {
                         return aVar;
                     }

@@ -11,7 +11,7 @@ public final class h1 implements p0, LongConsumer, y {
     public final /* synthetic */ a1 c;
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.q0
@@ -51,9 +51,9 @@ public final class h1 implements p0, LongConsumer, y {
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j3) {
+    public final void accept(long j10) {
         this.a = true;
-        this.b = j3;
+        this.b = j10;
     }
 
     @Override // java.util.Iterator

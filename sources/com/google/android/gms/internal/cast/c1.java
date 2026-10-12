@@ -5,7 +5,7 @@ import android.util.Log;
 import java.math.BigInteger;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c1 {
     public static final g6.b d = new g6.b("ApplicationAnalyticsUtils", null);
@@ -16,8 +16,8 @@ public final class c1 {
 
     public c1(String str, Bundle bundle) {
         this.a = str;
-        this.b = v7.i5.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", bundle);
-        this.c = v7.i5.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON", bundle);
+        this.b = v7.j5.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", bundle);
+        this.c = v7.j5.a("com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON", bundle);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:8:0x0039  */
@@ -73,11 +73,11 @@ public final class c1 {
     }
 
     public final r1 b(b1 b1Var) {
-        long j3;
+        long j10;
         r1 m10 = s1.m();
-        long j10 = b1Var.d;
+        long j11 = b1Var.d;
         m10.c();
-        s1.t((s1) m10.b, j10);
+        s1.t((s1) m10.b, j11);
         int i10 = b1Var.e;
         b1Var.e = i10 + 1;
         m10.c();
@@ -116,15 +116,15 @@ public final class c1 {
         if (str4 != null) {
             try {
                 String replace = str4.replace("-", "");
-                j3 = new BigInteger(replace.substring(0, Math.min(16, replace.length())), 16).longValue();
+                j10 = new BigInteger(replace.substring(0, Math.min(16, replace.length())), 16).longValue();
             } catch (NumberFormatException e7) {
                 Object[] objArr = {str4};
                 g6.b bVar = d;
                 Log.w(bVar.a, bVar.d("receiverSessionId %s is not valid for hash", objArr), e7);
-                j3 = 0;
+                j10 = 0;
             }
             l10.c();
-            n1.q((n1) l10.b, j3);
+            n1.q((n1) l10.b, j10);
         }
         int i11 = b1Var.g;
         l10.c();

@@ -1,95 +1,32 @@
 package org.telegram.ui;
 
-import android.view.WindowManager;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.ClippingImageView;
+import android.content.Context;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kr0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
-    public final /* synthetic */ ev0 c;
+public final class kr0 extends FrameLayout {
+    public org.telegram.ui.ActionBar.m2 a;
+    public FrameLayout b;
+    public org.telegram.ui.ActionBar.k c;
+    public org.telegram.ui.Components.mm0 d;
+    public int e;
+    public final /* synthetic */ mr0 f;
 
-    public /* synthetic */ kr0(PhotoViewer photoViewer, ev0 ev0Var, int i10) {
-        this.a = i10;
-        this.b = photoViewer;
-        this.c = ev0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kr0(mr0 mr0Var, Context context) {
+        super(context);
+        this.f = mr0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ClippingImageView clippingImageView;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.b;
-                photoViewer.h0.setImageBitmap(null);
-                ev0 ev0Var = this.c;
-                if (ev0Var != null && !AndroidUtilities.isTablet() && (clippingImageView = ev0Var.m) != null) {
-                    clippingImageView.setImageBitmap(null);
-                }
-                try {
-                    if (photoViewer.g0.getParent() != null) {
-                        ((WindowManager) photoViewer.y.getSystemService("window")).removeView(photoViewer.g0);
-                        photoViewer.W1();
-                        break;
-                    }
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
-                }
-                break;
-            case 1:
-                PhotoViewer photoViewer2 = this.b;
-                photoViewer2.p4 = null;
-                int i10 = 0;
-                photoViewer2.e0.setLayerType(0, null);
-                photoViewer2.n4 = 0;
-                photoViewer2.G1();
-                photoViewer2.Y1(this.c);
-                MediaController.getInstance().tryResumePausedAudio();
-                if (photoViewer2.v7 && !photoViewer2.w7 && (arrayList = photoViewer2.g7) != null) {
-                    int size = arrayList.size();
-                    while (i10 < size) {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        if (obj instanceof MediaController.PhotoEntry) {
-                            ((MediaController.PhotoEntry) obj).deleteAll();
-                        }
-                    }
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer3 = this.b;
-                photoViewer3.p4 = null;
-                wu0 wu0Var = photoViewer3.e0;
-                if (wu0Var != null) {
-                    int i11 = 0;
-                    wu0Var.setLayerType(0, null);
-                    photoViewer3.n4 = 0;
-                    photoViewer3.Y1(this.c);
-                    photoViewer3.e0.setScaleX(1.0f);
-                    photoViewer3.e0.setScaleY(1.0f);
-                    MediaController.getInstance().tryResumePausedAudio();
-                    if (photoViewer3.v7 && !photoViewer3.w7 && (arrayList2 = photoViewer3.g7) != null) {
-                        int size2 = arrayList2.size();
-                        while (i11 < size2) {
-                            Object obj2 = arrayList2.get(i11);
-                            i11++;
-                            if (obj2 instanceof MediaController.PhotoEntry) {
-                                ((MediaController.PhotoEntry) obj2).deleteAll();
-                            }
-                        }
-                        break;
-                    }
-                }
-                break;
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        kr0 kr0Var;
+        super.setTranslationX(f7);
+        mr0 mr0Var = this.f;
+        kr0[] kr0VarArr = mr0Var.n;
+        if (mr0Var.s && (kr0Var = kr0VarArr[0]) == this) {
+            mr0Var.h.j(Math.abs(kr0Var.getTranslationX()) / kr0VarArr[0].getMeasuredWidth(), kr0VarArr[1].e);
         }
     }
 }

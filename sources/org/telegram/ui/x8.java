@@ -1,37 +1,102 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import android.view.KeyEvent;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class x8 extends FragmentContextView {
-    public final /* synthetic */ int R0 = 1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 S0;
+public final /* synthetic */ class x8 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x8(j9 j9Var, Context context, j9 j9Var2, v8 v8Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, j9Var2, v8Var, false, e6Var);
-        this.S0 = j9Var;
+    public /* synthetic */ x8(int i10, TLRPC.InputGroupCall inputGroupCall, String[] strArr, FrameLayout frameLayout, org.telegram.ui.Components.da0 da0Var, org.telegram.ui.ActionBar.e3 e3Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        this.a = 0;
+        this.b = i10;
+        this.c = inputGroupCall;
+        this.d = strArr;
+        this.e = frameLayout;
+        this.f = da0Var;
+        this.g = e3Var;
+        this.h = c6Var;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.R0) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i10 = this.a;
+        Object obj = this.h;
+        Object obj2 = this.g;
+        Object obj3 = this.f;
+        Object obj4 = this.e;
+        Object obj5 = this.d;
+        Object obj6 = this.c;
+        switch (i10) {
             case 0:
-                j9 j9Var = (j9) this.S0;
-                j9Var.M.i(j9Var.N, i10 == 0, true);
+                TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) obj6;
+                String[] strArr = (String[]) obj5;
+                FrameLayout frameLayout = (FrameLayout) obj4;
+                org.telegram.ui.Components.da0 da0Var = (org.telegram.ui.Components.da0) obj3;
+                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) obj2;
+                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) obj;
+                boolean z10 = tLObject instanceof TLRPC.Updates;
+                int i11 = this.b;
+                if (z10) {
+                    MessagesController.getInstance(i11).lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
+                }
+                TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
+                exportgroupcallinvite.call = inputGroupCall;
+                ConnectionsManager.getInstance(i11).sendRequest(exportgroupcallinvite, new di.fd(strArr, frameLayout, da0Var, e3Var, c6Var, 1));
+                break;
+            case 1:
+                ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj6;
+                int[] iArr = (int[]) obj5;
+                org.telegram.ui.ActionBar.a2 a2Var = (org.telegram.ui.ActionBar.a2) obj4;
+                TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj3;
+                String str = (String) obj2;
+                String str2 = (String) obj;
+                ArrayList arrayList = ExternalActionActivity.x;
+                TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
+                if (authorizationform == null) {
+                    AndroidUtilities.runOnUIThread(new br(externalActionActivity, a2Var, tL_error, 5));
+                    break;
+                } else {
+                    TL_account.getPassword getpassword = new TL_account.getPassword();
+                    int i12 = this.b;
+                    iArr[0] = ConnectionsManager.getInstance(i12).sendRequest(getpassword, new x8(externalActionActivity, a2Var, i12, authorizationform, getauthorizationform, str, str2, 2));
+                    break;
+                }
+            case 2:
+                ArrayList arrayList2 = ExternalActionActivity.x;
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.b6((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.a2) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
                 break;
             default:
-                fg1 fg1Var = (fg1) this.S0;
-                fg1Var.U0.i(fg1Var.F0, i10 == 0, true);
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.ob((kg0) obj6, tLObject, tL_error, (c5.l) obj5, this.b, (c5.p) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj));
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x8(fg1 fg1Var, Context context, fg1 fg1Var2) {
-        super(context, fg1Var2, null, false, null);
-        this.S0 = fg1Var;
+    public /* synthetic */ x8(KeyEvent.Callback callback, Object obj, int i10, Object obj2, TLObject tLObject, String str, Object obj3, int i11) {
+        this.a = i11;
+        this.c = callback;
+        this.d = obj;
+        this.b = i10;
+        this.e = obj2;
+        this.f = tLObject;
+        this.g = str;
+        this.h = obj3;
     }
 }

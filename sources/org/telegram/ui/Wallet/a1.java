@@ -1,49 +1,86 @@
 package org.telegram.ui.Wallet;
 
-import j$.util.function.Predicate$-CC;
-import java.util.function.Predicate;
+import org.json.JSONArray;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.mt;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a1 implements Predicate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TL_wallet.tonConnectSession b;
+public final /* synthetic */ class a1 implements Utilities.Callback2 {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ d2 b;
+    public final /* synthetic */ TL_wallet.tonConnectSession c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ byte[] e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ a1(TL_wallet.tonConnectSession tonconnectsession, int i10) {
-        this.a = i10;
-        this.b = tonconnectsession;
+    public /* synthetic */ a1(d2 d2Var, bi.f0 f0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr, JSONArray jSONArray, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest) {
+        this.b = d2Var;
+        this.f = f0Var;
+        this.c = tonconnectsession;
+        this.d = str;
+        this.e = bArr;
+        this.g = jSONArray;
+        this.h = tL_urlAuthResultRequest;
     }
 
-    public /* synthetic */ Predicate and(Predicate predicate) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         int i10 = this.a;
-        return Predicate$-CC.$default$and(this, predicate);
-    }
-
-    public /* synthetic */ Predicate negate() {
-        switch (this.a) {
-        }
-        return Predicate$-CC.$default$negate(this);
-    }
-
-    public /* synthetic */ Predicate or(Predicate predicate) {
-        int i10 = this.a;
-        return Predicate$-CC.$default$or(this, predicate);
-    }
-
-    @Override // java.util.function.Predicate
-    public final boolean test(Object obj) {
-        TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj;
-        switch (this.a) {
+        d2 d2Var = this.b;
+        switch (i10) {
             case 0:
-                if (tonconnectsession.id == this.b.id) {
+                mt mtVar = (mt) this.f;
+                g0 g0Var = (g0) this.g;
+                TL_wallet.tonConnectSession tonconnectsession = this.c;
+                String str = this.d;
+                byte[] bArr = this.e;
+                y1 y1Var = (y1) this.h;
+                TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                d2Var.getClass();
+                if (tL_error == null && tonconnectchallenge != null) {
+                    Utilities.globalQueue.postRunnable(new ji.k(d2Var, g0Var, tonconnectsession, str, bArr, y1Var, tonconnectchallenge, mtVar, 4));
+                    break;
+                } else {
+                    mtVar.run(d2.x(tL_error, "registerKey"));
+                    break;
                 }
-                break;
             default:
-                if (tonconnectsession.id == this.b.id) {
+                bi.f0 f0Var = (bi.f0) this.f;
+                TL_wallet.tonConnectSession tonconnectsession2 = this.c;
+                String str2 = this.d;
+                byte[] bArr2 = this.e;
+                JSONArray jSONArray = (JSONArray) this.g;
+                TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) this.h;
+                g0 g0Var2 = (g0) obj;
+                String str3 = (String) obj2;
+                d2Var.getClass();
+                if (str3 == null && g0Var2 != null) {
+                    g0 b10 = g0Var2.b();
+                    Utilities.globalQueue.postRunnable(new ji.k(d2Var, b10, tonconnectsession2, str2, bArr2, jSONArray, tL_urlAuthResultRequest, new bi.f0(26, b10, f0Var), 5));
+                    break;
+                } else {
+                    if (str3 == null) {
+                        str3 = "Recovery phrase is unavailable";
+                    }
+                    f0Var.run(null, str3);
+                    break;
                 }
-                break;
         }
-        return false;
+    }
+
+    public /* synthetic */ a1(d2 d2Var, mt mtVar, g0 g0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr, y1 y1Var) {
+        this.b = d2Var;
+        this.f = mtVar;
+        this.g = g0Var;
+        this.c = tonconnectsession;
+        this.d = str;
+        this.e = bArr;
+        this.h = y1Var;
     }
 }

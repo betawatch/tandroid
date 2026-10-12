@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class fa {
     public static s k;
@@ -14,7 +14,7 @@ public final class fa {
     public final String a;
     public final String b;
     public final ca c;
-    public final qb.k d;
+    public final rb.k d;
     public final Task e;
     public final Task f;
     public final String g;
@@ -29,24 +29,24 @@ public final class fa {
         l = new x(objArr);
     }
 
-    public fa(Context context, qb.k kVar, ca caVar) {
+    public fa(Context context, rb.k kVar, ca caVar) {
         this.a = context.getPackageName();
-        this.b = qb.c.a(context);
+        this.b = rb.c.a(context);
         this.d = kVar;
         this.c = caVar;
-        ja.b();
+        ia.b();
         this.g = "play-services-mlkit-image-labeling";
-        qb.f a2 = qb.f.a();
-        c5.x xVar = new c5.x(this, 9);
+        rb.f a2 = rb.f.a();
+        c5.y yVar = new c5.y(this, 8);
         a2.getClass();
-        this.e = qb.f.b(xVar);
-        qb.f a10 = qb.f.a();
+        this.e = rb.f.b(yVar);
+        rb.f a10 = rb.f.a();
         kVar.getClass();
         t7.p pVar = new t7.p(kVar, 3);
         a10.getClass();
-        this.f = qb.f.b(pVar);
-        x xVar2 = l;
-        this.h = xVar2.containsKey("play-services-mlkit-image-labeling") ? y6.e.d(context, (String) xVar2.get("play-services-mlkit-image-labeling"), false) : -1;
+        this.f = rb.f.b(pVar);
+        x xVar = l;
+        this.h = xVar.containsKey("play-services-mlkit-image-labeling") ? y6.e.d(context, (String) xVar.get("play-services-mlkit-image-labeling"), false) : -1;
     }
 
     public static long a(ArrayList arrayList, double d) {
@@ -58,8 +58,8 @@ public final class fa {
         return task.isSuccessful() ? (String) task.getResult() : n6.i.c.a(this.g);
     }
 
-    public final boolean c(o7 o7Var, long j3) {
+    public final boolean c(o7 o7Var, long j10) {
         HashMap hashMap = this.i;
-        return hashMap.get(o7Var) == null || j3 - ((Long) hashMap.get(o7Var)).longValue() > TimeUnit.SECONDS.toMillis(30L);
+        return hashMap.get(o7Var) == null || j10 - ((Long) hashMap.get(o7Var)).longValue() > TimeUnit.SECONDS.toMillis(30L);
     }
 }

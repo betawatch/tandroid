@@ -1,110 +1,40 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class lc extends View {
+public final /* synthetic */ class lc implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Canvas b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ Paint f;
-    public final /* synthetic */ Bitmap h;
-    public final /* synthetic */ Paint n;
-    public final /* synthetic */ float r;
-    public final /* synthetic */ float s;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 v;
+    public final /* synthetic */ hd b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ lc(org.telegram.ui.ActionBar.n2 n2Var, Activity activity, Canvas canvas, float f7, float f10, float f11, Paint paint, Bitmap bitmap, Paint paint2, float f12, float f13, int i10) {
-        super(activity);
+    public /* synthetic */ lc(hd hdVar, int i10) {
         this.a = i10;
-        this.v = n2Var;
-        this.b = canvas;
-        this.c = f7;
-        this.d = f10;
-        this.e = f11;
-        this.f = paint;
-        this.h = bitmap;
-        this.n = paint2;
-        this.r = f12;
-        this.s = f13;
+        this.b = hdVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                super.onDraw(canvas);
-                bd bdVar = (bd) this.v;
-                boolean z10 = bdVar.J;
-                Paint paint = this.n;
-                float f7 = this.e;
-                float f10 = this.d;
-                float f11 = this.c;
-                if (z10) {
-                    float f12 = bdVar.n0;
-                    if (f12 > 0.0f) {
-                        this.b.drawCircle(f11, f10, f7 * f12, this.f);
-                    }
-                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint);
-                } else {
-                    canvas.drawCircle(f11, f10, (1.0f - bdVar.n0) * f7, paint);
-                }
-                canvas.save();
-                canvas.translate(this.r, this.s);
-                bdVar.L.draw(canvas);
-                canvas.restore();
+                TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) obj;
+                hd hdVar = this.b;
+                hdVar.E = wallPaper;
+                hdVar.F = wallPaper;
+                hdVar.G = wallPaper;
+                hdVar.X0(false);
+                hdVar.a1(false);
+                AndroidUtilities.runOnUIThread(new mc(hdVar, 1), 350L);
                 break;
             case 1:
-                super.onDraw(canvas);
-                aq0 aq0Var = (aq0) this.v;
-                boolean z11 = aq0Var.S;
-                Paint paint2 = this.n;
-                float f13 = this.e;
-                float f14 = this.d;
-                float f15 = this.c;
-                if (z11) {
-                    float f16 = aq0Var.Y;
-                    if (f16 > 0.0f) {
-                        this.b.drawCircle(f15, f14, f13 * f16, this.f);
-                    }
-                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint2);
-                } else {
-                    canvas.drawCircle(f15, f14, (1.0f - aq0Var.Y) * f13, paint2);
-                }
-                canvas.save();
-                canvas.translate(this.r, this.s);
-                aq0Var.K.draw(canvas);
-                canvas.restore();
+                hd.V(this.b, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             default:
-                super.onDraw(canvas);
-                xd1 xd1Var = (xd1) this.v;
-                boolean a2 = xd1Var.a.a();
-                Paint paint3 = this.n;
-                float f17 = this.e;
-                float f18 = this.d;
-                float f19 = this.c;
-                if (a2) {
-                    float f20 = xd1Var.i2;
-                    if (f20 > 0.0f) {
-                        this.b.drawCircle(f19, f18, f17 * f20, this.f);
-                    }
-                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint3);
-                } else {
-                    canvas.drawCircle(f19, f18, (1.0f - xd1Var.i2) * f17, paint3);
-                }
-                canvas.save();
-                canvas.translate(this.r, this.s);
-                xd1Var.O1.draw(canvas);
-                canvas.restore();
+                this.b.W0((TL_stories.TL_premium_boostsStatus) obj);
                 break;
         }
     }

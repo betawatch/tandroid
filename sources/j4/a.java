@@ -1,42 +1,43 @@
 package j4;
 
-import e9.a1;
-import e9.i0;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a implements c3.o {
     public final b a = new b("audio/ac3");
-    public final e2.v b = new e2.v(2786);
+    public final e2.x b = new e2.x(2786);
     public boolean c;
 
     @Override // c3.o
     public final boolean a(c3.p pVar) {
         c3.l lVar;
-        int f7;
-        e2.v vVar = new e2.v(10);
+        int e;
+        e2.x xVar = new e2.x(10);
         int i10 = 0;
         while (true) {
             lVar = (c3.l) pVar;
-            lVar.h(vVar.a, 0, 10, false);
-            vVar.J(0);
-            if (vVar.A() != 4801587) {
+            lVar.j(xVar.a, 0, 10, false);
+            xVar.N(0);
+            if (xVar.D() != 4801587) {
                 break;
             }
-            vVar.K(3);
-            int w10 = vVar.w();
-            i10 += w10 + 10;
-            lVar.v(w10, false);
+            xVar.O(3);
+            int z10 = xVar.z();
+            i10 += z10 + 10;
+            lVar.v(z10, false);
         }
         lVar.f = 0;
         lVar.v(i10, false);
         int i11 = 0;
         int i12 = i10;
         while (true) {
-            lVar.h(vVar.a, 0, 6, false);
-            vVar.J(0);
-            if (vVar.D() != 2935) {
+            lVar.j(xVar.a, 0, 6, false);
+            xVar.N(0);
+            if (xVar.H() != 2935) {
                 lVar.f = 0;
                 i12++;
                 if (i12 - i10 >= 8192) {
@@ -49,64 +50,64 @@ public final class a implements c3.o {
                 if (i11 >= 4) {
                     return true;
                 }
-                byte[] bArr = vVar.a;
+                byte[] bArr = xVar.a;
                 if (bArr.length < 6) {
-                    f7 = -1;
+                    e = -1;
                 } else if (((bArr[5] & 248) >> 3) > 10) {
-                    f7 = ((((bArr[2] & 7) << 8) | (bArr[3] & 255)) + 1) * 2;
+                    e = ((((bArr[2] & 7) << 8) | (bArr[3] & 255)) + 1) * 2;
                 } else {
                     byte b10 = bArr[4];
-                    f7 = c3.b.f((b10 & 192) >> 6, b10 & 63);
+                    e = c3.b.e((b10 & 192) >> 6, b10 & 63);
                 }
-                if (f7 == -1) {
+                if (e == -1) {
                     break;
                 }
-                lVar.v(f7 - 6, false);
+                lVar.v(e - 6, false);
             }
         }
         return false;
     }
 
     @Override // c3.o
-    public final void g(c3.q qVar) {
+    public final void c(c3.q qVar) {
         this.a.d(qVar, new f0(0, 1));
-        qVar.k1();
-        qVar.d2(new c3.t(-9223372036854775807L));
+        qVar.D();
+        qVar.K(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o
-    public final void h(long j3, long j10) {
+    public final void d(long j10, long j11) {
         this.c = false;
         this.a.c();
     }
 
     @Override // c3.o
-    public final List i() {
-        e9.g0 g0Var = i0.b;
-        return a1.e;
+    public final List e() {
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
     @Override // c3.o
-    public final int m(c3.p pVar, c3.s sVar) {
-        e2.v vVar = this.b;
-        int read = pVar.read(vVar.a, 0, 2786);
+    public final int f(c3.p pVar, c3.s sVar) {
+        e2.x xVar = this.b;
+        int read = pVar.read(xVar.a, 0, 2786);
         if (read == -1) {
             return -1;
         }
-        vVar.J(0);
-        vVar.I(read);
+        xVar.N(0);
+        xVar.M(read);
         boolean z10 = this.c;
         b bVar = this.a;
         if (!z10) {
             bVar.o = 0L;
             this.c = true;
         }
-        bVar.a(vVar);
+        bVar.a(xVar);
         return 0;
     }
 
     @Override // c3.o
-    public final c3.o c() {
+    public final c3.o b() {
         return this;
     }
 

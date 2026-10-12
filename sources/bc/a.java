@@ -1,26 +1,21 @@
 package bc;
 
-import ci.u5;
-import qb.g;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements q9.d {
-    public static final /* synthetic */ a b = new a(0);
-    public static final /* synthetic */ a c = new a(1);
-    public final /* synthetic */ int a;
+public final class a {
+    public final Bitmap a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
 
-    public /* synthetic */ a(int i10) {
-        this.a = i10;
-    }
-
-    @Override // q9.d
-    public final Object y0(u5 u5Var) {
-        switch (this.a) {
-            case 0:
-                return new c((g) u5Var.a(g.class));
-            default:
-                return new b((c) u5Var.a(c.class), (qb.d) u5Var.a(qb.d.class));
-        }
+    public a(Bitmap bitmap, int i10, int i11, int i12, int i13) {
+        this.a = bitmap;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
     }
 }

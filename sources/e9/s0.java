@@ -1,39 +1,41 @@
 package e9;
 
-import java.io.Serializable;
-import java.util.AbstractSequentialList;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.Collection;
+import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class s0 extends AbstractSequentialList implements Serializable {
-    public final List a;
-    public final d9.e b;
+public final class s0 extends i0 {
+    public final o0 b;
 
-    public s0(List list, d9.e eVar) {
-        list.getClass();
-        this.a = list;
-        this.b = eVar;
+    public s0(o0 o0Var) {
+        this.b = o0Var;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean isEmpty() {
-        return this.a.isEmpty();
+    @Override // e9.i0, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            Collection collection = (Collection) this.b.b().get(key);
+            if (collection != null && collection.contains(value)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // java.util.AbstractSequentialList, java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i10) {
-        return new q0(this, this.a.listIterator(i10), 1);
+    @Override // e9.i0
+    /* renamed from: r */
+    public final m2 iterator() {
+        o0 o0Var = this.b;
+        o0Var.getClass();
+        return new r0(o0Var);
     }
 
-    @Override // java.util.AbstractList
-    public final void removeRange(int i10, int i11) {
-        this.a.subList(i10, i11).clear();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public final int size() {
-        return this.a.size();
+        return this.b.f;
     }
 }

@@ -1,11 +1,41 @@
 package w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class o9 {
-    public static final long a(long j3, zd.c sourceUnit, zd.c targetUnit) {
-        kotlin.jvm.internal.i.e(sourceUnit, "sourceUnit");
-        kotlin.jvm.internal.i.e(targetUnit, "targetUnit");
-        return targetUnit.a.convert(j3, sourceUnit.a);
+    public static String a(String str) {
+        if (d(str)) {
+            return null;
+        }
+        return "American Express".equalsIgnoreCase(str) ? "American Express" : "MasterCard".equalsIgnoreCase(str) ? "MasterCard" : "Diners Club".equalsIgnoreCase(str) ? "Diners Club" : "Discover".equalsIgnoreCase(str) ? "Discover" : "JCB".equalsIgnoreCase(str) ? "JCB" : "Visa".equalsIgnoreCase(str) ? "Visa" : "Unknown";
+    }
+
+    public static String b(String str) {
+        if (d(str)) {
+            return null;
+        }
+        return "credit".equalsIgnoreCase(str) ? "credit" : "debit".equalsIgnoreCase(str) ? "debit" : "prepaid".equalsIgnoreCase(str) ? "prepaid" : "unknown";
+    }
+
+    public static boolean c(String str, String... strArr) {
+        if (str != null) {
+            for (String str2 : strArr) {
+                if (str.startsWith(str2)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean d(String str) {
+        return str == null || str.trim().length() == 0;
+    }
+
+    public static String e(String str) {
+        if (d(str)) {
+            return null;
+        }
+        return str;
     }
 }

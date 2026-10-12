@@ -1,12 +1,12 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 class Histogram {
     private final long handle;
 
-    private Histogram(long j3) {
-        this.handle = j3;
+    private Histogram(long j10) {
+        this.handle = j10;
     }
 
     public static Histogram createCounts(String str, int i10, int i11, int i12) {
@@ -17,7 +17,7 @@ class Histogram {
         return new Histogram(nativeCreateEnumeration(str, i10));
     }
 
-    private static native void nativeAddSample(long j3, int i10);
+    private static native void nativeAddSample(long j10, int i10);
 
     private static native long nativeCreateCounts(String str, int i10, int i11, int i12);
 

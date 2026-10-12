@@ -1,99 +1,69 @@
 package zg;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.c1;
+import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Cells.xa;
+import org.telegram.ui.Components.k9;
+import ug.s;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public long i;
-    public boolean j;
-    public float k;
-    public final /* synthetic */ d l;
+public final class c extends xa {
+    public final a a0;
+    public TL_stories.PrepaidGiveaway b0;
 
-    public c(d dVar) {
-        this.l = dVar;
+    public c(Context context) {
+        super(0, 0, context, false);
+        this.a0 = new a(context);
     }
 
-    public final void a() {
-        d dVar;
-        float f7 = 0.0f;
-        this.h = 0.0f;
-        float b10 = b();
-        float c10 = c();
-        int i10 = 0;
-        while (true) {
-            dVar = this.l;
-            if (i10 >= 20) {
-                break;
-            }
-            float b11 = b();
-            float c11 = c();
-            float f10 = 2.14748365E9f;
-            for (int i11 = 0; i11 < dVar.c.size(); i11++) {
-                float f11 = ((c) dVar.c.get(i11)).c - b11;
-                float f12 = ((c) dVar.c.get(i11)).d - c11;
-                float f13 = (f12 * f12) + (f11 * f11);
-                if (f13 < f10) {
-                    f10 = f13;
-                }
-            }
-            if (f10 > f7) {
-                b10 = b11;
-                c10 = c11;
-                f7 = f10;
-            }
-            i10++;
-        }
-        float f14 = dVar.f ? 0.8f : 0.5f;
-        this.c = b10;
-        if (b10 > dVar.b.width() * f14) {
-            this.a = dVar.b.width() * f14;
-        } else {
-            float width = dVar.b.width() * f14;
-            this.a = width;
-            if (this.c > width) {
-                this.c = width - 0.1f;
-            }
-        }
-        this.b = a1.g.e(c1.d(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, dVar.b.height() * 0.45f);
-        if (dVar.f) {
-            float e7 = a1.g.e(c1.d(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
-            this.f = e7;
-            this.g = (((c1.d(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * e7;
-            this.d = a1.g.e(c1.d(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, this.f / 2.0f);
-            this.e = dVar.b.height() + this.f;
-            this.i = Math.abs(Utilities.fastRandom.nextInt() % 600) + MediaDataController.MAX_STYLE_RUNS_COUNT;
-        } else {
-            float e10 = a1.g.e(c1.d(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
-            this.f = e10;
-            this.g = (((c1.d(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * e10;
-            this.d = c10;
-            this.e = c10 + dVar.b.height();
-            this.i = 1800L;
-        }
-        this.i = (long) (this.i / 1.75f);
-        this.j = Utilities.fastRandom.nextBoolean();
-        this.k = ((Utilities.fastRandom.nextInt() % 100) / 100.0f) * 20.0f;
+    @Override // org.telegram.ui.Cells.xa
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    public final float b() {
-        if (!this.l.f) {
-            return (c1.d(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
-        }
-        return a1.g.e(c1.d(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
+    public TL_stories.PrepaidGiveaway getPrepaidGiveaway() {
+        return this.b0;
     }
 
-    public final float c() {
-        return (c1.d(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
+    @Override // org.telegram.ui.Cells.xa, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.S) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, g6.k0);
+        }
+    }
+
+    public void setImage(TL_stories.PrepaidGiveaway prepaidGiveaway) {
+        this.b0 = prepaidGiveaway;
+        boolean z10 = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway;
+        k9 k9Var = this.E;
+        if (z10) {
+            k9Var.g(26);
+            String valueOf = String.valueOf(((TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway).stars / 500);
+            a aVar = this.a0;
+            aVar.f = valueOf;
+            aVar.e = aVar.a.measureText(valueOf);
+            aVar.invalidateSelf();
+        } else if (prepaidGiveaway instanceof TL_stories.TL_prepaidGiveaway) {
+            k9Var.g(16);
+            int i10 = ((TL_stories.TL_prepaidGiveaway) prepaidGiveaway).months;
+            if (i10 == 12) {
+                k9Var.i(-31392, -2796986);
+            } else if (i10 == 6) {
+                k9Var.i(-10703110, -12481584);
+            } else {
+                k9Var.i(-6631068, -11945404);
+            }
+            String valueOf2 = String.valueOf(s.g() * prepaidGiveaway.quantity);
+            a aVar2 = this.a0;
+            aVar2.f = valueOf2;
+            aVar2.e = aVar2.a.measureText(valueOf2);
+            aVar2.invalidateSelf();
+        }
+        this.b.i(this.a0);
     }
 }

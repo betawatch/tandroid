@@ -1,120 +1,167 @@
 package v7;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.NinePatchDrawable;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class v7 {
-    public static List a(int... iArr) {
-        return iArr.length == 0 ? Collections.EMPTY_LIST : new h9.b(0, iArr.length, iArr);
-    }
-
-    public static int b(long j3) {
-        int i10 = (int) j3;
-        t6.b(j3, "Out of range: %s", ((long) i10) == j3);
-        return i10;
-    }
-
-    public static int c(byte b10, byte b11, byte b12, byte b13) {
-        return (b10 << 24) | ((b11 & 255) << 16) | ((b12 & 255) << 8) | (b13 & 255);
-    }
-
-    public static int d(int i10, int i11, int i12, int[] iArr) {
-        while (i11 < i12) {
-            if (iArr[i11] == i10) {
-                return i11;
-            }
-            i11++;
+    public static NinePatchDrawable a(Bitmap bitmap, Rect rect, int i10, int i11) {
+        if (bitmap == null) {
+            throw new IllegalArgumentException("bitmap == null");
         }
-        return -1;
-    }
-
-    public static int e(long j3) {
-        return j3 > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : j3 < -2147483648L ? TLObject.FLAG_31 : (int) j3;
-    }
-
-    public static int[] f(Collection collection) {
-        if (collection instanceof h9.b) {
-            h9.b bVar = (h9.b) collection;
-            return Arrays.copyOfRange(bVar.a, bVar.b, bVar.c);
+        if (bitmap.isRecycled()) {
+            throw new IllegalArgumentException("bitmap is recycled");
         }
-        Object[] array = collection.toArray();
-        int length = array.length;
-        int[] iArr = new int[length];
-        for (int i10 = 0; i10 < length; i10++) {
-            Object obj = array[i10];
-            obj.getClass();
-            iArr[i10] = ((Number) obj).intValue();
+        if (i10 >= 0 && i10 < bitmap.getWidth() && i11 >= 0 && i11 < bitmap.getHeight()) {
+            return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, c(i10, i10 + 1, i11, i11 + 1, rect.left, rect.top, rect.right, rect.bottom, bitmap.getPixel(i10, i11)).array(), rect, null);
         }
-        return iArr;
+        StringBuilder l4 = i2.d.l("center pixel is outside bitmap: (", i10, ", ", i11, ") for ");
+        l4.append(bitmap.getWidth());
+        l4.append("x");
+        l4.append(bitmap.getHeight());
+        throw new IllegalArgumentException(l4.toString());
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public static Integer g(String str) {
-        byte b10;
-        Integer num;
-        Long l4;
-        byte b11;
-        str.getClass();
-        if (!str.isEmpty()) {
-            int i10 = str.charAt(0) == '-' ? 1 : 0;
-            if (i10 != str.length()) {
-                int i11 = i10 + 1;
-                char charAt = str.charAt(i10);
-                if (charAt < 128) {
-                    b10 = h9.c.a[charAt];
-                } else {
-                    byte[] bArr = h9.c.a;
-                    b10 = -1;
-                }
-                if (b10 >= 0 && b10 < 10) {
-                    long j3 = -b10;
-                    long j10 = 10;
-                    long j11 = Long.MIN_VALUE / j10;
-                    while (true) {
-                        if (i11 < str.length()) {
-                            int i12 = i11 + 1;
-                            char charAt2 = str.charAt(i11);
-                            if (charAt2 < 128) {
-                                b11 = h9.c.a[charAt2];
-                            } else {
-                                byte[] bArr2 = h9.c.a;
-                                b11 = -1;
-                            }
-                            if (b11 < 0 || b11 >= 10 || j3 < j11) {
-                                break;
-                            }
-                            long j12 = j3 * j10;
-                            num = null;
-                            long j13 = b11;
-                            if (j12 < j13 - Long.MIN_VALUE) {
-                                break;
-                            }
-                            j3 = j12 - j13;
-                            i11 = i12;
-                        } else {
-                            num = null;
-                            if (i10 != 0) {
-                                l4 = Long.valueOf(j3);
-                            } else if (j3 != Long.MIN_VALUE) {
-                                l4 = Long.valueOf(-j3);
-                            }
-                        }
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0102  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x010a  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static NinePatchDrawable b(Bitmap[] bitmapArr, float[] fArr, float f7, float f10, int i10, hh.f fVar) {
+        float f11;
+        int i11;
+        int i12;
+        Bitmap bitmap;
+        if (fArr == null || fArr.length != 8) {
+            throw new IllegalArgumentException("radii must have 8 values: TLx,TLy, TRx,TRy, BRx,BRy, BLx,BLy");
+        }
+        float max = Math.max(0.0f, fArr[0]);
+        float max2 = Math.max(0.0f, fArr[1]);
+        float max3 = Math.max(0.0f, fArr[2]);
+        float max4 = Math.max(0.0f, fArr[3]);
+        float max5 = Math.max(0.0f, fArr[4]);
+        float max6 = Math.max(0.0f, fArr[5]);
+        float max7 = Math.max(0.0f, fArr[6]);
+        float max8 = Math.max(0.0f, fArr[7]);
+        int ceil = (int) Math.ceil(f7 * 2.0f);
+        int ceil2 = ceil + ((int) Math.ceil(Math.max(0.0f, -0.0f)));
+        int ceil3 = ceil + ((int) Math.ceil(Math.max(0.0f, 0.0f)));
+        int ceil4 = ceil + ((int) Math.ceil(Math.max(0.0f, -f10)));
+        int ceil5 = ceil + ((int) Math.ceil(Math.max(0.0f, f10)));
+        float max9 = Math.max(max + max3, max7 + max5);
+        float max10 = Math.max(max2 + max8, max4 + max6);
+        int ceil6 = ((int) Math.ceil(max9 + 2.0f)) + ceil2;
+        int i13 = ceil6 + ceil3;
+        int ceil7 = ((int) Math.ceil(max10 + 2.0f)) + ceil4;
+        int i14 = ceil7 + ceil5;
+        boolean z10 = bitmapArr != null && bitmapArr.length == 1;
+        if (z10) {
+            i11 = 1;
+            bitmap = bitmapArr[0];
+            if (bitmap != null && !bitmap.isRecycled() && bitmap.isMutable() && bitmap.getWidth() == i13 && bitmap.getHeight() == i14) {
+                f11 = max5;
+                if (bitmap.getConfig() == Bitmap.Config.ARGB_8888) {
+                    bitmap.eraseColor(0);
+                    i12 = i14;
+                    if (bitmap == null) {
+                        bitmap = Bitmap.createBitmap(i13, i12, Bitmap.Config.ARGB_8888);
                     }
+                    if (z10) {
+                        bitmapArr[0] = bitmap;
+                    }
+                    Canvas canvas = new Canvas(bitmap);
+                    int i15 = i12;
+                    RectF rectF = new RectF(ceil2, ceil4, ceil6, ceil7);
+                    float[] fArr2 = new float[8];
+                    fArr2[0] = max;
+                    fArr2[i11] = max2;
+                    fArr2[2] = max3;
+                    fArr2[3] = max4;
+                    fArr2[4] = f11;
+                    fArr2[5] = max6;
+                    fArr2[6] = max7;
+                    fArr2[7] = max8;
+                    fVar.a(canvas, rectF, fArr2);
+                    float max11 = Math.max(max, max7);
+                    float max12 = Math.max(max3, f11);
+                    float max13 = Math.max(max2, max4);
+                    float max14 = Math.max(max8, max6);
+                    int i16 = i11;
+                    int b10 = w7.s.b(((int) Math.ceil(max11)) + ceil2, i16, i13 - 2);
+                    int b11 = w7.s.b((i13 - ceil3) - ((int) Math.ceil(max12)), b10 + 1, i13 - i16);
+                    int b12 = w7.s.b(((int) Math.ceil(max13)) + ceil4, i16, i15 - 2);
+                    return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, c(b10, b11, b12, w7.s.b((i15 - ceil5) - ((int) Math.ceil(max14)), b12 + 1, i15 - 1), ceil2, ceil4, ceil3, ceil5, i10).array(), new Rect(ceil2, ceil4, ceil3, ceil5), null);
                 }
-                num = null;
-                l4 = num;
-                return (l4 == 0 && l4.longValue() == ((long) l4.intValue())) ? Integer.valueOf(l4.intValue()) : num;
+            } else {
+                f11 = max5;
             }
+        } else {
+            f11 = max5;
+            i11 = 1;
         }
-        l4 = 0;
-        num = null;
-        if (l4 == 0) {
+        i12 = i14;
+        bitmap = null;
+        if (bitmap == null) {
         }
+        if (z10) {
+        }
+        Canvas canvas2 = new Canvas(bitmap);
+        int i152 = i12;
+        RectF rectF2 = new RectF(ceil2, ceil4, ceil6, ceil7);
+        float[] fArr22 = new float[8];
+        fArr22[0] = max;
+        fArr22[i11] = max2;
+        fArr22[2] = max3;
+        fArr22[3] = max4;
+        fArr22[4] = f11;
+        fArr22[5] = max6;
+        fArr22[6] = max7;
+        fArr22[7] = max8;
+        fVar.a(canvas2, rectF2, fArr22);
+        float max112 = Math.max(max, max7);
+        float max122 = Math.max(max3, f11);
+        float max132 = Math.max(max2, max4);
+        float max142 = Math.max(max8, max6);
+        int i162 = i11;
+        int b102 = w7.s.b(((int) Math.ceil(max112)) + ceil2, i162, i13 - 2);
+        int b112 = w7.s.b((i13 - ceil3) - ((int) Math.ceil(max122)), b102 + 1, i13 - i162);
+        int b122 = w7.s.b(((int) Math.ceil(max132)) + ceil4, i162, i152 - 2);
+        return new NinePatchDrawable(ApplicationLoader.applicationContext.getResources(), bitmap, c(b102, b112, b122, w7.s.b((i152 - ceil5) - ((int) Math.ceil(max142)), b122 + 1, i152 - 1), ceil2, ceil4, ceil3, ceil5, i10).array(), new Rect(ceil2, ceil4, ceil3, ceil5), null);
+    }
+
+    public static ByteBuffer c(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18) {
+        ByteBuffer order = ByteBuffer.allocate(84).order(ByteOrder.nativeOrder());
+        order.put((byte) 1);
+        order.put((byte) 2);
+        order.put((byte) 2);
+        order.put((byte) 9);
+        order.putInt(0);
+        order.putInt(0);
+        order.putInt(i14);
+        order.putInt(i16);
+        order.putInt(i15);
+        order.putInt(i17);
+        order.putInt(0);
+        order.putInt(i10);
+        order.putInt(i11);
+        order.putInt(i12);
+        order.putInt(i13);
+        order.putInt(1);
+        order.putInt(1);
+        order.putInt(1);
+        order.putInt(1);
+        order.putInt(i18);
+        order.putInt(1);
+        order.putInt(1);
+        order.putInt(1);
+        order.putInt(1);
+        return order;
     }
 }

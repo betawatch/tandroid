@@ -10,7 +10,7 @@ import org.webrtc.ContextUtils;
 import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class WebRtcAudioManager {
     private static final int BITS_PER_SAMPLE = 16;
@@ -41,14 +41,14 @@ public class WebRtcAudioManager {
     private int sampleRate;
     private final VolumeLogger volumeLogger;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class VolumeLogger {
         private static final String THREAD_NAME = "WebRtcVolumeLevelLoggerThread";
         private static final int TIMER_PERIOD_IN_SECONDS = 30;
         private final AudioManager audioManager;
         private Timer timer;
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public class LogVolumeTask extends TimerTask {
             private final int maxRingVolume;
             private final int maxVoiceCallVolume;
@@ -91,14 +91,14 @@ public class WebRtcAudioManager {
         }
     }
 
-    public WebRtcAudioManager(long j3) {
+    public WebRtcAudioManager(long j10) {
         Logging.d(TAG, "ctor" + WebRtcAudioUtils.getThreadInfo());
-        this.nativeAudioManager = j3;
+        this.nativeAudioManager = j10;
         AudioManager audioManager = (AudioManager) ContextUtils.getApplicationContext().getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
         this.audioManager = audioManager;
         this.volumeLogger = new VolumeLogger(audioManager);
         storeAudioParameters();
-        nativeCacheAudioParameters(this.sampleRate, this.outputChannels, this.inputChannels, this.hardwareAEC, this.hardwareAGC, this.hardwareNS, this.lowLatencyOutput, this.lowLatencyInput, this.proAudio, this.aAudio, this.outputBufferSize, this.inputBufferSize, j3);
+        nativeCacheAudioParameters(this.sampleRate, this.outputChannels, this.inputChannels, this.hardwareAEC, this.hardwareAGC, this.hardwareNS, this.lowLatencyOutput, this.lowLatencyInput, this.proAudio, this.aAudio, this.outputBufferSize, this.inputBufferSize, j10);
         WebRtcAudioUtils.logAudioState(TAG);
     }
 
@@ -220,7 +220,7 @@ public class WebRtcAudioManager {
         return ContextUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.audio.pro");
     }
 
-    private native void nativeCacheAudioParameters(int i10, int i11, int i12, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15, boolean z16, int i13, int i14, long j3);
+    private native void nativeCacheAudioParameters(int i10, int i11, int i12, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15, boolean z16, int i13, int i14, long j10);
 
     public static synchronized void setBlacklistDeviceForOpenSLESUsage(boolean z10) {
         synchronized (WebRtcAudioManager.class) {

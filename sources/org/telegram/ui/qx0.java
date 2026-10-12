@@ -1,28 +1,18 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qx0 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PrivacyControlActivity b;
+public final class qx0 {
+    public final int a;
+    public final int b;
+    public final CharSequence c;
+    public final String d;
+    public int e;
 
-    public /* synthetic */ qx0(PrivacyControlActivity privacyControlActivity, int i10) {
+    public qx0(int i10, int i11, String str, String str2) {
         this.a = i10;
-        this.b = privacyControlActivity;
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.z0();
-                break;
-            case 1:
-                this.b.finishFragment();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
-        }
+        this.b = i11;
+        this.c = str;
+        this.d = str2;
     }
 }

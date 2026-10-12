@@ -1,26 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.view.animation.OvershootInterpolator;
+import android.util.Property;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class u6 {
-    public static final OvershootInterpolator a = new OvershootInterpolator(1.9f);
-    public static final s6 b = new s6("alpha", 0);
-    public static final org.telegram.ui.Cells.t8 c;
-    public static final s6 d;
-    public static final s6 e;
-    public static final org.telegram.ui.Cells.t8 f;
-    public static final org.telegram.ui.Cells.t8 g;
-    public static final org.telegram.ui.Cells.t8 h;
+public abstract class u6 extends Property {
+    public final /* synthetic */ int a;
 
-    static {
-        new s6("color", 1);
-        c = new org.telegram.ui.Cells.t8("currentAlpha", 4);
-        d = new s6("alpha", 2);
-        e = new s6("alpha", 3);
-        f = new org.telegram.ui.Cells.t8("animationProgress", 5);
-        g = new org.telegram.ui.Cells.t8("animationValue", 6);
-        h = new org.telegram.ui.Cells.t8("clipProgress", 7);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u6(String str, int i10) {
+        super(Float.class, str);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                super(Integer.class, str);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void a(Object obj, Float f7) {
+        c(obj, f7.floatValue());
+    }
+
+    public abstract void b(int i10, Object obj);
+
+    public abstract void c(Object obj, float f7);
+
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                c(obj, ((Float) obj2).floatValue());
+                break;
+            default:
+                b(((Integer) obj2).intValue(), obj);
+                break;
+        }
     }
 }

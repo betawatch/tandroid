@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b1 extends v1 {
     private static final b1 zzb;
@@ -52,12 +52,12 @@ public final class b1 extends v1 {
         for (int i11 = 0; i11 < size4; i11++) {
             Object obj = arrayList.get(i11);
             if (obj == null) {
-                String i12 = hg.c.i(list.size() - size3, "Element at index ", " is null.");
+                String j10 = i2.d.j(list.size() - size3, "Element at index ", " is null.");
                 int size5 = list.size();
                 while (true) {
                     size5--;
                     if (size5 < size3) {
-                        throw new NullPointerException(i12);
+                        throw new NullPointerException(j10);
                     }
                     list.remove(size5);
                 }

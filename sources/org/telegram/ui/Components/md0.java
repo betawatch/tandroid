@@ -4,32 +4,32 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class md0 extends sw0 implements r0.m, View.OnLayoutChangeListener {
+public abstract class md0 extends ow0 implements r0.n, View.OnLayoutChangeListener {
     public int A0;
     public int B0;
     public boolean C0;
-    public final b2.q0 w0;
+    public final b2.v0 w0;
     public View x0;
     public ld0 y0;
-    public org.telegram.ui.ActionBar.d3 z0;
+    public org.telegram.ui.ActionBar.c3 z0;
 
     public md0(Context context) {
         super(context, null);
-        this.w0 = new b2.q0();
+        this.w0 = new b2.v0();
     }
 
     public void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
         ld0 ld0Var;
-        if (viewGroup != this.x0 || (ld0Var = this.y0) == null || ((org.telegram.ui.r7) ld0Var).getListView() == null) {
+        if (viewGroup != this.x0 || (ld0Var = this.y0) == null || ((org.telegram.ui.w7) ld0Var).getListView() == null) {
             return;
         }
         int top = this.y0.getTop();
         if (i11 >= 0) {
-            org.telegram.ui.ActionBar.d3 d3Var = this.z0;
-            if (d3Var != null) {
-                d3Var.onNestedPreScroll(viewGroup, i10, i11, iArr);
+            org.telegram.ui.ActionBar.c3 c3Var = this.z0;
+            if (c3Var != null) {
+                c3Var.onNestedPreScroll(viewGroup, i10, i11, iArr);
                 return;
             }
             return;
@@ -41,10 +41,10 @@ public abstract class md0 extends sw0 implements r0.m, View.OnLayoutChangeListen
             this.z0.onNestedScroll(viewGroup, 0, 0, i10, i11);
             return;
         }
-        qm0 listView = ((org.telegram.ui.r7) this.y0).getListView();
-        int L0 = ((s4.d0) listView.getLayoutManager()).L0();
+        mm0 listView = ((org.telegram.ui.w7) this.y0).getListView();
+        int L0 = ((s4.b0) listView.getLayoutManager()).L0();
         if (L0 != -1) {
-            s4.d1 K = listView.K(L0);
+            s4.b1 K = listView.K(L0);
             int top2 = K != null ? K.a.getTop() : -1;
             int paddingTop = listView.getPaddingTop();
             if (top2 == paddingTop && L0 == 0) {
@@ -65,9 +65,9 @@ public abstract class md0 extends sw0 implements r0.m, View.OnLayoutChangeListen
         if (this.y0 != ld0Var) {
             this.y0 = ld0Var;
             if (this.C0 && ld0Var != null) {
-                org.telegram.ui.r7 r7Var = (org.telegram.ui.r7) ld0Var;
-                if (r7Var.getListView() != null) {
-                    r7Var.getListView().addOnLayoutChangeListener(this);
+                org.telegram.ui.w7 w7Var = (org.telegram.ui.w7) ld0Var;
+                if (w7Var.getListView() != null) {
+                    w7Var.getListView().addOnLayoutChangeListener(this);
                 }
             }
         }
@@ -86,32 +86,32 @@ public abstract class md0 extends sw0 implements r0.m, View.OnLayoutChangeListen
         }
     }
 
-    @Override // org.telegram.ui.Components.sw0
+    @Override // org.telegram.ui.Components.ow0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
 
-    public void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
+    public void i(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
         ld0 ld0Var;
-        if (viewGroup != this.x0 || (ld0Var = this.y0) == null || ((org.telegram.ui.r7) ld0Var).getListView() == null) {
+        if (viewGroup != this.x0 || (ld0Var = this.y0) == null || ((org.telegram.ui.w7) ld0Var).getListView() == null) {
             return;
         }
-        qm0 listView = ((org.telegram.ui.r7) this.y0).getListView();
+        mm0 listView = ((org.telegram.ui.w7) this.y0).getListView();
         if (this.y0.getTop() == this.A0) {
             iArr[1] = i13;
             listView.scrollBy(0, i13);
         }
     }
 
-    public void o(int i10, View view) {
+    public void n(int i10, View view) {
         this.w0.a = 0;
-        org.telegram.ui.ActionBar.d3 d3Var = this.z0;
-        if (d3Var != null) {
-            d3Var.onStopNestedScroll(view);
+        org.telegram.ui.ActionBar.c3 c3Var = this.z0;
+        if (c3Var != null) {
+            c3Var.onStopNestedScroll(view);
         }
     }
 
-    @Override // org.telegram.ui.Components.sw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ow0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.C0 = true;
@@ -121,7 +121,7 @@ public abstract class md0 extends sw0 implements r0.m, View.OnLayoutChangeListen
         }
     }
 
-    @Override // org.telegram.ui.Components.sw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ow0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.C0 = false;
@@ -150,8 +150,8 @@ public abstract class md0 extends sw0 implements r0.m, View.OnLayoutChangeListen
         this.w0.a = i10;
     }
 
-    public void setBottomSheetContainerView(org.telegram.ui.ActionBar.d3 d3Var) {
-        this.z0 = d3Var;
+    public void setBottomSheetContainerView(org.telegram.ui.ActionBar.c3 c3Var) {
+        this.z0 = c3Var;
     }
 
     public void setChildLayout(ld0 ld0Var) {
@@ -167,6 +167,6 @@ public abstract class md0 extends sw0 implements r0.m, View.OnLayoutChangeListen
     public void onStopNestedScroll(View view) {
     }
 
-    public void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
+    public void b(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
     }
 }

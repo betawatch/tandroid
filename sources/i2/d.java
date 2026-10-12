@@ -1,31 +1,522 @@
 package i2;
 
-import android.content.Context;
+import android.media.MediaMetadataRetriever;
+import android.net.Uri;
+import androidx.car.app.hardware.common.CarZone;
+import androidx.car.app.navigation.model.Maneuver;
+import com.google.android.gms.internal.cast.i4;
+import com.google.android.gms.internal.play_billing.k3;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import org.telegram.messenger.BuildConfig;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.ActionBar.f2;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.zc;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements d9.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-
-    public /* synthetic */ d(Context context, int i10) {
-        this.a = i10;
-        this.b = context;
+public abstract /* synthetic */ class d {
+    public static void A(n2.g gVar, n2.g gVar2) {
+        if (gVar == gVar2) {
+            return;
+        }
+        if (gVar2 != null) {
+            gVar2.b(null);
+        }
+        if (gVar != null) {
+            gVar.a(null);
+        }
     }
 
-    @Override // d9.j
-    public final Object get() {
-        switch (this.a) {
-            case 0:
-                return c2.d.e(this.b);
+    public static /* synthetic */ String B(int i10) {
+        return i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "ERROR" : "CANCELLED" : "AUDIO_REMOVED" : "TRIMMED";
+    }
+
+    public static /* synthetic */ String C(int i10) {
+        switch (i10) {
             case 1:
-                return new l(this.b);
+                return "IDLE";
             case 2:
-                return new u2.p(this.b, new c3.m());
+                return "STARTING";
             case 3:
-                return new x2.p(this.b, new t7.t());
+                return "RECORDING";
+            case 4:
+                return "PAUSING";
+            case 5:
+                return "PREVIEWING";
+            case 6:
+                return "RESUMING";
+            case 7:
+                return "FINISHING";
+            case 8:
+                return "COMPLETED";
+            case 9:
+                return "ERROR";
+            case 10:
+                return "RELEASED";
             default:
-                return y2.f.b(this.b);
+                return BuildConfig.BETA_URL;
         }
+    }
+
+    public static /* synthetic */ String D(int i10) {
+        switch (i10) {
+            case 1:
+                return "BEGIN_ARRAY";
+            case 2:
+                return "END_ARRAY";
+            case 3:
+                return "BEGIN_OBJECT";
+            case 4:
+                return "END_OBJECT";
+            case 5:
+                return "NAME";
+            case 6:
+                return "STRING";
+            case 7:
+                return "NUMBER";
+            case 8:
+                return "BOOLEAN";
+            case 9:
+                return "NULL";
+            case 10:
+                return "END_DOCUMENT";
+            default:
+                return BuildConfig.BETA_URL;
+        }
+    }
+
+    public static boolean a(int i10, int i11, int i12) {
+        switch (i10) {
+            case 1:
+                if (((i11 + i12) & 1) == 0) {
+                }
+                break;
+            case 2:
+                if ((i11 & 1) == 0) {
+                }
+                break;
+            case 3:
+                if (i12 % 3 == 0) {
+                }
+                break;
+            case 4:
+                if ((i11 + i12) % 3 == 0) {
+                }
+                break;
+            case 5:
+                if ((((i12 / 3) + (i11 / 2)) & 1) == 0) {
+                }
+                break;
+            case 6:
+                if ((i11 * i12) % 6 == 0) {
+                }
+                break;
+            case 7:
+                if ((i11 * i12) % 6 < 3) {
+                }
+                break;
+            default:
+                if (((((i11 * i12) % 3) + i11 + i12) & 1) == 0) {
+                }
+                break;
+        }
+        return true;
+    }
+
+    public static int b(int i10) {
+        int[] d = m1.j.d(126);
+        if (i10 < 0 || i10 >= d.length) {
+            return 0;
+        }
+        return d[i10];
+    }
+
+    public static int c(int i10, int i11, int i12, int i13) {
+        return i10 | i11 | i12 | 128 | i13;
+    }
+
+    public static /* synthetic */ String d(int i10) {
+        switch (i10) {
+            case 1:
+                return "Blues";
+            case 2:
+                return "Classic Rock";
+            case 3:
+                return "Country";
+            case 4:
+                return "Dance";
+            case 5:
+                return "Disco";
+            case 6:
+                return "Funk";
+            case 7:
+                return "Grunge";
+            case 8:
+                return "Hip-Hop";
+            case 9:
+                return "Jazz";
+            case 10:
+                return "Metal";
+            case 11:
+                return "New Age";
+            case 12:
+                return "Oldies";
+            case 13:
+                return "Other";
+            case 14:
+                return "Pop";
+            case 15:
+                return "R&B";
+            case 16:
+                return "Rap";
+            case 17:
+                return "Reggae";
+            case 18:
+                return "Rock";
+            case 19:
+                return "Techno";
+            case 20:
+                return "Industrial";
+            case 21:
+                return "Alternative";
+            case 22:
+                return "Ska";
+            case 23:
+                return "Death Metal";
+            case 24:
+                return "Pranks";
+            case 25:
+                return "Soundtrack";
+            case 26:
+                return "Euro-Techno";
+            case 27:
+                return "Ambient";
+            case 28:
+                return "Trip-Hop";
+            case 29:
+                return "Vocal";
+            case MessageObject.TYPE_GIFT_STARS /* 30 */:
+                return "Jazz+Funk";
+            case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                return "Fusion";
+            case 32:
+                return "Trance";
+            case 33:
+                return "Classical";
+            case 34:
+                return "Instrumental";
+            case 35:
+                return "Acid";
+            case 36:
+                return "House";
+            case 37:
+                return "Game";
+            case 38:
+                return "Sound Clip";
+            case Maneuver.TYPE_DESTINATION /* 39 */:
+                return "Gospel";
+            case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+                return "Noise";
+            case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+                return "AlternRock";
+            case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
+                return "Bass";
+            case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
+                return "Soul";
+            case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
+                return "Punk";
+            case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
+                return "Space";
+            case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
+                return "Meditative";
+            case Maneuver.TYPE_FERRY_BOAT_LEFT /* 47 */:
+                return "Instrumental Pop";
+            case 48:
+                return "Instrumental Rock";
+            case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                return "Ethnic";
+            case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                return "Gothic";
+            case 51:
+                return "Darkwave";
+            case 52:
+                return "Techno-Industrial";
+            case 53:
+                return "Electronic";
+            case 54:
+                return "Pop-Folk";
+            case 55:
+                return "Eurodance";
+            case 56:
+                return "Dream";
+            case 57:
+                return "Southern Rock";
+            case 58:
+                return "Comedy";
+            case 59:
+                return "Cult";
+            case 60:
+                return "Gangsta";
+            case 61:
+                return "Top 40";
+            case 62:
+                return "Christian Rap";
+            case 63:
+                return "Pop/Funk";
+            case 64:
+                return "Jungle";
+            case VoIPService.CALL_MIN_LAYER /* 65 */:
+                return "Native American";
+            case 66:
+                return "Cabaret";
+            case 67:
+                return "New Wave";
+            case 68:
+                return "Psychadelic";
+            case 69:
+                return "Rave";
+            case 70:
+                return "Showtunes";
+            case 71:
+                return "Trailer";
+            case 72:
+                return "Lo-Fi";
+            case 73:
+                return "Tribal";
+            case 74:
+                return "Acid Punk";
+            case 75:
+                return "Acid Jazz";
+            case 76:
+                return "Polka";
+            case 77:
+                return "Retro";
+            case 78:
+                return "Musical";
+            case 79:
+                return "Rock & Roll";
+            case 80:
+                return "Hard Rock";
+            case 81:
+                return "Folk";
+            case 82:
+                return "Folk-Rock";
+            case 83:
+                return "National Folk";
+            case 84:
+                return "Swing";
+            case 85:
+                return "Fast Fusion";
+            case 86:
+                return "Bebop";
+            case 87:
+                return "Latin";
+            case 88:
+                return "Revival";
+            case 89:
+                return "Celtic";
+            case 90:
+                return "Bluegrass";
+            case 91:
+                return "Avantgarde";
+            case 92:
+                return "Gothic Rock";
+            case 93:
+                return "Progressive Rock";
+            case 94:
+                return "Psychedelic Rock";
+            case 95:
+                return "Symphonic Rock";
+            case CarZone.CAR_ZONE_COLUMN_PASSENGER /* 96 */:
+                return "Slow Rock";
+            case 97:
+                return "Big Band";
+            case 98:
+                return "Chorus";
+            case 99:
+                return "Easy Listening";
+            case 100:
+                return "Acoustic";
+            case 101:
+                return "Humour";
+            case 102:
+                return "Speech";
+            case 103:
+                return "Chanson";
+            case 104:
+                return "Opera";
+            case 105:
+                return "Chamber Music";
+            case 106:
+                return "Sonata";
+            case 107:
+                return "Symphony";
+            case 108:
+                return "Booty Bass";
+            case 109:
+                return "Primus";
+            case 110:
+                return "Porn Groove";
+            case 111:
+                return "Satire";
+            case 112:
+                return "Slow Jam";
+            case 113:
+                return "Club";
+            case 114:
+                return "Tango";
+            case 115:
+                return "Samba";
+            case 116:
+                return "Folklore";
+            case 117:
+                return "Ballad";
+            case 118:
+                return "Power Ballad";
+            case 119:
+                return "Rhythmic Soul";
+            case 120:
+                return "Freestyle";
+            case 121:
+                return "Duet";
+            case 122:
+                return "Punk Rock";
+            case 123:
+                return "Drum Solo";
+            case 124:
+                return "A capella";
+            case 125:
+                return "Euro-House";
+            case 126:
+                return "Dance Hall";
+            default:
+                throw null;
+        }
+    }
+
+    public static boolean e(int i10, boolean z10) {
+        int i11 = i10 & 7;
+        if (i11 != 4) {
+            return z10 && i11 == 3;
+        }
+        return true;
+    }
+
+    public static int f(int i10, int i11, int i12, int i13) {
+        return Math.max(i13, Math.min(Math.max(i10, i11), i12));
+    }
+
+    public static Object g(int i10, ArrayList arrayList) {
+        return arrayList.get(arrayList.size() - i10);
+    }
+
+    public static Object h(HashMap hashMap, Uri uri, Uri uri2) {
+        u6.p(hashMap.containsKey(uri));
+        return hashMap.get(uri2);
+    }
+
+    public static String i(int i10, String str) {
+        return str + i10;
+    }
+
+    public static String j(int i10, String str, String str2) {
+        return str + i10 + str2;
+    }
+
+    public static StringBuilder k(int i10, String str, String str2) {
+        StringBuilder sb2 = new StringBuilder(str);
+        sb2.append(i10);
+        sb2.append(str2);
+        return sb2;
+    }
+
+    public static StringBuilder l(String str, int i10, String str2, int i11, String str3) {
+        StringBuilder sb2 = new StringBuilder(str);
+        sb2.append(i10);
+        sb2.append(str2);
+        sb2.append(i11);
+        sb2.append(str3);
+        return sb2;
+    }
+
+    public static HashMap m(Class cls, ma.a aVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put(cls, aVar);
+        return hashMap;
+    }
+
+    public static Map n(HashMap hashMap) {
+        return DesugarCollections.unmodifiableMap(new HashMap(hashMap));
+    }
+
+    public static void o(int i10, ArrayList arrayList) {
+        arrayList.add(l61.t(LocaleController.getString(i10)));
+    }
+
+    public static void p(int i10, HashMap hashMap, String str, int i11, String str2) {
+        hashMap.put(Integer.valueOf(i10), str);
+        hashMap.put(Integer.valueOf(i11), str2);
+    }
+
+    public static void q(int i10, Object[] objArr, zc zcVar, int i11, int i12) {
+        zcVar.Q(i11, i12, LocaleController.formatString(i10, objArr)).j();
+    }
+
+    public static /* synthetic */ void r(MediaMetadataRetriever mediaMetadataRetriever) {
+        if (mediaMetadataRetriever instanceof AutoCloseable) {
+            mediaMetadataRetriever.close();
+        } else if (mediaMetadataRetriever instanceof ExecutorService) {
+            i4.b();
+        } else {
+            if (!k3.s(mediaMetadataRetriever)) {
+                throw new IllegalArgumentException();
+            }
+            mediaMetadataRetriever.release();
+        }
+    }
+
+    public static void s(b2.w wVar, c3.i0 i0Var) {
+        i0Var.b(new b2.x(wVar));
+    }
+
+    public static void t(String str, StringBuilder sb2) {
+        sb2.append(str);
+        FileLog.d(sb2.toString());
+    }
+
+    public static void u(StringBuilder sb2, int i10, String str, int i11, String str2) {
+        sb2.append(i10);
+        sb2.append(str);
+        sb2.append(i11);
+        sb2.append(str2);
+    }
+
+    public static void v(boolean z10, org.telegram.ui.ActionBar.k kVar) {
+        kVar.setBackButtonDrawable(new f2(z10));
+    }
+
+    public static int w(int i10, int i11, int i12, int i13) {
+        return Math.max(i13, Math.min(Math.min(i10, i11), i12));
+    }
+
+    public static Object x(int i10, ArrayList arrayList) {
+        return arrayList.remove(arrayList.size() - i10);
+    }
+
+    public static void y(int i10, ArrayList arrayList) {
+        arrayList.add(l61.B(LocaleController.getString(i10)));
+    }
+
+    public static int z(int i10, int i11, int i12, int i13) {
+        return ((i10 - i11) / i12) + i13;
     }
 }

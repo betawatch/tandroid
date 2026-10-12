@@ -7,7 +7,7 @@ import g2.c0;
 import g2.g;
 import g2.o;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSourceFactory implements g {
     private final g baseDataSourceFactory;
@@ -19,8 +19,8 @@ public final class ExtendedDefaultDataSourceFactory implements g {
         this(context, str, (c0) null);
     }
 
-    public void putDocumentUri(long j3, Uri uri) {
-        this.mtprotoUris.put(j3, uri);
+    public void putDocumentUri(long j10, Uri uri) {
+        this.mtprotoUris.put(j10, uri);
     }
 
     /* JADX WARN: Illegal instructions before constructor call */

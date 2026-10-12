@@ -1,8 +1,8 @@
 package t7;
 
-import w7.o7;
+import w7.q7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c extends d {
     public final transient int c;
@@ -17,29 +17,29 @@ public final class c extends d {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        o7.a(i10, this.d);
+        q7.a(i10, this.d);
         return this.e.get(i10 + this.c);
     }
 
     @Override // t7.a
+    public final int m() {
+        return this.e.n() + this.c + this.d;
+    }
+
+    @Override // t7.a
     public final int n() {
-        return this.e.o() + this.c + this.d;
+        return this.e.n() + this.c;
     }
 
     @Override // t7.a
-    public final int o() {
-        return this.e.o() + this.c;
-    }
-
-    @Override // t7.a
-    public final Object[] p() {
-        return this.e.p();
+    public final Object[] o() {
+        return this.e.o();
     }
 
     @Override // t7.d, java.util.List
-    /* renamed from: q, reason: merged with bridge method [inline-methods] */
+    /* renamed from: p, reason: merged with bridge method [inline-methods] */
     public final d subList(int i10, int i11) {
-        o7.c(i10, i11, this.d);
+        q7.c(i10, i11, this.d);
         int i12 = this.c;
         return this.e.subList(i10 + i12, i11 + i12);
     }

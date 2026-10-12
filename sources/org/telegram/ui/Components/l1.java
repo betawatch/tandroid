@@ -4,16 +4,16 @@ import android.content.Context;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a2 b;
     public final /* synthetic */ Context c;
 
-    public /* synthetic */ l1(int i10, Context context, org.telegram.ui.ActionBar.b2 b2Var) {
+    public /* synthetic */ l1(int i10, Context context, org.telegram.ui.ActionBar.a2 a2Var) {
         this.a = i10;
-        this.b = b2Var;
+        this.b = a2Var;
         this.c = context;
     }
 
@@ -21,18 +21,18 @@ public final /* synthetic */ class l1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.b2 b2Var = this.b;
-                if (b2Var != null) {
-                    b2Var.dismiss();
+                org.telegram.ui.ActionBar.a2 a2Var = this.b;
+                if (a2Var != null) {
+                    a2Var.dismiss();
                 }
-                of.f.s(this.c, LocaleController.getString(R.string.BotWebViewStartPermissionLink));
+                pf.d.s(this.c, LocaleController.getString(R.string.BotWebViewStartPermissionLink));
                 break;
             default:
-                org.telegram.ui.ActionBar.b2 b2Var2 = this.b;
-                if (b2Var2 != null) {
-                    b2Var2.dismiss();
+                org.telegram.ui.ActionBar.a2 a2Var2 = this.b;
+                if (a2Var2 != null) {
+                    a2Var2.dismiss();
                 }
-                of.f.s(this.c, LocaleController.getString(R.string.BotWebViewStartPermissionLink));
+                pf.d.s(this.c, LocaleController.getString(R.string.BotWebViewStartPermissionLink));
                 break;
         }
     }

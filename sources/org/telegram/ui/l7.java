@@ -1,33 +1,51 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class l7 extends og.a {
-    public r6 c;
-    public zh.a d;
+public final class l7 extends av0 {
+    public org.telegram.ui.Components.mm0 a;
+    public final /* synthetic */ w7 b;
 
-    public final boolean equals(Object obj) {
-        zh.a aVar;
-        zh.a aVar2;
-        r6 r6Var;
-        r6 r6Var2;
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && l7.class == obj.getClass()) {
-            l7 l7Var = (l7) obj;
-            int i10 = this.a;
-            if (i10 == l7Var.a) {
-                if (i10 == 1 && (r6Var = this.c) != null && (r6Var2 = l7Var.c) != null) {
-                    return r6Var.a == r6Var2.a;
-                }
-                if (i10 == 2 && (aVar = this.d) != null && (aVar2 = l7Var.d) != null) {
-                    return Objects.equals(aVar.a, aVar2.a);
-                }
+    public l7(w7 w7Var) {
+        this.b = w7Var;
+    }
+
+    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    public final kv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        org.telegram.ui.Cells.t7 t7Var;
+        org.telegram.ui.Components.mm0 listView = this.b.getListView();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= listView.getChildCount()) {
+                t7Var = null;
+                break;
             }
+            View childAt = listView.getChildAt(i11);
+            if (RecyclerView.R(childAt) == i10 && (childAt instanceof org.telegram.ui.Cells.t7)) {
+                t7Var = (org.telegram.ui.Cells.t7) childAt;
+                break;
+            }
+            i11++;
         }
-        return false;
+        if (t7Var == null) {
+            return null;
+        }
+        int[] iArr = new int[2];
+        t7Var.getLocationInWindow(iArr);
+        kv0 kv0Var = new kv0();
+        kv0Var.b = iArr[0];
+        kv0Var.c = iArr[1];
+        kv0Var.d = this.a;
+        ImageReceiver imageReceiver = t7Var.c;
+        kv0Var.a = imageReceiver;
+        kv0Var.e = imageReceiver.getBitmapSafe();
+        kv0Var.k = t7Var.getScaleX();
+        return kv0Var;
     }
 }

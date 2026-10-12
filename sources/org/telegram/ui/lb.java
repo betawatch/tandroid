@@ -1,47 +1,72 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class lb extends ji.n {
-    public int W;
-    public nu0 X;
-    public final /* synthetic */ vb Y;
+public final class lb extends av0 {
+    public final /* synthetic */ ac a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lb(vb vbVar, kb kbVar, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(null, kbVar, e6Var);
-        this.Y = vbVar;
-        this.W = -1;
+    public lb(ac acVar) {
+        this.a = acVar;
     }
 
-    @Override // ji.n, s4.j
-    public final void N() {
-        super.N();
-        nu0 nu0Var = this.X;
-        if (nu0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(nu0Var);
-        }
-        nu0 nu0Var2 = new nu0(this, 20);
-        this.X = nu0Var2;
-        AndroidUtilities.runOnUIThread(nu0Var2);
-    }
-
-    @Override // ji.n
-    public final void W() {
-        if (this.W == -1) {
-            this.W = this.Y.getNotificationCenter().setAnimationInProgress(this.W, vb.R0, false);
-        }
-        nu0 nu0Var = this.X;
-        if (nu0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(nu0Var);
-            this.X = null;
-        }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("admin logs chatItemAnimator disable notifications");
+    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    public final kv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        org.telegram.ui.Cells.x0 x0Var;
+        MessageObject messageObject2;
+        org.telegram.ui.Cells.u1 u1Var;
+        MessageObject messageObject3;
+        ac acVar = this.a;
+        int childCount = acVar.v.getChildCount();
+        int i11 = 0;
+        while (true) {
+            ImageReceiver imageReceiver = null;
+            if (i11 >= childCount) {
+                return null;
+            }
+            View childAt = acVar.v.getChildAt(i11);
+            if (childAt instanceof org.telegram.ui.Cells.u1) {
+                if (messageObject != null && (messageObject3 = (u1Var = (org.telegram.ui.Cells.u1) childAt).getMessageObject()) != null && messageObject3.getId() == messageObject.getId()) {
+                    imageReceiver = u1Var.getPhotoImage();
+                }
+            } else if ((childAt instanceof org.telegram.ui.Cells.x0) && (messageObject2 = (x0Var = (org.telegram.ui.Cells.x0) childAt).getMessageObject()) != null) {
+                if (messageObject != null) {
+                    if (messageObject2.getId() == messageObject.getId()) {
+                        imageReceiver = x0Var.getPhotoImage();
+                    }
+                } else if (fileLocation != null && messageObject2.photoThumbs != null) {
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 >= messageObject2.photoThumbs.size()) {
+                            break;
+                        }
+                        TLRPC.FileLocation fileLocation2 = messageObject2.photoThumbs.get(i12).location;
+                        if (fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.local_id == fileLocation.local_id) {
+                            imageReceiver = x0Var.getPhotoImage();
+                            break;
+                        }
+                        i12++;
+                    }
+                }
+            }
+            if (imageReceiver != null) {
+                int[] iArr = new int[2];
+                childAt.getLocationInWindow(iArr);
+                kv0 kv0Var = new kv0();
+                kv0Var.b = iArr[0];
+                kv0Var.c = iArr[1];
+                kv0Var.d = acVar.v;
+                kv0Var.a = imageReceiver;
+                kv0Var.e = imageReceiver.getBitmapSafe();
+                kv0Var.h = imageReceiver.getRoundRadius(true);
+                kv0Var.l = true;
+                return kv0Var;
+            }
+            i11++;
         }
     }
 }

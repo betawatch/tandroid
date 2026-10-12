@@ -5,23 +5,23 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.media.MediaDescriptionCompat;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$QueueItem implements Parcelable {
-    public static final Parcelable.Creator<MediaSessionCompat$QueueItem> CREATOR = new z(1);
+    public static final Parcelable.Creator<MediaSessionCompat$QueueItem> CREATOR = new a0(1);
     public final MediaDescriptionCompat a;
     public final long b;
     public MediaSession.QueueItem c;
 
-    public MediaSessionCompat$QueueItem(MediaSession.QueueItem queueItem, MediaDescriptionCompat mediaDescriptionCompat, long j3) {
+    public MediaSessionCompat$QueueItem(MediaSession.QueueItem queueItem, MediaDescriptionCompat mediaDescriptionCompat, long j10) {
         if (mediaDescriptionCompat == null) {
             throw new IllegalArgumentException("Description cannot be null");
         }
-        if (j3 == -1) {
+        if (j10 == -1) {
             throw new IllegalArgumentException("Id cannot be QueueItem.UNKNOWN_ID");
         }
         this.a = mediaDescriptionCompat;
-        this.b = j3;
+        this.b = j10;
         this.c = queueItem;
     }
 
@@ -34,7 +34,7 @@ public final class MediaSessionCompat$QueueItem implements Parcelable {
         StringBuilder sb2 = new StringBuilder("MediaSession.QueueItem {Description=");
         sb2.append(this.a);
         sb2.append(", Id=");
-        return a1.g.s(sb2, this.b, " }");
+        return a1.g.r(sb2, this.b, " }");
     }
 
     @Override // android.os.Parcelable

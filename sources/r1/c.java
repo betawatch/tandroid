@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
@@ -19,8 +19,8 @@ public final class c {
         this(-1L, bArr, i10, i11);
     }
 
-    public static c a(long j3, ByteOrder byteOrder) {
-        long[] jArr = {j3};
+    public static c a(long j10, ByteOrder byteOrder) {
+        long[] jArr = {j10};
         ByteBuffer wrap = ByteBuffer.wrap(new byte[g.F[4]]);
         wrap.order(byteOrder);
         wrap.putInt((int) jArr[0]);
@@ -206,8 +206,8 @@ public final class c {
                                 try {
                                     bVar.close();
                                     return str2;
-                                } catch (IOException e7) {
-                                    Log.e("ExifInterface", "IOException occurred while closing InputStream", e7);
+                                } catch (IOException e) {
+                                    Log.e("ExifInterface", "IOException occurred while closing InputStream", e);
                                     return str2;
                                 }
                             }
@@ -295,26 +295,26 @@ public final class c {
                             try {
                                 bVar.close();
                                 return null;
-                            } catch (IOException e10) {
-                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
+                            } catch (IOException e7) {
+                                Log.e("ExifInterface", "IOException occurred while closing InputStream", e7);
                                 return null;
                             }
                     }
                     try {
                         bVar.close();
                         return str;
-                    } catch (IOException e11) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e11);
+                    } catch (IOException e10) {
+                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e10);
                         return str;
                     }
-                } catch (IOException e12) {
-                    e = e12;
+                } catch (IOException e11) {
+                    e = e11;
                     Log.w("ExifInterface", "IOException occurred during reading a value", e);
                     if (bVar != null) {
                         try {
                             bVar.close();
-                        } catch (IOException e13) {
-                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e13);
+                        } catch (IOException e12) {
+                            Log.e("ExifInterface", "IOException occurred while closing InputStream", e12);
                         }
                     }
                     return null;
@@ -325,14 +325,14 @@ public final class c {
                 if (inputStream2 != null) {
                     try {
                         inputStream2.close();
-                    } catch (IOException e14) {
-                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e14);
+                    } catch (IOException e13) {
+                        Log.e("ExifInterface", "IOException occurred while closing InputStream", e13);
                     }
                 }
                 throw th;
             }
-        } catch (IOException e15) {
-            e = e15;
+        } catch (IOException e14) {
+            e = e14;
             bVar = null;
         } catch (Throwable th3) {
             th = th3;
@@ -346,13 +346,13 @@ public final class c {
         StringBuilder sb2 = new StringBuilder("(");
         sb2.append(g.E[this.a]);
         sb2.append(", data length:");
-        return a1.g.o(this.d.length, ")", sb2);
+        return a1.g.n(this.d.length, ")", sb2);
     }
 
-    public c(long j3, byte[] bArr, int i10, int i11) {
+    public c(long j10, byte[] bArr, int i10, int i11) {
         this.a = i10;
         this.b = i11;
-        this.c = j3;
+        this.c = j10;
         this.d = bArr;
     }
 }

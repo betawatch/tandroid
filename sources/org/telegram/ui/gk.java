@@ -1,122 +1,63 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.webrtc.MediaStreamTrack;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class gk extends org.telegram.ui.Components.pb0 {
-    public boolean V;
-    public final /* synthetic */ zn W;
+public final /* synthetic */ class gk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fo b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gk(zn znVar, Context context, long j3, long j10, zn znVar2, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, j3, j10, znVar2, e6Var);
-        this.W = znVar;
-        this.V = true;
+    public /* synthetic */ gk(fo foVar, int i10) {
+        this.a = i10;
+        this.b = foVar;
     }
 
-    @Override // org.telegram.ui.Components.pb0
-    public final boolean a() {
-        zn znVar = this.W;
-        return znVar.R.getVisibility() != 0 || znVar.n3;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() <= 0.0f) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.pb0
-    public final void j() {
-        this.W.wc();
-    }
-
-    @Override // org.telegram.ui.Components.pb0
-    public final void k(TLRPC.BotInlineResult botInlineResult) {
-        zn znVar = this.W;
-        if (znVar.getParentActivity() == null || botInlineResult.content == null) {
-            return;
-        }
-        if (!botInlineResult.type.equals(MediaStreamTrack.VIDEO_TRACK_KIND) && !botInlineResult.type.equals("web_player_video")) {
-            znVar.Ba(0, botInlineResult.content.url, null, null, false);
-            return;
-        }
-        int[] inlineResultWidthAndHeight = MessageObject.getInlineResultWidthAndHeight(botInlineResult);
-        ki kiVar = znVar.Ja;
-        String str = botInlineResult.title;
-        if (str == null) {
-            str = "";
-        }
-        String str2 = botInlineResult.description;
-        String str3 = botInlineResult.content.url;
-        org.telegram.ui.Components.lv.J(znVar, null, kiVar, str, str2, str3, str3, inlineResultWidthAndHeight[0], inlineResultWidthAndHeight[1], -1, znVar.C9());
-    }
-
-    @Override // org.telegram.ui.Components.pb0
-    public final void l(boolean z10) {
-        String string;
-        zn znVar = this.W;
-        ok okVar = znVar.Y;
-        if (okVar != null) {
-            gg.j1 adapter = getAdapter();
-            TLRPC.User user = adapter.w0;
-            if (user != null) {
-                string = user.bot_inline_placeholder;
-            } else {
-                String str = adapter.q0;
-                string = (str == null || !str.equals("gif")) ? null : LocaleController.getString(R.string.SearchGifsTitle);
-            }
-            okVar.setCaption(string);
-            org.telegram.ui.Components.ze zeVar = znVar.Y.P1;
-            if (zeVar == null) {
-                return;
-            }
-            if (!z10) {
-                zeVar.e = false;
-                return;
-            }
-            zeVar.e = true;
-            zeVar.b = System.currentTimeMillis();
-            zeVar.invalidateSelf();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.pb0
-    public final void m() {
-        zn znVar = this.W;
-        if (znVar.Z4 && ((getAdapter().R == null || znVar.a5 || znVar.b5) && znVar.h != null && getAdapter().R != null)) {
-            SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-            if (!globalMainSettings.getBoolean("secretbot", false)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(znVar.getParentActivity(), 0, znVar.ea);
-                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                alertDialog$Builder.a.T = LocaleController.getString(R.string.SecretChatContextBotAlert);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                znVar.showDialog(alertDialog$Builder.a);
-                globalMainSettings.edit().putBoolean("secretbot", true).commit();
-            }
-        }
-        znVar.wc();
-    }
-
-    @Override // org.telegram.ui.Components.pb0
-    public final void n(boolean z10) {
-        if (this.V != z10) {
-            zn znVar = this.W;
-            AndroidUtilities.updateViewShow(znVar.d1, !znVar.isInPreviewMode() && z10, false, true);
-            this.V = z10;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        fo foVar = this.b;
+        switch (i10) {
+            case 0:
+                int i11 = fo.Hc;
+                foVar.c7();
+                break;
+            case 1:
+                fo.j2(foVar);
+                break;
+            case 2:
+                fo.j2(foVar);
+                break;
+            case 3:
+                int i12 = fo.Hc;
+                foVar.Qa();
+                break;
+            case 4:
+                int i13 = fo.Hc;
+                foVar.Qa();
+                break;
+            case 5:
+                int i14 = fo.Hc;
+                foVar.Qa();
+                break;
+            case 6:
+                int i15 = fo.Hc;
+                foVar.Qa();
+                break;
+            case 7:
+                int i16 = fo.Hc;
+                foVar.Qa();
+                break;
+            case 8:
+                int i17 = fo.Hc;
+                foVar.Qa();
+                break;
+            case 9:
+                int i18 = fo.Hc;
+                foVar.Qa();
+                break;
+            default:
+                int i19 = fo.Hc;
+                foVar.Qa();
+                break;
         }
     }
 }

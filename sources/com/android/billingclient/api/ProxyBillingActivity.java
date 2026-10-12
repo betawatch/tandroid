@@ -7,12 +7,12 @@ import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 import c3.a;
-import c5.e0;
-import c5.h;
-import com.google.android.gms.internal.play_billing.m3;
+import c5.f0;
+import c5.i;
+import com.google.android.gms.internal.play_billing.n3;
 import com.google.android.gms.internal.play_billing.u;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class ProxyBillingActivity extends Activity {
     public ResultReceiver a;
@@ -22,18 +22,18 @@ public class ProxyBillingActivity extends Activity {
     public long e;
     public boolean f;
 
-    public final Intent a(int i10, long j3) {
+    public final Intent a(int i10, long j10) {
         Intent b10 = b();
         b10.putExtra("RESPONSE_CODE", 6);
         b10.putExtra("DEBUG_MESSAGE", "An internal error occurred.");
-        a a2 = h.a();
+        a a2 = i.a();
         a2.b = 6;
         a2.a = "An internal error occurred.";
-        h a10 = a2.a();
-        int i11 = e0.a;
-        b10.putExtra("FAILURE_LOGGING_PAYLOAD", e0.b(i10, 2, a10, null, m3.b).a());
+        i a10 = a2.a();
+        int i11 = f0.a;
+        b10.putExtra("FAILURE_LOGGING_PAYLOAD", f0.b(i10, 2, a10, null, n3.b).a());
         b10.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
-        b10.putExtra("billingClientTransactionId", j3);
+        b10.putExtra("billingClientTransactionId", j10);
         b10.putExtra("wasServiceAutoReconnected", this.f);
         return b10;
     }
@@ -170,8 +170,8 @@ public class ProxyBillingActivity extends Activity {
         try {
             this.b = true;
             startIntentSenderForResult(pendingIntent.getIntentSender(), this.d, new Intent(), 0, 0, 0);
-        } catch (IntentSender.SendIntentException e7) {
-            u.i("ProxyBillingActivity", "Got exception while trying to start a purchase flow.", e7);
+        } catch (IntentSender.SendIntentException e) {
+            u.i("ProxyBillingActivity", "Got exception while trying to start a purchase flow.", e);
             ResultReceiver resultReceiver = this.a;
             if (resultReceiver != null) {
                 resultReceiver.send(0, null);

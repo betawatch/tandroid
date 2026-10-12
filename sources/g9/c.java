@@ -2,8 +2,10 @@ package g9;
 
 import java.math.RoundingMode;
 import v7.l7;
+import v7.o7;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final /* synthetic */ int a = 0;
@@ -30,26 +32,22 @@ public abstract class c {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static int c(double d) {
         boolean b10;
         RoundingMode roundingMode = RoundingMode.CEILING;
-        if (!(d > 0.0d && l7.b(d))) {
-            throw new IllegalArgumentException("x must be positive and finite");
-        }
+        u6.f("x must be positive and finite", d > 0.0d && l7.b(d));
         int exponent = Math.getExponent(d);
         if (Math.getExponent(d) < -1022) {
             return c(d * 4.503599627370496E15d) - 52;
         }
         switch (b.a[roundingMode.ordinal()]) {
             case 1:
-                if (!b(d)) {
-                    throw new ArithmeticException("mode was UNNECESSARY, but rounding was necessary");
-                }
+                o7.b(b(d));
                 return !r2 ? exponent + 1 : exponent;
             case 2:
                 if (!r2) {

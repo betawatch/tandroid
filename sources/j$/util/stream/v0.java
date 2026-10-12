@@ -19,7 +19,7 @@ public final class v0 extends d5 {
     }
 
     @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final void o(long j3) {
+    public final void o(long j10) {
         this.a.o(-1L);
     }
 

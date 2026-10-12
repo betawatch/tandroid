@@ -7,15 +7,15 @@ public final class z5 extends v5 {
     public o6 c;
 
     @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final void o(long j3) {
+    public final void o(long j10) {
         o6 o6Var;
-        if (j3 >= 2147483639) {
+        if (j10 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        if (j3 <= 0) {
+        if (j10 <= 0) {
             o6Var = new o6();
         } else {
-            o6Var = new o6((int) j3);
+            o6Var = new o6((int) j10);
         }
         this.c = o6Var;
     }

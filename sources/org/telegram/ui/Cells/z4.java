@@ -5,20 +5,20 @@ import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class z4 extends org.telegram.ui.Components.y9 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 G;
+public final class z4 extends org.telegram.ui.Components.z9 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.c6 G;
     public final /* synthetic */ b5 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z4(b5 b5Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public z4(b5 b5Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
         this.H = b5Var;
-        this.G = e6Var;
+        this.G = c6Var;
     }
 
-    @Override // org.telegram.ui.Components.y9, android.view.View
+    @Override // org.telegram.ui.Components.z9, android.view.View
     public final void onDraw(Canvas canvas) {
         b5 b5Var = this.H;
         if (b5Var.r == null) {
@@ -27,14 +27,14 @@ public final class z4 extends org.telegram.ui.Components.y9 {
         }
         float dp = AndroidUtilities.dp(1.0f);
         b5Var.N.F.set(dp, dp, getMeasuredWidth() - r1, getMeasuredHeight() - r1);
-        ai.da daVar = b5Var.N;
-        daVar.a = false;
-        daVar.b = false;
-        daVar.v = true;
-        daVar.o = false;
-        daVar.J = this.G;
+        bi.m9 m9Var = b5Var.N;
+        m9Var.a = false;
+        m9Var.b = false;
+        m9Var.v = true;
+        m9Var.o = false;
+        m9Var.J = this.G;
         TL_stories.StoryItem storyItem = b5Var.r;
-        daVar.d = storyItem;
-        ai.ja.h(storyItem.dialogId, canvas, this.a, daVar);
+        m9Var.d = storyItem;
+        bi.s9.h(storyItem.dialogId, canvas, this.a, m9Var);
     }
 }

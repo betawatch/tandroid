@@ -1,97 +1,38 @@
 package k2;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class t extends c2.i {
-    public int[] i;
-    public int[] j;
+public final /* synthetic */ class t implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qf.b b;
+    public final /* synthetic */ t0 c;
 
-    @Override // c2.h
-    public final void c(ByteBuffer byteBuffer) {
-        int[] iArr = this.j;
-        iArr.getClass();
-        int position = byteBuffer.position();
-        int limit = byteBuffer.limit();
-        ByteBuffer j3 = j(((limit - position) / this.b.d) * this.c.d);
-        while (position < limit) {
-            for (int i10 : iArr) {
-                int s10 = (e2.d0.s(this.b.c) * i10) + position;
-                int i11 = this.b.c;
-                if (i11 != 2) {
-                    if (i11 == 3) {
-                        j3.put(byteBuffer.get(s10));
-                    } else if (i11 != 4) {
-                        if (i11 != 21) {
-                            if (i11 != 22) {
-                                if (i11 != 268435456) {
-                                    if (i11 != 1342177280) {
-                                        if (i11 != 1610612736) {
-                                            throw new IllegalStateException("Unexpected encoding: " + this.b.c);
-                                        }
-                                    }
-                                }
-                            }
-                            j3.putInt(byteBuffer.getInt(s10));
-                        }
-                        ByteOrder order = byteBuffer.order();
-                        ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
-                        byte b10 = byteBuffer.get(order == byteOrder ? s10 : s10 + 2);
-                        byte b11 = byteBuffer.get(s10 + 1);
-                        if (byteBuffer.order() == byteOrder) {
-                            s10 += 2;
-                        }
-                        int i12 = ((((b10 << 24) & (-16777216)) | ((b11 << 16) & 16711680)) | ((byteBuffer.get(s10) << 8) & 65280)) >> 8;
-                        e2.d.a("Value out of range of 24-bit integer: " + Integer.toHexString(i12), (i12 & (-16777216)) == 0 || (i12 & (-8388608)) == -8388608);
-                        e2.d.b(j3.remaining() >= 3);
-                        j3.put((byte) (j3.order() == byteOrder ? (i12 & 16711680) >> 16 : i12 & 255)).put((byte) ((i12 & 65280) >> 8)).put((byte) (j3.order() == byteOrder ? i12 & 255 : (i12 & 16711680) >> 16));
-                    } else {
-                        j3.putFloat(byteBuffer.getFloat(s10));
-                    }
-                }
-                j3.putShort(byteBuffer.getShort(s10));
-            }
-            position += this.b.d;
-        }
-        byteBuffer.position(limit);
-        j3.flip();
+    public /* synthetic */ t(qf.b bVar, t0 t0Var, int i10) {
+        this.a = i10;
+        this.b = bVar;
+        this.c = t0Var;
     }
 
-    @Override // c2.i
-    public final c2.f f(c2.f fVar) {
-        int i10 = fVar.c;
-        int[] iArr = this.i;
-        if (iArr == null) {
-            return c2.f.e;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        t0 t0Var = this.c;
+        qf.b bVar = this.b;
+        switch (i10) {
+            case 0:
+                u uVar = (u) bVar.c;
+                String str = e2.m0.a;
+                j2.f fVar = ((i2.b0) uVar).a.s;
+                j2.a p5 = fVar.p();
+                fVar.q(p5, 1032, new j2.e(p5, t0Var, 16));
+                break;
+            default:
+                u uVar2 = (u) bVar.c;
+                String str2 = e2.m0.a;
+                j2.f fVar2 = ((i2.b0) uVar2).a.s;
+                j2.a p9 = fVar2.p();
+                fVar2.q(p9, 1031, new j2.c(p9, t0Var, 29));
+                break;
         }
-        int i11 = fVar.b;
-        if (!e2.d0.J(i10)) {
-            throw new c2.g(fVar);
-        }
-        boolean z10 = i11 != iArr.length;
-        int i12 = 0;
-        while (i12 < iArr.length) {
-            int i13 = iArr[i12];
-            if (i13 >= i11) {
-                throw new c2.g("Channel map (" + Arrays.toString(iArr) + ") trying to access non-existent input channel.", fVar);
-            }
-            z10 |= i13 != i12;
-            i12++;
-        }
-        return z10 ? new c2.f(fVar.a, iArr.length, i10) : c2.f.e;
-    }
-
-    @Override // c2.i
-    public final void g() {
-        this.j = this.i;
-    }
-
-    @Override // c2.i
-    public final void i() {
-        this.j = null;
-        this.i = null;
     }
 }

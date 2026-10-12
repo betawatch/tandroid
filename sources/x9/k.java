@@ -1,82 +1,69 @@
 package x9;
 
 import android.util.Log;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.tasks.Tasks;
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Executor;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class k implements c {
-    public static final Charset c = Charset.forName("UTF-8");
-    public final File a;
-    public j b;
+public final class k implements Callable {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ Throwable b;
+    public final /* synthetic */ Thread c;
+    public final /* synthetic */ ea.b d;
+    public final /* synthetic */ n e;
 
-    public k(File file) {
-        this.a = file;
+    public k(n nVar, long j10, Throwable th2, Thread thread, ea.b bVar) {
+        this.e = nVar;
+        this.a = j10;
+        this.b = th2;
+        this.c = thread;
+        this.d = bVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0085 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0072  */
-    /* JADX WARN: Removed duplicated region for block: B:5:0x0070  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x007d  */
-    @Override // x9.c
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final String H() {
-        hc.a aVar;
-        byte[] bArr;
-        File file = this.a;
-        if (file.exists()) {
-            if (this.b == null) {
-                try {
-                    this.b = new j(file);
-                } catch (IOException e7) {
-                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e7);
-                }
-            }
-            j jVar = this.b;
-            if (jVar != null) {
-                int[] iArr = {0};
-                int i10 = 16;
-                if (jVar.c != 0) {
-                    g gVar = jVar.e;
-                    int i11 = gVar.a;
-                    int i12 = gVar.b;
-                    int i13 = jVar.d.a;
-                    i10 = i11 >= i13 ? 16 + (i11 - i13) + 4 + i12 : (((i11 + 4) + i12) + jVar.b) - i13;
-                }
-                byte[] bArr2 = new byte[i10];
-                try {
-                    jVar.a(new e(bArr2, iArr));
-                } catch (IOException e10) {
-                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e10);
-                }
-                aVar = new hc.a(bArr2, iArr[0]);
-                if (aVar != null) {
-                    bArr = null;
-                } else {
-                    int i14 = aVar.b;
-                    bArr = new byte[i14];
-                    System.arraycopy(aVar.a, 0, bArr, 0, i14);
-                }
-                if (bArr == null) {
-                    return new String(bArr, c);
-                }
-                return null;
-            }
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        ca.c cVar;
+        String str;
+        long j10 = this.a;
+        long j11 = j10 / 1000;
+        n nVar = this.e;
+        String e = nVar.e();
+        if (e == null) {
+            Log.e("FirebaseCrashlytics", "Tried to write a fatal exception while no session was open.", null);
+            return Tasks.forResult(null);
         }
-        aVar = null;
-        if (aVar != null) {
+        nVar.c.a();
+        com.google.firebase.messaging.m mVar = nVar.m;
+        mVar.getClass();
+        String concat = "Persisting fatal event for session ".concat(e);
+        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+            Log.v("FirebaseCrashlytics", concat, null);
         }
-        if (bArr == null) {
+        mVar.v(this.b, this.c, e, "crash", j11, true);
+        try {
+            cVar = nVar.g;
+            str = ".ae" + j10;
+            cVar.getClass();
+        } catch (IOException e7) {
+            Log.w("FirebaseCrashlytics", "Could not create app exception marker file.", e7);
         }
-    }
-
-    @Override // x9.c
-    public final void c() {
-        w9.h.c(this.b, "There was a problem closing the Crashlytics log file.");
-        this.b = null;
+        if (!new File(cVar.b, str).createNewFile()) {
+            throw new IOException("Create new file failed.");
+        }
+        ea.b bVar = this.d;
+        nVar.c(false, bVar);
+        new f(nVar.f);
+        n.a(nVar, f.b, Boolean.FALSE);
+        if (!nVar.b.a()) {
+            return Tasks.forResult(null);
+        }
+        Executor executor = (Executor) nVar.e.b;
+        return ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask().onSuccessTask(executor, new n6.o(this, executor, e));
     }
 }

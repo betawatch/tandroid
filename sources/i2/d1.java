@@ -1,134 +1,37 @@
 package i2;
 
-import ai.s1;
 import android.util.Pair;
-import ei.l3;
-import java.io.IOException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d1 implements u2.j0, n2.k {
-    public final f1 a;
+public final /* synthetic */ class d1 implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ g1 b;
+    public final /* synthetic */ Pair c;
+    public final /* synthetic */ u2.u d;
+    public final /* synthetic */ u2.c0 e;
 
-    public d1(g1 g1Var, f1 f1Var) {
+    public /* synthetic */ d1(g1 g1Var, Pair pair, u2.u uVar, u2.c0 c0Var, int i10) {
+        this.a = i10;
         this.b = g1Var;
-        this.a = f1Var;
+        this.c = pair;
+        this.d = uVar;
+        this.e = c0Var;
     }
 
-    @Override // n2.k
-    public final void a(int i10, u2.f0 f0Var, int i11) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new s1(this, l4, i11, 13));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                j2.f fVar = this.b.b.h;
+                Pair pair = this.c;
+                fVar.k(((Integer) pair.first).intValue(), (u2.g0) pair.second, this.d, this.e);
+                break;
+            default:
+                j2.f fVar2 = this.b.b.h;
+                Pair pair2 = this.c;
+                fVar2.f(((Integer) pair2.first).intValue(), (u2.g0) pair2.second, this.d, this.e);
+                break;
         }
-    }
-
-    @Override // n2.k
-    public final void b(int i10, u2.f0 f0Var, Exception exc) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new gg.t(this, l4, exc, 14));
-        }
-    }
-
-    @Override // u2.j0
-    public final void c(int i10, u2.f0 f0Var, u2.b0 b0Var) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new z0(this, l4, b0Var, 0));
-        }
-    }
-
-    @Override // u2.j0
-    public final void d(int i10, u2.f0 f0Var, u2.b0 b0Var) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new z0(this, l4, b0Var, 1));
-        }
-    }
-
-    @Override // u2.j0
-    public final void e(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new b1(this, l4, tVar, b0Var, 1));
-        }
-    }
-
-    @Override // u2.j0
-    public final void f(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var, IOException iOException, boolean z10) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new c1(this, l4, tVar, b0Var, iOException, z10, 0));
-        }
-    }
-
-    @Override // n2.k
-    public final void g(int i10, u2.f0 f0Var) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new a1(this, l4, 1));
-        }
-    }
-
-    @Override // u2.j0
-    public final void h(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var, int i11) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new l3(this, l4, tVar, b0Var, i11, 4));
-        }
-    }
-
-    @Override // n2.k
-    public final void i(int i10, u2.f0 f0Var) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new a1(this, l4, 2));
-        }
-    }
-
-    @Override // u2.j0
-    public final void j(int i10, u2.f0 f0Var, u2.t tVar, u2.b0 b0Var) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new b1(this, l4, tVar, b0Var, 0));
-        }
-    }
-
-    @Override // n2.k
-    public final void k(int i10, u2.f0 f0Var) {
-        Pair l4 = l(i10, f0Var);
-        if (l4 != null) {
-            this.b.i.c(new a1(this, l4, 0));
-        }
-    }
-
-    public final Pair l(int i10, u2.f0 f0Var) {
-        u2.f0 f0Var2;
-        f1 f1Var = this.a;
-        u2.f0 f0Var3 = null;
-        if (f0Var != null) {
-            int i11 = 0;
-            while (true) {
-                if (i11 >= f1Var.c.size()) {
-                    f0Var2 = null;
-                    break;
-                }
-                if (((u2.f0) f1Var.c.get(i11)).d == f0Var.d) {
-                    Object obj = f0Var.a;
-                    Object obj2 = f1Var.b;
-                    int i12 = a.g;
-                    f0Var2 = f0Var.a(Pair.create(obj2, obj));
-                    break;
-                }
-                i11++;
-            }
-            if (f0Var2 == null) {
-                return null;
-            }
-            f0Var3 = f0Var2;
-        }
-        return Pair.create(Integer.valueOf(i10 + f1Var.d), f0Var3);
     }
 }

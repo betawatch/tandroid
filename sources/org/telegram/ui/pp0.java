@@ -1,16 +1,68 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class pp0 extends org.telegram.ui.Cells.ga {
-    @Override // android.view.View
+public final class pp0 extends Drawable {
+    public final org.telegram.ui.Components.h11 a;
+    public final Drawable b;
+    public final sg.a1 c;
+
+    public pp0(int i10, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
+        this.a = new org.telegram.ui.Components.h11(LocaleController.formatPluralString(z10 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
+        Drawable mutate = context.getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
+        this.b = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        this.c = new sg.a1(org.telegram.ui.ActionBar.g6.Lj, org.telegram.ui.ActionBar.g6.Mj, -1, -1, c6Var);
+    }
+
+    @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        if (canvas.isHardwareAccelerated()) {
-            super.draw(canvas);
-        } else {
-            yf.i0.a(canvas, this, new t3(this, 15));
-        }
+        int i10 = getBounds().left;
+        int centerY = getBounds().centerY();
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f7 = centerY;
+        rectF.set(i10, f7 - (AndroidUtilities.dp(18.33f) / 2.0f), getIntrinsicWidth() + i10, (AndroidUtilities.dp(18.33f) / 2.0f) + f7);
+        sg.a1 a1Var = this.c;
+        a1Var.e(rectF);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), a1Var.f);
+        int dp = AndroidUtilities.dp(3.33f) + i10;
+        Drawable drawable = this.b;
+        drawable.setBounds(dp, (int) (f7 - ((drawable.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.33f) + i10), (int) a1.g.B(drawable.getIntrinsicHeight(), 0.875f, 2.0f, f7));
+        drawable.draw(canvas);
+        this.a.c((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.66f) + i10, f7, 1.0f, -1, canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.33f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return (int) (this.a.l() + (this.b.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(9.66f));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

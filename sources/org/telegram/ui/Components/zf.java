@@ -1,18 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.util.Property;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class zf extends Property {
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        return Float.valueOf(((ChatActivityEnterView.RecordCircle) obj).getControlsScale());
+public final class zf extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
+
+    public zf(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.b = chatActivityEnterView;
+        this.a = i10;
     }
 
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        ((ChatActivityEnterView.RecordCircle) obj).setControlsScale(((Float) obj2).floatValue());
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        if (animator.equals(chatActivityEnterView.t2)) {
+            int i10 = this.a;
+            if (i10 != 3 && chatActivityEnterView.E0 != null && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                chatActivityEnterView.E0.requestFocus();
+            }
+            chatActivityEnterView.y();
+            if (i10 != 3) {
+                tg tgVar = chatActivityEnterView.O1;
+                if (tgVar != null) {
+                    tgVar.setVisibility(8);
+                }
+                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.N1;
+                if (recordCircle != null) {
+                    recordCircle.d();
+                }
+            }
+        }
     }
 }

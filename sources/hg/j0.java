@@ -1,268 +1,232 @@
 package hg;
 
-import android.content.Context;
-import android.graphics.Point;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.graphics.Bitmap;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.am0;
-import org.telegram.ui.Components.c00;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.qi;
-import org.telegram.ui.Components.ui;
-import org.telegram.ui.Components.xi;
-import org.telegram.ui.Components.yi;
-import w7.x5;
+import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.ot;
+import org.telegram.ui.Components.qu0;
+import org.telegram.ui.Components.voip.m2;
+import org.telegram.ui.Components.voip.o2;
+import org.telegram.ui.Components.xv0;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class j0 extends qi implements NotificationCenter.NotificationCenterDelegate, me.d {
-    public final c00 E;
-    public final ui F;
-    public final me.b n;
-    public final FrameLayout r;
-    public final ai.w0 s;
-    public final f0 v;
-    public final HashSet w;
-    public final g0 x;
-    public final h0 y;
+public final class j0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public j0(Context context, e6 e6Var, yi yiVar) {
-        super(context, e6Var, yiVar);
-        this.n = new me.b(0, this, hs.h, 380L, false);
-        this.w = new HashSet();
-        this.y = new h0(this, context);
-        xi xiVar = new xi(context, i6.d6, e6Var);
-        xiVar.setVisibility(4);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.r = frameLayout;
-        ui uiVar = new ui(context, e6Var, this.b);
-        this.F = uiVar;
-        uiVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        d0 d0Var = new d0(this);
-        ci.g2 g2Var = uiVar.r;
-        g2Var.addTextChangedListener(d0Var);
-        g2Var.setHint(LocaleController.getString(R.string.BusinessRepliesSearch));
-        frameLayout.addView(xiVar, x5.g());
-        FrameLayout.LayoutParams a2 = x5.a(48.0f, 7.0f, 8.0f, 7.0f, 4.0f, -1, 51);
-        ((ViewGroup.MarginLayoutParams) a2).topMargin += AndroidUtilities.statusBarHeight;
-        frameLayout.addView(uiVar, a2);
-        c00 c00Var = new c00(context, e6Var);
-        this.E = c00Var;
-        c00Var.c();
-        addView(c00Var, x5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 51));
-        ai.w0 w0Var = new ai.w0(this, context, e6Var, 3);
-        this.s = w0Var;
-        w0Var.p1();
-        this.c = w0Var;
-        this.d = w0Var;
-        this.h = true;
-        this.f = true;
-        NotificationCenter.getGlobalInstance().listen(w0Var, NotificationCenter.emojiLoaded, new ai.y1(this, 23));
-        w0Var.setClipToPadding(false);
-        getContext();
-        f0 f0Var = new f0(this, AndroidUtilities.dp(9.0f), w0Var, 0);
-        this.v = f0Var;
-        w0Var.setLayoutManager(f0Var);
-        f0Var.P = false;
-        w0Var.setHorizontalScrollBarEnabled(false);
-        w0Var.setVerticalScrollBarEnabled(false);
-        w0Var.setClipToPadding(false);
-        addView(w0Var, x5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
-        g0 g0Var = new g0(this, context);
-        this.x = g0Var;
-        w0Var.setAdapter(g0Var);
-        w0Var.setGlowColor(i6.w0(i6.A5, this.a));
-        w0Var.setOnItemClickListener(new ai.g(this, 10));
-        w0Var.setOnScrollListener(new ai.r(this, 9));
-        FrameLayout.LayoutParams e7 = x5.e(-1, 60, 51);
-        ((ViewGroup.MarginLayoutParams) e7).height += AndroidUtilities.statusBarHeight;
-        addView(frameLayout, e7);
-        O();
+    public /* synthetic */ j0(FrameLayout frameLayout, View view, View view2, Object obj, int i10) {
+        this.a = i10;
+        this.e = frameLayout;
+        this.c = view;
+        this.b = view2;
+        this.d = obj;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public int getCurrentTop() {
-        ai.w0 w0Var = this.s;
-        if (w0Var.getChildCount() == 0) {
-            return -1000;
-        }
-        int i10 = 0;
-        View childAt = w0Var.getChildAt(0);
-        am0 am0Var = (am0) w0Var.G(childAt);
-        if (am0Var == null) {
-            return -1000;
-        }
-        int paddingTop = w0Var.getPaddingTop();
-        if (am0Var.b() == 0 && childAt.getTop() >= 0) {
-            i10 = childAt.getTop();
-        }
-        return paddingTop - i10;
-    }
-
-    @Override // org.telegram.ui.Components.qi
-    public final void C(int i10, int i11) {
-        int i12;
-        yi yiVar = this.b;
-        if (yiVar.u1.R() > AndroidUtilities.dp(20.0f)) {
-            i12 = AndroidUtilities.dp(8.0f);
-            yiVar.setAllowNestedScroll(false);
-        } else {
-            if (!AndroidUtilities.isTablet()) {
-                Point point = AndroidUtilities.displaySize;
-                if (point.x > point.y) {
-                    i12 = (int) (i11 / 3.5f);
-                    yiVar.setAllowNestedScroll(true);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                View view = (View) this.c;
+                view.setTranslationY(0.0f);
+                if (view instanceof org.telegram.ui.Cells.u1) {
+                    ((org.telegram.ui.Cells.u1) view).getTransitionParams().h = false;
+                    break;
                 }
-            }
-            i12 = (i11 / 5) * 2;
-            yiVar.setAllowNestedScroll(true);
-        }
-        this.s.o1(0, i12 + AndroidUtilities.statusBarHeight, 0, this.e);
-    }
-
-    @Override // org.telegram.ui.Components.qi
-    public final void G(qi qiVar) {
-        this.v.h1(0, 0);
-    }
-
-    @Override // org.telegram.ui.Components.qi
-    public final void J() {
-        this.s.x0(0);
-    }
-
-    public final void O() {
-        this.E.setVisibility(this.s.getAdapter().h() == 2 ? 0 : 8);
-        P();
-    }
-
-    public final void P() {
-        View childAt;
-        c00 c00Var = this.E;
-        if (c00Var.getVisibility() == 0 && (childAt = this.s.getChildAt(0)) != null) {
-            c00Var.setTranslationY((childAt.getTop() + (c00Var.getMeasuredHeight() - getMeasuredHeight())) / 2);
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.qi
-    public int getCurrentItemTop() {
-        ai.w0 w0Var = this.s;
-        if (w0Var.getChildCount() <= 0) {
-            return ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        View childAt = w0Var.getChildAt(0);
-        am0 am0Var = (am0) w0Var.G(childAt);
-        int top = (childAt.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(8.0f);
-        int i10 = (top <= 0 || am0Var == null || am0Var.b() != 0) ? 0 : top;
-        me.b bVar = this.n;
-        if (top < 0 || am0Var == null || am0Var.b() != 0) {
-            bVar.a(true, true);
-            top = i10;
-        } else {
-            bVar.a(false, true);
-        }
-        this.r.setTranslationY(top);
-        return AndroidUtilities.dp(12.0f) + top;
-    }
-
-    @Override // org.telegram.ui.Components.qi
-    public int getFirstOffset() {
-        return AndroidUtilities.dp(4.0f) + getListTopPadding();
-    }
-
-    @Override // org.telegram.ui.Components.qi
-    public int getListTopPadding() {
-        return this.s.getPaddingTop();
-    }
-
-    @Override // org.telegram.ui.Components.qi
-    public int getSelectedItemsCount() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.qi
-    public ArrayList<k6> getThemeDescriptions() {
-        j6 j6Var = new j6() { // from class: hg.c0
-            @Override // org.telegram.ui.ActionBar.j6
-            public final void b() {
-                ai.w0 w0Var = j0.this.s;
-                if (w0Var != null) {
-                    int childCount = w0Var.getChildCount();
-                    for (int i10 = 0; i10 < childCount; i10++) {
-                        w0Var.getChildAt(i10);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.ActionBar.k kVar;
+        switch (this.a) {
+            case 0:
+                ((ViewPropertyAnimator) this.d).setListener(null);
+                View view = (View) this.c;
+                view.setAlpha(1.0f);
+                view.setTranslationX(0.0f);
+                view.setTranslationY(0.0f);
+                view.setScaleX(1.0f);
+                view.setScaleY(1.0f);
+                k0 k0Var = (k0) this.e;
+                s4.b1 b1Var = (s4.b1) this.b;
+                k0Var.d(b1Var);
+                k0Var.A.remove(b1Var);
+                k0Var.G();
+                break;
+            case 1:
+                s4.b1 b1Var2 = (s4.b1) this.b;
+                ki.n nVar = (ki.n) this.e;
+                View view2 = (View) this.c;
+                if (view2 instanceof org.telegram.ui.Cells.u1) {
+                    ((org.telegram.ui.Cells.u1) view2).getTransitionParams().h = false;
+                }
+                ((ViewPropertyAnimator) this.d).setListener(null);
+                if (nVar.y.remove(b1Var2)) {
+                    nVar.u(b1Var2);
+                    nVar.G();
+                    break;
+                }
+                break;
+            case 2:
+                ((s4.b1) this.b).a.setAlpha(1.0f);
+                ((AnimatorSet) this.c).removeAllListeners();
+                ot otVar = (ot) this.e;
+                mt mtVar = (mt) this.d;
+                otVar.d(mtVar.a);
+                otVar.y.remove(mtVar.a);
+                otVar.A();
+                otVar.d(mtVar.b);
+                otVar.y.remove(mtVar.b);
+                otVar.A();
+                break;
+            case 3:
+                ((xv0) this.e).H1 = false;
+                View view3 = (View) this.c;
+                if (view3.getParent() != null) {
+                    ((qu0) this.b).removeView(view3);
+                    ((Bitmap) this.d).recycle();
+                    break;
+                }
+                break;
+            case 4:
+                o2 o2Var = (o2) this.e;
+                TextView[] textViewArr = o2Var.a;
+                View view4 = (View) this.c;
+                view4.setVisibility(8);
+                view4.setAlpha(1.0f);
+                view4.setTranslationY(0.0f);
+                view4.setScaleY(1.0f);
+                view4.setScaleX(1.0f);
+                View view5 = (View) this.b;
+                view5.setAlpha(1.0f);
+                view5.setTranslationY(0.0f);
+                view5.setVisibility(0);
+                view5.setScaleY(1.0f);
+                view5.setScaleX(1.0f);
+                Runnable runnable = (Runnable) this.d;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                o2Var.f = false;
+                CharSequence charSequence = o2Var.e;
+                if (charSequence != null) {
+                    if (charSequence.equals("timer")) {
+                        o2Var.e(true);
+                    } else {
+                        textViewArr[1].setText(o2Var.e);
+                        o2Var.a(textViewArr[0], textViewArr[1], new m2(this, 0));
                     }
+                    o2Var.e = null;
+                    break;
                 }
-            }
-
-            @Override // org.telegram.ui.ActionBar.j6
-            public final /* synthetic */ void a(float f7) {
-            }
-        };
-        ArrayList<k6> arrayList = new ArrayList<>();
-        arrayList.add(new k6(this.E, 4, null, null, null, null, i6.c7));
-        arrayList.add(new k6(this.E, 2048, null, null, null, null, i6.h6));
-        int i10 = i6.A5;
-        ai.w0 w0Var = this.s;
-        arrayList.add(new k6(w0Var, 32768, null, null, null, null, i10));
-        arrayList.add(new k6(w0Var, 4096, null, null, null, null, i6.i6));
-        arrayList.add(new k6(w0Var, 0, new Class[]{View.class}, i6.k0, null, null, i6.d7));
-        int i11 = i6.q5;
-        arrayList.add(new k6(w0Var, 0, new Class[]{i0.class}, new String[]{"nameTextView"}, null, null, -1, null, i11));
-        arrayList.add(new k6(w0Var, 0, new Class[]{i0.class}, new String[]{"statusTextView"}, null, null, -1, j6Var, i11));
-        arrayList.add(new k6(w0Var, 0, new Class[]{i0.class}, null, i6.r0, null, i6.J7));
-        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.O7));
-        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.P7));
-        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.Q7));
-        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.R7));
-        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.S7));
-        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.T7));
-        arrayList.add(new k6(null, 0, null, null, null, j6Var, i6.U7));
-        return arrayList;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        P();
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        this.b.getSheetContainer().invalidate();
-    }
-
-    public void setupBlurredSearchField(ah.c cVar) {
-        ui uiVar = this.F;
-        if (uiVar != null) {
-            uiVar.setupBlurredBackground(cVar.c(uiVar, eh.b.a(this.a), false));
+                break;
+            default:
+                Runnable runnable2 = (Runnable) this.c;
+                ProfileActivity profileActivity = (ProfileActivity) this.e;
+                org.telegram.ui.ActionBar.k kVar2 = (org.telegram.ui.ActionBar.k) this.b;
+                if (kVar2 != null) {
+                    kVar2.setSkipDrawChild(false);
+                }
+                org.telegram.ui.ActionBar.u0 u0Var = (org.telegram.ui.ActionBar.u0) this.d;
+                if (u0Var != null) {
+                    u0Var.setAlpha(1.0f);
+                }
+                if (profileActivity.fragmentView != null) {
+                    profileActivity.e0.setProgressToExpand(0.0f);
+                    profileActivity.a.setLayerType(0, null);
+                    if (profileActivity.P0 != null) {
+                        kVar = ((org.telegram.ui.ActionBar.m2) profileActivity).actionBar;
+                        org.telegram.ui.ActionBar.y n10 = kVar.n();
+                        ArrayList arrayList = n10.e;
+                        if (arrayList != null) {
+                            arrayList.clear();
+                        }
+                        n10.removeAllViews();
+                        profileActivity.P0 = null;
+                    }
+                    runnable2.run();
+                    if (profileActivity.J1 == 2) {
+                        profileActivity.J1 = 1;
+                        profileActivity.e0.setForegroundAlpha(1.0f);
+                        profileActivity.Y.setVisibility(8);
+                        profileActivity.n0.setAlpha(1.0f);
+                        profileActivity.n0.L();
+                        profileActivity.n0.setVisibility(0);
+                    }
+                    profileActivity.W4 = null;
+                    profileActivity.Z.invalidate();
+                    profileActivity.g5 = null;
+                    profileActivity.fragmentView.invalidate();
+                    break;
+                } else {
+                    runnable2.run();
+                    break;
+                }
         }
     }
 
-    @Override // org.telegram.ui.Components.qi
-    public final void p() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                ((ki.n) this.e).getClass();
+                break;
+            case 2:
+                ot otVar = (ot) this.e;
+                mt mtVar = (mt) this.d;
+                s4.b1 b1Var = mtVar.a;
+                otVar.getClass();
+                s4.b1 b1Var2 = mtVar.b;
+                otVar.getClass();
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 
-    @Override // me.d
-    public final /* synthetic */ void A(float f7, int i10) {
+    public /* synthetic */ j0(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+        this.a = i10;
+        this.e = obj;
+        this.b = obj2;
+        this.d = obj3;
+        this.c = obj4;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+    public j0(ki.n nVar, s4.b1 b1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
+        this.a = 1;
+        this.e = nVar;
+        this.b = b1Var;
+        this.c = view;
+        this.d = viewPropertyAnimator;
     }
 
-    @Override // me.d
-    public final void n(int i10, float f7, float f10, me.e eVar) {
+    public j0(ot otVar, mt mtVar, s4.b1 b1Var, AnimatorSet animatorSet) {
+        this.a = 2;
+        this.e = otVar;
+        this.d = mtVar;
+        this.b = b1Var;
+        this.c = animatorSet;
+    }
+
+    private final void a(Animator animator) {
     }
 }

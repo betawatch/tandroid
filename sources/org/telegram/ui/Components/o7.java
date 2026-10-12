@@ -1,44 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o7 implements em0 {
+public final /* synthetic */ class o7 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ m8 b;
 
-    public /* synthetic */ o7(int i10) {
+    public /* synthetic */ o7(m8 m8Var, int i10) {
         this.a = i10;
+        this.b = m8Var;
     }
 
-    @Override // org.telegram.ui.Components.em0
-    public final void d(int i10, View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                if (view instanceof org.telegram.ui.Cells.x) {
-                    ((org.telegram.ui.Cells.x) view).a();
-                    break;
-                }
-                break;
-            case 1:
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.t5) {
-                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-                    t5Var.w.b(t5Var);
-                    break;
-                }
-                break;
-            case 2:
-                break;
-            case 3:
-                int i11 = xh.d.a0;
+                m8.o(this.b);
                 break;
             default:
-                int i12 = xh.o.A0;
+                m8.H(this.b);
                 break;
         }
-    }
-
-    private final void a(int i10, View view) {
     }
 }

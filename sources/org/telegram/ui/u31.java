@@ -2,36 +2,108 @@ package org.telegram.ui;
 
 import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class u31 implements y31 {
-    public final /* synthetic */ zn a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
-    public final /* synthetic */ MessageObject d;
+public final /* synthetic */ class u31 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fo b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c6 d;
+    public final /* synthetic */ MessageObject e;
 
-    public u31(zn znVar, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, MessageObject messageObject) {
-        this.a = znVar;
-        this.b = activity;
-        this.c = e6Var;
-        this.d = messageObject;
+    public /* synthetic */ u31(fo foVar, Activity activity, org.telegram.ui.ActionBar.c6 c6Var, MessageObject messageObject, int i10) {
+        this.a = i10;
+        this.b = foVar;
+        this.c = activity;
+        this.d = c6Var;
+        this.e = messageObject;
     }
 
-    @Override // org.telegram.ui.y31
-    public final void a() {
-        AndroidUtilities.runOnUIThread(new o31(this.a, this.b, this.c, this.d, 2), 200L);
-    }
-
-    @Override // org.telegram.ui.y31
-    public final void b() {
-        AndroidUtilities.runOnUIThread(new ve(this.a, this.d, 8), 200L);
-    }
-
-    @Override // org.telegram.ui.y31
-    public final void c() {
-        zn znVar = this.a;
-        znVar.showDialog(new rg.y0((org.telegram.ui.ActionBar.n2) znVar, 3, true));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                fo foVar = this.b;
+                org.telegram.ui.Components.zc a02 = org.telegram.ui.Components.zc.a0(foVar);
+                String string = LocaleController.getString(R.string.AdReported);
+                final int i10 = 1;
+                final Activity activity = this.c;
+                a02.c(AndroidUtilities.replaceSingleTag(string, -1, 2, new Runnable() { // from class: org.telegram.ui.v31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                pf.d.s(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                pf.d.s(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                pf.d.s(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, this.d)).j();
+                MessageObject messageObject = this.e;
+                foVar.Ja(messageObject);
+                foVar.La(messageObject);
+                break;
+            case 1:
+                fo foVar2 = this.b;
+                org.telegram.ui.Components.zc a03 = org.telegram.ui.Components.zc.a0(foVar2);
+                String string2 = LocaleController.getString(R.string.AdReported);
+                final int i11 = 0;
+                final Activity activity2 = this.c;
+                a03.c(AndroidUtilities.replaceSingleTag(string2, -1, 2, new Runnable() { // from class: org.telegram.ui.v31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                pf.d.s(activity2, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                pf.d.s(activity2, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                pf.d.s(activity2, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, this.d)).j();
+                MessageObject messageObject2 = this.e;
+                foVar2.Ja(messageObject2);
+                foVar2.La(messageObject2);
+                break;
+            default:
+                fo foVar3 = this.b;
+                org.telegram.ui.Components.zc a04 = org.telegram.ui.Components.zc.a0(foVar3);
+                String string3 = LocaleController.getString(R.string.AdReported);
+                final int i12 = 2;
+                final Activity activity3 = this.c;
+                a04.c(AndroidUtilities.replaceSingleTag(string3, -1, 2, new Runnable() { // from class: org.telegram.ui.v31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                pf.d.s(activity3, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                pf.d.s(activity3, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                pf.d.s(activity3, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, this.d)).j();
+                MessageObject messageObject3 = this.e;
+                foVar3.Ja(messageObject3);
+                foVar3.La(messageObject3);
+                break;
+        }
     }
 }

@@ -1,28 +1,15 @@
 package com.google.firebase.messaging;
 
-import android.os.Binder;
-import android.os.Process;
-import android.util.Log;
-import com.google.android.gms.tasks.Task;
+import android.content.Intent;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d0 extends Binder {
-    public final a6.i a;
+public final class d0 {
+    public final Intent a;
+    public final TaskCompletionSource b = new TaskCompletionSource();
 
-    public d0(a6.i iVar) {
-        this.a = iVar;
-    }
-
-    public final void a(e0 e0Var) {
-        Task b10;
-        if (Binder.getCallingUid() != Process.myUid()) {
-            throw new SecurityException("Binding only allowed within app");
-        }
-        if (Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "service received new intent via bind strategy");
-        }
-        b10 = ((g) this.a.b).b(e0Var.a);
-        b10.addOnCompleteListener(new a3.b(2), new a1.c(e0Var, 24));
+    public d0(Intent intent) {
+        this.a = intent;
     }
 }

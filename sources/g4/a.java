@@ -5,26 +5,27 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
-import d2.b;
-import e2.d;
-import e2.d0;
-import e2.h;
-import e2.v;
-import e9.a1;
-import e9.g0;
-import e9.i0;
-import hg.c;
+import e2.j;
+import e2.m0;
+import e2.x;
+import e9.l0;
+import e9.n0;
+import e9.x1;
+import i2.d;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import z3.l;
+import v7.u6;
+import z3.b;
+import z3.e;
 import z3.m;
+import z3.n;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a implements m {
-    public final v a = new v();
+public final class a implements n {
+    public final x a = new x();
     public final boolean b;
     public final int c;
     public final int d;
@@ -51,7 +52,7 @@ public final class a implements m {
         boolean z10 = (bArr[0] & 32) != 0;
         this.b = z10;
         if (z10) {
-            this.f = d0.g(((bArr[11] & 255) | ((bArr[10] & 255) << 8)) / i10, 0.0f, 0.95f);
+            this.f = m0.h(((bArr[11] & 255) | ((bArr[10] & 255) << 8)) / i10, 0.0f, 0.95f);
         } else {
             this.f = 0.85f;
         }
@@ -88,42 +89,42 @@ public final class a implements m {
         }
     }
 
-    @Override // z3.m
-    public final int O() {
+    @Override // z3.n
+    public final int h0() {
         return 2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // z3.m
-    public final void P(byte[] bArr, int i10, int i11, l lVar, h hVar) {
-        String v;
+    @Override // z3.n
+    public final void u0(byte[] bArr, int i10, int i11, m mVar, j jVar) {
+        String y3;
         int i12;
         int i13;
-        v vVar = this.a;
-        vVar.H(i10 + i11, bArr);
-        vVar.J(i10);
+        x xVar = this.a;
+        xVar.L(i10 + i11, bArr);
+        xVar.N(i10);
         int i14 = 1;
         int i15 = 0;
         int i16 = 2;
-        d.b(vVar.a() >= 2);
-        int D = vVar.D();
-        if (D == 0) {
-            v = "";
+        u6.g(xVar.a() >= 2);
+        int H = xVar.H();
+        if (H == 0) {
+            y3 = "";
         } else {
-            int i17 = vVar.b;
-            Charset F = vVar.F();
-            int i18 = D - (vVar.b - i17);
-            if (F == null) {
-                F = StandardCharsets.UTF_8;
+            int i17 = xVar.b;
+            Charset J = xVar.J();
+            int i18 = H - (xVar.b - i17);
+            if (J == null) {
+                J = StandardCharsets.UTF_8;
             }
-            v = vVar.v(i18, F);
+            y3 = xVar.y(i18, J);
         }
-        if (v.isEmpty()) {
-            g0 g0Var = i0.b;
-            hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, a1.e));
+        if (y3.isEmpty()) {
+            l0 l0Var = n0.b;
+            jVar.accept(new b(-9223372036854775807L, -9223372036854775807L, x1.e));
             return;
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(v);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(y3);
         b(spannableStringBuilder, this.c, 0, 0, spannableStringBuilder.length(), 16711680);
         a(spannableStringBuilder, this.d, -1, 0, spannableStringBuilder.length(), 16711680);
         int length = spannableStringBuilder.length();
@@ -132,38 +133,38 @@ public final class a implements m {
             spannableStringBuilder.setSpan(new TypefaceSpan(str), 0, length, 16711713);
         }
         float f7 = this.f;
-        while (vVar.a() >= 8) {
-            int i19 = vVar.b;
-            int j3 = vVar.j();
-            int j10 = vVar.j();
-            if (j10 == 1937013100) {
-                d.b(vVar.a() >= i16 ? i14 : i15);
-                int D2 = vVar.D();
+        while (xVar.a() >= 8) {
+            int i19 = xVar.b;
+            int m10 = xVar.m();
+            int m11 = xVar.m();
+            if (m11 == 1937013100) {
+                u6.g(xVar.a() >= i16 ? i14 : i15);
+                int H2 = xVar.H();
                 int i20 = i15;
-                while (i20 < D2) {
-                    d.b(vVar.a() >= 12 ? i14 : i15);
-                    int D3 = vVar.D();
-                    int D4 = vVar.D();
-                    vVar.K(i16);
+                while (i20 < H2) {
+                    u6.g(xVar.a() >= 12 ? i14 : i15);
+                    int H3 = xVar.H();
+                    int H4 = xVar.H();
+                    xVar.O(i16);
                     int i21 = i20;
-                    int x10 = vVar.x();
-                    vVar.K(i14);
-                    int j11 = vVar.j();
-                    if (D4 > spannableStringBuilder.length()) {
-                        StringBuilder j12 = c.j(D4, "Truncating styl end (", ") to cueText.length() (");
-                        j12.append(spannableStringBuilder.length());
-                        j12.append(").");
-                        e2.a.n("Tx3gParser", j12.toString());
-                        D4 = spannableStringBuilder.length();
+                    int A = xVar.A();
+                    xVar.O(i14);
+                    int m12 = xVar.m();
+                    if (H4 > spannableStringBuilder.length()) {
+                        StringBuilder k10 = d.k(H4, "Truncating styl end (", ") to cueText.length() (");
+                        k10.append(spannableStringBuilder.length());
+                        k10.append(").");
+                        e2.a.l("Tx3gParser", k10.toString());
+                        H4 = spannableStringBuilder.length();
                     }
-                    if (D3 >= D4) {
-                        e2.a.n("Tx3gParser", "Ignoring styl with start (" + D3 + ") >= end (" + D4 + ").");
+                    if (H3 >= H4) {
+                        e2.a.l("Tx3gParser", "Ignoring styl with start (" + H3 + ") >= end (" + H4 + ").");
                         i13 = i21;
                     } else {
                         i13 = i21;
-                        int i22 = D4;
-                        b(spannableStringBuilder, x10, this.c, D3, i22, 0);
-                        a(spannableStringBuilder, j11, this.d, D3, i22, 0);
+                        int i22 = H4;
+                        b(spannableStringBuilder, A, this.c, H3, i22, 0);
+                        a(spannableStringBuilder, m12, this.d, H3, i22, 0);
                     }
                     i20 = i13 + 1;
                     i14 = 1;
@@ -171,27 +172,27 @@ public final class a implements m {
                     i16 = 2;
                 }
                 i12 = i16;
-            } else if (j10 == 1952608120 && this.b) {
+            } else if (m11 == 1952608120 && this.b) {
                 i12 = 2;
-                d.b(vVar.a() >= 2);
-                f7 = d0.g(vVar.D() / this.h, 0.0f, 0.95f);
+                u6.g(xVar.a() >= 2);
+                f7 = m0.h(xVar.H() / this.h, 0.0f, 0.95f);
             } else {
                 i12 = 2;
             }
-            vVar.J(i19 + j3);
+            xVar.N(i19 + m10);
             i16 = i12;
             i14 = 1;
             i15 = 0;
         }
-        hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, i0.z(new b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
+        jVar.accept(new b(-9223372036854775807L, -9223372036854775807L, n0.y(new d2.b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
     }
 
-    @Override // z3.m
-    public final /* synthetic */ z3.d s(int i10, int i11, byte[] bArr) {
-        return sc.v.a(this, bArr, i11);
+    @Override // z3.n
+    public final /* synthetic */ e w(int i10, int i11, byte[] bArr) {
+        return t8.b.a(this, bArr, i11);
     }
 
-    @Override // z3.m
+    @Override // z3.n
     public final /* synthetic */ void reset() {
     }
 }

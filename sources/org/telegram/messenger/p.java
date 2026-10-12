@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Comparator {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class p implements Comparator {
         int lambda$getContactsHash$26;
         int lambda$sortEmoji$3;
         int lambda$removePart$2;
-        int lambda$loadGalleryPhotosAlbums$56;
+        int lambda$loadGalleryPhotosAlbums$57;
         int lambda$sortPlaylist$13;
         int lambda$getTextStyleRunsLegacy$181;
         int lambda$static$160;
@@ -74,8 +74,8 @@ public final /* synthetic */ class p implements Comparator {
                 lambda$removePart$2 = FileLoadOperation.lambda$removePart$2((FileLoadOperation.Range) obj, (FileLoadOperation.Range) obj2);
                 return lambda$removePart$2;
             case 6:
-                lambda$loadGalleryPhotosAlbums$56 = MediaController.lambda$loadGalleryPhotosAlbums$56((MediaController.PhotoEntry) obj, (MediaController.PhotoEntry) obj2);
-                return lambda$loadGalleryPhotosAlbums$56;
+                lambda$loadGalleryPhotosAlbums$57 = MediaController.lambda$loadGalleryPhotosAlbums$57((MediaController.PhotoEntry) obj, (MediaController.PhotoEntry) obj2);
+                return lambda$loadGalleryPhotosAlbums$57;
             case 7:
                 lambda$sortPlaylist$13 = MediaController.lambda$sortPlaylist$13((MessageObject) obj, (MessageObject) obj2);
                 return lambda$sortPlaylist$13;
@@ -134,7 +134,7 @@ public final /* synthetic */ class p implements Comparator {
                 lambda$processLoadedFilterPeersInternal$70 = MessagesStorage.lambda$processLoadedFilterPeersInternal$70((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
                 return lambda$processLoadedFilterPeersInternal$70;
             case 26:
-                lambda$localSearch$260 = MessagesStorage.lambda$localSearch$260((gg.c0) obj, (gg.c0) obj2);
+                lambda$localSearch$260 = MessagesStorage.lambda$localSearch$260((hg.c0) obj, (hg.c0) obj2);
                 return lambda$localSearch$260;
             case 27:
                 lambda$switchToAvailable$3 = ProxyRotationController.lambda$switchToAvailable$3((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);

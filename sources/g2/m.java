@@ -1,12 +1,13 @@
 package g2;
 
 import android.net.Uri;
-import b2.l0;
+import b2.q0;
 import j$.util.DesugarCollections;
 import java.util.HashMap;
 import java.util.Map;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m {
     public static final /* synthetic */ int i = 0;
@@ -20,20 +21,20 @@ public final class m {
     public final int h;
 
     static {
-        l0.a("media3.datasource");
+        q0.a("media3.datasource");
     }
 
-    public m(Uri uri, int i10, byte[] bArr, Map map, long j3, long j10, String str, int i11) {
-        e2.d.b(j3 >= 0);
-        e2.d.b(j3 >= 0);
-        e2.d.b(j10 > 0 || j10 == -1);
+    public m(Uri uri, int i10, byte[] bArr, Map map, long j10, long j11, String str, int i11) {
+        u6.g(j10 >= 0);
+        u6.g(j10 >= 0);
+        u6.g(j11 > 0 || j11 == -1);
         uri.getClass();
         this.a = uri;
         this.b = i10;
         this.c = (bArr == null || bArr.length == 0) ? null : bArr;
         this.d = DesugarCollections.unmodifiableMap(new HashMap(map));
-        this.e = j3;
-        this.f = j10;
+        this.e = j10;
+        this.f = j11;
         this.g = str;
         this.h = i11;
     }
@@ -51,13 +52,13 @@ public final class m {
         return lVar;
     }
 
-    public final m b(long j3) {
-        long j10 = this.f;
-        long j11 = j10 != -1 ? j10 - j3 : -1L;
-        if (j3 == 0 && j10 == j11) {
+    public final m b(long j10) {
+        long j11 = this.f;
+        long j12 = j11 != -1 ? j11 - j10 : -1L;
+        if (j10 == 0 && j11 == j12) {
             return this;
         }
-        return new m(this.a, this.b, this.c, this.d, this.e + j3, j11, this.g, this.h);
+        return new m(this.a, this.b, this.c, this.d, this.e + j10, j12, this.g, this.h);
     }
 
     public final String toString() {
@@ -84,6 +85,6 @@ public final class m {
         sb2.append(", ");
         sb2.append(this.g);
         sb2.append(", ");
-        return a1.g.o(this.h, "]", sb2);
+        return a1.g.n(this.h, "]", sb2);
     }
 }

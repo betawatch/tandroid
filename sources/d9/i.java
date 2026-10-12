@@ -1,123 +1,31 @@
 package d9;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import v7.t6;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i implements Iterator {
-    public String b;
-    public final CharSequence c;
-    public final a d;
-    public int f;
-    public final /* synthetic */ a4.l h;
-    public int a = 2;
-    public int e = 0;
-
-    public i(a4.l lVar, a5.a aVar, CharSequence charSequence) {
-        this.h = lVar;
-        this.d = (a) aVar.c;
-        this.f = aVar.b;
-        this.c = charSequence;
+public abstract class i implements m {
+    public static String a(char c10) {
+        char[] cArr = new char[6];
+        cArr[0] = '\\';
+        cArr[1] = 'u';
+        cArr[2] = 0;
+        cArr[3] = 0;
+        cArr[4] = 0;
+        cArr[5] = 0;
+        for (int i10 = 0; i10 < 4; i10++) {
+            cArr[5 - i10] = "0123456789ABCDEF".charAt(c10 & 15);
+            c10 = (char) (c10 >> 4);
+        }
+        return String.copyValueOf(cArr);
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        String str;
-        a aVar;
-        int i10 = this.a;
-        if (i10 == 4) {
-            throw new IllegalStateException();
-        }
-        int c10 = m1.j.c(i10);
-        if (c10 == 0) {
-            return true;
-        }
-        if (c10 == 2) {
-            return false;
-        }
-        this.a = 4;
-        int i11 = this.e;
-        while (true) {
-            int i12 = this.e;
-            if (i12 == -1) {
-                this.a = 3;
-                str = null;
-                break;
-            }
-            b bVar = (b) this.h.b;
-            CharSequence charSequence = this.c;
-            int length = charSequence.length();
-            t6.e(i12, length);
-            while (true) {
-                if (i12 >= length) {
-                    i12 = -1;
-                    break;
-                }
-                if (bVar.a(charSequence.charAt(i12))) {
-                    break;
-                }
-                i12++;
-            }
-            if (i12 == -1) {
-                i12 = charSequence.length();
-                this.e = -1;
-            } else {
-                this.e = i12 + 1;
-            }
-            int i13 = this.e;
-            if (i13 == i11) {
-                int i14 = i13 + 1;
-                this.e = i14;
-                if (i14 > charSequence.length()) {
-                    this.e = -1;
-                }
-            } else {
-                while (true) {
-                    aVar = this.d;
-                    if (i11 >= i12 || !aVar.a(charSequence.charAt(i11))) {
-                        break;
-                    }
-                    i11++;
-                }
-                while (i12 > i11 && aVar.a(charSequence.charAt(i12 - 1))) {
-                    i12--;
-                }
-                int i15 = this.f;
-                if (i15 == 1) {
-                    i12 = charSequence.length();
-                    this.e = -1;
-                    while (i12 > i11 && aVar.a(charSequence.charAt(i12 - 1))) {
-                        i12--;
-                    }
-                } else {
-                    this.f = i15 - 1;
-                }
-                str = charSequence.subSequence(i11, i12).toString();
-            }
-        }
-        this.b = str;
-        if (this.a == 3) {
-            return false;
-        }
-        this.a = 1;
-        return true;
+    public static i b(String str) {
+        int length = str.length();
+        return length != 0 ? length != 1 ? length != 2 ? new c(str) : new f(str.charAt(0), str.charAt(1)) : new e(str.charAt(0), 0) : b.f;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        this.a = 2;
-        String str = this.b;
-        this.b = null;
-        return str;
-    }
+    public abstract boolean c(char c10);
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException();
+    public i d() {
+        return new c(this);
     }
 }

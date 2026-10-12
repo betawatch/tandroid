@@ -1,242 +1,356 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import android.util.Pair;
+import android.app.Activity;
+import android.graphics.Paint;
+import android.net.Uri;
+import android.os.Bundle;
+import android.text.style.ClickableSpan;
+import android.util.SparseArray;
 import android.view.View;
-import java.util.Comparator;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DownloadController;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.camera.Size;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gf implements Comparator {
+public final /* synthetic */ class gf implements View.OnClickListener {
     public final /* synthetic */ int a;
+    public final /* synthetic */ fo b;
 
-    public /* synthetic */ gf(int i10) {
+    public /* synthetic */ gf(fo foVar, int i10) {
         this.a = i10;
+        this.b = foVar;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int id2;
-        int id3;
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10;
+        int i11 = this.a;
+        final int i12 = 2;
+        MessageObject messageObject = null;
+        final int i13 = 0;
+        final int i14 = 1;
+        fo foVar = this.b;
+        switch (i11) {
             case 0:
-                return ((MessageObject) obj).getId() - ((MessageObject) obj2).getId();
+                fo foVar2 = this.b;
+                sg.j0.D1(foVar2, foVar2.D1, foVar2.E1, foVar2.T5, false);
+                break;
             case 1:
-                id2 = ((MessageObject) obj2).getId();
-                id3 = ((MessageObject) obj).getId();
+                foVar.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", foVar.r);
+                foVar.presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 2:
-                return ((Integer) obj2).compareTo((Integer) obj);
+                if (foVar.K3 != null) {
+                    foVar.Pb(!foVar.yc.f);
+                    break;
+                }
+                break;
             case 3:
-                id2 = ((MessageObject) obj2).getId();
-                id3 = ((MessageObject) obj).getId();
+                foVar.ob(!foVar.A0.N);
                 break;
             case 4:
-                TLObject tLObject = (TLObject) obj;
-                TLObject tLObject2 = (TLObject) obj2;
-                int j02 = tr.j0(tLObject);
-                int j03 = tr.j0(tLObject2);
-                if (j02 > j03) {
-                    return 1;
+                kk kkVar = foVar.I1;
+                if (kkVar != null) {
+                    kkVar.setReversed(true);
+                    foVar.I1.getAdapter().k0 = true;
+                    foVar.p7();
                 }
-                if (j02 < j03) {
-                    return -1;
+                foVar.S2.setVisibility(8);
+                foVar.T2.setVisibility(8);
+                foVar.n3 = true;
+                foVar.o3 = null;
+                foVar.p3 = null;
+                foVar.j0.setSearchFieldHint(LocaleController.getString(R.string.SearchMembers));
+                foVar.j0.setSearchFieldCaption(LocaleController.getString(R.string.SearchFrom));
+                AndroidUtilities.showKeyboard(foVar.j0.getSearchField());
+                org.telegram.ui.ActionBar.u0 u0Var = foVar.j0;
+                u0Var.r = null;
+                di.g2 g2Var = u0Var.e;
+                if (g2Var != null) {
+                    g2Var.setText("");
+                    break;
                 }
-                if ((tLObject instanceof TLRPC.ChannelParticipant) && (tLObject2 instanceof TLRPC.ChannelParticipant)) {
-                    return (int) (MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer) - MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject2).peer));
-                }
-                return 0;
+                break;
             case 5:
-                int j04 = tr.j0((TLObject) obj);
-                int j05 = tr.j0((TLObject) obj2);
-                if (j04 > j05) {
-                    return 1;
+                if (foVar.getParentActivity() != null) {
+                    org.telegram.ui.ActionBar.u0 u0Var2 = foVar.j0;
+                    if (u0Var2 != null) {
+                        AndroidUtilities.hideKeyboard(u0Var2.getSearchField());
+                    }
+                    foVar.showDialog(org.telegram.ui.Components.g5.o(foVar.getParentActivity(), new ll(foVar), foVar.ea).a);
+                    break;
                 }
-                return j04 < j05 ? -1 : 0;
+                break;
             case 6:
-                id2 = ((org.telegram.ui.Components.p9) obj2).b;
-                id3 = ((org.telegram.ui.Components.p9) obj).b;
+                foVar.D7(true);
                 break;
             case 7:
-                id2 = ((org.telegram.ui.Components.p9) obj2).b;
-                id3 = ((org.telegram.ui.Components.p9) obj).b;
+                MessageObject messageObject2 = foVar.d5;
+                if (messageObject2 != null) {
+                    foVar.O9(messageObject2, false, false);
+                    pf.d.r(foVar.getParentActivity(), Uri.parse(foVar.d5.sponsoredUrl), true, false, false, null, null, false, foVar.getMessagesController().sponsoredLinksInappAllow, false);
+                    break;
+                }
                 break;
             case 8:
-                return Long.compare(((org.telegram.ui.Components.fd) obj).c, ((org.telegram.ui.Components.fd) obj2).c);
-            case 9:
-                Size size = (Size) obj;
-                Size size2 = (Size) obj2;
-                float abs = Math.abs(1.0f - (Math.min(size.mHeight, size.mWidth) / Math.max(size.mHeight, size.mWidth)));
-                float abs2 = Math.abs(1.0f - (Math.min(size2.mHeight, size2.mWidth) / Math.max(size2.mHeight, size2.mWidth)));
-                if (abs < abs2) {
-                    return -1;
+                if (AndroidUtilities.addToClipboard(foVar.d5.sponsoredInfo)) {
+                    org.telegram.messenger.yh.o(R.string.TextCopied, new org.telegram.ui.Components.zc(org.telegram.ui.Components.nb.a(foVar.getParentActivity()), foVar.ea));
+                    break;
                 }
-                return abs > abs2 ? 1 : 0;
+                break;
+            case 9:
+                if (AndroidUtilities.addToClipboard(foVar.d5.sponsoredAdditionalInfo)) {
+                    org.telegram.messenger.yh.o(R.string.TextCopied, new org.telegram.ui.Components.zc(org.telegram.ui.Components.nb.a(foVar.getParentActivity()), foVar.ea));
+                    break;
+                }
+                break;
             case 10:
-                bd.a aVar = (bd.a) obj;
-                bd.a aVar2 = (bd.a) obj2;
-                int compare = Integer.compare(aVar.b, aVar2.b);
-                return compare != 0 ? compare : Integer.compare(aVar2.d, aVar.d);
+                if (foVar.X0 != null && foVar.getParentActivity() != null) {
+                    org.telegram.ui.ActionBar.e3 i15 = org.telegram.messenger.yh.i(1, foVar.X0.getContext(), null, false);
+                    Activity parentActivity = foVar.getParentActivity();
+                    co coVar = foVar.ea;
+                    final t91 t91Var = new t91(parentActivity);
+                    LinearLayout f7 = org.telegram.messenger.q.f(parentActivity, 1);
+                    TextView textView = new TextView(parentActivity);
+                    textView.setText(LocaleController.getString(R.string.SponsoredMessageInfo));
+                    textView.setTypeface(AndroidUtilities.bold());
+                    int i16 = org.telegram.ui.ActionBar.g6.G6;
+                    textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i16, coVar));
+                    textView.setTextSize(1, 20.0f);
+                    org.telegram.ui.Components.da0 da0Var = new org.telegram.ui.Components.da0(parentActivity, coVar);
+                    da0Var.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description1"), coVar));
+                    da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.gc, coVar));
+                    da0Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(i16, coVar));
+                    da0Var.setTextSize(1, 14.0f);
+                    da0Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                    da0Var.setOnLinkPressListener(new org.telegram.ui.Components.ca0() { // from class: org.telegram.ui.r91
+                        @Override // org.telegram.ui.Components.ca0
+                        public final void a(ClickableSpan clickableSpan) {
+                            switch (i13) {
+                                case 0:
+                                    clickableSpan.onClick(t91Var);
+                                    break;
+                                case 1:
+                                    clickableSpan.onClick(t91Var);
+                                    break;
+                                default:
+                                    clickableSpan.onClick(t91Var);
+                                    break;
+                            }
+                        }
+                    });
+                    org.telegram.ui.Components.da0 da0Var2 = new org.telegram.ui.Components.da0(parentActivity, null);
+                    da0Var2.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description2"), coVar));
+                    da0Var2.setTextColor(org.telegram.ui.ActionBar.g6.w0(i16, coVar));
+                    da0Var2.setTextSize(1, 14.0f);
+                    da0Var2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                    da0Var2.setOnLinkPressListener(new org.telegram.ui.Components.ca0() { // from class: org.telegram.ui.r91
+                        @Override // org.telegram.ui.Components.ca0
+                        public final void a(ClickableSpan clickableSpan) {
+                            switch (i14) {
+                                case 0:
+                                    clickableSpan.onClick(t91Var);
+                                    break;
+                                case 1:
+                                    clickableSpan.onClick(t91Var);
+                                    break;
+                                default:
+                                    clickableSpan.onClick(t91Var);
+                                    break;
+                            }
+                        }
+                    });
+                    org.telegram.ui.Components.da0 da0Var3 = new org.telegram.ui.Components.da0(parentActivity, null);
+                    da0Var3.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description3"), coVar));
+                    da0Var3.setTextColor(org.telegram.ui.ActionBar.g6.w0(i16, coVar));
+                    da0Var3.setTextSize(1, 14.0f);
+                    da0Var3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                    da0Var3.setOnLinkPressListener(new org.telegram.ui.Components.ca0() { // from class: org.telegram.ui.r91
+                        @Override // org.telegram.ui.Components.ca0
+                        public final void a(ClickableSpan clickableSpan) {
+                            switch (i12) {
+                                case 0:
+                                    clickableSpan.onClick(t91Var);
+                                    break;
+                                case 1:
+                                    clickableSpan.onClick(t91Var);
+                                    break;
+                                default:
+                                    clickableSpan.onClick(t91Var);
+                                    break;
+                            }
+                        }
+                    });
+                    Paint paint = new Paint(1);
+                    paint.setStyle(Paint.Style.STROKE);
+                    int i17 = org.telegram.ui.ActionBar.g6.Oh;
+                    paint.setColor(org.telegram.ui.ActionBar.g6.w0(i17, coVar));
+                    paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+                    xk xkVar = new xk(parentActivity, paint);
+                    xkVar.setOnClickListener(new s91(parentActivity));
+                    xkVar.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                    xkVar.setText(LocaleController.getString(R.string.SponsoredMessageAlertLearnMoreUrl));
+                    xkVar.setTextColor(org.telegram.ui.ActionBar.g6.w0(i17, coVar));
+                    xkVar.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{4.0f}, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h5, coVar)));
+                    xkVar.setTextSize(1, 14.0f);
+                    xkVar.setGravity(16);
+                    org.telegram.ui.Components.da0 da0Var4 = new org.telegram.ui.Components.da0(parentActivity, null);
+                    da0Var4.setText(AndroidUtilities.replaceLinks(LocaleController.getString("SponsoredMessageInfo2Description4"), coVar));
+                    da0Var4.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                    da0Var4.setTextColor(org.telegram.ui.ActionBar.g6.w0(i16, coVar));
+                    da0Var4.setTextSize(1, 14.0f);
+                    textView.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+                    f7.addView(textView);
+                    da0Var.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+                    f7.addView(da0Var, w7.a6.t(-1, -2, 0, 0, 18, 0, 0));
+                    da0Var2.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+                    f7.addView(da0Var2, w7.a6.t(-1, -2, 0, 0, 24, 0, 0));
+                    da0Var3.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+                    f7.addView(da0Var3, w7.a6.t(-1, -2, 0, 0, 24, 0, 0));
+                    f7.addView(xkVar, w7.a6.t(-2, 34, 1, 22, 14, 22, 0));
+                    da0Var4.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+                    f7.addView(da0Var4, w7.a6.t(-1, -2, 0, 0, 14, 0, 0));
+                    ScrollView scrollView = new ScrollView(t91Var.getContext());
+                    scrollView.addView(f7);
+                    t91Var.addView(scrollView, w7.a6.a(-2.0f, 0.0f, 12.0f, 0.0f, 22.0f, -1, 0));
+                    i15.customView = t91Var;
+                    i15.show();
+                    break;
+                }
+                break;
             case 11:
-                id2 = ((Integer) obj2).intValue();
-                id3 = ((Integer) obj).intValue();
+                foVar.finishPreviewFragment();
                 break;
             case 12:
-                float f7 = ((org.telegram.ui.Components.ph0) obj).a;
-                float f10 = ((org.telegram.ui.Components.ph0) obj2).a;
-                if (f7 > f10) {
-                    return -1;
-                }
-                return f7 < f10 ? 1 : 0;
+                foVar.getClass();
+                foVar.showDialog(new sg.y0((org.telegram.ui.ActionBar.m2) foVar, 28, true));
+                break;
             case 13:
-                return Float.compare(((org.telegram.ui.Components.nm0) obj).a, ((org.telegram.ui.Components.nm0) obj2).a);
+                fo foVar3 = this.b;
+                org.telegram.ui.Components.g5.i0(foVar3, foVar3.T5, foVar3.f, foVar3.e, foVar3.h, foVar3.N1.getTag(R.id.object_tag) != null, foVar3.Z7, new fh(foVar3, i12), foVar3.ea);
+                break;
             case 14:
-                Pair pair = (Pair) obj;
-                Pair pair2 = (Pair) obj2;
-                if (((Float) pair.first).floatValue() > ((Float) pair2.first).floatValue()) {
-                    return 1;
-                }
-                return ((Float) pair2.first).floatValue() > ((Float) pair.first).floatValue() ? -1 : 0;
+                fo.k0(foVar);
+                break;
             case 15:
-                Pair pair3 = (Pair) obj;
-                Pair pair4 = (Pair) obj2;
-                if (((Float) pair3.first).floatValue() > ((Float) pair4.first).floatValue()) {
-                    return 1;
+                if (foVar.c4 != null) {
+                    TopicsController topicsController = foVar.getMessagesController().getTopicsController();
+                    long j10 = foVar.e.id;
+                    TLRPC.TL_forumTopic tL_forumTopic = foVar.c4;
+                    int i18 = tL_forumTopic.id;
+                    tL_forumTopic.closed = false;
+                    topicsController.toggleCloseTopic(j10, i18, false);
                 }
-                return ((Float) pair4.first).floatValue() > ((Float) pair3.first).floatValue() ? -1 : 0;
+                foVar.Vc();
+                foVar.lc(false);
+                foVar.Uc(true);
+                break;
             case 16:
-                int i10 = ((org.telegram.ui.Components.ar0) obj).c;
-                int i11 = ((org.telegram.ui.Components.ar0) obj2).c;
-                if (i10 < i11) {
-                    return 1;
+                long j11 = foVar.T5;
+                if (foVar.h != null) {
+                    j11 = foVar.f.id;
                 }
-                return i10 > i11 ? -1 : 0;
+                foVar.Yb = false;
+                foVar.getMessagesController().hidePeerSettingsBar(j11, foVar.f, foVar.e);
+                foVar.Uc(true);
+                foVar.sc(true);
+                break;
             case 17:
-                id2 = ((org.telegram.ui.Components.zu0) obj2).c;
-                id3 = ((org.telegram.ui.Components.zu0) obj).c;
+                fo foVar4 = this.b;
+                foVar4.D4 = true;
+                if (!foVar4.K9() || foVar4.h4) {
+                    int i19 = foVar4.L4;
+                    if (i19 != 0) {
+                        if (!foVar4.H4.isEmpty()) {
+                            if (i19 == ((Integer) i2.d.g(1, foVar4.H4)).intValue()) {
+                                i13 = ((Integer) foVar4.H4.get(0)).intValue() + 1;
+                                foVar4.O4 = true;
+                            } else {
+                                foVar4.O4 = false;
+                                i13 = i19 - 1;
+                            }
+                        }
+                        foVar4.N4 = i13;
+                        if (!foVar4.O4) {
+                            i13 = -i13;
+                        }
+                        foVar4.j(i19, 0, true, 0, true, i13);
+                        foVar4.yc();
+                        break;
+                    }
+                } else {
+                    foVar4.j((int) foVar4.d4, 0, true, 0, true, 0);
+                    break;
+                }
                 break;
             case 18:
-                Pair pair5 = (Pair) obj;
-                Pair pair6 = (Pair) obj2;
-                if (((Float) pair5.first).floatValue() > ((Float) pair6.first).floatValue()) {
-                    return 1;
-                }
-                return ((Float) pair6.first).floatValue() > ((Float) pair5.first).floatValue() ? -1 : 0;
+                foVar.na(false);
+                break;
             case 19:
-                DownloadController.Preset preset = (DownloadController.Preset) obj;
-                DownloadController.Preset preset2 = (DownloadController.Preset) obj2;
-                int typeToIndex = DownloadController.typeToIndex(4);
-                int typeToIndex2 = DownloadController.typeToIndex(8);
-                int i12 = 0;
-                boolean z10 = false;
-                boolean z11 = false;
-                while (true) {
-                    int[] iArr = preset.mask;
-                    if (i12 < iArr.length) {
-                        int i13 = iArr[i12];
-                        z10 = z10;
-                        if ((i13 & 4) != 0) {
-                            z10 = true;
-                        }
-                        z11 = z11;
-                        if ((i13 & 8) != 0) {
-                            z11 = true;
-                        }
-                        if (!z10 || !z11) {
-                            i12++;
-                            z10 = z10;
-                            z11 = z11;
-                        }
-                    }
-                }
-                int i14 = 0;
-                boolean z12 = false;
-                boolean z13 = false;
-                while (true) {
-                    int[] iArr2 = preset2.mask;
-                    if (i14 < iArr2.length) {
-                        int i15 = iArr2[i14];
-                        z12 = z12;
-                        if ((i15 & 4) != 0) {
-                            z12 = true;
-                        }
-                        z13 = z13;
-                        if ((i15 & 8) != 0) {
-                            z13 = true;
-                        }
-                        if (!z12 || !z13) {
-                            i14++;
-                            z12 = z12;
-                            z13 = z13;
-                        }
-                    }
-                }
-                long j3 = (z10 ? preset.sizes[typeToIndex] : 0L) + (z11 ? preset.sizes[typeToIndex2] : 0L) + (preset.preloadStories ? 1L : 0L);
-                long j10 = (z12 ? preset2.sizes[typeToIndex] : 0L) + (z13 ? preset2.sizes[typeToIndex2] : 0L) + (preset2.preloadStories ? 1L : 0L);
-                if (j3 > j10) {
-                    return 1;
-                }
-                return j3 < j10 ? -1 : 0;
+                fo.b1(foVar);
+                break;
             case 20:
-                return Long.compare(((tu) obj2).c, ((tu) obj).c);
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("user_id", foVar.a());
+                foVar.presentFragment(new fl(bundle2));
+                break;
             case 21:
-                long j11 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j12 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j11 > j12) {
-                    return 1;
-                }
-                return j11 < j12 ? -1 : 0;
+                fo.m0(foVar);
+                break;
             case 22:
-                int i16 = ((ContactsController.Contact) obj).imported;
-                int i17 = ((ContactsController.Contact) obj2).imported;
-                if (i16 > i17) {
-                    return -1;
-                }
-                return i16 < i17 ? 1 : 0;
+                fo.Y0(foVar);
+                break;
             case 23:
-                long j13 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j14 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j13 > j14) {
-                    return 1;
-                }
-                return j13 < j14 ? -1 : 0;
+                fo.i0(foVar);
+                break;
             case 24:
-                long j15 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j16 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j15 > j16) {
-                    return 1;
-                }
-                return j15 < j16 ? -1 : 0;
+                foVar.ga(false);
+                break;
             case 25:
-                return ((String) obj).compareTo((String) obj2);
+                SparseArray[] sparseArrayArr = foVar.W5;
+                for (int i20 = 1; i20 >= 0; i20--) {
+                    if (messageObject == null && sparseArrayArr[i20].size() != 0) {
+                        messageObject = (MessageObject) foVar.o6[i20].get(sparseArrayArr[i20].keyAt(0));
+                    }
+                    sparseArrayArr[i20].clear();
+                    foVar.X5[i20].clear();
+                    foVar.Y5[i20].clear();
+                }
+                foVar.h9();
+                if (messageObject != null && ((i10 = messageObject.messageOwner.id) > 0 || (i10 < 0 && foVar.h != null))) {
+                    foVar.Fb(messageObject);
+                }
+                foVar.Cc(0, true);
+                foVar.ad(false);
+                foVar.Pc();
+                break;
             case 26:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                return ((MessageObject) obj).getId() - ((MessageObject) obj2).getId();
+                fo.c1(foVar);
+                break;
             case 27:
-                return (int) (((View) obj).getY() - ((View) obj2).getY());
+                fo foVar5 = this.b;
+                MessageObject messageObject3 = foVar5.p5;
+                if (messageObject3 != null) {
+                    foVar5.j(messageObject3.getId(), 0, true, 0, true, 0);
+                    break;
+                }
+                break;
             case 28:
-                int i18 = obj instanceof h11 ? ((h11) obj).g : obj instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj).num : 0;
-                int i19 = obj2 instanceof h11 ? ((h11) obj2).g : obj2 instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj2).num : 0;
-                if (i18 < i19) {
-                    return -1;
-                }
-                return i18 > i19 ? 1 : 0;
+                foVar.qa(foVar.J9() ? "" : null);
+                break;
             default:
-                long j17 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j18 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j17 > j18) {
-                    return 1;
-                }
-                return j17 < j18 ? -1 : 0;
+                foVar.T7();
+                foVar.y3.m(foVar.T5, LocaleController.getString(R.string.BroadcastGroupInfo), 18);
+                break;
         }
-        return id2 - id3;
     }
 }

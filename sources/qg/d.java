@@ -1,92 +1,41 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import v7.z6;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class d extends FrameLayout {
-    public boolean a;
-    public final c b;
-    public boolean c;
-    public float d;
-    public float e;
-    public boolean f;
-
-    public d(Context context, c cVar) {
-        super(context);
-        this.b = cVar;
+public final class d extends m {
+    @Override // qg.m
+    public final float a() {
+        return 1.0f;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (this.a && (view instanceof b2)) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j3);
+    @Override // qg.m
+    public final float d() {
+        return 1.0f;
     }
 
-    @Override // android.view.ViewGroup
-    public final void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
-        if (!(view instanceof w2)) {
-            super.measureChildWithMargins(view, i10, i11, i12, i13);
-            return;
-        }
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        view.measure(ViewGroup.getChildMeasureSpec(i10, getPaddingRight() + getPaddingLeft() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin + i11, marginLayoutParams.width), View.MeasureSpec.makeMeasureSpec(0, 0));
+    @Override // qg.m
+    public final int e() {
+        return R.raw.photo_eraser;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        c cVar = this.b;
-        j b10 = cVar.b();
-        if (b10 == null) {
-            return false;
+    @Override // qg.m
+    public final float g() {
+        return 0.35f;
+    }
+
+    @Override // qg.m
+    public final String i(int i10) {
+        if (i10 == 0) {
+            return "blitWithMaskEraser";
         }
-        if (motionEvent.getPointerCount() != 1) {
-            b10.n = false;
-            b10.r = true;
-            this.c = false;
-            this.f = true;
-            invalidate();
-            return true;
+        if (i10 == 1) {
+            return "compositeWithMaskEraser";
         }
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 0) {
-            this.c = false;
-            b10.n = false;
-            b10.r = false;
-            this.d = motionEvent.getX();
-            this.e = motionEvent.getY();
-            this.f = false;
-            return true;
+        if (i10 != 2) {
+            return null;
         }
-        if (!this.f && actionMasked == 2) {
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            if (this.c || z6.a(x10, y3, this.d, this.e) > AndroidUtilities.touchSlop) {
-                this.c = true;
-                b10.n = true;
-                b10.e(x10 - this.d, y3 - this.e);
-                this.d = x10;
-                this.e = y3;
-                return true;
-            }
-        } else if (actionMasked == 1 || actionMasked == 3) {
-            b10.n = false;
-            b10.r = true;
-            if (!this.c) {
-                cVar.a();
-            }
-            invalidate();
-            return false;
-        }
-        return true;
+        return "brush";
     }
 }

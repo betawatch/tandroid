@@ -1,9 +1,9 @@
 package x4;
 
 import android.animation.TypeEvaluator;
-import v7.c8;
+import v7.x7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e implements TypeEvaluator {
     public i0.d[] a;
@@ -12,11 +12,11 @@ public final class e implements TypeEvaluator {
     public final Object evaluate(float f7, Object obj, Object obj2) {
         i0.d[] dVarArr = (i0.d[]) obj;
         i0.d[] dVarArr2 = (i0.d[]) obj2;
-        if (!c8.a(dVarArr, dVarArr2)) {
+        if (!x7.a(dVarArr, dVarArr2)) {
             throw new IllegalArgumentException("Can't interpolate between two incompatible pathData");
         }
-        if (!c8.a(this.a, dVarArr)) {
-            this.a = c8.e(dVarArr);
+        if (!x7.a(this.a, dVarArr)) {
+            this.a = x7.e(dVarArr);
         }
         for (int i10 = 0; i10 < dVarArr.length; i10++) {
             i0.d dVar = this.a[i10];

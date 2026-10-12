@@ -1,7 +1,6 @@
 package h8;
 
 import a9.w;
-import ae.x;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -9,11 +8,12 @@ import android.os.RemoteException;
 import android.util.Log;
 import java.util.ArrayList;
 import n6.l;
-import v7.h8;
-import v7.u7;
-import v7.u8;
+import org.telegram.messenger.BuildConfig;
+import v7.a8;
+import v7.o8;
+import v7.s7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class e {
     public static boolean a = false;
@@ -39,20 +39,20 @@ public abstract class e {
         synchronized (e.class) {
             try {
                 l.i(context, "Context is null");
-                Log.d("e", "preferredRenderer: ".concat("null"));
+                Log.d("e", "preferredRenderer: ".concat(BuildConfig.BETA_URL));
                 if (a) {
                     return 0;
                 }
                 try {
-                    i8.e a2 = h8.a(context);
+                    i8.e a2 = a8.a(context);
                     try {
                         i8.a V0 = a2.V0();
                         l.h(V0);
-                        u7.a = V0;
+                        s7.a = V0;
                         s7.e X0 = a2.X0();
-                        if (u8.a == null) {
+                        if (o8.a == null) {
                             l.i(X0, "delegate must not be null");
-                            u8.a = X0;
+                            o8.a = X0;
                         }
                         a = true;
                         try {
@@ -67,17 +67,17 @@ public abstract class e {
                             s7.b.c(N0, bVar);
                             N0.writeInt(0);
                             a2.R0(N0, 10);
-                        } catch (RemoteException e7) {
-                            Log.e("e", "Failed to retrieve renderer type or log initialization.", e7);
+                        } catch (RemoteException e) {
+                            Log.e("e", "Failed to retrieve renderer type or log initialization.", e);
                         }
                         int i10 = b;
-                        Log.d("e", "loadedRenderer: ".concat(i10 != 1 ? i10 != 2 ? "null" : "LATEST" : "LEGACY"));
+                        Log.d("e", "loadedRenderer: ".concat(i10 != 1 ? i10 != 2 ? BuildConfig.BETA_URL : "LATEST" : "LEGACY"));
                         return 0;
-                    } catch (RemoteException e10) {
-                        throw new x(e10);
+                    } catch (RemoteException e7) {
+                        throw new androidx.car.app.j(e7);
                     }
-                } catch (k6.f e11) {
-                    return e11.a;
+                } catch (k6.f e10) {
+                    return e10.a;
                 }
             } catch (Throwable th2) {
                 throw th2;

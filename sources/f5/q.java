@@ -1,16 +1,16 @@
 package f5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class q {
     public final long a;
     public final long b;
     public final long c;
 
-    public q(long j3, long j10, long j11) {
-        this.a = j3;
-        this.b = j10;
-        this.c = j11;
+    public q(long j10, long j11, long j12) {
+        this.a = j10;
+        this.b = j11;
+        this.c = j12;
     }
 
     public final boolean equals(Object obj) {
@@ -25,11 +25,11 @@ public final class q {
     }
 
     public final int hashCode() {
-        long j3 = this.a;
-        long j10 = this.b;
-        int i10 = ((((int) (j3 ^ (j3 >>> 32))) * 31) + ((int) (j10 ^ (j10 >>> 32)))) * 31;
-        long j11 = this.c;
-        return i10 + ((int) ((j11 >>> 32) ^ j11));
+        long j10 = this.a;
+        long j11 = this.b;
+        int i10 = ((((int) (j10 ^ (j10 >>> 32))) * 31) + ((int) (j11 ^ (j11 >>> 32)))) * 31;
+        long j12 = this.c;
+        return i10 + ((int) ((j12 >>> 32) ^ j12));
     }
 
     public final String toString() {

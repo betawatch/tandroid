@@ -1,93 +1,73 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ep extends org.telegram.ui.Components.m90 {
-    public final /* synthetic */ Context w;
-    public final /* synthetic */ ip x;
+public final /* synthetic */ class ep implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ np b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ep(ip ipVar, Context context, TLRPC.Chat chat, Context context2) {
-        super(context, chat);
-        this.x = ipVar;
-        this.w = context2;
+    public /* synthetic */ ep(np npVar, int i10) {
+        this.a = i10;
+        this.b = npVar;
     }
 
-    @Override // org.telegram.ui.Components.m90
-    public final boolean a(final boolean z10, org.telegram.ui.Components.k90 k90Var) {
-        TLRPC.ChatFull chatFull;
-        int i10;
-        org.telegram.ui.ActionBar.e6 e6Var;
-        ip ipVar = this.x;
-        if (!ipVar.V || (chatFull = ipVar.Y) == null || (i10 = chatFull.invitesCount) == 0) {
-            return true;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        np npVar = this.b;
+        switch (i10) {
+            case 0:
+                TLRPC.Chat currentChannel = ((org.telegram.ui.Cells.n) view.getParent()).getCurrentChannel();
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(npVar.getParentActivity());
+                String string = LocaleController.getString(R.string.AppName);
+                org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
+                a2Var.R = string;
+                if (npVar.a0) {
+                    a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, npVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                } else {
+                    a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlert", R.string.RevokeLinkAlert, npVar.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
+                }
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new m4.z0(19, npVar, currentChannel));
+                npVar.showDialog(a2Var);
+                break;
+            case 1:
+                if (!npVar.V) {
+                    npVar.V = true;
+                    npVar.b0();
+                    break;
+                }
+                break;
+            case 2:
+                if (npVar.V) {
+                    if (!npVar.c0) {
+                        npVar.Z();
+                        break;
+                    } else {
+                        npVar.V = false;
+                        npVar.b0();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                ei0 ei0Var = new ei0(npVar.Z, 0L, 0);
+                ei0Var.g0(npVar.Y, npVar.l0);
+                npVar.presentFragment(ei0Var);
+                break;
+            default:
+                boolean z10 = !npVar.b0;
+                npVar.b0 = z10;
+                ((org.telegram.ui.Cells.w8) view).setChecked(z10);
+                break;
         }
-        String str = ipVar.a0 ? z10 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z10 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
-        Context context = this.w;
-        e6Var = ((org.telegram.ui.ActionBar.n2) ipVar).resourceProvider;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, e6Var);
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.ApproveNewMembersApplyToLinksTitle);
-        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString(str, i10, new Object[0]));
-        final int i11 = 0;
-        alertDialog$Builder.k(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksApply), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.dp
-            public final /* synthetic */ ep b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.ui.ActionBar.a2
-            public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i12) {
-                switch (i11) {
-                    case 0:
-                        boolean z11 = z10;
-                        ep epVar = this.b;
-                        epVar.setJoinRequest(z11);
-                        epVar.x.W = true;
-                        break;
-                    default:
-                        boolean z12 = z10;
-                        ep epVar2 = this.b;
-                        epVar2.setJoinRequest(z12);
-                        epVar2.x.W = false;
-                        break;
-                }
-            }
-        });
-        final int i12 = 1;
-        alertDialog$Builder.h(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksDontApply), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.dp
-            public final /* synthetic */ ep b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // org.telegram.ui.ActionBar.a2
-            public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i122) {
-                switch (i12) {
-                    case 0:
-                        boolean z11 = z10;
-                        ep epVar = this.b;
-                        epVar.setJoinRequest(z11);
-                        epVar.x.W = true;
-                        break;
-                    default:
-                        boolean z12 = z10;
-                        ep epVar2 = this.b;
-                        epVar2.setJoinRequest(z12);
-                        epVar2.x.W = false;
-                        break;
-                }
-            }
-        });
-        ipVar.showDialog(alertDialog$Builder.a);
-        return false;
     }
 }

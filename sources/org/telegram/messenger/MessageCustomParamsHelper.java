@@ -8,11 +8,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class MessageCustomParamsHelper {
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class Params_v1 extends TLObject {
         private static final int VERSION = 1;
         int flags;
@@ -197,7 +197,7 @@ public class MessageCustomParamsHelper {
         }
         int readInt32 = nativeByteBuffer.readInt32(true);
         if (readInt32 != 1) {
-            throw new RuntimeException(hg.c.h(readInt32, "can't read params version = "));
+            throw new RuntimeException(i2.d.i(readInt32, "can't read params version = "));
         }
         new Params_v1(message).readParams(nativeByteBuffer, true);
     }
@@ -211,8 +211,8 @@ public class MessageCustomParamsHelper {
             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(params_v1.getObjectSize());
             params_v1.serializeToStream(nativeByteBuffer);
             return nativeByteBuffer;
-        } catch (Exception e7) {
-            e7.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }

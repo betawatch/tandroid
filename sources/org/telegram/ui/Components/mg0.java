@@ -1,73 +1,245 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.net.Uri;
+import android.net.http.SslError;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import android.webkit.RenderProcessGoneDetail;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import java.io.ByteArrayInputStream;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.fi1;
+import org.telegram.ui.yj1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class mg0 extends LinearLayout {
-    public final LinearLayout a;
-    public final LinearLayout b;
+public final class mg0 extends WebViewClient {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public mg0(Context context) {
-        super(context);
-        setOrientation(0);
-        setGravity(17);
-        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        LinearLayout a2 = a(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia));
-        this.b = a2;
-        addView(a2, w7.x5.n(-2, -1));
-        LinearLayout a10 = a(R.drawable.media_button_restore, LocaleController.getString(R.string.Edit));
-        this.a = a10;
-        addView(a10, w7.x5.n(-2, -1));
+    public /* synthetic */ mg0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final LinearLayout a(int i10, String str) {
-        Context context = getContext();
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        linearLayout.setGravity(17);
-        linearLayout.setPadding(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f));
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(i10);
-        linearLayout.addView(imageView, w7.x5.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
-        TextView textView = new TextView(context);
-        textView.setGravity(16);
-        textView.setText(str);
-        textView.setTextSize(2, 14.0f);
-        textView.setSingleLine(true);
-        textView.setTextColor(-1);
-        linearLayout.addView(textView, w7.x5.n(-2, -2));
-        w7.z5.a(linearLayout);
-        return linearLayout;
+    public boolean a(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return false;
+        }
+        Uri parse = Uri.parse(str);
+        if (!"tg".equals(parse.getScheme())) {
+            return false;
+        }
+        ((yj1) this.b).getClass();
+        ((yj1) this.b).finishFragment(false);
+        try {
+            Intent intent = new Intent("android.intent.action.VIEW", parse);
+            intent.setComponent(new ComponentName(ApplicationLoader.applicationContext.getPackageName(), LaunchActivity.class.getName()));
+            intent.putExtra("com.android.browser.application_id", ApplicationLoader.applicationContext.getPackageName());
+            ApplicationLoader.applicationContext.startActivity(intent);
+            return true;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return true;
+        }
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        LinearLayout linearLayout = this.a;
-        ViewGroup.LayoutParams layoutParams = linearLayout.getLayoutParams();
-        ViewGroup.LayoutParams layoutParams2 = linearLayout.getLayoutParams();
-        int size = View.MeasureSpec.getSize(i10);
-        int size2 = View.MeasureSpec.getSize(i11);
-        int paddingRight = getPaddingRight() + getPaddingLeft();
-        int paddingBottom = getPaddingBottom() + getPaddingTop();
-        int max = Math.max(0, size - paddingRight);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, size2 - paddingBottom), TLObject.FLAG_30);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_31);
-        linearLayout.measure(makeMeasureSpec2, makeMeasureSpec);
-        LinearLayout linearLayout2 = this.b;
-        linearLayout2.measure(makeMeasureSpec2, makeMeasureSpec);
-        int min = Math.min(Math.max(linearLayout.getMeasuredWidth(), linearLayout2.getMeasuredWidth()), max / 2);
-        layoutParams2.width = min;
-        layoutParams.width = min;
-        super.onMeasure(i10, i11);
+    @Override // android.webkit.WebViewClient
+    public void onLoadResource(WebView webView, String str) {
+        switch (this.a) {
+            case 1:
+                if (!a(str)) {
+                    super.onLoadResource(webView, str);
+                    break;
+                }
+                break;
+            default:
+                super.onLoadResource(webView, str);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public void onPageFinished(WebView webView, String str) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                super.onPageFinished(webView, str);
+                org.telegram.ui.pu0 pu0Var = (org.telegram.ui.pu0) obj;
+                View view = pu0Var.r;
+                if (!pu0Var.x) {
+                    pu0Var.n.setVisibility(4);
+                    pu0Var.h.setVisibility(4);
+                    view.setEnabled(true);
+                    view.setAlpha(1.0f);
+                    break;
+                }
+                break;
+            case 1:
+                super.onPageFinished(webView, str);
+                yj1 yj1Var = (yj1) obj;
+                gr grVar = yj1Var.c;
+                if (grVar != null && grVar.getVisibility() == 0) {
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    yj1Var.b.getContentView().setVisibility(0);
+                    yj1Var.b.setEnabled(true);
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(yj1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(yj1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(yj1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(yj1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(yj1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(yj1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
+                    animatorSet.addListener(new fi1(this, 8));
+                    animatorSet.setDuration(150L);
+                    animatorSet.start();
+                    break;
+                }
+                break;
+            default:
+                super.onPageFinished(webView, str);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
+        switch (this.a) {
+            case 2:
+                if (webResourceRequest.isForMainFrame()) {
+                    qi.i iVar = (qi.i) this.b;
+                    if (webView == iVar.o) {
+                        iVar.f();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onReceivedError(webView, webResourceRequest, webResourceError);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
+        switch (this.a) {
+            case 2:
+                if (webResourceRequest.isForMainFrame()) {
+                    qi.i iVar = (qi.i) this.b;
+                    if (webView == iVar.o) {
+                        iVar.f();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
+        switch (this.a) {
+            case 2:
+                sslErrorHandler.cancel();
+                qi.i iVar = (qi.i) this.b;
+                if (webView == iVar.o) {
+                    iVar.f();
+                    break;
+                }
+                break;
+            default:
+                super.onReceivedSslError(webView, sslErrorHandler, sslError);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
+        switch (this.a) {
+            case 2:
+                qi.i iVar = (qi.i) this.b;
+                if (webView != iVar.o) {
+                    return true;
+                }
+                iVar.f();
+                return true;
+            default:
+                return super.onRenderProcessGone(webView, renderProcessGoneDetail);
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
+        switch (this.a) {
+            case 0:
+                String uri = webResourceRequest.getUrl().toString();
+                if (!((org.telegram.ui.pu0) this.b).x || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
+                    return null;
+                }
+                Utilities.externalNetworkQueue.postRunnable(new v70(this, uri, webResourceRequest, 4));
+                return null;
+            case 1:
+            default:
+                return super.shouldInterceptRequest(webView, webResourceRequest);
+            case 2:
+                Uri url = webResourceRequest.getUrl();
+                if ("http".equalsIgnoreCase(url.getScheme()) || "https".equalsIgnoreCase(url.getScheme())) {
+                    qi.i iVar = (qi.i) this.b;
+                    iVar.getClass();
+                    String path = url.getPath();
+                    if (!"https".equalsIgnoreCase(url.getScheme()) || !iVar.c.equalsIgnoreCase(url.getHost()) || url.getUserInfo() != null || ((url.getPort() != -1 && url.getPort() != 443) || path == null || !path.startsWith(iVar.d))) {
+                        return new WebResourceResponse("text/plain", "UTF-8", new ByteArrayInputStream(new byte[0]));
+                    }
+                }
+                return null;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        switch (this.a) {
+            case 0:
+                if (!((org.telegram.ui.pu0) this.b).x) {
+                    break;
+                } else {
+                    pf.d.s(webView.getContext(), str);
+                    break;
+                }
+            case 1:
+                if (a(str) || super.shouldOverrideUrlLoading(webView, str)) {
+                }
+                break;
+        }
+        return super.shouldOverrideUrlLoading(webView, str);
+    }
+
+    @Override // android.webkit.WebViewClient
+    public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
+        switch (this.a) {
+            case 2:
+                if (webResourceRequest.isForMainFrame()) {
+                    qi.i iVar = (qi.i) this.b;
+                    Uri url = webResourceRequest.getUrl();
+                    if (url != null) {
+                        if (iVar.g.equals(url.toString())) {
+                            return false;
+                        }
+                    } else {
+                        iVar.getClass();
+                    }
+                }
+                return true;
+            default:
+                return super.shouldOverrideUrlLoading(webView, webResourceRequest);
+        }
     }
 }

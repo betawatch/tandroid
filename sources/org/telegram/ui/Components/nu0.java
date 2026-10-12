@@ -1,22 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface nu0 {
-    void E();
+public final /* synthetic */ class nu0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ou0 b;
+    public final /* synthetic */ String c;
 
-    void R();
+    public /* synthetic */ nu0(ou0 ou0Var, String str, int i10) {
+        this.a = i10;
+        this.b = ou0Var;
+        this.c = str;
+    }
 
-    boolean T();
-
-    qm0 f();
-
-    TLRPC.Chat g();
-
-    boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view);
-
-    boolean q();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ou0 ou0Var = this.b;
+                String str = this.c;
+                ou0Var.getClass();
+                AndroidUtilities.runOnUIThread(new nu0(ou0Var, str, 1));
+                break;
+            default:
+                ou0 ou0Var2 = this.b;
+                String str2 = this.c;
+                ArrayList arrayList = null;
+                ou0Var2.f = null;
+                if (!ChatObject.isChannel(ou0Var2.n) && ou0Var2.s.d1 != null) {
+                    arrayList = new ArrayList(ou0Var2.s.d1.participants.participants);
+                }
+                ou0Var2.r = 2;
+                if (arrayList != null) {
+                    Utilities.searchQueue.postRunnable(new v70((lm0) ou0Var2, str2, arrayList, 12));
+                } else {
+                    ou0Var2.r = 1;
+                }
+                ou0Var2.e.g(str2, false, false, true, false, ChatObject.isChannel(ou0Var2.n) ? ou0Var2.n.id : 0L, false, 2, 1);
+                break;
+        }
+    }
 }

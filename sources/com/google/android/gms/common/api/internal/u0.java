@@ -4,16 +4,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import v7.h5;
+import v7.i5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class u0 extends BroadcastReceiver {
     public Context a;
-    public final h5 b;
+    public final i5 b;
 
-    public u0(h5 h5Var) {
-        this.b = h5Var;
+    public u0(i5 i5Var) {
+        this.b = i5Var;
     }
 
     public final synchronized void a() {

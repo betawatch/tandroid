@@ -1,155 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.util.Property;
-import android.util.SparseArray;
-import android.view.View;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class qs0 extends bi.z {
-    public final /* synthetic */ bw0 G;
+public final class qs0 extends Drawable {
+    public final /* synthetic */ int a;
+    public final ShapeDrawable b;
+    public final Rect c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qs0(bw0 bw0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, long j3) {
-        super(context, n2Var, j3);
-        this.G = bw0Var;
+    public qs0(ns0 ns0Var) {
+        this.a = 1;
+        this.b = org.telegram.ui.ActionBar.g6.d0(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), 0);
+        this.c = new Rect();
     }
 
-    @Override // bi.z
-    public final boolean c(MessageObject messageObject) {
-        bw0 bw0Var = this.G;
-        return bw0Var.Z0[(messageObject.getDialogId() > bw0Var.j1 ? 1 : (messageObject.getDialogId() == bw0Var.j1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0;
-    }
-
-    @Override // bi.z
-    public final boolean e(MessageObject messageObject) {
-        bw0 bw0Var = this.G;
-        ArrayList arrayList = bw0Var.N0;
-        NumberTextView numberTextView = bw0Var.A0;
-        SparseArray[] sparseArrayArr = bw0Var.Z0;
-        if (messageObject != null) {
-            char c10 = messageObject.getDialogId() == bw0Var.j1 ? (char) 0 : (char) 1;
-            if (sparseArrayArr[c10].indexOfKey(messageObject.getId()) < 0) {
-                if (sparseArrayArr[1].size() + sparseArrayArr[0].size() < 100) {
-                    sparseArrayArr[c10].put(messageObject.getId(), messageObject);
-                    if (!messageObject.canDeleteMessage(false, null)) {
-                        bw0Var.a1++;
-                    }
-                    if (bw0Var.C1) {
-                        numberTextView.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
-                    } else {
-                        AndroidUtilities.hideKeyboard(bw0Var.v1.getParentActivity().getCurrentFocus());
-                        int i10 = 8;
-                        bw0Var.l0.setVisibility(bw0Var.a1 == 0 ? 0 : 8);
-                        org.telegram.ui.ActionBar.v0 v0Var = bw0Var.u0;
-                        if (v0Var != null) {
-                            v0Var.setVisibility((bw0Var.getClosestTab() == 8 || bw0Var.getClosestTab() == 13) ? 8 : 0);
-                        }
-                        org.telegram.ui.ActionBar.v0 v0Var2 = bw0Var.v0;
-                        if (v0Var2 != null) {
-                            v0Var2.setVisibility(8);
-                        }
-                        org.telegram.ui.ActionBar.v0 v0Var3 = bw0Var.w0;
-                        if (v0Var3 != null) {
-                            v0Var3.setVisibility(8);
-                        }
-                        org.telegram.ui.ActionBar.v0 v0Var4 = bw0Var.t0;
-                        if (v0Var4 != null) {
-                            if (bw0Var.getClosestTab() != 8 && bw0Var.getClosestTab() != 13) {
-                                i10 = 0;
-                            }
-                            v0Var4.setVisibility(i10);
-                        }
-                        numberTextView.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), false);
-                        AnimatorSet animatorSet = new AnimatorSet();
-                        ArrayList arrayList2 = new ArrayList();
-                        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                            View view = (View) arrayList.get(i11);
-                            AndroidUtilities.clearDrawableAnimation(view);
-                            arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 0.1f, 1.0f));
-                        }
-                        animatorSet.playTogether(arrayList2);
-                        animatorSet.setDuration(250L);
-                        animatorSet.start();
-                        bw0Var.b1 = false;
-                        bw0Var.b1(true);
-                    }
-                    j();
-                    return true;
-                }
-            }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                Rect bounds = getBounds();
+                Rect rect = this.c;
+                rect.set(bounds);
+                rect.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
+                ShapeDrawable shapeDrawable = this.b;
+                shapeDrawable.setBounds(rect);
+                shapeDrawable.draw(canvas);
+                break;
+            default:
+                Rect bounds2 = getBounds();
+                Rect rect2 = this.c;
+                rect2.set(bounds2);
+                rect2.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
+                ShapeDrawable shapeDrawable2 = this.b;
+                shapeDrawable2.setBounds(rect2);
+                shapeDrawable2.draw(canvas);
+                break;
         }
-        return false;
     }
 
-    @Override // bi.z
-    public final boolean g(MessageObject messageObject) {
-        bw0 bw0Var = this.G;
-        ArrayList arrayList = bw0Var.N0;
-        SparseArray[] sparseArrayArr = bw0Var.Z0;
-        if (messageObject != null) {
-            int i10 = 1;
-            char c10 = messageObject.getDialogId() == bw0Var.j1 ? (char) 0 : (char) 1;
-            if (sparseArrayArr[c10].indexOfKey(messageObject.getId()) >= 0) {
-                sparseArrayArr[c10].remove(messageObject.getId());
-                if (!messageObject.canDeleteMessage(false, null)) {
-                    bw0Var.a1--;
-                }
-                if (sparseArrayArr[0].size() == 0 && sparseArrayArr[1].size() == 0) {
-                    AndroidUtilities.hideKeyboard(bw0Var.v1.getParentActivity().getCurrentFocus());
-                    sparseArrayArr[0].clear();
-                    sparseArrayArr[1].clear();
-                    int i11 = 8;
-                    bw0Var.l0.setVisibility(bw0Var.a1 == 0 ? 0 : 8);
-                    org.telegram.ui.ActionBar.v0 v0Var = bw0Var.u0;
-                    if (v0Var != null) {
-                        v0Var.setVisibility((bw0Var.getClosestTab() == 8 || bw0Var.getClosestTab() == 13) ? 8 : 0);
-                    }
-                    org.telegram.ui.ActionBar.v0 v0Var2 = bw0Var.v0;
-                    if (v0Var2 != null) {
-                        v0Var2.setVisibility(8);
-                    }
-                    org.telegram.ui.ActionBar.v0 v0Var3 = bw0Var.w0;
-                    if (v0Var3 != null) {
-                        v0Var3.setVisibility(8);
-                    }
-                    org.telegram.ui.ActionBar.v0 v0Var4 = bw0Var.t0;
-                    if (v0Var4 != null) {
-                        if (bw0Var.getClosestTab() != 8 && bw0Var.getClosestTab() != 13) {
-                            i11 = 0;
-                        }
-                        v0Var4.setVisibility(i11);
-                    }
-                    AnimatorSet animatorSet = new AnimatorSet();
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                        View view = (View) arrayList.get(i12);
-                        AndroidUtilities.clearDrawableAnimation(view);
-                        arrayList2.add(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.SCALE_Y, 1.0f, 0.1f));
-                    }
-                    animatorSet.playTogether(arrayList2);
-                    animatorSet.setDuration(250L);
-                    animatorSet.start();
-                    bw0Var.b1 = false;
-                    AndroidUtilities.runOnUIThread(new or0(this, i10), 20L);
-                } else {
-                    bw0Var.A0.a(sparseArrayArr[1].size() + sparseArrayArr[0].size(), true);
-                }
-                j();
-                return true;
-            }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
         }
-        return false;
+        return -2;
     }
 
-    @Override // bi.z
-    public final int getStartedTrackingX() {
-        return this.G.z1;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.setAlpha(i10);
+                break;
+            default:
+                this.b.setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        int i10 = this.a;
+    }
+
+    public qs0(rs0 rs0Var) {
+        this.a = 0;
+        int dp = AndroidUtilities.dp(16.0f);
+        int dp2 = AndroidUtilities.dp(16.0f);
+        int i10 = org.telegram.ui.ActionBar.g6.d6;
+        org.telegram.ui.ActionBar.c6 c6Var = rs0Var.c;
+        this.b = org.telegram.ui.ActionBar.g6.d0(dp, dp2, org.telegram.ui.ActionBar.g6.v(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), org.telegram.ui.ActionBar.g6.m1(0.04f, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var))));
+        this.c = new Rect();
+    }
+
+    private final void a(ColorFilter colorFilter) {
+    }
+
+    private final void b(ColorFilter colorFilter) {
     }
 }

@@ -1,71 +1,82 @@
 package m4;
 
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Build;
+import java.util.concurrent.Executor;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b0 b;
-    public final /* synthetic */ r c;
+public final class b {
+    public static final Uri g = Uri.parse("content://androidx.car.app.connection");
+    public final Context a;
+    public final g0 b;
+    public final Executor c;
+    public final androidx.mediarouter.app.f d;
+    public final AtomicBoolean e;
+    public final AtomicBoolean f;
 
-    public /* synthetic */ b(b0 b0Var, r rVar, int i10) {
-        this.a = i10;
-        this.b = b0Var;
-        this.c = rVar;
+    public b(Context context, g0 g0Var) {
+        this.a = context.getApplicationContext();
+        this.b = g0Var;
+        Executor e = e2.a.e();
+        this.c = e;
+        this.d = new androidx.mediarouter.app.f(this, 6);
+        this.e = new AtomicBoolean();
+        this.f = new AtomicBoolean();
+        e.execute(new a(this, 1));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                b0 b0Var = this.b;
-                if (!b0Var.j()) {
-                    if (b0Var.x) {
-                        r rVar = this.c;
-                        if (!b0.k(rVar)) {
-                            if (b0Var.i(rVar)) {
-                                b0Var.x = false;
-                            }
-                        }
+    public static /* synthetic */ void a(b bVar) {
+        androidx.mediarouter.app.f fVar = bVar.d;
+        Context context = bVar.a;
+        IntentFilter intentFilter = new IntentFilter("androidx.car.app.connection.action.CAR_CONNECTION_UPDATED");
+        if (Build.VERSION.SDK_INT >= 33) {
+            context.registerReceiver(fVar, intentFilter, 2);
+        } else {
+            context.registerReceiver(fVar, intentFilter);
+        }
+        bVar.b();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:5:0x001e, code lost:
+    
+        if (r4 != null) goto L6;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b() {
+        Cursor query;
+        AtomicBoolean atomicBoolean = this.e;
+        boolean z10 = atomicBoolean.get();
+        boolean z11 = false;
+        try {
+            query = this.a.getContentResolver().query(g, new String[]{"CarConnectionState"}, null, null, null);
+        } catch (Exception unused) {
+        }
+        if (query != null) {
+            try {
+                int columnIndex = query.getColumnIndex("CarConnectionState");
+                if (columnIndex != -1 && query.moveToNext()) {
+                    boolean z12 = query.getInt(columnIndex) != 0;
+                    query.close();
+                    z11 = z12;
+                    atomicBoolean.set(z11);
+                    if (z10 != z11 || this.f.get()) {
                     }
-                    b0Var.e.getClass();
-                    break;
+                    this.b.run();
+                    return;
                 }
-                break;
-            case 1:
-                this.b.g.M0(this.c, TLObject.FLAG_31, 7, b1.O0(new j2.e(27)));
-                break;
-            case 2:
-                this.b.g.M0(this.c, TLObject.FLAG_31, 12, b1.O0(new q0(0)));
-                break;
-            case 3:
-                this.b.g.M0(this.c, TLObject.FLAG_31, 11, b1.O0(new j2.e(25)));
-                break;
-            case 4:
-                this.b.g.M0(this.c, TLObject.FLAG_31, 3, b1.O0(new q0(7)));
-                break;
-            case 5:
-                this.b.g.M0(this.c, TLObject.FLAG_31, 1, b1.O0(new j2.e(22)));
-                break;
-            case 6:
-                b1 b1Var = this.b.g;
-                b1Var.getClass();
-                r rVar2 = this.c;
-                b1Var.M0(rVar2, TLObject.FLAG_31, 1, b1.O0(new ah.b(27, b1Var, rVar2)));
-                break;
-            case 7:
-                b1 b1Var2 = this.b.g;
-                b1Var2.getClass();
-                r rVar3 = this.c;
-                b1Var2.M0(rVar3, TLObject.FLAG_31, 1, b1.O0(new ah.b(27, b1Var2, rVar3)));
-                break;
-            case 8:
-                this.b.g.M0(this.c, TLObject.FLAG_31, 1, b1.O0(new j2.e(22)));
-                break;
-            default:
-                this.b.g.M0(this.c, TLObject.FLAG_31, 9, b1.O0(new q0(1)));
-                break;
+            } finally {
+            }
+        }
+        query.close();
+        atomicBoolean.set(z11);
+        if (z10 != z11) {
         }
     }
 }

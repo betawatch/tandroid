@@ -13,18 +13,18 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
     @Override // java.lang.Comparable
     /* renamed from: E */
     public final /* synthetic */ int compareTo(b bVar) {
-        return j$.com.android.tools.r8.a.e(this, bVar);
+        return j$.com.android.tools.r8.a.d(this, bVar);
     }
 
-    public abstract b J(long j3);
+    public abstract b J(long j10);
 
-    public abstract b K(long j3);
+    public abstract b K(long j10);
 
-    public abstract b L(long j3);
+    public abstract b L(long j10);
 
     @Override // j$.time.chrono.b, j$.time.temporal.l
     public /* synthetic */ boolean e(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.q(this, oVar);
+        return j$.com.android.tools.r8.a.p(this, oVar);
     }
 
     @Override // j$.time.temporal.l
@@ -39,7 +39,7 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
 
     @Override // j$.time.temporal.l
     public final /* synthetic */ Object m(j$.time.format.a aVar) {
-        return j$.com.android.tools.r8.a.s(this, aVar);
+        return j$.com.android.tools.r8.a.r(this, aVar);
     }
 
     @Override // j$.time.temporal.m
@@ -61,32 +61,32 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
     }
 
     @Override // j$.time.temporal.Temporal
-    public b d(long j3, j$.time.temporal.q qVar) {
+    public b d(long j10, j$.time.temporal.q qVar) {
         boolean z10 = qVar instanceof ChronoUnit;
         if (!z10) {
             if (!z10) {
-                return G(a(), qVar.j(this, j3));
+                return G(a(), qVar.j(this, j10));
             }
             throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
         switch (c.a[((ChronoUnit) qVar).ordinal()]) {
             case 1:
-                return J(j3);
+                return J(j10);
             case 2:
-                return J(j$.com.android.tools.r8.a.T(j3, 7));
+                return J(j$.com.android.tools.r8.a.S(j10, 7));
             case 3:
-                return K(j3);
+                return K(j10);
             case 4:
-                return L(j3);
+                return L(j10);
             case 5:
-                return L(j$.com.android.tools.r8.a.T(j3, 10));
+                return L(j$.com.android.tools.r8.a.S(j10, 10));
             case 6:
-                return L(j$.com.android.tools.r8.a.T(j3, 100));
+                return L(j$.com.android.tools.r8.a.S(j10, 100));
             case 7:
-                return L(j$.com.android.tools.r8.a.T(j3, MediaDataController.MAX_STYLE_RUNS_COUNT));
+                return L(j$.com.android.tools.r8.a.S(j10, MediaDataController.MAX_STYLE_RUNS_COUNT));
             case 8:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return c(j$.com.android.tools.r8.a.O(y(aVar), j3), (j$.time.temporal.o) aVar);
+                return c(j$.com.android.tools.r8.a.N(y(aVar), j10), (j$.time.temporal.o) aVar);
             default:
                 throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
@@ -141,7 +141,7 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
         if (this == obj) {
             return true;
         }
-        return (obj instanceof b) && j$.com.android.tools.r8.a.e(this, (b) obj) == 0;
+        return (obj instanceof b) && j$.com.android.tools.r8.a.d(this, (b) obj) == 0;
     }
 
     @Override // j$.time.chrono.b
@@ -175,17 +175,17 @@ public abstract class d implements b, Temporal, j$.time.temporal.m, Serializable
     }
 
     @Override // j$.time.temporal.Temporal
-    public b c(long j3, j$.time.temporal.o oVar) {
+    public b c(long j10, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             throw new j$.time.temporal.r(j$.time.c.a("Unsupported field: ", oVar));
         }
-        return G(a(), oVar.q(this, j3));
+        return G(a(), oVar.q(this, j10));
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: t, reason: merged with bridge method [inline-methods] */
-    public b w(long j3, j$.time.temporal.q qVar) {
-        return G(a(), j$.time.temporal.p.b(this, j3, qVar));
+    public b w(long j10, j$.time.temporal.q qVar) {
+        return G(a(), j$.time.temporal.p.b(this, j10, qVar));
     }
 
     @Override // j$.time.chrono.b

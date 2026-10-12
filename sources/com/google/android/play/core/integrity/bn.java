@@ -12,7 +12,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 final class bn {
     final a9.e a;
@@ -44,12 +44,12 @@ final class bn {
         eVar.a().post(new be(this, taskCompletionSource, context));
     }
 
-    public static Bundle a(bn bnVar, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j3, long j10, int i10) {
+    public static Bundle a(bn bnVar, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j10, long j11, int i10) {
         Bundle bundle = new Bundle();
         bundle.putString("package.name", bnVar.c);
-        bundle.putLong("cloud.prj", j3);
+        bundle.putLong("cloud.prj", j10);
         bundle.putString("nonce", standardIntegrityTokenRequest.requestHash());
-        bundle.putLong("warm.up.sid", j10);
+        bundle.putLong("warm.up.sid", j11);
         bundle.putInt("playcore.integrity.version.major", 1);
         bundle.putInt("playcore.integrity.version.minor", 4);
         bundle.putInt("playcore.integrity.version.patch", 0);
@@ -61,10 +61,10 @@ final class bn {
         return bundle;
     }
 
-    public static Bundle b(bn bnVar, long j3, int i10) {
+    public static Bundle b(bn bnVar, long j10, int i10) {
         Bundle bundle = new Bundle();
         bundle.putString("package.name", bnVar.c);
-        bundle.putLong("cloud.prj", j3);
+        bundle.putLong("cloud.prj", j10);
         bundle.putInt("playcore.integrity.version.major", 1);
         bundle.putInt("playcore.integrity.version.minor", 4);
         bundle.putInt("playcore.integrity.version.patch", 0);
@@ -91,17 +91,17 @@ final class bn {
         return taskCompletionSource.getTask();
     }
 
-    public final Task d(StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j3, long j10, int i10) {
-        this.b.b("requestExpressIntegrityToken(%s)", Long.valueOf(j10));
+    public final Task d(StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j10, long j11, int i10) {
+        this.b.b("requestExpressIntegrityToken(%s)", Long.valueOf(j11));
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.c(new bg(this, taskCompletionSource, 0, standardIntegrityTokenRequest, j3, j10, taskCompletionSource), taskCompletionSource);
+        this.a.c(new bg(this, taskCompletionSource, 0, standardIntegrityTokenRequest, j10, j11, taskCompletionSource), taskCompletionSource);
         return taskCompletionSource.getTask();
     }
 
-    public final Task e(long j3, int i10) {
-        this.b.b("warmUpIntegrityToken(%s)", Long.valueOf(j3));
+    public final Task e(long j10, int i10) {
+        this.b.b("warmUpIntegrityToken(%s)", Long.valueOf(j10));
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.c(new bf(this, taskCompletionSource, 0, j3, taskCompletionSource), taskCompletionSource);
+        this.a.c(new bf(this, taskCompletionSource, 0, j10, taskCompletionSource), taskCompletionSource);
         return taskCompletionSource.getTask();
     }
 }

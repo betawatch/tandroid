@@ -1,39 +1,40 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c9 {
-    public int a;
-    public boolean b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+public final class c9 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ h9 d;
 
-    public final c9 a() {
-        c9 c9Var = new c9();
-        c9Var.c = this.c;
-        c9Var.d = this.d;
-        c9Var.e = this.e;
-        c9Var.f = this.f;
-        c9Var.b = this.b;
-        return c9Var;
+    public c9(h9 h9Var, float f7, float f10, boolean z10) {
+        this.d = h9Var;
+        this.a = f7;
+        this.b = f10;
+        this.c = z10;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        h9 h9Var = this.d;
+        h9Var.N = floatValue;
+        float lerp = AndroidUtilities.lerp(this.a, this.b, floatValue);
+        kVar = ((org.telegram.ui.ActionBar.m2) h9Var).actionBar;
+        kVar.getTitleTextView().setAlpha(h9Var.N);
+        if (h9Var.F && !this.c) {
+            h9Var.i0(1.0f - h9Var.N, false);
         }
-        if (!(obj instanceof c9)) {
-            return false;
-        }
-        c9 c9Var = (c9) obj;
-        return this.c == c9Var.c && this.d == c9Var.d && this.e == c9Var.e && this.f == c9Var.f;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
+        h9Var.r.setTranslationY(lerp);
+        h9Var.x.setTranslationY(lerp);
+        h9Var.fragmentView.invalidate();
+        kVar2 = ((org.telegram.ui.ActionBar.m2) h9Var).actionBar;
+        kVar2.invalidate();
     }
 }

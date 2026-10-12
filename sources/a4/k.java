@@ -1,11 +1,12 @@
 package a4;
 
-import e2.d0;
+import e2.m0;
 import java.util.ArrayDeque;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class k implements z3.e {
+public abstract class k implements z3.f {
     public final ArrayDeque a = new ArrayDeque();
     public final ArrayDeque b;
     public final ArrayDeque c;
@@ -31,18 +32,18 @@ public abstract class k implements z3.e {
     }
 
     @Override // h2.e
-    public final void a(long j3) {
-        this.g = j3;
+    public final void a(long j10) {
+        this.g = j10;
     }
 
-    @Override // z3.e
-    public final void b(long j3) {
-        this.e = j3;
+    @Override // z3.f
+    public final void b(long j10) {
+        this.e = j10;
     }
 
     @Override // h2.e
     public final Object d() {
-        e2.d.g(this.d == null);
+        u6.p(this.d == null);
         ArrayDeque arrayDeque = this.a;
         if (arrayDeque.isEmpty()) {
             return null;
@@ -54,28 +55,28 @@ public abstract class k implements z3.e {
 
     @Override // h2.e
     public final void e(Object obj) {
-        z3.i iVar = (z3.i) obj;
-        e2.d.b(iVar == this.d);
-        i iVar2 = (i) iVar;
-        if (!iVar2.isEndOfStream()) {
-            long j3 = iVar2.e;
-            if (j3 != Long.MIN_VALUE) {
-                long j10 = this.g;
-                if (j10 != -9223372036854775807L && j3 < j10) {
-                    iVar2.clear();
-                    this.a.add(iVar2);
+        z3.j jVar = (z3.j) obj;
+        u6.g(jVar == this.d);
+        i iVar = (i) jVar;
+        if (!iVar.isEndOfStream()) {
+            long j10 = iVar.e;
+            if (j10 != Long.MIN_VALUE) {
+                long j11 = this.g;
+                if (j11 != -9223372036854775807L && j10 < j11) {
+                    iVar.clear();
+                    this.a.add(iVar);
                     this.d = null;
                 }
             }
         }
-        long j11 = this.f;
-        this.f = 1 + j11;
-        iVar2.s = j11;
-        this.c.add(iVar2);
+        long j12 = this.f;
+        this.f = 1 + j12;
+        iVar.s = j12;
+        this.c.add(iVar);
         this.d = null;
     }
 
-    public abstract l f();
+    public abstract k6.h f();
 
     @Override // h2.e
     public void flush() {
@@ -90,7 +91,7 @@ public abstract class k implements z3.e {
                 break;
             }
             i iVar = (i) arrayDeque2.poll();
-            String str = d0.a;
+            String str = m0.a;
             iVar.clear();
             arrayDeque.add(iVar);
         }
@@ -106,7 +107,7 @@ public abstract class k implements z3.e {
 
     @Override // h2.e
     /* renamed from: h, reason: merged with bridge method [inline-methods] */
-    public z3.j c() {
+    public z3.k c() {
         ArrayDeque arrayDeque = this.b;
         if (arrayDeque.isEmpty()) {
             return null;
@@ -117,7 +118,7 @@ public abstract class k implements z3.e {
                 return null;
             }
             i iVar = (i) arrayDeque2.peek();
-            String str = d0.a;
+            String str = m0.a;
             if (iVar.e > this.e) {
                 return null;
             }
@@ -125,23 +126,23 @@ public abstract class k implements z3.e {
             boolean isEndOfStream = iVar2.isEndOfStream();
             ArrayDeque arrayDeque3 = this.a;
             if (isEndOfStream) {
-                z3.j jVar = (z3.j) arrayDeque.pollFirst();
-                jVar.addFlag(4);
+                z3.k kVar = (z3.k) arrayDeque.pollFirst();
+                kVar.addFlag(4);
                 iVar2.clear();
                 arrayDeque3.add(iVar2);
-                return jVar;
+                return kVar;
             }
             g(iVar2);
             if (i()) {
-                l f7 = f();
-                z3.j jVar2 = (z3.j) arrayDeque.pollFirst();
-                long j3 = iVar2.e;
-                jVar2.timeUs = j3;
-                jVar2.a = f7;
-                jVar2.b = j3;
+                k6.h f7 = f();
+                z3.k kVar2 = (z3.k) arrayDeque.pollFirst();
+                long j10 = iVar2.e;
+                kVar2.timeUs = j10;
+                kVar2.a = f7;
+                kVar2.b = j10;
                 iVar2.clear();
                 arrayDeque3.add(iVar2);
-                return jVar2;
+                return kVar2;
             }
             iVar2.clear();
             arrayDeque3.add(iVar2);

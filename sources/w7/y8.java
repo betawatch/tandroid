@@ -1,35 +1,84 @@
 package w7;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
+import android.text.TextUtils;
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class y8 {
-    public static HashMap a(vc.a aVar) {
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
-        hashMap2.put("number", z8.e(aVar.a));
-        hashMap2.put("cvc", z8.e(aVar.b));
-        hashMap2.put("exp_month", aVar.c);
-        hashMap2.put("exp_year", aVar.d);
-        hashMap2.put("name", z8.e(aVar.e));
-        hashMap2.put("currency", z8.e(aVar.n));
-        hashMap2.put("address_line1", z8.e(aVar.f));
-        hashMap2.put("address_line2", z8.e(aVar.g));
-        hashMap2.put("address_city", z8.e(aVar.h));
-        hashMap2.put("address_zip", z8.e(aVar.j));
-        hashMap2.put("address_state", z8.e(aVar.i));
-        hashMap2.put("address_country", z8.e(aVar.k));
-        Iterator it = new HashSet(hashMap2.keySet()).iterator();
-        while (it.hasNext()) {
-            String str = (String) it.next();
-            if (hashMap2.get(str) == null) {
-                hashMap2.remove(str);
+    public static String a;
+
+    public static String a(LaunchActivity launchActivity) {
+        PackageManager packageManager;
+        ApplicationInfo applicationInfo;
+        String str = a;
+        if (str != null) {
+            return str;
+        }
+        PackageManager packageManager2 = launchActivity.getPackageManager();
+        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("http://www.example.com"));
+        ResolveInfo resolveActivity = packageManager2.resolveActivity(intent, 0);
+        String str2 = resolveActivity != null ? resolveActivity.activityInfo.packageName : null;
+        List<ResolveInfo> queryIntentActivities = packageManager2.queryIntentActivities(intent, 0);
+        ArrayList arrayList = new ArrayList();
+        for (ResolveInfo resolveInfo : queryIntentActivities) {
+            Intent intent2 = new Intent();
+            intent2.setAction("android.support.customtabs.action.CustomTabsService");
+            intent2.setPackage(resolveInfo.activityInfo.packageName);
+            if (packageManager2.resolveService(intent2, 0) != null) {
+                arrayList.add(resolveInfo.activityInfo.packageName);
             }
         }
-        hashMap.put("card", hashMap2);
-        return hashMap;
+        if (arrayList.isEmpty()) {
+            a = null;
+        } else if (arrayList.size() == 1) {
+            a = (String) arrayList.get(0);
+        } else {
+            if (!TextUtils.isEmpty(str2)) {
+                try {
+                    List<ResolveInfo> queryIntentActivities2 = launchActivity.getPackageManager().queryIntentActivities(intent, 64);
+                    if (queryIntentActivities2 != null && queryIntentActivities2.size() != 0) {
+                        for (ResolveInfo resolveInfo2 : queryIntentActivities2) {
+                            IntentFilter intentFilter = resolveInfo2.filter;
+                            if (intentFilter != null && intentFilter.countDataAuthorities() != 0 && intentFilter.countDataPaths() != 0 && resolveInfo2.activityInfo != null) {
+                                break;
+                            }
+                        }
+                    }
+                } catch (RuntimeException unused) {
+                    Log.e("CustomTabsHelper", "Runtime exception while getting specialized handlers");
+                }
+                if (arrayList.contains(str2)) {
+                    a = str2;
+                }
+            }
+            if (arrayList.contains("com.android.chrome")) {
+                a = "com.android.chrome";
+            } else if (arrayList.contains("com.chrome.beta")) {
+                a = "com.chrome.beta";
+            } else if (arrayList.contains("com.chrome.dev")) {
+                a = "com.chrome.dev";
+            } else if (arrayList.contains("com.google.android.apps.chrome")) {
+                a = "com.google.android.apps.chrome";
+            }
+        }
+        try {
+            if ("com.sec.android.app.sbrowser".equalsIgnoreCase(a) && (applicationInfo = (packageManager = ApplicationLoader.applicationContext.getPackageManager()).getApplicationInfo("com.android.chrome", 0)) != null && applicationInfo.enabled) {
+                packageManager.getPackageInfo("com.android.chrome", 1);
+                a = "com.android.chrome";
+            }
+        } catch (Throwable unused2) {
+        }
+        return a;
     }
 }

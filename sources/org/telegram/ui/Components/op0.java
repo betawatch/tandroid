@@ -1,32 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class op0 extends q6 {
-    public final /* synthetic */ int d0 = 0;
-    public final /* synthetic */ Object e0;
+public final /* synthetic */ class op0 implements o1.f {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wp0 b;
+    public final /* synthetic */ o1.k c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public op0(Runnable runnable) {
-        super(false, true, true, true, false);
-        this.e0 = runnable;
+    public /* synthetic */ op0(wp0 wp0Var, o1.k kVar, int i10) {
+        this.a = i10;
+        this.b = wp0Var;
+        this.c = kVar;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        switch (this.d0) {
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+        switch (this.a) {
             case 0:
-                ((Runnable) this.e0).run();
+                if (!z10) {
+                    this.b.z.remove(this.c);
+                    hVar.c();
+                    break;
+                }
                 break;
             default:
-                ((org.telegram.ui.y21) this.e0).invalidate();
-                break;
+                wp0 wp0Var = this.b;
+                if (!z10) {
+                    wp0Var.z.remove(this.c);
+                    hVar.c();
+                    break;
+                } else {
+                    wp0Var.getClass();
+                    break;
+                }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public op0(org.telegram.ui.y21 y21Var) {
-        super(false, true, false);
-        this.e0 = y21Var;
     }
 }

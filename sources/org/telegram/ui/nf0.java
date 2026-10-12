@@ -1,27 +1,193 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class nf0 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zf0 b;
+import android.content.Context;
+import android.graphics.Point;
+import android.os.Bundle;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-    public /* synthetic */ nf0(zf0 zf0Var, int i10) {
-        this.a = i10;
-        this.b = zf0Var;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class nf0 extends org.telegram.ui.Components.tw0 {
+    public final /* synthetic */ bh0 E;
+    public final org.telegram.ui.Components.bk0 a;
+    public final TextView b;
+    public final TextView c;
+    public final TextView d;
+    public final TextView e;
+    public final TextView f;
+    public a6 h;
+    public Bundle n;
+    public String r;
+    public String s;
+    public String v;
+    public int w;
+    public int x;
+    public Boolean y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nf0(bh0 bh0Var, Context context) {
+        super(context);
+        this.E = bh0Var;
+        setOrientation(1);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setGravity(17);
+        FrameLayout frameLayout = new FrameLayout(context);
+        org.telegram.ui.Components.bk0 bk0Var = new org.telegram.ui.Components.bk0(context);
+        this.a = bk0Var;
+        bk0Var.setAutoRepeat(true);
+        bk0Var.f(R.raw.sandclock, 120, 120, null);
+        frameLayout.addView(bk0Var, w7.a6.e(120, 120, 1));
+        Point point = AndroidUtilities.displaySize;
+        frameLayout.setVisibility((point.x <= point.y || AndroidUtilities.isTablet()) ? 0 : 8);
+        linearLayout.addView(frameLayout, w7.a6.e(-1, -2, 1));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView);
+        textView.setText(LocaleController.getString(R.string.ResetAccount));
+        textView.setGravity(17);
+        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        linearLayout.addView(textView, w7.a6.a(-2.0f, 32.0f, 16.0f, 32.0f, 0.0f, -1, 1));
+        TextView textView2 = new TextView(context);
+        this.c = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity(1);
+        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        linearLayout.addView(textView2, w7.a6.t(-2, -2, 1, 12, 8, 12, 0));
+        addView(linearLayout, w7.a6.l(1.0f, -1, 0));
+        TextView textView3 = new TextView(context);
+        this.f = textView3;
+        textView3.setGravity(1);
+        textView3.setText(LocaleController.getString("ResetAccountStatus", R.string.ResetAccountStatus));
+        textView3.setTextSize(1, 14.0f);
+        textView3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView3, w7.a6.t(-2, -2, 49, 0, 24, 0, 0));
+        TextView textView4 = new TextView(context);
+        this.e = textView4;
+        textView4.setGravity(1);
+        textView4.setTextSize(1, 20.0f);
+        textView4.setTypeface(AndroidUtilities.bold());
+        textView4.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView4, w7.a6.t(-2, -2, 1, 0, 8, 0, 0));
+        TextView textView5 = new TextView(context);
+        this.d = textView5;
+        textView5.setGravity(17);
+        textView5.setText(LocaleController.getString(R.string.ResetAccount));
+        textView5.setTypeface(AndroidUtilities.bold());
+        textView5.setTextSize(1, 15.0f);
+        textView5.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        textView5.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+        textView5.setTextColor(-1);
+        addView(textView5, w7.a6.t(-1, 50, 1, 16, 32, 16, 48));
+        textView5.setOnClickListener(new t60(this, 6));
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                zf0 zf0Var = this.b;
-                zf0Var.c(true);
-                zf0Var.s0.u1(0, true, null, true);
-                break;
-            default:
-                this.b.s0.u1(0, true, null, true);
-                break;
+    @Override // org.telegram.ui.Components.tw0
+    public final boolean b() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.tw0
+    public final boolean c(boolean z10) {
+        this.E.k1(true, true);
+        AndroidUtilities.cancelRunOnUIThread(this.h);
+        this.h = null;
+        this.n = null;
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.tw0
+    public String getHeaderName() {
+        return LocaleController.getString("ResetAccount", R.string.ResetAccount);
+    }
+
+    @Override // org.telegram.ui.Components.tw0
+    public final void k(Bundle bundle) {
+        Bundle bundle2 = bundle.getBundle("resetview_params");
+        this.n = bundle2;
+        if (bundle2 != null) {
+            m(bundle2, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tw0
+    public final void l(Bundle bundle) {
+        Bundle bundle2 = this.n;
+        if (bundle2 != null) {
+            bundle.putBundle("resetview_params", bundle2);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tw0
+    public final void m(Bundle bundle, boolean z10) {
+        if (bundle == null) {
+            return;
+        }
+        this.n = bundle;
+        this.r = bundle.getString("phoneFormated");
+        this.s = bundle.getString("phoneHash");
+        this.v = bundle.getString("code");
+        this.w = bundle.getInt("startTime");
+        this.x = bundle.getInt("waitTime");
+        this.c.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ResetAccountInfo", R.string.ResetAccountInfo, LocaleController.addNbsp(jf.b.c().b("+" + this.r)))));
+        o();
+        a6 a6Var = new a6(this, 9);
+        this.h = a6Var;
+        AndroidUtilities.runOnUIThread(a6Var, 1000L);
+    }
+
+    @Override // org.telegram.ui.Components.tw0
+    public final void n() {
+        int i10 = org.telegram.ui.ActionBar.g6.G6;
+        this.b.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
+        this.c.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
+        this.f.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
+        this.e.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
+        int dp = AndroidUtilities.dp(6.0f);
+        int x02 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Wh, false);
+        int x03 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Q9, false);
+        this.d.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, x02, x03, x03));
+    }
+
+    public final void o() {
+        int i10;
+        int i11 = this.x;
+        i10 = ((org.telegram.ui.ActionBar.m2) this.E).currentAccount;
+        int max = Math.max(0, i11 - (ConnectionsManager.getInstance(i10).getCurrentTime() - this.w));
+        int i12 = max / 86400;
+        int round = Math.round(max / 86400.0f);
+        int i13 = max / 3600;
+        int i14 = (max / 60) % 60;
+        int i15 = max % 60;
+        TextView textView = this.e;
+        if (i12 >= 2) {
+            textView.setText(LocaleController.formatPluralString("Days", round, new Object[0]));
+        } else {
+            textView.setText(String.format(Locale.getDefault(), "%02d:%02d:%02d", Integer.valueOf(i13), Integer.valueOf(i14), Integer.valueOf(i15)));
+        }
+        boolean z10 = max == 0;
+        Boolean bool = this.y;
+        if (bool == null || bool.booleanValue() != z10) {
+            org.telegram.ui.Components.bk0 bk0Var = this.a;
+            if (z10) {
+                bk0Var.getAnimatedDrawable().K(0);
+            } else {
+                bk0Var.setAutoRepeat(true);
+                if (!bk0Var.b()) {
+                    bk0Var.d();
+                }
+            }
+            textView.setVisibility(z10 ? 4 : 0);
+            this.f.setVisibility(z10 ? 4 : 0);
+            this.d.setVisibility(z10 ? 0 : 4);
+            this.y = Boolean.valueOf(z10);
         }
     }
 }

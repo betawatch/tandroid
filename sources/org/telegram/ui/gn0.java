@@ -1,52 +1,102 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.text.Editable;
+import android.text.TextWatcher;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class gn0 extends TextView {
-    public final /* synthetic */ int a;
+public final class gn0 implements TextWatcher {
+    public final /* synthetic */ un0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gn0(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public gn0(un0 un0Var) {
+        this.a = un0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.a) {
-            case 3:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        String str;
+        int indexOf;
+        un0 un0Var = this.a;
+        ArrayList arrayList = un0Var.U0;
+        HashMap hashMap = un0Var.W0;
+        if (un0Var.Z0) {
+            return;
         }
+        un0Var.Z0 = true;
+        String d = jf.b.d(un0Var.Y[1].getText().toString(), false);
+        un0Var.Y[1].setText(d);
+        org.telegram.ui.Components.s40 s40Var = (org.telegram.ui.Components.s40) un0Var.Y[2];
+        if (d.length() == 0) {
+            s40Var.setHintText((String) null);
+            s40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+            un0Var.Y[0].setText(LocaleController.getString(R.string.ChooseCountry));
+        } else {
+            int i10 = 4;
+            if (d.length() > 4) {
+                while (true) {
+                    if (i10 < 1) {
+                        z10 = false;
+                        str = null;
+                        break;
+                    }
+                    String substring = d.substring(0, i10);
+                    if (((String) hashMap.get(substring)) != null) {
+                        String str2 = d.substring(i10) + un0Var.Y[2].getText().toString();
+                        un0Var.Y[1].setText(substring);
+                        str = str2;
+                        d = substring;
+                        z10 = true;
+                        break;
+                    }
+                    i10--;
+                }
+                if (!z10) {
+                    str = d.substring(1) + un0Var.Y[2].getText().toString();
+                    EditTextBoldCursor editTextBoldCursor = un0Var.Y[1];
+                    d = d.substring(0, 1);
+                    editTextBoldCursor.setText(d);
+                }
+            } else {
+                z10 = false;
+                str = null;
+            }
+            String str3 = (String) hashMap.get(d);
+            if (str3 == null || (indexOf = arrayList.indexOf(str3)) == -1) {
+                s40Var.setHintText((String) null);
+                s40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+                un0Var.Y[0].setText(LocaleController.getString(R.string.WrongCountry));
+            } else {
+                un0Var.Y[0].setText((CharSequence) arrayList.get(indexOf));
+                String str4 = (String) un0Var.X0.get(d);
+                if (str4 != null) {
+                    s40Var.setHintText(str4.replace('X', (char) 8211));
+                    s40Var.setHint((CharSequence) null);
+                }
+            }
+            if (!z10) {
+                EditTextBoldCursor editTextBoldCursor2 = un0Var.Y[1];
+                editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
+            }
+            if (str != null) {
+                s40Var.requestFocus();
+                s40Var.setText(str);
+                s40Var.setSelection(s40Var.length());
+            }
+        }
+        un0Var.Z0 = false;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
-                break;
-            case 3:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 4:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
-                break;
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

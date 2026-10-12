@@ -1,285 +1,27 @@
 package c5;
 
-import android.content.res.Resources;
-import android.graphics.Bitmap;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
+import android.os.DeadObjectException;
+import android.os.Parcel;
 import android.text.TextUtils;
-import android.util.Log;
-import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import com.android.billingclient.api.Purchase;
+import com.google.android.gms.internal.play_billing.t1;
+import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.concurrent.atomic.AtomicInteger;
-import m.f3;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.pg;
-import v7.e8;
-import w7.j7;
-import w7.l9;
-import w7.la;
-import w7.qa;
-import w7.r2;
-import w7.sa;
-import w7.ua;
-import y8.k0;
+import java.util.List;
+import java.util.concurrent.Callable;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v implements Runnable {
+public final /* synthetic */ class v implements Callable {
     public final /* synthetic */ int a;
-    public Object b;
-    public Object c;
-    public Object d;
-
-    public /* synthetic */ v() {
-        this.a = 7;
-    }
-
-    private final void a() {
-        c6.f fVar;
-        synchronized (((g6.v) this.b).X) {
-            fVar = (c6.f) ((g6.v) this.b).X.get((String) this.c);
-        }
-        if (fVar != null) {
-            ((e6.h) fVar).o((String) this.d);
-        } else {
-            g6.v.n0.b("Discarded message for unknown namespace '%s'", (String) this.c);
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0024, code lost:
-    
-        if (r2.isEmpty() == false) goto L9;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private final void b() {
-        String str;
-        ua uaVar;
-        la laVar = (la) this.b;
-        n6.t tVar = (n6.t) this.c;
-        j7 j7Var = j7.b;
-        String str2 = (String) this.d;
-        v7.k kVar = (v7.k) tVar.b;
-        kVar.c = j7Var;
-        l9 l9Var = (l9) kVar.b;
-        if (l9Var != null) {
-            str = l9Var.d;
-            int i10 = r2.a;
-            if (str != null) {
-            }
-        }
-        str = "NA";
-        e8 e8Var = new e8();
-        e8Var.a = laVar.a;
-        e8Var.b = laVar.b;
-        synchronized (la.class) {
-            uaVar = la.j;
-            if (uaVar == null) {
-                n0.c a2 = w7.y.a(Resources.getSystem().getConfiguration());
-                Object[] objArr = new Object[4];
-                int i11 = 0;
-                int i12 = 0;
-                while (i11 < a2.a.size()) {
-                    Locale locale = a2.a.get(i11);
-                    mf.g gVar = qb.c.a;
-                    String languageTag = locale.toLanguageTag();
-                    languageTag.getClass();
-                    int i13 = i12 + 1;
-                    int length = objArr.length;
-                    if (length < i13) {
-                        int i14 = length + (length >> 1) + 1;
-                        if (i14 < i13) {
-                            int highestOneBit = Integer.highestOneBit(i12);
-                            i14 = highestOneBit + highestOneBit;
-                        }
-                        if (i14 < 0) {
-                            i14 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                        }
-                        objArr = Arrays.copyOf(objArr, i14);
-                    }
-                    objArr[i12] = languageTag;
-                    i11++;
-                    i12 = i13;
-                }
-                qa qaVar = sa.b;
-                uaVar = i12 == 0 ? ua.e : new ua(i12, objArr);
-                la.j = uaVar;
-            }
-        }
-        e8Var.k = uaVar;
-        e8Var.g = Boolean.TRUE;
-        e8Var.d = str;
-        e8Var.c = str2;
-        e8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
-        e8Var.i = 10;
-        e8Var.j = Integer.valueOf(laVar.h);
-        tVar.c = e8Var;
-        laVar.c.a(tVar);
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        c6.f fVar;
-        int i10 = 24;
-        Object obj = null;
-        switch (this.a) {
-            case 0:
-                c cVar = (c) this.b;
-                j jVar = (j) this.c;
-                i iVar = (i) this.d;
-                h hVar = g0.i;
-                cVar.y(24, 4, hVar);
-                jVar.a(hVar, iVar.a);
-                return;
-            case 1:
-                super/*c5.c*/.c((a4.l) this.c, (org.telegram.messenger.d0) this.d);
-                return;
-            case 2:
-                super/*c5.c*/.a((i) this.d, (j) this.c);
-                return;
-            case 3:
-                c6.d0 d0Var = (c6.d0) this.b;
-                HashMap hashMap = d0Var.b.C;
-                String str = (String) this.c;
-                synchronized (hashMap) {
-                    fVar = (c6.f) d0Var.b.C.get(str);
-                }
-                if (fVar != null) {
-                    ((e6.h) fVar).o((String) this.d);
-                    return;
-                } else {
-                    c6.e0.G.b("Discarded message for unknown namespace '%s'", str);
-                    return;
-                }
-            case 4:
-                ca.c cVar2 = (ca.c) this.d;
-                w9.b bVar = (w9.b) this.b;
-                cVar2.b(bVar, (TaskCompletionSource) this.c);
-                ((AtomicInteger) cVar2.i.c).set(0);
-                double min = Math.min(3600000.0d, Math.pow(cVar2.b, cVar2.a()) * (60000.0d / cVar2.a));
-                String str2 = "Delay for: " + String.format(Locale.US, "%.2f", Double.valueOf(min / 1000.0d)) + " s for report: " + bVar.b;
-                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                    Log.d("FirebaseCrashlytics", str2, null);
-                }
-                try {
-                    Thread.sleep((long) min);
-                    return;
-                } catch (InterruptedException unused) {
-                    return;
-                }
-            case 5:
-                com.google.android.gms.common.api.internal.l lVar = (com.google.android.gms.common.api.internal.l) this.b;
-                a5.a aVar = (a5.a) this.d;
-                if (aVar.b > 0) {
-                    Bundle bundle = (Bundle) aVar.d;
-                    lVar.onCreate(bundle != null ? bundle.getBundle((String) this.c) : null);
-                }
-                if (aVar.b >= 2) {
-                    lVar.onStart();
-                }
-                if (aVar.b >= 3) {
-                    lVar.onResume();
-                }
-                if (aVar.b >= 4) {
-                    lVar.onStop();
-                }
-                if (aVar.b >= 5) {
-                    lVar.onDestroy();
-                    return;
-                }
-                return;
-            case 6:
-                a();
-                return;
-            case 7:
-                try {
-                    obj = ((o0.e) this.b).call();
-                } catch (Exception unused2) {
-                }
-                ((Handler) this.d).post(new i9.s(21, (z) this.c, obj));
-                return;
-            case 8:
-                ((pg) this.d).n((File) this.c, (ArrayList) this.b);
-                return;
-            case 9:
-                u4.e eVar = (u4.e) this.d;
-                eVar.d.c.remove((String) this.b);
-                c0.l lVar2 = (c0.l) this.c;
-                if (lVar2.a instanceof c0.a) {
-                    return;
-                }
-                try {
-                    lVar2.get();
-                    return;
-                } catch (Exception e7) {
-                    eVar.c.l(e7);
-                    return;
-                }
-            case 10:
-                ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl = (ShortcutInfoCompatSaverImpl) this.d;
-                Bitmap bitmap = (Bitmap) this.b;
-                String str3 = (String) this.c;
-                shortcutInfoCompatSaverImpl.getClass();
-                if (bitmap == null) {
-                    throw new IllegalArgumentException("bitmap is null");
-                }
-                if (TextUtils.isEmpty(str3)) {
-                    throw new IllegalArgumentException("path is empty");
-                }
-                try {
-                    FileOutputStream fileOutputStream = new FileOutputStream(new File(str3));
-                    try {
-                        if (bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream)) {
-                            fileOutputStream.close();
-                            return;
-                        }
-                        Log.wtf("ShortcutInfoCompatSaver", "Unable to compress bitmap");
-                        throw new RuntimeException("Unable to compress bitmap for saving " + str3);
-                    } catch (Throwable th2) {
-                        try {
-                            fileOutputStream.close();
-                        } catch (Throwable th3) {
-                            th2.addSuppressed(th3);
-                        }
-                        throw th2;
-                    }
-                } catch (IOException | OutOfMemoryError | RuntimeException e10) {
-                    Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e10);
-                    throw new RuntimeException(sc.v.i("Unable to write bitmap to file ", str3), e10);
-                }
-            case 11:
-                b();
-                return;
-            default:
-                x8.m mVar = (x8.m) this.b;
-                k0 k0Var = (k0) this.c;
-                y8.e0 e0Var = (y8.e0) this.d;
-                Task<byte[]> onRequest = mVar.c.onRequest(k0Var.d, k0Var.b, k0Var.c);
-                if (onRequest == null) {
-                    x8.m.L0(e0Var, false, null);
-                    return;
-                } else {
-                    onRequest.addOnCompleteListener(new f3(e0Var, i10));
-                    return;
-                }
-        }
-    }
-
-    public /* synthetic */ v(d0 d0Var, i iVar, j jVar) {
-        this.a = 2;
-        this.b = d0Var;
-        this.d = iVar;
-        this.c = jVar;
-    }
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
     public /* synthetic */ v(Object obj, Object obj2, Object obj3, int i10) {
         this.a = i10;
@@ -288,17 +30,550 @@ public final /* synthetic */ class v implements Runnable {
         this.d = obj3;
     }
 
-    public /* synthetic */ v(Object obj, Object obj2, Object obj3, boolean z10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = obj2;
-        this.c = obj3;
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x00b6, code lost:
+    
+        r0 = r2.s(c5.h0.h, 107, "Service has been reset to null.", r5);
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private final Object a() {
+        j6.l lVar;
+        int i10;
+        com.google.android.gms.internal.play_billing.c cVar;
+        int i11;
+        int i12;
+        c cVar2 = (c) this.b;
+        org.telegram.messenger.e0 e0Var = (org.telegram.messenger.e0) this.c;
+        qb.c cVar3 = (qb.c) this.d;
+        Exception exc = null;
+        if (!cVar2.n()) {
+            i iVar = h0.h;
+            cVar2.y(2, 7, iVar);
+            com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
+            com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
+            e0Var.a(iVar, new t(vVar, vVar));
+            return null;
+        }
+        if (!cVar2.r) {
+            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Querying product details is not supported.");
+            i iVar2 = h0.m;
+            cVar2.y(20, 7, iVar2);
+            com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
+            com.google.android.gms.internal.play_billing.v vVar2 = com.google.android.gms.internal.play_billing.v.e;
+            e0Var.a(iVar2, new t(vVar2, vVar2));
+            return null;
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        int i13 = 0;
+        String str = ((s) ((com.google.android.gms.internal.play_billing.r) cVar3.b).get(0)).b;
+        com.google.android.gms.internal.play_billing.r rVar = (com.google.android.gms.internal.play_billing.r) cVar3.b;
+        int size = rVar.size();
+        int i14 = 0;
+        while (true) {
+            if (i14 >= size) {
+                lVar = new j6.l(0, "", arrayList, arrayList2);
+                break;
+            }
+            int i15 = i14 + 20;
+            ArrayList arrayList3 = new ArrayList(rVar.subList(i14, i15 > size ? size : i15));
+            ArrayList<String> arrayList4 = new ArrayList<>();
+            int size2 = arrayList3.size();
+            for (int i16 = i13; i16 < size2; i16++) {
+                arrayList4.add(((s) arrayList3.get(i16)).a);
+            }
+            Bundle bundle = new Bundle();
+            bundle.putStringArrayList("ITEM_ID_LIST", arrayList4);
+            String str2 = cVar2.c;
+            bundle.putString("playBillingLibraryVersion", str2);
+            try {
+                synchronized (cVar2.a) {
+                    try {
+                        cVar = cVar2.i;
+                    } finally {
+                        th = th;
+                        i10 = 43;
+                        while (true) {
+                            try {
+                            } catch (Throwable th2) {
+                                th = th2;
+                            }
+                        }
+                    }
+                }
+                if (cVar == null) {
+                    break;
+                }
+                if (cVar2.s) {
+                    cVar2.x.getClass();
+                }
+                cVar2.v();
+                cVar2.v();
+                cVar2.v();
+                cVar2.v();
+                int i17 = i15;
+                try {
+                    Bundle b12 = ((com.google.android.gms.internal.play_billing.a) cVar).b1(true != cVar2.t ? 17 : 20, cVar2.g.getPackageName(), str, bundle, com.google.android.gms.internal.play_billing.u.d(str2, cVar2.d, arrayList3, new t1(1), cVar2.A.longValue()));
+                    if (b12 == null) {
+                        lVar = cVar2.s(h0.n, 44, "queryProductDetailsAsync got empty product details response.", null);
+                        break;
+                    }
+                    if (b12.containsKey("DETAILS_LIST")) {
+                        ArrayList<String> stringArrayList = b12.getStringArrayList("DETAILS_LIST");
+                        if (stringArrayList == null) {
+                            lVar = cVar2.s(h0.n, 46, "queryProductDetailsAsync got null response list", null);
+                            break;
+                        }
+                        ArrayList arrayList5 = new ArrayList();
+                        int size3 = stringArrayList.size();
+                        int i18 = 0;
+                        while (i18 < size3) {
+                            com.google.android.gms.internal.play_billing.r rVar2 = rVar;
+                            try {
+                                p pVar3 = new p(stringArrayList.get(i18));
+                                com.google.android.gms.internal.play_billing.u.g("BillingClient", "Got product details: ".concat(pVar3.toString()));
+                                arrayList5.add(pVar3);
+                                i18++;
+                                rVar = rVar2;
+                            } catch (JSONException e) {
+                                lVar = cVar2.s(h0.a(6, "Error trying to decode SkuDetails."), 47, "Got a JSON exception trying to decode ProductDetails. \n Exception: ", e);
+                            }
+                        }
+                        com.google.android.gms.internal.play_billing.r rVar3 = rVar;
+                        ArrayList<String> stringArrayList2 = b12.getStringArrayList("UNFETCHED_PRODUCT_LIST");
+                        new ArrayList();
+                        try {
+                            ArrayList arrayList6 = new ArrayList();
+                            if (stringArrayList2 != null) {
+                                int size4 = stringArrayList2.size();
+                                int i19 = 0;
+                                while (i19 < size4) {
+                                    String str3 = stringArrayList2.get(i19);
+                                    i19++;
+                                    u uVar = new u(str3);
+                                    com.google.android.gms.internal.play_billing.u.g("BillingClient", "Got unfetchedProduct: ".concat(uVar.toString()));
+                                    arrayList6.add(uVar);
+                                }
+                            } else {
+                                int size5 = arrayList3.size();
+                                int i20 = 0;
+                                while (i20 < size5) {
+                                    Object obj = arrayList3.get(i20);
+                                    i20++;
+                                    s sVar = (s) obj;
+                                    int size6 = arrayList5.size();
+                                    int i21 = 0;
+                                    while (true) {
+                                        if (i21 >= size6) {
+                                            i11 = size5;
+                                            i12 = i17;
+                                            arrayList6.add(new u(new JSONObject().put("productId", sVar.a).put(TeXSymbolParser.TYPE_ATTR, sVar.b).put("statusCode", 0).toString()));
+                                            break;
+                                        }
+                                        Object obj2 = arrayList5.get(i21);
+                                        i21++;
+                                        p pVar4 = (p) obj2;
+                                        i11 = size5;
+                                        i12 = i17;
+                                        if (!sVar.a.equals(pVar4.c) || !sVar.b.equals(pVar4.d)) {
+                                            size5 = i11;
+                                            i17 = i12;
+                                        }
+                                    }
+                                    size5 = i11;
+                                    i17 = i12;
+                                }
+                            }
+                            int i22 = i17;
+                            arrayList.addAll(arrayList5);
+                            arrayList2.addAll(arrayList6);
+                            rVar = rVar3;
+                            i14 = i22;
+                            exc = null;
+                            i13 = 0;
+                        } catch (JSONException e7) {
+                            lVar = cVar2.s(h0.a(6, "Error trying to decode SkuDetails."), 47, "Got a JSON exception trying to decode UnfetchedProduct. \n Exception: ", e7);
+                        }
+                    } else {
+                        int a2 = com.google.android.gms.internal.play_billing.u.a("BillingClient", b12);
+                        String f7 = com.google.android.gms.internal.play_billing.u.f("BillingClient", b12);
+                        lVar = a2 != 0 ? cVar2.s(h0.a(a2, f7), 23, i2.d.i(a2, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : cVar2.s(h0.a(6, f7), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
+                    }
+                } catch (DeadObjectException e10) {
+                    e = e10;
+                    lVar = cVar2.s(h0.h, i10, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
+                    e0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
+                    return null;
+                } catch (Exception e11) {
+                    e = e11;
+                    lVar = cVar2.s(h0.f, i10, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
+                    e0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
+                    return null;
+                }
+            } catch (DeadObjectException e12) {
+                e = e12;
+                i10 = 43;
+            } catch (Exception e13) {
+                e = e13;
+                i10 = 43;
+            }
+        }
+        e0Var.a(h0.a(lVar.a, (String) lVar.d), new t((ArrayList) lVar.b, (ArrayList) lVar.c));
+        return null;
     }
 
-    public /* synthetic */ v(la laVar, n6.t tVar, String str) {
-        this.a = 11;
-        this.b = laVar;
-        this.c = tVar;
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x008c, code lost:
+    
+        r0 = r2.x(c5.h0.h, 107, "Service has been reset to null", r3);
+     */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0178  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x023e  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x024a  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0170 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private final Object b() {
+        Exception exc;
+        n4.s x10;
+        List list;
+        com.google.android.gms.internal.play_billing.c cVar;
+        i a2;
+        int i10;
+        c cVar2 = (c) this.b;
+        Exception exc2 = null;
+        int i11 = 9;
+        if (!cVar2.n()) {
+            i iVar = h0.h;
+            cVar2.y(2, 9, iVar);
+            q qVar = (q) this.c;
+            com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
+            qVar.b(iVar, com.google.android.gms.internal.play_billing.v.e);
+            return null;
+        }
+        String str = (String) this.d;
+        if (TextUtils.isEmpty(str)) {
+            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Please provide a valid product type.");
+            i iVar2 = h0.d;
+            cVar2.y(50, 9, iVar2);
+            q qVar2 = (q) this.c;
+            com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
+            qVar2.b(iVar2, com.google.android.gms.internal.play_billing.v.e);
+            return null;
+        }
+        com.google.android.gms.internal.play_billing.u.g("BillingClient", "Querying owned items, item type: ".concat(String.valueOf(str)));
+        ArrayList arrayList = new ArrayList();
+        boolean z10 = cVar2.n;
+        cVar2.x.getClass();
+        cVar2.x.getClass();
+        long longValue = cVar2.A.longValue();
+        Bundle bundle = new Bundle();
+        com.google.android.gms.internal.play_billing.u.b(bundle, cVar2.c, cVar2.d, longValue);
+        int i12 = 1;
+        if (z10) {
+            bundle.putBoolean("enablePendingPurchases", true);
+        }
+        String str2 = null;
+        while (true) {
+            try {
+                synchronized (cVar2.a) {
+                    try {
+                        cVar = cVar2.i;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        exc = exc2;
+                        while (true) {
+                            try {
+                                try {
+                                    throw th;
+                                } catch (DeadObjectException e) {
+                                    e = e;
+                                    x10 = cVar2.x(h0.h, 52, "Got exception trying to get purchases try to reconnect", e);
+                                    list = (List) x10.b;
+                                    if (list != null) {
+                                    }
+                                    return exc;
+                                } catch (Exception e7) {
+                                    e = e7;
+                                    x10 = cVar2.x(h0.f, 52, "Got exception trying to get purchases try to reconnect", e);
+                                    list = (List) x10.b;
+                                    if (list != null) {
+                                    }
+                                    return exc;
+                                }
+                            } catch (Throwable th3) {
+                                th = th3;
+                            }
+                        }
+                    }
+                }
+                if (cVar == null) {
+                    break;
+                }
+                Bundle a12 = cVar2.n ? ((com.google.android.gms.internal.play_billing.a) cVar).a1(cVar2.w ? 26 : cVar2.v ? 24 : cVar2.s ? 19 : i11, cVar2.g.getPackageName(), str, str2, bundle) : ((com.google.android.gms.internal.play_billing.a) cVar).Z0(cVar2.g.getPackageName(), str, str2);
+                i iVar3 = h0.f;
+                if (a12 == null) {
+                    com.google.android.gms.internal.play_billing.u.h("BillingClient", "getPurchase() got null owned items list");
+                    i10 = 54;
+                } else {
+                    int a10 = com.google.android.gms.internal.play_billing.u.a("BillingClient", a12);
+                    String f7 = com.google.android.gms.internal.play_billing.u.f("BillingClient", a12);
+                    c3.a a11 = i.a();
+                    a11.b = a10;
+                    a11.a = f7;
+                    a2 = a11.a();
+                    if (a10 != 0) {
+                        com.google.android.gms.internal.play_billing.u.h("BillingClient", "getPurchase() failed. Response code: " + a10);
+                        i10 = 23;
+                    } else if (a12.containsKey("INAPP_PURCHASE_ITEM_LIST") && a12.containsKey("INAPP_PURCHASE_DATA_LIST") && a12.containsKey("INAPP_DATA_SIGNATURE_LIST")) {
+                        ArrayList<String> stringArrayList = a12.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
+                        ArrayList<String> stringArrayList2 = a12.getStringArrayList("INAPP_PURCHASE_DATA_LIST");
+                        ArrayList<String> stringArrayList3 = a12.getStringArrayList("INAPP_DATA_SIGNATURE_LIST");
+                        if (stringArrayList == null) {
+                            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Bundle returned from getPurchase() contains null SKUs list.");
+                            i10 = 56;
+                        } else if (stringArrayList2 == null) {
+                            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Bundle returned from getPurchase() contains null purchases list.");
+                            i10 = 57;
+                        } else if (stringArrayList3 == null) {
+                            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Bundle returned from getPurchase() contains null signatures list.");
+                            i10 = 58;
+                        } else {
+                            a2 = h0.g;
+                            i10 = i12;
+                        }
+                    } else {
+                        com.google.android.gms.internal.play_billing.u.h("BillingClient", "Bundle returned from getPurchase() doesn't contain required fields.");
+                        i10 = 55;
+                    }
+                    if (a2 == h0.g) {
+                        x10 = cVar2.x(a2, i10, "Purchase bundle invalid", exc2);
+                        break;
+                    }
+                    ArrayList<String> stringArrayList4 = a12.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
+                    ArrayList<String> stringArrayList5 = a12.getStringArrayList("INAPP_PURCHASE_DATA_LIST");
+                    ArrayList<String> stringArrayList6 = a12.getStringArrayList("INAPP_DATA_SIGNATURE_LIST");
+                    exc = exc2;
+                    boolean z11 = false;
+                    for (int i13 = 0; i13 < stringArrayList5.size(); i13++) {
+                        String str3 = stringArrayList5.get(i13);
+                        String str4 = stringArrayList6.get(i13);
+                        com.google.android.gms.internal.play_billing.u.g("BillingClient", "Sku is owned: ".concat(String.valueOf(stringArrayList4.get(i13))));
+                        try {
+                            Purchase purchase = new Purchase(str3, str4);
+                            if (TextUtils.isEmpty(purchase.c())) {
+                                com.google.android.gms.internal.play_billing.u.h("BillingClient", "BUG: empty/null token!");
+                                z11 = true;
+                            }
+                            arrayList.add(purchase);
+                        } catch (JSONException e10) {
+                            x10 = cVar2.x(h0.f, 51, "Got an exception trying to decode the purchase!", e10);
+                        }
+                    }
+                    if (z11) {
+                        cVar2.y(26, 9, iVar3);
+                    }
+                    str2 = a12.getString("INAPP_CONTINUATION_TOKEN");
+                    com.google.android.gms.internal.play_billing.u.g("BillingClient", "Continuation token: ".concat(String.valueOf(str2)));
+                    if (TextUtils.isEmpty(str2)) {
+                        x10 = new n4.s(h0.g, arrayList, false, 9);
+                        break;
+                    }
+                    exc2 = exc;
+                    i11 = 9;
+                    i12 = 1;
+                }
+                a2 = iVar3;
+                if (a2 == h0.g) {
+                }
+            } catch (DeadObjectException e11) {
+                e = e11;
+                exc = exc2;
+            } catch (Exception e12) {
+                e = e12;
+                exc = exc2;
+            }
+        }
+        exc = exc2;
+        list = (List) x10.b;
+        if (list != null) {
+            ((q) this.c).b((i) x10.c, list);
+        } else {
+            q qVar3 = (q) this.c;
+            i iVar4 = (i) x10.c;
+            com.google.android.gms.internal.play_billing.p pVar3 = com.google.android.gms.internal.play_billing.r.b;
+            qVar3.b(iVar4, com.google.android.gms.internal.play_billing.v.e);
+        }
+        return exc;
+    }
+
+    private final Object c() {
+        Bundle c10;
+        com.google.android.gms.internal.play_billing.c cVar;
+        c cVar2 = (c) this.b;
+        String str = (String) this.c;
+        String str2 = (String) this.d;
+        try {
+            synchronized (cVar2.a) {
+                cVar = cVar2.i;
+            }
+            if (cVar == null) {
+                return com.google.android.gms.internal.play_billing.u.c(107, h0.h);
+            }
+            return ((com.google.android.gms.internal.play_billing.a) cVar).X0(cVar2.g.getPackageName(), str, str2);
+        } catch (DeadObjectException e) {
+            i iVar = h0.h;
+            String a2 = f0.a(e);
+            c10 = com.google.android.gms.internal.play_billing.u.c(5, iVar);
+            if (a2 != null) {
+                c10.putString("ADDITIONAL_LOG_DETAILS", a2);
+            }
+            return c10;
+        } catch (Exception e7) {
+            i iVar2 = h0.f;
+            String a10 = f0.a(e7);
+            c10 = com.google.android.gms.internal.play_billing.u.c(5, iVar2);
+            if (a10 != null) {
+                c10.putString("ADDITIONAL_LOG_DETAILS", a10);
+            }
+            return c10;
+        }
+    }
+
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        Exception exc;
+        DeadObjectException deadObjectException;
+        com.google.android.gms.internal.play_billing.c cVar;
+        int readInt;
+        String str;
+        switch (this.a) {
+            case 0:
+                c cVar2 = (c) this.b;
+                k kVar = (k) this.c;
+                j jVar = (j) this.d;
+                if (!cVar2.n()) {
+                    i iVar = h0.h;
+                    cVar2.y(2, 4, iVar);
+                    kVar.a(iVar, jVar.a);
+                    return null;
+                }
+                String str2 = "Error consuming purchase with token. Response code: ";
+                String str3 = jVar.a;
+                try {
+                    com.google.android.gms.internal.play_billing.u.g("BillingClient", "Consuming purchase with token: ".concat(str3));
+                    try {
+                        synchronized (cVar2.a) {
+                            try {
+                                cVar = cVar2.i;
+                            } catch (Throwable th2) {
+                                th = th2;
+                                while (true) {
+                                    try {
+                                        throw th;
+                                    } catch (Throwable th3) {
+                                        th = th3;
+                                    }
+                                }
+                            }
+                        }
+                        try {
+                            if (cVar == null) {
+                                str2 = str3;
+                                try {
+                                    cVar2.g(kVar, str2, h0.h, 107, "Service has been reset to null.", null);
+                                    return null;
+                                } catch (DeadObjectException e) {
+                                    e = e;
+                                    deadObjectException = e;
+                                    cVar2.g(kVar, str2, h0.h, 29, "Error consuming purchase!", deadObjectException);
+                                    return null;
+                                } catch (Exception e7) {
+                                    e = e7;
+                                    exc = e;
+                                    cVar2.g(kVar, str2, h0.f, 29, "Error consuming purchase!", exc);
+                                    return null;
+                                }
+                            }
+                            if (cVar2.n) {
+                                String packageName = cVar2.g.getPackageName();
+                                boolean z10 = cVar2.n;
+                                String str4 = cVar2.c;
+                                String str5 = cVar2.d;
+                                long longValue = cVar2.A.longValue();
+                                Bundle bundle = new Bundle();
+                                if (z10) {
+                                    com.google.android.gms.internal.play_billing.u.b(bundle, str4, str5, longValue);
+                                }
+                                Bundle W0 = ((com.google.android.gms.internal.play_billing.a) cVar).W0(packageName, str3, bundle);
+                                readInt = W0.getInt("RESPONSE_CODE");
+                                str = com.google.android.gms.internal.play_billing.u.f("BillingClient", W0);
+                            } else {
+                                String packageName2 = cVar2.g.getPackageName();
+                                com.google.android.gms.internal.play_billing.a aVar = (com.google.android.gms.internal.play_billing.a) cVar;
+                                Parcel T0 = aVar.T0();
+                                T0.writeInt(3);
+                                T0.writeString(packageName2);
+                                T0.writeString(str3);
+                                Parcel U0 = aVar.U0(T0, 5);
+                                readInt = U0.readInt();
+                                U0.recycle();
+                                str = "";
+                            }
+                            i a2 = h0.a(readInt, str);
+                            if (readInt == 0) {
+                                com.google.android.gms.internal.play_billing.u.g("BillingClient", "Successfully consumed purchase.");
+                                kVar.a(a2, str3);
+                                return null;
+                            }
+                            cVar2.g(kVar, str3, a2, 23, "Error consuming purchase with token. Response code: " + readInt, null);
+                            return null;
+                        } catch (DeadObjectException e10) {
+                            deadObjectException = e10;
+                            str2 = str3;
+                            cVar2.g(kVar, str2, h0.h, 29, "Error consuming purchase!", deadObjectException);
+                            return null;
+                        } catch (Exception e11) {
+                            exc = e11;
+                            str2 = str3;
+                            cVar2.g(kVar, str2, h0.f, 29, "Error consuming purchase!", exc);
+                            return null;
+                        }
+                    } catch (DeadObjectException e12) {
+                        e = e12;
+                    } catch (Exception e13) {
+                        e = e13;
+                    }
+                } catch (DeadObjectException e14) {
+                    e = e14;
+                    str2 = str3;
+                } catch (Exception e15) {
+                    e = e15;
+                    str2 = str3;
+                }
+            case 1:
+                return a();
+            case 2:
+                return b();
+            case 3:
+                return c();
+            case 4:
+                return Boolean.valueOf(((SharedPreferences) this.b).getBoolean((String) this.c, ((Boolean) this.d).booleanValue()));
+            case 5:
+                return Integer.valueOf(((SharedPreferences) this.b).getInt((String) this.c, ((Integer) this.d).intValue()));
+            case 6:
+                return Long.valueOf(((SharedPreferences) this.b).getLong((String) this.c, ((Long) this.d).longValue()));
+            default:
+                return ((SharedPreferences) this.b).getString((String) this.c, (String) this.d);
+        }
+    }
+
+    public v(c cVar, q qVar, String str) {
+        this.a = 2;
+        this.c = qVar;
         this.d = str;
+        Objects.requireNonNull(cVar);
+        this.b = cVar;
     }
 }

@@ -1,315 +1,55 @@
 package hg;
 
-import ai.t5;
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import ci.rc;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.eb;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.nd;
-import org.telegram.ui.Components.pm0;
-import org.telegram.ui.Components.qm0;
-import org.telegram.ui.Components.y9;
-import org.telegram.ui.LaunchActivity;
-import w7.x5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class l0 extends eb {
-    public static final int g0 = -1;
-    public static final int h0 = -2;
-    public final TL_account.TL_connectedBot X;
-    public final TLRPC.User Y;
-    public final b0 Z;
-    public final LinearLayout a0;
-    public final ci.d b0;
-    public final ci.d c0;
-    public c71 d0;
-    public boolean e0;
-    public Boolean f0;
+public final class l0 extends s4.o {
+    public final /* synthetic */ r0 b;
 
-    public l0(Activity activity, TL_account.TL_connectedBot tL_connectedBot, nd ndVar, e6 e6Var) {
-        super(2, (Context) activity, e6Var, false);
-        this.X = tL_connectedBot;
-        TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_connectedBot.bot_id));
-        this.Y = user;
-        this.K = AndroidUtilities.dp(36.0f);
-        this.v = 0.15f;
-        b0 b0Var = new b0(activity, this.currentAccount, new rc(this, 20), e6Var);
-        this.Z = b0Var;
-        TL_account.TL_businessBotRecipients tL_businessBotRecipients = tL_connectedBot.recipients;
-        this.e0 = tL_businessBotRecipients.exclude_selected;
-        b0Var.i(tL_businessBotRecipients);
-        LinearLayout linearLayout = new LinearLayout(activity);
-        this.a0 = linearLayout;
-        linearLayout.setOrientation(1);
-        j9 j9Var = new j9((e6) null);
-        y9 y9Var = new y9(activity);
-        y9Var.setRoundRadius(AndroidUtilities.dp(40.0f));
-        j9Var.r(user);
-        y9Var.e(user, j9Var);
-        linearLayout.addView(y9Var, x5.t(80, 80, 1, 0, 0, 0, 0));
-        TextView textView = new TextView(activity);
-        textView.setTextSize(1, 20.0f);
-        textView.setTextColor(getThemedColor(i6.G6));
-        textView.setGravity(17);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setText(UserObject.getUserName(user));
-        linearLayout.addView(textView, x5.r(-1, -2, 1, 32.0f, 15.66f, 32.0f, 3.66f));
-        this.e.setTitle(UserObject.getUserName(user));
-        TextView textView2 = new TextView(activity);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(getThemedColor(i6.y6));
-        textView2.setGravity(17);
-        textView2.setText(LocaleController.getString(R.string.SessionBot));
-        linearLayout.addView(textView2, x5.r(-1, -2, 1, 32.0f, 0.0f, 32.0f, 3.66f));
-        String publicUsername = UserObject.getPublicUsername(user);
-        if (!TextUtils.isEmpty(publicUsername)) {
-            TextView textView3 = new TextView(activity);
-            textView3.setTextSize(1, 14.0f);
-            textView3.setTextColor(getThemedColor(i6.gc));
-            textView3.setText("@" + publicUsername);
-            textView3.setGravity(17);
-            linearLayout.addView(textView3, x5.t(-1, -2, 1, 32, 0, 32, 18));
+    public l0(r0 r0Var) {
+        this.b = r0Var;
+    }
+
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        return true;
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        r0 r0Var = this.b;
+        p0 p0Var = (p0) r0Var.W2.get(i10);
+        p0 p0Var2 = (p0) r0Var.V2.get(i11);
+        if (!p0Var.b(p0Var2)) {
+            return false;
         }
-        int i10 = i6.a7;
-        setBackgroundColor(getThemedColor(i10));
-        fixNavigationBar(getThemedColor(i10));
-        qm0 qm0Var = this.d;
-        int i11 = this.backgroundPaddingLeft;
-        qm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
-        this.d.p1();
-        this.d.setOnItemClickListener(new ai.g(this, 11));
-        FrameLayout frameLayout = new FrameLayout(activity);
-        frameLayout.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
-        frameLayout.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{i6.m1(0.0f, getThemedColor(i10)), getThemedColor(i10), getThemedColor(i10)}));
-        ci.d dVar = new ci.d(activity, e6Var, true);
-        dVar.setRoundRadius(24);
-        this.b0 = dVar;
-        dVar.setColor(getThemedColor(i6.wj));
-        dVar.setText(LocaleController.getString(R.string.TerminateSession));
-        dVar.setOnClickListener(new ai.d0(this, tL_connectedBot, ndVar, 8));
-        frameLayout.addView(dVar, x5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
-        ci.d dVar2 = new ci.d(activity, e6Var, true);
-        dVar2.setRoundRadius(24);
-        this.c0 = dVar2;
-        dVar2.setText(LocaleController.getString(R.string.BusinessBotUpdate));
-        dVar2.setOnClickListener(new ai.f2(11, this, tL_connectedBot));
-        frameLayout.addView(dVar2, x5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
-        U(false);
-        FrameLayout.LayoutParams e7 = x5.e(-1, -2, 80);
-        int i12 = e7.leftMargin;
-        int i13 = this.backgroundPaddingLeft;
-        e7.leftMargin = i12 + i13;
-        e7.rightMargin += i13;
-        this.containerView.addView(frameLayout, e7);
-        s4.j jVar = new s4.j();
-        jVar.m = false;
-        jVar.C = false;
-        jVar.o(hs.h);
-        jVar.n(350L);
-        this.d.setItemAnimator(jVar);
-        c71 c71Var = this.d0;
-        if (c71Var != null) {
-            c71Var.N(false);
+        int i12 = p0Var.d;
+        if (i12 != 4) {
+            return i12 == 6 ? p0Var.c.equals(p0Var2.c) : i12 == 7;
         }
-    }
-
-    public static void Q(l0 l0Var, TL_account.TL_connectedBot tL_connectedBot, TL_account.TL_businessBotRecipients tL_businessBotRecipients) {
-        g.a(l0Var.currentAccount).b();
-        l0Var.dismiss();
-        tL_connectedBot.recipients = tL_businessBotRecipients;
-        n2 U = LaunchActivity.U();
-        if (U != null) {
-            c.q(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(l0Var.Y)}, ad.a0(U), R.raw.contact_check, 36);
-        }
-    }
-
-    public static void R(l0 l0Var, TL_account.TL_connectedBot tL_connectedBot) {
-        b0 b0Var = l0Var.Z;
-        ci.d dVar = l0Var.c0;
-        if (dVar.N) {
-            return;
-        }
-        dVar.setLoading(true);
-        TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
-        updateconnectedbot.bot = MessagesController.getInstance(l0Var.currentAccount).getInputUser(tL_connectedBot.bot_id);
-        updateconnectedbot.recipients = b0Var.b();
-        ConnectionsManager.getInstance(l0Var.currentAccount).sendRequest(updateconnectedbot, new t5(l0Var, tL_connectedBot, b0Var.c(), 5));
-    }
-
-    public static /* synthetic */ void S(l0 l0Var, nd ndVar) {
-        g.a(l0Var.currentAccount).b();
-        ndVar.run();
-        l0Var.dismiss();
-    }
-
-    public static void T(l0 l0Var, TL_account.TL_connectedBot tL_connectedBot, nd ndVar) {
-        ci.d dVar = l0Var.b0;
-        if (dVar.N) {
-            return;
-        }
-        dVar.setLoading(true);
-        TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
-        updateconnectedbot.deleted = true;
-        updateconnectedbot.bot = MessagesController.getInstance(l0Var.currentAccount).getInputUser(tL_connectedBot.bot_id);
-        updateconnectedbot.recipients = new TL_account.TL_inputBusinessBotRecipients();
-        ConnectionsManager.getInstance(l0Var.currentAccount).sendRequest(updateconnectedbot, new ai.v1(14, l0Var, ndVar));
-    }
-
-    @Override // org.telegram.ui.Components.eb
-    public final CharSequence B() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.eb
-    public final void D(float f7) {
-        j5 titleTextView = this.e.getTitleTextView();
-        if (titleTextView != null) {
-            titleTextView.setAlpha(f7);
-        }
-    }
-
-    public final void U(boolean z10) {
-        b0 b0Var = this.Z;
-        final boolean z11 = b0Var != null && b0Var.g();
-        Boolean bool = this.f0;
-        if (bool == null || bool.booleanValue() != z11) {
-            this.f0 = Boolean.valueOf(z11);
-            ci.d dVar = this.b0;
-            ci.d dVar2 = this.c0;
-            if (z10) {
-                dVar2.setVisibility(0);
-                ViewPropertyAnimator duration = dVar2.animate().alpha(z11 ? 1.0f : 0.0f).scaleX(z11 ? 1.0f : 0.8f).scaleY(z11 ? 1.0f : 0.8f).setDuration(320L);
-                hs hsVar = hs.h;
-                final int i10 = 0;
-                duration.setInterpolator(hsVar).withEndAction(new Runnable(this) { // from class: hg.k0
-                    public final /* synthetic */ l0 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                boolean z12 = z11;
-                                l0 l0Var = this.b;
-                                if (!z12) {
-                                    l0Var.c0.setVisibility(8);
-                                    break;
-                                } else {
-                                    l0Var.getClass();
-                                    break;
-                                }
-                            default:
-                                boolean z13 = z11;
-                                l0 l0Var2 = this.b;
-                                if (!z13) {
-                                    l0Var2.getClass();
-                                    break;
-                                } else {
-                                    l0Var2.b0.setVisibility(8);
-                                    break;
-                                }
-                        }
-                    }
-                }).start();
-                dVar.setVisibility(0);
-                final int i11 = 1;
-                dVar.animate().alpha(z11 ? 0.0f : 1.0f).scaleX(!z11 ? 1.0f : 0.8f).scaleY(z11 ? 0.8f : 1.0f).setDuration(320L).setInterpolator(hsVar).withEndAction(new Runnable(this) { // from class: hg.k0
-                    public final /* synthetic */ l0 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                boolean z12 = z11;
-                                l0 l0Var = this.b;
-                                if (!z12) {
-                                    l0Var.c0.setVisibility(8);
-                                    break;
-                                } else {
-                                    l0Var.getClass();
-                                    break;
-                                }
-                            default:
-                                boolean z13 = z11;
-                                l0 l0Var2 = this.b;
-                                if (!z13) {
-                                    l0Var2.getClass();
-                                    break;
-                                } else {
-                                    l0Var2.b0.setVisibility(8);
-                                    break;
-                                }
-                        }
-                    }
-                }).start();
-                return;
+        TLObject tLObject = p0Var.f;
+        if (tLObject instanceof TLRPC.User) {
+            TLObject tLObject2 = p0Var2.f;
+            if (tLObject2 instanceof TLRPC.User) {
+                return ((TLRPC.User) tLObject).id == ((TLRPC.User) tLObject2).id;
             }
-            dVar2.setVisibility(z11 ? 0 : 8);
-            dVar2.animate().cancel();
-            dVar2.setAlpha(z11 ? 1.0f : 0.0f);
-            dVar2.setScaleX(z11 ? 1.0f : 0.8f);
-            dVar2.setScaleY(z11 ? 1.0f : 0.8f);
-            dVar.setVisibility(z11 ? 8 : 0);
-            dVar.animate().cancel();
-            dVar.setAlpha(z11 ? 0.0f : 1.0f);
-            dVar.setScaleX(!z11 ? 1.0f : 0.8f);
-            dVar.setScaleY(z11 ? 0.8f : 1.0f);
         }
+        if (!(tLObject instanceof TLRPC.Chat)) {
+            return false;
+        }
+        TLObject tLObject3 = p0Var2.f;
+        return (tLObject3 instanceof TLRPC.Chat) && ((TLRPC.Chat) tLObject).id == ((TLRPC.Chat) tLObject3).id;
     }
 
-    @Override // org.telegram.ui.Components.eb, org.telegram.ui.ActionBar.f3
-    public final boolean canDismissWithSwipe() {
-        b0 b0Var = this.Z;
-        if (b0Var != null) {
-            b0Var.g();
-        }
-        return false;
+    @Override // s4.o
+    public final int d() {
+        return this.b.V2.size();
     }
 
-    @Override // org.telegram.ui.ActionBar.f3
-    public final boolean canDismissWithTouchOutside() {
-        b0 b0Var = this.Z;
-        if (b0Var == null || !b0Var.g()) {
-            return super.canDismissWithTouchOutside();
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.eb
-    public final pm0 x(qm0 qm0Var) {
-        c71 c71Var = new c71(qm0Var, getContext(), this.currentAccount, 0, true, new bi.v(this, 23), this.resourcesProvider);
-        this.d0 = c71Var;
-        c71Var.r = false;
-        return c71Var;
+    @Override // s4.o
+    public final int e() {
+        return this.b.W2.size();
     }
 }

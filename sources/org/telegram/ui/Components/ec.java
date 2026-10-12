@@ -1,75 +1,33 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.support.SparseLongArray;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ec extends bc implements NotificationCenter.NotificationCenterDelegate {
-    public final cc d;
-    public SparseLongArray e;
-    public final org.telegram.ui.ActionBar.n2 f;
-    public final int h;
-    public tc n;
+public class ec extends pb {
+    public final z9 a;
+    public final TextView b;
 
-    public ec(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(n2Var.getContext(), n2Var.getResourceProvider());
-        this.f = n2Var;
-        this.h = i10;
-        this.b.setLayoutParams(w7.x5.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
-        this.a.setLayoutParams(w7.x5.h(56.0f, 48.0f, 8388659));
-        cc ccVar = new cc(this, n2Var, getContext(), n2Var.getCurrentAccount(), n2Var.getResourceProvider());
-        this.d = ccVar;
-        ccVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(0.0f));
-        this.d.setDelegate(new dc(this));
-        this.d.setTop(true);
-        this.d.setClipChildren(false);
-        this.d.setClipToPadding(false);
-        this.d.setVisibility(0);
-        this.d.setBubbleOffset(-AndroidUtilities.dp(80.0f));
-        this.d.setHint(LocaleController.getString(R.string.SavedTagReactionsHint));
-        addView(this.d, w7.x5.a(92.5f, 0.0f, 36.0f, 0.0f, 0.0f, -2, 1));
-        this.d.p(null, null, true);
+    public ec(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, c6Var);
+        z9 z9Var = new z9(getContext());
+        this.a = z9Var;
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        addView(z9Var, w7.a6.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
+        textView.setGravity(8388611);
+        textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Hi));
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(Typeface.SANS_SERIF);
+        addView(textView, w7.a6.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.savedMessagesForwarded) {
-            this.e = (SparseLongArray) objArr[0];
-        }
-    }
-
-    public final void f() {
-        if (this.d.getReactionsWindow() != null) {
-            this.d.e();
-            if (this.d.getReactionsWindow().a != null) {
-                this.d.getReactionsWindow().a.animate().alpha(0.0f).setDuration(180L).start();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xb
-    public int getMeasuredBackgroundHeight() {
-        return AndroidUtilities.dp(30.0f) + this.b.getMeasuredHeight();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getInstance(UserConfig.selectedAccount).addObserver(this, NotificationCenter.savedMessagesForwarded);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getInstance(UserConfig.selectedAccount).removeObserver(this, NotificationCenter.savedMessagesForwarded);
-    }
-
-    public void setBulletin(tc tcVar) {
-        this.n = tcVar;
+    @Override // org.telegram.ui.Components.wb
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
     }
 }

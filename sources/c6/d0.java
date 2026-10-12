@@ -3,7 +3,7 @@ package c6;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d0 extends g6.g {
     public final /* synthetic */ e0 b;
@@ -25,7 +25,7 @@ public final class d0 extends g6.g {
     @Override // g6.h
     public final void T(String str, String str2) {
         e0.G.b("Receive (type=text, ns=%s) %s", str, str2);
-        e0.k(this.b).post(new c5.v(this, str, str2, 3));
+        e0.k(this.b).post(new c5.w(this, str, str2, 3));
     }
 
     @Override // g6.h
@@ -34,8 +34,8 @@ public final class d0 extends g6.g {
     }
 
     @Override // g6.h
-    public final void Y(long j3) {
-        e0.f(this.b, j3, 0);
+    public final void Y(long j10) {
+        e0.f(this.b, j10, 0);
     }
 
     @Override // g6.h
@@ -69,7 +69,7 @@ public final class d0 extends g6.g {
 
     @Override // g6.h
     public final void t0(g6.d dVar) {
-        e0.k(this.b).post(new i9.s(8, this, dVar));
+        e0.k(this.b).post(new j9.u(7, this, dVar));
     }
 
     @Override // g6.h
@@ -79,7 +79,7 @@ public final class d0 extends g6.g {
 
     @Override // g6.h
     public final void y0(g6.c cVar) {
-        e0.k(this.b).post(new i9.s(9, this, cVar));
+        e0.k(this.b).post(new j9.u(8, this, cVar));
     }
 
     @Override // g6.h
@@ -97,8 +97,8 @@ public final class d0 extends g6.g {
     }
 
     @Override // g6.h
-    public final void zzm(int i10, long j3) {
-        e0.f(this.b, j3, i10);
+    public final void zzm(int i10, long j10) {
+        e0.f(this.b, j10, i10);
     }
 
     @Override // g6.h

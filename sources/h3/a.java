@@ -7,9 +7,8 @@ import c3.h;
 import c3.i;
 import c3.p;
 import c3.s;
-import e2.d;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a {
     public final e a;
@@ -17,21 +16,21 @@ public final class a {
     public f c;
     public final int d;
 
-    public a(g gVar, i iVar, long j3, long j10, long j11, long j12, long j13, int i10) {
+    public a(g gVar, i iVar, long j10, long j11, long j12, long j13, long j14, int i10) {
         this.b = iVar;
         this.d = i10;
-        this.a = new e(gVar, j3, j10, j11, j12, j13);
+        this.a = new e(gVar, j10, j11, j12, j13, j14);
     }
 
     public static int a(int i10, byte[] bArr) {
         return (bArr[i10 + 3] & 255) | ((bArr[i10] & 255) << 24) | ((bArr[i10 + 1] & 255) << 16) | ((bArr[i10 + 2] & 255) << 8);
     }
 
-    public static int c(p pVar, long j3, s sVar) {
-        if (j3 == pVar.getPosition()) {
+    public static int c(p pVar, long j10, s sVar) {
+        if (j10 == pVar.getPosition()) {
             return 0;
         }
-        sVar.a = j3;
+        sVar.a = j10;
         return 1;
     }
 
@@ -45,19 +44,19 @@ public final class a {
     public final int b(p pVar, s sVar) {
         while (true) {
             f fVar = this.c;
-            d.h(fVar);
-            long j3 = fVar.f;
-            long j10 = fVar.g;
-            long j11 = fVar.h;
-            long j12 = j10 - j3;
-            long j13 = this.d;
+            fVar.getClass();
+            long j10 = fVar.f;
+            long j11 = fVar.g;
+            long j12 = fVar.h;
+            long j13 = j11 - j10;
+            long j14 = this.d;
             i iVar = this.b;
-            if (j12 <= j13) {
+            if (j13 <= j14) {
                 this.c = null;
-                iVar.d();
-                return c(pVar, j3, sVar);
+                iVar.c();
+                return c(pVar, j10, sVar);
             }
-            long position = j11 - pVar.getPosition();
+            long position = j12 - pVar.getPosition();
             if (position < 0 || position > 262144) {
                 break;
             }
@@ -65,42 +64,42 @@ public final class a {
             pVar.q();
             h b10 = iVar.b(pVar, fVar.b);
             int i10 = b10.a;
-            long j14 = b10.b;
-            long j15 = b10.c;
+            long j15 = b10.b;
+            long j16 = b10.c;
             if (i10 == -3) {
                 this.c = null;
-                iVar.d();
-                return c(pVar, j11, sVar);
+                iVar.c();
+                return c(pVar, j12, sVar);
             }
             if (i10 == -2) {
-                fVar.d = j14;
-                fVar.f = j15;
-                fVar.h = f.a(fVar.b, j14, fVar.e, j15, fVar.g, fVar.c);
+                fVar.d = j15;
+                fVar.f = j16;
+                fVar.h = f.a(fVar.b, j15, fVar.e, j16, fVar.g, fVar.c);
             } else {
                 if (i10 != -1) {
                     if (i10 != 0) {
                         throw new IllegalStateException("Invalid case");
                     }
-                    long position2 = j15 - pVar.getPosition();
+                    long position2 = j16 - pVar.getPosition();
                     if (position2 >= 0 && position2 <= 262144) {
                         pVar.r((int) position2);
                     }
                     this.c = null;
-                    iVar.d();
-                    return c(pVar, j15, sVar);
+                    iVar.c();
+                    return c(pVar, j16, sVar);
                 }
-                fVar.e = j14;
-                fVar.g = j15;
-                fVar.h = f.a(fVar.b, fVar.d, j14, fVar.f, j15, fVar.c);
+                fVar.e = j15;
+                fVar.g = j16;
+                fVar.h = f.a(fVar.b, fVar.d, j15, fVar.f, j16, fVar.c);
             }
         }
     }
 
-    public final void d(long j3) {
+    public final void d(long j10) {
         f fVar = this.c;
-        if (fVar == null || fVar.a != j3) {
+        if (fVar == null || fVar.a != j10) {
             e eVar = this.a;
-            this.c = new f(j3, eVar.a.c(j3), eVar.c, eVar.d, eVar.e, eVar.f);
+            this.c = new f(j10, eVar.a.k(j10), eVar.c, eVar.d, eVar.e, eVar.f);
         }
     }
 }

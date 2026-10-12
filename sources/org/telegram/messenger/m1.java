@@ -1,47 +1,32 @@
 package org.telegram.messenger;
 
-import java.text.Collator;
-import java.util.Comparator;
-import org.telegram.messenger.ContactsController;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m1 implements Comparator {
+public final /* synthetic */ class m1 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Collator b;
+    public final /* synthetic */ ContactsController b;
 
-    public /* synthetic */ m1(Collator collator, int i10) {
+    public /* synthetic */ m1(ContactsController contactsController, int i10) {
         this.a = i10;
-        this.b = collator;
+        this.b = contactsController;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$buildContactsSectionsArrays$44;
-        int lambda$mergePhonebookAndTelegramContacts$38;
-        int lambda$mergePhonebookAndTelegramContacts$39;
-        int lambda$processLoadedContacts$31;
-        int lambda$processLoadedContacts$32;
-        int lambda$updateUnregisteredContacts$42;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                lambda$buildContactsSectionsArrays$44 = ContactsController.lambda$buildContactsSectionsArrays$44(this.b, (String) obj, (String) obj2);
-                return lambda$buildContactsSectionsArrays$44;
+                this.b.lambda$checkInviteText$3(tLObject, tL_error);
+                break;
             case 1:
-                lambda$mergePhonebookAndTelegramContacts$38 = ContactsController.lambda$mergePhonebookAndTelegramContacts$38(this.b, obj, obj2);
-                return lambda$mergePhonebookAndTelegramContacts$38;
-            case 2:
-                lambda$mergePhonebookAndTelegramContacts$39 = ContactsController.lambda$mergePhonebookAndTelegramContacts$39(this.b, (String) obj, (String) obj2);
-                return lambda$mergePhonebookAndTelegramContacts$39;
-            case 3:
-                lambda$processLoadedContacts$31 = ContactsController.lambda$processLoadedContacts$31(this.b, (String) obj, (String) obj2);
-                return lambda$processLoadedContacts$31;
-            case 4:
-                lambda$processLoadedContacts$32 = ContactsController.lambda$processLoadedContacts$32(this.b, (String) obj, (String) obj2);
-                return lambda$processLoadedContacts$32;
+                this.b.lambda$loadGlobalPrivacySetting$61(tLObject, tL_error);
+                break;
             default:
-                lambda$updateUnregisteredContacts$42 = ContactsController.lambda$updateUnregisteredContacts$42(this.b, (ContactsController.Contact) obj, (ContactsController.Contact) obj2);
-                return lambda$updateUnregisteredContacts$42;
+                this.b.lambda$loadPrivacySettings$63(tLObject, tL_error);
+                break;
         }
     }
 }

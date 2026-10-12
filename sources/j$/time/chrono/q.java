@@ -11,7 +11,7 @@ public final class q implements l {
 
     @Override // j$.time.temporal.l
     public final /* synthetic */ boolean e(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.r(this, oVar);
+        return j$.com.android.tools.r8.a.q(this, oVar);
     }
 
     @Override // j$.time.chrono.l
@@ -21,17 +21,17 @@ public final class q implements l {
 
     @Override // j$.time.temporal.l
     public final /* synthetic */ int j(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.m(this, oVar);
+        return j$.com.android.tools.r8.a.l(this, oVar);
     }
 
     @Override // j$.time.temporal.l
     public final /* synthetic */ Object m(j$.time.format.a aVar) {
-        return j$.com.android.tools.r8.a.v(this, aVar);
+        return j$.com.android.tools.r8.a.u(this, aVar);
     }
 
     @Override // j$.time.temporal.l
     public final /* synthetic */ long y(j$.time.temporal.o oVar) {
-        return j$.com.android.tools.r8.a.o(this, oVar);
+        return j$.com.android.tools.r8.a.n(this, oVar);
     }
 
     public static q valueOf(String str) {

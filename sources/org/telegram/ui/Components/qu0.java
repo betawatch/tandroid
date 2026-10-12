@@ -1,83 +1,70 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ObjectAnimator;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qu0 implements gg.a2, org.telegram.ui.Cells.a5 {
-    public final /* synthetic */ su0 a;
+public abstract class qu0 extends FrameLayout {
+    public pl0 E;
+    public int F;
+    public qr0 G;
+    public f60 H;
+    public boolean I;
+    public int J;
+    public boolean K;
+    public float L;
+    public long a;
+    public boolean b;
+    public ObjectAnimator c;
+    public s4.k d;
+    public s4.t0 e;
+    public s4.t0 f;
+    public ws0 h;
+    public bh.l n;
+    public pu0 r;
+    public ys0 s;
+    public ft0 v;
+    public ht0 w;
+    public us0 x;
+    public et0 y;
 
-    public /* synthetic */ qu0(su0 su0Var) {
-        this.a = su0Var;
-    }
-
-    @Override // gg.a2
-    public /* synthetic */ a0.i V() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.a5
-    public boolean c(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
-        int intValue = ((Integer) b5Var.getTag()).intValue();
-        su0 su0Var = this.a;
-        TLObject E = su0Var.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
-        }
-        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
-        tL_chatChannelParticipant.channelParticipant = channelParticipant;
-        tL_chatChannelParticipant.user_id = MessageObject.getPeerId(channelParticipant.peer);
-        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
-        tL_chatChannelParticipant.date = channelParticipant.date;
-        return su0Var.s.D1.h(tL_chatChannelParticipant, true, !z10, b5Var);
-    }
-
-    @Override // gg.a2
-    public /* synthetic */ a0.i d0() {
-        return null;
-    }
-
-    @Override // gg.a2
-    public void h(int i10) {
-        su0 su0Var = this.a;
-        su0Var.l();
-        if (i10 != 1) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        qr0 qr0Var = this.G;
+        if (qr0Var == null || qr0Var.getVisibility() != 0) {
             return;
         }
-        int i11 = su0Var.r - 1;
-        su0Var.r = i11;
-        if (i11 != 0) {
-            return;
+        tl0 fastScroll = this.h.getFastScroll();
+        if (fastScroll != null) {
+            float dp = AndroidUtilities.dp(36.0f) + fastScroll.getScrollBarY();
+            if (this.F == 9) {
+                dp += AndroidUtilities.dp(64.0f);
+            }
+            int i10 = this.F;
+            if (i10 == 8 || xv0.w0(i10)) {
+                dp += AndroidUtilities.dp(42.0f);
+            }
+            float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - AndroidUtilities.dp(16.0f);
+            this.G.setPivotX(r2.getMeasuredWidth());
+            this.G.setPivotY(0.0f);
+            this.G.setTranslationX(measuredWidth);
+            this.G.setTranslationY(dp);
         }
-        int i12 = 0;
-        while (true) {
-            bw0 bw0Var = su0Var.s;
-            uu0[] uu0VarArr = bw0Var.k0;
-            if (i12 >= uu0VarArr.length) {
-                return;
-            }
-            uu0 uu0Var = uu0VarArr[i12];
-            if (uu0Var.F == 7) {
-                if (su0Var.h == 0) {
-                    uu0Var.w.e(false, true);
-                } else {
-                    bw0Var.z(uu0Var.h, 0, null);
-                }
-            }
-            i12++;
+        if (fastScroll.getProgress() > 0.85f) {
+            xv0.q(this, null, false);
         }
     }
 
-    @Override // gg.a2
-    public /* synthetic */ boolean s0(int i10) {
-        return true;
-    }
-
-    @Override // gg.a2
-    public /* synthetic */ void x0(ArrayList arrayList) {
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (view == this.r) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j10);
     }
 }

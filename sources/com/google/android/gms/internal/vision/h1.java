@@ -7,9 +7,9 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class h1 extends n0 implements j2, RandomAccess {
+public final class h1 extends n0 implements i2, RandomAccess {
     public static final h1 d;
     public int[] b;
     public int c;
@@ -29,9 +29,9 @@ public final class h1 extends n0 implements j2, RandomAccess {
     public final /* synthetic */ void add(int i10, Object obj) {
         int i11;
         int intValue = ((Integer) obj).intValue();
-        i();
+        h();
         if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(p(i10));
+            throw new IndexOutOfBoundsException(o(i10));
         }
         int[] iArr = this.b;
         if (i11 < iArr.length) {
@@ -49,7 +49,7 @@ public final class h1 extends n0 implements j2, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean addAll(Collection collection) {
-        i();
+        h();
         Charset charset = j1.a;
         collection.getClass();
         if (!(collection instanceof h1)) {
@@ -103,7 +103,7 @@ public final class h1 extends n0 implements j2, RandomAccess {
 
     @Override // java.util.AbstractList, java.util.List
     public final Object get(int i10) {
-        o(i10);
+        n(i10);
         return Integer.valueOf(this.b[i10]);
     }
 
@@ -131,8 +131,8 @@ public final class h1 extends n0 implements j2, RandomAccess {
         return -1;
     }
 
-    public final void n(int i10) {
-        i();
+    public final void m(int i10) {
+        h();
         int i11 = this.c;
         int[] iArr = this.b;
         if (i11 == iArr.length) {
@@ -146,13 +146,13 @@ public final class h1 extends n0 implements j2, RandomAccess {
         iArr3[i12] = i10;
     }
 
-    public final void o(int i10) {
+    public final void n(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(p(i10));
+            throw new IndexOutOfBoundsException(o(i10));
         }
     }
 
-    public final String p(int i10) {
+    public final String o(int i10) {
         int i11 = this.c;
         StringBuilder sb2 = new StringBuilder(35);
         sb2.append("Index:");
@@ -164,8 +164,8 @@ public final class h1 extends n0 implements j2, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
     public final /* synthetic */ Object remove(int i10) {
-        i();
-        o(i10);
+        h();
+        n(i10);
         int[] iArr = this.b;
         int i11 = iArr[i10];
         if (i10 < this.c - 1) {
@@ -178,7 +178,7 @@ public final class h1 extends n0 implements j2, RandomAccess {
 
     @Override // java.util.AbstractList
     public final void removeRange(int i10, int i11) {
-        i();
+        h();
         if (i11 < i10) {
             throw new IndexOutOfBoundsException("toIndex < fromIndex");
         }
@@ -191,8 +191,8 @@ public final class h1 extends n0 implements j2, RandomAccess {
     @Override // java.util.AbstractList, java.util.List
     public final /* synthetic */ Object set(int i10, Object obj) {
         int intValue = ((Integer) obj).intValue();
-        i();
-        o(i10);
+        h();
+        n(i10);
         int[] iArr = this.b;
         int i11 = iArr[i10];
         iArr[i10] = intValue;
@@ -214,7 +214,7 @@ public final class h1 extends n0 implements j2, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final /* synthetic */ boolean add(Object obj) {
-        n(((Integer) obj).intValue());
+        m(((Integer) obj).intValue());
         return true;
     }
 }

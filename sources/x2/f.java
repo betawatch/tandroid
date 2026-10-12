@@ -1,33 +1,34 @@
 package x2;
 
-import b2.l1;
+import b2.q1;
+import b2.x;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f extends n implements Comparable {
+public final class f extends l implements Comparable {
     public final int e;
     public final int f;
 
-    public f(int i10, l1 l1Var, int i11, i iVar, int i12) {
-        super(i10, l1Var, i11);
+    public f(int i10, q1 q1Var, int i11, i iVar, int i12) {
+        super(i10, q1Var, i11);
         int i13;
-        this.e = hg.c.d(i12, iVar.t0) ? 1 : 0;
-        b2.s sVar = this.d;
-        int i14 = sVar.y;
+        this.e = i2.d.e(i12, iVar.B0) ? 1 : 0;
+        x xVar = this.d;
+        int i14 = xVar.z;
         int i15 = -1;
-        if (i14 != -1 && (i13 = sVar.z) != -1) {
+        if (i14 != -1 && (i13 = xVar.A) != -1) {
             i15 = i14 * i13;
         }
         this.f = i15;
     }
 
-    @Override // x2.n
+    @Override // x2.l
     public final int a() {
         return this.e;
     }
 
-    @Override // x2.n
-    public final /* bridge */ /* synthetic */ boolean b(n nVar) {
+    @Override // x2.l
+    public final /* bridge */ /* synthetic */ boolean b(l lVar) {
         return false;
     }
 

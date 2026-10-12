@@ -16,12 +16,12 @@ public final class f extends p implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+        return j$.com.android.tools.r8.a.m(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+        return j$.com.android.tools.r8.a.o(this, i10);
     }
 
     @Override // j$.util.Spliterator
@@ -29,10 +29,10 @@ public final class f extends p implements Spliterator {
         throw new IllegalStateException();
     }
 
-    public f(l[] lVarArr, int i10, int i11, int i12, long j3, ConcurrentHashMap concurrentHashMap) {
+    public f(l[] lVarArr, int i10, int i11, int i12, long j10, ConcurrentHashMap concurrentHashMap) {
         super(lVarArr, i10, i11, i12);
         this.i = concurrentHashMap;
-        this.j = j3;
+        this.j = j10;
     }
 
     @Override // j$.util.Spliterator
@@ -45,9 +45,9 @@ public final class f extends p implements Spliterator {
         }
         l[] lVarArr = this.a;
         this.g = i12;
-        long j3 = this.j >>> 1;
-        this.j = j3;
-        return new f(lVarArr, this.h, i12, i11, j3, this.i);
+        long j10 = this.j >>> 1;
+        this.j = j10;
+        return new f(lVarArr, this.h, i12, i11, j10, this.i);
     }
 
     @Override // j$.util.Spliterator

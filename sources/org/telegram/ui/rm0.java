@@ -1,73 +1,56 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class rm0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ nn0 c;
+public final class rm0 implements TextWatcher {
+    public final /* synthetic */ EditTextBoldCursor a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ un0 c;
 
-    public /* synthetic */ rm0(nn0 nn0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = nn0Var;
-        this.b = z10;
+    public rm0(un0 un0Var, EditTextBoldCursor editTextBoldCursor, String str) {
+        this.c = un0Var;
+        this.a = editTextBoldCursor;
+        this.b = str;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                nn0 nn0Var = this.c;
-                AnimatorSet animatorSet = nn0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    nn0Var.M = null;
-                    break;
-                }
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        EditTextBoldCursor editTextBoldCursor = this.a;
+        int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
+        int i10 = 0;
+        while (true) {
+            if (i10 >= editable.length()) {
+                z10 = false;
                 break;
-            default:
-                nn0 nn0Var2 = this.c;
-                AnimatorSet animatorSet2 = nn0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    nn0Var2.M = null;
-                    break;
-                }
+            }
+            char charAt = editable.charAt(i10);
+            if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'z') && !((charAt >= 'A' && charAt <= 'Z') || charAt == ' ' || charAt == '\'' || charAt == ',' || charAt == '.' || charAt == '&' || charAt == '-' || charAt == '/'))) {
+                z10 = true;
                 break;
+            }
+            i10++;
+        }
+        un0 un0Var = this.c;
+        if (z10 && !un0Var.u0) {
+            editTextBoldCursor.setErrorText(LocaleController.getString(R.string.PassportUseLatinOnly));
+        } else {
+            un0Var.t0[intValue] = z10;
+            un0.I0(un0Var, editTextBoldCursor, this.b, editable, false);
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                nn0 nn0Var = this.c;
-                AnimatorSet animatorSet = nn0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        nn0Var.N.setVisibility(4);
-                        break;
-                    } else {
-                        nn0Var.L.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                nn0 nn0Var2 = this.c;
-                AnimatorSet animatorSet2 = nn0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        nn0Var2.P.setVisibility(4);
-                        break;
-                    } else {
-                        nn0Var2.O.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

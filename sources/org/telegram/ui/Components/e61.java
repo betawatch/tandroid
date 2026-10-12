@@ -1,48 +1,41 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.MotionEvent;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class e61 extends s4.t0 {
-    public final /* synthetic */ l61 a;
+public abstract class e61 {
+    public String[] a = new String[0];
 
-    public e61(l61 l61Var) {
-        this.a = l61Var;
+    public boolean a() {
+        return false;
     }
 
-    @Override // s4.t0
-    public final void a(RecyclerView recyclerView, int i10) {
-        s4.t0 t0Var = this.a.y;
-        if (t0Var != null) {
-            t0Var.a(recyclerView, i10);
-        }
+    public String[] b() {
+        return this.a;
     }
 
-    @Override // s4.t0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        l61 l61Var = this.a;
-        k61 k61Var = l61Var.s;
-        b61 b61Var = l61Var.n;
-        s4.t0 t0Var = l61Var.y;
-        if (t0Var != null) {
-            t0Var.b(b61Var, i10, i11);
-        }
-        if (i11 <= 0 || b61Var.getAdapter() != k61Var || !l61Var.J || k61Var.r || k61Var.s) {
-            return;
-        }
-        if (l61Var.r.N0() >= ((k61Var.w + 1) - ((k61Var.v + 1) * 10)) - 1) {
-            l61 l61Var2 = k61Var.x;
-            if (!l61Var2.J || k61Var.r || k61Var.s) {
-                return;
-            }
-            k61Var.r = true;
-            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
-            tL_messages_getOldFeaturedStickers.offset = k61Var.n.size();
-            tL_messages_getOldFeaturedStickers.limit = 40;
-            ConnectionsManager.getInstance(l61Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new y1(k61Var, 17));
-        }
+    public boolean c() {
+        return false;
+    }
+
+    public boolean d(x51 x51Var, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean e(x51 x51Var, j jVar, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
+
+    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    public void i(String[] strArr) {
+        this.a = strArr;
+    }
+
+    public void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
     }
 }

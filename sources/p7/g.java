@@ -3,17 +3,17 @@ package p7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
-import w7.d0;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g extends o6.a {
     public final String a;
-    public final l b;
+    public final k b;
     public final int c;
     public final byte[] d;
     public static final int e = Integer.parseInt("-1");
-    public static final Parcelable.Creator<g> CREATOR = new m8.h(28);
+    public static final Parcelable.Creator<g> CREATOR = new m8.h(26);
 
     static {
         ArrayList arrayList = new ArrayList();
@@ -26,7 +26,7 @@ public final class g extends o6.a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public g(String str, l lVar, int i10, byte[] bArr) {
+    public g(String str, k kVar, int i10, byte[] bArr) {
         String str2;
         String str3;
         String str4 = null;
@@ -34,7 +34,7 @@ public final class g extends o6.a {
         int i11 = e;
         if (i10 != i11) {
             if (i10 >= 0) {
-                String[] strArr = k.a;
+                String[] strArr = j.a;
                 if (i10 < 10) {
                     str3 = strArr[i10];
                     if (str3 == null) {
@@ -42,7 +42,7 @@ public final class g extends o6.a {
                     }
                 }
             } else {
-                String[] strArr2 = k.a;
+                String[] strArr2 = j.a;
             }
             str3 = null;
             if (str3 == null) {
@@ -53,12 +53,12 @@ public final class g extends o6.a {
         sb2.append(i10);
         n6.l.a(sb2.toString(), z10);
         this.a = str;
-        this.b = lVar;
+        this.b = kVar;
         this.c = i10;
         this.d = bArr;
         if (i10 != i11) {
             if (i10 >= 0) {
-                String[] strArr3 = k.a;
+                String[] strArr3 = j.a;
                 if (i10 < 10) {
                     str2 = strArr3[i10];
                     if (str2 == null) {
@@ -73,7 +73,7 @@ public final class g extends o6.a {
                     }
                 }
             } else {
-                String[] strArr4 = k.a;
+                String[] strArr4 = j.a;
             }
             str2 = null;
             if (str2 == null) {
@@ -88,12 +88,12 @@ public final class g extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.l(parcel, 1, this.a);
-        d0.k(parcel, 3, this.b, i10);
-        d0.s(parcel, 4, 4);
+        int q6 = g0.q(parcel, 20293);
+        g0.l(parcel, 1, this.a);
+        g0.k(parcel, 3, this.b, i10);
+        g0.s(parcel, 4, 4);
         parcel.writeInt(this.c);
-        d0.c(parcel, 5, this.d);
-        d0.r(parcel, q6);
+        g0.c(parcel, 5, this.d);
+        g0.r(parcel, q6);
     }
 }

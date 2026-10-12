@@ -1,58 +1,26 @@
 package e6;
 
-import android.util.Log;
-import ci.n2;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.cast.a0;
+import android.util.LruCache;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c b;
+public final class r extends LruCache {
+    public final /* synthetic */ c a;
 
-    public /* synthetic */ r(c cVar, int i10) {
-        this.a = i10;
-        this.b = cVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r(c cVar) {
+        super(20);
+        this.a = cVar;
     }
 
-    public final void a(com.google.android.gms.common.api.q qVar) {
-        o oVar = (o) qVar;
-        switch (this.a) {
-            case 0:
-                Status i10 = oVar.i();
-                int i11 = i10.a;
-                c cVar = this.b;
-                if (i11 != 0) {
-                    g6.b bVar = cVar.a;
-                    Log.w(bVar.a, bVar.d("Error fetching queue item ids, statusCode=" + i11 + ", statusMessage=" + i10.b, new Object[0]));
-                }
-                cVar.l = null;
-                if (!cVar.h.isEmpty()) {
-                    a0 a0Var = cVar.i;
-                    n2 n2Var = cVar.j;
-                    a0Var.removeCallbacks(n2Var);
-                    a0Var.postDelayed(n2Var, 500L);
-                    break;
-                }
-                break;
-            default:
-                Status i12 = oVar.i();
-                int i13 = i12.a;
-                c cVar2 = this.b;
-                if (i13 != 0) {
-                    g6.b bVar2 = cVar2.a;
-                    Log.w(bVar2.a, bVar2.d("Error fetching queue items, statusCode=" + i13 + ", statusMessage=" + i12.b, new Object[0]));
-                }
-                cVar2.k = null;
-                if (!cVar2.h.isEmpty()) {
-                    a0 a0Var2 = cVar2.i;
-                    n2 n2Var2 = cVar2.j;
-                    a0Var2.removeCallbacks(n2Var2);
-                    a0Var2.postDelayed(n2Var2, 500L);
-                    break;
-                }
-                break;
+    @Override // android.util.LruCache
+    public final /* bridge */ /* synthetic */ void entryRemoved(boolean z10, Object obj, Object obj2, Object obj3) {
+        ArrayList arrayList = this.a.g;
+        Integer num = (Integer) obj;
+        if (z10) {
+            n6.l.h(arrayList);
+            arrayList.add(num);
         }
     }
 }

@@ -1,186 +1,82 @@
 package e9;
 
-import j$.util.DesugarCollections;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
-import java.util.NavigableMap;
-import java.util.NavigableSet;
-import java.util.Set;
-import java.util.SortedMap;
-import java.util.SortedSet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f extends i implements NavigableMap {
-    public final /* synthetic */ v0 n;
+public class f extends j2 {
+    public final Map b;
+    public final /* synthetic */ p1 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(v0 v0Var, NavigableMap navigableMap) {
-        super(v0Var, navigableMap);
-        this.n = v0Var;
+    public f(p1 p1Var, Map map) {
+        super(0);
+        this.c = p1Var;
+        map.getClass();
+        this.b = map;
     }
 
-    @Override // e9.i
-    public final SortedSet b() {
-        return new g(this.n, d());
-    }
-
-    @Override // e9.i
-    /* renamed from: c */
-    public final SortedSet keySet() {
-        return (NavigableSet) super.keySet();
-    }
-
-    @Override // java.util.NavigableMap
-    public final Map.Entry ceilingEntry(Object obj) {
-        Map.Entry ceilingEntry = d().ceilingEntry(obj);
-        if (ceilingEntry == null) {
-            return null;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        Iterator it = iterator();
+        while (true) {
+            d dVar = (d) it;
+            if (!dVar.hasNext()) {
+                return;
+            }
+            dVar.next();
+            dVar.remove();
         }
-        return a(ceilingEntry);
     }
 
-    @Override // java.util.NavigableMap
-    public final Object ceilingKey(Object obj) {
-        return d().ceilingKey(obj);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.b.containsKey(obj);
     }
 
-    @Override // java.util.NavigableMap
-    public final NavigableSet descendingKeySet() {
-        return (NavigableSet) super.keySet();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean containsAll(Collection collection) {
+        return this.b.keySet().containsAll(collection);
     }
 
-    @Override // java.util.NavigableMap
-    public final NavigableMap descendingMap() {
-        return new f(this.n, d().descendingMap());
+    @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+    public final boolean equals(Object obj) {
+        return this == obj || this.b.keySet().equals(obj);
     }
 
-    public final e0 e(Iterator it) {
-        if (!it.hasNext()) {
-            return null;
+    @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return this.b.keySet().hashCode();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean isEmpty() {
+        return this.b.isEmpty();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        return new d(this, this.b.entrySet().iterator(), 1);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        int i10;
+        Collection collection = (Collection) this.b.remove(obj);
+        if (collection != null) {
+            i10 = collection.size();
+            collection.clear();
+            this.c.f -= i10;
+        } else {
+            i10 = 0;
         }
-        Map.Entry entry = (Map.Entry) it.next();
-        Collection c10 = this.n.c();
-        c10.addAll((Collection) entry.getValue());
-        it.remove();
-        return new e0(entry.getKey(), DesugarCollections.unmodifiableList((List) c10));
+        return i10 > 0;
     }
 
-    @Override // e9.i
-    /* renamed from: f, reason: merged with bridge method [inline-methods] */
-    public final NavigableMap d() {
-        return (NavigableMap) ((SortedMap) this.b);
-    }
-
-    @Override // java.util.NavigableMap
-    public final Map.Entry firstEntry() {
-        Map.Entry firstEntry = d().firstEntry();
-        if (firstEntry == null) {
-            return null;
-        }
-        return a(firstEntry);
-    }
-
-    @Override // java.util.NavigableMap
-    public final Map.Entry floorEntry(Object obj) {
-        Map.Entry floorEntry = d().floorEntry(obj);
-        if (floorEntry == null) {
-            return null;
-        }
-        return a(floorEntry);
-    }
-
-    @Override // java.util.NavigableMap
-    public final Object floorKey(Object obj) {
-        return d().floorKey(obj);
-    }
-
-    @Override // e9.i, java.util.SortedMap, java.util.NavigableMap
-    public final SortedMap headMap(Object obj) {
-        return headMap(obj, false);
-    }
-
-    @Override // java.util.NavigableMap
-    public final Map.Entry higherEntry(Object obj) {
-        Map.Entry higherEntry = d().higherEntry(obj);
-        if (higherEntry == null) {
-            return null;
-        }
-        return a(higherEntry);
-    }
-
-    @Override // java.util.NavigableMap
-    public final Object higherKey(Object obj) {
-        return d().higherKey(obj);
-    }
-
-    @Override // e9.i, e9.d, java.util.AbstractMap, java.util.Map
-    public final Set keySet() {
-        return (NavigableSet) super.keySet();
-    }
-
-    @Override // java.util.NavigableMap
-    public final Map.Entry lastEntry() {
-        Map.Entry lastEntry = d().lastEntry();
-        if (lastEntry == null) {
-            return null;
-        }
-        return a(lastEntry);
-    }
-
-    @Override // java.util.NavigableMap
-    public final Map.Entry lowerEntry(Object obj) {
-        Map.Entry lowerEntry = d().lowerEntry(obj);
-        if (lowerEntry == null) {
-            return null;
-        }
-        return a(lowerEntry);
-    }
-
-    @Override // java.util.NavigableMap
-    public final Object lowerKey(Object obj) {
-        return d().lowerKey(obj);
-    }
-
-    @Override // java.util.NavigableMap
-    public final NavigableSet navigableKeySet() {
-        return (NavigableSet) super.keySet();
-    }
-
-    @Override // java.util.NavigableMap
-    public final Map.Entry pollFirstEntry() {
-        return e(((b) entrySet()).iterator());
-    }
-
-    @Override // java.util.NavigableMap
-    public final Map.Entry pollLastEntry() {
-        return e(((b) ((d) descendingMap()).entrySet()).iterator());
-    }
-
-    @Override // e9.i, java.util.SortedMap, java.util.NavigableMap
-    public final SortedMap subMap(Object obj, Object obj2) {
-        return subMap(obj, true, obj2, false);
-    }
-
-    @Override // e9.i, java.util.SortedMap, java.util.NavigableMap
-    public final SortedMap tailMap(Object obj) {
-        return tailMap(obj, true);
-    }
-
-    @Override // java.util.NavigableMap
-    public final NavigableMap headMap(Object obj, boolean z10) {
-        return new f(this.n, d().headMap(obj, z10));
-    }
-
-    @Override // java.util.NavigableMap
-    public final NavigableMap subMap(Object obj, boolean z10, Object obj2, boolean z11) {
-        return new f(this.n, d().subMap(obj, z10, obj2, z11));
-    }
-
-    @Override // java.util.NavigableMap
-    public final NavigableMap tailMap(Object obj, boolean z10) {
-        return new f(this.n, d().tailMap(obj, z10));
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.b.size();
     }
 }

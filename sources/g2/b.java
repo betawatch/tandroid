@@ -3,11 +3,12 @@ package g2;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.net.Uri;
+import e2.m0;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b extends c {
     public final AssetManager a;
@@ -30,8 +31,8 @@ public final class b extends c {
                 if (inputStream != null) {
                     inputStream.close();
                 }
-            } catch (IOException e7) {
-                throw new a(e7, 2000);
+            } catch (IOException e) {
+                throw new a(e, 2000);
             }
         } finally {
             this.c = null;
@@ -51,7 +52,7 @@ public final class b extends c {
     public final long open(m mVar) {
         try {
             Uri uri = mVar.a;
-            long j3 = mVar.e;
+            long j10 = mVar.e;
             this.b = uri;
             String path = uri.getPath();
             path.getClass();
@@ -63,12 +64,12 @@ public final class b extends c {
             transferInitializing(mVar);
             InputStream open = this.a.open(path, 1);
             this.c = open;
-            if (open.skip(j3) < j3) {
+            if (open.skip(j10) < j10) {
                 throw new a(null, 2008);
             }
-            long j10 = mVar.f;
-            if (j10 != -1) {
-                this.d = j10;
+            long j11 = mVar.f;
+            if (j11 != -1) {
+                this.d = j11;
             } else {
                 long available = this.c.available();
                 this.d = available;
@@ -79,34 +80,34 @@ public final class b extends c {
             this.e = true;
             transferStarted(mVar);
             return this.d;
-        } catch (a e7) {
-            throw e7;
-        } catch (IOException e10) {
-            throw new a(e10, e10 instanceof FileNotFoundException ? 2005 : 2000);
+        } catch (a e) {
+            throw e;
+        } catch (IOException e7) {
+            throw new a(e7, e7 instanceof FileNotFoundException ? 2005 : 2000);
         }
     }
 
-    @Override // b2.k
+    @Override // b2.p
     public final int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;
         }
-        long j3 = this.d;
-        if (j3 != 0) {
-            if (j3 != -1) {
+        long j10 = this.d;
+        if (j10 != 0) {
+            if (j10 != -1) {
                 try {
-                    i11 = (int) Math.min(j3, i11);
-                } catch (IOException e7) {
-                    throw new a(e7, 2000);
+                    i11 = (int) Math.min(j10, i11);
+                } catch (IOException e) {
+                    throw new a(e, 2000);
                 }
             }
             InputStream inputStream = this.c;
-            String str = e2.d0.a;
+            String str = m0.a;
             int read = inputStream.read(bArr, i10, i11);
             if (read != -1) {
-                long j10 = this.d;
-                if (j10 != -1) {
-                    this.d = j10 - read;
+                long j11 = this.d;
+                if (j11 != -1) {
+                    this.d = j11 - read;
                 }
                 bytesTransferred(read);
                 return read;

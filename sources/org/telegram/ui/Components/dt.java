@@ -1,65 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dt implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
+public final class dt {
+    public final int a;
+    public final zs b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public long f;
+    public String g;
+    public final ArrayList h = new ArrayList();
+    public boolean i = false;
 
-    public /* synthetic */ dt(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public dt(int i10, zs zsVar) {
         this.a = i10;
-        this.b = context;
-        this.c = e6Var;
+        this.b = zsVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
-                String string = LocaleController.getString(R.string.AppsTabInfoText);
-                bt btVar = new bt(b2VarArr, 0);
-                org.telegram.ui.ActionBar.e6 e6Var = this.c;
-                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(AndroidUtilities.replaceLinks(string, e6Var, btVar));
-                Matcher matcher = Pattern.compile("@([a-zA-Z0-9_-]+)").matcher(replaceTags);
-                while (true) {
-                    boolean find = matcher.find();
-                    Context context = this.b;
-                    if (!find) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, e6Var);
-                        String string2 = LocaleController.getString(R.string.AppsTabInfoTitle);
-                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                        b2Var.R = string2;
-                        b2Var.T = replaceTags;
-                        alertDialog$Builder.k(LocaleController.getString(R.string.AppsTabInfoButton), null);
-                        b2VarArr[0] = alertDialog$Builder.o();
-                        break;
-                    } else {
-                        replaceTags.setSpan(new org.telegram.ui.o0(b2VarArr, context, matcher.group(1), 1), matcher.start(), matcher.end(), 33);
-                    }
-                }
-            case 1:
-                org.telegram.ui.Wallet.a5.t0(this.b, this.c);
-                break;
-            default:
-                new yh.f7(this.b, this.c).show();
-                break;
+    public final void a() {
+        if (this.c || this.e) {
+            return;
         }
-    }
-
-    public /* synthetic */ dt(ht htVar, org.telegram.ui.ActionBar.e6 e6Var, Context context) {
-        this.a = 0;
-        this.c = e6Var;
-        this.b = context;
+        this.c = true;
+        boolean z10 = this.d;
+        int i10 = this.a;
+        if (!z10) {
+            ct ctVar = new ct(this, 0);
+            MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+            messagesStorage.getStorageQueue().postRunnable(new n2.h(this, messagesStorage, ctVar, 23));
+            return;
+        }
+        TL_bots.getPopularAppBots getpopularappbots = new TL_bots.getPopularAppBots();
+        getpopularappbots.limit = 20;
+        String str = this.g;
+        if (str == null) {
+            str = "";
+        }
+        getpopularappbots.offset = str;
+        ConnectionsManager.getInstance(i10).sendRequest(getpopularappbots, new y1(this, 3));
     }
 }

@@ -1,37 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class uw0 extends z60 {
-    public final /* synthetic */ ww0 d;
+public final /* synthetic */ class uw0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ww0 b;
 
-    public uw0(ww0 ww0Var) {
-        this.d = ww0Var;
+    public /* synthetic */ uw0(ww0 ww0Var, int i10) {
+        this.a = i10;
+        this.b = ww0Var;
     }
 
-    @Override // org.telegram.ui.Components.hp0
-    public final CharSequence d() {
-        ww0 ww0Var = this.d;
-        int i10 = ww0Var.I;
-        String[] strArr = ww0Var.F;
-        if (i10 < strArr.length) {
-            return strArr[i10];
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ww0 ww0Var = this.b;
+                ww0Var.V0 = false;
+                if (!ww0Var.Y0 && ww0Var.W0) {
+                    ww0Var.C(true);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.V0 = false;
+                break;
+            case 2:
+                ww0 ww0Var2 = this.b;
+                ww0Var2.Y0 = false;
+                if (!ww0Var2.V0 && ww0Var2.W0) {
+                    ww0Var2.C(true);
+                    break;
+                }
+                break;
+            default:
+                this.b.Y0 = false;
+                break;
         }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.z60
-    public final int i() {
-        return this.d.F.length - 1;
-    }
-
-    @Override // org.telegram.ui.Components.z60
-    public final int j() {
-        return this.d.I;
-    }
-
-    @Override // org.telegram.ui.Components.z60
-    public final void k(int i10) {
-        this.d.setOption(i10);
     }
 }

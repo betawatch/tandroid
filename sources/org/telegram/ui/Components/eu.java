@@ -1,28 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import android.widget.EdgeEffect;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.view.View;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class eu extends s4.m0 {
-    public final du[] a = new du[4];
-    public final ArrayList b = new ArrayList();
+public final /* synthetic */ class eu implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    @Override // s4.m0
-    public final EdgeEffect a(RecyclerView recyclerView, int i10) {
-        du duVar = new du(recyclerView, i10, new bu(this, 0));
-        this.a[i10] = duVar;
-        return duVar;
+    public /* synthetic */ eu(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    public final float b(int i10) {
-        du duVar = this.a[i10];
-        if (Build.VERSION.SDK_INT < 31 || duVar == null || duVar.isFinished()) {
-            return 0.0f;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.g4 g4Var = ((EditTextBoldCursor) this.b).floatingActionMode;
+                if (g4Var != null) {
+                    g4Var.c();
+                    break;
+                }
+                break;
+            default:
+                ((k80) this.b).invalidate();
+                break;
         }
-        return duVar.getDistance();
+        return true;
     }
 }

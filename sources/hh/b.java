@@ -1,38 +1,9 @@
 package hh;
 
-import android.graphics.RectF;
-import java.util.HashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.vs;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ b(int i10) {
-        this.a = i10;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                RectF rectF = e.H;
-                break;
-            case 1:
-                int i10 = vs.G0;
-                break;
-            default:
-                Boolean bool = (Boolean) obj;
-                HashSet<Long> hashSet = (HashSet) obj2;
-                VoIPService sharedInstance = VoIPService.getSharedInstance();
-                if (sharedInstance != null) {
-                    sharedInstance.convertToConferenceCall(bool.booleanValue(), hashSet);
-                    break;
-                }
-                break;
-        }
-    }
+public interface b {
+    Object a(Bitmap bitmap);
 }

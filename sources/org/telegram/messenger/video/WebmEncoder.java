@@ -15,7 +15,7 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -27,19 +27,20 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.q;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.b6;
 import org.telegram.ui.Components.c6;
 import org.telegram.ui.Components.f6;
-import pg.k0;
+import qg.j0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -118,10 +119,10 @@ public class WebmEncoder {
             }
         }
 
-        private void drawEntity(Canvas canvas, VideoEditedInfo.MediaEntity mediaEntity, int i10, long j3) {
+        private void drawEntity(Canvas canvas, VideoEditedInfo.MediaEntity mediaEntity, int i10, long j10) {
             VideoEditedInfo.MediaEntity mediaEntity2;
             Canvas canvas2;
-            long j10;
+            long j11;
             RLottieNative rLottieNative = mediaEntity.lottieNative;
             int i11 = 0;
             if (rLottieNative != null) {
@@ -169,15 +170,15 @@ public class WebmEncoder {
                 VideoEditedInfo.EmojiEntity emojiEntity = mediaEntity.entities.get(i11);
                 if (emojiEntity == null || (mediaEntity2 = emojiEntity.entity) == null) {
                     canvas2 = canvas;
-                    j10 = j3;
+                    j11 = j10;
                 } else {
                     canvas2 = canvas;
-                    j10 = j3;
-                    drawEntity(canvas2, mediaEntity2, mediaEntity.color, j10);
+                    j11 = j10;
+                    drawEntity(canvas2, mediaEntity2, mediaEntity.color, j11);
                 }
                 i11++;
                 canvas = canvas2;
-                j3 = j10;
+                j10 = j11;
             }
         }
 
@@ -254,12 +255,12 @@ public class WebmEncoder {
                     if (width > 1.0f) {
                         float f19 = mediaEntity.height;
                         float f20 = f19 / width;
-                        mediaEntity.y = e2.z(f19, f20, 2.0f, mediaEntity.y);
+                        mediaEntity.y = k3.z(f19, f20, 2.0f, mediaEntity.y);
                         mediaEntity.height = f20;
                     } else if (width < 1.0f) {
                         float f21 = mediaEntity.width;
                         float f22 = width * f21;
-                        mediaEntity.x = e2.z(f21, f22, 2.0f, mediaEntity.x);
+                        mediaEntity.x = k3.z(f21, f22, 2.0f, mediaEntity.x);
                         mediaEntity.width = f22;
                     }
                 }
@@ -270,13 +271,13 @@ public class WebmEncoder {
         private void initTextEntity(final VideoEditedInfo.MediaEntity mediaEntity) {
             Emoji.EmojiSpan[] emojiSpanArr;
             Typeface d;
-            final qg.b bVar = new qg.b(ApplicationLoader.applicationContext);
+            final rg.b bVar = new rg.b(ApplicationLoader.applicationContext);
             bVar.getPaint().setAntiAlias(true);
             bVar.drawAnimatedEmojiDrawables = false;
             bVar.setBackgroundColor(0);
             bVar.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
-            k0 k0Var = mediaEntity.textTypeface;
-            if (k0Var != null && (d = k0Var.d()) != null) {
+            j0 j0Var = mediaEntity.textTypeface;
+            if (j0Var != null && (d = j0Var.d()) != null) {
                 bVar.setTypeface(d);
             }
             bVar.setTextSize(0, mediaEntity.fontSize);
@@ -309,7 +310,7 @@ public class WebmEncoder {
                                 double d10 = paddingLeft - f12;
                                 double d11 = (paddingTop - f13) / f14;
                                 paddingLeft = ((float) ((Math.cos(-mediaEntity.rotation) * d10) - (Math.sin(-mediaEntity.rotation) * d11))) + f12;
-                                paddingTop = (((float) hg.c.e(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
+                                paddingTop = (((float) q.a(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
                             }
                             VideoEditedInfo.MediaEntity mediaEntity5 = emojiEntity.entity;
                             int i17 = this.measuredSize;
@@ -397,16 +398,16 @@ public class WebmEncoder {
             if (bitmap != null) {
                 canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
             }
-            long j3 = (1000000000 / this.fps) * i10;
+            long j10 = (1000000000 / this.fps) * i10;
             int size = this.mediaEntities.size();
             for (int i11 = 0; i11 < size; i11++) {
                 VideoEditedInfo.MediaEntity mediaEntity = this.mediaEntities.get(i11);
-                drawEntity(canvas, mediaEntity, mediaEntity.color, j3);
+                drawEntity(canvas, mediaEntity, mediaEntity.color, j10);
             }
             canvas.restore();
         }
 
-        public void setBreakStrategy(qg.b bVar) {
+        public void setBreakStrategy(rg.b bVar) {
             bVar.setBreakStrategy(0);
         }
     }
@@ -439,8 +440,8 @@ public class WebmEncoder {
             } catch (Throwable th2) {
                 th = th2;
             }
-        } catch (Exception e7) {
-            e = e7;
+        } catch (Exception e) {
+            e = e;
             z10 = z12;
         }
         try {
@@ -465,8 +466,8 @@ public class WebmEncoder {
                         z10 = z12;
                         try {
                             bitmap = bitmap2;
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e7) {
+                            e = e7;
                             FileLog.e(e);
                             stop(createEncoder);
                             if (bitmap2 != null) {
@@ -485,8 +486,8 @@ public class WebmEncoder {
                         try {
                             i11 = i12;
                             videoConvertorListener3.didWriteData(Math.min(261120L, convertVideoParams.cacheFile.length()), i14 / ceil);
-                        } catch (Exception e11) {
-                            e = e11;
+                        } catch (Exception e10) {
+                            e = e10;
                             bitmap2 = bitmap;
                             FileLog.e(e);
                             stop(createEncoder);
@@ -526,8 +527,8 @@ public class WebmEncoder {
                 stop(createEncoder);
                 bitmap2.recycle();
                 z11 = false;
-            } catch (Exception e12) {
-                e = e12;
+            } catch (Exception e11) {
+                e = e11;
                 z10 = z12;
             }
             length = convertVideoParams.cacheFile.length();
@@ -549,9 +550,9 @@ public class WebmEncoder {
         }
     }
 
-    private static native long createEncoder(String str, int i10, int i11, int i12, long j3);
+    private static native long createEncoder(String str, int i10, int i11, int i12, long j10);
 
-    public static native void stop(long j3);
+    public static native void stop(long j10);
 
-    private static native boolean writeFrame(long j3, ByteBuffer byteBuffer, int i10, int i11);
+    private static native boolean writeFrame(long j10, ByteBuffer byteBuffer, int i10, int i11);
 }

@@ -4,7 +4,7 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class d extends FilterInputStream {
     public final /* synthetic */ int a = 1;
@@ -97,23 +97,23 @@ public class d extends FilterInputStream {
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
-    public long skip(long j3) {
+    public long skip(long j10) {
         switch (this.a) {
             case 0:
-                long skip = ((FilterInputStream) this).in.skip(Math.min(j3, this.b));
+                long skip = ((FilterInputStream) this).in.skip(Math.min(j10, this.b));
                 this.b -= skip;
                 return skip;
             default:
-                long j10 = this.b;
-                long skip2 = super.skip(j3);
-                this.b = j10 + skip2;
+                long j11 = this.b;
+                long skip2 = super.skip(j10);
+                this.b = j11 + skip2;
                 return skip2;
         }
     }
 
-    public d(InputStream inputStream, long j3) {
+    public d(InputStream inputStream, long j10) {
         super(inputStream);
-        this.b = j3;
+        this.b = j10;
     }
 
     public d(InputStream inputStream) {
@@ -126,20 +126,20 @@ public class d extends FilterInputStream {
     public int read(byte[] bArr, int i10, int i11) {
         switch (this.a) {
             case 0:
-                long j3 = this.b;
-                if (j3 == 0) {
+                long j10 = this.b;
+                if (j10 == 0) {
                     return -1;
                 }
-                int read = ((FilterInputStream) this).in.read(bArr, i10, (int) Math.min(i11, j3));
+                int read = ((FilterInputStream) this).in.read(bArr, i10, (int) Math.min(i11, j10));
                 if (read != -1) {
                     this.b -= read;
                 }
                 return read;
             default:
-                long j10 = this.b;
+                long j11 = this.b;
                 int read2 = super.read(bArr, i10, i11);
                 if (read2 > 0) {
-                    this.b = j10 + read2;
+                    this.b = j11 + read2;
                 }
                 return read2;
         }

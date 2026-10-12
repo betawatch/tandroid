@@ -4,18 +4,18 @@ import android.content.Context;
 import java.util.ArrayList;
 import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.p01;
+import org.telegram.ui.w01;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class e6 implements o2 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ p01 c;
+    public final /* synthetic */ w01 c;
 
-    public e6(p01 p01Var, org.telegram.ui.ActionBar.n2 n2Var, Context context) {
-        this.c = p01Var;
-        this.a = n2Var;
+    public e6(w01 w01Var, org.telegram.ui.ActionBar.m2 m2Var, Context context) {
+        this.c = w01Var;
+        this.a = m2Var;
         this.b = context;
     }
 
@@ -26,8 +26,8 @@ public final class e6 implements o2 {
 
     @Override // org.telegram.ui.Cells.o2
     public final void c() {
-        org.telegram.ui.ActionBar.n2 n2Var = this.a;
-        ai.m9 storiesController = n2Var.getMessagesController().getStoriesController();
+        org.telegram.ui.ActionBar.m2 m2Var = this.a;
+        bi.x8 storiesController = m2Var.getMessagesController().getStoriesController();
         ArrayList arrayList = storiesController.h;
         if (arrayList.isEmpty()) {
             return;
@@ -40,15 +40,15 @@ public final class e6 implements o2 {
                 arrayList2.add(Long.valueOf(peerDialogId));
             }
         }
-        n2Var.getOrCreateStoryViewer().G(this.b, null, arrayList2, 0, null, null, new ai.v9(this.c), false);
+        m2Var.getOrCreateStoryViewer().G(this.b, null, arrayList2, 0, null, null, new bi.g9(this.c), false);
     }
 
     @Override // org.telegram.ui.Cells.o2
     public final void f(s2 s2Var) {
-        org.telegram.ui.ActionBar.n2 n2Var = this.a;
-        if (n2Var.getMessagesController().getStoriesController().I(s2Var.getDialogId())) {
-            n2Var.getOrCreateStoryViewer().getClass();
-            n2Var.getOrCreateStoryViewer().D(n2Var.getContext(), s2Var.getDialogId(), new ai.v9(this.c));
+        org.telegram.ui.ActionBar.m2 m2Var = this.a;
+        if (m2Var.getMessagesController().getStoriesController().I(s2Var.getDialogId())) {
+            m2Var.getOrCreateStoryViewer().getClass();
+            m2Var.getOrCreateStoryViewer().D(m2Var.getContext(), s2Var.getDialogId(), new bi.g9(this.c));
         }
     }
 
@@ -57,7 +57,7 @@ public final class e6 implements o2 {
     }
 
     @Override // org.telegram.ui.Cells.o2
-    public final void d(s2 s2Var) {
+    public final void e(s2 s2Var) {
     }
 
     @Override // org.telegram.ui.Cells.o2

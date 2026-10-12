@@ -1,239 +1,103 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.os.SystemClock;
 import android.text.Layout;
-import android.text.Spanned;
+import android.text.SpannableString;
 import android.text.style.CharacterStyle;
-import android.util.Pair;
-import android.view.View;
-import java.util.ArrayList;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ba0 {
-    public View a;
-    public org.telegram.ui.Cells.b1 b;
-    public final ArrayList c = new ArrayList();
-    public int d = 0;
-    public final ArrayList e = new ArrayList();
-    public int f = 0;
+public final class ba0 extends org.telegram.ui.ActionBar.h5 {
+    public final org.telegram.ui.ActionBar.c6 M0;
+    public final aa0 N0;
+    public ea0 O0;
 
-    public ba0() {
+    public ba0(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context);
+        this.N0 = new aa0(this);
+        this.M0 = c6Var;
     }
 
-    public static ia0 i(Layout layout, CharacterStyle characterStyle, float f7) {
-        if (layout == null || characterStyle == null || !(layout.getText() instanceof Spanned)) {
-            return null;
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(getLayoutX(), getLayoutY());
+        if (this.N0.f(canvas)) {
+            invalidate();
         }
-        Spanned spanned = (Spanned) layout.getText();
-        y90 y90Var = new y90(0);
-        int spanStart = spanned.getSpanStart(characterStyle);
-        int spanEnd = spanned.getSpanEnd(characterStyle);
-        y90Var.d(layout, spanStart, f7);
-        layout.getSelectionPath(spanStart, spanEnd, y90Var);
-        ia0 ia0Var = new ia0();
-        ia0Var.y = y90Var;
-        ia0Var.D = true;
-        ia0Var.k(4.0f);
-        ia0Var.l();
-        return ia0Var;
+        canvas.restore();
     }
 
-    public final void a(fa0 fa0Var, Object obj) {
-        this.c.add(new Pair(fa0Var, obj));
-        this.d++;
-        h(obj, true);
-    }
-
-    public final void b(ia0 ia0Var, Object obj) {
-        this.e.add(new Pair(ia0Var, obj));
-        this.f++;
-        h(obj, true);
-    }
-
-    public final void c() {
-        d(true);
-    }
-
-    public final void d(boolean z10) {
-        if (z10) {
-            for (int i10 = 0; i10 < this.d; i10++) {
-                j(i10);
-            }
-        } else {
-            if (this.d <= 0) {
-                return;
-            }
-            int i11 = 0;
-            while (true) {
-                int i12 = this.d;
-                ArrayList arrayList = this.c;
-                if (i11 >= i12) {
-                    arrayList.clear();
-                    this.d = 0;
-                    h(null, true);
-                    return;
-                } else {
-                    ((fa0) ((Pair) arrayList.get(i11)).first).c();
-                    h(((Pair) arrayList.get(i11)).second, false);
-                    i11++;
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00d4  */
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ClickableSpan clickableSpan;
+        CharacterStyle characterStyle;
+        aa0 aa0Var = this.N0;
+        if (aa0Var != null) {
+            Layout layout = getLayout();
+            int x10 = (int) motionEvent.getX();
+            int y3 = (int) motionEvent.getY();
+            Layout layout2 = getLayout();
+            if (layout2 != null) {
+                int layoutX = (int) (x10 - getLayoutX());
+                int layoutY = (int) (y3 - getLayoutY());
+                int lineForVertical = layout2.getLineForVertical(layoutY);
+                float f7 = layoutX;
+                int offsetForHorizontal = layout2.getOffsetForHorizontal(lineForVertical, f7);
+                float lineLeft = layout2.getLineLeft(lineForVertical);
+                if (lineLeft <= f7 && layout2.getLineWidth(lineForVertical) + lineLeft >= f7 && layoutY >= 0 && layoutY <= layout2.getHeight()) {
+                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout2.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
+                    if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                        clickableSpan = clickableSpanArr[0];
+                        if (clickableSpan == null && motionEvent.getAction() == 0) {
+                            ea0 ea0Var = new ea0(clickableSpan, this.M0, motionEvent.getX(), motionEvent.getY(), 0);
+                            this.O0 = ea0Var;
+                            aa0Var.a(ea0Var, null);
+                            SpannableString spannableString = new SpannableString(layout.getText());
+                            int spanStart = spannableString.getSpanStart(this.O0.i);
+                            int spanEnd = spannableString.getSpanEnd(this.O0.i);
+                            x90 b10 = this.O0.b();
+                            b10.d(layout, spanStart, 0.0f);
+                            layout.getSelectionPath(spanStart, spanEnd, b10);
+                            return true;
+                        }
+                        if (motionEvent.getAction() == 1) {
+                            aa0Var.d(true);
+                            ea0 ea0Var2 = this.O0;
+                            if (ea0Var2 != null && (characterStyle = ea0Var2.i) == clickableSpan) {
+                                if (characterStyle instanceof ClickableSpan) {
+                                    ((ClickableSpan) characterStyle).onClick(this);
+                                }
+                                this.O0 = null;
+                                return true;
+                            }
+                            this.O0 = null;
+                        }
+                        if (motionEvent.getAction() == 3) {
+                            aa0Var.d(true);
+                            this.O0 = null;
+                        }
+                    }
                 }
             }
-        }
-    }
-
-    public final void e() {
-        for (int i10 = 0; i10 < this.f; i10++) {
-            m(i10, true);
-        }
-    }
-
-    public final boolean f(Canvas canvas) {
-        int i10 = 0;
-        boolean z10 = false;
-        while (i10 < this.f) {
-            ((ia0) ((Pair) this.e.get(i10)).first).draw(canvas);
-            i10++;
-            z10 = true;
-        }
-        for (int i11 = 0; i11 < this.d; i11++) {
-            z10 = ((fa0) ((Pair) this.c.get(i11)).first).a(canvas) || z10;
-        }
-        return z10;
-    }
-
-    public final boolean g(Canvas canvas, Object obj) {
-        boolean z10 = false;
-        for (int i10 = 0; i10 < this.f; i10++) {
-            ArrayList arrayList = this.e;
-            if (((Pair) arrayList.get(i10)).second == obj) {
-                ((ia0) ((Pair) arrayList.get(i10)).first).draw(canvas);
-                z10 = true;
+            clickableSpan = null;
+            if (clickableSpan == null) {
+            }
+            if (motionEvent.getAction() == 1) {
+            }
+            if (motionEvent.getAction() == 3) {
             }
         }
-        for (int i11 = 0; i11 < this.d; i11++) {
-            ArrayList arrayList2 = this.c;
-            if (((Pair) arrayList2.get(i11)).second == obj) {
-                z10 = ((fa0) ((Pair) arrayList2.get(i11)).first).a(canvas) || z10;
-            }
-        }
-        h(obj, false);
-        return z10;
-    }
-
-    public final void h(Object obj, boolean z10) {
-        View view;
-        View view2;
-        if (obj instanceof View) {
-            ((View) obj).invalidate();
-        } else if (obj instanceof org.telegram.ui.b3) {
-            org.telegram.ui.b3 b3Var = (org.telegram.ui.b3) obj;
-            if (!b3Var.c && (view2 = b3Var.b) != null) {
-                view2.invalidate();
-            }
-        } else if (z10 && (view = this.a) != null) {
-            view.invalidate();
-        }
-        org.telegram.ui.Cells.b1 b1Var = this.b;
-        if (b1Var != null) {
-            b1Var.run();
-        }
-    }
-
-    public final void j(int i10) {
-        if (i10 < 0 || i10 >= this.d) {
-            return;
-        }
-        Pair pair = (Pair) this.c.get(i10);
-        fa0 fa0Var = (fa0) pair.first;
-        if (fa0Var.p < 0) {
-            fa0Var.p = Math.max(fa0Var.o + fa0Var.q, SystemClock.elapsedRealtime());
-            h(pair.second, true);
-            AndroidUtilities.runOnUIThread(new aa0(this, fa0Var, 1), Math.max(0L, (fa0Var.p - SystemClock.elapsedRealtime()) + 175));
-        }
-    }
-
-    public final void k(fa0 fa0Var, boolean z10) {
-        ArrayList arrayList;
-        Pair pair;
-        if (fa0Var == null) {
-            return;
-        }
-        int i10 = 0;
-        while (true) {
-            int i11 = this.d;
-            arrayList = this.c;
-            if (i10 >= i11) {
-                pair = null;
-                break;
-            } else {
-                if (((Pair) arrayList.get(i10)).first == fa0Var) {
-                    pair = (Pair) arrayList.get(i10);
-                    break;
-                }
-                i10++;
-            }
-        }
-        if (pair == null) {
-            return;
-        }
-        if (!z10) {
-            arrayList.remove(pair);
-            fa0Var.c();
-            this.d = arrayList.size();
-            h(pair.second, true);
-            return;
-        }
-        if (fa0Var.p < 0) {
-            fa0Var.p = Math.max(fa0Var.o + fa0Var.q, SystemClock.elapsedRealtime());
-            h(pair.second, true);
-            AndroidUtilities.runOnUIThread(new aa0(this, fa0Var, 0), Math.max(0L, (fa0Var.p - SystemClock.elapsedRealtime()) + 175));
-        }
-    }
-
-    public final void l(ia0 ia0Var, boolean z10) {
-        if (ia0Var == null) {
-            return;
-        }
-        for (int i10 = 0; i10 < this.f; i10++) {
-            if (((Pair) this.e.get(i10)).first == ia0Var) {
-                m(i10, z10);
-                return;
-            }
-        }
-    }
-
-    public final void m(int i10, boolean z10) {
-        if (i10 < 0 || i10 >= this.f) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        Pair pair = (Pair) arrayList.get(i10);
-        if (pair == null) {
-            return;
-        }
-        ia0 ia0Var = (ia0) pair.first;
-        if (!z10) {
-            arrayList.remove(pair);
-            ia0Var.b = -1L;
-            ia0Var.c = -1L;
-            this.f = arrayList.size();
-            h(pair.second, true);
-            return;
-        }
-        if (ia0Var.c()) {
-            l(ia0Var, false);
-            return;
-        }
-        if (!ia0Var.d()) {
-            ia0Var.a();
-        }
-        AndroidUtilities.runOnUIThread(new zr(26, this, ia0Var), ia0Var.c > 0 ? 320 - (SystemClock.elapsedRealtime() - ia0Var.c) : 0L);
-    }
-
-    public ba0(View view) {
-        this.a = view;
+        return this.O0 != null || super.onTouchEvent(motionEvent);
     }
 }

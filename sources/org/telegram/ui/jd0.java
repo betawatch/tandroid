@@ -1,45 +1,46 @@
 package org.telegram.ui;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.util.Property;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jd0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wg0 b;
+public final class jd0 implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a;
+    public final float[] b = {0.0f, 1.0f};
+    public final /* synthetic */ FrameLayout c;
+    public final /* synthetic */ kd0 d;
 
-    public /* synthetic */ jd0(wg0 wg0Var, int i10) {
-        this.a = i10;
-        this.b = wg0Var;
+    public jd0(kd0 kd0Var, FrameLayout frameLayout) {
+        this.d = kd0Var;
+        this.c = frameLayout;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                wg0 wg0Var = this.b;
-                wg0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wg0Var.c.setAlpha(floatValue);
-                wg0Var.c.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(230.0f));
-                break;
-            case 1:
-                wg0 wg0Var2 = this.b;
-                wg0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f7 = (0.9f * floatValue2) + 0.1f;
-                wg0Var2.V.setScaleX(f7);
-                wg0Var2.V.setScaleY(f7);
-                wg0Var2.V.setAlpha(floatValue2);
-                break;
-            default:
-                wg0 wg0Var3 = this.b;
-                wg0Var3.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                wg0Var3.c.setAlpha(floatValue3);
-                wg0Var3.c.setTranslationY((1.0f - floatValue3) * AndroidUtilities.dp(230.0f));
-                break;
+        float lerp = AndroidUtilities.lerp(this.b, valueAnimator.getAnimatedFraction());
+        if (lerp >= 0.7f && !this.a) {
+            kd0 kd0Var = this.d;
+            nd0 nd0Var = kd0Var.b;
+            nd0 nd0Var2 = kd0Var.b;
+            if (nd0Var.o0 != null) {
+                AnimatorSet animatorSet = new AnimatorSet();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(nd0Var2.o0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(nd0Var2.o0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(nd0Var2.o0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
+                animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
+                animatorSet.setDuration(250L);
+                animatorSet.start();
+                this.a = true;
+            }
         }
+        float interpolation = lerp <= 0.5f ? org.telegram.ui.Components.es.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (org.telegram.ui.Components.es.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (org.telegram.ui.Components.es.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
+        FrameLayout frameLayout = this.c;
+        frameLayout.setScaleX(interpolation);
+        frameLayout.setScaleY(interpolation);
     }
 }

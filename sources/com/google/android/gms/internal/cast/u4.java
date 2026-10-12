@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class u4 extends AbstractList implements k5 {
     public boolean a;
@@ -16,19 +16,19 @@ public abstract class u4 extends AbstractList implements k5 {
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean add(Object obj) {
-        i();
+        h();
         return super.add(obj);
     }
 
     @Override // java.util.AbstractList, java.util.List
     public boolean addAll(int i10, Collection collection) {
-        i();
+        h();
         return super.addAll(i10, collection);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
-        i();
+        h();
         super.clear();
     }
 
@@ -56,6 +56,12 @@ public abstract class u4 extends AbstractList implements k5 {
         return true;
     }
 
+    public final void h() {
+        if (!this.a) {
+            throw new UnsupportedOperationException();
+        }
+    }
+
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public int hashCode() {
         int size = size();
@@ -66,18 +72,12 @@ public abstract class u4 extends AbstractList implements k5 {
         return i10;
     }
 
-    public final void i() {
-        if (!this.a) {
-            throw new UnsupportedOperationException();
-        }
-    }
-
     @Override // java.util.AbstractList, java.util.List
     public abstract Object remove(int i10);
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean remove(Object obj) {
-        i();
+        h();
         int indexOf = indexOf(obj);
         if (indexOf == -1) {
             return false;
@@ -88,19 +88,19 @@ public abstract class u4 extends AbstractList implements k5 {
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean removeAll(Collection collection) {
-        i();
+        h();
         return super.removeAll(collection);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean retainAll(Collection collection) {
-        i();
+        h();
         return super.retainAll(collection);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean addAll(Collection collection) {
-        i();
+        h();
         return super.addAll(collection);
     }
 }

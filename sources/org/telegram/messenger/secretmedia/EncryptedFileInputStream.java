@@ -6,7 +6,7 @@ import java.io.RandomAccessFile;
 import org.telegram.messenger.SecureDocumentKey;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class EncryptedFileInputStream extends FileInputStream {
     private static final int MODE_CBC = 1;
@@ -56,9 +56,9 @@ public class EncryptedFileInputStream extends FileInputStream {
     }
 
     @Override // java.io.FileInputStream, java.io.InputStream
-    public long skip(long j3) {
-        this.fileOffset = (int) (this.fileOffset + j3);
-        return super.skip(j3);
+    public long skip(long j10) {
+        this.fileOffset = (int) (this.fileOffset + j10);
+        return super.skip(j10);
     }
 
     public static void decryptBytesWithKeyFile(byte[] bArr, int i10, int i11, File file) {

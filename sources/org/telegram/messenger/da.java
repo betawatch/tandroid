@@ -1,32 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a2 c;
 
-    public /* synthetic */ da(MessagesController messagesController, int i10, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = i10;
+    public /* synthetic */ da(int i10, Context context, org.telegram.ui.ActionBar.a2 a2Var) {
+        this.a = i10;
+        this.b = context;
+        this.c = a2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateTimerProc$156(this.c);
+                MessagesController.lambda$convertToMegaGroup$261(this.b, this.c);
                 break;
             case 1:
-                this.b.lambda$onFolderEmpty$196(this.c);
-                break;
-            case 2:
-                this.b.lambda$ensureMessagesLoaded$465(this.c);
+                MessagesController.lambda$convertToGigaGroup$266(this.b, this.c);
                 break;
             default:
-                this.b.lambda$didAddedNewTask$80(this.c);
+                SecretChatHelper.lambda$startSecretChat$24(this.b, this.c);
                 break;
         }
     }

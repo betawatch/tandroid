@@ -2,7 +2,7 @@ package n7;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class w0 extends c1 {
     public final s0 a;
@@ -27,7 +27,7 @@ public final class w0 extends c1 {
         if (length != bArr2.length) {
             return bArr.length - bArr2.length;
         }
-        return p0.a.compare(s0Var2.u(), s0Var.u());
+        return p0.a.compare(s0Var2.t(), s0Var.t());
     }
 
     public final boolean equals(Object obj) {
@@ -114,8 +114,8 @@ public final class w0 extends c1 {
             m0Var = j0Var == j0Var2 ? k0Var : new k0(j0Var);
             k0Var.c = m0Var;
         }
-        byte[] u10 = this.a.u();
-        return a1.g.q("h'", m0Var.c(u10.length, u10), "'");
+        byte[] t10 = this.a.t();
+        return a1.g.p("h'", m0Var.c(t10.length, t10), "'");
     }
 
     @Override // n7.c1

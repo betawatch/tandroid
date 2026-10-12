@@ -1,66 +1,17 @@
 package qg;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
-
-    public /* synthetic */ f(j jVar, int i10) {
-        this.a = i10;
-        this.b = jVar;
+public final class f extends m {
+    @Override // qg.m
+    public final int c() {
+        return -47814;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                j jVar = this.b;
-                jVar.g(AndroidUtilities.lerpAngle(jVar.L, jVar.i0, jVar.Q.getAnimatedFraction()));
-                break;
-            case 1:
-                j jVar2 = this.b;
-                jVar2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                jVar2.n0 = floatValue;
-                jVar2.setAlpha(floatValue);
-                i iVar = jVar2.H;
-                if (iVar != null) {
-                    iVar.setScaleX(Utilities.clamp(jVar2.n0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, jVar2.j0));
-                    jVar2.H.setScaleY(Utilities.clamp(jVar2.n0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, jVar2.j0));
-                    jVar2.H.setAlpha(Math.max(0.0f, jVar2.n0 - 0.8f) * jVar2.j0 * 5.0f);
-                }
-                jVar2.invalidate();
-                break;
-            case 2:
-                j jVar3 = this.b;
-                jVar3.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                jVar3.j0 = floatValue2;
-                i iVar2 = jVar3.H;
-                if (iVar2 != null) {
-                    iVar2.setScaleX(Utilities.clamp(jVar3.n0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, floatValue2));
-                    jVar3.H.setScaleY(Utilities.clamp(jVar3.n0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, jVar3.j0));
-                    jVar3.H.setAlpha(Math.max(0.0f, jVar3.n0 - 0.8f) * jVar3.j0 * 5.0f);
-                    break;
-                }
-                break;
-            case 3:
-                this.b.k();
-                break;
-            case 4:
-                this.b.k();
-                break;
-            default:
-                j jVar4 = this.b;
-                float lerpAngle = AndroidUtilities.lerpAngle(jVar4.i0, jVar4.L, valueAnimator.getAnimatedFraction());
-                jVar4.O = lerpAngle;
-                jVar4.g(lerpAngle);
-                break;
-        }
+    @Override // qg.m
+    public final int e() {
+        return R.raw.photo_pen;
     }
 }

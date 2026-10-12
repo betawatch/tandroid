@@ -1,52 +1,27 @@
 package yh;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.TwoStepVerificationActivity;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ s3 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TwoStepVerificationActivity d;
-    public final /* synthetic */ TLObject e;
+public final class s0 extends x4 {
+    public final /* synthetic */ p1 x0;
 
-    public /* synthetic */ s0(s3 s3Var, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity) {
-        this.b = s3Var;
-        this.c = tL_error;
-        this.e = tLObject;
-        this.d = twoStepVerificationActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s0(p1 p1Var, Context context, int i10, TL_stars.StarGift starGift, long j10, n0 n0Var, boolean z10, boolean z11) {
+        super(context, i10, starGift, null, j10, n0Var, z10, z11);
+        this.x0 = p1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                s3 s3Var = this.b;
-                s3Var.getClass();
-                if (this.c == null) {
-                    TL_account.Password password = (TL_account.Password) this.e;
-                    TwoStepVerificationActivity twoStepVerificationActivity = this.d;
-                    twoStepVerificationActivity.I = password;
-                    TwoStepVerificationActivity.m0(password);
-                    s3Var.N1(twoStepVerificationActivity.l0(), twoStepVerificationActivity);
-                    break;
-                }
-                break;
-            default:
-                TwoStepVerificationActivity twoStepVerificationActivity2 = this.d;
-                s3.X0(this.b, this.c, this.e, twoStepVerificationActivity2);
-                break;
-        }
-    }
-
-    public /* synthetic */ s0(s3 s3Var, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, TLObject tLObject) {
-        this.b = s3Var;
-        this.c = tL_error;
-        this.d = twoStepVerificationActivity;
-        this.e = tLObject;
+    @Override // yh.x4
+    public final zc Y() {
+        c6 c6Var;
+        p1 p1Var = this.x0;
+        org.telegram.ui.ActionBar.c3 c3Var = p1Var.container;
+        c6Var = p1Var.resourcesProvider;
+        return new zc(c3Var, c6Var);
     }
 }

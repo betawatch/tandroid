@@ -1,73 +1,17 @@
 package x8;
 
 import android.content.ComponentName;
-import android.content.Intent;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
+import android.content.ServiceConnection;
+import android.os.IBinder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class p extends Handler {
-    public boolean a;
-    public final o b;
-    public final /* synthetic */ k c;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p(k kVar, Looper looper) {
-        super(looper);
-        this.c = kVar;
-        this.b = new o();
+public final class p implements ServiceConnection {
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
     }
 
-    public final synchronized void a(String str) {
-        ComponentName componentName;
-        if (this.a) {
-            if (Log.isLoggable("WearableLS", 2)) {
-                componentName = this.c.zza;
-                Log.v("WearableLS", "unbindService: " + str + ", " + String.valueOf(componentName));
-            }
-            try {
-                this.c.unbindService(this.b);
-            } catch (RuntimeException e7) {
-                Log.e("WearableLS", "Exception when unbinding from local service", e7);
-            }
-            this.a = false;
-        }
-    }
-
-    @Override // android.os.Handler
-    public final void dispatchMessage(Message message) {
-        Intent intent;
-        ComponentName componentName;
-        synchronized (this) {
-            try {
-                if (!this.a) {
-                    if (Log.isLoggable("WearableLS", 2)) {
-                        componentName = this.c.zza;
-                        Log.v("WearableLS", "bindService: ".concat(String.valueOf(componentName)));
-                    }
-                    k kVar = this.c;
-                    intent = kVar.zzd;
-                    kVar.bindService(intent, this.b, 1);
-                    this.a = true;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        try {
-            super.dispatchMessage(message);
-            if (hasMessages(0)) {
-                return;
-            }
-            a("dispatch");
-        } catch (Throwable th3) {
-            if (!hasMessages(0)) {
-                a("dispatch");
-            }
-            throw th3;
-        }
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
     }
 }

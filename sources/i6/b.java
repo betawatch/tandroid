@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import g8.j;
 import java.util.Arrays;
-import w7.d0;
+import w7.g0;
 
 /* loaded from: classes.dex */
 public final class b extends o6.a {
@@ -14,10 +14,10 @@ public final class b extends o6.a {
     public final long b;
     public final long c;
 
-    public b(long j3, long j10, boolean z10) {
+    public b(long j10, long j11, boolean z10) {
         this.a = z10;
-        this.b = j3;
-        this.c = j10;
+        this.b = j10;
+        this.c = j11;
     }
 
     public final boolean equals(Object obj) {
@@ -43,18 +43,18 @@ public final class b extends o6.a {
         sb2.append(",collectForDebugStartTimeMillis: ");
         sb2.append(this.b);
         sb2.append(",collectForDebugExpiryTimeMillis: ");
-        return g.s(sb2, this.c, "]");
+        return g.r(sb2, this.c, "]");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.s(parcel, 1, 4);
+        int q6 = g0.q(parcel, 20293);
+        g0.s(parcel, 1, 4);
         parcel.writeInt(this.a ? 1 : 0);
-        d0.s(parcel, 2, 8);
+        g0.s(parcel, 2, 8);
         parcel.writeLong(this.c);
-        d0.s(parcel, 3, 8);
+        g0.s(parcel, 3, 8);
         parcel.writeLong(this.b);
-        d0.r(parcel, q6);
+        g0.r(parcel, q6);
     }
 }

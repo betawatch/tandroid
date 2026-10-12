@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.telephony.TelephonyManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class CallReceiver extends BroadcastReceiver {
     public static void checkLastReceivedCall() {
@@ -33,7 +33,7 @@ public class CallReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals("android.intent.action.PHONE_STATE") && TelephonyManager.EXTRA_STATE_RINGING.equals(intent.getStringExtra("state"))) {
-            String d = hf.b.d(intent.getStringExtra("incoming_number"), false);
+            String d = jf.b.d(intent.getStringExtra("incoming_number"), false);
             SharedConfig.getPreferences().edit().putString("last_call_phone_number", d).putLong("last_call_time", System.currentTimeMillis()).apply();
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReceiveCall, d);
         }

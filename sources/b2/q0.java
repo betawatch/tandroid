@@ -1,36 +1,26 @@
 package b2;
 
-import org.telegram.tgnet.TLObject;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class q0 {
-    public int a;
-    public int b;
+public abstract class q0 {
+    public static final HashSet a = new HashSet();
+    public static String b = "media3.common";
 
-    public /* synthetic */ q0(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public static synchronized void a(String str) {
+        synchronized (q0.class) {
+            if (a.add(str)) {
+                b += ", " + str;
+            }
+        }
     }
 
-    public int a() {
-        int i10 = this.b;
-        if (i10 == 2) {
-            return 10;
+    public static synchronized String b() {
+        String str;
+        synchronized (q0.class) {
+            str = b;
         }
-        if (i10 == 5) {
-            return 11;
-        }
-        if (i10 == 29) {
-            return 12;
-        }
-        if (i10 != 42) {
-            return i10 != 22 ? i10 != 23 ? 0 : 15 : TLObject.FLAG_30;
-        }
-        return 16;
-    }
-
-    public int b() {
-        return this.a | this.b;
+        return str;
     }
 }

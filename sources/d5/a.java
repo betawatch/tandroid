@@ -2,7 +2,7 @@ package d5;
 
 import java.util.Random;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a extends Random {
     public long a;
@@ -54,17 +54,17 @@ public final class a extends Random {
 
     @Override // java.util.Random
     public final long nextLong() {
-        long j3 = this.a;
-        long j10 = this.b;
-        long j11 = j3 + j10;
-        long j12 = j10 ^ j3;
-        this.a = (Long.rotateLeft(j3, 55) ^ j12) ^ (j12 << 14);
-        this.b = Long.rotateLeft(j12, 36);
-        return j11;
+        long j10 = this.a;
+        long j11 = this.b;
+        long j12 = j10 + j11;
+        long j13 = j11 ^ j10;
+        this.a = (Long.rotateLeft(j10, 55) ^ j13) ^ (j13 << 14);
+        this.b = Long.rotateLeft(j13, 36);
+        return j12;
     }
 
     @Override // java.util.Random
-    public final void setSeed(long j3) {
+    public final void setSeed(long j10) {
         if (this.a != 0 || this.b != 0) {
             throw new RuntimeException("No seed set");
         }

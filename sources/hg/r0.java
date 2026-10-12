@@ -1,211 +1,408 @@
 package hg;
 
-import android.text.SpannableStringBuilder;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.text.TextUtils;
-import java.io.File;
+import android.view.MotionEvent;
+import android.view.View;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.fc;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.ny0;
-import org.telegram.ui.Components.tc;
-import org.telegram.ui.Components.y9;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.ih1;
-import org.telegram.ui.rt;
-import org.telegram.ui.zn;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ TLObject n;
+public final class r0 extends mm0 {
+    public static final p0[] a3 = {new p0(R.drawable.search_media_filled, R.string.SharedMediaTab2, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new p0(R.drawable.search_links_filled, R.string.SharedLinksTab2, new TLRPC.TL_inputMessagesFilterUrl(), 2), new p0(R.drawable.search_files_filled, R.string.SharedFilesTab2, new TLRPC.TL_inputMessagesFilterDocument(), 1), new p0(R.drawable.search_music_filled, R.string.SharedMusicTab2, new TLRPC.TL_inputMessagesFilterMusic(), 3), new p0(R.drawable.search_voice_filled, R.string.SharedVoiceTab2, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
+    public static final Pattern b3 = Pattern.compile("20[0-9]{1,2}");
+    public static final Pattern c3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
+    public static final Pattern d3 = Pattern.compile("([0-9]{0,4}) (\\w{2,})");
+    public static final Pattern e3 = Pattern.compile("^([0-9]{1,4})(\\.| |/|\\-)([0-9]{1,4})$");
+    public static final Pattern f3 = Pattern.compile("^([0-9]{1,2})(\\.| |/|\\-)([0-9]{1,2})(\\.| |/|\\-)([0-9]{1,4})$");
+    public static final int[] g3 = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    public final ArrayList V2;
+    public final ArrayList W2;
+    public final i0 X2;
+    public boolean Y2;
+    public final l0 Z2;
 
-    public /* synthetic */ r0(u0 u0Var, TLRPC.TL_error tL_error, TLObject tLObject, int[] iArr, ArrayList arrayList, boolean z10, TLRPC.User user) {
-        this.f = u0Var;
-        this.b = tL_error;
-        this.c = tLObject;
-        this.h = iArr;
-        this.e = arrayList;
-        this.d = z10;
-        this.n = user;
+    public r0(Context context, c6 c6Var) {
+        super(context, c6Var);
+        this.V2 = new ArrayList();
+        this.W2 = new ArrayList();
+        this.Y2 = true;
+        this.Z2 = new l0(this);
+        i0 i0Var = new i0((Object) this, 0);
+        this.X2 = i0Var;
+        i0Var.j1(0);
+        setLayoutManager(i0Var);
+        setAdapter(new m0(this, 0));
+        i(new bi.o(1));
+        setItemAnimator(new k0());
+        setWillNotDraw(false);
+        setHideIfEmpty(false);
+        setSelectorRadius(AndroidUtilities.dp(28.0f));
+        setSelectorDrawableColor(g6.w0(g6.i6, this.n2));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ArrayList arrayList;
-        TLRPC.User user;
-        int i10 = this.a;
-        boolean z10 = this.d;
-        TLObject tLObject = this.n;
-        Object obj = this.e;
-        Object obj2 = this.h;
-        Object obj3 = this.c;
-        Object obj4 = this.b;
-        Object obj5 = this.f;
-        switch (i10) {
-            case 0:
-                u0.U((u0) obj5, (TLRPC.TL_error) obj4, (TLObject) obj3, (int[]) obj2, (ArrayList) obj, this.d, (TLRPC.User) tLObject);
-                break;
-            case 1:
-                ((SendMessagesHelper) obj5).lambda$performSendMessageRequestMulti$76((TLRPC.TL_error) obj4, (TLObject) obj3, this.d, (ArrayList) obj, (ArrayList) obj2, this.n);
-                break;
-            case 2:
-                ArrayList arrayList2 = (ArrayList) obj;
-                n2 n2Var = (n2) obj4;
-                TLRPC.Document document = (TLRPC.Document) obj2;
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
-                arrayList2.add(new MediaController.PhotoEntry(0, 0, 0L, ((File) obj5).getAbsolutePath(), 0, false, 0, 0, 0L));
-                PhotoViewer.t1().K2(n2Var.getParentActivity(), null, n2Var.getResourceProvider());
-                PhotoViewer.t1().g2(arrayList2, 0, 11, false, new ny0(), (zn) obj3);
-                PhotoViewer.t1().Y0(document, z10 ? document : null, false, null);
-                rt q6 = rt.q();
-                if (!z10) {
-                    tL_messages_stickerSet = null;
-                }
-                q6.T = tL_messages_stickerSet;
-                break;
-            case 3:
-                ih1.d0((ih1) obj5, (TLRPC.TL_error) obj4, this.d, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
-                break;
-            default:
-                wh.l lVar = (wh.l) obj5;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj4;
-                TLObject tLObject2 = (TLObject) obj3;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) obj2;
-                TLRPC.User user2 = (TLRPC.User) tLObject;
-                TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = (TLRPC.TL_messages_hideChatJoinRequest) obj;
-                int i11 = lVar.k;
-                ArrayList arrayList3 = lVar.e;
-                n2 n2Var2 = lVar.g;
-                if (n2Var2 != null && n2Var2.getParentActivity() != null) {
-                    if (tL_error != null) {
-                        g5.e0(i11, tL_error, n2Var2, tL_messages_hideChatJoinRequest, new Object[0]);
-                        break;
+    public static int A1(String str) {
+        String[] strArr = {LocaleController.getString(R.string.January).toLowerCase(), LocaleController.getString(R.string.February).toLowerCase(), LocaleController.getString(R.string.March).toLowerCase(), LocaleController.getString(R.string.April).toLowerCase(), LocaleController.getString(R.string.May).toLowerCase(), LocaleController.getString(R.string.June).toLowerCase(), LocaleController.getString(R.string.July).toLowerCase(), LocaleController.getString(R.string.August).toLowerCase(), LocaleController.getString(R.string.September).toLowerCase(), LocaleController.getString(R.string.October).toLowerCase(), LocaleController.getString(R.string.November).toLowerCase(), LocaleController.getString(R.string.December).toLowerCase()};
+        String[] strArr2 = new String[12];
+        Calendar calendar = Calendar.getInstance();
+        for (int i10 = 1; i10 <= 12; i10++) {
+            calendar.set(0, 0, 0, 0, 0, 0);
+            calendar.set(2, i10);
+            strArr2[i10 - 1] = calendar.getDisplayName(2, 2, Locale.ENGLISH).toLowerCase();
+        }
+        for (int i11 = 0; i11 < 12; i11++) {
+            if (strArr2[i11].startsWith(str) || strArr[i11].startsWith(str)) {
+                return i11;
+            }
+        }
+        return -1;
+    }
+
+    public static void x1(int i10, int i11, ArrayList arrayList) {
+        int i12 = i11;
+        if (i12 < 0 || i12 >= 12 || i10 < 0 || i10 >= g3[i12]) {
+            return;
+        }
+        int i13 = Calendar.getInstance().get(1);
+        long timeInMillis = Calendar.getInstance().getTimeInMillis();
+        GregorianCalendar gregorianCalendar = (GregorianCalendar) Calendar.getInstance();
+        int i14 = i13;
+        while (i14 >= 2013) {
+            if (i12 != 1 || i10 != 28 || gregorianCalendar.isLeapYear(i14)) {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(i14, i12, i10 + 1, 0, 0, 0);
+                long timeInMillis2 = calendar.getTimeInMillis();
+                if (timeInMillis2 <= timeInMillis) {
+                    calendar.set(i14, i11, i10 + 2, 0, 0, 0);
+                    long timeInMillis3 = calendar.getTimeInMillis() - 1;
+                    if (i14 == i13) {
+                        arrayList.add(new n0(timeInMillis2, timeInMillis3, LocaleController.getInstance().getFormatterDayMonth().format(timeInMillis2)));
                     } else {
-                        TLRPC.TL_updates tL_updates = (TLRPC.TL_updates) tLObject2;
-                        if (!tL_updates.chats.isEmpty()) {
-                            MessagesController.getInstance(i11).loadFullChat(tL_updates.chats.get(0).id, 0, true);
-                        }
-                        int i12 = 0;
-                        while (true) {
-                            if (i12 < arrayList3.size()) {
-                                if (((TLRPC.TL_chatInviteImporter) arrayList3.get(i12)).user_id == tL_chatInviteImporter.user_id) {
-                                    arrayList3.remove(i12);
-                                } else {
-                                    i12++;
-                                }
-                            }
-                        }
-                        wh.g gVar = lVar.f;
-                        wh.l lVar2 = gVar.c;
-                        int i13 = 0;
-                        while (true) {
-                            arrayList = lVar2.c;
-                            if (i13 < arrayList.size()) {
-                                user = user2;
-                                if (((TLRPC.TL_chatInviteImporter) arrayList.get(i13)).user_id != tL_chatInviteImporter.user_id) {
-                                    i13++;
-                                    user2 = user;
-                                }
-                            } else {
-                                user = user2;
-                                i13 = -1;
-                            }
-                        }
-                        if (i13 >= 0) {
-                            arrayList.remove(i13);
-                            gVar.u((!gVar.c.B ? 1 : 0) + i13);
-                            if (arrayList.isEmpty()) {
-                                gVar.u(1);
-                            }
-                        }
-                        lVar.f(lVar.t, false, true);
-                        if (z10) {
-                            fc fcVar = new fc(n2Var2.getParentActivity(), n2Var2.getResourceProvider());
-                            int dp = AndroidUtilities.dp(15.0f);
-                            y9 y9Var = fcVar.a;
-                            y9Var.setRoundRadius(dp);
-                            TLRPC.User user3 = user;
-                            y9Var.e(user3, new j9(0, user3));
-                            String firstName = UserObject.getFirstName(user3);
-                            String formatString = lVar.a ? LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, firstName) : LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, firstName);
-                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
-                            int indexOf = formatString.indexOf(firstName);
-                            spannableStringBuilder.setSpan(new m61(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
-                            fcVar.b.setText(spannableStringBuilder);
-                            if (arrayList3.isEmpty()) {
-                                tc.g(n2Var2, fcVar, 2750).j();
-                            } else {
-                                tc.f(lVar.h, fcVar, 2750).j();
-                            }
-                        }
-                        org.telegram.ui.ActionBar.z o9 = n2Var2.getActionBar().o();
-                        if (TextUtils.isEmpty(lVar.t) && lVar.l) {
-                            o9.k(0).setVisibility(arrayList3.isEmpty() ? 8 : 0);
-                            break;
-                        }
+                        arrayList.add(new n0(timeInMillis2, timeInMillis3, LocaleController.getInstance().getFormatterYearMax().format(timeInMillis2)));
                     }
                 }
-                break;
+            }
+            i14--;
+            i12 = i11;
         }
     }
 
-    public /* synthetic */ r0(File file, ArrayList arrayList, n2 n2Var, zn znVar, TLRPC.Document document, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        this.f = file;
-        this.e = arrayList;
-        this.b = n2Var;
-        this.c = znVar;
-        this.h = document;
-        this.d = z10;
-        this.n = tL_messages_stickerSet;
+    public static void y1(int i10, int i11, ArrayList arrayList) {
+        int i12 = Calendar.getInstance().get(1);
+        long timeInMillis = Calendar.getInstance().getTimeInMillis();
+        if (i11 < 2013 || i11 > i12) {
+            return;
+        }
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(i11, i10, 1, 0, 0, 0);
+        long timeInMillis2 = calendar.getTimeInMillis();
+        if (timeInMillis2 > timeInMillis) {
+            return;
+        }
+        calendar.add(2, 1);
+        arrayList.add(new n0(timeInMillis2, calendar.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterMonthYear().format(timeInMillis2)));
     }
 
-    public /* synthetic */ r0(SendMessagesHelper sendMessagesHelper, TLRPC.TL_error tL_error, TLObject tLObject, boolean z10, ArrayList arrayList, ArrayList arrayList2, TLObject tLObject2) {
-        this.f = sendMessagesHelper;
-        this.b = tL_error;
-        this.c = tLObject;
-        this.d = z10;
-        this.e = arrayList;
-        this.h = arrayList2;
-        this.n = tLObject2;
+    public static void z1(String str, ArrayList arrayList) {
+        arrayList.clear();
+        if (str == null) {
+            return;
+        }
+        String trim = str.trim();
+        if (trim.length() < 3) {
+            return;
+        }
+        if (LocaleController.getString(R.string.SearchTipToday).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
+            Calendar calendar = Calendar.getInstance();
+            int i10 = calendar.get(1);
+            int i11 = calendar.get(2);
+            int i12 = calendar.get(5);
+            calendar.set(i10, i11, i12, 0, 0, 0);
+            long timeInMillis = calendar.getTimeInMillis();
+            calendar.set(i10, i11, i12 + 1, 0, 0, 0);
+            arrayList.add(new n0(timeInMillis, calendar.getTimeInMillis() - 1, LocaleController.getString(R.string.SearchTipToday)));
+            return;
+        }
+        if (LocaleController.getString(R.string.SearchTipYesterday).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
+            Calendar calendar2 = Calendar.getInstance();
+            int i13 = calendar2.get(1);
+            int i14 = calendar2.get(2);
+            int i15 = calendar2.get(5);
+            calendar2.set(i13, i14, i15, 0, 0, 0);
+            long timeInMillis2 = calendar2.getTimeInMillis() - 86400000;
+            calendar2.set(i13, i14, i15 + 1, 0, 0, 0);
+            arrayList.add(new n0(timeInMillis2, calendar2.getTimeInMillis() - 86400001, LocaleController.getString(R.string.SearchTipYesterday)));
+            return;
+        }
+        Calendar calendar3 = Calendar.getInstance();
+        int i16 = -1;
+        if (trim.length() > 3) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE", Locale.ENGLISH);
+            for (int i17 = 0; i17 < 7; i17++) {
+                calendar3.set(7, i17);
+                if (LocaleController.getInstance().getFormatterWeekLong().format(calendar3.getTime()).toLowerCase().startsWith(trim) || simpleDateFormat.format(calendar3.getTime()).toLowerCase().startsWith(trim)) {
+                    i16 = i17;
+                    break;
+                }
+            }
+        }
+        if (i16 >= 0) {
+            Calendar calendar4 = Calendar.getInstance();
+            long timeInMillis3 = calendar4.getTimeInMillis();
+            calendar4.set(7, i16);
+            if (calendar4.getTimeInMillis() > timeInMillis3) {
+                calendar4.setTimeInMillis(calendar4.getTimeInMillis() - 604800000);
+            }
+            int i18 = calendar4.get(1);
+            int i19 = calendar4.get(2);
+            int i20 = calendar4.get(5);
+            calendar4.set(i18, i19, i20, 0, 0, 0);
+            long timeInMillis4 = calendar4.getTimeInMillis();
+            calendar4.set(i18, i19, i20 + 1, 0, 0, 0);
+            arrayList.add(new n0(timeInMillis4, calendar4.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterWeekLong().format(timeInMillis4)));
+            return;
+        }
+        Matcher matcher = e3.matcher(trim);
+        if (matcher.matches()) {
+            String group = matcher.group(1);
+            String group2 = matcher.group(3);
+            int parseInt = Integer.parseInt(group);
+            int parseInt2 = Integer.parseInt(group2);
+            if (parseInt <= 0 || parseInt > 31) {
+                if (parseInt < 2013 || parseInt2 > 12) {
+                    return;
+                }
+                y1(parseInt2 - 1, parseInt, arrayList);
+                return;
+            }
+            if (parseInt2 >= 2013 && parseInt <= 12) {
+                y1(parseInt - 1, parseInt2, arrayList);
+                return;
+            } else {
+                if (parseInt2 <= 12) {
+                    x1(parseInt - 1, parseInt2 - 1, arrayList);
+                    return;
+                }
+                return;
+            }
+        }
+        Matcher matcher2 = f3.matcher(trim);
+        if (matcher2.matches()) {
+            String group3 = matcher2.group(1);
+            String group4 = matcher2.group(3);
+            String group5 = matcher2.group(5);
+            if (matcher2.group(2).equals(matcher2.group(4))) {
+                int parseInt3 = Integer.parseInt(group3);
+                int parseInt4 = Integer.parseInt(group4) - 1;
+                int parseInt5 = Integer.parseInt(group5);
+                if (parseInt5 >= 10 && parseInt5 <= 99) {
+                    parseInt5 += 2000;
+                }
+                int i21 = parseInt5;
+                int i22 = Calendar.getInstance().get(1);
+                int i23 = parseInt3 - 1;
+                if (parseInt4 < 0 || parseInt4 >= 12 || i23 < 0 || i23 >= g3[parseInt4] || i21 < 2013 || i21 > i22) {
+                    return;
+                }
+                Calendar calendar5 = Calendar.getInstance();
+                calendar5.set(i21, parseInt4, parseInt3, 0, 0, 0);
+                long timeInMillis5 = calendar5.getTimeInMillis();
+                calendar5.set(i21, parseInt4, parseInt3 + 1, 0, 0, 0);
+                arrayList.add(new n0(timeInMillis5, calendar5.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterYearMax().format(timeInMillis5)));
+                return;
+            }
+            return;
+        }
+        if (b3.matcher(trim).matches()) {
+            int intValue = Integer.valueOf(trim).intValue();
+            int i24 = Calendar.getInstance().get(1);
+            if (intValue < 2013) {
+                while (i24 >= 2013) {
+                    Calendar calendar6 = Calendar.getInstance();
+                    calendar6.set(i24, 0, 1, 0, 0, 0);
+                    long timeInMillis6 = calendar6.getTimeInMillis();
+                    calendar6.set(i24 + 1, 0, 1, 0, 0, 0);
+                    arrayList.add(new n0(timeInMillis6, calendar6.getTimeInMillis() - 1, Integer.toString(i24)));
+                    i24--;
+                }
+                return;
+            }
+            if (intValue <= i24) {
+                Calendar calendar7 = Calendar.getInstance();
+                calendar7.set(intValue, 0, 1, 0, 0, 0);
+                long timeInMillis7 = calendar7.getTimeInMillis();
+                calendar7.set(intValue + 1, 0, 1, 0, 0, 0);
+                arrayList.add(new n0(timeInMillis7, calendar7.getTimeInMillis() - 1, Integer.toString(intValue)));
+                return;
+            }
+            return;
+        }
+        Matcher matcher3 = c3.matcher(trim);
+        if (matcher3.matches()) {
+            String group6 = matcher3.group(1);
+            String group7 = matcher3.group(2);
+            int A1 = A1(group6);
+            if (A1 >= 0) {
+                int intValue2 = Integer.valueOf(group7).intValue();
+                if (intValue2 > 0 && intValue2 <= 31) {
+                    x1(intValue2 - 1, A1, arrayList);
+                    return;
+                } else if (intValue2 >= 2013) {
+                    y1(A1, intValue2, arrayList);
+                    return;
+                }
+            }
+        }
+        Matcher matcher4 = d3.matcher(trim);
+        if (matcher4.matches()) {
+            String group8 = matcher4.group(1);
+            int A12 = A1(matcher4.group(2));
+            if (A12 >= 0) {
+                int intValue3 = Integer.valueOf(group8).intValue();
+                if (intValue3 > 0 && intValue3 <= 31) {
+                    x1(intValue3 - 1, A12, arrayList);
+                    return;
+                } else if (intValue3 >= 2013) {
+                    y1(A12, intValue3, arrayList);
+                }
+            }
+        }
+        if (TextUtils.isEmpty(trim) || trim.length() <= 2) {
+            return;
+        }
+        int A13 = A1(trim);
+        long timeInMillis8 = Calendar.getInstance().getTimeInMillis();
+        if (A13 >= 0) {
+            for (int i25 = Calendar.getInstance().get(1); i25 >= 2013; i25--) {
+                Calendar calendar8 = Calendar.getInstance();
+                calendar8.set(i25, A13, 1, 0, 0, 0);
+                long timeInMillis9 = calendar8.getTimeInMillis();
+                if (timeInMillis9 <= timeInMillis8) {
+                    calendar8.add(2, 1);
+                    arrayList.add(new n0(timeInMillis9, calendar8.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterMonthYear().format(timeInMillis9)));
+                }
+            }
+        }
     }
 
-    public /* synthetic */ r0(ih1 ih1Var, TLRPC.TL_error tL_error, boolean z10, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
-        this.f = ih1Var;
-        this.b = tL_error;
-        this.d = z10;
-        this.c = tLObject;
-        this.h = bArr;
-        this.e = str;
-        this.n = passwordinputsettings;
+    public final void B1(ArrayList arrayList, ArrayList arrayList2, boolean z10) {
+        ArrayList arrayList3 = this.W2;
+        arrayList3.clear();
+        ArrayList arrayList4 = this.V2;
+        arrayList3.addAll(arrayList4);
+        arrayList4.clear();
+        if (arrayList != null) {
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                Object obj = arrayList.get(i10);
+                if (obj instanceof TLRPC.User) {
+                    TLRPC.User user = (TLRPC.User) obj;
+                    p0 p0Var = new p0(R.drawable.search_users_filled, 4, UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id == user.id ? LocaleController.getString(R.string.SavedMessages) : ContactsController.formatName(user.first_name, user.last_name, 10));
+                    p0Var.f = user;
+                    arrayList4.add(p0Var);
+                } else if (obj instanceof TLRPC.Chat) {
+                    TLRPC.Chat chat = (TLRPC.Chat) obj;
+                    String str = chat.title;
+                    if (str.length() > 12) {
+                        str = t8.b.u(str.substring(0, 10), "...");
+                    }
+                    p0 p0Var2 = new p0(R.drawable.search_users_filled, 4, str);
+                    p0Var2.f = chat;
+                    arrayList4.add(p0Var2);
+                }
+            }
+        }
+        if (arrayList2 != null) {
+            for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                n0 n0Var = (n0) arrayList2.get(i11);
+                p0 p0Var3 = new p0(R.drawable.search_date_filled, 6, n0Var.a);
+                p0Var3.g = n0Var;
+                arrayList4.add(p0Var3);
+            }
+        }
+        if (z10) {
+            arrayList4.add(new p0(R.drawable.chats_archive, R.string.ArchiveSearchFilter, null, 7));
+        }
+        if (getAdapter() != null) {
+            b2.u uVar = new b2.u(getAdapter(), 2);
+            s4.o.c(this.Z2, true).b(uVar);
+            if (arrayList4.isEmpty() || !uVar.b) {
+                return;
+            }
+            this.X2.h1(0, 0);
+        }
     }
 
-    public /* synthetic */ r0(wh.l lVar, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
-        this.f = lVar;
-        this.b = tL_error;
-        this.c = tLObject;
-        this.h = tL_chatInviteImporter;
-        this.d = z10;
-        this.n = user;
-        this.e = tL_messages_hideChatJoinRequest;
+    public final void C1() {
+        getRecycledViewPool().a();
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof o0) {
+                int i11 = o0.f;
+                ((o0) childAt).a();
+            }
+        }
+        for (int i12 = 0; i12 < getCachedChildCount(); i12++) {
+            View P = P(i12);
+            if (P instanceof o0) {
+                int i13 = o0.f;
+                ((o0) P).a();
+            }
+        }
+        for (int i14 = 0; i14 < getAttachedScrapChildCount(); i14++) {
+            View O = O(i14);
+            if (O instanceof o0) {
+                int i15 = o0.f;
+                ((o0) O).a();
+            }
+        }
+        setSelectorDrawableColor(g6.w0(g6.i6, this.n2));
+    }
+
+    public ArrayList<i6> getThemeDescriptions() {
+        ArrayList<i6> arrayList = new ArrayList<>();
+        arrayList.add(new i6(this, 0, null, null, null, null, g6.e7));
+        arrayList.add(new i6(this, 0, null, null, null, null, g6.f7));
+        return arrayList;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.Y2) {
+            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), g6.k0);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onInterceptTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onTouchEvent(motionEvent);
+        }
+        return false;
     }
 }

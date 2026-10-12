@@ -1,29 +1,6 @@
 package xd;
 
-import id.h;
-import id.o;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import kotlin.jvm.internal.i;
-
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class d extends f {
-    public static List a(b bVar) {
-        i.e(bVar, "<this>");
-        Iterator it = bVar.iterator();
-        if (!it.hasNext()) {
-            return o.a;
-        }
-        Object next = it.next();
-        if (!it.hasNext()) {
-            return h.b(next);
-        }
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(next);
-        while (it.hasNext()) {
-            arrayList.add(it.next());
-        }
-        return arrayList;
-    }
+public interface d {
 }

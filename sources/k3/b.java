@@ -1,133 +1,141 @@
 package k3;
 
-import b2.p0;
-import b2.r;
-import b2.r0;
-import b2.s0;
-import c3.h0;
+import b2.u0;
+import b2.w;
+import b2.w0;
+import b2.x0;
+import c3.i0;
 import c3.l;
 import c3.o;
 import c3.p;
 import c3.q;
 import c3.s;
 import c3.t;
-import e2.v;
-import e6.n;
-import e9.a1;
-import e9.g0;
-import e9.i0;
+import e2.x;
+import e9.l0;
+import e9.n0;
+import e9.x1;
+import j$.util.Objects;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 import w3.m;
-import z3.k;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q b;
     public int c;
     public int d;
     public int e;
-    public r3.a g;
+    public l3.b g;
     public p h;
-    public n i;
+    public ad.d i;
     public m j;
-    public final v a = new v(2);
+    public final x a = new x(2);
     public long f = -1;
 
     @Override // c3.o
     public final boolean a(p pVar) {
+        String v;
         l lVar = (l) pVar;
-        v vVar = this.a;
-        vVar.G(2);
-        lVar.h(vVar.a, 0, 2, false);
-        if (vVar.D() == 65496) {
-            vVar.G(2);
-            lVar.h(vVar.a, 0, 2, false);
-            int D = vVar.D();
-            this.d = D;
-            if (D == 65504) {
-                vVar.G(2);
-                lVar.h(vVar.a, 0, 2, false);
-                lVar.v(vVar.D() - 2, false);
-                vVar.G(2);
-                lVar.h(vVar.a, 0, 2, false);
-                this.d = vVar.D();
-            }
-            if (this.d == 65505) {
-                return true;
+        x xVar = this.a;
+        xVar.K(2);
+        lVar.j(xVar.a, 0, 2, false);
+        if (xVar.H() == 65496) {
+            while (true) {
+                xVar.K(2);
+                lVar.j(xVar.a, 0, 2, false);
+                int H = xVar.H();
+                this.d = H;
+                if (H == 65498) {
+                    break;
+                }
+                xVar.K(2);
+                lVar.a(0, 2, xVar.a);
+                int H2 = xVar.H() - 2;
+                if (H2 < 0) {
+                    break;
+                }
+                if (this.d != 65505) {
+                    lVar.v(H2, false);
+                } else {
+                    xVar.K(H2);
+                    lVar.j(xVar.a, 0, H2, false);
+                    if (Objects.equals(xVar.v(), "http://ns.adobe.com/xap/1.0/") && (v = xVar.v()) != null) {
+                        for (int i10 = 0; i10 < 4; i10++) {
+                            if (v.contains(d.a[i10] + "=\"1\"")) {
+                                return true;
+                            }
+                        }
+                    }
+                }
             }
         }
         return false;
     }
 
-    public final void b() {
-        q qVar = this.b;
-        qVar.getClass();
-        qVar.k1();
-        this.b.d2(new t(-9223372036854775807L));
-        this.c = 6;
-    }
-
     @Override // c3.o
-    public final void g(q qVar) {
+    public final void c(q qVar) {
         this.b = qVar;
     }
 
     @Override // c3.o
-    public final void h(long j3, long j10) {
-        if (j3 == 0) {
+    public final void d(long j10, long j11) {
+        if (j10 == 0) {
             this.c = 0;
             this.j = null;
         } else if (this.c == 5) {
             m mVar = this.j;
             mVar.getClass();
-            mVar.h(j3, j10);
+            mVar.d(j10, j11);
         }
     }
 
     @Override // c3.o
-    public final List i() {
-        g0 g0Var = i0.b;
-        return a1.e;
+    public final List e() {
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:53:0x017b  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x018d  */
     @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int m(p pVar, s sVar) {
-        String s10;
-        n nVar;
-        a1 a1Var;
+    public final int f(p pVar, s sVar) {
+        String v;
+        ad.d dVar;
+        x1 x1Var;
         int i10;
-        r3.a aVar;
-        long j3;
+        l3.b bVar;
+        long j10;
+        long j11;
         int i11 = this.c;
-        v vVar = this.a;
+        long j12 = -1;
+        x xVar = this.a;
         if (i11 == 0) {
-            vVar.G(2);
-            pVar.readFully(vVar.a, 0, 2);
-            int D = vVar.D();
-            this.d = D;
-            if (D == 65498) {
+            xVar.K(2);
+            pVar.readFully(xVar.a, 0, 2);
+            int H = xVar.H();
+            this.d = H;
+            if (H == 65498) {
                 if (this.f != -1) {
                     this.c = 4;
                     return 0;
                 }
-                b();
+                g();
                 return 0;
             }
-            if ((D < 65488 || D > 65497) && D != 65281) {
+            if ((H < 65488 || H > 65497) && H != 65281) {
                 this.c = 1;
             }
             return 0;
         }
         if (i11 == 1) {
-            vVar.G(2);
-            pVar.readFully(vVar.a, 0, 2);
-            this.e = vVar.D() - 2;
+            xVar.K(2);
+            pVar.a(0, 2, xVar.a);
+            this.e = xVar.H() - 2;
+            pVar.r(2);
             this.c = 2;
             return 0;
         }
@@ -141,108 +149,109 @@ public final class b implements o {
                 }
                 if (this.i == null || pVar != this.h) {
                     this.h = pVar;
-                    this.i = new n(pVar, this.f);
+                    this.i = new ad.d(pVar, this.f);
                 }
                 m mVar = this.j;
                 mVar.getClass();
-                int m10 = mVar.m(this.i, sVar);
-                if (m10 == 1) {
+                int f7 = mVar.f(this.i, sVar);
+                if (f7 == 1) {
                     sVar.a += this.f;
                 }
-                return m10;
+                return f7;
             }
             long position = pVar.getPosition();
-            long j10 = this.f;
-            if (position != j10) {
-                sVar.a = j10;
+            long j13 = this.f;
+            if (position != j13) {
+                sVar.a = j13;
                 return 1;
             }
-            if (!pVar.h(vVar.a, 0, 1, true)) {
-                b();
+            if (!pVar.j(xVar.a, 0, 1, true)) {
+                g();
                 return 0;
             }
             pVar.q();
             if (this.j == null) {
-                this.j = new m(k.D, 8);
+                this.j = new m(z3.l.D, 8);
             }
-            n nVar2 = new n(pVar, this.f);
-            this.i = nVar2;
-            if (!this.j.a(nVar2)) {
-                b();
+            ad.d dVar2 = new ad.d(pVar, this.f);
+            this.i = dVar2;
+            if (!this.j.a(dVar2)) {
+                g();
                 return 0;
             }
             m mVar2 = this.j;
-            long j11 = this.f;
+            long j14 = this.f;
             q qVar = this.b;
             qVar.getClass();
-            mVar2.g(new n(j11, qVar, 3));
-            r3.a aVar2 = this.g;
-            aVar2.getClass();
+            mVar2.c(new ad.d(j14, qVar, 2));
+            l3.b bVar2 = this.g;
+            bVar2.getClass();
             q qVar2 = this.b;
             qVar2.getClass();
-            h0 f22 = qVar2.f2(1024, 4);
-            r rVar = new r();
-            rVar.p = r0.n("image/jpeg");
-            rVar.k = new p0(aVar2);
-            hg.c.s(rVar, f22);
+            i0 a02 = qVar2.a0(1024, 4);
+            w wVar = new w();
+            wVar.q = w0.n("image/jpeg");
+            wVar.k = new u0(bVar2);
+            i2.d.s(wVar, a02);
             this.c = 5;
             return 0;
         }
         if (this.d == 65505) {
-            v vVar2 = new v(this.e);
-            pVar.readFully(vVar2.a, 0, this.e);
-            if (this.g == null && "http://ns.adobe.com/xap/1.0/".equals(vVar2.s()) && (s10 = vVar2.s()) != null) {
+            x xVar2 = new x(this.e);
+            pVar.readFully(xVar2.a, 0, this.e);
+            if (this.g == null && "http://ns.adobe.com/xap/1.0/".equals(xVar2.v()) && (v = xVar2.v()) != null) {
                 long length = pVar.getLength();
                 if (length != -1) {
                     try {
-                        nVar = e.a(s10);
-                    } catch (s0 | NumberFormatException | XmlPullParserException unused) {
-                        e2.a.n("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata");
-                        nVar = null;
+                        dVar = d.a(v);
+                    } catch (x0 | NumberFormatException | XmlPullParserException unused) {
+                        e2.a.l("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata");
+                        dVar = null;
                     }
-                    if (nVar != null && (i10 = (a1Var = (a1) nVar.c).d) >= 2) {
+                    if (dVar != null && (i10 = (x1Var = (x1) dVar.c).d) >= 2) {
                         int i12 = i10 - 1;
-                        long j12 = -1;
-                        long j13 = -1;
-                        long j14 = -1;
                         long j15 = -1;
-                        boolean z10 = false;
+                        long j16 = -1;
+                        long j17 = -1;
+                        long j18 = -1;
                         while (i12 >= 0) {
-                            c cVar = (c) a1Var.get(i12);
-                            boolean equals = "video/mp4".equals(cVar.a) | z10;
+                            c cVar = (c) x1Var.get(i12);
+                            String str = cVar.a;
+                            boolean z10 = str.equals("video/mp4") || str.equals("video/quicktime");
                             if (i12 == 0) {
+                                j10 = j12;
                                 length -= cVar.d;
-                                j3 = 0;
+                                j11 = 0;
                             } else {
-                                j3 = length - cVar.c;
+                                j10 = j12;
+                                j11 = length - cVar.c;
                             }
-                            long j16 = j3;
-                            long j17 = length;
-                            length = j16;
-                            if (equals && length != j17) {
-                                j15 = j17 - length;
-                                j14 = length;
-                                equals = false;
+                            long j19 = length;
+                            length = j11;
+                            if (z10 && length != j19) {
+                                j18 = j19 - length;
+                                j17 = length;
                             }
                             if (i12 == 0) {
-                                j12 = length;
-                                j13 = j17;
+                                j16 = j19;
+                                j15 = length;
                             }
                             i12--;
-                            z10 = equals;
+                            j12 = j10;
                         }
-                        if (j14 != -1 && j15 != -1 && j12 != -1 && j13 != -1) {
-                            aVar = new r3.a(j12, j13, nVar.b, j14, j15);
-                            this.g = aVar;
-                            if (aVar != null) {
-                                this.f = aVar.d;
+                        long j20 = j12;
+                        if (j17 != j20 && j18 != j20 && j15 != j20 && j16 != j20) {
+                            bVar = new l3.b(j15, j16, dVar.b, j17, j18);
+                            this.g = bVar;
+                            if (bVar != null) {
+                                this.f = bVar.d;
                             }
                         }
                     }
                 }
-                aVar = null;
-                this.g = aVar;
-                if (aVar != null) {
+                bVar = null;
+                this.g = bVar;
+                if (bVar != null) {
                 }
             }
         } else {
@@ -250,6 +259,14 @@ public final class b implements o {
         }
         this.c = 0;
         return 0;
+    }
+
+    public final void g() {
+        q qVar = this.b;
+        qVar.getClass();
+        qVar.D();
+        this.b.K(new t(-9223372036854775807L));
+        this.c = 6;
     }
 
     @Override // c3.o
@@ -261,7 +278,7 @@ public final class b implements o {
     }
 
     @Override // c3.o
-    public final o c() {
+    public final o b() {
         return this;
     }
 }

@@ -11,16 +11,16 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.dq;
+import org.telegram.ui.Components.aq;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class x8 extends FrameLayout {
     public final TextView a;
     public final TextView b;
-    public final dq c;
+    public final aq c;
     public boolean d;
     public boolean e;
     public int f;
@@ -36,17 +36,17 @@ public final class x8 extends FrameLayout {
         this.f = 50;
         TextView textView = new TextView(context);
         this.a = textView;
-        bi.u(textView, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
+        yh.t(textView, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.x5.a(-1.0f, z10 ? 21 : 64.0f, 0.0f, z10 ? 64.0f : 21, 0.0f, -1, (z10 ? 5 : 3) | 48));
+        addView(textView, w7.a6.a(-1.0f, z10 ? 21 : 64.0f, 0.0f, z10 ? 64.0f : 21, 0.0f, -1, (z10 ? 5 : 3) | 48));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.z6, false));
+        textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.z6, false));
         textView2.setTextSize(1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(1);
@@ -55,14 +55,14 @@ public final class x8 extends FrameLayout {
         textView2.setPadding(0, 0, 0, 0);
         textView2.setEllipsize(truncateAt);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, w7.x5.a(-2.0f, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f, -2, (z11 ? 5 : 3) | 48));
-        dq dqVar = new dq(context, 21, null);
-        this.c = dqVar;
-        dqVar.setDrawUnchecked(true);
-        dqVar.setDrawBackgroundAsArc(10);
-        dqVar.setDuration(100L);
-        dqVar.b(org.telegram.ui.ActionBar.i6.h7, org.telegram.ui.ActionBar.i6.j7, org.telegram.ui.ActionBar.i6.k7);
-        addView(dqVar, w7.x5.a(20.0f, 22.0f, 0.0f, 22.0f, 0.0f, 20, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(textView2, w7.a6.a(-2.0f, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f, -2, (z11 ? 5 : 3) | 48));
+        aq aqVar = new aq(context, 21, null);
+        this.c = aqVar;
+        aqVar.setDrawUnchecked(true);
+        aqVar.setDrawBackgroundAsArc(10);
+        aqVar.setDuration(100L);
+        aqVar.b(org.telegram.ui.ActionBar.g6.h7, org.telegram.ui.ActionBar.g6.j7, org.telegram.ui.ActionBar.g6.k7);
+        addView(aqVar, w7.a6.a(20.0f, 22.0f, 0.0f, 22.0f, 0.0f, 20, (LocaleController.isRTL ? 5 : 3) | 16));
         setClipChildren(false);
     }
 
@@ -105,7 +105,7 @@ public final class x8 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.d) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
         }
     }
 

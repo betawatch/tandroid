@@ -1,98 +1,58 @@
 package e9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.util.AbstractList;
+import java.util.ListIterator;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g1 extends m0 {
-    public static final Object[] r;
-    public static final g1 s;
-    public final transient Object[] d;
-    public final transient int e;
-    public final transient Object[] f;
-    public final transient int h;
-    public final transient int n;
+public final class g1 extends l2 implements ListIterator {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ AbstractList c;
 
-    static {
-        Object[] objArr = new Object[0];
-        r = objArr;
-        s = new g1(0, 0, 0, objArr, objArr);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g1(AbstractList abstractList, ListIterator listIterator, int i10) {
+        super(listIterator);
+        this.b = i10;
+        this.c = abstractList;
     }
 
-    public g1(int i10, int i11, int i12, Object[] objArr, Object[] objArr2) {
-        this.d = objArr;
-        this.e = i10;
-        this.f = objArr2;
-        this.h = i11;
-        this.n = i12;
-    }
-
-    @Override // e9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj != null) {
-            Object[] objArr = this.f;
-            if (objArr.length != 0) {
-                int t10 = q.t(obj);
-                while (true) {
-                    int i10 = t10 & this.h;
-                    Object obj2 = objArr[i10];
-                    if (obj2 == null) {
-                        return false;
-                    }
-                    if (obj2.equals(obj)) {
-                        return true;
-                    }
-                    t10 = i10 + 1;
-                }
-            }
+    @Override // e9.l2
+    public final Object a(Object obj) {
+        switch (this.b) {
+            case 0:
+                return ((h1) this.c).b.apply(obj);
+            default:
+                return ((i1) this.c).b.apply(obj);
         }
-        return false;
     }
 
-    @Override // e9.m0, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.e;
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // e9.d0
-    public final int n(int i10, Object[] objArr) {
-        Object[] objArr2 = this.d;
-        int i11 = this.n;
-        System.arraycopy(objArr2, 0, objArr, i10, i11);
-        return i10 + i11;
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return ((ListIterator) this.a).hasPrevious();
     }
 
-    @Override // e9.d0
-    public final Object[] o() {
-        return this.d;
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return ((ListIterator) this.a).nextIndex();
     }
 
-    @Override // e9.d0
-    public final int p() {
-        return this.n;
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        return a(((ListIterator) this.a).previous());
     }
 
-    @Override // e9.d0
-    public final int q() {
-        return 0;
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return ((ListIterator) this.a).previousIndex();
     }
 
-    @Override // e9.d0
-    public final boolean r() {
-        return false;
-    }
-
-    @Override // e9.d0
-    /* renamed from: s */
-    public final o1 iterator() {
-        return i().listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.n;
-    }
-
-    @Override // e9.m0
-    public final i0 w() {
-        return i0.t(this.n, this.d);
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

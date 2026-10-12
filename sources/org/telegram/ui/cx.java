@@ -1,40 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class cx extends FragmentContextView {
-    public final /* synthetic */ int R0;
-    public final /* synthetic */ ty S0;
+public final class cx implements o70 {
+    public final /* synthetic */ yy a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cx(ty tyVar, Context context, ty tyVar2, int i10) {
-        super(context, tyVar2, true);
-        this.R0 = i10;
-        switch (i10) {
-            case 1:
-                this.S0 = tyVar;
-                super(context, tyVar2, false);
-                break;
-            default:
-                this.S0 = tyVar;
-                break;
-        }
+    public cx(yy yyVar) {
+        this.a = yyVar;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.R0) {
-            case 0:
-                ty tyVar = this.S0;
-                tyVar.J1.i(tyVar.G1, i10 == 0, true);
-                break;
-            default:
-                ty tyVar2 = this.S0;
-                tyVar2.J1.i(tyVar2.I1, i10 == 0, true);
-                break;
+    @Override // org.telegram.ui.o70
+    public final void a(p70 p70Var, long j10) {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(MessagesStorage.TopicKey.of(-j10, 0L));
+        yy yyVar = this.a;
+        sy syVar = yyVar.C2;
+        if (yyVar.B2) {
+            yyVar.removeSelfFromStack();
         }
+        syVar.w(yyVar, arrayList, null, true, yyVar.J2, yyVar.K2, yyVar.L2, null);
     }
 }

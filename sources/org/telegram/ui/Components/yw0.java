@@ -1,41 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yw0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ax0 b;
+public final class yw0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public int j;
+    public final /* synthetic */ zw0 k;
 
-    public /* synthetic */ yw0(ax0 ax0Var, int i10) {
-        this.a = i10;
-        this.b = ax0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ax0 ax0Var = this.b;
-                ax0Var.V0 = false;
-                if (!ax0Var.Y0 && ax0Var.W0) {
-                    ax0Var.C(true);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.V0 = false;
-                break;
-            case 2:
-                ax0 ax0Var2 = this.b;
-                ax0Var2.Y0 = false;
-                if (!ax0Var2.V0 && ax0Var2.W0) {
-                    ax0Var2.C(true);
-                    break;
-                }
-                break;
-            default:
-                this.b.Y0 = false;
-                break;
-        }
+    public yw0(zw0 zw0Var) {
+        this.k = zw0Var;
     }
 }

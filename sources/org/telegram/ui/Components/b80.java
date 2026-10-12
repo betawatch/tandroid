@@ -1,31 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b80 extends AnimatorListenerAdapter {
+public final /* synthetic */ class b80 implements org.telegram.ui.ActionBar.k1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c80 b;
+    public final /* synthetic */ m80 b;
 
-    public /* synthetic */ b80(c80 c80Var, int i10) {
+    public /* synthetic */ b80(m80 m80Var, int i10) {
         this.a = i10;
-        this.b = c80Var;
+        this.b = m80Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.ui.ActionBar.k1
+    public final void n(KeyEvent keyEvent) {
+        m80 m80Var;
+        h80 h80Var;
+        m80 m80Var2;
+        h80 h80Var2;
         switch (this.a) {
             case 0:
-                c80 c80Var = this.b;
-                c80Var.e.d0 = null;
-                c80Var.requestLayout();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (h80Var = (m80Var = this.b).m) != null && h80Var.isShowing()) {
+                    m80Var.u();
+                    break;
+                }
                 break;
             default:
-                c80 c80Var2 = this.b;
-                c80Var2.e.d0 = null;
-                c80Var2.a = false;
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (h80Var2 = (m80Var2 = this.b).m) != null && h80Var2.isShowing()) {
+                    m80Var2.u();
+                    break;
+                }
                 break;
         }
     }

@@ -1,34 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class e91 extends AnimatorListenerAdapter {
-    public boolean a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ o91 d;
+public final class e91 extends s4.c0 {
+    public final /* synthetic */ hg.i0 r;
 
-    public e91(o91 o91Var, View view, float f7) {
-        this.d = o91Var;
-        this.b = view;
-        this.c = f7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e91(hg.i0 i0Var, Context context) {
+        super(context);
+        this.r = i0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        super.onAnimationCancel(animator);
-        this.a = true;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.a) {
-            return;
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+    
+        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.j91) r5.r.J).getMeasuredWidth()) goto L13;
+     */
+    @Override // s4.c0, s4.x0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, s4.w0 w0Var) {
+        int j10 = j(o(), view);
+        if (j10 > 0 || (j10 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
+            j10 += AndroidUtilities.dp(60.0f);
+        } else {
+            if (j10 >= 0) {
+                if (j10 == 0) {
+                }
+            }
+            j10 -= AndroidUtilities.dp(60.0f);
         }
-        this.d.E(this.b, this.c);
+        int k10 = k(p(), view);
+        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j10 * j10))));
+        if (max > 0) {
+            w0Var.b(-j10, -k10, max, this.j);
+        }
     }
 }

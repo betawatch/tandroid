@@ -5,13 +5,13 @@ import java.util.Iterator;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class k0 extends e0 implements Set, j$.util.Set {
     public static final /* synthetic */ int c = 0;
     public transient h0 b;
 
-    public static int q(int i10) {
+    public static int p(int i10) {
         int max = Math.max(i10, 2);
         if (max >= 751619276) {
             if (max < 1073741824) {
@@ -26,7 +26,7 @@ public abstract class k0 extends e0 implements Set, j$.util.Set {
         return highestOneBit;
     }
 
-    public static k0 r(int i10, Object... objArr) {
+    public static k0 q(int i10, Object... objArr) {
         if (i10 == 0) {
             return t0.s;
         }
@@ -35,18 +35,18 @@ public abstract class k0 extends e0 implements Set, j$.util.Set {
             obj.getClass();
             return new u0(obj);
         }
-        int q6 = q(i10);
-        Object[] objArr2 = new Object[q6];
-        int i11 = q6 - 1;
+        int p5 = p(i10);
+        Object[] objArr2 = new Object[p5];
+        int i11 = p5 - 1;
         int i12 = 0;
         int i13 = 0;
         for (int i14 = 0; i14 < i10; i14++) {
             Object obj2 = objArr[i14];
             if (obj2 == null) {
-                throw new NullPointerException(hg.c.h(i14, "at index "));
+                throw new NullPointerException(i2.d.i(i14, "at index "));
             }
             int hashCode = obj2.hashCode();
-            int a2 = v7.n5.a(hashCode);
+            int a2 = v7.o5.a(hashCode);
             while (true) {
                 int i15 = a2 & i11;
                 Object obj3 = objArr2[i15];
@@ -68,8 +68,8 @@ public abstract class k0 extends e0 implements Set, j$.util.Set {
             obj4.getClass();
             return new u0(obj4);
         }
-        if (q(i13) < q6 / 2) {
-            return r(i13, objArr);
+        if (p(i13) < p5 / 2) {
+            return q(i13, objArr);
         }
         int length = objArr.length;
         if (i13 < (length >> 1) + (length >> 2)) {

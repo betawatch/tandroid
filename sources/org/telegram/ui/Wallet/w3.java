@@ -3,61 +3,61 @@ package org.telegram.ui.Wallet;
 import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.f91;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.t51;
+import org.telegram.ui.Components.c91;
+import org.telegram.ui.Components.h71;
+import org.telegram.ui.Components.p51;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class w3 extends f91 {
-    public final /* synthetic */ a5 a;
+public final class w3 extends c91 {
+    public final /* synthetic */ z4 a;
 
-    public w3(a5 a5Var) {
-        this.a = a5Var;
+    public w3(z4 z4Var) {
+        this.a = z4Var;
     }
 
-    @Override // org.telegram.ui.Components.f91
+    @Override // org.telegram.ui.Components.c91
     public final void b(View view, int i10, int i11) {
-        k71 k71Var = (k71) view;
-        boolean canScrollVertically = k71Var.canScrollVertically(-1);
-        k71Var.W2.N(false);
-        k71Var.a0();
+        h71 h71Var = (h71) view;
+        boolean canScrollVertically = h71Var.canScrollVertically(-1);
+        h71Var.W2.N(false);
+        h71Var.a0();
         if (canScrollVertically) {
             return;
         }
-        k71Var.V2.h1(0, 0);
+        h71Var.V2.h1(0, 0);
     }
 
-    @Override // org.telegram.ui.Components.f91
+    @Override // org.telegram.ui.Components.c91
     public final View d(int i10) {
-        a5 a5Var = this.a;
-        k71[] k71VarArr = a5Var.p0;
-        k71 k71Var = k71VarArr[i10];
-        if (k71Var != null) {
-            return k71Var;
+        z4 z4Var = this.a;
+        h71[] h71VarArr = z4Var.p0;
+        h71 h71Var = h71VarArr[i10];
+        if (h71Var != null) {
+            return h71Var;
         }
-        v3 v3Var = new v3(a5Var, new org.telegram.ui.Components.o(this, i10, 2), new i3(a5Var), new i3(a5Var));
+        v3 v3Var = new v3(z4Var, new org.telegram.ui.Components.o(this, i10, 2), new i3(z4Var), new i3(z4Var));
         v3Var.setFocusableInTouchMode(false);
         v3Var.setClipChildren(false);
         v3Var.setClipToPadding(false);
         v3Var.p1();
         v3Var.W2.r = false;
-        v3Var.j(new t51(this, i10));
-        k71VarArr[i10] = v3Var;
+        v3Var.j(new p51(this, i10));
+        h71VarArr[i10] = v3Var;
         return v3Var;
     }
 
-    @Override // org.telegram.ui.Components.f91
+    @Override // org.telegram.ui.Components.c91
     public final int e() {
         return this.a.g0 ? 2 : 1;
     }
 
-    @Override // org.telegram.ui.Components.f91
+    @Override // org.telegram.ui.Components.c91
     public final CharSequence g(int i10) {
         return LocaleController.getString(i10 == 0 ? R.string.WalletTransactions : R.string.WalletCollectibles);
     }
 
-    @Override // org.telegram.ui.Components.f91
+    @Override // org.telegram.ui.Components.c91
     public final int h(int i10) {
         return i10;
     }

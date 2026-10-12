@@ -1,24 +1,23 @@
 package com.google.android.recaptcha.internal;
 
-import ae.d0;
-import ae.g0;
-import ae.j0;
-import hd.e;
-import hd.f;
-import hd.i;
+import be.c0;
+import be.f0;
+import be.i0;
+import id.e;
+import id.f;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import jd.c;
-import kd.a;
-import ld.j;
-import sd.p;
-import v7.a8;
+import kd.c;
+import ld.a;
+import md.i;
+import td.p;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-final class zzk extends j implements p {
+final class zzk extends i implements p {
     int zza;
     final /* synthetic */ zzq zzb;
     final /* synthetic */ String zzc;
@@ -27,43 +26,43 @@ final class zzk extends j implements p {
     private /* synthetic */ Object zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzk(zzq zzqVar, String str, zzgr zzgrVar, long j3, c cVar) {
+    public zzk(zzq zzqVar, String str, zzgr zzgrVar, long j10, c cVar) {
         super(2, cVar);
         this.zzb = zzqVar;
         this.zzc = str;
         this.zzd = zzgrVar;
-        this.zze = j3;
+        this.zze = j10;
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final c create(Object obj, c cVar) {
         zzk zzkVar = new zzk(this.zzb, this.zzc, this.zzd, this.zze, cVar);
         zzkVar.zzf = obj;
         return zzkVar;
     }
 
-    @Override // sd.p
+    @Override // td.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzk) create((d0) obj, (c) obj2)).invokeSuspend(i.a);
+        return ((zzk) create((c0) obj, (c) obj2)).invokeSuspend(id.i.a);
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
         int i10 = this.zza;
-        a8.b(obj);
+        i8.b(obj);
         if (i10 == 0) {
-            d0 d0Var = (d0) this.zzf;
+            c0 c0Var = (c0) this.zzf;
             ArrayList arrayList = new ArrayList();
             for (zzg zzgVar : this.zzb.zzd()) {
                 if (zzgVar.zzi()) {
-                    arrayList.add(g0.c(d0Var, new zzj(this.zzd, zzgVar, this.zzc, this.zze, null)));
+                    arrayList.add(f0.c(c0Var, new zzj(this.zzd, zzgVar, this.zzc, this.zze, null)));
                 }
             }
-            j0[] j0VarArr = (j0[]) arrayList.toArray(new j0[0]);
-            j0[] j0VarArr2 = (j0[]) Arrays.copyOf(j0VarArr, j0VarArr.length);
+            i0[] i0VarArr = (i0[]) arrayList.toArray(new i0[0]);
+            i0[] i0VarArr2 = (i0[]) Arrays.copyOf(i0VarArr, i0VarArr.length);
             this.zza = 1;
-            obj = g0.d(j0VarArr2, this);
+            obj = f0.d(i0VarArr2, this);
             if (obj == aVar) {
                 return aVar;
             }

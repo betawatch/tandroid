@@ -6,9 +6,9 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class n4 extends v7.m5 implements ScheduledFuture, i9.w, Future {
+public final class n4 extends v7.n5 implements ScheduledFuture, j9.y, Future {
     public final f4 b;
     public final ScheduledFuture c;
 
@@ -17,7 +17,7 @@ public final class n4 extends v7.m5 implements ScheduledFuture, i9.w, Future {
         this.c = scheduledFuture;
     }
 
-    @Override // i9.w
+    @Override // j9.y
     public final void a(Runnable runnable, Executor executor) {
         this.b.a(runnable, executor);
     }
@@ -57,7 +57,7 @@ public final class n4 extends v7.m5 implements ScheduledFuture, i9.w, Future {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j3, TimeUnit timeUnit) {
-        return this.b.get(j3, timeUnit);
+    public final Object get(long j10, TimeUnit timeUnit) {
+        return this.b.get(j10, timeUnit);
     }
 }

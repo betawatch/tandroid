@@ -16,7 +16,7 @@ public final class d1 extends AbstractList implements f0, RandomAccess {
     }
 
     @Override // com.google.android.gms.internal.clearcut.f0
-    public final List e() {
+    public final List d() {
         return DesugarCollections.unmodifiableList(this.a.b);
     }
 
@@ -45,7 +45,7 @@ public final class d1 extends AbstractList implements f0, RandomAccess {
     }
 
     @Override // com.google.android.gms.internal.clearcut.f0
-    public final f0 k() {
+    public final f0 j() {
         return this;
     }
 }

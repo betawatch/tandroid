@@ -1,104 +1,40 @@
 package m4;
 
-import android.os.DeadObjectException;
-import android.os.Handler;
+import android.content.Context;
+import android.os.Bundle;
 import android.os.Looper;
-import android.os.Message;
-import android.os.RemoteException;
+import java.util.HashMap;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class y extends Handler {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ b0 c;
+public class y {
+    public static final Object b = new Object();
+    public static final HashMap c = new HashMap();
+    public final f0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(b0 b0Var, Looper looper) {
-        super(looper);
-        this.c = b0Var;
-        this.a = true;
-        this.b = true;
+    public y(Context context, String str, b2.g1 g1Var, e9.n0 n0Var, e9.n0 n0Var2, e9.n0 n0Var3, pb.a aVar, Bundle bundle, Bundle bundle2, e2.d dVar, boolean z10, boolean z11) {
+        synchronized (b) {
+            HashMap hashMap = c;
+            if (hashMap.containsKey(str)) {
+                throw new IllegalStateException("Session ID must be unique. ID=" + str);
+            }
+            hashMap.put(str, this);
+        }
+        this.a = new f0(this, context, str, g1Var, n0Var, n0Var2, n0Var3, aVar, bundle, bundle2, dVar, z10, z11);
     }
 
-    public final void a(boolean z10, boolean z11) {
-        boolean z12 = false;
-        this.a = this.a && z10;
-        if (this.b && z11) {
-            z12 = true;
-        }
-        this.b = z12;
-        if (hasMessages(1)) {
+    public final void a(b2.g1 g1Var) {
+        g1Var.getClass();
+        u6.g(g1Var.P());
+        Looper A0 = g1Var.A0();
+        f0 f0Var = this.a;
+        u6.g(A0 == f0Var.t.a.A0());
+        u6.p(g1Var.A0() == Looper.myLooper());
+        n1 n1Var = f0Var.t;
+        if (g1Var == n1Var.a) {
             return;
         }
-        sendEmptyMessage(1);
-    }
-
-    @Override // android.os.Handler
-    public final void handleMessage(Message message) {
-        r rVar;
-        int i10;
-        d1 d1Var;
-        b0 b0Var = this.c;
-        b1 b1Var = b0Var.g;
-        if (message.what != 1) {
-            throw new IllegalStateException("Invalid message what=" + message.what);
-        }
-        d1 c10 = b0Var.s.c(b0Var.t.Q0(), b0Var.t.O0(), b0Var.s.k);
-        b0Var.s = c10;
-        boolean z10 = this.a;
-        boolean z11 = this.b;
-        d1 G0 = b1Var.G0(c10);
-        oi.f fVar = b1Var.b;
-        e9.i0 s10 = fVar.s();
-        for (int i11 = 0; i11 < s10.size(); i11++) {
-            r rVar2 = (r) s10.get(i11);
-            try {
-                com.google.android.gms.common.api.internal.v x10 = fVar.x(rVar2);
-                if (x10 != null) {
-                    i10 = x10.e();
-                } else if (!b0Var.h(rVar2)) {
-                    break;
-                } else {
-                    i10 = 0;
-                }
-                d1 w10 = fVar.w(rVar2);
-                if (w10 == null) {
-                    fVar.v(rVar2);
-                    b2.x0 a2 = w7.s.a(fVar.r(rVar2), b0Var.t.t());
-                    try {
-                        q qVar = rVar2.d;
-                        e2.d.h(qVar);
-                        if (w10 == null) {
-                            rVar = rVar2;
-                            d1Var = G0;
-                        } else {
-                            rVar = rVar2;
-                            d1Var = w10;
-                        }
-                        try {
-                            qVar.g(i10, d1Var, a2, z10, z11);
-                        } catch (DeadObjectException unused) {
-                            b1Var.b.M(rVar);
-                        } catch (RemoteException e7) {
-                            e = e7;
-                            e2.a.o("MediaSessionImpl", "Exception in " + rVar, e);
-                        }
-                    } catch (DeadObjectException unused2) {
-                        rVar = rVar2;
-                    } catch (RemoteException e10) {
-                        e = e10;
-                        rVar = rVar2;
-                    }
-                }
-            } catch (DeadObjectException unused3) {
-                rVar = rVar2;
-            } catch (RemoteException e11) {
-                e = e11;
-                rVar = rVar2;
-            }
-        }
-        this.a = true;
-        this.b = true;
+        f0Var.u(n1Var, new n1(g1Var));
     }
 }

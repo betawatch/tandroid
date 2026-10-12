@@ -15,13 +15,13 @@ public final /* synthetic */ class m0 implements LongConsumer {
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j3) {
+    public final void accept(long j10) {
         switch (this.a) {
             case 0:
-                this.b.accept(Long.valueOf(j3));
+                this.b.accept(Long.valueOf(j10));
                 break;
             default:
-                ((j5) this.b).accept(j3);
+                ((j5) this.b).accept(j10);
                 break;
         }
     }
@@ -29,6 +29,6 @@ public final /* synthetic */ class m0 implements LongConsumer {
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
         switch (this.a) {
         }
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 }

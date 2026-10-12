@@ -2,9 +2,9 @@ package r7;
 
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
-import w7.f7;
+import w7.a7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class r extends a9.o implements ListIterator {
     public final int b;
@@ -16,7 +16,7 @@ public final class r extends a9.o implements ListIterator {
         super(3);
         int size = tVar.size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(f7.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(a7.c(i10, size, "index"));
         }
         this.b = size;
         this.c = i10;

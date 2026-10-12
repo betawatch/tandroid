@@ -10,12 +10,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class CaptchaController {
     public static HashMap<Integer, Request> currentRequests;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class Request {
         public String action;
         public int currentAccount;
@@ -66,7 +66,7 @@ public class CaptchaController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$request$0(String str, String str2, Request request, String str3) {
-        hg.c.t(str3, a1.g.x("CaptchaController: got token for {action=", str, ", key_id=", str2, "}: "));
+        i2.d.t(str3, a1.g.w("CaptchaController: got token for {action=", str, ", key_id=", str2, "}: "));
         if (str3 == null) {
             request.done("RECAPTCHA_FAILED_TOKEN_NULL");
         } else {
@@ -82,7 +82,7 @@ public class CaptchaController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$request$2(String str, String str2, Request request, RecaptchaTasksClient recaptchaTasksClient) {
-        recaptchaTasksClient.executeTask(getAction(str)).addOnSuccessListener(new r0(str, str2, request, 1)).addOnFailureListener(new s0(request, 1));
+        recaptchaTasksClient.executeTask(getAction(str)).addOnSuccessListener(new s0(str, str2, request, 1)).addOnFailureListener(new t0(request, 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -105,7 +105,7 @@ public class CaptchaController {
         request2.requestTokens.add(Integer.valueOf(i11));
         Activity activity = AndroidUtilities.getActivity();
         if (activity != null) {
-            Recaptcha.getTasksClient(activity.getApplication(), str2).addOnSuccessListener(new r0(str, str2, request2, i12)).addOnFailureListener(new s0(request2, i12));
+            Recaptcha.getTasksClient(activity.getApplication(), str2).addOnSuccessListener(new s0(str, str2, request2, i12)).addOnFailureListener(new t0(request2, i12));
         } else {
             FileLog.e("CaptchaController: no activity found");
             request2.done("RECAPTCHA_FAILED_NO_ACTIVITY");

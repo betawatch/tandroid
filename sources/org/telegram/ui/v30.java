@@ -1,24 +1,43 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class v30 extends s4.j {
-    public final /* synthetic */ g60 F;
+public final class v30 implements Runnable {
+    public final /* synthetic */ n60 a;
 
-    public v30(g60 g60Var) {
-        this.F = g60Var;
+    public v30(n60 n60Var) {
+        this.a = n60Var;
     }
 
-    @Override // s4.j
-    public final void P(s4.d1 d1Var) {
-        ViewGroup viewGroup;
-        g60 g60Var = this.F;
-        g60Var.Q.invalidate();
-        g60Var.a2.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.f3) g60Var).containerView;
-        viewGroup.invalidate();
-        g60.K0(g60Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        n60 n60Var = this.a;
+        org.telegram.ui.ActionBar.h5 h5Var = n60Var.U;
+        s50 s50Var = n60Var.V;
+        if (s50Var == null || n60Var.isDismissed()) {
+            return;
+        }
+        ChatObject.Call call = n60Var.a1;
+        int i10 = call != null ? call.call.schedule_date : n60Var.k2;
+        if (i10 == 0) {
+            return;
+        }
+        int currentTime = i10 - n60Var.d.getConnectionsManager().getCurrentTime();
+        if (currentTime >= 86400) {
+            s50Var.l(LocaleController.formatPluralString("Days", Math.round(currentTime / 86400.0f), new Object[0]), false);
+        } else {
+            s50Var.l(AndroidUtilities.formatFullDuration(Math.abs(currentTime)), false);
+            if (currentTime < 0 && h5Var.getTag() == null) {
+                h5Var.setTag(1);
+                h5Var.l(LocaleController.getString(R.string.VoipChatLateBy), false);
+            }
+        }
+        n60Var.W.l(LocaleController.formatStartsTime(i10, 3), false);
+        AndroidUtilities.runOnUIThread(n60Var.w2, 1000L);
     }
 }

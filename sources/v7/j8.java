@@ -1,36 +1,11 @@
 package v7;
 
-import java.util.concurrent.Future;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class j8 {
-    public static Object a(Future future) {
-        Object obj;
-        boolean z10 = false;
-        if (!future.isDone()) {
-            throw new IllegalStateException(u6.a("Future was expected to be done: %s", future));
-        }
-        while (true) {
-            try {
-                obj = future.get();
-                break;
-            } catch (InterruptedException unused) {
-                z10 = true;
-            } catch (Throwable th2) {
-                if (z10) {
-                    Thread.currentThread().interrupt();
-                }
-                throw th2;
-            }
-        }
-        if (z10) {
-            Thread.currentThread().interrupt();
-        }
-        return obj;
-    }
-
-    public static i9.u b(Object obj) {
-        return obj == null ? i9.u.b : new i9.u(obj);
+    public static void a(int i10, Drawable drawable) {
+        drawable.setTint(i10);
     }
 }

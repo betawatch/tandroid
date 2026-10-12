@@ -1,32 +1,44 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ a0.i c;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ nf(MessagesStorage messagesStorage, a0.i iVar, int i10) {
+    public /* synthetic */ nf(MessagesStorage messagesStorage, long j10, int i10) {
         this.a = i10;
         this.b = messagesStorage;
-        this.c = iVar;
+        this.c = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$getDialogs$239(this.c);
+                this.b.lambda$deleteStoryPushMessage$39(this.c);
                 break;
             case 1:
-                this.b.lambda$markMessagesAsDeletedInternal$225(this.c);
+                this.b.lambda$clearUserPhotos$92(this.c);
                 break;
             case 2:
-                this.b.lambda$putWebPages$188(this.c);
+                this.b.lambda$removeAllTopics$56(this.c);
+                break;
+            case 3:
+                this.b.lambda$deleteWallpaper$79(this.c);
+                break;
+            case 4:
+                this.b.lambda$deleteSavedDialog$55(this.c);
+                break;
+            case 5:
+                this.b.lambda$onDeleteQueryComplete$91(this.c);
+                break;
+            case 6:
+                this.b.lambda$removePendingTask$11(this.c);
                 break;
             default:
-                this.b.lambda$deleteEphemeralMessages$205(this.c);
+                this.b.lambda$loadChannelAdmins$123(this.c);
                 break;
         }
     }

@@ -1,5 +1,6 @@
 package j$.util.stream;
 
+import j$.util.function.IntConsumer$-CC;
 import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
@@ -7,7 +8,7 @@ public final class z6 extends b7 implements IntConsumer {
     public final int[] c;
 
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
     public z6(int i10) {
@@ -15,9 +16,9 @@ public final class z6 extends b7 implements IntConsumer {
     }
 
     @Override // j$.util.stream.b7
-    public final void a(Object obj, long j3) {
+    public final void a(Object obj, long j10) {
         IntConsumer intConsumer = (IntConsumer) obj;
-        for (int i10 = 0; i10 < j3; i10++) {
+        for (int i10 = 0; i10 < j10; i10++) {
             intConsumer.accept(this.c[i10]);
         }
     }

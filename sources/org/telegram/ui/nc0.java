@@ -1,34 +1,64 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class nc0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hd0 b;
-    public final /* synthetic */ boolean c;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-    public /* synthetic */ nc0(hd0 hd0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.b = hd0Var;
-        this.c = z10;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class nc0 extends org.telegram.ui.Components.v60 {
+    public final /* synthetic */ pc0 d;
+
+    public nc0(pc0 pc0Var) {
+        this.d = pc0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                boolean z10 = this.c;
-                hd0 hd0Var = this.b;
-                if (!z10) {
-                    hd0Var.b.setVisibility(8);
-                    break;
-                } else {
-                    hd0Var.getClass();
-                    break;
-                }
-            default:
-                this.b.r0(this.c);
-                break;
+    @Override // org.telegram.ui.Components.dp0
+    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.e(view, accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+    }
+
+    @Override // org.telegram.ui.Components.v60
+    public final int h() {
+        return 5;
+    }
+
+    @Override // org.telegram.ui.Components.v60
+    public final int i() {
+        return 100;
+    }
+
+    @Override // org.telegram.ui.Components.v60
+    public final int j() {
+        return LiteMode.getPowerSaverLevel();
+    }
+
+    @Override // org.telegram.ui.Components.v60
+    public final void k(int i10) {
+        pc0 pc0Var = this.d;
+        float f7 = i10 / 100.0f;
+        pc0Var.h.w.X(f7, true);
+        pc0Var.h.setProgress(f7);
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onPopulateAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
+        super.onPopulateAccessibilityEvent(view, accessibilityEvent);
+        StringBuilder sb2 = new StringBuilder(LocaleController.getString(R.string.LiteBatteryTitle));
+        sb2.append(", ");
+        int powerSaverLevel = LiteMode.getPowerSaverLevel();
+        if (powerSaverLevel <= 0) {
+            sb2.append(LocaleController.getString(R.string.LiteBatteryAlwaysDisabled));
+        } else if (powerSaverLevel >= 100) {
+            sb2.append(LocaleController.getString(R.string.LiteBatteryAlwaysEnabled));
+        } else {
+            sb2.append(LocaleController.formatString(R.string.AccDescrLiteBatteryWhenBelow, Integer.valueOf(Math.round(powerSaverLevel))));
         }
+        accessibilityEvent.setContentDescription(sb2);
+        this.d.setContentDescription(sb2);
     }
 }

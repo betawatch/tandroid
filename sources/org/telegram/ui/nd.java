@@ -1,84 +1,170 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
+import android.os.Bundle;
+import android.os.Vibrator;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nd implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ke b;
-    public final /* synthetic */ int c;
+public final class nd extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ sd a;
 
-    public /* synthetic */ nd(ke keVar, int i10, int i11) {
-        this.a = i11;
-        this.b = keVar;
-        this.c = i10;
+    public nd(sd sdVar) {
+        this.a = sdVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        int i11 = this.c;
-        ke keVar = this.b;
-        switch (i10) {
-            case 0:
-                of.f.s(keVar.getContext(), LocaleController.getString(i11));
-                break;
-            case 1:
-                nd ndVar = keVar.i1;
-                fi.o oVar = keVar.Y0;
-                org.telegram.ui.Components.tc.e();
-                if (keVar.N0.amount < MessagesController.getInstance(i11).starsRevenueWithdrawalMin) {
-                    keVar.W0 = true;
-                    keVar.X0 = keVar.N0.amount;
-                } else {
-                    keVar.W0 = false;
-                    keVar.X0 = MessagesController.getInstance(i11).starsRevenueWithdrawalMin;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
+        int i12;
+        sd sdVar = this.a;
+        long j10 = sdVar.i0;
+        jd jdVar = sdVar.v0;
+        if (i10 == -1) {
+            if (sdVar.r0) {
+                sd.Y(sdVar);
+                return;
+            } else {
+                sdVar.finishFragment();
+                return;
+            }
+        }
+        if (i10 == 1) {
+            int i13 = sdVar.h0;
+            if (i13 == 0) {
+                if (sdVar.getParentActivity() == null) {
+                    return;
                 }
-                keVar.V0 = true;
-                oVar.setText(Long.toString(keVar.X0));
-                oVar.setSelection(oVar.getText().length());
-                keVar.V0 = false;
-                AndroidUtilities.cancelRunOnUIThread(ndVar);
-                ndVar.run();
-                break;
-            default:
-                nd ndVar2 = keVar.i1;
-                int currentTime = ConnectionsManager.getInstance(i11).getCurrentTime();
-                be beVar = keVar.Q0;
-                beVar.setEnabled(keVar.X0 > 0 || keVar.L0 > currentTime);
-                if (currentTime >= keVar.L0) {
-                    beVar.f(null, true);
-                    beVar.g(yh.p7.W0(false, keVar.W0 ? LocaleController.getString(R.string.MonetizationStarsWithdrawAll) : LocaleController.formatPluralStringSpaced("MonetizationStarsWithdraw", (int) keVar.X0), keVar.R0), true, true);
-                    break;
-                } else {
-                    beVar.g(LocaleController.getString(R.string.MonetizationStarsWithdrawUntil), true, true);
-                    if (keVar.h1 == null) {
-                        keVar.h1 = new SpannableStringBuilder("l");
-                        org.telegram.ui.Components.er erVar = new org.telegram.ui.Components.er(R.drawable.mini_switch_lock, 0);
-                        erVar.setTopOffset(1);
-                        keVar.h1.setSpan(erVar, 0, 1, 33);
+                if (sdVar.r0) {
+                    sd.Y(sdVar);
+                    return;
+                }
+                if (sdVar.c.a.length() == 0) {
+                    Vibrator vibrator = (Vibrator) sdVar.getParentActivity().getSystemService("vibrator");
+                    if (vibrator != null) {
+                        vibrator.vibrate(200L);
                     }
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) keVar.h1).append((CharSequence) yh.g.j0(keVar.L0 - currentTime));
-                    beVar.f(spannableStringBuilder, true);
-                    org.telegram.ui.Components.tc tcVar = keVar.Z0;
-                    if (tcVar != null) {
-                        org.telegram.ui.Components.xb xbVar = tcVar.e;
-                        if ((xbVar instanceof org.telegram.ui.Components.bc) && xbVar.isAttachedToWindow()) {
-                            org.telegram.messenger.bi.r(R.string.BotStarsWithdrawalToast, new Object[]{yh.g.j0(keVar.L0 - currentTime)}, ((org.telegram.ui.Components.bc) keVar.Z0.e).b);
+                    AndroidUtilities.shakeView(sdVar.c);
+                    return;
+                }
+                sdVar.r0 = true;
+                AndroidUtilities.runOnUIThread(jdVar, 200L);
+                if (sdVar.v.g()) {
+                    sdVar.q0 = true;
+                    return;
+                } else {
+                    i12 = ((org.telegram.ui.ActionBar.m2) sdVar).currentAccount;
+                    sdVar.s0 = Integer.valueOf(MessagesController.getInstance(i12).createChat(sdVar.c.getText().toString(), new ArrayList<>(), sdVar.w.getText().toString(), 2, false, null, null, -1, sdVar));
+                    return;
+                }
+            }
+            if (i13 == 1) {
+                if (sdVar.a0) {
+                    Utilities.Callback2 callback2 = sdVar.t0;
+                    if (callback2 != null) {
+                        callback2.run(sdVar, Long.valueOf(j10));
+                    }
+                } else {
+                    if (sdVar.w.length() == 0) {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(sdVar.getParentActivity());
+                        alertDialog$Builder.a.R = LocaleController.getString(R.string.ChannelPublicEmptyUsernameTitle);
+                        alertDialog$Builder.a.T = LocaleController.getString(R.string.ChannelPublicEmptyUsername);
+                        alertDialog$Builder.k(LocaleController.getString(R.string.Close), null);
+                        sdVar.showDialog(alertDialog$Builder.a);
+                        return;
+                    }
+                    if (!sdVar.Z) {
+                        Vibrator vibrator2 = (Vibrator) sdVar.getParentActivity().getSystemService("vibrator");
+                        if (vibrator2 != null) {
+                            vibrator2.vibrate(200L);
                         }
+                        AndroidUtilities.shakeView(sdVar.U);
+                        return;
                     }
-                    AndroidUtilities.cancelRunOnUIThread(ndVar2);
-                    AndroidUtilities.runOnUIThread(ndVar2, 1000L);
-                    break;
+                    AndroidUtilities.runOnUIThread(jdVar, 200L);
+                    i11 = ((org.telegram.ui.ActionBar.m2) sdVar).currentAccount;
+                    MessagesController messagesController = MessagesController.getInstance(i11);
+                    long j11 = sdVar.i0;
+                    String str = sdVar.X;
+                    final int i14 = 0;
+                    Runnable runnable = new Runnable(this) { // from class: org.telegram.ui.md
+                        public final /* synthetic */ nd b;
+
+                        {
+                            this.b = this;
+                        }
+
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i14) {
+                                case 0:
+                                    sd sdVar2 = this.b.a;
+                                    sdVar2.g0(false);
+                                    Utilities.Callback2 callback22 = sdVar2.t0;
+                                    if (callback22 != null) {
+                                        callback22.run(sdVar2, Long.valueOf(sdVar2.i0));
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    sd sdVar3 = this.b.a;
+                                    sdVar3.g0(false);
+                                    Utilities.Callback2 callback23 = sdVar3.t0;
+                                    if (callback23 != null) {
+                                        callback23.run(sdVar3, Long.valueOf(sdVar3.i0));
+                                        break;
+                                    }
+                                    break;
+                            }
+                        }
+                    };
+                    final int i15 = 1;
+                    messagesController.updateChannelUserName(sdVar, j11, str, runnable, new Runnable(this) { // from class: org.telegram.ui.md
+                        public final /* synthetic */ nd b;
+
+                        {
+                            this.b = this;
+                        }
+
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i15) {
+                                case 0:
+                                    sd sdVar2 = this.b.a;
+                                    sdVar2.g0(false);
+                                    Utilities.Callback2 callback22 = sdVar2.t0;
+                                    if (callback22 != null) {
+                                        callback22.run(sdVar2, Long.valueOf(sdVar2.i0));
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    sd sdVar3 = this.b.a;
+                                    sdVar3.g0(false);
+                                    Utilities.Callback2 callback23 = sdVar3.t0;
+                                    if (callback23 != null) {
+                                        callback23.run(sdVar3, Long.valueOf(sdVar3.i0));
+                                        break;
+                                    }
+                                    break;
+                            }
+                        }
+                    });
                 }
-                break;
+                if (sdVar.t0 == null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("step", 2);
+                    bundle.putLong("chatId", j10);
+                    bundle.putInt("chatType", 2);
+                    sdVar.presentFragment(new j70(bundle), true);
+                }
+            }
         }
     }
 }

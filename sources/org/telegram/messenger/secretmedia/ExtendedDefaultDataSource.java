@@ -5,8 +5,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.LongSparseArray;
-import e2.d;
-import e2.d0;
+import e2.m0;
 import g2.a0;
 import g2.b;
 import g2.c0;
@@ -22,10 +21,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import n4.x;
+import n4.s;
 import org.telegram.messenger.FileStreamLoadOperation;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSource implements h {
     private static final String SCHEME_ASSET = "asset";
@@ -119,8 +119,8 @@ public final class ExtendedDefaultDataSource implements h {
                 addListenersToDataSource(hVar);
             } catch (ClassNotFoundException unused) {
                 Log.w(TAG, "Attempting to play RTMP stream without depending on the RTMP extension");
-            } catch (Exception e7) {
-                throw new RuntimeException("Error instantiating RTMP extension", e7);
+            } catch (Exception e) {
+                throw new RuntimeException("Error instantiating RTMP extension", e);
             }
             if (this.rtmpDataSource == null) {
                 this.rtmpDataSource = this.baseDataSource;
@@ -185,7 +185,7 @@ public final class ExtendedDefaultDataSource implements h {
 
     @Override // g2.h
     public long open(m mVar) {
-        d.g(this.dataSource == null);
+        u6.p(this.dataSource == null);
         Uri uri = mVar.a;
         if ("mtproto".equals(uri.getScheme())) {
             uri = this.mtprotoUris.get(Long.parseLong(mVar.a.toString().substring(8)));
@@ -194,7 +194,7 @@ public final class ExtendedDefaultDataSource implements h {
             mVar = a2.d();
         }
         String scheme = uri.getScheme();
-        String str = d0.a;
+        String str = m0.a;
         String scheme2 = uri.getScheme();
         if (TextUtils.isEmpty(scheme2) || Objects.equals(scheme2, "file")) {
             String path = uri.getPath();
@@ -223,7 +223,7 @@ public final class ExtendedDefaultDataSource implements h {
         return this.dataSource.open(mVar);
     }
 
-    @Override // b2.k
+    @Override // b2.p
     public int read(byte[] bArr, int i10, int i11) {
         h hVar = this.dataSource;
         hVar.getClass();
@@ -231,7 +231,7 @@ public final class ExtendedDefaultDataSource implements h {
     }
 
     public ExtendedDefaultDataSource(Context context, String str, int i10, int i11, boolean z10) {
-        this(context, new r(str, i10, i11, z10, new x(17)), (LongSparseArray<Uri>) null);
+        this(context, new r(str, i10, i11, z10, new s(17)), (LongSparseArray<Uri>) null);
     }
 
     public ExtendedDefaultDataSource(Context context, h hVar, LongSparseArray<Uri> longSparseArray) {

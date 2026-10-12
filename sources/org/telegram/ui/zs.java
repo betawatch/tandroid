@@ -1,54 +1,76 @@
 package org.telegram.ui;
 
-import android.os.Build;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class zs extends s4.t0 {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ ContactsActivity c;
+public final /* synthetic */ class zs implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.ol0, org.telegram.ui.Components.cm0, r0.o {
+    public final /* synthetic */ ContactsActivity a;
 
-    public zs(ContactsActivity contactsActivity) {
-        this.c = contactsActivity;
+    public /* synthetic */ zs(ContactsActivity contactsActivity) {
+        this.a = contactsActivity;
     }
 
-    @Override // s4.t0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 != 1) {
-            this.b = false;
-            return;
-        }
-        ContactsActivity contactsActivity = this.c;
-        if ((contactsActivity.F && contactsActivity.E) || contactsActivity.Z.r.isFocused()) {
-            AndroidUtilities.hideKeyboard(contactsActivity.getParentActivity().getCurrentFocus());
-        }
-        this.b = true;
+    @Override // r0.o
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
+        int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
+        ContactsActivity contactsActivity = this.a;
+        contactsActivity.q0 = i10;
+        contactsActivity.j0();
+        contactsActivity.i0();
+        contactsActivity.h0();
+        return r0.l1.b;
     }
 
-    @Override // s4.t0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.h hVar;
-        ContactsActivity contactsActivity = this.c;
-        int L0 = contactsActivity.n.L0();
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (contactsActivity.w != null && !contactsActivity.F) {
-            boolean z10 = i11 > 0;
-            if (i11 != 0 && this.a && (z10 || this.b)) {
-                contactsActivity.x = !z10;
-                ContactsActivity.e0(contactsActivity);
+    @Override // org.telegram.ui.Components.cm0
+    public boolean a(int i10, View view) {
+        ContactsActivity contactsActivity = this.a;
+        s4.g0 adapter = contactsActivity.f.getAdapter();
+        et etVar = contactsActivity.d;
+        if (adapter == etVar) {
+            int S = etVar.S(i10);
+            int Q = contactsActivity.d.Q(i10);
+            org.telegram.ui.Components.sc scVar = org.telegram.ui.Components.sc.w;
+            if (scVar != null) {
+                scVar.b();
             }
-            this.a = true;
+            if (Q < 0 || S < 0) {
+                return false;
+            }
         }
-        contactsActivity.Y.b(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT >= 31 && (hVar = contactsActivity.t0) != null) {
-            hVar.f(i10, i11);
-            contactsActivity.g0();
+        boolean z10 = contactsActivity.K;
+        if (!z10 && !contactsActivity.L && (view instanceof org.telegram.ui.Cells.xa)) {
+            contactsActivity.r0((org.telegram.ui.Cells.xa) view);
+            return true;
         }
-        ContactsActivity.d0(contactsActivity);
+        if (z10 || contactsActivity.L || !(view instanceof org.telegram.ui.Cells.i6)) {
+            return false;
+        }
+        org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) view;
+        if (i6Var.getUser() != null && i6Var.getUser().contact) {
+            contactsActivity.r0(i6Var);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ol0
+    public void c() {
+        this.a.g0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        ContactsActivity contactsActivity = this.a;
+        contactsActivity.getClass();
+        a0.h hVar = contactsActivity.d0;
+        ArrayList<TLRPC.User> arrayList = new ArrayList<>(hVar.m());
+        for (int i11 = 0; i11 < hVar.m(); i11++) {
+            arrayList.add((TLRPC.User) hVar.f(hVar.j(i11)));
+        }
+        contactsActivity.getContactsController().deleteContactsUndoable(contactsActivity.getParentActivity(), contactsActivity, arrayList);
+        contactsActivity.o0();
     }
 }

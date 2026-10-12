@@ -1,31 +1,114 @@
 package ce;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final class e extends f {
-    public final Throwable a;
+import android.os.Handler;
+import android.os.Looper;
+import be.a0;
+import be.f0;
+import be.f2;
+import be.k0;
+import be.m;
+import be.n0;
+import be.p0;
+import be.x1;
+import ge.o;
+import j9.u;
+import java.util.concurrent.CancellationException;
+import kd.h;
+import kotlin.jvm.internal.i;
 
-    public e(Throwable th2) {
-        this.a = th2;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class e extends a0 implements k0 {
+    public final Handler c;
+    public final boolean d;
+    public final e e;
+
+    public e(Handler handler, boolean z10) {
+        this.c = handler;
+        this.d = z10;
+        this.e = z10 ? this : new e(handler, true);
+    }
+
+    @Override // be.k0
+    public final void a(long j10, m mVar) {
+        u uVar = new u(9, mVar, this);
+        if (j10 > 4611686018427387903L) {
+            j10 = 4611686018427387903L;
+        }
+        if (this.c.postDelayed(uVar, j10)) {
+            mVar.u(new d(0, this, uVar));
+        } else {
+            f(mVar.e, uVar);
+        }
+    }
+
+    @Override // be.k0
+    public final p0 b(long j10, final f2 f2Var, h hVar) {
+        if (j10 > 4611686018427387903L) {
+            j10 = 4611686018427387903L;
+        }
+        if (this.c.postDelayed(f2Var, j10)) {
+            return new p0() { // from class: ce.c
+                @Override // be.p0
+                public final void dispose() {
+                    e.this.c.removeCallbacks(f2Var);
+                }
+            };
+        }
+        f(hVar, f2Var);
+        return x1.a;
+    }
+
+    @Override // be.a0
+    public final void c(h hVar, Runnable runnable) {
+        if (this.c.post(runnable)) {
+            return;
+        }
+        f(hVar, runnable);
+    }
+
+    @Override // be.a0
+    public final boolean d() {
+        return (this.d && i.a(Looper.myLooper(), this.c.getLooper())) ? false : true;
     }
 
     public final boolean equals(Object obj) {
-        if (obj instanceof e) {
-            return kotlin.jvm.internal.i.a(this.a, ((e) obj).a);
+        if (!(obj instanceof e)) {
+            return false;
         }
-        return false;
+        e eVar = (e) obj;
+        return eVar.c == this.c && eVar.d == this.d;
+    }
+
+    public final void f(h hVar, Runnable runnable) {
+        f0.e(hVar, new CancellationException("The task was rejected, the handler underlying the dispatcher '" + this + "' was closed"));
+        n0.b.c(hVar, runnable);
     }
 
     public final int hashCode() {
-        Throwable th2 = this.a;
-        if (th2 != null) {
-            return th2.hashCode();
-        }
-        return 0;
+        return System.identityHashCode(this.c) ^ (this.d ? 1231 : 1237);
     }
 
-    @Override // ce.f
+    @Override // be.a0
     public final String toString() {
-        return "Closed(" + this.a + ')';
+        e eVar;
+        String str;
+        ie.e eVar2 = n0.a;
+        e eVar3 = o.a;
+        if (this == eVar3) {
+            str = "Dispatchers.Main";
+        } else {
+            try {
+                eVar = eVar3.e;
+            } catch (UnsupportedOperationException unused) {
+                eVar = null;
+            }
+            str = this == eVar ? "Dispatchers.Main.immediate" : null;
+        }
+        if (str != null) {
+            return str;
+        }
+        String handler = this.c.toString();
+        return this.d ? t8.b.u(handler, ".immediate") : handler;
     }
 }

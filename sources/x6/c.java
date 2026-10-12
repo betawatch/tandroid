@@ -1,6 +1,5 @@
 package x6;
 
-import ae.x;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
@@ -9,7 +8,7 @@ import android.view.ViewGroup;
 import h8.j;
 import i8.g;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c implements e {
     public final /* synthetic */ Bundle a;
@@ -27,10 +26,10 @@ public final class c implements e {
 
     @Override // x6.e
     public final void b() {
-        aa.a aVar = this.b.a;
+        androidx.biometric.e eVar = this.b.a;
         Bundle bundle = this.a;
-        ViewGroup viewGroup = (ViewGroup) aVar.b;
-        g gVar = (g) aVar.c;
+        ViewGroup viewGroup = (ViewGroup) eVar.b;
+        g gVar = (g) eVar.c;
         try {
             Bundle bundle2 = new Bundle();
             i8.d.c(bundle, bundle2);
@@ -41,11 +40,11 @@ public final class c implements e {
             Parcel M0 = gVar.M0(gVar.N0(), 8);
             a K0 = b.K0(M0.readStrongBinder());
             M0.recycle();
-            aVar.d = (View) b.L0(K0);
+            eVar.d = (View) b.L0(K0);
             viewGroup.removeAllViews();
-            viewGroup.addView((View) aVar.d);
-        } catch (RemoteException e7) {
-            throw new x(e7);
+            viewGroup.addView((View) eVar.d);
+        } catch (RemoteException e) {
+            throw new androidx.car.app.j(e);
         }
     }
 }

@@ -1,66 +1,52 @@
 package org.telegram.ui;
 
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class j20 {
-    public LinearGradient b;
-    public final Paint[] a = new Paint[4];
-    public final Matrix c = new Matrix();
+public final class j20 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public org.telegram.ui.Components.yi0 c;
+    public boolean d;
+    public TLRPC.TL_dialogFilterSuggested e;
 
-    public final void a(Canvas canvas, RectF rectF, float f7) {
-        Paint[] paintArr = this.a;
-        if (paintArr[0] == null) {
-            Paint paint = new Paint(1);
-            paintArr[0] = paint;
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        }
-        paintArr[0].setShader(this.b);
-        paintArr[0].setAlpha((int) (f7 * 255.0f));
-        canvas.drawRect(rectF, paintArr[0]);
+    public TLRPC.TL_dialogFilterSuggested getSuggestedFilter() {
+        return this.e;
     }
 
-    public final void b(Canvas canvas, RectF rectF, int i10, float f7) {
-        if (f7 <= 0.0f) {
-            return;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
         }
-        if (this.b == null) {
-            this.b = new LinearGradient(0.0f, 0.0f, 0.0f, 16.0f, new int[]{-65536, 16711680}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        }
-        Paint[] paintArr = this.a;
-        if (paintArr[i10] == null) {
-            paintArr[i10] = new Paint(1);
-            paintArr[i10].setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        }
-        paintArr[i10].setShader(this.b);
-        Matrix matrix = this.c;
-        matrix.reset();
-        if (i10 == 0) {
-            matrix.postScale(1.0f, rectF.width() / 16.0f);
-            matrix.postRotate(-90.0f);
-            matrix.postTranslate(rectF.left, rectF.top);
-        } else if (i10 == 1) {
-            matrix.postScale(1.0f, rectF.height() / 16.0f);
-            matrix.postTranslate(rectF.left, rectF.top);
-        } else if (i10 == 2) {
-            matrix.postScale(1.0f, rectF.width() / 16.0f);
-            matrix.postRotate(90.0f);
-            matrix.postTranslate(rectF.right, rectF.top);
-        } else if (i10 == 3) {
-            matrix.postScale(1.0f, rectF.height() / 16.0f);
-            matrix.postScale(1.0f, -1.0f);
-            matrix.postTranslate(rectF.left, rectF.bottom);
-        }
-        this.b.setLocalMatrix(matrix);
-        paintArr[i10].setAlpha((int) (f7 * 255.0f));
-        canvas.drawRect(rectF, paintArr[i10]);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setText(this.c.getText());
+        accessibilityNodeInfo.setClassName("android.widget.Button");
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(64.0f));
+        measureChildWithMargins(this.c, i10, 0, i11, 0);
+        TextView textView = this.a;
+        org.telegram.ui.Components.yi0 yi0Var = this.c;
+        measureChildWithMargins(textView, i10, yi0Var.getMeasuredWidth(), i11, 0);
+        measureChildWithMargins(this.b, i10, yi0Var.getMeasuredWidth(), i11, 0);
+    }
+
+    public void setAddOnClickListener(View.OnClickListener onClickListener) {
+        this.c.setOnClickListener(onClickListener);
     }
 }

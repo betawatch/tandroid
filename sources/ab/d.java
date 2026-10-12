@@ -1,27 +1,27 @@
 package ab;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.os.Build;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d {
-    public static final d a;
-    public static final d b;
-    public static final /* synthetic */ d[] c;
+public final class d implements ja.d {
+    public static final d a = new d();
+    public static final ja.c b = ja.c.c("appId");
+    public static final ja.c c = ja.c.c("deviceModel");
+    public static final ja.c d = ja.c.c("sessionSdkVersion");
+    public static final ja.c e = ja.c.c("osVersion");
+    public static final ja.c f = ja.c.c("logEnvironment");
+    public static final ja.c g = ja.c.c("androidAppInfo");
 
-    static {
-        d dVar = new d("CRASHLYTICS", 0);
-        a = dVar;
-        d dVar2 = new d("PERFORMANCE", 1);
-        b = dVar2;
-        c = new d[]{dVar, dVar2, new d("MATT_SAYS_HI", 2)};
-    }
-
-    public static d valueOf(String str) {
-        return (d) Enum.valueOf(d.class, str);
-    }
-
-    public static d[] values() {
-        return (d[]) c.clone();
+    @Override // ja.a
+    public final void a(Object obj, Object obj2) {
+        b bVar = (b) obj;
+        ja.e eVar = (ja.e) obj2;
+        eVar.d(b, bVar.a);
+        eVar.d(c, Build.MODEL);
+        eVar.d(d, "1.2.0");
+        eVar.d(e, Build.VERSION.RELEASE);
+        eVar.d(f, p.b);
+        eVar.d(g, bVar.b);
     }
 }

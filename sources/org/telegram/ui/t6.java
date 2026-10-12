@@ -1,71 +1,19 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class t6 extends og.a {
-    public final int c;
-    public CharSequence d;
-    public String e;
-    public int f;
-    public long g;
-    public int h;
-    public boolean i;
-    public boolean j;
+public final class t6 extends o6 {
+    public final /* synthetic */ d7 d;
 
-    public t6(int i10, String str) {
-        super(i10, true);
-        this.c = -1;
-        this.d = str;
-    }
-
-    public static t6 b(int i10, long j3, String str, int i11) {
-        t6 t6Var = new t6(11);
-        t6Var.f = i10;
-        t6Var.d = str;
-        t6Var.g = j3;
-        t6Var.h = i11;
-        t6Var.j = false;
-        return t6Var;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this != obj) {
-            if (obj == null || t6.class != obj.getClass()) {
-                return false;
-            }
-            t6 t6Var = (t6) obj;
-            int i10 = this.a;
-            if (i10 != t6Var.a) {
-                return false;
-            }
-            if (i10 != 9 && i10 != 10 && i10 != 8 && i10 != 4 && i10 != 2 && i10 != 0 && i10 != 13) {
-                if (i10 == 3) {
-                    return Objects.equals(this.d, t6Var.d);
-                }
-                if (i10 == 1) {
-                    return Objects.equals(this.e, t6Var.e);
-                }
-                if (i10 == 11) {
-                    if (this.f != t6Var.f || this.g != t6Var.g) {
-                        return false;
-                    }
-                } else if (i10 != 7 || this.c != t6Var.c) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
-    public t6(int i10, int i11) {
-        super(7, true);
-        this.c = i10;
-    }
-
-    public t6(int i10) {
-        super(i10, true);
-        this.c = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t6(d7 d7Var, Context context) {
+        super(context);
+        this.d = d7Var;
+        ((ViewGroup.MarginLayoutParams) this.a.getLayoutParams()).topMargin = AndroidUtilities.dp(5.0f);
+        this.a.setOnClickListener(new a(this, 6));
     }
 }

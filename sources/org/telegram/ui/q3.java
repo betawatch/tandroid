@@ -1,69 +1,194 @@
 package org.telegram.ui;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.util.SparseArray;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.view.View;
+import java.io.File;
+import java.util.List;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class q3 {
-    public TextPaint a;
-    public final SparseArray b = new SparseArray();
-    public final SparseArray c = new SparseArray();
-    public final SparseArray d = new SparseArray();
-    public final SparseArray e = new SparseArray();
-    public final SparseArray f = new SparseArray();
-    public final SparseArray g = new SparseArray();
-    public final SparseArray h = new SparseArray();
-    public final SparseArray i = new SparseArray();
-    public final SparseArray j = new SparseArray();
-    public final SparseArray k = new SparseArray();
-    public final SparseArray l = new SparseArray();
-    public final SparseArray m = new SparseArray();
-    public final SparseArray n = new SparseArray();
-    public final SparseArray o = new SparseArray();
-    public final SparseArray p = new SparseArray();
-    public final SparseArray q = new SparseArray();
-    public final SparseArray r = new SparseArray();
-    public final SparseArray s = new SparseArray();
-    public final SparseArray t = new SparseArray();
-    public final SparseArray u = new SparseArray();
-    public final SparseArray v = new SparseArray();
-    public final SparseArray w = new SparseArray();
-    public final SparseArray x = new SparseArray();
-    public final SparseArray y = new SparseArray();
-    public final SparseArray z = new SparseArray();
-    public final SparseArray A = new SparseArray();
+public final class q3 implements ev0 {
+    public final TLRPC.WebPage a;
+    public final List b;
+    public final /* synthetic */ k4 c;
 
-    public static void a(i4 i4Var, SparseArray sparseArray) {
-        for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-            int keyAt = sparseArray.keyAt(i10);
-            TextPaint textPaint = (TextPaint) sparseArray.valueAt(i10);
-            if (textPaint != null) {
-                if ((keyAt & 8) == 0 && (keyAt & 512) == 0) {
-                    textPaint.setColor(i4Var.b());
-                } else {
-                    textPaint.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.J6, false));
+    public q3(k4 k4Var, TLRPC.WebPage webPage, List list) {
+        this.c = k4Var;
+        this.a = webPage;
+        this.b = list;
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final boolean a(int i10) {
+        return i10 < this.b.size() && i10 >= 0 && h4.g(this.a, get(i10));
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final File b(int i10) {
+        TLRPC.Document a2;
+        TLRPC.PhotoSize closestPhotoSizeWithSize;
+        if (i10 < this.b.size() && i10 >= 0) {
+            TL_iv.PageBlock pageBlock = get(i10);
+            boolean z10 = pageBlock instanceof TL_iv.pageBlockPhoto;
+            TLRPC.WebPage webPage = this.a;
+            if (z10) {
+                TLRPC.Photo e = h4.e(webPage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
+                if (e != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(e.sizes, AndroidUtilities.getPhotoSize())) != null) {
+                    return h4.c(closestPhotoSizeWithSize);
+                }
+            } else if ((pageBlock instanceof TL_iv.pageBlockVideo) && (a2 = h4.a(webPage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) != null) {
+                return h4.c(a2);
+            }
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final String c(int i10) {
+        TLObject d = d(i10);
+        if (d instanceof TLRPC.Photo) {
+            d = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) d).sizes, AndroidUtilities.getPhotoSize());
+        }
+        return FileLoader.getAttachFileName(d);
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final TLObject d(int i10) {
+        if (i10 < this.b.size() && i10 >= 0) {
+            TL_iv.PageBlock pageBlock = get(i10);
+            boolean z10 = pageBlock instanceof TL_iv.pageBlockPhoto;
+            TLRPC.WebPage webPage = this.a;
+            if (z10) {
+                return h4.e(webPage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
+            }
+            if (pageBlock instanceof TL_iv.pageBlockVideo) {
+                return h4.a(webPage, ((TL_iv.pageBlockVideo) pageBlock).video_id);
+            }
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final boolean e(int i10) {
+        if (i10 < this.b.size() && i10 >= 0 && !h4.g(this.a, get(i10))) {
+            i4 i4Var = this.c.u0[0].c;
+            TL_iv.PageBlock pageBlock = get(i10);
+            i4Var.getClass();
+            if (i4.I(pageBlock) == 5) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final TLRPC.PhotoSize f(TLObject tLObject, int[] iArr) {
+        TLRPC.PhotoSize closestPhotoSizeWithSize;
+        if (!(tLObject instanceof TLRPC.Photo)) {
+            if (!(tLObject instanceof TLRPC.Document) || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Document) tLObject).thumbs, 90)) == null) {
+                return null;
+            }
+            int i10 = closestPhotoSizeWithSize.size;
+            iArr[0] = i10;
+            if (i10 == 0) {
+                iArr[0] = -1;
+            }
+            return closestPhotoSizeWithSize;
+        }
+        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, AndroidUtilities.getPhotoSize());
+        if (closestPhotoSizeWithSize2 == null) {
+            iArr[0] = -1;
+            return null;
+        }
+        int i11 = closestPhotoSizeWithSize2.size;
+        iArr[0] = i11;
+        if (i11 == 0) {
+            iArr[0] = -1;
+        }
+        return closestPhotoSizeWithSize2;
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final Object g() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final TL_iv.PageBlock get(int i10) {
+        return (TL_iv.PageBlock) this.b.get(i10);
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final List getAll() {
+        return this.b;
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final void h(TL_iv.PageBlock pageBlock) {
+        k4 k4Var = this.c;
+        int childCount = k4Var.u0[0].b.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = k4Var.u0[0].b.getChildAt(i10);
+            if (childAt instanceof s2) {
+                s2 s2Var = (s2) childAt;
+                int indexOf = s2Var.d.items.indexOf(pageBlock);
+                if (indexOf != -1) {
+                    s2Var.a.x(indexOf, false);
+                    return;
                 }
             }
         }
     }
 
-    public static void b(int i10, TextPaint textPaint, Typeface typeface, Typeface typeface2, Typeface typeface3, Typeface typeface4) {
-        int i11 = i10 & 1;
-        if (i11 != 0 && (i10 & 2) != 0) {
-            textPaint.setTypeface(typeface2);
-            return;
-        }
-        if (i11 != 0) {
-            textPaint.setTypeface(typeface3);
-        } else if ((i10 & 2) != 0) {
-            textPaint.setTypeface(typeface4);
-        } else {
-            if ((i10 & 4) != 0) {
-                return;
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0089 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x002c  */
+    @Override // org.telegram.ui.ev0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final CharSequence i(int i10) {
+        SpannableStringBuilder spannableStringBuilder;
+        TL_iv.PageBlock pageBlock = get(i10);
+        if (pageBlock instanceof TL_iv.pageBlockPhoto) {
+            String str = ((TL_iv.pageBlockPhoto) pageBlock).url;
+            if (!TextUtils.isEmpty(str)) {
+                spannableStringBuilder = new SpannableStringBuilder(str);
+                spannableStringBuilder.setSpan(new p3(this, str, 0), 0, str.length(), 34);
+                if (spannableStringBuilder == null) {
+                    return spannableStringBuilder;
+                }
+                k4 k4Var = this.c;
+                k4Var.getClass();
+                TL_iv.RichText w9 = k4.w(2, pageBlock);
+                CharSequence C = k4.C(k4Var, this.a, null, w9, w9, pageBlock, -AndroidUtilities.dp(100.0f));
+                if (!(C instanceof Spannable)) {
+                    return C;
+                }
+                Spannable spannable = (Spannable) C;
+                org.telegram.ui.Components.l11[] l11VarArr = (org.telegram.ui.Components.l11[]) spannable.getSpans(0, C.length(), org.telegram.ui.Components.l11.class);
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(C.toString());
+                if (l11VarArr != null && l11VarArr.length > 0) {
+                    for (int i11 = 0; i11 < l11VarArr.length; i11++) {
+                        spannableStringBuilder2.setSpan(new p3(this, l11VarArr[i11].b, 1), spannable.getSpanStart(l11VarArr[i11]), spannable.getSpanEnd(l11VarArr[i11]), 33);
+                    }
+                }
+                return spannableStringBuilder2;
             }
-            textPaint.setTypeface(typeface);
         }
+        spannableStringBuilder = null;
+        if (spannableStringBuilder == null) {
+        }
+    }
+
+    @Override // org.telegram.ui.ev0
+    public final int j() {
+        return this.b.size();
     }
 }

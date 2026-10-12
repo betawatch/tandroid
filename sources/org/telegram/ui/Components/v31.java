@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v31 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -17,16 +17,17 @@ public final /* synthetic */ class v31 implements ValueAnimator.AnimatorUpdateLi
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ai.o4 o4Var = this.b.f;
-                o4Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                o4Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                o4Var.invalidate();
-                break;
-            default:
                 x31 x31Var = this.b;
                 x31Var.getClass();
-                x31Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                x31Var.Q = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 x31Var.h();
+                x31Var.g();
+                break;
+            default:
+                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                x31 x31Var2 = this.b;
+                x31Var2.K = max;
+                x31Var2.h.invalidate();
                 break;
         }
     }

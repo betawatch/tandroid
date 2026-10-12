@@ -1,28 +1,18 @@
 package yh;
 
-import android.view.View;
-import org.telegram.ui.bi0;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.s5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class k2 {
-    public final int a;
-    public final float b;
-    public final float c;
-    public final int d;
-    public final int e;
-    public final float f;
-    public final View g;
-    public final Runnable h;
+public final class k2 extends s5 {
+    @Override // org.telegram.ui.Components.s5, android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
+    }
 
-    public k2(int i10, float f7, float f10, int i11, int i12, float f11, View view, bi0 bi0Var) {
-        this.a = i10;
-        this.b = f7;
-        this.c = f10;
-        this.d = i11;
-        this.e = i12;
-        this.f = f11;
-        this.g = view;
-        this.h = bi0Var;
+    @Override // org.telegram.ui.Components.s5, android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
     }
 }

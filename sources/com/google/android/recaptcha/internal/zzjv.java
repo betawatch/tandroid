@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzjv implements zzjt {
     public static final zzjv zza = new zzjv();
@@ -25,10 +25,10 @@ public final class zzjv implements zzjt {
                 zza2 = zzizVar.zzh().zza((String) zza2);
             }
             zzizVar.zzc().zze(i10, zziy.zza(zza2));
-        } catch (zzdm e7) {
-            throw e7;
-        } catch (Exception e10) {
-            throw new zzdm(6, 8, e10);
+        } catch (zzdm e) {
+            throw e;
+        } catch (Exception e7) {
+            throw new zzdm(6, 8, e7);
         }
     }
 }

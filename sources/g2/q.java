@@ -1,15 +1,15 @@
 package g2;
 
-import e9.j1;
+import e9.h2;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class q extends e9.q implements Map {
+public final class q extends e9.s implements Map {
     public final Map b;
 
     public q(Map map) {
@@ -28,7 +28,7 @@ public final class q extends e9.q implements Map {
 
     @Override // java.util.Map
     public final boolean containsValue(Object obj) {
-        Iterator it = ((j1) entrySet()).iterator();
+        Iterator it = ((h2) entrySet()).iterator();
         it.getClass();
         if (obj == null) {
             while (it.hasNext()) {
@@ -48,17 +48,12 @@ public final class q extends e9.q implements Map {
 
     @Override // java.util.Map
     public final Set entrySet() {
-        return e9.q.j(this.b.entrySet(), new p(0));
+        return e9.s.k(this.b.entrySet(), new p(0));
     }
 
     @Override // java.util.Map
     public final boolean equals(Object obj) {
-        return obj != null && e9.q.h(this, obj);
-    }
-
-    @Override // e9.q
-    public final Object g() {
-        return this.b;
+        return obj != null && e9.s.i(this, obj);
     }
 
     @Override // java.util.Map
@@ -69,9 +64,14 @@ public final class q extends e9.q implements Map {
         return (List) this.b.get(obj);
     }
 
+    @Override // e9.s
+    public final Object h() {
+        return this.b;
+    }
+
     @Override // java.util.Map
     public final int hashCode() {
-        return e9.q.m(entrySet());
+        return e9.s.n(entrySet());
     }
 
     @Override // java.util.Map
@@ -82,7 +82,7 @@ public final class q extends e9.q implements Map {
 
     @Override // java.util.Map
     public final Set keySet() {
-        return e9.q.j(this.b.keySet(), new p(1));
+        return e9.s.k(this.b.keySet(), new p(1));
     }
 
     @Override // java.util.Map

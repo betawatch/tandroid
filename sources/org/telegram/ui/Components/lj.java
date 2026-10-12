@@ -1,26 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class lj extends s4.e0 {
-    public final /* synthetic */ bi.l r;
+public final /* synthetic */ class lj implements cm0, qj {
+    public final /* synthetic */ zj a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lj(bi.l lVar, Context context) {
-        super(context);
-        this.r = lVar;
+    public /* synthetic */ lj(zj zjVar) {
+        this.a = zjVar;
     }
 
-    @Override // s4.e0
-    public final int k(int i10, View view) {
-        return org.telegram.messenger.q.A(7.0f, ((nj) this.r.R).n.getPaddingTop(), super.k(i10, view));
+    @Override // org.telegram.ui.Components.cm0
+    public boolean a(int i10, View view) {
+        Object O;
+        zj zjVar = this.a;
+        s4.g0 adapter = zjVar.s.getAdapter();
+        vj vjVar = zjVar.F;
+        if (adapter == vjVar) {
+            O = vjVar.E(i10);
+        } else {
+            tj tjVar = zjVar.E;
+            O = tjVar.O(tjVar.S(i10), tjVar.Q(i10));
+        }
+        if (O == null) {
+            return false;
+        }
+        zjVar.O((yj) view, O);
+        return true;
     }
 
-    @Override // s4.e0
-    public final int m(int i10) {
-        return super.m(i10) * 2;
+    @Override // org.telegram.ui.Components.qj
+    public void b(TLRPC.User user, boolean z10, int i10, long j10) {
+        zj zjVar = this.a;
+        zjVar.b.dismiss(true);
+        zjVar.J.b(user, z10, i10, j10);
+    }
+
+    @Override // org.telegram.ui.Components.qj
+    public /* synthetic */ void c(ArrayList arrayList, String str, boolean z10, int i10, long j10, boolean z11) {
     }
 }

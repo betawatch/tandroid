@@ -1,46 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.app.Activity;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class kj extends dh.b {
-    public final /* synthetic */ int n;
-    public final /* synthetic */ zn r;
+public final class kj extends org.telegram.ui.Components.ew {
+    public final /* synthetic */ fo W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ kj(zn znVar, org.telegram.ui.ActionBar.e6 e6Var, int i10, int i11) {
-        super(i10, e6Var);
-        this.n = i11;
-        this.r = znVar;
+    public kj(fo foVar, org.telegram.ui.ActionBar.m2 m2Var, Activity activity, org.telegram.ui.ActionBar.c6 c6Var, ArrayList arrayList) {
+        super(m2Var, activity, c6Var, arrayList);
+        this.W = foVar;
     }
 
-    @Override // dh.b, dh.a
-    public final int x() {
-        int i10;
-        int i11;
-        switch (this.n) {
-            case 0:
-                zn znVar = this.r;
-                i10 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
-                if (!eh.b.c(i10, znVar.ea)) {
-                    break;
-                } else if (znVar.ea != null && !org.telegram.ui.ActionBar.i6.I.q()) {
-                    break;
-                } else {
-                    break;
-                }
-                break;
-            default:
-                zn znVar2 = this.r;
-                i11 = ((org.telegram.ui.ActionBar.n2) znVar2).currentAccount;
-                if (!eh.b.c(i11, znVar2.ea)) {
-                    break;
-                } else if (znVar2.ea != null && !org.telegram.ui.ActionBar.i6.I.q()) {
-                    break;
-                } else {
-                    break;
-                }
-                break;
-        }
-        return this.d;
+    @Override // org.telegram.ui.Components.ew, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public final void dismiss() {
+        super.dismiss();
+        fo foVar = this.W;
+        foVar.getClass();
+        foVar.j8(false, true, 0.0f);
     }
 }

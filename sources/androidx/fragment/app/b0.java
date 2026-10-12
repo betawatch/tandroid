@@ -1,46 +1,54 @@
 package androidx.fragment.app;
 
-import android.util.Log;
-import java.util.ArrayList;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.lang.reflect.InvocationTargetException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b0 {
-    public boolean a = false;
-    public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
-    public kotlin.jvm.internal.h c;
-    public final /* synthetic */ k0 d;
+    public static final a0.l b = new a0.l(0);
+    public final /* synthetic */ i0 a;
 
-    public b0(k0 k0Var) {
-        this.d = k0Var;
+    public b0(i0 i0Var) {
+        this.a = i0Var;
     }
 
-    public final void a() {
-        boolean K = k0.K(3);
-        k0 k0Var = this.d;
-        if (K) {
-            Log.d("FragmentManager", "handleOnBackCancelled. PREDICTIVE_BACK = true fragment manager " + k0Var);
+    public static Class b(ClassLoader classLoader, String str) {
+        a0.l lVar = b;
+        a0.l lVar2 = (a0.l) lVar.get(classLoader);
+        if (lVar2 == null) {
+            lVar2 = new a0.l(0);
+            lVar.put(classLoader, lVar2);
         }
-        if (k0.K(3)) {
-            Log.d("FragmentManager", "cancelBackStackTransition for transition " + k0Var.h);
+        Class cls = (Class) lVar2.get(str);
+        if (cls != null) {
+            return cls;
         }
-        a aVar = k0Var.h;
-        if (aVar != null) {
-            aVar.r = false;
-            aVar.d();
-            a aVar2 = k0Var.h;
-            a0 a0Var = new a0(k0Var, 0);
-            if (aVar2.p == null) {
-                aVar2.p = new ArrayList();
-            }
-            aVar2.p.add(a0Var);
-            k0Var.h.e(false, true);
-            k0Var.i = true;
-            k0Var.A(true);
-            k0Var.E();
-            k0Var.i = false;
-            k0Var.h = null;
+        Class<?> cls2 = Class.forName(str, false, classLoader);
+        lVar2.put(str, cls2);
+        return cls2;
+    }
+
+    public static Class c(ClassLoader classLoader, String str) {
+        try {
+            return b(classLoader, str);
+        } catch (ClassCastException e) {
+            throw new androidx.car.app.j(a1.g.p("Unable to instantiate fragment ", str, ": make sure class is a valid subclass of Fragment"), e);
+        } catch (ClassNotFoundException e7) {
+            throw new androidx.car.app.j(a1.g.p("Unable to instantiate fragment ", str, ": make sure class name exists"), e7);
+        }
+    }
+
+    public final r a(String str) {
+        try {
+            return (r) c(this.a.w.b.getClassLoader(), str).getConstructor(null).newInstance(null);
+        } catch (IllegalAccessException e) {
+            throw new androidx.car.app.j(a1.g.p("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e);
+        } catch (InstantiationException e7) {
+            throw new androidx.car.app.j(a1.g.p("Unable to instantiate fragment ", str, ": make sure class name exists, is public, and has an empty constructor that is public"), e7);
+        } catch (NoSuchMethodException e10) {
+            throw new androidx.car.app.j(a1.g.p("Unable to instantiate fragment ", str, ": could not find Fragment constructor"), e10);
+        } catch (InvocationTargetException e11) {
+            throw new androidx.car.app.j(a1.g.p("Unable to instantiate fragment ", str, ": calling Fragment constructor caused an exception"), e11);
         }
     }
 }

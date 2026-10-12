@@ -1,53 +1,41 @@
 package org.telegram.ui;
 
-import android.text.style.URLSpan;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k20 implements Utilities.CallbackReturn {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class k20 extends FrameLayout {
+    public org.telegram.ui.ActionBar.h5 a;
+    public ImageView b;
 
-    public /* synthetic */ k20(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int dp;
+        ImageView imageView = this.b;
+        int i14 = i12 - i10;
+        org.telegram.ui.ActionBar.h5 h5Var = this.a;
+        int textHeight = ((i13 - i11) - h5Var.getTextHeight()) / 2;
+        if (LocaleController.isRTL) {
+            dp = (getMeasuredWidth() - h5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
+        } else {
+            dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
+        }
+        h5Var.layout(dp, textHeight, h5Var.getMeasuredWidth() + dp, h5Var.getMeasuredHeight() + textHeight);
+        int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(20.0f);
+        imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        switch (this.a) {
-            case 0:
-                p20 p20Var = (p20) this.b;
-                p20Var.getClass();
-                if (((View) obj).getParent() == p20Var.c) {
-                    break;
-                } else {
-                    break;
-                }
-            case 1:
-                fg0 fg0Var = (fg0) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                    AndroidUtilities.runOnUIThread(new bg0(fg0Var, 1));
-                    break;
-                } else {
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                URLSpan uRLSpan = (URLSpan) obj;
-                if (uRLSpan == null) {
-                    break;
-                } else {
-                    profileActivity.B4(uRLSpan.getURL(), null);
-                    break;
-                }
-        }
-        return Boolean.FALSE;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        AndroidUtilities.dp(48.0f);
+        this.a.measure(org.telegram.messenger.yh.z(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+        this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+        setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
     }
 }

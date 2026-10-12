@@ -2,7 +2,7 @@ package y6;
 
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j extends a9.a {
     public final x6.a V0(x6.b bVar, String str, int i10) {
@@ -39,12 +39,12 @@ public final class j extends a9.a {
         return K0;
     }
 
-    public final x6.a Y0(x6.b bVar, String str, boolean z10, long j3) {
+    public final x6.a Y0(x6.b bVar, String str, boolean z10, long j10) {
         Parcel N0 = N0();
         m7.a.c(N0, bVar);
         N0.writeString(str);
         N0.writeInt(z10 ? 1 : 0);
-        N0.writeLong(j3);
+        N0.writeLong(j10);
         Parcel L0 = L0(N0, 7);
         x6.a K0 = x6.b.K0(L0.readStrongBinder());
         L0.recycle();

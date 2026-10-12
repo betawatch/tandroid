@@ -16,9 +16,9 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import v7.s7;
+import v7.q7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class d2 implements l.b0 {
     public static final Method P;
@@ -94,7 +94,7 @@ public abstract class d2 implements l.b0 {
         if (obtainStyledAttributes2.hasValue(2)) {
             xVar.setOverlapAnchor(obtainStyledAttributes2.getBoolean(2, false));
         }
-        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : s7.b(context, resourceId));
+        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : q7.b(context, resourceId));
         obtainStyledAttributes2.recycle();
         this.O = xVar;
         xVar.setInputMethodMode(1);
@@ -122,10 +122,6 @@ public abstract class d2 implements l.b0 {
         this.K.removeCallbacks(this.G);
     }
 
-    public final Drawable e() {
-        return this.O.getBackground();
-    }
-
     @Override // l.b0
     public final r1 f() {
         return this.c;
@@ -141,9 +137,9 @@ public abstract class d2 implements l.b0 {
         Context context = this.a;
         x xVar = this.O;
         if (r1Var2 == null) {
-            r1 o9 = o(context, !this.N);
-            this.c = o9;
-            o9.setAdapter(this.b);
+            r1 p5 = p(context, !this.N);
+            this.c = p5;
+            p5.setAdapter(this.b);
             this.c.setOnItemClickListener(this.F);
             this.c.setFocusable(true);
             this.c.setFocusableInTouchMode(true);
@@ -192,7 +188,7 @@ public abstract class d2 implements l.b0 {
         xVar.setWindowLayoutType(this.n);
         if (xVar.isShowing()) {
             View view2 = this.E;
-            WeakHashMap weakHashMap = r0.i0.a;
+            WeakHashMap weakHashMap = r0.j0.a;
             if (view2.isAttachedToWindow()) {
                 int i15 = this.e;
                 if (i15 == -1) {
@@ -261,8 +257,8 @@ public abstract class d2 implements l.b0 {
             if (method3 != null) {
                 try {
                     method3.invoke(xVar, this.M);
-                } catch (Exception e7) {
-                    Log.e("ListPopupWindow", "Could not invoke setEpicenterBounds on PopupWindow", e7);
+                } catch (Exception e) {
+                    Log.e("ListPopupWindow", "Could not invoke setEpicenterBounds on PopupWindow", e);
                 }
             }
         } else {
@@ -280,23 +276,27 @@ public abstract class d2 implements l.b0 {
         this.K.post(this.J);
     }
 
-    public final void i(Drawable drawable) {
+    public final Drawable h() {
+        return this.O.getBackground();
+    }
+
+    public final void j(Drawable drawable) {
         this.O.setBackgroundDrawable(drawable);
     }
 
-    public final void j(int i10) {
+    public final void k(int i10) {
         this.h = i10;
         this.r = true;
     }
 
-    public final int m() {
+    public final int n() {
         if (this.r) {
             return this.h;
         }
         return 0;
     }
 
-    public void n(ListAdapter listAdapter) {
+    public void o(ListAdapter listAdapter) {
         h1.a aVar = this.y;
         if (aVar == null) {
             this.y = new h1.a(this, 1);
@@ -316,11 +316,11 @@ public abstract class d2 implements l.b0 {
         }
     }
 
-    public r1 o(Context context, boolean z10) {
+    public r1 p(Context context, boolean z10) {
         return new r1(context, z10);
     }
 
-    public final void p(int i10) {
+    public final void q(int i10) {
         Drawable background = this.O.getBackground();
         if (background == null) {
             this.e = i10;

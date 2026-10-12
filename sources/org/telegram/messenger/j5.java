@@ -1,41 +1,28 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ImageLoader;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LocaleController b;
-    public final /* synthetic */ LocaleController.LocaleInfo c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Runnable f;
+    public final /* synthetic */ ImageLoader.HttpImageTask b;
+    public final /* synthetic */ Boolean c;
 
-    public /* synthetic */ j5(LocaleController localeController, LocaleController.LocaleInfo localeInfo, TLObject tLObject, int i10, Runnable runnable, int i11) {
-        this.a = i11;
-        this.b = localeController;
-        this.c = localeInfo;
-        this.d = tLObject;
-        this.e = i10;
-        this.f = runnable;
+    public /* synthetic */ j5(ImageLoader.HttpImageTask httpImageTask, Boolean bool, int i10) {
+        this.a = i10;
+        this.b = httpImageTask;
+        this.c = bool;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$applyRemoteLanguage$16(this.c, this.d, this.e, this.f);
-                break;
-            case 1:
-                this.b.lambda$applyRemoteLanguage$20(this.c, this.d, this.e, this.f);
-                break;
-            case 2:
-                this.b.lambda$applyRemoteLanguage$18(this.c, this.d, this.e, this.f);
+                this.b.lambda$onPostExecute$3(this.c);
                 break;
             default:
-                this.b.lambda$applyRemoteLanguage$14(this.c, this.d, this.e, this.f);
+                this.b.lambda$onPostExecute$4(this.c);
                 break;
         }
     }

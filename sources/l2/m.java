@@ -1,59 +1,59 @@
 package l2;
 
-import b2.s;
-import e2.d0;
-import n4.x;
-import u2.b1;
+import b2.x;
+import e2.m0;
+import n4.s;
+import u2.d1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class m implements b1 {
-    public final s a;
+public final class m implements d1 {
+    public final x a;
     public long[] c;
     public boolean d;
     public m2.g e;
     public boolean f;
     public int h;
-    public final x b = new x(28);
+    public final s b = new s(29);
     public long n = -9223372036854775807L;
 
-    public m(m2.g gVar, s sVar, boolean z10) {
-        this.a = sVar;
+    public m(m2.g gVar, x xVar, boolean z10) {
+        this.a = xVar;
         this.e = gVar;
         this.c = gVar.b;
-        b(gVar, z10);
+        a(gVar, z10);
     }
 
-    public final void b(m2.g gVar, boolean z10) {
+    public final void a(m2.g gVar, boolean z10) {
         int i10 = this.h;
-        long j3 = -9223372036854775807L;
-        long j10 = i10 == 0 ? -9223372036854775807L : this.c[i10 - 1];
+        long j10 = -9223372036854775807L;
+        long j11 = i10 == 0 ? -9223372036854775807L : this.c[i10 - 1];
         this.d = z10;
         this.e = gVar;
         long[] jArr = gVar.b;
         this.c = jArr;
-        long j11 = this.n;
-        if (j11 == -9223372036854775807L) {
-            if (j10 != -9223372036854775807L) {
-                this.h = d0.a(jArr, j10, false);
+        long j12 = this.n;
+        if (j12 == -9223372036854775807L) {
+            if (j11 != -9223372036854775807L) {
+                this.h = m0.b(jArr, j11, false);
             }
         } else {
-            int a2 = d0.a(jArr, j11, true);
-            this.h = a2;
-            if (this.d && a2 == this.c.length) {
-                j3 = j11;
+            int b10 = m0.b(jArr, j12, true);
+            this.h = b10;
+            if (this.d && b10 == this.c.length) {
+                j10 = j12;
             }
-            this.n = j3;
+            this.n = j10;
         }
     }
 
-    @Override // u2.b1
+    @Override // u2.d1
     public final boolean e() {
         return true;
     }
 
-    @Override // u2.b1
-    public final int f(x xVar, h2.h hVar, int i10) {
+    @Override // u2.d1
+    public final int f(qf.b bVar, h2.h hVar, int i10) {
         int i11 = this.h;
         boolean z10 = i11 == this.c.length;
         if (z10 && !this.d) {
@@ -61,7 +61,7 @@ public final class m implements b1 {
             return -4;
         }
         if ((i10 & 2) != 0 || !this.f) {
-            xVar.c = this.a;
+            bVar.c = this.a;
             this.f = true;
             return -5;
         }
@@ -72,24 +72,24 @@ public final class m implements b1 {
             this.h = i11 + 1;
         }
         if ((i10 & 4) == 0) {
-            byte[] P = this.b.P(this.e.a[i11]);
-            hVar.b(P.length);
-            hVar.c.put(P);
+            byte[] k10 = this.b.k(this.e.a[i11]);
+            hVar.b(k10.length);
+            hVar.c.put(k10);
         }
         hVar.e = this.c[i11];
         hVar.setFlags(1);
         return -4;
     }
 
-    @Override // u2.b1
-    public final int j(long j3) {
-        int max = Math.max(this.h, d0.a(this.c, j3, true));
+    @Override // u2.d1
+    public final int m(long j10) {
+        int max = Math.max(this.h, m0.b(this.c, j10, true));
         int i10 = max - this.h;
         this.h = max;
         return i10;
     }
 
-    @Override // u2.b1
-    public final void a() {
+    @Override // u2.d1
+    public final void d() {
     }
 }

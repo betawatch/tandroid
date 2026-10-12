@@ -4,18 +4,19 @@ import android.net.Uri;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b0 implements h {
     public final h a;
     public long b;
     public Uri c;
+    public Map d;
 
     public b0(h hVar) {
         hVar.getClass();
         this.a = hVar;
         this.c = Uri.EMPTY;
-        Map map = Collections.EMPTY_MAP;
+        this.d = Collections.EMPTY_MAP;
     }
 
     @Override // g2.h
@@ -43,7 +44,7 @@ public final class b0 implements h {
     public final long open(m mVar) {
         h hVar = this.a;
         this.c = mVar.a;
-        Map map = Collections.EMPTY_MAP;
+        this.d = Collections.EMPTY_MAP;
         try {
             return hVar.open(mVar);
         } finally {
@@ -51,11 +52,11 @@ public final class b0 implements h {
             if (uri != null) {
                 this.c = uri;
             }
-            hVar.getResponseHeaders();
+            this.d = hVar.getResponseHeaders();
         }
     }
 
-    @Override // b2.k
+    @Override // b2.p
     public final int read(byte[] bArr, int i10, int i11) {
         int read = this.a.read(bArr, i10, i11);
         if (read != -1) {

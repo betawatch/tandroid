@@ -1,49 +1,54 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.text.TextPaint;
-import android.view.View;
+import android.widget.PopupWindow;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ks extends View {
-    public final TextPaint a;
-    public final TextPaint b;
-    public final String c;
-    public final String d;
-    public final Rect e;
+public abstract class ks {
+    public final org.telegram.ui.ActionBar.m1 a;
+    public boolean b;
 
-    public ks(Context context, String str, String str2) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        TextPaint textPaint2 = new TextPaint(1);
-        this.b = textPaint2;
-        this.e = new Rect();
-        this.c = str;
-        this.d = str2;
-        textPaint.setTextSize(AndroidUtilities.dp(24.0f));
-        textPaint2.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G6, false));
-        textPaint2.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.H6, false));
+    public ks(Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, z10 ? 1 : 0, context, c6Var);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnTouchListener(new uk(this, 1));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setDispatchKeyEventListener(new s(this, 27));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setShownFromBottom(false);
+        b(actionBarPopupWindow$ActionBarPopupWindowLayout);
+        org.telegram.ui.ActionBar.m1 m1Var = new org.telegram.ui.ActionBar.m1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.a = m1Var;
+        m1Var.b = false;
+        m1Var.setAnimationStyle(R.style.PopupContextAnimation2);
+        m1Var.setOutsideTouchable(true);
+        m1Var.setClippingEnabled(true);
+        m1Var.setInputMethodMode(2);
+        m1Var.setSoftInputMode(0);
+        m1Var.getContentView().setFocusableInTouchMode(true);
+        if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
+            m1Var.setFocusable(true);
+        }
+        m1Var.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: org.telegram.ui.Components.js
+            @Override // android.widget.PopupWindow.OnDismissListener
+            public final void onDismiss() {
+                ks ksVar = ks.this;
+                ksVar.c();
+                ksVar.b = false;
+            }
+        });
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        TextPaint textPaint = this.b;
-        String str = this.d;
-        float measureText = textPaint.measureText(str);
-        TextPaint textPaint2 = this.a;
-        String str2 = this.c;
-        float measureText2 = textPaint2.measureText(str2);
-        int length = str2.length();
-        Rect rect = this.e;
-        textPaint2.getTextBounds(str2, 0, length, rect);
-        textPaint.getTextBounds(str, 0, str.length(), rect);
-        canvas.drawText(str2, (getWidth() * 0.25f) - (measureText2 / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint2);
-        canvas.drawText(str, (getWidth() * 0.7f) - (measureText / 2.0f), (getHeight() / 2.0f) + (rect.height() / 2.0f), textPaint);
+    public final void a() {
+        org.telegram.ui.ActionBar.m1 m1Var = this.a;
+        if (m1Var != null) {
+            m1Var.d(true);
+        }
     }
+
+    public abstract void b(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout);
+
+    public abstract void c();
 }

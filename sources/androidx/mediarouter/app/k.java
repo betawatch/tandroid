@@ -1,80 +1,11 @@
 package androidx.mediarouter.app;
 
-import android.view.animation.Animation;
-import java.util.ArrayList;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class k implements Animation.AnimationListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ k(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // android.view.animation.Animation.AnimationListener
-    public final void onAnimationEnd(Animation animation) {
-        switch (this.a) {
-            case 0:
-                ((u) this.b).j(true);
-                break;
-            case 1:
-                break;
-            default:
-                o0 o0Var = ((m0) this.b).w;
-                o0Var.O = false;
-                o0Var.o();
-                break;
-        }
-    }
-
-    @Override // android.view.animation.Animation.AnimationListener
-    public final void onAnimationRepeat(Animation animation) {
-        int i10 = this.a;
-    }
-
-    @Override // android.view.animation.Animation.AnimationListener
-    public final void onAnimationStart(Animation animation) {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                u uVar = (u) this.b;
-                OverlayListView overlayListView = uVar.U;
-                ArrayList arrayList = overlayListView.a;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    p0 p0Var = (p0) obj;
-                    if (!p0Var.j) {
-                        p0Var.i = overlayListView.getDrawingTime();
-                        p0Var.j = true;
-                    }
-                }
-                uVar.U.postDelayed(uVar.E0, uVar.x0);
-                break;
-            default:
-                ((m0) this.b).w.O = true;
-                break;
-        }
-    }
-
-    private final void a(Animation animation) {
-    }
-
-    private final void b(Animation animation) {
-    }
-
-    private final void c(Animation animation) {
-    }
-
-    private final void d(Animation animation) {
-    }
-
-    private final void e(Animation animation) {
+public final class k implements View.OnClickListener {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
     }
 }

@@ -1,27 +1,64 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.ViewTreeObserver;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import org.telegram.ui.Components.nv;
-import org.telegram.ui.b71;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g1 implements ViewTreeObserver.OnScrollChangedListener {
+public final class g1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
+    public final /* synthetic */ m1 b;
 
-    @Override // android.view.ViewTreeObserver.OnScrollChangedListener
-    public final void onScrollChanged() {
+    public /* synthetic */ g1(m1 m1Var, int i10) {
+        this.a = i10;
+        this.b = m1Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout;
         switch (this.a) {
             case 0:
-                Method method = n1.k;
-                break;
-            case 1:
-                Field field = nv.f;
+                m1 m1Var = this.b;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = null;
+                m1Var.a = null;
+                ViewGroup viewGroup = (ViewGroup) m1Var.getContentView();
+                if (viewGroup instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
+                    actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup;
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.n = false;
+                } else {
+                    for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
+                        if (viewGroup.getChildAt(i10) instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
+                            actionBarPopupWindow$ActionBarPopupWindowLayout2 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup.getChildAt(i10);
+                            actionBarPopupWindow$ActionBarPopupWindowLayout2.n = false;
+                        }
+                    }
+                    actionBarPopupWindow$ActionBarPopupWindowLayout = actionBarPopupWindow$ActionBarPopupWindowLayout2;
+                }
+                int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
+                for (int i11 = 0; i11 < itemsCount; i11++) {
+                    View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i11);
+                    if (!(childAt instanceof j1)) {
+                        childAt.setAlpha(childAt.isEnabled() ? 1.0f : 0.5f);
+                    }
+                }
                 break;
             default:
-                Field field2 = b71.c;
+                m1 m1Var2 = this.b;
+                m1Var2.a = null;
+                m1Var2.d = false;
+                m1Var2.setFocusable(false);
+                try {
+                    super/*android.widget.PopupWindow*/.dismiss();
+                } catch (Exception unused) {
+                }
+                m1Var2.j();
+                if (m1Var2.e) {
+                    m1Var2.j.unlock();
+                    break;
+                }
                 break;
         }
     }

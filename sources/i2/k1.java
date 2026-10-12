@@ -1,38 +1,120 @@
 package i2;
 
-import android.os.Looper;
+import android.os.SystemClock;
+import e9.x1;
+import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k1 {
-    public final j1 a;
-    public final i1 b;
-    public int c;
-    public Object d;
-    public final Looper e;
-    public boolean f;
+    public static final u2.g0 u = new u2.g0(new Object());
+    public final b2.p1 a;
+    public final u2.g0 b;
+    public final long c;
+    public final long d;
+    public final int e;
+    public final m f;
+    public final boolean g;
+    public final u2.r1 h;
+    public final x2.t i;
+    public final List j;
+    public final u2.g0 k;
+    public final boolean l;
+    public final int m;
+    public final int n;
+    public final b2.a1 o;
+    public final boolean p;
+    public volatile long q;
+    public volatile long r;
+    public volatile long s;
+    public volatile long t;
 
-    public k1(i1 i1Var, j1 j1Var, b2.k1 k1Var, int i10, Looper looper) {
-        this.b = i1Var;
-        this.a = j1Var;
-        this.e = looper;
+    public k1(b2.p1 p1Var, u2.g0 g0Var, long j10, long j11, int i10, m mVar, boolean z10, u2.r1 r1Var, x2.t tVar, List list, u2.g0 g0Var2, boolean z11, int i11, int i12, b2.a1 a1Var, long j12, long j13, long j14, long j15, boolean z12) {
+        this.a = p1Var;
+        this.b = g0Var;
+        this.c = j10;
+        this.d = j11;
+        this.e = i10;
+        this.f = mVar;
+        this.g = z10;
+        this.h = r1Var;
+        this.i = tVar;
+        this.j = list;
+        this.k = g0Var2;
+        this.l = z11;
+        this.m = i11;
+        this.n = i12;
+        this.o = a1Var;
+        this.q = j12;
+        this.r = j13;
+        this.s = j14;
+        this.t = j15;
+        this.p = z12;
     }
 
-    public final synchronized void a(boolean z10) {
-        synchronized (this) {
-            notifyAll();
-        }
+    public static k1 k(x2.t tVar) {
+        b2.l1 l1Var = b2.p1.a;
+        u2.r1 r1Var = u2.r1.d;
+        x1 x1Var = x1.e;
+        b2.a1 a1Var = b2.a1.d;
+        u2.g0 g0Var = u;
+        return new k1(l1Var, g0Var, -9223372036854775807L, 0L, 1, null, false, r1Var, tVar, x1Var, g0Var, false, 1, 0, a1Var, 0L, 0L, 0L, 0L, false);
     }
 
-    public final void b() {
-        e2.d.g(!this.f);
-        this.f = true;
-        p0 p0Var = (p0) this.b;
-        if (!p0Var.X && p0Var.s.getThread().isAlive()) {
-            p0Var.n.a(14, this).b();
-        } else {
-            e2.a.n("ExoPlayerImplInternal", "Ignoring messages sent after release.");
-            a(false);
+    public final k1 a() {
+        return new k1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, l(), SystemClock.elapsedRealtime(), this.p);
+    }
+
+    public final k1 b(boolean z10) {
+        return new k1(this.a, this.b, this.c, this.d, this.e, this.f, z10, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
+    }
+
+    public final k1 c(u2.g0 g0Var) {
+        return new k1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, g0Var, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
+    }
+
+    public final k1 d(u2.g0 g0Var, long j10, long j11, long j12, long j13, u2.r1 r1Var, x2.t tVar, List list) {
+        return new k1(this.a, g0Var, j11, j12, this.e, this.f, this.g, r1Var, tVar, list, this.k, this.l, this.m, this.n, this.o, this.q, j13, j10, SystemClock.elapsedRealtime(), this.p);
+    }
+
+    public final k1 e(int i10, int i11, boolean z10) {
+        return new k1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, z10, i10, i11, this.o, this.q, this.r, this.s, this.t, this.p);
+    }
+
+    public final k1 f(m mVar) {
+        return new k1(this.a, this.b, this.c, this.d, this.e, mVar, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
+    }
+
+    public final k1 g(b2.a1 a1Var) {
+        return new k1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, a1Var, this.q, this.r, this.s, this.t, this.p);
+    }
+
+    public final k1 h(int i10) {
+        return new k1(this.a, this.b, this.c, this.d, i10, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
+    }
+
+    public final k1 i(boolean z10) {
+        return new k1(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, z10);
+    }
+
+    public final k1 j(b2.p1 p1Var) {
+        return new k1(p1Var, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.q, this.r, this.s, this.t, this.p);
+    }
+
+    public final long l() {
+        long j10;
+        long j11;
+        if (!m()) {
+            return this.s;
         }
+        do {
+            j10 = this.t;
+            j11 = this.s;
+        } while (j10 != this.t);
+        return e2.m0.S(e2.m0.h0(j11) + ((long) ((SystemClock.elapsedRealtime() - j10) * this.o.a)));
+    }
+
+    public final boolean m() {
+        return this.e == 3 && this.l && this.n == 0;
     }
 }

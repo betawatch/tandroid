@@ -1,19 +1,16 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class i8 {
-    public abstract boolean a(i9.o oVar, i9.c cVar, i9.c cVar2);
+    public static final id.e a(Throwable exception) {
+        kotlin.jvm.internal.i.e(exception, "exception");
+        return new id.e(exception);
+    }
 
-    public abstract boolean b(i9.o oVar, Object obj, Object obj2);
-
-    public abstract boolean c(i9.o oVar, i9.n nVar, i9.n nVar2);
-
-    public abstract i9.c d(i9.o oVar);
-
-    public abstract i9.n e(i9.o oVar);
-
-    public abstract void f(i9.n nVar, i9.n nVar2);
-
-    public abstract void g(i9.n nVar, Thread thread);
+    public static final void b(Object obj) {
+        if (obj instanceof id.e) {
+            throw ((id.e) obj).a;
+        }
+    }
 }

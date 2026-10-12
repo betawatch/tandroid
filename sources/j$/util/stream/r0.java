@@ -31,10 +31,10 @@ public final class r0 extends CountedCompleter {
         Spliterator trySplit;
         Spliterator spliterator = this.a;
         long estimateSize = spliterator.estimateSize();
-        long j3 = this.d;
-        if (j3 == 0) {
-            j3 = d.e(estimateSize);
-            this.d = j3;
+        long j10 = this.d;
+        if (j10 == 0) {
+            j10 = d.e(estimateSize);
+            this.d = j10;
         }
         boolean m10 = v6.SHORT_CIRCUIT.m(((a) this.c).m);
         j5 j5Var = this.b;
@@ -44,7 +44,7 @@ public final class r0 extends CountedCompleter {
             if (m10 && j5Var.q()) {
                 break;
             }
-            if (estimateSize <= j3 || (trySplit = spliterator.trySplit()) == null) {
+            if (estimateSize <= j10 || (trySplit = spliterator.trySplit()) == null) {
                 break;
             }
             r0 r0Var2 = new r0(r0Var, trySplit);

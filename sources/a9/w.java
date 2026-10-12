@@ -1,14 +1,14 @@
 package a9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class w {
     public final int a;
     public final long b;
 
-    public w(int i10, long j3) {
+    public w(int i10, long j10) {
         this.a = i10;
-        this.b = j3;
+        this.b = j10;
     }
 
     public final boolean equals(Object obj) {
@@ -23,14 +23,14 @@ public final class w {
     }
 
     public final int hashCode() {
-        long j3 = this.b;
-        return ((this.a ^ 1000003) * 1000003) ^ ((int) (j3 ^ (j3 >>> 32)));
+        long j10 = this.b;
+        return ((this.a ^ 1000003) * 1000003) ^ ((int) (j10 ^ (j10 >>> 32)));
     }
 
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("EventRecord{eventType=");
         sb2.append(this.a);
         sb2.append(", eventTimestamp=");
-        return a1.g.s(sb2, this.b, "}");
+        return a1.g.r(sb2, this.b, "}");
     }
 }

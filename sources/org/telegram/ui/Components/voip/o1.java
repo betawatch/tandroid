@@ -1,37 +1,161 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.widget.FrameLayout;
-import org.telegram.ui.di1;
-import w7.x5;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.view.View;
+import android.view.animation.LinearInterpolator;
+import java.util.ArrayList;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class o1 extends FrameLayout {
-    public final l1 a;
-    public final FrameLayout b;
-    public final n1[] c;
-    public di1 d;
+public final class o1 {
+    public final com.google.firebase.messaging.m a;
+    public final com.google.firebase.messaging.m b;
+    public com.google.firebase.messaging.m c;
+    public com.google.firebase.messaging.m d;
+    public boolean e;
+    public int f;
+    public int g;
+    public int h;
+    public boolean i;
+    public final Paint j;
+    public final Paint k;
+    public final Paint l;
+    public final ArrayList m;
 
-    public o1(Activity activity, q1 q1Var) {
-        super(activity);
-        this.c = new n1[5];
-        setWillNotDraw(false);
-        l1 l1Var = new l1(activity, q1Var);
-        this.a = l1Var;
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.b = frameLayout;
-        l1Var.setVisibility(8);
-        frameLayout.setVisibility(8);
-        for (int i10 = 0; i10 < 5; i10++) {
-            this.c[i10] = new n1(activity);
-            this.c[i10].setAllStarsProvider(new m4.w(this, 13));
-            n1 n1Var = this.c[i10];
-            n1Var.d = new org.telegram.ui.Components.y2(20, this, activity);
-            n1Var.f = i10;
-            this.b.addView(n1Var, x5.a(-2.0f, i10 * 41, 0.0f, 0.0f, 0.0f, -2, 51));
+    public o1() {
+        com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m(80, 80);
+        this.a = mVar;
+        com.google.firebase.messaging.m mVar2 = new com.google.firebase.messaging.m(80, 80);
+        this.b = mVar2;
+        this.f = 0;
+        this.g = 0;
+        Paint paint = new Paint(1);
+        this.j = paint;
+        Paint paint2 = new Paint(1);
+        this.k = paint2;
+        Paint paint3 = new Paint(1);
+        this.l = paint3;
+        this.m = new ArrayList();
+        mVar2.z(0.0f, 0.0f, 80.0f, 80.0f);
+        mVar.z(0.0f, 0.0f, 80.0f, 80.0f);
+        paint.setColor(-1);
+        paint.setAlpha(35);
+        paint2.setColor(-16777216);
+        paint2.setAlpha(102);
+        paint3.setColor(-16777216);
+        paint3.setAlpha(35);
+        ((Paint) mVar2.a).setAlpha(180);
+    }
+
+    public final void a(View view) {
+        this.m.add(view);
+    }
+
+    public final Paint b() {
+        return this.i ? this.k : (Paint) this.b.a;
+    }
+
+    public final void c() {
+        ArrayList arrayList = this.m;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((View) obj).invalidate();
         }
-        addView(this.a, x5.a(152.0f, 0.0f, 0.0f, 0.0f, 0.0f, 300, 49));
-        addView(this.b, x5.a(100.0f, 0.0f, 90.0f, 0.0f, 0.0f, 201, 49));
+    }
+
+    public final void d(float f7, float f10) {
+        float f11 = this.g * 1.12f;
+        float f12 = -f7;
+        float f13 = -f10;
+        this.b.B(f12 - ((f11 - this.f) / 2.0f), f13 - ((f11 - this.g) / 2.0f), f11 / ((Bitmap) r1.c).getHeight(), this.h);
+        this.d.z(f12, f13, this.f - f7, this.g - f10);
+    }
+
+    public final void e(boolean z10) {
+        if (!this.i || z10) {
+            this.i = z10;
+        } else {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
+            final int i10 = 0;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.n1
+                public final /* synthetic */ o1 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    switch (i10) {
+                        case 0:
+                            o1 o1Var = this.b;
+                            o1Var.getClass();
+                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            int i11 = (int) (35.0f * floatValue);
+                            o1Var.l.setAlpha(i11);
+                            o1Var.k.setAlpha((int) (floatValue * 102.0f));
+                            o1Var.j.setAlpha(i11);
+                            o1Var.c();
+                            break;
+                        default:
+                            o1 o1Var2 = this.b;
+                            o1Var2.getClass();
+                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            ((Paint) o1Var2.b.a).setAlpha((int) (180.0f * floatValue2));
+                            ((Paint) o1Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
+                            o1Var2.c();
+                            break;
+                    }
+                }
+            });
+            ofFloat.setInterpolator(new LinearInterpolator());
+            ofFloat.setDuration(80L);
+            ofFloat.addListener(new u61(this, 10));
+            ofFloat.start();
+            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+            final int i11 = 1;
+            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.voip.n1
+                public final /* synthetic */ o1 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    switch (i11) {
+                        case 0:
+                            o1 o1Var = this.b;
+                            o1Var.getClass();
+                            float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            int i112 = (int) (35.0f * floatValue);
+                            o1Var.l.setAlpha(i112);
+                            o1Var.k.setAlpha((int) (floatValue * 102.0f));
+                            o1Var.j.setAlpha(i112);
+                            o1Var.c();
+                            break;
+                        default:
+                            o1 o1Var2 = this.b;
+                            o1Var2.getClass();
+                            float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            ((Paint) o1Var2.b.a).setAlpha((int) (180.0f * floatValue2));
+                            ((Paint) o1Var2.a.a).setAlpha((int) (floatValue2 * 255.0f));
+                            o1Var2.c();
+                            break;
+                    }
+                }
+            });
+            ofFloat2.setInterpolator(new LinearInterpolator());
+            ofFloat2.setStartDelay(80L);
+            ofFloat2.setDuration(80L);
+            ofFloat2.start();
+        }
+        c();
     }
 }

@@ -2,7 +2,7 @@ package k5;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k extends r {
     public final long a;
@@ -13,13 +13,13 @@ public final class k extends r {
     public final long f;
     public final v g;
 
-    public k(long j3, Integer num, long j10, byte[] bArr, String str, long j11, v vVar) {
-        this.a = j3;
+    public k(long j10, Integer num, long j11, byte[] bArr, String str, long j12, v vVar) {
+        this.a = j10;
         this.b = num;
-        this.c = j10;
+        this.c = j11;
         this.d = bArr;
         this.e = str;
-        this.f = j11;
+        this.f = j12;
         this.g = vVar;
     }
 
@@ -46,16 +46,16 @@ public final class k extends r {
     }
 
     public final int hashCode() {
-        long j3 = this.a;
-        int i10 = (((int) (j3 ^ (j3 >>> 32))) ^ 1000003) * 1000003;
+        long j10 = this.a;
+        int i10 = (((int) (j10 ^ (j10 >>> 32))) ^ 1000003) * 1000003;
         Integer num = this.b;
         int hashCode = (i10 ^ (num == null ? 0 : num.hashCode())) * 1000003;
-        long j10 = this.c;
-        int hashCode2 = (((hashCode ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003) ^ Arrays.hashCode(this.d)) * 1000003;
+        long j11 = this.c;
+        int hashCode2 = (((hashCode ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003) ^ Arrays.hashCode(this.d)) * 1000003;
         String str = this.e;
         int hashCode3 = (hashCode2 ^ (str == null ? 0 : str.hashCode())) * 1000003;
-        long j11 = this.f;
-        int i11 = (hashCode3 ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003;
+        long j12 = this.f;
+        int i11 = (hashCode3 ^ ((int) (j12 ^ (j12 >>> 32)))) * 1000003;
         v vVar = this.g;
         return i11 ^ (vVar != null ? vVar.hashCode() : 0);
     }

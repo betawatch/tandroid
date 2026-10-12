@@ -4,15 +4,15 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.pw0;
+import org.telegram.ui.Components.lw0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class a0 extends ViewGroup implements pw0 {
+public abstract class a0 extends ViewGroup implements lw0 {
     public boolean a;
     public androidx.emoji2.text.j b;
     public int c;
-    public ai.r4 d;
+    public androidx.activity.i d;
     public Runnable e;
 
     public a0(Context context) {
@@ -26,7 +26,7 @@ public abstract class a0 extends ViewGroup implements pw0 {
         setHapticFeedbackEnabled(true);
     }
 
-    public static float o(Drawable drawable, float f7, float f10, float f11) {
+    public static float n(Drawable drawable, float f7, float f10, float f11) {
         float intrinsicWidth = (drawable.getIntrinsicWidth() * f11) / drawable.getIntrinsicHeight();
         int i10 = (int) f7;
         int i11 = (int) f10;
@@ -34,7 +34,7 @@ public abstract class a0 extends ViewGroup implements pw0 {
         return intrinsicWidth;
     }
 
-    public static void p(int i10, int i11, Drawable drawable) {
+    public static void o(int i10, int i11, Drawable drawable) {
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
@@ -44,7 +44,7 @@ public abstract class a0 extends ViewGroup implements pw0 {
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    @Override // org.telegram.ui.Components.pw0
+    @Override // org.telegram.ui.Components.lw0
     public final void g(Runnable runnable) {
         this.e = runnable;
     }
@@ -77,9 +77,9 @@ public abstract class a0 extends ViewGroup implements pw0 {
         if (jVar != null) {
             removeCallbacks(jVar);
         }
-        ai.r4 r4Var = this.d;
-        if (r4Var != null) {
-            removeCallbacks(r4Var);
+        androidx.activity.i iVar = this.d;
+        if (iVar != null) {
+            removeCallbacks(iVar);
         }
     }
 
@@ -97,7 +97,7 @@ public abstract class a0 extends ViewGroup implements pw0 {
         }
         this.a = true;
         if (this.d == null) {
-            this.d = new ai.r4(this, 28);
+            this.d = new androidx.activity.i(this, 28);
         }
         postDelayed(this.d, ViewConfiguration.getTapTimeout());
     }

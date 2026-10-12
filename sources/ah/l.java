@@ -1,94 +1,57 @@
 package ah;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
+import android.view.ViewGroup;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class l extends Drawable {
-    public dh.a a;
-    public int b;
-    public int c;
-    public int f;
-    public boolean j;
-    public float k;
-    public float d = 1.0f;
-    public final RectF e = new RectF();
-    public final Paint g = new Paint(1);
-    public final Paint h = new Paint(1);
-    public final Paint i = new Paint(1);
+public final /* synthetic */ class l implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a0 b;
 
-    public final void a(dh.a aVar) {
-        this.a = aVar;
-        Paint.Style style = Paint.Style.STROKE;
-        this.h.setStyle(style);
-        this.i.setStyle(style);
-        b();
+    public /* synthetic */ l(a0 a0Var, int i10) {
+        this.a = i10;
+        this.b = a0Var;
     }
 
-    public final void b() {
-        dh.a aVar = this.a;
-        if (aVar == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        a0 a0Var = this.b;
+        switch (i10) {
+            case 0:
+                a0Var.n.requestFocus();
+                break;
+            case 1:
+                a0Var.finishFragment();
+                break;
+            case 2:
+                if (!a0Var.K) {
+                    a0Var.K = true;
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
+                    int measuredHeight = a0Var.c.getMeasuredHeight();
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) a0Var.y.getLayoutParams();
+                    marginLayoutParams.bottomMargin = measuredHeight;
+                    a0Var.y.setLayoutParams(marginLayoutParams);
+                    a0Var.c.setVisibility(0);
+                    a0Var.c.setTranslationY(r0.getMeasuredHeight());
+                    a0Var.c.animate().setListener(null).cancel();
+                    a0Var.c.animate().translationY(0.0f).withLayer().setDuration(350L).setInterpolator(es.f).setUpdateListener(new n(a0Var, 0)).setListener(new z(0)).start();
+                    break;
+                }
+                break;
+            case 3:
+                pf.d.s(a0Var.getParentActivity(), "https://t.me/stickers");
+                break;
+            case 4:
+                pf.d.s(a0Var.getParentActivity(), LocaleController.getString(R.string.ChannelEnablePaidReactionsInfoLink));
+                break;
+            default:
+                a0Var.Y(false);
+                break;
         }
-        this.b = i6.m1(this.d, aVar.d());
-        this.c = i6.m1(this.d, this.a.m());
-        int i10 = this.b;
-        Paint paint = this.h;
-        paint.setColor(i10);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
-        int i11 = this.c;
-        Paint paint2 = this.i;
-        paint2.setColor(i11);
-        paint2.setStrokeWidth(AndroidUtilities.dpf2(0.6666667f));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        float centerX = getBounds().centerX();
-        float centerY = getBounds().centerY();
-        float min = (Math.min(getBounds().width(), getBounds().height()) / 2.0f) - this.f;
-        RectF rectF = this.e;
-        rectF.set(centerX - min, centerY - min, centerX + min, centerY + min);
-        if (this.j) {
-            rectF.set(getBounds());
-            min = this.k;
-        }
-        float f7 = min;
-        Paint paint = this.g;
-        if (Color.alpha(paint.getColor()) > 0) {
-            canvas.drawCircle(centerX, centerY, f7, paint);
-        }
-        if (this.b != 0) {
-            canvas2 = canvas;
-            ch.d.f(canvas2, rectF, f7, AndroidUtilities.dpf2(1.0f), true, this.h);
-        } else {
-            canvas2 = canvas;
-        }
-        if (this.c != 0) {
-            ch.d.f(canvas2, rectF, f7, AndroidUtilities.dpf2(0.6666667f), false, this.i);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.d = i10 / 255.0f;
-        b();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

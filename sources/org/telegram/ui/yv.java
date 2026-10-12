@@ -1,35 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yv implements MessagesStorage.IntCallback {
+public final /* synthetic */ class yv implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ty b;
+    public final /* synthetic */ yy b;
+    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
+    public final /* synthetic */ LaunchActivity d;
 
-    public /* synthetic */ yv(ty tyVar, int i10) {
+    public /* synthetic */ yv(yy yyVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, LaunchActivity launchActivity, int i10) {
         this.a = i10;
-        this.b = tyVar;
+        this.b = yyVar;
+        this.c = tL_attachMenuBot;
+        this.d = launchActivity;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ty tyVar = this.b;
-                tyVar.getClass();
-                tyVar.U1 = i10 != 0;
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts", tyVar.U1).apply();
-                tyVar.h3(false);
+                yy.r0(this.b, this.c, this.d);
                 break;
             default:
-                ty tyVar2 = this.b;
-                tyVar2.getClass();
-                tyVar2.U1 = i10 != 0;
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts", tyVar2.U1).commit();
-                tyVar2.h3(false);
+                yy.f0(this.b, this.c, this.d);
                 break;
         }
     }

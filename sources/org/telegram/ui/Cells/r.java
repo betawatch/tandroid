@@ -5,7 +5,7 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -25,10 +25,10 @@ public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateList
                 sVar.a(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                e0 e0Var = (e0) this.b;
-                e0Var.getClass();
-                e0Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e0Var.a.run();
+                f0 f0Var = (f0) this.b;
+                f0Var.getClass();
+                f0Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                f0Var.a.run();
                 break;
             case 2:
                 u1 u1Var = (u1) this.b;
@@ -38,11 +38,11 @@ public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateList
                 break;
             case 3:
                 g4 g4Var = (g4) this.b;
-                org.telegram.ui.Components.y9 y9Var = g4Var.a;
+                org.telegram.ui.Components.z9 z9Var = g4Var.a;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float f7 = g4Var.H ? 1.0f - (0.18f * floatValue) : 0.82f + (0.18f * floatValue);
-                y9Var.setScaleX(f7);
-                y9Var.setScaleY(f7);
+                z9Var.setScaleX(f7);
+                z9Var.setScaleY(f7);
                 if (!g4Var.H) {
                     floatValue = 1.0f - floatValue;
                 }
@@ -68,7 +68,7 @@ public final /* synthetic */ class r implements ValueAnimator.AnimatorUpdateList
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 z7Var.v = floatValue2;
                 colorMatrix.setSaturation(floatValue2);
-                if (org.telegram.ui.ActionBar.i6.I.q()) {
+                if (org.telegram.ui.ActionBar.g6.I.q()) {
                     AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - z7Var.v) * (-0.3f));
                 }
                 z7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));

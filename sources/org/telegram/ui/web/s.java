@@ -1,11 +1,11 @@
 package org.telegram.ui.web;
 
-import ai.ea;
+import bi.n9;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -20,38 +20,38 @@ public final /* synthetic */ class s implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                g0 g0Var = this.b.c;
-                if (g0Var != null) {
-                    g0Var.b();
+                h0 h0Var = this.b.c;
+                if (h0Var != null) {
+                    h0Var.b();
                 }
-                LaunchActivity.L();
+                LaunchActivity.K();
                 break;
             case 1:
                 b1 b1Var = this.b;
-                ea eaVar = b1Var.I0;
-                ei.w0 w0Var = b1Var.k0;
-                w0Var.getClass();
+                n9 n9Var = b1Var.I0;
+                fi.v0 v0Var = b1Var.k0;
+                v0Var.getClass();
                 JSONObject jSONObject = new JSONObject();
                 try {
-                    jSONObject.put("available", w0Var.d());
-                    if (w0Var.d()) {
-                        jSONObject.put("access_requested", w0Var.d);
-                        if (w0Var.d) {
-                            jSONObject.put("access_granted", w0Var.e && w0Var.a());
+                    jSONObject.put("available", v0Var.d());
+                    if (v0Var.d()) {
+                        jSONObject.put("access_requested", v0Var.d);
+                        if (v0Var.d) {
+                            jSONObject.put("access_granted", v0Var.e && v0Var.a());
                         }
                     }
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
-                b1Var.x(eaVar, "location_checked", jSONObject);
+                b1Var.x(n9Var, "location_checked", jSONObject);
                 break;
             default:
                 b1 b1Var2 = this.b;
                 if (b1Var2.S) {
                     b1Var2.S = false;
-                    g0 g0Var2 = b1Var2.c;
-                    if (g0Var2 != null) {
-                        g0Var2.t(false);
+                    h0 h0Var2 = b1Var2.c;
+                    if (h0Var2 != null) {
+                        h0Var2.t(false);
                     }
                 }
                 b1Var2.c();

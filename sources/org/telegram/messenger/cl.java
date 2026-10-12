@@ -1,77 +1,66 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
-import java.util.ArrayList;
-import java.util.HashMap;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class cl implements Runnable {
+public final /* synthetic */ class cl implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ BaseController b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ long c;
     public final /* synthetic */ Object d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
 
-    public /* synthetic */ cl(BaseController baseController, Object obj, long j3, Object obj2, Object obj3, int i10) {
+    public /* synthetic */ cl(BaseController baseController, long j10, Object obj, int i10) {
         this.a = i10;
         this.b = baseController;
-        this.f = obj;
-        this.e = j3;
-        this.c = obj2;
-        this.d = obj3;
+        this.c = j10;
+        this.d = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((TranslateController) this.b).lambda$pushPollToTranslate$25((TranslateController.PendingPollTranslation) this.f, (TLObject) this.c, (TLRPC.TL_error) this.d, this.e);
+                ((TranslateController) this.b).lambda$pushPollToTranslate$26((TranslateController.PendingPollTranslation) this.d, this.c, tLObject, tL_error);
                 break;
             case 1:
-                ((TranslateController) this.b).lambda$pushRichMessageToTranslate$28((TranslateController.PendingRichTranslation) this.f, (TLObject) this.c, (TLRPC.TL_error) this.d, this.e);
+                ((TranslateController) this.b).lambda$pushRichMessageToTranslate$29((TranslateController.PendingRichTranslation) this.d, this.c, tLObject, tL_error);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$getSavedReactionTags$488((TLObject) this.c, this.e, (TLRPC.messages_SavedReactionTags) this.f, (TLRPC.TL_messages_getSavedReactionTags) this.d);
+                ((MediaDataController) this.b).lambda$loadPinnedMessageInternal$165(this.c, (TLRPC.TL_messages_getMessages) this.d, tLObject, tL_error);
                 break;
             case 3:
-                ((MessagesController) this.b).lambda$addUserToChat$305((TLRPC.Updates) this.f, (Utilities.Callback) this.c, (TLRPC.TL_messages_invitedUsers) this.d, this.e);
+                ((MessagesController) this.b).lambda$updateTimerProc$154(this.c, (TLRPC.TL_messages_getMessagesViews) this.d, tLObject, tL_error);
                 break;
             case 4:
-                ((MessagesController) this.b).lambda$getSponsoredMessages$442((ArrayList) this.f, this.e, (MessagesController.SponsoredMessagesInfo) this.c, (Integer) this.d);
+                ((MessagesController) this.b).lambda$reloadMentionsCountForChannel$220((TLRPC.InputPeer) this.d, this.c, tLObject, tL_error);
                 break;
             case 5:
-                ((SendMessagesHelper) this.b).lambda$prepareImportHistory$113((ArrayList) this.f, this.e, (Uri) this.c, (MessagesStorage.LongCallback) this.d);
+                ((MessagesController) this.b).lambda$getGroupCall$62(this.c, (Runnable) this.d, tLObject, tL_error);
+                break;
+            case 6:
+                ((MessagesController) this.b).lambda$getSponsoredMessages$443(this.c, (MessagesController.SponsoredMessagesInfo) this.d, tLObject, tL_error);
+                break;
+            case 7:
+                ((MessagesController) this.b).lambda$loadUnknownChannel$329(this.c, (TLRPC.TL_channel) this.d, tLObject, tL_error);
+                break;
+            case 8:
+                ((MessagesController) this.b).lambda$setChatReactions$474(this.c, (TLRPC.TL_messages_setChatAvailableReactions) this.d, tLObject, tL_error);
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$prepareImportHistory$112((HashMap) this.f, this.e, (SendMessagesHelper.ImportingHistory) this.c, (MessagesStorage.LongCallback) this.d);
+                ((MessagesController) this.b).lambda$checkLastDialogMessage$226((TLRPC.Dialog) this.d, this.c, tLObject, tL_error);
                 break;
         }
     }
 
-    public /* synthetic */ cl(BaseController baseController, Object obj, Object obj2, TLObject tLObject, long j3, int i10) {
+    public /* synthetic */ cl(BaseController baseController, Object obj, long j10, int i10) {
         this.a = i10;
         this.b = baseController;
-        this.f = obj;
-        this.c = obj2;
-        this.d = tLObject;
-        this.e = j3;
-    }
-
-    public /* synthetic */ cl(MessagesController messagesController, TLObject tLObject, long j3, TLRPC.messages_SavedReactionTags messages_savedreactiontags, TLRPC.TL_messages_getSavedReactionTags tL_messages_getSavedReactionTags) {
-        this.a = 2;
-        this.b = messagesController;
-        this.c = tLObject;
-        this.e = j3;
-        this.f = messages_savedreactiontags;
-        this.d = tL_messages_getSavedReactionTags;
+        this.d = obj;
+        this.c = j10;
     }
 }

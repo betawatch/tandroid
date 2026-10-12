@@ -1,29 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class z30 extends q4 {
-    public final /* synthetic */ g60 U;
+public final class z30 extends UndoView {
+    public final /* synthetic */ n60 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z30(g60 g60Var, LaunchActivity launchActivity) {
+    public z30(n60 n60Var, LaunchActivity launchActivity) {
         super(launchActivity);
-        this.U = g60Var;
+        this.f0 = n60Var;
     }
 
-    @Override // org.telegram.ui.q4, org.telegram.ui.Components.oi0
-    public final void c() {
-        g60 g60Var = this.U;
-        AccountInstance accountInstance = g60Var.d;
-        a40 a40Var = g60Var.b;
-        long dialogId = a40Var.getDialogId();
-        if (dialogId > 0) {
-            TLRPC.User user = accountInstance.getMessagesController().getUser(Long.valueOf(dialogId));
-            a40Var.H(null, ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 0), ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 1), false);
+    @Override // org.telegram.ui.Components.UndoView
+    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
+        if (this.f0.z0 != null) {
+            return;
         }
+        super.k(j10, i10, obj, obj2, runnable, runnable2);
     }
 }

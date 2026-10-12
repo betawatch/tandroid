@@ -2,227 +2,214 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class cs extends LinearLayout {
-    public final Paint a;
-    public final Paint b;
-    public float c;
-    public boolean d;
-    public boolean e;
-    public es[] f;
+public final class cs extends Drawable {
+    public final org.telegram.ui.ActionBar.c6 a;
+    public final Paint b = new Paint(1);
+    public final Paint c;
+    public final Drawable d;
+    public final RectF e;
+    public final org.telegram.ui.Components.r6 f;
+    public final org.telegram.ui.Components.r6 g;
+    public final Paint h;
+    public final Path i;
+    public final Drawable j;
+    public int k;
+    public boolean l;
+    public final org.telegram.ui.Components.g6 m;
 
-    public cs(Context context) {
-        super(context);
+    public cs(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
         Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Paint(1);
-        paint.setStyle(Paint.Style.STROKE);
-        setOrientation(0);
-    }
-
-    public abstract void a();
-
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00b2  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00b4  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10, int i11) {
-        int i12;
-        int i13;
-        int i14;
-        es[] esVarArr = this.f;
-        int i15 = 0;
-        if (esVarArr == null || esVarArr.length != i10) {
-            if (esVarArr != null) {
-                for (es esVar : esVarArr) {
-                    removeView(esVar);
-                }
-            }
-            this.f = new es[i10];
-            int i16 = 0;
-            while (i16 < i10) {
-                this.f[i16] = new as(this, getContext(), i16, i10);
-                this.f[i16].setImeOptions(268435461);
-                this.f[i16].setTextSize(1, 20.0f);
-                this.f[i16].setMaxLines(1);
-                this.f[i16].setTypeface(AndroidUtilities.bold());
-                this.f[i16].setPadding(0, 0, 0, 0);
-                this.f[i16].setGravity(17);
-                if (i11 == 3) {
-                    this.f[i16].setEnabled(false);
-                    this.f[i16].setInputType(0);
-                    this.f[i16].setVisibility(8);
-                } else {
-                    this.f[i16].setInputType(3);
-                }
-                int i17 = 42;
-                int i18 = 10;
-                if (i11 == 10) {
-                    i12 = 47;
-                } else {
-                    i12 = 34;
-                    if (i11 == 11) {
-                        i17 = 28;
-                        i18 = 5;
-                    } else {
-                        i18 = 7;
-                        i13 = 42;
-                        i14 = 34;
-                        addView(this.f[i16], w7.x5.t(i14, i13, 1, 0, 0, i16 == i10 + (-1) ? i18 : 0, 0));
-                        this.f[i16].addTextChangedListener(new bs(this, i16, i10));
-                        this.f[i16].setOnEditorActionListener(new ja(this, 3));
-                        i16++;
-                    }
-                }
-                i14 = i17;
-                i13 = i12;
-                addView(this.f[i16], w7.x5.t(i14, i13, 1, 0, 0, i16 == i10 + (-1) ? i18 : 0, 0));
-                this.f[i16].addTextChangedListener(new bs(this, i16, i10));
-                this.f[i16].setOnEditorActionListener(new ja(this, 3));
-                i16++;
-            }
-            return;
-        }
-        while (true) {
-            es[] esVarArr2 = this.f;
-            if (i15 >= esVarArr2.length) {
-                return;
-            }
-            esVarArr2[i15].setText("");
-            i15++;
-        }
-    }
-
-    public final void c(String str, boolean z10) {
-        if (this.f == null) {
-            return;
-        }
-        int i10 = 0;
-        if (z10) {
-            int i11 = 0;
-            while (true) {
-                es[] esVarArr = this.f;
-                if (i11 >= esVarArr.length) {
-                    break;
-                }
-                if (esVarArr[i11].isFocused()) {
-                    i10 = i11;
-                    break;
-                }
-                i11++;
-            }
-        }
-        for (int i12 = i10; i12 < Math.min(this.f.length, str.length() + i10); i12++) {
-            this.f[i12].setText(Character.toString(str.charAt(i12 - i10)));
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof es) {
-                es esVar = (es) childAt;
-                if (!this.e) {
-                    if (childAt.isFocused()) {
-                        esVar.j(1.0f);
-                    } else if (!childAt.isFocused()) {
-                        esVar.j(0.0f);
-                    }
-                }
-                float successProgress = esVar.getSuccessProgress();
-                int d = i0.a.d(successProgress, i0.a.d(esVar.getErrorProgress(), i0.a.d(esVar.getFocusedProgress(), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.k6, false), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.l6, false)), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.q7, false)), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.i7, false));
-                Paint paint = this.a;
-                paint.setColor(d);
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
-                float f7 = this.c;
-                rectF.inset(f7, f7);
-                if (successProgress != 0.0f) {
-                    float f10 = -Math.max(0.0f, (esVar.getSuccessScaleProgress() - 1.0f) * this.c);
-                    rectF.inset(f10, f10);
-                }
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
-            }
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (!(view instanceof es)) {
-            return super.drawChild(canvas, view, j3);
-        }
-        es esVar = (es) view;
-        canvas.save();
-        float f7 = esVar.v;
+        this.c = paint;
+        this.e = new RectF();
+        org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(false, false, false);
+        this.f = r6Var;
+        org.telegram.ui.Components.r6 r6Var2 = new org.telegram.ui.Components.r6(false, false, false);
+        this.g = r6Var2;
+        Paint paint2 = new Paint(1);
+        this.h = paint2;
+        Path path = new Path();
+        this.i = path;
+        this.m = new org.telegram.ui.Components.g6(new gj(this, 13), 320L, org.telegram.ui.Components.es.h, 0);
+        bs bsVar = new bs(0, this);
+        this.a = c6Var;
+        this.d = context.getResources().getDrawable(i10).mutate();
+        this.j = context.getResources().getDrawable(R.drawable.mini_casting_fill).mutate();
+        paint.setColor(-1);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        r6Var.x(AndroidUtilities.getTypeface("fonts/num.otf"));
+        r6Var.u(-16777216);
+        r6Var.w(AndroidUtilities.dp(7.0f));
+        r6Var.setCallback(bsVar);
+        r6Var.b = 17;
+        r6Var.M = AndroidUtilities.displaySize.x;
+        r6Var2.x(AndroidUtilities.getTypeface("fonts/num.otf"));
+        r6Var2.u(-16777216);
+        r6Var2.w(AndroidUtilities.dp(7.0f));
+        r6Var2.setCallback(bsVar);
+        r6Var2.b = 17;
+        r6Var2.M = AndroidUtilities.displaySize.x;
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(view.getX(), view.getY(), view.getX() + view.getMeasuredWidth(), view.getY() + view.getMeasuredHeight());
-        float f10 = this.c;
-        rectF.inset(f10, f10);
-        canvas.clipRect(rectF);
-        if (esVar.x) {
-            float f11 = (f7 * 0.5f) + 0.5f;
-            view.setAlpha(f7);
-            canvas.scale(f11, f11, (esVar.getMeasuredWidth() / 2.0f) + esVar.getX(), (esVar.getMeasuredHeight() / 2.0f) + esVar.getY());
+        rectF.set(AndroidUtilities.dp(0.66f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.33f));
+        path.addRoundRect(rectF, AndroidUtilities.dp(2.66f), AndroidUtilities.dp(2.66f), Path.Direction.CW);
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+    }
+
+    public final void a(boolean z10) {
+        if (this.l == z10) {
+            return;
+        }
+        this.l = z10;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Canvas canvas2;
+        float f7;
+        float f10;
+        float f11;
+        int i10;
+        float f12;
+        float e = this.m.e(this.l);
+        float dp = AndroidUtilities.dp(5.0f);
+        org.telegram.ui.Components.r6 r6Var = this.f;
+        float c10 = r6Var.c() + (r6Var.i() * dp);
+        float dp2 = AndroidUtilities.dp(5.0f);
+        org.telegram.ui.Components.r6 r6Var2 = this.g;
+        float c11 = r6Var2.c() + (r6Var2.i() * dp2);
+        int saveCount = canvas.getSaveCount();
+        Rect bounds = getBounds();
+        if (c10 > 0.0f || c11 > 0.0f || e > 0.0f) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, 255, 31);
         } else {
-            view.setAlpha(1.0f);
-            canvas.translate(0.0f, (1.0f - f7) * view.getMeasuredHeight());
+            canvas2 = canvas;
         }
-        super.drawChild(canvas, view, j3);
-        canvas.restore();
-        float f12 = esVar.w;
-        if (f12 >= 1.0f) {
-            return true;
-        }
-        canvas.save();
-        float f13 = 1.0f - f12;
-        float f14 = (f13 * 0.5f) + 0.5f;
-        canvas.scale(f14, f14, (esVar.getMeasuredWidth() / 2.0f) + esVar.getX(), (esVar.getMeasuredHeight() / 2.0f) + esVar.getY());
+        Rect rect = AndroidUtilities.rectTmp2;
+        rect.set(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), (bounds.width() + AndroidUtilities.dp(6.0f)) - AndroidUtilities.dp(12.0f), (bounds.height() + AndroidUtilities.dp(6.0f)) - AndroidUtilities.dp(12.0f));
+        rect.offset(bounds.left, bounds.top);
+        Drawable drawable = this.d;
+        drawable.setBounds(rect);
+        canvas2.save();
+        canvas2.rotate(-0.0f, bounds.centerX(), bounds.centerY());
+        drawable.draw(canvas2);
+        canvas2.restore();
         Paint paint = this.b;
-        paint.setAlpha((int) (f13 * 255.0f));
-        canvas.drawBitmap(esVar.y, esVar.getX(), esVar.getY(), paint);
-        canvas.restore();
-        return true;
-    }
-
-    public String getCode() {
-        if (this.f == null) {
-            return "";
+        paint.setColor(-1);
+        float width = (bounds.width() * 0.98f) + bounds.left;
+        float height = (bounds.height() * 0.18f) + bounds.top;
+        float height2 = (bounds.height() * 0.78f) + bounds.top;
+        float dp3 = AndroidUtilities.dp(10.0f);
+        Paint paint2 = this.c;
+        RectF rectF = this.e;
+        if (c10 > 0.0f) {
+            f7 = dp3;
+            float f13 = f7 / 2.0f;
+            f10 = height;
+            f11 = height2;
+            rectF.set(width - c10, f10 - f13, width, f10 + f13);
+            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), paint2);
+        } else {
+            f7 = dp3;
+            f10 = height;
+            f11 = height2;
         }
-        StringBuilder sb2 = new StringBuilder();
-        int i10 = 0;
-        while (true) {
-            es[] esVarArr = this.f;
-            if (i10 >= esVarArr.length) {
-                return sb2.toString();
+        int i11 = (c11 > 0.0f ? 1 : (c11 == 0.0f ? 0 : -1));
+        if (i11 > 0) {
+            float f14 = f7 / 2.0f;
+            i10 = i11;
+            rectF.set(width - c11, f11 - f14, width, f11 + f14);
+            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), paint2);
+        } else {
+            i10 = i11;
+        }
+        float f15 = 1.0f - e;
+        if (c10 * f15 > 0.0f) {
+            paint.setAlpha((int) (r6Var.i() * 255.0f * f15));
+            r6Var.B = (int) (r6Var.i() * 255.0f * f15);
+            float f16 = f7 / 2.0f;
+            rectF.set(width - c10, f10 - f16, width, f10 + f16);
+            rectF.inset(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
+            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), paint);
+            rectF.inset(-AndroidUtilities.dp(1.0f), -AndroidUtilities.dp(1.0f));
+            r6Var.p(rectF);
+            r6Var.draw(canvas2);
+        }
+        if (e > 0.0f) {
+            canvas2.save();
+            int w02 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, this.a);
+            int i12 = this.k;
+            Drawable drawable2 = this.j;
+            if (i12 != w02) {
+                this.k = w02;
+                drawable2.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
             }
-            sb2.append(hf.b.d(esVarArr[i10].getText().toString(), false));
-            i10++;
+            f12 = 255.0f;
+            drawable2.setBounds((bounds.right - drawable2.getIntrinsicWidth()) - AndroidUtilities.dp(3.0f), AndroidUtilities.dp(0.66f) + bounds.top, bounds.right - AndroidUtilities.dp(3.0f), drawable2.getIntrinsicHeight() + AndroidUtilities.dp(0.66f) + bounds.top);
+            drawable2.setAlpha((int) (e * 255.0f));
+            float lerp = AndroidUtilities.lerp(0.8f, 1.0f, e);
+            canvas2.scale(lerp, lerp, drawable2.getBounds().centerX(), drawable2.getBounds().centerY());
+            if (e > 0.5f) {
+                canvas2.save();
+                canvas2.translate(drawable2.getBounds().left, drawable2.getBounds().top);
+                canvas2.drawPath(this.i, this.h);
+                canvas2.restore();
+            }
+            drawable2.draw(canvas2);
+            canvas2.restore();
+        } else {
+            f12 = 255.0f;
         }
+        if (i10 > 0) {
+            paint.setAlpha((int) (r6Var2.i() * f12));
+            r6Var2.B = (int) (r6Var2.i() * f12);
+            float f17 = f7 / 2.0f;
+            rectF.set(width - c11, f11 - f17, width, f11 + f17);
+            rectF.inset(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
+            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), paint);
+            rectF.inset(-AndroidUtilities.dp(1.0f), -AndroidUtilities.dp(1.0f));
+            r6Var2.p(rectF);
+            r6Var2.draw(canvas2);
+        }
+        canvas2.restoreToCount(saveCount);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        float dp = AndroidUtilities.dp(1.5f);
-        this.c = dp;
-        this.a.setStrokeWidth(dp);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(12.0f) + this.d.getIntrinsicHeight();
     }
 
-    public void setCode(String str) {
-        this.f[0].setText(str);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(12.0f) + this.d.getIntrinsicWidth();
     }
 
-    public void setText(String str) {
-        c(str, false);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return this.d.getOpacity();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.d.setColorFilter(colorFilter);
     }
 }

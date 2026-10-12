@@ -5,16 +5,16 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class f1 extends l0 {
     private static Map<Object, f1> zzd = new ConcurrentHashMap();
-    protected r2 zzb;
+    protected q2 zzb;
     private int zzc;
 
     public f1() {
         this.zza = 0;
-        this.zzb = r2.f;
+        this.zzb = q2.f;
         this.zzc = -1;
     }
 
@@ -24,14 +24,14 @@ public abstract class f1 extends l0 {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 f1Var = zzd.get(cls);
-            } catch (ClassNotFoundException e7) {
-                throw new IllegalStateException("Class initialization cannot fail.", e7);
+            } catch (ClassNotFoundException e) {
+                throw new IllegalStateException("Class initialization cannot fail.", e);
             }
         }
         if (f1Var != null) {
             return f1Var;
         }
-        f1 f1Var2 = (f1) ((f1) y2.b(cls)).e(6);
+        f1 f1Var2 = (f1) ((f1) x2.b(cls)).e(6);
         if (f1Var2 == null) {
             throw new IllegalStateException();
         }
@@ -42,10 +42,10 @@ public abstract class f1 extends l0 {
     public static Object f(Method method, f1 f1Var, Object... objArr) {
         try {
             return method.invoke(f1Var, objArr);
-        } catch (IllegalAccessException e7) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e7);
-        } catch (InvocationTargetException e10) {
-            Throwable cause = e10.getCause();
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
+        } catch (InvocationTargetException e7) {
+            Throwable cause = e7.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -84,16 +84,16 @@ public abstract class f1 extends l0 {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        l2 l2Var = l2.c;
-        l2Var.getClass();
-        return l2Var.a(getClass()).g(this, (f1) obj);
+        k2 k2Var = k2.c;
+        k2Var.getClass();
+        return k2Var.a(getClass()).g(this, (f1) obj);
     }
 
     public final int h() {
         if (this.zzc == -1) {
-            l2 l2Var = l2.c;
-            l2Var.getClass();
-            this.zzc = l2Var.a(getClass()).zzb(this);
+            k2 k2Var = k2.c;
+            k2Var.getClass();
+            this.zzc = k2Var.a(getClass()).zzb(this);
         }
         return this.zzc;
     }
@@ -103,9 +103,9 @@ public abstract class f1 extends l0 {
         if (i10 != 0) {
             return i10;
         }
-        l2 l2Var = l2.c;
-        l2Var.getClass();
-        int d = l2Var.a(getClass()).d(this);
+        k2 k2Var = k2.c;
+        k2Var.getClass();
+        int d = k2Var.a(getClass()).d(this);
         this.zza = d;
         return d;
     }

@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class o1 extends q1 {
     public final /* synthetic */ int b;
@@ -14,20 +14,20 @@ public final class o1 extends q1 {
     }
 
     @Override // androidx.datastore.preferences.protobuf.q1
-    public final boolean c(Object obj, long j3) {
+    public final boolean c(Object obj, long j10) {
         switch (this.b) {
             case 0:
                 if (r1.h) {
-                    if (r1.g(obj, j3) == 0) {
+                    if (r1.g(obj, j10) == 0) {
                     }
-                } else if (r1.h(obj, j3) == 0) {
+                } else if (r1.h(obj, j10) == 0) {
                 }
                 break;
             default:
                 if (r1.h) {
-                    if (r1.g(obj, j3) == 0) {
+                    if (r1.g(obj, j10) == 0) {
                     }
-                } else if (r1.h(obj, j3) == 0) {
+                } else if (r1.h(obj, j10) == 0) {
                 }
                 break;
         }
@@ -35,7 +35,7 @@ public final class o1 extends q1 {
     }
 
     @Override // androidx.datastore.preferences.protobuf.q1
-    public final byte d(Object obj, long j3) {
+    public final byte d(Object obj, long j10) {
         switch (this.b) {
             case 0:
                 if (!r1.h) {
@@ -50,87 +50,87 @@ public final class o1 extends q1 {
                     break;
                 }
         }
-        return r1.h(obj, j3);
+        return r1.h(obj, j10);
     }
 
     @Override // androidx.datastore.preferences.protobuf.q1
-    public final double e(Object obj, long j3) {
+    public final double e(Object obj, long j10) {
         switch (this.b) {
         }
-        return Double.longBitsToDouble(h(obj, j3));
+        return Double.longBitsToDouble(h(obj, j10));
     }
 
     @Override // androidx.datastore.preferences.protobuf.q1
-    public final float f(Object obj, long j3) {
+    public final float f(Object obj, long j10) {
         switch (this.b) {
         }
-        return Float.intBitsToFloat(g(obj, j3));
+        return Float.intBitsToFloat(g(obj, j10));
     }
 
     @Override // androidx.datastore.preferences.protobuf.q1
-    public final void k(Object obj, long j3, boolean z10) {
+    public final void k(Object obj, long j10, boolean z10) {
         switch (this.b) {
             case 0:
                 if (!r1.h) {
-                    r1.l(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    r1.l(obj, j10, z10 ? (byte) 1 : (byte) 0);
                     break;
                 } else {
-                    r1.k(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    r1.k(obj, j10, z10 ? (byte) 1 : (byte) 0);
                     break;
                 }
             default:
                 if (!r1.h) {
-                    r1.l(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    r1.l(obj, j10, z10 ? (byte) 1 : (byte) 0);
                     break;
                 } else {
-                    r1.k(obj, j3, z10 ? (byte) 1 : (byte) 0);
+                    r1.k(obj, j10, z10 ? (byte) 1 : (byte) 0);
                     break;
                 }
         }
     }
 
     @Override // androidx.datastore.preferences.protobuf.q1
-    public final void l(Object obj, long j3, byte b10) {
+    public final void l(Object obj, long j10, byte b10) {
         switch (this.b) {
             case 0:
                 if (!r1.h) {
-                    r1.l(obj, j3, b10);
+                    r1.l(obj, j10, b10);
                     break;
                 } else {
-                    r1.k(obj, j3, b10);
+                    r1.k(obj, j10, b10);
                     break;
                 }
             default:
                 if (!r1.h) {
-                    r1.l(obj, j3, b10);
+                    r1.l(obj, j10, b10);
                     break;
                 } else {
-                    r1.k(obj, j3, b10);
+                    r1.k(obj, j10, b10);
                     break;
                 }
         }
     }
 
     @Override // androidx.datastore.preferences.protobuf.q1
-    public final void m(Object obj, long j3, double d) {
+    public final void m(Object obj, long j10, double d) {
         switch (this.b) {
             case 0:
-                p(obj, j3, Double.doubleToLongBits(d));
+                p(obj, j10, Double.doubleToLongBits(d));
                 break;
             default:
-                p(obj, j3, Double.doubleToLongBits(d));
+                p(obj, j10, Double.doubleToLongBits(d));
                 break;
         }
     }
 
     @Override // androidx.datastore.preferences.protobuf.q1
-    public final void n(Object obj, long j3, float f7) {
+    public final void n(Object obj, long j10, float f7) {
         switch (this.b) {
             case 0:
-                o(j3, obj, Float.floatToIntBits(f7));
+                o(j10, obj, Float.floatToIntBits(f7));
                 break;
             default:
-                o(j3, obj, Float.floatToIntBits(f7));
+                o(j10, obj, Float.floatToIntBits(f7));
                 break;
         }
     }

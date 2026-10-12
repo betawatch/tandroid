@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaDataController;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class Camera2Enumerator implements CameraEnumerator {
     private static final double NANO_SECONDS_PER_SECOND = 1.0E9d;
@@ -54,8 +54,8 @@ public class Camera2Enumerator implements CameraEnumerator {
     private CameraCharacteristics getCameraCharacteristics(String str) {
         try {
             return this.cameraManager.getCameraCharacteristics(str);
-        } catch (AndroidException e7) {
-            Logging.e(TAG, "Camera access exception: " + e7);
+        } catch (AndroidException e) {
+            Logging.e(TAG, "Camera access exception: " + e);
             return null;
         }
     }
@@ -97,8 +97,8 @@ public class Camera2Enumerator implements CameraEnumerator {
     public String[] getDeviceNames() {
         try {
             return this.cameraManager.getCameraIdList();
-        } catch (AndroidException e7) {
-            Logging.e(TAG, "Camera access exception: " + e7);
+        } catch (AndroidException e) {
+            Logging.e(TAG, "Camera access exception: " + e);
             return new String[0];
         }
     }
@@ -125,7 +125,7 @@ public class Camera2Enumerator implements CameraEnumerator {
     }
 
     public static List<CameraEnumerationAndroid.CaptureFormat> getSupportedFormats(CameraManager cameraManager, String str) {
-        long j3;
+        long j10;
         Map<String, List<CameraEnumerationAndroid.CaptureFormat>> map = cachedSupportedFormats;
         synchronized (map) {
             try {
@@ -146,19 +146,19 @@ public class Camera2Enumerator implements CameraEnumerator {
                         ArrayList arrayList = new ArrayList();
                         for (Size size : supportedSizes) {
                             try {
-                                j3 = streamConfigurationMap.getOutputMinFrameDuration(SurfaceTexture.class, new android.util.Size(size.width, size.height));
+                                j10 = streamConfigurationMap.getOutputMinFrameDuration(SurfaceTexture.class, new android.util.Size(size.width, size.height));
                             } catch (Exception unused) {
-                                j3 = 0;
+                                j10 = 0;
                             }
-                            int round = j3 == 0 ? i10 : ((int) Math.round(NANO_SECONDS_PER_SECOND / j3)) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+                            int round = j10 == 0 ? i10 : ((int) Math.round(NANO_SECONDS_PER_SECOND / j10)) * MediaDataController.MAX_STYLE_RUNS_COUNT;
                             arrayList.add(new CameraEnumerationAndroid.CaptureFormat(size.width, size.height, 0, round));
                             Logging.d(TAG, "Format: " + size.width + "x" + size.height + "@" + round);
                         }
                         cachedSupportedFormats.put(str, arrayList);
                         Logging.d(TAG, "Get supported formats for camera index " + str + " done. Time spent: " + (SystemClock.elapsedRealtime() - elapsedRealtime) + " ms.");
                         return arrayList;
-                    } catch (Exception e7) {
-                        Logging.e(TAG, "getCameraCharacteristics()", e7);
+                    } catch (Exception e) {
+                        Logging.e(TAG, "getCameraCharacteristics()", e);
                         return new ArrayList();
                     }
                 }

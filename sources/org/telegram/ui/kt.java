@@ -1,38 +1,74 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class kt extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ nt o;
+public final /* synthetic */ class kt implements r0.o, org.telegram.ui.Components.fl0 {
+    public final /* synthetic */ xt a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kt(nt ntVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = ntVar;
+    public /* synthetic */ kt(xt xtVar) {
+        this.a = xtVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        rt rtVar = this.o.a;
-        rtVar.k = null;
-        rtVar.K = false;
-        if (rtVar.R) {
-            rtVar.n();
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ boolean D() {
+        return false;
+    }
+
+    @Override // r0.o
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
+        this.a.q = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
+        return l1Var;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ boolean i() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ boolean n() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public void r(View view, ah.i1 i1Var, boolean z10, boolean z11) {
+        if (i1Var == null) {
+            return;
         }
-        View view = rtVar.h;
-        if (view != null) {
-            if (view instanceof org.telegram.ui.Cells.f8) {
-                ((org.telegram.ui.Cells.f8) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.d8) {
-                ((org.telegram.ui.Cells.d8) view).setScaled(false);
-            } else if (view instanceof org.telegram.ui.Cells.f2) {
-                ((org.telegram.ui.Cells.f2) view).setScaled(false);
+        xt xtVar = this.a;
+        ah.t0 reactionsWindow = xtVar.P.getReactionsWindow();
+        if (!xtVar.o.contains(i1Var.f)) {
+            xtVar.o.add(i1Var.f);
+            if (xtVar.o.size() > 7) {
+                xtVar.o.remove(0);
             }
-            rtVar.h = null;
+        } else if (xtVar.o.size() <= 1) {
+            return;
+        } else {
+            xtVar.o.remove(i1Var.f);
         }
+        xtVar.P.setSelectedEmojis(xtVar.o);
+        if (reactionsWindow != null) {
+            ah.n0 n0Var = reactionsWindow.m;
+            xtVar.P.p(null, null, false);
+            if (n0Var != null) {
+                n0Var.setSelectedReactions(xtVar.o);
+                n0Var.setRecentReactions(xtVar.P.V);
+            }
+            reactionsWindow.d();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ void y() {
+    }
+
+    @Override // org.telegram.ui.Components.fl0
+    public /* synthetic */ void w(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

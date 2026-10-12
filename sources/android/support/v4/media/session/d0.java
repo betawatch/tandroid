@@ -1,33 +1,16 @@
 package android.support.v4.media.session;
 
-import android.os.SystemClock;
-import android.support.v4.media.session.PlaybackStateCompat;
-import java.util.ArrayList;
+import android.media.session.PlaybackState;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d0 {
-    public int b;
-    public long c;
-    public float d;
-    public long e;
-    public long f;
-    public final ArrayList a = new ArrayList();
-    public final long g = -1;
-
-    public final void a(PlaybackStateCompat.CustomAction customAction) {
-        this.a.add(customAction);
+public abstract class d0 {
+    public static Bundle a(PlaybackState playbackState) {
+        return playbackState.getExtras();
     }
 
-    public final PlaybackStateCompat b() {
-        return new PlaybackStateCompat(this.b, this.c, 0L, this.d, this.e, 0, null, this.f, this.a, this.g, null);
-    }
-
-    public final void c(int i10, long j3, float f7) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        this.b = i10;
-        this.c = j3;
-        this.f = elapsedRealtime;
-        this.d = f7;
+    public static void b(PlaybackState.Builder builder, Bundle bundle) {
+        builder.setExtras(bundle);
     }
 }

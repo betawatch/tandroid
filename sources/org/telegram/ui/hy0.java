@@ -1,82 +1,113 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import android.app.Dialog;
+import android.widget.TextView;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hy0 implements Runnable {
+public final /* synthetic */ class hy0 implements org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
-    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ PrivacySettingsActivity b;
 
-    public /* synthetic */ hy0(ProfileActivity profileActivity, TLRPC.User user, int i10) {
+    public /* synthetic */ hy0(PrivacySettingsActivity privacySettingsActivity, int i10) {
         this.a = i10;
-        this.b = profileActivity;
-        this.c = user;
+        this.b = privacySettingsActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public void a() {
+        int i10;
+        switch (this.a) {
+            case 2:
+                PrivacySettingsActivity privacySettingsActivity = this.b;
+                iy0 iy0Var = privacySettingsActivity.a;
+                if (iy0Var != null && (i10 = privacySettingsActivity.s) >= 0) {
+                    iy0Var.m(i10);
+                    break;
+                }
+                break;
+            default:
+                PrivacySettingsActivity.U(this.b);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        String string;
         switch (this.a) {
             case 0:
-                ProfileActivity profileActivity = this.b;
-                TLRPC.User user = this.c;
-                profileActivity.getClass();
-                profileActivity.presentFragment(zn.W9(user.id));
+                PrivacySettingsActivity privacySettingsActivity = this.b;
+                try {
+                    Dialog dialog = privacySettingsActivity.visibleDialog;
+                    if (dialog != null) {
+                        dialog.dismiss();
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
+                alertDialog$Builder.a.R = LocaleController.getString("PrivacyPaymentsClearAlertTitle", R.string.PrivacyPaymentsClearAlertTitle);
+                alertDialog$Builder.a.T = LocaleController.getString("PrivacyPaymentsClearAlert", R.string.PrivacyPaymentsClearAlert);
+                alertDialog$Builder.k(LocaleController.getString("ClearButton", R.string.ClearButton), new hy0(privacySettingsActivity, 1));
+                alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
+                privacySettingsActivity.showDialog(alertDialog$Builder.a);
+                org.telegram.ui.ActionBar.a2 a2Var2 = alertDialog$Builder.a;
+                privacySettingsActivity.showDialog(a2Var2);
+                TextView textView = (TextView) a2Var2.d(-1);
+                if (textView != null) {
+                    textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.q7, false));
+                    break;
+                }
                 break;
             case 1:
-                ProfileActivity profileActivity2 = this.b;
-                TLRPC.User user2 = this.c;
-                if (profileActivity2.getParentActivity() != null) {
-                    TLRPC.UserFull userFull = profileActivity2.v2;
-                    org.telegram.ui.Components.voip.f2.m(user2, false, userFull != null && userFull.video_calls_available, profileActivity2.getParentActivity(), profileActivity2.v2, profileActivity2.getAccountInstance());
-                    break;
+                TLRPC.TL_payments_clearSavedInfo tL_payments_clearSavedInfo = new TLRPC.TL_payments_clearSavedInfo();
+                PrivacySettingsActivity privacySettingsActivity2 = this.b;
+                boolean[] zArr = privacySettingsActivity2.Z;
+                tL_payments_clearSavedInfo.credentials = zArr[1];
+                tL_payments_clearSavedInfo.info = zArr[0];
+                privacySettingsActivity2.getUserConfig().tmpPassword = null;
+                privacySettingsActivity2.getUserConfig().saveConfig(false);
+                privacySettingsActivity2.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new bi.g7(8));
+                boolean z10 = zArr[0];
+                if (z10 && zArr[1]) {
+                    string = LocaleController.getString("PrivacyPaymentsPaymentShippingCleared", R.string.PrivacyPaymentsPaymentShippingCleared);
+                } else if (z10) {
+                    string = LocaleController.getString("PrivacyPaymentsShippingInfoCleared", R.string.PrivacyPaymentsShippingInfoCleared);
+                } else if (zArr[1]) {
+                    string = LocaleController.getString("PrivacyPaymentsPaymentInfoCleared", R.string.PrivacyPaymentsPaymentInfoCleared);
                 }
+                org.telegram.ui.Components.zc.a0(privacySettingsActivity2).Q(R.raw.chats_infotip, 36, string).j();
                 break;
             case 2:
-                ProfileActivity profileActivity3 = this.b;
-                TLRPC.User user3 = this.c;
-                if (profileActivity3.getParentActivity() != null) {
-                    TLRPC.UserFull userFull2 = profileActivity3.v2;
-                    org.telegram.ui.Components.voip.f2.m(user3, true, userFull2 != null && userFull2.video_calls_available, profileActivity3.getParentActivity(), profileActivity3.v2, profileActivity3.getAccountInstance());
-                    break;
-                }
-                break;
             case 3:
-                ProfileActivity profileActivity4 = this.b;
-                TLRPC.User user4 = this.c;
-                profileActivity4.getClass();
-                try {
-                    Intent intent = new Intent("android.intent.action.DIAL", Uri.parse("tel:+" + user4.phone));
-                    intent.addFlags(TLObject.FLAG_28);
-                    profileActivity4.getParentActivity().startActivityForResult(intent, 500);
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
-                }
             default:
-                ProfileActivity profileActivity5 = this.b;
-                TLRPC.User user5 = this.c;
-                try {
-                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", "+" + user5.phone));
-                    if (AndroidUtilities.shouldShowClipboardToast()) {
-                        org.telegram.ui.Components.ad.a0(profileActivity5).i(LocaleController.getString(R.string.PhoneCopied)).j();
-                        break;
-                    }
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                PrivacySettingsActivity privacySettingsActivity3 = this.b;
+                org.telegram.ui.ActionBar.a2 o10 = new AlertDialog$Builder(privacySettingsActivity3.getParentActivity(), 3, null).o();
+                privacySettingsActivity3.c = o10;
+                o10.g0 = false;
+                if (privacySettingsActivity3.S != privacySettingsActivity3.T) {
+                    UserConfig userConfig = privacySettingsActivity3.getUserConfig();
+                    boolean z11 = privacySettingsActivity3.T;
+                    userConfig.syncContacts = z11;
+                    privacySettingsActivity3.S = z11;
+                    privacySettingsActivity3.getUserConfig().saveConfig(false);
                 }
+                privacySettingsActivity3.getContactsController().deleteAllContacts(new gy0(privacySettingsActivity3, 1));
+                break;
+            case 4:
+                bh0 bh0Var = new bh0();
+                PrivacySettingsActivity privacySettingsActivity4 = this.b;
+                gy0 gy0Var = new gy0(privacySettingsActivity4, 2);
+                bh0Var.F = 3;
+                bh0Var.a = 12;
+                bh0Var.d0 = gy0Var;
+                privacySettingsActivity4.presentFragment(bh0Var);
                 break;
         }
     }

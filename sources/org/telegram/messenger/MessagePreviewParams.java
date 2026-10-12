@@ -16,13 +16,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hc0;
+import org.telegram.ui.Components.gc0;
 import org.telegram.ui.Components.pc0;
 import org.telegram.ui.Components.uc0;
 import org.telegram.ui.Components.vc0;
-import org.telegram.ui.pn;
+import org.telegram.ui.un;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class MessagePreviewParams {
     public CharacterStyle currentLink;
@@ -41,7 +41,7 @@ public class MessagePreviewParams {
     public boolean multipleUsers;
     public boolean noforwards;
     private vc0 previewView;
-    public pn quote;
+    public un quote;
     public int quoteEnd;
     public int quoteStart;
     public Messages replyMessage;
@@ -52,7 +52,7 @@ public class MessagePreviewParams {
     public boolean webpageTop;
     public boolean willSeeSenders;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public class Messages {
         private long dialogId;
         public LongSparseArray<MessageObject.GroupedMessages> groupedMessagesMap;
@@ -108,18 +108,18 @@ public class MessagePreviewParams {
             }
         }
 
-        public Messages(MessagePreviewParams messagePreviewParams, Boolean bool, int i10, MessageObject messageObject, long j3) {
-            this(bool, i10, MessagePreviewParams.singletonArrayList(messageObject), j3, null);
+        public Messages(MessagePreviewParams messagePreviewParams, Boolean bool, int i10, MessageObject messageObject, long j10) {
+            this(bool, i10, MessagePreviewParams.singletonArrayList(messageObject), j10, null);
         }
 
-        public Messages(Boolean bool, int i10, ArrayList<MessageObject> arrayList, long j3, SparseBooleanArray sparseBooleanArray) {
+        public Messages(Boolean bool, int i10, ArrayList<MessageObject> arrayList, long j10, SparseBooleanArray sparseBooleanArray) {
             this.groupedMessagesMap = new LongSparseArray<>();
             this.previewMessages = new ArrayList<>();
             this.selectedIds = new SparseBooleanArray();
             this.pollChosenAnswers = new ArrayList<>();
             this.out = bool;
             this.type = i10;
-            this.dialogId = j3;
+            this.dialogId = j10;
             this.messages = arrayList;
             if (sparseBooleanArray != null) {
                 this.selectedIds = sparseBooleanArray;
@@ -146,7 +146,7 @@ public class MessagePreviewParams {
                         }
                     }
                 }
-                previewMessage.messageOwner.dialog_id = j3;
+                previewMessage.messageOwner.dialog_id = j10;
                 if (previewMessage.getGroupId() != 0) {
                     MessageObject.GroupedMessages groupedMessages = this.groupedMessagesMap.get(previewMessage.getGroupId(), null);
                     if (groupedMessages == null) {
@@ -206,7 +206,7 @@ public class MessagePreviewParams {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class PreviewMediaPoll extends TLRPC.TL_messageMediaPoll {
         public int totalVotersCached;
     }
@@ -239,7 +239,7 @@ public class MessagePreviewParams {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static ArrayList<MessageObject> singletonArrayList(MessageObject messageObject) {
-        return q.k(messageObject);
+        return q.l(messageObject);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -298,8 +298,8 @@ public class MessagePreviewParams {
                 TLRPC.Message message4 = messageObject.messageOwner;
                 messageFwdHeader = message4.fwd_from;
                 if (messageFwdHeader == null) {
-                    long j3 = message4.from_id.user_id;
-                    if (j3 == 0 || message4.dialog_id != clientUserId || j3 != clientUserId) {
+                    long j10 = message4.from_id.user_id;
+                    if (j10 == 0 || message4.dialog_id != clientUserId || j10 != clientUserId) {
                         messageFwdHeader = new TLRPC.TL_messageFwdHeader();
                         messageFwdHeader.from_id = messageObject.messageOwner.from_id;
                         if (messageObject.isDice()) {
@@ -417,7 +417,7 @@ public class MessagePreviewParams {
             if (view instanceof pc0) {
                 pc0 pc0Var = (pc0) view;
                 int i11 = pc0Var.a;
-                hc0 hc0Var = pc0Var.e;
+                gc0 gc0Var = pc0Var.e;
                 if (i11 == 1) {
                     pc0Var.r = messagePreviewParams.forwardMessages;
                 } else if (i11 == 0) {
@@ -429,19 +429,19 @@ public class MessagePreviewParams {
                 if (i11 == 0) {
                     if (!vc0Var.b || messagePreviewParams.isSecret) {
                         messagePreviewParams.quote = null;
-                        hc0Var.f(false);
+                        gc0Var.f(false);
                         pc0Var.g(false, true);
                     } else {
-                        org.telegram.ui.Cells.w9 w9Var = hc0Var.W;
+                        org.telegram.ui.Cells.w9 w9Var = gc0Var.W;
                         MessageObject c10 = pc0Var.c(w9Var != null ? ((org.telegram.ui.Cells.u1) w9Var).getMessageObject() : null);
                         if (c10 != null) {
                             messagePreviewParams.quoteStart = 0;
                             int min = Math.min(MessagesController.getInstance(vc0Var.w).quoteLengthMax, c10.messageOwner.message.length());
                             messagePreviewParams.quoteEnd = min;
-                            messagePreviewParams.quote = pn.b(messagePreviewParams.quoteStart, min, c10);
+                            messagePreviewParams.quote = un.b(messagePreviewParams.quoteStart, min, c10);
                             View d = pc0Var.d();
                             if (d instanceof org.telegram.ui.Cells.u1) {
-                                hc0Var.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams.quoteStart, messagePreviewParams.quoteEnd);
+                                gc0Var.Z((org.telegram.ui.Cells.u1) d, messagePreviewParams.quoteStart, messagePreviewParams.quoteEnd);
                             }
                         }
                     }
@@ -470,16 +470,16 @@ public class MessagePreviewParams {
                 SpannableString valueOf = SpannableString.valueOf(charSequence);
                 try {
                     AndroidUtilities.addLinksSafe(valueOf, 1, false, true);
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
                 for (URLSpan uRLSpan : (URLSpan[]) valueOf.getSpans(0, valueOf.length(), URLSpan.class)) {
                     if (areUrlsEqual(uRLSpan.getURL(), str)) {
                         return true;
                     }
                 }
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
         return false;
@@ -501,12 +501,12 @@ public class MessagePreviewParams {
         return messages3 == null || (arrayList = messages3.messages) == null || arrayList.isEmpty();
     }
 
-    public void updateForward(ArrayList<MessageObject> arrayList, long j3) {
-        long j10;
+    public void updateForward(ArrayList<MessageObject> arrayList, long j10) {
+        long j11;
         TLRPC.MessageFwdHeader messageFwdHeader;
         this.hasCaption = false;
         this.hasSenders = false;
-        this.isSecret = DialogObject.isEncryptedDialog(j3);
+        this.isSecret = DialogObject.isEncryptedDialog(j10);
         this.multipleUsers = false;
         if (arrayList == null) {
             this.forwardMessages = null;
@@ -524,7 +524,7 @@ public class MessagePreviewParams {
         }
         Boolean bool = Boolean.TRUE;
         Messages messages = this.forwardMessages;
-        Messages messages2 = new Messages(bool, 0, arrayList, j3, messages != null ? messages.selectedIds : null);
+        Messages messages2 = new Messages(bool, 0, arrayList, j10, messages != null ? messages.selectedIds : null);
         this.forwardMessages = messages2;
         if (messages2.messages.isEmpty()) {
             this.forwardMessages = null;
@@ -533,13 +533,13 @@ public class MessagePreviewParams {
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             MessageObject messageObject2 = arrayList.get(i11);
             if (messageObject2.isFromUser()) {
-                j10 = messageObject2.messageOwner.from_id.user_id;
+                j11 = messageObject2.messageOwner.from_id.user_id;
             } else {
                 TLRPC.Chat chat = MessagesController.getInstance(messageObject2.currentAccount).getChat(Long.valueOf(messageObject2.messageOwner.peer_id.channel_id));
-                j10 = -((ChatObject.isChannel(chat) && chat.megagroup && messageObject2.isForwardedChannelPost()) ? messageObject2.messageOwner.fwd_from.from_id.channel_id : messageObject2.messageOwner.peer_id.channel_id);
+                j11 = -((ChatObject.isChannel(chat) && chat.megagroup && messageObject2.isForwardedChannelPost()) ? messageObject2.messageOwner.fwd_from.from_id.channel_id : messageObject2.messageOwner.peer_id.channel_id);
             }
-            if (!arrayList3.contains(Long.valueOf(j10))) {
-                arrayList3.add(Long.valueOf(j10));
+            if (!arrayList3.contains(Long.valueOf(j11))) {
+                arrayList3.add(Long.valueOf(j11));
             }
         }
         if (arrayList2.size() + arrayList3.size() > 1) {
@@ -547,7 +547,7 @@ public class MessagePreviewParams {
         }
     }
 
-    public void updateLink(int i10, TLRPC.WebPage webPage, CharSequence charSequence, MessageObject messageObject, pn pnVar, MessageObject messageObject2) {
+    public void updateLink(int i10, TLRPC.WebPage webPage, CharSequence charSequence, MessageObject messageObject, un unVar, MessageObject messageObject2) {
         TLRPC.MessageMedia messageMedia;
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia2;
@@ -602,11 +602,11 @@ public class MessagePreviewParams {
                 tL_message.replyMessage = messageObject.messageOwner;
                 TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
                 tL_message.reply_to = tL_messageReplyHeader;
-                if (pnVar != null) {
-                    tL_messageReplyHeader.quote_text = pnVar.i;
+                if (unVar != null) {
+                    tL_messageReplyHeader.quote_text = unVar.i;
                     int i11 = tL_messageReplyHeader.flags;
                     tL_messageReplyHeader.flags = i11 | 64;
-                    ArrayList<TLRPC.MessageEntity> arrayList = pnVar.j;
+                    ArrayList<TLRPC.MessageEntity> arrayList = unVar.j;
                     tL_messageReplyHeader.quote_entities = arrayList;
                     if (arrayList != null) {
                         tL_messageReplyHeader.flags = i11 | 192;
@@ -681,40 +681,40 @@ public class MessagePreviewParams {
         this.webpageTop = z10;
     }
 
-    public void updateReply(MessageObject messageObject, MessageObject.GroupedMessages groupedMessages, long j3, pn pnVar) {
+    public void updateReply(MessageObject messageObject, MessageObject.GroupedMessages groupedMessages, long j10, un unVar) {
         MessageObject messageObject2;
-        pn pnVar2;
+        un unVar2;
         int i10;
         if (this.isSecret || messageObject == null || (i10 = messageObject.type) == 10 || i10 == 11 || i10 == 22 || i10 == 21 || i10 == 18 || i10 == 25 || i10 == 16) {
             messageObject2 = null;
-            pnVar2 = null;
+            unVar2 = null;
         } else {
             messageObject2 = messageObject;
-            pnVar2 = pnVar;
+            unVar2 = unVar;
         }
         this.hasSecretMessages = messageObject2 != null && (messageObject2.isVoiceOnce() || messageObject2.isRoundOnce() || messageObject2.type == 30);
-        if (messageObject2 == null && pnVar2 == null) {
+        if (messageObject2 == null && unVar2 == null) {
             this.replyMessage = null;
             this.quote = null;
             return;
         }
         if (groupedMessages != null) {
-            this.replyMessage = new Messages(null, 1, groupedMessages.messages, j3, null);
+            this.replyMessage = new Messages(null, 1, groupedMessages.messages, j10, null);
         } else {
             MessageObject messageObject3 = messageObject2;
             if (messageObject3 == null) {
-                messageObject3 = pnVar2.a;
+                messageObject3 = unVar2.a;
             }
-            this.replyMessage = new Messages(this, null, 1, messageObject3, j3);
+            this.replyMessage = new Messages(this, null, 1, messageObject3, j10);
         }
         if (this.replyMessage.messages.isEmpty()) {
             this.replyMessage = null;
             return;
         }
-        this.quote = pnVar2;
-        if (pnVar2 != null) {
-            this.quoteStart = pnVar2.b;
-            this.quoteEnd = pnVar2.c;
+        this.quote = unVar2;
+        if (unVar2 != null) {
+            this.quoteStart = unVar2.b;
+            this.quoteEnd = unVar2.c;
         }
     }
 }

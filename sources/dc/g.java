@@ -1,45 +1,62 @@
 package dc;
 
-import com.google.android.gms.internal.vision.e2;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
+public final class g extends d {
+    public final byte[] c;
+    public final int d;
+    public final int e;
 
-    public g(float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17) {
-        this.a = f7;
-        this.b = f12;
-        this.c = f15;
-        this.d = f10;
-        this.e = f13;
-        this.f = f16;
-        this.g = f11;
-        this.h = f14;
-        this.i = f17;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g(int i10, int i11, int[] iArr) {
+        super(i10, i11);
+        int i12 = i10 * i11;
+        if (iArr.length < i12) {
+            throw new IllegalArgumentException("Pixel array length is less than width * height");
+        }
+        byte[] bArr = new byte[i12];
+        for (int i13 = 0; i13 < i12; i13++) {
+            int i14 = iArr[i13];
+            bArr[i13] = (byte) (((((i14 >> 16) & 255) + ((i14 >> 7) & 510)) + (i14 & 255)) / 4);
+        }
+        this.c = bArr;
+        this.d = i10;
+        this.e = i11;
     }
 
-    public static g a(float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16) {
-        float f17 = ((f7 - f11) + f13) - f15;
-        float f18 = ((f10 - f12) + f14) - f16;
-        if (f17 == 0.0f && f18 == 0.0f) {
-            return new g(f11 - f7, f13 - f11, f7, f12 - f10, f14 - f12, f10, 0.0f, 0.0f, 1.0f);
+    @Override // dc.d
+    public final byte[] a() {
+        byte[] bArr = this.c;
+        int i10 = this.a;
+        int i11 = this.b;
+        int i12 = this.d;
+        if (i10 == i12 && i11 == this.e) {
+            return bArr;
         }
-        float f19 = f11 - f13;
-        float f20 = f15 - f13;
-        float f21 = f12 - f14;
-        float f22 = f16 - f14;
-        float f23 = (f19 * f22) - (f20 * f21);
-        float u10 = e2.u(f20, f18, f22 * f17, f23);
-        float u11 = e2.u(f17, f21, f19 * f18, f23);
-        return new g((u10 * f11) + (f11 - f7), (u11 * f15) + (f15 - f7), f7, (u10 * f12) + (f12 - f10), (u11 * f16) + (f16 - f10), f10, u10, u11, 1.0f);
+        int i13 = i10 * i11;
+        byte[] bArr2 = new byte[i13];
+        if (i10 == i12) {
+            System.arraycopy(bArr, 0, bArr2, 0, i13);
+            return bArr2;
+        }
+        int i14 = 0;
+        for (int i15 = 0; i15 < i11; i15++) {
+            System.arraycopy(bArr, i14, bArr2, i15 * i10, i10);
+            i14 += i12;
+        }
+        return bArr2;
+    }
+
+    @Override // dc.d
+    public final byte[] b(int i10, byte[] bArr) {
+        if (i10 < 0 || i10 >= this.b) {
+            throw new IllegalArgumentException(i2.d.i(i10, "Requested row is outside the image: "));
+        }
+        int i11 = this.a;
+        if (bArr == null || bArr.length < i11) {
+            bArr = new byte[i11];
+        }
+        System.arraycopy(this.c, i10 * this.d, bArr, 0, i11);
+        return bArr;
     }
 }

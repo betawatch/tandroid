@@ -46,7 +46,7 @@ public final /* synthetic */ class b0 implements DoubleStream {
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble average() {
-        return j$.com.android.tools.r8.a.J(this.a.average());
+        return j$.com.android.tools.r8.a.I(this.a.average());
     }
 
     @Override // java.util.stream.DoubleStream
@@ -93,12 +93,12 @@ public final /* synthetic */ class b0 implements DoubleStream {
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble findAny() {
-        return j$.com.android.tools.r8.a.J(this.a.findAny());
+        return j$.com.android.tools.r8.a.I(this.a.findAny());
     }
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble findFirst() {
-        return j$.com.android.tools.r8.a.J(this.a.findFirst());
+        return j$.com.android.tools.r8.a.I(this.a.findFirst());
     }
 
     @Override // java.util.stream.DoubleStream
@@ -135,8 +135,8 @@ public final /* synthetic */ class b0 implements DoubleStream {
     }
 
     @Override // java.util.stream.DoubleStream
-    public final /* synthetic */ DoubleStream limit(long j3) {
-        return f(this.a.limit(j3));
+    public final /* synthetic */ DoubleStream limit(long j10) {
+        return f(this.a.limit(j10));
     }
 
     @Override // java.util.stream.DoubleStream
@@ -161,12 +161,12 @@ public final /* synthetic */ class b0 implements DoubleStream {
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble max() {
-        return j$.com.android.tools.r8.a.J(this.a.max());
+        return j$.com.android.tools.r8.a.I(this.a.max());
     }
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble min() {
-        return j$.com.android.tools.r8.a.J(this.a.min());
+        return j$.com.android.tools.r8.a.I(this.a.min());
     }
 
     @Override // java.util.stream.DoubleStream
@@ -203,7 +203,7 @@ public final /* synthetic */ class b0 implements DoubleStream {
 
     @Override // java.util.stream.DoubleStream
     public final /* synthetic */ OptionalDouble reduce(DoubleBinaryOperator doubleBinaryOperator) {
-        return j$.com.android.tools.r8.a.J(this.a.reduce(doubleBinaryOperator));
+        return j$.com.android.tools.r8.a.I(this.a.reduce(doubleBinaryOperator));
     }
 
     /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.DoubleStream] */
@@ -218,8 +218,8 @@ public final /* synthetic */ class b0 implements DoubleStream {
     }
 
     @Override // java.util.stream.DoubleStream
-    public final /* synthetic */ DoubleStream skip(long j3) {
-        return f(this.a.skip(j3));
+    public final /* synthetic */ DoubleStream skip(long j10) {
+        return f(this.a.skip(j10));
     }
 
     @Override // java.util.stream.DoubleStream

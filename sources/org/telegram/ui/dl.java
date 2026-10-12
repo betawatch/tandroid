@@ -1,49 +1,65 @@
 package org.telegram.ui;
 
-import android.animation.LayoutTransition;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class dl implements LayoutTransition.TransitionListener {
-    public cl a;
-    public int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.z c;
-    public final /* synthetic */ zn d;
+public final class dl extends org.telegram.ui.Components.ko0 {
+    public final /* synthetic */ fo I;
 
-    public dl(zn znVar, org.telegram.ui.ActionBar.z zVar) {
-        this.d = znVar;
-        this.c = zVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dl(fo foVar, Context context, fo foVar2, int i10, long j10, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(i10, j10, context, foVar2, c6Var);
+        this.I = foVar;
     }
 
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
-        int i11 = this.b - 1;
-        this.b = i11;
-        if (i11 != 0 || this.a == null) {
-            return;
+    @Override // org.telegram.ui.Components.ko0
+    public final void b(boolean z10) {
+        fo foVar = this.I;
+        foVar.w7();
+        foVar.u7();
+        il ilVar = foVar.bb;
+        if (ilVar != null) {
+            ilVar.setTranslationY(foVar.w9 + getCurrentHeight());
         }
-        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
-        this.a = null;
+        if (z10) {
+            foVar.D9 = true;
+            foVar.nc();
+        }
     }
 
-    /* JADX WARN: Type inference failed for: r1v5, types: [org.telegram.ui.cl] */
-    @Override // android.animation.LayoutTransition.TransitionListener
-    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
-        if (this.b == 0 && this.a == null) {
-            this.a = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.cl
-                @Override // android.view.ViewTreeObserver.OnPreDrawListener
-                public final boolean onPreDraw() {
-                    org.telegram.ui.ActionBar.k kVar;
-                    kVar = ((org.telegram.ui.ActionBar.n2) dl.this.d).actionBar;
-                    kVar.invalidate();
-                    return true;
-                }
-            };
-            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
+    @Override // org.telegram.ui.Components.ko0
+    public final boolean f(ah.i1 i1Var) {
+        int i10;
+        fo foVar = this.I;
+        foVar.q3 = i1Var;
+        foVar.r3 = i1Var != null;
+        if (i1Var == null) {
+            foVar.getMediaDataController().clearFoundMessageObjects();
+            foVar.ob(false);
+            foVar.Jc(0, 0, -1);
         }
-        this.b++;
+        foVar.Mc();
+        foVar.zc();
+        foVar.t3 = foVar.j0.getSearchField().getText().toString();
+        MediaDataController mediaDataController = foVar.getMediaDataController();
+        String str = foVar.t3;
+        long j10 = foVar.T5;
+        long j11 = foVar.L6;
+        i10 = ((org.telegram.ui.ActionBar.m2) foVar).classGuid;
+        mediaDataController.searchMessagesInChat(str, j10, j11, i10, 0, foVar.d4, false, foVar.o3, foVar.p3, (TextUtils.isEmpty(foVar.t3) && foVar.q3 == null) ? false : true, foVar.q3);
+        AndroidUtilities.hideKeyboard(foVar.j0.getSearchField());
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ko0
+    public final void h(boolean z10) {
+        super.h(z10);
+        fo foVar = this.I;
+        org.telegram.ui.ActionBar.u0 u0Var = foVar.j0;
+        g(u0Var != null && u0Var.s() && a() && foVar.u3 == null);
     }
 }

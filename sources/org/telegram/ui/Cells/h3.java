@@ -9,25 +9,25 @@ import android.view.Menu;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.ru;
-import org.telegram.ui.Components.t11;
-import org.telegram.ui.Components.u11;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.nu;
+import org.telegram.ui.Components.p11;
+import org.telegram.ui.Components.q11;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class h3 extends ru {
+public final class h3 extends nu {
     public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c6 d;
     public final /* synthetic */ boolean e;
     public final /* synthetic */ j3 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h3(j3 j3Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10, org.telegram.ui.ActionBar.e6 e6Var2, boolean z10) {
-        super(context, e6Var);
+    public h3(j3 j3Var, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10, org.telegram.ui.ActionBar.c6 c6Var2, boolean z10) {
+        super(context, c6Var);
         this.f = j3Var;
         this.c = i10;
-        this.d = e6Var2;
+        this.d = c6Var2;
         this.e = z10;
     }
 
@@ -35,7 +35,7 @@ public final class h3 extends ru {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         j3 j3Var = this.f;
-        j3Var.v.u(j3Var.r.a(org.telegram.ui.ActionBar.i6.w0(j3Var.s <= 0 ? org.telegram.ui.ActionBar.i6.p7 : org.telegram.ui.ActionBar.i6.P5, this.d), false));
+        j3Var.v.u(j3Var.r.a(org.telegram.ui.ActionBar.g6.w0(j3Var.s <= 0 ? org.telegram.ui.ActionBar.g6.p7 : org.telegram.ui.ActionBar.g6.P5, this.d), false));
         j3Var.v.setBounds(getScrollX(), getHeight() - Math.min(AndroidUtilities.dp(52.0f), getHeight()), AndroidUtilities.dp(42.0f) + ((getWidth() + getScrollX()) - getPaddingRight()), getHeight());
         j3Var.v.draw(canvas);
     }
@@ -45,21 +45,21 @@ public final class h3 extends ru {
         if (this.e && menu.findItem(R.id.menu_bold) == null) {
             menu.removeItem(android.R.id.shareText);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Bold));
-            spannableStringBuilder.setSpan(new m61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.setSpan(new i61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_bold, 6, spannableStringBuilder);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.Italic));
-            spannableStringBuilder2.setSpan(new m61(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder2.length(), 33);
+            spannableStringBuilder2.setSpan(new i61(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC)), 0, spannableStringBuilder2.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_italic, 7, spannableStringBuilder2);
             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(LocaleController.getString(R.string.Strike));
-            t11 t11Var = new t11();
-            t11Var.a |= 8;
-            spannableStringBuilder3.setSpan(new u11(t11Var, 0), 0, spannableStringBuilder3.length(), 33);
+            p11 p11Var = new p11();
+            p11Var.a |= 8;
+            spannableStringBuilder3.setSpan(new q11(p11Var, 0), 0, spannableStringBuilder3.length(), 33);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_strike, 8, spannableStringBuilder3);
             menu.add(R.id.menu_groupbolditalic, R.id.menu_regular, 9, LocaleController.getString(R.string.Regular));
         }
     }
 
-    @Override // org.telegram.ui.Components.ru, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.tu, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.nu, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pu, android.widget.TextView, android.view.View
     public final void onDraw(Canvas canvas) {
         canvas.save();
         canvas.clipRect(getPaddingLeft() + getScrollX(), getScrollY(), (getWidth() + getScrollX()) - getPaddingRight(), getHeight() + getScrollY());
@@ -67,15 +67,15 @@ public final class h3 extends ru {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.tu, android.widget.TextView
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pu, android.widget.TextView
     public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         super.onTextChanged(charSequence, i10, i11, i12);
         j3 j3Var = this.f;
-        org.telegram.ui.Components.q6 q6Var = j3Var.v;
-        if (q6Var == null || this.c <= 0) {
+        org.telegram.ui.Components.r6 r6Var = j3Var.v;
+        if (r6Var == null || this.c <= 0) {
             return;
         }
-        q6Var.a();
+        r6Var.a();
         j3Var.c();
     }
 

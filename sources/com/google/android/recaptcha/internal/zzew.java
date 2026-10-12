@@ -1,16 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import ae.d0;
-import hd.i;
-import jd.c;
-import kd.a;
-import ld.j;
-import sd.p;
-import v7.a8;
+import be.c0;
+import kd.c;
+import ld.a;
+import md.i;
+import td.p;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-final class zzew extends j implements p {
+final class zzew extends i implements p {
     Object zza;
     int zzb;
     final /* synthetic */ long zzc;
@@ -19,34 +18,34 @@ final class zzew extends j implements p {
     final /* synthetic */ zzye zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzew(long j3, zzfp zzfpVar, zzgr zzgrVar, zzye zzyeVar, c cVar) {
+    public zzew(long j10, zzfp zzfpVar, zzgr zzgrVar, zzye zzyeVar, c cVar) {
         super(2, cVar);
-        this.zzc = j3;
+        this.zzc = j10;
         this.zzd = zzfpVar;
         this.zze = zzgrVar;
         this.zzf = zzyeVar;
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final c create(Object obj, c cVar) {
         return new zzew(this.zzc, this.zzd, this.zze, this.zzf, cVar);
     }
 
-    @Override // sd.p
+    @Override // td.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzew) create((d0) obj, (c) obj2)).invokeSuspend(i.a);
+        return ((zzew) create((c0) obj, (c) obj2)).invokeSuspend(id.i.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x004e  */
     /* JADX WARN: Removed duplicated region for block: B:16:0x0055  */
-    @Override // ld.a
+    @Override // md.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         kotlin.jvm.internal.p pVar;
         kotlin.jvm.internal.p pVar2;
-        long j3;
+        long j10;
         zzev zzevVar;
         Object zzc;
         zzcg zzcgVar;
@@ -54,10 +53,10 @@ final class zzew extends j implements p {
         if (this.zzb != 0) {
             pVar2 = (kotlin.jvm.internal.p) this.zza;
             try {
-                a8.b(obj);
+                i8.b(obj);
                 zzc = obj;
-            } catch (Exception e7) {
-                e = e7;
+            } catch (Exception e) {
+                e = e;
                 zzcgVar = (zzcg) pVar2.a;
                 if (zzcgVar != null) {
                     throw zzfp.zzd(this.zzd, e);
@@ -65,26 +64,26 @@ final class zzew extends j implements p {
                 throw zzcgVar;
             }
         } else {
-            a8.b(obj);
+            i8.b(obj);
             kotlin.jvm.internal.p pVar3 = new kotlin.jvm.internal.p();
             try {
-                j3 = this.zzc;
+                j10 = this.zzc;
                 zzevVar = new zzev(this.zze, this.zzd, this.zzf, pVar3, null);
                 pVar = pVar3;
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e7) {
+                e = e7;
                 pVar = pVar3;
             }
             try {
                 this.zza = pVar;
                 this.zzb = 1;
-                zzc = zzcx.zzc(j3, 20, 100L, 1000L, 2.0d, zzevVar, this);
+                zzc = zzcx.zzc(j10, 20, 100L, 1000L, 2.0d, zzevVar, this);
                 if (zzc == aVar) {
                     return aVar;
                 }
                 pVar2 = pVar;
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e10) {
+                e = e10;
                 pVar2 = pVar;
                 zzcgVar = (zzcg) pVar2.a;
                 if (zzcgVar != null) {

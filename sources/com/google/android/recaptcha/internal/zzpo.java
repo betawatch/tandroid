@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import hg.c;
+import i2.d;
 import j$.util.Objects;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 class zzpo extends zzpp {
     public static final /* synthetic */ int zzc = 0;
@@ -58,12 +58,12 @@ class zzpo extends zzpp {
         int length = zze.length();
         zzpk zzpkVar = this.zza;
         if (!zzpkVar.zzc(length)) {
-            throw new zzpn(c.h(zze.length(), "Invalid input length "));
+            throw new zzpn(d.i(zze.length(), "Invalid input length "));
         }
         int i11 = 0;
         int i12 = 0;
         while (i11 < zze.length()) {
-            long j3 = 0;
+            long j10 = 0;
             int i13 = 0;
             int i14 = 0;
             while (true) {
@@ -71,9 +71,9 @@ class zzpo extends zzpp {
                 if (i13 >= i10) {
                     break;
                 }
-                j3 <<= zzpkVar.zzb;
+                j10 <<= zzpkVar.zzb;
                 if (i11 + i13 < zze.length()) {
-                    j3 |= zzpkVar.zzb(zze.charAt(i14 + i11));
+                    j10 |= zzpkVar.zzb(zze.charAt(i14 + i11));
                     i14++;
                 }
                 i13++;
@@ -82,7 +82,7 @@ class zzpo extends zzpp {
             int i16 = i14 * zzpkVar.zzb;
             int i17 = (i15 - 1) * 8;
             while (i17 >= (i15 * 8) - i16) {
-                bArr[i12] = (byte) ((j3 >>> i17) & 255);
+                bArr[i12] = (byte) ((j10 >>> i17) & 255);
                 i17 -= 8;
                 i12++;
             }
@@ -135,14 +135,14 @@ class zzpo extends zzpp {
         int i12 = zzpkVar.zzd;
         int i13 = 0;
         zzmd.zza(i11 <= i12);
-        long j3 = 0;
+        long j10 = 0;
         for (int i14 = 0; i14 < i11; i14++) {
-            j3 = (j3 | (bArr[i10 + i14] & 255)) << 8;
+            j10 = (j10 | (bArr[i10 + i14] & 255)) << 8;
         }
         int i15 = (i11 + 1) * 8;
         int i16 = zzpkVar.zzb;
         while (i13 < i11 * 8) {
-            appendable.append(zzpkVar.zza(zzpkVar.zza & ((int) (j3 >>> ((i15 - i16) - i13)))));
+            appendable.append(zzpkVar.zza(zzpkVar.zza & ((int) (j10 >>> ((i15 - i16) - i13)))));
             i13 += i16;
         }
         if (this.zzb != null) {

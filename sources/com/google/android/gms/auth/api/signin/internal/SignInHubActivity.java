@@ -1,30 +1,29 @@
 package com.google.android.gms.auth.api.signin.internal;
 
-import a0.n;
+import a0.m;
 import a6.b;
 import a6.d;
 import a6.i;
-import aa.a;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
-import androidx.fragment.app.v;
-import b2.p;
+import androidx.biometric.e;
+import androidx.fragment.app.u;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.SignInAccount;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.m;
 import java.lang.reflect.Modifier;
 import java.util.Set;
-import pb.c;
+import qb.c;
+import w1.a;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class SignInHubActivity extends v {
+public class SignInHubActivity extends u {
     public static boolean T = false;
     public boolean O = false;
     public SignInConfiguration P;
@@ -37,7 +36,7 @@ public class SignInHubActivity extends v {
         return true;
     }
 
-    @Override // androidx.fragment.app.v, androidx.activity.l, android.app.Activity
+    @Override // androidx.fragment.app.u, androidx.activity.m, android.app.Activity
     public final void onActivityResult(int i10, int i11, Intent intent) {
         GoogleSignInAccount googleSignInAccount;
         if (this.O) {
@@ -50,11 +49,11 @@ public class SignInHubActivity extends v {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                i U = i.U(this);
+                i n10 = i.n(this);
                 GoogleSignInOptions googleSignInOptions = this.P.b;
-                synchronized (U) {
-                    synchronized (U) {
-                        ((b) U.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (n10) {
+                    synchronized (n10) {
+                        ((b) n10.b).c(googleSignInAccount, googleSignInOptions);
                     }
                     intent.removeExtra("signInAccount");
                     intent.putExtra("googleSignInAccount", googleSignInAccount);
@@ -84,7 +83,7 @@ public class SignInHubActivity extends v {
         v(8);
     }
 
-    @Override // androidx.fragment.app.v, androidx.activity.l, e0.f, android.app.Activity
+    @Override // androidx.fragment.app.u, androidx.activity.m, e0.f, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Intent intent = getIntent();
@@ -160,13 +159,13 @@ public class SignInHubActivity extends v {
         }
     }
 
-    @Override // androidx.fragment.app.v, android.app.Activity
+    @Override // androidx.fragment.app.u, android.app.Activity
     public final void onDestroy() {
         super.onDestroy();
         T = false;
     }
 
-    @Override // androidx.activity.l, e0.f, android.app.Activity
+    @Override // androidx.activity.m, e0.f, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         bundle.putBoolean("signingInGoogleApiClients", this.Q);
@@ -177,51 +176,51 @@ public class SignInHubActivity extends v {
     }
 
     public final void u() {
-        w1.b bVar = (w1.b) new a(f(), w1.b.f).j(w1.b.class);
+        w1.b bVar = (w1.b) new e(f(), w1.b.f).m(w1.b.class);
         c cVar = new c(this, 1);
         boolean z10 = bVar.e;
-        n nVar = bVar.d;
+        m mVar = bVar.d;
         if (z10) {
             throw new IllegalStateException("Called while creating a loader");
         }
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException("initLoader must be called on the main thread");
         }
-        w1.a aVar = (w1.a) nVar.c(0);
+        a aVar = (a) mVar.c(0);
         if (aVar == null) {
             try {
                 bVar.e = true;
-                Set set = m.a;
+                Set set = com.google.android.gms.common.api.m.a;
                 synchronized (set) {
                 }
                 d dVar = new d(this, set);
                 if (d.class.isMemberClass() && !Modifier.isStatic(d.class.getModifiers())) {
                     throw new IllegalArgumentException("Object returned from onCreateLoader must not be a non-static inner member class: " + dVar);
                 }
-                w1.a aVar2 = new w1.a(dVar);
-                nVar.d(0, aVar2);
+                a aVar2 = new a(dVar);
+                mVar.d(0, aVar2);
                 bVar.e = false;
-                p pVar = new p(aVar2.l, cVar);
-                aVar2.d(this, pVar);
-                p pVar2 = aVar2.n;
-                if (pVar2 != null) {
-                    aVar2.i(pVar2);
+                b2.u uVar = new b2.u(aVar2.l, cVar);
+                aVar2.d(this, uVar);
+                b2.u uVar2 = aVar2.n;
+                if (uVar2 != null) {
+                    aVar2.i(uVar2);
                 }
                 aVar2.m = this;
-                aVar2.n = pVar;
+                aVar2.n = uVar;
             } catch (Throwable th2) {
                 bVar.e = false;
                 throw th2;
             }
         } else {
-            p pVar3 = new p(aVar.l, cVar);
-            aVar.d(this, pVar3);
-            p pVar4 = aVar.n;
-            if (pVar4 != null) {
-                aVar.i(pVar4);
+            b2.u uVar3 = new b2.u(aVar.l, cVar);
+            aVar.d(this, uVar3);
+            b2.u uVar4 = aVar.n;
+            if (uVar4 != null) {
+                aVar.i(uVar4);
             }
             aVar.m = this;
-            aVar.n = pVar3;
+            aVar.n = uVar3;
         }
         T = false;
     }

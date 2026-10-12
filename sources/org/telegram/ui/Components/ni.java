@@ -1,115 +1,184 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ni extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ oi x;
+public abstract class ni extends FrameLayout {
+    public final org.telegram.ui.ActionBar.c6 a;
+    public final vi b;
+    public mm0 c;
+    public mm0 d;
+    public int e;
+    public boolean f;
+    public boolean h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ni(oi oiVar, oi oiVar2) {
-        super(oiVar2);
-        this.x = oiVar;
+    public ni(Context context, org.telegram.ui.ActionBar.c6 c6Var, vi viVar) {
+        super(context);
+        this.a = c6Var;
+        this.b = viVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final boolean b() {
-        a00 a00Var;
-        yi yiVar = this.x.B0;
-        if ((!yiVar.isDismissed() || yiVar.x0) && yiVar.v1) {
-            qi qiVar = yiVar.B0;
-            if (qiVar != yiVar.m0 && qiVar != yiVar.n0 && !yiVar.o1().m()) {
-                return true;
-            }
-            qi qiVar2 = yiVar.B0;
-            lo loVar = yiVar.m0;
-            if (qiVar2 == loVar && ((a00Var = loVar.E) == null || a00Var.getVisibility() != 0)) {
-                return true;
-            }
-            qi qiVar3 = yiVar.B0;
-            lo loVar2 = yiVar.n0;
-            if (qiVar3 == loVar2) {
-                a00 a00Var2 = loVar2.E;
-                return a00Var2 == null || a00Var2.getVisibility() != 0;
-            }
-        }
+    public abstract void B(int i10, int i11);
+
+    public boolean F(int i10) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void e(float f7, float f10, boolean z10) {
-        oi oiVar = this.x;
-        yi yiVar = oiVar.B0;
-        yiVar.o2 = f7;
-        float f11 = yiVar.g2;
-        if (f11 > 0.0f) {
-            yiVar.o2 = com.google.android.gms.internal.vision.e2.y(f11, yiVar.h2, (yiVar.B0 != yiVar.w0 || z10) ? 1.0f - f10 : f10, f7);
-        }
-        yiVar.a1.setTranslationY(yiVar.o2);
-        yiVar.d1.setTranslationY(yiVar.o2);
-        org.telegram.ui.ActionBar.v0 v0Var = yiVar.h1;
-        if (v0Var != null) {
-            v0Var.setTranslationY(yiVar.o2);
-        }
-        org.telegram.ui.ActionBar.v0 v0Var2 = yiVar.f1;
-        if (v0Var2 != null) {
-            v0Var2.setTranslationY(yiVar.d1.getTranslationY());
-        }
-        ci.d4 d4Var = yiVar.g1;
-        if (d4Var != null) {
-            d4Var.setTranslationY(yiVar.d1.getTranslationY());
-        }
-        yiVar.i1.setTranslationY(yiVar.o2);
-        yiVar.e2(0);
-        yiVar.setCurrentPanTranslationY(yiVar.B0 != yiVar.w0 ? yiVar.o2 : 0.0f);
-        oiVar.invalidate();
-        yiVar.G0.invalidate();
-        yiVar.Y1();
-        qi qiVar = yiVar.B0;
-        if (qiVar != null) {
-            qiVar.m(yiVar.o2, f10);
-        }
+    public boolean K(int i10, boolean z10, int i11, boolean z11, long j10) {
+        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void f() {
-        boolean z10;
-        yi yiVar = this.x.B0;
-        yiVar.b2(yiVar.B0, 0);
-        yiVar.f2 = yiVar.e2[0];
-        yiVar.B0.y();
-        if (!(yiVar.B0 instanceof ei.p4) || yiVar.G1) {
-            return;
-        }
-        z10 = ((org.telegram.ui.ActionBar.f3) yiVar).keyboardVisible;
-        int dp = z10 ? AndroidUtilities.dp(84.0f) : 0;
-        for (int i10 = 0; i10 < yiVar.A0.size(); i10++) {
-            ((ei.p4) yiVar.A0.valueAt(i10)).setMeasureOffsetY(dp);
-        }
+    public boolean L() {
+        return !(this instanceof fi.q4);
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(int i10, boolean z10) {
-        int i11;
-        oi oiVar = this.x;
-        yi yiVar = oiVar.B0;
-        int i12 = yiVar.f2;
-        if (i12 <= 0 || i12 == (i11 = yiVar.e2[0]) || !(z10 || yiVar.B0 == yiVar.w0)) {
-            yiVar.g2 = -1.0f;
-        } else {
-            yiVar.g2 = i12;
-            yiVar.h2 = i11;
-        }
-        oiVar.invalidate();
-        ai aiVar = yiVar.A1;
-        if ((yiVar.B0 instanceof ei.p4) && !yiVar.G1) {
-            if (z10) {
-                aiVar.setVisibility(8);
-            } else {
-                aiVar.setVisibility(0);
-            }
-        }
-        yiVar.B0.z(i10, z10);
+    public boolean M() {
+        return true;
+    }
+
+    public boolean b() {
+        return true;
+    }
+
+    public boolean c() {
+        return true;
+    }
+
+    public boolean e() {
+        return this instanceof dl;
+    }
+
+    public boolean f() {
+        return false;
+    }
+
+    public boolean g() {
+        return this instanceof dl;
+    }
+
+    public int getButtonsHideOffset() {
+        return AndroidUtilities.dp(i() != 0 ? 12.0f : 17.0f);
+    }
+
+    public int getCurrentItemTop() {
+        return 0;
+    }
+
+    public int getCustomActionBarBackground() {
+        return 0;
+    }
+
+    public int getCustomBackground() {
+        return 0;
+    }
+
+    public int getFirstOffset() {
+        return 0;
+    }
+
+    public ch.a getIBlur3Capture() {
+        return null;
+    }
+
+    public int getListTopPadding() {
+        return 0;
+    }
+
+    public int getSelectedItemsCount() {
+        return 0;
+    }
+
+    public ArrayList<org.telegram.ui.ActionBar.i6> getThemeDescriptions() {
+        return null;
+    }
+
+    public boolean h() {
+        return false;
+    }
+
+    public int i() {
+        return 0;
+    }
+
+    public boolean j() {
+        return false;
+    }
+
+    public void m(float f7, float f10) {
+        l(f7);
+    }
+
+    public boolean n(MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean q() {
+        return false;
+    }
+
+    public boolean s() {
+        return true;
+    }
+
+    public void A() {
+    }
+
+    public void D() {
+    }
+
+    public void E(int i10) {
+    }
+
+    public void G(ni niVar) {
+    }
+
+    public void I() {
+    }
+
+    public void J() {
+    }
+
+    public void a(CharSequence charSequence) {
+    }
+
+    public void d() {
+    }
+
+    public void k() {
+    }
+
+    public void l(float f7) {
+    }
+
+    public void o() {
+    }
+
+    public void r(int i10) {
+    }
+
+    public void t() {
+    }
+
+    public void u() {
+    }
+
+    public void v(float f7) {
+    }
+
+    public void w(int i10) {
+    }
+
+    public void x() {
+    }
+
+    public void y() {
+    }
+
+    public void z(int i10, boolean z10) {
     }
 }

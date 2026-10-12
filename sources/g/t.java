@@ -13,12 +13,12 @@ import androidx.appcompat.widget.Toolbar;
 import m.j1;
 import m.m3;
 import org.telegram.messenger.beta.R;
-import r0.i0;
-import w7.x6;
+import r0.j0;
+import w7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class t extends androidx.activity.m {
+public abstract class t extends androidx.activity.n {
     public r d;
     public final s e;
 
@@ -37,8 +37,8 @@ public abstract class t extends androidx.activity.m {
         } else {
             i11 = i10;
         }
-        this.e = new r0.j() { // from class: g.s
-            @Override // r0.j
+        this.e = new r0.k() { // from class: g.s
+            @Override // r0.k
             public final boolean i(KeyEvent keyEvent) {
                 return t.this.d(keyEvent);
             }
@@ -53,7 +53,7 @@ public abstract class t extends androidx.activity.m {
         c10.a();
     }
 
-    @Override // androidx.activity.m, android.app.Dialog
+    @Override // androidx.activity.n, android.app.Dialog
     public final void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
         r rVar = (r) c();
         rVar.k();
@@ -98,7 +98,7 @@ public abstract class t extends androidx.activity.m {
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        return x6.b(this.e, getWindow().getDecorView(), this, keyEvent);
+        return u6.b(this.e, getWindow().getDecorView(), this, keyEvent);
     }
 
     @Override // android.app.Dialog
@@ -112,12 +112,12 @@ public abstract class t extends androidx.activity.m {
     public final void invalidateOptionsMenu() {
         r rVar = (r) c();
         if (rVar.n != null) {
-            rVar.q().getClass();
-            rVar.r(0);
+            rVar.r().getClass();
+            rVar.s(0);
         }
     }
 
-    @Override // androidx.activity.m, android.app.Dialog
+    @Override // androidx.activity.n, android.app.Dialog
     public void onCreate(Bundle bundle) {
         r rVar = (r) c();
         LayoutInflater from = LayoutInflater.from(rVar.e);
@@ -130,18 +130,18 @@ public abstract class t extends androidx.activity.m {
         c().a();
     }
 
-    @Override // androidx.activity.m, android.app.Dialog
+    @Override // androidx.activity.n, android.app.Dialog
     public final void onStop() {
-        bc.d dVar;
+        cc.d dVar;
         super.onStop();
-        a0 q6 = ((r) c()).q();
-        if (q6 == null || (dVar = q6.s) == null) {
+        a0 r10 = ((r) c()).r();
+        if (r10 == null || (dVar = r10.s) == null) {
             return;
         }
         dVar.a();
     }
 
-    @Override // androidx.activity.m, android.app.Dialog
+    @Override // androidx.activity.n, android.app.Dialog
     public final void setContentView(int i10) {
         r rVar = (r) c();
         rVar.k();
@@ -179,12 +179,12 @@ public abstract class t extends androidx.activity.m {
         if ((m3Var.b & 8) != 0) {
             toolbar.setTitle(charSequence);
             if (m3Var.g) {
-                i0.k(toolbar.getRootView(), charSequence);
+                j0.k(toolbar.getRootView(), charSequence);
             }
         }
     }
 
-    @Override // androidx.activity.m, android.app.Dialog
+    @Override // androidx.activity.n, android.app.Dialog
     public final void setContentView(View view) {
         r rVar = (r) c();
         rVar.k();
@@ -194,7 +194,7 @@ public abstract class t extends androidx.activity.m {
         rVar.h.a(rVar.f.getCallback());
     }
 
-    @Override // androidx.activity.m, android.app.Dialog
+    @Override // androidx.activity.n, android.app.Dialog
     public final void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
         r rVar = (r) c();
         rVar.k();
@@ -227,7 +227,7 @@ public abstract class t extends androidx.activity.m {
             if ((m3Var.b & 8) != 0) {
                 toolbar.setTitle(string);
                 if (m3Var.g) {
-                    i0.k(toolbar.getRootView(), string);
+                    j0.k(toolbar.getRootView(), string);
                     return;
                 }
                 return;

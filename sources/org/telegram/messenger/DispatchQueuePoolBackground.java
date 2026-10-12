@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class DispatchQueuePoolBackground {
     public static final String THREAD_PREFIX = "DispatchQueuePoolThreadSafety_";
@@ -82,12 +82,12 @@ public class DispatchQueuePoolBackground {
                 this.totalTasksCount++;
                 this.busyQueues.add(remove);
                 this.busyQueuesMap.put(remove.index, this.busyQueuesMap.get(remove.index, 0) + 1);
-                if (zg.d0.b) {
+                if (ah.x0.b) {
                     remove.setPriority(1);
                 } else if (remove.getPriority() != 10) {
                     remove.setPriority(10);
                 }
-                remove.postRunnable(new g0(this, runnable, remove, 18));
+                remove.postRunnable(new h0(this, runnable, remove, 17));
             }
         }
     }
@@ -123,7 +123,7 @@ public class DispatchQueuePoolBackground {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$execute$1(Runnable runnable, DispatchQueue dispatchQueue) {
         runnable.run();
-        Utilities.globalQueue.postRunnable(new d3(28, this, dispatchQueue));
+        Utilities.globalQueue.postRunnable(new g3(27, this, dispatchQueue));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -153,7 +153,7 @@ public class DispatchQueuePoolBackground {
         if (updateTaskCollection == null) {
             ArrayList<ArrayList<Runnable>> arrayList = freeCollections;
             if (!arrayList.isEmpty()) {
-                updateTaskCollection = (ArrayList) hg.c.x(1, arrayList);
+                updateTaskCollection = (ArrayList) i2.d.x(1, arrayList);
             } else {
                 updateTaskCollection = new ArrayList<>(100);
             }

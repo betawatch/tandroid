@@ -1,37 +1,56 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class pj0 extends xg.i {
-    public boolean J;
-    public final /* synthetic */ sj0 K;
+public final class pj0 extends LinearLayout {
+    public static final /* synthetic */ int d = 0;
+    public final TextView[] a;
+    public final TextView[] b;
+    public final /* synthetic */ qj0 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pj0(sj0 sj0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.K = sj0Var;
+    public pj0(qj0 qj0Var, Context context) {
+        super(context);
+        this.c = qj0Var;
+        this.a = new TextView[4];
+        this.b = new TextView[4];
+        setOrientation(1);
+        setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
+        int i10 = 0;
+        while (i10 < 2) {
+            LinearLayout e = org.telegram.messenger.yh.e(context, 0);
+            for (int i11 = 0; i11 < 2; i11++) {
+                LinearLayout e7 = org.telegram.messenger.yh.e(context, 1);
+                LinearLayout e10 = org.telegram.messenger.yh.e(context, 0);
+                int i12 = (i10 * 2) + i11;
+                this.a[i12] = new TextView(context);
+                this.b[i12] = new TextView(context);
+                this.a[i12].setTypeface(AndroidUtilities.bold());
+                this.a[i12].setTextSize(1, 17.0f);
+                this.b[i12].setTextSize(1, 13.0f);
+                this.b[i12].setGravity(3);
+                e10.addView(this.a[i12]);
+                e7.addView(e10);
+                e7.addView(this.b[i12]);
+                e.addView(e7, w7.a6.l(1.0f, -1, -2));
+            }
+            addView(e, w7.a6.a(-2.0f, 0.0f, 0.0f, 0.0f, i10 == 0 ? 16.0f : 0.0f, -1, 0));
+            i10++;
+        }
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        int dp = AndroidUtilities.dp(64.0f) + getMeasuredHeight();
-        sj0 sj0Var = this.K;
-        sj0Var.l0 = dp;
-        sj0Var.k0.G();
-        if (this.J != sj0Var.isKeyboardVisible()) {
-            boolean isKeyboardVisible = sj0Var.isKeyboardVisible();
-            this.J = isKeyboardVisible;
-            if (isKeyboardVisible) {
-                org.telegram.ui.Components.qm0 qm0Var = sj0Var.d;
-                ji.o oVar = new ji.o(sj0Var.getContext(), 2, 0.6f);
-                oVar.a = 1;
-                oVar.p = AndroidUtilities.dp(36.0f);
-                qm0Var.getLayoutManager().w0(oVar);
-            }
+    public final void a() {
+        for (int i10 = 0; i10 < 4; i10++) {
+            TextView textView = this.a[i10];
+            int i11 = org.telegram.ui.ActionBar.g6.G6;
+            qj0 qj0Var = this.c;
+            textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, qj0Var.getResourceProvider()));
+            this.b[i10].setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.z6, qj0Var.getResourceProvider()));
         }
     }
 }

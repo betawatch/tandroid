@@ -1,42 +1,25 @@
 package p2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public abstract class j implements Comparable {
-    public final String a;
-    public final i b;
-    public final long c;
-    public final int d;
-    public final long e;
-    public final b2.o f;
-    public final String h;
-    public final String n;
-    public final long r;
-    public final long s;
-    public final boolean v;
+import e9.l0;
+import e9.n0;
+import e9.x1;
+import java.util.List;
 
-    public j(String str, i iVar, long j3, int i10, long j10, b2.o oVar, String str2, String str3, long j11, long j12, boolean z10) {
-        this.a = str;
-        this.b = iVar;
-        this.c = j3;
-        this.d = i10;
-        this.e = j10;
-        this.f = oVar;
-        this.h = str2;
-        this.n = str3;
-        this.r = j11;
-        this.s = j12;
-        this.v = z10;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class j extends k {
+    public final String w;
+    public final n0 x;
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public j(String str, long j10, long j11, String str2, String str3) {
+        this(str, null, "", 0L, -1, -9223372036854775807L, null, str2, str3, j10, j11, false, x1.e);
+        l0 l0Var = n0.b;
     }
 
-    @Override // java.lang.Comparable
-    public final int compareTo(Object obj) {
-        Long l4 = (Long) obj;
-        long longValue = l4.longValue();
-        long j3 = this.e;
-        if (j3 > longValue) {
-            return 1;
-        }
-        return j3 < l4.longValue() ? -1 : 0;
+    public j(String str, j jVar, String str2, long j10, int i10, long j11, b2.t tVar, String str3, String str4, long j12, long j13, boolean z10, List list) {
+        super(str, jVar, j10, i10, j11, tVar, str3, str4, j12, j13, z10);
+        this.w = str2;
+        this.x = n0.u(list);
     }
 }

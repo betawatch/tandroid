@@ -1,26 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ct0 extends s4.s {
-    public final /* synthetic */ bw0 Q;
+public final class ct0 extends s4.r0 {
+    public final /* synthetic */ ts0 a;
+    public final /* synthetic */ us0 b;
+    public final /* synthetic */ xv0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ct0(bw0 bw0Var) {
-        super(3);
-        this.Q = bw0Var;
+    public ct0(xv0 xv0Var, ts0 ts0Var, us0 us0Var) {
+        this.c = xv0Var;
+        this.a = ts0Var;
+        this.b = us0Var;
     }
 
-    @Override // s4.s, s4.d0, s4.p0
-    public final int o0(int i10, pf.e eVar, s4.a1 a1Var) {
-        if (this.Q.o1) {
-            i10 = 0;
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        this.c.b1 = i10 != 0;
+    }
+
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        int i12;
+        int i13;
+        xv0 xv0Var = this.c;
+        mv0[] mv0VarArr = xv0Var.t1;
+        us0 us0Var = this.b;
+        ts0 ts0Var = this.a;
+        xv0Var.G(ts0Var, (mm0) recyclerView, us0Var);
+        if (i11 != 0 && ((i13 = xv0Var.k0[0].F) == 0 || i13 == 5)) {
+            mv0VarArr[0].a.isEmpty();
         }
-        return super.o0(i10, eVar, a1Var);
-    }
-
-    @Override // s4.s, s4.d0, s4.p0
-    public final boolean y0() {
-        return false;
+        if (i11 != 0 && ((i12 = ts0Var.F) == 0 || xv0.p0(i12))) {
+            xv0.q(ts0Var, mv0VarArr, true);
+        }
+        ts0Var.h.L0(true);
+        if (ts0Var.G != null) {
+            ts0Var.invalidate();
+        }
+        xv0Var.o0();
     }
 }

@@ -89,19 +89,19 @@ public final class d0 implements Externalizable {
 
     @Override // java.io.Externalizable
     public final void readExternal(ObjectInput objectInput) {
-        Object W;
+        Object V;
         byte readByte = objectInput.readByte();
         this.a = readByte;
         switch (readByte) {
             case 1:
                 ConcurrentHashMap concurrentHashMap = a.a;
-                W = j$.com.android.tools.r8.a.W(objectInput.readUTF());
+                V = j$.com.android.tools.r8.a.V(objectInput.readUTF());
                 break;
             case 2:
-                W = ((b) objectInput.readObject()).A((j$.time.h) objectInput.readObject());
+                V = ((b) objectInput.readObject()).A((j$.time.h) objectInput.readObject());
                 break;
             case 3:
-                W = ((ChronoLocalDateTime) objectInput.readObject()).n((ZoneOffset) objectInput.readObject()).v((ZoneId) objectInput.readObject());
+                V = ((ChronoLocalDateTime) objectInput.readObject()).n((ZoneOffset) objectInput.readObject()).v((ZoneId) objectInput.readObject());
                 break;
             case 4:
                 LocalDate localDate = w.d;
@@ -109,11 +109,11 @@ public final class d0 implements Externalizable {
                 byte readByte2 = objectInput.readByte();
                 byte readByte3 = objectInput.readByte();
                 u.c.getClass();
-                W = new w(LocalDate.of(readInt, readByte2, readByte3));
+                V = new w(LocalDate.of(readInt, readByte2, readByte3));
                 break;
             case 5:
                 x xVar = x.d;
-                W = x.s(objectInput.readByte());
+                V = x.s(objectInput.readByte());
                 break;
             case 6:
                 n nVar = (n) objectInput.readObject();
@@ -121,30 +121,30 @@ public final class d0 implements Externalizable {
                 byte readByte4 = objectInput.readByte();
                 byte readByte5 = objectInput.readByte();
                 nVar.getClass();
-                W = new p(nVar, readInt2, readByte4, readByte5);
+                V = new p(nVar, readInt2, readByte4, readByte5);
                 break;
             case 7:
                 int readInt3 = objectInput.readInt();
                 byte readByte6 = objectInput.readByte();
                 byte readByte7 = objectInput.readByte();
                 z.c.getClass();
-                W = new b0(LocalDate.of(readInt3 + 1911, readByte6, readByte7));
+                V = new b0(LocalDate.of(readInt3 + 1911, readByte6, readByte7));
                 break;
             case 8:
                 int readInt4 = objectInput.readInt();
                 byte readByte8 = objectInput.readByte();
                 byte readByte9 = objectInput.readByte();
                 f0.c.getClass();
-                W = new h0(LocalDate.of(readInt4 - 543, readByte8, readByte9));
+                V = new h0(LocalDate.of(readInt4 - 543, readByte8, readByte9));
                 break;
             case 9:
                 int i10 = g.e;
-                W = new g(j$.com.android.tools.r8.a.W(objectInput.readUTF()), objectInput.readInt(), objectInput.readInt(), objectInput.readInt());
+                V = new g(j$.com.android.tools.r8.a.V(objectInput.readUTF()), objectInput.readInt(), objectInput.readInt(), objectInput.readInt());
                 break;
             default:
                 throw new StreamCorruptedException("Unknown serialized type");
         }
-        this.b = W;
+        this.b = V;
     }
 
     private Object readResolve() {

@@ -1,22 +1,40 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.content.DialogInterface;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class pz0 extends org.telegram.ui.Components.ti0 {
-    public final /* synthetic */ ProfileActivity s1;
+public final /* synthetic */ class pz0 implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pz0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.k kVar, ez0 ez0Var, oz0 oz0Var, org.telegram.ui.Components.oi0 oi0Var, org.telegram.ui.Components.ki0 ki0Var) {
-        super(context, j3, kVar, ez0Var, oz0Var, oi0Var, ki0Var);
-        this.s1 = profileActivity;
+    public /* synthetic */ pz0(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.ti0
-    public final void setCustomAvatarProgress(float f7) {
-        ProfileActivity profileActivity = this.s1;
-        profileActivity.n5 = f7;
-        profileActivity.B3();
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
+        switch (this.a) {
+            case 0:
+                int i11 = 2 - i10;
+                if (i11 != this.b) {
+                    SharedConfig.overrideDevicePerformanceClass(i11);
+                    break;
+                } else {
+                    SharedConfig.overrideDevicePerformanceClass(-1);
+                    break;
+                }
+            default:
+                int i12 = 2 - i10;
+                if (i12 != this.b) {
+                    SharedConfig.overrideDevicePerformanceClass(i12);
+                    break;
+                } else {
+                    SharedConfig.overrideDevicePerformanceClass(-1);
+                    break;
+                }
+        }
     }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class o extends k implements List, RandomAccess {
     public static final m b = new m(s.e, 0);
@@ -37,7 +37,7 @@ public abstract class o extends k implements List, RandomAccess {
             if (size == list.size()) {
                 if (list instanceof RandomAccess) {
                     for (int i10 = 0; i10 < size; i10++) {
-                        if (w7.l8.a(get(i10), list.get(i10))) {
+                        if (w7.m8.a(get(i10), list.get(i10))) {
                         }
                     }
                     return true;
@@ -46,7 +46,7 @@ public abstract class o extends k implements List, RandomAccess {
                 Iterator it = list.iterator();
                 while (true) {
                     if (listIterator.hasNext()) {
-                        if (!it.hasNext() || !w7.l8.a(listIterator.next(), it.next())) {
+                        if (!it.hasNext() || !w7.m8.a(listIterator.next(), it.next())) {
                             break;
                         }
                     } else if (!it.hasNext()) {
@@ -58,6 +58,15 @@ public abstract class o extends k implements List, RandomAccess {
         return false;
     }
 
+    @Override // x7.k
+    public int h(Object[] objArr) {
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = get(i10);
+        }
+        return size;
+    }
+
     @Override // java.util.Collection, java.util.List
     public final int hashCode() {
         int size = size();
@@ -66,15 +75,6 @@ public abstract class o extends k implements List, RandomAccess {
             i10 = (i10 * 31) + get(i11).hashCode();
         }
         return i10;
-    }
-
-    @Override // x7.k
-    public int i(Object[] objArr) {
-        int size = size();
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = get(i10);
-        }
-        return size;
     }
 
     @Override // java.util.List
@@ -115,19 +115,19 @@ public abstract class o extends k implements List, RandomAccess {
     }
 
     @Override // java.util.List
-    /* renamed from: q */
+    /* renamed from: p */
     public o subList(int i10, int i11) {
-        w7.m8.b(i10, i11, size());
+        w7.n8.b(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? s.e : new n(this, i10, i12);
     }
 
     @Override // java.util.List
-    /* renamed from: r, reason: merged with bridge method [inline-methods] */
+    /* renamed from: q, reason: merged with bridge method [inline-methods] */
     public final m listIterator(int i10) {
         int size = size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(w7.m8.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(w7.n8.c(i10, size, "index"));
         }
         return isEmpty() ? b : new m(this, i10);
     }

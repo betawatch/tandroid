@@ -1,46 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Matrix;
-import android.view.TextureView;
-import android.view.View;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class eg0 extends TextureView {
-    public final /* synthetic */ kg0 a;
+public final class eg0 {
+    public final fg0 a = new fg0();
+    public final fg0 b = new fg0();
+    public final fg0 c = new fg0();
+    public final fg0 d = new fg0();
+    public final ByteBuffer e;
+    public int f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eg0(kg0 kg0Var, Context context) {
-        super(context);
-        this.a = kg0Var;
+    public eg0() {
+        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
+        this.e = allocateDirect;
+        allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        View.MeasureSpec.getSize(i10);
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.TextureView
-    public final void setTransform(Matrix matrix) {
-        super.setTransform(matrix);
-        l00 l00Var = this.a.l0;
-        if (l00Var != null) {
-            int width = getWidth();
-            int height = getHeight();
-            sa saVar = l00Var.I;
-            if (saVar == null) {
-                return;
-            }
-            Matrix matrix2 = saVar.v;
-            matrix.invert(matrix2);
-            float f7 = width;
-            float f10 = height;
-            matrix2.preScale(f7, f10);
-            matrix2.postScale(1.0f / f7, 1.0f / f10);
-            saVar.c(matrix2);
-            l00Var.e(false, false, false);
+    public final void a() {
+        ByteBuffer byteBuffer = this.e;
+        byteBuffer.position(0);
+        fg0 fg0Var = this.a;
+        if (fg0Var.f == null) {
+            fg0Var.a();
         }
+        float[] fArr = fg0Var.f;
+        fg0 fg0Var2 = this.b;
+        if (fg0Var2.f == null) {
+            fg0Var2.a();
+        }
+        float[] fArr2 = fg0Var2.f;
+        fg0 fg0Var3 = this.c;
+        if (fg0Var3.f == null) {
+            fg0Var3.a();
+        }
+        float[] fArr3 = fg0Var3.f;
+        fg0 fg0Var4 = this.d;
+        if (fg0Var4.f == null) {
+            fg0Var4.a();
+        }
+        float[] fArr4 = fg0Var4.f;
+        for (int i10 = 0; i10 < 200; i10++) {
+            byteBuffer.put((byte) (fArr2[i10] * 255.0f));
+            byteBuffer.put((byte) (fArr3[i10] * 255.0f));
+            byteBuffer.put((byte) (fArr4[i10] * 255.0f));
+            byteBuffer.put((byte) (fArr[i10] * 255.0f));
+        }
+        byteBuffer.position(0);
+    }
+
+    public final boolean b() {
+        return this.a.b() && this.b.b() && this.c.b() && this.d.b();
     }
 }

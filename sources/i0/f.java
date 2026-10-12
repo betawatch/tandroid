@@ -15,12 +15,12 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import v7.d8;
-import v7.g8;
+import v7.y7;
+import v7.z7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class f extends d8 {
+public class f extends y7 {
     public static Class a = null;
     public static Constructor b = null;
     public static Method c = null;
@@ -68,18 +68,18 @@ public class f extends d8 {
         d = method;
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         h();
         try {
             Object newInstance = b.newInstance(null);
             for (h0.f fVar : eVar.a) {
-                File d10 = g8.d(context);
+                File d10 = z7.d(context);
                 if (d10 == null) {
                     return null;
                 }
                 try {
-                    if (!g8.b(d10, resources, fVar.f)) {
+                    if (!z7.b(d10, resources, fVar.f)) {
                         return null;
                     }
                     if (!g(newInstance, d10.getPath(), fVar.b, fVar.c)) {
@@ -105,7 +105,7 @@ public class f extends d8 {
         }
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public Typeface b(Context context, o0.h[] hVarArr, int i10) {
         File file;
         String readlink;

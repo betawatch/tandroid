@@ -1,32 +1,33 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class zw extends org.telegram.ui.Components.nj0 {
-    public final /* synthetic */ int f0 = 0;
-    public final /* synthetic */ Object g0;
+public final class zw extends org.telegram.ui.Components.ot {
+    public final /* synthetic */ xy E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zw(fg1 fg1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
-        super(spannableStringBuilder, spannableStringBuilder2);
-        this.g0 = fg1Var;
+    public zw(uy uyVar, xy xyVar) {
+        super(uyVar);
+        this.E = xyVar;
     }
 
-    @Override // org.telegram.ui.Components.nj0
-    public final float d() {
-        switch (this.f0) {
-            case 0:
-                return ((sy) this.g0).a.getViewOffset();
-            default:
-                return ((fg1) this.g0).N.d3;
+    @Override // s4.e1
+    public final void y() {
+        xy xyVar = this.E;
+        if (xyVar.c.L0() == 0) {
+            View m10 = xyVar.c.m(0);
+            if (m10 != null) {
+                m10.invalidate();
+            }
+            if (xyVar.v == 2) {
+                xyVar.v = 1;
+            }
+            ex exVar = xyVar.n;
+            if (exVar != null) {
+                exVar.b();
+            }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zw(String str, String str2, sy syVar) {
-        super(str, str2);
-        this.g0 = syVar;
     }
 }

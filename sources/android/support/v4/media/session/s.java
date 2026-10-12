@@ -13,7 +13,7 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class s {
     q mCallbackHandler;
@@ -27,10 +27,10 @@ public abstract class s {
             this.mMediaPlayPausePendingOnHandler = false;
             handler.removeMessages(1);
             PlaybackStateCompat d = tVar.d();
-            long j3 = d == null ? 0L : d.e;
+            long j10 = d == null ? 0L : d.e;
             boolean z10 = d != null && d.a == 3;
-            boolean z11 = (516 & j3) != 0;
-            boolean z12 = (j3 & 514) != 0;
+            boolean z11 = (516 & j10) != 0;
+            boolean z12 = (j10 & 514) != 0;
             if (z10 && z12) {
                 onPause();
             } else {
@@ -141,7 +141,7 @@ public abstract class s {
     public void onRemoveQueueItemAt(int i10) {
     }
 
-    public void onSeekTo(long j3) {
+    public void onSeekTo(long j10) {
     }
 
     public void onSetCaptioningEnabled(boolean z10) {
@@ -156,7 +156,7 @@ public abstract class s {
     public void onSetShuffleMode(int i10) {
     }
 
-    public void onSkipToQueueItem(long j3) {
+    public void onSkipToQueueItem(long j10) {
     }
 
     public void onCustomAction(String str, Bundle bundle) {

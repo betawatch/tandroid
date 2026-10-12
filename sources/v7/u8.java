@@ -1,44 +1,33 @@
 package v7;
 
-import android.graphics.Bitmap;
-import android.os.Parcel;
-import android.os.RemoteException;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.tm0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class u8 {
-    public static s7.e a;
-
-    public static xa.d a(Bitmap bitmap) {
-        n6.l.i(bitmap, "image must not be null");
-        try {
-            s7.e eVar = a;
-            n6.l.i(eVar, "IBitmapDescriptorFactory is not initialized");
-            s7.c cVar = (s7.c) eVar;
-            Parcel N0 = cVar.N0();
-            s7.b.b(N0, bitmap);
-            Parcel M0 = cVar.M0(N0, 6);
-            x6.a K0 = x6.b.K0(M0.readStrongBinder());
-            M0.recycle();
-            return new xa.d(K0);
-        } catch (RemoteException e7) {
-            throw new ae.x(e7);
-        }
+    public static void a(tm0 tm0Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        tm0Var.q(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, c6Var), c6Var != null ? c6Var.a() : org.telegram.ui.ActionBar.g6.I.q());
     }
 
-    public static xa.d b(int i10) {
-        try {
-            s7.e eVar = a;
-            n6.l.i(eVar, "IBitmapDescriptorFactory is not initialized");
-            s7.c cVar = (s7.c) eVar;
-            Parcel N0 = cVar.N0();
-            N0.writeInt(i10);
-            Parcel M0 = cVar.M0(N0, 1);
-            x6.a K0 = x6.b.K0(M0.readStrongBinder());
-            M0.recycle();
-            return new xa.d(K0);
-        } catch (RemoteException e7) {
-            throw new ae.x(e7);
+    public static int b(ji.a aVar) {
+        if (aVar == null) {
+            return 0;
         }
+        return c(aVar) + (Math.max(0, aVar.c) > 0 ? AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r4, 1, 24, 28)) : 0);
+    }
+
+    public static int c(ji.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r3, 1, 16, 12));
+    }
+
+    public static int d(ji.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r3, 1, 16, 8));
     }
 }

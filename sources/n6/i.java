@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class i {
-    public static final mf.g b = new mf.g(1, "LibraryVersion", "");
+    public static final c5.a b = new c5.a("LibraryVersion", "");
     public static final i c = new i();
     public final ConcurrentHashMap a = new ConcurrentHashMap();
 
@@ -19,10 +19,10 @@ public final class i {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final String a(String str) {
-        IOException e7;
+        IOException e;
         String str2;
         InputStream inputStream;
-        mf.g gVar = b;
+        c5.a aVar = b;
         l.g(str, "Please provide a valid libraryName");
         ConcurrentHashMap concurrentHashMap = this.a;
         if (concurrentHashMap.containsKey(str)) {
@@ -36,8 +36,8 @@ public final class i {
         try {
             try {
                 inputStream = i.class.getResourceAsStream("/" + str + ".properties");
-            } catch (IOException e10) {
-                e7 = e10;
+            } catch (IOException e7) {
+                e = e7;
                 str2 = null;
             }
         } catch (Throwable th2) {
@@ -48,8 +48,8 @@ public final class i {
                 properties.load(inputStream);
                 str3 = properties.getProperty("version", null);
                 String str4 = str + " version is " + str3;
-                if (Log.isLoggable(gVar.a, 2)) {
-                    String str5 = gVar.b;
+                if (Log.isLoggable(aVar.b, 2)) {
+                    String str5 = aVar.c;
                     if (str5 != null) {
                         str4 = str5.concat(str4);
                     }
@@ -57,25 +57,25 @@ public final class i {
                 }
             } else {
                 String str6 = "Failed to get app version for libraryName: " + str;
-                if (Log.isLoggable(gVar.a, 5)) {
-                    String str7 = gVar.b;
+                if (Log.isLoggable(aVar.b, 5)) {
+                    String str7 = aVar.c;
                     if (str7 != null) {
                         str6 = str7.concat(str6);
                     }
                     Log.w("LibraryVersion", str6);
                 }
             }
-        } catch (IOException e11) {
-            e7 = e11;
+        } catch (IOException e10) {
+            e = e10;
             inputStream2 = inputStream;
             str2 = null;
             String str8 = "Failed to get app version for libraryName: " + str;
-            if (Log.isLoggable(gVar.a, 6)) {
-                String str9 = gVar.b;
+            if (Log.isLoggable(aVar.b, 6)) {
+                String str9 = aVar.c;
                 if (str9 != null) {
                     str8 = str9.concat(str8);
                 }
-                Log.e("LibraryVersion", str8, e7);
+                Log.e("LibraryVersion", str8, e);
             }
             InputStream inputStream3 = inputStream2;
             str3 = str2;
@@ -98,8 +98,8 @@ public final class i {
             u6.b.a(inputStream);
         }
         if (str3 == null) {
-            if (Log.isLoggable(gVar.a, 3)) {
-                String str10 = gVar.b;
+            if (Log.isLoggable(aVar.b, 3)) {
+                String str10 = aVar.c;
                 Log.d("LibraryVersion", str10 != null ? str10.concat(".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used") : ".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used");
             }
             str3 = "UNKNOWN";

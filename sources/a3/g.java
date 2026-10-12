@@ -2,7 +2,7 @@ package a3;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g {
     public long a;
@@ -18,23 +18,23 @@ public final class g {
         return this.d > 15 && this.h == 0;
     }
 
-    public final void b(long j3) {
-        long j10 = this.d;
-        if (j10 == 0) {
-            this.a = j3;
-        } else if (j10 == 1) {
-            long j11 = j3 - this.a;
-            this.b = j11;
-            this.f = j11;
+    public final void b(long j10) {
+        long j11 = this.d;
+        if (j11 == 0) {
+            this.a = j10;
+        } else if (j11 == 1) {
+            long j12 = j10 - this.a;
+            this.b = j12;
+            this.f = j12;
             this.e = 1L;
         } else {
-            long j12 = j3 - this.c;
-            int i10 = (int) (j10 % 15);
-            long abs = Math.abs(j12 - this.b);
+            long j13 = j10 - this.c;
+            int i10 = (int) (j11 % 15);
+            long abs = Math.abs(j13 - this.b);
             boolean[] zArr = this.g;
             if (abs <= 1000000) {
                 this.e++;
-                this.f += j12;
+                this.f += j13;
                 if (zArr[i10]) {
                     zArr[i10] = false;
                     this.h--;
@@ -45,7 +45,7 @@ public final class g {
             }
         }
         this.d++;
-        this.c = j3;
+        this.c = j10;
     }
 
     public final void c() {

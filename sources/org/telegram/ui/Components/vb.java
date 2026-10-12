@@ -1,27 +1,9 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vb implements o1.g {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xb b;
-    public final /* synthetic */ q0.a c;
+public interface vb {
+    void a0(wb wbVar, hb hbVar, qg qgVar, am amVar);
 
-    public /* synthetic */ vb(q0.a aVar, xb xbVar, int i10) {
-        this.a = i10;
-        this.c = aVar;
-        this.b = xbVar;
-    }
-
-    @Override // o1.g
-    public final void a(o1.h hVar, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                ((jb) this.c).accept(Float.valueOf(this.b.getTranslationY()));
-                break;
-            default:
-                ((dm) this.c).accept(Float.valueOf(this.b.getTranslationY()));
-                break;
-        }
-    }
+    void d(wb wbVar, hb hbVar, fb fbVar, ib ibVar);
 }

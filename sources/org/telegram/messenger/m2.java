@@ -1,33 +1,89 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class m2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FileLoadOperation b;
-    public final /* synthetic */ int c;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.util.Pair;
+import java.util.List;
+import java.util.Random;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.cd0;
+import org.telegram.ui.Components.nu;
+import org.telegram.ui.co;
+import org.telegram.ui.yn;
 
-    public /* synthetic */ m2(FileLoadOperation fileLoadOperation, int i10, int i11) {
-        this.a = i11;
-        this.b = fileLoadOperation;
-        this.c = i10;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class m2 implements org.telegram.ui.ActionBar.z1, ResultCallback {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ m2(FactCheckController factCheckController, nu nuVar, int i10, MessageObject messageObject, boolean z10) {
+        this.c = factCheckController;
+        this.d = nuVar;
+        this.b = i10;
+        this.e = messageObject;
+        this.a = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$onFail$24(this.c);
-                break;
-            case 1:
-                this.b.lambda$processRequestResult$23(this.c);
-                break;
-            case 2:
-                this.b.lambda$start$9(this.c);
-                break;
-            default:
-                this.b.lambda$startDownloadRequest$31(this.c);
-                break;
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        ((FactCheckController) this.c).lambda$openFactCheckEditor$8((nu) this.d, this.b, (MessageObject) this.e, this.a, a2Var, i10);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public void onComplete(Object obj) {
+        co coVar = (co) this.c;
+        org.telegram.ui.ActionBar.b4 b4Var = (org.telegram.ui.ActionBar.b4) this.d;
+        cd0 cd0Var = (cd0) this.e;
+        Pair pair = (Pair) obj;
+        if (pair == null) {
+            return;
         }
+        long longValue = ((Long) pair.first).longValue();
+        Bitmap bitmap = ((eg.a) pair.second).b;
+        org.telegram.ui.ActionBar.b4 b4Var2 = coVar.f;
+        if (b4Var2 == null || longValue != b4Var2.i(coVar.G ? 1 : 0) || bitmap == null) {
+            return;
+        }
+        ValueAnimator valueAnimator = coVar.r;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        int i10 = b4Var.k(this.a ? 1 : 0).settings.intensity;
+        List list = ((eg.a) pair.second).c;
+        cd0Var.R = list;
+        long j10 = coVar.V.Ra;
+        if (list != null) {
+            cd0Var.S = new Random(j10).nextInt(cd0Var.R.size());
+        }
+        cd0Var.t(bitmap, i10);
+        cd0Var.u(this.b);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        coVar.r = ofFloat;
+        ofFloat.addUpdateListener(new yn(cd0Var, 2));
+        coVar.r.setDuration(250L);
+        coVar.r.start();
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
+    }
+
+    public /* synthetic */ m2(co coVar, org.telegram.ui.ActionBar.b4 b4Var, boolean z10, cd0 cd0Var, int i10) {
+        this.c = coVar;
+        this.d = b4Var;
+        this.a = z10;
+        this.e = cd0Var;
+        this.b = i10;
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
+        org.telegram.tgnet.l.b(this, tL_error);
     }
 }

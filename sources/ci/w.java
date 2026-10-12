@@ -1,61 +1,51 @@
 package ci;
 
 import android.content.Context;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.am0;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.g6;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class w extends s4.i0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ w2 d;
-    public final /* synthetic */ y e;
+public final class w extends LinearLayout {
+    public final TextView a;
+    public final TextView b;
+    public boolean c;
 
-    public w(y yVar, Context context, w2 w2Var) {
-        this.e = yVar;
-        this.c = context;
-        this.d = w2Var;
+    public w(Context context) {
+        super(context);
+        setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+        setOrientation(1);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setTextColor(g6.x0(null, g6.j5, false));
+        textView.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(textView, a6.t(-1, -2, 51, 0, 7, 0, 0));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 13.0f);
+        textView2.setTextColor(g6.x0(null, g6.q5, false));
+        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(textView2, a6.t(-1, -2, 51, 0, 4, 0, 0));
     }
 
-    @Override // s4.i0
-    public final int h() {
-        return t.a().size();
-    }
-
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
-        x xVar = (x) d1Var.a;
-        t tVar = (t) t.a().get(i10);
-        boolean z10 = i10 == xVar.s;
-        xVar.setDrawable(new u(tVar, false));
-        xVar.b(tVar.equals(this.e.b), z10);
-        xVar.s = i10;
-    }
-
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        x xVar = new x(this.c);
-        xVar.setLayoutParams(new s4.q0(AndroidUtilities.dp(46.0f), AndroidUtilities.dp(56.0f)));
-        xVar.setBackground(org.telegram.ui.ActionBar.i6.g0(553648127, 1, -1));
-        return new am0(xVar);
-    }
-
-    @Override // s4.i0
-    public final void y(s4.d1 d1Var) {
-        x xVar = (x) d1Var.a;
-        this.d.a(xVar);
-        int i10 = xVar.s;
-        if (i10 < 0 || i10 >= t.a().size()) {
-            return;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.c) {
+            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), g6.k0);
         }
-        t tVar = (t) t.a().get(xVar.s);
-        xVar.setDrawable(new u(tVar, false));
-        xVar.b(tVar.equals(this.e.b), false);
     }
 
-    @Override // s4.i0
-    public final void z(s4.d1 d1Var) {
-        this.d.d.remove((x) d1Var.a);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 }

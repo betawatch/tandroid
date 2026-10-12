@@ -1,13 +1,13 @@
 package h2;
 
-import b2.l0;
-import b2.s;
+import b2.q0;
+import b2.x;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class h extends a {
-    public s a;
+    public x a;
     public final d b = new d();
     public ByteBuffer c;
     public boolean d;
@@ -17,7 +17,7 @@ public class h extends a {
     public final int n;
 
     static {
-        l0.a("media3.decoder");
+        q0.a("media3.decoder");
     }
 
     public h(int i10, int i11) {
@@ -60,17 +60,6 @@ public class h extends a {
         this.c = a2;
     }
 
-    public final void c() {
-        ByteBuffer byteBuffer = this.c;
-        if (byteBuffer != null) {
-            byteBuffer.flip();
-        }
-        ByteBuffer byteBuffer2 = this.f;
-        if (byteBuffer2 != null) {
-            byteBuffer2.flip();
-        }
-    }
-
     @Override // h2.a
     public void clear() {
         super.clear();
@@ -83,5 +72,16 @@ public class h extends a {
             byteBuffer2.clear();
         }
         this.d = false;
+    }
+
+    public final void e() {
+        ByteBuffer byteBuffer = this.c;
+        if (byteBuffer != null) {
+            byteBuffer.flip();
+        }
+        ByteBuffer byteBuffer2 = this.f;
+        if (byteBuffer2 != null) {
+            byteBuffer2.flip();
+        }
     }
 }

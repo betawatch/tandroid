@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h1 extends f5 {
     private static final i5 zzb = new e1();
@@ -12,7 +12,7 @@ public final class h1 extends f5 {
     private int zze;
     private l1 zzf;
     private x2 zzg;
-    private k5 zzh = f6.d;
+    private k5 zzh = g6.d;
     private h5 zzi = g5.d;
 
     static {
@@ -57,7 +57,7 @@ public final class h1 extends f5 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new g6(zzd, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001ဉ\u0000\u0002ဉ\u0001\u0003\u001b\u0004ࠞ", new Object[]{"zze", "zzf", "zzg", "zzh", v2.class, "zzi", z0.C});
+            return new h6(zzd, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001ဉ\u0000\u0002ဉ\u0001\u0003\u001b\u0004ࠞ", new Object[]{"zze", "zzf", "zzg", "zzh", v2.class, "zzi", z0.C});
         }
         if (i11 == 3) {
             return new h1();

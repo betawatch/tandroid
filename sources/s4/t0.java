@@ -1,13 +1,33 @@
 package s4;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class t0 {
-    public void a(RecyclerView recyclerView, int i10) {
+public final class t0 {
+    public final SparseArray a = new SparseArray();
+    public int b = 0;
+
+    public final void a() {
+        int i10 = 0;
+        while (true) {
+            SparseArray sparseArray = this.a;
+            if (i10 >= sparseArray.size()) {
+                return;
+            }
+            ((s0) sparseArray.valueAt(i10)).a.clear();
+            i10++;
+        }
     }
 
-    public void b(RecyclerView recyclerView, int i10, int i11) {
+    public final s0 b(int i10) {
+        SparseArray sparseArray = this.a;
+        s0 s0Var = (s0) sparseArray.get(i10);
+        if (s0Var != null) {
+            return s0Var;
+        }
+        s0 s0Var2 = new s0();
+        sparseArray.put(i10, s0Var2);
+        return s0Var2;
     }
 }

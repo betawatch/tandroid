@@ -11,9 +11,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ls0;
+import org.telegram.ui.cs0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class m extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ o a;
@@ -29,15 +29,15 @@ public final class m extends org.telegram.ui.ActionBar.j {
         o oVar = this.a;
         HashSet hashSet = oVar.w;
         if (i10 == -1) {
-            kVar = ((org.telegram.ui.ActionBar.n2) oVar).actionBar;
+            kVar = ((org.telegram.ui.ActionBar.m2) oVar).actionBar;
             if (!kVar.t()) {
                 oVar.finishFragment();
                 return;
             }
-            kVar2 = ((org.telegram.ui.ActionBar.n2) oVar).actionBar;
+            kVar2 = ((org.telegram.ui.ActionBar.m2) oVar).actionBar;
             kVar2.s();
             hashSet.clear();
-            AndroidUtilities.forEachViews((RecyclerView) oVar.a, (Utilities.Callback<View>) new ai.i(22));
+            AndroidUtilities.forEachViews((RecyclerView) oVar.a, (Utilities.Callback<View>) new bi.f(22));
             return;
         }
         if (i10 != R.id.menu_delete) {
@@ -99,7 +99,7 @@ public final class m extends org.telegram.ui.ActionBar.j {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(oVar.getParentActivity(), 0, oVar.getResourceProvider());
         alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteOptionsTitle", hashSet3.size(), new Object[0]);
         alertDialog$Builder.a.T = LocaleController.getString(hashSet3.size() == 1 ? "AreYouSureUnsaveSingleMessage" : "AreYouSureUnsaveFewMessages");
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ls0(26, oVar, hashSet3));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new cs0(29, oVar, hashSet3));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         alertDialog$Builder.d(-1);
         alertDialog$Builder.o();

@@ -1,24 +1,70 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class vk extends org.telegram.ui.Components.tl0 {
-    public final /* synthetic */ zn l;
+public final class vk extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fo b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vk(zn znVar, wj wjVar, zj zjVar) {
-        super(wjVar, zjVar);
-        this.l = znVar;
+    public /* synthetic */ vk(fo foVar, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = foVar;
     }
 
-    public final void e(int i10) {
-        if (this.l.Qa) {
-            if (i10 == 0) {
-                i10 = 1;
-            } else if (i10 == 1) {
-                i10 = 0;
-            }
+    @Override // android.view.ViewGroup
+    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                fo foVar = this.b;
+                if (view == foVar.U2) {
+                    ImageView imageView = foVar.S2;
+                    int i14 = (imageView == null || imageView.getVisibility() == 8) ? 18 : 66;
+                    ImageView imageView2 = foVar.T2;
+                    if (imageView2 != null && imageView2.getVisibility() != 8) {
+                        i14 += 48;
+                    }
+                    ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).leftMargin = AndroidUtilities.dp(i14);
+                }
+                super.measureChildWithMargins(view, i10, i11, i12, i13);
+                break;
+            default:
+                super.measureChildWithMargins(view, i10, i11, i12, i13);
+                break;
         }
-        this.b = i10;
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        switch (this.a) {
+            case 2:
+                super.setTranslationY(f7);
+                this.b.X0.invalidate();
+                break;
+            default:
+                super.setTranslationY(f7);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.a) {
+            case 0:
+                super.setVisibility(i10);
+                this.b.Bc.i(2, i10 == 0, getMeasuredWidth() > 0);
+                break;
+            default:
+                super.setVisibility(i10);
+                break;
+        }
     }
 }

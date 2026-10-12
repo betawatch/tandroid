@@ -3,7 +3,7 @@ package r1;
 import android.system.Os;
 import java.io.FileDescriptor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class h {
     public static void a(FileDescriptor fileDescriptor) {
@@ -14,7 +14,7 @@ public abstract class h {
         return Os.dup(fileDescriptor);
     }
 
-    public static long c(FileDescriptor fileDescriptor, long j3, int i10) {
-        return Os.lseek(fileDescriptor, j3, i10);
+    public static long c(FileDescriptor fileDescriptor, long j10, int i10) {
+        return Os.lseek(fileDescriptor, j10, i10);
     }
 }

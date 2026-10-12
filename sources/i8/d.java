@@ -2,37 +2,45 @@ package i8;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-import com.google.android.gms.internal.cast.p;
-import com.google.mlkit.vision.segmentation.subject.internal.zzd;
-import java.util.concurrent.Executor;
-import m.q3;
+import kotlin.jvm.internal.i;
 import n6.l;
-import n6.t;
-import qb.m;
-import z7.ce;
-import z7.fb;
-import z7.gb;
-import z7.hb;
-import z7.wf;
-import z7.yf;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class d {
-    public static zzd a(ac.e eVar) {
-        bc.b bVar = (bc.b) qb.g.c().a(bc.b.class);
-        bc.f fVar = (bc.f) bVar.a.O0(eVar);
-        Executor executor = (Executor) bVar.b.a.get();
-        wf b10 = yf.b();
-        zzd zzdVar = new zzd(fVar, executor);
-        q3 q3Var = new q3();
-        q3Var.c = fb.b;
-        t tVar = new t(29);
-        tVar.c = eVar.a();
-        tVar.b = gb.b;
-        q3Var.d = new ce(tVar);
-        m.a.execute(new p(b10, new a5.a(q3Var, 1), hb.N4, b10.c(), 8));
-        return zzdVar;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x005d, code lost:
+    
+        if (r8 > 4611686018427387903L) goto L14;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final long a(int i10, ae.c unit) {
+        i.e(unit, "unit");
+        if (unit.compareTo(ae.c.d) <= 0) {
+            long a2 = l9.b.a(i10, unit, ae.c.b) << 1;
+            int i11 = ae.a.d;
+            int i12 = ae.b.a;
+            return a2;
+        }
+        long j10 = i10;
+        ae.c cVar = ae.c.b;
+        long a10 = l9.b.a(4611686018426999999L, cVar, unit);
+        if ((-a10) <= j10 && j10 <= a10) {
+            long a11 = l9.b.a(j10, unit, cVar) << 1;
+            int i13 = ae.a.d;
+            int i14 = ae.b.a;
+            return a11;
+        }
+        ae.c targetUnit = ae.c.c;
+        i.e(targetUnit, "targetUnit");
+        long convert = targetUnit.a.convert(j10, unit.a);
+        long j11 = convert >= -4611686018427387903L ? 4611686018427387903L : -4611686018427387903L;
+        convert = j11;
+        long j12 = (convert << 1) + 1;
+        int i15 = ae.a.d;
+        int i16 = ae.b.a;
+        return j12;
     }
 
     public static Parcelable b(String str, Bundle bundle) {

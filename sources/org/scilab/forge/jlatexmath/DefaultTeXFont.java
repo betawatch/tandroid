@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.d0;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class DefaultTeXFont implements TeXFont {
     protected static final int BOT = 3;
@@ -78,11 +78,11 @@ public class DefaultTeXFont implements TeXFont {
     }
 
     public static void addAlphabet(Character.UnicodeBlock unicodeBlock, String str) {
-        String i10 = c1.i("fonts/", str, "/language_", str, ".xml");
-        String i11 = c1.i("fonts/", str, "/symbols_", str, ".xml");
-        String i12 = c1.i("fonts/", str, "/mappings_", str, ".xml");
+        String j10 = d0.j("fonts/", str, "/language_", str, ".xml");
+        String j11 = d0.j("fonts/", str, "/symbols_", str, ".xml");
+        String j12 = d0.j("fonts/", str, "/mappings_", str, ".xml");
         try {
-            addAlphabet(unicodeBlock, JLatexMathAndroid.getResourceAsStream(i10), i10, JLatexMathAndroid.getResourceAsStream(i11), i11, JLatexMathAndroid.getResourceAsStream(i12), i12);
+            addAlphabet(unicodeBlock, JLatexMathAndroid.getResourceAsStream(j10), j10, JLatexMathAndroid.getResourceAsStream(j11), j11, JLatexMathAndroid.getResourceAsStream(j12), j12);
         } catch (FontAlreadyLoadedException unused) {
         }
     }
@@ -90,8 +90,8 @@ public class DefaultTeXFont implements TeXFont {
     public static void addTeXFontDescription(String str) {
         try {
             addTeXFontDescription(new FileInputStream(str), str);
-        } catch (FileNotFoundException e7) {
-            throw new ResourceParseException(str, e7);
+        } catch (FileNotFoundException e) {
+            throw new ResourceParseException(str, e);
         }
     }
 
@@ -537,8 +537,8 @@ public class DefaultTeXFont implements TeXFont {
         if (alphabetRegistration != null) {
             try {
                 addAlphabet(alphabetRegistration.getPackage(), alphabetRegistration.getUnicodeBlock(), alphabetRegistration.getTeXFontFileName());
-            } catch (AlphabetRegistrationException e7) {
-                System.err.println(e7.toString());
+            } catch (AlphabetRegistrationException e) {
+                System.err.println(e.toString());
             } catch (FontAlreadyLoadedException unused) {
             }
         }

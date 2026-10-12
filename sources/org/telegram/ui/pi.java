@@ -1,82 +1,71 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import android.view.View;
-import org.telegram.messenger.MessageObject;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class pi implements org.telegram.ui.Components.hm0 {
-    public final /* synthetic */ zn a;
+public final class pi implements View.OnClickListener {
+    public final /* synthetic */ li0 a;
+    public final /* synthetic */ org.telegram.ui.Components.mm0 b;
+    public final /* synthetic */ LinearLayout c;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ fo f;
 
-    public pi(zn znVar) {
-        this.a = znVar;
+    public pi(fo foVar, li0 li0Var, org.telegram.ui.Components.mm0 mm0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.f = foVar;
+        this.a = li0Var;
+        this.b = mm0Var;
+        this.c = linearLayout;
+        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.e = iArr;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
-    @Override // org.telegram.ui.Components.hm0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean c(float f7, float f10, int i10, View view) {
-        boolean z10;
-        boolean z11;
-        org.telegram.ui.ActionBar.k kVar;
-        View view2;
-        boolean z12;
-        zn znVar = this.a;
-        tm tmVar = znVar.c9;
-        if ((tmVar == null || !tmVar.z) && !znVar.g9()) {
-            z10 = ((org.telegram.ui.ActionBar.n2) znVar).inPreviewMode;
-            if (!z10 && !znVar.Pa) {
-                znVar.D4 = true;
-                if (view instanceof org.telegram.ui.Cells.w0) {
-                    org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
-                    MessageObject messageObject = w0Var.getMessageObject();
-                    if (messageObject != null) {
-                        if (!(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && w0Var.getMessageObject().type != 21 && !w0Var.getMessageObject().isWallpaperAction() && w0Var.getMessageObject().type != 30) {
-                            z11 = false;
-                            kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
-                            if (!kVar.t() || (znVar.F9() && !z11)) {
-                                view2 = view;
-                                zn.c2(znVar, view2, view2 instanceof org.telegram.ui.Cells.u1 ? !((org.telegram.ui.Cells.u1) view2).i3(f7) : false, f7, f10);
-                                z12 = true;
-                            } else {
-                                view2 = view;
-                                z12 = znVar.L7(view2, false, true, f7, f10, true, true, false);
-                            }
-                            if (view2 instanceof org.telegram.ui.Cells.u1) {
-                                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view2;
-                                if (u1Var.getMessageObject() != null && u1Var.getMessageObject().type != 27) {
-                                    zn.d2(znVar, i10);
-                                    return true;
-                                }
-                            }
-                            return z12;
-                        }
-                    }
-                }
-                z11 = true;
-                kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
-                if (kVar.t()) {
-                }
-                view2 = view;
-                zn.c2(znVar, view2, view2 instanceof org.telegram.ui.Cells.u1 ? !((org.telegram.ui.Cells.u1) view2).i3(f7) : false, f7, f10);
-                z12 = true;
-                if (view2 instanceof org.telegram.ui.Cells.u1) {
-                }
-                return z12;
-            }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        li0 li0Var = this.a;
+        ArrayList arrayList = li0Var.b;
+        ArrayList arrayList2 = li0Var.c;
+        fo foVar = this.f;
+        if (foVar.Q8 == null || arrayList2.isEmpty()) {
+            return;
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.hm0
-    public final /* synthetic */ void h() {
-    }
-
-    @Override // org.telegram.ui.Components.hm0
-    public final /* synthetic */ void q(float f7) {
+        if (arrayList2.size() == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            foVar.presentFragment(new ProfileActivity(bundle, null));
+            foVar.D7(true);
+            return;
+        }
+        if (SharedConfig.messageSeenHintCount > 0 && foVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.sc t10 = new org.telegram.ui.Components.zc(org.telegram.ui.Components.nb.a(foVar.getParentActivity()), foVar.ea).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            foVar.n1 = t10;
+            t10.j = 4000;
+            t10.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        }
+        org.telegram.ui.Components.mm0 mm0Var = this.b;
+        mm0Var.requestLayout();
+        this.c.requestLayout();
+        mm0Var.getAdapter().l();
+        this.d.getSwipeBack().e(this.e[0]);
     }
 }

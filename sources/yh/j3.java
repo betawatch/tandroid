@@ -1,36 +1,47 @@
 package yh;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.cd;
-import org.telegram.ui.Components.dd;
-import org.telegram.ui.bi0;
+import org.telegram.messenger.R;
+import org.telegram.messenger.yh;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.z9;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class j3 extends cd {
-    public final org.telegram.ui.ActionBar.e6 P;
-    public String Q;
-    public int R;
+public final class j3 extends LinearLayout {
+    public final TextView a;
 
-    public j3(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public j3(Context context, c6 c6Var) {
         super(context);
-        this.P = e6Var;
-        setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.G6, e6Var));
-        setTextSize(1, 14.0f);
-        setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
+        setOrientation(1);
+        z9 z9Var = new z9(context);
+        z9Var.setImageDrawable(new yj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
+        addView(z9Var, a6.t(64, 64, 17, 0, 32, 0, 0));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        yh.n(g6.A6, c6Var, textView, 1, 14.0f);
+        textView.setGravity(17);
+        addView(textView, a6.t(-1, -2, 7, 12, 12, 12, 24));
     }
 
-    public final void e(String str, int i10, w0 w0Var) {
-        if (str == this.Q && this.R == i10) {
-            return;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+            size = AndroidUtilities.dp(250.0f);
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Emoji.replaceEmoji(str, getPaint().getFontMetricsInt(), false));
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) dd.b(ei.l.H0(i10), w0Var != null ? new bi0(this, w0Var, i10, 22) : null, this.P, null));
-        setText(spannableStringBuilder);
-        this.Q = str;
-        this.R = i10;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
+    }
+
+    public void set(CharSequence charSequence) {
+        this.a.setText(charSequence);
     }
 }

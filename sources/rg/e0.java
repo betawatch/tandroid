@@ -1,28 +1,66 @@
 package rg;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import org.telegram.ui.hu0;
+import org.telegram.ui.or0;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class e0 {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final int e;
-    public boolean f;
+public final class e0 implements qg.b1 {
+    public final /* synthetic */ or0 a;
+    public final /* synthetic */ hu0 b;
 
-    public e0(int i10, int i11, int i12, String str, String str2) {
-        this.a = i10;
-        this.b = i11;
-        this.c = str;
-        this.d = str2;
-        this.e = i12;
+    public e0(hu0 hu0Var, or0 or0Var) {
+        this.b = hu0Var;
+        this.a = or0Var;
     }
 
-    public static e0 a(int i10, int i11) {
-        return new e0(i10, i11, -1, null, null);
+    @Override // qg.b1
+    public final void a() {
+        this.a.run();
     }
 
-    public static e0 b(int i10, int i11, String str) {
-        return new e0(i10, -1, i11, null, str);
+    @Override // qg.b1
+    public final void b() {
+        f0 f0Var = this.b.X0;
+        if (f0Var != null) {
+            f0Var.invalidate();
+        }
+    }
+
+    @Override // qg.b1
+    public final void c() {
+        hu0 hu0Var = this.b;
+        if (hu0Var.k1) {
+            hu0Var.k1 = false;
+        } else {
+            hu0Var.t1.b(1);
+            hu0Var.o((qg.m) qg.m.a.get(0));
+        }
+    }
+
+    @Override // qg.b1
+    public final boolean d() {
+        hu0 hu0Var = this.b;
+        boolean z10 = hu0Var.S0 == null;
+        if (!z10) {
+            hu0Var.s0(null, true);
+        }
+        return z10;
+    }
+
+    @Override // qg.b1
+    public final void e() {
+        hu0 hu0Var = this.b;
+        hu0Var.F0.a.f();
+        hu0Var.l1.setViewHidden(false);
+    }
+
+    @Override // qg.b1
+    public final void f() {
+        hu0 hu0Var = this.b;
+        if (hu0Var.S0 != null) {
+            hu0Var.s0(null, true);
+        }
+        hu0Var.l1.setViewHidden(true);
     }
 }

@@ -1,80 +1,44 @@
 package androidx.biometric;
 
-import android.os.Looper;
-import androidx.lifecycle.p0;
-import java.util.concurrent.Executor;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class x extends p0 {
-    public androidx.lifecycle.z A;
-    public Executor d;
-    public v7.l e;
-    public j6.l f;
-    public t g;
-    public aa.a h;
-    public pf.b i;
-    public w j;
-    public String k;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public androidx.lifecycle.z r;
-    public androidx.lifecycle.z s;
-    public androidx.lifecycle.z t;
-    public androidx.lifecycle.z u;
-    public androidx.lifecycle.z v;
-    public androidx.lifecycle.z x;
-    public androidx.lifecycle.z z;
-    public int l = 0;
-    public boolean w = true;
-    public int y = 0;
+public final class x extends d {
+    public final WeakReference a;
 
-    public static void h(androidx.lifecycle.z zVar, Object obj) {
-        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
-            zVar.j(obj);
-        } else {
-            zVar.h(obj);
-        }
+    public x(z zVar) {
+        this.a = new WeakReference(zVar);
     }
 
-    public final int c() {
-        j6.l lVar = this.f;
-        if (lVar == null) {
-            return 0;
+    @Override // androidx.biometric.d
+    public final void a(int i10, CharSequence charSequence) {
+        WeakReference weakReference = this.a;
+        if (weakReference.get() == null || ((z) weakReference.get()).o || !((z) weakReference.get()).n) {
+            return;
         }
-        t tVar = this.g;
-        int i10 = lVar.a;
-        return i10 != 0 ? i10 : tVar != null ? 15 : 255;
+        ((z) weakReference.get()).d(new f(i10, charSequence));
     }
 
-    public final void d(e eVar) {
-        if (this.s == null) {
-            this.s = new androidx.lifecycle.z();
+    @Override // androidx.biometric.d
+    public final void b(u uVar) {
+        WeakReference weakReference = this.a;
+        if (weakReference.get() == null || !((z) weakReference.get()).n) {
+            return;
         }
-        h(this.s, eVar);
-    }
-
-    public final void e(CharSequence charSequence) {
-        if (this.A == null) {
-            this.A = new androidx.lifecycle.z();
+        int i10 = -1;
+        if (uVar.b == -1) {
+            v vVar = uVar.a;
+            int c10 = ((z) weakReference.get()).c();
+            if ((c10 & 32767) != 0 && !v7.k.a(c10)) {
+                i10 = 2;
+            }
+            uVar = new u(vVar, i10);
         }
-        h(this.A, charSequence);
-    }
-
-    public final void f(int i10) {
-        if (this.z == null) {
-            this.z = new androidx.lifecycle.z();
+        z zVar = (z) weakReference.get();
+        if (zVar.r == null) {
+            zVar.r = new androidx.lifecycle.z();
         }
-        h(this.z, Integer.valueOf(i10));
-    }
-
-    public final void g(boolean z10) {
-        if (this.v == null) {
-            this.v = new androidx.lifecycle.z();
-        }
-        h(this.v, Boolean.valueOf(z10));
+        z.h(zVar.r, uVar);
     }
 }

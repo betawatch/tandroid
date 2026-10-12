@@ -1,18 +1,42 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class jf1 extends s4.z {
-    public final /* synthetic */ fg1 S;
+public final /* synthetic */ class jf1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ lg1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jf1(fg1 fg1Var, eg1 eg1Var) {
-        super(eg1Var);
-        this.S = fg1Var;
+    public /* synthetic */ jf1(lg1 lg1Var, int i10) {
+        this.a = i10;
+        this.b = lg1Var;
     }
 
-    @Override // s4.z
-    public final boolean q() {
-        return this.S.x > 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                lg1 lg1Var = this.b;
+                lg1Var.x0();
+                lg1Var.B0();
+                break;
+            case 1:
+                this.b.x0();
+                break;
+            case 2:
+                this.b.O0(true);
+                break;
+            case 3:
+                this.b.finishPreviewFragment();
+                break;
+            case 4:
+                lg1 lg1Var2 = this.b;
+                lg1Var2.A0 = null;
+                lg1Var2.U0(true, false);
+                break;
+            default:
+                lg1 lg1Var3 = this.b;
+                lg1Var3.N.postOnAnimation(new jf1(lg1Var3, 1));
+                break;
+        }
     }
 }

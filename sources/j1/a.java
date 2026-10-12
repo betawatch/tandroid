@@ -5,45 +5,45 @@ import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.WeakHashMap;
-import l2.f;
+import ji.w4;
 import org.telegram.tgnet.TLObject;
-import r0.i0;
-import s0.d;
+import r0.j0;
+import s0.c;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a extends f {
+public final class a extends w4 {
     public final /* synthetic */ b c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(b bVar) {
-        super(22);
+        super(25);
         this.c = bVar;
     }
 
-    @Override // l2.f
-    public final d o(int i10) {
-        return new d(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
+    @Override // ji.w4
+    public final c I(int i10) {
+        return new c(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
     }
 
-    @Override // l2.f
-    public final d p(int i10) {
+    @Override // ji.w4
+    public final c P(int i10) {
         b bVar = this.c;
         int i11 = i10 == 2 ? bVar.k : bVar.l;
         if (i11 == Integer.MIN_VALUE) {
             return null;
         }
-        return o(i11);
+        return I(i11);
     }
 
-    @Override // l2.f
-    public final boolean t(int i10, int i11, Bundle bundle) {
+    @Override // ji.w4
+    public final boolean U(int i10, int i11, Bundle bundle) {
         int i12;
         int i13;
         b bVar = this.c;
         View view = bVar.i;
         if (i10 == -1) {
-            WeakHashMap weakHashMap = i0.a;
+            WeakHashMap weakHashMap = j0.a;
             return view.performAccessibilityAction(i11, bundle);
         }
         if (i11 != 1) {

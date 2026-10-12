@@ -1,11 +1,12 @@
 package x3;
 
-import b2.s0;
+import b2.x0;
 import c3.p;
-import e2.v;
+import e2.x;
 import java.io.EOFException;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f {
     public int a;
@@ -14,7 +15,7 @@ public final class f {
     public int d;
     public int e;
     public final int[] f = new int[255];
-    public final v g = new v(255);
+    public final x g = new x(255);
 
     public final boolean a(p pVar, boolean z10) {
         boolean z11;
@@ -24,76 +25,76 @@ public final class f {
         this.c = 0;
         this.d = 0;
         this.e = 0;
-        v vVar = this.g;
-        vVar.G(27);
+        x xVar = this.g;
+        xVar.K(27);
         try {
-            z11 = pVar.h(vVar.a, 0, 27, z10);
-        } catch (EOFException e7) {
+            z11 = pVar.j(xVar.a, 0, 27, z10);
+        } catch (EOFException e) {
             if (!z10) {
-                throw e7;
+                throw e;
             }
             z11 = false;
         }
-        if (z11 && vVar.z() == 1332176723) {
-            if (vVar.x() == 0) {
-                this.a = vVar.x();
-                this.b = vVar.m();
-                vVar.o();
-                vVar.o();
-                vVar.o();
-                int x10 = vVar.x();
-                this.c = x10;
-                this.d = x10 + 27;
-                vVar.G(x10);
+        if (z11 && xVar.C() == 1332176723) {
+            if (xVar.A() == 0) {
+                this.a = xVar.A();
+                this.b = xVar.p();
+                xVar.r();
+                xVar.r();
+                xVar.r();
+                int A = xVar.A();
+                this.c = A;
+                this.d = A + 27;
+                xVar.K(A);
                 try {
-                    z12 = pVar.h(vVar.a, 0, this.c, z10);
-                } catch (EOFException e10) {
+                    z12 = pVar.j(xVar.a, 0, this.c, z10);
+                } catch (EOFException e7) {
                     if (!z10) {
-                        throw e10;
+                        throw e7;
                     }
                     z12 = false;
                 }
                 if (z12) {
                     for (int i10 = 0; i10 < this.c; i10++) {
-                        int x11 = vVar.x();
-                        this.f[i10] = x11;
-                        this.e += x11;
+                        int A2 = xVar.A();
+                        this.f[i10] = A2;
+                        this.e += A2;
                     }
                     return true;
                 }
             } else if (!z10) {
-                throw s0.c("unsupported bit stream revision");
+                throw x0.c("unsupported bit stream revision");
             }
         }
         return false;
     }
 
-    public final boolean b(p pVar, long j3) {
+    public final boolean b(p pVar, long j10) {
         boolean z10;
-        e2.d.b(pVar.getPosition() == pVar.j());
-        v vVar = this.g;
-        vVar.G(4);
+        u6.g(pVar.getPosition() == pVar.k());
+        x xVar = this.g;
+        xVar.K(4);
         while (true) {
-            if (j3 != -1 && pVar.getPosition() + 4 >= j3) {
+            if (j10 != -1 && pVar.getPosition() + 4 >= j10) {
                 break;
             }
             try {
-                z10 = pVar.h(vVar.a, 0, 4, true);
+                z10 = pVar.j(xVar.a, 0, 4, true);
             } catch (EOFException unused) {
                 z10 = false;
             }
             if (!z10) {
                 break;
             }
-            vVar.J(0);
-            if (vVar.z() == 1332176723) {
+            xVar.N(0);
+            if (xVar.C() == 1332176723) {
                 pVar.q();
                 return true;
             }
             pVar.r(1);
         }
         do {
-            if (j3 != -1 && pVar.getPosition() >= j3) {
+            if (j10 != -1 && pVar.getPosition() >= j10) {
                 break;
             }
         } while (pVar.skip(1) != -1);

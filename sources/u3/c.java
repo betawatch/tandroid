@@ -1,73 +1,37 @@
 package u3;
 
-import b2.o;
-import b2.s0;
-import c3.g0;
-import c3.h0;
-import c3.i0;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class c {
-    public int A;
-    public int B;
-    public int C;
-    public int D;
-    public int E;
-    public float F;
-    public float G;
-    public float H;
-    public float I;
-    public float J;
-    public float K;
-    public float L;
-    public float M;
-    public float N;
-    public float O;
-    public byte[] P;
-    public int Q;
-    public int R;
-    public int S;
-    public long T;
-    public long U;
-    public i0 V;
-    public boolean W;
-    public boolean X;
-    public String Y;
-    public h0 Z;
-    public boolean a;
-    public int a0;
-    public String b;
-    public String c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public boolean i;
-    public byte[] j;
-    public g0 k;
-    public byte[] l;
-    public o m;
-    public int n;
-    public int o;
-    public int p;
-    public int q;
-    public int r;
-    public int s;
-    public int t;
-    public float u;
-    public float v;
-    public float w;
-    public byte[] x;
-    public int y;
-    public boolean z;
+public final class c implements Comparable {
+    public final long a;
+    public final long b;
+    public final long c;
 
-    public final byte[] a(String str) {
-        byte[] bArr = this.l;
-        if (bArr != null) {
-            return bArr;
+    public c(long j10, long j11, long j12) {
+        this.a = j10;
+        this.b = j11;
+        this.c = j12;
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Long.compare(this.a, ((c) obj).a);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        throw s0.a(null, "Missing CodecPrivate for codec " + str);
+        if (!(obj instanceof c)) {
+            return false;
+        }
+        c cVar = (c) obj;
+        return this.a == cVar.a && this.b == cVar.b && this.c == cVar.c;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c));
     }
 }

@@ -1,20 +1,40 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class i30 extends g.o {
-    public final /* synthetic */ g60 c;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-    public i30(g60 g60Var) {
-        this.c = g60Var;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class i30 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n60 b;
+
+    public /* synthetic */ i30(n60 n60Var, int i10) {
+        this.a = i10;
+        this.b = n60Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int size = this.c.o2.e.size();
-        if (size > 1 && size != 2) {
-            return (size != 3 || i10 == 0 || i10 == 1) ? 3 : 6;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        TLRPC.Updates updates = (TLRPC.Updates) obj;
+        switch (this.a) {
+            case 0:
+                n60 n60Var = this.b;
+                if (updates != null) {
+                    n60Var.d.getMessagesController().lambda$processUpdates$377(updates, false);
+                }
+                AndroidUtilities.runOnUIThread(new z20(n60Var, 10));
+                break;
+            default:
+                n60 n60Var2 = this.b;
+                if (updates == null) {
+                    n60Var2.getClass();
+                    break;
+                } else {
+                    n60Var2.d.getMessagesController().lambda$processUpdates$377(updates, false);
+                    break;
+                }
         }
-        return 6;
     }
 }

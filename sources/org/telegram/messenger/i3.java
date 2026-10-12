@@ -1,46 +1,25 @@
 package org.telegram.messenger;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i3 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Serializable h;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Throwable b;
 
-    public /* synthetic */ i3(FilePathDatabase filePathDatabase, long j3, int i10, int i11, String str, int i12) {
-        this.f = filePathDatabase;
-        this.c = j3;
-        this.b = i10;
-        this.d = i11;
-        this.h = str;
-        this.e = i12;
+    public /* synthetic */ i3(int i10, Throwable th2) {
+        this.a = i10;
+        this.b = th2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((FilePathDatabase) this.f).lambda$putPath$1(this.c, this.b, this.d, (String) this.h, this.e);
+                FileLog.lambda$e$5(this.b);
                 break;
             default:
-                ((MessagesStorage) this.f).lambda$updateRepliesCount$194(this.b, this.c, this.d, (ArrayList) this.h, this.e);
+                FileLog.lambda$fatal$6(this.b);
                 break;
         }
-    }
-
-    public /* synthetic */ i3(MessagesStorage messagesStorage, int i10, long j3, int i11, ArrayList arrayList, int i12) {
-        this.f = messagesStorage;
-        this.b = i10;
-        this.c = j3;
-        this.d = i11;
-        this.h = arrayList;
-        this.e = i12;
     }
 }

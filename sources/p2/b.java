@@ -2,132 +2,81 @@ package p2;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import b2.s0;
-import c5.b0;
+import b2.x0;
+import c5.c0;
 import com.google.android.gms.internal.cast.z4;
-import e2.d0;
-import e9.i0;
+import e2.m0;
+import e9.n0;
+import g2.b0;
 import g2.x;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.web.w1;
+import org.telegram.ui.Wallet.t8;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b implements y2.g {
     public final Uri a;
-    public final y2.l b = new y2.l("DefaultHlsPlaylistTracker:MediaPlaylist");
-    public final g2.h c;
-    public l d;
-    public long e;
+    public final String b;
+    public final y2.l c = new y2.l("DefaultHlsPlaylistTracker:MediaPlaylist");
+    public final g2.h d;
+    public m e;
     public long f;
     public long h;
     public long n;
-    public boolean r;
-    public IOException s;
-    public boolean v;
-    public final /* synthetic */ c w;
+    public long r;
+    public boolean s;
+    public IOException v;
+    public boolean w;
+    public final /* synthetic */ d x;
 
-    public b(c cVar, Uri uri) {
-        this.w = cVar;
+    public b(d dVar, Uri uri, String str) {
+        this.x = dVar;
         this.a = uri;
-        this.c = ((g2.g) cVar.a.b).createDataSource();
-    }
-
-    public static boolean a(b bVar, long j3) {
-        bVar.n = SystemClock.elapsedRealtime() + j3;
-        Uri uri = bVar.a;
-        c cVar = bVar.w;
-        if (!uri.equals(cVar.v)) {
-            return false;
-        }
-        List list = cVar.s.e;
-        int size = list.size();
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        for (int i10 = 0; i10 < size; i10++) {
-            b bVar2 = (b) cVar.d.get(((n) list.get(i10)).a);
-            bVar2.getClass();
-            if (elapsedRealtime > bVar2.n) {
-                Uri uri2 = bVar2.a;
-                cVar.v = uri2;
-                bVar2.e(cVar.b(uri2));
-                return false;
-            }
-        }
-        return true;
+        this.b = str;
+        this.d = ((g2.g) dVar.a.b).createDataSource();
     }
 
     @Override // y2.g
-    public final void C(y2.i iVar, long j3, long j10, int i10) {
-        u2.t tVar;
+    public final void B(y2.i iVar, long j10, long j11, boolean z10) {
         y2.o oVar = (y2.o) iVar;
-        if (i10 == 0) {
-            long j11 = oVar.a;
-            tVar = new u2.t(oVar.b);
-        } else {
-            long j12 = oVar.a;
-            Uri uri = oVar.d.c;
-            tVar = new u2.t(j10);
-        }
-        this.w.f.u(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+        long j12 = oVar.a;
+        g2.m mVar = oVar.b;
+        b0 b0Var = oVar.d;
+        u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        d dVar = this.x;
+        dVar.c.getClass();
+        dVar.f.q(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
-    @Override // y2.g
-    public final void F(y2.i iVar, long j3, long j10) {
-        y2.o oVar = (y2.o) iVar;
-        p pVar = (p) oVar.f;
-        Uri uri = oVar.d.c;
-        u2.t tVar = new u2.t(j10);
-        if (pVar instanceof l) {
-            f((l) pVar, tVar);
-            this.w.f.q(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-        } else {
-            s0 b10 = s0.b("Loaded playlist has unexpected type.", null);
-            this.s = b10;
-            this.w.f.s(tVar, 4, b10, true);
-        }
-        this.w.c.getClass();
-    }
-
-    @Override // y2.g
-    public final void O0(y2.i iVar, long j3, long j10, boolean z10) {
-        y2.o oVar = (y2.o) iVar;
-        long j11 = oVar.a;
-        Uri uri = oVar.d.c;
-        u2.t tVar = new u2.t(j10);
-        c cVar = this.w;
-        cVar.c.getClass();
-        cVar.f.p(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
-    }
-
-    public final Uri b() {
-        l lVar = this.d;
+    public final Uri a() {
+        m mVar = this.e;
         Uri uri = this.a;
-        if (lVar != null) {
-            k kVar = lVar.v;
-            if (kVar.a != -9223372036854775807L || kVar.e) {
+        if (mVar != null) {
+            l lVar = mVar.v;
+            if (lVar.a != -9223372036854775807L || lVar.e) {
                 Uri.Builder buildUpon = uri.buildUpon();
-                l lVar2 = this.d;
-                if (lVar2.v.e) {
-                    buildUpon.appendQueryParameter("_HLS_msn", String.valueOf(lVar2.k + lVar2.r.size()));
-                    l lVar3 = this.d;
-                    if (lVar3.n != -9223372036854775807L) {
-                        i0 i0Var = lVar3.s;
-                        int size = i0Var.size();
-                        if (!i0Var.isEmpty() && ((g) e9.q.l(i0Var)).x) {
+                m mVar2 = this.e;
+                if (mVar2.v.e) {
+                    buildUpon.appendQueryParameter("_HLS_msn", String.valueOf(mVar2.k + mVar2.r.size()));
+                    m mVar3 = this.e;
+                    if (mVar3.n != -9223372036854775807L) {
+                        n0 n0Var = mVar3.s;
+                        int size = n0Var.size();
+                        if (!n0Var.isEmpty() && ((h) e9.s.m(n0Var)).x) {
                             size--;
                         }
                         buildUpon.appendQueryParameter("_HLS_part", String.valueOf(size));
                     }
                 }
-                k kVar2 = this.d.v;
-                if (kVar2.a != -9223372036854775807L) {
-                    buildUpon.appendQueryParameter("_HLS_skip", kVar2.b ? "v2" : "YES");
+                l lVar2 = this.e.v;
+                if (lVar2.a != -9223372036854775807L) {
+                    buildUpon.appendQueryParameter("_HLS_skip", lVar2.b ? "v2" : "YES");
                 }
                 return buildUpon.build();
             }
@@ -135,285 +84,318 @@ public final class b implements y2.g {
         return uri;
     }
 
-    public final void c(boolean z10) {
-        e(z10 ? b() : this.a);
-    }
-
-    public final void d(Uri uri) {
-        c cVar = this.w;
-        y2.n y3 = cVar.b.y(cVar.s, this.d);
+    public final void b(Uri uri) {
+        d dVar = this.x;
+        y2.n U = dVar.b.U(dVar.s, this.e);
         Map map = Collections.EMPTY_MAP;
-        e2.d.i(uri, "The uri must be set.");
-        y2.o oVar = new y2.o(this.c, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, y3);
-        this.b.f(oVar, this, cVar.c.m3(oVar.c));
+        u6.l(uri, "The uri must be set.");
+        y2.o oVar = new y2.o(this.d, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, U);
+        this.c.f(oVar, this, dVar.c.y3(oVar.c));
     }
 
-    public final void e(Uri uri) {
-        this.n = 0L;
-        if (this.r) {
+    public final void c(Uri uri) {
+        this.r = 0L;
+        if (this.s) {
             return;
         }
-        y2.l lVar = this.b;
-        if (lVar.d() || lVar.c()) {
+        y2.l lVar = this.c;
+        if (lVar.c() || lVar.b()) {
             return;
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j3 = this.h;
-        if (elapsedRealtime >= j3) {
-            d(uri);
+        long j10 = this.n;
+        if (elapsedRealtime >= j10) {
+            b(uri);
         } else {
-            this.r = true;
-            this.w.n.postDelayed(new w1(3, this, uri), j3 - elapsedRealtime);
+            this.s = true;
+            this.x.n.postDelayed(new t8(14, this, uri), j10 - elapsedRealtime);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x01b9  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0253  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x027f  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x025b  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0287  */
     /* JADX WARN: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x025a  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x01ee  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x011d  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0262  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x01f6  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0121  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0129  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0057  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(l lVar, u2.t tVar) {
+    public final void d(m mVar, u2.u uVar) {
         boolean z10;
         CopyOnWriteArrayList copyOnWriteArrayList;
         boolean z11;
-        long j3;
         long j10;
         long j11;
-        int i10;
-        i0 i0Var;
-        l lVar2;
-        z4 z4Var;
         long j12;
+        int i10;
+        n0 n0Var;
+        m mVar2;
+        z4 z4Var;
+        long j13;
         z4 z4Var2;
         boolean z12;
-        k kVar;
+        l lVar;
         int size;
         int size2;
         int size3;
-        l lVar3 = this.d;
+        m mVar3 = this.e;
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        this.e = elapsedRealtime;
-        c cVar = this.w;
-        CopyOnWriteArrayList copyOnWriteArrayList2 = cVar.e;
-        if (lVar3 != null) {
-            long j13 = lVar.k;
-            long j14 = lVar3.k;
-            if (j13 <= j14 && (j13 < j14 || ((size = lVar.r.size() - lVar3.r.size()) == 0 ? !((size2 = lVar.s.size()) > (size3 = lVar3.s.size()) || (size2 == size3 && lVar.o && !lVar3.o)) : size <= 0))) {
+        this.f = elapsedRealtime;
+        d dVar = this.x;
+        CopyOnWriteArrayList copyOnWriteArrayList2 = dVar.e;
+        if (mVar3 != null) {
+            long j14 = mVar.k;
+            long j15 = mVar3.k;
+            if (j14 <= j15 && (j14 < j15 || ((size = mVar.r.size() - mVar3.r.size()) == 0 ? !((size2 = mVar.s.size()) > (size3 = mVar3.s.size()) || (size2 == size3 && mVar.o && !mVar3.o)) : size <= 0))) {
                 z10 = false;
-                i0 i0Var2 = lVar.r;
-                long j15 = lVar.k;
-                long j16 = 0;
+                n0 n0Var2 = mVar.r;
+                long j16 = mVar.k;
+                long j17 = 0;
                 if (z10) {
-                    if (!lVar.o) {
+                    if (!mVar.o) {
                         copyOnWriteArrayList = copyOnWriteArrayList2;
                         z11 = true;
-                        lVar2 = lVar3;
-                        j12 = j15;
-                    } else if (lVar3.o) {
-                        lVar2 = lVar3;
+                        mVar2 = mVar3;
+                        j13 = j16;
+                    } else if (mVar3.o) {
+                        mVar2 = mVar3;
                         copyOnWriteArrayList = copyOnWriteArrayList2;
-                        j12 = j15;
+                        j13 = j16;
                         z4Var = null;
                         z11 = true;
                     } else {
                         z11 = true;
                         copyOnWriteArrayList = copyOnWriteArrayList2;
-                        j12 = j15;
-                        lVar2 = new l(lVar3.d, lVar3.a, lVar3.b, lVar3.e, lVar3.g, lVar3.h, lVar3.i, lVar3.j, lVar3.k, lVar3.l, lVar3.m, lVar3.n, lVar3.c, true, lVar3.p, lVar3.q, lVar3.r, lVar3.s, lVar3.v, lVar3.t, lVar3.w);
+                        j13 = j16;
+                        mVar2 = new m(mVar3.d, mVar3.a, mVar3.b, mVar3.e, mVar3.g, mVar3.h, mVar3.i, mVar3.j, mVar3.k, mVar3.l, mVar3.m, mVar3.n, mVar3.c, true, mVar3.p, mVar3.q, mVar3.r, mVar3.s, mVar3.v, mVar3.t, mVar3.w, mVar3.x);
                     }
                     z4Var = null;
                 } else {
                     copyOnWriteArrayList = copyOnWriteArrayList2;
                     z11 = true;
-                    if (lVar.p) {
-                        j3 = lVar.h;
+                    if (mVar.p) {
+                        j10 = mVar.h;
                     } else {
-                        l lVar4 = cVar.w;
-                        j3 = lVar4 != null ? lVar4.h : 0L;
-                        if (lVar3 != null) {
-                            long j17 = lVar3.h;
-                            long j18 = lVar3.k;
-                            i0 i0Var3 = lVar3.r;
-                            j10 = j3;
-                            int size4 = i0Var3.size();
-                            int i11 = (int) (j15 - j18);
-                            i iVar = i11 < i0Var3.size() ? (i) i0Var3.get(i11) : null;
-                            if (iVar != null) {
-                                j11 = iVar.e;
+                        m mVar4 = dVar.G;
+                        j10 = mVar4 != null ? mVar4.h : 0L;
+                        if (mVar3 != null) {
+                            long j18 = mVar3.h;
+                            long j19 = mVar3.k;
+                            n0 n0Var3 = mVar3.r;
+                            j11 = j10;
+                            int size4 = n0Var3.size();
+                            int i11 = (int) (j16 - j19);
+                            j jVar = i11 < n0Var3.size() ? (j) n0Var3.get(i11) : null;
+                            if (jVar != null) {
+                                j12 = jVar.e;
                             } else {
-                                if (size4 == j15 - j18) {
-                                    j11 = lVar3.u;
+                                if (size4 == j16 - j19) {
+                                    j12 = mVar3.u;
                                 }
-                                if (lVar.i) {
-                                    l lVar5 = cVar.w;
-                                    int i12 = lVar5 != null ? lVar5.j : 0;
-                                    if (lVar3 != null) {
-                                        int i13 = (int) (j15 - lVar3.k);
-                                        i0 i0Var4 = lVar3.r;
-                                        i iVar2 = i13 < i0Var4.size() ? (i) i0Var4.get(i13) : null;
-                                        if (iVar2 != null) {
-                                            i12 = (lVar3.j + iVar2.d) - ((i) i0Var2.get(0)).d;
+                                if (mVar.i) {
+                                    m mVar5 = dVar.G;
+                                    int i12 = mVar5 != null ? mVar5.j : 0;
+                                    if (mVar3 != null) {
+                                        int i13 = (int) (j16 - mVar3.k);
+                                        n0 n0Var4 = mVar3.r;
+                                        j jVar2 = i13 < n0Var4.size() ? (j) n0Var4.get(i13) : null;
+                                        if (jVar2 != null) {
+                                            i12 = (mVar3.j + jVar2.d) - ((j) n0Var2.get(0)).d;
                                             i10 = i12;
-                                            i0Var = i0Var2;
+                                            n0Var = n0Var2;
                                         }
                                     }
                                     i10 = i12;
-                                    i0Var = i0Var2;
+                                    n0Var = n0Var2;
                                 } else {
-                                    i10 = lVar.j;
-                                    i0Var = i0Var2;
+                                    i10 = mVar.j;
+                                    n0Var = n0Var2;
                                 }
                                 z4Var = null;
-                                j12 = j15;
-                                lVar2 = new l(lVar.d, lVar.a, lVar.b, lVar.e, lVar.g, j10, true, i10, lVar.k, lVar.l, lVar.m, lVar.n, lVar.c, lVar.o, lVar.p, lVar.q, i0Var, lVar.s, lVar.v, lVar.t, lVar.w);
+                                j13 = j16;
+                                mVar2 = new m(mVar.d, mVar.a, mVar.b, mVar.e, mVar.g, j11, true, i10, mVar.k, mVar.l, mVar.m, mVar.n, mVar.c, mVar.o, mVar.p, mVar.q, n0Var, mVar.s, mVar.v, mVar.t, mVar.w, mVar.x);
                             }
-                            j3 = j17 + j11;
+                            j10 = j18 + j12;
                         }
                     }
-                    j10 = j3;
-                    if (lVar.i) {
+                    j11 = j10;
+                    if (mVar.i) {
                     }
                     z4Var = null;
-                    j12 = j15;
-                    lVar2 = new l(lVar.d, lVar.a, lVar.b, lVar.e, lVar.g, j10, true, i10, lVar.k, lVar.l, lVar.m, lVar.n, lVar.c, lVar.o, lVar.p, lVar.q, i0Var, lVar.s, lVar.v, lVar.t, lVar.w);
+                    j13 = j16;
+                    mVar2 = new m(mVar.d, mVar.a, mVar.b, mVar.e, mVar.g, j11, true, i10, mVar.k, mVar.l, mVar.m, mVar.n, mVar.c, mVar.o, mVar.p, mVar.q, n0Var, mVar.s, mVar.v, mVar.t, mVar.w, mVar.x);
                 }
-                this.d = lVar2;
+                this.e = mVar2;
                 Uri uri = this.a;
-                if (lVar2 == lVar3) {
-                    this.s = z4Var;
-                    this.f = elapsedRealtime;
-                    if (uri.equals(cVar.v)) {
-                        if (cVar.w == null) {
-                            cVar.x = !lVar2.o;
-                            cVar.y = lVar2.h;
+                if (mVar2 == mVar3) {
+                    this.v = z4Var;
+                    this.h = elapsedRealtime;
+                    if (uri.equals(dVar.F)) {
+                        if (dVar.G == null) {
+                            dVar.H = !mVar2.o;
+                            dVar.I = mVar2.h;
                         }
-                        cVar.w = lVar2;
-                        cVar.r.v(lVar2);
+                        dVar.G = mVar2;
+                        dVar.r.v(mVar2);
                     }
                     Iterator it = copyOnWriteArrayList.iterator();
                     while (it.hasNext()) {
-                        ((t) it.next()).a();
+                        ((u) it.next()).a();
                     }
-                } else if (!lVar2.o) {
-                    long size5 = j12 + lVar.r.size();
-                    l lVar6 = this.d;
-                    if (size5 < lVar6.k) {
+                } else if (!mVar2.o) {
+                    long size5 = j13 + mVar.r.size();
+                    m mVar6 = this.e;
+                    if (size5 < mVar6.k) {
                         z4Var2 = new z4();
                         z12 = z11;
                     } else {
-                        z4Var2 = ((double) (elapsedRealtime - this.f)) > ((double) d0.d0(lVar6.m)) * 3.5d ? new z4() : z4Var;
+                        z4Var2 = ((double) (elapsedRealtime - this.h)) > ((double) m0.h0(mVar6.m)) * 3.5d ? new z4() : z4Var;
                         z12 = false;
                     }
                     if (z4Var2 != null) {
-                        this.s = z4Var2;
-                        b0 b0Var = new b0(z4Var2, z11 ? 1 : 0, 15);
+                        this.v = z4Var2;
+                        c0 c0Var = new c0(z4Var2, z11 ? 1 : 0, 16);
                         Iterator it2 = copyOnWriteArrayList.iterator();
                         while (it2.hasNext()) {
-                            ((t) it2.next()).b(uri, b0Var, z12);
+                            ((u) it2.next()).d(uri, c0Var, z12);
                         }
                     }
                 }
-                l lVar7 = this.d;
-                kVar = lVar7.v;
-                long j19 = lVar7.m;
-                if (!kVar.e) {
-                    if (lVar7 == lVar3) {
-                        long j20 = lVar7.n;
-                        if (j20 != -9223372036854775807L) {
-                            j16 = j20 / 2;
+                m mVar7 = this.e;
+                lVar = mVar7.v;
+                long j20 = mVar7.m;
+                if (!lVar.e) {
+                    if (mVar7 == mVar3) {
+                        long j21 = mVar7.n;
+                        if (j21 != -9223372036854775807L) {
+                            j17 = j21 / 2;
                         } else {
-                            j19 /= 2;
+                            j20 /= 2;
                         }
                     }
-                    this.h = (d0.d0(j16) + elapsedRealtime) - tVar.a;
-                    if (this.d.o) {
+                    this.n = (m0.h0(j17) + elapsedRealtime) - uVar.e;
+                    if (this.e.o) {
                         return;
                     }
-                    if (uri.equals(cVar.v) || this.v) {
-                        e(b());
+                    if (uri.equals(dVar.F) || this.w) {
+                        c(a());
                         return;
                     }
                     return;
                 }
-                if (lVar7 == lVar3) {
-                    j19 /= 2;
+                if (mVar7 == mVar3) {
+                    j20 /= 2;
                 }
-                j16 = j19;
-                this.h = (d0.d0(j16) + elapsedRealtime) - tVar.a;
-                if (this.d.o) {
+                j17 = j20;
+                this.n = (m0.h0(j17) + elapsedRealtime) - uVar.e;
+                if (this.e.o) {
                 }
             }
         } else {
-            lVar.getClass();
+            mVar.getClass();
         }
         z10 = true;
-        i0 i0Var22 = lVar.r;
-        long j152 = lVar.k;
-        long j162 = 0;
+        n0 n0Var22 = mVar.r;
+        long j162 = mVar.k;
+        long j172 = 0;
         if (z10) {
         }
-        this.d = lVar2;
+        this.e = mVar2;
         Uri uri2 = this.a;
-        if (lVar2 == lVar3) {
+        if (mVar2 == mVar3) {
         }
-        l lVar72 = this.d;
-        kVar = lVar72.v;
-        long j192 = lVar72.m;
-        if (!kVar.e) {
+        m mVar72 = this.e;
+        lVar = mVar72.v;
+        long j202 = mVar72.m;
+        if (!lVar.e) {
         }
-        j162 = j192;
-        this.h = (d0.d0(j162) + elapsedRealtime) - tVar.a;
-        if (this.d.o) {
+        j172 = j202;
+        this.n = (m0.h0(j172) + elapsedRealtime) - uVar.e;
+        if (this.e.o) {
         }
     }
 
     @Override // y2.g
-    public final k4.d y(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d j(y2.i iVar, long j10, long j11, IOException iOException, int i10) {
         y2.o oVar = (y2.o) iVar;
-        long j11 = oVar.a;
+        long j12 = oVar.a;
         int i11 = oVar.c;
-        Uri uri = oVar.d.c;
-        u2.t tVar = new u2.t(j10);
+        g2.m mVar = oVar.b;
+        b0 b0Var = oVar.d;
+        Uri uri = b0Var.c;
+        u2.u uVar = new u2.u(mVar, uri, b0Var.d, j10, j11, b0Var.b);
         boolean z10 = uri.getQueryParameter("_HLS_msn") != null;
-        boolean z11 = iOException instanceof q;
+        boolean z11 = iOException instanceof r;
         k4.d dVar = y2.l.e;
-        c cVar = this.w;
+        Uri uri2 = this.a;
+        d dVar2 = this.x;
         if (z10 || z11) {
-            int i12 = iOException instanceof x ? ((x) iOException).d : ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i12 = iOException instanceof x ? ((x) iOException).c : ConnectionsManager.DEFAULT_DATACENTER_ID;
             if (z11 || i12 == 400 || i12 == 503) {
-                this.h = SystemClock.elapsedRealtime();
-                c(false);
-                a5.a aVar = cVar.f;
-                String str = d0.a;
-                aVar.s(tVar, i11, iOException, true);
+                this.n = SystemClock.elapsedRealtime();
+                c(uri2);
+                a5.a aVar = dVar2.f;
+                String str = m0.a;
+                aVar.t(uVar, i11, iOException, true);
                 return dVar;
             }
         }
-        b0 b0Var = new b0(iOException, i10, 15);
-        Iterator it = cVar.e.iterator();
+        c0 c0Var = new c0(iOException, i10, 16);
+        Iterator it = dVar2.e.iterator();
         boolean z12 = false;
         while (it.hasNext()) {
-            z12 |= !((t) it.next()).b(this.a, b0Var, false);
+            z12 |= !((u) it.next()).d(uri2, c0Var, false);
         }
-        rb.a aVar2 = cVar.c;
+        oa.d dVar3 = dVar2.c;
         if (z12) {
-            aVar2.getClass();
-            long n32 = rb.a.n3(b0Var);
-            dVar = n32 != -9223372036854775807L ? new k4.d(0, n32, false) : y2.l.f;
+            dVar3.getClass();
+            long z32 = oa.d.z3(c0Var);
+            dVar = z32 != -9223372036854775807L ? new k4.d(0, z32, false) : y2.l.f;
         }
         boolean a2 = dVar.a();
-        cVar.f.s(tVar, i11, iOException, !a2);
+        dVar2.f.t(uVar, i11, iOException, !a2);
         if (!a2) {
-            aVar2.getClass();
+            dVar3.getClass();
         }
         return dVar;
+    }
+
+    @Override // y2.g
+    public final void k(y2.i iVar, long j10, long j11, int i10) {
+        u2.u uVar;
+        y2.o oVar = (y2.o) iVar;
+        if (i10 == 0) {
+            long j12 = oVar.a;
+            uVar = new u2.u(oVar.b, j10);
+        } else {
+            long j13 = oVar.a;
+            g2.m mVar = oVar.b;
+            b0 b0Var = oVar.d;
+            uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        }
+        this.x.f.v(uVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+    }
+
+    @Override // y2.g
+    public final void l(y2.i iVar, long j10, long j11) {
+        y2.o oVar = (y2.o) iVar;
+        q qVar = (q) oVar.f;
+        g2.m mVar = oVar.b;
+        b0 b0Var = oVar.d;
+        u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        if (qVar instanceof m) {
+            d((m) qVar, uVar);
+            this.x.f.r(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        } else {
+            x0 b10 = x0.b("Loaded playlist has unexpected type.", null);
+            this.v = b10;
+            this.x.f.t(uVar, 4, b10, true);
+        }
+        this.x.c.getClass();
     }
 }

@@ -1,31 +1,33 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class ql implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ UnconfirmedAuthController b;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.TranslateController;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ ql(UnconfirmedAuthController unconfirmedAuthController, int i10) {
-        this.a = i10;
-        this.b = unconfirmedAuthController;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class ql implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ TranslateController a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ TranslateController.MessageKey c;
+    public final /* synthetic */ Utilities.Callback d;
+
+    public /* synthetic */ ql(TranslateController translateController, MessageObject messageObject, TranslateController.MessageKey messageKey, Utilities.Callback callback) {
+        this.a = translateController;
+        this.b = messageObject;
+        this.c = messageKey;
+        this.d = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$readCache$1();
-                break;
-            case 1:
-                this.b.lambda$saveCache$3();
-                break;
-            case 2:
-                this.b.lambda$new$2();
-                break;
-            default:
-                this.b.lambda$saveCache$4();
-                break;
-        }
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        this.a.lambda$detectPhotoLanguage$42(this.b, this.c, this.d, exc);
+    }
+
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        TranslateController.MessageKey messageKey = this.c;
+        Utilities.Callback callback = this.d;
+        this.a.lambda$detectPhotoLanguage$40(this.b, messageKey, callback, str);
     }
 }

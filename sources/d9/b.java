@@ -1,35 +1,43 @@
 package d9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b extends a {
-    public final char a;
+public final class b extends g {
+    public static final b c = new b("CharMatcher.any()", 0);
+    public static final b d = new b("CharMatcher.ascii()", 1);
+    public static final b e = new b("CharMatcher.javaIsoControl()", 2);
+    public static final b f = new b("CharMatcher.none()", 3);
+    public final /* synthetic */ int b;
 
-    public b(char c10) {
-        this.a = c10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b(String str, int i10) {
+        super(str);
+        this.b = i10;
     }
 
-    @Override // d9.a
-    public final boolean a(char c10) {
-        return c10 == this.a;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("CharMatcher.is('");
-        char[] cArr = new char[6];
-        cArr[0] = '\\';
-        cArr[1] = 'u';
-        cArr[2] = 0;
-        cArr[3] = 0;
-        cArr[4] = 0;
-        cArr[5] = 0;
-        char c10 = this.a;
-        for (int i10 = 0; i10 < 4; i10++) {
-            cArr[5 - i10] = "0123456789ABCDEF".charAt(c10 & 15);
-            c10 = (char) (c10 >> 4);
+    @Override // d9.i
+    public final boolean c(char c10) {
+        switch (this.b) {
+            case 0:
+                return true;
+            case 1:
+                return c10 <= 127;
+            case 2:
+                return c10 <= 31 || (c10 >= 127 && c10 <= 159);
+            default:
+                return false;
         }
-        sb2.append(String.copyValueOf(cArr));
-        sb2.append("')");
-        return sb2.toString();
+    }
+
+    @Override // d9.d, d9.i
+    public i d() {
+        switch (this.b) {
+            case 0:
+                return f;
+            case 3:
+                return c;
+            default:
+                return super.d();
+        }
     }
 }

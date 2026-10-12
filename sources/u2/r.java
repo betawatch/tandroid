@@ -1,61 +1,25 @@
 package u2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class r extends b2.k1 {
-    public final b2.k1 e;
-
-    public r(b2.k1 k1Var) {
-        this.e = k1Var;
+public final class r implements d1 {
+    @Override // u2.d1
+    public final boolean e() {
+        return true;
     }
 
-    @Override // b2.k1
-    public final int a(boolean z10) {
-        return this.e.a(z10);
+    @Override // u2.d1
+    public final int f(qf.b bVar, h2.h hVar, int i10) {
+        hVar.setFlags(4);
+        return -4;
     }
 
-    @Override // b2.k1
-    public int b(Object obj) {
-        return this.e.b(obj);
+    @Override // u2.d1
+    public final int m(long j10) {
+        return 0;
     }
 
-    @Override // b2.k1
-    public final int c(boolean z10) {
-        return this.e.c(z10);
-    }
-
-    @Override // b2.k1
-    public int e(int i10, int i11, boolean z10) {
-        return this.e.e(i10, i11, z10);
-    }
-
-    @Override // b2.k1
-    public b2.h1 f(int i10, b2.h1 h1Var, boolean z10) {
-        return this.e.f(i10, h1Var, z10);
-    }
-
-    @Override // b2.k1
-    public final int h() {
-        return this.e.h();
-    }
-
-    @Override // b2.k1
-    public int k(int i10, int i11, boolean z10) {
-        return this.e.k(i10, i11, z10);
-    }
-
-    @Override // b2.k1
-    public Object l(int i10) {
-        return this.e.l(i10);
-    }
-
-    @Override // b2.k1
-    public b2.j1 m(int i10, b2.j1 j1Var, long j3) {
-        return this.e.m(i10, j1Var, j3);
-    }
-
-    @Override // b2.k1
-    public final int o() {
-        return this.e.o();
+    @Override // u2.d1
+    public final void d() {
     }
 }

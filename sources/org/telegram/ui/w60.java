@@ -1,23 +1,26 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.ContactsController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class w60 implements Comparator {
-    public static String a(TLObject tLObject) {
-        if (!(tLObject instanceof TLRPC.User)) {
-            return tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
-        }
-        TLRPC.User user = (TLRPC.User) tLObject;
-        return ContactsController.formatName(user.first_name, user.last_name);
+public final class w60 extends sg.j0 {
+    public final /* synthetic */ x60 W0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w60(x60 x60Var, x60 x60Var2, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(i10, i11, activity, x60Var2, c6Var);
+        this.W0 = x60Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return a((TLObject) obj).compareTo(a((TLObject) obj2));
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public final void dismiss() {
+        super.dismiss();
+        this.W0.B0 = false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3
+    public final void onOpenAnimationEnd() {
+        this.W0.B0 = false;
     }
 }

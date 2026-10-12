@@ -8,12 +8,12 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Utilities;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class VoipAudioManager {
     private Boolean isSpeakerphoneOn;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class InstanceHolder {
         static final VoipAudioManager instance = new VoipAudioManager();
 
@@ -51,7 +51,7 @@ public class VoipAudioManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$isBluetoothAndSpeakerOnAsync$4(Utilities.Callback2 callback2) {
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.l(callback2, isBluetoothOn(), getAudioManager().isSpeakerphoneOn(), 2));
+        AndroidUtilities.runOnUIThread(new e2.n0(callback2, isBluetoothOn(), getAudioManager().isSpeakerphoneOn(), 3));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -74,7 +74,7 @@ public class VoipAudioManager {
     }
 
     public void isBluetoothAndSpeakerOnAsync(Utilities.Callback2<Boolean, Boolean> callback2) {
-        Utilities.globalQueue.postRunnable(new ki.i0(26, this, callback2));
+        Utilities.globalQueue.postRunnable(new j(7, this, callback2));
     }
 
     public boolean isBluetoothOn() {
@@ -99,7 +99,7 @@ public class VoipAudioManager {
 
     public void setSpeakerphoneOn(boolean z10) {
         this.isSpeakerphoneOn = Boolean.valueOf(z10);
-        Utilities.globalQueue.postRunnable(new bi.f(18, getAudioManager(), z10));
+        Utilities.globalQueue.postRunnable(new ah.t(19, getAudioManager(), z10));
     }
 
     public void startBluetooth() {
@@ -113,7 +113,7 @@ public class VoipAudioManager {
             return;
         }
         this.isSpeakerphoneOn = Boolean.FALSE;
-        Utilities.globalQueue.postRunnable(new ki.i0(25, audioManager, findBluetoothDevice));
+        Utilities.globalQueue.postRunnable(new j(6, audioManager, findBluetoothDevice));
     }
 
     public void stopBluetooth() {

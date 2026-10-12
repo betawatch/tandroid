@@ -1,52 +1,33 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class d20 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public org.telegram.ui.Components.cj0 c;
-    public boolean d;
-    public TLRPC.TL_dialogFilterSuggested e;
+public final /* synthetic */ class d20 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FiltersSetupActivity b;
 
-    public TLRPC.TL_dialogFilterSuggested getSuggestedFilter() {
-        return this.e;
+    public /* synthetic */ d20(FiltersSetupActivity filtersSetupActivity, int i10) {
+        this.a = i10;
+        this.b = filtersSetupActivity;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.d) {
-            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                FiltersSetupActivity filtersSetupActivity = this.b;
+                filtersSetupActivity.getClass();
+                filtersSetupActivity.presentFragment(new PremiumPreviewFragment(0, "settings"));
+                break;
+            case 1:
+                FiltersSetupActivity filtersSetupActivity2 = this.b;
+                filtersSetupActivity2.a.e1(new mu(filtersSetupActivity2, 9), 700, true);
+                break;
+            default:
+                FiltersSetupActivity filtersSetupActivity3 = this.b;
+                filtersSetupActivity3.getClass();
+                filtersSetupActivity3.showDialog(new sg.y0((org.telegram.ui.ActionBar.m2) filtersSetupActivity3, 9, true));
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setEnabled(true);
-        accessibilityNodeInfo.setText(this.c.getText());
-        accessibilityNodeInfo.setClassName("android.widget.Button");
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(64.0f));
-        measureChildWithMargins(this.c, i10, 0, i11, 0);
-        TextView textView = this.a;
-        org.telegram.ui.Components.cj0 cj0Var = this.c;
-        measureChildWithMargins(textView, i10, cj0Var.getMeasuredWidth(), i11, 0);
-        measureChildWithMargins(this.b, i10, cj0Var.getMeasuredWidth(), i11, 0);
-    }
-
-    public void setAddOnClickListener(View.OnClickListener onClickListener) {
-        this.c.setOnClickListener(onClickListener);
     }
 }

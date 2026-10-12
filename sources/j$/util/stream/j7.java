@@ -14,10 +14,10 @@ public final /* synthetic */ class j7 implements i5 {
         this.b = longConsumer;
     }
 
-    private final /* synthetic */ void a(long j3) {
+    private final /* synthetic */ void a(long j10) {
     }
 
-    private final /* synthetic */ void b(long j3) {
+    private final /* synthetic */ void b(long j10) {
     }
 
     private final /* synthetic */ void c() {
@@ -51,13 +51,13 @@ public final /* synthetic */ class j7 implements i5 {
     }
 
     @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j3) {
+    public final void accept(long j10) {
         switch (this.a) {
             case 0:
-                this.b.accept(j3);
+                this.b.accept(j10);
                 break;
             default:
-                ((q6) this.b).accept(j3);
+                ((q6) this.b).accept(j10);
                 break;
         }
     }
@@ -84,7 +84,7 @@ public final /* synthetic */ class j7 implements i5 {
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
         switch (this.a) {
         }
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.j5
@@ -93,7 +93,7 @@ public final /* synthetic */ class j7 implements i5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j3) {
+    public final /* synthetic */ void o(long j10) {
         int i10 = this.a;
     }
 

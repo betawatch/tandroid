@@ -4,24 +4,24 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+    public final /* synthetic */ m b;
 
-    public /* synthetic */ f(l lVar, int i10) {
+    public /* synthetic */ f(m mVar, int i10) {
         this.a = i10;
-        this.b = lVar;
+        this.b = mVar;
     }
 
     public final void a() {
         switch (this.a) {
             case 0:
-                l lVar = this.b;
-                Bundle c10 = ((m.p) lVar.e.d).c("android:support:activity-result");
+                m mVar = this.b;
+                Bundle c10 = ((m.p) mVar.e.c).c("android:support:activity-result");
                 if (c10 != null) {
-                    h hVar = lVar.w;
+                    h hVar = mVar.w;
                     HashMap hashMap = hVar.b;
                     HashMap hashMap2 = hVar.a;
                     Bundle bundle = hVar.g;
@@ -49,8 +49,8 @@ public final /* synthetic */ class f {
                 }
                 break;
             default:
-                androidx.fragment.app.u uVar = (androidx.fragment.app.u) ((androidx.fragment.app.v) this.b).J.b;
-                uVar.d.b(uVar, uVar, null);
+                androidx.fragment.app.t tVar = (androidx.fragment.app.t) ((androidx.fragment.app.u) this.b).J.b;
+                tVar.d.b(tVar, tVar, null);
                 break;
         }
     }

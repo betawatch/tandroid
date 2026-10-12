@@ -1,38 +1,80 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_account;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n81 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
+public final class n81 extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final TextView c;
+    public final Switch d;
+    public boolean e;
 
-    public /* synthetic */ n81(SessionsActivity sessionsActivity, int i10) {
-        this.a = i10;
-        this.b = sessionsActivity;
+    public n81(Activity activity, boolean z10) {
+        super(activity);
+        this.e = false;
+        ImageView imageView = new ImageView(activity);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, w7.a6.a(32.0f, 12.0f, 4.0f, 0.0f, 0.0f, 32, 0));
+        LinearLayout linearLayout = new LinearLayout(activity);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, w7.a6.a(-2.0f, 64.0f, 4.0f, 0.0f, 4.0f, -1, 0));
+        TextView textView = new TextView(activity);
+        this.b = textView;
+        textView.setTextSize(2, 16.0f);
+        textView.setGravity(3);
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
+        linearLayout.addView(textView, w7.a6.t(-1, -2, 0, 0, 0, z10 ? 64 : 0, 0));
+        TextView textView2 = new TextView(activity);
+        this.c = textView2;
+        textView2.setTextSize(2, 13.0f);
+        textView2.setGravity(3);
+        textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.y6, false));
+        linearLayout.addView(textView2, w7.a6.t(-1, -2, 0, 0, 4, z10 ? 64 : 0, 0));
+        setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
+        if (z10) {
+            Switch r22 = new Switch(activity, null);
+            this.d = r22;
+            r22.setDrawIconType(1);
+            addView(r22, w7.a6.a(40.0f, 21.0f, 0.0f, 21.0f, 0.0f, 37, 21));
+        }
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                if (connectedbots != null) {
-                    sessionsActivity.h = connectedbots.connected_bots;
-                    if (sessionsActivity.a != null) {
-                        sessionsActivity.m0();
-                        sessionsActivity.a.l();
-                        break;
-                    }
-                }
-                break;
-            default:
-                SessionsActivity.V(this.b, (Boolean) obj);
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.e) {
+            canvas.drawRect(AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.g6.k0);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        Switch r02 = this.d;
+        if (r02 != null) {
+            accessibilityNodeInfo.setClassName("android.widget.Switch");
+            accessibilityNodeInfo.setCheckable(true);
+            accessibilityNodeInfo.setChecked(r02.h);
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append((Object) this.b.getText());
+            sb2.append("\n");
+            sb2.append((Object) this.c.getText());
+            sb2.append("\n");
+            sb2.append(LocaleController.getString(r02.h ? R.string.NotificationsOn : R.string.NotificationsOff));
+            accessibilityNodeInfo.setText(sb2.toString());
         }
     }
 }

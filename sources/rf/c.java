@@ -1,17 +1,36 @@
 package rf;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.app.Activity;
+import android.content.ComponentCallbacks2;
+import android.view.View;
+import i2.h0;
+import org.telegram.ui.LaunchActivity;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface c {
-    void a();
+public final class c {
+    public final Activity a;
+    public final tf.a b;
+    public String c;
+    public int d;
+    public int e = 0;
+    public boolean f = false;
+    public h0 g;
+    public int h;
+    public int i;
+    public View j;
+    public View k;
 
-    void b();
+    public c(Activity activity, tf.a aVar) {
+        this.a = activity;
+        this.b = aVar;
+    }
 
-    void c();
-
-    void d();
-
-    void e();
-
-    void f();
+    public final d a() {
+        ComponentCallbacks2 componentCallbacks2 = this.a;
+        if (componentCallbacks2 instanceof sf.a) {
+            return new d(((LaunchActivity) ((sf.a) componentCallbacks2)).m0, this);
+        }
+        return null;
+    }
 }

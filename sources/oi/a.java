@@ -1,51 +1,80 @@
 package oi;
 
-import android.text.TextUtils;
-import java.net.IDN;
-import java.util.Locale;
+import android.graphics.RectF;
+import i2.d;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class a {
-    public int a;
-    public String b;
-    public int c;
-    public String d;
-    public String e;
-    public String f;
+    public final ArrayList a = new ArrayList();
+    public int b;
 
-    public final b a() {
-        if (this.a == 3) {
-            String str = this.b;
-            if (TextUtils.isEmpty(str)) {
-                str = "";
-            } else {
-                int indexOf = str.indexOf(47);
-                String substring = indexOf >= 0 ? str.substring(0, indexOf) : str;
-                String substring2 = indexOf >= 0 ? str.substring(indexOf + 1) : null;
-                if (!TextUtils.isEmpty(substring) && substring.indexOf(58) < 0 && substring.indexOf(63) < 0 && substring.indexOf(35) < 0 && (substring2 == null || (substring2.length() <= 128 && b.g.matcher(substring2).matches()))) {
-                    try {
-                        String lowerCase = IDN.toASCII(substring, 3).toLowerCase(Locale.US);
-                        if (substring2 == null) {
-                            str = lowerCase;
-                        } else {
-                            str = lowerCase + '/' + substring2;
-                        }
-                    } catch (IllegalArgumentException unused) {
-                    }
-                }
-            }
-            this.b = str;
-            if (str == null || str.indexOf(47) < 0) {
-                this.f = this.f.toLowerCase(Locale.US);
-            } else {
-                String b10 = b.b(this.f);
-                if (b10 == null) {
-                    b10 = this.f.toLowerCase(Locale.US);
-                }
-                this.f = b10;
+    public final RectF a(float f7, float f10, float f11, float f12) {
+        RectF rectF;
+        int i10 = this.b;
+        ArrayList arrayList = this.a;
+        if (i10 < arrayList.size()) {
+            rectF = (RectF) arrayList.get(this.b);
+            rectF.set(f7, f10, f11, f12);
+        } else {
+            rectF = new RectF(f7, f10, f11, f12);
+            arrayList.add(rectF);
+        }
+        this.b++;
+        return rectF;
+    }
+
+    public final RectF b(int i10) {
+        if (i10 >= 0 && i10 < this.b) {
+            return (RectF) this.a.get(i10);
+        }
+        StringBuilder k10 = d.k(i10, "index=", ", size=");
+        k10.append(this.b);
+        throw new IndexOutOfBoundsException(k10.toString());
+    }
+
+    public final void c(int i10) {
+        int i11;
+        if (i10 < 0 || i10 >= (i11 = this.b)) {
+            StringBuilder k10 = d.k(i10, "index=", ", size=");
+            k10.append(this.b);
+            throw new IndexOutOfBoundsException(k10.toString());
+        }
+        int i12 = i11 - 1;
+        ArrayList arrayList = this.a;
+        RectF rectF = (RectF) arrayList.get(i10);
+        if (i10 != i12) {
+            arrayList.set(i10, (RectF) arrayList.get(i12));
+            arrayList.set(i12, rectF);
+        }
+        this.b = i12;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        if (this.b != aVar.b) {
+            return false;
+        }
+        for (int i10 = 0; i10 < this.b; i10++) {
+            if (!((RectF) this.a.get(i10)).equals(aVar.a.get(i10))) {
+                return false;
             }
         }
-        return new b(this);
+        return true;
+    }
+
+    public final int hashCode() {
+        int i10 = 1;
+        for (int i11 = 0; i11 < this.b; i11++) {
+            i10 = (i10 * 31) + ((RectF) this.a.get(i11)).hashCode();
+        }
+        return i10;
     }
 }

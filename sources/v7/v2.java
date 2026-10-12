@@ -1,18 +1,19 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class v2 implements ia.d {
+public final class v2 implements ja.d {
     public static final v2 a = new v2();
-    public static final ia.c b = new ia.c("identifyLanguageConfidenceThreshold", hg.c.m(sc.v.l(h.class, new e(1))));
-    public static final ia.c c = new ia.c("identifyAllLanguagesConfidenceThreshold", hg.c.m(sc.v.l(h.class, new e(2))));
-    public static final ia.c d = new ia.c("confidenceThreshold", hg.c.m(sc.v.l(h.class, new e(3))));
 
-    @Override // ia.a
-    public final void a(Object obj, Object obj2) {
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, null);
-        eVar.a(c, null);
-        eVar.a(d, ((g6) obj).a);
+    static {
+        t8.b.s(t8.b.k(h.class, new e(1)));
+    }
+
+    @Override // ja.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
     }
 }

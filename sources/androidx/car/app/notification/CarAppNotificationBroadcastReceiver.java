@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import androidx.car.app.IStartCarApp;
-import androidx.car.app.utils.g;
+import androidx.car.app.utils.i;
 import j$.util.Objects;
-import qg.x1;
+import org.telegram.ui.web.c0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class CarAppNotificationBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -35,7 +35,7 @@ public class CarAppNotificationBroadcastReceiver extends BroadcastReceiver {
         } else {
             IStartCarApp asInterface = IStartCarApp.Stub.asInterface(iBinder);
             Objects.requireNonNull(asInterface);
-            g.d("startCarApp from notification", new x1(13, asInterface, intent));
+            i.d("startCarApp from notification", new c0(16, asInterface, intent));
         }
     }
 }

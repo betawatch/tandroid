@@ -1,39 +1,67 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashSet;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t51 implements Utilities.Callback {
+public final /* synthetic */ class t51 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LinkedHashSet b;
-    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ r71 b;
 
-    public /* synthetic */ t51(LinkedHashSet linkedHashSet, Runnable runnable, int i10) {
+    public /* synthetic */ t51(r71 r71Var, int i10) {
         this.a = i10;
-        this.b = linkedHashSet;
-        this.c = runnable;
+        this.b = r71Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                if (arrayList != null) {
-                    this.b.addAll(arrayList);
+                r71 r71Var = this.b;
+                r71Var.getClass();
+                HashSet hashSet = ah.x0.a;
+                hf.c cacheOutQueue = ImageLoader.getInstance().getCacheOutQueue();
+                if (cacheOutQueue.b == null) {
+                    cacheOutQueue.b = new CountDownLatch(1);
                 }
-                this.c.run();
+                ah.x0.b = true;
+                ah.x0.e = false;
+                ah.x0.g = false;
+                AndroidUtilities.runOnUIThread(new t51(r71Var, 2), 0L);
+                break;
+            case 1:
+                r71 r71Var2 = this.b;
+                ArrayList arrayList = r71Var2.A1;
+                if (arrayList != null) {
+                    arrayList.clear();
+                }
+                ArrayList arrayList2 = r71Var2.B1;
+                if (arrayList2 != null) {
+                    arrayList2.clear();
+                }
+                ArrayList arrayList3 = r71Var2.D1;
+                if (arrayList3 != null) {
+                    arrayList3.clear();
+                }
+                r71Var2.q0.E(true);
+                break;
+            case 2:
+                this.b.U1.start();
+                break;
+            case 3:
+                this.b.B(true, true, true);
                 break;
             default:
-                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
-                if (tL_emojiList != null) {
-                    this.b.addAll(tL_emojiList.document_id);
-                }
-                this.c.run();
+                r71 r71Var3 = this.b;
+                NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
+                t51 t51Var = r71Var3.R1;
+                globalInstance.removeDelayed(t51Var);
+                NotificationCenter.getGlobalInstance().doOnIdle(t51Var);
                 break;
         }
     }

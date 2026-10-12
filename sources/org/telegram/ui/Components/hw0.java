@@ -1,27 +1,24 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class hw0 {
-    public static final hw0 a;
-    public static final hw0 b;
-    public static final /* synthetic */ hw0[] c;
+public final class hw0 extends o1.i {
+    public final fw0 a;
+    public final gw0 b;
+    public float c = 1.0f;
 
-    static {
-        hw0 hw0Var = new hw0("DEFAULT", 0);
-        a = hw0Var;
-        hw0 hw0Var2 = new hw0("RECORDING", 1);
-        b = hw0Var2;
-        c = new hw0[]{hw0Var, hw0Var2};
+    public hw0(fw0 fw0Var, gw0 gw0Var) {
+        this.a = fw0Var;
+        this.b = gw0Var;
     }
 
-    public static hw0 valueOf(String str) {
-        return (hw0) Enum.valueOf(hw0.class, str);
+    @Override // o1.i
+    public final float a(Object obj) {
+        return this.a.get(obj) * this.c;
     }
 
-    public static hw0[] values() {
-        return (hw0[]) c.clone();
+    @Override // o1.i
+    public final void b(Object obj, float f7) {
+        this.b.b(obj, f7 / this.c);
     }
 }

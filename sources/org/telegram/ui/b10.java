@@ -1,21 +1,17 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b10 extends y00 {
-    public final /* synthetic */ c10 E;
+public final class b10 extends FrameLayout {
+    public org.telegram.ui.Components.bk0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b10(c10 c10Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, int i10, int i11) {
-        super(context, n2Var, i10, i11);
-        this.E = c10Var;
-    }
-
-    @Override // org.telegram.ui.y00
-    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
-        this.E.e.l0(tL_exportedChatlistInvite);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(156.0f), TLObject.FLAG_30));
     }
 }

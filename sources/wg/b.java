@@ -1,48 +1,76 @@
 package wg;
 
-import android.os.Bundle;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.u1;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.zn;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.yh;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h5;
+import org.telegram.ui.Components.cr;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c b;
-    public final /* synthetic */ MessageObject c;
-    public final /* synthetic */ TLRPC.TL_messageMediaGiveawayResults d;
+public final class b extends FrameLayout {
+    public final h5 a;
+    public final ImageView b;
 
-    public /* synthetic */ b(c cVar, MessageObject messageObject, TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults, int i10) {
-        this.a = i10;
-        this.b = cVar;
-        this.c = messageObject;
-        this.d = tL_messageMediaGiveawayResults;
+    public b(Context context, c6 c6Var) {
+        super(context);
+        h5 h5Var = new h5(context);
+        this.a = h5Var;
+        h5Var.setTextSize(16);
+        h5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        int i10 = g6.L6;
+        h5Var.setTextColor(g6.w0(i10, c6Var));
+        h5Var.setTag(Integer.valueOf(i10));
+        addView(h5Var);
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView);
+        h5Var.k(LocaleController.getString(R.string.BoostingAddChannelOrGroup));
+        Drawable drawable = getResources().getDrawable(R.drawable.poll_add_circle);
+        Drawable drawable2 = getResources().getDrawable(R.drawable.poll_add_plus);
+        int w02 = g6.w0(g6.N6, c6Var);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
+        drawable2.setColorFilter(new PorterDuffColorFilter(g6.w0(g6.k7, c6Var), mode));
+        imageView.setImageDrawable(new cr(drawable, drawable2));
+        setBackgroundColor(g6.w0(g6.h5, c6Var));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new b(this.b, this.c, this.d, 1));
-                break;
-            default:
-                u1 u1Var = this.b.c;
-                long dialogId = this.c.getDialogId();
-                TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = this.d;
-                if (dialogId != (-tL_messageMediaGiveawayResults.channel_id)) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", tL_messageMediaGiveawayResults.channel_id);
-                    bundle.putInt("message_id", tL_messageMediaGiveawayResults.launch_msg_id);
-                    LaunchActivity.R().presentFragment(new zn(bundle));
-                    break;
-                } else {
-                    u1Var.getDelegate().h2(u1Var, tL_messageMediaGiveawayResults.launch_msg_id, 0.0f, 0.0f, false);
-                    break;
-                }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int dp;
+        int i14 = i12 - i10;
+        h5 h5Var = this.a;
+        int textHeight = ((i13 - i11) - h5Var.getTextHeight()) / 2;
+        boolean z11 = LocaleController.isRTL;
+        ImageView imageView = this.b;
+        if (z11) {
+            dp = (getMeasuredWidth() - h5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
+        } else {
+            dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 68.0f : 23.0f);
         }
+        h5Var.layout(dp, textHeight, h5Var.getMeasuredWidth() + dp, h5Var.getMeasuredHeight() + textHeight);
+        int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(24.0f);
+        imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        this.a.measure(yh.z(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+        this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+        setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
     }
 }

@@ -1,47 +1,59 @@
 package b2;
 
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
+import java.util.ArrayList;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class c1 {
-    public static final String a;
+public final class c1 {
+    public static final c1 b;
+    public static final String c;
+    public final v a;
 
     static {
-        String str = e2.d0.a;
-        a = Integer.toString(0, 36);
+        SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
+        u6.p(!false);
+        b = new c1(new v(sparseBooleanArray));
+        String str = e2.m0.a;
+        c = Integer.toString(0, 36);
     }
 
-    public static c1 a(Bundle bundle) {
-        String str = a;
-        int i10 = bundle.getInt(str, -1);
-        if (i10 == 0) {
-            String str2 = u.d;
-            e2.d.b(bundle.getInt(str, -1) == 0);
-            return bundle.getBoolean(u.d, false) ? new u(bundle.getBoolean(u.e, false)) : new u();
-        }
-        if (i10 == 1) {
-            String str3 = t0.c;
-            e2.d.b(bundle.getInt(str, -1) == 1);
-            float f7 = bundle.getFloat(t0.c, -1.0f);
-            return f7 == -1.0f ? new t0() : new t0(f7);
-        }
-        if (i10 != 2) {
-            if (i10 != 3) {
-                throw new IllegalArgumentException(hg.c.h(i10, "Unknown RatingType: "));
+    public c1(v vVar) {
+        this.a = vVar;
+    }
+
+    public final boolean a(int i10) {
+        return this.a.a.get(i10);
+    }
+
+    public final Bundle b() {
+        Bundle bundle = new Bundle();
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        int i10 = 0;
+        while (true) {
+            v vVar = this.a;
+            if (i10 >= vVar.a.size()) {
+                bundle.putIntegerArrayList(c, arrayList);
+                return bundle;
             }
-            String str4 = f1.d;
-            e2.d.b(bundle.getInt(str, -1) == 3);
-            return bundle.getBoolean(f1.d, false) ? new f1(bundle.getBoolean(f1.e, false)) : new f1();
+            arrayList.add(Integer.valueOf(vVar.a(i10)));
+            i10++;
         }
-        String str5 = d1.d;
-        e2.d.b(bundle.getInt(str, -1) == 2);
-        int i11 = bundle.getInt(d1.d, 5);
-        float f10 = bundle.getFloat(d1.e, -1.0f);
-        return f10 == -1.0f ? new d1(i11) : new d1(i11, f10);
     }
 
-    public abstract boolean b();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof c1) {
+            return this.a.equals(((c1) obj).a);
+        }
+        return false;
+    }
 
-    public abstract Bundle c();
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
 }

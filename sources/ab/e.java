@@ -1,28 +1,19 @@
 package ab;
 
-import kotlin.jvm.internal.i;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e {
-    public final String a;
+public final class e implements ja.d {
+    public static final e a = new e();
+    public static final ja.c b = ja.c.c("performance");
+    public static final ja.c c = ja.c.c("crashlytics");
+    public static final ja.c d = ja.c.c("sessionSamplingRate");
 
-    public e(String str) {
-        this.a = str;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof e) && i.a(this.a, ((e) obj).a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return "SessionDetails(sessionId=" + this.a + ')';
+    @Override // ja.a
+    public final void a(Object obj, Object obj2) {
+        j jVar = (j) obj;
+        ja.e eVar = (ja.e) obj2;
+        eVar.d(b, jVar.a);
+        eVar.d(c, jVar.b);
+        eVar.e(d, jVar.c);
     }
 }

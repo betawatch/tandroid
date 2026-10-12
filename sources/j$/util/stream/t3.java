@@ -24,7 +24,7 @@ public abstract class t3 implements b8 {
     public static final long[] f = new long[0];
     public static final double[] g = new double[0];
 
-    public abstract w1 A0(long j3, IntFunction intFunction);
+    public abstract w1 A0(long j10, IntFunction intFunction);
 
     public abstract o4 D0();
 
@@ -89,17 +89,17 @@ public abstract class t3 implements b8 {
         return hashSet;
     }
 
-    public static long W(long j3, long j10, long j11) {
-        if (j3 >= 0) {
-            return Math.max(-1L, Math.min(j3 - j10, j11));
+    public static long W(long j10, long j11, long j12) {
+        if (j10 >= 0) {
+            return Math.max(-1L, Math.min(j10 - j11, j12));
         }
         return -1L;
     }
 
-    public static long Z(long j3, long j10) {
-        long j11 = j10 >= 0 ? j3 + j10 : Long.MAX_VALUE;
-        if (j11 >= 0) {
-            return j11;
+    public static long Z(long j10, long j11) {
+        long j12 = j11 >= 0 ? j10 + j11 : Long.MAX_VALUE;
+        if (j12 >= 0) {
+            return j12;
         }
         return Long.MAX_VALUE;
     }
@@ -109,22 +109,22 @@ public abstract class t3 implements b8 {
         return new y4(spliterator, v6.l(spliterator), z10);
     }
 
-    public static Spliterator X(w6 w6Var, Spliterator spliterator, long j3, long j10) {
-        long Z = Z(j3, j10);
+    public static Spliterator X(w6 w6Var, Spliterator spliterator, long j10, long j11) {
+        long Z = Z(j10, j11);
         int i10 = s5.a[w6Var.ordinal()];
         if (i10 == 1) {
-            return new p7(spliterator, j3, Z);
+            return new p7(spliterator, j10, Z);
         }
         if (i10 == 2) {
-            return new m7((j$.util.x0) spliterator, j3, Z);
+            return new m7((j$.util.x0) spliterator, j10, Z);
         }
         if (i10 == 3) {
-            return new n7((j$.util.a1) spliterator, j3, Z);
+            return new n7((j$.util.a1) spliterator, j10, Z);
         }
         if (i10 != 4) {
             throw new IllegalStateException("Unknown shape " + w6Var);
         }
-        return new l7((j$.util.u0) spliterator, j3, Z);
+        return new l7((j$.util.u0) spliterator, j10, Z);
     }
 
     public static j$.util.concurrent.t B0(r1 r1Var, Predicate predicate) {
@@ -156,27 +156,27 @@ public abstract class t3 implements b8 {
         return new j$.util.concurrent.t(w6.INT_VALUE, r1Var, new l1(r1Var, 1));
     }
 
-    public static l5 C0(b5 b5Var, long j3, long j10) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException("Skip must be non-negative: " + j3);
+    public static l5 C0(b5 b5Var, long j10, long j11) {
+        if (j10 < 0) {
+            throw new IllegalArgumentException("Skip must be non-negative: " + j10);
         }
-        return new l5(b5Var, l0(j10), j3, j10);
+        return new l5(b5Var, l0(j11), j10, j11);
     }
 
-    public static e2 V(e2 e2Var, long j3, long j10, IntFunction intFunction) {
-        if (j3 == 0 && j10 == e2Var.count()) {
+    public static e2 V(e2 e2Var, long j10, long j11, IntFunction intFunction) {
+        if (j10 == 0 && j11 == e2Var.count()) {
             return e2Var;
         }
         Spliterator spliterator = e2Var.spliterator();
-        long j11 = j10 - j3;
-        w1 Y = Y(j11, intFunction);
-        Y.o(j11);
-        for (int i10 = 0; i10 < j3 && spliterator.tryAdvance(new a1(11)); i10++) {
+        long j12 = j11 - j10;
+        w1 Y = Y(j12, intFunction);
+        Y.o(j12);
+        for (int i10 = 0; i10 < j10 && spliterator.tryAdvance(new a1(11)); i10++) {
         }
-        if (j10 == e2Var.count()) {
+        if (j11 == e2Var.count()) {
             spliterator.forEachRemaining(Y);
         } else {
-            for (int i11 = 0; i11 < j11 && spliterator.tryAdvance(Y); i11++) {
+            for (int i11 = 0; i11 < j12 && spliterator.tryAdvance(Y); i11++) {
             }
         }
         Y.end();
@@ -220,9 +220,9 @@ public abstract class t3 implements b8 {
         throw new IllegalStateException("called wrong accept method");
     }
 
-    public static w1 Y(long j3, IntFunction intFunction) {
-        if (j3 >= 0 && j3 < 2147483639) {
-            return new y2(j3, intFunction);
+    public static w1 Y(long j10, IntFunction intFunction) {
+        if (j10 >= 0 && j10 < 2147483639) {
+            return new y2(j10, intFunction);
         }
         return new q3();
     }
@@ -247,11 +247,11 @@ public abstract class t3 implements b8 {
         i5Var.accept(l4.longValue());
     }
 
-    public static u1 s0(long j3) {
-        if (j3 < 0 || j3 >= 2147483639) {
+    public static u1 s0(long j10) {
+        if (j10 < 0 || j10 >= 2147483639) {
             return new b3();
         }
-        return new a3(j3);
+        return new a3(j10);
     }
 
     public static void D(g5 g5Var, Double d10) {
@@ -262,18 +262,18 @@ public abstract class t3 implements b8 {
         g5Var.accept(d10.doubleValue());
     }
 
-    public static n5 x0(z0 z0Var, long j3, long j10) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException("Skip must be non-negative: " + j3);
+    public static n5 x0(z0 z0Var, long j10, long j11) {
+        if (j10 < 0) {
+            throw new IllegalArgumentException("Skip must be non-negative: " + j10);
         }
-        return new n5(z0Var, l0(j10), j3, j10);
+        return new n5(z0Var, l0(j11), j10, j11);
     }
 
-    public static v1 t0(long j3) {
-        if (j3 < 0 || j3 >= 2147483639) {
+    public static v1 t0(long j10) {
+        if (j10 < 0 || j10 >= 2147483639) {
             return new k3();
         }
-        return new j3(j3);
+        return new j3(j10);
     }
 
     public static Object[] L(d2 d2Var, IntFunction intFunction) {
@@ -289,11 +289,11 @@ public abstract class t3 implements b8 {
         return objArr;
     }
 
-    public static t1 h0(long j3) {
-        if (j3 < 0 || j3 >= 2147483639) {
+    public static t1 h0(long j10) {
+        if (j10 < 0 || j10 >= 2147483639) {
             return new s2();
         }
-        return new r2(j3);
+        return new r2(j10);
     }
 
     public static e2 a0(t3 t3Var, Spliterator spliterator, boolean z10, IntFunction intFunction) {
@@ -324,11 +324,11 @@ public abstract class t3 implements b8 {
         }
     }
 
-    public static p5 z0(i1 i1Var, long j3, long j10) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException("Skip must be non-negative: " + j3);
+    public static p5 z0(i1 i1Var, long j10, long j11) {
+        if (j10 < 0) {
+            throw new IllegalArgumentException("Skip must be non-negative: " + j10);
         }
-        return new p5(i1Var, l0(j10), j3, j10);
+        return new p5(i1Var, l0(j11), j10, j11);
     }
 
     public static void N(a2 a2Var, Integer[] numArr, int i10) {
@@ -342,20 +342,20 @@ public abstract class t3 implements b8 {
         }
     }
 
-    public static a2 T(a2 a2Var, long j3, long j10) {
-        if (j3 == 0 && j10 == a2Var.count()) {
+    public static a2 T(a2 a2Var, long j10, long j11) {
+        if (j10 == 0 && j11 == a2Var.count()) {
             return a2Var;
         }
-        long j11 = j10 - j3;
+        long j12 = j11 - j10;
         j$.util.x0 x0Var = (j$.util.x0) a2Var.spliterator();
-        u1 s02 = s0(j11);
-        s02.o(j11);
-        for (int i10 = 0; i10 < j3 && x0Var.tryAdvance((IntConsumer) new z1(0)); i10++) {
+        u1 s02 = s0(j12);
+        s02.o(j12);
+        for (int i10 = 0; i10 < j10 && x0Var.tryAdvance((IntConsumer) new z1(0)); i10++) {
         }
-        if (j10 == a2Var.count()) {
+        if (j11 == a2Var.count()) {
             x0Var.forEachRemaining((IntConsumer) s02);
         } else {
-            for (int i11 = 0; i11 < j11 && x0Var.tryAdvance((IntConsumer) s02); i11++) {
+            for (int i11 = 0; i11 < j12 && x0Var.tryAdvance((IntConsumer) s02); i11++) {
             }
         }
         s02.end();
@@ -413,20 +413,20 @@ public abstract class t3 implements b8 {
         }
     }
 
-    public static c2 U(c2 c2Var, long j3, long j10) {
-        if (j3 == 0 && j10 == c2Var.count()) {
+    public static c2 U(c2 c2Var, long j10, long j11) {
+        if (j10 == 0 && j11 == c2Var.count()) {
             return c2Var;
         }
-        long j11 = j10 - j3;
+        long j12 = j11 - j10;
         j$.util.a1 a1Var = (j$.util.a1) c2Var.spliterator();
-        v1 t02 = t0(j11);
-        t02.o(j11);
-        for (int i10 = 0; i10 < j3 && a1Var.tryAdvance((LongConsumer) new b2(0)); i10++) {
+        v1 t02 = t0(j12);
+        t02.o(j12);
+        for (int i10 = 0; i10 < j10 && a1Var.tryAdvance((LongConsumer) new b2(0)); i10++) {
         }
-        if (j10 == c2Var.count()) {
+        if (j11 == c2Var.count()) {
             a1Var.forEachRemaining((LongConsumer) t02);
         } else {
-            for (int i11 = 0; i11 < j11 && a1Var.tryAdvance((LongConsumer) t02); i11++) {
+            for (int i11 = 0; i11 < j12 && a1Var.tryAdvance((LongConsumer) t02); i11++) {
             }
         }
         t02.end();
@@ -447,11 +447,11 @@ public abstract class t3 implements b8 {
         return new q2(dArr);
     }
 
-    public static r5 v0(z zVar, long j3, long j10) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException("Skip must be non-negative: " + j3);
+    public static r5 v0(z zVar, long j10, long j11) {
+        if (j10 < 0) {
+            throw new IllegalArgumentException("Skip must be non-negative: " + j10);
         }
-        return new r5(zVar, l0(j10), j3, j10);
+        return new r5(zVar, l0(j11), j10, j11);
     }
 
     public static e2 m0(e2 e2Var, IntFunction intFunction) {
@@ -503,20 +503,20 @@ public abstract class t3 implements b8 {
         }
     }
 
-    public static y1 S(y1 y1Var, long j3, long j10) {
-        if (j3 == 0 && j10 == y1Var.count()) {
+    public static y1 S(y1 y1Var, long j10, long j11) {
+        if (j10 == 0 && j11 == y1Var.count()) {
             return y1Var;
         }
-        long j11 = j10 - j3;
+        long j12 = j11 - j10;
         j$.util.u0 u0Var = (j$.util.u0) y1Var.spliterator();
-        t1 h02 = h0(j11);
-        h02.o(j11);
-        for (int i10 = 0; i10 < j3 && u0Var.tryAdvance((DoubleConsumer) new x1(0)); i10++) {
+        t1 h02 = h0(j12);
+        h02.o(j12);
+        for (int i10 = 0; i10 < j10 && u0Var.tryAdvance((DoubleConsumer) new x1(0)); i10++) {
         }
-        if (j10 == y1Var.count()) {
+        if (j11 == y1Var.count()) {
             u0Var.forEachRemaining((DoubleConsumer) h02);
         } else {
-            for (int i11 = 0; i11 < j11 && u0Var.tryAdvance((DoubleConsumer) h02); i11++) {
+            for (int i11 = 0; i11 < j12 && u0Var.tryAdvance((DoubleConsumer) h02); i11++) {
             }
         }
         h02.end();
@@ -536,8 +536,8 @@ public abstract class t3 implements b8 {
         return new i3(jArr);
     }
 
-    public static int l0(long j3) {
-        return (j3 != -1 ? v6.u : 0) | v6.t;
+    public static int l0(long j10) {
+        return (j10 != -1 ? v6.u : 0) | v6.t;
     }
 
     public static y1 n0(y1 y1Var) {

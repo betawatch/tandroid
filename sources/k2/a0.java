@@ -1,31 +1,20 @@
 package k2;
 
-import android.os.Handler;
-import java.util.concurrent.Executor;
+import android.media.AudioTimestamp;
+import android.media.AudioTrack;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a0 implements Executor {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class a0 {
+    public final AudioTrack a;
+    public final AudioTimestamp b = new AudioTimestamp();
+    public long c;
+    public long d;
+    public long e;
+    public boolean f;
+    public long g;
 
-    public /* synthetic */ a0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((Handler) this.b).post(runnable);
-                break;
-            case 1:
-                e2.d0.T(((m4.b0) this.b).l, runnable);
-                break;
-            default:
-                ((p4.b) this.b).post(runnable);
-                break;
-        }
+    public a0(AudioTrack audioTrack) {
+        this.a = audioTrack;
     }
 }

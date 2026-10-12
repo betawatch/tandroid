@@ -18,17 +18,17 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m2 {
     public static m2 i;
     public WeakHashMap a;
-    public a0.m b;
-    public a0.n c;
+    public a0.l b;
+    public a0.m c;
     public final WeakHashMap d = new WeakHashMap(0);
     public TypedValue e;
     public boolean f;
-    public com.google.firebase.messaging.n g;
+    public com.google.firebase.messaging.m g;
     public static final PorterDuff.Mode h = PorterDuff.Mode.SRC_IN;
     public static final k2 j = new k2(6);
 
@@ -74,21 +74,21 @@ public final class m2 {
 
     public final void a(String str, l2 l2Var) {
         if (this.b == null) {
-            this.b = new a0.m(0);
+            this.b = new a0.l(0);
         }
         this.b.put(str, l2Var);
     }
 
-    public final synchronized void b(Context context, long j3, Drawable drawable) {
+    public final synchronized void b(Context context, long j10, Drawable drawable) {
         try {
             Drawable.ConstantState constantState = drawable.getConstantState();
             if (constantState != null) {
-                a0.i iVar = (a0.i) this.d.get(context);
-                if (iVar == null) {
-                    iVar = new a0.i();
-                    this.d.put(context, iVar);
+                a0.h hVar = (a0.h) this.d.get(context);
+                if (hVar == null) {
+                    hVar = new a0.h();
+                    this.d.put(context, hVar);
                 }
-                iVar.k(new WeakReference(constantState), j3);
+                hVar.k(new WeakReference(constantState), j10);
             }
         } catch (Throwable th2) {
             throw th2;
@@ -101,42 +101,42 @@ public final class m2 {
         }
         TypedValue typedValue = this.e;
         context.getResources().getValue(i10, typedValue, true);
-        long j3 = (typedValue.assetCookie << 32) | typedValue.data;
-        Drawable e7 = e(context, j3);
-        if (e7 != null) {
-            return e7;
+        long j10 = (typedValue.assetCookie << 32) | typedValue.data;
+        Drawable e = e(context, j10);
+        if (e != null) {
+            return e;
         }
         LayerDrawable layerDrawable = null;
         if (this.g != null) {
             if (i10 == R.drawable.abc_cab_background_top_material) {
                 layerDrawable = new LayerDrawable(new Drawable[]{g(context, R.drawable.abc_cab_background_internal_bg), g(context, R.drawable.abc_cab_background_top_mtrl_alpha)});
             } else if (i10 == R.drawable.abc_ratingbar_material) {
-                layerDrawable = com.google.firebase.messaging.n.r(this, context, R.dimen.abc_star_big);
+                layerDrawable = com.google.firebase.messaging.m.r(this, context, R.dimen.abc_star_big);
             } else if (i10 == R.drawable.abc_ratingbar_indicator_material) {
-                layerDrawable = com.google.firebase.messaging.n.r(this, context, R.dimen.abc_star_medium);
+                layerDrawable = com.google.firebase.messaging.m.r(this, context, R.dimen.abc_star_medium);
             } else if (i10 == R.drawable.abc_ratingbar_small_material) {
-                layerDrawable = com.google.firebase.messaging.n.r(this, context, R.dimen.abc_star_small);
+                layerDrawable = com.google.firebase.messaging.m.r(this, context, R.dimen.abc_star_small);
             }
         }
         if (layerDrawable != null) {
             layerDrawable.setChangingConfigurations(typedValue.changingConfigurations);
-            b(context, j3, layerDrawable);
+            b(context, j10, layerDrawable);
         }
         return layerDrawable;
     }
 
-    public final synchronized Drawable e(Context context, long j3) {
-        a0.i iVar = (a0.i) this.d.get(context);
-        if (iVar == null) {
+    public final synchronized Drawable e(Context context, long j10) {
+        a0.h hVar = (a0.h) this.d.get(context);
+        if (hVar == null) {
             return null;
         }
-        WeakReference weakReference = (WeakReference) iVar.f(j3);
+        WeakReference weakReference = (WeakReference) hVar.f(j10);
         if (weakReference != null) {
             Drawable.ConstantState constantState = (Drawable.ConstantState) weakReference.get();
             if (constantState != null) {
                 return constantState.newDrawable(context.getResources());
             }
-            iVar.l(j3);
+            hVar.l(j10);
         }
         return null;
     }
@@ -177,25 +177,25 @@ public final class m2 {
 
     public final synchronized ColorStateList i(Context context, int i10) {
         ColorStateList colorStateList;
-        a0.n nVar;
+        a0.m mVar;
         WeakHashMap weakHashMap = this.a;
         ColorStateList colorStateList2 = null;
-        colorStateList = (weakHashMap == null || (nVar = (a0.n) weakHashMap.get(context)) == null) ? null : (ColorStateList) nVar.c(i10);
+        colorStateList = (weakHashMap == null || (mVar = (a0.m) weakHashMap.get(context)) == null) ? null : (ColorStateList) mVar.c(i10);
         if (colorStateList == null) {
-            com.google.firebase.messaging.n nVar2 = this.g;
-            if (nVar2 != null) {
-                colorStateList2 = nVar2.t(context, i10);
+            com.google.firebase.messaging.m mVar2 = this.g;
+            if (mVar2 != null) {
+                colorStateList2 = mVar2.t(context, i10);
             }
             if (colorStateList2 != null) {
                 if (this.a == null) {
                     this.a = new WeakHashMap();
                 }
-                a0.n nVar3 = (a0.n) this.a.get(context);
-                if (nVar3 == null) {
-                    nVar3 = new a0.n();
-                    this.a.put(context, nVar3);
+                a0.m mVar3 = (a0.m) this.a.get(context);
+                if (mVar3 == null) {
+                    mVar3 = new a0.m();
+                    this.a.put(context, mVar3);
                 }
-                nVar3.a(i10, colorStateList2);
+                mVar3.a(i10, colorStateList2);
             }
             colorStateList = colorStateList2;
         }
@@ -204,13 +204,13 @@ public final class m2 {
 
     public final Drawable k(Context context, int i10) {
         int next;
-        a0.m mVar = this.b;
-        if (mVar == null || mVar.isEmpty()) {
+        a0.l lVar = this.b;
+        if (lVar == null || lVar.isEmpty()) {
             return null;
         }
-        a0.n nVar = this.c;
-        if (nVar != null) {
-            String str = (String) nVar.c(i10);
+        a0.m mVar = this.c;
+        if (mVar != null) {
+            String str = (String) mVar.c(i10);
             if ("appcompat_skip_skip".equals(str)) {
                 return null;
             }
@@ -218,7 +218,7 @@ public final class m2 {
                 return null;
             }
         } else {
-            this.c = new a0.n();
+            this.c = new a0.m();
         }
         if (this.e == null) {
             this.e = new TypedValue();
@@ -226,10 +226,10 @@ public final class m2 {
         TypedValue typedValue = this.e;
         Resources resources = context.getResources();
         resources.getValue(i10, typedValue, true);
-        long j3 = (typedValue.assetCookie << 32) | typedValue.data;
-        Drawable e7 = e(context, j3);
-        if (e7 != null) {
-            return e7;
+        long j10 = (typedValue.assetCookie << 32) | typedValue.data;
+        Drawable e = e(context, j10);
+        if (e != null) {
+            return e;
         }
         CharSequence charSequence = typedValue.string;
         if (charSequence != null && charSequence.toString().endsWith(".xml")) {
@@ -249,24 +249,24 @@ public final class m2 {
                 this.c.a(i10, name);
                 l2 l2Var = (l2) this.b.get(name);
                 if (l2Var != null) {
-                    e7 = l2Var.a(context, xml, asAttributeSet, context.getTheme());
+                    e = l2Var.a(context, xml, asAttributeSet, context.getTheme());
                 }
-                if (e7 != null) {
-                    e7.setChangingConfigurations(typedValue.changingConfigurations);
-                    b(context, j3, e7);
+                if (e != null) {
+                    e.setChangingConfigurations(typedValue.changingConfigurations);
+                    b(context, j10, e);
                 }
-            } catch (Exception e10) {
-                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e10);
+            } catch (Exception e7) {
+                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e7);
             }
         }
-        if (e7 == null) {
+        if (e == null) {
             this.c.a(i10, "appcompat_skip_skip");
         }
-        return e7;
+        return e;
     }
 
-    public final synchronized void l(com.google.firebase.messaging.n nVar) {
-        this.g = nVar;
+    public final synchronized void l(com.google.firebase.messaging.m mVar) {
+        this.g = mVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x00e4  */
@@ -291,39 +291,39 @@ public final class m2 {
             }
             return mutate;
         }
-        com.google.firebase.messaging.n nVar = this.g;
+        com.google.firebase.messaging.m mVar = this.g;
         int i12 = R.attr.colorControlNormal;
-        if (nVar != null) {
+        if (mVar != null) {
             if (i10 == R.drawable.abc_seekbar_track_material) {
                 LayerDrawable layerDrawable = (LayerDrawable) drawable;
                 Drawable findDrawableByLayerId = layerDrawable.findDrawableByLayerId(android.R.id.background);
-                int c10 = a3.c(context, R.attr.colorControlNormal);
+                int c10 = b3.c(context, R.attr.colorControlNormal);
                 PorterDuff.Mode mode2 = q.b;
-                com.google.firebase.messaging.n.C(findDrawableByLayerId, c10, mode2);
-                com.google.firebase.messaging.n.C(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), a3.c(context, R.attr.colorControlNormal), mode2);
-                com.google.firebase.messaging.n.C(layerDrawable.findDrawableByLayerId(android.R.id.progress), a3.c(context, R.attr.colorControlActivated), mode2);
+                com.google.firebase.messaging.m.C(findDrawableByLayerId, c10, mode2);
+                com.google.firebase.messaging.m.C(layerDrawable.findDrawableByLayerId(android.R.id.secondaryProgress), b3.c(context, R.attr.colorControlNormal), mode2);
+                com.google.firebase.messaging.m.C(layerDrawable.findDrawableByLayerId(android.R.id.progress), b3.c(context, R.attr.colorControlActivated), mode2);
                 return drawable;
             }
             if (i10 == R.drawable.abc_ratingbar_material || i10 == R.drawable.abc_ratingbar_indicator_material || i10 == R.drawable.abc_ratingbar_small_material) {
                 LayerDrawable layerDrawable2 = (LayerDrawable) drawable;
                 Drawable findDrawableByLayerId2 = layerDrawable2.findDrawableByLayerId(android.R.id.background);
-                int b10 = a3.b(context, R.attr.colorControlNormal);
+                int b10 = b3.b(context, R.attr.colorControlNormal);
                 PorterDuff.Mode mode3 = q.b;
-                com.google.firebase.messaging.n.C(findDrawableByLayerId2, b10, mode3);
-                com.google.firebase.messaging.n.C(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), a3.c(context, R.attr.colorControlActivated), mode3);
-                com.google.firebase.messaging.n.C(layerDrawable2.findDrawableByLayerId(android.R.id.progress), a3.c(context, R.attr.colorControlActivated), mode3);
+                com.google.firebase.messaging.m.C(findDrawableByLayerId2, b10, mode3);
+                com.google.firebase.messaging.m.C(layerDrawable2.findDrawableByLayerId(android.R.id.secondaryProgress), b3.c(context, R.attr.colorControlActivated), mode3);
+                com.google.firebase.messaging.m.C(layerDrawable2.findDrawableByLayerId(android.R.id.progress), b3.c(context, R.attr.colorControlActivated), mode3);
                 return drawable;
             }
         }
-        com.google.firebase.messaging.n nVar2 = this.g;
+        com.google.firebase.messaging.m mVar2 = this.g;
         boolean z12 = false;
-        if (nVar2 != null) {
+        if (mVar2 != null) {
             PorterDuff.Mode mode4 = q.b;
-            if (!com.google.firebase.messaging.n.f(i10, (int[]) nVar2.a)) {
-                if (com.google.firebase.messaging.n.f(i10, (int[]) nVar2.c)) {
+            if (!com.google.firebase.messaging.m.f(i10, (int[]) mVar2.a)) {
+                if (com.google.firebase.messaging.m.f(i10, (int[]) mVar2.c)) {
                     i12 = R.attr.colorControlActivated;
                 } else {
-                    boolean f7 = com.google.firebase.messaging.n.f(i10, (int[]) nVar2.d);
+                    boolean f7 = com.google.firebase.messaging.m.f(i10, (int[]) mVar2.d);
                     i12 = android.R.attr.colorBackground;
                     if (f7) {
                         mode4 = PorterDuff.Mode.MULTIPLY;
@@ -334,7 +334,7 @@ public final class m2 {
                         if (z11) {
                             int[] iArr2 = l1.a;
                             Drawable mutate2 = drawable.mutate();
-                            int c11 = a3.c(context, i12);
+                            int c11 = b3.c(context, i12);
                             synchronized (q.class) {
                                 h10 = h(c11, mode4);
                             }

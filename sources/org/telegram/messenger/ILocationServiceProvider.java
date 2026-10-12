@@ -4,7 +4,7 @@ import android.content.Context;
 import android.location.Location;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public interface ILocationServiceProvider {
     public static final int PRIORITY_BALANCED_POWER_ACCURACY = 1;
@@ -15,33 +15,33 @@ public interface ILocationServiceProvider {
     public static final int STATUS_SETTINGS_CHANGE_UNAVAILABLE = 2;
     public static final int STATUS_SUCCESS = 0;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface IAPIConnectionCallbacks {
         void onConnected(Bundle bundle);
 
         void onConnectionSuspended(int i10);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface IAPIOnConnectionFailedListener {
         void onConnectionFailed();
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface ILocationListener {
         void onLocationChanged(Location location);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface ILocationRequest {
-        void setFastestInterval(long j3);
+        void setFastestInterval(long j10);
 
-        void setInterval(long j3);
+        void setInterval(long j10);
 
         void setPriority(int i10);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface IMapApiClient {
         void connect();
 

@@ -1,24 +1,49 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.View;
-import org.telegram.ui.Components.z6;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class t1 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ z6 a;
+public final class t1 extends Drawable {
+    public final int a;
+    public final /* synthetic */ GradientDrawable b;
+    public final /* synthetic */ a2 c;
 
-    public t1(z6 z6Var) {
-        this.a = z6Var;
+    public t1(a2 a2Var, GradientDrawable gradientDrawable) {
+        this.c = a2Var;
+        this.b = gradientDrawable;
+        this.a = AndroidUtilities.dp(52.0f) + a2Var.Y;
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        this.a.c(null);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int width = this.c.k0.getWidth();
+        int i10 = this.a;
+        int i11 = (int) ((width - i10) / 2.0f);
+        int height = (int) ((r0.k0.getHeight() - i10) / 2.0f);
+        int width2 = (int) ((r0.k0.getWidth() + i10) / 2.0f);
+        int height2 = (int) ((r0.k0.getHeight() + i10) / 2.0f);
+        GradientDrawable gradientDrawable = this.b;
+        gradientDrawable.setBounds(i11, height, width2, height2);
+        gradientDrawable.draw(canvas);
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        this.a.b(null);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return this.b.getOpacity();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.b.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.b.setColorFilter(colorFilter);
     }
 }

@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class o5 extends FrameLayout {
     public final /* synthetic */ t5 a;
@@ -23,16 +23,16 @@ public final class o5 extends FrameLayout {
     }
 
     @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
         float measuredWidth;
         float measuredHeight;
         int i10;
         t5 t5Var = this.a;
         p5 p5Var = t5Var.a;
         if (t5Var.M == null || view != p5Var) {
-            return super.drawChild(canvas, view, j3);
+            return super.drawChild(canvas, view, j10);
         }
-        boolean drawChild = super.drawChild(canvas, view, j3);
+        boolean drawChild = super.drawChild(canvas, view, j10);
         if (t5Var.N) {
             Rect rect = t5.a0;
             MediaController.PhotoEntry photoEntry = t5Var.G;

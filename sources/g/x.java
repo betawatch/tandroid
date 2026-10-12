@@ -1,6 +1,6 @@
 package g;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class x {
     public static x d;
@@ -8,8 +8,8 @@ public final class x {
     public long b;
     public int c;
 
-    public final void a(double d10, double d11, long j3) {
-        double d12 = (0.01720197f * ((j3 - 946728000000L) / 8.64E7f)) + 6.24006f;
+    public final void a(double d10, double d11, long j10) {
+        double d12 = (0.01720197f * ((j10 - 946728000000L) / 8.64E7f)) + 6.24006f;
         double sin = (Math.sin(r3 * 3.0f) * 5.236000106378924E-6d) + (Math.sin(2.0f * r3) * 3.4906598739326E-4d) + (Math.sin(d12) * 0.03341960161924362d) + d12 + 1.796593063d + 3.141592653589793d;
         double sin2 = (Math.sin(2.0d * sin) * (-0.0069d)) + (Math.sin(d12) * 0.0053d) + Math.round((r2 - 9.0E-4f) - r6) + 9.0E-4f + ((-d11) / 360.0d);
         double asin = Math.asin(Math.sin(0.4092797040939331d) * Math.sin(sin));
@@ -30,7 +30,7 @@ public final class x {
             this.a = Math.round((sin2 + acos) * 8.64E7d) + 946728000000L;
             long round = Math.round((sin2 - acos) * 8.64E7d) + 946728000000L;
             this.b = round;
-            if (round >= j3 || this.a <= j3) {
+            if (round >= j10 || this.a <= j10) {
                 this.c = 1;
             } else {
                 this.c = 0;

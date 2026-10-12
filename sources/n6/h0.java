@@ -10,7 +10,7 @@ import android.os.RemoteException;
 import android.util.Log;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h0 {
     public static final Uri d = new Uri.Builder().scheme("content").authority("com.google.android.gms.chimera").build();
@@ -47,8 +47,8 @@ public final class h0 {
             bundle2.putString("serviceActionBundleKey", str);
             try {
                 acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(d);
-            } catch (RemoteException e7) {
-                e = e7;
+            } catch (RemoteException e) {
+                e = e;
                 bundle = null;
                 Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
                 if (bundle == null) {
@@ -57,8 +57,8 @@ public final class h0 {
                 }
                 if (intent == null) {
                 }
-            } catch (IllegalArgumentException e10) {
-                e = e10;
+            } catch (IllegalArgumentException e7) {
+                e = e7;
                 bundle = null;
                 Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
                 if (bundle == null) {
@@ -74,8 +74,8 @@ public final class h0 {
             try {
                 bundle = acquireUnstableContentProviderClient.call("serviceIntentCall", null, bundle2);
                 try {
-                } catch (RemoteException e11) {
-                    e = e11;
+                } catch (RemoteException e10) {
+                    e = e10;
                     Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
                     if (bundle == null) {
                     }
@@ -83,8 +83,8 @@ public final class h0 {
                     }
                     if (intent == null) {
                     }
-                } catch (IllegalArgumentException e12) {
-                    e = e12;
+                } catch (IllegalArgumentException e11) {
+                    e = e11;
                     Log.w("ConnectionStatusConfig", "Dynamic intent resolution failed: ".concat(e.toString()));
                     if (bundle == null) {
                     }

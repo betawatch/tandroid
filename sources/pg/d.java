@@ -1,41 +1,63 @@
 package pg;
 
-import org.telegram.messenger.R;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.ui.Cells.f8;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class d extends m {
-    @Override // pg.m
-    public final float a() {
-        return 1.0f;
-    }
+public abstract class d extends mm0 {
+    public boolean V2;
 
-    @Override // pg.m
-    public final float d() {
-        return 1.0f;
-    }
-
-    @Override // pg.m
-    public final int e() {
-        return R.raw.photo_eraser;
-    }
-
-    @Override // pg.m
-    public final float g() {
-        return 0.35f;
-    }
-
-    @Override // pg.m
-    public final String i(int i10) {
-        if (i10 == 0) {
-            return "blitWithMaskEraser";
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.ui.Components.mm0
+    public final void J0(Canvas canvas, RectF rectF, long j10) {
+        super.J0(canvas, rectF, j10);
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof c) {
+                float x10 = childAt.getX();
+                float y3 = childAt.getY();
+                if (rectF.intersects(x10, y3, childAt.getWidth() + x10, childAt.getHeight() + y3)) {
+                    canvas.save();
+                    canvas.translate(x10, y3);
+                    f8 f8Var = (f8) ((c) childAt);
+                    if (f8Var.L) {
+                        f8Var.b(canvas, this);
+                    }
+                    canvas.restore();
+                }
+            }
         }
-        if (i10 == 1) {
-            return "compositeWithMaskEraser";
+    }
+
+    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        this.V2 = false;
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            if (getChildAt(i10) instanceof c) {
+                c cVar = (c) getChildAt(i10);
+                canvas.save();
+                canvas.translate(cVar.getX(), cVar.getY());
+                f8 f8Var = (f8) cVar;
+                if (f8Var.L) {
+                    f8Var.b(canvas, this);
+                }
+                canvas.restore();
+            }
         }
-        if (i10 != 2) {
-            return null;
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.V2) {
+            return;
         }
-        return "brush";
+        super.invalidate();
+        this.V2 = true;
     }
 }

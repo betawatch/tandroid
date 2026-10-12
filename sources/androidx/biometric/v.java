@@ -1,44 +1,43 @@
 package androidx.biometric;
 
-import java.lang.ref.WeakReference;
+import android.security.identity.IdentityCredential;
+import java.security.Signature;
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class v extends d {
-    public final WeakReference a;
+public final class v {
+    public final Signature a;
+    public final Cipher b;
+    public final Mac c;
+    public final IdentityCredential d;
 
-    public v(x xVar) {
-        this.a = new WeakReference(xVar);
+    public v(Signature signature) {
+        this.a = signature;
+        this.b = null;
+        this.c = null;
+        this.d = null;
     }
 
-    @Override // androidx.biometric.d
-    public final void a(int i10, CharSequence charSequence) {
-        WeakReference weakReference = this.a;
-        if (weakReference.get() == null || ((x) weakReference.get()).o || !((x) weakReference.get()).n) {
-            return;
-        }
-        ((x) weakReference.get()).d(new e(i10, charSequence));
+    public v(Cipher cipher) {
+        this.a = null;
+        this.b = cipher;
+        this.c = null;
+        this.d = null;
     }
 
-    @Override // androidx.biometric.d
-    public final void b(s sVar) {
-        WeakReference weakReference = this.a;
-        if (weakReference.get() == null || !((x) weakReference.get()).n) {
-            return;
-        }
-        int i10 = -1;
-        if (sVar.b == -1) {
-            t tVar = sVar.a;
-            int c10 = ((x) weakReference.get()).c();
-            if ((c10 & 32767) != 0 && !te.b.b(c10)) {
-                i10 = 2;
-            }
-            sVar = new s(tVar, i10);
-        }
-        x xVar = (x) weakReference.get();
-        if (xVar.r == null) {
-            xVar.r = new androidx.lifecycle.z();
-        }
-        x.h(xVar.r, sVar);
+    public v(Mac mac) {
+        this.a = null;
+        this.b = null;
+        this.c = mac;
+        this.d = null;
+    }
+
+    public v(IdentityCredential identityCredential) {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = identityCredential;
     }
 }

@@ -10,13 +10,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class ProxyRotationController implements NotificationCenter.NotificationCenterDelegate {
     public static final int DEFAULT_TIMEOUT_INDEX = 1;
     private static final ProxyRotationController INSTANCE = new ProxyRotationController();
     public static final List<Integer> ROTATION_TIMEOUTS = Arrays.asList(5, 10, 15, 30, 60);
-    private Runnable checkProxyAndSwitchRunnable = new ug(this, 3);
+    private Runnable checkProxyAndSwitchRunnable = new jh(this, 2);
     private boolean isCurrentlyChecking;
 
     public static void init() {
@@ -32,22 +32,22 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$0(SharedConfig.ProxyInfo proxyInfo, long j3) {
+    public static /* synthetic */ void lambda$new$0(SharedConfig.ProxyInfo proxyInfo, long j10) {
         proxyInfo.availableCheckTime = SystemClock.elapsedRealtime();
         proxyInfo.checking = false;
-        if (j3 == -1) {
+        if (j10 == -1) {
             proxyInfo.available = false;
             proxyInfo.ping = 0L;
         } else {
-            proxyInfo.ping = j3;
+            proxyInfo.ping = j10;
             proxyInfo.available = true;
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxyCheckDone, proxyInfo);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$new$1(SharedConfig.ProxyInfo proxyInfo, long j3) {
-        AndroidUtilities.runOnUIThread(new qh(proxyInfo, j3, 0));
+    public static /* synthetic */ void lambda$new$1(SharedConfig.ProxyInfo proxyInfo, long j10) {
+        AndroidUtilities.runOnUIThread(new th(proxyInfo, j10, 0));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -59,7 +59,7 @@ public class ProxyRotationController implements NotificationCenter.NotificationC
             SharedConfig.ProxyInfo proxyInfo = SharedConfig.proxyList.get(i11);
             if (!proxyInfo.checking && SystemClock.elapsedRealtime() - proxyInfo.availableCheckTime >= 120000) {
                 proxyInfo.checking = true;
-                ConnectionsManager.getInstance(i10).checkProxy(proxyInfo.settings, new d0(proxyInfo, 10));
+                ConnectionsManager.getInstance(i10).checkProxy(proxyInfo.settings, new e0(proxyInfo, 10));
                 z10 = true;
             }
         }

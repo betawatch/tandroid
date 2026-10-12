@@ -3,12 +3,12 @@ package v8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.identity.intents.model.UserAddress;
-import w7.d0;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b extends o6.a {
-    public static final Parcelable.Creator<b> CREATOR = new r(7);
+    public static final Parcelable.Creator<b> CREATOR = new s(5);
     public String a;
     public String b;
     public String c;
@@ -17,14 +17,14 @@ public final class b extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.l(parcel, 1, this.a);
-        d0.l(parcel, 2, this.b);
-        d0.l(parcel, 3, this.c);
+        int q6 = g0.q(parcel, 20293);
+        g0.l(parcel, 1, this.a);
+        g0.l(parcel, 2, this.b);
+        g0.l(parcel, 3, this.c);
         int i11 = this.d;
-        d0.s(parcel, 4, 4);
+        g0.s(parcel, 4, 4);
         parcel.writeInt(i11);
-        d0.k(parcel, 5, this.e, i10);
-        d0.r(parcel, q6);
+        g0.k(parcel, 5, this.e, i10);
+        g0.r(parcel, q6);
     }
 }

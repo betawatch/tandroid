@@ -1,25 +1,76 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class t41 extends b51 {
-    public final /* synthetic */ Runnable T;
+public final class t41 extends s6 {
+    public final Paint s;
+    public final aa0 v;
+    public final /* synthetic */ v41 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t41(Context context, String str, String str2, CharSequence charSequence, TLRPC.InputPeer inputPeer, int i10, boolean z10, Runnable runnable) {
-        super(context, str, str2, charSequence, inputPeer, i10, z10, null);
-        this.T = runnable;
+    public t41(v41 v41Var, Context context) {
+        super(context, false, false, false);
+        this.w = v41Var;
+        this.s = new Paint(1);
+        this.v = new aa0();
     }
 
-    @Override // org.telegram.ui.Components.b51, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        Runnable runnable = this.T;
-        if (runnable != null) {
-            runnable.run();
+    @Override // org.telegram.ui.Components.s6, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (LocaleController.isRTL) {
+            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+        } else {
+            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
         }
+        x41 x41Var = this.w.n;
+        int i10 = org.telegram.ui.ActionBar.g6.Pi;
+        String[] strArr = x41.R;
+        int m12 = org.telegram.ui.ActionBar.g6.m1(0.1175f, x41Var.getThemedColor(i10));
+        Paint paint = this.s;
+        paint.setColor(m12);
+        canvas.drawRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
+        if (this.v.f(canvas)) {
+            invalidate();
+        }
+        super.onDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.c6 c6Var;
+        x41 x41Var = this.w.n;
+        int action = motionEvent.getAction();
+        aa0 aa0Var = this.v;
+        if (action != 0) {
+            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                if (motionEvent.getAction() == 1) {
+                    performClick();
+                }
+                aa0Var.d(true);
+                invalidate();
+            }
+            return super.onTouchEvent(motionEvent);
+        }
+        c6Var = ((org.telegram.ui.ActionBar.e3) x41Var).resourcesProvider;
+        ea0 ea0Var = new ea0(null, c6Var, motionEvent.getX(), motionEvent.getY(), 0);
+        ea0Var.d(org.telegram.ui.ActionBar.g6.m1(0.1175f, x41Var.getThemedColor(org.telegram.ui.ActionBar.g6.Pi)));
+        x90 b10 = ea0Var.b();
+        if (LocaleController.isRTL) {
+            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+        } else {
+            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+        }
+        b10.addRect(AndroidUtilities.rectTmp, Path.Direction.CW);
+        aa0Var.a(ea0Var, null);
+        invalidate();
+        return true;
     }
 }

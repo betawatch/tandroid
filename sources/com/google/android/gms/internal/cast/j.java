@@ -8,9 +8,9 @@ import android.util.Log;
 import com.google.android.gms.cast.CastDevice;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class j extends p4.s {
+public final class j extends p4.t {
     public static final g6.b b = new g6.b("MediaRouterCallback", null);
     public final i a;
 
@@ -19,48 +19,48 @@ public final class j extends p4.s {
         this.a = iVar;
     }
 
-    @Override // p4.s
-    public final void d(p4.v vVar) {
+    @Override // p4.t
+    public final void d(p4.w wVar) {
         try {
             i iVar = this.a;
-            String str = vVar.c;
-            Bundle bundle = vVar.s;
+            String str = wVar.c;
+            Bundle bundle = wVar.s;
             Parcel N0 = iVar.N0();
             N0.writeString(str);
             v.c(N0, bundle);
             iVar.R0(N0, 1);
-        } catch (RemoteException e7) {
-            b.a(e7, "Unable to call %s on %s.", "onRouteAdded", i.class.getSimpleName());
+        } catch (RemoteException e) {
+            b.a(e, "Unable to call %s on %s.", "onRouteAdded", i.class.getSimpleName());
         }
     }
 
-    @Override // p4.s
-    public final void e(p4.v vVar) {
+    @Override // p4.t
+    public final void e(p4.w wVar) {
         try {
             i iVar = this.a;
-            String str = vVar.c;
-            Bundle bundle = vVar.s;
+            String str = wVar.c;
+            Bundle bundle = wVar.s;
             Parcel N0 = iVar.N0();
             N0.writeString(str);
             v.c(N0, bundle);
             iVar.R0(N0, 2);
-        } catch (RemoteException e7) {
-            b.a(e7, "Unable to call %s on %s.", "onRouteChanged", i.class.getSimpleName());
+        } catch (RemoteException e) {
+            b.a(e, "Unable to call %s on %s.", "onRouteChanged", i.class.getSimpleName());
         }
     }
 
-    @Override // p4.s
-    public final void f(p4.v vVar) {
+    @Override // p4.t
+    public final void f(p4.w wVar) {
         try {
             i iVar = this.a;
-            String str = vVar.c;
-            Bundle bundle = vVar.s;
+            String str = wVar.c;
+            Bundle bundle = wVar.s;
             Parcel N0 = iVar.N0();
             N0.writeString(str);
             v.c(N0, bundle);
             iVar.R0(N0, 3);
-        } catch (RemoteException e7) {
-            b.a(e7, "Unable to call %s on %s.", "onRouteRemoved", i.class.getSimpleName());
+        } catch (RemoteException e) {
+            b.a(e, "Unable to call %s on %s.", "onRouteRemoved", i.class.getSimpleName());
         }
     }
 
@@ -68,40 +68,40 @@ public final class j extends p4.s {
     /* JADX WARN: Type inference failed for: r18v1 */
     /* JADX WARN: Type inference failed for: r18v2 */
     /* JADX WARN: Type inference failed for: r18v7 */
-    @Override // p4.s
-    public final void h(p4.x xVar, p4.v vVar, int i10) {
+    @Override // p4.t
+    public final void h(p4.y yVar, p4.w wVar, int i10) {
         ?? r18;
         CastDevice b10;
         String str;
         CastDevice b11;
         i iVar = this.a;
         Integer valueOf = Integer.valueOf(i10);
-        String str2 = vVar.c;
+        String str2 = wVar.c;
         boolean z10 = true;
         g6.b bVar = b;
         Log.i(bVar.a, bVar.d("onRouteSelected with reason = %d, routeId = %s", valueOf, str2));
-        if (vVar.l != 1) {
+        if (wVar.l != 1) {
             return;
         }
         if (str2 != null) {
             try {
-                if (str2.endsWith("-groupRoute") && (b10 = CastDevice.b(vVar.s)) != null) {
+                if (str2.endsWith("-groupRoute") && (b10 = CastDevice.b(wVar.s)) != null) {
                     String str3 = b10.a;
                     if (str3.startsWith("__cast_nearby__")) {
                         str3 = str3.substring(16);
                     }
-                    p4.x.b();
-                    ArrayList arrayList = p4.x.c().j;
+                    p4.y.b();
+                    ArrayList arrayList = p4.y.c().j;
                     int size = arrayList.size();
                     int i11 = 0;
                     while (i11 < size) {
                         Object obj = arrayList.get(i11);
                         i11++;
-                        p4.v vVar2 = (p4.v) obj;
+                        p4.w wVar2 = (p4.w) obj;
                         boolean z11 = z10;
                         try {
-                            str = vVar2.c;
-                            if (str != null && !str.endsWith("-groupRoute") && (b11 = CastDevice.b(vVar2.s)) != null) {
+                            str = wVar2.c;
+                            if (str != null && !str.endsWith("-groupRoute") && (b11 = CastDevice.b(wVar2.s)) != null) {
                                 String str4 = b11.a;
                                 if (str4.startsWith("__cast_nearby__")) {
                                     str4 = str4.substring(16);
@@ -115,8 +115,8 @@ public final class j extends p4.s {
                                 }
                             }
                             z10 = z11 ? 1 : 0;
-                        } catch (RemoteException e7) {
-                            e = e7;
+                        } catch (RemoteException e) {
+                            e = e;
                             r18 = z11;
                             String simpleName = i.class.getSimpleName();
                             Object[] objArr2 = new Object[2];
@@ -127,8 +127,8 @@ public final class j extends p4.s {
                         }
                     }
                 }
-            } catch (RemoteException e10) {
-                e = e10;
+            } catch (RemoteException e7) {
+                e = e7;
                 r18 = z10;
             }
         }
@@ -137,14 +137,14 @@ public final class j extends p4.s {
         int readInt = P0.readInt();
         P0.recycle();
         if (readInt < 220400000) {
-            Bundle bundle = vVar.s;
+            Bundle bundle = wVar.s;
             Parcel N0 = iVar.N0();
             N0.writeString(str);
             v.c(N0, bundle);
             iVar.R0(N0, 4);
             return;
         }
-        Bundle bundle2 = vVar.s;
+        Bundle bundle2 = wVar.s;
         Parcel N02 = iVar.N0();
         N02.writeString(str);
         N02.writeString(str2);
@@ -152,26 +152,26 @@ public final class j extends p4.s {
         iVar.R0(N02, 8);
     }
 
-    @Override // p4.s
-    public final void j(p4.x xVar, p4.v vVar, int i10) {
+    @Override // p4.t
+    public final void j(p4.y yVar, p4.w wVar, int i10) {
         Integer valueOf = Integer.valueOf(i10);
-        String str = vVar.c;
+        String str = wVar.c;
         g6.b bVar = b;
         Log.i(bVar.a, bVar.d("onRouteUnselected with reason = %d, routeId = %s", valueOf, str));
-        if (vVar.l != 1) {
+        if (wVar.l != 1) {
             bVar.b("skip route unselection for non-cast route", new Object[0]);
             return;
         }
         try {
             i iVar = this.a;
-            Bundle bundle = vVar.s;
+            Bundle bundle = wVar.s;
             Parcel N0 = iVar.N0();
             N0.writeString(str);
             v.c(N0, bundle);
             N0.writeInt(i10);
             iVar.R0(N0, 6);
-        } catch (RemoteException e7) {
-            bVar.a(e7, "Unable to call %s on %s.", "onRouteUnselected", i.class.getSimpleName());
+        } catch (RemoteException e) {
+            bVar.a(e, "Unable to call %s on %s.", "onRouteUnselected", i.class.getSimpleName());
         }
     }
 }

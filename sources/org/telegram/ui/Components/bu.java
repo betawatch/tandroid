@@ -1,34 +1,28 @@
 package org.telegram.ui.Components;
 
+import android.os.Build;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bu implements cu {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class bu extends s4.k0 {
+    public final au[] a = new au[4];
+    public final ArrayList b = new ArrayList();
 
-    public /* synthetic */ bu(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    @Override // s4.k0
+    public final EdgeEffect a(RecyclerView recyclerView, int i10) {
+        au auVar = new au(recyclerView, i10, new yt(this, 0));
+        this.a[i10] = auVar;
+        return auVar;
     }
 
-    @Override // org.telegram.ui.Components.cu
-    public final void a(int i10, boolean z10) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = ((eu) this.b).b;
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    ((cu) obj).a(i10, z10);
-                }
-                break;
-            default:
-                ((Runnable) this.b).run();
-                break;
+    public final float b(int i10) {
+        au auVar = this.a[i10];
+        if (Build.VERSION.SDK_INT < 31 || auVar == null || auVar.isFinished()) {
+            return 0.0f;
         }
+        return auVar.getDistance();
     }
 }

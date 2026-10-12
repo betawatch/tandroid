@@ -1,57 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Region;
-import android.graphics.text.MeasuredText;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class qw0 extends Canvas {
-    @Override // android.graphics.Canvas
-    public final boolean clipPath(Path path) {
-        return false;
+public final class qw0 extends v60 {
+    public final /* synthetic */ sw0 d;
+
+    public qw0(sw0 sw0Var) {
+        this.d = sw0Var;
     }
 
-    @Override // android.graphics.Canvas
-    public final void drawText(CharSequence charSequence, int i10, int i11, float f7, float f10, Paint paint) {
+    @Override // org.telegram.ui.Components.dp0
+    public final CharSequence d() {
+        sw0 sw0Var = this.d;
+        int i10 = sw0Var.I;
+        String[] strArr = sw0Var.F;
+        if (i10 < strArr.length) {
+            return strArr[i10];
+        }
+        return null;
     }
 
-    @Override // android.graphics.Canvas
-    public final void drawTextOnPath(String str, Path path, float f7, float f10, Paint paint) {
+    @Override // org.telegram.ui.Components.v60
+    public final int i() {
+        return this.d.F.length - 1;
     }
 
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(MeasuredText measuredText, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
+    @Override // org.telegram.ui.Components.v60
+    public final int j() {
+        return this.d.I;
     }
 
-    @Override // android.graphics.Canvas
-    public final boolean clipPath(Path path, Region.Op op) {
-        return false;
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(String str, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextOnPath(char[] cArr, int i10, int i11, Path path, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(CharSequence charSequence, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(String str, int i10, int i11, float f7, float f10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawTextRun(char[] cArr, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
-    }
-
-    @Override // android.graphics.Canvas
-    public final void drawText(char[] cArr, int i10, int i11, float f7, float f10, Paint paint) {
+    @Override // org.telegram.ui.Components.v60
+    public final void k(int i10) {
+        this.d.setOption(i10);
     }
 }

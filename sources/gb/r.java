@@ -1,116 +1,22 @@
 package gb;
 
-import java.io.Serializable;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class r extends db.u {
-    public static final p c = new p(db.t.a, 1);
-    public final db.g a;
-    public final db.t b;
+public final class r extends t {
+    public final /* synthetic */ Method b;
 
-    public r(db.g gVar, db.t tVar) {
-        this.a = gVar;
-        this.b = tVar;
+    public r(Method method) {
+        this.b = method;
     }
 
-    public final Serializable a(lb.a aVar, int i10) {
-        int c10 = m1.j.c(i10);
-        if (c10 == 5) {
-            return aVar.v();
+    @Override // gb.t
+    public final Object a(Class cls) {
+        String x10 = qf.b.x(cls);
+        if (x10 == null) {
+            return this.b.invoke(null, cls, Object.class);
         }
-        if (c10 == 6) {
-            return this.b.a(aVar);
-        }
-        if (c10 == 7) {
-            return Boolean.valueOf(aVar.n());
-        }
-        if (c10 != 8) {
-            throw new IllegalStateException("Unexpected token: ".concat(hg.c.D(i10)));
-        }
-        aVar.t();
-        return null;
-    }
-
-    @Override // db.u
-    public final Object read(lb.a aVar) {
-        Object arrayList;
-        Serializable arrayList2;
-        int x10 = aVar.x();
-        int c10 = m1.j.c(x10);
-        if (c10 == 0) {
-            aVar.a();
-            arrayList = new ArrayList();
-        } else if (c10 != 2) {
-            arrayList = null;
-        } else {
-            aVar.b();
-            arrayList = new fb.m(true);
-        }
-        if (arrayList == null) {
-            return a(aVar, x10);
-        }
-        ArrayDeque arrayDeque = new ArrayDeque();
-        while (true) {
-            if (aVar.k()) {
-                String r10 = arrayList instanceof Map ? aVar.r() : null;
-                int x11 = aVar.x();
-                int c11 = m1.j.c(x11);
-                if (c11 == 0) {
-                    aVar.a();
-                    arrayList2 = new ArrayList();
-                } else if (c11 != 2) {
-                    arrayList2 = null;
-                } else {
-                    aVar.b();
-                    arrayList2 = new fb.m(true);
-                }
-                boolean z10 = arrayList2 != null;
-                if (arrayList2 == null) {
-                    arrayList2 = a(aVar, x11);
-                }
-                if (arrayList instanceof List) {
-                    ((List) arrayList).add(arrayList2);
-                } else {
-                    ((Map) arrayList).put(r10, arrayList2);
-                }
-                if (z10) {
-                    arrayDeque.addLast(arrayList);
-                    arrayList = arrayList2;
-                }
-            } else {
-                if (arrayList instanceof List) {
-                    aVar.e();
-                } else {
-                    aVar.f();
-                }
-                if (arrayDeque.isEmpty()) {
-                    return arrayList;
-                }
-                arrayList = arrayDeque.removeLast();
-            }
-        }
-    }
-
-    @Override // db.u
-    public final void write(lb.b bVar, Object obj) {
-        if (obj == null) {
-            bVar.i();
-            return;
-        }
-        Class<?> cls = obj.getClass();
-        db.g gVar = this.a;
-        gVar.getClass();
-        db.u b10 = gVar.b(new kb.a(cls));
-        if (!(b10 instanceof r)) {
-            b10.write(bVar, obj);
-        } else {
-            bVar.c();
-            bVar.f();
-        }
+        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(x10));
     }
 }

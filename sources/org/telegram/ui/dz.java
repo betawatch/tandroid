@@ -1,45 +1,44 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
+import android.graphics.Rect;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class dz implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ ez a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ MessageObject c;
-    public final /* synthetic */ fz d;
+public final class dz implements org.telegram.ui.Components.dm0 {
+    public final Rect a = new Rect();
+    public final /* synthetic */ hz b;
 
-    public dz(fz fzVar, ez ezVar, boolean z10, MessageObject messageObject) {
-        this.d = fzVar;
-        this.a = ezVar;
-        this.b = z10;
-        this.c = messageObject;
+    public dz(hz hzVar) {
+        this.b = hzVar;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        ez ezVar = this.a;
-        if (ezVar.r.getLottieAnimation() != null) {
-            ezVar.r.getLottieAnimation().N(0, false, true);
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.i5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void onAnimationReady(ImageReceiver imageReceiver) {
-        MessageObject messageObject;
-        if (this.b && (messageObject = this.c) != null && messageObject.isAnimatedAnimatedEmoji() && imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().x == null) {
-            try {
-                this.d.G.performHapticFeedback(3, 1);
-            } catch (Exception unused) {
+    @Override // org.telegram.ui.Components.dm0
+    public final boolean d(float f7, float f10, int i10, View view) {
+        hz hzVar = this.b;
+        if (hzVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.g4)) {
+            ImageView imageView = (ImageView) view.getTag(R.id.object_tag);
+            Rect rect = this.a;
+            imageView.getHitRect(rect);
+            if (!rect.contains((int) f7, (int) f10)) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hzVar.getParentActivity());
+                alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Delete)}, new cz(this, i10, 0));
+                hzVar.showDialog(alertDialog$Builder.a);
+                return true;
             }
         }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.dm0
+    public final void h() {
+    }
+
+    @Override // org.telegram.ui.Components.dm0
+    public final void q(float f7) {
     }
 }

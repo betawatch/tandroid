@@ -1,64 +1,21 @@
 package tc;
 
-import android.os.AsyncTask;
-import java.util.Locale;
-import m.f3;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ko0;
-import org.telegram.ui.tk0;
-import org.telegram.ui.vo0;
-import uc.g;
-import v7.k;
-import w7.y8;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a extends AsyncTask {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ vc.a b;
-    public final /* synthetic */ ko0 c;
-    public final /* synthetic */ f3 d;
+public final class a {
+    public final String a;
+    public final int b;
+    public transient String c;
 
-    public a(f3 f3Var, String str, vc.a aVar, ko0 ko0Var) {
-        this.d = f3Var;
+    public a(String str, int i10) {
         this.a = str;
-        this.b = aVar;
-        this.c = ko0Var;
+        this.b = i10;
     }
 
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        f3 f3Var = this.d;
-        try {
-            k c10 = wc.b.c(y8.a(this.b), new f2.a(this.a));
-            Object obj = f3Var.b;
-            return new b(c10, null);
-        } catch (g e7) {
-            Object obj2 = f3Var.b;
-            return new b(null, e7);
+    public final String toString() {
+        if (this.c == null) {
+            this.c = String.format("%s:%d", this.a, Integer.valueOf(this.b));
         }
-    }
-
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        b bVar = (b) obj;
-        Object obj2 = this.d.b;
-        k kVar = bVar.a;
-        ko0 ko0Var = this.c;
-        if (kVar != null) {
-            vo0 vo0Var = ko0Var.a;
-            if (vo0Var.Q0) {
-                return;
-            }
-            vo0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) kVar.c, (String) kVar.b);
-            AndroidUtilities.runOnUIThread(new tk0(ko0Var, 9));
-            return;
-        }
-        Exception exc = bVar.b;
-        if (exc != null) {
-            ko0Var.a(exc);
-        } else {
-            ko0Var.a(new RuntimeException("Somehow got neither a token response or an error response"));
-        }
+        return this.c;
     }
 }

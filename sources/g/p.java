@@ -3,9 +3,9 @@ package g;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import androidx.appcompat.widget.ContentFrameLayout;
-import v7.s7;
+import v7.q7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class p extends ContentFrameLayout {
     public final /* synthetic */ r r;
@@ -28,7 +28,7 @@ public final class p extends ContentFrameLayout {
             int y3 = (int) motionEvent.getY();
             if (x10 < -5 || y3 < -5 || x10 > getWidth() + 5 || y3 > getHeight() + 5) {
                 r rVar = this.r;
-                rVar.h(rVar.p(0), true);
+                rVar.h(rVar.q(0), true);
                 return true;
             }
         }
@@ -37,6 +37,6 @@ public final class p extends ContentFrameLayout {
 
     @Override // android.view.View
     public final void setBackgroundResource(int i10) {
-        setBackgroundDrawable(s7.b(getContext(), i10));
+        setBackgroundDrawable(q7.b(getContext(), i10));
     }
 }

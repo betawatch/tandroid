@@ -1,34 +1,36 @@
 package x2;
 
 import android.os.SystemClock;
-import b2.l1;
-import e2.d0;
+import b2.q1;
+import b2.x;
+import e2.m0;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.ui.mb1;
+import org.telegram.ui.es0;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class c implements r {
-    public final l1 a;
+public abstract class c implements p {
+    public final q1 a;
     public final int b;
     public final int[] c;
-    public final b2.s[] d;
+    public final x[] d;
     public final long[] e;
     public int f;
 
-    public c(l1 l1Var, int[] iArr) {
+    public c(q1 q1Var, int[] iArr) {
         int i10 = 0;
-        e2.d.g(iArr.length > 0);
-        l1Var.getClass();
-        this.a = l1Var;
+        u6.p(iArr.length > 0);
+        q1Var.getClass();
+        this.a = q1Var;
         int length = iArr.length;
         this.b = length;
-        this.d = new b2.s[length];
+        this.d = new x[length];
         for (int i11 = 0; i11 < iArr.length; i11++) {
-            this.d[i11] = l1Var.d[iArr[i11]];
+            this.d[i11] = q1Var.d[iArr[i11]];
         }
-        Arrays.sort(this.d, new mb1(12));
+        Arrays.sort(this.d, new es0(14));
         this.c = new int[this.b];
         while (true) {
             int i12 = this.b;
@@ -36,24 +38,24 @@ public abstract class c implements r {
                 this.e = new long[i12];
                 return;
             } else {
-                this.c[i10] = l1Var.a(this.d[i10]);
+                this.c[i10] = q1Var.a(this.d[i10]);
                 i10++;
             }
         }
     }
 
-    @Override // x2.r
-    public final boolean a(int i10, long j3) {
-        return this.e[i10] > j3;
+    @Override // x2.p
+    public final boolean a(int i10, long j10) {
+        return this.e[i10] > j10;
     }
 
-    @Override // x2.r
-    public final l1 b() {
+    @Override // x2.p
+    public final q1 b() {
         return this.a;
     }
 
-    @Override // x2.r
-    public final /* synthetic */ boolean d(long j3, v2.e eVar, List list) {
+    @Override // x2.p
+    public final /* synthetic */ boolean d(long j10, v2.f fVar, List list) {
         return false;
     }
 
@@ -70,12 +72,12 @@ public abstract class c implements r {
         return false;
     }
 
-    @Override // x2.r
-    public final b2.s f(int i10) {
+    @Override // x2.p
+    public final x f(int i10) {
         return this.d[i10];
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public final int h(int i10) {
         return this.c[i10];
     }
@@ -87,28 +89,28 @@ public abstract class c implements r {
         return this.f;
     }
 
-    @Override // x2.r
-    public int i(long j3, List list) {
+    @Override // x2.p
+    public int i(long j10, List list) {
         return list.size();
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public final int l() {
         return this.c[c()];
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public final int length() {
         return this.c.length;
     }
 
-    @Override // x2.r
-    public final b2.s m() {
+    @Override // x2.p
+    public final x m() {
         return this.d[c()];
     }
 
-    @Override // x2.r
-    public final boolean o(int i10, long j3) {
+    @Override // x2.p
+    public final boolean o(int i10, long j10) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         boolean a2 = a(i10, elapsedRealtime);
         int i11 = 0;
@@ -120,27 +122,21 @@ public abstract class c implements r {
             return false;
         }
         long[] jArr = this.e;
-        long j10 = jArr[i10];
-        String str = d0.a;
-        long j11 = elapsedRealtime + j3;
-        if (((j3 ^ j11) & (elapsedRealtime ^ j11)) < 0) {
-            j11 = Long.MAX_VALUE;
-        }
-        jArr[i10] = Math.max(j10, j11);
+        jArr[i10] = Math.max(jArr[i10], m0.a(elapsedRealtime, j10));
         return true;
     }
 
-    @Override // x2.r
-    public final int s(b2.s sVar) {
+    @Override // x2.p
+    public final int s(x xVar) {
         for (int i10 = 0; i10 < this.b; i10++) {
-            if (this.d[i10] == sVar) {
+            if (this.d[i10] == xVar) {
                 return i10;
             }
         }
         return -1;
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public final int u(int i10) {
         for (int i11 = 0; i11 < this.b; i11++) {
             if (this.c[i11] == i10) {
@@ -150,27 +146,27 @@ public abstract class c implements r {
         return -1;
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public void g() {
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public void j() {
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public final /* synthetic */ void r() {
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public final /* synthetic */ void t() {
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public final void e(boolean z10) {
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public void p(float f7) {
     }
 }

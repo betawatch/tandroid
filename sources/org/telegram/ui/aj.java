@@ -1,71 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class aj extends of.e {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 f;
-    public final /* synthetic */ zn g;
+public final class aj implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.gl0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ ah.i1 n;
+    public final /* synthetic */ MessageObject r;
+    public final /* synthetic */ fo s;
 
-    public /* synthetic */ aj(zn znVar, int i10, org.telegram.ui.Cells.u1 u1Var, int i11) {
-        this.d = i11;
-        this.g = znVar;
-        this.e = i10;
-        this.f = u1Var;
+    public aj(fo foVar, boolean z10, boolean z11, int i10, boolean z12, org.telegram.ui.Components.gl0 gl0Var, float f7, float f10, ah.i1 i1Var, MessageObject messageObject) {
+        this.s = foVar;
+        this.a = z10;
+        this.b = z11;
+        this.c = i10;
+        this.d = z12;
+        this.e = gl0Var;
+        this.f = f7;
+        this.h = f10;
+        this.n = i1Var;
+        this.r = messageObject;
     }
 
-    @Override // of.e
-    public final void c(boolean z10) {
-        switch (this.d) {
-            case 0:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ai.p8(this, this.e, 20), 240L);
-                    break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (!this.a) {
+            fo foVar = this.s;
+            if (foVar.cc != null) {
+                foVar.cc = null;
+                if (this.b) {
+                    foVar.k8(new zi(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
+                } else {
+                    foVar.k8(new fc(23, this, this.r));
                 }
-                break;
-            case 1:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ai.p8(this, this.e, 23), 240L);
-                    break;
-                }
-                break;
-            default:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ai.p8(this, this.e, 24), 240L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // of.e
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                int i10 = this.e;
-                zn znVar = this.g;
-                znVar.wb = i10;
-                znVar.xb = 6;
-                this.f.invalidate();
-                break;
-            case 1:
-                int i11 = this.e;
-                zn znVar2 = this.g;
-                znVar2.wb = i11;
-                znVar2.xb = 5;
-                znVar2.zb = null;
-                this.f.invalidate();
-                break;
-            default:
-                int i12 = this.e;
-                zn znVar3 = this.g;
-                znVar3.wb = i12;
-                znVar3.xb = 7;
-                this.f.invalidate();
-                break;
+                foVar.D7(true);
+            }
         }
     }
 }

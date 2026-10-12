@@ -16,9 +16,9 @@ public final class s1 extends y {
         y.c(s1.class, s1Var);
     }
 
-    public static void f(s1 s1Var, long j3) {
+    public static void f(s1 s1Var, long j10) {
         s1Var.zzbb |= 4;
-        s1Var.zzbit = j3;
+        s1Var.zzbit = j10;
     }
 
     public static void g(s1 s1Var, String str) {
@@ -28,9 +28,9 @@ public final class s1 extends y {
         s1Var.zzbis = str;
     }
 
-    public static void h(s1 s1Var, long j3) {
+    public static void h(s1 s1Var, long j10) {
         s1Var.zzbb |= 8;
-        s1Var.zzbiu = j3;
+        s1Var.zzbiu = j10;
     }
 
     public static r1 m() {

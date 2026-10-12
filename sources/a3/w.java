@@ -3,44 +3,50 @@ package a3;
 import android.content.Context;
 import android.util.Pair;
 import android.util.SparseArray;
-import e9.a1;
+import e9.x1;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class w {
-    public static final b o = new b(0);
+    public static final b q = new b(0);
     public final Context a;
     public final u b;
     public final SparseArray c;
     public final boolean d;
     public final f e;
-    public final e2.x f;
+    public final e2.g0 f;
     public final CopyOnWriteArraySet g;
-    public e2.a0 h = new e2.a0(0, (byte) 0);
-    public e2.z i;
-    public Pair j;
-    public int k;
-    public int l;
-    public long m;
+    public final long h;
+    public final b0 i;
+    public e2.j0 j = new e2.j0(0, (byte) 0);
+    public e2.i0 k;
+    public Pair l;
+    public int m;
     public int n;
+    public long o;
+    public int p;
 
     public w(q qVar) {
-        this.a = (Context) qVar.c;
-        u uVar = (u) qVar.e;
-        e2.d.h(uVar);
+        this.a = qVar.a;
+        u uVar = qVar.c;
+        uVar.getClass();
         this.b = uVar;
         this.c = new SparseArray();
-        e9.g0 g0Var = e9.i0.b;
-        a1 a1Var = a1.e;
-        this.d = qVar.a;
-        e2.x xVar = (e2.x) qVar.f;
-        this.f = xVar;
-        this.e = new f((a0) qVar.d, xVar);
+        e9.l0 l0Var = e9.n0.b;
+        x1 x1Var = x1.e;
+        this.d = qVar.d;
+        e2.g0 g0Var = qVar.e;
+        this.f = g0Var;
+        long j10 = qVar.g;
+        this.h = j10 != -9223372036854775807L ? -j10 : -9223372036854775807L;
+        b0 b0Var = qVar.h;
+        this.i = b0Var;
+        this.e = new f(qVar.b, b0Var, g0Var);
         this.g = new CopyOnWriteArraySet();
-        new b2.r().a();
-        this.m = -9223372036854775807L;
-        this.n = -1;
-        this.l = 0;
+        new b2.w().a();
+        this.o = -9223372036854775807L;
+        this.p = -1;
+        this.n = 0;
     }
 }

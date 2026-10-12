@@ -1,18 +1,18 @@
 package s3;
 
-import b2.m0;
-import b2.o0;
-import b2.s;
+import b2.r0;
+import b2.t0;
+import b2.x;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class b implements o0 {
-    @Override // b2.o0
-    public final /* synthetic */ s a() {
+public abstract class b implements t0 {
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
         return null;
     }
 
-    @Override // b2.o0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }
@@ -21,7 +21,7 @@ public abstract class b implements o0 {
         return "SCTE-35 splice command: type=".concat(getClass().getSimpleName());
     }
 
-    @Override // b2.o0
-    public final /* synthetic */ void b(m0 m0Var) {
+    @Override // b2.t0
+    public final /* synthetic */ void b(r0 r0Var) {
     }
 }

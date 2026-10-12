@@ -24,10 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
-import r0.i0;
-import r0.l0;
+import r0.j0;
+import r0.m0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m implements Window.Callback {
     public final Window.Callback a;
@@ -97,9 +97,9 @@ public final class m implements Window.Callback {
         if (!this.a.dispatchKeyShortcutEvent(keyEvent)) {
             int keyCode = keyEvent.getKeyCode();
             r rVar = this.e;
-            a0 q6 = rVar.q();
-            if (q6 != null) {
-                z zVar = q6.i;
+            a0 r10 = rVar.r();
+            if (r10 != null) {
+                z zVar = r10.i;
                 if (zVar == null || (kVar = zVar.d) == null) {
                     performShortcut = false;
                 } else {
@@ -108,12 +108,12 @@ public final class m implements Window.Callback {
                 }
             }
             q qVar = rVar.V;
-            if (qVar == null || !rVar.u(qVar, keyEvent.getKeyCode(), keyEvent)) {
+            if (qVar == null || !rVar.v(qVar, keyEvent.getKeyCode(), keyEvent)) {
                 if (rVar.V == null) {
-                    q p5 = rVar.p(0);
-                    rVar.v(p5, keyEvent);
-                    boolean u10 = rVar.u(p5, keyEvent.getKeyCode(), keyEvent);
-                    p5.k = false;
+                    q q6 = rVar.q(0);
+                    rVar.w(q6, keyEvent);
+                    boolean v = rVar.v(q6, keyEvent.getKeyCode(), keyEvent);
+                    q6.k = false;
                 }
                 z10 = false;
                 if (z10) {
@@ -194,12 +194,12 @@ public final class m implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final boolean onMenuOpened(int i10, Menu menu) {
-        a0 q6;
+        a0 r10;
         b(i10, menu);
-        if (i10 == 108 && (q6 = this.e.q()) != null) {
-            ArrayList arrayList = q6.m;
-            if (true != q6.l) {
-                q6.l = true;
+        if (i10 == 108 && (r10 = this.e.r()) != null) {
+            ArrayList arrayList = r10.m;
+            if (true != r10.l) {
+                r10.l = true;
                 if (arrayList.size() > 0) {
                     arrayList.get(0).getClass();
                     throw new ClassCastException();
@@ -219,20 +219,20 @@ public final class m implements Window.Callback {
         r rVar = this.e;
         if (i10 != 108) {
             if (i10 == 0) {
-                q p5 = rVar.p(i10);
-                if (p5.m) {
-                    rVar.h(p5, false);
+                q q6 = rVar.q(i10);
+                if (q6.m) {
+                    rVar.h(q6, false);
                     return;
                 }
                 return;
             }
             return;
         }
-        a0 q6 = rVar.q();
-        if (q6 != null) {
-            ArrayList arrayList = q6.m;
-            if (q6.l) {
-                q6.l = false;
+        a0 r10 = rVar.r();
+        if (r10 != null) {
+            ArrayList arrayList = r10.m;
+            if (r10.l) {
+                r10.l = false;
                 if (arrayList.size() <= 0) {
                     return;
                 }
@@ -265,7 +265,7 @@ public final class m implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final void onProvideKeyboardShortcuts(List list, Menu menu, int i10) {
-        l.k kVar = this.e.p(0).h;
+        l.k kVar = this.e.q(0).h;
         if (kVar != null) {
             d(list, kVar, i10);
         } else {
@@ -300,35 +300,35 @@ public final class m implements Window.Callback {
             return k.j.b(this.a, callback, i10);
         }
         Context context = rVar.e;
-        oi.f fVar = new oi.f();
-        fVar.b = context;
-        fVar.a = callback;
-        fVar.c = new ArrayList();
+        qi.e eVar = new qi.e();
+        eVar.b = context;
+        eVar.a = callback;
+        eVar.c = new ArrayList();
         boolean z10 = false;
-        fVar.d = new a0.m(0);
+        eVar.d = new a0.l(0);
         k.a aVar = rVar.x;
         if (aVar != null) {
             aVar.a();
         }
-        n4.x xVar = new n4.x(rVar, fVar, z10, 16);
-        a0 q6 = rVar.q();
+        n4.s sVar = new n4.s(rVar, eVar, z10, 16);
+        a0 r10 = rVar.r();
         int i11 = 1;
-        if (q6 != null) {
-            z zVar = q6.i;
+        if (r10 != null) {
+            z zVar = r10.i;
             if (zVar != null) {
                 zVar.a();
             }
-            q6.c.setHideOnContentScrollEnabled(false);
-            q6.f.e();
-            z zVar2 = new z(q6, q6.f.getContext(), xVar);
+            r10.c.setHideOnContentScrollEnabled(false);
+            r10.f.e();
+            z zVar2 = new z(r10, r10.f.getContext(), sVar);
             l.k kVar = zVar2.d;
             kVar.w();
             try {
-                if (((oi.f) zVar2.e.b).H(zVar2, kVar)) {
-                    q6.i = zVar2;
+                if (((qi.e) zVar2.e.b).z(zVar2, kVar)) {
+                    r10.i = zVar2;
                     zVar2.g();
-                    q6.f.c(zVar2);
-                    q6.a(true);
+                    r10.f.c(zVar2);
+                    r10.a(true);
                 } else {
                     zVar2 = null;
                 }
@@ -338,9 +338,9 @@ public final class m implements Window.Callback {
             }
         }
         if (rVar.x == null) {
-            l0 l0Var = rVar.G;
-            if (l0Var != null) {
-                l0Var.b();
+            m0 m0Var = rVar.G;
+            if (m0Var != null) {
+                m0Var.b();
             }
             k.a aVar2 = rVar.x;
             if (aVar2 != null) {
@@ -378,9 +378,9 @@ public final class m implements Window.Callback {
                 }
             }
             if (rVar.y != null) {
-                l0 l0Var2 = rVar.G;
-                if (l0Var2 != null) {
-                    l0Var2.b();
+                m0 m0Var2 = rVar.G;
+                if (m0Var2 != null) {
+                    m0Var2.b();
                 }
                 rVar.y.e();
                 Context context2 = rVar.y.getContext();
@@ -388,20 +388,20 @@ public final class m implements Window.Callback {
                 k.d dVar = new k.d();
                 dVar.c = context2;
                 dVar.d = actionBarContextView;
-                dVar.e = xVar;
+                dVar.e = sVar;
                 l.k kVar2 = new l.k(actionBarContextView.getContext());
                 kVar2.l = 1;
                 dVar.n = kVar2;
                 kVar2.e = dVar;
-                if (fVar.H(dVar, kVar2)) {
+                if (eVar.z(dVar, kVar2)) {
                     dVar.g();
                     rVar.y.c(dVar);
                     rVar.x = dVar;
                     if (rVar.I && (viewGroup = rVar.J) != null) {
-                        WeakHashMap weakHashMap = i0.a;
+                        WeakHashMap weakHashMap = j0.a;
                         if (viewGroup.isLaidOut()) {
                             rVar.y.setAlpha(0.0f);
-                            l0 a2 = i0.a(rVar.y);
+                            m0 a2 = j0.a(rVar.y);
                             a2.a(1.0f);
                             rVar.G = a2;
                             a2.d(new i(rVar, i11));
@@ -414,8 +414,8 @@ public final class m implements Window.Callback {
                     rVar.y.setVisibility(0);
                     if (rVar.y.getParent() instanceof View) {
                         View view = (View) rVar.y.getParent();
-                        WeakHashMap weakHashMap2 = i0.a;
-                        r0.y.c(view);
+                        WeakHashMap weakHashMap2 = j0.a;
+                        r0.z.c(view);
                     }
                     if (rVar.E != null) {
                     }
@@ -423,13 +423,13 @@ public final class m implements Window.Callback {
                     rVar.x = null;
                 }
             }
-            rVar.x();
+            rVar.y();
             rVar.x = rVar.x;
         }
-        rVar.x();
+        rVar.y();
         k.a aVar3 = rVar.x;
         if (aVar3 != null) {
-            return fVar.o(aVar3);
+            return eVar.k(aVar3);
         }
         return null;
     }

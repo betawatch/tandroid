@@ -1,26 +1,31 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class m4 implements Runnable {
-    public final /* synthetic */ p4 a;
+    public final /* synthetic */ int a;
+    public boolean b;
+    public final /* synthetic */ Object c;
 
-    public m4(p4 p4Var) {
-        this.a = p4Var;
+    public /* synthetic */ m4(Object obj, int i10) {
+        this.a = i10;
+        this.c = obj;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        UsersSelectActivity usersSelectActivity = new UsersSelectActivity(null);
-        usersSelectActivity.N = new a0.i();
-        usersSelectActivity.O = new ArrayList();
-        usersSelectActivity.x = 1;
-        usersSelectActivity.G = false;
-        p4 p4Var = this.a;
-        usersSelectActivity.R = p4Var.U();
-        usersSelectActivity.n = new z0(this, 2);
-        p4Var.presentFragment(usersSelectActivity);
+        switch (this.a) {
+            case 0:
+                this.b = false;
+                ((n4) this.c).getClass();
+                break;
+            default:
+                if (!this.b) {
+                    this.b = true;
+                    ((fo) this.c).presentFragment(new NotificationsSettingsActivity());
+                    break;
+                }
+                break;
+        }
     }
 }

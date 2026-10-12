@@ -1,30 +1,12 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stories;
+import android.graphics.Color;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m5 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v5 b;
-
-    public /* synthetic */ m5(v5 v5Var, int i10) {
-        this.a = i10;
-        this.b = v5Var;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                this.b.S = (ChannelBoostsController.CanApplyBoost) obj;
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(8, this.b, (TL_stories.TL_premium_boostsStatus) obj));
-                break;
-        }
-    }
+public final class m5 extends org.telegram.ui.ActionBar.e3 {
+    public static float c = 1.0f;
+    public static float d = 1.0f;
+    public static float e = 1.0f - (Color.alpha(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.xf, false)) / 255.0f);
+    public org.telegram.ui.Components.ow0 b;
 }

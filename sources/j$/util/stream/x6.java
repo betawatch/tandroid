@@ -23,7 +23,7 @@ public abstract class x6 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+        return j$.com.android.tools.r8.a.o(this, i10);
     }
 
     public x6(a aVar, Supplier supplier, boolean z10) {
@@ -59,9 +59,9 @@ public abstract class x6 implements Spliterator {
             this.e.o(this.d.getExactSizeIfKnown());
             return b();
         }
-        long j3 = this.g + 1;
-        this.g = j3;
-        boolean z10 = j3 < cVar.count();
+        long j10 = this.g + 1;
+        this.g = j10;
+        boolean z10 = j10 < cVar.count();
         if (z10) {
             return z10;
         }
@@ -121,7 +121,7 @@ public abstract class x6 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final Comparator getComparator() {
-        if (j$.com.android.tools.r8.a.p(this, 4)) {
+        if (j$.com.android.tools.r8.a.o(this, 4)) {
             return null;
         }
         throw new IllegalStateException();

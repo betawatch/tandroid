@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class e extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -47,8 +47,8 @@ public final class e extends AnimatorListenerAdapter {
                 break;
             default:
                 k kVar2 = this.b;
-                j5 j5Var = kVar2.n[1];
-                if (j5Var != null && j5Var.getParent() != null) {
+                h5 h5Var = kVar2.n[1];
+                if (h5Var != null && h5Var.getParent() != null) {
                     ((ViewGroup) kVar2.n[1].getParent()).removeView(kVar2.n[1]);
                 }
                 kVar2.N0.v(kVar2.n[1]);

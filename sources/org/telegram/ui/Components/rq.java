@@ -1,45 +1,110 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class rq extends FrameLayout {
-    public final View a;
-    public final TextView b;
+public final class rq extends Drawable {
+    public final Drawable a;
+    public Path b;
+    public final RectF c;
+    public final RectF d;
+    public boolean e;
+    public final float[] f;
 
-    public rq(Context context) {
-        super(context);
-        View view = new View(context);
-        this.a = view;
-        int dp = AndroidUtilities.dp(4.0f);
-        int x02 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Oh, false);
-        int x03 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Qh, false);
-        view.setBackground(org.telegram.ui.ActionBar.i6.j0(dp, dp, dp, dp, x02, x03, x03));
-        addView(view, w7.x5.a(-1.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setGravity(17);
-        org.telegram.messenger.q.m(14.0f, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Sh, false), 1, textView);
-        addView(textView, w7.x5.e(-2, -2, 17));
+    public rq(Drawable drawable) {
+        ah.f1 f1Var = new ah.f1(this, 3);
+        this.c = new RectF();
+        this.d = new RectF();
+        this.e = false;
+        this.f = new float[8];
+        Drawable drawable2 = this.a;
+        if (drawable2 != null) {
+            drawable2.setCallback(null);
+        }
+        this.a = drawable;
+        if (drawable != null) {
+            drawable.setBounds(getBounds());
+            this.a.setCallback(f1Var);
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    public final void a() {
+        if (this.e) {
+            Path path = this.b;
+            if (path == null) {
+                this.b = new Path();
+            } else {
+                path.rewind();
+            }
+            Rect bounds = getBounds();
+            RectF rectF = this.c;
+            rectF.set(bounds);
+            float f7 = rectF.left;
+            RectF rectF2 = this.d;
+            rectF.left = f7 + rectF2.left;
+            rectF.top += rectF2.top;
+            rectF.right -= rectF2.right;
+            rectF.bottom -= rectF2.bottom;
+            this.b.addRoundRect(rectF, this.f, Path.Direction.CW);
+        }
     }
 
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setBounds(getBounds());
+            if (!this.e) {
+                canvas.save();
+                canvas.clipRect(getBounds());
+                this.a.draw(canvas);
+                canvas.restore();
+                return;
+            }
+            canvas.save();
+            a();
+            canvas.clipPath(this.b);
+            this.a.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        Drawable drawable = this.a;
+        return drawable != null ? drawable.getIntrinsicHeight() : super.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        Drawable drawable = this.a;
+        return drawable != null ? drawable.getIntrinsicWidth() : super.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setAlpha(i10);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setColorFilter(colorFilter);
+        }
     }
 }

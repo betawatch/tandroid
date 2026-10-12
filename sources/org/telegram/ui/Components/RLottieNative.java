@@ -5,15 +5,15 @@ import android.os.Trace;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class RLottieNative {
     public final int[] a;
     public long b;
     public final AtomicBoolean c = new AtomicBoolean(false);
 
-    public RLottieNative(long j3, int[] iArr) {
-        this.b = j3;
+    public RLottieNative(long j10, int[] iArr) {
+        this.b = j10;
         this.a = iArr;
     }
 
@@ -99,18 +99,18 @@ public final class RLottieNative {
 
     private static native long nCreateWithJson(String str, int[] iArr, int[] iArr2, String[] strArr, int[] iArr3);
 
-    private static native void nDestroy(long j3);
+    private static native void nDestroy(long j10);
 
-    private static native int nGetFrame(long j3, int i10, Bitmap bitmap, boolean z10);
+    private static native int nGetFrame(long j10, int i10, Bitmap bitmap, boolean z10);
 
     public final int c(int i10, Bitmap bitmap, boolean z10) {
         if (this.c.get()) {
             throw new IllegalStateException("Called method on a recycled RLottie instance");
         }
-        long j3 = this.b;
+        long j10 = this.b;
         Trace.beginSection("RLottieNative#getFrame");
         try {
-            return nGetFrame(j3, i10, bitmap, z10);
+            return nGetFrame(j10, i10, bitmap, z10);
         } finally {
             Trace.endSection();
         }
@@ -118,12 +118,12 @@ public final class RLottieNative {
 
     public final void d() {
         if (this.c.compareAndSet(false, true)) {
-            long j3 = this.b;
+            long j10 = this.b;
             this.b = 0L;
-            if (j3 != 0) {
+            if (j10 != 0) {
                 Trace.beginSection("RLottieNative#destroy");
                 try {
-                    nDestroy(j3);
+                    nDestroy(j10);
                 } finally {
                     Trace.endSection();
                 }

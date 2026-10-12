@@ -1,32 +1,52 @@
 package org.telegram.ui.Components;
 
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tn implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
+public final class tn implements gk {
+    public final /* synthetic */ Utilities.Callback a;
+    public final /* synthetic */ pn b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 c;
 
-    public /* synthetic */ tn(int i10, Utilities.Callback callback) {
-        this.a = i10;
-        this.b = callback;
+    public tn(Utilities.Callback callback, org.telegram.ui.ActionBar.m2 m2Var, pn pnVar) {
+        this.a = callback;
+        this.b = pnVar;
+        this.c = m2Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                this.b.run(new rh.e((String) obj));
-                break;
-            default:
-                int[] iArr = (int[]) obj;
-                boolean z10 = false;
-                if (iArr.length >= 1 && iArr[0] == 0) {
-                    z10 = true;
-                }
-                this.b.run(Boolean.valueOf(z10));
-                break;
+    @Override // org.telegram.ui.Components.gk
+    public final void l(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j10, boolean z11, long j11) {
+        if (!arrayList.isEmpty()) {
+            this.a.run(new sh.c((String) arrayList.get(0)));
         }
+        this.b.dismiss(true);
+    }
+
+    @Override // org.telegram.ui.Components.gk
+    public final void m(long j10, ArrayList arrayList, boolean z10, int i10) {
+        if (!arrayList.isEmpty()) {
+            this.a.run(new sh.d((SendMessagesHelper.SendingMediaInfo) arrayList.get(0)));
+        }
+        this.b.dismiss(true);
+    }
+
+    @Override // org.telegram.ui.Components.gk
+    public final void y() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("*/*");
+            this.c.getParentActivity().startActivityForResult(intent, 28);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.gk
+    public final /* synthetic */ void O() {
     }
 }

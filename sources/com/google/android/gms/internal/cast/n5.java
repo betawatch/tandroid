@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class n5 extends u4 implements RandomAccess, o5 {
     public final List b;
@@ -27,14 +27,14 @@ public final class n5 extends u4 implements RandomAccess, o5 {
 
     @Override // java.util.AbstractList, java.util.List
     public final /* bridge */ /* synthetic */ void add(int i10, Object obj) {
-        i();
+        h();
         this.b.add(i10, (String) obj);
         ((AbstractList) this).modCount++;
     }
 
     @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.List
     public final boolean addAll(int i10, Collection collection) {
-        i();
+        h();
         if (collection instanceof o5) {
             collection = ((o5) collection).zzh();
         }
@@ -50,13 +50,13 @@ public final class n5 extends u4 implements RandomAccess, o5 {
 
     @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final void clear() {
-        i();
+        h();
         this.b.clear();
         ((AbstractList) this).modCount++;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    /* renamed from: n, reason: merged with bridge method [inline-methods] */
+    /* renamed from: m, reason: merged with bridge method [inline-methods] */
     public final String get(int i10) {
         String str;
         List list = this.b;
@@ -67,7 +67,7 @@ public final class n5 extends u4 implements RandomAccess, o5 {
         if (!(obj instanceof x4)) {
             byte[] bArr = (byte[]) obj;
             String str2 = new String(bArr, l5.a);
-            e1 e1Var = u6.a;
+            e1 e1Var = v6.a;
             int length = bArr.length;
             e1Var.getClass();
             if (e1.a(length, bArr)) {
@@ -77,15 +77,15 @@ public final class n5 extends u4 implements RandomAccess, o5 {
         }
         x4 x4Var = (x4) obj;
         Charset charset = l5.a;
-        if (x4Var.o() == 0) {
+        if (x4Var.n() == 0) {
             str = "";
         } else {
-            str = new String(x4Var.b, 0, x4Var.o(), charset);
+            str = new String(x4Var.b, 0, x4Var.n(), charset);
         }
-        int o9 = x4Var.o();
+        int n10 = x4Var.n();
         byte[] bArr2 = x4Var.b;
-        u6.a.getClass();
-        if (e1.a(o9, bArr2)) {
+        v6.a.getClass();
+        if (e1.a(n10, bArr2)) {
             list.set(i10, str);
         }
         return str;
@@ -93,7 +93,7 @@ public final class n5 extends u4 implements RandomAccess, o5 {
 
     @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.List
     public final Object remove(int i10) {
-        i();
+        h();
         Object remove = this.b.remove(i10);
         ((AbstractList) this).modCount++;
         if (remove instanceof String) {
@@ -104,15 +104,15 @@ public final class n5 extends u4 implements RandomAccess, o5 {
         }
         x4 x4Var = (x4) remove;
         Charset charset = l5.a;
-        if (x4Var.o() == 0) {
+        if (x4Var.n() == 0) {
             return "";
         }
-        return new String(x4Var.b, 0, x4Var.o(), charset);
+        return new String(x4Var.b, 0, x4Var.n(), charset);
     }
 
     @Override // java.util.AbstractList, java.util.List
     public final Object set(int i10, Object obj) {
-        i();
+        h();
         Object obj2 = this.b.set(i10, (String) obj);
         if (obj2 instanceof String) {
             return (String) obj2;
@@ -122,10 +122,10 @@ public final class n5 extends u4 implements RandomAccess, o5 {
         }
         x4 x4Var = (x4) obj2;
         Charset charset = l5.a;
-        if (x4Var.o() == 0) {
+        if (x4Var.n() == 0) {
             return "";
         }
-        return new String(x4Var.b, 0, x4Var.o(), charset);
+        return new String(x4Var.b, 0, x4Var.n(), charset);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -135,7 +135,7 @@ public final class n5 extends u4 implements RandomAccess, o5 {
 
     @Override // com.google.android.gms.internal.cast.o5
     public final o5 zzd() {
-        return this.a ? new n6(this) : this;
+        return this.a ? new o6(this) : this;
     }
 
     @Override // com.google.android.gms.internal.cast.k5

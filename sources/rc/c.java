@@ -1,0 +1,22 @@
+package rc;
+
+import java.util.logging.Logger;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public abstract class c {
+    public static c a(Class cls) {
+        if (System.getProperty("java.vm.name").equalsIgnoreCase("Dalvik")) {
+            String simpleName = cls.getSimpleName();
+            a aVar = new a(0);
+            aVar.b = simpleName;
+            return aVar;
+        }
+        String simpleName2 = cls.getSimpleName();
+        a aVar2 = new a(1);
+        aVar2.b = Logger.getLogger(simpleName2);
+        return aVar2;
+    }
+
+    public abstract void b(String str);
+}

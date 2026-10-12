@@ -1,55 +1,63 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class wr implements Drawable.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Drawable b;
+public final /* synthetic */ class wr implements org.telegram.ui.Cells.a5, hg.z1 {
+    public final /* synthetic */ xr a;
 
-    public /* synthetic */ wr(int i10, Drawable drawable) {
-        this.a = i10;
-        this.b = drawable;
+    public /* synthetic */ wr(xr xrVar) {
+        this.a = xrVar;
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 0:
-                ((xr) this.b).invalidateSelf();
-                break;
-            default:
-                org.telegram.ui.Cells.w0 w0Var = ((j11) this.b).h;
-                if (w0Var != null) {
-                    w0Var.invalidate();
-                    break;
-                }
-                break;
+    @Override // hg.z1
+    public /* synthetic */ a0.h K() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.a5
+    public boolean d(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
+        int intValue = ((Integer) b5Var.getTag()).intValue();
+        xr xrVar = this.a;
+        TLObject E = xrVar.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
         }
+        return xrVar.y.h0((TLRPC.ChannelParticipant) E, !z10, b5Var);
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        switch (this.a) {
-            case 0:
-                ((xr) this.b).scheduleSelf(runnable, j3);
-                break;
+    @Override // hg.z1
+    public /* synthetic */ a0.h j0() {
+        return null;
+    }
+
+    @Override // hg.z1
+    public void k(int i10) {
+        xr xrVar = this.a;
+        yr yrVar = xrVar.y;
+        if (xrVar.h.e()) {
+            return;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((xr) this.b).unscheduleSelf(runnable);
-                break;
+        int i11 = xrVar.r;
+        xrVar.l();
+        if (xrVar.r > i11) {
+            yrVar.y0(i11);
         }
+        if (xrVar.s || xrVar.r != 0 || i10 == 0) {
+            return;
+        }
+        yrVar.b.e(false, true);
     }
 
-    private final void b(Drawable drawable, Runnable runnable) {
+    @Override // hg.z1
+    public /* synthetic */ boolean t0(int i10) {
+        return true;
     }
 
-    private final void a(Drawable drawable, Runnable runnable, long j3) {
+    @Override // hg.z1
+    public /* synthetic */ void I0(ArrayList arrayList) {
     }
 }

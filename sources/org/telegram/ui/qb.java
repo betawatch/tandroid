@@ -1,57 +1,47 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class qb implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ s4.d1 b;
-    public final /* synthetic */ rb c;
+public final class qb extends ki.n {
+    public int W;
+    public tu0 X;
+    public final /* synthetic */ ac Y;
 
-    public qb(rb rbVar, View view, s4.d1 d1Var) {
-        this.c = rbVar;
-        this.a = view;
-        this.b = d1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qb(ac acVar, pb pbVar, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(null, pbVar, c6Var);
+        this.Y = acVar;
+        this.W = -1;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        org.telegram.ui.ActionBar.k kVar3;
-        View view = this.a;
-        view.getViewTreeObserver().removeOnPreDrawListener(this);
-        vb vbVar = this.c.n;
-        int measuredHeight = vbVar.v.getMeasuredHeight();
-        int top = view.getTop();
-        view.getBottom();
-        int i10 = top >= 0 ? 0 : -top;
-        int measuredHeight2 = view.getMeasuredHeight();
-        if (measuredHeight2 > measuredHeight) {
-            measuredHeight2 = i10 + measuredHeight;
+    @Override // ki.n, s4.k
+    public final void N() {
+        super.N();
+        tu0 tu0Var = this.X;
+        if (tu0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(tu0Var);
         }
-        View view2 = this.b.a;
-        if (view2 instanceof org.telegram.ui.Cells.u1) {
-            int heightWithKeyboard = (vbVar.X.getHeightWithKeyboard() - AndroidUtilities.dp(48.0f)) - vbVar.v.getTop();
-            float y3 = view.getY();
-            kVar3 = ((org.telegram.ui.ActionBar.n2) vbVar).actionBar;
-            ((org.telegram.ui.Cells.u1) view).b4(i10, measuredHeight2 - i10, heightWithKeyboard, 0.0f, (y3 + kVar3.getMeasuredHeight()) - vbVar.X.getBackgroundTranslationY(), vbVar.X.getMeasuredWidth(), vbVar.X.getBackgroundSizeY(), 0, 0, 0);
-            return true;
+        tu0 tu0Var2 = new tu0(this, 20);
+        this.X = tu0Var2;
+        AndroidUtilities.runOnUIThread(tu0Var2);
+    }
+
+    @Override // ki.n
+    public final void W() {
+        if (this.W == -1) {
+            this.W = this.Y.getNotificationCenter().setAnimationInProgress(this.W, ac.R0, false);
         }
-        if (!(view2 instanceof org.telegram.ui.Cells.w0)) {
-            return true;
+        tu0 tu0Var = this.X;
+        if (tu0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(tu0Var);
+            this.X = null;
         }
-        kVar = ((org.telegram.ui.ActionBar.n2) vbVar).actionBar;
-        if (kVar == null || vbVar.X == null) {
-            return true;
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d("admin logs chatItemAnimator disable notifications");
         }
-        org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
-        float y10 = view.getY();
-        kVar2 = ((org.telegram.ui.ActionBar.n2) vbVar).actionBar;
-        w0Var.a0((y10 + kVar2.getMeasuredHeight()) - vbVar.X.getBackgroundTranslationY(), vbVar.X.getBackgroundSizeY());
-        return true;
     }
 }

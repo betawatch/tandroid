@@ -31,7 +31,7 @@ public abstract class e5 implements i5 {
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.i5
@@ -44,8 +44,8 @@ public abstract class e5 implements i5 {
     }
 
     @Override // j$.util.stream.j5
-    public void o(long j3) {
-        this.a.o(j3);
+    public void o(long j10) {
+        this.a.o(j10);
     }
 
     @Override // j$.util.stream.j5

@@ -1,53 +1,39 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class zs0 extends g.o {
-    public final /* synthetic */ xs0 c;
-    public final /* synthetic */ bw0 d;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public zs0(bw0 bw0Var, xs0 xs0Var) {
-        this.d = bw0Var;
-        this.c = xs0Var;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class zs0 extends s4.m0 {
+    public final /* synthetic */ ts0 a;
+
+    public zs0(ts0 ts0Var) {
+        this.a = ts0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
-    
-        if (r3.h.getAdapter().j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
-    
-        if (r5.j(r9) == 2) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x0023, code lost:
-    
-        r1 = 1;
-     */
-    @Override // g.o
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int i(int i10) {
-        bw0 bw0Var = this.d;
-        int[] iArr = bw0Var.m1;
-        pu0 pu0Var = bw0Var.O;
-        xs0 xs0Var = this.c;
-        int i11 = iArr[bw0.p0(xs0Var.F) ? 1 : 0];
-        s4.i0 adapter = xs0Var.h.getAdapter();
-        gu0 gu0Var = bw0Var.H;
-        if (adapter != gu0Var) {
-            if (bw0.u(bw0Var, xs0Var.h.getAdapter()) == -1) {
-                if (xs0Var.h.getAdapter() != pu0Var) {
-                    i11 = xs0Var.x.J;
-                } else if (xs0Var.h.getAdapter() == pu0Var && bw0Var.t1[5].a.isEmpty()) {
-                    i11 = xs0Var.x.J;
-                } else {
-                    ys0 ys0Var = xs0Var.x;
-                    ys0Var.B1();
-                    i11 = ys0Var.R.get(i10);
-                }
-            }
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
+        if (!(view instanceof org.telegram.ui.Cells.t7)) {
+            rect.left = 0;
+            rect.top = 0;
+            rect.bottom = 0;
+            rect.right = 0;
+            return;
         }
-        return Math.min(i11, xs0Var.x.J);
+        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
+        ts0 ts0Var = this.a;
+        ts0Var.r.getClass();
+        int R = RecyclerView.R(t7Var);
+        int i10 = ts0Var.s.J;
+        t7Var.a0 = R < i10;
+        int i11 = R % i10;
+        t7Var.V = i11 == 0;
+        t7Var.W = i11 == i10 - 1;
+        rect.left = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        rect.right = 0;
     }
 }

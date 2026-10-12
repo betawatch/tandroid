@@ -1,24 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class fb extends org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ vb o;
+import j$.util.Objects;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stars;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fb(vb vbVar, eb ebVar) {
-        super(ebVar, -2, -2);
-        this.o = vbVar;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class fb implements Predicate {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ fb(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        vb vbVar = this.o;
-        if (vbVar.F0 != this) {
-            return;
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
         }
-        org.telegram.ui.Components.tc.e();
-        vbVar.F0 = null;
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
+        switch (this.a) {
+            case 0:
+                return ((String) obj) != null;
+            case 1:
+                return !((MessageObject) obj).isEphemeral();
+            case 2:
+                return Objects.nonNull((TLObject) obj);
+            default:
+                return !((TL_stars.StarGift) obj).auction;
+        }
     }
 }

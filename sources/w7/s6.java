@@ -1,12 +1,7 @@
 package w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class s6 {
-    public static int a(long j3) {
-        if (j3 > 2147483647L || j3 < -2147483648L) {
-            throw new RuntimeException(org.telegram.ui.Cells.c1.h(j3, "A cast to int has gone wrong. Please contact the mp4parser discussion group (", ")"));
-        }
-        return (int) j3;
-    }
+    public static String[] a;
 }

@@ -1,45 +1,86 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.FrameLayout;
+import android.view.MotionEvent;
+import android.widget.Scroller;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ed1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ xd1 e;
+public final class ed1 implements org.telegram.ui.Components.fp0, org.telegram.ui.Components.v20 {
+    public final /* synthetic */ ce1 a;
 
-    public ed1(xd1 xd1Var, boolean z10, int i10, int i11, boolean z11) {
-        this.e = xd1Var;
-        this.a = z10;
-        this.b = i10;
-        this.c = i11;
-        this.d = z11;
+    public /* synthetic */ ed1(ce1 ce1Var) {
+        this.a = ce1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        xd1 xd1Var = this.e;
-        FrameLayout[] frameLayoutArr = xd1Var.L0;
-        xd1Var.r1 = null;
-        int i10 = this.c;
-        int i11 = this.b;
-        boolean z10 = this.a;
-        if (z10 && frameLayoutArr[i11].getVisibility() == 0) {
-            frameLayoutArr[i11].setAlpha(1.0f);
-            frameLayoutArr[i11].setVisibility(4);
-        } else if (!z10) {
-            frameLayoutArr[i10].setVisibility(4);
+    @Override // org.telegram.ui.Components.fp0
+    public void X(float f7, boolean z10) {
+        ce1 ce1Var = this.a;
+        ce1Var.l1 = f7;
+        ce1Var.k1();
+    }
+
+    @Override // org.telegram.ui.Components.fp0
+    public /* synthetic */ CharSequence getContentDescription() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.fp0
+    public /* synthetic */ int k0() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.v20
+    public boolean onDown(MotionEvent motionEvent) {
+        Scroller scroller = this.a.c;
+        if (scroller == null) {
+            return true;
         }
-        int i12 = xd1Var.b;
-        if (i12 == 1 || i12 == 2) {
-            xd1Var.J0[this.d ? (char) 0 : (char) 2].setVisibility(4);
-        } else if (i10 == 1) {
-            frameLayoutArr[i11].setAlpha(0.0f);
+        scroller.abortAnimation();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.v20
+    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        ce1 ce1Var = this.a;
+        Scroller scroller = ce1Var.c;
+        if (scroller == null) {
+            return true;
         }
+        scroller.abortAnimation();
+        ce1Var.c.fling((int) ce1Var.X1, 0, Math.round(-f7), Math.round(f10), 0, (int) ce1Var.W1, 0, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        ce1Var.x0.postInvalidate();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.v20
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        ce1 ce1Var = this.a;
+        Scroller scroller = ce1Var.c;
+        if (scroller != null) {
+            scroller.abortAnimation();
+        }
+        ce1Var.X1 = Utilities.clamp(ce1Var.X1 + f7, ce1Var.W1, 0.0f);
+        ce1Var.V0();
+        ce1Var.x0.invalidate();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.v20
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.v20
+    public void b1() {
+    }
+
+    @Override // org.telegram.ui.Components.v20
+    public void onLongPress(MotionEvent motionEvent) {
+    }
+
+    @Override // org.telegram.ui.Components.fp0
+    public void z() {
     }
 }

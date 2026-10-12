@@ -1,15 +1,16 @@
 package o2;
 
 import android.text.TextUtils;
-import b2.m0;
-import b2.o0;
+import b2.r0;
+import b2.t0;
+import b2.x;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class s implements o0 {
+public final class s implements t0 {
     public final String a;
     public final String b;
     public final List c;
@@ -20,12 +21,12 @@ public final class s implements o0 {
         this.c = DesugarCollections.unmodifiableList(new ArrayList(list));
     }
 
-    @Override // b2.o0
-    public final /* synthetic */ b2.s a() {
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
         return null;
     }
 
-    @Override // b2.o0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }
@@ -53,11 +54,11 @@ public final class s implements o0 {
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("HlsTrackMetadataEntry");
         String str = this.a;
-        sb2.append(str != null ? a1.g.t(a1.g.w(" [", str, ", "), this.b, "]") : "");
+        sb2.append(str != null ? a1.g.s(a1.g.v(" [", str, ", "), this.b, "]") : "");
         return sb2.toString();
     }
 
-    @Override // b2.o0
-    public final /* synthetic */ void b(m0 m0Var) {
+    @Override // b2.t0
+    public final /* synthetic */ void b(r0 r0Var) {
     }
 }

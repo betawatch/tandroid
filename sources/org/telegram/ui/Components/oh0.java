@@ -1,324 +1,117 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.util.Property;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import j$.util.Objects;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class oh0 extends mm0 {
-    public final Context r;
-    public final /* synthetic */ sh0 s;
+public abstract class oh0 extends FrameLayout {
+    public final a6 a;
+    public final TextView b;
+    public final org.telegram.ui.Cells.x1 c;
+    public final /* synthetic */ qh0 d;
 
-    public oh0(sh0 sh0Var, Context context) {
-        this.s = sh0Var;
-        this.r = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oh0(qh0 qh0Var, Context context) {
+        super(context);
+        this.d = qh0Var;
+        setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i5, false));
+        a6 a6Var = new a6(getContext());
+        this.a = a6Var;
+        a6Var.setTextSize(1, 14.0f);
+        a6Var.setTypeface(AndroidUtilities.bold());
+        int i10 = org.telegram.ui.ActionBar.g6.f7;
+        a6Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
+        a6Var.setSingleLine(true);
+        a6Var.setEllipsize(TextUtils.TruncateAt.END);
+        a6Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        org.telegram.ui.Cells.x1 x1Var = new org.telegram.ui.Cells.x1(this, getContext(), 1);
+        this.c = x1Var;
+        x1Var.setTextSize(AndroidUtilities.dp(14.0f));
+        x1Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
+        x1Var.setGravity(LocaleController.isRTL ? 3 : 5);
+        x1Var.setOnClickListener(new z80(this, 8));
+        boolean z10 = LocaleController.isRTL;
+        addView(a6Var, w7.a6.a(-1.0f, z10 ? 0 : 16, 0.0f, z10 ? 16 : 0, 0.0f, -2, (z10 ? 5 : 3) | 48));
+        addView(textView, w7.a6.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(x1Var, w7.a6.a(-1.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final String F(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.yl0
-    public final void G(qm0 qm0Var, float f7, int[] iArr) {
-        iArr[0] = 0;
-        iArr[1] = 0;
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final int M(int i10) {
-        int i11 = 1;
-        if (i10 == 0) {
-            return 1;
-        }
-        rh0 rh0Var = (rh0) this.s.x.get(i10 - 1);
-        int b10 = rh0Var.b() + 1;
-        if (TextUtils.isEmpty(rh0Var.c) && !rh0Var.e) {
-            i11 = 0;
-        }
-        return b10 + i11;
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final Object O(int i10, int i11) {
-        int i12;
-        if (i10 == 0) {
-            return 293145;
-        }
-        int i13 = i10 - 1;
-        if (i11 == 0) {
-            return -928312;
-        }
-        if (i13 >= 0) {
-            sh0 sh0Var = this.s;
-            if (i13 < sh0Var.x.size() && (i12 = i11 - 1) < ((rh0) sh0Var.x.get(i13)).b()) {
-                return Integer.valueOf(Objects.hash(Long.valueOf(DialogObject.getPeerDialogId(((TLRPC.MessagePeerVote) ((rh0) sh0Var.x.get(i13)).b.get(i12)).peer))));
-            }
-        }
-        return -182734;
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final int P(int i10, int i11) {
-        if (i10 == 0) {
-            return 1;
-        }
-        if (i11 == 0) {
-            return 2;
-        }
-        return i11 + (-1) < ((rh0) this.s.x.get(i10 + (-1))).b() ? 0 : 3;
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final int R() {
-        return this.s.x.size() + 1;
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final View T(int i10, View view) {
-        TLRPC.Message message;
-        sh0 sh0Var = this.s;
-        TLRPC.Poll poll = sh0Var.r;
-        MessageObject messageObject = sh0Var.n;
-        if (view == null) {
-            view = new nh0(this, this.r);
-        }
-        qh0 qh0Var = (qh0) view;
-        if (i10 == 0) {
-            qh0Var.setAlpha(0.0f);
-            return view;
-        }
-        view.setAlpha(1.0f);
-        rh0 rh0Var = (rh0) sh0Var.x.get(i10 - 1);
-        int size = poll.answers.size();
-        int i11 = 0;
-        for (int i12 = 0; i12 < size; i12++) {
-            TLRPC.PollAnswer pollAnswer = poll.answers.get(i12);
-            if (Arrays.equals(pollAnswer.option, rh0Var.d) && ((ph0) sh0Var.w.get(rh0Var)) != null) {
-                TLRPC.TL_textWithEntities tL_textWithEntities = pollAnswer.text;
-                if (messageObject != null && messageObject.translated && (message = messageObject.messageOwner) != null && message.translatedPoll != null) {
-                    while (true) {
-                        if (i11 >= messageObject.messageOwner.translatedPoll.answers.size()) {
-                            break;
-                        }
-                        TLRPC.PollAnswer pollAnswer2 = messageObject.messageOwner.translatedPoll.answers.get(i11);
-                        if (Arrays.equals(pollAnswer2.option, pollAnswer.option)) {
-                            tL_textWithEntities = pollAnswer2.text;
-                            break;
-                        }
-                        i11++;
-                    }
-                }
-                qh0Var.a(tL_textWithEntities == null ? "" : tL_textWithEntities.text, tL_textWithEntities == null ? null : tL_textWithEntities.entities, sh0Var.Q(rh0Var.d), rh0Var.a, rh0Var.a(), false);
-                qh0Var.setTag(R.id.object_tag, rh0Var);
-                return view;
-            }
-        }
-        return view;
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean V(int i10, int i11, s4.d1 d1Var) {
-        if (i10 == 0 || i11 == 0) {
-            return false;
-        }
-        ArrayList arrayList = this.s.F;
-        return arrayList == null || arrayList.isEmpty();
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final void W(int i10, int i11, s4.d1 d1Var) {
-        TLRPC.Message message;
-        sh0 sh0Var = this.s;
-        TLRPC.Poll poll = sh0Var.r;
-        ArrayList arrayList = sh0Var.x;
-        MessageObject messageObject = sh0Var.n;
-        int i12 = d1Var.f;
-        View view = d1Var.a;
-        int i13 = 0;
-        if (i12 != 2) {
-            if (i12 != 3) {
-                return;
-            }
-            rh0 rh0Var = (rh0) arrayList.get(i10 - 1);
-            ((org.telegram.ui.Cells.r8) view).m(R.drawable.arrow_more, LocaleController.formatPluralString("ShowVotes", rh0Var.a - rh0Var.b(), new Object[0]), false);
-            return;
-        }
-        qh0 qh0Var = (qh0) view;
-        rh0 rh0Var2 = (rh0) arrayList.get(i10 - 1);
-        ArrayList arrayList2 = rh0Var2.b;
-        byte[] bArr = rh0Var2.d;
-        int size = poll.answers.size();
-        for (int i14 = 0; i14 < size; i14++) {
-            TLRPC.PollAnswer pollAnswer = poll.answers.get(i14);
-            if (Arrays.equals(pollAnswer.option, bArr) && ((ph0) sh0Var.w.get(rh0Var2)) != null) {
-                TLRPC.TL_textWithEntities tL_textWithEntities = pollAnswer.text;
-                if (messageObject != null && messageObject.translated && (message = messageObject.messageOwner) != null && message.translatedPoll != null) {
-                    while (true) {
-                        if (i13 >= messageObject.messageOwner.translatedPoll.answers.size()) {
-                            break;
-                        }
-                        TLRPC.PollAnswer pollAnswer2 = messageObject.messageOwner.translatedPoll.answers.get(i13);
-                        if (Arrays.equals(pollAnswer2.option, pollAnswer.option)) {
-                            tL_textWithEntities = pollAnswer2.text;
-                            break;
-                        }
-                        i13++;
-                    }
-                }
-                qh0Var.a(tL_textWithEntities == null ? "" : tL_textWithEntities.text, tL_textWithEntities == null ? null : tL_textWithEntities.entities, sh0Var.Q(bArr), rh0Var2.a, rh0Var2.a(), false);
-                qh0Var.setTag(R.id.object_tag, rh0Var2);
-                return;
-            }
-        }
-    }
-
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        sh0 sh0Var = this.s;
-        View view2 = sh0Var.y;
-        Context context = this.r;
-        if (i10 == 0) {
-            view = new PollVotesAlert$UserCell(sh0Var, context);
-        } else if (i10 == 1) {
-            ViewParent parent = view2.getParent();
-            view = view2;
-            if (parent != null) {
-                ((ViewGroup) view2.getParent()).removeView(view2);
-                view = view2;
-            }
-        } else if (i10 != 2) {
-            org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(23, context, true);
-            r8Var.setOffsetFromImage(65);
-            r8Var.setBackgroundColor(sh0Var.getThemedColor(org.telegram.ui.ActionBar.i6.h5));
-            r8Var.e(org.telegram.ui.ActionBar.i6.N6, org.telegram.ui.ActionBar.i6.q6);
-            view = r8Var;
+    public final void a(String str, ArrayList arrayList, int i10, int i11, int i12, boolean z10) {
+        a6 a6Var = this.a;
+        if (arrayList != null) {
+            NotificationCenter.listenEmojiLoading(a6Var);
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+            MediaDataController.addTextStyleRuns((ArrayList<TLRPC.MessageEntity>) arrayList, str, spannableStringBuilder);
+            CharSequence replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, a6Var.getPaint().getFontMetricsInt(), false);
+            MessageObject.replaceAnimatedEmoji(replaceEmoji, arrayList, a6Var.getPaint().getFontMetricsInt());
+            a6Var.setText(replaceEmoji);
         } else {
-            View nh0Var = new nh0(this, context);
-            nh0Var.setTag(-33024);
-            view = nh0Var;
+            a6Var.setText(Emoji.replaceEmoji(str, a6Var.getPaint().getFontMetricsInt(), false));
         }
-        return new am0(view);
+        String format = String.format("%d", Integer.valueOf(i10));
+        SpannableStringBuilder spannableStringBuilder2 = LocaleController.isRTL ? new SpannableStringBuilder(a1.g.m(i10, "% – ")) : new SpannableStringBuilder(i2.d.j(i10, " – ", "%"));
+        spannableStringBuilder2.setSpan(new i61(AndroidUtilities.bold()), 3, format.length() + 3, 33);
+        this.b.setText(spannableStringBuilder2);
+        org.telegram.ui.Cells.x1 x1Var = this.c;
+        if (i12 == 0) {
+            if (this.d.r.quiz) {
+                x1Var.c(LocaleController.formatPluralString("Answer", i11, new Object[0]), z10, true);
+                return;
+            } else {
+                x1Var.c(LocaleController.formatPluralString("Vote", i11, new Object[0]), z10, true);
+                return;
+            }
+        }
+        if (i12 == 1) {
+            x1Var.c(LocaleController.getString(R.string.PollExpand), z10, true);
+        } else {
+            x1Var.c(LocaleController.getString(R.string.PollCollapse), z10, true);
+        }
     }
 
-    @Override // s4.i0
-    public final void y(s4.d1 d1Var) {
-        TLRPC.Chat chat;
-        boolean z10;
-        org.telegram.ui.ActionBar.e6 e6Var;
-        if (d1Var.f == 0) {
-            int b10 = d1Var.b();
-            int S = S(b10);
-            int Q = Q(b10) - 1;
-            PollVotesAlert$UserCell pollVotesAlert$UserCell = (PollVotesAlert$UserCell) d1Var.a;
-            sh0 sh0Var = this.s;
-            rh0 rh0Var = (rh0) sh0Var.x.get(S - 1);
-            TLRPC.MessagePeerVote messagePeerVote = (TLRPC.MessagePeerVote) rh0Var.b.get(Q);
-            TLObject userOrChat = sh0Var.R().getUserOrChat(DialogObject.getPeerDialogId(messagePeerVote.peer));
-            int i10 = messagePeerVote.date;
-            boolean z11 = (Q == rh0Var.b() - 1 && TextUtils.isEmpty(rh0Var.c) && !rh0Var.e) ? false : true;
-            y9 y9Var = pollVotesAlert$UserCell.a;
-            org.telegram.ui.ActionBar.j5 j5Var = pollVotesAlert$UserCell.b;
-            if (userOrChat instanceof TLRPC.User) {
-                pollVotesAlert$UserCell.h = (TLRPC.User) userOrChat;
-                pollVotesAlert$UserCell.n = null;
-            } else if (userOrChat instanceof TLRPC.Chat) {
-                pollVotesAlert$UserCell.n = (TLRPC.Chat) userOrChat;
-                pollVotesAlert$UserCell.h = null;
-            } else {
-                pollVotesAlert$UserCell.h = null;
-                pollVotesAlert$UserCell.n = null;
-            }
-            long j3 = i10;
-            pollVotesAlert$UserCell.d.setText(LocaleController.getInstance().getFormatterDay().format(j3 * 1000));
-            pollVotesAlert$UserCell.c.setText(LocaleController.formatDate(j3, true));
-            pollVotesAlert$UserCell.v = z11;
-            pollVotesAlert$UserCell.x = userOrChat == null;
-            pollVotesAlert$UserCell.w = Q;
-            if (userOrChat == null) {
-                j5Var.l("", false);
-                y9Var.setImageDrawable(null);
-            } else {
-                int i11 = pollVotesAlert$UserCell.s;
-                j9 j9Var = pollVotesAlert$UserCell.e;
-                TLRPC.User user = pollVotesAlert$UserCell.h;
-                if ((user == null || user.photo == null) && (chat = pollVotesAlert$UserCell.n) != null) {
-                    TLRPC.ChatPhoto chatPhoto = chat.photo;
-                }
-                if (user != null) {
-                    j9Var.m(i11, user);
-                    TLRPC.UserStatus userStatus = pollVotesAlert$UserCell.h.status;
-                } else {
-                    TLRPC.Chat chat2 = pollVotesAlert$UserCell.n;
-                    if (chat2 != null) {
-                        j9Var.k(i11, chat2);
-                    }
-                }
-                TLRPC.User user2 = pollVotesAlert$UserCell.h;
-                if (user2 != null) {
-                    String userName = UserObject.getUserName(user2);
-                    pollVotesAlert$UserCell.r = userName;
-                    z10 = false;
-                    pollVotesAlert$UserCell.r = Emoji.replaceEmoji(userName, j5Var.getPaint().getFontMetricsInt(), false);
-                } else {
-                    z10 = false;
-                    TLRPC.Chat chat3 = pollVotesAlert$UserCell.n;
-                    if (chat3 != null) {
-                        String str = chat3.title;
-                        pollVotesAlert$UserCell.r = str;
-                        pollVotesAlert$UserCell.r = Emoji.replaceEmoji(str, j5Var.getPaint().getFontMetricsInt(), false);
-                    } else {
-                        pollVotesAlert$UserCell.r = "";
-                    }
-                }
-                j5Var.l(pollVotesAlert$UserCell.r, z10);
-                nx0 nx0Var = pollVotesAlert$UserCell.f;
-                TLRPC.User user3 = pollVotesAlert$UserCell.h;
-                TLRPC.Chat chat4 = pollVotesAlert$UserCell.n;
-                int i12 = org.telegram.ui.ActionBar.i6.z9;
-                e6Var = ((org.telegram.ui.ActionBar.f3) pollVotesAlert$UserCell.F).resourcesProvider;
-                j5Var.i(nx0Var.a(user3, chat4, org.telegram.ui.ActionBar.i6.w0(i12, e6Var), z10));
-                TLRPC.Chat chat5 = pollVotesAlert$UserCell.n;
-                if (chat5 != null) {
-                    y9Var.e(chat5, j9Var);
-                } else {
-                    TLRPC.User user4 = pollVotesAlert$UserCell.h;
-                    if (user4 != null) {
-                        y9Var.e(user4, j9Var);
-                    } else {
-                        y9Var.setImageDrawable(j9Var);
-                    }
-                }
-            }
-            ArrayList arrayList = pollVotesAlert$UserCell.E;
-            if (arrayList == null) {
-                if (pollVotesAlert$UserCell.x) {
-                    return;
-                }
-                pollVotesAlert$UserCell.y = 0.0f;
-            } else {
-                Property property = View.ALPHA;
-                arrayList.add(ObjectAnimator.ofFloat(y9Var, (Property<y9, Float>) property, 0.0f, 1.0f));
-                pollVotesAlert$UserCell.E.add(ObjectAnimator.ofFloat(j5Var, (Property<org.telegram.ui.ActionBar.j5, Float>) property, 0.0f, 1.0f));
-                pollVotesAlert$UserCell.E.add(ObjectAnimator.ofFloat(pollVotesAlert$UserCell, sh0.O, 1.0f, 0.0f));
-            }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        boolean z11 = LocaleController.isRTL;
+        a6 a6Var = this.a;
+        TextView textView = this.b;
+        if (z11) {
+            int left = a6Var.getLeft() - textView.getMeasuredWidth();
+            textView.layout(left, textView.getTop(), textView.getMeasuredWidth() + left, textView.getBottom());
+        } else {
+            int right = a6Var.getRight();
+            textView.layout(right, textView.getTop(), textView.getMeasuredWidth() + right, textView.getBottom());
         }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30);
+        TextView textView = this.b;
+        measureChildWithMargins(textView, i10, 0, makeMeasureSpec, 0);
+        org.telegram.ui.Cells.x1 x1Var = this.c;
+        measureChildWithMargins(x1Var, i10, 0, makeMeasureSpec, 0);
+        measureChildWithMargins(this.a, i10, AndroidUtilities.dp(32.0f) + x1Var.getMeasuredWidth() + textView.getMeasuredWidth(), makeMeasureSpec, 0);
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(32.0f));
     }
 }

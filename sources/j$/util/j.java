@@ -204,7 +204,7 @@ public final class j implements java.util.Map, Serializable, Map {
                 if (concurrentMap instanceof j$.util.concurrent.u) {
                     ((j$.util.concurrent.u) concurrentMap).forEach(tVar);
                 } else {
-                    j$.com.android.tools.r8.a.h(concurrentMap, tVar);
+                    j$.com.android.tools.r8.a.g(concurrentMap, tVar);
                 }
             } else {
                 Map.-CC.$default$replaceAll(map, biFunction);

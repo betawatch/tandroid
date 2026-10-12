@@ -1,6 +1,6 @@
 package x7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class p7 {
     public final i9 a;
@@ -10,12 +10,12 @@ public final class p7 {
     public final f8 e;
     public final s0 f;
 
-    public /* synthetic */ p7(com.google.firebase.messaging.n nVar) {
-        this.a = (i9) nVar.a;
-        this.b = (o7) nVar.b;
-        this.c = (m7) nVar.c;
-        this.d = (g8) nVar.d;
-        this.e = (f8) nVar.e;
-        this.f = (s0) nVar.f;
+    public /* synthetic */ p7(com.google.firebase.messaging.m mVar) {
+        this.a = (i9) mVar.a;
+        this.b = (o7) mVar.b;
+        this.c = (m7) mVar.c;
+        this.d = (g8) mVar.d;
+        this.e = (f8) mVar.e;
+        this.f = (s0) mVar.f;
     }
 }

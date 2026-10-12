@@ -1,70 +1,36 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.Emoji;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class pb0 implements TextWatcher {
+public final /* synthetic */ class pb0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vb0 b;
+    public final /* synthetic */ ac0 b;
 
-    public /* synthetic */ pb0(vb0 vb0Var, int i10) {
+    public /* synthetic */ pb0(ac0 ac0Var, int i10) {
         this.a = i10;
-        this.b = vb0Var;
+        this.b = ac0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                Emoji.replaceEmoji(editable, this.b.K.getPaint().getFontMetricsInt(), false);
+                ac0 ac0Var = this.b;
+                ac0Var.r.b.requestFocus();
+                AndroidUtilities.showKeyboard(ac0Var.r.b);
+                break;
+            case 1:
+                ac0 ac0Var2 = this.b;
+                ac0Var2.r.b.clearFocus();
+                AndroidUtilities.hideKeyboard(ac0Var2.r.b);
                 break;
             default:
-                vb0 vb0Var = this.b;
-                if (!vb0Var.O) {
-                    if (editable.toString().equals("0")) {
-                        vb0Var.F.setText("");
-                        break;
-                    } else {
-                        try {
-                            int parseInt = Integer.parseInt(editable.toString());
-                            if (parseInt <= 100000) {
-                                vb0Var.W(parseInt);
-                                break;
-                            } else {
-                                vb0Var.X();
-                                break;
-                            }
-                        } catch (NumberFormatException unused) {
-                            vb0Var.X();
-                        }
-                    }
-                }
+                pf.d.s(this.b.getParentActivity(), LocaleController.getString(R.string.RequireMonthlyFeeInfoLink));
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

@@ -1,44 +1,44 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
 import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c50 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ org.telegram.ui.Components.hq u1;
-    public final /* synthetic */ g60 v1;
+public final class c50 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ ChatObject.VideoParticipant a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ n60 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c50(g60 g60Var, LaunchActivity launchActivity, org.telegram.ui.Components.hq hqVar) {
-        super(launchActivity, null);
-        this.v1 = g60Var;
-        this.u1 = hqVar;
+    public c50(n60 n60Var, ChatObject.VideoParticipant videoParticipant, boolean z10) {
+        this.c = n60Var;
+        this.a = videoParticipant;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (getAdditionalSubtitleTextView().getVisibility() == 0) {
-            canvas.save();
-            canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - AndroidUtilities.dp(1.0f));
-            int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
-            org.telegram.ui.Components.hq hqVar = this.u1;
-            hqVar.f = alpha;
-            hqVar.draw(canvas);
-            canvas.restore();
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         ViewGroup viewGroup;
-        if (getAlpha() != f7) {
-            super.setAlpha(f7);
-            viewGroup = ((org.telegram.ui.ActionBar.f3) this.v1).containerView;
-            viewGroup.invalidate();
+        n60 n60Var = this.c;
+        t50 t50Var = n60Var.Q;
+        t50Var.getViewTreeObserver().removeOnPreDrawListener(this);
+        n60Var.q2 = null;
+        e40 e40Var = n60Var.a2;
+        ChatObject.VideoParticipant videoParticipant = this.a;
+        e40Var.j(videoParticipant);
+        if (n60Var.s0) {
+            n60Var.s0 = false;
+            n60Var.P0(true);
+            if (this.b && videoParticipant != null) {
+                t50Var.u0(0);
+            }
+            n60Var.s0 = true;
+        } else {
+            n60Var.P0(true);
         }
+        viewGroup = ((org.telegram.ui.ActionBar.e3) n60Var).containerView;
+        viewGroup.requestLayout();
+        return false;
     }
 }

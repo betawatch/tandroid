@@ -1,15 +1,15 @@
 package h1;
 
 import android.database.DataSetObserver;
+import m.a3;
 import m.d2;
-import m.z2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.b11;
-import org.telegram.ui.nz0;
+import org.telegram.ui.i11;
+import org.telegram.ui.uz0;
 import z4.g;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a extends DataSetObserver {
     public final /* synthetic */ int a;
@@ -24,9 +24,9 @@ public final class a extends DataSetObserver {
     public final void onChanged() {
         switch (this.a) {
             case 0:
-                z2 z2Var = (z2) this.b;
-                z2Var.a = true;
-                z2Var.notifyDataSetChanged();
+                a3 a3Var = (a3) this.b;
+                a3Var.a = true;
+                a3Var.notifyDataSetChanged();
                 break;
             case 1:
                 d2 d2Var = (d2) this.b;
@@ -36,20 +36,20 @@ public final class a extends DataSetObserver {
                 }
                 break;
             case 2:
-                b11 b11Var = (b11) this.b;
-                ProfileActivity profileActivity = b11Var.n;
+                i11 i11Var = (i11) this.b;
+                ProfileActivity profileActivity = i11Var.n;
                 int realCount = profileActivity.n0.getRealCount();
                 if (profileActivity.A0 == 0 && realCount > 1 && realCount <= 20 && profileActivity.N.E) {
                     profileActivity.A0 = 1;
                 }
-                b11Var.a(false);
-                b11Var.b(1.0f);
+                i11Var.a(false);
+                i11Var.b(1.0f);
                 if (profileActivity.q0 != null) {
                     if (!profileActivity.T0.t()) {
-                        b11Var.c();
+                        i11Var.c();
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(new nz0(b11Var, 3), 500L);
+                        AndroidUtilities.runOnUIThread(new uz0(i11Var, 3), 500L);
                         break;
                     }
                 }
@@ -64,9 +64,9 @@ public final class a extends DataSetObserver {
     public void onInvalidated() {
         switch (this.a) {
             case 0:
-                z2 z2Var = (z2) this.b;
-                z2Var.a = false;
-                z2Var.notifyDataSetInvalidated();
+                a3 a3Var = (a3) this.b;
+                a3Var.a = false;
+                a3Var.notifyDataSetInvalidated();
                 break;
             case 1:
                 ((d2) this.b).dismiss();

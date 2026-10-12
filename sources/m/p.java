@@ -13,9 +13,9 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import java.util.Iterator;
 import java.util.Map;
-import v7.s7;
+import v7.q7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class p {
     public Parcelable a;
@@ -122,33 +122,33 @@ public final class p {
         CompoundButton compoundButton = (CompoundButton) this.f;
         Context context = compoundButton.getContext();
         int[] iArr = f.a.m;
-        la.h R = la.h.R(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) R.c;
-        r0.i0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) R.c, i10);
+        li.k P = li.k.P(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) P.c;
+        r0.j0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
         try {
             if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
                 try {
-                    compoundButton.setButtonDrawable(s7.b(compoundButton.getContext(), resourceId2));
+                    compoundButton.setButtonDrawable(q7.b(compoundButton.getContext(), resourceId2));
                 } catch (Resources.NotFoundException unused) {
                 }
                 if (typedArray.hasValue(2)) {
-                    compoundButton.setButtonTintList(R.E(2));
+                    compoundButton.setButtonTintList(P.E(2));
                 }
                 if (typedArray.hasValue(3)) {
                     compoundButton.setButtonTintMode(l1.b(typedArray.getInt(3, -1), null));
                 }
-                R.S();
+                P.Q();
             }
             if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
-                compoundButton.setButtonDrawable(s7.b(compoundButton.getContext(), resourceId));
+                compoundButton.setButtonDrawable(q7.b(compoundButton.getContext(), resourceId));
             }
             if (typedArray.hasValue(2)) {
             }
             if (typedArray.hasValue(3)) {
             }
-            R.S();
+            P.Q();
         } catch (Throwable th2) {
-            R.S();
+            P.Q();
             throw th2;
         }
     }
@@ -157,9 +157,9 @@ public final class p {
         Object obj;
         kotlin.jvm.internal.i.e(provider, "provider");
         o.f fVar = (o.f) this.f;
-        o.c i10 = fVar.i(str);
-        if (i10 != null) {
-            obj = i10.b;
+        o.c h = fVar.h(str);
+        if (h != null) {
+            obj = h.b;
         } else {
             o.c cVar = new o.c(str, provider);
             fVar.d++;
@@ -194,8 +194,8 @@ public final class p {
             if (aVar2 != null) {
                 aVar2.a.add(androidx.lifecycle.j.class.getName());
             }
-        } catch (NoSuchMethodException e7) {
-            throw new IllegalArgumentException("Class " + androidx.lifecycle.j.class.getSimpleName() + " must have default constructor in order to be automatically recreated", e7);
+        } catch (NoSuchMethodException e) {
+            throw new IllegalArgumentException("Class " + androidx.lifecycle.j.class.getSimpleName() + " must have default constructor in order to be automatically recreated", e);
         }
     }
 

@@ -2,20 +2,19 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class nt0 extends FragmentContextView {
-    public final /* synthetic */ bw0 R0;
+public final class nt0 extends jv0 {
+    public final /* synthetic */ xv0 t0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nt0(bw0 bw0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, bw0 bw0Var2, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, n2Var, bw0Var2, false, e6Var);
-        this.R0 = bw0Var;
+    public nt0(xv0 xv0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(xv0Var, context, c6Var);
+        this.t0 = xv0Var;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        bw0 bw0Var = this.R0;
-        bw0Var.P0.i(bw0Var.Q0, i10 == 0, true);
+    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
+    public final int f(int i10) {
+        return this.t0.V0(i10);
     }
 }

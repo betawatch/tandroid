@@ -1,102 +1,175 @@
 package c2;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
+import android.app.Notification;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Icon;
+import android.hardware.display.DisplayManager;
+import android.media.AudioFocusRequest;
+import android.media.AudioManager;
+import android.os.Build;
+import android.os.Looper;
+import android.view.Display;
+import android.view.ViewConfiguration;
+import bi.u8;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class i implements h {
-    public f b;
-    public f c;
-    public f d;
-    public f e;
-    public ByteBuffer f;
-    public ByteBuffer g;
-    public boolean h;
+public abstract class i {
+    public static AudioManager a;
 
-    public i() {
-        ByteBuffer byteBuffer = h.a;
-        this.f = byteBuffer;
-        this.g = byteBuffer;
-        f fVar = f.e;
-        this.d = fVar;
-        this.e = fVar;
-        this.b = fVar;
-        this.c = fVar;
-    }
-
-    @Override // c2.h
-    public ByteBuffer a() {
-        ByteBuffer byteBuffer = this.g;
-        this.g = h.a;
-        return byteBuffer;
-    }
-
-    @Override // c2.h
-    public boolean b() {
-        return this.h && this.g == h.a;
-    }
-
-    @Override // c2.h
-    public final f d(f fVar) {
-        this.d = fVar;
-        this.e = f(fVar);
-        return isActive() ? this.e : f.e;
-    }
-
-    @Override // c2.h
-    public final void e() {
-        this.h = true;
-        h();
-    }
-
-    public abstract f f(f fVar);
-
-    @Override // c2.h
-    public final void flush() {
-        this.g = h.a;
-        this.h = false;
-        this.b = this.d;
-        this.c = this.e;
-        g();
-    }
-
-    @Override // c2.h
-    public boolean isActive() {
-        return this.e != f.e;
-    }
-
-    public final ByteBuffer j(int i10) {
-        if (this.f.capacity() < i10) {
-            this.f = ByteBuffer.allocateDirect(i10).order(ByteOrder.nativeOrder());
-        } else {
-            this.f.clear();
+    public static void a(AudioManager audioManager, h hVar) {
+        if (Build.VERSION.SDK_INT < 26) {
+            audioManager.abandonAudioFocus(hVar.b);
+            return;
         }
-        ByteBuffer byteBuffer = this.f;
-        this.g = byteBuffer;
-        return byteBuffer;
+        Object obj = hVar.f;
+        obj.getClass();
+        audioManager.abandonAudioFocusRequest((AudioFocusRequest) obj);
     }
 
-    @Override // c2.h
-    public final void reset() {
-        ByteBuffer byteBuffer = h.a;
-        this.g = byteBuffer;
-        this.h = false;
-        this.f = byteBuffer;
-        f fVar = f.e;
-        this.d = fVar;
-        this.e = fVar;
-        this.b = fVar;
-        this.c = fVar;
-        i();
+    public static Notification.Builder b(Context context, String str) {
+        return new Notification.Builder(context, str);
     }
 
-    public void g() {
+    public static Icon c(Bitmap bitmap) {
+        return Icon.createWithAdaptiveBitmap(bitmap);
     }
 
-    public void h() {
+    public static boolean d(Context context) {
+        Display.HdrCapabilities hdrCapabilities;
+        DisplayManager displayManager = (DisplayManager) context.getSystemService("display");
+        Display display = displayManager != null ? displayManager.getDisplay(0) : null;
+        if (display == null || !display.isHdr() || (hdrCapabilities = display.getHdrCapabilities()) == null) {
+            return false;
+        }
+        for (int i10 : hdrCapabilities.getSupportedHdrTypes()) {
+            if (i10 == 1) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void i() {
+    public static synchronized AudioManager e(Context context) {
+        synchronized (i.class) {
+            synchronized (i.class) {
+                try {
+                    Context applicationContext = context.getApplicationContext();
+                    if (applicationContext != null) {
+                        a = null;
+                    }
+                    AudioManager audioManager = a;
+                    if (audioManager != null) {
+                        return audioManager;
+                    }
+                    Looper myLooper = Looper.myLooper();
+                    if (myLooper != null && myLooper != Looper.getMainLooper()) {
+                        e2.i iVar = new e2.i();
+                        e2.a.e().execute(new u8(18, applicationContext, iVar));
+                        iVar.b();
+                        AudioManager audioManager2 = a;
+                        audioManager2.getClass();
+                        return audioManager2;
+                    }
+                    AudioManager audioManager3 = (AudioManager) applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+                    a = audioManager3;
+                    audioManager3.getClass();
+                    return audioManager3;
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+        }
+    }
+
+    public static float f(ViewConfiguration viewConfiguration) {
+        return viewConfiguration.getScaledHorizontalScrollFactor();
+    }
+
+    public static float g(ViewConfiguration viewConfiguration) {
+        return viewConfiguration.getScaledVerticalScrollFactor();
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0025, code lost:
+    
+        if (r0 == Integer.MIN_VALUE) goto L17;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int h(AudioManager audioManager, h hVar) {
+        int volumeControlStream;
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 26) {
+            Object obj = hVar.f;
+            obj.getClass();
+            return audioManager.requestAudioFocus((AudioFocusRequest) obj);
+        }
+        AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = hVar.b;
+        b2.f fVar = hVar.d;
+        fVar.getClass();
+        if (i10 >= 26) {
+            try {
+                volumeControlStream = fVar.b().getVolumeControlStream();
+            } catch (RuntimeException unused) {
+            }
+        } else {
+            if ((fVar.b & 1) != 1) {
+                switch (fVar.c) {
+                    case 2:
+                        volumeControlStream = 0;
+                        break;
+                    case 3:
+                        volumeControlStream = 8;
+                        break;
+                    case 4:
+                        volumeControlStream = 4;
+                        break;
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 10:
+                        volumeControlStream = 5;
+                        break;
+                    case 6:
+                        volumeControlStream = 2;
+                        break;
+                    case 11:
+                        volumeControlStream = 10;
+                        break;
+                    case 12:
+                    default:
+                        volumeControlStream = 3;
+                        break;
+                    case 13:
+                        break;
+                }
+            }
+            volumeControlStream = 1;
+        }
+        return audioManager.requestAudioFocus(onAudioFocusChangeListener, volumeControlStream, hVar.a);
+    }
+
+    public static void i(Notification.Builder builder) {
+        builder.setBadgeIconType(0);
+    }
+
+    public static void j(Notification.Builder builder, int i10) {
+        builder.setGroupAlertBehavior(i10);
+    }
+
+    public static void k(Notification.Builder builder) {
+        builder.setSettingsText(null);
+    }
+
+    public static void l(Notification.Builder builder, String str) {
+        builder.setShortcutId(str);
+    }
+
+    public static void m(Notification.Builder builder) {
+        builder.setTimeoutAfter(0L);
     }
 }

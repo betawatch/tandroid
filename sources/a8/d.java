@@ -12,13 +12,13 @@ import g6.v;
 import g6.w;
 import kotlin.jvm.internal.i;
 import m.q3;
-import n6.p;
+import n6.q;
 import n7.l1;
 import s6.h;
 import v8.o;
 import y8.y0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final class d {
                     case 6:
                         return new i7.c(context, looper, kVar, lVar, commonSettings);
                     case 11:
-                        return new p6.c(context, looper, commonSettings, (p) obj, kVar, lVar);
+                        return new p6.c(context, looper, commonSettings, (q) obj, kVar, lVar);
                     case 12:
                         return new p7.b(context, looper, 19, commonSettings, kVar, lVar, 0);
                     case 13:
@@ -100,7 +100,7 @@ public final class d {
                 bundle.putBoolean("com.google.android.gms.signin.internal.waitForAccessTokenRefresh", false);
                 return new o8.a(context, looper, commonSettings, bundle, kVar, lVar);
             case 10:
-                throw a1.g.j(obj);
+                throw a1.g.i(obj);
             case 15:
                 o oVar = (o) obj;
                 if (oVar == null) {

@@ -36,7 +36,7 @@ public class m6 extends s6 implements DoubleConsumer {
                 d8.a(getClass(), "{0} calling SpinedBuffer.OfDouble.forEach(Consumer)");
                 throw null;
             }
-            j$.com.android.tools.r8.a.i((l6) spliterator(), consumer);
+            j$.com.android.tools.r8.a.h((l6) spliterator(), consumer);
         }
     }
 

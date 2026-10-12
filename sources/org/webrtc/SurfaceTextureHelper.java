@@ -9,7 +9,7 @@ import org.webrtc.EglBase;
 import org.webrtc.TextureBufferImpl;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class SurfaceTextureHelper {
     private static final String TAG = "SurfaceTextureHelper";
@@ -31,7 +31,7 @@ public class SurfaceTextureHelper {
     private final TimestampAligner timestampAligner;
     private final YuvConverter yuvConverter;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface FrameRefMonitor {
         void onDestroyBuffer(VideoFrame.TextureBuffer textureBuffer);
 
@@ -51,8 +51,8 @@ public class SurfaceTextureHelper {
             public SurfaceTextureHelper call() {
                 try {
                     return new SurfaceTextureHelper(EglBase.Context.this, handler, z10, yuvConverter, frameRefMonitor);
-                } catch (RuntimeException e7) {
-                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e7);
+                } catch (RuntimeException e) {
+                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e);
                     return null;
                 }
             }
@@ -131,7 +131,7 @@ public class SurfaceTextureHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void returnTextureFrame() {
-        this.handler.post(new q(this, 2));
+        this.handler.post(new r(this, 2));
     }
 
     private static void setOnFrameAvailableListener(SurfaceTexture surfaceTexture, SurfaceTexture.OnFrameAvailableListener onFrameAvailableListener, Handler handler) {
@@ -181,11 +181,11 @@ public class SurfaceTextureHelper {
 
     public void dispose() {
         Logging.d(TAG, "dispose()");
-        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new q(this, 1));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new r(this, 1));
     }
 
     public void forceFrame() {
-        this.handler.post(new q(this, 3));
+        this.handler.post(new r(this, 3));
     }
 
     public Handler getHandler() {
@@ -201,18 +201,18 @@ public class SurfaceTextureHelper {
     }
 
     public void setFrameRotation(int i10) {
-        this.handler.post(new i(this, i10, 1));
+        this.handler.post(new j(this, i10, 1));
     }
 
     public void setTextureSize(int i10, int i11) {
         if (i10 <= 0) {
-            throw new IllegalArgumentException(hg.c.h(i10, "Texture width must be positive, but was "));
+            throw new IllegalArgumentException(i2.d.i(i10, "Texture width must be positive, but was "));
         }
         if (i11 <= 0) {
-            throw new IllegalArgumentException(hg.c.h(i11, "Texture height must be positive, but was "));
+            throw new IllegalArgumentException(i2.d.i(i11, "Texture height must be positive, but was "));
         }
         this.surfaceTexture.setDefaultBufferSize(i10, i11);
-        this.handler.post(new gg.n(this, i10, i11, 11));
+        this.handler.post(new hg.n(this, i10, i11, 11));
     }
 
     public void startListening(VideoSink videoSink) {
@@ -226,7 +226,7 @@ public class SurfaceTextureHelper {
     public void stopListening() {
         Logging.d(TAG, "stopListening()");
         this.handler.removeCallbacks(this.setListenerRunnable);
-        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new q(this, 0));
+        ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new r(this, 0));
     }
 
     @Deprecated
@@ -287,16 +287,16 @@ public class SurfaceTextureHelper {
             this.oesTextureId = generateTexture;
             SurfaceTexture surfaceTexture = new SurfaceTexture(generateTexture);
             this.surfaceTexture = surfaceTexture;
-            setOnFrameAvailableListener(surfaceTexture, new SurfaceTexture.OnFrameAvailableListener() { // from class: org.webrtc.r
+            setOnFrameAvailableListener(surfaceTexture, new SurfaceTexture.OnFrameAvailableListener() { // from class: org.webrtc.s
                 @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
                 public final void onFrameAvailable(SurfaceTexture surfaceTexture2) {
                     SurfaceTextureHelper.this.lambda$new$0(surfaceTexture2);
                 }
             }, handler);
-        } catch (RuntimeException e7) {
+        } catch (RuntimeException e) {
             this.eglBase.release();
             handler.getLooper().quit();
-            throw e7;
+            throw e;
         }
     }
 

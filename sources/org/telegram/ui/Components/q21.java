@@ -1,109 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class q21 extends pm0 {
-    public final Context c;
-    public int d;
-    public ArrayList e = new ArrayList();
-    public ArrayList f = new ArrayList();
-    public zk h;
-    public String n;
-    public final /* synthetic */ ThemeEditorView.EditorAlert r;
+public final class q21 implements TextWatcher {
+    public final /* synthetic */ r21 a;
 
-    public q21(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        this.r = editorAlert;
-        this.c = context;
+    public q21(r21 r21Var) {
+        this.a = r21Var;
     }
 
-    public static CharSequence E(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
-            return "";
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10 = this.a.b.length() > 0;
+        if (z10 != (this.a.a.getAlpha() != 0.0f)) {
+            this.a.a.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).scaleX(z10 ? 1.0f : 0.1f).scaleY(z10 ? 1.0f : 0.1f).start();
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        String trim = str.trim();
-        String lowerCase = trim.toLowerCase();
-        int i10 = 0;
-        while (true) {
-            int indexOf = lowerCase.indexOf(str2, i10);
-            if (indexOf == -1) {
-                break;
+        String obj = this.a.b.getText().toString();
+        if (obj.length() != 0) {
+            yz yzVar = this.a.c.e;
+            if (yzVar != null) {
+                yzVar.setText(LocaleController.getString(R.string.NoResult));
             }
-            int length = str2.length() + indexOf;
-            if (i10 != 0 && i10 != indexOf + 1) {
-                spannableStringBuilder.append((CharSequence) trim.substring(i10, indexOf));
-            } else if (i10 == 0 && indexOf != 0) {
-                spannableStringBuilder.append((CharSequence) trim.substring(0, indexOf));
-            }
-            String substring = trim.substring(indexOf, Math.min(trim.length(), length));
-            if (substring.startsWith(" ")) {
-                spannableStringBuilder.append((CharSequence) " ");
-            }
-            String trim2 = substring.trim();
-            int length2 = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) trim2);
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(-11697229), length2, trim2.length() + length2, 33);
-            i10 = length;
-        }
-        if (i10 != -1 && i10 < trim.length()) {
-            spannableStringBuilder.append((CharSequence) trim.substring(i10));
-        }
-        return spannableStringBuilder;
-    }
-
-    @Override // org.telegram.ui.Components.pm0
-    public final boolean D(s4.d1 d1Var) {
-        return true;
-    }
-
-    @Override // s4.i0
-    public final int h() {
-        if (this.e.isEmpty()) {
-            return 0;
-        }
-        return this.e.size() + 1;
-    }
-
-    @Override // s4.i0
-    public final int j(int i10) {
-        return i10 == 0 ? 1 : 0;
-    }
-
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
-        if (d1Var.f == 0) {
-            int i11 = i10 - 1;
-            org.telegram.ui.ActionBar.k6 k6Var = (org.telegram.ui.ActionBar.k6) ((ArrayList) this.e.get(i11)).get(0);
-            int c10 = k6Var.f == org.telegram.ui.ActionBar.i6.Nd ? 0 : k6Var.c();
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) d1Var.a;
-            z8Var.a.setText((CharSequence) this.f.get(i11));
-            z8Var.b = c10;
-            z8Var.setWillNotDraw(c10 == 0);
-            z8Var.invalidate();
-        }
-    }
-
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        View z8Var;
-        Context context = this.c;
-        if (i10 != 0) {
-            z8Var = new View(context);
-            z8Var.setLayoutParams(new s4.q0(-1, AndroidUtilities.dp(56.0f)));
         } else {
-            z8Var = new org.telegram.ui.Cells.z8(context);
-            z8Var.setLayoutParams(new s4.q0(-1, -2));
+            s4.g0 adapter = this.a.c.c.getAdapter();
+            ThemeEditorView.EditorAlert editorAlert = this.a.c;
+            if (adapter != editorAlert.n) {
+                int K = ThemeEditorView.EditorAlert.K(editorAlert);
+                this.a.c.e.setText(LocaleController.getString(R.string.NoChats));
+                this.a.c.e.c();
+                ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
+                editorAlert2.c.setAdapter(editorAlert2.n);
+                this.a.c.n.l();
+                if (K > 0) {
+                    this.a.c.h.h1(0, -K);
+                }
+            }
         }
-        return new am0(z8Var);
+        n21 n21Var = this.a.c.r;
+        if (n21Var == null || obj.equals(n21Var.n)) {
+            return;
+        }
+        n21Var.n = obj;
+        if (n21Var.h != null) {
+            Utilities.searchQueue.cancelRunnable(n21Var.h);
+            n21Var.h = null;
+        }
+        if (obj.length() != 0) {
+            int i10 = n21Var.d + 1;
+            n21Var.d = i10;
+            n21Var.h = new org.telegram.ui.gm(n21Var, obj, i10, 24);
+            Utilities.searchQueue.postRunnable(n21Var.h, 300L);
+            return;
+        }
+        n21Var.e.clear();
+        ThemeEditorView.EditorAlert editorAlert3 = n21Var.r;
+        editorAlert3.F = ThemeEditorView.EditorAlert.K(editorAlert3);
+        n21Var.d = -1;
+        n21Var.l();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

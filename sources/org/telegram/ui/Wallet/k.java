@@ -7,16 +7,16 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.m80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.df;
-import org.telegram.ui.e90;
-import org.telegram.ui.ls0;
-import org.telegram.ui.vx;
-import org.telegram.ui.zn;
+import org.telegram.ui.ay;
+import org.telegram.ui.cs0;
+import org.telegram.ui.fo;
+import org.telegram.ui.j90;
+import org.telegram.ui.kf;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -35,22 +35,22 @@ public final /* synthetic */ class k implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                k0 k0Var = (k0) this.b;
+                j0 j0Var = (j0) this.b;
                 String str = (String) this.c;
-                b0 b0Var = (b0) this.d;
-                if (k0Var.J.get(str) == b0Var) {
-                    b0Var.e = true;
-                    ArrayList arrayList = b0Var.f;
-                    k0Var.f0(b0Var);
+                a0 a0Var = (a0) this.d;
+                if (j0Var.J.get(str) == a0Var) {
+                    a0Var.e = true;
+                    ArrayList arrayList = a0Var.f;
+                    j0Var.f0(a0Var);
                     int size = arrayList.size();
                     int i10 = 0;
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        ((Utilities.Callback) obj).run(b0Var);
+                        ((Utilities.Callback) obj).run(a0Var);
                     }
                     arrayList.clear();
-                    k0Var.I();
+                    j0Var.I();
                     break;
                 }
                 break;
@@ -59,14 +59,14 @@ public final /* synthetic */ class k implements Runnable {
                 Exception exc = (Exception) this.c;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
                 if (importedWalletProof != null) {
-                    k0.E("proof done");
+                    j0.E("proof done");
                     callback2.run(importedWalletProof, null);
                     break;
                 } else {
                     StringBuilder sb2 = new StringBuilder("failed to prove: ");
                     String str2 = "PROOF_ERROR";
                     sb2.append((exc == null || exc.getMessage() == null) ? "PROOF_ERROR" : exc.getMessage());
-                    k0.j(sb2.toString(), exc);
+                    j0.j(sb2.toString(), exc);
                     if (exc != null && exc.getMessage() != null) {
                         str2 = exc.getMessage();
                     }
@@ -75,10 +75,10 @@ public final /* synthetic */ class k implements Runnable {
                 }
                 break;
             case 2:
-                vx vxVar = (vx) this.b;
+                ay ayVar = (ay) this.b;
                 z1 z1Var = (z1) this.c;
-                ci.d dVar = (ci.d) this.d;
-                if (!vxVar.canScrollVertically(1)) {
+                di.d dVar = (di.d) this.d;
+                if (!ayVar.canScrollVertically(1)) {
                     z1Var.p = true;
                 }
                 dVar.setEnabled((!z1Var.p || z1Var.m || z1Var.n) ? false : true);
@@ -86,14 +86,14 @@ public final /* synthetic */ class k implements Runnable {
             case 3:
                 d2 d2Var = (d2) this.b;
                 y1 y1Var = (y1) this.c;
-                e90 e90Var = (e90) this.d;
+                j90 j90Var = (j90) this.d;
                 d2Var.getClass();
-                j jVar = new j(e90Var, 2);
+                j jVar = new j(j90Var, 2);
                 TL_wallet.tonConnectSession tonconnectsession = y1Var.e;
                 if (!tonconnectsession.closed && !tonconnectsession.closing && tonconnectsession.manifest_error == null && tonconnectsession.manifest != null) {
                     if (!y1Var.f) {
                         y1Var.f = true;
-                        d2Var.b.h0(new m6(d2Var, y1Var, jVar, tonconnectsession, 5));
+                        d2Var.b.h0(new l6(d2Var, y1Var, jVar, tonconnectsession, 5));
                         break;
                     } else {
                         jVar.run("A TON Connect operation is already in progress");
@@ -129,18 +129,18 @@ public final /* synthetic */ class k implements Runnable {
                 }
                 break;
             case 5:
-                ((ai.m0) this.b).run((TL_wallet.inputTonConnectOauthSession) this.d, (String) this.c);
+                ((bi.f0) this.b).run((TL_wallet.inputTonConnectOauthSession) this.d, (String) this.c);
                 break;
             case 6:
                 d2 d2Var3 = (d2) this.b;
                 o oVar2 = (o) this.c;
                 TL_wallet.tonConnectSession tonconnectsession3 = (TL_wallet.tonConnectSession) this.d;
-                k0 k0Var2 = d2Var3.b;
-                String r10 = k0Var2.r();
-                byte[] w10 = k0Var2.w();
-                byte[] bArr = w10 == null ? null : (byte[]) w10.clone();
+                j0 j0Var2 = d2Var3.b;
+                String r10 = j0Var2.r();
+                byte[] w9 = j0Var2.w();
+                byte[] bArr = w9 == null ? null : (byte[]) w9.clone();
                 if (r10 != null && bArr != null) {
-                    k0Var2.x(new df(d2Var3, oVar2, tonconnectsession3, r10, bArr, 6), true, false);
+                    j0Var2.x(new kf(d2Var3, oVar2, tonconnectsession3, r10, bArr, 6), true, false);
                     break;
                 } else {
                     oVar2.run("Wallet is not ready");
@@ -154,11 +154,11 @@ public final /* synthetic */ class k implements Runnable {
                 jVar3.run(str3);
                 break;
             case 8:
-                m6 m6Var = (m6) this.b;
-                p80 p80Var = (p80) this.c;
-                p80 p80Var2 = (p80) this.d;
-                m6Var.run();
-                p80Var.K(p80Var2);
+                l6 l6Var = (l6) this.b;
+                m80 m80Var = (m80) this.c;
+                m80 m80Var2 = (m80) this.d;
+                l6Var.run();
+                m80Var.K(m80Var2);
                 break;
             case 9:
                 Utilities.Callback3 callback3 = (Utilities.Callback3) this.b;
@@ -169,16 +169,16 @@ public final /* synthetic */ class k implements Runnable {
                     if (i2Var != null) {
                         i2Var.dismiss();
                     }
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                     if (U != null) {
-                        U.presentFragment(zn.W9(wallettransactionpeeruser.user_id));
+                        U.presentFragment(fo.W9(wallettransactionpeeruser.user_id));
                         break;
                     }
                 }
                 break;
             case 10:
                 i2[] i2VarArr2 = (i2[]) this.b;
-                i2VarArr2[0].setOnDismissListener(new ei.e0(13, (TLRPC.User) this.c, (TL_wallet.walletTransactionPeerUser) this.d));
+                i2VarArr2[0].setOnDismissListener(new fi.d0(13, (TLRPC.User) this.c, (TL_wallet.walletTransactionPeerUser) this.d));
                 i2VarArr2[0].dismiss();
                 break;
             case 11:
@@ -197,25 +197,25 @@ public final /* synthetic */ class k implements Runnable {
                 ((WalletEngine2) this.b).lambda$previewTonConnect$2((c2) this.c, (Utilities.Callback2) this.d);
                 break;
             case 16:
-                l7 l7Var = (l7) this.c;
-                k0 k0Var3 = (k0) this.b;
-                f0 f0Var = (f0) this.d;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(l7Var.getParentActivity(), 0, l7Var.getResourceProvider());
+                k7 k7Var = (k7) this.c;
+                j0 j0Var3 = (j0) this.b;
+                e0 e0Var = (e0) this.d;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(k7Var.getParentActivity(), 0, k7Var.getResourceProvider());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.WalletDisableBackupTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WalletDisableBackupConfirmInfo);
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.k(LocaleController.getString(R.string.WalletDisable), new f7(l7Var, k0Var3, f0Var));
+                alertDialog$Builder.k(LocaleController.getString(R.string.WalletDisable), new e7(k7Var, j0Var3, e0Var));
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.o();
                 break;
             default:
-                l7 l7Var2 = (l7) this.c;
+                k7 k7Var2 = (k7) this.c;
                 Boolean bool = (Boolean) this.d;
-                k0 k0Var4 = (k0) this.b;
-                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(l7Var2.getParentActivity(), 0, l7Var2.getResourceProvider());
+                j0 j0Var4 = (j0) this.b;
+                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(k7Var2.getParentActivity(), 0, k7Var2.getResourceProvider());
                 alertDialog$Builder2.a.R = LocaleController.getString(R.string.WalletReplaceWalletTitle);
-                alertDialog$Builder2.k(LocaleController.getString(R.string.WalletCreateNew), new f7(l7Var2, bool, k0Var4, 0));
-                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new ls0(22, l7Var2, bool));
+                alertDialog$Builder2.k(LocaleController.getString(R.string.WalletCreateNew), new e7(k7Var2, bool, j0Var4, 0));
+                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new cs0(25, k7Var2, bool));
                 alertDialog$Builder2.o();
                 break;
         }
@@ -228,24 +228,24 @@ public final /* synthetic */ class k implements Runnable {
         this.d = obj3;
     }
 
-    public /* synthetic */ k(k0 k0Var, WalletEngine2.ImportedWalletProof importedWalletProof, Exception exc, Utilities.Callback2 callback2) {
+    public /* synthetic */ k(j0 j0Var, WalletEngine2.ImportedWalletProof importedWalletProof, Exception exc, Utilities.Callback2 callback2) {
         this.a = 1;
         this.b = importedWalletProof;
         this.c = exc;
         this.d = callback2;
     }
 
-    public /* synthetic */ k(l7 l7Var, Boolean bool, k0 k0Var) {
+    public /* synthetic */ k(k7 k7Var, Boolean bool, j0 j0Var) {
         this.a = 17;
-        this.c = l7Var;
+        this.c = k7Var;
         this.d = bool;
-        this.b = k0Var;
+        this.b = j0Var;
     }
 
-    public /* synthetic */ k(l7 l7Var, k0 k0Var, f0 f0Var) {
+    public /* synthetic */ k(k7 k7Var, j0 j0Var, e0 e0Var) {
         this.a = 16;
-        this.c = l7Var;
-        this.b = k0Var;
-        this.d = f0Var;
+        this.c = k7Var;
+        this.b = j0Var;
+        this.d = e0Var;
     }
 }

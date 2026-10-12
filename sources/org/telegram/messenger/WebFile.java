@@ -5,7 +5,7 @@ import java.util.Locale;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class WebFile extends TLObject {
     public ArrayList<TLRPC.DocumentAttribute> attributes;
@@ -59,14 +59,14 @@ public class WebFile extends TLObject {
         return webFile2;
     }
 
-    public static WebFile createWithGeoPoint(double d, double d10, long j3, int i10, int i11, int i12, int i13) {
+    public static WebFile createWithGeoPoint(double d, double d10, long j10, int i10, int i11, int i12, int i13) {
         WebFile webFile = new WebFile();
         TLRPC.TL_inputWebFileGeoPointLocation tL_inputWebFileGeoPointLocation = new TLRPC.TL_inputWebFileGeoPointLocation();
         webFile.location = tL_inputWebFileGeoPointLocation;
         TLRPC.TL_inputGeoPoint tL_inputGeoPoint = new TLRPC.TL_inputGeoPoint();
         webFile.geo_point = tL_inputGeoPoint;
         tL_inputWebFileGeoPointLocation.geo_point = tL_inputGeoPoint;
-        tL_inputWebFileGeoPointLocation.access_hash = j3;
+        tL_inputWebFileGeoPointLocation.access_hash = j10;
         tL_inputGeoPoint.lat = d;
         tL_inputGeoPoint._long = d10;
         webFile.w = i10;

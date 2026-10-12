@@ -7,17 +7,18 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.yh;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class x3 extends FrameLayout {
     public final TextPaint a;
-    public final /* synthetic */ a5 b;
+    public final /* synthetic */ z4 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x3(a5 a5Var, Context context) {
+    public x3(z4 z4Var, Context context) {
         super(context);
-        this.b = a5Var;
+        this.b = z4Var;
         this.a = new TextPaint(1);
     }
 
@@ -30,7 +31,7 @@ public final class x3 extends FrameLayout {
         int dp2 = AndroidUtilities.dp(14.0f);
         int i12 = 0;
         while (i12 < 2) {
-            dp2 = org.telegram.messenger.q.C(24.0f, (int) Math.ceil(textPaint.measureText(LocaleController.getString(i12 == 0 ? R.string.WalletTransactions : R.string.WalletCollectibles))), dp2);
+            dp2 = yh.c(24.0f, (int) Math.ceil(textPaint.measureText(LocaleController.getString(i12 == 0 ? R.string.WalletTransactions : R.string.WalletCollectibles))), dp2);
             i12++;
         }
         this.b.h0.getLayoutParams().width = Math.min(dp2, Math.max(0, View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(32.0f)));

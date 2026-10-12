@@ -1,89 +1,82 @@
 package org.telegram.ui;
 
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.view.View;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fo0 extends WebViewClient {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ vo0 b;
+public final class fo0 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ int[] d;
 
-    public fo0(vo0 vo0Var, Context context) {
-        this.b = vo0Var;
-        this.a = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fo0(Context context, int i10, int[] iArr, int[] iArr2) {
+        super(context);
+        this.b = i10;
+        this.c = iArr;
+        this.d = iArr2;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void onPageFinished(WebView webView, String str) {
-        super.onPageFinished(webView, str);
-        vo0 vo0Var = this.b;
-        vo0Var.z0 = false;
-        vo0Var.H0(true, false);
-        vo0Var.K0();
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        vo0 vo0Var = this.b;
-        try {
-            if (!AndroidUtilities.isSafeToShow(vo0Var.getParentActivity())) {
-                return true;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        this.a = true;
+        int dp = AndroidUtilities.dp(9.0f);
+        int i12 = this.b;
+        int i13 = (i12 - 1) * dp;
+        int[] iArr = this.c;
+        float f7 = 1.0f;
+        if ((iArr[0] * i12) + i13 <= size) {
+            setWeightSum(1.0f);
+            int childCount = getChildCount();
+            for (int i14 = 0; i14 < childCount; i14++) {
+                getChildAt(i14).getLayoutParams().width = 0;
+                ((LinearLayout.LayoutParams) getChildAt(i14).getLayoutParams()).weight = 1.0f / childCount;
             }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(vo0Var.getParentActivity(), 0, vo0Var.Y0);
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new tk0(this, 8));
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.o();
-            return true;
-        } catch (Exception e7) {
-            FileLog.e(e7);
-            return false;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        Uri parse;
-        boolean equals;
-        vo0 vo0Var;
-        try {
-            parse = Uri.parse(str);
-            equals = "t.me".equals(parse.getHost());
-            vo0Var = this.b;
-        } catch (Exception unused) {
-        }
-        if (equals) {
-            vo0Var.t0();
-            return true;
-        }
-        if (!vo0.h1.contains(parse.getScheme())) {
-            if (!vo0.g1.contains(parse.getScheme())) {
-                try {
-                    if (vo0Var.getParentActivity() != null) {
-                        vo0Var.getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", parse), 210);
-                        return true;
+        } else if (this.d[0] + i13 <= size) {
+            setWeightSum(1.0f);
+            int i15 = size - i13;
+            int childCount2 = getChildCount();
+            for (int i16 = 0; i16 < childCount2; i16++) {
+                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i16).getLayoutParams();
+                layoutParams.width = 0;
+                float intValue = ((Integer) r9.getTag(R.id.width_tag)).intValue() / i15;
+                layoutParams.weight = intValue;
+                f7 -= intValue;
+            }
+            float f10 = f7 / (i12 - 1);
+            if (f10 > 0.0f) {
+                int childCount3 = getChildCount();
+                for (int i17 = 0; i17 < childCount3; i17++) {
+                    View childAt = getChildAt(i17);
+                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) childAt.getLayoutParams();
+                    if (((Integer) childAt.getTag(R.id.width_tag)).intValue() != iArr[0]) {
+                        layoutParams2.weight += f10;
                     }
-                } catch (ActivityNotFoundException unused2) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a);
-                    alertDialog$Builder.a.R = vo0Var.p0;
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                    alertDialog$Builder.o();
                 }
             }
-            return false;
+        } else {
+            setWeightSum(0.0f);
+            int childCount4 = getChildCount();
+            for (int i18 = 0; i18 < childCount4; i18++) {
+                getChildAt(i18).getLayoutParams().width = -2;
+                ((LinearLayout.LayoutParams) getChildAt(i18).getLayoutParams()).weight = 0.0f;
+            }
         }
-        return true;
+        this.a = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
+        }
+        super.requestLayout();
     }
 }

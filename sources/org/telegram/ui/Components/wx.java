@@ -1,30 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class wx extends s4.e0 {
-    public final /* synthetic */ int r;
+public final class wx extends g.o {
+    public final /* synthetic */ wz c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wx(Context context, int i10) {
-        super(context);
-        this.r = i10;
+    public wx(wz wzVar) {
+        this.c = wzVar;
     }
 
-    @Override // s4.e0
-    public final int i(int i10, int i11, int i12, int i13, int i14) {
-        return super.i(i10, i11, i12, i13, i14) + this.r;
-    }
-
-    @Override // s4.e0
-    public final int m(int i10) {
-        return super.m(i10) * 16;
-    }
-
-    @Override // s4.e0
-    public final int p() {
-        return -1;
+    @Override // g.o
+    public final int i(int i10) {
+        wz wzVar = this.c;
+        fy fyVar = wzVar.R;
+        vx vxVar = wzVar.Q;
+        s4.g0 adapter = wzVar.P.getAdapter();
+        vy vyVar = wzVar.S;
+        if (adapter == vyVar) {
+            int j10 = vyVar.j(i10);
+            if (j10 == 1 || j10 == 3 || j10 == 2 || j10 == 4 || j10 == 5) {
+                return vxVar.J;
+            }
+        } else if ((wzVar.d0 && i10 == 0) || i10 == fyVar.d || i10 == fyVar.c || i10 == fyVar.f || fyVar.r.indexOfKey(i10) >= 0 || fyVar.v.indexOfKey(i10) >= 0) {
+            return vxVar.J;
+        }
+        return 1;
     }
 }

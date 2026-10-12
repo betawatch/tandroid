@@ -7,7 +7,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class AiTonesController {
     public final int currentAccount;
@@ -48,9 +48,9 @@ public final class AiTonesController {
 
     public void add(TL_aicompose.AiComposeTone aiComposeTone) {
         if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
-            long j3 = ((TL_aicompose.TL_aiComposeTone) aiComposeTone).id;
+            long j10 = ((TL_aicompose.TL_aiComposeTone) aiComposeTone).id;
             for (int i10 = 0; i10 < this.tones.size(); i10++) {
-                if ((this.tones.get(i10) instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.TL_aiComposeTone) this.tones.get(i10)).id == j3) {
+                if ((this.tones.get(i10) instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.TL_aiComposeTone) this.tones.get(i10)).id == j10) {
                     return;
                 }
             }
@@ -112,8 +112,8 @@ public final class AiTonesController {
                         this.tones.addAll(((TL_aicompose.TL_tones) TLdeserialize).tones);
                     }
                 }
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
         }
         request();
@@ -133,7 +133,7 @@ public final class AiTonesController {
         if (this.requestId < 0 && System.currentTimeMillis() - this.requestedTime >= 1800000) {
             TL_aicompose.getTones gettones = new TL_aicompose.getTones();
             gettones.hash = this.hash;
-            this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(gettones, new a(), new le(this, 1));
+            this.requestId = ConnectionsManager.getInstance(this.currentAccount).sendRequestTyped(gettones, new a(), new oe(this, 1));
         }
     }
 

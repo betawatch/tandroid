@@ -1,6 +1,7 @@
 package j$.util.stream;
 
 import j$.util.Objects;
+import j$.util.function.IntConsumer$-CC;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.function.Consumer;
@@ -9,7 +10,7 @@ import java.util.function.IntConsumer;
 /* loaded from: classes2.dex */
 public class o6 extends s6 implements IntConsumer {
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
     @Override // j$.util.stream.s6
@@ -36,7 +37,7 @@ public class o6 extends s6 implements IntConsumer {
                 d8.a(getClass(), "{0} calling SpinedBuffer.OfInt.forEach(Consumer)");
                 throw null;
             }
-            j$.com.android.tools.r8.a.j((n6) spliterator(), consumer);
+            j$.com.android.tools.r8.a.i((n6) spliterator(), consumer);
         }
     }
 

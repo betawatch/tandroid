@@ -1,26 +1,37 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class is0 implements Utilities.Callback {
+public final /* synthetic */ class is0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ss0 b;
+    public final /* synthetic */ PhotoViewer b;
 
-    public /* synthetic */ is0(ss0 ss0Var, int i10) {
+    public /* synthetic */ is0(PhotoViewer photoViewer, int i10) {
         this.a = i10;
-        this.b = ss0Var;
+        this.b = photoViewer;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (i10) {
             case 0:
-                new org.telegram.ui.Components.ad(this.b.b.e0, null).m(org.telegram.ui.Components.zc.r, 1, -115203550, -1, null).j();
+                Drawable[] drawableArr = PhotoViewer.U8;
+                photoViewer.G0(true, false);
+                break;
+            case 1:
+                Drawable[] drawableArr2 = PhotoViewer.U8;
+                photoViewer.f3(1, false);
+                break;
+            case 2:
+                Drawable[] drawableArr3 = PhotoViewer.U8;
+                photoViewer.f3(-1, false);
                 break;
             default:
-                new org.telegram.ui.Components.ad(this.b.b.e0, null).m(org.telegram.ui.Components.zc.r, 1, -115203550, -1, null).j();
+                PhotoViewer.S(photoViewer);
                 break;
         }
     }

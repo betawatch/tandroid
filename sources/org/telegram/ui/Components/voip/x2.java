@@ -1,55 +1,49 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.TextPaint;
-import android.view.View;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class x2 extends View {
-    public final TextPaint a;
-    public final Paint b;
-    public final float c;
-    public final String d;
-    public volatile Bitmap e;
+public final /* synthetic */ class x2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y2 b;
 
-    public x2(Context context, String str) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        this.b = new Paint(1);
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
-        textPaint.setColor(-1);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        this.c = textPaint.measureText(str);
-        this.d = str;
+    public /* synthetic */ x2(y2 y2Var, int i10) {
+        this.a = i10;
+        this.b = y2Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.e != null) {
-            canvas.drawBitmap(this.e, 0.0f, 0.0f, this.b);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                y2 y2Var = this.b;
+                y2Var.getClass();
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                y2Var.d = intValue;
+                y2Var.e = intValue;
+                y2Var.f = intValue;
+                y2Var.h = intValue;
+                y2Var.n = intValue;
+                y2Var.invalidate();
+                break;
+            default:
+                y2 y2Var2 = this.b;
+                y2Var2.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y2Var2.d = AndroidUtilities.lerp(y2Var2.F, AndroidUtilities.dp(56.0f), floatValue);
+                y2Var2.e = AndroidUtilities.lerp(y2Var2.F, AndroidUtilities.dp(36.0f), floatValue);
+                y2Var2.f = AndroidUtilities.lerp(y2Var2.F, AndroidUtilities.dp(60.0f), floatValue);
+                y2Var2.h = AndroidUtilities.lerp(y2Var2.F, AndroidUtilities.dp(36.0f), floatValue);
+                y2Var2.n = AndroidUtilities.lerp(y2Var2.F, AndroidUtilities.dp(64.0f), floatValue);
+                y2Var2.r = AndroidUtilities.lerp(0, AndroidUtilities.dp(50.0f), floatValue);
+                y2Var2.s = AndroidUtilities.lerp(0, AndroidUtilities.dp(20.0f), floatValue);
+                y2Var2.v = AndroidUtilities.lerp(0, 0, floatValue);
+                y2Var2.w = AndroidUtilities.lerp(0, AndroidUtilities.dp(-20.0f), floatValue);
+                y2Var2.x = AndroidUtilities.lerp(0, AndroidUtilities.dp(-40.0f), floatValue);
+                y2Var2.invalidate();
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (z10) {
-            Utilities.globalQueue.postRunnable(new i2.h0(this, 27));
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + ((int) this.c), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
     }
 }

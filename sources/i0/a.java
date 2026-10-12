@@ -1,9 +1,9 @@
 package i0;
 
 import android.graphics.Color;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final ThreadLocal a = new ThreadLocal();
@@ -72,7 +72,7 @@ public abstract class a {
             z10 = 0.0f;
             abs = 0.0f;
         } else {
-            z10 = max == f7 ? ((f10 - f11) / f12) % 6.0f : max == f10 ? e2.z(f11, f7, f12, 2.0f) : e2.z(f7, f10, f12, 4.0f);
+            z10 = max == f7 ? ((f10 - f11) / f12) % 6.0f : max == f10 ? k3.z(f11, f7, f12, 2.0f) : k3.z(f7, f10, f12, 4.0f);
             abs = f12 / (1.0f - Math.abs((2.0f * f13) - 1.0f));
         }
         float f14 = (z10 * 60.0f) % 360.0f;
@@ -166,7 +166,7 @@ public abstract class a {
         if (i14 == 0) {
             return 0;
         }
-        return hg.c.f(255, i11, i12 * i13, (i10 * 255) * i11) / (i14 * 255);
+        return k3.v(255, i11, i12 * i13, (i10 * 255) * i11) / (i14 * 255);
     }
 
     public static int j(int i10) {

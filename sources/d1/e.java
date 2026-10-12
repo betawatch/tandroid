@@ -35,9 +35,9 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MediaDataController;
 import v0.i;
-import v7.o6;
+import v7.p6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -59,8 +59,8 @@ public final class e extends b1.d {
             s0 s0Var = uVar.c;
             try {
                 JSONObject jSONObject2 = new JSONObject();
-                if (s0Var != null && s0Var.u().length > 0) {
-                    jSONObject2.put("rawId", u6.b.c(s0Var.u()));
+                if (s0Var != null && s0Var.t().length > 0) {
+                    jSONObject2.put("rawId", u6.b.c(s0Var.t()));
                 }
                 String str = uVar.n;
                 if (str != null) {
@@ -95,8 +95,8 @@ public final class e extends b1.d {
                                 }
                                 str4 = "error";
                                 jSONObject = jSONObject3;
-                            } catch (JSONException e7) {
-                                throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e7);
+                            } catch (JSONException e) {
+                                throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e);
                             }
                         } else {
                             jSONObject = null;
@@ -117,8 +117,8 @@ public final class e extends b1.d {
                 Bundle bundle = new Bundle();
                 bundle.putString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON", jSONObject4);
                 return new v0.f(jSONObject4, bundle);
-            } catch (JSONException e10) {
-                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e10);
+            } catch (JSONException e7) {
+                throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e7);
             }
         } catch (Throwable th2) {
             throw new w0.c("The PublicKeyCredential response json had an unexpected exception when parsing: " + th2.getMessage(), 2);
@@ -133,7 +133,7 @@ public final class e extends b1.d {
         String str;
         JSONArray jSONArray;
         ArrayList arrayList;
-        long j3;
+        long j10;
         kotlin.jvm.internal.i.e(request, "request");
         LinkedHashMap linkedHashMap = f.a;
         String str2 = request.d;
@@ -145,16 +145,16 @@ public final class e extends b1.d {
             if (Build.VERSION.SDK_INT >= 28) {
                 PackageInfo packageInfo = packageManager.getPackageInfo("com.google.android.gms", 0);
                 kotlin.jvm.internal.i.d(packageInfo, "getPackageInfo(...)");
-                j3 = b5.d.s(packageInfo);
+                j10 = b5.d.s(packageInfo);
             } else {
-                j3 = packageManager.getPackageInfo("com.google.android.gms", 0).versionCode;
+                j10 = packageManager.getPackageInfo("com.google.android.gms", 0).versionCode;
             }
-            if (j3 > 241217000) {
+            if (j10 > 241217000) {
                 return new v(str2);
             }
         }
         JSONObject jSONObject = new JSONObject(str2);
-        byte[] a2 = o6.a(jSONObject);
+        byte[] a2 = p6.a(jSONObject);
         JSONObject jSONObject2 = jSONObject.getJSONObject("user");
         String str3 = "id";
         String string = jSONObject2.getString("id");
@@ -252,8 +252,8 @@ public final class e extends b1.d {
                             arrayList.add(Transport.a(jSONArray4.getString(i13)));
                             i13++;
                             jSONArray4 = jSONArray5;
-                        } catch (a7.a e7) {
-                            throw new y0.a(new x0.a(4), e7.getMessage());
+                        } catch (a7.a e) {
+                            throw new y0.a(new x0.a(4), e.getMessage());
                         }
                     }
                 } else {

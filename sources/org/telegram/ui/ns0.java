@@ -1,102 +1,52 @@
 package org.telegram.ui;
 
-import android.widget.Toast;
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.SurfaceView;
+import android.view.View;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ns0 implements RequestDelegate {
+public final class ns0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ PhotoViewer c;
 
-    public /* synthetic */ ns0(Object obj, Object obj2, Object obj3, int i10) {
+    public /* synthetic */ ns0(PhotoViewer photoViewer, View view, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+        this.c = photoViewer;
+        this.b = view;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new rr0((ss0) this.b, tLObject, (UserConfig) this.c, (TLRPC.Photo) this.d, 2));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new g90(this.b, tLObject, this.c, this.d, tL_error, 17));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new rr0((PrivacySettingsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tLObject, (TL_account.setAccountTTL) this.d, 5));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new g90(this.b, tLObject, this.c, this.d, tL_error, 21));
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new g90(this.b, tLObject, this.c, this.d, tL_error, 19));
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new g90(this.b, tLObject, this.c, this.d, tL_error, 20));
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new rr0((g01) this.b, tLObject, (UserConfig) this.c, (TLRPC.Photo) this.d, 11));
-                break;
-            case 7:
-                AndroidUtilities.runOnUIThread(new g90(this.b, tL_error, tLObject, this.c, this.d, 24));
-                break;
-            case 8:
-                AndroidUtilities.runOnUIThread(new rr0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tL_error, (TLRPC.TL_authorization) this.d, 14));
-                break;
-            case 9:
-                AndroidUtilities.runOnUIThread(new rr0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tL_error, (TLRPC.TL_webAuthorization) this.d, 13));
-                break;
-            case 10:
-                ma1 ma1Var = (ma1) this.b;
-                String str = (String) this.c;
-                ab1 ab1Var = (ab1) this.d;
-                boolean z10 = true;
-                jg.b bVar = null;
-                if (tLObject instanceof TL_stats.TL_statsGraph) {
-                    try {
-                        JSONObject jSONObject = new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data);
-                        na1 na1Var = ma1Var.r;
-                        int i10 = na1Var.i;
-                        if (na1Var != ma1Var.w.w) {
-                            z10 = false;
-                        }
-                        bVar = bb1.e0(jSONObject, i10, z10);
-                    } catch (JSONException e7) {
-                        e7.printStackTrace();
-                    }
-                } else if (tLObject instanceof TL_stats.TL_statsGraphError) {
-                    Toast.makeText(ma1Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
+                PhotoViewer photoViewer = this.c;
+                photoViewer.B3 = false;
+                this.b.setOutlineProvider(null);
+                ImageView imageView = photoViewer.x3;
+                if (imageView != null) {
+                    imageView.setOutlineProvider(null);
                 }
-                AndroidUtilities.runOnUIThread(new rr0(ma1Var, bVar, str, ab1Var, 17));
-                break;
-            case 11:
-                AndroidUtilities.runOnUIThread(new rr0((xe1) this.b, tLObject, (String) this.c, (org.telegram.ui.ActionBar.b2) this.d, 19));
+                bv0 bv0Var = photoViewer.E2;
+                if (bv0Var != null) {
+                    bv0Var.setOutlineProvider(null);
+                }
+                SurfaceView surfaceView = photoViewer.C2;
+                if (surfaceView != null) {
+                    surfaceView.setVisibility(0);
+                    break;
+                }
                 break;
             default:
-                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
-                byte[] bArr = (byte[]) this.c;
-                byte[] bArr2 = (byte[]) this.d;
-                if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new n31(25, twoStepVerificationActivity, tL_error));
-                    break;
-                } else {
-                    Utilities.globalQueue.postRunnable(new rr0(twoStepVerificationActivity, bArr, tLObject, bArr2, 20));
-                    break;
-                }
+                PhotoViewer photoViewer2 = this.c;
+                photoViewer2.B3 = false;
+                photoViewer2.i4.run();
+                AndroidUtilities.runOnUIThread(new on0(10, this, this.b), 100L);
+                break;
         }
     }
 }

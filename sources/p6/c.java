@@ -9,16 +9,16 @@ import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
 import m.q3;
 import n6.g;
-import n6.p;
+import n6.q;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c extends g {
-    public final p U;
+    public final q U;
 
-    public c(Context context, Looper looper, q3 q3Var, p pVar, k kVar, l lVar) {
+    public c(Context context, Looper looper, q3 q3Var, q qVar, k kVar, l lVar) {
         super(context, looper, 270, q3Var, kVar, lVar, 0);
-        this.U = pVar;
+        this.U = qVar;
     }
 
     @Override // n6.g, com.google.android.gms.common.api.c
@@ -42,10 +42,10 @@ public final class c extends g {
 
     @Override // n6.g
     public final Bundle t() {
-        p pVar = this.U;
-        pVar.getClass();
+        q qVar = this.U;
+        qVar.getClass();
         Bundle bundle = new Bundle();
-        String str = pVar.a;
+        String str = qVar.a;
         if (str != null) {
             bundle.putString("api", str);
         }

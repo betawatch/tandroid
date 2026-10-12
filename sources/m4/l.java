@@ -1,29 +1,28 @@
 package m4;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final class l {
-    public static final String d;
-    public static final String e;
-    public static final String f;
-    public static final String g;
-    public final int a;
-    public final long b;
-    public final j1 c;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.Parcel;
 
-    static {
-        String str = e2.d0.a;
-        d = Integer.toString(0, 36);
-        e = Integer.toString(1, 36);
-        Integer.toString(2, 36);
-        Integer.toString(3, 36);
-        f = Integer.toString(4, 36);
-        g = Integer.toString(5, 36);
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class l implements m {
+    public IBinder a;
+
+    public final void F0(int i10, Bundle bundle) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i10);
+            w7.u.a(obtain, bundle);
+            this.a.transact(3001, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
     }
 
-    public l(int i10, long j3, j1 j1Var) {
-        this.a = i10;
-        this.b = j3;
-        this.c = j1Var;
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
     }
 }

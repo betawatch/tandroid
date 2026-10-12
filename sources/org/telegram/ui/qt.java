@@ -1,28 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class qt extends LinearLayout {
-    public final org.telegram.ui.Components.y9 a;
-    public final org.telegram.ui.ActionBar.j5 b;
-    public final org.telegram.ui.ActionBar.e6 c;
-    public TLRPC.StickerSetCovered d;
+public final class qt extends org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ tt o;
 
-    public qt(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.c = e6Var;
-        org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(context);
-        this.a = y9Var;
-        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
-        this.b = j5Var;
-        j5Var.setTextSize(16);
-        j5Var.setTextColor(-1);
-        setOrientation(0);
-        addView(y9Var, w7.x5.t(24, 24, 17, 17, 0, 17, 0));
-        addView(j5Var, w7.x5.t(-2, -2, 17, 0, 0, 12, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qt(tt ttVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = ttVar;
+    }
+
+    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        xt xtVar = this.o.a;
+        xtVar.k = null;
+        xtVar.K = false;
+        if (xtVar.R) {
+            xtVar.n();
+        }
+        View view = xtVar.h;
+        if (view != null) {
+            if (view instanceof org.telegram.ui.Cells.f8) {
+                ((org.telegram.ui.Cells.f8) view).setScaled(false);
+            } else if (view instanceof org.telegram.ui.Cells.d8) {
+                ((org.telegram.ui.Cells.d8) view).setScaled(false);
+            } else if (view instanceof org.telegram.ui.Cells.f2) {
+                ((org.telegram.ui.Cells.f2) view).setScaled(false);
+            }
+            xtVar.h = null;
+        }
     }
 }

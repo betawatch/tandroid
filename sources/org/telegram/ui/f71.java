@@ -1,61 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class f71 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Runnable e;
-    public final /* synthetic */ g71 f;
+public final class f71 extends org.telegram.ui.Components.ux0 {
+    public final /* synthetic */ g71 x3;
 
-    public f71(g71 g71Var, boolean z10, Runnable runnable, boolean[] zArr, boolean z11, Runnable runnable2) {
-        this.f = g71Var;
-        this.a = z10;
-        this.b = runnable;
-        this.c = zArr;
-        this.d = z11;
-        this.e = runnable2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f71(g71 g71Var, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, i10, c6Var);
+        this.x3 = g71Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        Runnable runnable;
-        g71 g71Var = this.f;
-        k0 k0Var = g71Var.s;
-        boolean z10 = this.a;
-        float f7 = z10 ? 1.0f : 0.0f;
-        g71Var.I = f7;
-        AndroidUtilities.lerp(g71Var.c, g71Var.d, f7, g71Var.e);
-        k0Var.invalidate();
-        if (!z10) {
-            g71Var.v.setAlpha(g71Var.I);
-        }
-        if (g71Var.I < 0.5f && !z10 && (runnable = this.b) != null) {
-            boolean[] zArr = this.c;
-            if (!zArr[0]) {
-                zArr[0] = true;
-                runnable.run();
-            }
-        }
-        if (!z10) {
-            if (this.d) {
-                g71Var.a.b = false;
-                g71Var.P.h0.invalidate();
-            }
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 4);
-        }
-        g71Var.K = null;
-        k0Var.invalidate();
-        Runnable runnable2 = this.e;
-        if (runnable2 != null) {
-            runnable2.run();
-        }
+    @Override // org.telegram.ui.Components.ux0
+    public final boolean B1() {
+        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) || this.x3.y.W == 4;
+    }
+
+    @Override // org.telegram.ui.Components.ux0
+    public final void F1(int i10) {
+        super.F1(i10);
+        this.x3.e(false);
     }
 }

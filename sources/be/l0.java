@@ -1,0 +1,31 @@
+package be;
+
+import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class l0 extends ge.s {
+    public static final /* synthetic */ AtomicIntegerFieldUpdater e = AtomicIntegerFieldUpdater.newUpdater(l0.class, "_decision$volatile");
+    private volatile /* synthetic */ int _decision$volatile;
+
+    @Override // ge.s, be.v1
+    public final void b(Object obj) {
+        g(obj);
+    }
+
+    @Override // ge.s, be.v1
+    public final void g(Object obj) {
+        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater;
+        do {
+            atomicIntegerFieldUpdater = e;
+            int i10 = atomicIntegerFieldUpdater.get(this);
+            if (i10 != 0) {
+                if (i10 != 1) {
+                    throw new IllegalStateException("Already resumed");
+                }
+                ge.a.g(f0.r(obj), w7.n.b(this.d));
+                return;
+            }
+        } while (!atomicIntegerFieldUpdater.compareAndSet(this, 0, 2));
+    }
+}

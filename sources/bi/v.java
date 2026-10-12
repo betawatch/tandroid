@@ -1,1167 +1,1491 @@
 package bi;
 
-import android.graphics.Bitmap;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.util.LongSparseArray;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.LinearLayout;
-import ci.d2;
-import ci.kc;
-import ci.l8;
-import ci.lc;
-import ci.m8;
-import ci.nb;
-import ci.oc;
-import ci.q6;
-import ci.r2;
-import ci.s8;
-import ci.u8;
-import ci.y1;
-import ci.z3;
-import ci.zb;
-import com.google.android.gms.internal.vision.e2;
-import ei.d5;
-import ei.e4;
-import ei.e5;
-import ei.k3;
-import ei.m2;
-import ei.p1;
-import gg.h0;
-import hg.b0;
-import hg.e1;
-import hg.f1;
-import hg.g1;
-import hg.i1;
-import hg.l0;
-import hg.u0;
-import hg.w0;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import androidx.recyclerview.widget.RecyclerView;
+import di.fc;
+import di.kc;
 import java.util.ArrayList;
+import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.TranslateController;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Cells.i6;
-import org.telegram.ui.Components.bd0;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.og0;
-import org.telegram.ui.Components.oo0;
-import org.telegram.ui.Components.p61;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.ru;
-import org.telegram.ui.Components.wo0;
-import org.telegram.ui.ty;
+import org.telegram.ui.Components.b30;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.hd;
+import org.telegram.ui.Components.i61;
+import org.telegram.ui.px;
+import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class v implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public abstract class v extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, ne.d {
+    public boolean A0;
+    public final float B0;
+    public ValueAnimator C0;
+    public ValueAnimator D0;
+    public final q E;
+    public float E0;
+    public final q F;
+    public ValueAnimator F0;
+    public final Paint G;
+    public float G0;
+    public final Paint H;
+    public ValueAnimator H0;
+    public final hd I;
+    public float I0;
+    public di.d4 J;
+    public OvershootInterpolator J0;
+    public boolean K;
+    public AnimatorSet K0;
+    public int L;
+    public final c2.b L0;
+    public int M;
+    public long M0;
+    public float N;
+    public Drawable N0;
+    public int O;
+    public final ArrayList P;
+    public final ArrayList Q;
+    public final s4.k R;
+    public final s4.b0 S;
+    public final org.telegram.ui.Components.s6 T;
+    public final n U;
+    public final ImageView V;
+    public final ImageView W;
+    public final ne.b a;
+    public final org.telegram.ui.Components.q5 a0;
+    public final int b;
+    public final ArrayList b0;
+    public final Drawable c;
+    public float c0;
+    public final p d;
+    public float d0;
+    public int e;
+    public final yy e0;
+    public final int f;
+    public CharSequence f0;
+    public boolean g0;
+    public final m h;
+    public int h0;
+    public SpannableStringBuilder i0;
+    public ValueAnimator j0;
+    public s k0;
+    public boolean l0;
+    public boolean m0;
+    public ck0 n;
+    public float n0;
+    public int o0;
+    public u p0;
+    public org.telegram.ui.ActionBar.k q0;
+    public final m r;
+    public n9 r0;
+    public final x8 s;
+    public float s0;
+    public final float t0;
+    public final float u0;
+    public final ArrayList v;
+    public final float v0;
+    public final ArrayList w;
+    public final a4.d w0;
+    public final ArrayList x;
+    public LinearGradient x0;
+    public final ArrayList y;
+    public Matrix y0;
+    public Paint z0;
 
-    public /* synthetic */ v(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public v(Context context, yy yyVar, int i10, int i11) {
+        super(context);
+        this.a = new ne.b(1, this, es.h, 380L, false);
+        this.v = new ArrayList();
+        this.w = new ArrayList();
+        this.x = new ArrayList();
+        this.y = new ArrayList();
+        px pxVar = (px) this;
+        q qVar = new q(pxVar, false);
+        this.E = qVar;
+        q qVar2 = new q(pxVar, true);
+        this.F = qVar2;
+        Paint paint = new Paint();
+        this.G = new Paint(1);
+        this.H = new Paint(1);
+        hd hdVar = new hd(this);
+        this.I = hdVar;
+        this.N = -1.0f;
+        this.O = -1;
+        this.P = new ArrayList();
+        this.Q = new ArrayList();
+        this.b0 = new ArrayList();
+        this.c0 = -1.0f;
+        this.l0 = true;
+        this.t0 = 1.0f;
+        this.u0 = 0.95f;
+        this.v0 = 0.9f;
+        this.w0 = new a4.d(4);
+        this.B0 = 0.3f;
+        this.E0 = 1.0f;
+        new OvershootInterpolator(0.9f);
+        this.J0 = new OvershootInterpolator(0.95f);
+        c2.b bVar = new c2.b(this);
+        this.L0 = bVar;
+        this.b = i11;
+        this.f = i10;
+        this.e0 = yyVar;
+        this.s0 = AndroidUtilities.dp(68.0f);
+        this.s = MessagesController.getInstance(i10).getStoriesController();
+        m mVar = new m(pxVar, context, 0);
+        this.h = mVar;
+        mVar.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
+        mVar.setClipToPadding(false);
+        mVar.setClipChildren(false);
+        hdVar.h = new a3.d(pxVar, 13);
+        ah.j jVar = new ah.j(pxVar, 1);
+        hdVar.l = true;
+        hdVar.j = jVar;
+        mVar.j(new ah.d0(pxVar, 1));
+        s4.k kVar = new s4.k();
+        this.R = kVar;
+        kVar.C = false;
+        kVar.n(150L);
+        kVar.m = false;
+        mVar.setItemAnimator(kVar);
+        s4.b0 b0Var = new s4.b0(0, false);
+        this.S = b0Var;
+        mVar.setLayoutManager(b0Var);
+        mVar.setOnItemClickListener(new d(pxVar, 0));
+        mVar.setOnItemLongClickListener(new a1.c(pxVar, 3));
+        mVar.setAdapter(qVar);
+        addView(mVar, w7.a6.a(-2.0f, 0.0f, 4.0f, 0.0f, 0.0f, -1, 0));
+        org.telegram.ui.Components.s6 s6Var = new org.telegram.ui.Components.s6(getContext(), true, true, false);
+        this.T = s6Var;
+        s6Var.setGravity(3);
+        s6Var.setTextColor(getTextLogoColor());
+        s6Var.setTypeface(AndroidUtilities.bold());
+        s6Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        s6Var.setTextSize(AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 20.0f : 18.0f));
+        s6Var.setImportantForAccessibility(1);
+        s6Var.setFocusableInTouchMode(true);
+        addView(s6Var, w7.a6.d(-2.0f, -1));
+        ImageView imageView = new ImageView(context);
+        this.V = imageView;
+        imageView.setContentDescription(LocaleController.getString(R.string.AppName));
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setImageResource(R.drawable.telegram_logo_2);
+        imageView.setColorFilter(getTextLogoColor(), PorterDuff.Mode.MULTIPLY);
+        imageView.setImportantForAccessibility(1);
+        imageView.setFocusableInTouchMode(true);
+        addView(imageView, w7.a6.d(22.0f, 90));
+        org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(AndroidUtilities.dp(26.0f), null);
+        this.a0 = q5Var;
+        q5Var.a = true;
+        q5Var.setCallback(this);
+        ImageView imageView2 = new ImageView(context);
+        this.W = imageView2;
+        imageView2.setScaleType(ImageView.ScaleType.CENTER);
+        imageView2.setImageDrawable(q5Var);
+        addView(imageView2, w7.a6.d(40.0f, 40));
+        n nVar = new n(pxVar, context, bVar);
+        this.U = nVar;
+        addView(nVar, w7.a6.d(-2.0f, -2));
+        paint.setColor(-2762018);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        this.c = getContext().getDrawable(R.drawable.msg_mini_addstory);
+        m mVar2 = new m(pxVar, getContext(), 1);
+        this.r = mVar2;
+        getContext();
+        mVar2.setLayoutManager(new s4.b0(0, false));
+        mVar2.i(new o(0));
+        p pVar = new p();
+        this.d = pVar;
+        pVar.C = false;
+        pVar.m = false;
+        mVar2.setItemAnimator(pVar);
+        mVar2.setAdapter(qVar2);
+        mVar2.setClipChildren(false);
+        addView(mVar2, w7.a6.a(-2.0f, 0.0f, 4.0f, 0.0f, 0.0f, -1, 0));
+        setClipChildren(false);
+        setClipToPadding(false);
+        d();
+        q(false, false);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Utilities.Callback callback;
-        String str;
-        String upperCase;
-        boolean z10;
-        c71 c71Var;
+    /* JADX INFO: Access modifiers changed from: private */
+    public int getTextColor() {
+        return this.b == 0 ? f(org.telegram.ui.ActionBar.g6.A8) : f(org.telegram.ui.ActionBar.g6.P8);
+    }
+
+    private int getTextLogoColor() {
+        return f(org.telegram.ui.ActionBar.g6.gl);
+    }
+
+    public final void b() {
+        this.N = 1.0f - AndroidUtilities.lerp(1.0f - this.c0, 1.0f, 1.0f - this.d0);
+        d();
+        float f7 = this.N;
+        int i10 = f7 == 1.0f ? 2 : f7 != 0.0f ? 1 : 0;
+        if (this.O != i10) {
+            this.O = i10;
+            if (i10 != 1 && this.K) {
+                AndroidUtilities.runOnUIThread(new e(this, 0));
+            }
+            int i11 = this.O;
+            m mVar = this.r;
+            m mVar2 = this.h;
+            if (i11 == 0) {
+                AndroidUtilities.forEachViews((RecyclerView) mVar2, (Utilities.Callback<View>) new f(0));
+                mVar.setVisibility(4);
+                mVar2.setVisibility(0);
+                if (System.currentTimeMillis() >= this.M0) {
+                    this.M0 = System.currentTimeMillis() + 60000;
+                }
+            } else {
+                int i12 = this.f;
+                if (i11 == 1) {
+                    ArrayList arrayList = this.Q;
+                    arrayList.clear();
+                    int i13 = 0;
+                    while (true) {
+                        ArrayList arrayList2 = this.x;
+                        if (i13 >= arrayList2.size()) {
+                            break;
+                        }
+                        if (((r) arrayList2.get(i13)).c != UserConfig.getInstance(i12).getClientUserId() || m()) {
+                            arrayList.add(Long.valueOf(((r) arrayList2.get(i13)).c));
+                            if (arrayList.size() == 3) {
+                                break;
+                            }
+                        }
+                        i13++;
+                    }
+                    mVar.setVisibility(4);
+                    mVar2.setVisibility(0);
+                } else if (i11 == 2) {
+                    mVar.setVisibility(0);
+                    mVar2.setVisibility(4);
+                    this.S.h1(0, 0);
+                    ah.g gVar = MessagesController.getInstance(i12).getStoriesController().K;
+                    AndroidUtilities.cancelRunOnUIThread(gVar);
+                    gVar.run();
+                    n9 n9Var = this.r0;
+                    if (n9Var != null) {
+                        n9Var.a();
+                        this.r0 = null;
+                    }
+                }
+            }
+            invalidate();
+        }
+        invalidate();
+    }
+
+    public final void c() {
+        int N0;
+        s4.b0 b0Var = this.S;
+        int N02 = b0Var.N0() + 10;
+        ArrayList arrayList = this.x;
+        int size = arrayList.size();
+        x8 x8Var = this.s;
+        if (N02 > size || ((N0 = b0Var.N0() + 9) < arrayList.size() && x8Var.D(0, ((r) arrayList.get(N0)).c) == 0)) {
+            boolean z10 = this.b == 1;
+            if (z10) {
+                if (!x8Var.z) {
+                    return;
+                }
+            } else if (!x8Var.p) {
+                return;
+            }
+            x8Var.Q(z10);
+        }
+    }
+
+    public final void d() {
+        float a2 = w7.s.a(Math.min(this.N, this.d0), 0.0f, 1.0f);
+        float f7 = this.a.e;
+        float f10 = 1.0f - f7;
+        float f11 = f7 * a2;
+        float f12 = f10 * a2;
+        org.telegram.ui.Components.s6 s6Var = this.T;
+        if (s6Var != null) {
+            s6Var.setAlpha(f11);
+            s6Var.setVisibility(f11 > 0.0f ? 0 : 8);
+        }
+        ImageView imageView = this.V;
+        if (imageView != null) {
+            imageView.setAlpha(f12);
+            imageView.setVisibility(f12 > 0.0f ? 0 : 8);
+        }
+        ImageView imageView2 = this.W;
+        if (imageView2 != null) {
+            imageView2.setAlpha(f12);
+            imageView2.setVisibility(f12 > 0.0f ? 0 : 8);
+        }
+        n nVar = this.U;
+        if (nVar != null) {
+            nVar.setAlpha(a2);
+            nVar.setVisibility(a2 > 0.0f ? 0 : 8);
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.storiesUpdated && this.l0) {
+            q(getVisibility() == 0, false);
+            AndroidUtilities.runOnUIThread(new e(this, 2));
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:101:0x03ca  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0456  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x0419  */
+    /* JADX WARN: Removed duplicated region for block: B:150:0x03af  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x037b  */
+    /* JADX WARN: Removed duplicated region for block: B:162:0x0340  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x02d0  */
+    /* JADX WARN: Removed duplicated region for block: B:170:0x01a6  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0192  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x01a4  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x01ac  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x02cc  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x031b  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0367  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0399  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x03a6  */
+    @Override // android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void dispatchDraw(Canvas canvas) {
+        ArrayList arrayList;
         int i10;
+        float f7;
+        float f10;
+        m mVar;
+        float f11;
+        float f12;
+        m mVar2;
+        int i11;
+        Canvas canvas2;
+        boolean z10;
+        float f13;
+        double d;
         boolean z11;
-        String str2;
-        boolean z12;
-        String str3;
-        int i11 = this.a;
-        String str4 = "";
-        final int i12 = 0;
-        r10 = false;
-        boolean z13 = false;
-        boolean z14 = true;
-        Object obj3 = this.b;
-        switch (i11) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                ((y) obj3).getClass();
-                ArrayList<TranslateController.Language> languages = TranslateController.getLanguages();
-                int size = languages.size();
-                while (i12 < size) {
-                    TranslateController.Language language = languages.get(i12);
-                    i12++;
-                    int i13 = w.a;
-                    p61 J = p61.J(w.class);
-                    J.G = language;
-                    arrayList.add(J);
-                }
+        float f14;
+        float f15;
+        m mVar3;
+        float f16;
+        float dp;
+        float f17;
+        float lerp;
+        float f18;
+        float lerp2;
+        int i12;
+        float f19;
+        float f20;
+        float lerp3;
+        float f21;
+        float f22;
+        int R;
+        canvas.save();
+        int i13 = this.L;
+        if (i13 > 0) {
+            canvas.clipRect(0, i13, getMeasuredWidth(), getMeasuredHeight());
+        }
+        float measuredHeight = (getMeasuredHeight() - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(4.0f);
+        float f23 = 0.0f;
+        float lerp4 = AndroidUtilities.lerp(0.0f, measuredHeight, this.c0);
+        m mVar4 = this.h;
+        mVar4.setTranslationY(lerp4);
+        m mVar5 = this.r;
+        mVar5.setTranslationY(lerp4);
+        mVar5.setTranslationX(this.s0);
+        int i14 = 0;
+        while (true) {
+            arrayList = this.P;
+            if (i14 >= arrayList.size()) {
                 break;
-            case 1:
-                ci.m mVar = (ci.m) obj3;
-                Canvas canvas = (Canvas) obj;
-                Runnable runnable = (Runnable) obj2;
-                Paint paint = mVar.I;
-                RectF rectF = mVar.z0;
-                ci.g gVar = mVar.f;
-                if (mVar.g()) {
-                    if (mVar.G == null) {
-                        runnable.run();
-                        break;
+            }
+            ((u) arrayList.get(i14)).a = false;
+            i14++;
+        }
+        arrayList.clear();
+        int i15 = this.O;
+        int i16 = -1;
+        ArrayList arrayList2 = this.Q;
+        if ((i15 == 1 || i15 == 0) && !arrayList2.isEmpty()) {
+            i10 = -1;
+            f7 = 4.0f;
+            for (int i17 = 0; i17 < mVar4.getChildCount(); i17++) {
+                u uVar = (u) mVar4.getChildAt(i17);
+                i10 = uVar.E == ((Long) arrayList2.get(0)).longValue() ? RecyclerView.R(uVar) : i10;
+            }
+        } else {
+            f7 = 4.0f;
+            i10 = this.O == 2 ? 0 : -1;
+        }
+        int i18 = this.O;
+        if (i18 < 0 || i18 == 2) {
+            f10 = lerp4;
+            mVar = mVar4;
+            f11 = 2.0f;
+            float f24 = 0.0f;
+            for (int i19 = 0; i19 < mVar5.getChildCount(); i19++) {
+                float x10 = ((u) mVar5.getChildAt(i19)).getX() + mVar5.getX() + r4.getMeasuredWidth();
+                if (f24 == 0.0f || x10 > f24) {
+                    f24 = x10;
+                }
+            }
+            f12 = f24;
+        } else {
+            if (i10 == -1) {
+                s4.b0 b0Var = this.S;
+                i10 = b0Var.I0();
+                if (i10 == -1) {
+                    i10 = b0Var.L0();
+                }
+                z10 = true;
+            } else {
+                z10 = false;
+            }
+            mVar4.setAlpha(1.0f - Utilities.clamp(this.N / this.B0, 1.0f, 0.0f));
+            this.o0 = -1;
+            if (this.n0 != 0.0f) {
+                int i20 = -1;
+                int i21 = 0;
+                f11 = 2.0f;
+                while (i21 < mVar4.getChildCount()) {
+                    View childAt = mVar4.getChildAt(i21);
+                    if (childAt.getX() < f23 || childAt.getX() + childAt.getMeasuredWidth() > getMeasuredWidth() || (R = RecyclerView.R(childAt)) < 0 || (i20 != i16 && R >= i20)) {
+                        f22 = lerp4;
                     } else {
-                        canvas.translate(-gVar.getEditText().hintLayoutX, 0.0f);
-                        canvas.saveLayerAlpha(0.0f, 0.0f, mVar.G.getWidth(), mVar.G.getHeight(), 255, 31);
-                        rectF.set(0.0f, 1.0f, mVar.G.getWidth(), mVar.G.getHeight() - 1);
-                        mVar.h(mVar.P, canvas, rectF, 0.0f, true, (-gVar.getX()) - r1.getPaddingLeft(), ((-gVar.getY()) - r1.getPaddingTop()) - r1.getExtendedPaddingTop(), true);
-                        canvas.save();
-                        paint.setAlpha(165);
-                        canvas.drawBitmap(mVar.G, 0.0f, 0.0f, paint);
-                        canvas.restore();
-                        canvas.restore();
-                        break;
+                        f22 = lerp4;
+                        if (((r) this.x.get(R)).c != UserConfig.getInstance(this.f).clientUserId) {
+                            this.p0 = (u) childAt;
+                            i20 = R;
+                        }
                     }
-                } else {
-                    Paint c10 = mVar.P.c(1.0f);
-                    gVar.getEditText().setHintColor(c10 == null ? -2130706433 : -1);
-                    if (c10 == null) {
-                        runnable.run();
-                        break;
+                    i21++;
+                    lerp4 = f22;
+                    i16 = -1;
+                    f23 = 0.0f;
+                }
+                f10 = lerp4;
+                this.o0 = i20;
+            } else {
+                f10 = lerp4;
+                f11 = 2.0f;
+            }
+            float f25 = 0.0f;
+            int i22 = 0;
+            while (i22 < mVar4.getChildCount()) {
+                u uVar2 = (u) mVar4.getChildAt(i22);
+                uVar2.setClipInParent(false);
+                m9 m9Var = uVar2.O;
+                int R2 = RecyclerView.R(uVar2);
+                float f26 = this.N;
+                if (R2 >= i10 && R2 < arrayList2.size() + i10) {
+                    int i23 = R2 - i10;
+                    if (i23 == i10 + 2) {
+                        f26 = this.N;
+                    } else if (i23 == i10 + 1) {
+                        f13 = measuredHeight;
+                        f26 = (float) Math.pow(this.N, 0.5d);
+                        d = 0.25d;
+                        if (R2 < i10) {
+                            f26 = (float) Math.pow(this.N, d);
+                        }
+                        uVar2.d(f26, this.d0, this.n0, this.o0 == uVar2.b);
+                        if (R2 > i10 || R2 >= arrayList2.size() + i10) {
+                            z11 = z10;
+                            f14 = f25;
+                            f15 = f26;
+                            mVar3 = mVar4;
+                            f16 = 0.0f;
+                            m9Var.g = 0.0f;
+                            m9Var.h = 0.0f;
+                            m9Var.i = 0.0f;
+                            m9Var.j = 0.0f;
+                            m9Var.k = false;
+                        } else {
+                            u uVar3 = (u) mVar4.getChildAt(i22 - 1);
+                            if (uVar3 != null) {
+                                m9 m9Var2 = uVar3.O;
+                                float dp2 = AndroidUtilities.dp(48.0f);
+                                float dp3 = AndroidUtilities.dp(26.33f);
+                                z11 = z10;
+                                float lerp5 = (AndroidUtilities.lerp(dp2, dp3, uVar3.J) + AndroidUtilities.dp(8.0f)) / f11;
+                                float lerp6 = (AndroidUtilities.lerp(dp2, dp3, uVar2.J) + AndroidUtilities.dp(8.0f)) / f11;
+                                float x11 = uVar3.getX() + m9Var2.F.centerX();
+                                float y3 = uVar3.getY() + m9Var2.F.centerY();
+                                float x12 = (uVar2.getX() + m9Var.F.centerX()) - x11;
+                                float y10 = (uVar2.getY() + m9Var.F.centerY()) - y3;
+                                f14 = f25;
+                                if (((float) Math.sqrt((y10 * y10) + (x12 * x12))) < lerp5 + lerp6) {
+                                    float degrees = (float) Math.toDegrees(Math.acos(r1 / r3) * 2.0d);
+                                    f15 = f26;
+                                    mVar3 = mVar4;
+                                    float degrees2 = (float) Math.toDegrees(Math.atan2(y10, x12));
+                                    float f27 = degrees / f11;
+                                    m9Var2.g = degrees2 - f27;
+                                    m9Var2.h = degrees2 + f27;
+                                    float degrees3 = (float) Math.toDegrees(Math.atan2(-y10, -x12));
+                                    float f28 = -Math.abs(degrees3 - f27);
+                                    float abs = Math.abs(degrees3 + f27);
+                                    m9Var.i = f28;
+                                    m9Var.j = abs;
+                                    f16 = 0.0f;
+                                } else {
+                                    f15 = f26;
+                                    mVar3 = mVar4;
+                                    f16 = 0.0f;
+                                    m9Var2.g = 0.0f;
+                                    m9Var2.h = 0.0f;
+                                    m9Var.i = 0.0f;
+                                    m9Var.j = 0.0f;
+                                }
+                                m9Var2.k = false;
+                                m9Var.k = false;
+                            } else {
+                                z11 = z10;
+                                f14 = f25;
+                                f15 = f26;
+                                mVar3 = mVar4;
+                                f16 = 0.0f;
+                            }
+                        }
+                        dp = AndroidUtilities.dp(16.0f) * Utilities.clamp((this.n0 - 0.5f) / 0.5f, 1.0f, f16);
+                        float f29 = (float) (((1.0f - r2) * 0.5f) + 0.5d);
+                        if (R2 <= i10) {
+                            f17 = 0.0f;
+                            lerp = 0.0f;
+                        } else if (R2 == i10 + 1) {
+                            lerp = AndroidUtilities.lerp(AndroidUtilities.dp(16.0f), 0.0f, this.N) + ((AndroidUtilities.dp(16.0f) * f15) - AndroidUtilities.dpf2(0.5f));
+                            f17 = 0.0f;
+                        } else {
+                            f17 = 0.0f;
+                            lerp = AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), 0.0f, this.N) + (((AndroidUtilities.dp(16.0f) * f15) + AndroidUtilities.dp(16.0f)) - AndroidUtilities.dpf2(0.5f));
+                        }
+                        float f30 = lerp + this.s0;
+                        if (this.A0) {
+                            f18 = 0.0f;
+                            lerp2 = AndroidUtilities.lerp(0.0f, f30 - uVar2.getLeft(), this.J0.getInterpolation(this.E0));
+                        } else {
+                            if (this.n0 > f17) {
+                                int i24 = uVar2.b;
+                                int i25 = this.o0;
+                                if (i24 < i25) {
+                                    f21 = -dp;
+                                } else if (i24 > i25) {
+                                    f21 = dp;
+                                }
+                                lerp2 = AndroidUtilities.lerp(f30 - uVar2.getLeft(), f21, 1.0f - this.I0);
+                                f18 = 0.0f;
+                            }
+                            f21 = 0.0f;
+                            lerp2 = AndroidUtilities.lerp(f30 - uVar2.getLeft(), f21, 1.0f - this.I0);
+                            f18 = 0.0f;
+                        }
+                        float a2 = w7.s.a((this.c0 - 0.2f) / 0.1f, f18, 1.0f);
+                        i12 = R2 - i10;
+                        if (i12 == 0) {
+                            f19 = 0.65f;
+                            lerp3 = AndroidUtilities.lerp(f18, f10 - f13, es.h.getInterpolation(this.N));
+                        } else {
+                            f19 = 0.65f;
+                            if (i12 == 1) {
+                                lerp3 = AndroidUtilities.lerp(f18, (f10 - f13) * 0.65f, es.h.getInterpolation(this.N));
+                            } else {
+                                f20 = f18;
+                                float f31 = (uVar2.b == this.o0 || this.n0 <= f18) ? 0.0f : (-dp) / f11;
+                                float lerp7 = AndroidUtilities.lerp(i12 != 0 ? AndroidUtilities.lerp(f31, f10 - f13, this.G0) : i12 == 1 ? AndroidUtilities.lerp(f31, (f10 - f13) * f19, this.G0) : 0.0f, f20, a2);
+                                if (this.N <= 0.0f) {
+                                    boolean z12 = R2 >= i10 && R2 <= i10 + 2;
+                                    if (!z11) {
+                                        uVar2.setCrossfadeTo(-1L);
+                                    } else if (i12 < 0 || i12 >= arrayList2.size()) {
+                                        uVar2.setCrossfadeTo(-1L);
+                                    } else {
+                                        uVar2.setCrossfadeTo(((Long) arrayList2.get(i12)).longValue());
+                                    }
+                                    uVar2.a = z12;
+                                    uVar2.d = R2 == i10;
+                                    uVar2.c = R2 >= (arrayList2.size() + i10) + (-1);
+                                    uVar2.setTranslationX(lerp2);
+                                    uVar2.setTranslationY(lerp7);
+                                    if (z12) {
+                                        arrayList.add(uVar2);
+                                    }
+                                } else if (mVar3.getItemAnimator() == null || !mVar3.getItemAnimator().k()) {
+                                    if (this.n0 > 0.0f) {
+                                        int i26 = uVar2.b;
+                                        int i27 = this.o0;
+                                        if (i26 < i27) {
+                                            uVar2.setAlpha(f29);
+                                        } else if (i26 > i27) {
+                                            uVar2.setAlpha(f29);
+                                        } else {
+                                            uVar2.setAlpha(1.0f);
+                                        }
+                                    } else {
+                                        uVar2.setAlpha(1.0f);
+                                    }
+                                    uVar2.setTranslationX(lerp2);
+                                    uVar2.setTranslationY(lerp7);
+                                }
+                                if (uVar2.a) {
+                                    float dp4 = (AndroidUtilities.dp(70.0f) / f11) + (uVar2.getMeasuredWidth() / f11) + uVar2.getX() + mVar3.getX();
+                                    if (f14 == 0.0f || dp4 > f14) {
+                                        f25 = dp4;
+                                        i22++;
+                                        measuredHeight = f13;
+                                        z10 = z11;
+                                        mVar4 = mVar3;
+                                    }
+                                }
+                                f25 = f14;
+                                i22++;
+                                measuredHeight = f13;
+                                z10 = z11;
+                                mVar4 = mVar3;
+                            }
+                        }
+                        f20 = lerp3;
+                        if (uVar2.b == this.o0) {
+                        }
+                        float lerp72 = AndroidUtilities.lerp(i12 != 0 ? AndroidUtilities.lerp(f31, f10 - f13, this.G0) : i12 == 1 ? AndroidUtilities.lerp(f31, (f10 - f13) * f19, this.G0) : 0.0f, f20, a2);
+                        if (this.N <= 0.0f) {
+                        }
+                        if (uVar2.a) {
+                        }
+                        f25 = f14;
+                        i22++;
+                        measuredHeight = f13;
+                        z10 = z11;
+                        mVar4 = mVar3;
                     } else {
-                        ru editText = gVar.getEditText();
-                        canvas.saveLayerAlpha(0.0f, 0.0f, editText.getWidth(), editText.getHeight(), 255, 31);
-                        runnable.run();
-                        canvas.drawRect(0.0f, 0.0f, editText.getWidth(), editText.getHeight(), c10);
-                        canvas.restore();
-                        break;
+                        f13 = measuredHeight;
+                        d = 0.25d;
+                        f26 = (float) Math.pow(this.N, 0.25d);
+                        if (R2 < i10) {
+                        }
+                        uVar2.d(f26, this.d0, this.n0, this.o0 == uVar2.b);
+                        if (R2 > i10) {
+                        }
+                        z11 = z10;
+                        f14 = f25;
+                        f15 = f26;
+                        mVar3 = mVar4;
+                        f16 = 0.0f;
+                        m9Var.g = 0.0f;
+                        m9Var.h = 0.0f;
+                        m9Var.i = 0.0f;
+                        m9Var.j = 0.0f;
+                        m9Var.k = false;
+                        dp = AndroidUtilities.dp(16.0f) * Utilities.clamp((this.n0 - 0.5f) / 0.5f, 1.0f, f16);
+                        float f292 = (float) (((1.0f - r2) * 0.5f) + 0.5d);
+                        if (R2 <= i10) {
+                        }
+                        float f302 = lerp + this.s0;
+                        if (this.A0) {
+                        }
+                        float a22 = w7.s.a((this.c0 - 0.2f) / 0.1f, f18, 1.0f);
+                        i12 = R2 - i10;
+                        if (i12 == 0) {
+                        }
+                        f20 = lerp3;
+                        if (uVar2.b == this.o0) {
+                        }
+                        float lerp722 = AndroidUtilities.lerp(i12 != 0 ? AndroidUtilities.lerp(f31, f10 - f13, this.G0) : i12 == 1 ? AndroidUtilities.lerp(f31, (f10 - f13) * f19, this.G0) : 0.0f, f20, a22);
+                        if (this.N <= 0.0f) {
+                        }
+                        if (uVar2.a) {
+                        }
+                        f25 = f14;
+                        i22++;
+                        measuredHeight = f13;
+                        z10 = z11;
+                        mVar4 = mVar3;
                     }
                 }
-            case 2:
-                y1 y1Var = (y1) obj3;
-                String str5 = (String) obj;
-                r2 r2Var = y1Var.r;
-                r2Var.b = str5;
-                r2Var.c = ((Integer) obj2).intValue();
-                y1Var.c.H(str5);
-                break;
-            case 3:
-                d2 d2Var = (d2) obj3;
-                String str6 = (String) obj;
-                r2 r2Var2 = d2Var.s;
-                r2Var2.b = str6;
-                r2Var2.c = ((Integer) obj2).intValue();
-                d2Var.c.D(str6);
-                break;
-            case 4:
-                z3 z3Var = (z3) obj3;
-                if (obj != null) {
-                    if (z3Var.e == null && (obj instanceof MediaController.PhotoEntry) && (callback = z3Var.f) != null) {
-                        callback.run((MediaController.PhotoEntry) obj);
-                        break;
+                f13 = measuredHeight;
+                d = 0.25d;
+                if (R2 < i10) {
+                }
+                uVar2.d(f26, this.d0, this.n0, this.o0 == uVar2.b);
+                if (R2 > i10) {
+                }
+                z11 = z10;
+                f14 = f25;
+                f15 = f26;
+                mVar3 = mVar4;
+                f16 = 0.0f;
+                m9Var.g = 0.0f;
+                m9Var.h = 0.0f;
+                m9Var.i = 0.0f;
+                m9Var.j = 0.0f;
+                m9Var.k = false;
+                dp = AndroidUtilities.dp(16.0f) * Utilities.clamp((this.n0 - 0.5f) / 0.5f, 1.0f, f16);
+                float f2922 = (float) (((1.0f - r2) * 0.5f) + 0.5d);
+                if (R2 <= i10) {
+                }
+                float f3022 = lerp + this.s0;
+                if (this.A0) {
+                }
+                float a222 = w7.s.a((this.c0 - 0.2f) / 0.1f, f18, 1.0f);
+                i12 = R2 - i10;
+                if (i12 == 0) {
+                }
+                f20 = lerp3;
+                if (uVar2.b == this.o0) {
+                }
+                float lerp7222 = AndroidUtilities.lerp(i12 != 0 ? AndroidUtilities.lerp(f31, f10 - f13, this.G0) : i12 == 1 ? AndroidUtilities.lerp(f31, (f10 - f13) * f19, this.G0) : 0.0f, f20, a222);
+                if (this.N <= 0.0f) {
+                }
+                if (uVar2.a) {
+                }
+                f25 = f14;
+                i22++;
+                measuredHeight = f13;
+                z10 = z11;
+                mVar4 = mVar3;
+            }
+            f12 = f25;
+            mVar = mVar4;
+        }
+        if (this.J != null) {
+            float lerp8 = AndroidUtilities.lerp(29, 74, es.g.getInterpolation(this.N));
+            mVar2 = mVar;
+            i11 = 0;
+            if (mVar.getChildCount() > 0) {
+                lerp8 += mVar2.getChildAt(0).getLeft();
+            }
+            this.J.l(0.0f, lerp8);
+        } else {
+            mVar2 = mVar;
+            i11 = 0;
+        }
+        float min = Math.min(this.N, this.d0);
+        float visibleItemsMeasuredWidthWithAlpha = (this.q0.E.getVisibleItemsMeasuredWidthWithAlpha() * min) - AndroidUtilities.dp(6.0f);
+        int i28 = (min == 0.0f || visibleItemsMeasuredWidthWithAlpha <= 0.0f) ? i11 : 1;
+        if (i28 != 0) {
+            canvas2 = canvas;
+            canvas2.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
+            canvas2.save();
+            canvas2.clipRect(0.0f, 0.0f, getWidth() - visibleItemsMeasuredWidthWithAlpha, getHeight());
+        } else {
+            canvas2 = canvas;
+        }
+        if (min != 0.0f) {
+            n nVar = this.U;
+            float totalVisibility = nVar.getTotalVisibility() * (-AndroidUtilities.dp(10.0f));
+            org.telegram.ui.Components.s6 s6Var = this.T;
+            s6Var.setPivotX(0.0f);
+            s6Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, nVar.getTotalVisibility()));
+            s6Var.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, nVar.getTotalVisibility()));
+            s6Var.setTranslationY((((f10 + AndroidUtilities.dp(14.0f)) - ((s6Var.getMeasuredHeight() - s6Var.getTextHeight()) / f11)) + AndroidUtilities.dp(f7)) - (nVar.getTotalVisibility() * AndroidUtilities.dp(6.0f)));
+            int dp5 = AndroidUtilities.dp(72.0f);
+            float f32 = this.N;
+            float lerp9 = AndroidUtilities.lerp(AndroidUtilities.dp(48.0f), AndroidUtilities.dp(26.33f), f32) / f11;
+            float c10 = t8.b.c(lerp9, f11, AndroidUtilities.lerp((dp5 / f11) - lerp9, 0.0f, f32), -dp5) + AndroidUtilities.dp(12.0f) + f12;
+            s6Var.setTranslationX(c10);
+            org.telegram.ui.Components.r6 drawable = s6Var.getDrawable();
+            drawable.N = (this.q0.E.getVisibleItemsMeasuredWidthWithAlpha() * min) + (c10 - AndroidUtilities.dp(12.0f));
+            drawable.invalidateSelf();
+            float translationX = s6Var.getTranslationX() + AndroidUtilities.dp(1.0f);
+            ImageView imageView = this.V;
+            imageView.setTranslationX(translationX);
+            imageView.setTranslationY(f10 + AndroidUtilities.dp(22.333f) + totalVisibility);
+            float translationX2 = (s6Var.getTranslationX() - AndroidUtilities.dpf2(3.33f)) + imageView.getMeasuredWidth();
+            ImageView imageView2 = this.W;
+            imageView2.setTranslationX(translationX2);
+            imageView2.setTranslationY(f10 + AndroidUtilities.dp(11.333f) + totalVisibility);
+            nVar.setTranslationX(s6Var.getTranslationX());
+            nVar.setTranslationY(f10 + AndroidUtilities.dp(31.333f));
+        }
+        super.dispatchDraw(canvas);
+        int i29 = this.O;
+        if (i29 >= 0 && i29 != 2) {
+            Collections.sort(arrayList, this.w0);
+            while (i11 < arrayList.size()) {
+                u uVar4 = (u) arrayList.get(i11);
+                canvas2.save();
+                canvas2.translate(uVar4.getX() + mVar2.getX(), uVar4.getY() + mVar2.getY());
+                uVar4.draw(canvas2);
+                canvas2.restore();
+                i11++;
+            }
+        }
+        if (i28 != 0) {
+            float dp6 = AndroidUtilities.dp(16.0f);
+            if (this.x0 == null) {
+                this.x0 = new LinearGradient(0.0f, 0.0f, dp6, 0.0f, new int[]{16711680, -65536}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                this.y0 = new Matrix();
+                Paint paint = new Paint(1);
+                this.z0 = paint;
+                paint.setShader(this.x0);
+                this.z0.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+            }
+            this.y0.reset();
+            this.y0.postTranslate((getWidth() - visibleItemsMeasuredWidthWithAlpha) - dp6, 0.0f);
+            this.x0.setLocalMatrix(this.y0);
+            canvas2.drawRect((getWidth() - visibleItemsMeasuredWidthWithAlpha) - dp6, 0.0f, AndroidUtilities.dp(1.0f) + (getWidth() - visibleItemsMeasuredWidthWithAlpha), getHeight(), this.z0);
+            canvas.restore();
+            canvas.restore();
+        }
+        canvas.restore();
+    }
+
+    public final u e(long j10) {
+        m mVar = this.O == 2 ? this.r : this.h;
+        for (int i10 = 0; i10 < mVar.getChildCount(); i10++) {
+            View childAt = mVar.getChildAt(i10);
+            if (childAt instanceof u) {
+                u uVar = (u) childAt;
+                if (uVar.E == j10) {
+                    return uVar;
+                }
+            }
+        }
+        return null;
+    }
+
+    public final int f(int i10) {
+        yy yyVar = this.e0;
+        return (yyVar == null || yyVar.getResourceProvider() == null) ? org.telegram.ui.ActionBar.g6.x0(null, i10, false) : yyVar.getThemedColor(i10);
+    }
+
+    public final boolean g() {
+        int i10 = this.O;
+        return i10 == 0 || i10 == 1;
+    }
+
+    public float getCollapsedProgress() {
+        return this.N;
+    }
+
+    public float getOverScrollCoef() {
+        return this.t0;
+    }
+
+    public di.d4 getPremiumHint() {
+        return this.J;
+    }
+
+    public final void h() {
+        if (this.s.H()) {
+            ArrayList arrayList = new ArrayList();
+            arrayList.add(Long.valueOf(UserConfig.getInstance(this.f).clientUserId));
+            this.e0.getOrCreateStoryViewer().G(getContext(), null, arrayList, 0, null, null, g9.a(this.r), false);
+        }
+    }
+
+    public final void i(u uVar, boolean z10) {
+        ValueAnimator valueAnimator;
+        if ((!z10 || (valueAnimator = this.H0) == null || !valueAnimator.isRunning()) && uVar != null) {
+            try {
+                performHapticFeedback(3);
+            } catch (Exception unused) {
+            }
+            boolean z11 = uVar.F;
+            x8 x8Var = this.s;
+            if (!z11 || x8Var.H()) {
+                if (x8Var.I(uVar.E) || x8Var.K(uVar.E)) {
+                    TL_stories.PeerStories y3 = x8Var.y(uVar.E);
+                    long j10 = uVar.E;
+                    n9 n9Var = this.r0;
+                    if (n9Var != null) {
+                        n9Var.a();
+                        this.r0 = null;
                     }
-                } else {
-                    z3Var.getClass();
+                    a3.i0 i0Var = new a3.i0(this, uVar, j10, 1);
+                    if (z10) {
+                        i0Var.run();
+                        return;
+                    }
+                    n9 n10 = s9.n(y3, i0Var);
+                    uVar.e = n10;
+                    this.r0 = n10;
+                    if (n10 != null) {
+                        x8Var.e0(uVar.E, true);
+                    }
+                }
+            } else if (MessagesController.getInstance(this.f).storiesEnabled()) {
+                j(0L);
+            } else {
+                n();
+            }
+        }
+    }
+
+    public final void j(long j10) {
+        u uVar;
+        q8 o10;
+        yy yyVar = this.e0;
+        int i10 = this.f;
+        if (j10 == 0 && (o10 = MessagesController.getInstance(i10).getStoriesController().o()) != null && o10.a(i10, 1)) {
+            yyVar.showDialog(new sg.j0(o10.b(), this.f, getContext(), this.e0, null));
+            return;
+        }
+        int i11 = 0;
+        while (true) {
+            m mVar = this.h;
+            if (i11 >= mVar.getChildCount()) {
+                uVar = null;
+                break;
+            }
+            uVar = (u) mVar.getChildAt(i11);
+            if (j10 == 0) {
+                if (uVar.F) {
                     break;
-                }
-                break;
-            case 5:
-                q6 q6Var = (q6) obj3;
-                q6Var.d0(q6Var.i0((TLRPC.MessageMedia) obj, (TL_stories.MediaArea) obj2));
-                break;
-            case 6:
-                ((kc) obj3).Z((Bitmap) obj, ((Float) obj2).floatValue());
-                break;
-            case 7:
-                u8 u8Var = (u8) obj3;
-                ArrayList arrayList2 = (ArrayList) obj;
-                if (u8Var.h0 || u8Var.g0 != null) {
-                    TLRPC.WebPage webPage = u8Var.g0;
-                    m8 m8Var = new m8(u8Var, 0);
-                    int i14 = s8.a;
-                    p61 J2 = p61.J(s8.class);
-                    J2.G = webPage;
-                    J2.D = m8Var;
-                    arrayList2.add(J2);
-                }
-                arrayList2.add(p61.k(u8Var.Y));
-                arrayList2.add(p61.A(1, null));
-                p61 i15 = p61.i(2, LocaleController.getString(R.string.StoryLinkNameHeader));
-                i15.K(u8Var.m0);
-                arrayList2.add(i15);
-                if (u8Var.m0) {
-                    arrayList2.add(p61.k(u8Var.Z));
-                }
-                arrayList2.add(p61.A(3, null));
-                arrayList2.add(p61.k(u8Var.a0));
-                break;
-            case 8:
-                lc lcVar = (lc) obj3;
-                Float f7 = (Float) obj2;
-                long duration = lcVar.X0.getDuration() < 100 ? lcVar.K1.h0 : lcVar.X0.getDuration();
-                float floatValue = ((f7.floatValue() / 0.96f) * 0.04f) + f7.floatValue();
-                l8 l8Var = lcVar.K1;
-                float f10 = l8Var.a0;
-                float f11 = l8Var.Z;
-                float f12 = (f10 - f11) * floatValue;
-                float f13 = duration;
-                long j3 = (long) (f12 * f13);
-                zb zbVar = lcVar.X0;
-                long j10 = (long) ((f11 * f13) + j3);
-                lcVar.M1 = j10;
-                zbVar.m(j10);
-                nb nbVar = lcVar.v1;
-                if (nbVar != null) {
-                    nbVar.setCoverTime(lcVar.M1);
-                }
-                l8 l8Var2 = lcVar.K1;
-                if (l8Var2 != null && l8Var2.g) {
-                    l8Var2.j = true;
-                    break;
-                }
-                break;
-            case 9:
-                ((oc) obj3).b((short[]) obj, ((Integer) obj2).intValue());
-                break;
-            case 10:
-                ((di.i) obj3).D0((ArrayList) obj, (c71) obj2);
-                break;
-            case 11:
-                di.h hVar = (di.h) obj3;
-                ArrayList arrayList3 = (ArrayList) obj;
-                arrayList3.add(p61.k(hVar.Y));
-                arrayList3.add(p61.k(hVar.Z));
-                break;
-            case 12:
-                ((ei.l) obj3).F0((ArrayList) obj, (c71) obj2);
-                break;
-            case 13:
-                ei.u.U((ei.u) obj3, (ArrayList) obj);
-                break;
-            case 14:
-                r6 r6Var = (r6) obj3;
-                String str7 = (String) obj;
-                Long l4 = (Long) obj2;
-                StringBuilder sb2 = new StringBuilder();
-                if (l4.longValue() > 0) {
-                    sb2.append("~");
-                    sb2.append(AndroidUtilities.formatFileSize(l4.longValue()));
-                }
-                if (str7 == null) {
-                    upperCase = null;
                 } else {
-                    if (!str7.isEmpty()) {
-                        switch (str7) {
-                            case "application/epub+zip":
-                                str = "epub";
+                    i11++;
+                }
+            } else if (uVar.E == j10) {
+                break;
+            } else {
+                i11++;
+            }
+        }
+        if (uVar == null) {
+            return;
+        }
+        if (j10 == 0) {
+            kc.D(yyVar.getParentActivity(), i10).Q(fc.c(uVar));
+            return;
+        }
+        org.telegram.ui.ActionBar.c6 resourceProvider = yyVar != null ? yyVar.getResourceProvider() : null;
+        org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(getContext(), 3, resourceProvider);
+        a2Var.q(500L);
+        MessagesController.getInstance(i10).getStoriesController().k(j10, new i(this, a2Var, j10, uVar, 0), true, resourceProvider);
+    }
+
+    public final boolean k(long j10) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.x;
+            if (i10 >= arrayList.size()) {
+                i10 = -1;
+                break;
+            }
+            if (((r) arrayList.get(i10)).c == j10) {
+                break;
+            }
+            i10++;
+        }
+        if (i10 >= 0) {
+            s4.b0 b0Var = this.S;
+            if (i10 < b0Var.I0()) {
+                b0Var.h1(i10, 0);
+                return true;
+            }
+            if (i10 > b0Var.M0()) {
+                b0Var.i1(i10, 0, true);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void l(float f7, boolean z10) {
+        if (this.c0 == f7) {
+            return;
+        }
+        this.c0 = f7;
+        b();
+        final int i10 = 0;
+        final int i11 = 1;
+        boolean z11 = f7 > this.B0;
+        if (z11 != this.A0) {
+            this.A0 = z11;
+            AnimatorSet animatorSet = this.K0;
+            if (animatorSet != null) {
+                animatorSet.removeAllListeners();
+                this.K0.cancel();
+                this.K0 = null;
+            }
+            if (!z10) {
+                this.d0 = z11 ? 1.0f : 0.0f;
+                b();
+                AndroidUtilities.forEachViews((RecyclerView) this.h, (Utilities.Callback<View>) new f(i11));
+                return;
+            }
+            final int i12 = 2;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d0, z11 ? 1.0f : 0.0f);
+            this.C0 = ofFloat;
+            ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: bi.c
+                public final /* synthetic */ v b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    switch (i10) {
+                        case 0:
+                            v vVar = this.b;
+                            vVar.getClass();
+                            vVar.d0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            vVar.b();
+                            break;
+                        case 1:
+                            v vVar2 = this.b;
+                            vVar2.getClass();
+                            vVar2.G0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            break;
+                        case 2:
+                            v vVar3 = this.b;
+                            vVar3.getClass();
+                            vVar3.E0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            break;
+                        default:
+                            v vVar4 = this.b;
+                            vVar4.getClass();
+                            vVar4.I0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            vVar4.invalidate();
+                            break;
+                    }
+                }
+            });
+            this.C0.setInterpolator(es.h);
+            float f10 = this.c0;
+            ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f10, z11 ? f10 : 0.0f);
+            this.F0 = ofFloat2;
+            ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: bi.c
+                public final /* synthetic */ v b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                    switch (i11) {
+                        case 0:
+                            v vVar = this.b;
+                            vVar.getClass();
+                            vVar.d0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            vVar.b();
+                            break;
+                        case 1:
+                            v vVar2 = this.b;
+                            vVar2.getClass();
+                            vVar2.G0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            break;
+                        case 2:
+                            v vVar3 = this.b;
+                            vVar3.getClass();
+                            vVar3.E0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            break;
+                        default:
+                            v vVar4 = this.b;
+                            vVar4.getClass();
+                            vVar4.I0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                            vVar4.invalidate();
+                            break;
+                    }
+                }
+            });
+            this.F0.setDuration(100L);
+            AnimatorSet animatorSet2 = new AnimatorSet();
+            this.K0 = animatorSet2;
+            animatorSet2.addListener(new ah.p0(i11, this, z11));
+            ArrayList arrayList = new ArrayList();
+            arrayList.add(this.C0);
+            arrayList.add(this.F0);
+            if (this.A0) {
+                this.K0.setDuration(1000L);
+                ValueAnimator ofFloat3 = ValueAnimator.ofFloat(this.d0, z11 ? 1.0f : 0.0f);
+                this.D0 = ofFloat3;
+                ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: bi.c
+                    public final /* synthetic */ v b;
+
+                    {
+                        this.b = this;
+                    }
+
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        switch (i12) {
+                            case 0:
+                                v vVar = this.b;
+                                vVar.getClass();
+                                vVar.d0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                vVar.b();
                                 break;
-                            case "application/vnd.oasis.opendocument.text":
-                                str = "odt";
+                            case 1:
+                                v vVar2 = this.b;
+                                vVar2.getClass();
+                                vVar2.G0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                 break;
-                            case "video/3gpp":
-                            case "audio/3gpp":
-                                str = "3gp";
-                                break;
-                            case "application/vnd.ms-fontobject":
-                                str = "eot";
-                                break;
-                            case "application/x-cdf":
-                                str = "cda";
-                                break;
-                            case "application/x-csh":
-                                str = "csh";
-                                break;
-                            case "video/x-msvideo":
-                                str = "avi";
-                                break;
-                            case "application/vnd.openxmlformats-officedocument.presentationml.presentation":
-                                str = "pptx";
-                                break;
-                            case "application/vnd.ms-powerpoint":
-                                str = "ppt";
-                                break;
-                            case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-                                str = "docx";
-                                break;
-                            case "audio/x-midi":
-                                str = "midi";
-                                break;
-                            case "text/calendar":
-                                str = "ics";
-                                break;
-                            case "application/x-httpd-php":
-                                str = "php";
-                                break;
-                            case "audio/3gpp2":
-                            case "video/3gpp2":
-                                str = "3g2";
-                                break;
-                            case "application/vnd.apple.installer+xml":
-                                str = "mpkg";
-                                break;
-                            case "application/vnd.ms-excel":
-                                str = "xls";
-                                break;
-                            case "application/gzip":
-                            case "application/x-gzip":
-                                str = "gz";
-                                break;
-                            case "application/x-sh":
-                                str = "sh";
-                                break;
-                            case "audio/ogg":
-                                str = "opus";
-                                break;
-                            case "text/plain":
-                                str = "txt";
-                                break;
-                            case "application/x-abiword":
-                                str = "abw";
-                                break;
-                            case "application/ld+json":
-                                str = "jsonld";
-                                break;
-                            case "application/msword":
-                                str = "doc";
-                                break;
-                            case "application/x-bzip":
-                                str = "bz";
-                                break;
-                            case "application/octet-stream":
-                                str = "bin";
-                                break;
-                            case "application/x-bzip2":
-                                str = "bz2";
-                                break;
-                            case "application/vnd.oasis.opendocument.presentation":
-                                str = "odp";
-                                break;
-                            case "application/x-7z-compressed":
-                                str = "7z";
-                                break;
-                            case "application/x-freearc":
-                                str = "arc";
-                                break;
-                            case "audio/mpeg":
-                                str = "mp3";
-                                break;
-                            case "application/vnd.rar":
-                                str = "rar";
-                                break;
-                            case "image/vnd.microsoft.icon":
-                                str = "ico";
-                                break;
-                            case "application/vnd.oasis.opendocument.spreadsheet":
-                                str = "ods";
-                                break;
-                            case "application/vnd.amazon.ebook":
-                                str = "azw";
-                                break;
-                            case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-                                str = "xlsx";
-                                break;
-                            case "application/java-archive":
-                                str = "jar";
-                                break;
-                            case "text/javascript":
-                                str = "js";
+                            case 2:
+                                v vVar3 = this.b;
+                                vVar3.getClass();
+                                vVar3.E0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                 break;
                             default:
-                                if (str7.contains("/")) {
-                                    str7 = str7.substring(str7.indexOf("/") + 1);
-                                }
-                                if (str7.contains("-")) {
-                                    str7 = str7.substring(str7.indexOf("-") + 1);
-                                }
-                                if (str7.contains("+")) {
-                                    str7 = str7.substring(0, str7.indexOf("+"));
-                                }
-                                str = str7.toLowerCase();
+                                v vVar4 = this.b;
+                                vVar4.getClass();
+                                vVar4.I0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                vVar4.invalidate();
                                 break;
                         }
-                    } else {
-                        str = "";
                     }
-                    upperCase = str.toUpperCase();
-                }
-                if (!TextUtils.isEmpty(upperCase)) {
-                    if (sb2.length() > 0) {
-                        sb2.append(" ");
+                });
+                OvershootInterpolator overshootInterpolator = new OvershootInterpolator(this.u0);
+                this.J0 = overshootInterpolator;
+                this.D0.setInterpolator(overshootInterpolator);
+                this.D0.setDuration(750L);
+                arrayList.add(this.D0);
+            } else {
+                this.H0 = ValueAnimator.ofFloat(this.d0, z11 ? 1.0f : 0.0f);
+                this.H0.setInterpolator(new OvershootInterpolator(this.v0));
+                this.H0.setDuration(350L);
+                final int i13 = 3;
+                this.H0.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: bi.c
+                    public final /* synthetic */ v b;
+
+                    {
+                        this.b = this;
                     }
-                    sb2.append(upperCase.toUpperCase());
-                }
-                if (sb2.length() <= 0) {
-                    sb2.append(LocaleController.getString(R.string.AttachDocument));
-                }
-                r6Var.setText(sb2);
-                break;
-            case 15:
-                p1 p1Var = (p1) obj3;
-                ArrayList arrayList4 = (ArrayList) obj;
-                arrayList4.add(p61.j(-1, p1Var.a0));
-                arrayList4.add(p61.B(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotShareMessageInfo, p1Var.Y))));
-                break;
-            case 16:
-                k3 k3Var = (k3) obj3;
-                TLRPC.TL_webViewResultUrl tL_webViewResultUrl = (TLRPC.TL_webViewResultUrl) obj;
-                if (((TLRPC.TL_error) obj2) != null) {
-                    k3Var.getClass();
-                    break;
-                } else {
-                    e5 e5Var = k3Var.v0;
-                    if (e5Var != null) {
-                        e5Var.a(tL_webViewResultUrl);
-                        k3Var.o();
-                        break;
-                    }
-                }
-                break;
-            case 17:
-                ((e4) obj3).G0((ArrayList) obj, (c71) obj2);
-                break;
-            case 18:
-                ((d5) obj3).U((ArrayList) obj, (c71) obj2);
-                break;
-            case 19:
-                ((fi.s) obj3).v.c((ArrayList) obj);
-                break;
-            case 20:
-                TLRPC.TL_sponsoredPeer tL_sponsoredPeer = (TLRPC.TL_sponsoredPeer) obj2;
-                wo0 wo0Var = (wo0) ((h0) obj3);
-                ty tyVar = wo0Var.I0;
-                AndroidUtilities.hideKeyboard(tyVar.getParentActivity().getCurrentFocus());
-                p80 I = p80.I(tyVar, (i6) obj);
-                if (TextUtils.isEmpty(tL_sponsoredPeer.sponsor_info) && TextUtils.isEmpty(tL_sponsoredPeer.additional_info)) {
-                    z10 = false;
-                } else {
-                    p80 J3 = I.J();
-                    J3.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new bd0(I, 24), false);
-                    J3.k();
-                    if (!TextUtils.isEmpty(tL_sponsoredPeer.sponsor_info)) {
-                        J3.p(13, -1, tL_sponsoredPeer.sponsor_info);
-                    }
-                    if (!TextUtils.isEmpty(tL_sponsoredPeer.additional_info)) {
-                        if (!TextUtils.isEmpty(tL_sponsoredPeer.sponsor_info)) {
-                            J3.k();
-                        }
-                        J3.p(13, -1, tL_sponsoredPeer.additional_info);
-                    }
-                    z10 = false;
-                    I.c(R.drawable.msg_channel, LocaleController.getString(R.string.SponsoredMessageSponsorReportable), new m2(I, J3, 8), false);
-                }
-                I.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new oo0(wo0Var, tyVar, wo0Var.J0, I, 0), z10);
-                I.c(R.drawable.msg_block2, LocaleController.getString(R.string.ReportAd), new oo0(wo0Var, tyVar, tL_sponsoredPeer, I, 1), z10);
-                I.k();
-                I.c(R.drawable.msg_cancel, LocaleController.getString(R.string.RemoveAds), new og0(wo0Var, tyVar, I, 3), z10);
-                I.V(LocaleController.isRTL ? 3 : 5);
-                I.Y = true;
-                I.t = z10;
-                I.Z();
-                break;
-            case 21:
-                hg.d.U((hg.d) obj3, (ArrayList) obj, (c71) obj2);
-                break;
-            case 22:
-                hg.n nVar = (hg.n) obj3;
-                nVar.L.dismiss();
-                nVar.y = (String) obj;
-                nVar.E = (TLRPC.InputDocument) obj2;
-                nVar.w = false;
-                AndroidUtilities.cancelRunOnUIThread(nVar.d);
-                nVar.n.setSticker(nVar.y);
-                nVar.e0(true);
-                e71 e71Var = nVar.a;
-                if (e71Var != null && (c71Var = e71Var.W2) != null) {
-                    c71Var.N(true);
-                    break;
-                }
-                break;
-            case 23:
-                l0 l0Var = (l0) obj3;
-                ArrayList arrayList5 = (ArrayList) obj;
-                c71 c71Var2 = (c71) obj2;
-                c71Var2.E = 1;
-                LinearLayout linearLayout = l0Var.a0;
-                p61 p61Var = new p61(-4);
-                p61Var.d = -5;
-                p61Var.c = linearLayout;
-                p61Var.z = -1;
-                arrayList5.add(p61Var);
-                TL_account.TL_connectedBot tL_connectedBot = l0Var.X;
-                if (tL_connectedBot != null) {
-                    if (TLObject.hasFlag(tL_connectedBot.flags, 1) || TLObject.hasFlag(tL_connectedBot.flags, 2) || TLObject.hasFlag(tL_connectedBot.flags, 4)) {
-                        e2.n(R.string.SessionBotConnectedFrom, arrayList5);
-                        if (TLObject.hasFlag(tL_connectedBot.flags, 1)) {
-                            arrayList5.add(p61.f(LocaleController.getString(R.string.SessionBotDevice), tL_connectedBot.device, 1));
-                        }
-                        if (TLObject.hasFlag(tL_connectedBot.flags, 4)) {
-                            i10 = 2;
-                            arrayList5.add(p61.f(LocaleController.getString(R.string.SessionBotLocation), tL_connectedBot.location, 2));
-                        } else {
-                            i10 = 2;
-                        }
-                        if (TLObject.hasFlag(tL_connectedBot.flags, i10)) {
-                            arrayList5.add(p61.f(LocaleController.getString(R.string.SessionBotDate), LocaleController.formatDateTime(tL_connectedBot.date, false), 3));
-                        }
-                        arrayList5.add(p61.B(null));
-                    }
-                    c71Var2.U();
-                    e2.n(R.string.BusinessBotChats2, arrayList5);
-                    int i16 = l0.g0;
-                    p61 w10 = p61.w(-1, LocaleController.getString(R.string.BusinessChatsAllPrivateExcept2));
-                    w10.K(l0Var.e0);
-                    arrayList5.add(w10);
-                    int i17 = l0.h0;
-                    p61 w11 = p61.w(-2, LocaleController.getString(R.string.BusinessChatsOnlySelected2));
-                    w11.K(!l0Var.e0);
-                    arrayList5.add(w11);
-                    c71Var2.T();
-                    arrayList5.add(p61.B(null));
-                    b0 b0Var = l0Var.Z;
-                    if (b0Var != null) {
-                        b0Var.a(arrayList5, c71Var2, true);
-                    }
-                    hg.c.n(R.string.BusinessBotChatsInfo2, arrayList5);
-                    break;
-                }
-                break;
-            case 24:
-                final u0 u0Var = (u0) obj3;
-                ArrayList arrayList6 = (ArrayList) obj;
-                c71 c71Var3 = (c71) obj2;
-                LongSparseArray longSparseArray = u0Var.N;
-                String string = LocaleController.getString(R.string.BusinessBots2);
-                String string2 = LocaleController.getString(R.string.BusinessBots2Info);
-                p61 p61Var2 = new p61(2);
-                p61Var2.l = string;
-                p61Var2.o = string2;
-                p61Var2.m = AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME_2;
-                p61Var2.n = "🤖🏝️";
-                p61Var2.z = 120;
-                arrayList6.add(p61Var2);
-                if (u0Var.M != null) {
-                    c71Var3.U();
-                    long j11 = u0Var.M.id;
-                    p61 p61Var3 = new p61(13);
-                    p61Var3.x = j11;
-                    p61Var3.K(true);
-                    p61Var3.D = new View.OnClickListener() { // from class: hg.p0
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            switch (i12) {
-                                case 0:
-                                    u0 u0Var2 = u0Var;
-                                    u0Var2.M = null;
-                                    u0Var2.c.W2.N(true);
-                                    u0Var2.Y(true);
-                                    break;
-                                case 1:
-                                    u0 u0Var3 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights = u0Var3.J;
-                                    if (tL_businessBotRights.reply && tL_businessBotRights.read_messages && tL_businessBotRights.delete_received_messages && tL_businessBotRights.delete_sent_messages) {
-                                        tL_businessBotRights.delete_sent_messages = false;
-                                        tL_businessBotRights.delete_received_messages = false;
-                                        tL_businessBotRights.read_messages = false;
-                                        tL_businessBotRights.reply = false;
-                                    } else {
-                                        tL_businessBotRights.delete_sent_messages = true;
-                                        tL_businessBotRights.delete_received_messages = true;
-                                        tL_businessBotRights.read_messages = true;
-                                        tL_businessBotRights.reply = true;
-                                    }
-                                    u0Var3.c.W2.N(true);
-                                    u0Var3.Y(true);
-                                    break;
-                                case 2:
-                                    u0 u0Var4 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights2 = u0Var4.J;
-                                    if (!tL_businessBotRights2.edit_name || !tL_businessBotRights2.edit_bio || !tL_businessBotRights2.edit_profile_photo || !tL_businessBotRights2.edit_username) {
-                                        u0Var4.X(-14, true, new n0(u0Var4, 2));
-                                        break;
-                                    } else {
-                                        tL_businessBotRights2.edit_username = false;
-                                        tL_businessBotRights2.edit_profile_photo = false;
-                                        tL_businessBotRights2.edit_bio = false;
-                                        tL_businessBotRights2.edit_name = false;
-                                        u0Var4.c.W2.N(true);
-                                        u0Var4.Y(true);
-                                        break;
-                                    }
-                                    break;
-                                case 3:
-                                    u0 u0Var5 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights3 = u0Var5.J;
-                                    if (!tL_businessBotRights3.view_gifts || !tL_businessBotRights3.sell_gifts || !tL_businessBotRights3.change_gift_settings || !tL_businessBotRights3.transfer_and_upgrade_gifts || !tL_businessBotRights3.transfer_stars) {
-                                        u0Var5.X(-17, true, new n0(u0Var5, 1));
-                                        break;
-                                    } else {
-                                        tL_businessBotRights3.transfer_stars = false;
-                                        tL_businessBotRights3.transfer_and_upgrade_gifts = false;
-                                        tL_businessBotRights3.change_gift_settings = false;
-                                        tL_businessBotRights3.sell_gifts = false;
-                                        tL_businessBotRights3.view_gifts = false;
-                                        u0Var5.c.W2.N(true);
-                                        u0Var5.Y(true);
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    u0 u0Var6 = u0Var;
-                                    u0Var6.J.manage_stories = !r0.manage_stories;
-                                    u0Var6.c.W2.N(true);
-                                    u0Var6.Y(true);
-                                    break;
-                            }
-                        }
-                    };
-                    arrayList6.add(p61Var3);
-                    c71Var3.T();
-                    z11 = true;
-                    str2 = "";
-                } else {
-                    c71Var3.U();
-                    arrayList6.add(p61.k(u0Var.e));
-                    longSparseArray.clear();
-                    int i18 = 0;
-                    boolean z15 = false;
-                    while (i18 < u0Var.d.d.size()) {
-                        TLObject tLObject = (TLObject) u0Var.d.d.get(i18);
-                        if (tLObject instanceof TLRPC.User) {
-                            TLRPC.User user = (TLRPC.User) tLObject;
-                            if (user.bot) {
-                                z12 = z14;
-                                str3 = str4;
-                                long j12 = user.id;
-                                String str8 = u0Var.y;
-                                p61 p61Var4 = new p61(13);
-                                p61Var4.x = j12;
-                                p61Var4.n = str8;
-                                arrayList6.add(p61Var4);
-                                longSparseArray.put(user.id, user);
-                                z15 = z12;
-                                i18++;
-                                str4 = str3;
-                                z14 = z12;
-                            }
-                        }
-                        z12 = z14;
-                        str3 = str4;
-                        i18++;
-                        str4 = str3;
-                        z14 = z12;
-                    }
-                    z11 = z14;
-                    str2 = str4;
-                    for (int i19 = 0; i19 < u0Var.d.e.size(); i19++) {
-                        TLObject tLObject2 = (TLObject) u0Var.d.e.get(i19);
-                        if (tLObject2 instanceof TLRPC.User) {
-                            TLRPC.User user2 = (TLRPC.User) tLObject2;
-                            if (user2.bot) {
-                                long j13 = user2.id;
-                                String str9 = u0Var.y;
-                                p61 p61Var5 = new p61(13);
-                                p61Var5.x = j13;
-                                p61Var5.n = str9;
-                                arrayList6.add(p61Var5);
-                                longSparseArray.put(user2.id, user2);
-                                z15 = z11;
-                            }
+
+                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+                        switch (i13) {
+                            case 0:
+                                v vVar = this.b;
+                                vVar.getClass();
+                                vVar.d0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                vVar.b();
+                                break;
+                            case 1:
+                                v vVar2 = this.b;
+                                vVar2.getClass();
+                                vVar2.G0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                break;
+                            case 2:
+                                v vVar3 = this.b;
+                                vVar3.getClass();
+                                vVar3.E0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                break;
+                            default:
+                                v vVar4 = this.b;
+                                vVar4.getClass();
+                                vVar4.I0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                vVar4.invalidate();
+                                break;
                         }
                     }
-                    if (longSparseArray.size() <= 0 && (!TextUtils.isEmpty(u0Var.f.getText().toString()) || u0Var.d.e() || u0Var.x)) {
-                        arrayList6.add(p61.k(u0Var.n));
-                        z15 = z11;
-                    }
-                    u0Var.h.setVisibility(z15 ? 0 : 8);
-                    c71Var3.T();
-                }
-                arrayList6.add(p61.B(LocaleController.getString(R.string.BusinessBotLinkInfo2)));
-                c71Var3.U();
-                p61 t10 = p61.t(LocaleController.getString(R.string.BusinessBotChats2));
-                t10.g = u0Var.M != null ? z11 : false;
-                arrayList6.add(t10);
-                p61 w12 = p61.w(-1, LocaleController.getString(R.string.BusinessChatsAllPrivateExcept2));
-                w12.K(u0Var.I);
-                w12.g = u0Var.M != null ? z11 : false;
-                arrayList6.add(w12);
-                p61 w13 = p61.w(-2, LocaleController.getString(R.string.BusinessChatsOnlySelected2));
-                w13.K(!u0Var.I);
-                w13.g = u0Var.M != null ? z11 : false;
-                arrayList6.add(w13);
-                c71Var3.T();
-                arrayList6.add(p61.B(null));
-                u0Var.v.a(arrayList6, c71Var3, u0Var.M != null ? z11 : false);
-                hg.c.n(R.string.BusinessBotChatsInfo2, arrayList6);
-                if (u0Var.M != null) {
-                    c71Var3.U();
-                    e2.n(R.string.BusinessBotPermissions, arrayList6);
-                    String string3 = LocaleController.getString(R.string.BusinessBotPermissionsMessagesSection);
-                    StringBuilder sb3 = new StringBuilder();
-                    TL_account.TL_businessBotRights tL_businessBotRights = u0Var.J;
-                    sb3.append((tL_businessBotRights.reply ? 1 : 0) + 1 + (tL_businessBotRights.read_messages ? 1 : 0) + (tL_businessBotRights.delete_sent_messages ? 1 : 0) + (tL_businessBotRights.delete_received_messages ? 1 : 0));
-                    sb3.append("/5");
-                    p61 m10 = p61.m(-4, string3, sb3.toString());
-                    TL_account.TL_businessBotRights tL_businessBotRights2 = u0Var.J;
-                    m10.K((tL_businessBotRights2.reply && tL_businessBotRights2.read_messages && tL_businessBotRights2.delete_received_messages && tL_businessBotRights2.delete_sent_messages) ? z11 : false);
-                    m10.f = !u0Var.P;
-                    boolean z16 = z11;
-                    final int i20 = z16 ? 1 : 0;
-                    m10.D = new View.OnClickListener() { // from class: hg.p0
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            switch (i20) {
-                                case 0:
-                                    u0 u0Var2 = u0Var;
-                                    u0Var2.M = null;
-                                    u0Var2.c.W2.N(true);
-                                    u0Var2.Y(true);
-                                    break;
-                                case 1:
-                                    u0 u0Var3 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights3 = u0Var3.J;
-                                    if (tL_businessBotRights3.reply && tL_businessBotRights3.read_messages && tL_businessBotRights3.delete_received_messages && tL_businessBotRights3.delete_sent_messages) {
-                                        tL_businessBotRights3.delete_sent_messages = false;
-                                        tL_businessBotRights3.delete_received_messages = false;
-                                        tL_businessBotRights3.read_messages = false;
-                                        tL_businessBotRights3.reply = false;
-                                    } else {
-                                        tL_businessBotRights3.delete_sent_messages = true;
-                                        tL_businessBotRights3.delete_received_messages = true;
-                                        tL_businessBotRights3.read_messages = true;
-                                        tL_businessBotRights3.reply = true;
-                                    }
-                                    u0Var3.c.W2.N(true);
-                                    u0Var3.Y(true);
-                                    break;
-                                case 2:
-                                    u0 u0Var4 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights22 = u0Var4.J;
-                                    if (!tL_businessBotRights22.edit_name || !tL_businessBotRights22.edit_bio || !tL_businessBotRights22.edit_profile_photo || !tL_businessBotRights22.edit_username) {
-                                        u0Var4.X(-14, true, new n0(u0Var4, 2));
-                                        break;
-                                    } else {
-                                        tL_businessBotRights22.edit_username = false;
-                                        tL_businessBotRights22.edit_profile_photo = false;
-                                        tL_businessBotRights22.edit_bio = false;
-                                        tL_businessBotRights22.edit_name = false;
-                                        u0Var4.c.W2.N(true);
-                                        u0Var4.Y(true);
-                                        break;
-                                    }
-                                    break;
-                                case 3:
-                                    u0 u0Var5 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights32 = u0Var5.J;
-                                    if (!tL_businessBotRights32.view_gifts || !tL_businessBotRights32.sell_gifts || !tL_businessBotRights32.change_gift_settings || !tL_businessBotRights32.transfer_and_upgrade_gifts || !tL_businessBotRights32.transfer_stars) {
-                                        u0Var5.X(-17, true, new n0(u0Var5, 1));
-                                        break;
-                                    } else {
-                                        tL_businessBotRights32.transfer_stars = false;
-                                        tL_businessBotRights32.transfer_and_upgrade_gifts = false;
-                                        tL_businessBotRights32.change_gift_settings = false;
-                                        tL_businessBotRights32.sell_gifts = false;
-                                        tL_businessBotRights32.view_gifts = false;
-                                        u0Var5.c.W2.N(true);
-                                        u0Var5.Y(true);
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    u0 u0Var6 = u0Var;
-                                    u0Var6.J.manage_stories = !r0.manage_stories;
-                                    u0Var6.c.W2.N(true);
-                                    u0Var6.Y(true);
-                                    break;
-                            }
-                        }
-                    };
-                    arrayList6.add(m10);
-                    if (u0Var.P) {
-                        p61 y3 = p61.y(-5, LocaleController.getString(R.string.BusinessBotPermissionsMessagesRead));
-                        y3.K(z16);
-                        y3.g = false;
-                        y3.i = z16 ? 1 : 0;
-                        arrayList6.add(y3);
-                        p61 y10 = p61.y(-6, LocaleController.getString(R.string.BusinessBotPermissionsMessagesReply));
-                        y10.K(u0Var.J.reply);
-                        y10.i = z16 ? 1 : 0;
-                        arrayList6.add(y10);
-                        p61 y11 = p61.y(-7, LocaleController.getString(R.string.BusinessBotPermissionsMessagesMarkAsRead));
-                        y11.K(u0Var.J.read_messages);
-                        y11.i = z16 ? 1 : 0;
-                        arrayList6.add(y11);
-                        p61 y12 = p61.y(-8, LocaleController.getString(R.string.BusinessBotPermissionsMessagesDeleteSent));
-                        y12.K(u0Var.J.delete_sent_messages);
-                        y12.i = z16 ? 1 : 0;
-                        arrayList6.add(y12);
-                        p61 y13 = p61.y(-9, LocaleController.getString(R.string.BusinessBotPermissionsMessagesDeleteReceived));
-                        y13.K(u0Var.J.delete_received_messages);
-                        y13.i = z16 ? 1 : 0;
-                        arrayList6.add(y13);
-                    }
-                    String string4 = LocaleController.getString(R.string.BusinessBotPermissionsProfileSection);
-                    StringBuilder sb4 = new StringBuilder();
-                    TL_account.TL_businessBotRights tL_businessBotRights3 = u0Var.J;
-                    sb4.append((tL_businessBotRights3.edit_name ? 1 : 0) + (tL_businessBotRights3.edit_bio ? 1 : 0) + (tL_businessBotRights3.edit_profile_photo ? 1 : 0) + (tL_businessBotRights3.edit_username ? 1 : 0));
-                    sb4.append("/4");
-                    p61 m11 = p61.m(-10, string4, sb4.toString());
-                    TL_account.TL_businessBotRights tL_businessBotRights4 = u0Var.J;
-                    m11.K(tL_businessBotRights4.edit_name && tL_businessBotRights4.edit_bio && tL_businessBotRights4.edit_profile_photo && tL_businessBotRights4.edit_username);
-                    m11.f = !u0Var.Q;
-                    final int i21 = 2;
-                    m11.D = new View.OnClickListener() { // from class: hg.p0
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            switch (i21) {
-                                case 0:
-                                    u0 u0Var2 = u0Var;
-                                    u0Var2.M = null;
-                                    u0Var2.c.W2.N(true);
-                                    u0Var2.Y(true);
-                                    break;
-                                case 1:
-                                    u0 u0Var3 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights32 = u0Var3.J;
-                                    if (tL_businessBotRights32.reply && tL_businessBotRights32.read_messages && tL_businessBotRights32.delete_received_messages && tL_businessBotRights32.delete_sent_messages) {
-                                        tL_businessBotRights32.delete_sent_messages = false;
-                                        tL_businessBotRights32.delete_received_messages = false;
-                                        tL_businessBotRights32.read_messages = false;
-                                        tL_businessBotRights32.reply = false;
-                                    } else {
-                                        tL_businessBotRights32.delete_sent_messages = true;
-                                        tL_businessBotRights32.delete_received_messages = true;
-                                        tL_businessBotRights32.read_messages = true;
-                                        tL_businessBotRights32.reply = true;
-                                    }
-                                    u0Var3.c.W2.N(true);
-                                    u0Var3.Y(true);
-                                    break;
-                                case 2:
-                                    u0 u0Var4 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights22 = u0Var4.J;
-                                    if (!tL_businessBotRights22.edit_name || !tL_businessBotRights22.edit_bio || !tL_businessBotRights22.edit_profile_photo || !tL_businessBotRights22.edit_username) {
-                                        u0Var4.X(-14, true, new n0(u0Var4, 2));
-                                        break;
-                                    } else {
-                                        tL_businessBotRights22.edit_username = false;
-                                        tL_businessBotRights22.edit_profile_photo = false;
-                                        tL_businessBotRights22.edit_bio = false;
-                                        tL_businessBotRights22.edit_name = false;
-                                        u0Var4.c.W2.N(true);
-                                        u0Var4.Y(true);
-                                        break;
-                                    }
-                                    break;
-                                case 3:
-                                    u0 u0Var5 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights322 = u0Var5.J;
-                                    if (!tL_businessBotRights322.view_gifts || !tL_businessBotRights322.sell_gifts || !tL_businessBotRights322.change_gift_settings || !tL_businessBotRights322.transfer_and_upgrade_gifts || !tL_businessBotRights322.transfer_stars) {
-                                        u0Var5.X(-17, true, new n0(u0Var5, 1));
-                                        break;
-                                    } else {
-                                        tL_businessBotRights322.transfer_stars = false;
-                                        tL_businessBotRights322.transfer_and_upgrade_gifts = false;
-                                        tL_businessBotRights322.change_gift_settings = false;
-                                        tL_businessBotRights322.sell_gifts = false;
-                                        tL_businessBotRights322.view_gifts = false;
-                                        u0Var5.c.W2.N(true);
-                                        u0Var5.Y(true);
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    u0 u0Var6 = u0Var;
-                                    u0Var6.J.manage_stories = !r0.manage_stories;
-                                    u0Var6.c.W2.N(true);
-                                    u0Var6.Y(true);
-                                    break;
-                            }
-                        }
-                    };
-                    arrayList6.add(m11);
-                    if (u0Var.Q) {
-                        p61 y14 = p61.y(-11, LocaleController.getString(R.string.BusinessBotPermissionsProfileName));
-                        y14.K(u0Var.J.edit_name);
-                        y14.i = 1;
-                        arrayList6.add(y14);
-                        p61 y15 = p61.y(-12, LocaleController.getString(R.string.BusinessBotPermissionsProfileBio));
-                        y15.K(u0Var.J.edit_bio);
-                        y15.i = 1;
-                        arrayList6.add(y15);
-                        p61 y16 = p61.y(-13, LocaleController.getString(R.string.BusinessBotPermissionsProfilePicture));
-                        y16.K(u0Var.J.edit_profile_photo);
-                        y16.i = 1;
-                        arrayList6.add(y16);
-                        p61 y17 = p61.y(-14, LocaleController.getString(R.string.BusinessBotPermissionsProfileUsername));
-                        y17.K(u0Var.J.edit_username);
-                        y17.i = 1;
-                        arrayList6.add(y17);
-                    }
-                    String string5 = LocaleController.getString(R.string.BusinessBotPermissionsGiftsSection);
-                    StringBuilder sb5 = new StringBuilder();
-                    TL_account.TL_businessBotRights tL_businessBotRights5 = u0Var.J;
-                    sb5.append((tL_businessBotRights5.view_gifts ? 1 : 0) + (tL_businessBotRights5.sell_gifts ? 1 : 0) + (tL_businessBotRights5.change_gift_settings ? 1 : 0) + (tL_businessBotRights5.transfer_and_upgrade_gifts ? 1 : 0) + (tL_businessBotRights5.transfer_stars ? 1 : 0));
-                    sb5.append("/5");
-                    p61 m12 = p61.m(-15, string5, sb5.toString());
-                    TL_account.TL_businessBotRights tL_businessBotRights6 = u0Var.J;
-                    m12.K(tL_businessBotRights6.view_gifts && tL_businessBotRights6.sell_gifts && tL_businessBotRights6.change_gift_settings && tL_businessBotRights6.transfer_and_upgrade_gifts && tL_businessBotRights6.transfer_stars);
-                    m12.f = !u0Var.R;
-                    final int i22 = 3;
-                    m12.D = new View.OnClickListener() { // from class: hg.p0
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            switch (i22) {
-                                case 0:
-                                    u0 u0Var2 = u0Var;
-                                    u0Var2.M = null;
-                                    u0Var2.c.W2.N(true);
-                                    u0Var2.Y(true);
-                                    break;
-                                case 1:
-                                    u0 u0Var3 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights32 = u0Var3.J;
-                                    if (tL_businessBotRights32.reply && tL_businessBotRights32.read_messages && tL_businessBotRights32.delete_received_messages && tL_businessBotRights32.delete_sent_messages) {
-                                        tL_businessBotRights32.delete_sent_messages = false;
-                                        tL_businessBotRights32.delete_received_messages = false;
-                                        tL_businessBotRights32.read_messages = false;
-                                        tL_businessBotRights32.reply = false;
-                                    } else {
-                                        tL_businessBotRights32.delete_sent_messages = true;
-                                        tL_businessBotRights32.delete_received_messages = true;
-                                        tL_businessBotRights32.read_messages = true;
-                                        tL_businessBotRights32.reply = true;
-                                    }
-                                    u0Var3.c.W2.N(true);
-                                    u0Var3.Y(true);
-                                    break;
-                                case 2:
-                                    u0 u0Var4 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights22 = u0Var4.J;
-                                    if (!tL_businessBotRights22.edit_name || !tL_businessBotRights22.edit_bio || !tL_businessBotRights22.edit_profile_photo || !tL_businessBotRights22.edit_username) {
-                                        u0Var4.X(-14, true, new n0(u0Var4, 2));
-                                        break;
-                                    } else {
-                                        tL_businessBotRights22.edit_username = false;
-                                        tL_businessBotRights22.edit_profile_photo = false;
-                                        tL_businessBotRights22.edit_bio = false;
-                                        tL_businessBotRights22.edit_name = false;
-                                        u0Var4.c.W2.N(true);
-                                        u0Var4.Y(true);
-                                        break;
-                                    }
-                                    break;
-                                case 3:
-                                    u0 u0Var5 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights322 = u0Var5.J;
-                                    if (!tL_businessBotRights322.view_gifts || !tL_businessBotRights322.sell_gifts || !tL_businessBotRights322.change_gift_settings || !tL_businessBotRights322.transfer_and_upgrade_gifts || !tL_businessBotRights322.transfer_stars) {
-                                        u0Var5.X(-17, true, new n0(u0Var5, 1));
-                                        break;
-                                    } else {
-                                        tL_businessBotRights322.transfer_stars = false;
-                                        tL_businessBotRights322.transfer_and_upgrade_gifts = false;
-                                        tL_businessBotRights322.change_gift_settings = false;
-                                        tL_businessBotRights322.sell_gifts = false;
-                                        tL_businessBotRights322.view_gifts = false;
-                                        u0Var5.c.W2.N(true);
-                                        u0Var5.Y(true);
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    u0 u0Var6 = u0Var;
-                                    u0Var6.J.manage_stories = !r0.manage_stories;
-                                    u0Var6.c.W2.N(true);
-                                    u0Var6.Y(true);
-                                    break;
-                            }
-                        }
-                    };
-                    arrayList6.add(m12);
-                    if (u0Var.R) {
-                        p61 y18 = p61.y(-16, LocaleController.getString(R.string.BusinessBotPermissionsGiftsView));
-                        y18.K(u0Var.J.view_gifts);
-                        y18.i = 1;
-                        arrayList6.add(y18);
-                        p61 y19 = p61.y(-17, LocaleController.getString(R.string.BusinessBotPermissionsGiftsSell));
-                        y19.K(u0Var.J.sell_gifts);
-                        y19.i = 1;
-                        arrayList6.add(y19);
-                        p61 y20 = p61.y(-18, LocaleController.getString(R.string.BusinessBotPermissionsGiftsSettings));
-                        y20.K(u0Var.J.change_gift_settings);
-                        y20.i = 1;
-                        arrayList6.add(y20);
-                        p61 y21 = p61.y(-19, LocaleController.getString(R.string.BusinessBotPermissionsGiftsTransfer));
-                        y21.K(u0Var.J.transfer_and_upgrade_gifts);
-                        y21.i = 1;
-                        arrayList6.add(y21);
-                        p61 y22 = p61.y(-20, LocaleController.getString(R.string.BusinessBotPermissionsGiftsTransferStars));
-                        y22.K(u0Var.J.transfer_stars);
-                        y22.i = 1;
-                        arrayList6.add(y22);
-                    }
-                    p61 m13 = p61.m(-21, LocaleController.getString(R.string.BusinessBotPermissionsStories), str2);
-                    m13.K(u0Var.J.manage_stories);
-                    final int i23 = 4;
-                    m13.D = new View.OnClickListener() { // from class: hg.p0
-                        @Override // android.view.View.OnClickListener
-                        public final void onClick(View view) {
-                            switch (i23) {
-                                case 0:
-                                    u0 u0Var2 = u0Var;
-                                    u0Var2.M = null;
-                                    u0Var2.c.W2.N(true);
-                                    u0Var2.Y(true);
-                                    break;
-                                case 1:
-                                    u0 u0Var3 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights32 = u0Var3.J;
-                                    if (tL_businessBotRights32.reply && tL_businessBotRights32.read_messages && tL_businessBotRights32.delete_received_messages && tL_businessBotRights32.delete_sent_messages) {
-                                        tL_businessBotRights32.delete_sent_messages = false;
-                                        tL_businessBotRights32.delete_received_messages = false;
-                                        tL_businessBotRights32.read_messages = false;
-                                        tL_businessBotRights32.reply = false;
-                                    } else {
-                                        tL_businessBotRights32.delete_sent_messages = true;
-                                        tL_businessBotRights32.delete_received_messages = true;
-                                        tL_businessBotRights32.read_messages = true;
-                                        tL_businessBotRights32.reply = true;
-                                    }
-                                    u0Var3.c.W2.N(true);
-                                    u0Var3.Y(true);
-                                    break;
-                                case 2:
-                                    u0 u0Var4 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights22 = u0Var4.J;
-                                    if (!tL_businessBotRights22.edit_name || !tL_businessBotRights22.edit_bio || !tL_businessBotRights22.edit_profile_photo || !tL_businessBotRights22.edit_username) {
-                                        u0Var4.X(-14, true, new n0(u0Var4, 2));
-                                        break;
-                                    } else {
-                                        tL_businessBotRights22.edit_username = false;
-                                        tL_businessBotRights22.edit_profile_photo = false;
-                                        tL_businessBotRights22.edit_bio = false;
-                                        tL_businessBotRights22.edit_name = false;
-                                        u0Var4.c.W2.N(true);
-                                        u0Var4.Y(true);
-                                        break;
-                                    }
-                                    break;
-                                case 3:
-                                    u0 u0Var5 = u0Var;
-                                    TL_account.TL_businessBotRights tL_businessBotRights322 = u0Var5.J;
-                                    if (!tL_businessBotRights322.view_gifts || !tL_businessBotRights322.sell_gifts || !tL_businessBotRights322.change_gift_settings || !tL_businessBotRights322.transfer_and_upgrade_gifts || !tL_businessBotRights322.transfer_stars) {
-                                        u0Var5.X(-17, true, new n0(u0Var5, 1));
-                                        break;
-                                    } else {
-                                        tL_businessBotRights322.transfer_stars = false;
-                                        tL_businessBotRights322.transfer_and_upgrade_gifts = false;
-                                        tL_businessBotRights322.change_gift_settings = false;
-                                        tL_businessBotRights322.sell_gifts = false;
-                                        tL_businessBotRights322.view_gifts = false;
-                                        u0Var5.c.W2.N(true);
-                                        u0Var5.Y(true);
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    u0 u0Var6 = u0Var;
-                                    u0Var6.J.manage_stories = !r0.manage_stories;
-                                    u0Var6.c.W2.N(true);
-                                    u0Var6.Y(true);
-                                    break;
-                            }
-                        }
-                    };
-                    arrayList6.add(m13);
-                    c71Var3.T();
-                    arrayList6.add(p61.A(-4, null));
-                    arrayList6.add(p61.A(-5, null));
-                    arrayList6.add(p61.A(-6, null));
-                    arrayList6.add(p61.A(-7, null));
-                    break;
-                }
-                break;
-            case 25:
-                w0.U((w0) obj3, (ArrayList) obj, (c71) obj2);
-                break;
-            case 26:
-                e1 e1Var = (e1) obj3;
-                ArrayList arrayList7 = (ArrayList) obj;
-                String string6 = LocaleController.getString(R.string.BusinessLocation);
-                String string7 = LocaleController.getString(R.string.BusinessLocationInfo);
-                int i24 = R.raw.biz_map;
-                p61 p61Var6 = new p61(2);
-                p61Var6.l = string6;
-                p61Var6.o = string7;
-                p61Var6.k = i24;
-                arrayList7.add(p61Var6);
-                arrayList7.add(p61.k(e1Var.e));
-                arrayList7.add(p61.B(null));
-                p61 i25 = p61.i(1, LocaleController.getString(R.string.BusinessLocationMap));
-                i25.K(e1Var.x != null);
-                arrayList7.add(i25);
-                if (e1Var.x != null) {
-                    arrayList7.add(p61.k(e1Var.h));
-                }
-                arrayList7.add(p61.B(null));
-                if (e1Var.w != null && (e1Var.x != null || !TextUtils.isEmpty(e1Var.y))) {
-                    z13 = true;
-                }
-                e1Var.G = z13;
-                if (z13) {
-                    p61 e7 = p61.e(2, LocaleController.getString(R.string.BusinessLocationClear));
-                    e7.r = true;
-                    arrayList7.add(e7);
-                    arrayList7.add(p61.B(null));
-                }
-                e1Var.U(true);
-                break;
-            case 27:
-                g1.V((g1) obj3, (ArrayList) obj);
-                break;
-            default:
-                i1 i1Var = (i1) obj3;
-                ArrayList arrayList8 = (ArrayList) obj;
-                ArrayList arrayList9 = i1Var.b;
-                String string8 = LocaleController.getString(R.string.BusinessHoursDayOpen);
-                p61 p61Var7 = new p61(9);
-                p61Var7.d = -1;
-                p61Var7.l = string8;
-                p61Var7.K(i1Var.r);
-                arrayList8.add(p61Var7);
-                arrayList8.add(p61.B(null));
-                if (i1Var.r) {
-                    for (int i26 = 0; i26 < arrayList9.size(); i26++) {
-                        if (i26 > 0) {
-                            arrayList8.add(p61.B(null));
-                        }
-                        f1 f1Var = (f1) arrayList9.get(i26);
-                        if (!i1Var.U()) {
-                            int i27 = i26 * 3;
-                            arrayList8.add(p61.f(LocaleController.getString(R.string.BusinessHoursDayOpenHour), f1.a(f1Var.a), i27));
-                            arrayList8.add(p61.f(LocaleController.getString(R.string.BusinessHoursDayCloseHour), f1.a(f1Var.b), i27 + 1));
-                            p61 e10 = p61.e(i27 + 2, LocaleController.getString(R.string.Remove));
-                            e10.r = true;
-                            arrayList8.add(e10);
-                        }
-                    }
-                    if (i1Var.V()) {
-                        arrayList8.add(p61.B(null));
-                        p61 c11 = p61.c(-2, R.drawable.menu_premium_clock_add, LocaleController.getString(R.string.BusinessHoursDayAdd));
-                        c11.q = true;
-                        arrayList8.add(c11);
-                    }
-                    hg.c.n(R.string.BusinessHoursDayInfo, arrayList8);
-                    break;
-                }
-                break;
+                });
+                arrayList.add(this.H0);
+            }
+            this.K0.playTogether(arrayList);
+            this.K0.start();
         }
+    }
+
+    public final boolean m() {
+        long j10 = UserConfig.getInstance(this.f).clientUserId;
+        x8 x8Var = this.s;
+        if (x8Var.J(j10)) {
+            return true;
+        }
+        return x8Var.H() && x8Var.g.size() <= 3;
+    }
+
+    public final void n() {
+        if (this.J == null) {
+            di.d4 d4Var = new di.d4(getContext(), 1);
+            d4Var.h(f(org.telegram.ui.ActionBar.g6.Fi));
+            d4Var.p(true);
+            d4Var.K = Layout.Alignment.ALIGN_CENTER;
+            d4Var.l(0.0f, 29.0f);
+            this.J = d4Var;
+            SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("StoriesPremiumHint2").replace('\n', ' '), org.telegram.ui.ActionBar.g6.Gi, 0, new e(this, 1));
+            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) replaceSingleTag.getSpans(0, replaceSingleTag.length(), ClickableSpan.class);
+            if (clickableSpanArr != null && clickableSpanArr.length >= 1) {
+                replaceSingleTag.setSpan(new i61(AndroidUtilities.bold()), replaceSingleTag.getSpanStart(clickableSpanArr[0]), replaceSingleTag.getSpanEnd(clickableSpanArr[0]), 33);
+            }
+            di.d4 d4Var2 = this.J;
+            d4Var2.h = di.d4.a(replaceSingleTag, d4Var2.getTextPaint());
+            this.J.s(replaceSingleTag);
+            this.J.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f), 0);
+            if (getParent() instanceof FrameLayout) {
+                ((FrameLayout) getParent()).addView(this.J, w7.a6.e(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 51));
+            }
+        }
+        di.d4 d4Var3 = this.J;
+        if (d4Var3 != null) {
+            if (d4Var3.V) {
+                BotWebViewVibrationEffect.APP_ERROR.vibrate();
+            }
+            this.J.u();
+        }
+    }
+
+    public final void o() {
+        b30 b30Var = s9.b;
+        if (b30Var != null) {
+            b30Var.d(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.lk, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.mk, false), 0, 0);
+        }
+        b30 b30Var2 = s9.c;
+        if (b30Var2 != null) {
+            b30Var2.d(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.nk, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.ok, false), 0, 0);
+        }
+        b30[] b30VarArr = s9.a;
+        b30 b30Var3 = b30VarArr[0];
+        if (b30Var3 != null) {
+            b30Var3.d(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.jk, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.kk, false), 0, 0);
+        }
+        b30 b30Var4 = b30VarArr[1];
+        if (b30Var4 != null) {
+            b30Var4.d(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.hk, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.ik, false), 0, 0);
+        }
+        if (s9.d != null) {
+            int x02 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.xj, false);
+            int x03 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.q7, false);
+            s9.d.d(i0.a.d(0.25f, x02, x03), x03, 0, 0);
+        }
+        int textColor = getTextColor();
+        this.T.setTextColor(getTextLogoColor());
+        n nVar = this.U;
+        if (nVar != null) {
+            nVar.b();
+        }
+        this.V.setColorFilter(getTextLogoColor(), PorterDuff.Mode.MULTIPLY);
+        AndroidUtilities.forEachViews((RecyclerView) this.h, (Utilities.Callback<View>) new j(textColor, 0));
+        AndroidUtilities.forEachViews((RecyclerView) this.r, (Utilities.Callback<View>) new f(2));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        q(false, false);
+        NotificationCenter.getInstance(this.f).addObserver(this, NotificationCenter.storiesUpdated);
+        c2.b bVar = this.L0;
+        bVar.a = true;
+        AnimatorSet animatorSet = (AnimatorSet) bVar.c;
+        if (!animatorSet.isRunning()) {
+            animatorSet.start();
+        }
+        this.a0.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(this.f).removeObserver(this, NotificationCenter.storiesUpdated);
+        c2.b bVar = this.L0;
+        bVar.a = false;
+        ((AnimatorSet) bVar.c).cancel();
+        n9 n9Var = this.r0;
+        if (n9Var != null) {
+            n9Var.a();
+            this.r0 = null;
+        }
+        this.a0.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.T.setTextSize(AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 20.0f : 18.0f));
+        this.M = AndroidUtilities.dp(70.0f);
+        AndroidUtilities.rectTmp.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(89.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.O == 2) {
+            int dp = AndroidUtilities.dp((this.y.size() * 26.33f) - (Math.max(0, r0 - 1) * 16.0f));
+            m mVar = this.r;
+            int x10 = (int) mVar.getX();
+            int y3 = (int) mVar.getY();
+            int x11 = (int) (mVar.getX() + dp);
+            int y10 = (int) (mVar.getY() + mVar.getHeight());
+            hd hdVar = this.I;
+            hdVar.getClass();
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(x10, y3, x11, y10);
+            hdVar.i = false;
+            hdVar.c = 0;
+            hdVar.a(rectF);
+            if (hdVar.b(motionEvent)) {
+                return true;
+            }
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // ne.d
+    public final void p(int i10, float f7, float f10, ne.e eVar) {
+        if (i10 == 1) {
+            d();
+        }
+    }
+
+    public final void q(boolean z10, boolean z11) {
+        ArrayList arrayList;
+        boolean z12;
+        if ((this.O == 1 || this.n0 != 0.0f) && !z11) {
+            this.K = true;
+            return;
+        }
+        ArrayList arrayList2 = this.v;
+        arrayList2.clear();
+        ArrayList arrayList3 = this.x;
+        arrayList2.addAll(arrayList3);
+        ArrayList arrayList4 = this.w;
+        arrayList4.clear();
+        ArrayList arrayList5 = this.y;
+        arrayList4.addAll(arrayList5);
+        arrayList3.clear();
+        int i10 = this.b;
+        int i11 = this.f;
+        if (i10 != 1) {
+            arrayList3.add(new r(UserConfig.getInstance(i11).getClientUserId()));
+        }
+        x8 x8Var = this.s;
+        ArrayList arrayList6 = i10 == 1 ? x8Var.h : x8Var.g;
+        for (int i12 = 0; i12 < arrayList6.size(); i12++) {
+            long peerDialogId = DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList6.get(i12)).peer);
+            if (peerDialogId != UserConfig.getInstance(i11).getClientUserId()) {
+                arrayList3.add(new r(peerDialogId));
+            }
+        }
+        int size = arrayList3.size();
+        if (!x8Var.H()) {
+            size--;
+        }
+        int max = Math.max(1, Math.max(x8Var.C(i10 == 1), size));
+        this.f0 = null;
+        boolean G = x8Var.G();
+        org.telegram.ui.Components.s6 s6Var = this.T;
+        if (G) {
+            arrayList = arrayList3;
+            if (x8Var.K(UserConfig.getInstance(i11).getClientUserId())) {
+                String string = LocaleController.getString(R.string.UploadingStory);
+                if (string.indexOf("…") > 0) {
+                    if (this.i0 == null) {
+                        SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
+                        yb ybVar = new yb();
+                        valueOf.setSpan(ybVar, valueOf.length() - 1, valueOf.length(), 0);
+                        ybVar.a = s6Var;
+                        ybVar.n = true;
+                        this.i0 = valueOf;
+                    }
+                    this.f0 = this.i0;
+                } else {
+                    this.f0 = string;
+                }
+            } else {
+                this.f0 = this.s0 < ((float) AndroidUtilities.dp(50.0f)) ? null : LocaleController.getString(R.string.MyStory);
+            }
+        } else {
+            arrayList = arrayList3;
+            this.f0 = this.s0 < ((float) AndroidUtilities.dp(50.0f)) ? null : LocaleController.formatPluralString("Stories", max, new Object[0]);
+        }
+        if (this.g0) {
+            z12 = true;
+        } else {
+            z12 = true;
+            s6Var.c(this.f0, z10 && !LocaleController.isRTL, true);
+        }
+        this.a.a((!TextUtils.isEmpty(this.f0) || this.g0) ? z12 : false, z10);
+        arrayList5.clear();
+        for (int i13 = 0; i13 < arrayList.size(); i13++) {
+            if (((r) arrayList.get(i13)).c != UserConfig.getInstance(i11).clientUserId || m()) {
+                arrayList5.add((r) arrayList.get(i13));
+                if (arrayList5.size() >= 3) {
+                    break;
+                }
+            }
+        }
+        m mVar = this.h;
+        m mVar2 = this.r;
+        if (!z10) {
+            mVar.setItemAnimator(null);
+            mVar2.setItemAnimator(null);
+        } else if (this.O == 2) {
+            mVar2.setItemAnimator(this.d);
+            mVar.setItemAnimator(null);
+        } else {
+            mVar.setItemAnimator(this.R);
+            mVar2.setItemAnimator(null);
+        }
+        this.E.E(arrayList2, arrayList);
+        this.F.E(arrayList4, arrayList5);
+        arrayList2.clear();
+        invalidate();
+    }
+
+    public void setActionBar(org.telegram.ui.ActionBar.k kVar) {
+        this.q0 = kVar;
+    }
+
+    public void setClipTop(int i10) {
+        if (i10 < 0) {
+            i10 = 0;
+        }
+        if (this.L != i10) {
+            this.L = i10;
+            invalidate();
+        }
+    }
+
+    public void setMenuItemsOffset(float f7) {
+        this.s0 = f7;
+    }
+
+    public void setOverscroll(float f7) {
+        this.n0 = f7 / AndroidUtilities.dp(90.0f);
+        invalidate();
+        this.h.invalidate();
+    }
+
+    public void setProgressToCollapse(float f7) {
+        l(f7, true);
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        di.d4 d4Var = this.J;
+        if (d4Var != null) {
+            d4Var.setTranslationY(f7);
+        }
+    }
+
+    @Override // ne.d
+    public final /* synthetic */ void C(float f7, int i10) {
     }
 }

@@ -20,7 +20,7 @@ public final class w0 extends j {
 
     @Override // java.util.AbstractList, java.util.List
     public final void add(int i10, Object obj) {
-        i();
+        h();
         this.b.add(i10, obj);
         ((AbstractList) this).modCount++;
     }
@@ -43,7 +43,7 @@ public final class w0 extends j {
 
     @Override // java.util.AbstractList, java.util.List
     public final Object remove(int i10) {
-        i();
+        h();
         Object remove = this.b.remove(i10);
         ((AbstractList) this).modCount++;
         return remove;
@@ -51,7 +51,7 @@ public final class w0 extends j {
 
     @Override // java.util.AbstractList, java.util.List
     public final Object set(int i10, Object obj) {
-        i();
+        h();
         Object obj2 = this.b.set(i10, obj);
         ((AbstractList) this).modCount++;
         return obj2;

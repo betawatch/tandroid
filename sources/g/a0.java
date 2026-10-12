@@ -1,5 +1,6 @@
 package g;
 
+import ah.l0;
 import android.R;
 import android.app.Activity;
 import android.content.Context;
@@ -16,13 +17,15 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import m.k1;
 import m.m3;
-import r0.i0;
-import r0.l0;
-import v7.g7;
+import org.telegram.messenger.BuildConfig;
+import r0.b0;
+import r0.j0;
+import r0.m0;
+import v7.i7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a0 extends g7 implements m.b {
+public final class a0 extends i7 implements m.b {
     public static final AccelerateInterpolator x = new AccelerateInterpolator();
     public static final DecelerateInterpolator y = new DecelerateInterpolator();
     public Context a;
@@ -35,7 +38,7 @@ public final class a0 extends g7 implements m.b {
     public boolean h;
     public z i;
     public z j;
-    public n4.x k;
+    public n4.s k;
     public boolean l;
     public final ArrayList m;
     public int n;
@@ -43,11 +46,11 @@ public final class a0 extends g7 implements m.b {
     public boolean p;
     public boolean q;
     public boolean r;
-    public bc.d s;
+    public cc.d s;
     public boolean t;
     public final y u;
     public final y v;
-    public final a4.l w;
+    public final k6.h w;
 
     public a0(Activity activity, boolean z10) {
         new ArrayList();
@@ -57,7 +60,7 @@ public final class a0 extends g7 implements m.b {
         this.r = true;
         this.u = new y(this, 0);
         this.v = new y(this, 1);
-        this.w = new a4.l(this, 17);
+        this.w = new k6.h(this, 23);
         View decorView = activity.getWindow().getDecorView();
         b(decorView);
         if (z10) {
@@ -67,8 +70,8 @@ public final class a0 extends g7 implements m.b {
     }
 
     public final void a(boolean z10) {
-        l0 i10;
-        l0 l0Var;
+        m0 i10;
+        m0 m0Var;
         if (z10) {
             if (!this.q) {
                 this.q = true;
@@ -87,7 +90,7 @@ public final class a0 extends g7 implements m.b {
             d(false);
         }
         ActionBarContainer actionBarContainer = this.d;
-        WeakHashMap weakHashMap = i0.a;
+        WeakHashMap weakHashMap = j0.a;
         if (!actionBarContainer.isLaidOut()) {
             if (z10) {
                 ((m3) this.e).a.setVisibility(4);
@@ -101,30 +104,30 @@ public final class a0 extends g7 implements m.b {
         }
         if (z10) {
             m3 m3Var = (m3) this.e;
-            i10 = i0.a(m3Var.a);
+            i10 = j0.a(m3Var.a);
             i10.a(0.0f);
             i10.c(100L);
             i10.d(new k.i(m3Var, 4));
-            l0Var = this.f.i(0, 200L);
+            m0Var = this.f.i(0, 200L);
         } else {
             m3 m3Var2 = (m3) this.e;
-            l0 a2 = i0.a(m3Var2.a);
+            m0 a2 = j0.a(m3Var2.a);
             a2.a(1.0f);
             a2.c(200L);
             a2.d(new k.i(m3Var2, 0));
             i10 = this.f.i(8, 100L);
-            l0Var = a2;
+            m0Var = a2;
         }
-        bc.d dVar = new bc.d();
+        cc.d dVar = new cc.d();
         ArrayList arrayList = (ArrayList) dVar.c;
         arrayList.add(i10);
         View view = (View) i10.a.get();
         long duration = view != null ? view.animate().getDuration() : 0L;
-        View view2 = (View) l0Var.a.get();
+        View view2 = (View) m0Var.a.get();
         if (view2 != null) {
             view2.animate().setStartDelay(duration);
         }
-        arrayList.add(l0Var);
+        arrayList.add(m0Var);
         dVar.b();
     }
 
@@ -140,7 +143,7 @@ public final class a0 extends g7 implements m.b {
             wrapper = (k1) findViewById;
         } else {
             if (!(findViewById instanceof Toolbar)) {
-                throw new IllegalStateException("Can't make a decor toolbar out of ".concat(findViewById != null ? findViewById.getClass().getSimpleName() : "null"));
+                throw new IllegalStateException("Can't make a decor toolbar out of ".concat(findViewById != null ? findViewById.getClass().getSimpleName() : BuildConfig.BETA_URL));
             }
             wrapper = ((Toolbar) findViewById).getWrapper();
         }
@@ -181,8 +184,8 @@ public final class a0 extends g7 implements m.b {
         int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(12, 0);
         if (dimensionPixelSize != 0) {
             ActionBarContainer actionBarContainer2 = this.d;
-            WeakHashMap weakHashMap = i0.a;
-            r0.a0.h(actionBarContainer2, dimensionPixelSize);
+            WeakHashMap weakHashMap = j0.a;
+            b0.h(actionBarContainer2, dimensionPixelSize);
         }
         obtainStyledAttributes.recycle();
     }
@@ -202,12 +205,12 @@ public final class a0 extends g7 implements m.b {
         boolean z11 = this.p;
         boolean z12 = this.q;
         int i10 = 27;
-        a4.l lVar = this.w;
+        k6.h hVar = this.w;
         View view = this.g;
         if (!z12 && z11) {
             if (this.r) {
                 this.r = false;
-                bc.d dVar = this.s;
+                cc.d dVar = this.s;
                 if (dVar != null) {
                     dVar.a();
                 }
@@ -219,24 +222,24 @@ public final class a0 extends g7 implements m.b {
                 }
                 this.d.setAlpha(1.0f);
                 this.d.setTransitioning(true);
-                bc.d dVar2 = new bc.d();
+                cc.d dVar2 = new cc.d();
                 ArrayList arrayList = (ArrayList) dVar2.c;
                 float f7 = -this.d.getHeight();
                 if (z10) {
                     this.d.getLocationInWindow(new int[]{0, 0});
                     f7 -= r13[1];
                 }
-                l0 a2 = i0.a(this.d);
+                m0 a2 = j0.a(this.d);
                 a2.e(f7);
                 View view2 = (View) a2.a.get();
                 if (view2 != null) {
-                    view2.animate().setUpdateListener(lVar != null ? new ai.x(i10, lVar, view2) : null);
+                    view2.animate().setUpdateListener(hVar != null ? new l0(i10, hVar, view2) : null);
                 }
                 if (!dVar2.b) {
                     arrayList.add(a2);
                 }
                 if (this.o && view != null) {
-                    l0 a10 = i0.a(view);
+                    m0 a10 = j0.a(view);
                     a10.e(f7);
                     if (!dVar2.b) {
                         arrayList.add(a10);
@@ -262,7 +265,7 @@ public final class a0 extends g7 implements m.b {
             return;
         }
         this.r = true;
-        bc.d dVar3 = this.s;
+        cc.d dVar3 = this.s;
         if (dVar3 != null) {
             dVar3.a();
         }
@@ -277,20 +280,20 @@ public final class a0 extends g7 implements m.b {
                 f10 -= r13[1];
             }
             this.d.setTranslationY(f10);
-            bc.d dVar4 = new bc.d();
+            cc.d dVar4 = new cc.d();
             ArrayList arrayList2 = (ArrayList) dVar4.c;
-            l0 a11 = i0.a(this.d);
+            m0 a11 = j0.a(this.d);
             a11.e(0.0f);
             View view3 = (View) a11.a.get();
             if (view3 != null) {
-                view3.animate().setUpdateListener(lVar != null ? new ai.x(i10, lVar, view3) : null);
+                view3.animate().setUpdateListener(hVar != null ? new l0(i10, hVar, view3) : null);
             }
             if (!dVar4.b) {
                 arrayList2.add(a11);
             }
             if (this.o && view != null) {
                 view.setTranslationY(f10);
-                l0 a12 = i0.a(view);
+                m0 a12 = j0.a(view);
                 a12.e(0.0f);
                 if (!dVar4.b) {
                     arrayList2.add(a12);
@@ -318,8 +321,8 @@ public final class a0 extends g7 implements m.b {
         }
         ActionBarOverlayLayout actionBarOverlayLayout = this.c;
         if (actionBarOverlayLayout != null) {
-            WeakHashMap weakHashMap = i0.a;
-            r0.y.c(actionBarOverlayLayout);
+            WeakHashMap weakHashMap = j0.a;
+            r0.z.c(actionBarOverlayLayout);
         }
     }
 
@@ -331,7 +334,7 @@ public final class a0 extends g7 implements m.b {
         this.r = true;
         this.u = new y(this, 0);
         this.v = new y(this, 1);
-        this.w = new a4.l(this, 17);
+        this.w = new k6.h(this, 23);
         b(tVar.getWindow().getDecorView());
     }
 }

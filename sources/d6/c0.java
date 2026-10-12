@@ -5,14 +5,14 @@ import android.util.SparseIntArray;
 import com.google.android.gms.internal.cast.h3;
 import com.google.android.gms.internal.cast.o4;
 import com.google.android.gms.internal.cast.s2;
-import com.google.android.gms.internal.cast.v6;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.cast.w6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c0 extends e6.g {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class c0 extends e6.g {
     public void a() {
         switch (this.a) {
             case 2:
-                ((f6.i) this.b).b();
+                ((f6.h) this.b).b();
                 break;
         }
     }
@@ -36,7 +36,7 @@ public final class c0 extends e6.g {
     public void c() {
         switch (this.a) {
             case 2:
-                ((f6.i) this.b).b();
+                ((f6.h) this.b).b();
                 break;
         }
     }
@@ -45,7 +45,7 @@ public final class c0 extends e6.g {
     public void d() {
         switch (this.a) {
             case 2:
-                ((f6.i) this.b).b();
+                ((f6.h) this.b).b();
                 break;
         }
     }
@@ -54,7 +54,7 @@ public final class c0 extends e6.g {
     public void e() {
         switch (this.a) {
             case 2:
-                ((f6.i) this.b).b();
+                ((f6.h) this.b).b();
                 break;
         }
     }
@@ -64,9 +64,9 @@ public final class c0 extends e6.g {
         switch (this.a) {
             case 1:
                 e6.c cVar = (e6.c) this.b;
-                long e7 = cVar.e();
-                if (e7 != cVar.b) {
-                    cVar.b = e7;
+                long e = cVar.e();
+                if (e != cVar.b) {
+                    cVar.b = e;
                     cVar.c();
                     if (cVar.b != 0) {
                         cVar.d();
@@ -75,23 +75,23 @@ public final class c0 extends e6.g {
                 }
                 break;
             case 2:
-                ((f6.i) this.b).b();
+                ((f6.h) this.b).b();
                 break;
         }
     }
 
     @Override // e6.g
-    public void h(String str, long j3, int i10, long j10, long j11) {
+    public void h(String str, long j10, int i10, long j11, long j12) {
         switch (this.a) {
             case 0:
                 o4 o4Var = ((c) this.b).l;
                 if (o4Var != null) {
-                    v6 F = o4Var.a.F();
+                    w6 F = o4Var.a.F();
                     s2 s2Var = new s2(str);
-                    s2Var.b = j3;
+                    s2Var.b = j10;
                     s2Var.c = i10;
-                    s2Var.d = j10;
-                    s2Var.e = j11;
+                    s2Var.d = j11;
+                    s2Var.e = j12;
                     h3 h3Var = new h3(s2Var);
                     h3Var.f = F.h;
                     F.d.add(h3Var);
@@ -299,7 +299,7 @@ public final class c0 extends e6.g {
                         cVar.d();
                         break;
                     } else {
-                        i10 = e2.e(i12, i10, 1, arrayList);
+                        i10 = k3.f(i12, i10, 1, arrayList);
                     }
                 }
                 Collections.sort(arrayList);

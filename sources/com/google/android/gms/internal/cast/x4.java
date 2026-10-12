@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class x4 implements Iterable, Serializable {
     public static final x4 c = new x4(l5.b);
@@ -21,9 +21,9 @@ public class x4 implements Iterable, Serializable {
         this.b = bArr;
     }
 
-    public static void p(int i10) {
+    public static void o(int i10) {
         if (((i10 - 47) | 47) < 0) {
-            throw new IndexOutOfBoundsException(hg.c.h(i10, "End index: 47 >= "));
+            throw new IndexOutOfBoundsException(i2.d.i(i10, "End index: 47 >= "));
         }
     }
 
@@ -31,8 +31,8 @@ public class x4 implements Iterable, Serializable {
         if (obj == this) {
             return true;
         }
-        if ((obj instanceof x4) && o() == ((x4) obj).o()) {
-            if (o() == 0) {
+        if ((obj instanceof x4) && n() == ((x4) obj).n()) {
+            if (n() == 0) {
                 return true;
             }
             if (!(obj instanceof x4)) {
@@ -42,17 +42,17 @@ public class x4 implements Iterable, Serializable {
             int i10 = this.a;
             int i11 = x4Var.a;
             if (i10 == 0 || i11 == 0 || i10 == i11) {
-                int o9 = o();
-                if (o9 > x4Var.o()) {
-                    throw new IllegalArgumentException("Length too large: " + o9 + o());
+                int n10 = n();
+                if (n10 > x4Var.n()) {
+                    throw new IllegalArgumentException("Length too large: " + n10 + n());
                 }
-                if (o9 > x4Var.o()) {
-                    throw new IllegalArgumentException(a1.g.m(o9, x4Var.o(), "Ran off end of other: 0, ", ", "));
+                if (n10 > x4Var.n()) {
+                    throw new IllegalArgumentException(a1.g.l(n10, x4Var.n(), "Ran off end of other: 0, ", ", "));
                 }
                 byte[] bArr = x4Var.b;
                 int i12 = 0;
                 int i13 = 0;
-                while (i12 < o9) {
+                while (i12 < n10) {
                     if (this.b[i12] == bArr[i13]) {
                         i12++;
                         i13++;
@@ -64,15 +64,19 @@ public class x4 implements Iterable, Serializable {
         return false;
     }
 
+    public byte h(int i10) {
+        return this.b[i10];
+    }
+
     public final int hashCode() {
         int i10 = this.a;
         if (i10 != 0) {
             return i10;
         }
-        int o9 = o();
+        int n10 = n();
         Charset charset = l5.a;
-        int i11 = o9;
-        for (int i12 = 0; i12 < o9; i12++) {
+        int i11 = n10;
+        for (int i12 = 0; i12 < n10; i12++) {
             i11 = (i11 * 31) + this.b[i12];
         }
         if (i11 == 0) {
@@ -82,20 +86,16 @@ public class x4 implements Iterable, Serializable {
         return i11;
     }
 
-    public byte i(int i10) {
-        return this.b[i10];
-    }
-
     @Override // java.lang.Iterable
     public final /* synthetic */ Iterator iterator() {
         return new androidx.datastore.preferences.protobuf.e(this);
     }
 
-    public byte n(int i10) {
+    public byte m(int i10) {
         return this.b[i10];
     }
 
-    public int o() {
+    public int n() {
         return this.b.length;
     }
 
@@ -103,18 +103,18 @@ public class x4 implements Iterable, Serializable {
         String concat;
         Locale locale = Locale.ROOT;
         String hexString = Integer.toHexString(System.identityHashCode(this));
-        int o9 = o();
-        if (o() <= 50) {
-            concat = v7.t5.a(this);
+        int n10 = n();
+        if (n() <= 50) {
+            concat = v7.u5.a(this);
         } else {
-            p(o());
-            concat = v7.t5.a(new w4(this.b)).concat("...");
+            o(n());
+            concat = v7.u5.a(new w4(this.b)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);
         sb2.append(" size=");
-        sb2.append(o9);
+        sb2.append(n10);
         sb2.append(" contents=\"");
-        return a1.g.t(sb2, concat, "\">");
+        return a1.g.s(sb2, concat, "\">");
     }
 }

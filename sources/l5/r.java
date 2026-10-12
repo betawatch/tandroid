@@ -1,9 +1,9 @@
 package l5;
 
 import java.util.HashMap;
-import org.telegram.ui.rr0;
+import org.telegram.ui.ss0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class r {
     public final i a;
@@ -28,14 +28,14 @@ public final class r {
         s sVar = this.e;
         q5.b bVar = sVar.c;
         i b10 = this.a.b(aVar.c);
-        com.google.firebase.messaging.n nVar = new com.google.firebase.messaging.n();
-        nVar.f = new HashMap();
-        nVar.d = Long.valueOf(sVar.a.Z());
-        nVar.e = Long.valueOf(sVar.b.Z());
-        nVar.a = this.b;
-        nVar.c = new l(this.c, (byte[]) eVar.apply(aVar.b));
-        nVar.b = aVar.a;
+        com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m();
+        mVar.f = new HashMap();
+        mVar.d = Long.valueOf(sVar.a.d());
+        mVar.e = Long.valueOf(sVar.b.d());
+        mVar.a = this.b;
+        mVar.c = new l(this.c, (byte[]) eVar.apply(aVar.b));
+        mVar.b = aVar.a;
         q5.a aVar2 = (q5.a) bVar;
-        aVar2.b.execute(new rr0(aVar2, b10, gVar, nVar.g(), 23));
+        aVar2.b.execute(new ss0(aVar2, b10, gVar, mVar.g(), 21));
     }
 }

@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class RtpSender {
     private MediaStreamTrack cachedTrack;
@@ -10,13 +10,13 @@ public class RtpSender {
     private long nativeRtpSender;
     private boolean ownsTrack = true;
 
-    public RtpSender(long j3) {
-        this.nativeRtpSender = j3;
-        this.cachedTrack = MediaStreamTrack.createMediaStreamTrack(nativeGetTrack(j3));
-        if (!nativeGetMediaType(j3).equalsIgnoreCase(MediaStreamTrack.AUDIO_TRACK_KIND)) {
+    public RtpSender(long j10) {
+        this.nativeRtpSender = j10;
+        this.cachedTrack = MediaStreamTrack.createMediaStreamTrack(nativeGetTrack(j10));
+        if (!nativeGetMediaType(j10).equalsIgnoreCase(MediaStreamTrack.AUDIO_TRACK_KIND)) {
             this.dtmfSender = null;
         } else {
-            long nativeGetDtmfSender = nativeGetDtmfSender(j3);
+            long nativeGetDtmfSender = nativeGetDtmfSender(j10);
             this.dtmfSender = nativeGetDtmfSender != 0 ? new DtmfSender(nativeGetDtmfSender) : null;
         }
     }
@@ -27,25 +27,25 @@ public class RtpSender {
         }
     }
 
-    private static native long nativeGetDtmfSender(long j3);
+    private static native long nativeGetDtmfSender(long j10);
 
-    private static native String nativeGetId(long j3);
+    private static native String nativeGetId(long j10);
 
-    private static native String nativeGetMediaType(long j3);
+    private static native String nativeGetMediaType(long j10);
 
-    private static native RtpParameters nativeGetParameters(long j3);
+    private static native RtpParameters nativeGetParameters(long j10);
 
-    private static native List<String> nativeGetStreams(long j3);
+    private static native List<String> nativeGetStreams(long j10);
 
-    private static native long nativeGetTrack(long j3);
+    private static native long nativeGetTrack(long j10);
 
-    private static native void nativeSetFrameEncryptor(long j3, long j10);
+    private static native void nativeSetFrameEncryptor(long j10, long j11);
 
-    private static native boolean nativeSetParameters(long j3, RtpParameters rtpParameters);
+    private static native boolean nativeSetParameters(long j10, RtpParameters rtpParameters);
 
-    private static native void nativeSetStreams(long j3, List<String> list);
+    private static native void nativeSetStreams(long j10, List<String> list);
 
-    private static native boolean nativeSetTrack(long j3, long j10);
+    private static native boolean nativeSetTrack(long j10, long j11);
 
     public void dispose() {
         checkRtpSenderExists();

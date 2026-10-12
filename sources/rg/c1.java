@@ -1,333 +1,84 @@
 package rg;
 
-import ai.m4;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.util.SparseArray;
-import android.widget.ImageView;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.s5;
+import android.view.View;
+import android.view.ViewGroup;
+import di.a6;
+import di.z6;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.la;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class c1 extends ImageView {
-    public static final /* synthetic */ int L = 0;
-    public ImageReceiver E;
-    public s5 F;
-    public float G;
-    public boolean H;
-    public boolean I;
-    public org.telegram.ui.Components.voip.h J;
-    public Integer K;
-    public final int a;
-    public final float[] b;
-    public final v1 c;
-    public final e6 d;
-    public boolean e;
-    public final float f;
-    public boolean h;
-    public int n;
-    public int r;
-    public int s;
-    public LinearGradient v;
-    public final Path w;
-    public Paint x;
-    public Paint y;
+public final class c1 extends lm0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ la d;
+    public final /* synthetic */ z6 e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ a6 h;
 
-    public c1(Context context, int i10, e6 e6Var) {
-        super(context);
-        this.b = new float[3];
-        this.f = 1.0f;
-        this.h = false;
-        this.n = -1;
-        this.v = null;
-        this.w = new Path();
-        this.x = new Paint(1);
-        this.G = 1.0f;
-        this.a = i10;
-        this.d = e6Var;
-        setImageResource(i10 == 0 ? R.drawable.msg_premium_lock2 : R.drawable.msg_mini_premiumlock);
-        if (i10 == 0) {
-            v1 v1Var = new v1(5);
-            this.c = v1Var;
-            v1Var.g();
-            v1Var.M = false;
-            v1Var.s = 4;
-            v1Var.t = 4;
-            v1Var.r = 2;
-            v1Var.o = 0.1f;
-            v1Var.c();
-            return;
-        }
-        if (i10 == 2) {
-            this.f = 0.8f;
-            this.x.setColor(i6.x0(null, i6.a7, false));
-        } else if (i10 == 3) {
-            setScaleType(ImageView.ScaleType.CENTER);
-            setImageResource(R.drawable.msg_archive_hide);
-        } else if (i10 == 4) {
-            setScaleType(ImageView.ScaleType.CENTER);
-            setImageResource(R.drawable.msg_limit_pin);
-        }
+    public c1(a6 a6Var, Context context, la laVar, z6 z6Var, boolean z10) {
+        this.h = a6Var;
+        this.c = context;
+        this.d = laVar;
+        this.e = z6Var;
+        this.f = z10;
     }
 
-    public final void a() {
-        if (!this.e || getMeasuredHeight() == 0 || getMeasuredWidth() == 0) {
-            return;
-        }
-        int i10 = this.n;
-        float[] fArr = this.b;
-        Color.colorToHSV(i10, fArr);
-        fArr[1] = fArr[1] * 1.0f;
-        if (fArr[2] > 0.7f) {
-            fArr[2] = 0.7f;
-        }
-        int HSVToColor = Color.HSVToColor(fArr);
-        int i11 = i6.d6;
-        e6 e6Var = this.d;
-        int d = i0.a.d(0.5f, HSVToColor, i6.w0(i11, e6Var));
-        int d10 = i0.a.d(0.4f, HSVToColor, i6.w0(i11, e6Var));
-        if (this.v != null && this.r == d10 && this.s == d) {
-            return;
-        }
-        if (this.I) {
-            Paint paint = this.x;
-            this.y = paint;
-            paint.setAlpha(255);
-            this.G = 0.0f;
-        }
-        this.x = new Paint(1);
-        float measuredHeight = getMeasuredHeight();
-        this.r = d10;
-        this.s = d;
-        LinearGradient linearGradient = new LinearGradient(0.0f, measuredHeight, 0.0f, 0.0f, new int[]{d10, d}, (float[]) null, Shader.TileMode.CLAMP);
-        this.v = linearGradient;
-        this.x.setShader(linearGradient);
-        invalidate();
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        return true;
     }
 
-    public ImageReceiver getImageReceiver() {
-        return this.E;
+    @Override // s4.g0
+    public final int h() {
+        return this.h.s0.size();
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.e = true;
-        if (this.a != 0) {
-            a();
-        }
+    @Override // s4.g0
+    public final int j(int i10) {
+        return ((MessageObject) this.h.s0.get((r0.size() - 1) - i10)).contentType;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.e = false;
-        Paint paint = this.x;
-        if (paint != null && this.a != 2) {
-            paint.setShader(null);
-            this.x = null;
-        }
-        this.v = null;
-        this.I = false;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x007b  */
-    @Override // android.widget.ImageView, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        int intValue;
-        m4 m4Var;
-        if (this.H) {
-            ImageReceiver imageReceiver = this.E;
-            if (imageReceiver == null || imageReceiver.getBitmap() == null) {
-                s5 s5Var = this.F;
-                if (s5Var != null) {
-                    SparseArray sparseArray = s5.q;
-                    long i10 = s5Var.i();
-                    if (i10 != 0) {
-                        if (s5.w == null) {
-                            s5.w = new HashMap();
-                        }
-                        Integer num = (Integer) s5.w.get(Long.valueOf(i10));
-                        if (num == null && (m4Var = s5Var.k) != null && m4Var.getBitmap() != null) {
-                            HashMap hashMap = s5.w;
-                            Long valueOf = Long.valueOf(i10);
-                            Integer valueOf2 = Integer.valueOf(AndroidUtilities.getDominantColor(s5Var.k.getBitmap()));
-                            hashMap.put(valueOf, valueOf2);
-                            num = valueOf2;
-                        }
-                        if (num != null) {
-                            intValue = num.intValue();
-                            if (intValue == 0) {
-                                this.H = false;
-                                setColor(intValue);
-                            } else {
-                                invalidate();
-                            }
-                        }
-                    }
-                    intValue = 0;
-                    if (intValue == 0) {
-                    }
-                } else {
-                    invalidate();
-                }
-            } else {
-                this.H = false;
-                setColor(AndroidUtilities.getDominantColor(this.E.getBitmap()));
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        boolean z10;
+        MessageObject.GroupedMessagePosition position;
+        a6 a6Var = this.h;
+        ArrayList arrayList = a6Var.s0;
+        MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - 1) - i10);
+        View view = b1Var.a;
+        if (!(view instanceof org.telegram.ui.Cells.u1)) {
+            if (view instanceof org.telegram.ui.Cells.x0) {
+                ((org.telegram.ui.Cells.x0) view).setMessageObject(messageObject);
+                return;
             }
-        }
-        Paint paint = this.x;
-        if (paint != null) {
-            int i11 = this.a;
-            if (i11 == 2) {
-                float measuredWidth = getMeasuredWidth() / 2.0f;
-                canvas.drawCircle(measuredWidth, getMeasuredHeight() / 2.0f, measuredWidth, this.x);
-            } else if (i11 == 0) {
-                int i12 = this.n;
-                Path path = this.w;
-                if (i12 != 0) {
-                    canvas.drawPath(path, paint);
-                } else {
-                    b1.d().f(-AndroidUtilities.dp(24.0f), 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                    canvas.drawPath(path, b1.d().e());
-                }
-                if (this.J == null) {
-                    this.J = new org.telegram.ui.Components.voip.h();
-                }
-                this.J.f = getMeasuredWidth() / 2;
-                org.telegram.ui.Components.voip.h hVar = this.J;
-                hVar.k = false;
-                hVar.c(this);
-                canvas.drawPath(path, hVar.a);
-                if (hVar.k) {
-                    canvas.drawPath(path, hVar.c);
-                }
-                canvas.save();
-                canvas.clipPath(path);
-                this.c.d(canvas);
-                canvas.restore();
-                invalidate();
-            } else {
-                float measuredWidth2 = getMeasuredWidth() / 2.0f;
-                float measuredHeight = getMeasuredHeight() / 2.0f;
-                if (this.y == null) {
-                    this.G = 1.0f;
-                }
-                float f7 = this.G;
-                if (f7 != 1.0f) {
-                    this.x.setAlpha((int) (f7 * 255.0f));
-                    canvas.drawCircle(measuredWidth2, measuredHeight, measuredWidth2, this.y);
-                    canvas.drawCircle(measuredWidth2, measuredHeight, measuredWidth2, this.x);
-                    float f10 = this.G + 0.10666667f;
-                    this.G = f10;
-                    if (f10 > 1.0f) {
-                        this.G = 1.0f;
-                        this.y = null;
-                    }
-                    invalidate();
-                    this.x.setAlpha(255);
-                } else {
-                    canvas.drawCircle(measuredWidth2, measuredHeight, measuredWidth2, this.x);
-                }
-            }
-        }
-        float f11 = this.f;
-        boolean z10 = f11 != 1.0f;
-        if (z10) {
-            canvas.save();
-            canvas.scale(f11, f11, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        }
-        super.onDraw(canvas);
-        if (z10) {
-            canvas.restore();
-        }
-        this.I = true;
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        if (this.a != 0) {
-            a();
             return;
         }
-        Path path = this.w;
-        path.rewind();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        float width = rectF.width() / 2.0f;
-        float centerY = rectF.centerY();
-        float width2 = rectF.width() / 2.0f;
-        Path.Direction direction = Path.Direction.CW;
-        path.addCircle(width, centerY, width2, direction);
-        rectF.set((getMeasuredWidth() / 2.0f) + AndroidUtilities.dp(2.5f), AndroidUtilities.dpf2(5.7f) + (getMeasuredHeight() / 2.0f), getMeasuredWidth() - AndroidUtilities.dpf2(0.2f), getMeasuredHeight());
-        path.addRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), direction);
-        path.close();
-        v1 v1Var = this.c;
-        v1Var.a.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        v1Var.a.inset(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
+        org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
+        MessageObject.GroupedMessages groupedMessages = a6Var.t0;
+        if (groupedMessages == null || (position = groupedMessages.getPosition(messageObject)) == null) {
+            z10 = false;
+        } else {
+            z10 = position.minY != 0;
+        }
+        MessageObject.GroupedMessages groupedMessages2 = a6Var.t0;
+        u1Var.X3(messageObject, groupedMessages2, groupedMessages2 != null, z10, false, false);
     }
 
-    public void setAnimatedEmojiDrawable(s5 s5Var) {
-        this.F = s5Var;
-        if (s5Var != null) {
-            this.H = true;
-            invalidate();
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        com.google.firebase.messaging.m mVar = this.h.D0;
+        Context context = this.c;
+        if (i10 == 1) {
+            return new wl0(new a1(this, context, mVar));
         }
-    }
-
-    public void setBlendWithColor(Integer num) {
-        this.K = num;
-    }
-
-    public void setColor(int i10) {
-        this.h = true;
-        Integer num = this.K;
-        if (num != null) {
-            i10 = i6.v(i10, num.intValue());
-        }
-        if (this.n != i10) {
-            this.n = i10;
-            int i11 = this.a;
-            if (i11 == 0 || i11 == 2) {
-                Paint paint = this.x;
-                if (paint != null) {
-                    paint.setColor(i10);
-                }
-            } else {
-                a();
-            }
-            invalidate();
-        }
-    }
-
-    public void setImageReceiver(ImageReceiver imageReceiver) {
-        this.E = imageReceiver;
-        if (imageReceiver != null) {
-            this.H = true;
-            invalidate();
-        }
-    }
-
-    public void setLocked(boolean z10) {
-        if (this.a != 0) {
-            setImageResource(z10 ? R.drawable.msg_mini_premiumlock : R.drawable.msg_mini_stickerstar);
-        }
+        b1 b1Var = new b1(this, context, UserConfig.selectedAccount, mVar);
+        b1Var.N7 = true;
+        return new wl0(b1Var);
     }
 }

@@ -9,10 +9,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
-import n4.x;
-import w7.d0;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class Status extends o6.a implements q, ReflectedParcelable {
     public final int a;
@@ -59,29 +58,29 @@ public final class Status extends o6.a implements q, ReflectedParcelable {
     }
 
     public final String toString() {
-        x xVar = new x(this);
+        m4.c cVar = new m4.c(this);
         String str = this.b;
         if (str == null) {
             str = x8.j.a(this.a);
         }
-        xVar.o(str, "statusCode");
-        xVar.o(this.c, "resolution");
-        return xVar.toString();
+        cVar.u(str, "statusCode");
+        cVar.u(this.c, "resolution");
+        return cVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.s(parcel, 1, 4);
+        int q6 = g0.q(parcel, 20293);
+        g0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        d0.l(parcel, 2, this.b);
-        d0.k(parcel, 3, this.c, i10);
-        d0.k(parcel, 4, this.d, i10);
-        d0.r(parcel, q6);
+        g0.l(parcel, 2, this.b);
+        g0.k(parcel, 3, this.c, i10);
+        g0.k(parcel, 4, this.d, i10);
+        g0.r(parcel, q6);
     }
 
     @Override // com.google.android.gms.common.api.q
-    public final Status i() {
+    public final Status h() {
         return this;
     }
 }

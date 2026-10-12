@@ -1,44 +1,47 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.xd1;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class pm extends org.telegram.ui.ActionBar.v0 {
-    public final /* synthetic */ int v0;
-    public final /* synthetic */ Object w0;
+public final class pm extends TextView {
+    public float a;
+    public boolean b;
+    public final /* synthetic */ Paint c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ pm(qi qiVar, Context context, org.telegram.ui.ActionBar.z zVar, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, zVar, 0, 0, false, e6Var);
-        this.v0 = i10;
-        this.w0 = qiVar;
+    public pm(Context context, Paint paint) {
+        super(context);
+        this.c = paint;
+        this.a = 0.0f;
     }
 
-    @Override // org.telegram.ui.ActionBar.v0, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.v0) {
-            case 0:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((ChatAttachAlertPhotoLayout) this.w0).x.getText());
-                break;
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((hn) this.w0).x.getText());
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((xd1) this.w0).h.getText());
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = (int) ((this.a * 130.0f) + 125.0f);
+        Paint paint = this.c;
+        paint.setAlpha(i10);
+        if (this.b) {
+            float f7 = this.a + 0.026666667f;
+            this.a = f7;
+            if (f7 >= 1.0f) {
+                this.a = 1.0f;
+                this.b = false;
+            }
+        } else {
+            float f10 = this.a - 0.026666667f;
+            this.a = f10;
+            if (f10 <= 0.0f) {
+                this.a = 0.0f;
+                this.b = true;
+            }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pm(xd1 xd1Var, Context context, org.telegram.ui.ActionBar.z zVar) {
-        super(context, zVar, 0, 0);
-        this.v0 = 2;
-        this.w0 = xd1Var;
+        super.onDraw(canvas);
+        canvas.drawCircle(AndroidUtilities.dp(14.0f), getMeasuredHeight() / 2, AndroidUtilities.dp(4.0f), paint);
+        invalidate();
     }
 }

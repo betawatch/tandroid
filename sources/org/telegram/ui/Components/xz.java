@@ -1,34 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class xz extends y9 {
-    public final /* synthetic */ yz G;
+public final class xz extends ReplacementSpan {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xz(yz yzVar, Context context) {
-        super(context);
-        this.G = yzVar;
+    public /* synthetic */ xz(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.y9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        yz yzVar = this.G;
-        a00 a00Var = yzVar.d;
-        boolean z10 = yzVar.c;
-        if (z10) {
-            return;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int i15 = this.a;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                return (int) paint.measureText(charSequence, i10, i11);
+            case 1:
+                return AndroidUtilities.dp(16.0f);
+            case 2:
+                return AndroidUtilities.dp(12.0f);
+            case 3:
+                return AndroidUtilities.dp(12.0f);
+            default:
+                return AndroidUtilities.dp(16.0f);
         }
-        if (!MediaDataController.getInstance(a00Var.c1).isStickerPackUnread(z10, ((TLRPC.StickerSetCovered) getTag()).set.id) || a00Var.s1 == null) {
-            return;
-        }
-        canvas.drawCircle(canvas.getWidth() - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(3.0f), a00Var.s1);
+    }
+
+    public /* synthetic */ xz(boolean z10) {
+        this.a = 0;
+    }
+
+    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void d(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void e(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
     }
 }

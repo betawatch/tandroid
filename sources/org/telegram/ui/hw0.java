@@ -1,154 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class hw0 extends FrameLayout {
+public final /* synthetic */ class hw0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mw0 b;
+    public final /* synthetic */ sw0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hw0(mw0 mw0Var, Context context, int i10) {
-        super(context);
+    public /* synthetic */ hw0(sw0 sw0Var, int i10) {
         this.a = i10;
-        this.b = mw0Var;
+        this.b = sw0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        org.telegram.ui.Cells.u1 u1Var;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                mw0 mw0Var = this.b;
-                if (mw0Var.y <= 0.0f || mw0Var.w == null) {
-                    canvas2 = canvas;
-                } else {
-                    mw0Var.x.reset();
-                    float width = getWidth() / mw0Var.s.getWidth();
-                    mw0Var.x.postScale(width, width);
-                    mw0Var.v.setLocalMatrix(mw0Var.x);
-                    mw0Var.w.setAlpha((int) (mw0Var.y * 255.0f));
-                    canvas2 = canvas;
-                    canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), mw0Var.w);
+                sw0 sw0Var = this.b;
+                AndroidUtilities.runOnUIThread(new hw0(sw0Var, 3));
+                org.telegram.ui.Cells.u1 u1Var = sw0Var.L;
+                if (u1Var != null) {
+                    u1Var.setVisibility(0);
+                    org.telegram.ui.Cells.u1 u1Var2 = sw0Var.L;
+                    u1Var2.L7 = null;
+                    u1Var2.invalidate();
                 }
-                if (mw0Var.O && (u1Var = mw0Var.L) != null) {
-                    u1Var.L7 = mw0Var.P;
-                    u1Var.invalidate();
-                    mw0Var.O = false;
+                bn bnVar = sw0Var.e0;
+                if (bnVar != null) {
+                    AndroidUtilities.runOnUIThread(bnVar);
+                    sw0Var.e0 = null;
+                    break;
                 }
-                super.dispatchDraw(canvas2);
                 break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchKeyEventPreIme(KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                if (keyEvent == null || keyEvent.getKeyCode() != 4 || keyEvent.getAction() != 1) {
-                    return super.dispatchKeyEventPreIme(keyEvent);
-                }
-                this.b.c(true);
-                return true;
-            default:
-                return super.dispatchKeyEventPreIme(keyEvent);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.a) {
             case 1:
-                mw0 mw0Var = this.b;
-                if (view != mw0Var.K && view != mw0Var.J) {
-                    return super.drawChild(canvas, view, j3);
-                }
-                canvas.save();
-                canvas.clipRect(0.0f, AndroidUtilities.lerp(mw0Var.M, 0.0f, mw0Var.y), getWidth(), AndroidUtilities.lerp(mw0Var.N, getHeight(), mw0Var.y));
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j3);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 0:
-                super.onLayout(z10, i10, i11, i12, i13);
-                this.b.d();
+                this.b.c(false);
                 break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
             case 2:
-                int size = View.MeasureSpec.getSize(i10);
-                int size2 = View.MeasureSpec.getSize(i11);
-                mw0 mw0Var = this.b;
-                mw0Var.e();
-                for (int i12 = 0; i12 < getChildCount(); i12++) {
-                    View childAt = getChildAt(i12);
-                    ViewGroup viewGroup = mw0Var.T;
-                    if (childAt == viewGroup) {
-                        float f7 = mw0Var.U;
-                        if (f7 > 0.0f) {
-                            viewGroup.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f7), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                        }
-                    }
-                    ViewGroup viewGroup2 = mw0Var.R;
-                    if (childAt == viewGroup2) {
-                        float f10 = mw0Var.S;
-                        if (f10 > 0.0f) {
-                            viewGroup2.measure(View.MeasureSpec.makeMeasureSpec(Math.min(size, (int) f10), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                        }
-                    }
-                    org.telegram.ui.Components.kl0 kl0Var = mw0Var.Q;
-                    if (childAt == kl0Var) {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(kl0Var.getTotalWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                    } else {
-                        childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
-                    }
-                }
-                setMeasuredDimension(size, size2);
+                this.b.c(false);
                 break;
             default:
-                super.onMeasure(i10, i11);
+                super/*android.app.Dialog*/.dismiss();
                 break;
         }
     }
 
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 0:
-                super.onSizeChanged(i10, i11, i12, i13);
-                mw0 mw0Var = this.b;
-                gh.d.c(mw0Var.F, mw0Var.c);
-                mw0Var.G.d();
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-        }
+    public /* synthetic */ hw0(sw0 sw0Var, boolean z10) {
+        this.a = 0;
+        this.b = sw0Var;
     }
 }

@@ -1,6 +1,7 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
+import j$.util.function.IntConsumer$-CC;
 import java.util.function.IntConsumer;
 
 /* loaded from: classes2.dex */
@@ -14,7 +15,7 @@ public final class m0 extends p0 implements h5 {
     }
 
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
     @Override // java.util.function.Supplier

@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnContentRefreshListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class OnContentRefreshDelegateImpl implements d0 {
     private final IOnContentRefreshListener mListener;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class OnContentRefreshListenerStub extends IOnContentRefreshListener.Stub {
         private final e0 mOnContentRefreshListener;
 
@@ -24,7 +24,7 @@ public class OnContentRefreshDelegateImpl implements d0 {
 
         @Override // androidx.car.app.model.IOnContentRefreshListener
         public void onContentRefreshRequested(IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.g.b(iOnDoneCallback, "onClick", new f(this, 2));
+            androidx.car.app.utils.i.b(iOnDoneCallback, "onClick", new f(this, 2));
         }
     }
 
@@ -36,13 +36,13 @@ public class OnContentRefreshDelegateImpl implements d0 {
         return new OnContentRefreshDelegateImpl(e0Var);
     }
 
-    public void sendContentRefreshRequested(androidx.car.app.j jVar) {
+    public void sendContentRefreshRequested(androidx.car.app.k kVar) {
         try {
             IOnContentRefreshListener iOnContentRefreshListener = this.mListener;
             Objects.requireNonNull(iOnContentRefreshListener);
-            iOnContentRefreshListener.onContentRefreshRequested(androidx.car.app.utils.g.a());
-        } catch (RemoteException e7) {
-            throw new RuntimeException(e7);
+            iOnContentRefreshListener.onContentRefreshRequested(androidx.car.app.utils.i.a());
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
         }
     }
 

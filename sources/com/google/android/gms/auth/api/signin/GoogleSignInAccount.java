@@ -13,10 +13,10 @@ import n6.l;
 import o6.a;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import w7.d0;
+import w7.g0;
 import z5.d;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInAccount extends a implements ReflectedParcelable {
@@ -35,7 +35,7 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
     public final String w;
     public final HashSet x = new HashSet();
 
-    public GoogleSignInAccount(int i10, String str, String str2, String str3, String str4, Uri uri, String str5, long j3, String str6, ArrayList arrayList, String str7, String str8) {
+    public GoogleSignInAccount(int i10, String str, String str2, String str3, String str4, Uri uri, String str5, long j10, String str6, ArrayList arrayList, String str7, String str8) {
         this.a = i10;
         this.b = str;
         this.c = str2;
@@ -43,7 +43,7 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         this.e = str4;
         this.f = uri;
         this.h = str5;
-        this.n = j3;
+        this.n = j10;
         this.r = str6;
         this.s = arrayList;
         this.v = str7;
@@ -107,21 +107,21 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.s(parcel, 1, 4);
+        int q6 = g0.q(parcel, 20293);
+        g0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        d0.l(parcel, 2, this.b);
-        d0.l(parcel, 3, this.c);
-        d0.l(parcel, 4, this.d);
-        d0.l(parcel, 5, this.e);
-        d0.k(parcel, 6, this.f, i10);
-        d0.l(parcel, 7, this.h);
-        d0.s(parcel, 8, 8);
+        g0.l(parcel, 2, this.b);
+        g0.l(parcel, 3, this.c);
+        g0.l(parcel, 4, this.d);
+        g0.l(parcel, 5, this.e);
+        g0.k(parcel, 6, this.f, i10);
+        g0.l(parcel, 7, this.h);
+        g0.s(parcel, 8, 8);
         parcel.writeLong(this.n);
-        d0.l(parcel, 9, this.r);
-        d0.p(parcel, 10, this.s);
-        d0.l(parcel, 11, this.v);
-        d0.l(parcel, 12, this.w);
-        d0.r(parcel, q6);
+        g0.l(parcel, 9, this.r);
+        g0.p(parcel, 10, this.s);
+        g0.l(parcel, 11, this.v);
+        g0.l(parcel, 12, this.w);
+        g0.r(parcel, q6);
     }
 }

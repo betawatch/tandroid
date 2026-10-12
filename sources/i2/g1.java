@@ -1,184 +1,133 @@
 package i2;
 
-import android.os.Handler;
-import android.os.Looper;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.IdentityHashMap;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArrayList;
+import android.util.Pair;
+import fi.l3;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g1 {
-    public final j2.k a;
-    public final p0 e;
-    public final j2.f h;
-    public final e2.z i;
-    public boolean k;
-    public g2.c0 l;
-    public u2.g1 j = new u2.e1();
-    public final IdentityHashMap c = new IdentityHashMap();
-    public final HashMap d = new HashMap();
-    public final ArrayList b = new ArrayList();
-    public final HashMap f = new HashMap();
-    public final HashSet g = new HashSet();
+public final class g1 implements u2.k0, n2.l {
+    public final i1 a;
+    public final /* synthetic */ j1 b;
 
-    public g1(p0 p0Var, j2.f fVar, e2.z zVar, j2.k kVar) {
-        this.a = kVar;
-        this.e = p0Var;
-        this.h = fVar;
-        this.i = zVar;
+    public g1(j1 j1Var, i1 i1Var) {
+        this.b = j1Var;
+        this.a = i1Var;
     }
 
-    public final b2.k1 a(int i10, ArrayList arrayList, u2.g1 g1Var) {
-        if (!arrayList.isEmpty()) {
-            this.j = g1Var;
-            for (int i11 = i10; i11 < arrayList.size() + i10; i11++) {
-                f1 f1Var = (f1) arrayList.get(i11 - i10);
-                ArrayList arrayList2 = this.b;
-                if (i11 > 0) {
-                    f1 f1Var2 = (f1) arrayList2.get(i11 - 1);
-                    f1Var.d = f1Var2.a.o.e.o() + f1Var2.d;
-                    f1Var.e = false;
-                    f1Var.c.clear();
-                } else {
-                    f1Var.d = 0;
-                    f1Var.e = false;
-                    f1Var.c.clear();
+    @Override // n2.l
+    public final void a(int i10, u2.g0 g0Var, int i11) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new ah.o(this, l4, i11, 13));
+        }
+    }
+
+    @Override // n2.l
+    public final void b(int i10, u2.g0 g0Var, Exception exc) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new hg.t(this, l4, exc, 7));
+        }
+    }
+
+    @Override // n2.l
+    public final void c(int i10, u2.g0 g0Var, oa.d dVar) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new hg.t(this, l4, dVar, 6));
+        }
+    }
+
+    @Override // u2.k0
+    public final void d(int i10, u2.g0 g0Var, u2.c0 c0Var) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new c1(this, l4, c0Var, 0));
+        }
+    }
+
+    @Override // u2.k0
+    public final void e(int i10, u2.g0 g0Var, u2.c0 c0Var) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new c1(this, l4, c0Var, 1));
+        }
+    }
+
+    @Override // u2.k0
+    public final void f(int i10, u2.g0 g0Var, u2.u uVar, u2.c0 c0Var) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new d1(this, l4, uVar, c0Var, 1));
+        }
+    }
+
+    @Override // u2.k0
+    public final void g(int i10, u2.g0 g0Var, u2.u uVar, u2.c0 c0Var, IOException iOException, boolean z10) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new f1(this, l4, uVar, c0Var, iOException, z10, 0));
+        }
+    }
+
+    @Override // n2.l
+    public final void h(int i10, u2.g0 g0Var) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new e1(this, l4, 0));
+        }
+    }
+
+    @Override // u2.k0
+    public final void i(int i10, u2.g0 g0Var, u2.u uVar, u2.c0 c0Var, int i11) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new l3(this, l4, uVar, c0Var, i11, 4));
+        }
+    }
+
+    @Override // n2.l
+    public final void j(int i10, u2.g0 g0Var) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new e1(this, l4, 1));
+        }
+    }
+
+    @Override // u2.k0
+    public final void k(int i10, u2.g0 g0Var, u2.u uVar, u2.c0 c0Var) {
+        Pair l4 = l(i10, g0Var);
+        if (l4 != null) {
+            this.b.i.d(new d1(this, l4, uVar, c0Var, 0));
+        }
+    }
+
+    public final Pair l(int i10, u2.g0 g0Var) {
+        u2.g0 g0Var2;
+        i1 i1Var = this.a;
+        u2.g0 g0Var3 = null;
+        if (g0Var != null) {
+            int i11 = 0;
+            while (true) {
+                if (i11 >= i1Var.c.size()) {
+                    g0Var2 = null;
+                    break;
                 }
-                int o9 = f1Var.a.o.e.o();
-                for (int i12 = i11; i12 < arrayList2.size(); i12++) {
-                    ((f1) arrayList2.get(i12)).d += o9;
+                if (((u2.g0) i1Var.c.get(i11)).d == g0Var.d) {
+                    Object obj = g0Var.a;
+                    Object obj2 = i1Var.b;
+                    int i12 = a.g;
+                    g0Var2 = g0Var.a(Pair.create(obj2, obj));
+                    break;
                 }
-                arrayList2.add(i11, f1Var);
-                this.d.put(f1Var.b, f1Var);
-                if (this.k) {
-                    e(f1Var);
-                    if (this.c.isEmpty()) {
-                        this.g.add(f1Var);
-                    } else {
-                        e1 e1Var = (e1) this.f.get(f1Var);
-                        if (e1Var != null) {
-                            e1Var.a.d(e1Var.b);
-                        }
-                    }
-                }
+                i11++;
             }
-        }
-        return b();
-    }
-
-    public final b2.k1 b() {
-        ArrayList arrayList = this.b;
-        if (arrayList.isEmpty()) {
-            return b2.k1.a;
-        }
-        int i10 = 0;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            f1 f1Var = (f1) arrayList.get(i11);
-            f1Var.d = i10;
-            i10 += f1Var.a.o.e.o();
-        }
-        return new m1(arrayList, this.j);
-    }
-
-    public final void c() {
-        Iterator it = this.g.iterator();
-        while (it.hasNext()) {
-            f1 f1Var = (f1) it.next();
-            if (f1Var.c.isEmpty()) {
-                e1 e1Var = (e1) this.f.get(f1Var);
-                if (e1Var != null) {
-                    e1Var.a.d(e1Var.b);
-                }
-                it.remove();
+            if (g0Var2 == null) {
+                return null;
             }
+            g0Var3 = g0Var2;
         }
-    }
-
-    public final void d(f1 f1Var) {
-        if (f1Var.e && f1Var.c.isEmpty()) {
-            e1 e1Var = (e1) this.f.remove(f1Var);
-            e1Var.getClass();
-            d1 d1Var = e1Var.c;
-            u2.a aVar = e1Var.a;
-            aVar.p(e1Var.b);
-            aVar.s(d1Var);
-            aVar.r(d1Var);
-            this.g.remove(f1Var);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v0, types: [i2.y0, u2.g0] */
-    public final void e(f1 f1Var) {
-        u2.a0 a0Var = f1Var.a;
-        ?? r12 = new u2.g0() { // from class: i2.y0
-            @Override // u2.g0
-            public final void a(u2.a aVar, b2.k1 k1Var) {
-                e2.z zVar = g1.this.e.n;
-                zVar.d(2);
-                zVar.e(22);
-            }
-        };
-        d1 d1Var = new d1(this, f1Var);
-        this.f.put(f1Var, new e1(a0Var, r12, d1Var));
-        String str = e2.d0.a;
-        Looper myLooper = Looper.myLooper();
-        if (myLooper == null) {
-            myLooper = Looper.getMainLooper();
-        }
-        Handler handler = new Handler(myLooper, null);
-        a0Var.getClass();
-        a5.a aVar = a0Var.c;
-        aVar.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) aVar.d;
-        u2.i0 i0Var = new u2.i0();
-        i0Var.a = handler;
-        i0Var.b = d1Var;
-        copyOnWriteArrayList.add(i0Var);
-        Looper myLooper2 = Looper.myLooper();
-        if (myLooper2 == null) {
-            myLooper2 = Looper.getMainLooper();
-        }
-        Handler handler2 = new Handler(myLooper2, null);
-        n2.j jVar = a0Var.d;
-        jVar.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList2 = jVar.c;
-        n2.i iVar = new n2.i();
-        iVar.a = handler2;
-        iVar.b = d1Var;
-        copyOnWriteArrayList2.add(iVar);
-        a0Var.l(r12, this.l, this.a);
-    }
-
-    public final void f(u2.d0 d0Var) {
-        IdentityHashMap identityHashMap = this.c;
-        f1 f1Var = (f1) identityHashMap.remove(d0Var);
-        f1Var.getClass();
-        f1Var.a.o(d0Var);
-        f1Var.c.remove(((u2.x) d0Var).a);
-        if (!identityHashMap.isEmpty()) {
-            c();
-        }
-        d(f1Var);
-    }
-
-    public final void g(int i10, int i11) {
-        for (int i12 = i11 - 1; i12 >= i10; i12--) {
-            ArrayList arrayList = this.b;
-            f1 f1Var = (f1) arrayList.remove(i12);
-            this.d.remove(f1Var.b);
-            int i13 = -f1Var.a.o.e.o();
-            for (int i14 = i12; i14 < arrayList.size(); i14++) {
-                ((f1) arrayList.get(i14)).d += i13;
-            }
-            f1Var.e = true;
-            if (this.k) {
-                d(f1Var);
-            }
-        }
+        return Pair.create(Integer.valueOf(i10 + i1Var.d), g0Var3);
     }
 }

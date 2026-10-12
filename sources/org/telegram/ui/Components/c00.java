@@ -1,168 +1,179 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c00 extends FrameLayout {
-    public static final /* synthetic */ int h = 0;
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final TextView b;
-    public final View c;
-    public final fk0 d;
-    public boolean e;
-    public int f;
+public final class c00 extends View {
+    public final Paint a;
+    public final Paint b;
+    public final Path c;
+    public int d;
+    public int e;
+    public h11[] f;
+    public RectF[] h;
+    public float n;
+    public org.telegram.ui.ep0 r;
+    public int s;
 
-    public c00(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public c00(Context context) {
         super(context);
-        this.a = e6Var;
-        View radialProgressView = new RadialProgressView(context, null);
-        addView(radialProgressView, w7.x5.d(-2.0f, -2));
-        this.c = radialProgressView;
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        linearLayout.setGravity(1);
-        linearLayout.setClipChildren(false);
-        linearLayout.setClipToPadding(false);
-        linearLayout.setOrientation(1);
-        fk0 fk0Var = new fk0(context);
-        this.d = fk0Var;
-        fk0Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        fk0Var.setImportantForAccessibility(2);
-        fk0Var.setVisibility(8);
-        linearLayout.addView(fk0Var, w7.x5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 20.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.c7, e6Var));
-        textView.setGravity(1);
-        textView.setText(LocaleController.getString(R.string.NoResult));
-        linearLayout.addView(textView, w7.x5.q(-2, -2, 17));
-        addView(linearLayout, w7.x5.d(-2.0f, -2));
-        AndroidUtilities.updateViewVisibilityAnimated(textView, false, 2.0f, false);
-        AndroidUtilities.updateViewVisibilityAnimated(radialProgressView, false, 1.0f, false);
-        setOnTouchListener(new bi.d(18));
+        this.a = new Paint(1);
+        this.b = new Paint(1);
+        this.c = new Path();
+        this.d = -1;
+        this.e = -1;
+        this.s = -1;
     }
 
-    public final void a(int i10, int i11, int i12) {
-        int i13 = i10 != 0 ? 0 : 8;
-        fk0 fk0Var = this.d;
-        fk0Var.setVisibility(i13);
-        if (i10 != 0) {
-            fk0Var.f(i10, i11, i12, null);
-            fk0Var.d();
+    public final void a(float f7, int i10, int i11, Canvas canvas) {
+        h11[] h11VarArr = this.f;
+        int length = h11VarArr.length;
+        int i12 = 0;
+        float f10 = f7;
+        while (i12 < length) {
+            h11 h11Var = h11VarArr[i12];
+            int i13 = i11;
+            h11Var.c(f10, i10 / 2.0f, 1.0f, i13, canvas);
+            f10 += h11Var.l() + AndroidUtilities.dp(24.0f);
+            i12++;
+            i11 = i13;
         }
-    }
-
-    public final void b() {
-        AndroidUtilities.updateViewVisibilityAnimated(this.b, false, 0.9f, true);
-        AndroidUtilities.updateViewVisibilityAnimated(this.c, true, 1.0f, true);
-    }
-
-    public final void c() {
-        AndroidUtilities.updateViewVisibilityAnimated(this.b, true, 0.9f, true);
-        AndroidUtilities.updateViewVisibilityAnimated(this.c, false, 1.0f, true);
     }
 
     @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int measuredHeight;
-        int paddingTop;
-        this.e = true;
-        int i14 = i12 - i10;
-        int i15 = i13 - i11;
-        int childCount = getChildCount();
-        for (int i16 = 0; i16 < childCount; i16++) {
-            View childAt = getChildAt(i16);
-            if (childAt.getVisibility() != 8) {
-                int measuredWidth = (i14 - childAt.getMeasuredWidth()) / 2;
-                View view = this.c;
-                if (childAt == view && (view instanceof j10)) {
-                    measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
-                    paddingTop = getPaddingTop();
-                } else {
-                    int i17 = this.f;
-                    if (i17 == 2) {
-                        measuredHeight = (AndroidUtilities.dp(100.0f) - childAt.getMeasuredHeight()) / 2;
-                        paddingTop = getPaddingTop();
-                    } else if (i17 == 1) {
-                        measuredHeight = ((i15 / 2) - childAt.getMeasuredHeight()) / 2;
-                        paddingTop = getPaddingTop();
-                    } else {
-                        measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
-                        paddingTop = getPaddingTop();
-                    }
-                }
-                int i18 = paddingTop + measuredHeight;
-                childAt.layout(measuredWidth, i18, childAt.getMeasuredWidth() + measuredWidth, childAt.getMeasuredHeight() + i18);
-            }
-        }
-        this.e = false;
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.e) {
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.f == null) {
             return;
         }
-        super.requestLayout();
-    }
-
-    public void setProgressBarColor(int i10) {
-        View view = this.c;
-        if (view instanceof RadialProgressView) {
-            ((RadialProgressView) view).setProgressColor(i10);
+        int width = getWidth();
+        int height = getHeight();
+        float f7 = 4.0f;
+        int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.yh.y(24.0f, this.f.length, AndroidUtilities.dp(4.0f));
+        int i10 = 0;
+        while (true) {
+            h11[] h11VarArr = this.f;
+            if (i10 >= h11VarArr.length) {
+                break;
+            }
+            dp = (int) (h11VarArr[i10].l() + dp);
+            i10++;
         }
+        float dp2 = (height - AndroidUtilities.dp(36.0f)) / 2.0f;
+        float dp3 = (AndroidUtilities.dp(36.0f) + height) / 2.0f;
+        float f10 = (width - dp) / 2.0f;
+        float dp4 = AndroidUtilities.dp(16.0f) + f10;
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(f10, dp2, dp + f10, dp3);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.a);
+        float dp5 = f10 + AndroidUtilities.dp(16.0f);
+        int i11 = 0;
+        while (i11 < this.f.length) {
+            this.h[i11].set(dp5 - AndroidUtilities.dp(16.0f), dp2, this.f[i11].l() + dp5 + AndroidUtilities.dp(16.0f), dp3);
+            dp5 += this.f[i11].l() + AndroidUtilities.dp(24.0f);
+            i11++;
+            f7 = f7;
+        }
+        AndroidUtilities.dp(f7);
+        int clamp = Utilities.clamp((int) Math.floor(this.n), this.f.length - 1, 0);
+        int clamp2 = Utilities.clamp((int) Math.ceil(this.n), this.f.length - 1, 0);
+        float dp6 = this.h[clamp].left + AndroidUtilities.dp(r16);
+        float dp7 = this.h[clamp2].left + AndroidUtilities.dp(r16);
+        float f11 = this.n;
+        float lerp = AndroidUtilities.lerp(dp6, dp7, (float) (f11 - Math.floor(f11)));
+        float dp8 = this.h[clamp].right - AndroidUtilities.dp(r16);
+        float dp9 = this.h[clamp2].right - AndroidUtilities.dp(r16);
+        float f12 = this.n;
+        float lerp2 = AndroidUtilities.lerp(dp8, dp9, (float) (f12 - Math.floor(f12)));
+        RectF rectF2 = AndroidUtilities.rectTmp;
+        rectF2.set(lerp, (height - AndroidUtilities.dp(28.0f)) / 2.0f, lerp2, (AndroidUtilities.dp(28.0f) + height) / 2.0f);
+        Path path = this.c;
+        path.rewind();
+        path.addRoundRect(rectF2, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), Path.Direction.CW);
+        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), this.b);
+        a(dp4, height, this.d, canvas);
+        canvas.save();
+        canvas.clipPath(path);
+        a(dp4, height, this.e, canvas);
+        canvas.restore();
     }
 
-    public void setShowAtCenter(boolean z10) {
-        this.f = z10 ? 1 : 0;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i10 = 0;
+        if (this.f == null || this.h == null) {
+            return false;
+        }
+        while (true) {
+            RectF[] rectFArr = this.h;
+            if (i10 >= rectFArr.length) {
+                i10 = -1;
+                break;
+            }
+            if (rectFArr[i10].contains(motionEvent.getX(), motionEvent.getY())) {
+                break;
+            }
+            i10++;
+        }
+        if (i10 >= 0 && i10 != this.s) {
+            this.s = i10;
+            org.telegram.ui.ep0 ep0Var = this.r;
+            if (ep0Var != null) {
+                ep0Var.run(Integer.valueOf(i10));
+            }
+        }
+        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            this.s = -1;
+        }
+        if (motionEvent.getAction() != 0 || i10 < 0) {
+            return super.onTouchEvent(motionEvent);
+        }
+        return true;
     }
 
-    public void setShowAtTop(boolean z10) {
-        this.f = z10 ? 2 : 0;
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        this.a.setColor(i10);
+        invalidate();
     }
 
-    public void setText(String str) {
-        this.b.setText(str);
+    public void setSelected(float f7) {
+        if (Math.abs(f7 - this.n) > 0.001f) {
+            invalidate();
+        }
+        this.n = f7;
+    }
+
+    public void setSelectedColor(int i10) {
+        this.b.setColor(i10);
+        invalidate();
+    }
+
+    public void setSelectedTextColor(int i10) {
+        this.e = i10;
+        invalidate();
+    }
+
+    public void setTabs(CharSequence... charSequenceArr) {
+        this.f = new h11[charSequenceArr.length];
+        this.h = new RectF[charSequenceArr.length];
+        for (int i10 = 0; i10 < charSequenceArr.length; i10++) {
+            this.f[i10] = new h11(charSequenceArr[i10], 14.0f, AndroidUtilities.bold());
+            this.h[i10] = new RectF();
+        }
+        invalidate();
     }
 
     public void setTextColor(int i10) {
-        this.b.setTextColor(i10);
-    }
-
-    public void setTextSize(int i10) {
-        this.b.setTextSize(1, i10);
-    }
-
-    public void setTopImage(int i10) {
-        TextView textView = this.b;
-        if (i10 == 0) {
-            textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
-            return;
-        }
-        Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
-        if (mutate != null) {
-            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.c7, this.a), PorterDuff.Mode.MULTIPLY));
-        }
-        textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
-        textView.setCompoundDrawablePadding(AndroidUtilities.dp(1.0f));
+        this.d = i10;
+        invalidate();
     }
 }

@@ -150,10 +150,10 @@ public final class e extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.Collection
     public final j$.util.Spliterator spliterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
-        long j3 = concurrentHashMap.j();
+        long j10 = concurrentHashMap.j();
         l[] lVarArr = concurrentHashMap.a;
         int length = lVarArr == null ? 0 : lVarArr.length;
-        return new f(lVarArr, length, 0, length, j3 >= 0 ? j3 : 0L, concurrentHashMap);
+        return new f(lVarArr, length, 0, length, j10 >= 0 ? j10 : 0L, concurrentHashMap);
     }
 
     @Override // java.lang.Iterable, j$.util.Collection

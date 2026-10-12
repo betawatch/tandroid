@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h extends w {
     private static final h DEFAULT_INSTANCE;
@@ -32,7 +32,7 @@ public final class h extends w {
         y yVar = hVar.strings_;
         if (!((androidx.datastore.preferences.protobuf.b) yVar).a) {
             int size = yVar.size();
-            hVar.strings_ = yVar.d(size == 0 ? 10 : size * 2);
+            hVar.strings_ = yVar.b(size == 0 ? 10 : size * 2);
         }
         List list = hVar.strings_;
         Charset charset = z.a;
@@ -53,10 +53,10 @@ public final class h extends w {
             }
             return;
         }
-        List h = ((e0) set).h();
+        List g10 = ((e0) set).g();
         e0 e0Var = (e0) list;
         int size4 = list.size();
-        for (Object obj2 : h) {
+        for (Object obj2 : g10) {
             if (obj2 == null) {
                 String str2 = "Element at index " + (e0Var.size() - size4) + " is null.";
                 for (int size5 = e0Var.size() - 1; size5 >= size4; size5--) {
@@ -65,7 +65,7 @@ public final class h extends w {
                 throw new NullPointerException(str2);
             }
             if (obj2 instanceof androidx.datastore.preferences.protobuf.g) {
-                e0Var.g((androidx.datastore.preferences.protobuf.g) obj2);
+                e0Var.e((androidx.datastore.preferences.protobuf.g) obj2);
             } else {
                 e0Var.add((String) obj2);
             }

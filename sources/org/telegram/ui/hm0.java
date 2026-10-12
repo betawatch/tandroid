@@ -1,180 +1,82 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.StaticLayout;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.content.Intent;
+import android.net.Uri;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class hm0 extends FrameLayout {
+public final /* synthetic */ class hm0 implements org.telegram.ui.ActionBar.z1, eu, hn0 {
     public final /* synthetic */ int a;
-    public Object b;
-    public float c;
-    public final /* synthetic */ KeyEvent.Callback d;
+    public final /* synthetic */ un0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hm0(Context context, EditTextBoldCursor editTextBoldCursor, int i10) {
-        super(context);
+    public /* synthetic */ hm0(un0 un0Var, int i10) {
         this.a = i10;
-        this.d = editTextBoldCursor;
+        this.b = un0Var;
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    @Override // org.telegram.ui.eu
+    public void a1(au auVar) {
         switch (this.a) {
-            case 0:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
-                break;
-            case 1:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
-                break;
             case 2:
-                if (((StaticLayout) this.b) != null) {
-                    canvas.save();
-                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
-                    ((StaticLayout) this.b).draw(canvas);
-                    canvas.restore();
-                    break;
-                }
+                un0 un0Var = this.b;
+                un0Var.Y[5].setText(auVar.a);
+                un0Var.s = auVar.d;
                 break;
             default:
-                super.onDraw(canvas);
+                un0 un0Var2 = this.b;
+                un0Var2.Y[0].setText(auVar.a);
+                if (un0Var2.U0.indexOf(auVar.a) != -1) {
+                    un0Var2.Z0 = true;
+                    String str = (String) un0Var2.V0.get(auVar.a);
+                    un0Var2.Y[1].setText(str);
+                    String str2 = (String) un0Var2.X0.get(str);
+                    un0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
+                    un0Var2.Z0 = false;
+                }
+                AndroidUtilities.runOnUIThread(new em0(un0Var2, 3), 300L);
+                un0Var2.Y[2].requestFocus();
+                EditTextBoldCursor editTextBoldCursor = un0Var2.Y[2];
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 break;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
             case 0:
-                int size = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
-                StaticLayout errorLayout = ((EditTextBoldCursor) this.d).getErrorLayout(size);
-                this.b = errorLayout;
-                if (errorLayout != null) {
-                    int lineCount = errorLayout.getLineCount();
-                    int i12 = 0;
-                    if (lineCount > 1) {
-                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
-                    }
-                    if (LocaleController.isRTL) {
-                        float f7 = 0.0f;
-                        while (true) {
-                            if (i12 < lineCount) {
-                                if (((StaticLayout) this.b).getLineLeft(i12) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f7 = Math.max(f7, ((StaticLayout) this.b).getLineWidth(i12));
-                                    if (i12 == lineCount - 1) {
-                                        this.c = size - f7;
-                                    }
-                                    i12++;
-                                }
-                            }
-                        }
-                    }
+                un0 un0Var = this.b;
+                un0Var.getClass();
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    un0Var.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
                 }
-                super.onMeasure(i10, i11);
-                break;
             case 1:
-                int size2 = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
-                StaticLayout errorLayout2 = ((EditTextBoldCursor) this.d).getErrorLayout(size2);
-                this.b = errorLayout2;
-                if (errorLayout2 != null) {
-                    int lineCount2 = errorLayout2.getLineCount();
-                    int i13 = 0;
-                    if (lineCount2 > 1) {
-                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount2 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
-                    }
-                    if (LocaleController.isRTL) {
-                        float f10 = 0.0f;
-                        while (true) {
-                            if (i13 < lineCount2) {
-                                if (((StaticLayout) this.b).getLineLeft(i13) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f10 = Math.max(f10, ((StaticLayout) this.b).getLineWidth(i13));
-                                    if (i13 == lineCount2 - 1) {
-                                        this.c = size2 - f10;
-                                    }
-                                    i13++;
-                                }
-                            }
-                        }
-                    }
-                }
-                super.onMeasure(i10, i11);
+                this.b.finishFragment();
                 break;
             case 2:
-                int size3 = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
-                StaticLayout errorLayout3 = ((EditTextBoldCursor) this.d).getErrorLayout(size3);
-                this.b = errorLayout3;
-                if (errorLayout3 != null) {
-                    int lineCount3 = errorLayout3.getLineCount();
-                    int i14 = 0;
-                    if (lineCount3 > 1) {
-                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount3 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
-                    }
-                    if (LocaleController.isRTL) {
-                        float f11 = 0.0f;
-                        while (true) {
-                            if (i14 < lineCount3) {
-                                if (((StaticLayout) this.b).getLineLeft(i14) != 0.0f) {
-                                    this.c = 0.0f;
-                                } else {
-                                    f11 = Math.max(f11, ((StaticLayout) this.b).getLineWidth(i14));
-                                    if (i14 == lineCount3 - 1) {
-                                        this.c = size3 - f11;
-                                    }
-                                    i14++;
-                                }
-                            }
-                        }
-                    }
-                }
-                super.onMeasure(i10, i11);
-                break;
+            case 3:
             default:
-                super.onMeasure(i10, i11);
-                org.telegram.ui.Components.fk0 fk0Var = ((org.telegram.ui.Components.oj0) this.d).h;
-                float measuredHeight = (r0.f / 768.0f) * ((hg.l) this.b).getMeasuredHeight();
-                if (this.c != measuredHeight) {
-                    this.c = measuredHeight;
-                    ViewGroup.LayoutParams layoutParams = fk0Var.getLayoutParams();
-                    int i15 = (int) measuredHeight;
-                    fk0Var.getLayoutParams().width = i15;
-                    layoutParams.height = i15;
-                    super.onMeasure(i10, i11);
-                    break;
-                }
+                un0.a0(this.b);
+                break;
+            case 4:
+                pf.d.s(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hm0(org.telegram.ui.Components.oj0 oj0Var, Context context, hg.l lVar) {
-        super(context);
-        this.a = 3;
-        this.d = oj0Var;
-        this.b = lVar;
+    @Override // org.telegram.ui.hn0
+    public void o(String str, String str2) {
+        this.b.w1();
     }
 }

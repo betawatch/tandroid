@@ -1,43 +1,73 @@
 package ji;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import org.telegram.ui.Cells.h0;
-import org.telegram.ui.Cells.za;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.h80;
+import org.telegram.ui.Components.m80;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class h implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ n c;
-    public final /* synthetic */ View d;
+    public final /* synthetic */ m80 b;
 
-    public /* synthetic */ h(n nVar, View view, float f7, int i10) {
+    public /* synthetic */ h(m80 m80Var, int i10) {
         this.a = i10;
-        this.c = nVar;
-        this.d = view;
-        this.b = f7;
+        this.b = m80Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n nVar = this.c;
-                float measuredHeight = ((nVar.G.getMeasuredHeight() - nVar.F.s9) - r2.Ba) / 2.0f;
-                h0 h0Var = (h0) this.d;
-                float measuredHeight2 = (measuredHeight - (h0Var.getMeasuredHeight() / 2.0f)) + nVar.F.s9;
-                h0Var.setTranslationY(((((float) h0Var.getTop()) > measuredHeight2 ? measuredHeight2 - h0Var.getTop() : 0.0f) * floatValue) + ((1.0f - floatValue) * this.b));
+                this.b.s();
+                break;
+            case 1:
+                this.b.s();
+                break;
+            case 2:
+                this.b.s();
+                break;
+            case 3:
+                h80 h80Var = this.b.m;
+                if (h80Var != null) {
+                    AndroidUtilities.hideKeyboard(h80Var.getContentView());
+                    break;
+                }
+                break;
+            case 4:
+                h80 h80Var2 = this.b.m;
+                if (h80Var2 != null) {
+                    AndroidUtilities.hideKeyboard(h80Var2.getContentView());
+                    break;
+                }
+                break;
+            case 5:
+                h80 h80Var3 = this.b.m;
+                if (h80Var3 != null) {
+                    AndroidUtilities.hideKeyboard(h80Var3.getContentView());
+                    break;
+                }
+                break;
+            case 6:
+                h80 h80Var4 = this.b.m;
+                if (h80Var4 != null) {
+                    AndroidUtilities.hideKeyboard(h80Var4.getContentView());
+                    break;
+                }
+                break;
+            case 7:
+                h80 h80Var5 = this.b.m;
+                if (h80Var5 != null) {
+                    AndroidUtilities.hideKeyboard(h80Var5.getContentView());
+                    break;
+                }
                 break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n nVar2 = this.c;
-                float measuredHeight3 = ((nVar2.G.getMeasuredHeight() - nVar2.F.s9) - r2.Ba) / 2.0f;
-                za zaVar = (za) this.d;
-                float measuredHeight4 = (measuredHeight3 - (zaVar.getMeasuredHeight() / 2.0f)) + nVar2.F.s9;
-                zaVar.setTranslationY(((((float) zaVar.getTop()) > measuredHeight4 ? measuredHeight4 - zaVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
+                h80 h80Var6 = this.b.m;
+                if (h80Var6 != null) {
+                    AndroidUtilities.hideKeyboard(h80Var6.getContentView());
+                    break;
+                }
                 break;
         }
     }

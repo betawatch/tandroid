@@ -1,143 +1,127 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.R;
 import java.util.ArrayList;
-import java.util.Random;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.ea0;
-import org.telegram.ui.Components.j10;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class c1 {
-    public static boolean a(MessageObject messageObject) {
-        return messageObject != null && messageObject.getDialogId() == UserObject.REPLY_BOT;
+public final /* synthetic */ class c1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u1 b;
+
+    public /* synthetic */ c1(int i10, u1 u1Var) {
+        this.a = i10;
+        this.b = u1Var;
     }
 
-    public static int b(float f7, int i10, TextView textView) {
-        textView.setText(LocaleController.getString(i10));
-        return AndroidUtilities.dp(f7);
-    }
-
-    public static int c(int i10, int i11, Drawable drawable) {
-        return i11 - (drawable.getIntrinsicHeight() / i10);
-    }
-
-    public static int d(Random random, int i10) {
-        return Math.abs(random.nextInt() % i10);
-    }
-
-    public static int e(j10 j10Var, int i10) {
-        return j10Var.c(j10Var.getMeasuredWidth()) + i10;
-    }
-
-    public static Bundle f(int i10, String str) {
-        Bundle bundle = new Bundle();
-        bundle.putInt(str, i10);
-        return bundle;
-    }
-
-    public static TextView g(FrameLayout frameLayout, TextView textView, FrameLayout.LayoutParams layoutParams, Context context) {
-        frameLayout.addView(textView, layoutParams);
-        return new TextView(context);
-    }
-
-    public static String h(long j3, String str, String str2) {
-        return str + j3 + str2;
-    }
-
-    public static String i(String str, String str2, String str3, String str4, String str5) {
-        return str + str2 + str3 + str4 + str5;
-    }
-
-    public static o1.l j(float f7, float f10, float f11) {
-        o1.l lVar = new o1.l(f7);
-        lVar.b(f10);
-        lVar.a(f11);
-        return lVar;
-    }
-
-    public static void k(int i10, int i11, ArrayList arrayList, ArrayList arrayList2) {
-        arrayList.add(Integer.valueOf(i10));
-        arrayList2.add(Integer.valueOf(i11));
-    }
-
-    public static void l(int i10, String str, StringBuilder sb2) {
-        sb2.append(LocaleController.getString(i10));
-        sb2.append(str);
-    }
-
-    public static void m(int i10, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(Integer.valueOf(i10));
-        arrayList2.add(num);
-    }
-
-    public static void n(int i10, org.telegram.ui.ActionBar.e6 e6Var, TextView textView, int i11, float f7) {
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(i10, e6Var));
-        textView.setTextSize(i11, f7);
-        textView.setTypeface(AndroidUtilities.bold());
-    }
-
-    public static void o(int i10, ea0 ea0Var) {
-        ea0Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(i10)));
-    }
-
-    public static void p(FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, TLRPC.TL_error tL_error, boolean z10) {
-        new ad(frameLayout, e6Var).f0(tL_error, z10);
-    }
-
-    public static void q(String str, int i10, ArrayList arrayList) {
-        arrayList.add(new s6(str, i10));
-    }
-
-    public static /* synthetic */ boolean r(TLRPC.TL_game tL_game) {
-        return tL_game != null;
-    }
-
-    public static int s(int i10, int i11, Drawable drawable) {
-        return i11 - (drawable.getIntrinsicWidth() / i10);
-    }
-
-    public static void t(int i10, int i11, ArrayList arrayList, ArrayList arrayList2) {
-        arrayList.add(LocaleController.getString(i10));
-        arrayList2.add(Integer.valueOf(i11));
-    }
-
-    public static void u(int i10, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(LocaleController.getString(i10));
-        arrayList2.add(num);
-    }
-
-    public static int v(int i10, int i11, Drawable drawable) {
-        return (drawable.getIntrinsicHeight() / i10) + i11;
-    }
-
-    public static int w(int i10, int i11, Drawable drawable) {
-        return (drawable.getIntrinsicWidth() / i10) + i11;
-    }
-
-    public static /* synthetic */ String x(int i10) {
-        if (i10 == 1) {
-            return "PAID";
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b3();
+                break;
+            case 1:
+                u1 u1Var = this.b;
+                l1 l1Var = u1Var.Jc;
+                if (l1Var != null) {
+                    l1Var.r(u1Var);
+                    break;
+                }
+                break;
+            case 2:
+                this.b.H3();
+                break;
+            case 3:
+                u1 u1Var2 = this.b;
+                ji.w4 w4Var = u1Var2.w;
+                w4Var.G(u1Var2.Qd);
+                w4Var.G(u1Var2.Rd);
+                u1Var2.H3();
+                MessageObject messageObject = u1Var2.y7;
+                if (messageObject != null) {
+                    messageObject.generateLayout(null);
+                    MessageObject messageObject2 = u1Var2.y7;
+                    if (messageObject2.caption != null) {
+                        messageObject2.caption = null;
+                        messageObject2.generateCaption();
+                    }
+                    l1 l1Var2 = u1Var2.Jc;
+                    if (l1Var2 != null) {
+                        l1Var2.T(u1Var2);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                u1 u1Var3 = this.b;
+                if (u1Var3.Q9 && !u1Var3.R9 && u1Var3.S9) {
+                    u1Var3.R9 = true;
+                    u1Var3.zc.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
+                    break;
+                }
+                break;
+            case 5:
+                u1 u1Var4 = this.b;
+                u1Var4.zc.setState(new int[0]);
+                u1Var4.invalidate();
+                break;
+            case 6:
+                u1 u1Var5 = this.b;
+                u1Var5.zc.setState(new int[0]);
+                u1Var5.invalidate();
+                break;
+            case 7:
+                u1 u1Var6 = this.b;
+                int i10 = 0;
+                u1Var6.x7 = false;
+                u1Var6.getMessageObject().isSpoilersRevealed = true;
+                MessageObject.TextLayoutBlocks textLayoutBlocks = u1Var6.h4;
+                if (textLayoutBlocks != null) {
+                    ArrayList<MessageObject.TextLayoutBlock> arrayList = textLayoutBlocks.textLayoutBlocks;
+                    int size = arrayList.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        MessageObject.TextLayoutBlock textLayoutBlock = arrayList.get(i11);
+                        i11++;
+                        textLayoutBlock.spoilers.clear();
+                    }
+                }
+                MessageObject.TextLayoutBlocks textLayoutBlocks2 = u1Var6.c4;
+                if (textLayoutBlocks2 != null) {
+                    ArrayList<MessageObject.TextLayoutBlock> arrayList2 = textLayoutBlocks2.textLayoutBlocks;
+                    int size2 = arrayList2.size();
+                    while (i10 < size2) {
+                        MessageObject.TextLayoutBlock textLayoutBlock2 = arrayList2.get(i10);
+                        i10++;
+                        textLayoutBlock2.spoilers.clear();
+                    }
+                } else {
+                    ArrayList<MessageObject.TextLayoutBlock> arrayList3 = u1Var6.y7.textLayoutBlocks;
+                    if (arrayList3 != null) {
+                        int size3 = arrayList3.size();
+                        while (i10 < size3) {
+                            MessageObject.TextLayoutBlock textLayoutBlock3 = arrayList3.get(i10);
+                            i10++;
+                            textLayoutBlock3.spoilers.clear();
+                        }
+                    }
+                }
+                u1Var6.invalidate();
+                break;
+            case 8:
+                u1 u1Var7 = this.b;
+                u1Var7.getMessageObject().replyMessageObject.isSpoilersRevealed = true;
+                u1Var7.Ld.clear();
+                u1Var7.invalidate();
+                break;
+            case 9:
+                u1 u1Var8 = this.b;
+                u1Var8.post(new c1(7, u1Var8));
+                break;
+            default:
+                this.b.a3();
+                break;
         }
-        if (i10 == 2) {
-            return "CANCELLED";
-        }
-        if (i10 == 3) {
-            return "PENDING";
-        }
-        if (i10 == 4) {
-            return "FAILED";
-        }
-        throw null;
     }
 }

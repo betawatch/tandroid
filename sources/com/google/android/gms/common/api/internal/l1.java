@@ -1,21 +1,20 @@
 package com.google.android.gms.common.api.internal;
 
-import ai.r4;
 import android.app.AlertDialog;
-import v7.h5;
+import v7.i5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class l1 extends h5 {
+public final class l1 extends i5 {
     public final /* synthetic */ AlertDialog a;
-    public final /* synthetic */ r4 b;
+    public final /* synthetic */ androidx.activity.i b;
 
-    public l1(r4 r4Var, AlertDialog alertDialog) {
-        this.b = r4Var;
+    public l1(androidx.activity.i iVar, AlertDialog alertDialog) {
+        this.b = iVar;
         this.a = alertDialog;
     }
 
-    @Override // v7.h5
+    @Override // v7.i5
     public final void a() {
         throw null;
     }

@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.PeerConnection;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class RtcCertificatePem {
     private static final long DEFAULT_EXPIRY = 2592000;
@@ -18,7 +18,7 @@ public class RtcCertificatePem {
         return nativeGenerateCertificate(PeerConnection.KeyType.ECDSA, DEFAULT_EXPIRY);
     }
 
-    private static native RtcCertificatePem nativeGenerateCertificate(PeerConnection.KeyType keyType, long j3);
+    private static native RtcCertificatePem nativeGenerateCertificate(PeerConnection.KeyType keyType, long j10);
 
     public String getCertificate() {
         return this.certificate;
@@ -32,11 +32,11 @@ public class RtcCertificatePem {
         return nativeGenerateCertificate(keyType, DEFAULT_EXPIRY);
     }
 
-    public static RtcCertificatePem generateCertificate(long j3) {
-        return nativeGenerateCertificate(PeerConnection.KeyType.ECDSA, j3);
+    public static RtcCertificatePem generateCertificate(long j10) {
+        return nativeGenerateCertificate(PeerConnection.KeyType.ECDSA, j10);
     }
 
-    public static RtcCertificatePem generateCertificate(PeerConnection.KeyType keyType, long j3) {
-        return nativeGenerateCertificate(keyType, j3);
+    public static RtcCertificatePem generateCertificate(PeerConnection.KeyType keyType, long j10) {
+        return nativeGenerateCertificate(keyType, j10);
     }
 }

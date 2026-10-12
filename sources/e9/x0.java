@@ -1,54 +1,36 @@
 package e9;
 
-import java.io.Serializable;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class x0 extends y0 implements Serializable {
-    public static final x0 b = new x0(0);
-    public static final x0 c = new x0(1);
-    public final /* synthetic */ int a;
-
-    public /* synthetic */ x0(int i10) {
-        this.a = i10;
+public final class x0 extends g0 {
+    @Override // e9.h0
+    public final /* bridge */ /* synthetic */ h0 a(Object obj) {
+        f(obj);
+        return this;
     }
 
-    @Override // e9.y0
-    public final y0 a() {
-        switch (this.a) {
-            case 0:
-                return c;
-            default:
-                return b;
-        }
+    public final void f(Object obj) {
+        obj.getClass();
+        c(obj);
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                Comparable comparable = (Comparable) obj;
-                Comparable comparable2 = (Comparable) obj2;
-                comparable.getClass();
-                comparable2.getClass();
-                return comparable.compareTo(comparable2);
-            default:
-                Comparable comparable3 = (Comparable) obj;
-                Comparable comparable4 = (Comparable) obj2;
-                comparable3.getClass();
-                if (comparable3 == comparable4) {
-                    return 0;
-                }
-                return comparable4.compareTo(comparable3);
+    public final y0 g() {
+        int i10 = this.b;
+        if (i10 == 0) {
+            int i11 = y0.c;
+            return e2.s;
         }
-    }
-
-    public final String toString() {
-        switch (this.a) {
-            case 0:
-                return "Ordering.natural()";
-            default:
-                return "Ordering.natural().reverse()";
+        if (i10 != 1) {
+            y0 t10 = y0.t(i10, this.a);
+            this.b = t10.size();
+            this.c = true;
+            return t10;
         }
+        Object obj = this.a[0];
+        Objects.requireNonNull(obj);
+        int i12 = y0.c;
+        return new k2(obj);
     }
 }

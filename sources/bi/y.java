@@ -1,50 +1,21 @@
 package bi;
 
-import ai.o6;
-import ai.y1;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.eb;
-import org.telegram.ui.Components.pm0;
-import org.telegram.ui.Components.qm0;
+import android.content.Context;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class y extends eb {
-    public final int X;
-    public final CharSequence Y;
-    public c71 Z;
+public final class y extends zh.e8 {
+    public final /* synthetic */ Utilities.Callback[] m0;
 
-    public y(n2 n2Var, String str, y1 y1Var) {
-        super(n2Var, true, false, n2Var.getResourceProvider());
-        new FrameLayout(getContext());
-        new ImageView(getContext());
-        this.X = n2Var.getCurrentAccount();
-        this.Y = str;
-        O();
-        this.v = 0.6f;
-        this.y = true;
-        this.E = true;
-        fixNavigationBar();
-        L();
-        qm0 qm0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        qm0Var.setPadding(i10, 0, i10, 0);
-        this.d.setOnItemClickListener(new o6(1, this, y1Var));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y(Context context, b bVar, Utilities.Callback[] callbackArr) {
+        super(context, bVar);
+        this.m0 = callbackArr;
     }
 
-    @Override // org.telegram.ui.Components.eb
-    public final CharSequence B() {
-        return this.Y;
-    }
-
-    @Override // org.telegram.ui.Components.eb
-    public final pm0 x(qm0 qm0Var) {
-        c71 c71Var = new c71(qm0Var, getContext(), this.X, 0, false, new v(this, 0), this.resourcesProvider);
-        this.Z = c71Var;
-        c71Var.r = false;
-        return c71Var;
+    @Override // zh.e8
+    public final void e(int i10) {
+        this.m0[0].run(Integer.valueOf(i10));
     }
 }

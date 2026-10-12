@@ -1,46 +1,21 @@
 package r2;
 
-import android.media.MediaCodec;
-import android.media.MediaFormat;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.Surface;
-import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public interface m {
-    void a(long j3, int i10, int i11, int i12);
+    void b(long j10, int i10, int i11, int i12);
 
-    void b(int i10, h2.d dVar, long j3, int i11);
-
-    void c(int i10);
-
-    void d(a3.m mVar, Handler handler);
-
-    void e();
-
-    void f(int i10, long j3);
+    void e(int i10, h2.d dVar, long j10, int i11);
 
     void flush();
 
-    int g();
-
-    ByteBuffer getInputBuffer(int i10);
-
-    ByteBuffer getOutputBuffer(int i10);
-
-    MediaFormat getOutputFormat();
-
-    int h(MediaCodec.BufferInfo bufferInfo);
-
-    void i(int i10);
-
-    void j(Surface surface);
-
-    boolean k(l2.f fVar);
-
-    void release();
+    void r0();
 
     void setParameters(Bundle bundle);
+
+    void shutdown();
+
+    void start();
 }

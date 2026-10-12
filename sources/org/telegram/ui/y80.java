@@ -1,45 +1,60 @@
 package org.telegram.ui;
 
-import java.util.HashMap;
+import android.content.SharedPreferences;
+import android.os.StatFs;
+import java.io.File;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y80 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class y80 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ HashMap c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ y80(int i10, HashMap hashMap, boolean z10, boolean z11, int i11) {
+    public /* synthetic */ y80(LaunchActivity launchActivity, int i10, int i11) {
         this.a = i11;
-        this.b = i10;
-        this.c = hashMap;
-        this.d = z10;
-        this.e = z11;
+        this.b = launchActivity;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        int i11 = this.a;
-        boolean z10 = this.e;
-        boolean z11 = this.d;
-        HashMap<String, ContactsController.Contact> hashMap = this.c;
-        int i12 = this.b;
-        switch (i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        File directory;
+        int i10 = this.a;
+        int i11 = this.c;
+        LaunchActivity launchActivity = this.b;
+        switch (i10) {
             case 0:
                 Pattern pattern = LaunchActivity.B1;
-                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, true);
-                break;
-            case 1:
-                Pattern pattern2 = LaunchActivity.B1;
-                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, false);
+                if (UserConfig.getInstance(launchActivity.O).isClientActivated()) {
+                    try {
+                        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+                        if ((((i11 == 2 || i11 == 1) && Math.abs(launchActivity.w1 - System.currentTimeMillis()) > 240000) || Math.abs(globalMainSettings.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (directory = FileLoader.getDirectory(4)) != null) {
+                            StatFs statFs = new StatFs(directory.getAbsolutePath());
+                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
+                            if (i11 > 0 || availableBlocksLong < 52428800) {
+                                if (i11 > 0) {
+                                    launchActivity.w1 = System.currentTimeMillis();
+                                }
+                                globalMainSettings.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
+                                AndroidUtilities.runOnUIThread(new k90(launchActivity, 6));
+                                break;
+                            }
+                        }
+                    } catch (Throwable unused) {
+                        return;
+                    }
+                }
                 break;
             default:
-                Pattern pattern3 = LaunchActivity.B1;
-                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, true);
+                Pattern pattern2 = LaunchActivity.B1;
+                ConnectionsManager.getInstance(launchActivity.O).cancelRequest(i11, true);
                 break;
         }
     }

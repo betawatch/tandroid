@@ -1,264 +1,299 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
+import android.content.res.Resources;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.Region;
 import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class er extends ReplacementSpan {
-    public static final int ALIGN_BASELINE = 1;
-    public static final int ALIGN_CENTER = 2;
-    public static final int ALIGN_DEFAULT = 0;
-    private float alpha;
-    private Runnable checkColorDelegate;
-    int colorKey;
-    public boolean draw;
-    public Drawable drawable;
-    int drawableColor;
-    private Paint.FontMetricsInt fontMetrics;
-    private boolean isRelativeSize;
-    private int overrideColor;
-    public boolean recolorDrawable;
-    public float rotate;
-    private float scaleX;
-    private float scaleY;
-    private int size;
-    private int sizeWidth;
-    public float spaceScaleX;
-    private int topOffset;
-    public float translateX;
-    public float translateY;
-    public boolean useLinkPaintColor;
-    boolean usePaintColor;
-    private final int verticalAlignment;
+public abstract class er extends Drawable {
+    public final /* synthetic */ int a;
+    public Object b;
 
-    public er(int i10) {
-        this(i10, 0);
+    public /* synthetic */ er() {
+        this.a = 1;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0065  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x005d  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x003d  */
-    @Override // android.text.style.ReplacementSpan
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        boolean z10;
-        int i15;
-        if (this.draw) {
-            Runnable runnable = this.checkColorDelegate;
-            if (runnable != null) {
-                runnable.run();
-            } else if (this.recolorDrawable) {
-                int i16 = this.overrideColor;
-                if (i16 == 0) {
-                    if (this.useLinkPaintColor && (paint instanceof TextPaint)) {
-                        i16 = ((TextPaint) paint).linkColor;
-                    } else {
-                        if (this.usePaintColor) {
-                            i16 = paint.getColor();
-                            z10 = true;
-                            if (this.drawableColor != i16) {
-                                this.drawableColor = i16;
-                                this.drawable.setColorFilter(new PorterDuffColorFilter(this.drawableColor, PorterDuff.Mode.SRC_IN));
-                            }
-                            canvas.save();
-                            Drawable drawable = this.drawable;
-                            int i17 = i14 - (drawable != null ? drawable.getBounds().bottom : i14);
-                            i15 = this.verticalAlignment;
-                            if (i15 != 1) {
-                                if (i15 == 2) {
-                                    int z11 = hg.c.z(i14, i12, 2, i12);
-                                    Drawable drawable2 = this.drawable;
-                                    i17 = z11 - (drawable2 != null ? drawable2.getBounds().height() / 2 : 0);
-                                } else if (i15 == 0) {
-                                    int i18 = i14 - i12;
-                                    int i19 = this.size;
-                                    if (i19 == 0) {
-                                        i19 = this.drawable.getIntrinsicHeight();
-                                    }
-                                    i17 = hg.c.z(i18, i19, 2, i12) + AndroidUtilities.dp(this.topOffset);
-                                }
-                            }
-                            canvas.translate(f7 + this.translateX, i17 + this.translateY);
-                            if (this.drawable != null) {
-                                float f10 = this.scaleX;
-                                if (f10 != 1.0f || this.scaleY != 1.0f) {
-                                    canvas.scale(f10, this.scaleY, 0.0f, r5.getBounds().centerY());
-                                }
-                                float f11 = this.rotate;
-                                if (f11 != 1.0f) {
-                                    canvas.rotate(f11, this.drawable.getBounds().centerX(), this.drawable.getBounds().centerY());
-                                }
-                                if (z10) {
-                                    this.drawable.setAlpha((int) ((paint.getAlpha() / Color.alpha(this.drawableColor)) * this.alpha * 255.0f));
-                                } else {
-                                    this.drawable.setAlpha((int) (paint.getAlpha() * this.alpha));
-                                }
-                                this.drawable.draw(canvas);
-                            }
-                            canvas.restore();
-                        }
-                        i16 = org.telegram.ui.ActionBar.i6.x0(null, this.colorKey, false);
-                    }
+    @Override // android.graphics.drawable.Drawable
+    public void applyTheme(Resources.Theme theme) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.applyTheme(theme);
+                    break;
                 }
-                z10 = false;
-                if (this.drawableColor != i16) {
+                break;
+            default:
+                super.applyTheme(theme);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void clearColorFilter() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    super.clearColorFilter();
+                    break;
+                } else {
+                    drawable.clearColorFilter();
+                    break;
                 }
-                canvas.save();
-                Drawable drawable3 = this.drawable;
-                int i172 = i14 - (drawable3 != null ? drawable3.getBounds().bottom : i14);
-                i15 = this.verticalAlignment;
-                if (i15 != 1) {
+            default:
+                super.clearColorFilter();
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public Drawable getCurrent() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
                 }
-                canvas.translate(f7 + this.translateX, i172 + this.translateY);
-                if (this.drawable != null) {
+        }
+        return super.getCurrent();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getMinimumHeight() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
                 }
-                canvas.restore();
-            }
-            z10 = false;
-            canvas.save();
-            Drawable drawable32 = this.drawable;
-            int i1722 = i14 - (drawable32 != null ? drawable32.getBounds().bottom : i14);
-            i15 = this.verticalAlignment;
-            if (i15 != 1) {
-            }
-            canvas.translate(f7 + this.translateX, i1722 + this.translateY);
-            if (this.drawable != null) {
-            }
-            canvas.restore();
+        }
+        return super.getMinimumHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getMinimumWidth() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getMinimumWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public boolean getPadding(Rect rect) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getPadding(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int[] getState() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getState();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public Region getTransparentRegion() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.getTransparentRegion();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void jumpToCurrentState() {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.jumpToCurrentState();
+                    break;
+                }
+                break;
+            default:
+                super.jumpToCurrentState();
+                break;
         }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        if (!this.isRelativeSize || this.fontMetrics == null) {
-            if (this.sizeWidth != 0) {
-                return (int) (Math.abs(this.scaleX) * this.sizeWidth);
+    @Override // android.graphics.drawable.Drawable
+    public boolean onLevelChange(int i10) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.onLevelChange(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setAlpha(int i10) {
+        ((Paint) this.b).setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setChangingConfigurations(int i10) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    super.setChangingConfigurations(i10);
+                    break;
+                } else {
+                    drawable.setChangingConfigurations(i10);
+                    break;
+                }
+            default:
+                super.setChangingConfigurations(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(int i10, PorterDuff.Mode mode) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    super.setColorFilter(i10, mode);
+                    break;
+                } else {
+                    drawable.setColorFilter(i10, mode);
+                    break;
+                }
+            default:
+                super.setColorFilter(i10, mode);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setFilterBitmap(boolean z10) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.setFilterBitmap(z10);
+                    break;
+                }
+                break;
+            default:
+                super.setFilterBitmap(z10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setHotspot(float f7, float f10) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.setHotspot(f7, f10);
+                    break;
+                }
+                break;
+            default:
+                super.setHotspot(f7, f10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setHotspotBounds(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable != null) {
+                    drawable.setHotspotBounds(i10, i11, i12, i13);
+                    break;
+                }
+                break;
+            default:
+                super.setHotspotBounds(i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public boolean setState(int[] iArr) {
+        switch (this.a) {
+            case 1:
+                Drawable drawable = (Drawable) this.b;
+                if (drawable == null) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.setState(iArr);
+    }
+
+    public er(View view) {
+        this.a = 0;
+        this.b = new Paint(1);
+        if (view != null) {
+            view.addOnAttachStateChangeListener(new bi.j2(this, 7));
+            if (view.isAttachedToWindow()) {
+                view.post(new kq(this, 1));
             }
-            float abs = Math.abs(this.spaceScaleX) * Math.abs(this.scaleX);
-            int i12 = this.size;
-            if (i12 == 0) {
-                i12 = this.drawable.getIntrinsicWidth();
-            }
-            return (int) (abs * i12);
-        }
-        if (fontMetricsInt == null) {
-            fontMetricsInt = new Paint.FontMetricsInt();
-        }
-        Paint.FontMetricsInt fontMetricsInt2 = this.fontMetrics;
-        fontMetricsInt.ascent = fontMetricsInt2.ascent;
-        fontMetricsInt.descent = fontMetricsInt2.descent;
-        fontMetricsInt.top = fontMetricsInt2.top;
-        fontMetricsInt.bottom = fontMetricsInt2.bottom;
-        return (int) (Math.abs(this.spaceScaleX) * Math.abs(this.scaleX) * this.size);
-    }
-
-    public void rotate(float f7) {
-        this.rotate = f7;
-    }
-
-    public void setAlpha(float f7) {
-        this.alpha = f7;
-    }
-
-    public void setCheckColorDelegate(Runnable runnable) {
-        this.checkColorDelegate = runnable;
-    }
-
-    public er setColorKey(int i10) {
-        this.colorKey = i10;
-        this.usePaintColor = i10 < 0;
-        return this;
-    }
-
-    public er setOverrideColor(int i10) {
-        this.overrideColor = i10;
-        return this;
-    }
-
-    public void setRelativeSize(Paint.FontMetricsInt fontMetricsInt) {
-        this.isRelativeSize = true;
-        this.fontMetrics = fontMetricsInt;
-        if (fontMetricsInt != null) {
-            setSize(Math.abs(this.fontMetrics.ascent) + Math.abs(fontMetricsInt.descent));
-            if (this.size == 0) {
-                setSize(AndroidUtilities.dp(20.0f));
-            }
         }
     }
 
-    public er setScale(float f7) {
-        this.scaleX = f7;
-        return this;
+    @Override // android.graphics.drawable.Drawable
+    public void setColorFilter(ColorFilter colorFilter) {
+        ((Paint) this.b).setColorFilter(colorFilter);
     }
 
-    public void setSize(int i10) {
-        this.size = i10;
-        this.drawable.setBounds(0, 0, i10, i10);
+    public void a() {
     }
 
-    public void setTopOffset(int i10) {
-        this.topOffset = i10;
-    }
-
-    public void setTranslateX(float f7) {
-        this.translateX = f7;
-    }
-
-    public void setTranslateY(float f7) {
-        this.translateY = f7;
-    }
-
-    public void setWidth(int i10) {
-        this.sizeWidth = i10;
-    }
-
-    public er translate(float f7, float f10) {
-        this.translateX = f7;
-        this.translateY = f10;
-        return this;
-    }
-
-    public er(Drawable drawable) {
-        this(0, drawable);
-    }
-
-    public er setScale(float f7, float f10) {
-        this.scaleX = f7;
-        this.scaleY = f10;
-        return this;
-    }
-
-    public er(int i10, int i11) {
-        this(i11, ApplicationLoader.applicationContext.getDrawable(i10).mutate());
-    }
-
-    public er(int i10, Drawable drawable) {
-        this.draw = true;
-        this.recolorDrawable = true;
-        this.usePaintColor = true;
-        this.useLinkPaintColor = false;
-        this.topOffset = 0;
-        this.alpha = 1.0f;
-        this.spaceScaleX = 1.0f;
-        this.scaleX = 1.0f;
-        this.scaleY = 1.0f;
-        this.drawable = drawable;
-        if (drawable != null) {
-            drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-        }
-        this.verticalAlignment = i10;
+    public void b() {
     }
 }

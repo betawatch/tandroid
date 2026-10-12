@@ -1,39 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class yx extends FrameLayout {
-    public final /* synthetic */ a00 a;
+public final class yx extends vz {
+    public final /* synthetic */ wz d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yx(a00 a00Var, Context context) {
-        super(context);
-        this.a = a00Var;
+    public yx(wz wzVar) {
+        super(wzVar, 1);
+        this.d = wzVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        a00 a00Var = this.a;
-        ey eyVar = a00Var.I;
-        zw zwVar = a00Var.V;
-        my myVar = a00Var.P;
-        if (view != myVar && view != zwVar) {
-            return super.drawChild(canvas, view, j3);
+    @Override // org.telegram.ui.Components.vz, s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        if (i10 == 0) {
+            this.d.f0 = false;
         }
-        canvas.save();
-        float y3 = eyVar.getY() + eyVar.getMeasuredHeight() + 1.0f;
-        if (view == myVar && zwVar != null) {
-            y3 = Math.max(y3, zwVar.getY() + zwVar.getMeasuredHeight() + 1.0f);
+        super.a(recyclerView, i10);
+    }
+
+    @Override // org.telegram.ui.Components.vz, s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        bh.f fVar;
+        wz wzVar = this.d;
+        vy vyVar = wzVar.S;
+        vx vxVar = wzVar.Q;
+        wzVar.U(vxVar.I0());
+        if (Build.VERSION.SDK_INT >= 31 && (fVar = wzVar.j2) != null) {
+            fVar.f(i10, i11);
         }
-        canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * a00Var.b.e), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
+        super.b(recyclerView, i10, i11);
+        if (vyVar == null || wzVar.P.getAdapter() != vyVar) {
+            return;
+        }
+        vy vyVar2 = vyVar.x.a;
+        if (vyVar2.F.V.F || vyVar2.E) {
+            return;
+        }
+        if (vxVar.N0() + 20 > vyVar.h()) {
+            uy uyVar = vyVar.x;
+            Objects.requireNonNull(uyVar);
+            AndroidUtilities.runOnUIThread(new dx(uyVar, 1));
+        }
     }
 }

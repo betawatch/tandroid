@@ -2,10 +2,10 @@ package l5;
 
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class n {
-    public static final la.h a;
+    public static final li.k a;
 
     static {
         HashMap hashMap = new HashMap();
@@ -24,6 +24,6 @@ public abstract class n {
         hashMap2.remove(o5.b.class);
         hashMap.put(o5.f.class, f.a);
         hashMap2.remove(o5.f.class);
-        a = new la.h(new HashMap(hashMap), new HashMap(hashMap2), la.g.a, 0);
+        a = new li.k(new HashMap(hashMap), new HashMap(hashMap2), ma.g.a, 5);
     }
 }

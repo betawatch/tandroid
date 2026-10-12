@@ -1,29 +1,28 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ya implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ a0.i c;
+    public final /* synthetic */ TLRPC.TL_help_peerColors c;
 
-    public /* synthetic */ ya(MessagesController messagesController, a0.i iVar, int i10) {
+    public /* synthetic */ ya(MessagesController messagesController, TLRPC.TL_help_peerColors tL_help_peerColors, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = iVar;
+        this.c = tL_help_peerColors;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$409(this.c);
-                break;
-            case 1:
-                this.b.lambda$processUpdateArray$410(this.c);
+                this.b.lambda$checkPeerColors$493(this.c);
                 break;
             default:
-                this.b.lambda$getChannelDifference$339(this.c);
+                this.b.lambda$checkPeerColors$495(this.c);
                 break;
         }
     }

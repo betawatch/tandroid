@@ -9,7 +9,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class m4 extends AbstractExecutorService implements l4, AutoCloseable {
     public final ExecutorService a;
@@ -20,8 +20,8 @@ public class m4 extends AbstractExecutorService implements l4, AutoCloseable {
     }
 
     @Override // java.util.concurrent.ExecutorService
-    public final boolean awaitTermination(long j3, TimeUnit timeUnit) {
-        return this.a.awaitTermination(j3, timeUnit);
+    public final boolean awaitTermination(long j10, TimeUnit timeUnit) {
+        return this.a.awaitTermination(j10, timeUnit);
     }
 
     @Override // java.lang.AutoCloseable
@@ -61,7 +61,7 @@ public class m4 extends AbstractExecutorService implements l4, AutoCloseable {
 
     @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
     public final /* synthetic */ Future submit(Runnable runnable) {
-        return (i9.w) super.submit(runnable);
+        return (j9.y) super.submit(runnable);
     }
 
     public final String toString() {
@@ -75,11 +75,11 @@ public class m4 extends AbstractExecutorService implements l4, AutoCloseable {
 
     @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
     public final /* synthetic */ Future submit(Runnable runnable, Object obj) {
-        return (i9.w) super.submit(runnable, obj);
+        return (j9.y) super.submit(runnable, obj);
     }
 
     @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
     public final /* synthetic */ Future submit(Callable callable) {
-        return (i9.w) super.submit(callable);
+        return (j9.y) super.submit(callable);
     }
 }

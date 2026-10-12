@@ -1,32 +1,86 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class zn0 implements View.OnClickListener {
-    public final /* synthetic */ ao0 a;
+public abstract class zn0 extends FrameLayout {
+    public final View a;
+    public final ImageView b;
+    public final ImageView c;
+    public final di.i2 d;
+    public final di.g2 e;
+    public final org.telegram.ui.ActionBar.c6 f;
 
-    public zn0(ao0 ao0Var) {
-        this.a = ao0Var;
+    public zn0(Context context, float f7, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context);
+        this.f = c6Var;
+        View view = new View(context);
+        this.a = view;
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.O5, c6Var)));
+        addView(view, w7.a6.i(-1.0f, 36.0f, 8388659, f7, 11.0f, f7, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Q5, c6Var), PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.a6.i(36.0f, 36.0f, 8388659, f7 + 2.0f, 11.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.c = imageView2;
+        imageView2.setScaleType(scaleType);
+        di.i2 i2Var = new di.i2(3, this);
+        this.d = i2Var;
+        imageView2.setImageDrawable(i2Var);
+        i2Var.f = AndroidUtilities.dp(7.0f);
+        imageView2.setScaleX(0.1f);
+        imageView2.setScaleY(0.1f);
+        imageView2.setAlpha(0.0f);
+        addView(imageView2, w7.a6.i(36.0f, 36.0f, 8388661, f7, 11.0f, f7, 0.0f));
+        imageView2.setOnClickListener(new z80(this, 11));
+        di.g2 g2Var = new di.g2(this, context, 6);
+        this.e = g2Var;
+        g2Var.setTextSize(1, 16.0f);
+        g2Var.setHintTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.P5, c6Var));
+        g2Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.R5, c6Var));
+        g2Var.setBackgroundDrawable(null);
+        g2Var.setPadding(0, 0, 0, 0);
+        g2Var.setMaxLines(1);
+        g2Var.setLines(1);
+        g2Var.setSingleLine(true);
+        g2Var.setGravity(w7.a6.y() | 16);
+        g2Var.setImeOptions(268435459);
+        g2Var.setCursorColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Mh, c6Var));
+        g2Var.setCursorSize(AndroidUtilities.dp(20.0f));
+        g2Var.setCursorWidth(1.5f);
+        float f10 = f7 + 2.0f;
+        addView(g2Var, w7.a6.i(-1.0f, 40.0f, 8388659, f10 + 38.0f, 9.0f, f10 + 30.0f, 0.0f));
+        g2Var.addTextChangedListener(new di.h2(this, 11));
+        g2Var.setOnEditorActionListener(new e1(this, 6));
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        bo0 bo0Var = this.a.c;
-        for (int i10 = 0; i10 < bo0Var.e.size(); i10++) {
-            MessageObject messageObject = (MessageObject) bo0Var.e.get(i10);
-            if (bo0Var.H) {
-                AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().cancelLoadFile(messageObject.getDocument());
-            } else {
-                AccountInstance.getInstance(UserConfig.selectedAccount).getFileLoader().loadFile(messageObject.getDocument(), messageObject, 0, 0);
-                DownloadController.getInstance(bo0Var.d).updateFilesLoadingPriority();
-            }
-        }
-        bo0Var.d(true);
+    public abstract void a(String str);
+
+    public sq getProgressDrawable() {
+        return this.d;
+    }
+
+    public View getSearchBackground() {
+        return this.a;
+    }
+
+    public EditTextBoldCursor getSearchEditText() {
+        return this.e;
+    }
+
+    public void setHint(String str) {
+        this.e.setHint(str);
     }
 }

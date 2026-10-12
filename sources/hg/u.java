@@ -1,100 +1,116 @@
 package hg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import bi.n8;
+import fi.l3;
+import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.j5;
-import w7.x5;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Components.or0;
+import org.telegram.ui.Components.r40;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.g9;
+import org.telegram.ui.ia;
+import org.telegram.ui.ry0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class u extends FrameLayout {
-    public final j5 a;
-    public final vh.n b;
-    public final j5 c;
-    public final e6 d;
-    public boolean e;
-    public TL_account.TL_businessChatLink f;
+public final /* synthetic */ class u implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public u(Context context, e6 e6Var) {
-        super(context);
-        this.d = e6Var;
-        setWillNotDraw(false);
-        ImageView imageView = new ImageView(context);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        imageView.setImageResource(R.drawable.msg_limit_links);
-        imageView.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        imageView.setBackground(i6.K(AndroidUtilities.dp(36.0f), i6.x0(null, i6.Oh, false)));
-        imageView.setOnClickListener(new ai.v0(this, 25));
-        addView(imageView, x5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
-        j5 j5Var = new j5(context);
-        this.a = j5Var;
-        j5Var.setTextSize(15);
-        j5Var.setTextColor(i6.x0(null, i6.G6, false));
-        j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(j5Var, x5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
-        j5 j5Var2 = new j5(context);
-        this.c = j5Var2;
-        j5Var2.setTextSize(14);
-        int i10 = i6.z6;
-        j5Var2.setTextColor(i6.x0(null, i10, false));
-        j5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(j5Var2, x5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
-        vh.n nVar = new vh.n(context);
-        this.b = nVar;
-        nVar.setTextSize(1, 13.0f);
-        nVar.setMaxLines(1);
-        nVar.setEllipsize(TextUtils.TruncateAt.END);
-        nVar.setTextColor(i6.w0(i10, e6Var));
-        nVar.setGravity(LocaleController.isRTL ? 5 : 3);
-        nVar.r = false;
-        nVar.setUseAlphaForEmoji(false);
-        NotificationCenter.listenEmojiLoading(nVar);
-        addView(nVar, x5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
+    public /* synthetic */ u(int i10, HashSet hashSet, m2 m2Var) {
+        this.a = 4;
+        this.b = i10;
+        this.d = hashSet;
+        this.c = m2Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.e) {
-            Paint U0 = i6.U0("paintDivider", this.d);
-            if (U0 == null) {
-                U0 = i6.k0;
-            }
-            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), U0);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                h0 h0Var = (h0) this.d;
+                String str = (String) this.c;
+                h0Var.getClass();
+                AndroidUtilities.runOnUIThread(new n8(h0Var, this.b, tLObject, str, 4));
+                break;
+            case 1:
+                ((VoIPService) this.d).lambda$startConferenceGroupCall$34(this.b, (String) this.c, tLObject, tL_error);
+                break;
+            case 2:
+                ((VoIPService) this.d).lambda$editCallMember$90(this.b, (Runnable) this.c, tLObject, tL_error);
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new n8((g9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new l3(tLObject, this.b, (HashSet) this.d, tL_error, (m2) this.c, 15));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new n8((m2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 19));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new n8((r40) this.d, this.b, tLObject, (String) this.c, 21));
+                break;
+            case 7:
+                AndroidUtilities.runOnUIThread(new n8((or0) this.d, this.b, tLObject, (String) this.c, 23));
+                break;
+            case 8:
+                AndroidUtilities.runOnUIThread(new ry0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
+                break;
+            default:
+                TLRPC.Chat chat = (TLRPC.Chat) this.d;
+                Utilities.Callback callback = (Utilities.Callback) this.c;
+                if (tLObject instanceof Vector) {
+                    Vector vector = (Vector) tLObject;
+                    ArrayList arrayList = new ArrayList();
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i10 = 0; i10 < vector.objects.size(); i10++) {
+                        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) vector.objects.get(i10);
+                        arrayList.add(tL_premiumGiftCodeOption);
+                        String str2 = tL_premiumGiftCodeOption.store_product;
+                        if (str2 != null) {
+                            c5.a aVar = new c5.a();
+                            aVar.c = "inapp";
+                            aVar.b = str2;
+                            arrayList2.add(aVar.a());
+                        }
+                    }
+                    boolean isEmpty = arrayList2.isEmpty();
+                    int i11 = this.b;
+                    if (isEmpty || !ug.s.h()) {
+                        AndroidUtilities.runOnUIThread(new ug.o(chat, i11, arrayList, callback, 0));
+                        break;
+                    } else {
+                        BillingController.getInstance().queryProductDetails(arrayList2, new ia(arrayList, chat, i11, callback, 10));
+                        break;
+                    }
+                }
+                break;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        boolean z11 = LocaleController.isRTL;
-        j5 j5Var = this.c;
-        j5 j5Var2 = this.a;
-        if (z11) {
-            j5Var2.setPadding(j5Var.getTextWidth(), 0, 0, 0);
-        } else {
-            j5Var2.setPadding(0, 0, j5Var.getTextWidth(), 0);
-        }
+    public /* synthetic */ u(Object obj, int i10, Object obj2, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i10;
+        this.c = obj2;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f) + (this.e ? 1 : 0), TLObject.FLAG_30));
+    public /* synthetic */ u(ProfileActivity profileActivity, TLRPC.TL_channels_getParticipants tL_channels_getParticipants, int i10) {
+        this.a = 8;
+        this.d = profileActivity;
+        this.c = tL_channels_getParticipants;
+        this.b = i10;
     }
 }

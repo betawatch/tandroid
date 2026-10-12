@@ -20,7 +20,7 @@ public final class k extends f5 {
     }
 
     @Override // j$.util.stream.f5, j$.util.stream.j5
-    public final void o(long j3) {
+    public final void o(long j10) {
         switch (this.b) {
             case 0:
                 this.c = false;

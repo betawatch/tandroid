@@ -1,16 +1,37 @@
 package e9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.util.Collection;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f0 extends com.google.android.gms.common.api.internal.w {
-    @Override // com.google.android.gms.common.api.internal.w
-    public final com.google.android.gms.common.api.internal.w c(Object obj) {
-        b(obj);
-        return this;
+public abstract class f0 extends q0 {
+    @Override // e9.q0
+    public final i0 d() {
+        throw new AssertionError("should never be called");
     }
 
-    public final a1 i() {
-        this.b = true;
-        return i0.t(this.a, this.c);
+    @Override // e9.q0
+    /* renamed from: e */
+    public final i0 values() {
+        w1 w1Var = ((w1) this).n;
+        y0 y0Var = w1Var.b;
+        if (y0Var != null) {
+            return y0Var;
+        }
+        a2 c10 = w1Var.c();
+        w1Var.b = c10;
+        return c10;
+    }
+
+    @Override // e9.q0, java.util.Map
+    public final Collection values() {
+        w1 w1Var = ((w1) this).n;
+        y0 y0Var = w1Var.b;
+        if (y0Var != null) {
+            return y0Var;
+        }
+        a2 c10 = w1Var.c();
+        w1Var.b = c10;
+        return c10;
     }
 }

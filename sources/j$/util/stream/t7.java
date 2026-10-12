@@ -9,17 +9,17 @@ public final class t7 extends u7 implements j$.util.a1, LongConsumer {
     public long f;
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.k(this, consumer);
+        j$.com.android.tools.r8.a.j(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.B(this, consumer);
+        return j$.com.android.tools.r8.a.A(this, consumer);
     }
 
     @Override // j$.util.stream.x7
@@ -33,8 +33,8 @@ public final class t7 extends u7 implements j$.util.a1, LongConsumer {
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j3) {
-        this.f = j3;
+    public final void accept(long j10) {
+        this.f = j10;
     }
 
     @Override // j$.util.stream.u7

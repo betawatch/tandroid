@@ -1,27 +1,17 @@
 package pg;
 
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class a extends m {
-    @Override // pg.m
-    public final int c() {
-        return -30208;
+public abstract class a {
+    public int a;
+    public boolean b;
+
+    public a(int i10, boolean z10) {
+        this.a = i10;
+        this.b = z10;
     }
 
-    @Override // pg.m
-    public final float d() {
-        return 0.25f;
-    }
-
-    @Override // pg.m
-    public final int e() {
-        return R.raw.photo_arrow;
-    }
-
-    @Override // pg.m
-    public final float j() {
-        return 0.25f;
+    public boolean a(a aVar) {
+        return false;
     }
 }

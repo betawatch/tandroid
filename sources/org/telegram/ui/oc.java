@@ -1,136 +1,20 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class oc extends FrameLayout {
-    public org.telegram.ui.ActionBar.j5 a;
-    public org.telegram.ui.Components.l11 b;
-    public org.telegram.ui.Components.q5 c;
-    public org.telegram.ui.ActionBar.e6 d;
-    public boolean e;
-    public int f;
+public final class oc extends sg.j0 {
+    public final /* synthetic */ int W0;
 
-    public final void a(int i10, int i11, boolean z10) {
-        if (i11 < 0) {
-            b(null);
-        } else if (i11 < 7) {
-            this.f = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.r8[i11], this.d);
-        } else {
-            MessagesController messagesController = MessagesController.getInstance(i10);
-            MessagesController.PeerColors peerColors = z10 ? messagesController.peerColors : messagesController.profilePeerColors;
-            b(peerColors != null ? peerColors.getColor(i11) : null);
-        }
-        invalidate();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oc(hd hdVar, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var, int i12) {
+        super(i10, i11, activity, hdVar, c6Var);
+        this.W0 = i12;
     }
 
-    public final void b(MessagesController.PeerColor peerColor) {
-        org.telegram.ui.ActionBar.e6 e6Var = this.d;
-        if (peerColor != null) {
-            this.f = peerColor.getColor(0, e6Var);
-            return;
-        }
-        int i10 = org.telegram.ui.ActionBar.i6.s8;
-        if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.i6.w0(i10, e6Var)) > 0.8f) {
-            this.f = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.n6, e6Var);
-        } else if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.i6.w0(i10, e6Var)) < 0.2f) {
-            this.f = org.telegram.ui.ActionBar.i6.m1(0.5f, org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.A8, e6Var));
-        } else {
-            this.f = org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.d6, e6Var), org.telegram.ui.ActionBar.i6.m1(0.7f, aq0.w0(org.telegram.ui.ActionBar.i6.w0(i10, e6Var))));
-        }
-    }
-
-    public final void c(long j3, boolean z10, boolean z11) {
-        org.telegram.ui.Components.q5 q5Var = this.c;
-        if (j3 == 0) {
-            q5Var.g(null, z11);
-            if (this.b == null) {
-                this.b = new org.telegram.ui.Components.l11(LocaleController.getString(R.string.ChannelReplyIconOff), 16.0f, null);
-            }
-        } else {
-            q5Var.j(j3, z11);
-            this.b = null;
-        }
-        q5Var.m(z10, z11);
-    }
-
-    public final void d(TLRPC.Document document) {
-        org.telegram.ui.Components.q5 q5Var = this.c;
-        if (document == null) {
-            q5Var.g(null, false);
-            if (this.b == null) {
-                this.b = new org.telegram.ui.Components.l11(LocaleController.getString(R.string.ChannelReplyIconOff), 16.0f, null);
-            }
-        } else {
-            q5Var.i(document, false);
-            this.b = null;
-        }
-        q5Var.m(false, false);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        org.telegram.ui.ActionBar.e6 e6Var = this.d;
-        super.dispatchDraw(canvas);
-        f();
-        org.telegram.ui.Components.q5 q5Var = this.c;
-        q5Var.k(Integer.valueOf(this.f));
-        org.telegram.ui.Components.l11 l11Var = this.b;
-        if (l11Var != null) {
-            canvas2 = canvas;
-            l11Var.c((getMeasuredWidth() - this.b.l()) - AndroidUtilities.dp(19.0f), getMeasuredHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.q6, e6Var), canvas2);
-        } else {
-            canvas2 = canvas;
-            q5Var.draw(canvas2);
-        }
-        if (this.e) {
-            Paint F = e6Var != null ? e6Var.F("paintDivider") : org.telegram.ui.ActionBar.i6.k0;
-            if (F != null) {
-                canvas2.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(23.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(23.0f) : 0), getMeasuredHeight() - 1, F);
-            }
-        }
-    }
-
-    public final void e(int i10) {
-        org.telegram.ui.ActionBar.j5 j5Var = this.a;
-        if (i10 <= 0) {
-            j5Var.i(null);
-        } else {
-            j5Var.i(new jp0(i10, getContext(), this.d, false));
-            j5Var.setDrawablePadding(AndroidUtilities.dp(6.0f));
-        }
-    }
-
-    public final void f() {
-        org.telegram.ui.Components.q5 q5Var = this.c;
-        q5Var.setBounds((getWidth() - q5Var.s) - AndroidUtilities.dp(21.0f), (getHeight() - q5Var.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + q5Var.s) / 2);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.b();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+    @Override // sg.j0
+    public final int p1() {
+        return this.W0;
     }
 }

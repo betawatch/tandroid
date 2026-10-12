@@ -1,22 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.SurfaceTexture;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class e81 extends i2.l {
-    public final /* synthetic */ k81 d;
+public interface e81 {
+    void onError(h81 h81Var, Exception exc);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e81(Context context, k81 k81Var) {
-        super(context);
-        this.d = k81Var;
-    }
+    void onRenderedFirstFrame();
 
-    @Override // i2.l
-    public final k2.d0 a(Context context) {
-        ai.e6 e6Var = new ai.e6(context);
-        e6Var.d = new aa.a(new c2.h[]{new k2.k0(new j81(this.d))});
-        return e6Var.a();
-    }
+    void onRenderedFirstFrame(j2.a aVar);
+
+    void onSeekFinished(j2.a aVar);
+
+    void onSeekStarted(j2.a aVar);
+
+    void onStateChanged(boolean z10, int i10);
+
+    boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture);
+
+    void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture);
+
+    void onVideoSizeChanged(int i10, int i11, int i12, float f7);
 }

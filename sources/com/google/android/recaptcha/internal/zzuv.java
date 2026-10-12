@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 abstract class zzuv {
     private static volatile int zza = 100;
@@ -13,13 +13,13 @@ abstract class zzuv {
 
     public abstract void zzd(Object obj, int i10, int i11);
 
-    public abstract void zze(Object obj, int i10, long j3);
+    public abstract void zze(Object obj, int i10, long j10);
 
     public abstract void zzf(Object obj, int i10, Object obj2);
 
     public abstract void zzg(Object obj, int i10, zzqm zzqmVar);
 
-    public abstract void zzh(Object obj, int i10, long j3);
+    public abstract void zzh(Object obj, int i10, long j10);
 
     public abstract void zzi(Object obj);
 

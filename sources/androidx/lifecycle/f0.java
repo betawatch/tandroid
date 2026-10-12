@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Build;
 import androidx.lifecycle.h0;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class f0 {
     /* JADX WARN: Multi-variable type inference failed */
@@ -14,7 +14,7 @@ public abstract class f0 {
         kotlin.jvm.internal.i.e(event, "event");
         if (activity instanceof t) {
             o m10 = ((t) activity).m();
-            if (e2.t(m10)) {
+            if (k3.s(m10)) {
                 ((v) m10).e(event);
             }
         }

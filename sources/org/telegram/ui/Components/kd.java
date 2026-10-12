@@ -1,112 +1,436 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import java.util.Random;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class kd {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public int g;
-    public float[] k;
-    public float[] l;
-    public float[] m;
-    public float[] n;
-    public float[] o;
-    public float[] p;
-    public float[] q;
-    public float[] r;
-    public float[] s;
-    public float[] t;
-    public float[] u;
-    public float[] v;
-    public float[] w;
-    public int x;
-    public int h = -11318601;
-    public final Paint i = new Paint(1);
-    public final Random j = new Random();
-    public int y = 255;
+public final class kd extends Drawable {
+    public static final id H = new id(0);
+    public int B;
+    public int C;
+    public int D;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public float l;
+    public float m;
+    public float n;
+    public float o;
+    public float p;
+    public final jd q;
+    public final jd r;
+    public float s;
+    public long t;
+    public boolean u;
+    public float v;
+    public float w;
+    public float x;
+    public final float a = AndroidUtilities.dp(18.0f);
+    public final float b = AndroidUtilities.dp(22.0f);
+    public final float c = 2.4f;
+    public final float d = AndroidUtilities.dp(12.0f);
+    public final float e = AndroidUtilities.dp(1.5f);
+    public final float f = 3600.0f;
+    public final float g = 0.25f;
+    public final Path y = new Path();
+    public final float[] z = new float[4];
+    public int A = -1;
+    public float E = 1.0f;
+    public final qg F = new qg(this, 16);
+    public int G = 255;
 
-    public final void a() {
-        int i10 = this.h;
-        Paint paint = this.i;
-        paint.setColor(i10);
-        paint.setAlpha((this.g * this.y) / 255);
+    public kd() {
+        jd jdVar = new jd();
+        this.q = jdVar;
+        jdVar.a = 1.0f;
+        jdVar.b = 0.0f;
+        jdVar.c = AndroidUtilities.dp(0.5f);
+        jdVar.d = AndroidUtilities.dp(8.5f);
+        jdVar.e = 1.0f;
+        jdVar.f = 1.0f;
+        jdVar.g = 61;
+        jd jdVar2 = new jd();
+        this.r = jdVar2;
+        jdVar2.a = 0.82f;
+        jdVar2.b = 0.6f;
+        jdVar2.c = AndroidUtilities.dp(0.0f);
+        jdVar2.d = AndroidUtilities.dp(4.25f);
+        jdVar2.e = 0.55f;
+        jdVar2.f = 0.55f;
+        jdVar2.g = 128;
+        e(0, false);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0029, code lost:
-    
-        if (r3 > 1.0f) goto L4;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10) {
-        float f7 = 0.18f / this.x;
-        float f10 = this.k[i10];
-        Random random = this.j;
-        float nextFloat = ((random.nextFloat() - 0.5f) * 2.0f * 0.35f) + f10;
-        float[] fArr = this.l;
-        float f11 = nextFloat >= 0.0f ? 1.0f : 0.0f;
-        nextFloat = f11;
-        fArr[i10] = nextFloat;
-        float nextFloat2 = ((random.nextFloat() - 0.5f) * 2.0f * f7 * 0.35f) + this.m[i10];
-        float[] fArr2 = this.n;
-        float f12 = -f7;
-        if (nextFloat2 < f12) {
-            f7 = f12;
-        } else if (nextFloat2 <= f7) {
-            f7 = nextFloat2;
-        }
-        fArr2[i10] = f7;
-        this.p[i10] = ((random.nextFloat() * 0.003f) + 0.017f) * this.a;
+    public final void a(float f7, float f10, float f11, float[] fArr) {
+        double d = f11;
+        float cos = (float) Math.cos(d);
+        float sin = (float) Math.sin(d);
+        float f12 = this.j;
+        fArr[0] = (f12 * cos) + f7;
+        fArr[1] = (f12 * sin) + f10;
+        fArr[2] = -sin;
+        fArr[3] = cos;
     }
 
-    public final void c(int i10) {
-        this.x = i10;
-        this.k = new float[i10];
-        this.l = new float[i10];
-        this.m = new float[i10];
-        this.n = new float[i10];
-        this.o = new float[i10];
-        this.p = new float[i10];
-        this.q = new float[i10];
-        this.r = new float[i10];
-        this.s = new float[i10];
-        this.t = new float[i10];
-        this.u = new float[i10];
-        this.v = new float[i10];
-        this.w = new float[i10];
-        for (int i11 = 0; i11 < this.x; i11++) {
-            float[] fArr = this.k;
-            Random random = this.j;
-            fArr[i11] = random.nextFloat();
-            this.m[i11] = (((random.nextFloat() - 0.5f) * 2.0f) * 0.18f) / this.x;
-            b(i11);
-            this.o[i11] = random.nextFloat();
+    public final void b(Canvas canvas, jd jdVar, float f7, float f10, float f11) {
+        int i10;
+        char c10;
+        int i11 = jdVar.x;
+        if (i11 == 0) {
+            return;
         }
-        a();
+        float f12 = jdVar.c;
+        float f13 = jdVar.d - f12;
+        float f14 = this.v;
+        float f15 = (f13 * f14) + f12;
+        float f16 = 1.0f;
+        float f17 = 0.0f;
+        float A = com.google.android.gms.internal.play_billing.k3.A(f14, 1.0f, 0.0f, this.d * jdVar.e);
+        float[] fArr = jdVar.u;
+        float[] fArr2 = jdVar.v;
+        float[] fArr3 = jdVar.w;
+        int i12 = 0;
+        for (int i13 = 0; i13 < i11; i13++) {
+            float interpolation = H.getInterpolation(jdVar.o[i13]);
+            float f18 = 1.0f - interpolation;
+            fArr[i13] = (jdVar.l[i13] * interpolation) + (jdVar.k[i13] * f18);
+            fArr3[i13] = (jdVar.n[i13] * interpolation) + (jdVar.m[i13] * f18);
+        }
+        float f19 = this.g;
+        char c11 = 2;
+        if (f19 > 0.0f) {
+            int i14 = 0;
+            while (i14 < 2) {
+                int i15 = 0;
+                while (i15 < i11) {
+                    float f20 = f16;
+                    int i16 = i15 + 1;
+                    float f21 = (fArr[i15 == 0 ? i11 - 1 : i15 - 1] + fArr[i16 == i11 ? 0 : i16]) * 0.5f;
+                    float f22 = f17;
+                    float f23 = fArr[i15];
+                    fArr2[i15] = com.google.android.gms.internal.play_billing.k3.y(f21, f23, f19, f23);
+                    i15 = i16;
+                    f16 = f20;
+                    f17 = f22;
+                }
+                float f24 = f16;
+                i14++;
+                float[] fArr4 = fArr2;
+                fArr2 = fArr;
+                fArr = fArr4;
+                f16 = f24;
+            }
+        }
+        float f25 = f16;
+        float f26 = f17;
+        int i17 = 0;
+        while (i17 < i11) {
+            float f27 = (i17 / i11) + fArr3[i17];
+            float floor = (f27 - ((float) Math.floor(f27))) * this.p;
+            float f28 = this.m;
+            float[] fArr5 = this.z;
+            if (floor < f28) {
+                fArr5[i12] = (-this.k) + floor;
+                fArr5[1] = -this.i;
+                fArr5[c11] = f25;
+                fArr5[3] = f26;
+                i10 = i12;
+                c10 = c11;
+            } else {
+                float f29 = floor - f28;
+                float f30 = this.o;
+                i10 = i12;
+                float f31 = this.c;
+                if (f29 < f30) {
+                    c10 = c11;
+                    a(this.k, -this.l, (f29 / (f31 * this.j)) - 1.5707964f, fArr5);
+                } else {
+                    c10 = c11;
+                    float f32 = f29 - f30;
+                    float f33 = this.n;
+                    if (f32 < f33) {
+                        fArr5[i10] = this.h;
+                        fArr5[1] = (-this.l) + f32;
+                        fArr5[c10] = f26;
+                        fArr5[3] = f25;
+                    } else {
+                        float f34 = f32 - f33;
+                        if (f34 < f30) {
+                            a(this.k, this.l, f34 / (f31 * this.j), fArr5);
+                        } else {
+                            float f35 = f34 - f30;
+                            if (f35 < f28) {
+                                fArr5[i10] = this.k - f35;
+                                fArr5[1] = this.i;
+                                fArr5[c10] = -1.0f;
+                                fArr5[3] = f26;
+                            } else {
+                                float f36 = f35 - f28;
+                                if (f36 < f30) {
+                                    a(-this.k, this.l, (f36 / (f31 * this.j)) + 1.5707964f, fArr5);
+                                } else {
+                                    float f37 = f36 - f30;
+                                    if (f37 < f33) {
+                                        fArr5[i10] = -this.h;
+                                        fArr5[1] = this.l - f37;
+                                        fArr5[c10] = f26;
+                                        fArr5[3] = -1.0f;
+                                    } else {
+                                        a(-this.k, -this.l, ((f37 - f33) / (f31 * this.j)) + 3.1415927f, fArr5);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            float f38 = fArr5[3];
+            float f39 = -fArr5[c10];
+            float f40 = (fArr[i17] * A) + f15 + f11;
+            jdVar.q[i17] = (f38 * f40) + f7 + fArr5[i10];
+            jdVar.r[i17] = (f39 * f40) + f10 + fArr5[1];
+            jdVar.s[i17] = fArr5[c10];
+            jdVar.t[i17] = fArr5[3];
+            i17++;
+            c11 = c10;
+            i12 = i10;
+        }
+        int i18 = i12;
+        Path path = this.y;
+        path.rewind();
+        path.moveTo(jdVar.q[i18], jdVar.r[i18]);
+        int i19 = i18;
+        while (i19 < i11) {
+            int i20 = i19 + 1;
+            int i21 = i20 < i11 ? i20 : i18;
+            float[] fArr6 = jdVar.q;
+            float f41 = fArr6[i21] - fArr6[i19];
+            float[] fArr7 = jdVar.r;
+            float f42 = fArr7[i21] - fArr7[i19];
+            float sqrt = ((float) Math.sqrt((f42 * f42) + (f41 * f41))) / 3.0f;
+            float[] fArr8 = jdVar.q;
+            float f43 = fArr8[i19];
+            float[] fArr9 = jdVar.s;
+            float f44 = (fArr9[i19] * sqrt) + f43;
+            float[] fArr10 = jdVar.r;
+            float f45 = fArr10[i19];
+            float[] fArr11 = jdVar.t;
+            float f46 = (fArr11[i19] * sqrt) + f45;
+            float f47 = fArr8[i21];
+            float f48 = f47 - (fArr9[i21] * sqrt);
+            float f49 = fArr10[i21];
+            path.cubicTo(f44, f46, f48, f49 - (fArr11[i21] * sqrt), f47, f49);
+            i19 = i20;
+        }
+        path.close();
+        canvas.drawPath(path, jdVar.i);
+    }
+
+    public final float c() {
+        jd jdVar = this.q;
+        float f7 = jdVar.d;
+        float f10 = jdVar.f;
+        float f11 = this.e;
+        float f12 = (f10 * f11) + f7;
+        float f13 = jdVar.e;
+        float f14 = this.d;
+        float f15 = (f13 * f14) + f12;
+        jd jdVar2 = this.r;
+        return Math.max(f15, (f14 * jdVar2.e) + (f11 * jdVar2.f) + jdVar2.d);
     }
 
     public final void d(float f7) {
-        for (int i10 = 0; i10 < this.x; i10++) {
-            float[] fArr = this.o;
-            float f10 = fArr[i10];
-            float f11 = this.p[i10];
-            jd jdVar = ld.H;
-            float f12 = (f11 * f7 * 8.2f) + (0.8f * f11) + f10;
-            fArr[i10] = f12;
-            if (f12 >= 1.0f) {
-                fArr[i10] = 0.0f;
-                this.k[i10] = this.l[i10];
-                this.m[i10] = this.n[i10];
-                b(i10);
-            }
+        this.w = f7;
+        if (LiteMode.isEnabled(512)) {
+            float f10 = this.w - this.v;
+            this.x = f10 / (((f10 > 0.0f ? 400.0f : 500.0f) * 0.55f) + 100.0f);
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        if (bounds.isEmpty() || this.h < 1.0f) {
+            return;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long min = (this.u || this.E < 1.0f) ? Math.min(40L, Math.max(0L, elapsedRealtime - this.t)) : 0L;
+        this.t = elapsedRealtime;
+        boolean isEnabled = LiteMode.isEnabled(512);
+        jd jdVar = this.r;
+        jd jdVar2 = this.q;
+        if (isEnabled && min > 0) {
+            float f7 = this.w;
+            float f10 = this.v;
+            if (f7 != f10) {
+                float f11 = this.x;
+                float f12 = (min * f11) + f10;
+                this.v = f12;
+                if (f11 > 0.0f) {
+                    if (f12 > f7) {
+                        this.v = f7;
+                    }
+                } else if (f12 < f7) {
+                    this.v = f7;
+                }
+            }
+            this.s = a1.g.d(min, this.f, 6.2831855f, this.s);
+            jdVar2.d(this.v);
+            jdVar.d(this.v);
+        }
+        float f13 = this.E;
+        if (f13 < 1.0f && min > 0) {
+            float f14 = (min / 250.0f) + f13;
+            this.E = f14;
+            if (f14 > 1.0f) {
+                this.E = 1.0f;
+            }
+            int d = i0.a.d(this.E, this.C, this.D);
+            this.B = d;
+            jdVar2.h = d;
+            jdVar.h = d;
+            jdVar2.a();
+            jdVar.a();
+        }
+        float exactCenterX = bounds.exactCenterX();
+        float exactCenterY = bounds.exactCenterY();
+        float f15 = 1.0f - (this.v * 0.7f);
+        float f16 = jdVar2.f;
+        float f17 = this.e;
+        float A = com.google.android.gms.internal.play_billing.k3.A((float) Math.sin(this.s), 0.5f, 0.5f, f16 * f17 * f15);
+        float A2 = com.google.android.gms.internal.play_billing.k3.A((float) Math.sin(this.s + jdVar.b), 0.5f, 0.5f, f17 * jdVar.f * f15);
+        b(canvas, this.q, exactCenterX, exactCenterY, A);
+        b(canvas, this.r, exactCenterX, exactCenterY, A2);
+        if (this.E < 1.0f) {
+            invalidateSelf();
+        }
+    }
+
+    public final void e(int i10, boolean z10) {
+        if (i10 != this.A || this.E < 1.0f) {
+            this.A = i10;
+            int x02 = i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.bh, false) : i0.a.d(0.5f, i0.a.d(0.5f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.ih, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.jh, false)), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.kh, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Zg, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.ah, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Xg, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Yg, false));
+            if (z10 && this.B != 0 && LiteMode.isEnabled(512)) {
+                this.C = this.B;
+                this.D = x02;
+                this.E = 0.0f;
+            } else {
+                this.E = 1.0f;
+                this.B = x02;
+                jd jdVar = this.q;
+                jdVar.h = x02;
+                jd jdVar2 = this.r;
+                jdVar2.h = x02;
+                jdVar.a();
+                jdVar2.a();
+            }
+            invalidateSelf();
+        }
+    }
+
+    public final void f(boolean z10) {
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null) {
+            return;
+        }
+        int callState = sharedInstance.getCallState();
+        if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
+            e(2, z10);
+            return;
+        }
+        ChatObject.Call call = sharedInstance.groupCall;
+        if (call == null) {
+            e(sharedInstance.isMicMute() ? 1 : 0, z10);
+            return;
+        }
+        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
+        if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
+            e(sharedInstance.isMicMute() ? 1 : 0, z10);
+        } else {
+            sharedInstance.setMicMute(true, false, false);
+            e(3, z10);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.G;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        if (getBounds().isEmpty()) {
+            return;
+        }
+        float c10 = c() + AndroidUtilities.dp(1.0f);
+        float min = (Math.min(r6.width(), r6.height()) / 2.0f) - AndroidUtilities.dp(2.0f);
+        if (c10 > min) {
+            c10 = Math.max(0.0f, min);
+        }
+        this.h = (r6.width() / 2.0f) - c10;
+        float height = (r6.height() / 2.0f) - c10;
+        this.i = height;
+        float f7 = this.h;
+        if (f7 < 1.0f || height < 1.0f) {
+            return;
+        }
+        float min2 = Math.min(this.a, Math.min(f7, height));
+        this.j = min2;
+        float f10 = this.h - min2;
+        this.k = f10;
+        float f11 = this.i - min2;
+        this.l = f11;
+        float f12 = f10 * 2.0f;
+        this.m = f12;
+        float f13 = f11 * 2.0f;
+        this.n = f13;
+        float f14 = this.c * 1.5707964f * min2;
+        this.o = f14;
+        float f15 = (f13 * 2.0f) + (f12 * 2.0f);
+        this.p = (f14 * 4.0f) + f15;
+        int max = Math.max(12, Math.min(80, Math.round(((min2 * 6.2831855f) + f15) / this.b)));
+        jd jdVar = this.q;
+        if (max != jdVar.x) {
+            jdVar.c(max);
+            this.r.c(max);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        if (this.G != i10) {
+            this.G = i10;
+            jd jdVar = this.q;
+            jdVar.y = i10;
+            jdVar.a();
+            jd jdVar2 = this.r;
+            jdVar2.y = i10;
+            jdVar2.a();
+            invalidateSelf();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.q.i.setColorFilter(colorFilter);
+        this.r.i.setColorFilter(colorFilter);
+        invalidateSelf();
     }
 }

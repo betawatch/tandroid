@@ -1,67 +1,126 @@
 package k1;
 
-import v7.a8;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class n extends ld.j implements sd.p {
+public final class n extends md.i implements td.p {
     public final /* synthetic */ int a;
-    public /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public int b;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ z d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n(Object obj, jd.c cVar, int i10) {
+    public /* synthetic */ n(z zVar, kd.c cVar, int i10) {
         super(2, cVar);
         this.a = i10;
-        this.c = obj;
+        this.d = zVar;
     }
 
-    @Override // ld.a
-    public final jd.c create(Object obj, jd.c cVar) {
+    @Override // md.a
+    public final kd.c create(Object obj, kd.c cVar) {
         switch (this.a) {
             case 0:
-                n nVar = new n((b0) this.c, cVar, 0);
-                nVar.b = obj;
+                n nVar = new n(this.d, cVar, 0);
+                nVar.c = obj;
                 return nVar;
             default:
-                n nVar2 = new n((String) this.c, cVar, 1);
-                nVar2.b = obj;
+                n nVar2 = new n(this.d, cVar, 1);
+                nVar2.c = obj;
                 return nVar2;
         }
     }
 
-    @Override // sd.p
+    @Override // td.p
     public final Object invoke(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                return ((n) create((b0) obj, (jd.c) obj2)).invokeSuspend(hd.i.a);
+                return ((n) create((k) obj, (kd.c) obj2)).invokeSuspend(id.i.a);
             default:
-                n nVar = (n) create((n1.b) obj, (jd.c) obj2);
-                hd.i iVar = hd.i.a;
-                nVar.invokeSuspend(iVar);
-                return iVar;
+                return ((n) create((ee.c) obj, (kd.c) obj2)).invokeSuspend(id.i.a);
         }
     }
 
-    @Override // ld.a
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x009c, code lost:
+    
+        if (r8 == r0) goto L43;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00ab, code lost:
+    
+        if (r8 == r0) goto L43;
+     */
+    @Override // md.a
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object invokeSuspend(Object obj) {
-        int i10 = this.a;
-        Object obj2 = this.c;
-        switch (i10) {
+        Object obj2;
+        switch (this.a) {
             case 0:
-                kd.a aVar = kd.a.a;
-                a8.b(obj);
-                b0 b0Var = (b0) obj2;
-                return Boolean.valueOf(((b0Var instanceof b) || (b0Var instanceof g) || ((b0) this.b) != b0Var) ? false : true);
+                ld.a aVar = ld.a.a;
+                int i10 = this.b;
+                id.i iVar = id.i.a;
+                if (i10 == 0) {
+                    i8.b(obj);
+                    k kVar = (k) this.c;
+                    boolean z10 = kVar instanceof i;
+                    z zVar = this.d;
+                    if (z10) {
+                        i iVar2 = (i) kVar;
+                        this.b = 1;
+                        a0 a0Var = (a0) zVar.f.c();
+                        if (!(a0Var instanceof b)) {
+                            if (a0Var instanceof h) {
+                                if (a0Var == iVar2.a) {
+                                    obj2 = zVar.f(this);
+                                    break;
+                                }
+                            } else if (kotlin.jvm.internal.i.a(a0Var, b0.a)) {
+                                obj2 = zVar.f(this);
+                                break;
+                            } else if (a0Var instanceof g) {
+                                throw new IllegalStateException("Can't read in final state.");
+                            }
+                        }
+                        obj2 = iVar;
+                        if (obj2 == aVar) {
+                            return aVar;
+                        }
+                    } else if (kVar instanceof j) {
+                        this.b = 2;
+                        if (z.b(zVar, (j) kVar, this) == aVar) {
+                            return aVar;
+                        }
+                    }
+                } else {
+                    if (i10 != 1 && i10 != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    i8.b(obj);
+                }
+                return iVar;
             default:
-                kd.a aVar2 = kd.a.a;
-                a8.b(obj);
-                n1.b bVar = (n1.b) this.b;
-                bVar.getClass();
-                n1.d key = za.w.a;
-                kotlin.jvm.internal.i.e(key, "key");
-                bVar.b(key, (String) obj2);
-                return hd.i.a;
+                z zVar2 = this.d;
+                ee.n nVar = zVar2.f;
+                ld.a aVar2 = ld.a.a;
+                int i11 = this.b;
+                if (i11 != 0) {
+                    if (i11 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    i8.b(obj);
+                    return id.i.a;
+                }
+                i8.b(obj);
+                ee.c cVar = (ee.c) this.c;
+                a0 a0Var2 = (a0) nVar.c();
+                if (!(a0Var2 instanceof b)) {
+                    zVar2.n.o(new i(a0Var2));
+                }
+                ab.b0 b0Var = new ab.b0(a0Var2, null, 1);
+                this.b = 1;
+                nVar.g(new ee.i(new kotlin.jvm.internal.n(), new ab.a0(cVar), b0Var), this);
+                return aVar2;
         }
     }
 }

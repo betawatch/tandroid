@@ -1,32 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gu implements Utilities.Callback0Return {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class gu extends ShapeDrawable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ gu(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gu(EditTextBoldCursor editTextBoldCursor, RectShape rectShape) {
+        super(rectShape);
+        this.b = editTextBoldCursor;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    public final Object run() {
-        Editable text;
-        wj0[] wj0VarArr;
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
             case 0:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
-                int i11 = EditTextBoldCursor.a;
-                return Boolean.valueOf(editTextBoldCursor.hasSelection() && editTextBoldCursor.getSelectionStart() >= 0 && editTextBoldCursor.getSelectionEnd() >= 0 && editTextBoldCursor.getSelectionStart() != editTextBoldCursor.getSelectionEnd() && (text = editTextBoldCursor.getText()) != null && ((wj0VarArr = (wj0[]) text.getSpans(editTextBoldCursor.getSelectionStart(), editTextBoldCursor.getSelectionEnd(), wj0.class)) == null || wj0VarArr.length == 0));
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                if (!editTextBoldCursor.drawInMaim) {
+                    super.draw(canvas);
+                    break;
+                } else {
+                    editTextBoldCursor.cursorDrawn = true;
+                    break;
+                }
             default:
-                return ((l50) obj).getCloseIntoObject();
+                super.draw(canvas);
+                this.b.cursorDrawn = true;
+                break;
         }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                i10 = this.b.cursorSize;
+                return AndroidUtilities.dp(i10 + 20);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.ShapeDrawable, android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        float f7;
+        switch (this.a) {
+            case 0:
+                f7 = this.b.cursorWidth;
+                return AndroidUtilities.dp(f7);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    public gu(EditTextBoldCursor editTextBoldCursor) {
+        this.b = editTextBoldCursor;
     }
 }

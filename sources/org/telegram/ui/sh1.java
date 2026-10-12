@@ -1,61 +1,54 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.app.Activity;
+import java.util.ArrayList;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class sh1 extends org.telegram.ui.Components.o61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class sh1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    static {
-        org.telegram.ui.Components.o61.setup(new sh1());
+    public /* synthetic */ sh1(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
+        this.f = obj5;
+        this.g = obj6;
     }
 
-    @Override // org.telegram.ui.Components.o61
-    public final void bindView(View view, org.telegram.ui.Components.p61 p61Var, boolean z10, org.telegram.ui.Components.c71 c71Var, org.telegram.ui.Components.k71 k71Var) {
-        th1 th1Var = (th1) view;
-        int i10 = p61Var.k;
-        CharSequence charSequence = p61Var.l;
-        CharSequence charSequence2 = p61Var.m;
-        boolean z11 = p61Var.q;
-        boolean z12 = p61Var.r;
-        int i11 = p61Var.z;
-        TextView textView = th1Var.d;
-        TextView textView2 = th1Var.e;
-        ImageView imageView = th1Var.f;
-        th1Var.h = z11;
-        th1Var.n = z12;
-        ImageView imageView2 = th1Var.b;
-        imageView2.setImageResource(i10);
-        if (i11 != 0) {
-            imageView.setVisibility(0);
-            imageView.setImageResource(i11);
-        } else {
-            imageView.setVisibility(8);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new ji.k((UserInfoActivity) this.b, tL_error, (TLObject) this.c, (TL_account.TL_birthday) this.d, (TLRPC.UserFull) this.e, tLObject, (int[]) this.f, (ArrayList) this.g));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new ji.k(tL_error, (ug.v) this.b, tLObject, (List) this.c, (c5.i) this.d, (ug.v) this.e, (org.telegram.ui.ActionBar.m2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.g, 7));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new ji.k(tL_error, (Utilities.Callback) this.b, tLObject, (List) this.c, (c5.i) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.m2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.g, 8));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new ji.k(tLObject, (c5.p) this.b, (c5.i) this.c, (rh.s) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.f, (List) this.g, tL_error, 9));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new ji.k(tLObject, (c5.p) this.b, (c5.i) this.c, (org.telegram.ui.Components.d90) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGift) this.f, (List) this.g, tL_error, 10));
+                break;
         }
-        textView.setText(charSequence);
-        textView2.setText(charSequence2);
-        textView2.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
-        int dp = AndroidUtilities.dp(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
-        th1Var.c.setPadding(0, dp, 0, dp);
-        org.telegram.ui.ActionBar.e6 e6Var = th1Var.a;
-        int w02 = org.telegram.ui.ActionBar.i6.w0(th1Var.n ? org.telegram.ui.ActionBar.i6.q7 : th1Var.h ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.G6, e6Var);
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        imageView2.setColorFilter(new PorterDuffColorFilter(w02, mode));
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(th1Var.n ? org.telegram.ui.ActionBar.i6.q7 : th1Var.h ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.G6, e6Var), mode));
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(th1Var.n ? org.telegram.ui.ActionBar.i6.p7 : th1Var.h ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.G6, e6Var));
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(th1Var.n ? org.telegram.ui.ActionBar.i6.p7 : th1Var.h ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.y6, e6Var));
-    }
-
-    @Override // org.telegram.ui.Components.o61
-    public final View createView(Context context, org.telegram.ui.Components.qm0 qm0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new th1(context, e6Var);
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g1 implements d2 {
     public static final g1 b = new g1(0);
@@ -21,7 +21,7 @@ public final class g1 implements d2 {
     }
 
     @Override // com.google.android.gms.internal.vision.d2
-    public final m2 zzb(Class cls) {
+    public final l2 zzb(Class cls) {
         switch (this.a) {
             case 0:
                 if (!f1.class.isAssignableFrom(cls)) {
@@ -29,10 +29,10 @@ public final class g1 implements d2 {
                     throw new IllegalArgumentException(name.length() != 0 ? "Unsupported message type: ".concat(name) : new String("Unsupported message type: "));
                 }
                 try {
-                    return (m2) f1.d(cls.asSubclass(f1.class)).e(3);
-                } catch (Exception e7) {
+                    return (l2) f1.d(cls.asSubclass(f1.class)).e(3);
+                } catch (Exception e) {
                     String name2 = cls.getName();
-                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e7);
+                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e);
                 }
             default:
                 throw new IllegalStateException("This should never be called.");

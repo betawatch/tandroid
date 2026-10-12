@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.VideoProcessor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class VideoSource extends MediaSource {
     private final CapturerObserver capturerObserver;
@@ -11,7 +11,7 @@ public class VideoSource extends MediaSource {
     private VideoProcessor videoProcessor;
     private final Object videoProcessorLock;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class AspectRatio {
         public static final AspectRatio UNDEFINED = new AspectRatio(0, 0);
         public final int height;
@@ -23,8 +23,8 @@ public class VideoSource extends MediaSource {
         }
     }
 
-    public VideoSource(long j3) {
-        super(j3);
+    public VideoSource(long j10) {
+        super(j10);
         this.videoProcessorLock = new Object();
         this.capturerObserver = new CapturerObserver() { // from class: org.webrtc.VideoSource.1
             @Override // org.webrtc.CapturerObserver
@@ -66,7 +66,7 @@ public class VideoSource extends MediaSource {
                             VideoSource.this.videoProcessor.onFrameCaptured(videoFrame, adaptFrame);
                             return;
                         }
-                        VideoFrame b10 = d0.b(videoFrame, adaptFrame);
+                        VideoFrame b10 = e0.b(videoFrame, adaptFrame);
                         if (b10 != null) {
                             VideoSource.this.nativeAndroidVideoTrackSource.onFrameCaptured(b10);
                             b10.release();
@@ -77,7 +77,7 @@ public class VideoSource extends MediaSource {
                 }
             }
         };
-        this.nativeAndroidVideoTrackSource = new NativeAndroidVideoTrackSource(j3);
+        this.nativeAndroidVideoTrackSource = new NativeAndroidVideoTrackSource(j10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -87,7 +87,7 @@ public class VideoSource extends MediaSource {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setVideoProcessor$1(VideoFrame videoFrame) {
-        runWithReference(new s(6, this, videoFrame));
+        runWithReference(new t(6, this, videoFrame));
     }
 
     public void adaptOutputFormat(int i10, int i11, int i12) {

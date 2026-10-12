@@ -1,6 +1,5 @@
 package m;
 
-import ai.r4;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
@@ -16,7 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class r1 extends ListView {
     public final Rect a;
@@ -30,7 +29,7 @@ public class r1 extends ListView {
     public final boolean r;
     public boolean s;
     public u0.d v;
-    public r4 w;
+    public androidx.activity.i w;
 
     public r1(Context context, boolean z10) {
         super(context, null, R.attr.dropDownListViewStyle);
@@ -196,8 +195,8 @@ public class r1 extends ListView {
                     if (field != null) {
                         try {
                             z11 = field.getBoolean(this);
-                        } catch (IllegalAccessException e7) {
-                            e7.printStackTrace();
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
                         }
                     }
                     z11 = false;
@@ -211,8 +210,8 @@ public class r1 extends ListView {
                         if (field2 != null) {
                             try {
                                 field2.set(this, Boolean.valueOf(z15));
-                            } catch (IllegalAccessException e10) {
-                                e10.printStackTrace();
+                            } catch (IllegalAccessException e7) {
+                                e7.printStackTrace();
                             }
                         }
                     }
@@ -329,9 +328,9 @@ public class r1 extends ListView {
         }
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 10 && this.w == null) {
-            r4 r4Var = new r4(this, 25);
-            this.w = r4Var;
-            post(r4Var);
+            androidx.activity.i iVar = new androidx.activity.i(this, 25);
+            this.w = iVar;
+            post(iVar);
         }
         boolean onHoverEvent = super.onHoverEvent(motionEvent);
         if (actionMasked != 9 && actionMasked != 7) {
@@ -350,10 +349,10 @@ public class r1 extends ListView {
                         n1.a.invoke(this, Integer.valueOf(pointToPosition), childAt, Boolean.FALSE, -1, -1);
                         n1.b.invoke(this, Integer.valueOf(pointToPosition));
                         n1.c.invoke(this, Integer.valueOf(pointToPosition));
-                    } catch (IllegalAccessException e7) {
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    } catch (InvocationTargetException e7) {
                         e7.printStackTrace();
-                    } catch (InvocationTargetException e10) {
-                        e10.printStackTrace();
                     }
                 }
             }
@@ -370,11 +369,11 @@ public class r1 extends ListView {
         if (motionEvent.getAction() == 0) {
             this.f = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY());
         }
-        r4 r4Var = this.w;
-        if (r4Var != null) {
-            r1 r1Var = (r1) r4Var.b;
+        androidx.activity.i iVar = this.w;
+        if (iVar != null) {
+            r1 r1Var = (r1) iVar.b;
             r1Var.w = null;
-            r1Var.removeCallbacks(r4Var);
+            r1Var.removeCallbacks(iVar);
         }
         return super.onTouchEvent(motionEvent);
     }

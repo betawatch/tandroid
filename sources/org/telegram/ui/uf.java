@@ -1,30 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uf implements View.OnClickListener {
+public final /* synthetic */ class uf implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout b;
+    public final /* synthetic */ fo b;
 
-    public /* synthetic */ uf(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int i10) {
+    public /* synthetic */ uf(fo foVar, int i10) {
         this.a = i10;
-        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.b = foVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.getSwipeBack().b(true);
-                break;
-            case 1:
-                this.b.getSwipeBack().b(true);
+                this.b.Rb(false);
                 break;
             default:
-                this.b.getSwipeBack().b(true);
+                this.b.Rb(false);
                 break;
         }
     }

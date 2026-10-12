@@ -2,8 +2,9 @@ package h2;
 
 import java.util.ArrayDeque;
 import org.telegram.tgnet.TLObject;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class l implements e {
     public final k a;
@@ -38,18 +39,18 @@ public abstract class l implements e {
     }
 
     @Override // h2.e
-    public final void a(long j3) {
+    public final void a(long j10) {
         boolean z10;
         synchronized (this.b) {
             try {
                 if (this.g != this.e.length && !this.k) {
                     z10 = false;
-                    e2.d.g(z10);
-                    this.n = j3;
+                    u6.p(z10);
+                    this.n = j10;
                 }
                 z10 = true;
-                e2.d.g(z10);
-                this.n = j3;
+                u6.p(z10);
+                this.n = j10;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -65,7 +66,7 @@ public abstract class l implements e {
                 if (fVar != null) {
                     throw fVar;
                 }
-                e2.d.g(this.i == null);
+                u6.p(this.i == null);
                 int i10 = this.g;
                 if (i10 == 0) {
                     hVar = null;
@@ -157,10 +158,10 @@ public abstract class l implements e {
                 }
                 try {
                     h = i(hVar, jVar, z10);
-                } catch (OutOfMemoryError e7) {
+                } catch (OutOfMemoryError e) {
+                    h = h(e);
+                } catch (RuntimeException e7) {
                     h = h(e7);
-                } catch (RuntimeException e10) {
-                    h = h(e10);
                 }
                 if (h != null) {
                     synchronized (this.b) {
@@ -212,11 +213,11 @@ public abstract class l implements e {
         }
     }
 
-    public final boolean l(long j3) {
+    public final boolean l(long j10) {
         boolean z10;
         synchronized (this.b) {
-            long j10 = this.n;
-            z10 = j10 == -9223372036854775807L || j3 >= j10;
+            long j11 = this.n;
+            z10 = j11 == -9223372036854775807L || j10 >= j11;
         }
         return z10;
     }
@@ -230,7 +231,7 @@ public abstract class l implements e {
                 if (fVar != null) {
                     throw fVar;
                 }
-                e2.d.b(hVar == this.i);
+                u6.g(hVar == this.i);
                 this.c.addLast(hVar);
                 if (!this.c.isEmpty() && this.h > 0) {
                     this.b.notify();
@@ -258,7 +259,7 @@ public abstract class l implements e {
     public final void o(int i10) {
         int i11 = this.g;
         h[] hVarArr = this.e;
-        e2.d.g(i11 == hVarArr.length);
+        u6.p(i11 == hVarArr.length);
         for (h hVar : hVarArr) {
             hVar.b(i10);
         }

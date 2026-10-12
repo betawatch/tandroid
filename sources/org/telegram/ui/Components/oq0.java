@@ -1,68 +1,91 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class oq0 extends qm0 {
-    public final /* synthetic */ int V2;
-    public final /* synthetic */ mr0 W2;
+public final class oq0 extends vu {
+    public boolean V;
+    public int W;
+    public int a0;
+    public ValueAnimator b0;
+    public final /* synthetic */ jr0 c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ oq0(mr0 mr0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, e6Var);
-        this.V2 = i10;
-        this.W2 = mr0Var;
+    public oq0(jr0 jr0Var, Context context, uq0 uq0Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, uq0Var, null, 1, true, c6Var);
+        this.c0 = jr0Var;
     }
 
-    @Override // org.telegram.ui.Components.qm0
-    public final boolean E0(float f7) {
-        switch (this.V2) {
-            case 0:
-                mr0 mr0Var = this.W2;
-                if (f7 >= AndroidUtilities.dp((!mr0Var.h0 || mr0Var.o0[1] == null) ? 58.0f : 111.0f) + mr0Var.G0.b) {
-                }
-                break;
-            default:
-                mr0 mr0Var2 = this.W2;
-                if (f7 >= AndroidUtilities.dp((!mr0Var2.h0 || mr0Var2.o0[1] == null) ? 58.0f : 111.0f) + mr0Var2.G0.b) {
-                }
-                break;
-        }
-        return true;
+    @Override // org.telegram.ui.Components.vu
+    public final void c(float f7) {
+        this.c0.Z0();
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        switch (this.V2) {
-            case 0:
-                mr0 mr0Var = this.W2;
-                qm0 qm0Var = mr0Var.E;
-                if (qm0Var.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, AndroidUtilities.dp((!mr0Var.h0 || mr0Var.o0[1] == null) ? 58.0f : 111.0f) + mr0Var.p0, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (qm0Var.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
-            default:
-                mr0 mr0Var2 = this.W2;
-                qm0 qm0Var2 = mr0Var2.E;
-                if (qm0Var2.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, AndroidUtilities.dp((!mr0Var2.h0 || mr0Var2.o0[1] == null) ? 58.0f : 111.0f) + mr0Var2.p0, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (qm0Var2.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.V) {
+            nu editText = this.c0.d.getEditText();
+            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
+            ofFloat.addUpdateListener(new g80(editText, 19));
+            ValueAnimator valueAnimator = this.b0;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.b0 = ofFloat;
+            ofFloat.setDuration(200L);
+            ofFloat.setInterpolator(es.f);
+            ofFloat.start();
+            this.V = false;
         }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.vu
+    public final void f() {
+        super.f();
+        wz emojiView = getEmojiView();
+        jr0 jr0Var = this.c0;
+        if (emojiView != null) {
+            emojiView.w0 = false;
+            emojiView.w2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(jr0Var.G0.d);
+        }
+        FrameLayout frameLayout = jr0Var.c0;
+        if (frameLayout != null) {
+            frameLayout.bringToFront();
+        }
+        nq0 nq0Var = jr0Var.c;
+        if (nq0Var != null) {
+            nq0Var.bringToFront();
+        }
+        nq0 nq0Var2 = jr0Var.f;
+        if (nq0Var2 != null) {
+            nq0Var2.bringToFront();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.vu
+    public final void q(int i10, int i11) {
+        jr0 jr0Var = this.c0;
+        nq0 nq0Var = jr0Var.c;
+        if (TextUtils.isEmpty(getEditText().getText())) {
+            getEditText().animate().cancel();
+            getEditText().setOffsetY(0.0f);
+            this.V = false;
+        } else {
+            this.V = true;
+            this.W = getEditText().getMeasuredHeight();
+            this.a0 = getEditText().getScrollY();
+            invalidate();
+        }
+        jr0Var.v0 = nq0Var.getTop() + jr0Var.u0;
+        nq0Var.invalidate();
     }
 }

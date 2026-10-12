@@ -11,10 +11,10 @@ import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.b51;
-import org.telegram.ui.f41;
+import org.telegram.ui.Components.x41;
+import org.telegram.ui.l41;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class l9 implements ActionMode.Callback {
     public String a = null;
@@ -30,7 +30,7 @@ public final class l9 implements ActionMode.Callback {
         if (findItem == null) {
             return;
         }
-        findItem.setVisible((this.b.k0 == null || ((this.a == null || f41.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
+        findItem.setVisible((this.b.k0 == null || ((this.a == null || l41.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
     }
 
     @Override // android.view.ActionMode.Callback
@@ -50,9 +50,9 @@ public final class l9 implements ActionMode.Callback {
                     }
                     baVar.u();
                     baVar.f(true);
-                    w7.h0 h0Var = baVar.D;
-                    if (h0Var != null) {
-                        h0Var.b();
+                    w7.w5 w5Var = baVar.D;
+                    if (w5Var != null) {
+                        w5Var.b();
                         return true;
                     }
                 }
@@ -61,12 +61,12 @@ public final class l9 implements ActionMode.Callback {
                     if (itemId == 3) {
                         if (baVar.k0 != null) {
                             String language = LocaleController.getInstance().getCurrentLocale().getLanguage();
-                            org.telegram.ui.u uVar = baVar.k0;
+                            org.telegram.ui.t tVar = baVar.k0;
                             CharSequence r11 = baVar.r();
                             String str = this.a;
                             g gVar2 = new g(this, 8);
-                            org.telegram.ui.i4 i4Var = uVar.a;
-                            b51.L(i4Var.L, i4Var.M, str, language, r11, null, gVar2);
+                            org.telegram.ui.k4 k4Var = tVar.a;
+                            x41.L(k4Var.L, k4Var.M, str, language, r11, null, gVar2);
                         }
                         baVar.u();
                         return true;
@@ -153,12 +153,12 @@ public final class l9 implements ActionMode.Callback {
         }
         MenuItem findItem4 = menu.findItem(android.R.id.cut);
         if (findItem4 != null) {
-            findItem4.setVisible(this.b instanceof ii.k3);
+            findItem4.setVisible(this.b instanceof ji.k3);
         }
         MenuItem findItem5 = menu.findItem(android.R.id.paste);
         if (findItem5 != null) {
             ba baVar3 = this.b;
-            if (baVar3 instanceof ii.k3) {
+            if (baVar3 instanceof ji.k3) {
                 try {
                     aa aaVar = baVar3.C;
                     Context context = aaVar != null ? aaVar.getContext() : ApplicationLoader.applicationContext;

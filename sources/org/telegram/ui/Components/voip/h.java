@@ -9,7 +9,7 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h {
     public final Paint a;
@@ -26,8 +26,8 @@ public final class h {
     public boolean l;
     public float m;
     public float n;
-    public rg.a2 o;
-    public org.telegram.ui.web.q0 p;
+    public sg.a2 o;
+    public rh.j p;
 
     public h() {
         this(64, 204, 160);
@@ -62,17 +62,17 @@ public final class h {
                 view.invalidate();
             }
             long currentTimeMillis = System.currentTimeMillis();
-            long j3 = this.h;
-            if (j3 != 0) {
-                long j10 = currentTimeMillis - j3;
-                if (j10 > 10) {
-                    float f7 = ((j10 / 1200.0f) * this.n) + this.g;
+            long j10 = this.h;
+            if (j10 != 0) {
+                long j11 = currentTimeMillis - j10;
+                if (j11 > 10) {
+                    float f7 = ((j11 / 1200.0f) * this.n) + this.g;
                     this.g = f7;
                     if (f7 > this.m) {
                         this.g = 0.0f;
-                        org.telegram.ui.web.q0 q0Var = this.p;
-                        if (q0Var != null) {
-                            q0Var.run();
+                        rh.j jVar = this.p;
+                        if (jVar != null) {
+                            jVar.run();
                         }
                     }
                     this.h = currentTimeMillis;

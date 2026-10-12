@@ -14,7 +14,7 @@ import android.util.Log;
 import android.util.SparseIntArray;
 import com.google.android.gms.common.api.GoogleApiActivity;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import j$.util.concurrent.ConcurrentHashMap;
@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h implements Handler.Callback {
     public static final Status E = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -37,11 +37,11 @@ public final class h implements Handler.Callback {
     public static h H;
     public long a;
     public boolean b;
-    public n6.o c;
+    public n6.p c;
     public p6.b d;
     public final Context e;
     public final k6.d f;
-    public final n6.t h;
+    public final m4.c h;
     public final AtomicInteger n;
     public final AtomicInteger r;
     public final ConcurrentHashMap s;
@@ -64,7 +64,7 @@ public final class h implements Handler.Callback {
         com.google.android.gms.internal.cast.a0 a0Var = new com.google.android.gms.internal.cast.a0(looper, this);
         this.x = a0Var;
         this.f = dVar;
-        this.h = new n6.t(dVar);
+        this.h = new m4.c((k6.e) dVar);
         PackageManager packageManager = context.getPackageManager();
         if (u6.b.e == null) {
             u6.b.e = Boolean.valueOf(u6.b.d() && packageManager.hasSystemFeature("android.hardware.type.automotive"));
@@ -91,7 +91,7 @@ public final class h implements Handler.Callback {
     }
 
     public static Status d(b bVar, k6.a aVar) {
-        return new Status(17, e2.j("API: ", bVar.b.c, " is not available on this device. Connection failed with: ", String.valueOf(aVar)), aVar.c, aVar);
+        return new Status(17, k3.k("API: ", bVar.b.c, " is not available on this device. Connection failed with: ", String.valueOf(aVar)), aVar.c, aVar);
     }
 
     public static h g(Context context) {
@@ -210,7 +210,7 @@ public final class h implements Handler.Callback {
                 Task task = taskCompletionSource.getTask();
                 com.google.android.gms.internal.cast.a0 a0Var = hVar.x;
                 a0Var.getClass();
-                task.addOnCompleteListener(new androidx.biometric.n(a0Var, 2), y0Var);
+                task.addOnCompleteListener(new androidx.biometric.o(a0Var, 2), y0Var);
                 return;
             }
             return;
@@ -240,7 +240,7 @@ public final class h implements Handler.Callback {
         k6.c[] g10;
         int i10 = message.what;
         com.google.android.gms.common.api.e eVar = p6.b.k;
-        n6.p pVar = n6.p.b;
+        n6.q qVar = n6.q.b;
         Context context = this.e;
         com.google.android.gms.internal.cast.a0 a0Var = this.x;
         ConcurrentHashMap concurrentHashMap = this.s;
@@ -254,7 +254,7 @@ public final class h implements Handler.Callback {
                 }
                 return true;
             case 2:
-                throw a1.g.j(message.obj);
+                throw a1.g.i(message.obj);
             case 3:
                 for (p0 p0Var2 : concurrentHashMap.values()) {
                     n6.l.d(p0Var2.o.x);
@@ -293,7 +293,7 @@ public final class h implements Handler.Callback {
                     }
                 }
                 if (p0Var == null) {
-                    Log.wtf("GoogleApiManager", hg.c.i(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
+                    Log.wtf("GoogleApiManager", i2.d.j(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
                     return true;
                 }
                 int i12 = aVar.b;
@@ -303,7 +303,7 @@ public final class h implements Handler.Callback {
                 }
                 this.f.getClass();
                 AtomicBoolean atomicBoolean = k6.g.a;
-                p0Var.c(new Status(17, e2.j("Error resolution was canceled by the user, original error message: ", k6.a.d(i12), ": ", aVar.d), null, null));
+                p0Var.c(new Status(17, k3.k("Error resolution was canceled by the user, original error message: ", k6.a.d(i12), ": ", aVar.d), null, null));
                 return true;
             case 6:
                 if (context.getApplicationContext() instanceof Application) {
@@ -372,7 +372,7 @@ public final class h implements Handler.Callback {
                             p0Var6.k = false;
                         }
                         p0Var6.c(hVar.f.d(hVar.e, k6.e.a) == 18 ? new Status(21, "Connection timed out waiting for Google Play services update to complete.", null, null) : new Status(22, "API failed to connect while resuming due to an unknown error.", null, null));
-                        p0Var6.b.e("Timing out connection while resuming.");
+                        p0Var6.b.d("Timing out connection while resuming.");
                         return true;
                     }
                 }
@@ -385,7 +385,7 @@ public final class h implements Handler.Callback {
                     if (cVar.j() && p0Var7.f.isEmpty()) {
                         g1 g1Var = p0Var7.d;
                         if (((Map) g1Var.a).isEmpty() && ((Map) g1Var.b).isEmpty()) {
-                            cVar.e("Timing out service connection.");
+                            cVar.d("Timing out service connection.");
                             return true;
                         }
                         p0Var7.h();
@@ -394,7 +394,7 @@ public final class h implements Handler.Callback {
                 }
                 return true;
             case 14:
-                throw a1.g.j(message.obj);
+                throw a1.g.i(message.obj);
             case 15:
                 q0 q0Var = (q0) message.obj;
                 if (concurrentHashMap.containsKey(q0Var.a)) {
@@ -447,13 +447,13 @@ public final class h implements Handler.Callback {
                 }
                 return true;
             case 17:
-                n6.o oVar = this.c;
-                if (oVar != null) {
-                    if (oVar.a > 0 || b()) {
+                n6.p pVar = this.c;
+                if (pVar != null) {
+                    if (pVar.a > 0 || b()) {
                         if (this.d == null) {
-                            this.d = new p6.b(context, eVar, pVar, com.google.android.gms.common.api.i.c);
+                            this.d = new p6.b(context, eVar, qVar, com.google.android.gms.common.api.i.c);
                         }
-                        this.d.f(oVar);
+                        this.d.f(pVar);
                     }
                     this.c = null;
                     return true;
@@ -461,44 +461,44 @@ public final class h implements Handler.Callback {
                 return true;
             case 18:
                 z0 z0Var = (z0) message.obj;
-                long j3 = z0Var.c;
+                long j10 = z0Var.c;
                 n6.j jVar2 = z0Var.a;
                 int i15 = z0Var.b;
-                if (j3 == 0) {
-                    n6.o oVar2 = new n6.o(i15, Arrays.asList(jVar2));
+                if (j10 == 0) {
+                    n6.p pVar2 = new n6.p(i15, Arrays.asList(jVar2));
                     if (this.d == null) {
-                        this.d = new p6.b(context, eVar, pVar, com.google.android.gms.common.api.i.c);
+                        this.d = new p6.b(context, eVar, qVar, com.google.android.gms.common.api.i.c);
                     }
-                    this.d.f(oVar2);
+                    this.d.f(pVar2);
                     return true;
                 }
-                n6.o oVar3 = this.c;
-                if (oVar3 != null) {
-                    List list = oVar3.b;
-                    if (oVar3.a != i15 || (list != null && list.size() >= z0Var.d)) {
+                n6.p pVar3 = this.c;
+                if (pVar3 != null) {
+                    List list = pVar3.b;
+                    if (pVar3.a != i15 || (list != null && list.size() >= z0Var.d)) {
                         a0Var.removeMessages(17);
-                        n6.o oVar4 = this.c;
-                        if (oVar4 != null) {
-                            if (oVar4.a > 0 || b()) {
+                        n6.p pVar4 = this.c;
+                        if (pVar4 != null) {
+                            if (pVar4.a > 0 || b()) {
                                 if (this.d == null) {
-                                    this.d = new p6.b(context, eVar, pVar, com.google.android.gms.common.api.i.c);
+                                    this.d = new p6.b(context, eVar, qVar, com.google.android.gms.common.api.i.c);
                                 }
-                                this.d.f(oVar4);
+                                this.d.f(pVar4);
                             }
                             this.c = null;
                         }
                     } else {
-                        n6.o oVar5 = this.c;
-                        if (oVar5.b == null) {
-                            oVar5.b = new ArrayList();
+                        n6.p pVar5 = this.c;
+                        if (pVar5.b == null) {
+                            pVar5.b = new ArrayList();
                         }
-                        oVar5.b.add(jVar2);
+                        pVar5.b.add(jVar2);
                     }
                 }
                 if (this.c == null) {
                     ArrayList arrayList3 = new ArrayList();
                     arrayList3.add(jVar2);
-                    this.c = new n6.o(i15, arrayList3);
+                    this.c = new n6.p(i15, arrayList3);
                     a0Var.sendMessageDelayed(a0Var.obtainMessage(17), z0Var.c);
                     return true;
                 }

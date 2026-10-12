@@ -1,384 +1,364 @@
 package yh;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
-import java.lang.reflect.Array;
-import java.util.HashMap;
-import java.util.HashSet;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.f10;
+import org.telegram.ui.Components.ns0;
+import org.telegram.ui.Components.yj0;
+import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.z9;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import w7.a6;
+import zh.f5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class m2 extends FrameLayout {
-    public float E;
-    public int F;
-    public ValueAnimator G;
-    public l2 H;
-    public final f0 I;
-    public final View[] a;
-    public final Matrix b;
-    public final float[] c;
-    public float d;
-    public float e;
-    public boolean f;
-    public final float[][] h;
-    public final float[] n;
-    public final float[] r;
-    public final Integer[] s;
-    public final HashSet v;
-    public final HashMap w;
-    public final HashMap x;
-    public final float[] y;
+public final class m2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+    public final LinearLayout E;
+    public final TextView F;
+    public final TextView G;
+    public final di.d H;
+    public boolean I;
+    public final ns0 a;
+    public final int b;
+    public final c6 c;
+    public boolean d;
+    public f5 e;
+    public final h2 f;
+    public bh.l h;
+    public boolean n;
+    public int r;
+    public final FrameLayout s;
+    public final LinearLayout v;
+    public final TextView w;
+    public final TextView x;
+    public final FrameLayout y;
 
-    public m2(Context context, View[] viewArr) {
-        super(context);
-        this.b = new Matrix();
-        float[] fArr = new float[16];
-        this.c = fArr;
-        this.d = 0.0f;
-        this.e = 0.0f;
-        this.f = true;
-        this.h = new float[][]{new float[]{-1.0f, 0.0f, 0.0f, 0.0f}, new float[]{1.0f, 0.0f, 0.0f, 0.0f}, new float[]{0.0f, 1.0f, 0.0f, 0.0f}, new float[]{0.0f, -1.0f, 0.0f, 0.0f}, new float[]{0.0f, 0.0f, -1.0f, 0.0f}, new float[]{0.0f, 0.0f, 1.0f, 0.0f}};
-        this.n = new float[4];
-        this.r = new float[6];
-        this.s = new Integer[]{0, 1, 2, 3, 4, 5};
-        this.v = new HashSet();
-        this.w = new HashMap();
-        this.x = new HashMap();
-        this.y = new float[6];
-        this.F = -1;
-        this.I = new f0(this, 3);
-        setClipToOutline(false);
-        setClipToPadding(false);
-        android.opengl.Matrix.setIdentityM(fArr, 0);
-        this.a = viewArr;
-        for (View view : viewArr) {
-            addView(view, w7.x5.e(108, 108, 17));
+    public m2(ns0 ns0Var, int i10, c6 c6Var) {
+        super(ns0Var.getContext());
+        this.r = AndroidUtilities.displaySize.y;
+        Context context = ns0Var.getContext();
+        this.a = ns0Var;
+        this.b = i10;
+        this.c = c6Var;
+        h2 h2Var = new h2(context, i10, new ii.a(this, 17), new g2(this), new g2(this), c6Var, ns0Var);
+        this.f = h2Var;
+        h2Var.W2.r = false;
+        h2Var.setSelectorType(9);
+        h2Var.setSelectorDrawableColor(0);
+        h2Var.setPadding(AndroidUtilities.dp(9.0f), ns0Var.K, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(86.0f));
+        h2Var.setClipToPadding(false);
+        h2Var.setClipChildren(false);
+        addView(h2Var, a6.e(-1, -1, 119));
+        h2Var.j(new ji.n3(9, this, ns0Var));
+        i2 i2Var = new i2(ns0Var);
+        i2Var.m = false;
+        i2Var.C = false;
+        i2Var.o(es.h);
+        i2Var.n(350L);
+        h2Var.setItemAnimator(i2Var);
+        new s4.y(new j2(this, ns0Var)).d(h2Var);
+        View view = this.s;
+        if (view != null) {
+            removeView(view);
         }
-    }
-
-    public static void b(float f7, float f10, float f11, float[] fArr) {
-        double d = f11;
-        float cos = (float) Math.cos(d);
-        float sin = (float) Math.sin(d);
-        float f12 = 1.0f - cos;
-        float f13 = f12 * f7;
-        fArr[0] = (f13 * f7) + cos;
-        float f14 = f13 * f10;
-        float f15 = sin * 0.0f;
-        fArr[4] = f14 - f15;
-        float f16 = f13 * 0.0f;
-        float f17 = sin * f10;
-        fArr[8] = f16 + f17;
-        fArr[12] = 0.0f;
-        fArr[1] = f14 + f15;
-        float f18 = f12 * f10;
-        fArr[5] = (f10 * f18) + cos;
-        float f19 = f18 * 0.0f;
-        float f20 = sin * f7;
-        fArr[9] = f19 - f20;
-        fArr[13] = 0.0f;
-        fArr[2] = f16 - f17;
-        fArr[6] = f19 + f20;
-        fArr[10] = com.google.android.gms.internal.vision.e2.w(f12, 0.0f, 0.0f, cos);
-        fArr[14] = 0.0f;
-        fArr[3] = 0.0f;
-        fArr[7] = 0.0f;
-        fArr[11] = 0.0f;
-        fArr[15] = 1.0f;
-    }
-
-    public static void c(float[] fArr, float[] fArr2, float[] fArr3) {
-        float f7 = fArr[1];
-        float f10 = fArr2[2];
-        float f11 = fArr[2];
-        fArr3[0] = (f7 * f10) - (fArr2[1] * f11);
-        float f12 = fArr2[0];
-        float f13 = fArr[0];
-        fArr3[1] = (f11 * f12) - (f10 * f13);
-        fArr3[2] = (f13 * fArr2[1]) - (fArr[1] * f12);
-    }
-
-    public static void d(float[] fArr, float[] fArr2, float[] fArr3) {
-        float[] fArr4 = new float[16];
-        android.opengl.Matrix.multiplyMM(fArr4, 0, fArr, 0, fArr2, 0);
-        System.arraycopy(fArr4, 0, fArr3, 0, 16);
-    }
-
-    public static void e(float[] fArr) {
-        float f7 = fArr[0];
-        float f10 = fArr[1];
-        float f11 = fArr[2];
-        float f12 = f11 * f11;
-        float sqrt = (float) Math.sqrt(f12 + (f10 * f10) + (f7 * f7));
-        if (sqrt > 0.0f) {
-            fArr[0] = fArr[0] / sqrt;
-            fArr[1] = fArr[1] / sqrt;
-            fArr[2] = fArr[2] / sqrt;
+        View view2 = this.y;
+        if (view2 != null) {
+            removeView(view2);
         }
-    }
+        if (ns0Var.d != this.e) {
+            this.s = null;
+            this.w = null;
+            this.x = null;
+            this.v = null;
+            this.y = new FrameLayout(getContext());
+            LinearLayout linearLayout = new LinearLayout(getContext());
+            this.E = linearLayout;
+            linearLayout.setOrientation(1);
+            this.y.addView(this.E, a6.e(-2, -2, 17));
+            TextView textView = new TextView(getContext());
+            this.F = textView;
+            textView.setTextSize(1, 20.0f);
+            this.F.setTypeface(AndroidUtilities.bold());
+            this.F.setTextColor(g6.w0(g6.G6, c6Var));
+            this.F.setText(LocaleController.getString(R.string.Gift2CollectionEmptyTitle));
+            this.E.addView(this.F, a6.t(-2, -2, 1, 0, 0, 0, 0));
+            TextView textView2 = new TextView(getContext());
+            this.G = textView2;
+            textView2.setTextSize(1, 14.0f);
+            this.G.setTextColor(g6.w0(g6.y6, c6Var));
+            this.G.setText(LocaleController.getString(R.string.Gift2CollectionEmptyText));
+            this.E.addView(this.G, a6.t(-2, -2, 1, 0, 10, 0, 0));
+            di.d dVar = new di.d(getContext(), c6Var, true);
+            this.H = dVar;
+            dVar.g(LocaleController.getString(R.string.Gift2CollectionEmptyButton), false, true);
+            this.E.addView(this.H, a6.t(200, 44, 1, 0, 19, 0, 12));
+            final int i11 = 1;
+            this.H.setOnClickListener(new View.OnClickListener(this) { // from class: yh.d2
+                public final /* synthetic */ m2 b;
 
-    public final void a() {
-        if (Math.abs(this.d) > 1.0E-4f || Math.abs(this.e) > 1.0E-4f) {
-            float[] fArr = new float[16];
-            b(1.0f, 0.0f, this.d, fArr);
-            float[] fArr2 = this.c;
-            d(fArr, fArr2, fArr2);
-            b(0.0f, 1.0f, this.e, fArr);
-            d(fArr, fArr2, fArr2);
-            if (this.f) {
-                this.d *= 0.96f;
-                this.e *= 0.96f;
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view3) {
+                    switch (i11) {
+                        case 0:
+                            f5 f5Var = this.b.e;
+                            if (f5Var != null) {
+                                if (!f5Var.e || f5Var.g != 783) {
+                                    f5Var.g = 783;
+                                    f5Var.e = true;
+                                    f5Var.i(true);
+                                    break;
+                                }
+                            }
+                            break;
+                        default:
+                            this.b.a.a();
+                            break;
+                    }
+                }
+            });
+            addView(this.y, a6.a(-1.0f, 0.0f, -12.0f, 0.0f, 0.0f, -1, 119));
+            h2Var.setEmptyView(this.y);
+            LinearLayout linearLayout2 = this.E;
+            if (linearLayout2 != null) {
+                linearLayout2.setVisibility(ns0Var.e.h() ? 0 : 8);
+                return;
             }
+            return;
         }
-    }
+        this.y = null;
+        this.F = null;
+        this.G = null;
+        this.H = null;
+        this.E = null;
+        this.s = new FrameLayout(getContext());
+        LinearLayout linearLayout3 = new LinearLayout(getContext());
+        this.v = linearLayout3;
+        linearLayout3.setOrientation(1);
+        this.s.addView(this.v, a6.e(-2, -2, 17));
+        z9 z9Var = new z9(getContext());
+        z9Var.setImageDrawable(new yj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
+        this.v.addView(z9Var, a6.t(120, 120, 1, 0, 0, 0, 0));
+        TextView textView3 = new TextView(getContext());
+        this.w = textView3;
+        textView3.setTextSize(1, 17.0f);
+        this.w.setTypeface(AndroidUtilities.bold());
+        this.w.setTextColor(g6.w0(g6.G6, c6Var));
+        this.w.setText(LocaleController.getString(R.string.ProfileGiftsNotFoundTitle));
+        this.v.addView(this.w, a6.t(-2, -2, 1, 0, 12, 0, 0));
+        TextView textView4 = new TextView(getContext());
+        this.x = textView4;
+        textView4.setTextSize(1, 14.0f);
+        TextView textView5 = this.x;
+        int i12 = g6.Oh;
+        textView5.setTextColor(g6.w0(i12, c6Var));
+        this.x.setText(LocaleController.getString(R.string.ProfileGiftsNotFoundButton));
+        final int i13 = 0;
+        this.x.setOnClickListener(new View.OnClickListener(this) { // from class: yh.d2
+            public final /* synthetic */ m2 b;
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        RectF rectF;
-        boolean z10;
-        boolean z11;
-        float f7;
-        char c10;
-        float f10;
-        int i10;
-        int i11;
-        int indexOfChild = indexOfChild(view);
-        if (indexOfChild >= 6) {
-            z10 = this.F == indexOfChild;
-            rectF = (RectF) this.x.get(Integer.valueOf(indexOfChild));
-            Integer num = (Integer) this.w.get(Integer.valueOf(indexOfChild));
-            if (num != null) {
-                indexOfChild = num.intValue();
+            {
+                this.b = this;
             }
-            if (view instanceof r2) {
-                r2 r2Var = (r2) view;
-                float f11 = 1.0f - (z10 ? this.E : 1.0f);
-                r2Var.d.setAlpha(f11);
-                r2Var.e.setAlpha(f11);
-                if (!z10 || this.E >= 1.0f) {
-                    this.a[indexOfChild].setVisibility(8);
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view3) {
+                switch (i13) {
+                    case 0:
+                        f5 f5Var = this.b.e;
+                        if (f5Var != null) {
+                            if (!f5Var.e || f5Var.g != 783) {
+                                f5Var.g = 783;
+                                f5Var.e = true;
+                                f5Var.i(true);
+                                break;
+                            }
+                        }
+                        break;
+                    default:
+                        this.b.a.a();
+                        break;
                 }
             }
-            z11 = true;
-        } else {
-            rectF = null;
-            z10 = false;
-            z11 = false;
-        }
-        float[][] fArr = this.h;
-        android.opengl.Matrix.multiplyMV(this.n, 0, this.c, 0, fArr[indexOfChild], 0);
-        float f12 = this.n[2];
-        if (f12 < 0.001f) {
-            return false;
-        }
-        view.setAlpha(Math.min(1.0f, f12 / 0.3f));
-        float width = view.getWidth() / 2.0f;
-        if (z11 && (view instanceof r2)) {
-            f7 = 1.0f;
-            c10 = 6;
-            f10 = ((z10 ? this.E : 1.0f) * AndroidUtilities.dp(2.0f)) + AndroidUtilities.dp(-6.0f);
-        } else {
-            f7 = 1.0f;
-            c10 = 6;
-            f10 = 0.0f;
-        }
-        float dp = AndroidUtilities.dp(108.0f) / 2.0f;
-        float width2 = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float[] fArr2 = new float[4];
-        float[] fArr3 = new float[4];
-        float[] fArr4 = new float[4];
-        System.arraycopy(fArr[indexOfChild], 0, fArr2, 0, 4);
-        if (indexOfChild == 0) {
-            i10 = 3;
-            fArr3[0] = 0.0f;
-            fArr3[1] = 0.0f;
-            fArr3[2] = f7;
-            fArr4[0] = 0.0f;
-            fArr4[1] = -1.0f;
-            fArr4[2] = 0.0f;
-        } else if (indexOfChild == 1) {
-            i10 = 3;
-            fArr3[0] = 0.0f;
-            fArr3[1] = 0.0f;
-            fArr3[2] = -1.0f;
-            fArr4[0] = 0.0f;
-            fArr4[1] = -1.0f;
-            fArr4[2] = 0.0f;
-        } else if (indexOfChild == 2) {
-            i10 = 3;
-            fArr3[0] = f7;
-            fArr3[1] = 0.0f;
-            fArr3[2] = 0.0f;
-            fArr4[0] = 0.0f;
-            fArr4[1] = 0.0f;
-            fArr4[2] = f7;
-        } else if (indexOfChild == 3) {
-            i10 = 3;
-            fArr3[0] = f7;
-            fArr3[1] = 0.0f;
-            fArr3[2] = 0.0f;
-            fArr4[0] = 0.0f;
-            fArr4[1] = 0.0f;
-            fArr4[2] = -1.0f;
-        } else if (indexOfChild != 4) {
-            i10 = 3;
-            if (indexOfChild == 5) {
-                fArr3[0] = f7;
-                fArr3[1] = 0.0f;
-                fArr3[2] = 0.0f;
-                fArr4[0] = 0.0f;
-                fArr4[1] = -1.0f;
-                fArr4[2] = 0.0f;
-            }
-        } else {
-            i10 = 3;
-            fArr3[0] = -1.0f;
-            fArr3[1] = 0.0f;
-            fArr3[2] = 0.0f;
-            fArr4[0] = 0.0f;
-            fArr4[1] = -1.0f;
-            fArr4[2] = 0.0f;
-        }
-        fArr3[i10] = 0.0f;
-        fArr4[i10] = 0.0f;
-        float f13 = this.y[indexOfChild];
-        if (f13 != 0.0f) {
-            double radians = (float) Math.toRadians(f13);
-            float cos = (float) Math.cos(radians);
-            float sin = (float) Math.sin(radians);
-            float f14 = fArr3[0];
-            float f15 = fArr4[0];
-            float f16 = fArr3[1];
-            float f17 = fArr4[1];
-            float f18 = fArr3[2];
-            float f19 = fArr4[2];
-            fArr3[0] = (f15 * sin) + (f14 * cos);
-            fArr3[1] = (f17 * sin) + (f16 * cos);
-            fArr3[2] = (f19 * sin) + (f18 * cos);
-            fArr4[0] = (f15 * cos) + ((-f14) * sin);
-            fArr4[1] = (f17 * cos) + ((-f16) * sin);
-            fArr4[2] = (f19 * cos) + ((-f18) * sin);
-            i11 = 4;
-        } else {
-            i11 = 4;
-        }
-        float[] fArr5 = new float[i11];
-        float[] fArr6 = new float[i11];
-        float[] fArr7 = new float[i11];
-        android.opengl.Matrix.multiplyMV(fArr5, 0, this.c, 0, fArr2, 0);
-        float[] fArr8 = fArr5;
-        android.opengl.Matrix.multiplyMV(fArr6, 0, this.c, 0, fArr3, 0);
-        float[] fArr9 = fArr6;
-        android.opengl.Matrix.multiplyMV(fArr7, 0, this.c, 0, fArr4, 0);
-        float f20 = 64.0f * dp;
-        int i12 = 2;
-        int i13 = 1;
-        float[][] fArr10 = (float[][]) Array.newInstance((Class<?>) Float.TYPE, 4, i10);
-        int i14 = 0;
-        for (int i15 = 4; i14 < i15; i15 = 4) {
-            float f21 = (i14 == i13 || i14 == i12) ? f7 : -1.0f;
-            float f22 = (i14 == 0 || i14 == i13) ? f7 : -1.0f;
-            float[] fArr11 = fArr10[i14];
-            float[] fArr12 = fArr8;
-            float[] fArr13 = fArr9;
-            fArr11[0] = com.google.android.gms.internal.vision.e2.A(fArr7[0], f22, (fArr9[0] * f21) + fArr8[0], dp);
-            fArr11[1] = com.google.android.gms.internal.vision.e2.A(fArr7[1], f22, (fArr13[1] * f21) + fArr12[1], dp);
-            fArr11[2] = com.google.android.gms.internal.vision.e2.A(fArr7[2], f22, (fArr13[2] * f21) + fArr12[2], dp);
-            i14++;
-            fArr9 = fArr13;
-            fArr8 = fArr12;
-            i12 = 2;
-            i13 = 1;
-        }
-        int i16 = i12;
-        float[] fArr14 = new float[8];
-        int i17 = 0;
-        while (i17 < 4) {
-            float[] fArr15 = fArr10[i17];
-            float f23 = f20 / (f20 - fArr15[i16]);
-            int i18 = i17 * 2;
-            fArr14[i18] = (fArr15[0] * f23) + width2;
-            fArr14[i18 + 1] = (fArr15[1] * f23) + height;
-            i17++;
-            i16 = 2;
-        }
-        float f24 = (width2 - width) - f10;
-        float f25 = (height - width) - f10;
-        float f26 = width2 + width + f10;
-        float f27 = height + width + f10;
-        float[] fArr16 = new float[8];
-        fArr16[0] = f24;
-        fArr16[1] = f25;
-        fArr16[2] = f26;
-        fArr16[i10] = f25;
-        fArr16[4] = f26;
-        fArr16[5] = f27;
-        fArr16[c10] = f24;
-        fArr16[7] = f27;
-        if (z10 && rectF != null) {
-            float f28 = rectF.left;
-            float f29 = rectF.top;
-            float f30 = rectF.right;
-            float f31 = rectF.bottom;
-            float[] fArr17 = new float[8];
-            fArr17[0] = f28;
-            fArr17[1] = f29;
-            fArr17[2] = f30;
-            fArr17[i10] = f29;
-            fArr17[4] = f30;
-            fArr17[5] = f31;
-            fArr17[c10] = f28;
-            fArr17[7] = f31;
-            AndroidUtilities.lerp(fArr17, fArr14, this.E, fArr14);
-        }
-        Matrix matrix = this.b;
-        matrix.reset();
-        matrix.setPolyToPoly(fArr16, 0, fArr14, 0, 4);
-        canvas.save();
-        canvas.concat(matrix);
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
+        });
+        this.x.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f));
+        this.x.setBackground(g6.Z(g6.m1(0.1f, g6.w0(i12, c6Var)), 4, 4));
+        w7.c6.a(this.x);
+        this.v.addView(this.x, a6.t(-2, -2, 1, 0, 8, 0, 0));
+        addView(this.s, a6.e(-1, -1, 119));
+        h2Var.setEmptyView(this.s);
     }
 
-    public final void f(int i10, FrameLayout frameLayout) {
-        if (i10 == -1) {
-            i10 = 5;
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setReordering(boolean z10) {
+        h2 h2Var;
+        if (this.n == z10) {
+            return;
         }
-        AndroidUtilities.removeFromParent(frameLayout);
-        int childCount = getChildCount();
-        addView(frameLayout, w7.x5.e(64, 64, 17));
-        this.v.add(Integer.valueOf(i10));
-        this.w.put(Integer.valueOf(childCount), Integer.valueOf(i10));
-    }
-
-    @Override // android.view.ViewGroup
-    public final int getChildDrawingOrder(int i10, int i11) {
-        if (i11 < 6) {
-            Integer[] numArr = this.s;
-            if (i11 < numArr.length) {
-                return numArr[i11].intValue();
+        this.n = z10;
+        ns0 ns0Var = this.a;
+        ns0Var.p(ns0Var.g());
+        int i10 = 0;
+        while (true) {
+            h2Var = this.f;
+            if (i10 >= h2Var.getChildCount()) {
+                break;
+            }
+            View childAt = h2Var.getChildAt(i10);
+            if (childAt instanceof h1) {
+                ((h1) childAt).d(z10, true);
+            }
+            i10++;
+        }
+        z61 z61Var = h2Var.W2;
+        if (z61Var != null) {
+            z61Var.S();
+        }
+        if (z10) {
+            org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+            if (U instanceof ProfileActivity) {
+                ProfileActivity profileActivity = (ProfileActivity) U;
+                profileActivity.G4(false);
+                AndroidUtilities.runOnUIThread(new q1(profileActivity, 1));
             }
         }
-        return i11;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.starUserGiftsLoaded && objArr[1] == this.e) {
+            f(true);
+            if (this.e == null || !isAttachedToWindow()) {
+                return;
+            }
+            h2 h2Var = this.f;
+            if (h2Var.canScrollVertically(1)) {
+                for (int i12 = 0; i12 < h2Var.getChildCount(); i12++) {
+                    if (!(h2Var.getChildAt(i12) instanceof f10)) {
+                    }
+                }
+                return;
+            }
+            this.e.a();
+        }
+    }
+
+    public final void e() {
+        if (this.n) {
+            f5 f5Var = this.e;
+            if (f5Var != null) {
+                f5Var.l();
+            }
+            setReordering(false);
+        }
+    }
+
+    public final void f(boolean z10) {
+        z61 z61Var;
+        h2 h2Var = this.f;
+        if (h2Var == null || (z61Var = h2Var.W2) == null) {
+            return;
+        }
+        boolean canScrollVertically = h2Var.canScrollVertically(-1);
+        z61Var.N(z10);
+        if (canScrollVertically) {
+            return;
+        }
+        h2Var.u0(0);
+    }
+
+    public float getTabsHeight() {
+        int i10 = 0;
+        while (true) {
+            h2 h2Var = this.f;
+            if (i10 >= h2Var.getChildCount()) {
+                return 0.0f;
+            }
+            View childAt = h2Var.getChildAt(i10);
+            int R = RecyclerView.R(childAt);
+            if (childAt instanceof h1) {
+                if (R == 0) {
+                    return Math.max(0.0f, childAt.getY());
+                }
+            } else if (R == 0) {
+                return Math.max(0.0f, (childAt.getAlpha() * childAt.getHeight()) + childAt.getY());
+            }
+            i10++;
+        }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        AndroidUtilities.runOnUIThread(this.I, 16L);
+        NotificationCenter.getInstance(this.b).addObserver(this, NotificationCenter.starUserGiftsLoaded);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        AndroidUtilities.cancelRunOnUIThread(this.I);
+        NotificationCenter.getInstance(this.b).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        setVisibleHeight(this.r);
+    }
+
+    public void setHasTabs(boolean z10) {
+        if (this.I == z10) {
+            return;
+        }
+        this.I = z10;
+        h2 h2Var = this.f;
+        boolean canScrollVertically = h2Var.canScrollVertically(-1);
+        h2Var.W2.N(true);
+        if (!canScrollVertically) {
+            h2Var.u0(0);
+        }
+        this.a.o();
+    }
+
+    public void setVisibleHeight(int i10) {
+        this.r = i10;
+        float clamp01 = Utilities.clamp01(AndroidUtilities.ilerp(i10, AndroidUtilities.dp(150.0f), AndroidUtilities.dp(220.0f)));
+        float lerp = AndroidUtilities.lerp(0.6f, 1.0f, clamp01);
+        LinearLayout linearLayout = this.v;
+        if (linearLayout != null) {
+            linearLayout.setAlpha(clamp01);
+            this.v.setScaleX(lerp);
+            this.v.setScaleY(lerp);
+        }
+        FrameLayout frameLayout = this.s;
+        if (frameLayout != null) {
+            frameLayout.setTranslationY((-(getMeasuredHeight() - this.r)) / 2.0f);
+        }
+        LinearLayout linearLayout2 = this.E;
+        if (linearLayout2 != null) {
+            linearLayout2.setAlpha(clamp01);
+            this.E.setScaleX(lerp);
+            this.E.setScaleY(lerp);
+        }
+        FrameLayout frameLayout2 = this.y;
+        if (frameLayout2 != null) {
+            frameLayout2.setTranslationY((-(getMeasuredHeight() - this.r)) / 2.0f);
+        }
     }
 }

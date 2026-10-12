@@ -1,17 +1,17 @@
 package org.telegram.ui.Components.voip;
 
 import android.widget.TextView;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u b;
+    public final /* synthetic */ t b;
 
-    public /* synthetic */ m(u uVar, int i10) {
+    public /* synthetic */ m(t tVar, int i10) {
         this.a = i10;
-        this.b = uVar;
+        this.b = tVar;
     }
 
     @Override // java.lang.Runnable
@@ -21,14 +21,14 @@ public final /* synthetic */ class m implements Runnable {
                 this.b.requestLayout();
                 break;
             default:
-                u uVar = this.b;
-                TextView textView = uVar.O;
-                p pVar = uVar.a;
-                if (!pVar.d.isFirstFrameRendered()) {
-                    pVar.animate().cancel();
-                    pVar.animate().alpha(0.0f).setDuration(150L).start();
+                t tVar = this.b;
+                TextView textView = tVar.O;
+                o oVar = tVar.a;
+                if (!oVar.d.isFirstFrameRendered()) {
+                    oVar.animate().cancel();
+                    oVar.animate().alpha(0.0f).setDuration(150L).start();
                     textView.animate().cancel();
-                    bi.s(textView.animate(), 1.0f, 150L);
+                    yh.r(textView.animate(), 1.0f, 150L);
                     break;
                 }
                 break;

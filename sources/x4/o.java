@@ -17,15 +17,15 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import java.util.ArrayDeque;
-import org.telegram.ui.Components.hr;
+import org.telegram.ui.Components.er;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.c8;
-import v7.q8;
+import v7.j8;
+import v7.x7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class o extends hr {
+public final class o extends er {
     public static final PorterDuff.Mode v = PorterDuff.Mode.SRC_IN;
     public m c;
     public PorterDuffColorFilter d;
@@ -191,7 +191,7 @@ public final class o extends hr {
         return drawable != null ? drawable.getIntrinsicWidth() : (int) this.c.b.h;
     }
 
-    @Override // org.telegram.ui.Components.hr, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
     public final int getOpacity() {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -323,16 +323,16 @@ public final class o extends hr {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void scheduleSelf(Runnable runnable, long j3) {
+    public final void scheduleSelf(Runnable runnable, long j10) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
-            drawable.scheduleSelf(runnable, j3);
+            drawable.scheduleSelf(runnable, j10);
         } else {
-            super.scheduleSelf(runnable, j3);
+            super.scheduleSelf(runnable, j10);
         }
     }
 
-    @Override // org.telegram.ui.Components.hr, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -353,7 +353,7 @@ public final class o extends hr {
         }
     }
 
-    @Override // org.telegram.ui.Components.hr, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -368,7 +368,7 @@ public final class o extends hr {
     public final void setTint(int i10) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
-            q8.a(i10, drawable);
+            j8.a(i10, drawable);
         } else {
             setTintList(ColorStateList.valueOf(i10));
         }
@@ -476,8 +476,8 @@ public final class o extends hr {
                 ThreadLocal threadLocal = h0.c.a;
                 try {
                     colorStateList = h0.c.a(resources2, resources2.getXml(resourceId), theme);
-                } catch (Exception e7) {
-                    Log.e("CSLCompat", "Failed to inflate ColorStateList.", e7);
+                } catch (Exception e) {
+                    Log.e("CSLCompat", "Failed to inflate ColorStateList.", e);
                 }
             }
         }
@@ -559,7 +559,7 @@ public final class o extends hr {
                                 }
                                 String string3 = f12.getString(2);
                                 if (string3 != null) {
-                                    hVar.a = c8.c(string3);
+                                    hVar.a = x7.c(string3);
                                 }
                                 hVar.f = h0.b.a(f12, xmlPullParser, theme, "fillColor", 1);
                                 float f13 = hVar.h;
@@ -644,7 +644,7 @@ public final class o extends hr {
                                     }
                                     String string5 = f20.getString(1);
                                     if (string5 != null) {
-                                        gVar.a = c8.c(string5);
+                                        gVar.a = x7.c(string5);
                                     }
                                     gVar.c = !h0.b.c(xmlPullParser, "fillType") ? 0 : f20.getInt(2, 0);
                                     f20.recycle();

@@ -1,6 +1,5 @@
 package o0;
 
-import a0.k;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -16,17 +15,18 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import k2.g0;
-import w7.a8;
+import ji.h5;
+import ji.w4;
+import w7.d8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class c {
-    public static final k a = new k(2);
-    public static final a4.d b = new a4.d(21);
+    public static final a0.j a = new a0.j(2);
+    public static final a4.d b = new a4.d(25);
 
     public static j4.f a(Context context, List list) {
-        a8.a("FontProvider.getFontFamilyResult");
+        d8.a("FontProvider.getFontFamilyResult");
         try {
             ArrayList arrayList = new ArrayList();
             for (int i10 = 0; i10 < list.size(); i10++) {
@@ -45,8 +45,8 @@ public abstract class c {
 
     public static ProviderInfo b(PackageManager packageManager, d dVar, Resources resources) {
         a4.d dVar2 = b;
-        k kVar = a;
-        a8.a("FontProvider.getProvider");
+        a0.j jVar = a;
+        d8.a("FontProvider.getProvider");
         try {
             List list = dVar.d;
             String str = dVar.a;
@@ -58,7 +58,7 @@ public abstract class c {
             bVar.a = str;
             bVar.b = str2;
             bVar.c = list;
-            ProviderInfo providerInfo = (ProviderInfo) kVar.a(bVar);
+            ProviderInfo providerInfo = (ProviderInfo) jVar.a(bVar);
             if (providerInfo != null) {
                 return providerInfo;
             }
@@ -84,7 +84,7 @@ public abstract class c {
                             break;
                         }
                     }
-                    kVar.b(bVar, resolveContentProvider);
+                    jVar.b(bVar, resolveContentProvider);
                     return resolveContentProvider;
                 }
             }
@@ -96,18 +96,18 @@ public abstract class c {
     }
 
     public static h[] c(Context context, d dVar, String str) {
-        a8.a("FontProvider.query");
+        d8.a("FontProvider.query");
         try {
             ArrayList arrayList = new ArrayList();
             Uri build = new Uri.Builder().scheme("content").authority(str).build();
             Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            a fVar = Build.VERSION.SDK_INT < 24 ? new l2.f(context, build) : new g0(context, build);
+            a w4Var = Build.VERSION.SDK_INT < 24 ? new w4(context, build) : new h5(context, build);
             Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
-                a8.a("ContentQueryWrapper.query");
+                d8.a("ContentQueryWrapper.query");
                 try {
-                    cursor = fVar.X(build, strArr, new String[]{dVar.c});
+                    cursor = w4Var.X(build, strArr, new String[]{dVar.c});
                     Trace.endSection();
                     if (cursor != null && cursor.getCount() > 0) {
                         int columnIndex = cursor.getColumnIndex("result_code");
@@ -126,7 +126,7 @@ public abstract class c {
                     if (cursor != null) {
                         cursor.close();
                     }
-                    fVar.close();
+                    w4Var.close();
                     return (h[]) arrayList.toArray(new h[0]);
                 } finally {
                 }
@@ -134,7 +134,7 @@ public abstract class c {
                 if (cursor != null) {
                     cursor.close();
                 }
-                fVar.close();
+                w4Var.close();
                 throw th2;
             }
         } finally {

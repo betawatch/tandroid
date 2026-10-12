@@ -1,132 +1,51 @@
 package a3;
 
-import android.content.Context;
 import android.hardware.display.DisplayManager;
-import android.os.Build;
-import android.view.Display;
-import android.view.Surface;
+import android.os.Handler;
+import android.view.Choreographer;
+import android.view.Choreographer$VsyncCallback;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e0 {
-    public final h a;
-    public final c0 b;
-    public final d0 c;
-    public boolean d;
-    public Surface e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public int j;
-    public long k;
-    public long l;
-    public long m;
-    public long n;
-    public long o;
-    public long p;
-    public long q;
+public final class e0 extends c0 implements Choreographer$VsyncCallback {
+    public final Handler e;
 
-    public e0(Context context) {
-        DisplayManager displayManager;
-        h hVar = new h();
-        hVar.a = new g();
-        hVar.b = new g();
-        hVar.d = -9223372036854775807L;
-        this.a = hVar;
-        c0 c0Var = (context == null || (displayManager = (DisplayManager) context.getSystemService("display")) == null) ? null : new c0(this, displayManager);
-        this.b = c0Var;
-        this.c = c0Var != null ? d0.e : null;
-        this.k = -9223372036854775807L;
-        this.l = -9223372036854775807L;
-        this.f = -1.0f;
-        this.i = 1.0f;
-        this.j = 0;
+    public e0(Choreographer choreographer, DisplayManager displayManager) {
+        super(choreographer, displayManager);
+        this.e = e2.m0.q(null);
     }
 
-    public static void a(e0 e0Var, Display display) {
-        if (display != null) {
-            long refreshRate = (long) (1.0E9d / display.getRefreshRate());
-            e0Var.k = refreshRate;
-            e0Var.l = (refreshRate * 80) / 100;
-        } else {
-            e2.a.n("VideoFrameReleaseHelper", "Unable to query display refresh rate");
-            e0Var.k = -9223372036854775807L;
-            e0Var.l = -9223372036854775807L;
-        }
+    @Override // a3.c0
+    public final void a() {
+        this.b.registerDisplayListener(this, e2.m0.q(null));
+        this.a.postVsyncCallback(this);
     }
 
+    @Override // a3.c0
     public final void b() {
-        Surface surface;
-        if (Build.VERSION.SDK_INT < 30 || (surface = this.e) == null || this.j == Integer.MIN_VALUE || this.h == 0.0f) {
-            return;
-        }
-        this.h = 0.0f;
-        g0.f.v(surface, 0.0f);
+        this.b.unregisterDisplayListener(this);
+        this.e.removeCallbacksAndMessages(null);
+        this.a.removeVsyncCallback(this);
+        this.c = -9223372036854775807L;
+        this.d = -9223372036854775807L;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c() {
-        float f7;
-        float f10;
-        if (Build.VERSION.SDK_INT < 30 || this.e == null) {
-            return;
+    @Override // android.hardware.display.DisplayManager.DisplayListener
+    public final void onDisplayChanged(int i10) {
+        if (i10 == 0) {
+            this.a.postVsyncCallback(this);
         }
-        h hVar = this.a;
-        if (!hVar.a.a()) {
-            f7 = this.f;
-        } else if (hVar.a.a()) {
-            f7 = (float) (1.0E9d / (hVar.a.e != 0 ? r2.f / r4 : 0L));
+    }
+
+    public final void onVsync(Choreographer.FrameData frameData) {
+        this.c = frameData.getFrameTimeNanos();
+        Choreographer.FrameTimeline[] frameTimelines = frameData.getFrameTimelines();
+        if (frameTimelines.length >= 2) {
+            long expectedPresentationTimeNanos = frameTimelines[1].getExpectedPresentationTimeNanos() - frameTimelines[0].getExpectedPresentationTimeNanos();
+            this.d = expectedPresentationTimeNanos != 0 ? expectedPresentationTimeNanos : -9223372036854775807L;
         } else {
-            f7 = -1.0f;
+            this.d = -9223372036854775807L;
         }
-        float f11 = this.g;
-        if (f7 == f11) {
-            return;
-        }
-        if (f7 != -1.0f && f11 != -1.0f) {
-            if (hVar.a.a()) {
-                if ((hVar.a.a() ? hVar.a.f : -9223372036854775807L) >= 5000000000L) {
-                    f10 = 0.02f;
-                    if (Math.abs(f7 - this.g) < f10) {
-                        return;
-                    }
-                }
-            }
-            f10 = 1.0f;
-            if (Math.abs(f7 - this.g) < f10) {
-            }
-        } else if (f7 == -1.0f && hVar.e < 30) {
-            return;
-        }
-        this.g = f7;
-        d(false);
-    }
-
-    public final void d(boolean z10) {
-        Surface surface;
-        float f7;
-        if (Build.VERSION.SDK_INT < 30 || (surface = this.e) == null || this.j == Integer.MIN_VALUE) {
-            return;
-        }
-        if (this.d) {
-            float f10 = this.g;
-            if (f10 != -1.0f) {
-                f7 = f10 * this.i;
-                if (z10 && this.h == f7) {
-                    return;
-                }
-                this.h = f7;
-                g0.f.v(surface, f7);
-            }
-        }
-        f7 = 0.0f;
-        if (z10) {
-        }
-        this.h = f7;
-        g0.f.v(surface, f7);
+        this.e.postDelayed(new d(this, 2), 500L);
     }
 }

@@ -1,13 +1,27 @@
 package w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import com.google.android.gms.tasks.Task;
+import java.util.concurrent.CancellationException;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class o {
-    public static float a(float f7, float f10, float f11) {
-        return f7 < f10 ? f10 : f7 > f11 ? f11 : f7;
-    }
-
-    public static int b(int i10, int i11, int i12) {
-        return i10 < i11 ? i11 : i10 > i12 ? i12 : i10;
+    public static final Object a(Task task, md.c cVar) {
+        if (!task.isComplete()) {
+            be.m mVar = new be.m(1, n.b(cVar));
+            mVar.s();
+            task.addOnCompleteListener(le.a.a, new ji.h5(mVar, 4));
+            Object r10 = mVar.r();
+            ld.a aVar = ld.a.a;
+            return r10;
+        }
+        Exception exception = task.getException();
+        if (exception != null) {
+            throw exception;
+        }
+        if (!task.isCanceled()) {
+            return task.getResult();
+        }
+        throw new CancellationException("Task " + task + " was cancelled normally.");
     }
 }

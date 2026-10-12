@@ -119,14 +119,14 @@ public final class q extends l {
                 }
             } else {
                 j$.sun.misc.a aVar = h;
-                long j3 = i;
-                if (aVar.c(this, j3, i11, i11 + 4)) {
+                long j10 = i;
+                if (aVar.c(this, j10, i11, i11 + 4)) {
                     try {
                         r rVar2 = this.e;
                         if (rVar2 != null) {
                             rVar = rVar2.b(i10, obj, null);
                         }
-                        if (aVar.e(this, j3) == 6 && (thread = this.g) != null) {
+                        if (aVar.e(this, j10) == 6 && (thread = this.g) != null) {
                             LockSupport.unpark(thread);
                         }
                         return rVar;

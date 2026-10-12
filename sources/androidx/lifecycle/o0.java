@@ -6,11 +6,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class o0 {
-    public static final List a = id.h.c(Application.class, i0.class);
-    public static final List b = id.h.b(i0.class);
+    public static final List a = jd.h.c(Application.class, i0.class);
+    public static final List b = jd.h.b(i0.class);
 
     public static final Constructor a(List signature, Class cls) {
         kotlin.jvm.internal.i.e(signature, "signature");
@@ -19,7 +19,7 @@ public abstract class o0 {
         for (Constructor<?> constructor : constructors) {
             Class<?>[] parameterTypes = constructor.getParameterTypes();
             kotlin.jvm.internal.i.d(parameterTypes, "constructor.parameterTypes");
-            List h = id.f.h(parameterTypes);
+            List h = jd.f.h(parameterTypes);
             if (signature.equals(h)) {
                 return constructor;
             }
@@ -33,12 +33,12 @@ public abstract class o0 {
     public static final p0 b(Class cls, Constructor constructor, Object... objArr) {
         try {
             return (p0) constructor.newInstance(Arrays.copyOf(objArr, objArr.length));
-        } catch (IllegalAccessException e7) {
-            throw new RuntimeException("Failed to access " + cls, e7);
-        } catch (InstantiationException e10) {
-            throw new RuntimeException("A " + cls + " cannot be instantiated.", e10);
-        } catch (InvocationTargetException e11) {
-            throw new RuntimeException("An exception happened in constructor of " + cls, e11.getCause());
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException("Failed to access " + cls, e);
+        } catch (InstantiationException e7) {
+            throw new RuntimeException("A " + cls + " cannot be instantiated.", e7);
+        } catch (InvocationTargetException e10) {
+            throw new RuntimeException("An exception happened in constructor of " + cls, e10.getCause());
         }
     }
 }

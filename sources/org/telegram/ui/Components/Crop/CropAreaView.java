@@ -1,6 +1,6 @@
 package org.telegram.ui.Components.Crop;
 
-import ai.b;
+import ah.b;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -17,15 +17,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
-import com.google.android.gms.internal.vision.e2;
-import lg.a;
-import lg.n;
-import lg.o;
-import lg.p;
+import com.google.android.gms.internal.play_billing.k3;
 import m1.j;
+import mg.a;
+import mg.n;
+import mg.o;
+import mg.p;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public class CropAreaView extends ViewGroup {
     public int E;
@@ -215,7 +215,7 @@ public class CropAreaView extends ViewGroup {
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "gridProgress", this.b0, f7);
         this.c0 = ofFloat;
         ofFloat.setDuration(200L);
-        this.c0.addListener(new b(this, 25));
+        this.c0.addListener(new b(this, 29));
         if (i10 == 1) {
             this.c0.setStartDelay(200L);
         }
@@ -579,8 +579,8 @@ public class CropAreaView extends ViewGroup {
                     paint4.setAlpha((int) (this.L * 255.0f));
                     paint9.setAlpha((int) (this.L * 127.0f));
                     float f52 = this.a;
-                    this.b = e2.z(measuredWidth, f52, f7, f10);
-                    float z12 = e2.z(measuredHeight, f52, f7, f10) + (z10 ? 0 : AndroidUtilities.statusBarHeight);
+                    this.b = k3.z(measuredWidth, f52, f7, f10);
+                    float z12 = k3.z(measuredHeight, f52, f7, f10) + (z10 ? 0 : AndroidUtilities.statusBarHeight);
                     this.c = z12;
                     float f53 = z12 + f52;
                     canvas.drawRect(0.0f, 0.0f, getWidth(), (int) this.c, paint9);
@@ -603,12 +603,12 @@ public class CropAreaView extends ViewGroup {
         }
         if (this.L < 1.0f) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j3 = elapsedRealtime - this.N;
-            if (j3 > 17) {
-                j3 = 17;
+            long j10 = elapsedRealtime - this.N;
+            if (j10 > 17) {
+                j10 = 17;
             }
             this.N = elapsedRealtime;
-            float f55 = (j3 / 180.0f) + this.L;
+            float f55 = (j10 / 180.0f) + this.L;
             this.L = f55;
             if (f55 > 1.0f) {
                 this.L = 1.0f;
@@ -757,7 +757,7 @@ public class CropAreaView extends ViewGroup {
                 if (rectF.left < f7) {
                     float f18 = this.w;
                     if (f18 > 0.0f) {
-                        rectF.bottom = e2.z(rectF.right, f7, f18, rectF.top);
+                        rectF.bottom = k3.z(rectF.right, f7, f18, rectF.top);
                     }
                     rectF.left = f7;
                 } else if (rectF.right > getWidth() - f7) {
@@ -771,7 +771,7 @@ public class CropAreaView extends ViewGroup {
                 if (rectF.top < f19) {
                     float f21 = this.w;
                     if (f21 > 0.0f) {
-                        rectF.right = e2.y(rectF.bottom, f19, f21, rectF.left);
+                        rectF.right = k3.y(rectF.bottom, f19, f21, rectF.left);
                     }
                     rectF.top = f19;
                 } else if (rectF.bottom > getHeight() - f20) {
@@ -868,7 +868,7 @@ public class CropAreaView extends ViewGroup {
             pVar3.n = 0.0f;
             o oVar = pVar3.M;
             if (oVar != null) {
-                oVar.S(false);
+                oVar.i0(false);
                 return true;
             }
         }

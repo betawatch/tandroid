@@ -1,62 +1,76 @@
 package u3;
 
-import c3.p;
+import b2.t;
+import b2.x;
+import b2.x0;
+import c3.h0;
+import c3.i0;
+import c3.j0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e {
-    public static final long[] d = {128, 64, 32, 16, 8, 4, 2, 1};
-    public final byte[] a = new byte[8];
-    public int b;
-    public int c;
+    public int A;
+    public int B;
+    public int C;
+    public int D;
+    public int E;
+    public float F;
+    public float G;
+    public float H;
+    public float I;
+    public float J;
+    public float K;
+    public float L;
+    public float M;
+    public float N;
+    public float O;
+    public byte[] P;
+    public int Q;
+    public int R;
+    public int S;
+    public long T;
+    public long U;
+    public j0 V;
+    public boolean W;
+    public boolean X;
+    public boolean Y;
+    public String Z;
+    public boolean a;
+    public i0 a0;
+    public String b;
+    public x b0;
+    public String c;
+    public int c0;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public boolean i;
+    public byte[] j;
+    public h0 k;
+    public byte[] l;
+    public t m;
+    public int n;
+    public int o;
+    public int p;
+    public int q;
+    public int r;
+    public int s;
+    public int t;
+    public float u;
+    public float v;
+    public float w;
+    public byte[] x;
+    public int y;
+    public boolean z;
 
-    public static long a(int i10, boolean z10, byte[] bArr) {
-        long j3 = bArr[0] & 255;
-        if (z10) {
-            j3 &= ~d[i10 - 1];
+    public final byte[] a(String str) {
+        byte[] bArr = this.l;
+        if (bArr != null) {
+            return bArr;
         }
-        for (int i11 = 1; i11 < i10; i11++) {
-            j3 = (j3 << 8) | (bArr[i11] & 255);
-        }
-        return j3;
-    }
-
-    public final long b(p pVar, boolean z10, boolean z11, int i10) {
-        int i11;
-        int i12 = this.b;
-        byte[] bArr = this.a;
-        if (i12 == 0) {
-            if (!pVar.c(bArr, 0, 1, z10)) {
-                return -1L;
-            }
-            int i13 = bArr[0] & 255;
-            int i14 = 0;
-            while (true) {
-                if (i14 >= 8) {
-                    i11 = -1;
-                    break;
-                }
-                if ((d[i14] & i13) != 0) {
-                    i11 = i14 + 1;
-                    break;
-                }
-                i14++;
-            }
-            this.c = i11;
-            if (i11 == -1) {
-                throw new IllegalStateException("No valid varint length mask found");
-            }
-            this.b = 1;
-        }
-        int i15 = this.c;
-        if (i15 > i10) {
-            this.b = 0;
-            return -2L;
-        }
-        if (i15 != 1) {
-            pVar.readFully(bArr, 1, i15 - 1);
-        }
-        this.b = 0;
-        return a(this.c, z11, bArr);
+        throw x0.a(null, "Missing CodecPrivate for codec " + str);
     }
 }

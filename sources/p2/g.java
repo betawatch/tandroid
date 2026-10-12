@@ -1,14 +1,74 @@
 package p2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final class g extends j {
-    public final boolean w;
-    public final boolean x;
+import android.net.Uri;
+import e9.n0;
+import e9.x1;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.ui.es0;
+import v7.u6;
 
-    public g(String str, i iVar, long j3, int i10, long j10, b2.o oVar, String str2, String str3, long j11, long j12, boolean z10, boolean z11, boolean z12) {
-        super(str, iVar, j3, i10, j10, oVar, str2, str3, j11, j12, z10);
-        this.w = z11;
-        this.x = z12;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class g {
+    public final String a;
+    public final Uri b;
+    public final Uri c;
+    public final long d;
+    public final long e;
+    public final long f;
+    public final long g;
+    public final List h;
+    public final boolean i;
+    public final long j;
+    public final long k;
+    public final n0 l;
+    public final n0 m;
+    public final x1 n;
+    public final boolean o;
+    public final String p;
+    public final String q;
+    public final long r;
+    public final long s;
+    public final String t;
+
+    public g(String str, Uri uri, Uri uri2, long j10, long j11, long j12, long j13, ArrayList arrayList, boolean z10, long j14, long j15, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, boolean z11, String str2, String str3, long j16, long j17, String str4) {
+        u6.g((uri == null || uri2 == null) && !(uri == null && uri2 == null));
+        this.a = str;
+        this.b = uri;
+        this.c = uri2;
+        this.d = j10;
+        this.e = j11;
+        this.f = j12;
+        this.g = j13;
+        this.h = arrayList;
+        this.i = z10;
+        this.j = j14;
+        this.k = j15;
+        this.l = n0.u(arrayList2);
+        this.m = n0.u(arrayList3);
+        this.n = n0.A(new es0(11), arrayList4);
+        this.o = z11;
+        this.p = str2;
+        this.q = str3;
+        this.r = j16;
+        this.s = j17;
+        this.t = str4;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof g)) {
+            return false;
+        }
+        g gVar = (g) obj;
+        return this.d == gVar.d && this.e == gVar.e && this.f == gVar.f && this.g == gVar.g && this.i == gVar.i && this.j == gVar.j && this.k == gVar.k && this.o == gVar.o && this.r == gVar.r && this.s == gVar.s && Objects.equals(this.a, gVar.a) && Objects.equals(this.b, gVar.b) && Objects.equals(this.c, gVar.c) && Objects.equals(this.h, gVar.h) && Objects.equals(this.l, gVar.l) && Objects.equals(this.m, gVar.m) && Objects.equals(this.n, gVar.n) && Objects.equals(this.p, gVar.p) && Objects.equals(this.q, gVar.q) && Objects.equals(this.t, gVar.t);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a, this.b, this.c, Long.valueOf(this.d), Long.valueOf(this.e), Long.valueOf(this.f), Long.valueOf(this.g), this.h, Boolean.valueOf(this.i), Long.valueOf(this.j), Long.valueOf(this.k), this.l, this.m, this.n, Boolean.valueOf(this.o), this.p, this.q, Long.valueOf(this.r), Long.valueOf(this.s), this.t);
     }
 }

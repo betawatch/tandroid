@@ -6,7 +6,7 @@ import androidx.datastore.preferences.protobuf.v;
 import androidx.datastore.preferences.protobuf.w;
 import androidx.datastore.preferences.protobuf.w0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k extends w {
     public static final int BOOLEAN_FIELD_NUMBER = 1;
@@ -28,9 +28,9 @@ public final class k extends w {
         w.h(k.class, kVar);
     }
 
-    public static void i(k kVar, long j3) {
+    public static void i(k kVar, long j10) {
         kVar.valueCase_ = 4;
-        kVar.value_ = Long.valueOf(j3);
+        kVar.value_ = Long.valueOf(j10);
     }
 
     public static void j(k kVar, String str) {

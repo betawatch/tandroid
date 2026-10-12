@@ -2,42 +2,42 @@ package androidx.datastore.preferences.protobuf;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g0 extends h0 {
     @Override // androidx.datastore.preferences.protobuf.h0
-    public final void a(Object obj, long j3) {
-        ((b) ((y) r1.d.i(obj, j3))).a = false;
+    public final void a(Object obj, long j10) {
+        ((b) ((y) r1.d.i(obj, j10))).a = false;
     }
 
     @Override // androidx.datastore.preferences.protobuf.h0
-    public final void b(Object obj, long j3, Object obj2) {
+    public final void b(Object obj, long j10, Object obj2) {
         q1 q1Var = r1.d;
-        y yVar = (y) q1Var.i(obj, j3);
-        y yVar2 = (y) q1Var.i(obj2, j3);
+        y yVar = (y) q1Var.i(obj, j10);
+        y yVar2 = (y) q1Var.i(obj2, j10);
         int size = yVar.size();
         int size2 = yVar2.size();
         if (size > 0 && size2 > 0) {
             if (!((b) yVar).a) {
-                yVar = yVar.d(size2 + size);
+                yVar = yVar.b(size2 + size);
             }
             yVar.addAll(yVar2);
         }
         if (size > 0) {
             yVar2 = yVar;
         }
-        r1.o(obj, j3, yVar2);
+        r1.o(obj, j10, yVar2);
     }
 
     @Override // androidx.datastore.preferences.protobuf.h0
-    public final List c(Object obj, long j3) {
-        y yVar = (y) r1.d.i(obj, j3);
+    public final List c(Object obj, long j10) {
+        y yVar = (y) r1.d.i(obj, j10);
         if (((b) yVar).a) {
             return yVar;
         }
         int size = yVar.size();
-        y d = yVar.d(size == 0 ? 10 : size * 2);
-        r1.o(obj, j3, d);
-        return d;
+        y b10 = yVar.b(size == 0 ? 10 : size * 2);
+        r1.o(obj, j10, b10);
+        return b10;
     }
 }

@@ -1,17 +1,32 @@
 package y9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final class e implements ia.d {
-    public static final e a = new e();
-    public static final ia.c b = ia.c.c("files");
-    public static final ia.c c = ia.c.c("orgId");
+import t7.u;
 
-    @Override // ia.a
-    public final void a(Object obj, Object obj2) {
-        ia.e eVar = (ia.e) obj2;
-        e0 e0Var = (e0) ((j1) obj);
-        eVar.a(b, e0Var.a);
-        eVar.a(c, e0Var.b);
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class e implements i {
+    public static final u c = new u(27);
+    public final Object a;
+    public Object b;
+
+    public e(ca.c cVar) {
+        this.a = cVar;
+        this.b = c;
+    }
+
+    @Override // y9.i
+    public void a(h hVar, int i10) {
+        int[] iArr = (int[]) this.b;
+        try {
+            hVar.read((byte[]) this.a, iArr[0], i10);
+            iArr[0] = iArr[0] + i10;
+        } finally {
+            hVar.close();
+        }
+    }
+
+    public e(byte[] bArr, int[] iArr) {
+        this.a = bArr;
+        this.b = iArr;
     }
 }

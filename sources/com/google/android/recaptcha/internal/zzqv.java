@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class zzqv extends zzqe {
     public static final /* synthetic */ int zzb = 0;
@@ -19,8 +19,8 @@ public abstract class zzqv extends zzqe {
         return (352 - (Integer.numberOfLeadingZeros(i10) * 9)) >>> 6;
     }
 
-    public static int zzB(long j3) {
-        return (640 - (Long.numberOfLeadingZeros(j3) * 9)) >>> 6;
+    public static int zzB(long j10) {
+        return (640 - (Long.numberOfLeadingZeros(j10) * 9)) >>> 6;
     }
 
     @Deprecated
@@ -62,8 +62,8 @@ public abstract class zzqv extends zzqe {
             int length = bytes.length;
             zzt(length);
             zzl(bytes, 0, length);
-        } catch (IndexOutOfBoundsException e7) {
-            throw new zzqt(e7);
+        } catch (IndexOutOfBoundsException e) {
+            throw new zzqt(e);
         }
     }
 
@@ -79,9 +79,9 @@ public abstract class zzqv extends zzqe {
 
     public abstract void zzg(int i10);
 
-    public abstract void zzh(int i10, long j3);
+    public abstract void zzh(int i10, long j10);
 
-    public abstract void zzi(long j3);
+    public abstract void zzi(long j10);
 
     public abstract void zzj(int i10, int i11);
 
@@ -103,9 +103,9 @@ public abstract class zzqv extends zzqe {
 
     public abstract void zzt(int i10);
 
-    public abstract void zzu(int i10, long j3);
+    public abstract void zzu(int i10, long j10);
 
-    public abstract void zzv(long j3);
+    public abstract void zzv(long j10);
 
     public /* synthetic */ zzqv(zzqu zzquVar) {
     }

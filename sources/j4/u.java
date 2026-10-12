@@ -1,17 +1,18 @@
 package j4;
 
-import b2.r0;
-import c3.h0;
+import b2.w0;
+import c3.i0;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class u implements i {
-    public final e2.v a;
+    public final e2.x a;
     public final c3.z b;
     public final String c;
     public final int d;
     public final String e;
-    public h0 f;
+    public i0 f;
     public String g;
     public int h = 0;
     public int i;
@@ -22,9 +23,9 @@ public final class u implements i {
     public long n;
 
     public u(String str, int i10, String str2) {
-        e2.v vVar = new e2.v(4);
-        this.a = vVar;
-        vVar.a[0] = -1;
+        e2.x xVar = new e2.x(4);
+        this.a = xVar;
+        xVar.a[0] = -1;
         this.b = new c3.z();
         this.n = -9223372036854775807L;
         this.c = str;
@@ -33,18 +34,18 @@ public final class u implements i {
     }
 
     @Override // j4.i
-    public final void a(e2.v vVar) {
-        e2.d.h(this.f);
-        while (vVar.a() > 0) {
+    public final void a(e2.x xVar) {
+        this.f.getClass();
+        while (xVar.a() > 0) {
             int i10 = this.h;
-            e2.v vVar2 = this.a;
+            e2.x xVar2 = this.a;
             if (i10 == 0) {
-                byte[] bArr = vVar.a;
-                int i11 = vVar.b;
-                int i12 = vVar.c;
+                byte[] bArr = xVar.a;
+                int i11 = xVar.b;
+                int i12 = xVar.c;
                 while (true) {
                     if (i11 >= i12) {
-                        vVar.J(i12);
+                        xVar.N(i12);
                         break;
                     }
                     byte b10 = bArr[i11];
@@ -52,9 +53,9 @@ public final class u implements i {
                     boolean z11 = this.k && (b10 & 224) == 224;
                     this.k = z10;
                     if (z11) {
-                        vVar.J(i11 + 1);
+                        xVar.N(i11 + 1);
                         this.k = false;
-                        vVar2.a[1] = bArr[i11];
+                        xVar2.a[1] = bArr[i11];
                         this.i = 2;
                         this.h = 1;
                         break;
@@ -62,32 +63,32 @@ public final class u implements i {
                     i11++;
                 }
             } else if (i10 == 1) {
-                int min = Math.min(vVar.a(), 4 - this.i);
-                vVar.h(this.i, min, vVar2.a);
+                int min = Math.min(xVar.a(), 4 - this.i);
+                xVar.k(this.i, min, xVar2.a);
                 int i13 = this.i + min;
                 this.i = i13;
                 if (i13 >= 4) {
-                    vVar2.J(0);
-                    int j3 = vVar2.j();
+                    xVar2.N(0);
+                    int m10 = xVar2.m();
                     c3.z zVar = this.b;
-                    if (zVar.a(j3)) {
+                    if (zVar.a(m10)) {
                         this.m = zVar.b;
                         if (!this.j) {
                             this.l = (zVar.f * 1000000) / zVar.c;
-                            b2.r rVar = new b2.r();
-                            rVar.a = this.g;
-                            rVar.p = r0.n(this.e);
-                            rVar.q = r0.n((String) zVar.g);
-                            rVar.r = 4096;
-                            rVar.I = zVar.d;
-                            rVar.J = zVar.c;
-                            rVar.d = this.c;
-                            rVar.f = this.d;
-                            this.f.b(new b2.s(rVar));
+                            b2.w wVar = new b2.w();
+                            wVar.a = this.g;
+                            wVar.q = w0.n(this.e);
+                            wVar.r = w0.n((String) zVar.g);
+                            wVar.s = 4096;
+                            wVar.J = zVar.d;
+                            wVar.K = zVar.c;
+                            wVar.d = this.c;
+                            wVar.f = this.d;
+                            this.f.b(new b2.x(wVar));
                             this.j = true;
                         }
-                        vVar2.J(0);
-                        this.f.d(4, vVar2);
+                        xVar2.N(0);
+                        this.f.d(4, xVar2);
                         this.h = 2;
                     } else {
                         this.i = 0;
@@ -98,12 +99,12 @@ public final class u implements i {
                 if (i10 != 2) {
                     throw new IllegalStateException();
                 }
-                int min2 = Math.min(vVar.a(), this.m - this.i);
-                this.f.d(min2, vVar);
+                int min2 = Math.min(xVar.a(), this.m - this.i);
+                this.f.d(min2, xVar);
                 int i14 = this.i + min2;
                 this.i = i14;
                 if (i14 >= this.m) {
-                    e2.d.g(this.n != -9223372036854775807L);
+                    u6.p(this.n != -9223372036854775807L);
                     this.f.c(this.n, 1, this.m, 0, null);
                     this.n += this.l;
                     this.i = 0;
@@ -127,12 +128,12 @@ public final class u implements i {
         f0Var.c();
         this.g = (String) f0Var.e;
         f0Var.c();
-        this.f = qVar.f2(f0Var.c, 1);
+        this.f = qVar.a0(f0Var.c, 1);
     }
 
     @Override // j4.i
-    public final void f(int i10, long j3) {
-        this.n = j3;
+    public final void f(int i10, long j10) {
+        this.n = j10;
     }
 
     @Override // j4.i

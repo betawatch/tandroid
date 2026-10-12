@@ -1,36 +1,12 @@
 package yh;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ zf.a d;
-    public final /* synthetic */ Runnable e;
-
-    public /* synthetic */ z0(s3 s3Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, zf.a aVar, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = s3Var;
-        this.c = tL_starGiftUnique;
-        this.d = aVar;
-        this.e = runnable;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                s3.N0(this.b, this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            default:
-                s3.u0(this.b, this.c, this.d, this.e, tLObject, tL_error);
-                break;
-        }
+public final class z0 extends s4.k {
+    @Override // s4.k
+    public final float A(View view) {
+        return 0.3f;
     }
 }

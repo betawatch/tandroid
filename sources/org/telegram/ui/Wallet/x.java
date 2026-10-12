@@ -1,28 +1,33 @@
 package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.PasscodeActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class x extends PasscodeActivity {
-    public final /* synthetic */ boolean[] W;
-    public final /* synthetic */ Utilities.Callback X;
+public final class x implements Runnable {
+    public volatile boolean a;
+    public Runnable b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ byte[] f;
+    public final /* synthetic */ Utilities.Callback2 h;
+    public final /* synthetic */ j0 n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x(boolean[] zArr, Utilities.Callback callback) {
-        super(3);
-        this.W = zArr;
-        this.X = callback;
+    public x(j0 j0Var, String str, long j10, String str2, byte[] bArr, Utilities.Callback2 callback2) {
+        this.n = j0Var;
+        this.c = str;
+        this.d = j10;
+        this.e = str2;
+        this.f = bArr;
+        this.h = callback2;
     }
 
-    @Override // org.telegram.ui.PasscodeActivity, org.telegram.ui.ActionBar.n2
-    public final void onFragmentDestroy() {
-        Utilities.Callback callback;
-        super.onFragmentDestroy();
-        if (this.W[0] || (callback = this.X) == null) {
+    @Override // java.lang.Runnable
+    public final synchronized void run() {
+        if (this.a) {
             return;
         }
-        callback.run("PASSCODE_FAILED");
+        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new bi.f0(23, this, this.h));
     }
 }

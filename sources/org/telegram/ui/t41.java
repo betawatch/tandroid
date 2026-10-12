@@ -1,39 +1,60 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.Locale;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class t41 extends org.telegram.ui.Components.r6 {
-    public boolean s;
-    public final org.telegram.ui.Components.g6 v;
-    public final /* synthetic */ SaveToGallerySettingsActivity w;
+public final class t41 extends org.telegram.ui.ActionBar.m2 {
+    public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1200000, 2000000};
+    public org.telegram.ui.Components.mm0 a;
+    public s41 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t41(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
-        super(activity, true, true, false);
-        this.w = saveToGallerySettingsActivity;
-        this.v = new org.telegram.ui.Components.g6(this);
-        getDrawable().J = true;
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f7 = this.s ? 1.0f : 0.0f;
-        org.telegram.ui.Components.g6 g6Var = this.v;
-        g6Var.d(f7, false);
-        int i10 = org.telegram.ui.ActionBar.i6.y6;
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.w;
-        setTextColor(i0.a.d(g6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.i6.n6)));
-        super.dispatchDraw(canvas);
-    }
-
-    public final void e(boolean z10, boolean z11) {
-        if (this.s != z10) {
-            this.s = z10;
-            this.v.d(z10 ? 1.0f : 0.0f, z11);
-            invalidate();
+    public static String U(int i10) {
+        if (i10 % MediaController.VIDEO_BITRATE_480 == 0) {
+            return (i10 / MediaController.VIDEO_BITRATE_480) + " Mbps";
         }
+        if (i10 > 1000000) {
+            return String.format(Locale.US, "%.1f Mbps", Float.valueOf(i10 / 1000000.0f));
+        }
+        return (i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + " kbps";
+    }
+
+    public final void V(int i10, CharSequence[] charSequenceArr, ul0 ul0Var) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+        alertDialog$Builder.a.R = LocaleController.getString(i10);
+        alertDialog$Builder.f(charSequenceArr, new mg.j(11, this, ul0Var));
+        showDialog(alertDialog$Builder.a);
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.RoundVideoSettings));
+        this.actionBar.setActionBarMenuOnItemClick(new q70(this, 29));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.a7, false));
+        this.fragmentView = frameLayout;
+        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
+        this.a = mm0Var;
+        mm0Var.p1();
+        this.actionBar.setAdaptiveBackground(this.a);
+        this.a.setLayoutManager(new s4.b0());
+        this.a.setVerticalScrollBarEnabled(false);
+        org.telegram.ui.Components.mm0 mm0Var2 = this.a;
+        s41 s41Var = new s41(context);
+        this.b = s41Var;
+        mm0Var2.setAdapter(s41Var);
+        this.a.setOnItemClickListener(new i21(this, 4));
+        frameLayout.addView(this.a, w7.a6.d(-1.0f, -1));
+        return this.fragmentView;
     }
 }

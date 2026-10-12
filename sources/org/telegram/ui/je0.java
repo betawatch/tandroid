@@ -1,34 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Intent;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class je0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ le0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ String d;
+public final class je0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ le0 a;
 
-    public /* synthetic */ je0(le0 le0Var, String str, String str2, int i10) {
-        this.a = i10;
-        this.b = le0Var;
-        this.c = str;
-        this.d = str2;
+    public je0(le0 le0Var) {
+        this.a = le0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new ge0(this.b, tL_error, this.c, this.d, tLObject));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new ge0(this.b, tL_error, tLObject, this.c, this.d));
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        le0 le0Var = this.a;
+        int intValue = ((Integer) objArr[0]).intValue();
+        ((Integer) objArr[1]).getClass();
+        Intent intent = (Intent) objArr[2];
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onActivityResultReceived);
+        if (intValue == 200) {
+            try {
+                le0Var.F = (GoogleSignInAccount) w7.b9.b(intent).getResult(com.google.android.gms.common.api.f.class);
+                le0Var.h(null);
+            } catch (com.google.android.gms.common.api.f e) {
+                FileLog.e(e);
+            }
         }
     }
 }

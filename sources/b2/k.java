@@ -1,7 +1,80 @@
 package b2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.os.Bundle;
+import android.os.SharedMemory;
+import android.system.OsConstants;
+import java.nio.ByteBuffer;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface k {
-    int read(byte[] bArr, int i10, int i11);
+public final class k {
+    public final SharedMemory a;
+
+    public k(SharedMemory sharedMemory) {
+        this.a = sharedMemory;
+    }
+
+    public static k a(byte[] bArr) {
+        SharedMemory sharedMemory;
+        try {
+            sharedMemory = SharedMemory.create("BundleableByteArray", bArr.length);
+        } catch (Exception e) {
+            e = e;
+            sharedMemory = null;
+        }
+        try {
+            ByteBuffer mapReadWrite = sharedMemory.mapReadWrite();
+            mapReadWrite.put(bArr);
+            SharedMemory.unmap(mapReadWrite);
+            sharedMemory.setProtect(OsConstants.PROT_READ);
+            return new k(sharedMemory);
+        } catch (Exception e7) {
+            e = e7;
+            e2.a.m("BundleableByteArray", "Failed to allocate shared memory for byte array, size=" + bArr.length, e);
+            if (sharedMemory != null) {
+                sharedMemory.close();
+            }
+            return null;
+        }
+    }
+
+    public static byte[] b(Bundle bundle) {
+        ByteBuffer byteBuffer;
+        SharedMemory sharedMemory = (SharedMemory) bundle.getParcelable(m.f);
+        try {
+            if (sharedMemory == null) {
+                return null;
+            }
+            try {
+                byteBuffer = sharedMemory.mapReadOnly();
+                try {
+                    byte[] bArr = new byte[sharedMemory.getSize()];
+                    byteBuffer.get(bArr);
+                    SharedMemory.unmap(byteBuffer);
+                    sharedMemory.close();
+                    return bArr;
+                } catch (Exception e) {
+                    e = e;
+                    e2.a.m("BundleableByteArray", "Failed to read byte array from shared memory", e);
+                    if (byteBuffer != null) {
+                        SharedMemory.unmap(byteBuffer);
+                    }
+                    sharedMemory.close();
+                    return null;
+                }
+            } catch (Exception e7) {
+                e = e7;
+                byteBuffer = null;
+            } catch (Throwable th2) {
+                th = th2;
+                if (0 != 0) {
+                    SharedMemory.unmap(null);
+                }
+                sharedMemory.close();
+                throw th;
+            }
+        } catch (Throwable th3) {
+            th = th3;
+        }
+    }
 }

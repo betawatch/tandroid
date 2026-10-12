@@ -1,132 +1,221 @@
 package org.telegram.ui.Wallet;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Rect;
-import android.view.View;
-import android.view.ViewParent;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.SurfaceTexture;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import di.xa;
+import org.telegram.ui.fi1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class o5 extends FrameLayout {
-    public final Matrix a;
-    public final float[] b;
-    public final FrameLayout c;
-    public final ai.j2 d;
-    public boolean e;
-    public boolean f;
+public final class o5 extends tg.n {
+    public final j5 f0;
+    public final p5 g0;
+    public final int h0;
+    public final m i0;
+    public float j0;
+    public float k0;
+    public float l0;
+    public float m0;
+    public boolean n0;
+    public ValueAnimator o0;
 
-    public o5(Context context) {
-        super(context);
-        this.a = new Matrix();
-        this.b = new float[8];
-        this.e = true;
-        this.f = true;
-        setClipChildren(false);
-        setClipToPadding(false);
-        ai.j2 j2Var = new ai.j2(context, 1);
-        this.d = j2Var;
-        j2Var.setLayerType(2, null);
-        addView(j2Var, new FrameLayout.LayoutParams(-1, -1));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.c = frameLayout;
-        frameLayout.setPivotX(0.0f);
-        frameLayout.setPivotY(0.0f);
-        j2Var.addView(frameLayout, new FrameLayout.LayoutParams(AndroidUtilities.dp(336.0f), AndroidUtilities.dp(205.0f)));
+    public o5(Context context, p5 p5Var, int i10, int i11) {
+        super(context, 0, 0);
+        this.g0 = p5Var;
+        this.i0 = new m(p5Var, 9);
+        j5 j5Var = new j5(context, i10, i11);
+        this.f0 = j5Var;
+        setRenderer(j5Var);
+        setOpaque(false);
+        this.h0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    public final void a(k5 k5Var) {
-        Bitmap bitmap;
-        if (!this.e || getWidth() == 0 || getHeight() == 0) {
-            return;
+    @Override // tg.n
+    public final int getMaxFrameRate() {
+        return 60;
+    }
+
+    @Override // tg.n
+    public final boolean j() {
+        return true;
+    }
+
+    @Override // tg.n, android.view.View
+    public final void onDetachedFromWindow() {
+        removeCallbacks(this.i0);
+        this.g0.setPressed(false);
+        ValueAnimator valueAnimator = this.o0;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.o0.cancel();
+            this.o0 = null;
         }
-        this.e = false;
-        int width = getWidth();
-        int height = getHeight();
-        synchronized (k5Var) {
-            try {
-                bitmap = k5Var.S;
-                k5Var.S = null;
-                if (bitmap != null) {
-                    if (bitmap.getWidth() == width) {
-                        if (bitmap.getHeight() != height) {
-                        }
-                    }
-                    bitmap.recycle();
-                    bitmap = null;
+        super.onDetachedFromWindow();
+    }
+
+    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        this.f0.getClass();
+        this.g0.d();
+        super.onSurfaceTextureAvailable(surfaceTexture, i10, i11);
+    }
+
+    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        this.g0.d();
+        super.onSurfaceTextureDestroyed(surfaceTexture);
+        return true;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0022, code lost:
+    
+        r2 = ((long[]) r10.e)[r4];
+     */
+    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        long j10;
+        j5 j5Var = this.f0;
+        long timestamp = surfaceTexture.getTimestamp();
+        e2.j0 j0Var = j5Var.X;
+        synchronized (j0Var) {
+            int i10 = 0;
+            while (true) {
+                if (i10 >= j0Var.c) {
+                    j10 = 0;
+                    break;
                 }
-                if (bitmap == null) {
-                    bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+                int i11 = (j0Var.b - 1) - i10;
+                long[] jArr = (long[]) j0Var.d;
+                int length = (i11 + jArr.length) % jArr.length;
+                if (jArr[length] == timestamp) {
+                    break;
+                } else {
+                    i10++;
                 }
-            } finally {
             }
         }
-        bitmap.eraseColor(0);
-        Canvas canvas = new Canvas(bitmap);
-        this.d.draw(canvas);
-        canvas.setBitmap(null);
-        k5Var.f(bitmap);
-    }
-
-    public final void b(float[] fArr) {
-        int width = getWidth();
-        int height = getHeight();
-        if (width == 0 || height == 0) {
+        p5 p5Var = this.g0;
+        if (j10 >= p5Var.f && p5Var.c) {
+            p5Var.c = false;
+            setAlpha(1.0f);
+            this.g0.b.setVisibility(4);
+            n5 n5Var = this.g0.v;
+            n5Var.e = true;
+            n5Var.f = false;
+            n5Var.invalidate();
+            this.g0.invalidate();
+        }
+        p5 p5Var2 = this.g0;
+        Runnable runnable = p5Var2.n;
+        if (runnable == null || j10 < p5Var2.h) {
             return;
         }
-        float[] fArr2 = this.b;
-        fArr2[0] = 0.0f;
-        fArr2[1] = 0.0f;
-        float f7 = width;
-        fArr2[2] = f7;
-        fArr2[3] = 0.0f;
-        fArr2[4] = f7;
-        float f10 = height;
-        fArr2[5] = f10;
-        fArr2[6] = 0.0f;
-        fArr2[7] = f10;
-        this.a.setPolyToPoly(fArr2, 0, fArr, 0, 4);
-        invalidate();
+        p5Var2.n = null;
+        runnable.run();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.f) {
-            int save = canvas.save();
-            canvas.concat(this.a);
-            super.dispatchDraw(canvas);
-            canvas.restoreToCount(save);
+    @Override // tg.n, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        j5 j5Var = this.f0;
+        p5 p5Var = this.g0;
+        if (actionMasked == 0) {
+            ValueAnimator valueAnimator = this.o0;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                this.o0.cancel();
+                this.o0 = null;
+            }
+            getParent().requestDisallowInterceptTouchEvent(true);
+            this.j0 = motionEvent.getX();
+            this.k0 = motionEvent.getY();
+            this.l0 = j5Var.d;
+            this.m0 = j5Var.i;
+            this.n0 = false;
+            p5Var.setPressed(true);
+            return true;
         }
+        if (actionMasked == 1) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+            p5Var.setPressed(false);
+            if (this.n0) {
+                p();
+                return true;
+            }
+            postDelayed(this.i0, Math.max(0L, 80 - (motionEvent.getEventTime() - motionEvent.getDownTime())));
+            return true;
+        }
+        if (actionMasked == 2) {
+            float abs = Math.abs(motionEvent.getX() - this.j0);
+            float f7 = this.h0;
+            if (abs > f7 || Math.abs(motionEvent.getY() - this.k0) > f7) {
+                this.n0 = true;
+                p5Var.setPressed(false);
+            }
+            if (this.n0) {
+                float D = com.google.android.gms.internal.play_billing.k3.D(motionEvent.getX(), this.j0, 0.03f, this.l0);
+                float f10 = this.l0;
+                j5Var.d = p5.b(D, f10 - 32.0f, f10 + 32.0f);
+                float D2 = com.google.android.gms.internal.play_billing.k3.D(motionEvent.getY(), this.k0, 0.03f, this.m0);
+                float f11 = this.m0;
+                j5Var.i = p5.b(D2, f11 - 22.0f, f11 + 22.0f);
+            }
+        } else if (actionMasked == 3) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+            p5Var.setPressed(false);
+            if (this.n0) {
+                p();
+            }
+            this.n0 = true;
+            return true;
+        }
+        return true;
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final ViewParent invalidateChildInParent(int[] iArr, Rect rect) {
-        this.e = true;
-        return super.invalidateChildInParent(iArr, rect);
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onDescendantInvalidated(View view, View view2) {
-        this.e = true;
-        super.onDescendantInvalidated(view, view2);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.e = true;
+    public final void p() {
+        ValueAnimator valueAnimator = this.o0;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.o0.cancel();
+            this.o0 = null;
+        }
+        j5 j5Var = this.f0;
+        float f7 = j5Var.d;
+        float f10 = j5Var.i;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.o0 = ofFloat;
+        ofFloat.setDuration(600L);
+        org.telegram.ui.Cells.d0.l(1.2f, this.o0);
+        this.o0.addUpdateListener(new xa(this, f7, f10, 7));
+        this.o0.addListener(new fi1(this, 5));
+        this.o0.start();
     }
 
     @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        this.e = true;
-        FrameLayout frameLayout = this.c;
-        frameLayout.setScaleX(i10 / AndroidUtilities.dp(336.0f));
-        frameLayout.setScaleY(i11 / AndroidUtilities.dp(205.0f));
+    public final boolean performClick() {
+        super.performClick();
+        return true;
+    }
+
+    @Override // tg.n
+    public final void setPaused(boolean z10) {
+        j5 j5Var = this.f0;
+        synchronized (j5Var) {
+            if (j5Var.e0 != z10) {
+                j5Var.e0 = z10;
+                j5Var.g0 = 0L;
+            }
+        }
+        super.setPaused(z10);
+    }
+
+    @Override // tg.n
+    public final void n() {
     }
 }

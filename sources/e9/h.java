@@ -1,8 +1,107 @@
 package e9;
 
-import java.util.RandomAccess;
+import java.util.Iterator;
+import java.util.NavigableMap;
+import java.util.NavigableSet;
+import java.util.SortedMap;
+import java.util.SortedSet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class h extends l implements RandomAccess {
+public final class h extends k implements NavigableSet {
+    public final /* synthetic */ p1 e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h(p1 p1Var, NavigableMap navigableMap) {
+        super(p1Var, navigableMap);
+        this.e = p1Var;
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object ceiling(Object obj) {
+        return h().ceilingKey(obj);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Iterator descendingIterator() {
+        return ((f) descendingSet()).iterator();
+    }
+
+    @Override // java.util.NavigableSet
+    public final NavigableSet descendingSet() {
+        return new h(this.e, h().descendingMap());
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object floor(Object obj) {
+        return h().floorKey(obj);
+    }
+
+    @Override // e9.k, java.util.SortedSet, java.util.NavigableSet
+    public final SortedSet headSet(Object obj) {
+        return headSet(obj, false);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object higher(Object obj) {
+        return h().higherKey(obj);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object lower(Object obj) {
+        return h().lowerKey(obj);
+    }
+
+    @Override // e9.k
+    /* renamed from: m, reason: merged with bridge method [inline-methods] */
+    public final NavigableMap h() {
+        return (NavigableMap) ((SortedMap) this.b);
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object pollFirst() {
+        d dVar = (d) iterator();
+        if (!dVar.hasNext()) {
+            return null;
+        }
+        Object next = dVar.next();
+        dVar.remove();
+        return next;
+    }
+
+    @Override // java.util.NavigableSet
+    public final Object pollLast() {
+        Iterator descendingIterator = descendingIterator();
+        if (!descendingIterator.hasNext()) {
+            return null;
+        }
+        Object next = descendingIterator.next();
+        descendingIterator.remove();
+        return next;
+    }
+
+    @Override // e9.k, java.util.SortedSet, java.util.NavigableSet
+    public final SortedSet subSet(Object obj, Object obj2) {
+        return subSet(obj, true, obj2, false);
+    }
+
+    @Override // e9.k, java.util.SortedSet, java.util.NavigableSet
+    public final SortedSet tailSet(Object obj) {
+        return tailSet(obj, true);
+    }
+
+    @Override // java.util.NavigableSet
+    public final NavigableSet headSet(Object obj, boolean z10) {
+        return new h(this.e, h().headMap(obj, z10));
+    }
+
+    @Override // java.util.NavigableSet
+    public final NavigableSet subSet(Object obj, boolean z10, Object obj2, boolean z11) {
+        return new h(this.e, h().subMap(obj, z10, obj2, z11));
+    }
+
+    @Override // java.util.NavigableSet
+    public final NavigableSet tailSet(Object obj, boolean z10) {
+        return new h(this.e, h().tailMap(obj, z10));
+    }
 }

@@ -1,25 +1,38 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class oq implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tr b;
+import android.content.DialogInterface;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.DatePicker;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-    public /* synthetic */ oq(tr trVar, int i10) {
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class oq implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
+
+    public /* synthetic */ oq(int i10, View view) {
         this.a = i10;
-        this.b = trVar;
+        this.b = view;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.r0();
+                DatePicker datePicker = (DatePicker) this.b;
+                int childCount = datePicker.getChildCount();
+                for (int i10 = 0; i10 < childCount; i10++) {
+                    View childAt = datePicker.getChildAt(i10);
+                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
+                    layoutParams.width = -1;
+                    childAt.setLayoutParams(layoutParams);
+                }
                 break;
             default:
-                tr trVar = this.b;
-                trVar.getMessagesController().loadFullChat(trVar.N, 0, true);
+                AndroidUtilities.runOnUIThread(new oh(1, (EditTextBoldCursor) this.b));
                 break;
         }
     }

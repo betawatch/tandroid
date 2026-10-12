@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final /* synthetic */ class w implements Runnable {
                 if (hashSet.isEmpty()) {
                     return;
                 }
-                long j3 = true != hashSet2.equals(hashSet) ? 86400000L : 172800000L;
+                long j10 = true != hashSet2.equals(hashSet) ? 86400000L : 172800000L;
                 long currentTimeMillis = System.currentTimeMillis();
-                long j10 = d2Var.h;
-                if (j10 == 0 || currentTimeMillis - j10 >= j3) {
+                long j11 = d2Var.h;
+                if (j11 == 0 || currentTimeMillis - j11 >= j10) {
                     d2.i.b("Upload the feature usage report.", new Object[0]);
                     k1 l4 = l1.l();
                     String str = d2.j;
@@ -75,16 +75,16 @@ public final /* synthetic */ class w implements Runnable {
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
                             String num = Integer.toString(((d1) it.next()).a);
-                            String i10 = sc.v.i("feature_usage_timestamp_reported_feature_", num);
-                            if (!sharedPreferences.contains(i10)) {
-                                i10 = sc.v.i("feature_usage_timestamp_detected_feature_", num);
+                            String h = t8.b.h("feature_usage_timestamp_reported_feature_", num);
+                            if (!sharedPreferences.contains(h)) {
+                                h = t8.b.h("feature_usage_timestamp_detected_feature_", num);
                             }
-                            String i11 = sc.v.i("feature_usage_timestamp_reported_feature_", num);
-                            if (!TextUtils.equals(i10, i11)) {
-                                long j11 = sharedPreferences.getLong(i10, 0L);
-                                edit.remove(i10);
-                                if (j11 != 0) {
-                                    edit.putLong(i11, j11);
+                            String h10 = t8.b.h("feature_usage_timestamp_reported_feature_", num);
+                            if (!TextUtils.equals(h, h10)) {
+                                long j12 = sharedPreferences.getLong(h, 0L);
+                                edit.remove(h);
+                                if (j12 != 0) {
+                                    edit.putLong(h10, j12);
                                 }
                             }
                         }

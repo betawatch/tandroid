@@ -1,62 +1,25 @@
 package b2;
 
-import android.os.Bundle;
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d1 extends c1 {
-    public static final String d;
-    public static final String e;
-    public final int b;
-    public final float c;
+public final class d1 {
+    public final v a;
 
-    static {
-        String str = e2.d0.a;
-        d = Integer.toString(1, 36);
-        e = Integer.toString(2, 36);
-    }
-
-    public d1(int i10) {
-        e2.d.a("maxStars must be a positive integer", i10 > 0);
-        this.b = i10;
-        this.c = -1.0f;
-    }
-
-    @Override // b2.c1
-    public final boolean b() {
-        return this.c != -1.0f;
-    }
-
-    @Override // b2.c1
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(c1.a, 2);
-        bundle.putInt(d, this.b);
-        bundle.putFloat(e, this.c);
-        return bundle;
+    public d1(v vVar) {
+        this.a = vVar;
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof d1)) {
-            return false;
+        if (this == obj) {
+            return true;
         }
-        d1 d1Var = (d1) obj;
-        return this.b == d1Var.b && this.c == d1Var.c;
+        if (obj instanceof d1) {
+            return this.a.equals(((d1) obj).a);
+        }
+        return false;
     }
 
     public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.b), Float.valueOf(this.c));
-    }
-
-    public d1(int i10, float f7) {
-        boolean z10 = false;
-        e2.d.a("maxStars must be a positive integer", i10 > 0);
-        if (f7 >= 0.0f && f7 <= i10) {
-            z10 = true;
-        }
-        e2.d.a("starRating is out of range [0, maxStars]", z10);
-        this.b = i10;
-        this.c = f7;
+        return this.a.hashCode();
     }
 }

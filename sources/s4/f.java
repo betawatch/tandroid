@@ -1,94 +1,87 @@
 package s4;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ d1 b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewPropertyAnimator d;
-    public final /* synthetic */ j e;
+public final class f implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ k c;
 
-    public f(j jVar, d1 d1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
-        this.e = jVar;
-        this.b = d1Var;
-        this.d = viewPropertyAnimator;
-        this.c = view;
+    public /* synthetic */ f(k kVar, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.c = kVar;
+        this.b = arrayList;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
+            case 0:
+                ArrayList arrayList = this.b;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (true) {
+                    k kVar = this.c;
+                    if (i10 >= size) {
+                        arrayList.clear();
+                        kVar.u.remove(arrayList);
+                        break;
+                    } else {
+                        Object obj = arrayList.get(i10);
+                        i10++;
+                        j jVar = (j) obj;
+                        kVar.C(jVar.a, jVar);
+                        kVar.w.add(jVar);
+                    }
+                }
             case 1:
-                View view = this.c;
-                view.setAlpha(1.0f);
-                if (this.e.A(view) > 0.0f) {
-                    view.setScaleX(1.0f);
-                    view.setScaleY(1.0f);
-                    break;
+                ArrayList arrayList2 = this.b;
+                int size2 = arrayList2.size();
+                int i11 = 0;
+                while (true) {
+                    k kVar2 = this.c;
+                    if (i11 >= size2) {
+                        arrayList2.clear();
+                        kVar2.v.remove(arrayList2);
+                        break;
+                    } else {
+                        Object obj2 = arrayList2.get(i11);
+                        i11++;
+                        i iVar = (i) obj2;
+                        kVar2.B(iVar);
+                        kVar2.x.add(iVar);
+                    }
                 }
-                break;
             default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.d.setListener(null);
-                View view = this.c;
-                view.setAlpha(1.0f);
-                j jVar = this.e;
-                if (jVar.A(view) > 0.0f) {
-                    view.setScaleX(1.0f);
-                    view.setScaleY(1.0f);
+                ArrayList arrayList3 = this.b;
+                int i12 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                for (int size3 = arrayList3.size() - 1; size3 >= 0; size3--) {
+                    i12 = Math.min(i12, ((b1) arrayList3.get(size3)).b());
                 }
-                view.setTranslationX(0.0f);
-                view.setTranslationY(0.0f);
-                jVar.Q();
-                d1 d1Var = this.b;
-                jVar.d(d1Var);
-                jVar.A.remove(d1Var);
-                jVar.G();
-                break;
-            default:
-                this.d.setListener(null);
-                j jVar2 = this.e;
-                jVar2.M();
-                d1 d1Var2 = this.b;
-                jVar2.u(d1Var2);
-                jVar2.y.remove(d1Var2);
-                jVar2.G();
-                break;
+                int size4 = arrayList3.size();
+                while (true) {
+                    size4--;
+                    k kVar3 = this.c;
+                    if (size4 < 0) {
+                        arrayList3.clear();
+                        kVar3.t.remove(arrayList3);
+                        break;
+                    } else {
+                        b1 b1Var = (b1) arrayList3.get(size4);
+                        long b10 = (b1Var.b() - i12) * kVar3.D;
+                        View view = b1Var.a;
+                        ViewPropertyAnimator animate = view.animate();
+                        kVar3.y.add(b1Var);
+                        animate.alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(kVar3.h()).setStartDelay(b10).setInterpolator(kVar3.h);
+                        animate.setUpdateListener(new d(kVar3, b1Var, 1));
+                        animate.setListener(new g(kVar3, b1Var, view, animate)).start();
+                    }
+                }
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                this.e.getClass();
-                break;
-        }
-    }
-
-    public f(j jVar, d1 d1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
-        this.e = jVar;
-        this.b = d1Var;
-        this.c = view;
-        this.d = viewPropertyAnimator;
-    }
-
-    private final void a(Animator animator) {
     }
 }

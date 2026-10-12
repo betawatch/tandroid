@@ -13,22 +13,22 @@ public final class r1 implements a1 {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.k(this, consumer);
+        j$.com.android.tools.r8.a.j(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+        return j$.com.android.tools.r8.a.m(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+        return j$.com.android.tools.r8.a.o(this, i10);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.B(this, consumer);
+        return j$.com.android.tools.r8.a.A(this, consumer);
     }
 
     public r1(long[] jArr, int i10, int i11, int i12) {
@@ -92,7 +92,7 @@ public final class r1 implements a1 {
 
     @Override // j$.util.Spliterator
     public final Comparator getComparator() {
-        if (j$.com.android.tools.r8.a.p(this, 4)) {
+        if (j$.com.android.tools.r8.a.o(this, 4)) {
             return null;
         }
         throw new IllegalStateException();

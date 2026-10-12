@@ -1,48 +1,41 @@
 package k2;
 
-import android.media.AudioTrack;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class r {
-    public final q a;
-    public final int b;
-    public final xa.d c;
-    public int d;
-    public long e;
-    public long f;
-    public long g;
-    public long h;
-    public long i;
+public final /* synthetic */ class r implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qf.b b;
+    public final /* synthetic */ i2.e c;
 
-    public r(AudioTrack audioTrack, xa.d dVar) {
-        this.a = new q(audioTrack);
-        this.b = audioTrack.getSampleRate();
-        this.c = dVar;
-        a(0);
+    public /* synthetic */ r(qf.b bVar, i2.e eVar, int i10) {
+        this.a = i10;
+        this.b = bVar;
+        this.c = eVar;
     }
 
-    public final void a(int i10) {
-        this.d = i10;
-        if (i10 == 0) {
-            this.g = 0L;
-            this.h = -1L;
-            this.i = -9223372036854775807L;
-            this.e = System.nanoTime() / 1000;
-            this.f = 10000L;
-            return;
-        }
-        if (i10 == 1) {
-            this.f = 10000L;
-            return;
-        }
-        if (i10 == 2 || i10 == 3) {
-            this.f = 10000000L;
-        } else {
-            if (i10 != 4) {
-                throw new IllegalStateException();
-            }
-            this.f = 500000L;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                qf.b bVar = this.b;
+                i2.e eVar = this.c;
+                synchronized (eVar) {
+                }
+                u uVar = (u) bVar.c;
+                String str = e2.m0.a;
+                j2.f fVar = ((i2.b0) uVar).a.s;
+                j2.a n10 = fVar.n((u2.g0) fVar.d.e);
+                fVar.q(n10, 1013, new j2.c(n10, eVar, 24));
+                break;
+            default:
+                qf.b bVar2 = this.b;
+                i2.e eVar2 = this.c;
+                u uVar2 = (u) bVar2.c;
+                String str2 = e2.m0.a;
+                j2.f fVar2 = ((i2.b0) uVar2).a.s;
+                j2.a p5 = fVar2.p();
+                fVar2.q(p5, 1007, new j2.c(p5, eVar2, 19));
+                break;
         }
     }
 }

@@ -1,13 +1,13 @@
 package c3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public interface q {
-    public static final na.d m = new na.d(5);
+    public static final oa.d i = new oa.d(4);
 
-    void d2(b0 b0Var);
+    void D();
 
-    h0 f2(int i10, int i11);
+    void K(b0 b0Var);
 
-    void k1();
+    i0 a0(int i10, int i11);
 }

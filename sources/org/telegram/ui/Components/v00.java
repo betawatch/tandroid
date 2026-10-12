@@ -1,70 +1,141 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.ViewGroup;
+import android.util.SparseIntArray;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class v00 extends pm0 {
-    public final Context c;
-    public final /* synthetic */ a10 d;
+public final class v00 extends s4.v {
+    public final kq d = new kq(this, 17);
+    public final /* synthetic */ w00 e;
 
-    public v00(a10 a10Var, Context context) {
-        this.d = a10Var;
-        this.c = context;
+    public v00(w00 w00Var) {
+        this.e = w00Var;
     }
 
-    @Override // org.telegram.ui.Components.pm0
-    public final boolean D(s4.d1 d1Var) {
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
+        super.a(recyclerView, b1Var);
+        View view = b1Var.a;
+        view.setPressed(false);
+        view.setBackground(null);
+        view.setTag(R.id.dragging, null);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
+        if (MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
+            w00 w00Var = this.e;
+            if (!w00Var.n || (b1Var.b() == 0 && ((s00) w00Var.h.get(0)).e && !UserConfig.getInstance(UserConfig.selectedAccount).isPremium())) {
+                return s4.v.l(0, 0);
+            }
+        }
+        return s4.v.l(12, 0);
+    }
+
+    @Override // s4.v
+    public final boolean k() {
+        return this.e.n;
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
+        int i10 = 0;
+        if (MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked() && ((b1Var.b() == 0 || b1Var2.b() == 0) && !UserConfig.getInstance(UserConfig.selectedAccount).isPremium())) {
+            return false;
+        }
+        r00 r00Var = this.e.I;
+        int b10 = b1Var.b();
+        int b11 = b1Var2.b();
+        w00 w00Var = r00Var.d;
+        ArrayList arrayList = w00Var.h;
+        SparseIntArray sparseIntArray = w00Var.k0;
+        int size = arrayList.size();
+        if (b10 >= 0 && b11 >= 0 && b10 < size && b11 < size) {
+            ArrayList<MessagesController.DialogFilter> dialogFilters = MessagesController.getInstance(UserConfig.selectedAccount).getDialogFilters();
+            MessagesController.DialogFilter dialogFilter = dialogFilters.get(b10);
+            MessagesController.DialogFilter dialogFilter2 = dialogFilters.get(b11);
+            int i11 = dialogFilter.order;
+            dialogFilter.order = dialogFilter2.order;
+            dialogFilter2.order = i11;
+            dialogFilters.set(b10, dialogFilter2);
+            dialogFilters.set(b11, dialogFilter);
+            s00 s00Var = (s00) arrayList.get(b10);
+            s00 s00Var2 = (s00) arrayList.get(b11);
+            int i12 = s00Var.a;
+            s00Var.a = s00Var2.a;
+            s00Var2.a = i12;
+            int i13 = sparseIntArray.get(b10);
+            sparseIntArray.put(b10, sparseIntArray.get(b11));
+            sparseIntArray.put(b11, i13);
+            q00 q00Var = w00Var.J;
+            int i14 = s00Var2.a;
+            int i15 = s00Var.a;
+            org.telegram.ui.xw xwVar = (org.telegram.ui.xw) q00Var;
+            while (true) {
+                org.telegram.ui.xy[] xyVarArr = xwVar.b.e0;
+                if (i10 >= xyVarArr.length) {
+                    break;
+                }
+                org.telegram.ui.xy xyVar = xyVarArr[i10];
+                int i16 = xyVar.h;
+                if (i16 == i14) {
+                    xyVar.h = i15;
+                } else if (i16 == i15) {
+                    xyVar.h = i14;
+                }
+                i10++;
+            }
+            int i17 = w00Var.K;
+            if (i17 == b10) {
+                w00Var.K = b11;
+                w00Var.L = s00Var.a;
+            } else if (i17 == b11) {
+                w00Var.K = b10;
+                w00Var.L = s00Var2.a;
+            }
+            int i18 = w00Var.q0;
+            if (i18 == b10) {
+                w00Var.q0 = b11;
+                w00Var.r0 = s00Var.a;
+            } else if (i18 == b11) {
+                w00Var.q0 = b10;
+                w00Var.r0 = s00Var2.a;
+            }
+            arrayList.set(b10, s00Var2);
+            arrayList.set(b11, s00Var);
+            w00Var.j();
+            w00Var.y = true;
+            w00Var.F.setItemAnimator(w00Var.s0);
+            r00Var.p(b10, b11);
+        }
         return true;
     }
 
-    @Override // s4.i0
-    public final int h() {
-        return this.d.h.size();
-    }
-
-    @Override // s4.i0
-    public final long i(int i10) {
-        return this.d.k0.get(i10);
-    }
-
-    @Override // s4.i0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
-        y00 y00Var = (y00) d1Var.a;
-        int id2 = y00Var.b != null ? y00Var.getId() : -1;
-        w00 w00Var = (w00) this.d.h.get(i10);
-        y00Var.b = w00Var;
-        y00Var.e = i10;
-        y00Var.setContentDescription(w00Var.b);
-        y00Var.requestLayout();
-        boolean z10 = y00Var.n;
-        w00 w00Var2 = y00Var.b;
-        if (z10 != (w00Var2 != null && w00Var2.g)) {
-            b6.release(y00Var, y00Var.r);
-            b6.release(y00Var, y00Var.O);
-            b6.release(y00Var, y00Var.Q);
-            b6.release(y00Var, y00Var.S);
-            if (y00Var.l0) {
-                y00Var.r = b6.update(y00Var.b.g ? 26 : 0, y00Var, y00Var.r, y00Var.s);
-                y00Var.O = b6.update(y00Var.b.g ? 26 : 0, y00Var, y00Var.O, y00Var.P);
-                y00Var.Q = b6.update(y00Var.b.g ? 26 : 0, y00Var, y00Var.Q, y00Var.R);
-                y00Var.S = b6.update(y00Var.b.g ? 26 : 0, y00Var, y00Var.S, y00Var.T);
-            }
-            y00Var.n = y00Var.b.g;
+    @Override // s4.v
+    public final void p(s4.b1 b1Var, int i10) {
+        if (i10 != 0) {
+            w00 w00Var = this.e;
+            w00Var.F.I0(false);
+            b1Var.a.setPressed(true);
+            b1Var.a.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(w00Var.b0, w00Var.a));
+        } else {
+            kq kqVar = this.d;
+            AndroidUtilities.cancelRunOnUIThread(kqVar);
+            AndroidUtilities.runOnUIThread(kqVar, 320L);
         }
-        if (id2 != y00Var.getId()) {
-            y00Var.k0 = y00Var.b.f ? 1.0f : 0.0f;
+        if (b1Var != null) {
+            b1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
         }
     }
 
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        return new am0(new y00(this.d, this.c));
+    @Override // s4.v
+    public final void q(s4.b1 b1Var) {
     }
 }

@@ -1,12 +1,11 @@
 package androidx.activity;
 
 import android.os.Bundle;
-import androidx.fragment.app.k0;
-import androidx.lifecycle.i0;
+import androidx.fragment.app.i0;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements t4.d {
     public final /* synthetic */ int a;
@@ -21,9 +20,9 @@ public final /* synthetic */ class e implements t4.d {
     public final Bundle a() {
         switch (this.a) {
             case 0:
-                l lVar = (l) this.b;
+                m mVar = (m) this.b;
                 Bundle bundle = new Bundle();
-                h hVar = lVar.w;
+                h hVar = mVar.w;
                 hVar.getClass();
                 HashMap hashMap = hVar.b;
                 bundle.putIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS", new ArrayList<>(hashMap.values()));
@@ -32,15 +31,15 @@ public final /* synthetic */ class e implements t4.d {
                 bundle.putBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT", (Bundle) hVar.g.clone());
                 return bundle;
             case 1:
-                androidx.fragment.app.v vVar = (androidx.fragment.app.v) this.b;
-                while (androidx.fragment.app.v.t(vVar.s())) {
+                androidx.fragment.app.u uVar = (androidx.fragment.app.u) this.b;
+                while (androidx.fragment.app.u.t(uVar.s())) {
                 }
-                vVar.K.e(androidx.lifecycle.m.ON_STOP);
+                uVar.K.e(androidx.lifecycle.m.ON_STOP);
                 return new Bundle();
             case 2:
-                return ((k0) this.b).Y();
+                return ((i0) this.b).Y();
             default:
-                return i0.a((i0) this.b);
+                return androidx.lifecycle.i0.a((androidx.lifecycle.i0) this.b);
         }
     }
 }

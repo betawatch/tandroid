@@ -1,101 +1,100 @@
 package b3;
 
-import b2.s;
-import e2.v;
+import e2.m0;
+import e2.x;
 import h2.h;
-import hg.c;
-import i2.d0;
-import i2.f;
+import i2.b;
+import i2.c0;
+import i2.d;
 import java.nio.ByteBuffer;
-import n4.x;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a extends f {
+public final class a extends b {
     public final h I;
-    public final v J;
-    public d0 K;
+    public final x J;
+    public c0 K;
     public long L;
 
     public a() {
         super(6);
         this.I = new h(1, 0);
-        this.J = new v();
+        this.J = new x();
     }
 
-    @Override // i2.f
-    public final int A(s sVar) {
-        return "application/x-camera-motion".equals(sVar.r) ? c.b(4, 0, 0, 0) : c.b(0, 0, 0, 0);
+    @Override // i2.b
+    public final int C(b2.x xVar) {
+        return "application/x-camera-motion".equals(xVar.s) ? d.c(4, 0, 0, 0) : d.c(0, 0, 0, 0);
     }
 
-    @Override // i2.f, i2.j1
+    @Override // i2.b, i2.m1
     public final void c(int i10, Object obj) {
         if (i10 == 8) {
-            this.K = (d0) obj;
+            this.K = (c0) obj;
         }
     }
 
-    @Override // i2.f
+    @Override // i2.b
     public final String j() {
         return "CameraMotionRenderer";
     }
 
-    @Override // i2.f
+    @Override // i2.b
     public final boolean l() {
         return k();
     }
 
-    @Override // i2.f
+    @Override // i2.b
     public final boolean m() {
         return true;
     }
 
-    @Override // i2.f
-    public final void o() {
-        d0 d0Var = this.K;
-        if (d0Var != null) {
-            d0Var.d();
+    @Override // i2.b
+    public final void n() {
+        c0 c0Var = this.K;
+        if (c0Var != null) {
+            c0Var.d();
         }
     }
 
-    @Override // i2.f
-    public final void q(long j3, boolean z10) {
+    @Override // i2.b
+    public final void p(long j10, boolean z10, boolean z11) {
         this.L = Long.MIN_VALUE;
-        d0 d0Var = this.K;
-        if (d0Var != null) {
-            d0Var.d();
+        c0 c0Var = this.K;
+        if (c0Var != null) {
+            c0Var.d();
         }
     }
 
-    @Override // i2.f
-    public final void x(long j3, long j10) {
+    @Override // i2.b
+    public final void x(long j10, long j11) {
         float[] fArr;
-        while (!k() && this.L < 100000 + j3) {
+        while (!k() && this.L < 100000 + j10) {
             h hVar = this.I;
             hVar.clear();
-            x xVar = this.c;
-            xVar.u();
-            if (w(xVar, hVar, 0) != -4 || hVar.isEndOfStream()) {
+            qf.b bVar = this.c;
+            bVar.y();
+            if (w(bVar, hVar, 0) != -4 || hVar.isEndOfStream()) {
                 return;
             }
-            long j11 = hVar.e;
-            this.L = j11;
-            boolean z10 = j11 < this.w;
+            long j12 = hVar.e;
+            this.L = j12;
+            boolean z10 = j12 < this.w;
             if (this.K != null && !z10) {
-                hVar.c();
+                hVar.e();
                 ByteBuffer byteBuffer = hVar.c;
-                String str = e2.d0.a;
+                String str = m0.a;
                 if (byteBuffer.remaining() != 16) {
                     fArr = null;
                 } else {
                     byte[] array = byteBuffer.array();
                     int limit = byteBuffer.limit();
-                    v vVar = this.J;
-                    vVar.H(limit, array);
-                    vVar.J(byteBuffer.arrayOffset() + 4);
+                    x xVar = this.J;
+                    xVar.L(limit, array);
+                    xVar.N(byteBuffer.arrayOffset() + 4);
                     float[] fArr2 = new float[3];
                     for (int i10 = 0; i10 < 3; i10++) {
-                        fArr2[i10] = Float.intBitsToFloat(vVar.l());
+                        fArr2[i10] = Float.intBitsToFloat(xVar.o());
                     }
                     fArr = fArr2;
                 }

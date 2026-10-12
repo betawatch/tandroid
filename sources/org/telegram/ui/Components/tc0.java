@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class tc0 extends View {
     public final ArrayList a;
@@ -26,7 +26,7 @@ public final class tc0 extends View {
     public final RectF r;
     public Utilities.Callback s;
 
-    public tc0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public tc0(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
         int[] iArr;
         this.a = new ArrayList();
@@ -35,22 +35,22 @@ public final class tc0 extends View {
         this.h = AndroidUtilities.dp(14.0f);
         this.n = AndroidUtilities.dp(0.0f);
         this.r = new RectF();
-        if (org.telegram.ui.ActionBar.i6.I.q()) {
+        if (org.telegram.ui.ActionBar.g6.I.q()) {
             this.d = -1862270977;
             this.e = -1325400065;
             paint.setColor(285212671);
             return;
         }
-        int w02 = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.Nd, e6Var);
-        if (e6Var instanceof org.telegram.ui.xn) {
-            org.telegram.ui.xn xnVar = (org.telegram.ui.xn) e6Var;
-            if ((xnVar.d() instanceof cd0) && (iArr = ((cd0) xnVar.d()).a) != null) {
+        int w02 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Nd, c6Var);
+        if (c6Var instanceof org.telegram.ui.co) {
+            org.telegram.ui.co coVar = (org.telegram.ui.co) c6Var;
+            if ((coVar.d() instanceof cd0) && (iArr = ((cd0) coVar.d()).a) != null) {
                 w02 = AndroidUtilities.getAverageColor(AndroidUtilities.getAverageColor(iArr[0], iArr[1]), AndroidUtilities.getAverageColor(iArr[2], iArr[3]));
             }
         }
-        this.d = org.telegram.ui.ActionBar.i6.c(-1606201797, w02);
-        this.e = org.telegram.ui.ActionBar.i6.c(-448573893, w02);
-        paint.setColor(org.telegram.ui.ActionBar.i6.c(814980216, w02));
+        this.d = org.telegram.ui.ActionBar.g6.c(-1606201797, w02);
+        this.e = org.telegram.ui.ActionBar.g6.c(-448573893, w02);
+        paint.setColor(org.telegram.ui.ActionBar.g6.c(814980216, w02));
     }
 
     public final void a(int i10, String str) {

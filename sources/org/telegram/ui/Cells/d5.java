@@ -11,29 +11,29 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public abstract class d5 extends FrameLayout {
     public TextView a;
     public TextView b;
-    public j0 c;
+    public k0 c;
     public long d;
 
     public final void a(ArrayList arrayList, boolean z10) {
         TextView textView = this.b;
-        j0 j0Var = this.c;
+        k0 k0Var = this.c;
         TextView textView2 = this.a;
         super.setEnabled(z10);
         if (arrayList != null) {
             arrayList.add(ObjectAnimator.ofFloat(textView2, "alpha", z10 ? 1.0f : 0.5f));
-            arrayList.add(ObjectAnimator.ofFloat(j0Var, "alpha", z10 ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(k0Var, "alpha", z10 ? 1.0f : 0.5f));
             arrayList.add(ObjectAnimator.ofFloat(textView, "alpha", z10 ? 1.0f : 0.5f));
         } else {
             textView2.setAlpha(z10 ? 1.0f : 0.5f);
-            j0Var.setAlpha(z10 ? 1.0f : 0.5f);
+            k0Var.setAlpha(z10 ? 1.0f : 0.5f);
             textView.setAlpha(z10 ? 1.0f : 0.5f);
         }
     }
@@ -52,7 +52,7 @@ public abstract class d5 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+        canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
     }
 
     @Override // android.view.ViewGroup
@@ -70,8 +70,8 @@ public abstract class d5 extends FrameLayout {
         int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(42.0f);
         TextView textView = this.b;
         textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.q.b(8.0f, measuredWidth - textView.getMeasuredWidth(), AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
-        this.c.measure(bi.c(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.q.c(8.0f, measuredWidth - textView.getMeasuredWidth(), AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
+        this.c.measure(yh.z(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
@@ -82,26 +82,26 @@ public abstract class d5 extends FrameLayout {
         return true;
     }
 
-    public void setSize(long j3) {
+    public void setSize(long j10) {
         float max;
         float f7;
         float f10;
-        this.d = j3;
-        this.b.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j3)));
-        long j10 = j3 - 512000;
-        if (j10 < 536576) {
-            f10 = Math.max(0.0f, j10 / 536576.0f) * 0.25f;
+        this.d = j10;
+        this.b.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j10)));
+        long j11 = j10 - 512000;
+        if (j11 < 536576) {
+            f10 = Math.max(0.0f, j11 / 536576.0f) * 0.25f;
         } else {
-            long j11 = j3 - 1048576;
-            if (j11 < 9437184) {
-                f10 = (Math.max(0.0f, j11 / 9437184.0f) * 0.25f) + 0.25f;
+            long j12 = j10 - 1048576;
+            if (j12 < 9437184) {
+                f10 = (Math.max(0.0f, j12 / 9437184.0f) * 0.25f) + 0.25f;
             } else {
-                long j12 = j3 - 10485760;
-                if (j12 < 94371840) {
-                    max = Math.max(0.0f, j12 / 9.437184E7f) * 0.25f;
+                long j13 = j10 - 10485760;
+                if (j13 < 94371840) {
+                    max = Math.max(0.0f, j13 / 9.437184E7f) * 0.25f;
                     f7 = 0.5f;
                 } else {
-                    max = Math.max(0.0f, (j3 - SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) / 1.9922944E9f) * 0.25f;
+                    max = Math.max(0.0f, (j10 - SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) / 1.9922944E9f) * 0.25f;
                     f7 = 0.75f;
                 }
                 f10 = max + f7;

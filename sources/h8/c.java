@@ -1,12 +1,11 @@
 package h8;
 
-import ae.x;
 import android.os.Parcel;
 import android.os.RemoteException;
 import java.util.HashMap;
 import n6.l;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c {
     public final i8.f a;
@@ -24,8 +23,8 @@ public final class c {
             Parcel N0 = fVar.N0();
             N0.writeInt(i10);
             fVar.R0(N0, 16);
-        } catch (RemoteException e7) {
-            throw new x(e7);
+        } catch (RemoteException e) {
+            throw new androidx.car.app.j(e);
         }
     }
 }

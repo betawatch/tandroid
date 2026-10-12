@@ -1,37 +1,20 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xz implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ AlertDialog$Builder b;
+public final class xz extends FrameLayout {
+    public wh.n a;
 
-    public /* synthetic */ xz(AlertDialog$Builder alertDialog$Builder, int i10) {
-        this.a = i10;
-        this.b = alertDialog$Builder;
+    public wh.n getSubtitleTextView() {
+        return this.a;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.hideKeyboard(textView);
-                this.b.a.d(-1).callOnClick();
-                break;
-            case 1:
-                AndroidUtilities.hideKeyboard(textView);
-                this.b.a.d(-1).callOnClick();
-                break;
-            default:
-                AndroidUtilities.hideKeyboard(textView);
-                this.b.a.d(-1).callOnClick();
-                break;
-        }
-        return false;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

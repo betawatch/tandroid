@@ -1,26 +1,25 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class e80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l80 b;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-    public /* synthetic */ e80(l80 l80Var, int i10) {
-        this.a = i10;
-        this.b = l80Var;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class e80 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ org.telegram.ui.ActionBar.a2 a;
+    public final /* synthetic */ h80 b;
+
+    public e80(h80 h80Var, org.telegram.ui.ActionBar.a2 a2Var) {
+        this.b = h80Var;
+        this.a = a2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                l80 l80Var = this.b;
-                l80Var.h.postOnAnimation(new e80(l80Var, 1));
-                break;
-            default:
-                this.b.Y();
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.reloadInterface) {
+            this.a.dismiss();
+            NotificationCenter.getGlobalInstance().removeObserver(this, i10);
+            AndroidUtilities.runOnUIThread(new zz(this, 13), 100L);
         }
     }
 }

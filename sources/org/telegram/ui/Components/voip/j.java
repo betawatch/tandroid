@@ -13,9 +13,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j extends View {
     public org.telegram.ui.Cells.z a;
@@ -113,7 +113,7 @@ public final class j extends View {
         canvas.drawText(str, width, AndroidUtilities.dp(6.0f) + height, paint2);
         canvas.drawText(str, width, height + AndroidUtilities.dp(6.0f), paint3);
         if (this.a == null) {
-            org.telegram.ui.Cells.z Z = i6.Z(i6.x0(null, i6.i6, false), 8, 8);
+            org.telegram.ui.Cells.z Z = g6.Z(g6.x0(null, g6.i6, false), 8, 8);
             this.a = Z;
             Z.setCallback(this);
         }

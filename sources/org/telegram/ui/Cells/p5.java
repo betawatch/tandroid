@@ -11,12 +11,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.ym;
+import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.vm;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class p5 extends org.telegram.ui.Components.y9 {
+public final class p5 extends org.telegram.ui.Components.z9 {
     public final Paint G;
     public long H;
     public Drawable I;
@@ -30,7 +30,7 @@ public final class p5 extends org.telegram.ui.Components.y9 {
         this.G = new Paint(1);
     }
 
-    @Override // org.telegram.ui.Components.y9, android.view.View
+    @Override // org.telegram.ui.Components.z9, android.view.View
     public final void onDraw(Canvas canvas) {
         Bitmap bitmap;
         MediaController.PhotoEntry photoEntry;
@@ -61,7 +61,7 @@ public final class p5 extends org.telegram.ui.Components.y9 {
                 this.b.draw(canvas);
                 if (t5Var.M == null) {
                     if (t5Var.L == null) {
-                        vh.g gVar = new vh.g();
+                        wh.g gVar = new wh.g();
                         t5Var.L = gVar;
                         gVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f)));
                     }
@@ -73,7 +73,7 @@ public final class p5 extends org.telegram.ui.Components.y9 {
         }
         float f7 = t5Var.T;
         if (f7 != 1.0f && t5Var.R != null) {
-            int interpolation = (int) (hs.f.getInterpolation(1.0f - f7) * 255.0f);
+            int interpolation = (int) (es.f.getInterpolation(1.0f - f7) * 255.0f);
             Paint paint = this.G;
             paint.setAlpha(interpolation);
             canvas.drawBitmap(t5Var.R, 0.0f, 0.0f, paint);
@@ -93,7 +93,7 @@ public final class p5 extends org.telegram.ui.Components.y9 {
         }
         if (t5Var.s) {
             r5 r5Var = t5Var.U;
-            if ((r5Var == null || !((ym) ((org.telegram.ui.Components.s) r5Var).b).s) && (photoEntry = t5Var.G) != null && photoEntry.isLivePhoto()) {
+            if ((r5Var == null || !((vm) ((org.telegram.ui.Components.s) r5Var).b).s) && (photoEntry = t5Var.G) != null && photoEntry.isLivePhoto()) {
                 if (t5Var.G.isUnalivePhoto()) {
                     if (this.J == null) {
                         this.J = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();

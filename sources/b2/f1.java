@@ -2,54 +2,126 @@ package b2;
 
 import android.os.Bundle;
 import j$.util.Objects;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f1 extends c1 {
-    public static final String d;
-    public static final String e;
-    public final boolean b;
-    public final boolean c;
+public final class f1 {
+    public static final String j;
+    public static final String k;
+    public static final String l;
+    public static final String m;
+    public static final String n;
+    public static final String o;
+    public static final String p;
+    public final Object a;
+    public final int b;
+    public final p0 c;
+    public final Object d;
+    public final int e;
+    public final long f;
+    public final long g;
+    public final int h;
+    public final int i;
 
     static {
-        String str = e2.d0.a;
-        d = Integer.toString(1, 36);
-        e = Integer.toString(2, 36);
+        String str = e2.m0.a;
+        j = Integer.toString(0, 36);
+        k = Integer.toString(1, 36);
+        l = Integer.toString(2, 36);
+        m = Integer.toString(3, 36);
+        n = Integer.toString(4, 36);
+        o = Integer.toString(5, 36);
+        p = Integer.toString(6, 36);
     }
 
-    public f1() {
-        this.b = false;
-        this.c = false;
+    public f1(Object obj, int i10, p0 p0Var, Object obj2, int i11, long j10, long j11, int i12, int i13) {
+        u6.g(i10 >= 0);
+        u6.g(i11 >= 0);
+        this.a = obj;
+        this.b = i10;
+        this.c = p0Var;
+        this.d = obj2;
+        this.e = i11;
+        this.f = j10;
+        this.g = j11;
+        this.h = i12;
+        this.i = i13;
     }
 
-    @Override // b2.c1
-    public final boolean b() {
-        return this.b;
+    public final boolean a(f1 f1Var) {
+        return this.b == f1Var.b && this.e == f1Var.e && this.f == f1Var.f && this.g == f1Var.g && this.h == f1Var.h && this.i == f1Var.i && Objects.equals(this.c, f1Var.c);
     }
 
-    @Override // b2.c1
-    public final Bundle c() {
+    public final f1 b(boolean z10, boolean z11) {
+        if (z10 && z11) {
+            return this;
+        }
+        return new f1(this.a, z11 ? this.b : 0, z10 ? this.c : null, this.d, z11 ? this.e : 0, z10 ? this.f : 0L, z10 ? this.g : 0L, z10 ? this.h : -1, z10 ? this.i : -1);
+    }
+
+    public final Bundle c(int i10) {
         Bundle bundle = new Bundle();
-        bundle.putInt(c1.a, 3);
-        bundle.putBoolean(d, this.b);
-        bundle.putBoolean(e, this.c);
+        int i11 = this.b;
+        if (i10 < 3 || i11 != 0) {
+            bundle.putInt(j, i11);
+        }
+        p0 p0Var = this.c;
+        if (p0Var != null) {
+            bundle.putBundle(k, p0Var.c(i10, false));
+        }
+        int i12 = this.e;
+        if (i10 < 3 || i12 != 0) {
+            bundle.putInt(l, i12);
+        }
+        long j10 = this.f;
+        if (i10 < 3 || j10 != 0) {
+            bundle.putLong(m, j10);
+        }
+        long j11 = this.g;
+        if (i10 < 3 || j11 != 0) {
+            bundle.putLong(n, j11);
+        }
+        int i13 = this.h;
+        if (i13 != -1) {
+            bundle.putInt(o, i13);
+        }
+        int i14 = this.i;
+        if (i14 != -1) {
+            bundle.putInt(p, i14);
+        }
         return bundle;
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof f1)) {
-            return false;
+        if (this == obj) {
+            return true;
         }
-        f1 f1Var = (f1) obj;
-        return this.c == f1Var.c && this.b == f1Var.b;
+        if (obj != null && f1.class == obj.getClass()) {
+            f1 f1Var = (f1) obj;
+            if (a(f1Var) && Objects.equals(this.a, f1Var.a) && Objects.equals(this.d, f1Var.d)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public final int hashCode() {
-        return Objects.hash(Boolean.valueOf(this.b), Boolean.valueOf(this.c));
+        return Objects.hash(this.a, Integer.valueOf(this.b), this.c, this.d, Integer.valueOf(this.e), Long.valueOf(this.f), Long.valueOf(this.g), Integer.valueOf(this.h), Integer.valueOf(this.i));
     }
 
-    public f1(boolean z10) {
-        this.b = true;
-        this.c = z10;
+    public final String toString() {
+        String str = "mediaItem=" + this.b + ", period=" + this.e + ", pos=" + this.f;
+        int i10 = this.h;
+        if (i10 == -1) {
+            return str;
+        }
+        StringBuilder i11 = t8.b.i(str, ", contentPos=");
+        i11.append(this.g);
+        i11.append(", adGroup=");
+        i11.append(i10);
+        i11.append(", ad=");
+        i11.append(this.i);
+        return i11.toString();
     }
 }

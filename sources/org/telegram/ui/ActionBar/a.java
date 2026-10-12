@@ -2,9 +2,9 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.nz0;
+import org.telegram.ui.uz0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        z zVar;
+        y yVar;
         switch (this.a) {
             case 0:
                 k kVar = this.b;
@@ -26,9 +26,9 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 kVar.b();
                 break;
             case 1:
-                nz0 nz0Var = this.b.U0;
-                if (nz0Var != null) {
-                    nz0Var.run();
+                uz0 uz0Var = this.b.U0;
+                if (uz0Var != null) {
+                    uz0Var.run();
                     break;
                 }
                 break;
@@ -42,19 +42,19 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                     kVar2.a.r(lerp, dp, dp, lerp);
                     kVar2.invalidate();
                 }
-                if (kVar2.O0 && (zVar = kVar2.E) != null) {
-                    zVar.setTranslationX(-AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), kVar2.o0));
+                if (kVar2.O0 && (yVar = kVar2.E) != null) {
+                    yVar.setTranslationX(-AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f), kVar2.o0));
                 }
-                nz0 nz0Var2 = kVar2.U0;
-                if (nz0Var2 != null) {
-                    nz0Var2.run();
+                uz0 uz0Var2 = kVar2.U0;
+                if (uz0Var2 != null) {
+                    uz0Var2.run();
                     break;
                 }
                 break;
             case 3:
-                nz0 nz0Var3 = this.b.U0;
-                if (nz0Var3 != null) {
-                    nz0Var3.run();
+                uz0 uz0Var3 = this.b.U0;
+                if (uz0Var3 != null) {
+                    uz0Var3.run();
                     break;
                 }
                 break;

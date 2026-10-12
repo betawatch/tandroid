@@ -3,7 +3,7 @@ package z7;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class o extends j {
     public final transient com.google.android.gms.internal.cast.j0 c;
@@ -29,13 +29,13 @@ public final class o extends j {
     }
 
     @Override // z7.e
-    public final int i(Object[] objArr) {
+    public final int h(Object[] objArr) {
         i iVar = this.b;
         if (iVar == null) {
             iVar = new n(this);
             this.b = iVar;
         }
-        return iVar.i(objArr);
+        return iVar.h(objArr);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set

@@ -1,192 +1,98 @@
 package ah;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.ComposeShader;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class d extends Drawable {
-    public final Paint a;
-    public final ch.d b;
-    public final Matrix c;
-    public LinearGradient d;
-    public final Matrix e;
-    public LinearGradient f;
-    public BitmapShader g;
-    public ComposeShader h;
-    public final Matrix i;
-    public final Paint j;
-    public Bitmap k;
-    public int l;
-    public boolean m;
-    public final Paint n;
-    public int o;
-    public boolean p;
-    public int q;
+public final class d {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public long i;
+    public boolean j;
+    public float k;
+    public final /* synthetic */ e l;
 
-    public d(ch.d dVar) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.c = new Matrix();
-        this.e = new Matrix();
-        this.i = new Matrix();
-        Paint paint2 = new Paint(1);
-        this.j = paint2;
-        this.n = new Paint(1);
-        this.q = 255;
-        this.b = dVar;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-        paint2.setFilterBitmap(true);
-        b(AndroidUtilities.dp(40.0f), false);
+    public d(e eVar) {
+        this.l = eVar;
     }
 
-    public static LinearGradient a(int i10, boolean z10) {
-        int alpha = Color.alpha(i10);
-        return z10 ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i10, 0), i0.a.k(i10, (alpha * 96) / 285), i0.a.k(i10, (alpha * 176) / 285), i0.a.k(i10, (alpha * 232) / 285)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.k(i10, 0), i0.a.k(i10, (alpha * 96) / 255), i0.a.k(i10, (alpha * 176) / 255), i0.a.k(i10, (alpha * 232) / 255), i0.a.k(i10, (alpha * 255) / 255)}, (float[]) null, Shader.TileMode.CLAMP);
-    }
-
-    public final void b(int i10, boolean z10) {
-        if (this.l == i10 && this.m == z10) {
-            return;
-        }
-        this.l = i10;
-        this.m = z10;
-        LinearGradient a2 = a(-16777216, z10);
-        this.d = a2;
-        this.a.setShader(a2);
-        this.n.setShader(null);
-        Matrix matrix = this.c;
-        matrix.reset();
-        matrix.setScale(1.0f, i10);
-        if (i10 < 0) {
-            matrix.postTranslate(0.0f, -i10);
-        }
-        this.d.setLocalMatrix(matrix);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int height;
-        int i10;
-        boolean z10;
-        Rect bounds = getBounds();
-        if (bounds.isEmpty() || this.q == 0) {
-            return;
-        }
-        ch.d dVar = this.b;
-        fh.a i11 = dVar.i();
-        while (i11 instanceof fh.e) {
-            i11 = ((fh.e) i11).a;
-        }
-        boolean z11 = this.p;
-        Matrix matrix = this.c;
-        Matrix matrix2 = this.e;
-        if (!z11 && (i11 instanceof fh.c)) {
-            int color = ((fh.c) i11).a.getColor();
-            int i12 = this.o;
-            Paint paint = this.n;
-            if (i12 != color || this.f == null) {
-                LinearGradient a2 = a(color, this.m);
-                this.f = a2;
-                this.o = color;
-                paint.setShader(a2);
+    public final void a() {
+        e eVar;
+        float f7 = 0.0f;
+        this.h = 0.0f;
+        float b10 = b();
+        float c10 = c();
+        int i10 = 0;
+        while (true) {
+            eVar = this.l;
+            if (i10 >= 20) {
+                break;
             }
-            height = this.l < 0 ? bounds.height() + this.l : 0;
-            matrix2.set(matrix);
-            matrix2.postTranslate(bounds.left, bounds.top + height);
-            this.f.setLocalMatrix(matrix2);
-            paint.setAlpha(this.q);
-            canvas.drawRect(bounds, paint);
-            return;
-        }
-        if (z11 || !(i11 instanceof fh.b) || (i10 = Build.VERSION.SDK_INT) < 28) {
-            int saveLayerAlpha = canvas.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, this.q);
-            height = this.l < 0 ? bounds.height() + this.l : 0;
-            dVar.draw(canvas);
-            canvas.translate(bounds.left, bounds.top + height);
-            canvas.drawRect(0.0f, -height, bounds.width(), bounds.height() - height, this.a);
-            canvas.restoreToCount(saveLayerAlpha);
-            return;
-        }
-        fh.b bVar = (fh.b) i11;
-        Bitmap bitmap = bVar.d;
-        if (bitmap == null) {
-            return;
-        }
-        boolean z12 = true;
-        if (this.o != -16777216 || this.f == null) {
-            this.f = a(-16777216, this.m);
-            this.o = -16777216;
-            z10 = true;
-        } else {
-            z10 = false;
-        }
-        if (this.g == null || this.k != bitmap) {
-            this.k = bitmap;
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-            this.g = bitmapShader;
-            if (i10 >= 33) {
-                bitmapShader.setFilterMode(2);
+            float b11 = b();
+            float c11 = c();
+            float f10 = 2.14748365E9f;
+            for (int i11 = 0; i11 < eVar.c.size(); i11++) {
+                float f11 = ((d) eVar.c.get(i11)).c - b11;
+                float f12 = ((d) eVar.c.get(i11)).d - c11;
+                float f13 = (f12 * f12) + (f11 * f11);
+                if (f13 < f10) {
+                    f10 = f13;
+                }
             }
+            if (f10 > f7) {
+                b10 = b11;
+                c10 = c11;
+                f7 = f10;
+            }
+            i10++;
+        }
+        float f14 = eVar.f ? 0.8f : 0.5f;
+        this.c = b10;
+        if (b10 > eVar.b.width() * f14) {
+            this.a = eVar.b.width() * f14;
         } else {
-            z12 = z10;
+            float width = eVar.b.width() * f14;
+            this.a = width;
+            if (this.c > width) {
+                this.c = width - 0.1f;
+            }
         }
-        Paint paint2 = this.j;
-        if (z12 || this.h == null) {
-            ComposeShader composeShader = new ComposeShader(this.g, this.f, PorterDuff.Mode.DST_IN);
-            this.h = composeShader;
-            paint2.setShader(composeShader);
+        this.b = a1.g.d(org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 100), 100.0f, eVar.b.height() * 0.1f, eVar.b.height() * 0.45f);
+        if (eVar.f) {
+            float d = a1.g.d(org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 100), 100.0f, eVar.b.width() * 0.1f, eVar.b.width() * 0.05f);
+            this.f = d;
+            this.g = (((org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * d;
+            this.d = a1.g.d(org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 100), 100.0f, eVar.b.height() * 0.1f, this.f / 2.0f);
+            this.e = eVar.b.height() + this.f;
+            this.i = Math.abs(Utilities.fastRandom.nextInt() % 600) + MediaDataController.MAX_STYLE_RUNS_COUNT;
+        } else {
+            float d10 = a1.g.d(org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 100), 100.0f, eVar.b.width() * 0.1f, eVar.b.width() * 0.05f);
+            this.f = d10;
+            this.g = (((org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * d10;
+            this.d = c10;
+            this.e = c10 + eVar.b.height();
+            this.i = 1800L;
         }
-        height = this.l < 0 ? bounds.height() + this.l : 0;
-        matrix2.set(matrix);
-        matrix2.postTranslate(bounds.left, bounds.top + height);
-        this.f.setLocalMatrix(matrix2);
-        Matrix matrix3 = bVar.b;
-        Matrix matrix4 = this.i;
-        matrix4.set(matrix3);
-        matrix4.postTranslate(-dVar.a, -dVar.b);
-        this.g.setLocalMatrix(matrix4);
-        paint2.setAlpha(this.q);
-        canvas.drawRect(bounds, paint2);
+        this.i = (long) (this.i / 1.75f);
+        this.j = Utilities.fastRandom.nextBoolean();
+        this.k = ((Utilities.fastRandom.nextInt() % 100) / 100.0f) * 20.0f;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.q;
+    public final float b() {
+        if (!this.l.f) {
+            return (org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
+        }
+        return a1.g.d(org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.b.setBounds(rect);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.q = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final float c() {
+        return (org.telegram.ui.Cells.d0.e(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
     }
 }

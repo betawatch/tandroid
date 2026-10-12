@@ -3,7 +3,7 @@ package org.telegram.ui.web;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.webkit.MimeTypeMap;
-import ci.l8;
+import di.k8;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private Utilities.Callback<File> doneCallback;
@@ -48,8 +48,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
         return this;
     }
 
-    public HttpGetFileTask setMaxSize(long j3) {
-        this.max_size = j3;
+    public HttpGetFileTask setMaxSize(long j10) {
+        this.max_size = j10;
         return this;
     }
 
@@ -63,8 +63,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
         r18.file.delete();
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0176 A[LOOP:0: B:2:0x0009->B:35:0x0176, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0181 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0178 A[LOOP:0: B:2:0x0009->B:35:0x0178, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0183 A[SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r16v0 */
     /* JADX WARN: Type inference failed for: r16v1 */
     /* JADX WARN: Type inference failed for: r16v10 */
@@ -90,16 +90,16 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
         Throwable th3;
         FileChannel channel;
         String str = strArr[0];
-        long j3 = 0;
-        int i10 = 0;
         long j10 = 0;
+        int i10 = 0;
+        long j11 = 0;
         while (i10 < 5) {
             boolean z10 = i10 > 0;
             try {
                 HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
                 httpURLConnection.setRequestMethod("GET");
                 if (z10) {
-                    httpURLConnection.setRequestProperty("Range", "bytes=" + j10 + "-");
+                    httpURLConnection.setRequestProperty("Range", "bytes=" + j11 + "-");
                 }
                 httpURLConnection.setDoInput(true);
                 int responseCode = httpURLConnection.getResponseCode();
@@ -117,11 +117,11 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                             this.file = null;
                         }
                         z10 = false;
-                        j10 = j3;
-                    } catch (Exception e7) {
-                        e = e7;
-                        j10 = j3;
-                        r16 = j10;
+                        j11 = j10;
+                    } catch (Exception e) {
+                        e = e;
+                        j11 = j10;
+                        r16 = j11;
                         if (e instanceof ProtocolException) {
                             this.exception = e;
                             FileLog.e(e);
@@ -129,19 +129,19 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                         }
                         FileLog.d("got unexpected end of stream, lets try to resume");
                         i10++;
-                        j3 = r16;
+                        j10 = r16;
                     }
                 }
                 long contentLengthLong = Build.VERSION.SDK_INT >= 24 ? httpURLConnection.getContentLengthLong() : httpURLConnection.getContentLength();
-                long j11 = this.max_size;
-                r16 = (j11 > j3 ? 1 : (j11 == j3 ? 0 : -1));
-                if (r16 <= 0 || contentLengthLong <= j11) {
+                long j12 = this.max_size;
+                r16 = (j12 > j10 ? 1 : (j12 == j10 ? 0 : -1));
+                if (r16 <= 0 || contentLengthLong <= j12) {
                     if (this.file == null) {
                         String str2 = this.overrideExt;
                         if (str2 == null) {
                             str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                         }
-                        this.file = l8.w(UserConfig.selectedAccount, str2);
+                        this.file = k8.w(UserConfig.selectedAccount, str2);
                     }
                     bufferedInputStream = new BufferedInputStream(errorStream, 16384);
                     try {
@@ -154,10 +154,10 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                         byte[] bArr = new byte[16384];
                                         while (true) {
                                             int read = bufferedInputStream.read(bArr);
-                                            r16 = j3;
+                                            r16 = j10;
                                             if (read == -1) {
                                                 if (this.progressCallback != null) {
-                                                    AndroidUtilities.runOnUIThread(new q0(this, 3));
+                                                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.m2(this, 8));
                                                 }
                                                 if (channel != null) {
                                                     channel.close();
@@ -171,21 +171,21 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                             }
                                             try {
                                                 channel.write(ByteBuffer.wrap(bArr, 0, read));
-                                                j10 += read;
+                                                j11 += read;
                                                 if (isCancelled()) {
                                                     try {
                                                         break;
-                                                    } catch (Exception e10) {
-                                                        FileLog.e(e10);
+                                                    } catch (Exception e7) {
+                                                        FileLog.e(e7);
                                                     }
                                                 } else {
                                                     if (contentLengthLong > r16) {
-                                                        float clamp01 = Utilities.clamp01(j10 / contentLengthLong);
+                                                        float clamp01 = Utilities.clamp01(j11 / contentLengthLong);
                                                         if (this.progressCallback != null) {
                                                             AndroidUtilities.runOnUIThread(new org.telegram.ui.c0(this, clamp01, 5));
                                                         }
                                                     }
-                                                    j3 = r16;
+                                                    j10 = r16;
                                                 }
                                             } catch (Throwable th4) {
                                                 th = th4;
@@ -204,7 +204,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                         }
                                     } catch (Throwable th7) {
                                         th = th7;
-                                        r16 = j3;
+                                        r16 = j10;
                                     }
                                 } catch (Throwable th8) {
                                     th = th8;
@@ -219,14 +219,13 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                 }
                             } catch (Throwable th10) {
                                 th = th10;
-                                r16 = j3;
+                                r16 = j10;
                                 th3 = th;
                                 fileOutputStream.close();
                                 throw th3;
                             }
                         } catch (Throwable th11) {
                             th = th11;
-                            r16 = j3;
                             th2 = th;
                             try {
                                 try {
@@ -236,14 +235,15 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                     th2.addSuppressed(th12);
                                     throw th2;
                                 }
-                            } catch (Exception e11) {
-                                e = e11;
+                            } catch (Exception e10) {
+                                e = e10;
                                 if (e instanceof ProtocolException) {
                                 }
                             }
                         }
                     } catch (Throwable th13) {
                         th = th13;
+                        r16 = j10;
                         th2 = th;
                         bufferedInputStream.close();
                         throw th2;
@@ -255,9 +255,9 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                     }
                 }
                 return null;
-            } catch (Exception e12) {
-                e = e12;
-                r16 = j3;
+            } catch (Exception e11) {
+                e = e11;
+                r16 = j10;
             }
         }
         this.exception = new RuntimeException("too many retries");

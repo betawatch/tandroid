@@ -1,26 +1,38 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ j1 a;
+public final class g1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ h1 a;
 
-    public g1(j1 j1Var) {
-        this.a = j1Var;
+    public g1(h1 h1Var) {
+        this.a = h1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        j1 j1Var = this.a;
-        j1Var.b.removeViewImmediate(j1Var.d);
-        j1Var.f.d.release();
-        j1Var.v = null;
-        j1Var.w = true;
-        j1Var.x = false;
-        j1Var.J = null;
-        j1Var.H = false;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        h1 h1Var = this.a;
+        h1Var.x = true;
+        com.google.android.gms.internal.cast.p pVar = h1Var.Y;
+        if (pVar != null) {
+            pVar.run();
+            h1Var.Y = null;
+        }
+        AndroidUtilities.runOnUIThread(new ig.t0(this, 27));
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+        int i13 = (i12 / 90) % 2;
+        h1 h1Var = this.a;
+        if (i13 == 0) {
+            h1Var.U = Float.valueOf(i11 / i10);
+        } else {
+            h1Var.U = Float.valueOf(i10 / i11);
+        }
+        AndroidUtilities.runOnUIThread(new hg.n(this, i10, i11, 10));
     }
 }

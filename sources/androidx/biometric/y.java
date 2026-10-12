@@ -1,15 +1,35 @@
 package androidx.biometric;
 
-import android.os.CancellationSignal;
+import android.content.DialogInterface;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class y {
-    public static void a(CancellationSignal cancellationSignal) {
-        cancellationSignal.cancel();
+public final class y implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final Object b;
+
+    public y(z zVar) {
+        this.b = new WeakReference(zVar);
     }
 
-    public static CancellationSignal b() {
-        return new CancellationSignal();
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
+        switch (this.a) {
+            case 0:
+                WeakReference weakReference = (WeakReference) this.b;
+                if (weakReference.get() != null) {
+                    ((z) weakReference.get()).g(true);
+                    break;
+                }
+                break;
+            default:
+                ((g0) this.b).C0.g(true);
+                break;
+        }
+    }
+
+    public y(g0 g0Var) {
+        this.b = g0Var;
     }
 }

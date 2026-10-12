@@ -1,84 +1,23 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.camera.CameraView;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class um extends CameraView {
-    public final ai.x4 a;
-    public boolean b;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout c;
+public final class um extends j9 {
+    public final /* synthetic */ vm E;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public um(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, boolean z10, boolean z11) {
-        super(context, z10, z11);
-        this.c = chatAttachAlertPhotoLayout;
-        this.a = new ai.x4(this, 7);
+    public um(vm vmVar, Context context) {
+        super(context);
+        this.E = vmVar;
     }
 
-    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
-        yi yiVar = chatAttachAlertPhotoLayout.b;
-        if (AndroidUtilities.makingGlobalBlurBitmap) {
-            return;
-        }
-        if (this.b || (!chatAttachAlertPhotoLayout.d0 && chatAttachAlertPhotoLayout.b0)) {
-            super.dispatchDraw(canvas);
-            return;
-        }
-        float translationY = (yiVar.getContainerView().getTranslationY() + (yiVar.J0[1] + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY();
-        ci.i iVar = yiVar.E2;
-        int min = (int) Math.min(translationY - (iVar != null ? iVar.d() + AndroidUtilities.dp(8.0f) : 0.0f), getMeasuredHeight());
-        boolean z10 = chatAttachAlertPhotoLayout.d0;
-        if (z10) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f7 = chatAttachAlertPhotoLayout.n1;
-            boolean z11 = ChatAttachAlertPhotoLayout.q1;
-            float f10 = 1.0f - chatAttachAlertPhotoLayout.e0;
-            rectF.set((0.0f * f10) + f7, (f10 * chatAttachAlertPhotoLayout.W) + chatAttachAlertPhotoLayout.k1, chatAttachAlertPhotoLayout.m1, AndroidUtilities.lerp(Math.min(min, chatAttachAlertPhotoLayout.l1), getMeasuredHeight(), chatAttachAlertPhotoLayout.e0));
-        } else {
-            if (!z10 && !chatAttachAlertPhotoLayout.b0) {
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                rectF2.set(0.0f, chatAttachAlertPhotoLayout.W, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
-                return;
-            }
-            AndroidUtilities.rectTmp.set(0.0f, 0.0f, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
-        }
-        canvas.save();
-        canvas.clipRect(AndroidUtilities.rectTmp);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
-        tc.a(chatAttachAlertPhotoLayout.P, this.a);
-        chatAttachAlertPhotoLayout.E.invalidate();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        tc.h(this.c.P);
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        super.setVisibility(i10);
-        this.c.E.invalidate();
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView
-    public final void showTexture(boolean z10, boolean z11) {
-        super.showTexture(z10, z11);
-        this.c.E.invalidate();
+    @Override // org.telegram.ui.Components.j9, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        vm vmVar = this.E;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(vmVar.v.K0, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(vmVar.v.K0, TLObject.FLAG_30));
     }
 }

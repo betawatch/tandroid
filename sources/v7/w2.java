@@ -1,19 +1,165 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class w2 implements ia.d {
+public final class w2 implements ja.d {
     public static final w2 a = new w2();
+    public static final ja.c b = new ja.c("systemInfo", i2.d.n(t8.b.k(h.class, new e(1))));
+    public static final ja.c c = new ja.c("eventName", i2.d.n(t8.b.k(h.class, new e(2))));
+    public static final ja.c d = new ja.c("isThickClient", i2.d.n(t8.b.k(h.class, new e(37))));
+    public static final ja.c e = new ja.c("clientType", i2.d.n(t8.b.k(h.class, new e(61))));
+    public static final ja.c f = new ja.c("modelDownloadLogEvent", i2.d.n(t8.b.k(h.class, new e(3))));
+    public static final ja.c g = new ja.c("customModelLoadLogEvent", i2.d.n(t8.b.k(h.class, new e(20))));
+    public static final ja.c h = new ja.c("customModelInferenceLogEvent", i2.d.n(t8.b.k(h.class, new e(4))));
+    public static final ja.c i = new ja.c("customModelCreateLogEvent", i2.d.n(t8.b.k(h.class, new e(29))));
+    public static final ja.c j = new ja.c("onDeviceFaceDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(5))));
+    public static final ja.c k = new ja.c("onDeviceFaceLoadLogEvent", i2.d.n(t8.b.k(h.class, new e(59))));
+    public static final ja.c l = new ja.c("onDeviceTextDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(6))));
+    public static final ja.c m = new ja.c("onDeviceTextDetectionLoadLogEvent", i2.d.n(t8.b.k(h.class, new e(79))));
+    public static final ja.c n = new ja.c("onDeviceBarcodeDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(7))));
+    public static final ja.c o = new ja.c("onDeviceBarcodeLoadLogEvent", i2.d.n(t8.b.k(h.class, new e(58))));
+    public static final ja.c p = new ja.c("onDeviceImageLabelCreateLogEvent", i2.d.n(t8.b.k(h.class, new e(48))));
+    public static final ja.c q = new ja.c("onDeviceImageLabelLoadLogEvent", i2.d.n(t8.b.k(h.class, new e(49))));
+    public static final ja.c r = new ja.c("onDeviceImageLabelDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(18))));
+    public static final ja.c s = new ja.c("onDeviceObjectCreateLogEvent", i2.d.n(t8.b.k(h.class, new e(26))));
+    public static final ja.c t = new ja.c("onDeviceObjectLoadLogEvent", i2.d.n(t8.b.k(h.class, new e(27))));
+    public static final ja.c u = new ja.c("onDeviceObjectInferenceLogEvent", i2.d.n(t8.b.k(h.class, new e(28))));
+    public static final ja.c v = new ja.c("onDevicePoseDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(44))));
+    public static final ja.c w = new ja.c("onDeviceSegmentationLogEvent", i2.d.n(t8.b.k(h.class, new e(45))));
+    public static final ja.c x = new ja.c("onDeviceSmartReplyLogEvent", i2.d.n(t8.b.k(h.class, new e(19))));
+    public static final ja.c y = new ja.c("onDeviceLanguageIdentificationLogEvent", i2.d.n(t8.b.k(h.class, new e(21))));
+    public static final ja.c z = new ja.c("onDeviceTranslationLogEvent", i2.d.n(t8.b.k(h.class, new e(22))));
+    public static final ja.c A = new ja.c("cloudFaceDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(8))));
+    public static final ja.c B = new ja.c("cloudCropHintDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(9))));
+    public static final ja.c C = new ja.c("cloudDocumentTextDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(10))));
+    public static final ja.c D = new ja.c("cloudImagePropertiesDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(11))));
+    public static final ja.c E = new ja.c("cloudImageLabelDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(12))));
+    public static final ja.c F = new ja.c("cloudLandmarkDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(13))));
+    public static final ja.c G = new ja.c("cloudLogoDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(14))));
+    public static final ja.c H = new ja.c("cloudSafeSearchDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(15))));
+    public static final ja.c I = new ja.c("cloudTextDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(16))));
+    public static final ja.c J = new ja.c("cloudWebSearchDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(17))));
+    public static final ja.c K = new ja.c("automlImageLabelingCreateLogEvent", i2.d.n(t8.b.k(h.class, new e(23))));
+    public static final ja.c L = new ja.c("automlImageLabelingLoadLogEvent", i2.d.n(t8.b.k(h.class, new e(24))));
+    public static final ja.c M = new ja.c("automlImageLabelingInferenceLogEvent", i2.d.n(t8.b.k(h.class, new e(25))));
+    public static final ja.c N = new ja.c("isModelDownloadedLogEvent", i2.d.n(t8.b.k(h.class, new e(39))));
+    public static final ja.c O = new ja.c("deleteModelLogEvent", i2.d.n(t8.b.k(h.class, new e(40))));
+    public static final ja.c P = new ja.c("aggregatedAutomlImageLabelingInferenceLogEvent", i2.d.n(t8.b.k(h.class, new e(30))));
+    public static final ja.c Q = new ja.c("aggregatedCustomModelInferenceLogEvent", i2.d.n(t8.b.k(h.class, new e(31))));
+    public static final ja.c R = new ja.c("aggregatedOnDeviceFaceDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(32))));
+    public static final ja.c S = new ja.c("aggregatedOnDeviceBarcodeDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(33))));
+    public static final ja.c T = new ja.c("aggregatedOnDeviceImageLabelDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(34))));
+    public static final ja.c U = new ja.c("aggregatedOnDeviceObjectInferenceLogEvent", i2.d.n(t8.b.k(h.class, new e(35))));
+    public static final ja.c V = new ja.c("aggregatedOnDeviceTextDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(36))));
+    public static final ja.c W = new ja.c("aggregatedOnDevicePoseDetectionLogEvent", i2.d.n(t8.b.k(h.class, new e(46))));
+    public static final ja.c X = new ja.c("aggregatedOnDeviceSegmentationLogEvent", i2.d.n(t8.b.k(h.class, new e(47))));
+    public static final ja.c Y = new ja.c("pipelineAccelerationInferenceEvents", i2.d.n(t8.b.k(h.class, new e(69))));
+    public static final ja.c Z = new ja.c("remoteConfigLogEvent", i2.d.n(t8.b.k(h.class, new e(42))));
+    public static final ja.c a0 = new ja.c("inputImageConstructionLogEvent", i2.d.n(t8.b.k(h.class, new e(50))));
+    public static final ja.c b0 = new ja.c("leakedHandleEvent", i2.d.n(t8.b.k(h.class, new e(51))));
+    public static final ja.c c0 = new ja.c("cameraSourceLogEvent", i2.d.n(t8.b.k(h.class, new e(52))));
+    public static final ja.c d0 = new ja.c("imageLabelOptionalModuleLogEvent", i2.d.n(t8.b.k(h.class, new e(53))));
+    public static final ja.c e0 = new ja.c("languageIdentificationOptionalModuleLogEvent", i2.d.n(t8.b.k(h.class, new e(54))));
+    public static final ja.c f0 = new ja.c("faceDetectionOptionalModuleLogEvent", i2.d.n(t8.b.k(h.class, new e(60))));
+    public static final ja.c g0 = new ja.c("nlClassifierOptionalModuleLogEvent", i2.d.n(t8.b.k(h.class, new e(55))));
+    public static final ja.c h0 = new ja.c("nlClassifierClientLibraryLogEvent", i2.d.n(t8.b.k(h.class, new e(56))));
+    public static final ja.c i0 = new ja.c("accelerationAllowlistLogEvent", i2.d.n(t8.b.k(h.class, new e(57))));
+    public static final ja.c j0 = new ja.c("toxicityDetectionCreateEvent", i2.d.n(t8.b.k(h.class, new e(62))));
+    public static final ja.c k0 = new ja.c("toxicityDetectionLoadEvent", i2.d.n(t8.b.k(h.class, new e(63))));
+    public static final ja.c l0 = new ja.c("toxicityDetectionInferenceEvent", i2.d.n(t8.b.k(h.class, new e(64))));
+    public static final ja.c m0 = new ja.c("barcodeDetectionOptionalModuleLogEvent", i2.d.n(t8.b.k(h.class, new e(65))));
+    public static final ja.c n0 = new ja.c("customImageLabelOptionalModuleLogEvent", i2.d.n(t8.b.k(h.class, new e(66))));
+    public static final ja.c o0 = new ja.c("codeScannerScanApiEvent", i2.d.n(t8.b.k(h.class, new e(67))));
+    public static final ja.c p0 = new ja.c("codeScannerOptionalModuleEvent", i2.d.n(t8.b.k(h.class, new e(68))));
+    public static final ja.c q0 = new ja.c("onDeviceExplicitContentCreateLogEvent", i2.d.n(t8.b.k(h.class, new e(70))));
+    public static final ja.c r0 = new ja.c("onDeviceExplicitContentLoadLogEvent", i2.d.n(t8.b.k(h.class, new e(71))));
+    public static final ja.c s0 = new ja.c("onDeviceExplicitContentInferenceLogEvent", i2.d.n(t8.b.k(h.class, new e(72))));
+    public static final ja.c t0 = new ja.c("aggregatedOnDeviceExplicitContentLogEvent", i2.d.n(t8.b.k(h.class, new e(73))));
+    public static final ja.c u0 = new ja.c("onDeviceSelfieFaceCreateLogEvent", i2.d.n(t8.b.k(h.class, new e(74))));
+    public static final ja.c v0 = new ja.c("onDeviceSelfieFaceLoadLogEvent", i2.d.n(t8.b.k(h.class, new e(75))));
+    public static final ja.c w0 = new ja.c("onDeviceSelfieFaceLogEvent", i2.d.n(t8.b.k(h.class, new e(76))));
+    public static final ja.c x0 = new ja.c("aggregatedOnDeviceSelfieFaceLogEvent", i2.d.n(t8.b.k(h.class, new e(77))));
+    public static final ja.c y0 = new ja.c("smartReplyOptionalModuleLogEvent", i2.d.n(t8.b.k(h.class, new e(78))));
 
-    static {
-        sc.v.t(sc.v.l(h.class, new e(1)));
-    }
-
-    @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // ja.a
+    public final void a(Object obj, Object obj2) {
+        k6 k6Var = (k6) obj;
+        ja.e eVar = (ja.e) obj2;
+        eVar.d(b, k6Var.a);
+        eVar.d(c, k6Var.b);
+        eVar.d(d, null);
+        eVar.d(e, k6Var.c);
+        eVar.d(f, null);
+        eVar.d(g, null);
+        eVar.d(h, null);
+        eVar.d(i, null);
+        eVar.d(j, null);
+        eVar.d(k, null);
+        eVar.d(l, null);
+        eVar.d(m, null);
+        eVar.d(n, null);
+        eVar.d(o, null);
+        eVar.d(p, null);
+        eVar.d(q, null);
+        eVar.d(r, null);
+        eVar.d(s, null);
+        eVar.d(t, null);
+        eVar.d(u, null);
+        eVar.d(v, null);
+        eVar.d(w, null);
+        eVar.d(x, null);
+        eVar.d(y, k6Var.d);
+        eVar.d(z, null);
+        eVar.d(A, null);
+        eVar.d(B, null);
+        eVar.d(C, null);
+        eVar.d(D, null);
+        eVar.d(E, null);
+        eVar.d(F, null);
+        eVar.d(G, null);
+        eVar.d(H, null);
+        eVar.d(I, null);
+        eVar.d(J, null);
+        eVar.d(K, null);
+        eVar.d(L, null);
+        eVar.d(M, null);
+        eVar.d(N, null);
+        eVar.d(O, null);
+        eVar.d(P, null);
+        eVar.d(Q, null);
+        eVar.d(R, null);
+        eVar.d(S, null);
+        eVar.d(T, null);
+        eVar.d(U, null);
+        eVar.d(V, null);
+        eVar.d(W, null);
+        eVar.d(X, null);
+        eVar.d(Y, null);
+        eVar.d(Z, null);
+        eVar.d(a0, null);
+        eVar.d(b0, null);
+        eVar.d(c0, null);
+        eVar.d(d0, null);
+        eVar.d(e0, null);
+        eVar.d(f0, null);
+        eVar.d(g0, null);
+        eVar.d(h0, null);
+        eVar.d(i0, null);
+        eVar.d(j0, null);
+        eVar.d(k0, null);
+        eVar.d(l0, null);
+        eVar.d(m0, null);
+        eVar.d(n0, null);
+        eVar.d(o0, null);
+        eVar.d(p0, null);
+        eVar.d(q0, null);
+        eVar.d(r0, null);
+        eVar.d(s0, null);
+        eVar.d(t0, null);
+        eVar.d(u0, null);
+        eVar.d(v0, null);
+        eVar.d(w0, null);
+        eVar.d(x0, null);
+        eVar.d(y0, null);
     }
 }

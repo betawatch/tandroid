@@ -1,12 +1,12 @@
 package j4;
 
-import b2.r0;
+import b2.w0;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f {
     public final int a;
@@ -26,7 +26,7 @@ public final class f {
         String str = (String) lVar.b;
         if (i10 != 2) {
             if (i10 == 3 || i10 == 4) {
-                return new w(new u(str, lVar.d(), "video/mp2t"));
+                return new w(new u(str, lVar.b(), "video/mp2t"));
             }
             if (i10 == 21) {
                 return new w(new h());
@@ -47,34 +47,34 @@ public final class f {
                 return new w(new h((List) lVar.c));
             }
             if (i10 == 172) {
-                return new w(new b(lVar.d(), 1, str, "video/mp2t"));
+                return new w(new b(lVar.b(), 1, str, "video/mp2t"));
             }
             if (i10 == 257) {
-                return new b0(new aa.a("application/vnd.dvb.ait", 20));
+                return new b0(new androidx.biometric.e("application/vnd.dvb.ait", 21));
             }
             if (i10 != 138) {
                 if (i10 == 139) {
-                    return new w(new g(str, lVar.d(), 5408));
+                    return new w(new g(str, lVar.b(), 5408));
                 }
                 switch (i10) {
                     case 15:
                         if (c(2)) {
                             return null;
                         }
-                        return new w(new e(lVar.d(), str, "video/mp2t", false));
+                        return new w(new e(lVar.b(), str, "video/mp2t", false));
                     case 16:
                         return new w(new n(new c0(1, b(lVar))));
                     case 17:
                         if (c(2)) {
                             return null;
                         }
-                        return new w(new t(str, lVar.d()));
+                        return new w(new t(str, lVar.b()));
                     default:
                         switch (i10) {
                             case 128:
                                 break;
                             case 129:
-                                return new w(new b(lVar.d(), 0, str, "video/mp2t"));
+                                return new w(new b(lVar.b(), 0, str, "video/mp2t"));
                             case 130:
                                 if (!c(64)) {
                                     return null;
@@ -86,7 +86,7 @@ public final class f {
                                         if (c(16)) {
                                             return null;
                                         }
-                                        return new b0(new aa.a("application/x-scte35", 20));
+                                        return new b0(new androidx.biometric.e("application/x-scte35", 21));
                                     case 135:
                                         break;
                                     case 136:
@@ -97,7 +97,7 @@ public final class f {
                         }
                 }
             }
-            return new w(new g(str, lVar.d(), 4096));
+            return new w(new g(str, lVar.b(), 4096));
         }
         return new w(new k(new c0(1, b(lVar)), "video/mp2t"));
     }
@@ -111,43 +111,43 @@ public final class f {
         if (c10) {
             return list2;
         }
-        e2.v vVar = new e2.v((byte[]) lVar.d);
-        while (vVar.a() > 0) {
-            int x10 = vVar.x();
-            int x11 = vVar.b + vVar.x();
-            if (x10 == 134) {
+        e2.x xVar = new e2.x((byte[]) lVar.d);
+        while (xVar.a() > 0) {
+            int A = xVar.A();
+            int A2 = xVar.b + xVar.A();
+            if (A == 134) {
                 ArrayList arrayList = new ArrayList();
-                int x12 = vVar.x() & 31;
-                for (int i11 = 0; i11 < x12; i11++) {
-                    String v = vVar.v(3, StandardCharsets.UTF_8);
-                    int x13 = vVar.x();
-                    boolean z10 = (x13 & 128) != 0;
+                int A3 = xVar.A() & 31;
+                for (int i11 = 0; i11 < A3; i11++) {
+                    String y3 = xVar.y(3, StandardCharsets.UTF_8);
+                    int A4 = xVar.A();
+                    boolean z10 = (A4 & 128) != 0;
                     if (z10) {
-                        i10 = x13 & 63;
+                        i10 = A4 & 63;
                         str = "application/cea-708";
                     } else {
                         str = "application/cea-608";
                         i10 = 1;
                     }
-                    byte x14 = (byte) vVar.x();
-                    vVar.K(1);
+                    byte A5 = (byte) xVar.A();
+                    xVar.O(1);
                     if (z10) {
-                        boolean z11 = (x14 & 64) != 0;
-                        byte[] bArr = e2.e.a;
+                        boolean z11 = (A5 & 64) != 0;
+                        byte[] bArr = e2.g.a;
                         list = Collections.singletonList(z11 ? new byte[]{1} : new byte[]{0});
                     } else {
                         list = null;
                     }
-                    b2.r rVar = new b2.r();
-                    rVar.q = r0.n(str);
-                    rVar.d = v;
-                    rVar.N = i10;
-                    rVar.t = list;
-                    arrayList.add(new b2.s(rVar));
+                    b2.w wVar = new b2.w();
+                    wVar.r = w0.n(str);
+                    wVar.d = y3;
+                    wVar.O = i10;
+                    wVar.u = list;
+                    arrayList.add(new b2.x(wVar));
                 }
                 list2 = arrayList;
             }
-            vVar.J(x11);
+            xVar.N(A2);
         }
         return list2;
     }

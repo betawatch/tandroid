@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d implements Iterator, Map.Entry {
     public int a;
@@ -60,9 +60,9 @@ public final class d implements Iterator, Map.Entry {
         }
         int i10 = this.b;
         f fVar = this.d;
-        Object e7 = fVar.e(i10);
+        Object e = fVar.e(i10);
         Object h = fVar.h(this.b);
-        return (e7 == null ? 0 : e7.hashCode()) ^ (h != null ? h.hashCode() : 0);
+        return (e == null ? 0 : e.hashCode()) ^ (h != null ? h.hashCode() : 0);
     }
 
     @Override // java.util.Iterator

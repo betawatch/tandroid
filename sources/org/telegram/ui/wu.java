@@ -1,53 +1,69 @@
 package org.telegram.ui;
 
-import android.content.res.Configuration;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.StatsController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class wu extends View {
-    public Path a;
-    public Paint b;
-    public boolean c;
+public final /* synthetic */ class wu implements org.telegram.ui.Components.xl0, org.telegram.ui.ActionBar.z1 {
+    public final /* synthetic */ av a;
 
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        requestLayout();
+    public /* synthetic */ wu(av avVar) {
+        this.a = avVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.drawPath(this.a, this.b);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(13.0f), TLObject.FLAG_30));
-        setTop(this.c);
-    }
-
-    public void setTop(boolean z10) {
-        Path path = this.a;
-        path.rewind();
-        this.c = z10;
-        if (!z10) {
-            float dp = AndroidUtilities.dp(8.0f);
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(0.0f, ((-getMeasuredHeight()) * 2) - AndroidUtilities.dp(4.0f), getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(4.0f));
-            path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
-            return;
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        int i11;
+        int i12;
+        int i13;
+        av avVar = this.a;
+        ev evVar = avVar.m3;
+        ArrayList arrayList = avVar.d3;
+        arrayList.clear();
+        int i14 = 0;
+        while (true) {
+            zu[] zuVarArr = avVar.e3;
+            if (i14 >= zuVarArr.length) {
+                i11 = ((org.telegram.ui.ActionBar.m2) evVar).currentAccount;
+                StatsController.getInstance(i11).resetStats(0);
+                i12 = ((org.telegram.ui.ActionBar.m2) evVar).currentAccount;
+                StatsController.getInstance(i12).resetStats(1);
+                i13 = ((org.telegram.ui.ActionBar.m2) evVar).currentAccount;
+                StatsController.getInstance(i13).resetStats(2);
+                avVar.V2 = true;
+                avVar.A1();
+                avVar.B1(true);
+                return;
+            }
+            zu zuVar = zuVarArr[i14];
+            if (zuVar.c > 0) {
+                arrayList.add(Integer.valueOf(zuVar.d));
+            }
+            i14++;
         }
-        float dp2 = AndroidUtilities.dp(14.0f);
-        RectF rectF2 = AndroidUtilities.rectTmp;
-        rectF2.set(0.0f, AndroidUtilities.dp(4.0f), getMeasuredWidth(), (getMeasuredHeight() * 2) + AndroidUtilities.dp(4.0f));
-        path.addRoundRect(rectF2, dp2, dp2, Path.Direction.CW);
+    }
+
+    @Override // org.telegram.ui.Components.xl0
+    public int run() {
+        av avVar = this.a;
+        ArrayList arrayList = avVar.a3;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= arrayList.size()) {
+                i10 = -1;
+                break;
+            }
+            if (((vu) arrayList.get(i10)).a == 5) {
+                break;
+            }
+            i10++;
+        }
+        if (i10 < 0) {
+            return -1;
+        }
+        avVar.X2.h1(i10, AndroidUtilities.dp(60.0f));
+        return i10;
     }
 }

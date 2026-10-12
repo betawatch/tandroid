@@ -1,50 +1,132 @@
 package sg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import com.google.android.gms.internal.play_billing.k3;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.BuildVars;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class k extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
+public final class k {
+    public final TLRPC.TL_premiumGiftOption a;
+    public final TLRPC.TL_premiumGiftCodeOption b;
+    public final TLRPC.TL_premiumGiftOption c;
+    public final TLRPC.TL_premiumGiftCodeOption d;
+    public int e;
+    public long f;
+    public long g;
+    public c5.p h;
 
-    public /* synthetic */ k(n nVar, int i10) {
-        this.a = i10;
-        this.b = nVar;
+    public k(TLRPC.TL_premiumGiftOption tL_premiumGiftOption) {
+        this.a = tL_premiumGiftOption;
+        this.b = null;
+        this.c = null;
+        this.d = null;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                n nVar = this.b;
-                nVar.b.d = 0.0f;
-                nVar.a0 = null;
-                nVar.k(nVar.L);
-                break;
-            case 1:
-                super.onAnimationEnd(animator);
-                n nVar2 = this.b;
-                nVar2.b.d = 0.0f;
-                nVar2.a0 = null;
-                nVar2.k(nVar2.L);
-                break;
-            case 2:
-                super.onAnimationEnd(animator);
-                n nVar3 = this.b;
-                nVar3.b.d = 0.0f;
-                nVar3.a0 = null;
-                nVar3.k(nVar3.L);
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                n nVar4 = this.b;
-                nVar4.b.d = 0.0f;
-                nVar4.a0 = null;
-                nVar4.k(nVar4.L);
-                break;
+    public final String a() {
+        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.a;
+        if (tL_premiumGiftOption == null) {
+            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.b;
+            if (tL_premiumGiftCodeOption != null && (BuildVars.useInvoiceBilling() || tL_premiumGiftCodeOption.store_product == null)) {
+                return tL_premiumGiftCodeOption.currency;
+            }
+        } else if (BuildVars.useInvoiceBilling() || tL_premiumGiftOption.store_product == null) {
+            return tL_premiumGiftOption.currency;
         }
+        c5.p pVar = this.h;
+        return pVar == null ? "" : pVar.a().c;
+    }
+
+    public final int b() {
+        if (this.e == 0) {
+            if (f() == 0) {
+                return 0;
+            }
+            if (this.g != 0) {
+                int f7 = (int) ((1.0d - (f() / this.g)) * 100.0d);
+                this.e = f7;
+                if (f7 == 0) {
+                    this.e = -1;
+                }
+            }
+        }
+        return this.e;
+    }
+
+    public final String c() {
+        TLRPC.TL_premiumGiftOption tL_premiumGiftOption;
+        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption;
+        return (BuildVars.useInvoiceBilling() || ((tL_premiumGiftOption = this.a) != null && tL_premiumGiftOption.store_product == null) || ((tL_premiumGiftCodeOption = this.b) != null && tL_premiumGiftCodeOption.store_product == null)) ? BillingController.getInstance().formatCurrency(e(), a()) : this.h == null ? "" : BillingController.getInstance().formatCurrency(e(), a(), 6);
+    }
+
+    public final int d() {
+        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.a;
+        if (tL_premiumGiftOption != null) {
+            return tL_premiumGiftOption.months;
+        }
+        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.b;
+        if (tL_premiumGiftCodeOption != null) {
+            return tL_premiumGiftCodeOption.months;
+        }
+        return 1;
+    }
+
+    public final long e() {
+        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.a;
+        if (tL_premiumGiftOption == null) {
+            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.b;
+            if (tL_premiumGiftCodeOption != null && (BuildVars.useInvoiceBilling() || tL_premiumGiftCodeOption.store_product == null)) {
+                return tL_premiumGiftCodeOption.amount;
+            }
+        } else if (BuildVars.useInvoiceBilling() || tL_premiumGiftOption.store_product == null) {
+            return tL_premiumGiftOption.amount;
+        }
+        c5.p pVar = this.h;
+        if (pVar == null) {
+            return 0L;
+        }
+        return pVar.a().b;
+    }
+
+    public final long f() {
+        if (this.f == 0) {
+            long e = e();
+            if (e != 0) {
+                this.f = e / d();
+            }
+        }
+        return this.f;
+    }
+
+    public final long g() {
+        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.c;
+        if (tL_premiumGiftOption != null) {
+            return tL_premiumGiftOption.amount;
+        }
+        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.d;
+        if (tL_premiumGiftCodeOption != null) {
+            return tL_premiumGiftCodeOption.amount;
+        }
+        return 0L;
+    }
+
+    public final String h() {
+        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.a;
+        if (tL_premiumGiftOption != null) {
+            return tL_premiumGiftOption.store_product;
+        }
+        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.b;
+        if (tL_premiumGiftCodeOption != null) {
+            return tL_premiumGiftCodeOption.store_product;
+        }
+        return null;
+    }
+
+    public k(TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2) {
+        this.a = null;
+        this.b = tL_premiumGiftCodeOption;
+        this.c = null;
+        this.d = k3.s(tL_premiumGiftCodeOption2) ? tL_premiumGiftCodeOption2 : null;
     }
 }

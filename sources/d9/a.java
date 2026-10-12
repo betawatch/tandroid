@@ -1,12 +1,29 @@
 package d9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class a implements g {
-    public abstract boolean a(char c10);
+public final class a extends i {
+    public final i a;
+    public final i b;
 
-    @Override // d9.g
+    public a(i iVar, i iVar2) {
+        iVar.getClass();
+        this.a = iVar;
+        iVar2.getClass();
+        this.b = iVar2;
+    }
+
+    @Override // d9.m
     public final boolean apply(Object obj) {
-        return a(((Character) obj).charValue());
+        return c(((Character) obj).charValue());
+    }
+
+    @Override // d9.i
+    public final boolean c(char c10) {
+        return this.a.c(c10) && this.b.c(c10);
+    }
+
+    public final String toString() {
+        return "CharMatcher.and(" + this.a + ", " + this.b + ")";
     }
 }

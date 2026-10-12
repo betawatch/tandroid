@@ -1,55 +1,97 @@
 package v2;
 
-import b2.s;
+import b2.w0;
+import b2.x;
+import c3.i0;
 import g2.b0;
-import org.telegram.ui.ActionBar.b5;
+import n6.o;
+import u2.c1;
 import v7.k7;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class j extends e {
-    public final d s;
-    public b5 v;
-    public long w;
-    public volatile boolean x;
+public final class j extends a {
+    public final int E;
+    public final long F;
+    public final e G;
+    public long H;
+    public volatile boolean I;
+    public boolean J;
 
-    public j(g2.h hVar, g2.m mVar, s sVar, int i10, Object obj, d dVar) {
-        super(hVar, mVar, 2, sVar, i10, obj, -9223372036854775807L, -9223372036854775807L);
-        this.s = dVar;
+    public j(g2.h hVar, g2.m mVar, x xVar, int i10, Object obj, long j10, long j11, long j12, long j13, long j14, int i11, long j15, e eVar) {
+        super(hVar, mVar, xVar, i10, obj, j10, j11, j12, j13, j14);
+        this.E = i11;
+        this.F = j15;
+        this.G = eVar;
+    }
+
+    @Override // y2.i
+    public final void J() {
+        this.I = true;
     }
 
     @Override // y2.i
     public final void a() {
-        if (this.w == 0) {
-            this.s.a(this.v, -9223372036854775807L, -9223372036854775807L);
+        o oVar = this.x;
+        oVar.getClass();
+        if (this.H == 0) {
+            long j10 = this.F;
+            for (c1 c1Var : (c1[]) oVar.c) {
+                if (c1Var.H != j10) {
+                    c1Var.H = j10;
+                    c1Var.B = true;
+                }
+            }
+            e eVar = this.G;
+            long j11 = this.v;
+            long j12 = j11 == -9223372036854775807L ? -9223372036854775807L : j11 - this.F;
+            long j13 = this.w;
+            eVar.b(oVar, j12, j13 != -9223372036854775807L ? j13 - this.F : -9223372036854775807L);
         }
         try {
-            g2.m b10 = this.b.b(this.w);
+            g2.m b10 = this.b.b(this.H);
             b0 b0Var = this.r;
             c3.l lVar = new c3.l(b0Var, b10.e, b0Var.open(b10));
-            while (!this.x) {
+            while (!this.I) {
                 try {
-                    int m10 = this.s.a.m(lVar, d.s);
-                    boolean z10 = false;
-                    e2.d.g(m10 != 1);
-                    if (m10 == 0) {
-                        z10 = true;
-                    }
-                    if (!z10) {
+                    int f7 = this.G.a.f(lVar, e.v);
+                    u6.p(f7 != 1);
+                    if (!(f7 == 0)) {
                         break;
                     }
                 } finally {
-                    this.w = lVar.d - this.b.e;
-                    c3.b0 b0Var2 = this.s.n;
+                    this.H = lVar.d - this.b.e;
                 }
             }
-        } finally {
+            x xVar = this.d;
+            String str = xVar.r;
+            int i10 = xVar.R;
+            int i11 = xVar.S;
+            if (w0.k(str) && ((i10 > 1 || i11 > 1) && i10 != -1 && i11 != -1)) {
+                i0 g02 = oVar.g0(4);
+                int i12 = i10 * i11;
+                long j14 = (this.n - this.h) / i12;
+                for (int i13 = 1; i13 < i12; i13++) {
+                    g02.d(0, new e2.x());
+                    g02.c(i13 * j14, 0, 0, 0, null);
+                }
+            }
             k7.a(this.r);
+            this.J = !this.I;
+        } catch (Throwable th2) {
+            k7.a(this.r);
+            throw th2;
         }
     }
 
-    @Override // y2.i
-    public final void v() {
-        this.x = true;
+    @Override // v2.l
+    public final long b() {
+        return this.s + this.E;
+    }
+
+    @Override // v2.l
+    public final boolean c() {
+        return this.J;
     }
 }

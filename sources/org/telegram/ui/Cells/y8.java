@@ -11,10 +11,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class y8 extends FrameLayout {
     public static Paint d;
@@ -24,19 +24,19 @@ public final class y8 extends FrameLayout {
     public boolean b;
     public int c;
 
-    public y8(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public y8(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
         if (d == null) {
             d = new Paint(1);
         }
         TextView textView = new TextView(context);
         this.a = textView;
-        bi.o(org.telegram.ui.ActionBar.i6.G6, e6Var, textView, 1, 16.0f);
+        yh.n(org.telegram.ui.ActionBar.g6.G6, c6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        addView(textView, w7.x5.a(-1.0f, 21.0f, 0.0f, 21.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(textView, w7.a6.a(-1.0f, 21.0f, 0.0f, 21.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
     }
 
     public final void a(ArrayList arrayList, boolean z10) {
@@ -66,7 +66,7 @@ public final class y8 extends FrameLayout {
         Canvas canvas2;
         if (this.b) {
             canvas2 = canvas;
-            canvas2.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+            canvas2.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
         } else {
             canvas2 = canvas;
         }

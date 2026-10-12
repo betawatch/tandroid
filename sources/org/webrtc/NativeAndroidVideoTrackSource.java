@@ -4,28 +4,28 @@ import org.webrtc.VideoFrame;
 import org.webrtc.VideoProcessor;
 import org.webrtc.VideoSource;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 class NativeAndroidVideoTrackSource {
     private final long nativeAndroidVideoTrackSource;
 
-    public NativeAndroidVideoTrackSource(long j3) {
-        this.nativeAndroidVideoTrackSource = j3;
+    public NativeAndroidVideoTrackSource(long j10) {
+        this.nativeAndroidVideoTrackSource = j10;
     }
 
-    public static VideoProcessor.FrameAdaptationParameters createFrameAdaptationParameters(int i10, int i11, int i12, int i13, int i14, int i15, long j3, boolean z10) {
-        return new VideoProcessor.FrameAdaptationParameters(i10, i11, i12, i13, i14, i15, j3, z10);
+    public static VideoProcessor.FrameAdaptationParameters createFrameAdaptationParameters(int i10, int i11, int i12, int i13, int i14, int i15, long j10, boolean z10) {
+        return new VideoProcessor.FrameAdaptationParameters(i10, i11, i12, i13, i14, i15, j10, z10);
     }
 
-    private static native VideoProcessor.FrameAdaptationParameters nativeAdaptFrame(long j3, int i10, int i11, int i12, long j10);
+    private static native VideoProcessor.FrameAdaptationParameters nativeAdaptFrame(long j10, int i10, int i11, int i12, long j11);
 
-    private static native void nativeAdaptOutputFormat(long j3, int i10, int i11, Integer num, int i12, int i13, Integer num2, Integer num3);
+    private static native void nativeAdaptOutputFormat(long j10, int i10, int i11, Integer num, int i12, int i13, Integer num2, Integer num3);
 
-    private static native void nativeOnFrameCaptured(long j3, int i10, long j10, VideoFrame.Buffer buffer);
+    private static native void nativeOnFrameCaptured(long j10, int i10, long j11, VideoFrame.Buffer buffer);
 
-    private static native void nativeSetIsScreencast(long j3, boolean z10);
+    private static native void nativeSetIsScreencast(long j10, boolean z10);
 
-    private static native void nativeSetState(long j3, boolean z10);
+    private static native void nativeSetState(long j10, boolean z10);
 
     public VideoProcessor.FrameAdaptationParameters adaptFrame(VideoFrame videoFrame) {
         return nativeAdaptFrame(this.nativeAndroidVideoTrackSource, videoFrame.getBuffer().getWidth(), videoFrame.getBuffer().getHeight(), videoFrame.getRotation(), videoFrame.getTimestampNs());

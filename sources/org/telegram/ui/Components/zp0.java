@@ -1,47 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class zp0 extends LinearLayout {
-    public final iw0 a;
-    public final TextView b;
-    public final TextView c;
+public final class zp0 {
+    public final zu a;
+    public final long b;
+    public final float c;
+    public final float d;
+    public final float e;
 
-    public zp0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        setLayoutParams(new s4.q0(-1, -2));
-        setOrientation(0);
-        setGravity(16);
-        int dp = AndroidUtilities.dp(14.0f);
-        int i10 = dp / 2;
-        setPadding(dp, i10, dp, i10);
-        iw0 iw0Var = new iw0(context);
-        this.a = iw0Var;
-        addView(iw0Var, w7.x5.d(40.0f, 40));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.x5.m(1.0f, 0, -1, 12, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        int i11 = org.telegram.ui.ActionBar.i6.E8;
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(i11, e6Var));
-        textView.setTextSize(1, 16.0f);
-        textView.setTag(textView);
-        textView.setMaxLines(1);
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTextColor(i0.a.k(org.telegram.ui.ActionBar.i6.w0(i11, e6Var), 102));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTag(textView2);
-        textView2.setMaxLines(1);
-        textView2.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView2);
+    public zp0(View view) {
+        zu zuVar = new zu(1, view);
+        this.b = System.currentTimeMillis();
+        this.a = zuVar;
+        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+    }
+
+    public final void a(Canvas canvas, float f7) {
+        zu zuVar;
+        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
+        canvas.translate(0.0f, 0.0f);
+        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f7);
+        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7);
+        canvas.translate(-0.0f, -0.0f);
+        if (f7 <= 0.0f || (zuVar = this.a) == null) {
+            return;
+        }
+        zuVar.run();
     }
 }

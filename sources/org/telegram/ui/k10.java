@@ -1,27 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class k10 extends org.telegram.ui.Components.j10 {
-    public final /* synthetic */ int U;
-    public final /* synthetic */ Object V;
+public final class k10 extends ReplacementSpan {
+    public final org.telegram.ui.ActionBar.c6 a;
+    public final Paint b;
+    public final int c;
+    public final org.telegram.ui.Components.h11 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k10(Object obj, Context context, int i10) {
-        super(context, null);
-        this.U = i10;
-        this.V = obj;
+    public k10(String str, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.a = c6Var;
+        this.c = i10;
+        this.d = new org.telegram.ui.Components.h11(str, 9.33f, AndroidUtilities.bold());
+        paint.setStyle(Paint.Style.FILL);
     }
 
-    @Override // org.telegram.ui.Components.j10
-    public final int getColumnsCount() {
-        switch (this.U) {
-            case 0:
-                return ((w10) this.V).s;
-            default:
-                return ((u10) this.V).d.s;
-        }
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int w02 = org.telegram.ui.ActionBar.g6.w0(this.c, this.a);
+        int m12 = org.telegram.ui.ActionBar.g6.m1(0.15f, w02);
+        Paint paint2 = this.b;
+        paint2.setColor(m12);
+        float f10 = (i14 + i12) / 2.0f;
+        float dp = AndroidUtilities.dp(14.66f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f11 = dp / 2.0f;
+        rectF.set(f7, f10 - f11, this.d.l() + f7 + AndroidUtilities.dp(9.33f), f11 + f10);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint2);
+        this.d.c(f7 + AndroidUtilities.dp(4.66f), f10, 1.0f, w02, canvas);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return (int) (this.d.l() + AndroidUtilities.dp(9.33f));
     }
 }

@@ -1,52 +1,109 @@
 package org.telegram.ui;
 
-import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v5 b;
+public abstract class l5 extends androidx.fragment.app.u {
+    public int O = -1;
 
-    public /* synthetic */ l5(v5 v5Var, int i10) {
-        this.a = i10;
-        this.b = v5Var;
+    public final boolean u(int i10, String[] strArr, int[] iArr) {
+        if (iArr == null) {
+            iArr = new int[0];
+        }
+        if (strArr == null) {
+            strArr = new String[0];
+        }
+        boolean z10 = iArr.length > 0 && iArr[0] == 0;
+        if (i10 == 104) {
+            if (!z10) {
+                x(R.raw.permission_request_camera, LocaleController.getString(R.string.VoipNeedCameraPermission));
+                return true;
+            }
+            n60 n60Var = n60.D3;
+            if (n60Var != null) {
+                n60Var.n.callOnClick();
+                return true;
+            }
+        } else {
+            if (i10 == 4 || i10 == 151) {
+                if (z10) {
+                    ImageLoader.getInstance().checkMediaPaths();
+                    return true;
+                }
+                x(R.raw.permission_request_folder, i10 == 151 ? LocaleController.getString(R.string.PermissionNoStorageAvatar) : LocaleController.getString(R.string.PermissionStorageWithHint));
+                return true;
+            }
+            if (i10 == 5) {
+                if (z10) {
+                    ContactsController.getInstance(this.O).forceImportContacts();
+                    return true;
+                }
+                x(R.raw.permission_request_contacts, LocaleController.getString(R.string.PermissionNoContactsSharing));
+                return false;
+            }
+            if (i10 == 3 || i10 == 150) {
+                int min = Math.min(strArr.length, iArr.length);
+                boolean z11 = true;
+                boolean z12 = true;
+                for (int i11 = 0; i11 < min; i11++) {
+                    if ("android.permission.RECORD_AUDIO".equals(strArr[i11])) {
+                        z11 = iArr[i11] == 0;
+                    } else if ("android.permission.CAMERA".equals(strArr[i11])) {
+                        z12 = iArr[i11] == 0;
+                    }
+                }
+                if (i10 == 150 && (!z11 || !z12)) {
+                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraMicVideo));
+                    return true;
+                }
+                if (!z11) {
+                    x(R.raw.permission_request_microphone, LocaleController.getString(R.string.PermissionNoAudioWithHint));
+                    return true;
+                }
+                if (!z12) {
+                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
+                    return true;
+                }
+                if (SharedConfig.inappCamera) {
+                    CameraController.getInstance().initCamera(null);
+                }
+                return false;
+            }
+            if (i10 != 18 && i10 != 19 && i10 != 20 && i10 != 22) {
+                if (i10 == 2) {
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z10 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, new Object[0]);
+                    return true;
+                }
+                if (i10 == 211) {
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z10 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, 1);
+                    return true;
+                }
+            } else if (!z10) {
+                x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
+            }
+        }
+        return true;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                v5 v5Var = this.b;
-                v5Var.e0 = false;
-                v5Var.H0(true);
-                break;
-            case 1:
-                CountDownLatch countDownLatch = new CountDownLatch(2);
-                v5 v5Var2 = this.b;
-                v5Var2.D0(countDownLatch, null);
-                v5Var2.E0(countDownLatch, null);
-                try {
-                    countDownLatch.await();
-                } catch (InterruptedException unused) {
-                }
-                NotificationCenter.getInstance(v5Var2.Q).doOnIdle(new l5(v5Var2, 4));
-                break;
-            case 2:
-                v5 v5Var3 = this.b;
-                v5Var3.e0 = false;
-                v5Var3.H0(true);
-                break;
-            case 3:
-                v5 v5Var4 = this.b;
-                v5Var4.e0 = false;
-                v5Var4.H0(true);
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new l5(this.b, 0));
-                break;
-        }
+    public final org.telegram.ui.ActionBar.a2 v(int i10, String str) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
+        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.L5, false), null);
+        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(str);
+        alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new b1(this, 4));
+        alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
+        return alertDialog$Builder.a;
+    }
+
+    public final void x(int i10, String str) {
+        v(i10, str).show();
     }
 }

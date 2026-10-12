@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class u extends Binder implements d {
     public static final /* synthetic */ int b = 0;
@@ -132,35 +132,35 @@ public final class u extends Binder implements d {
             return playbackStateCompat;
         }
         float f7 = playbackStateCompat.d;
-        long j3 = playbackStateCompat.n;
+        long j10 = playbackStateCompat.n;
         int i10 = playbackStateCompat.a;
-        long j10 = playbackStateCompat.b;
-        long j11 = -1;
-        if (j10 == -1) {
+        long j11 = playbackStateCompat.b;
+        long j12 = -1;
+        if (j11 == -1) {
             return playbackStateCompat;
         }
-        if ((i10 != 3 && i10 != 4 && i10 != 5) || j3 <= 0) {
+        if ((i10 != 3 && i10 != 4 && i10 != 5) || j10 <= 0) {
             return playbackStateCompat;
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j12 = ((long) (f7 * (elapsedRealtime - j3))) + j10;
+        long j13 = ((long) (f7 * (elapsedRealtime - j10))) + j11;
         if (mediaMetadataCompat != null) {
             Bundle bundle = mediaMetadataCompat.a;
             if (bundle.containsKey("android.media.metadata.DURATION")) {
-                j11 = bundle.getLong("android.media.metadata.DURATION", 0L);
+                j12 = bundle.getLong("android.media.metadata.DURATION", 0L);
             }
         }
-        long j13 = (j11 < 0 || j12 <= j11) ? j12 < 0 ? 0L : j12 : j11;
+        long j14 = (j12 < 0 || j13 <= j12) ? j13 < 0 ? 0L : j13 : j12;
         ArrayList arrayList = new ArrayList();
-        long j14 = playbackStateCompat.c;
-        long j15 = playbackStateCompat.e;
+        long j15 = playbackStateCompat.c;
+        long j16 = playbackStateCompat.e;
         int i11 = playbackStateCompat.f;
         CharSequence charSequence = playbackStateCompat.h;
         ArrayList arrayList2 = playbackStateCompat.r;
         if (arrayList2 != null) {
             arrayList.addAll(arrayList2);
         }
-        return new PlaybackStateCompat(playbackStateCompat.a, j13, j14, playbackStateCompat.d, j15, i11, charSequence, elapsedRealtime, arrayList, playbackStateCompat.s, playbackStateCompat.v);
+        return new PlaybackStateCompat(playbackStateCompat.a, j14, j15, playbackStateCompat.d, j16, i11, charSequence, elapsedRealtime, arrayList, playbackStateCompat.s, playbackStateCompat.v);
     }
 
     @Override // android.support.v4.media.session.d
@@ -179,7 +179,7 @@ public final class u extends Binder implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final void g(long j3) {
+    public final void g(long j10) {
         throw new AssertionError();
     }
 
@@ -274,11 +274,11 @@ public final class u extends Binder implements d {
         b bVar2 = null;
         switch (i10) {
             case 1:
-                r0(parcel.readString(), (Bundle) pb.a.a(parcel, Bundle.CREATOR), (MediaSessionCompat$ResultReceiverWrapper) pb.a.a(parcel, MediaSessionCompat$ResultReceiverWrapper.CREATOR));
+                r0(parcel.readString(), (Bundle) t7.s.a(parcel, Bundle.CREATOR), (MediaSessionCompat$ResultReceiverWrapper) t7.s.a(parcel, MediaSessionCompat$ResultReceiverWrapper.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 2:
-                boolean a02 = a0((KeyEvent) pb.a.a(parcel, KeyEvent.CREATOR));
+                boolean a02 = a0((KeyEvent) t7.s.a(parcel, KeyEvent.CREATOR));
                 parcel2.writeNoException();
                 parcel2.writeInt(a02 ? 1 : 0);
                 return true;
@@ -313,9 +313,9 @@ public final class u extends Binder implements d {
                 parcel2.writeNoException();
                 return true;
             case 5:
-                boolean w10 = w();
+                boolean w9 = w();
                 parcel2.writeNoException();
-                parcel2.writeInt(w10 ? 1 : 0);
+                parcel2.writeInt(w9 ? 1 : 0);
                 return true;
             case 6:
                 String B0 = B0();
@@ -330,7 +330,7 @@ public final class u extends Binder implements d {
             case 8:
                 PendingIntent y3 = y();
                 parcel2.writeNoException();
-                pb.a.b(parcel2, y3);
+                t7.s.b(parcel2, y3);
                 return true;
             case 9:
                 long k10 = k();
@@ -340,7 +340,7 @@ public final class u extends Binder implements d {
             case 10:
                 ParcelableVolumeInfo x02 = x0();
                 parcel2.writeNoException();
-                pb.a.b(parcel2, x02);
+                t7.s.b(parcel2, x02);
                 return true;
             case 11:
                 int readInt = parcel.readInt();
@@ -361,15 +361,15 @@ public final class u extends Binder implements d {
                 parcel2.writeNoException();
                 return true;
             case 14:
-                N(parcel.readString(), (Bundle) pb.a.a(parcel, Bundle.CREATOR));
+                N(parcel.readString(), (Bundle) t7.s.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 15:
-                Q(parcel.readString(), (Bundle) pb.a.a(parcel, Bundle.CREATOR));
+                Q(parcel.readString(), (Bundle) t7.s.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 16:
-                V((Uri) pb.a.a(parcel, Uri.CREATOR), (Bundle) pb.a.a(parcel, Bundle.CREATOR));
+                V((Uri) t7.s.a(parcel, Uri.CREATOR), (Bundle) t7.s.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 17:
@@ -405,22 +405,22 @@ public final class u extends Binder implements d {
                 parcel2.writeNoException();
                 return true;
             case 25:
-                p((RatingCompat) pb.a.a(parcel, RatingCompat.CREATOR));
+                p((RatingCompat) t7.s.a(parcel, RatingCompat.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 26:
-                n(parcel.readString(), (Bundle) pb.a.a(parcel, Bundle.CREATOR));
+                n(parcel.readString(), (Bundle) t7.s.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 27:
                 MediaMetadataCompat J = J();
                 parcel2.writeNoException();
-                pb.a.b(parcel2, J);
+                t7.s.b(parcel2, J);
                 return true;
             case 28:
                 PlaybackStateCompat d = d();
                 parcel2.writeNoException();
-                pb.a.b(parcel2, d);
+                t7.s.b(parcel2, d);
                 return true;
             case 29:
                 List s02 = s0();
@@ -432,7 +432,7 @@ public final class u extends Binder implements d {
                 int size = s02.size();
                 parcel2.writeInt(size);
                 for (int i12 = 0; i12 < size; i12++) {
-                    pb.a.b(parcel2, (Parcelable) s02.get(i12));
+                    t7.s.b(parcel2, (Parcelable) s02.get(i12));
                 }
                 return true;
             case MessageObject.TYPE_GIFT_STARS /* 30 */:
@@ -448,7 +448,7 @@ public final class u extends Binder implements d {
             case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
                 Bundle extras = getExtras();
                 parcel2.writeNoException();
-                pb.a.b(parcel2, extras);
+                t7.s.b(parcel2, extras);
                 return true;
             case 32:
                 z();
@@ -460,15 +460,15 @@ public final class u extends Binder implements d {
                 parcel2.writeNoException();
                 return true;
             case 34:
-                K(parcel.readString(), (Bundle) pb.a.a(parcel, Bundle.CREATOR));
+                K(parcel.readString(), (Bundle) t7.s.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 35:
-                A(parcel.readString(), (Bundle) pb.a.a(parcel, Bundle.CREATOR));
+                A(parcel.readString(), (Bundle) t7.s.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 36:
-                q((Uri) pb.a.a(parcel, Uri.CREATOR), (Bundle) pb.a.a(parcel, Bundle.CREATOR));
+                q((Uri) t7.s.a(parcel, Uri.CREATOR), (Bundle) t7.s.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case 37:
@@ -489,15 +489,15 @@ public final class u extends Binder implements d {
                 parcel2.writeNoException();
                 return true;
             case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
-                x((MediaDescriptionCompat) pb.a.a(parcel, MediaDescriptionCompat.CREATOR));
+                x((MediaDescriptionCompat) t7.s.a(parcel, MediaDescriptionCompat.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
-                f0((MediaDescriptionCompat) pb.a.a(parcel, MediaDescriptionCompat.CREATOR), parcel.readInt());
+                f0((MediaDescriptionCompat) t7.s.a(parcel, MediaDescriptionCompat.CREATOR), parcel.readInt());
                 parcel2.writeNoException();
                 return true;
             case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
-                u((MediaDescriptionCompat) pb.a.a(parcel, MediaDescriptionCompat.CREATOR));
+                u((MediaDescriptionCompat) t7.s.a(parcel, MediaDescriptionCompat.CREATOR));
                 parcel2.writeNoException();
                 return true;
             case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
@@ -529,10 +529,10 @@ public final class u extends Binder implements d {
             case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
                 Bundle L = L();
                 parcel2.writeNoException();
-                pb.a.b(parcel2, L);
+                t7.s.b(parcel2, L);
                 return true;
             case 51:
-                d0((RatingCompat) pb.a.a(parcel, RatingCompat.CREATOR), (Bundle) pb.a.a(parcel, Bundle.CREATOR));
+                d0((RatingCompat) t7.s.a(parcel, RatingCompat.CREATOR), (Bundle) t7.s.a(parcel, Bundle.CREATOR));
                 parcel2.writeNoException();
                 return true;
             default:
@@ -586,7 +586,7 @@ public final class u extends Binder implements d {
     }
 
     @Override // android.support.v4.media.session.d
-    public final void w0(long j3) {
+    public final void w0(long j10) {
         throw new AssertionError();
     }
 

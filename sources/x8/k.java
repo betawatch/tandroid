@@ -10,18 +10,18 @@ import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class k extends Service implements c {
     public static final String BIND_LISTENER_INTENT_ACTION = "com.google.android.gms.wearable.BIND_LISTENER";
     private ComponentName zza;
-    private p zzb;
+    private q zzb;
     private IBinder zzc;
     private Intent zzd;
     private Looper zze;
     private boolean zzg;
     private final Object zzf = new Object();
-    private y8.d zzh = new y8.d(new w3.d(this));
+    private y8.d zzh = new y8.d(new w3.c(this));
 
     public Looper getLooper() {
         if (this.zze == null) {
@@ -104,7 +104,7 @@ public abstract class k extends Service implements c {
         if (Log.isLoggable("WearableLS", 3)) {
             Log.d("WearableLS", "onCreate: ".concat(String.valueOf(this.zza)));
         }
-        this.zzb = new p(this, getLooper());
+        this.zzb = new q(this, getLooper());
         Intent intent = new Intent(BIND_LISTENER_INTENT_ACTION);
         this.zzd = intent;
         intent.setComponent(this.zza);
@@ -118,12 +118,12 @@ public abstract class k extends Service implements c {
         }
         synchronized (this.zzf) {
             this.zzg = true;
-            p pVar = this.zzb;
-            if (pVar == null) {
+            q qVar = this.zzb;
+            if (qVar == null) {
                 throw new IllegalStateException("onDestroy: mServiceHandler not set, did you override onCreate() but forget to call super.onCreate()? component=".concat(String.valueOf(this.zza)));
             }
-            pVar.getLooper().quit();
-            pVar.a("quit");
+            qVar.getLooper().quit();
+            qVar.a("quit");
         }
         super.onDestroy();
     }

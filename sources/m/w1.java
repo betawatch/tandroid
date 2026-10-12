@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class w1 extends ViewGroup {
     public int E;
@@ -40,9 +40,9 @@ public abstract class w1 extends ViewGroup {
         this.c = 0;
         this.e = 8388659;
         int[] iArr = f.a.n;
-        la.h R = la.h.R(context, attributeSet, iArr, i10);
-        r0.i0.i(this, context, iArr, attributeSet, (TypedArray) R.c, i10);
-        TypedArray typedArray = (TypedArray) R.c;
+        li.k P = li.k.P(context, attributeSet, iArr, i10);
+        r0.j0.i(this, context, iArr, attributeSet, (TypedArray) P.c, i10);
+        TypedArray typedArray = (TypedArray) P.c;
         int i11 = typedArray.getInt(1, -1);
         if (i11 >= 0) {
             setOrientation(i11);
@@ -58,10 +58,10 @@ public abstract class w1 extends ViewGroup {
         this.h = typedArray.getFloat(4, -1.0f);
         this.b = typedArray.getInt(3, -1);
         this.n = typedArray.getBoolean(7, false);
-        setDividerDrawable(R.G(5));
+        setDividerDrawable(P.F(5));
         this.y = typedArray.getInt(8, 0);
         this.E = typedArray.getDimensionPixelSize(6, 0);
-        R.S();
+        P.Q();
     }
 
     public final void c(Canvas canvas, int i10) {
@@ -126,7 +126,7 @@ public abstract class w1 extends ViewGroup {
         int i12 = this.c;
         if (this.d == 1 && (i10 = this.e & 112) != 48) {
             if (i10 == 16) {
-                i12 = hg.c.z(((getBottom() - getTop()) - getPaddingTop()) - getPaddingBottom(), this.f, 2, i12);
+                i12 = i2.d.z(((getBottom() - getTop()) - getPaddingTop()) - getPaddingBottom(), this.f, 2, i12);
             } else if (i10 == 80) {
                 i12 = ((getBottom() - getTop()) - getPaddingBottom()) - this.f;
             }
@@ -287,7 +287,7 @@ public abstract class w1 extends ViewGroup {
             int i25 = this.e;
             int i26 = i25 & 112;
             int i27 = 8388615 & i25;
-            int paddingTop = i26 != 16 ? i26 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - this.f : hg.c.z(i13 - i11, this.f, 2, getPaddingTop());
+            int paddingTop = i26 != 16 ? i26 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - this.f : i2.d.z(i13 - i11, this.f, 2, getPaddingTop());
             int i28 = 0;
             while (i28 < virtualChildCount) {
                 View childAt = getChildAt(i28);
@@ -299,9 +299,9 @@ public abstract class w1 extends ViewGroup {
                     if (i29 < 0) {
                         i29 = i27;
                     }
-                    WeakHashMap weakHashMap = r0.i0.a;
+                    WeakHashMap weakHashMap = r0.j0.a;
                     int absoluteGravity = Gravity.getAbsoluteGravity(i29, getLayoutDirection()) & 7;
-                    int z13 = absoluteGravity != 1 ? absoluteGravity != 5 ? ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft : (paddingRight - measuredWidth) - ((LinearLayout.LayoutParams) v1Var).rightMargin : (hg.c.z(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin) - ((LinearLayout.LayoutParams) v1Var).rightMargin;
+                    int z13 = absoluteGravity != 1 ? absoluteGravity != 5 ? ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft : (paddingRight - measuredWidth) - ((LinearLayout.LayoutParams) v1Var).rightMargin : (i2.d.z(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin) - ((LinearLayout.LayoutParams) v1Var).rightMargin;
                     if (h(i28)) {
                         paddingTop += this.x;
                     }
@@ -326,14 +326,14 @@ public abstract class w1 extends ViewGroup {
         boolean z14 = this.a;
         int[] iArr = this.r;
         int[] iArr2 = this.s;
-        WeakHashMap weakHashMap2 = r0.i0.a;
+        WeakHashMap weakHashMap2 = r0.j0.a;
         int absoluteGravity2 = Gravity.getAbsoluteGravity(i33, getLayoutDirection());
         if (absoluteGravity2 != 1) {
             z11 = absoluteGravity2 != 5 ? getPaddingLeft() : ((getPaddingLeft() + i12) - i10) - this.f;
             i14 = 1;
         } else {
             i14 = 1;
-            z11 = hg.c.z(i12 - i10, this.f, 2, getPaddingLeft());
+            z11 = i2.d.z(i12 - i10, this.f, 2, getPaddingLeft());
         }
         if (a2) {
             i16 = virtualChildCount2 - 1;
@@ -366,7 +366,7 @@ public abstract class w1 extends ViewGroup {
                             i21 = i20 & 112;
                             i22 = i35;
                             if (i21 != 16) {
-                                z12 = (hg.c.z(paddingBottom2, measuredHeight2, 2, paddingTop2) + ((LinearLayout.LayoutParams) v1Var2).topMargin) - ((LinearLayout.LayoutParams) v1Var2).bottomMargin;
+                                z12 = (i2.d.z(paddingBottom2, measuredHeight2, 2, paddingTop2) + ((LinearLayout.LayoutParams) v1Var2).topMargin) - ((LinearLayout.LayoutParams) v1Var2).bottomMargin;
                             } else if (i21 == 48) {
                                 z12 = ((LinearLayout.LayoutParams) v1Var2).topMargin + paddingTop2;
                                 if (i19 != -1) {

@@ -13,8 +13,9 @@ import android.util.Log;
 import android.util.SparseArray;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.ui.Components.voip.m2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g extends p {
     public final String f;
@@ -26,7 +27,7 @@ public final class g extends p {
     public final /* synthetic */ k p;
     public final SparseArray j = new SparseArray();
     public final AtomicInteger l = new AtomicInteger(1);
-    public final org.telegram.ui.web.q0 m = new org.telegram.ui.web.q0(this, 8);
+    public final m2 m = new m2(this, 13);
     public int n = -1;
 
     public g(k kVar, MediaRouter2.RoutingController routingController, String str) {
@@ -35,7 +36,7 @@ public final class g extends p {
         this.f = str;
         Messenger n10 = k.n(routingController);
         this.h = n10;
-        this.i = n10 == null ? null : new Messenger(new androidx.mediarouter.app.c(this));
+        this.i = n10 == null ? null : new Messenger(new ab.o0(this));
         this.k = new Handler(Looper.getMainLooper());
     }
 
@@ -53,9 +54,9 @@ public final class g extends p {
         routingController.setVolume(i10);
         this.n = i10;
         Handler handler = this.k;
-        org.telegram.ui.web.q0 q0Var = this.m;
-        handler.removeCallbacks(q0Var);
-        handler.postDelayed(q0Var, 1000L);
+        m2 m2Var = this.m;
+        handler.removeCallbacks(m2Var);
+        handler.postDelayed(m2Var, 1000L);
     }
 
     @Override // p4.q
@@ -72,9 +73,9 @@ public final class g extends p {
         this.n = max;
         this.g.setVolume(max);
         Handler handler = this.k;
-        org.telegram.ui.web.q0 q0Var = this.m;
-        handler.removeCallbacks(q0Var);
-        handler.postDelayed(q0Var, 1000L);
+        m2 m2Var = this.m;
+        handler.removeCallbacks(m2Var);
+        handler.postDelayed(m2Var, 1000L);
     }
 
     @Override // p4.p
@@ -83,11 +84,11 @@ public final class g extends p {
             Log.w("MR2Provider", "onAddMemberRoute: Ignoring null or empty routeId.");
             return;
         }
-        MediaRoute2Info o9 = this.p.o(str);
-        if (o9 == null) {
+        MediaRoute2Info o10 = this.p.o(str);
+        if (o10 == null) {
             Log.w("MR2Provider", "onAddMemberRoute: Specified route not found. routeId=".concat(str));
         } else {
-            this.g.selectRoute(o9);
+            this.g.selectRoute(o10);
         }
     }
 
@@ -97,11 +98,11 @@ public final class g extends p {
             Log.w("MR2Provider", "onRemoveMemberRoute: Ignoring null or empty routeId.");
             return;
         }
-        MediaRoute2Info o9 = this.p.o(str);
-        if (o9 == null) {
+        MediaRoute2Info o10 = this.p.o(str);
+        if (o10 == null) {
             Log.w("MR2Provider", "onRemoveMemberRoute: Specified route not found. routeId=".concat(str));
         } else {
-            this.g.deselectRoute(o9);
+            this.g.deselectRoute(o10);
         }
     }
 
@@ -113,9 +114,9 @@ public final class g extends p {
         }
         String str = (String) list.get(0);
         k kVar = this.p;
-        MediaRoute2Info o9 = kVar.o(str);
-        if (o9 != null) {
-            kVar.r.transferTo(o9);
+        MediaRoute2Info o10 = kVar.o(str);
+        if (o10 != null) {
+            kVar.r.transferTo(o10);
             return;
         }
         Log.w("MR2Provider", "onUpdateMemberRoutes: Specified route not found. routeId=" + str);
@@ -144,8 +145,8 @@ public final class g extends p {
         try {
             messenger.send(obtain);
         } catch (DeadObjectException unused) {
-        } catch (RemoteException e7) {
-            Log.e("MR2Provider", "Could not send control request to service.", e7);
+        } catch (RemoteException e) {
+            Log.e("MR2Provider", "Could not send control request to service.", e);
         }
     }
 
@@ -167,8 +168,8 @@ public final class g extends p {
         try {
             messenger.send(obtain);
         } catch (DeadObjectException unused) {
-        } catch (RemoteException e7) {
-            Log.e("MR2Provider", "Could not send control request to service.", e7);
+        } catch (RemoteException e) {
+            Log.e("MR2Provider", "Could not send control request to service.", e);
         }
     }
 }

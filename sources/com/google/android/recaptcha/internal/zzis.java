@@ -1,22 +1,22 @@
 package com.google.android.recaptcha.internal;
 
-import ae.d0;
-import ae.g0;
 import android.webkit.WebView;
+import be.c0;
+import be.f0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzis {
     private final WebView zza;
-    private final d0 zzb;
+    private final c0 zzb;
 
-    public zzis(WebView webView, d0 d0Var) {
+    public zzis(WebView webView, c0 c0Var) {
         this.zza = webView;
-        this.zzb = d0Var;
+        this.zzb = c0Var;
     }
 
     public final void zzb(String str, String... strArr) {
-        g0.q(this.zzb, new zzir((String[]) Arrays.copyOf(strArr, strArr.length), this, str, null));
+        f0.q(this.zzb, new zzir((String[]) Arrays.copyOf(strArr, strArr.length), this, str, null));
     }
 }

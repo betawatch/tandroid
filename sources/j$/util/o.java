@@ -58,6 +58,6 @@ public final class o implements ListIterator, y {
 
     @Override // java.util.Iterator, j$.util.y
     public final void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.M(this.a, consumer);
+        j$.com.android.tools.r8.a.L(this.a, consumer);
     }
 }

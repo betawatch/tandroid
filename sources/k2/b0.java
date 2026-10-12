@@ -1,36 +1,49 @@
 package k2;
 
 import android.media.AudioTrack;
-import android.media.AudioTrack$StreamEventCallback;
+import ji.w4;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b0 extends AudioTrack$StreamEventCallback {
-    public final /* synthetic */ c0 a;
+public final class b0 {
+    public final a0 a;
+    public final int b;
+    public final w4 c;
+    public int d;
+    public long e;
+    public long f;
+    public long g;
+    public long h;
+    public long i;
 
-    public b0(c0 c0Var) {
-        this.a = c0Var;
+    public b0(AudioTrack audioTrack, w4 w4Var) {
+        this.a = new a0(audioTrack);
+        this.b = audioTrack.getSampleRate();
+        this.c = w4Var;
+        a(0);
     }
 
-    public final void onDataRequest(AudioTrack audioTrack, int i10) {
-        d0 d0Var;
-        n nVar;
-        if (audioTrack.equals(this.a.c.w) && (nVar = (d0Var = this.a.c).s) != null && d0Var.W) {
-            nVar.y0();
+    public final void a(int i10) {
+        this.d = i10;
+        if (i10 == 0) {
+            this.g = 0L;
+            this.h = -1L;
+            this.i = -9223372036854775807L;
+            this.e = System.nanoTime() / 1000;
+            this.f = 10000L;
+            return;
         }
-    }
-
-    public final void onPresentationEnded(AudioTrack audioTrack) {
-        if (audioTrack.equals(this.a.c.w)) {
-            this.a.c.V = true;
+        if (i10 == 1) {
+            this.f = 10000L;
+            return;
         }
-    }
-
-    public final void onTearDown(AudioTrack audioTrack) {
-        d0 d0Var;
-        n nVar;
-        if (audioTrack.equals(this.a.c.w) && (nVar = (d0Var = this.a.c).s) != null && d0Var.W) {
-            nVar.y0();
+        if (i10 == 2 || i10 == 3) {
+            this.f = 10000000L;
+        } else {
+            if (i10 != 4) {
+                throw new IllegalStateException();
+            }
+            this.f = 500000L;
         }
     }
 }

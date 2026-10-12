@@ -1,23 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b71 extends View {
-    public int a;
+public final class b71 extends h71 {
+    public final /* synthetic */ c71 d3;
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b71(c71 c71Var, c71 c71Var2, d dVar, a71 a71Var, a71 a71Var2) {
+        super(c71Var2, dVar, a71Var, a71Var2);
+        this.d3 = c71Var;
     }
 
-    public void setHeight(int i10) {
-        if (this.a == i10) {
-            return;
-        }
-        this.a = i10;
-        requestLayout();
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.d3.b = -1;
     }
 }

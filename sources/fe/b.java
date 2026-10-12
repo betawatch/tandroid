@@ -1,39 +1,27 @@
 package fe;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import ee.p;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class b extends p {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(b.class, Object.class, "_consensus$volatile");
-    private volatile /* synthetic */ Object _consensus$volatile = a.a;
+public abstract class b {
+    public p[] a;
+    public int b;
+    public int c;
 
-    @Override // fe.p
-    public final Object a(Object obj) {
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
-        Object obj2 = atomicReferenceFieldUpdater.get(this);
-        da.a aVar = a.a;
-        if (obj2 == aVar) {
-            da.a c10 = c(obj);
-            obj2 = atomicReferenceFieldUpdater.get(this);
-            if (obj2 == aVar) {
-                while (true) {
-                    if (atomicReferenceFieldUpdater.compareAndSet(this, aVar, c10)) {
-                        obj2 = c10;
-                        break;
-                    }
-                    if (atomicReferenceFieldUpdater.get(this) != aVar) {
-                        obj2 = atomicReferenceFieldUpdater.get(this);
-                        break;
-                    }
+    public final void b(p pVar) {
+        synchronized (this) {
+            try {
+                int i10 = this.b - 1;
+                this.b = i10;
+                if (i10 == 0) {
+                    this.c = 0;
                 }
+                kotlin.jvm.internal.i.c(pVar, "null cannot be cast to non-null type kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot<kotlin.Any>");
+                pVar.a.set(null);
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        b(obj, obj2);
-        return obj2;
     }
-
-    public abstract void b(Object obj, Object obj2);
-
-    public abstract da.a c(Object obj);
 }

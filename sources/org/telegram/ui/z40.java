@@ -1,27 +1,27 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class z40 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ g60 a;
+public final class z40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.voip.t a;
+    public final /* synthetic */ n60 b;
 
-    public z40(g60 g60Var) {
-        this.a = g60Var;
+    public z40(n60 n60Var, org.telegram.ui.Components.voip.t tVar) {
+        this.b = n60Var;
+        this.a = tVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         ViewGroup viewGroup;
-        g60 g60Var = this.a;
-        g60Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
-        g60Var.a2.j(null);
-        AndroidUtilities.updateVisibleRows(g60Var.m2);
-        viewGroup = ((org.telegram.ui.ActionBar.f3) g60Var).containerView;
-        viewGroup.requestLayout();
-        return false;
+        org.telegram.ui.Components.voip.t tVar = this.a;
+        if (tVar.getParent() != null) {
+            viewGroup = ((org.telegram.ui.ActionBar.e3) this.b).containerView;
+            viewGroup.removeView(tVar);
+        }
     }
 }

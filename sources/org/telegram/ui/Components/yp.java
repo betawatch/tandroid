@@ -1,41 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.widget.Toast;
-import java.util.List;
-import org.telegram.messenger.ChatThemeController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class yp implements ResultCallback {
-    public final /* synthetic */ ChatThemeController a;
-    public final /* synthetic */ cq b;
+public final class yp {
+    public final org.telegram.ui.ActionBar.b4 a;
+    public Drawable b;
+    public int c;
+    public boolean d;
+    public Bitmap e;
 
-    public yp(cq cqVar, ChatThemeController chatThemeController) {
-        this.b = cqVar;
-        this.a = chatThemeController;
+    public yp(org.telegram.ui.ActionBar.b4 b4Var) {
+        this.a = b4Var;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        int i10;
-        ChatThemeController chatThemeController = this.a;
-        List<org.telegram.ui.ActionBar.c4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
-        cq cqVar = this.b;
-        i10 = ((org.telegram.ui.ActionBar.f3) cqVar).currentAccount;
-        NotificationCenter.getInstance(i10).doOnIdle(new ea(27, this, emojiThemes));
-        cqVar.b0 = false;
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.l.a(this, th2);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
+    public final String a() {
+        org.telegram.ui.ActionBar.b4 b4Var = this.a;
+        if (b4Var == null || b4Var.a) {
+            return null;
+        }
+        return b4Var.e;
     }
 }

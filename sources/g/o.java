@@ -5,7 +5,7 @@ import android.content.IntentFilter;
 import android.util.SparseIntArray;
 import android.view.MenuItem;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class o {
     public Object a;
@@ -16,10 +16,10 @@ public abstract class o {
     }
 
     public void c() {
-        androidx.mediarouter.app.g gVar = (androidx.mediarouter.app.g) this.a;
-        if (gVar != null) {
+        androidx.mediarouter.app.f fVar = (androidx.mediarouter.app.f) this.a;
+        if (fVar != null) {
             try {
-                ((r) this.b).e.unregisterReceiver(gVar);
+                ((r) this.b).e.unregisterReceiver(fVar);
             } catch (IllegalArgumentException unused) {
             }
             this.a = null;
@@ -35,15 +35,15 @@ public abstract class o {
             return menuItem;
         }
         l0.a aVar = (l0.a) menuItem;
-        if (((a0.m) this.b) == null) {
-            this.b = new a0.m(0);
+        if (((a0.l) this.b) == null) {
+            this.b = new a0.l(0);
         }
-        MenuItem menuItem2 = (MenuItem) ((a0.m) this.b).get(aVar);
+        MenuItem menuItem2 = (MenuItem) ((a0.l) this.b).get(aVar);
         if (menuItem2 != null) {
             return menuItem2;
         }
         l.r rVar = new l.r((Context) this.a, aVar);
-        ((a0.m) this.b).put(aVar, rVar);
+        ((a0.l) this.b).put(aVar, rVar);
         return rVar;
     }
 
@@ -100,10 +100,10 @@ public abstract class o {
         if (d.countActions() == 0) {
             return;
         }
-        if (((androidx.mediarouter.app.g) this.a) == null) {
-            this.a = new androidx.mediarouter.app.g(this, 3);
+        if (((androidx.mediarouter.app.f) this.a) == null) {
+            this.a = new androidx.mediarouter.app.f(this, 3);
         }
-        ((r) this.b).e.registerReceiver((androidx.mediarouter.app.g) this.a, d);
+        ((r) this.b).e.registerReceiver((androidx.mediarouter.app.f) this.a, d);
     }
 
     public o() {

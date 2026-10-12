@@ -1,0 +1,46 @@
+package ug;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class t0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z0 b;
+
+    public /* synthetic */ t0(z0 z0Var, int i10) {
+        this.a = i10;
+        this.b = z0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.X(true);
+                break;
+            case 1:
+                this.b.c0(true, false);
+                break;
+            case 2:
+                this.b.S();
+                break;
+            case 3:
+                this.b.c0(true, false);
+                break;
+            case 4:
+                this.b.c0(true, false);
+                break;
+            case 5:
+                this.b.c0(true, false);
+                break;
+            case 6:
+                z0 z0Var = this.b;
+                z0Var.e0.clear();
+                z0Var.f0.clear();
+                z0Var.dismiss();
+                break;
+            default:
+                this.b.dismiss();
+                break;
+        }
+    }
+}

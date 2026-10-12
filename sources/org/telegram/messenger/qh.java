@@ -1,42 +1,38 @@
 package org.telegram.messenger;
 
-import android.os.SystemClock;
-import org.telegram.messenger.SharedConfig;
+import android.content.Context;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class qh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SharedConfig.ProxyInfo b;
-    public final /* synthetic */ long c;
+public final /* synthetic */ class qh implements Utilities.Callback2 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ qh(SharedConfig.ProxyInfo proxyInfo, long j3, int i10) {
-        this.a = i10;
-        this.b = proxyInfo;
-        this.c = j3;
+    public /* synthetic */ qh(Context context, int i10, Utilities.Callback2 callback2) {
+        this.c = callback2;
+        this.d = context;
+        this.b = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        long j3 = this.c;
-        SharedConfig.ProxyInfo proxyInfo = this.b;
-        switch (i10) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
             case 0:
-                ProxyRotationController.lambda$new$0(proxyInfo, j3);
+                PasskeysController.lambda$create$7((Utilities.Callback2) this.c, (Context) this.d, this.b, (v0.c) obj, (Throwable) obj2);
                 break;
             default:
-                proxyInfo.availableCheckTime = SystemClock.elapsedRealtime();
-                proxyInfo.checking = false;
-                if (j3 == -1) {
-                    proxyInfo.available = false;
-                    proxyInfo.ping = 0L;
-                } else {
-                    proxyInfo.ping = j3;
-                    proxyInfo.available = true;
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxyCheckDone, proxyInfo);
+                ((TranslateController) this.c).lambda$pushToSummarize$19(this.b, (Utilities.Callback) this.d, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ qh(TranslateController translateController, int i10, Utilities.Callback callback) {
+        this.c = translateController;
+        this.b = i10;
+        this.d = callback;
     }
 }

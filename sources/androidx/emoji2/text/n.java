@@ -1,81 +1,88 @@
 package androidx.emoji2.text;
 
-import java.nio.ByteBuffer;
+import android.os.Trace;
+import bi.s9;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.b30;
+import org.telegram.ui.Components.voip.k2;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.w2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class n {
-    public static final ThreadLocal d = new ThreadLocal();
-    public final int a;
-    public final com.google.firebase.messaging.s b;
-    public volatile int c = 0;
+public final class n implements Runnable {
+    public final /* synthetic */ int a;
 
-    public n(com.google.firebase.messaging.s sVar, int i10) {
-        this.b = sVar;
+    public /* synthetic */ n(int i10) {
         this.a = i10;
     }
 
-    public final int a(int i10) {
-        p1.a b10 = b();
-        int a2 = b10.a(16);
-        if (a2 == 0) {
-            return 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10 = true;
+        switch (this.a) {
+            case 0:
+                try {
+                    int i10 = n0.g.a;
+                    Trace.beginSection("EmojiCompat.EmojiCompatInitializer.run");
+                    if (l.j == null) {
+                        z10 = false;
+                    }
+                    if (z10) {
+                        l.a().c();
+                    }
+                    Trace.endSection();
+                    return;
+                } catch (Throwable th2) {
+                    int i11 = n0.g.a;
+                    Trace.endSection();
+                    throw th2;
+                }
+            case 1:
+                Math.abs(Utilities.random.nextInt() % 3);
+                b30[] b30VarArr = s9.a;
+                NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
+                AndroidUtilities.runOnUIThread(s9.o, 1000L);
+                LaunchActivity.R().getFragmentView();
+                return;
+            case 2:
+                return;
+            case 3:
+                g6.j = false;
+                g6.l(false);
+                return;
+            case 4:
+                g6.k = false;
+                g6.l(true);
+                return;
+            case 5:
+                return;
+            case 6:
+                k2 k2Var = k2.V;
+                if (k2Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(k2Var.b.f.N);
+                    return;
+                }
+                return;
+            default:
+                return;
         }
-        ByteBuffer byteBuffer = (ByteBuffer) b10.d;
-        int i11 = a2 + b10.a;
-        return byteBuffer.getInt((i10 * 4) + byteBuffer.getInt(i11) + i11 + 4);
     }
 
-    public final p1.a b() {
-        ThreadLocal threadLocal = d;
-        p1.a aVar = (p1.a) threadLocal.get();
-        if (aVar == null) {
-            aVar = new p1.a();
-            threadLocal.set(aVar);
-        }
-        p1.b bVar = (p1.b) this.b.b;
-        int a2 = bVar.a(6);
-        if (a2 != 0) {
-            int i10 = a2 + bVar.a;
-            int i11 = (this.a * 4) + ((ByteBuffer) bVar.d).getInt(i10) + i10 + 4;
-            int i12 = ((ByteBuffer) bVar.d).getInt(i11) + i11;
-            ByteBuffer byteBuffer = (ByteBuffer) bVar.d;
-            aVar.d = byteBuffer;
-            if (byteBuffer != null) {
-                aVar.a = i12;
-                int i13 = i12 - byteBuffer.getInt(i12);
-                aVar.b = i13;
-                aVar.c = ((ByteBuffer) aVar.d).getShort(i13);
-                return aVar;
-            }
-            aVar.a = 0;
-            aVar.b = 0;
-            aVar.c = 0;
-        }
-        return aVar;
+    public n(w2 w2Var) {
+        this.a = 5;
     }
 
-    public final String toString() {
-        int i10;
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(super.toString());
-        sb2.append(", id:");
-        p1.a b10 = b();
-        int a2 = b10.a(4);
-        sb2.append(Integer.toHexString(a2 != 0 ? ((ByteBuffer) b10.d).getInt(a2 + b10.a) : 0));
-        sb2.append(", codepoints:");
-        p1.a b11 = b();
-        int a10 = b11.a(16);
-        if (a10 != 0) {
-            int i11 = a10 + b11.a;
-            i10 = ((ByteBuffer) b11.d).getInt(((ByteBuffer) b11.d).getInt(i11) + i11);
-        } else {
-            i10 = 0;
-        }
-        for (int i12 = 0; i12 < i10; i12++) {
-            sb2.append(Integer.toHexString(a(i12)));
-            sb2.append(" ");
-        }
-        return sb2.toString();
+    private final void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
     }
 }

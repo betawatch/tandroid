@@ -1,96 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.util.SparseIntArray;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.WebFile;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class xi extends View {
-    public final /* synthetic */ int a = 0;
-    public final int b;
-    public final Object c;
-    public final Object d;
-    public final Object e;
+public final /* synthetic */ class xi implements Utilities.CallbackReturn {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public xi(ViewGroup viewGroup, int i10) {
-        super(viewGroup.getContext());
-        this.c = new ArrayList();
-        this.e = new org.telegram.ui.uz(this, 28);
-        this.d = viewGroup;
-        this.b = i10;
+    public /* synthetic */ xi(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public void a() {
-        org.telegram.ui.uz uzVar = (org.telegram.ui.uz) this.e;
-        ArrayList arrayList = (ArrayList) this.c;
-        boolean isEmpty = arrayList.isEmpty();
-        int i10 = this.b;
-        if (isEmpty && getVisibility() != 8) {
-            NotificationCenter.getInstance(i10).removeDelayed(uzVar);
-            NotificationCenter.getInstance(i10).doOnIdle(uzVar);
-        } else {
-            if (arrayList.isEmpty() || getVisibility() == 0) {
-                return;
-            }
-            NotificationCenter.getInstance(i10).removeDelayed(uzVar);
-            setVisibility(0);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
         switch (this.a) {
             case 0:
-                yf.y yVar = (yf.y) this.d;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.c;
-                int i10 = this.b;
-                yVar.b(org.telegram.ui.ActionBar.i6.m1(0.5f, org.telegram.ui.ActionBar.i6.w0(i10, e6Var)));
-                yVar.draw(canvas);
-                yf.y yVar2 = (yf.y) this.e;
-                yVar2.b(org.telegram.ui.ActionBar.i6.m1(0.95f, org.telegram.ui.ActionBar.i6.w0(i10, e6Var)));
-                yVar2.draw(canvas);
-                break;
-            default:
-                ArrayList arrayList = (ArrayList) this.c;
-                if (!arrayList.isEmpty()) {
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        ((org.telegram.ui.di0) arrayList.get(i11)).a(canvas);
-                    }
-                    break;
+                return Boolean.valueOf(hj.N((hj) this.b, (MessageObject) obj));
+            case 1:
+                sh.f fVar = (sh.f) this.b;
+                View view = (View) obj;
+                ImageReceiver imageReceiver = new ImageReceiver(view);
+                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, org.telegram.ui.ActionBar.g6.Pb, (org.telegram.ui.ActionBar.g6.I.q() ? 3 : 6) * 0.12f);
+                svgThumb.setAspectCenter(true);
+                svgThumb.setColorKey(org.telegram.ui.ActionBar.g6.qe);
+                imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(fVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new rq(svgThumb), (Object) null, 0);
+                view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.q8(imageReceiver, 1));
+                imageReceiver.setRoundRadius(AndroidUtilities.dp(14.0f));
+                return new gd(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
+            case 2:
+                int i10 = ((SparseIntArray) this.b).get(((Integer) obj).intValue(), -1);
+                if (i10 == -1) {
+                    return Boolean.TRUE;
                 }
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 0:
-                super.onSizeChanged(i10, i11, i12, i13);
-                int i14 = AndroidUtilities.statusBarHeight;
-                yf.y yVar = (yf.y) this.d;
-                yVar.c(AndroidUtilities.dp(12.0f) + i14, 0);
-                yVar.setBounds(0, 0, i10, AndroidUtilities.dp(52.0f) + i14);
-                yf.y yVar2 = (yf.y) this.e;
-                yVar2.c(i14 / 3, 0);
-                yVar2.setBounds(0, 0, i10, i14);
-                break;
+                return Boolean.valueOf(i10 == 1);
             default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
+                h71 h71Var = (h71) this.b;
+                View view2 = (View) obj;
+                h71Var.getClass();
+                return view2.getParent() != h71Var ? Boolean.FALSE : Boolean.valueOf(!z61.K(h71Var.T(view2).f));
         }
-    }
-
-    public xi(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.d = new yf.y(2);
-        this.e = new yf.y(2);
-        this.c = e6Var;
-        this.b = i10;
     }
 }

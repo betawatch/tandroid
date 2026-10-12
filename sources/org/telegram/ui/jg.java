@@ -1,51 +1,13 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import java.util.ArrayList;
+import java.util.function.Supplier;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jg implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ String c;
-
-    public /* synthetic */ jg(zn znVar, String str, int i10) {
-        this.a = i10;
-        this.b = znVar;
-        this.c = str;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Boolean bool = (Boolean) obj;
-        Boolean bool2 = (Boolean) obj2;
-        switch (this.a) {
-            case 0:
-                if (bool.booleanValue()) {
-                    boolean booleanValue = bool2.booleanValue();
-                    zn znVar = this.b;
-                    String str = this.c;
-                    if (booleanValue) {
-                        znVar.getMessagesController().addWebBrowserException(str, false);
-                    }
-                    znVar.getParentActivity();
-                    of.f.n(str);
-                    break;
-                }
-                break;
-            default:
-                zn znVar2 = this.b;
-                znVar2.getClass();
-                if (bool.booleanValue()) {
-                    boolean booleanValue2 = bool2.booleanValue();
-                    String str2 = this.c;
-                    if (booleanValue2) {
-                        znVar2.getMessagesController().addWebBrowserException(str2, true);
-                    }
-                    of.f.m(znVar2.getParentActivity(), str2, false, null);
-                    break;
-                }
-                break;
-        }
+public final /* synthetic */ class jg implements Supplier {
+    @Override // java.util.function.Supplier
+    public final Object get() {
+        return new ArrayList();
     }
 }

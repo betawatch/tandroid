@@ -1,95 +1,234 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.CacheByChatsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.WindowManager;
+import javax.microedition.khronos.egl.EGL10;
+import javax.microedition.khronos.egl.EGLDisplay;
+import javax.microedition.khronos.egl.EGLSurface;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Intro;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.camera.CameraView;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class a6 extends org.telegram.ui.ActionBar.n2 {
-    public y5 a;
-    public org.telegram.ui.Components.qm0 b;
-    public final ArrayList c;
-    public ArrayList d;
-    public int e;
+public final class a6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public a6(Bundle bundle) {
-        super(bundle);
-        this.c = new ArrayList();
-        this.d = new ArrayList();
+    public /* synthetic */ a6(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void U() {
-        ArrayList arrayList;
-        boolean z10 = this.isPaused;
-        ArrayList arrayList2 = this.c;
-        if (z10 || this.a == null) {
-            arrayList = null;
-        } else {
-            arrayList = new ArrayList();
-            arrayList.addAll(arrayList2);
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0147, code lost:
+    
+        if (r2.f.equals(r2.b.eglGetCurrentSurface(12377)) == false) goto L69;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        org.telegram.ui.Components.voip.l J0;
+        org.telegram.ui.Components.voip.t renderer;
+        org.telegram.ui.Components.voip.o oVar;
+        int i10;
+        switch (this.a) {
+            case 0:
+                BubbleActivity bubbleActivity = (BubbleActivity) this.b;
+                if (bubbleActivity.Y == this) {
+                    if (AndroidUtilities.needShowPasscode(true)) {
+                        if (BuildVars.LOGS_ENABLED) {
+                            FileLog.d("lock app");
+                        }
+                        bubbleActivity.z();
+                    } else if (BuildVars.LOGS_ENABLED) {
+                        FileLog.d("didn't pass lock check");
+                    }
+                    bubbleActivity.Y = null;
+                    break;
+                }
+                break;
+            case 1:
+                z9 z9Var = (z9) this.b;
+                CameraView cameraView = z9Var.c;
+                if (cameraView != null && !z9Var.N && cameraView.getCameraSession() != null) {
+                    z9Var.e.post(new tu0(this, 17));
+                    break;
+                }
+                break;
+            case 2:
+                ContactsActivity contactsActivity = (ContactsActivity) this.b;
+                contactsActivity.d.Z();
+                contactsActivity.l0 = false;
+                break;
+            case 3:
+                ExternalActionActivity externalActionActivity = (ExternalActionActivity) this.b;
+                if (externalActionActivity.w == this) {
+                    if (AndroidUtilities.needShowPasscode(true)) {
+                        if (BuildVars.LOGS_ENABLED) {
+                            FileLog.d("lock app");
+                        }
+                        externalActionActivity.i();
+                    } else if (BuildVars.LOGS_ENABLED) {
+                        FileLog.d("didn't pass lock check");
+                    }
+                    externalActionActivity.w = null;
+                    break;
+                }
+                break;
+            case 4:
+                c20 c20Var = (c20) this.b;
+                if (c20Var.M) {
+                    c20Var.f.clear();
+                    c20Var.n.clear();
+                    c20Var.r.clear();
+                    org.telegram.ui.Components.lm0 lm0Var = c20Var.d;
+                    if (lm0Var != null) {
+                        lm0Var.l();
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                n60 n60Var = ((u30) this.b).b;
+                n60Var.x.setAnimation(n60Var.J0);
+                n60Var.L0 = false;
+                break;
+            case 6:
+                try {
+                    n60 n60Var2 = (n60) this.b;
+                    e40 e40Var = n60Var2.a2;
+                    if (e40Var != null && !e40Var.b && (J0 = n60.J0(n60Var2)) != null && J0.isAttachedToWindow() && (renderer = J0.getRenderer()) != null && (oVar = renderer.a) != null) {
+                        n60.H3.postRunnable(new o00(9, this, oVar));
+                        break;
+                    }
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+                break;
+            case 7:
+                if (((f80) this.b).h) {
+                    long currentTimeMillis = System.currentTimeMillis();
+                    f80 f80Var = (f80) this.b;
+                    if (f80Var.e.equals(f80Var.b.eglGetCurrentContext())) {
+                        f80 f80Var2 = (f80) this.b;
+                        break;
+                    }
+                    f80 f80Var3 = (f80) this.b;
+                    EGL10 egl10 = f80Var3.b;
+                    EGLDisplay eGLDisplay = f80Var3.c;
+                    EGLSurface eGLSurface = f80Var3.f;
+                    if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, f80Var3.e)) {
+                        if (BuildVars.LOGS_ENABLED) {
+                            org.telegram.messenger.yh.u(((f80) this.b).b, new StringBuilder("eglMakeCurrent failed "));
+                            break;
+                        }
+                    }
+                    int min = (int) Math.min(currentTimeMillis - ((f80) this.b).s, 16L);
+                    Intro.setPage(((f80) this.b).x.H);
+                    Intro.setDate((currentTimeMillis - r3.J) / 1000.0f);
+                    Intro.onDrawFrame(min);
+                    f80 f80Var4 = (f80) this.b;
+                    f80Var4.b.eglSwapBuffers(f80Var4.c, f80Var4.f);
+                    f80 f80Var5 = (f80) this.b;
+                    f80Var5.s = currentTimeMillis;
+                    float f7 = 0.0f;
+                    if (f80Var5.r == 0.0f) {
+                        for (float f10 : ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getSupportedRefreshRates()) {
+                            if (f10 > f7) {
+                                f7 = f10;
+                            }
+                        }
+                        ((f80) this.b).r = f7;
+                    }
+                    long currentTimeMillis2 = System.currentTimeMillis() - currentTimeMillis;
+                    f80 f80Var6 = (f80) this.b;
+                    f80Var6.postRunnable(f80Var6.w, Math.max(((long) (1000.0f / f80Var6.r)) - currentTimeMillis2, 0L));
+                    break;
+                }
+                break;
+            case 8:
+                LaunchActivity launchActivity = (LaunchActivity) this.b;
+                if (launchActivity.Z0 == this) {
+                    if (AndroidUtilities.needShowPasscode(true)) {
+                        if (BuildVars.LOGS_ENABLED) {
+                            FileLog.d("lock app");
+                        }
+                        launchActivity.G0(true, false, -1, -1, null);
+                        try {
+                            NotificationsController.getInstance(UserConfig.selectedAccount).showNotifications();
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
+                        }
+                    } else if (BuildVars.LOGS_ENABLED) {
+                        FileLog.d("didn't pass lock check");
+                    }
+                    launchActivity.Z0 = null;
+                    break;
+                }
+                break;
+            case 9:
+                nf0 nf0Var = (nf0) this.b;
+                if (nf0Var.h == this) {
+                    nf0Var.o();
+                    AndroidUtilities.runOnUIThread(nf0Var.h, 1000L);
+                    break;
+                }
+                break;
+            case 10:
+                ((qj0) this.b).T.animate().alpha(1.0f).setDuration(230L);
+                break;
+            case 11:
+                xj0 xj0Var = (xj0) this.b;
+                String str = xj0Var.j0;
+                if (str != null) {
+                    xj0.R(xj0Var, str);
+                    break;
+                }
+                break;
+            case 12:
+                gw0 gw0Var = (gw0) this.b;
+                a6 a6Var = gw0Var.y0;
+                org.telegram.ui.Cells.d6 d6Var = gw0Var.b0;
+                if (d6Var != null) {
+                    EditTextBoldCursor editField = d6Var.getEditField();
+                    if (!gw0Var.U && editField != null && gw0Var.T && !gw0Var.Y && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
+                        editField.requestFocus();
+                        AndroidUtilities.showKeyboard(editField);
+                        AndroidUtilities.cancelRunOnUIThread(a6Var);
+                        AndroidUtilities.runOnUIThread(a6Var, 100L);
+                        break;
+                    }
+                }
+                break;
+            case 13:
+                ((hb1) this.b).b0.animate().alpha(1.0f).setDuration(230L);
+                break;
+            case 14:
+                af1 af1Var = (af1) this.b;
+                af1Var.F.setVisibility(0);
+                af1Var.F.setAlpha(0.0f);
+                af1Var.F.animate().alpha(1.0f).start();
+                break;
+            default:
+                yj1 yj1Var = (yj1) this.b;
+                MessageObject messageObject = yj1Var.n;
+                if (messageObject != null && yj1Var.getParentActivity() != null && yj1Var.s != null) {
+                    i10 = ((org.telegram.ui.ActionBar.m2) yj1Var).currentAccount;
+                    MessagesController.getInstance(i10).sendTyping(messageObject.getDialogId(), 0L, 6, 0);
+                    AndroidUtilities.runOnUIThread(yj1Var.s, 25000L);
+                    break;
+                }
+                break;
         }
-        arrayList2.clear();
-        arrayList2.add(new z5(1, null));
-        ArrayList arrayList3 = this.d;
-        int size = arrayList3.size();
-        boolean z11 = false;
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList3.get(i10);
-            i10++;
-            arrayList2.add(new z5(2, (CacheByChatsController.KeepMediaException) obj));
-            z11 = true;
-        }
-        if (z11) {
-            arrayList2.add(new z5(3, null));
-            arrayList2.add(new z5(4, null));
-        }
-        arrayList2.add(new z5(3, null));
-        y5 y5Var = this.a;
-        if (y5Var != null) {
-            if (arrayList != null) {
-                y5Var.E(arrayList, arrayList2);
-            } else {
-                y5Var.l();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        hg.c.v(false, this.actionBar);
-        this.actionBar.setActionBarMenuOnItemClick(new ei.t(this, 21));
-        this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
-        this.b = new org.telegram.ui.Components.qm0(context, null);
-        s4.j jVar = new s4.j();
-        jVar.C = false;
-        jVar.m = false;
-        this.b.setItemAnimator(jVar);
-        this.b.setLayoutManager(new s4.d0());
-        org.telegram.ui.Components.qm0 qm0Var = this.b;
-        y5 y5Var = new y5(this);
-        this.a = y5Var;
-        qm0Var.setAdapter(y5Var);
-        this.b.setOnItemClickListener(new z0(this, 7));
-        frameLayout.addView(this.b);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.a7, false));
-        U();
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final boolean onFragmentCreate() {
-        this.e = getArguments().getInt(TeXSymbolParser.TYPE_ATTR);
-        U();
-        return super.onFragmentCreate();
     }
 }

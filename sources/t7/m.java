@@ -8,12 +8,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class m implements ExecutorService, AutoCloseable {
     @Override // java.util.concurrent.ExecutorService
-    public final boolean awaitTermination(long j3, TimeUnit timeUnit) {
-        return ((qb.h) this).a.awaitTermination(j3, timeUnit);
+    public final boolean awaitTermination(long j10, TimeUnit timeUnit) {
+        return ((rb.h) this).a.awaitTermination(j10, timeUnit);
     }
 
     @Override // java.lang.AutoCloseable
@@ -23,60 +23,60 @@ public abstract class m implements ExecutorService, AutoCloseable {
 
     @Override // java.util.concurrent.ExecutorService
     public final List invokeAll(Collection collection) {
-        return ((qb.h) this).a.invokeAll(collection);
+        return ((rb.h) this).a.invokeAll(collection);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public final Object invokeAny(Collection collection) {
-        return ((qb.h) this).a.invokeAny(collection);
+        return ((rb.h) this).a.invokeAny(collection);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public final boolean isShutdown() {
-        return ((qb.h) this).a.isShutdown();
+        return ((rb.h) this).a.isShutdown();
     }
 
     @Override // java.util.concurrent.ExecutorService
     public final boolean isTerminated() {
-        return ((qb.h) this).a.isTerminated();
+        return ((rb.h) this).a.isTerminated();
     }
 
     @Override // java.util.concurrent.ExecutorService
     public final void shutdown() {
-        ((qb.h) this).a.shutdown();
+        ((rb.h) this).a.shutdown();
     }
 
     @Override // java.util.concurrent.ExecutorService
     public final List shutdownNow() {
-        return ((qb.h) this).a.shutdownNow();
+        return ((rb.h) this).a.shutdownNow();
     }
 
     @Override // java.util.concurrent.ExecutorService
     public final Future submit(Runnable runnable) {
-        return ((qb.h) this).a.submit(runnable);
+        return ((rb.h) this).a.submit(runnable);
     }
 
     public final String toString() {
-        return ((qb.h) this).a.toString();
+        return ((rb.h) this).a.toString();
     }
 
     @Override // java.util.concurrent.ExecutorService
-    public final List invokeAll(Collection collection, long j3, TimeUnit timeUnit) {
-        return ((qb.h) this).a.invokeAll(collection, j3, timeUnit);
+    public final List invokeAll(Collection collection, long j10, TimeUnit timeUnit) {
+        return ((rb.h) this).a.invokeAll(collection, j10, timeUnit);
     }
 
     @Override // java.util.concurrent.ExecutorService
-    public final Object invokeAny(Collection collection, long j3, TimeUnit timeUnit) {
-        return ((qb.h) this).a.invokeAny(collection, j3, timeUnit);
+    public final Object invokeAny(Collection collection, long j10, TimeUnit timeUnit) {
+        return ((rb.h) this).a.invokeAny(collection, j10, timeUnit);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public final Future submit(Runnable runnable, Object obj) {
-        return ((qb.h) this).a.submit(runnable, obj);
+        return ((rb.h) this).a.submit(runnable, obj);
     }
 
     @Override // java.util.concurrent.ExecutorService
     public final Future submit(Callable callable) {
-        return ((qb.h) this).a.submit(callable);
+        return ((rb.h) this).a.submit(callable);
     }
 }

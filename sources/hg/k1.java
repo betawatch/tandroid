@@ -1,105 +1,49 @@
 package hg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.WebFile;
-import org.telegram.messenger.bi;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ia0;
-import w7.x5;
+import bi.g9;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.Cells.o2;
+import org.telegram.ui.Cells.s2;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class k1 extends LinearLayout {
-    public final e6 a;
-    public final ia0 b;
-    public final ImageReceiver c;
-    public final TextView d;
-    public boolean e;
+public final class k1 implements o2 {
+    public final /* synthetic */ n1 a;
 
-    public k1(Context context, e6 e6Var) {
-        super(context);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.c = imageReceiver;
-        this.a = e6Var;
-        setOrientation(1);
-        ia0 ia0Var = new ia0();
-        this.b = ia0Var;
-        int i10 = i6.G6;
-        int w02 = i6.w0(i10, e6Var);
-        ia0Var.g(i6.m1(0.05f, w02), i6.m1(0.15f, w02), i6.m1(0.1f, w02), i6.m1(0.3f, w02));
-        ia0Var.k(4.0f);
-        ia0Var.x.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView.setTextColor(i6.w0(i10, e6Var));
-        textView.setTextSize(1, 16.0f);
-        boolean z10 = LocaleController.isRTL;
-        addView(textView, x5.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
-        TextView textView2 = new TextView(context);
-        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView2.setTextColor(i6.w0(i6.z6, e6Var));
-        bi.j(13.0f, R.string.BusinessProfileLocation, 1, textView2);
-        boolean z11 = LocaleController.isRTL;
-        addView(textView2, x5.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
-        setWillNotDraw(false);
+    public k1(n1 n1Var) {
+        this.a = n1Var;
     }
 
-    public final void a(TLRPC.TL_businessLocation tL_businessLocation, boolean z10) {
-        if (tL_businessLocation != null) {
-            this.d.setText(tL_businessLocation.address);
-            if (tL_businessLocation.geo_point != null) {
-                this.c.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(tL_businessLocation.geo_point, AndroidUtilities.dp(44.0f), AndroidUtilities.dp(44.0f), 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), "44_44", this.b, 0L, (String) null, (Object) null, 0);
-            } else {
-                this.c.setImageBitmap((Drawable) null);
-            }
-        }
-        this.e = z10;
-        setPadding(0, 0, 0, z10 ? 1 : 0);
-        invalidate();
+    @Override // org.telegram.ui.Cells.o2
+    public final boolean b() {
+        return false;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float dp = LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : getWidth() - AndroidUtilities.dp(60.0f);
-        float dp2 = AndroidUtilities.dp(8.0f);
-        float dp3 = AndroidUtilities.dp(44.0f);
-        float dp4 = AndroidUtilities.dp(44.0f);
-        ImageReceiver imageReceiver = this.c;
-        imageReceiver.setImageCoords(dp, dp2, dp3, dp4);
-        imageReceiver.draw(canvas);
-        super.onDraw(canvas);
-        if (this.e) {
-            Paint U0 = i6.U0("paintDivider", this.a);
-            if (U0 == null) {
-                U0 = i6.k0;
-            }
-            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 21.33f : 0.0f), getMeasuredHeight(), U0);
+    @Override // org.telegram.ui.Cells.o2
+    public final void f(s2 s2Var) {
+        n1 n1Var = this.a;
+        fo foVar = n1Var.f;
+        if (MessagesController.getInstance(n1Var.r).getStoriesController().I(s2Var.getDialogId())) {
+            foVar.getOrCreateStoryViewer().getClass();
+            foVar.getOrCreateStoryViewer().D(n1Var.c, s2Var.getDialogId(), g9.a((mm0) s2Var.getParent()));
         }
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // org.telegram.ui.Cells.o2
+    public final void a(s2 s2Var) {
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.b || super.verifyDrawable(drawable);
+    @Override // org.telegram.ui.Cells.o2
+    public final void c() {
+    }
+
+    @Override // org.telegram.ui.Cells.o2
+    public final void e(s2 s2Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.o2
+    public final void g(s2 s2Var) {
     }
 }

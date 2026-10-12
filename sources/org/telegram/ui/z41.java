@@ -1,66 +1,47 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.transition.Fade;
-import android.transition.TransitionValues;
-import android.view.View;
-import android.view.ViewGroup;
+import j$.util.Objects;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class z41 extends Fade {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ SecretMediaViewer d;
+public final class z41 extends pg.a {
+    public final SaveToGallerySettingsHelper.DialogException c;
+    public final String d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z41(SecretMediaViewer secretMediaViewer, boolean z10, boolean z11, int i10) {
-        super(1);
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.d = secretMediaViewer;
-                this.b = z10;
-                this.c = z11;
-                super(2);
-                break;
-            default:
-                this.d = secretMediaViewer;
-                this.b = z10;
-                this.c = z11;
-                break;
-        }
+    public z41(int i10) {
+        super(i10, false);
+        this.c = null;
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
-            case 0:
-                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-                if (this.b && !this.c && view == this.d.Z) {
-                    onAppear.addListener(new ep0(this, 18));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new y11(this, 4));
-                }
-                return onAppear;
-            default:
-                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+    public final boolean equals(Object obj) {
+        SaveToGallerySettingsHelper.DialogException dialogException;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || z41.class != obj.getClass()) {
+            return false;
+        }
+        z41 z41Var = (z41) obj;
+        if (this.a != z41Var.a) {
+            return false;
+        }
+        String str = this.d;
+        if (str != null) {
+            return Objects.equals(str, z41Var.d);
+        }
+        SaveToGallerySettingsHelper.DialogException dialogException2 = this.c;
+        return dialogException2 == null || (dialogException = z41Var.c) == null || dialogException2.dialogId == dialogException.dialogId;
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
-            case 1:
-                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-                if (!this.b && this.c && view == this.d.Z) {
-                    onDisappear.addListener(new ep0(this, 19));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new y11(this, 5));
-                }
-                return onDisappear;
-            default:
-                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-        }
+    public z41(SaveToGallerySettingsHelper.DialogException dialogException) {
+        super(2, false);
+        this.c = dialogException;
+    }
+
+    public z41(int i10, String str) {
+        super(i10, false);
+        this.d = str;
+        this.c = null;
     }
 }

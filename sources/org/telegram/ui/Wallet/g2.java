@@ -3,7 +3,7 @@ package org.telegram.ui.Wallet;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class g2 extends FrameLayout implements f2 {
     public final FrameLayout a;
@@ -14,7 +14,7 @@ public final class g2 extends FrameLayout implements f2 {
         setClipToPadding(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
-        addView(frameLayout, w7.x5.e(-1, -2, 80));
+        addView(frameLayout, w7.a6.e(-1, -2, 80));
     }
 
     public FrameLayout getContent() {

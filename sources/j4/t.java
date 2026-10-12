@@ -1,21 +1,22 @@
 package j4;
 
-import b2.r0;
-import b2.s0;
-import c3.h0;
+import b2.w0;
+import b2.x0;
+import c3.i0;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class t implements i {
     public final String a;
     public final int b;
-    public final e2.v c;
+    public final e2.x c;
     public final a4.g d;
-    public h0 e;
+    public i0 e;
     public String f;
-    public b2.s g;
+    public b2.x g;
     public int h;
     public int i;
     public int j;
@@ -35,9 +36,9 @@ public final class t implements i {
     public t(String str, int i10) {
         this.a = str;
         this.b = i10;
-        e2.v vVar = new e2.v(1024);
-        this.c = vVar;
-        byte[] bArr = vVar.a;
+        e2.x xVar = new e2.x(1024);
+        this.c = xVar;
+        byte[] bArr = xVar.a;
         this.d = new a4.g(bArr, bArr.length);
         this.l = -9223372036854775807L;
     }
@@ -50,83 +51,83 @@ public final class t implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(e2.v vVar) {
-        int i10;
-        boolean h;
-        e2.d.h(this.e);
-        while (vVar.a() > 0) {
-            int i11 = this.h;
-            if (i11 != 0) {
-                if (i11 != 1) {
-                    e2.v vVar2 = this.c;
+    public final void a(e2.x xVar) {
+        int g10;
+        boolean f7;
+        this.e.getClass();
+        while (xVar.a() > 0) {
+            int i10 = this.h;
+            if (i10 != 0) {
+                if (i10 != 1) {
+                    e2.x xVar2 = this.c;
                     a4.g gVar = this.d;
-                    if (i11 == 2) {
-                        int x10 = ((this.k & (-225)) << 8) | vVar.x();
-                        this.j = x10;
-                        if (x10 > vVar2.a.length) {
-                            vVar2.G(x10);
-                            byte[] bArr = vVar2.a;
+                    if (i10 == 2) {
+                        int A = ((this.k & (-225)) << 8) | xVar.A();
+                        this.j = A;
+                        if (A > xVar2.a.length) {
+                            xVar2.K(A);
+                            byte[] bArr = xVar2.a;
                             gVar.getClass();
-                            gVar.o(bArr.length, bArr);
+                            gVar.k(bArr.length, bArr);
                         }
                         this.i = 0;
                         this.h = 3;
                     } else {
-                        if (i11 != 3) {
+                        if (i10 != 3) {
                             throw new IllegalStateException();
                         }
-                        int min = Math.min(vVar.a(), this.j - this.i);
-                        vVar.h(this.i, min, gVar.b);
-                        int i12 = this.i + min;
-                        this.i = i12;
-                        if (i12 == this.j) {
-                            gVar.q(0);
-                            if (!gVar.h()) {
+                        int min = Math.min(xVar.a(), this.j - this.i);
+                        xVar.k(this.i, min, gVar.b);
+                        int i11 = this.i + min;
+                        this.i = i11;
+                        if (i11 == this.j) {
+                            gVar.m(0);
+                            if (!gVar.f()) {
                                 this.m = true;
-                                int i13 = gVar.i(1);
-                                int i14 = i13 == 1 ? gVar.i(1) : 0;
-                                this.n = i14;
-                                if (i14 != 0) {
-                                    throw s0.a(null, null);
+                                int g11 = gVar.g(1);
+                                int g12 = g11 == 1 ? gVar.g(1) : 0;
+                                this.n = g12;
+                                if (g12 != 0) {
+                                    throw x0.a(null, null);
                                 }
-                                if (i13 == 1) {
-                                    gVar.i((gVar.i(2) + 1) * 8);
+                                if (g11 == 1) {
+                                    gVar.g((gVar.g(2) + 1) * 8);
                                 }
-                                if (!gVar.h()) {
-                                    throw s0.a(null, null);
+                                if (!gVar.f()) {
+                                    throw x0.a(null, null);
                                 }
-                                this.o = gVar.i(6);
-                                int i15 = gVar.i(4);
-                                int i16 = gVar.i(3);
-                                if (i15 != 0 || i16 != 0) {
-                                    throw s0.a(null, null);
+                                this.o = gVar.g(6);
+                                int g13 = gVar.g(4);
+                                int g14 = gVar.g(3);
+                                if (g13 != 0 || g14 != 0) {
+                                    throw x0.a(null, null);
                                 }
-                                if (i13 == 0) {
-                                    int g10 = gVar.g();
+                                if (g11 == 0) {
+                                    int e = gVar.e();
                                     int b10 = gVar.b();
                                     c3.a n10 = c3.b.n(gVar, true);
                                     this.v = n10.a;
                                     this.s = n10.b;
                                     this.u = n10.c;
                                     int b11 = b10 - gVar.b();
-                                    gVar.q(g10);
+                                    gVar.m(e);
                                     byte[] bArr2 = new byte[(b11 + 7) / 8];
-                                    gVar.j(b11, bArr2);
-                                    b2.r rVar = new b2.r();
-                                    rVar.a = this.f;
-                                    rVar.p = r0.n("video/mp2t");
-                                    rVar.q = r0.n(MediaController.AUDIO_MIME_TYPE);
-                                    rVar.j = this.v;
-                                    rVar.I = this.u;
-                                    rVar.J = this.s;
-                                    rVar.t = Collections.singletonList(bArr2);
-                                    rVar.d = this.a;
-                                    rVar.f = this.b;
-                                    b2.s sVar = new b2.s(rVar);
-                                    if (!sVar.equals(this.g)) {
-                                        this.g = sVar;
-                                        this.t = 1024000000 / sVar.K;
-                                        this.e.b(sVar);
+                                    gVar.h(b11, bArr2);
+                                    b2.w wVar = new b2.w();
+                                    wVar.a = this.f;
+                                    wVar.q = w0.n("video/mp2t");
+                                    wVar.r = w0.n(MediaController.AUDIO_MIME_TYPE);
+                                    wVar.j = this.v;
+                                    wVar.J = this.u;
+                                    wVar.K = this.s;
+                                    wVar.u = Collections.singletonList(bArr2);
+                                    wVar.d = this.a;
+                                    wVar.f = this.b;
+                                    b2.x xVar3 = new b2.x(wVar);
+                                    if (!xVar3.equals(this.g)) {
+                                        this.g = xVar3;
+                                        this.t = 1024000000 / xVar3.L;
+                                        this.e.b(xVar3);
                                     }
                                 } else {
                                     int b12 = gVar.b();
@@ -134,66 +135,66 @@ public final class t implements i {
                                     this.v = n11.a;
                                     this.s = n11.b;
                                     this.u = n11.c;
-                                    gVar.t(gVar.i((gVar.i(2) + 1) * 8) - (b12 - gVar.b()));
+                                    gVar.o(gVar.g((gVar.g(2) + 1) * 8) - (b12 - gVar.b()));
                                 }
-                                int i17 = gVar.i(3);
-                                this.p = i17;
-                                if (i17 == 0) {
-                                    gVar.t(8);
-                                } else if (i17 == 1) {
-                                    gVar.t(9);
-                                } else if (i17 == 3 || i17 == 4 || i17 == 5) {
-                                    gVar.t(6);
+                                int g15 = gVar.g(3);
+                                this.p = g15;
+                                if (g15 == 0) {
+                                    gVar.o(8);
+                                } else if (g15 == 1) {
+                                    gVar.o(9);
+                                } else if (g15 == 3 || g15 == 4 || g15 == 5) {
+                                    gVar.o(6);
                                 } else {
-                                    if (i17 != 6 && i17 != 7) {
+                                    if (g15 != 6 && g15 != 7) {
                                         throw new IllegalStateException();
                                     }
-                                    gVar.t(1);
+                                    gVar.o(1);
                                 }
-                                boolean h10 = gVar.h();
-                                this.q = h10;
+                                boolean f10 = gVar.f();
+                                this.q = f10;
                                 this.r = 0L;
-                                if (h10) {
-                                    if (i13 == 1) {
-                                        this.r = gVar.i((gVar.i(2) + 1) * 8);
+                                if (f10) {
+                                    if (g11 == 1) {
+                                        this.r = gVar.g((gVar.g(2) + 1) * 8);
                                     } else {
                                         do {
-                                            h = gVar.h();
-                                            this.r = (this.r << 8) + gVar.i(8);
-                                        } while (h);
+                                            f7 = gVar.f();
+                                            this.r = (this.r << 8) + gVar.g(8);
+                                        } while (f7);
                                     }
                                 }
-                                if (gVar.h()) {
-                                    gVar.t(8);
+                                if (gVar.f()) {
+                                    gVar.o(8);
                                 }
                             }
                             if (this.n != 0) {
-                                throw s0.a(null, null);
+                                throw x0.a(null, null);
                             }
                             if (this.o != 0) {
-                                throw s0.a(null, null);
+                                throw x0.a(null, null);
                             }
                             if (this.p != 0) {
-                                throw s0.a(null, null);
+                                throw x0.a(null, null);
                             }
-                            int i18 = 0;
+                            int i12 = 0;
                             do {
-                                i10 = gVar.i(8);
-                                i18 += i10;
-                            } while (i10 == 255);
-                            int g11 = gVar.g();
-                            if ((g11 & 7) == 0) {
-                                vVar2.J(g11 >> 3);
+                                g10 = gVar.g(8);
+                                i12 += g10;
+                            } while (g10 == 255);
+                            int e7 = gVar.e();
+                            if ((e7 & 7) == 0) {
+                                xVar2.N(e7 >> 3);
                             } else {
-                                gVar.j(i18 * 8, vVar2.a);
-                                vVar2.J(0);
+                                gVar.h(i12 * 8, xVar2.a);
+                                xVar2.N(0);
                             }
-                            this.e.d(i18, vVar2);
-                            e2.d.g(this.l != -9223372036854775807L);
-                            this.e.c(this.l, 1, i18, 0, null);
+                            this.e.d(i12, xVar2);
+                            u6.p(this.l != -9223372036854775807L);
+                            this.e.c(this.l, 1, i12, 0, null);
                             this.l += this.t;
                             if (this.q) {
-                                gVar.t((int) this.r);
+                                gVar.o((int) this.r);
                             }
                             this.h = 0;
                         } else {
@@ -201,15 +202,15 @@ public final class t implements i {
                         }
                     }
                 } else {
-                    int x11 = vVar.x();
-                    if ((x11 & 224) == 224) {
-                        this.k = x11;
+                    int A2 = xVar.A();
+                    if ((A2 & 224) == 224) {
+                        this.k = A2;
                         this.h = 2;
-                    } else if (x11 != 86) {
+                    } else if (A2 != 86) {
                         this.h = 0;
                     }
                 }
-            } else if (vVar.x() == 86) {
+            } else if (xVar.A() == 86) {
                 this.h = 1;
             }
         }
@@ -226,14 +227,14 @@ public final class t implements i {
     public final void d(c3.q qVar, f0 f0Var) {
         f0Var.b();
         f0Var.c();
-        this.e = qVar.f2(f0Var.c, 1);
+        this.e = qVar.a0(f0Var.c, 1);
         f0Var.c();
         this.f = (String) f0Var.e;
     }
 
     @Override // j4.i
-    public final void f(int i10, long j3) {
-        this.l = j3;
+    public final void f(int i10, long j10) {
+        this.l = j10;
     }
 
     @Override // j4.i

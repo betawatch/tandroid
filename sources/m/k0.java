@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k0 implements AdapterView.OnItemClickListener {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final class k0 implements AdapterView.OnItemClickListener {
     }
 
     @Override // android.widget.AdapterView.OnItemClickListener
-    public final void onItemClick(AdapterView adapterView, View view, int i10, long j3) {
+    public final void onItemClick(AdapterView adapterView, View view, int i10, long j10) {
         switch (this.a) {
             case 0:
                 m0 m0Var = (m0) this.b;

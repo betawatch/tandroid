@@ -1,55 +1,15 @@
 package s4;
 
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.WeakHashMap;
+import org.telegram.ui.Components.my0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class x extends GestureDetector.SimpleOnGestureListener {
-    public boolean a = true;
-    public final /* synthetic */ z b;
+public abstract class x extends v {
+    public int d;
 
-    public x(z zVar) {
-        this.b = zVar;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-        d1 T;
-        if (this.a) {
-            z zVar = this.b;
-            View k10 = zVar.k(motionEvent);
-            w wVar = zVar.x;
-            if (k10 == null || (T = zVar.H.T(k10)) == null) {
-                return;
-            }
-            RecyclerView recyclerView = zVar.H;
-            int e7 = wVar.e(recyclerView, T);
-            WeakHashMap weakHashMap = r0.i0.a;
-            if ((wVar.b(e7, recyclerView.getLayoutDirection()) & 16711680) != 0) {
-                int pointerId = motionEvent.getPointerId(0);
-                int i10 = zVar.w;
-                if (pointerId == i10) {
-                    int findPointerIndex = motionEvent.findPointerIndex(i10);
-                    float x10 = motionEvent.getX(findPointerIndex);
-                    float y3 = motionEvent.getY(findPointerIndex);
-                    zVar.d = x10;
-                    zVar.e = y3;
-                    zVar.r = 0.0f;
-                    zVar.n = 0.0f;
-                    if (wVar.k()) {
-                        zVar.p(T, 2);
-                    }
-                }
-            }
-        }
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, b1 b1Var) {
+        return v.l(b1Var.f == 3 ? 0 : ((my0) this).d, 0);
     }
 }

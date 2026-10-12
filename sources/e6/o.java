@@ -1,22 +1,54 @@
 package e6;
 
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class o implements com.google.android.gms.common.api.q {
-    public final /* synthetic */ int a;
-    public final Status b;
+public abstract class o extends BasePendingResult {
+    public qb.c o;
+    public final boolean p;
+    public final /* synthetic */ h q;
 
-    public /* synthetic */ o(Status status, int i10) {
-        this.a = i10;
-        this.b = status;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o(h hVar, boolean z10) {
+        super(null);
+        this.q = hVar;
+        this.p = z10;
     }
 
-    @Override // com.google.android.gms.common.api.q
-    public final Status i() {
-        switch (this.a) {
+    @Override // com.google.android.gms.common.api.internal.BasePendingResult
+    public final /* synthetic */ com.google.android.gms.common.api.q d(Status status) {
+        return new n(status, 1);
+    }
+
+    public abstract void n();
+
+    public final g6.n o() {
+        if (this.o == null) {
+            this.o = new qb.c(this, 17);
         }
-        return this.b;
+        return this.o;
+    }
+
+    public final void p() {
+        if (!this.p) {
+            Iterator it = this.q.h.iterator();
+            if (it.hasNext()) {
+                throw a1.g.j(it);
+            }
+            Iterator it2 = this.q.i.iterator();
+            while (it2.hasNext()) {
+                ((g) it2.next()).f();
+            }
+        }
+        try {
+            synchronized (this.q.a) {
+                n();
+            }
+        } catch (g6.k unused) {
+            a(new n(new Status(2100, null, null, null), 1));
+        }
     }
 }

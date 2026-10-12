@@ -1,31 +1,10 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f8 {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final j9 e;
-    public final String f;
-    public final Boolean g;
-    public final Boolean h;
-    public final Boolean i;
-    public final Integer j;
-    public final Integer k;
-
-    public /* synthetic */ f8(e8 e8Var) {
-        this.a = e8Var.a;
-        this.b = e8Var.b;
-        this.c = e8Var.c;
-        this.d = e8Var.d;
-        this.e = (j9) e8Var.k;
-        this.f = e8Var.e;
-        this.g = (Boolean) e8Var.f;
-        this.h = (Boolean) e8Var.g;
-        this.i = (Boolean) e8Var.h;
-        this.j = e8Var.i;
-        this.k = (Integer) e8Var.j;
+public abstract class f8 {
+    public static byte a(long j10) {
+        u6.c(j10, "out of range: %s", (j10 >> 8) == 0);
+        return (byte) j10;
     }
 }

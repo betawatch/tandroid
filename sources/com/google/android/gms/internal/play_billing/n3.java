@@ -1,42 +1,21 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class n3 extends v1 {
-    private static final n3 zzb;
-    private int zzd;
-    private int zzf;
-    private k3 zzi;
-    private boolean zzj;
-    private boolean zzk;
-    private String zze = "";
-    private y1 zzg = w1.e;
-    private z1 zzh = r2.e;
+public enum n3 {
+    b(0),
+    c(1),
+    d(2),
+    e(3);
 
-    static {
-        n3 n3Var = new n3();
-        zzb = n3Var;
-        v1.k(n3.class, n3Var);
+    public final int a;
+
+    n3(int i10) {
+        this.a = i10;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i10) {
-        int i11 = i10 - 1;
-        if (i11 == 0) {
-            return (byte) 1;
-        }
-        if (i11 == 2) {
-            return new s2(zzb, "\u0004\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0002\u0000\u0001ဈ\u0000\u0002᠌\u0001\u0003ࠬ\u0004\u001b\u0005ဉ\u0002\u0006ဇ\u0003\u0007ဇ\u0004", new Object[]{"zzd", "zze", "zzf", d1.f, "zzg", d1.e, "zzh", y3.class, "zzi", "zzj", "zzk"});
-        }
-        if (i11 == 3) {
-            return new n3();
-        }
-        if (i11 == 4) {
-            return new y0(zzb);
-        }
-        if (i11 == 5) {
-            return zzb;
-        }
-        throw null;
+    @Override // java.lang.Enum
+    public final String toString() {
+        return Integer.toString(this.a);
     }
 }

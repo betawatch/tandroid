@@ -5,7 +5,7 @@ import android.util.LongSparseArray;
 import org.telegram.messenger.FilePathDatabase;
 import org.telegram.messenger.NotificationBadge;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class SaveToGallerySettingsHelper {
     public static String CHANNELS_PREF_NAME = "channels_save_gallery_exceptions";
@@ -17,7 +17,7 @@ public class SaveToGallerySettingsHelper {
     public static SharedSettings groups;
     public static SharedSettings user;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class DialogException extends Settings {
         public long dialogId;
 
@@ -35,9 +35,9 @@ public class SaveToGallerySettingsHelper {
                 if (sb2.length() != 0) {
                     sb2.append(", ");
                 }
-                long j3 = this.limitVideo;
-                if (j3 > 0 && j3 < 4194304000L) {
-                    sb2.append(LocaleController.formatString("SaveToGalleryVideosUpTo", R.string.SaveToGalleryVideosUpTo, AndroidUtilities.formatFileSize(j3, true, false)));
+                long j10 = this.limitVideo;
+                if (j10 > 0 && j10 < 4194304000L) {
+                    sb2.append(LocaleController.formatString("SaveToGalleryVideosUpTo", R.string.SaveToGalleryVideosUpTo, AndroidUtilities.formatFileSize(j10, true, false)));
                     return sb2;
                 }
                 sb2.append(LocaleController.formatString("SaveToGalleryVideos", R.string.SaveToGalleryVideos, new Object[0]));
@@ -46,7 +46,7 @@ public class SaveToGallerySettingsHelper {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static abstract class Settings {
         public long limitVideo = SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT;
         public boolean savePhoto;
@@ -69,7 +69,7 @@ public class SaveToGallerySettingsHelper {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class SharedSettings extends Settings {
         private int type;
 
@@ -83,14 +83,14 @@ public class SaveToGallerySettingsHelper {
             long size = messageObject != null ? messageObject.getSize() : fileMeta.messageSize;
             boolean z11 = this.saveVideo;
             boolean z12 = this.savePhoto;
-            long j3 = this.limitVideo;
+            long j10 = this.limitVideo;
             if (dialogException != null) {
                 z11 = dialogException.saveVideo;
                 z12 = dialogException.savePhoto;
-                j3 = dialogException.limitVideo;
+                j10 = dialogException.limitVideo;
             }
             if (z10) {
-                if (z11 && (j3 == -1 || size < j3)) {
+                if (z11 && (j10 == -1 || size < j10)) {
                     return true;
                 }
             } else if (z12) {
@@ -110,7 +110,7 @@ public class SaveToGallerySettingsHelper {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void save(String str, SharedPreferences sharedPreferences) {
-            sharedPreferences.edit().putBoolean(sc.v.v(str, "_save_gallery_photo"), this.savePhoto).putBoolean(sc.v.v(str, "_save_gallery_video"), this.saveVideo).putLong(sc.v.v(str, "_save_gallery_limitVideo"), this.limitVideo).apply();
+            sharedPreferences.edit().putBoolean(t8.b.u(str, "_save_gallery_photo"), this.savePhoto).putBoolean(t8.b.u(str, "_save_gallery_video"), this.saveVideo).putLong(t8.b.u(str, "_save_gallery_limitVideo"), this.limitVideo).apply();
         }
 
         @Override // org.telegram.messenger.SaveToGallerySettingsHelper.Settings
@@ -125,8 +125,8 @@ public class SaveToGallerySettingsHelper {
                         sb2.append(", ");
                     }
                     sb2.append(LocaleController.getString(R.string.SaveToGalleryVideos));
-                    long j3 = this.limitVideo;
-                    if (j3 > 0 && j3 < 4194304000L) {
+                    long j10 = this.limitVideo;
+                    if (j10 > 0 && j10 < 4194304000L) {
                         sb2.append(" (");
                         sb2.append(AndroidUtilities.formatFileSize(this.limitVideo, true, false));
                         sb2.append(")");
@@ -210,9 +210,9 @@ public class SaveToGallerySettingsHelper {
             dialogException.savePhoto = sharedPreferences.getBoolean(i11 + "_photo", false);
             dialogException.saveVideo = sharedPreferences.getBoolean(i11 + "_video", false);
             dialogException.limitVideo = sharedPreferences.getLong(i11 + "_limitVideo", DEFAULT_VIDEO_LIMIT);
-            long j3 = dialogException.dialogId;
-            if (j3 != 0) {
-                longSparseArray.put(j3, dialogException);
+            long j10 = dialogException.dialogId;
+            if (j10 != 0) {
+                longSparseArray.put(j10, dialogException);
             }
         }
         return longSparseArray;
@@ -239,7 +239,7 @@ public class SaveToGallerySettingsHelper {
         edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, longSparseArray.size());
         for (int i10 = 0; i10 < longSparseArray.size(); i10++) {
             DialogException valueAt = longSparseArray.valueAt(i10);
-            edit.putLong(a1.g.n(i10, "_dialog_id"), valueAt.dialogId);
+            edit.putLong(a1.g.m(i10, "_dialog_id"), valueAt.dialogId);
             edit.putBoolean(i10 + "_photo", valueAt.savePhoto);
             edit.putBoolean(i10 + "_video", valueAt.saveVideo);
             edit.putLong(i10 + "_limitVideo", valueAt.limitVideo);

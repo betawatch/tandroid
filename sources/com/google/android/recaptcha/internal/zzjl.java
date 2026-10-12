@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import id.f;
-import id.g;
 import java.util.Collection;
-import yd.a;
+import jd.f;
+import jd.g;
+import zd.a;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzjl implements zzjt {
     public static final zzjl zza = new zzjl();
@@ -55,12 +55,12 @@ public final class zzjl implements zzjt {
                 int length2 = jArr.length;
                 int i14 = 0;
                 while (i11 < length2) {
-                    long j3 = jArr[i11];
+                    long j10 = jArr[i11];
                     i14++;
                     if (i14 > 1) {
                         sb3.append((CharSequence) ",");
                     }
-                    sb3.append((CharSequence) String.valueOf(j3));
+                    sb3.append((CharSequence) String.valueOf(j10));
                     i11++;
                 }
                 sb3.append((CharSequence) "]");

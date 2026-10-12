@@ -1,53 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class k40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m40 b;
-
-    public /* synthetic */ k40(m40 m40Var, int i10) {
-        this.a = i10;
-        this.b = m40Var;
+public final class k40 implements ju0 {
+    @Override // org.telegram.ui.Components.ju0
+    public final boolean T() {
+        return false;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                m40 m40Var = this.b;
-                if (m40Var.b0 == animator) {
-                    m40Var.b0 = null;
-                    m40Var.b();
-                    break;
-                }
-                break;
-            default:
-                m40 m40Var2 = this.b;
-                if (m40Var2.a0 == animator) {
-                    m40Var2.a0 = null;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.ju0
+    public final mm0 f() {
+        return null;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 1:
-                l40 l40Var = this.b.W;
-                if (l40Var != null) {
-                    ((org.telegram.ui.vs0) l40Var).a.e0.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+    @Override // org.telegram.ui.Components.ju0
+    public final TLRPC.Chat g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final boolean r() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final void F() {
+    }
+
+    @Override // org.telegram.ui.Components.ju0
+    public final void R() {
     }
 }

@@ -1,58 +1,39 @@
 package b2;
 
-import android.os.Bundle;
-import android.util.SparseBooleanArray;
-import java.util.ArrayList;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class x0 {
-    public static final x0 b;
-    public static final String c;
-    public final q a;
+public class x0 extends IOException {
+    public final boolean a;
+    public final int b;
 
-    static {
-        SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
-        e2.d.g(!false);
-        b = new x0(new q(sparseBooleanArray));
-        String str = e2.d0.a;
-        c = Integer.toString(0, 36);
+    public x0(String str, Throwable th2, boolean z10, int i10) {
+        super(str, th2);
+        this.a = z10;
+        this.b = i10;
     }
 
-    public x0(q qVar) {
-        this.a = qVar;
+    public static x0 a(RuntimeException runtimeException, String str) {
+        return new x0(str, runtimeException, true, 1);
     }
 
-    public final boolean a(int i10) {
-        return this.a.a.get(i10);
+    public static x0 b(String str, Exception exc) {
+        return new x0(str, exc, true, 4);
     }
 
-    public final Bundle b() {
-        Bundle bundle = new Bundle();
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        int i10 = 0;
-        while (true) {
-            q qVar = this.a;
-            if (i10 >= qVar.a.size()) {
-                bundle.putIntegerArrayList(c, arrayList);
-                return bundle;
-            }
-            arrayList.add(Integer.valueOf(qVar.a(i10)));
-            i10++;
-        }
+    public static x0 c(String str) {
+        return new x0(str, null, false, 1);
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof x0) {
-            return this.a.equals(((x0) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
+    @Override // java.lang.Throwable
+    public String getMessage() {
+        String message = super.getMessage();
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(message != null ? message.concat(" ") : "");
+        sb2.append("{contentIsMalformed=");
+        sb2.append(this.a);
+        sb2.append(", dataType=");
+        return a1.g.n(this.b, "}", sb2);
     }
 }

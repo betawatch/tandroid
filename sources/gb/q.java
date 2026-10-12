@@ -1,31 +1,24 @@
 package gb;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.lang.reflect.Method;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class q extends db.u {
-    public static final p b = new p(new q(db.t.b), 0);
-    public final db.t a;
+public final class q extends t {
+    public final /* synthetic */ Method b;
+    public final /* synthetic */ int c;
 
-    public q(db.t tVar) {
-        this.a = tVar;
+    public q(int i10, Method method) {
+        this.b = method;
+        this.c = i10;
     }
 
-    @Override // db.u
-    public final Object read(lb.a aVar) {
-        int x10 = aVar.x();
-        int c10 = m1.j.c(x10);
-        if (c10 == 5 || c10 == 6) {
-            return this.a.a(aVar);
+    @Override // gb.t
+    public final Object a(Class cls) {
+        String x10 = qf.b.x(cls);
+        if (x10 == null) {
+            return this.b.invoke(null, cls, Integer.valueOf(this.c));
         }
-        if (c10 == 8) {
-            aVar.t();
-            return null;
-        }
-        throw new db.j("Expecting number, got: " + hg.c.D(x10) + "; at path " + aVar.h());
-    }
-
-    @Override // db.u
-    public final void write(lb.b bVar, Object obj) {
-        bVar.q((Number) obj);
+        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(x10));
     }
 }

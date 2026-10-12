@@ -1,34 +1,37 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b41 b;
+public final class z31 implements e41 {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ org.telegram.ui.Components.zc c;
 
-    public /* synthetic */ z31(b41 b41Var, int i10) {
-        this.a = i10;
-        this.b = b41Var;
+    public z31(boolean[] zArr, Utilities.Callback callback, org.telegram.ui.Components.zc zcVar) {
+        this.a = zArr;
+        this.b = callback;
+        this.c = zcVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                b41 b41Var = this.b;
-                c41 c41Var = b41Var.v;
-                if (b41Var.a != 0) {
-                    c41Var.onBackPressed();
-                    break;
-                } else {
-                    c41Var.dismiss();
-                    break;
-                }
-            default:
-                AndroidUtilities.showKeyboard(this.b.n.b);
-                break;
+    @Override // org.telegram.ui.e41
+    public final void a() {
+        Utilities.Callback callback;
+        boolean[] zArr = this.a;
+        if (!zArr[0] && (callback = this.b) != null) {
+            zArr[0] = true;
+            callback.run(Boolean.TRUE);
         }
+        AndroidUtilities.runOnUIThread(new uz0(this.c, 8), 200L);
+    }
+
+    @Override // org.telegram.ui.e41
+    public final /* synthetic */ void b() {
+    }
+
+    @Override // org.telegram.ui.e41
+    public final /* synthetic */ void c() {
     }
 }

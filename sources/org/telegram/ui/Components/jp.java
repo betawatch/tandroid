@@ -1,63 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class jp extends FrameLayout {
-    public n91 a;
-    public float b;
-    public boolean c;
-    public float d;
-    public ValueAnimator e;
+public final /* synthetic */ class jp implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zp b;
 
-    public abstract void a(boolean z10);
+    public /* synthetic */ jp(zp zpVar, int i10) {
+        this.a = i10;
+        this.b = zpVar;
+    }
 
-    public final void b(boolean z10) {
-        this.c = z10;
-        ValueAnimator valueAnimator = this.e;
-        if (valueAnimator != null) {
-            this.e = null;
-            valueAnimator.cancel();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                zp zpVar = this.b;
+                zpVar.f0 = (TL_stories.TL_premium_boostsStatus) obj;
+                zpVar.e0 = true;
+                zpVar.G(true);
+                zpVar.d0 = false;
+                break;
+            default:
+                zp.n(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                break;
         }
-        if (z10) {
-            setVisibility(0);
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
-        this.e = ofFloat;
-        ofFloat.addUpdateListener(new m6(this, 13));
-        this.e.setInterpolator(hs.h);
-        this.e.setDuration(320L);
-        this.e.addListener(new fa(4, this, z10));
-        this.e.start();
-    }
-
-    public int getCurrentHeight() {
-        return (int) (getMeasuredHeight() * this.b);
-    }
-
-    @Override // android.view.View
-    public final boolean isShown() {
-        return this.c;
-    }
-
-    public void setShown(float f7) {
-        this.b = f7;
-        n91 n91Var = this.a;
-        if (n91Var != null) {
-            n91Var.setPivotX(n91Var.getWidth() / 2.0f);
-            this.a.setPivotY(0.0f);
-            this.a.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
-            this.a.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f7));
-        }
-        setAlpha(f7);
-        invalidate();
-    }
-
-    public void setTabs(n91 n91Var) {
-        this.a = n91Var;
-        addView(n91Var, w7.x5.d(-1.0f, -1));
     }
 }

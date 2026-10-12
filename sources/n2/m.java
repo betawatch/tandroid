@@ -1,21 +1,11 @@
 package n2;
 
-import android.os.Looper;
+import m4.w0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public interface m {
-    public static final ob.a z = new ob.a(13);
-
-    void F(Looper looper, j2.k kVar);
-
-    int Q0(b2.s sVar);
-
-    void b();
-
-    g e1(j jVar, b2.s sVar);
-
-    l n0(j jVar, b2.s sVar);
+    public static final w0 u = new w0(13);
 
     void release();
 }

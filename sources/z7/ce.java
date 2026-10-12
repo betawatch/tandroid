@@ -1,13 +1,13 @@
 package z7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class ce {
     public final gb a;
     public final ve b;
 
-    public /* synthetic */ ce(n6.t tVar) {
-        this.a = (gb) tVar.b;
-        this.b = (ve) tVar.c;
+    public /* synthetic */ ce(x9.l lVar) {
+        this.a = (gb) lVar.a;
+        this.b = (ve) lVar.b;
     }
 }

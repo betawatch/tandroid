@@ -1,41 +1,51 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.content.Context;
+import android.net.Uri;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class h0 extends org.telegram.ui.ActionBar.g5 {
-    public final /* synthetic */ int f;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class h0 implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    public /* synthetic */ h0(Object obj, int i10) {
-        this.f = i10;
-        this.h = obj;
+    public /* synthetic */ h0(k4 k4Var, int i10, TLRPC.WebPage webPage, MessageObject messageObject, boolean z10, String str) {
+        this.d = k4Var;
+        this.b = i10;
+        this.e = webPage;
+        this.f = messageObject;
+        this.c = z10;
+        this.g = str;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5, org.telegram.ui.ActionBar.z2
-    public boolean h() {
-        switch (this.f) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                i4 i4Var = (i4) this.h;
-                org.telegram.ui.Cells.o9 o9Var = i4Var.P0;
-                if (o9Var == null || !o9Var.x()) {
-                    return true;
-                }
-                i4Var.P0.f(false);
-                return false;
-            case 1:
+                AndroidUtilities.runOnUIThread(new x((k4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (MessageObject) this.f, this.c, (String) this.g));
+                break;
             default:
-                return super.h();
-            case 2:
-                return !((org.telegram.ui.Wallet.z1) this.h).m;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.g5, org.telegram.ui.ActionBar.z2
-    public void onOpenAnimationEnd() {
-        switch (this.f) {
-            case 1:
-                ((org.telegram.ui.Components.mr0) this.h).Y = true;
+                AndroidUtilities.runOnUIThread(new x((pf.c) this.d, (org.telegram.ui.ActionBar.a2[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
                 break;
         }
+    }
+
+    public /* synthetic */ h0(pf.c cVar, org.telegram.ui.ActionBar.a2[] a2VarArr, int i10, Uri uri, Context context, boolean z10) {
+        this.d = cVar;
+        this.e = a2VarArr;
+        this.b = i10;
+        this.f = uri;
+        this.g = context;
+        this.c = z10;
     }
 }

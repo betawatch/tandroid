@@ -30,10 +30,10 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.w9;
+import org.telegram.ui.aa;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class d {
     public static int a;
@@ -61,7 +61,7 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new w9(2));
+        basePendingResult.b(new aa(2));
     }
 
     public static boolean B(ViewConfiguration viewConfiguration) {
@@ -77,14 +77,14 @@ public abstract class d {
         }
     }
 
-    public static void D(long j3) {
-        if (j3 < 0) {
+    public static void D(long j10) {
+        if (j10 < 0) {
             return;
         }
         e6.h e7 = e();
         long a2 = e7 == null ? -1L : e7.a();
-        if (a2 == -1 || Math.abs(a2 - j3) > 1500) {
-            v(j3);
+        if (a2 == -1 || Math.abs(a2 - j10) > 1500) {
+            v(j10);
         }
     }
 
@@ -260,7 +260,7 @@ public abstract class d {
         return false;
     }
 
-    public static void v(long j3) {
+    public static void v(long j10) {
         e6.h e7 = e();
         if (e7 == null) {
             return;
@@ -269,7 +269,7 @@ public abstract class d {
             b = new AtomicInteger(0);
         }
         b.incrementAndGet();
-        e7.q(new c6.p(j3)).b(new w9(3));
+        e7.q(new c6.p(j10)).b(new aa(3));
     }
 
     public static void w(int i10, TextView textView) {
@@ -296,7 +296,7 @@ public abstract class d {
             } else {
                 basePendingResult2 = e6.h.t();
             }
-            basePendingResult2.b(new w9(0));
+            basePendingResult2.b(new aa(0));
             return;
         }
         n6.l.e("Must be called from the main thread.");
@@ -307,7 +307,7 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new w9(1));
+        basePendingResult.b(new aa(1));
     }
 
     public static void y(Notification.Action.Builder builder, int i10) {
@@ -333,6 +333,6 @@ public abstract class d {
         } else {
             basePendingResult = e6.h.t();
         }
-        basePendingResult.b(new w9(4));
+        basePendingResult.b(new aa(4));
     }
 }

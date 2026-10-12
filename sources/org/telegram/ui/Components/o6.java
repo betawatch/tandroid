@@ -1,7 +1,54 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.graphics.Canvas;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface o6 {
-    void b(CharSequence charSequence);
+public final class o6 {
+    public final x5 a;
+    public final StaticLayout b;
+    public final float c;
+    public final int d;
+    public final float e;
+    public final float f;
+    public final float g;
+    public final float h;
+    public final /* synthetic */ r6 i;
+
+    public o6(r6 r6Var, StaticLayout staticLayout, float f7, int i10) {
+        this.i = r6Var;
+        this.b = staticLayout;
+        this.d = i10;
+        this.c = f7;
+        this.e = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineLeft(0);
+        this.f = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineWidth(0);
+        this.g = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineBaseline(0);
+        this.h = staticLayout != null ? staticLayout.getHeight() - this.g : 0.0f;
+        if (r6Var.getCallback() instanceof View) {
+            this.a = b6.update(r6Var.p, (View) r6Var.getCallback(), this.a, staticLayout);
+        }
+    }
+
+    public final void a(Canvas canvas, float f7) {
+        r6 r6Var = this.i;
+        int i10 = r6Var.B;
+        TextPaint textPaint = r6Var.a;
+        int max = Math.max(0, Math.min(255, (int) (i10 * f7)));
+        if (max == 0) {
+            return;
+        }
+        textPaint.setAlpha(255);
+        if (r6Var.U) {
+            textPaint.setShadowLayer(r6Var.V, 0.0f, r6Var.W, r6Var.X);
+        }
+        int saveLayerAlpha = max < 255 ? canvas.saveLayerAlpha(null, max, 31) : -1;
+        this.b.draw(canvas);
+        b6.drawAnimatedEmojis(canvas, this.b, this.a, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, r6Var.a0);
+        if (saveLayerAlpha != -1) {
+            canvas.restoreToCount(saveLayerAlpha);
+        }
+    }
 }

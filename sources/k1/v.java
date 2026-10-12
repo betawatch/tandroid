@@ -1,25 +1,27 @@
 package k1;
 
+import java.io.FileInputStream;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class v extends ld.c {
-    public a0 a;
-    public /* synthetic */ Object b;
-    public final /* synthetic */ a0 c;
-    public int d;
+public final class v extends md.c {
+    public z a;
+    public FileInputStream b;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ z d;
+    public int e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v(a0 a0Var, ld.c cVar) {
+    public v(z zVar, md.c cVar) {
         super(cVar);
-        this.c = a0Var;
+        this.d = zVar;
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final Object invokeSuspend(Object obj) {
-        this.b = obj;
-        this.d |= TLObject.FLAG_31;
-        return this.c.f(this);
+        this.c = obj;
+        this.e |= TLObject.FLAG_31;
+        return this.d.g(this);
     }
 }

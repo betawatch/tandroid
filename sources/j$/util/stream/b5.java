@@ -120,8 +120,8 @@ public abstract class b5 extends a implements Stream {
     }
 
     @Override // j$.util.stream.t3
-    public final w1 A0(long j3, IntFunction intFunction) {
-        return t3.Y(j3, intFunction);
+    public final w1 A0(long j10, IntFunction intFunction) {
+        return t3.Y(j10, intFunction);
     }
 
     @Override // j$.util.stream.BaseStream
@@ -221,19 +221,19 @@ public abstract class b5 extends a implements Stream {
     }
 
     @Override // j$.util.stream.Stream
-    public final Stream limit(long j3) {
-        if (j3 < 0) {
-            throw new IllegalArgumentException(Long.toString(j3));
+    public final Stream limit(long j10) {
+        if (j10 < 0) {
+            throw new IllegalArgumentException(Long.toString(j10));
         }
-        return t3.C0(this, 0L, j3);
+        return t3.C0(this, 0L, j10);
     }
 
     @Override // j$.util.stream.Stream
-    public final Stream skip(long j3) {
-        if (j3 >= 0) {
-            return j3 == 0 ? this : t3.C0(this, j3, -1L);
+    public final Stream skip(long j10) {
+        if (j10 >= 0) {
+            return j10 == 0 ? this : t3.C0(this, j10, -1L);
         }
-        throw new IllegalArgumentException(Long.toString(j3));
+        throw new IllegalArgumentException(Long.toString(j10));
     }
 
     @Override // j$.util.stream.Stream

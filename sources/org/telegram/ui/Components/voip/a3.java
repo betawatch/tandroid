@@ -1,60 +1,29 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c3 b;
+public final class a3 extends Drawable {
+    public final int a = -15130842;
 
-    public /* synthetic */ a3(c3 c3Var, int i10) {
-        this.a = i10;
-        this.b = c3Var;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawColor(this.a);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                c3 c3Var = this.b;
-                c3Var.getClass();
-                c3Var.H = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                c3Var.invalidate();
-                c3Var.T.c();
-                break;
-            case 1:
-                c3 c3Var2 = this.b;
-                c3Var2.getClass();
-                c3Var2.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c3Var2.invalidate();
-                c3Var2.T.c();
-                break;
-            case 2:
-                c3 c3Var3 = this.b;
-                c3Var3.getClass();
-                c3Var3.H = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                c3Var3.invalidate();
-                c3Var3.T.c();
-                break;
-            case 3:
-                c3 c3Var4 = this.b;
-                c3Var4.getClass();
-                c3Var4.E = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                c3Var4.invalidate();
-                break;
-            case 4:
-                c3 c3Var5 = this.b;
-                c3Var5.getClass();
-                c3Var5.F = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                c3Var5.invalidate();
-                break;
-            default:
-                c3 c3Var6 = this.b;
-                c3Var6.getClass();
-                c3Var6.E = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                c3Var6.invalidate();
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

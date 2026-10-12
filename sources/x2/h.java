@@ -2,68 +2,68 @@ package x2;
 
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
-import b2.m1;
-import b2.p1;
-import b2.q1;
+import b2.r1;
+import b2.t1;
+import b2.u1;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class h extends p1 {
-    public final boolean F;
-    public final boolean G;
-    public final boolean H;
-    public final boolean I;
+public final class h extends t1 {
     public final boolean J;
     public final boolean K;
     public final boolean L;
-    public final SparseArray M;
-    public final SparseBooleanArray N;
+    public final boolean M;
+    public final boolean N;
+    public final boolean O;
+    public final boolean P;
+    public final SparseArray Q;
+    public final SparseBooleanArray R;
 
     public h(i iVar) {
         d(iVar);
-        this.F = iVar.o0;
-        this.G = iVar.p0;
-        this.H = iVar.q0;
-        this.I = iVar.r0;
-        this.J = iVar.s0;
-        this.K = iVar.t0;
-        this.L = iVar.u0;
-        SparseArray sparseArray = iVar.v0;
+        this.J = iVar.w0;
+        this.K = iVar.x0;
+        this.L = iVar.y0;
+        this.M = iVar.z0;
+        this.N = iVar.A0;
+        this.O = iVar.B0;
+        this.P = iVar.C0;
+        SparseArray sparseArray = iVar.D0;
         SparseArray sparseArray2 = new SparseArray();
         for (int i10 = 0; i10 < sparseArray.size(); i10++) {
             sparseArray2.put(sparseArray.keyAt(i10), new HashMap((Map) sparseArray.valueAt(i10)));
         }
-        this.M = sparseArray2;
-        this.N = iVar.w0.clone();
+        this.Q = sparseArray2;
+        this.R = iVar.E0.clone();
     }
 
-    @Override // b2.p1
-    public final void a(m1 m1Var) {
-        this.D.put(m1Var.a, m1Var);
+    @Override // b2.t1
+    public final void a(r1 r1Var) {
+        this.H.put(r1Var.a, r1Var);
     }
 
-    @Override // b2.p1
-    public final q1 b() {
+    @Override // b2.t1
+    public final u1 b() {
         return new i(this);
     }
 
-    @Override // b2.p1
-    public final p1 c() {
+    @Override // b2.t1
+    public final t1 c() {
         super.c();
         return this;
     }
 
     public h() {
-        this.M = new SparseArray();
-        this.N = new SparseBooleanArray();
-        this.F = true;
-        this.G = true;
-        this.H = true;
-        this.I = true;
+        this.Q = new SparseArray();
+        this.R = new SparseBooleanArray();
         this.J = true;
         this.K = true;
         this.L = true;
+        this.M = true;
+        this.N = true;
+        this.O = true;
+        this.P = true;
     }
 }

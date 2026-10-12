@@ -19,13 +19,13 @@ public final class d1 extends e5 {
     }
 
     @Override // j$.util.stream.e5, j$.util.stream.j5
-    public final void o(long j3) {
+    public final void o(long j10) {
         this.a.o(-1L);
     }
 
     @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j3) {
-        LongStream longStream = (LongStream) ((j$.time.t) this.d.t).apply(j3);
+    public final void accept(long j10) {
+        LongStream longStream = (LongStream) ((j$.time.t) this.d.t).apply(j10);
         if (longStream != null) {
             try {
                 boolean z10 = this.b;

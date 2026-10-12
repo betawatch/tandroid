@@ -1,52 +1,55 @@
 package b2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public class z {
-    public static final z i = new z(new y());
-    public static final String j = Integer.toString(0, 36);
-    public static final String k = Integer.toString(1, 36);
-    public static final String l = Integer.toString(2, 36);
-    public static final String m = Integer.toString(3, 36);
-    public static final String n = Integer.toString(4, 36);
-    public static final String o = Integer.toString(5, 36);
-    public static final String p = Integer.toString(6, 36);
-    public static final String q = Integer.toString(7, 36);
-    public final long a;
-    public final long b;
-    public final long c;
-    public final long d;
-    public final boolean e;
-    public final boolean f;
-    public final boolean g;
-    public final boolean h;
+import android.os.Bundle;
+import j$.util.Objects;
 
-    public z(y yVar) {
-        this.a = e2.d0.d0(yVar.a);
-        this.c = e2.d0.d0(yVar.b);
-        this.b = yVar.a;
-        this.d = yVar.b;
-        this.e = yVar.c;
-        this.f = yVar.d;
-        this.g = yVar.e;
-        this.h = yVar.f;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class z extends h1 {
+    public static final String d;
+    public static final String e;
+    public final boolean b;
+    public final boolean c;
+
+    static {
+        String str = e2.m0.a;
+        d = Integer.toString(1, 36);
+        e = Integer.toString(2, 36);
+    }
+
+    public z() {
+        this.b = false;
+        this.c = false;
+    }
+
+    @Override // b2.h1
+    public final boolean b() {
+        return this.b;
+    }
+
+    @Override // b2.h1
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(h1.a, 0);
+        bundle.putBoolean(d, this.b);
+        bundle.putBoolean(e, this.c);
+        return bundle;
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (!(obj instanceof z)) {
             return false;
         }
         z zVar = (z) obj;
-        return this.b == zVar.b && this.d == zVar.d && this.e == zVar.e && this.f == zVar.f && this.g == zVar.g && this.h == zVar.h;
+        return this.c == zVar.c && this.b == zVar.b;
     }
 
     public final int hashCode() {
-        long j3 = this.b;
-        int i10 = ((int) (j3 ^ (j3 >>> 32))) * 31;
-        long j10 = this.d;
-        return ((((((((i10 + ((int) ((j10 >>> 32) ^ j10))) * 31) + (this.e ? 1 : 0)) * 31) + (this.f ? 1 : 0)) * 31) + (this.g ? 1 : 0)) * 31) + (this.h ? 1 : 0);
+        return Objects.hash(Boolean.valueOf(this.b), Boolean.valueOf(this.c));
+    }
+
+    public z(boolean z10) {
+        this.b = true;
+        this.c = z10;
     }
 }

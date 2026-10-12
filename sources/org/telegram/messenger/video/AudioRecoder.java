@@ -11,17 +11,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class AudioRecoder {
     private static final int BYTES_PER_SHORT = 2;
-    ArrayList<ag.a> audioInputs;
+    ArrayList<bg.a> audioInputs;
     private final MediaCodec encoder;
     private boolean encoderDone;
     private ByteBuffer[] encoderInputBuffers;
     private ByteBuffer[] encoderOutputBuffers;
     public final MediaFormat format;
-    ag.a mainInput;
+    bg.a mainInput;
     private int sampleRate;
     private long totalDurationUs;
     private final int TIMEOUT_USEC = 2500;
@@ -36,10 +36,10 @@ public class AudioRecoder {
     private int channelCount = 2;
     private long encoderInputPresentationTimeUs = 0;
 
-    public AudioRecoder(ArrayList<ag.a> arrayList, long j3) {
+    public AudioRecoder(ArrayList<bg.a> arrayList, long j10) {
         this.sampleRate = 44100;
         this.audioInputs = arrayList;
-        this.totalDurationUs = j3;
+        this.totalDurationUs = j10;
         this.mainInput = arrayList.get(0);
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             if (arrayList.get(i10).b() > this.sampleRate) {
@@ -90,8 +90,8 @@ public class AudioRecoder {
             for (int i10 = 0; i10 < this.audioInputs.size(); i10++) {
                 this.audioInputs.get(i10).d();
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 

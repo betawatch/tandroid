@@ -1,11 +1,14 @@
 package j4;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import e2.k0;
+import e2.m0;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class x {
     public final /* synthetic */ int a;
-    public final e2.b0 b;
-    public final e2.v c;
+    public final k0 b;
+    public final e2.x c;
     public boolean d;
     public boolean e;
     public boolean f;
@@ -17,18 +20,18 @@ public final class x {
         this.a = i10;
         switch (i10) {
             case 1:
-                this.b = new e2.b0(0L);
+                this.b = new k0(0L);
                 this.g = -9223372036854775807L;
                 this.h = -9223372036854775807L;
                 this.i = -9223372036854775807L;
-                this.c = new e2.v();
+                this.c = new e2.x();
                 break;
             default:
-                this.b = new e2.b0(0L);
+                this.b = new k0(0L);
                 this.g = -9223372036854775807L;
                 this.h = -9223372036854775807L;
                 this.i = -9223372036854775807L;
-                this.c = new e2.v();
+                this.c = new e2.x();
                 break;
         }
     }
@@ -37,23 +40,23 @@ public final class x {
         return (bArr[i10 + 3] & 255) | ((bArr[i10] & 255) << 24) | ((bArr[i10 + 1] & 255) << 16) | ((bArr[i10 + 2] & 255) << 8);
     }
 
-    public static long c(e2.v vVar) {
-        int i10 = vVar.b;
-        if (vVar.a() < 9) {
+    public static long c(e2.x xVar) {
+        int i10 = xVar.b;
+        if (xVar.a() < 9) {
             return -9223372036854775807L;
         }
         byte[] bArr = new byte[9];
-        vVar.h(0, 9, bArr);
-        vVar.J(i10);
+        xVar.k(0, 9, bArr);
+        xVar.N(i10);
         byte b10 = bArr[0];
         if ((b10 & 196) == 68) {
             byte b11 = bArr[2];
             if ((b11 & 4) == 4) {
                 byte b12 = bArr[4];
                 if ((b12 & 4) == 4 && (bArr[5] & 1) == 1 && (bArr[8] & 3) == 3) {
-                    long j3 = b10;
-                    long j10 = b11;
-                    return ((j10 & 3) << 13) | ((j3 & 3) << 28) | (((56 & j3) >> 3) << 30) | ((bArr[1] & 255) << 20) | (((j10 & 248) >> 3) << 15) | ((bArr[3] & 255) << 5) | ((b12 & 248) >> 3);
+                    long j10 = b10;
+                    long j11 = b11;
+                    return ((j11 & 3) << 13) | ((j10 & 3) << 28) | (((56 & j10) >> 3) << 30) | ((bArr[1] & 255) << 20) | (((j11 & 248) >> 3) << 15) | ((bArr[3] & 255) << 5) | ((b12 & 248) >> 3);
                 }
             }
         }
@@ -63,18 +66,18 @@ public final class x {
     public final void a(c3.p pVar) {
         switch (this.a) {
             case 0:
-                byte[] bArr = e2.d0.b;
-                e2.v vVar = this.c;
-                vVar.getClass();
-                vVar.H(bArr.length, bArr);
+                byte[] bArr = m0.b;
+                e2.x xVar = this.c;
+                xVar.getClass();
+                xVar.L(bArr.length, bArr);
                 this.d = true;
                 pVar.q();
                 break;
             default:
-                byte[] bArr2 = e2.d0.b;
-                e2.v vVar2 = this.c;
-                vVar2.getClass();
-                vVar2.H(bArr2.length, bArr2);
+                byte[] bArr2 = m0.b;
+                e2.x xVar2 = this.c;
+                xVar2.getClass();
+                xVar2.L(bArr2.length, bArr2);
                 this.d = true;
                 pVar.q();
                 break;

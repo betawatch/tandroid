@@ -1,22 +1,12 @@
 package w7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.res.Configuration;
+import android.os.Build;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class a0 {
-    public static Parcelable a(Parcelable parcelable, Parcelable.Creator creator) {
-        if (parcelable == null) {
-            return null;
-        }
-        Parcel obtain = Parcel.obtain();
-        try {
-            parcelable.writeToParcel(obtain, 0);
-            obtain.setDataPosition(0);
-            return (Parcelable) creator.createFromParcel(obtain);
-        } finally {
-            obtain.recycle();
-        }
+    public static n0.c a(Configuration configuration) {
+        return Build.VERSION.SDK_INT >= 24 ? new n0.c(new n0.f(androidx.emoji2.text.w.f(configuration))) : n0.c.a(configuration.locale);
     }
 }

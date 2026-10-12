@@ -1,37 +1,29 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ z6(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
+    public /* synthetic */ z6(MediaDataController mediaDataController, long j10, int i10) {
         this.a = i10;
         this.b = mediaDataController;
-        this.c = tL_messages_stickerSet;
+        this.c = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$saveStickerSetIntoCache$40(this.c);
+                this.b.lambda$loadPinnedMessages$161(this.c);
                 break;
             case 1:
-                this.b.lambda$loadGroupStickerSet$45(this.c);
-                break;
-            case 2:
-                this.b.lambda$loadGroupStickerSet$43(this.c);
-                break;
-            case 3:
-                this.b.lambda$putSetToCache$47(this.c);
+                this.b.lambda$increasePeerRaiting$157(this.c);
                 break;
             default:
-                this.b.lambda$replaceStickerSet$28(this.c);
+                this.b.lambda$clearBotKeyboard$195(this.c);
                 break;
         }
     }

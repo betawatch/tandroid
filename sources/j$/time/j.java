@@ -157,7 +157,7 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
 
     @Override // j$.time.temporal.m
     public final Temporal q(Temporal temporal) {
-        if (!j$.com.android.tools.r8.a.N(temporal).equals(j$.time.chrono.r.c)) {
+        if (!j$.com.android.tools.r8.a.M(temporal).equals(j$.time.chrono.r.c)) {
             throw new b("Adjustment only supported on ISO date-time");
         }
         return temporal.c(getValue(), j$.time.temporal.a.MONTH_OF_YEAR);

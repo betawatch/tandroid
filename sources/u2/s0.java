@@ -1,76 +1,60 @@
 package u2;
 
-import java.io.IOException;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class s0 implements b1 {
-    public final int a;
-    public final /* synthetic */ u0 b;
+public final class s0 implements c3.i0 {
+    public final c1 a;
+    public final c1 b;
+    public final c3.n c = new c3.n();
+    public final AtomicReference d = new AtomicReference(r0.a);
 
-    public s0(u0 u0Var, int i10) {
-        this.b = u0Var;
-        this.a = i10;
+    public s0(c1 c1Var) {
+        this.a = c1Var;
+        this.b = c1Var;
     }
 
-    @Override // u2.b1
-    public final void a() {
-        int i10 = this.a;
-        u0 u0Var = this.b;
-        u0Var.K[i10].z();
-        y2.l lVar = u0Var.x;
-        int m32 = u0Var.d.m3(u0Var.U);
-        IOException iOException = lVar.c;
-        if (iOException != null) {
-            throw iOException;
-        }
-        y2.h hVar = lVar.b;
-        if (hVar != null) {
-            if (m32 == Integer.MIN_VALUE) {
-                m32 = hVar.a;
-            }
-            IOException iOException2 = hVar.e;
-            if (iOException2 != null && hVar.f > m32) {
-                throw iOException2;
-            }
+    @Override // c3.i0
+    public final int a(b2.p pVar, int i10, boolean z10) {
+        return h().a(pVar, i10, z10);
+    }
+
+    @Override // c3.i0
+    public final void b(b2.x xVar) {
+        this.a.b(xVar);
+    }
+
+    @Override // c3.i0
+    public final void c(long j10, int i10, int i11, int i12, c3.h0 h0Var) {
+        h().c(j10, i10, i11, i12, h0Var);
+        AtomicReference atomicReference = this.d;
+        if (atomicReference.get() == r0.b) {
+            this.b.G(false);
+            atomicReference.set(r0.c);
         }
     }
 
-    @Override // u2.b1
-    public final boolean e() {
-        u0 u0Var = this.b;
-        return !u0Var.A() && u0Var.K[this.a].x(u0Var.e0);
+    @Override // c3.i0
+    public final void d(int i10, e2.x xVar) {
+        h().d(i10, xVar);
     }
 
-    @Override // u2.b1
-    public final int f(n4.x xVar, h2.h hVar, int i10) {
-        u0 u0Var = this.b;
-        if (u0Var.A()) {
-            return -3;
-        }
-        int i11 = this.a;
-        u0Var.u(i11);
-        int C = u0Var.K[i11].C(xVar, hVar, i10, u0Var.e0);
-        if (C == -3) {
-            u0Var.v(i11);
-        }
-        return C;
+    @Override // c3.i0
+    public final int f(b2.p pVar, int i10, boolean z10) {
+        return h().f(pVar, i10, z10);
     }
 
-    @Override // u2.b1
-    public final int j(long j3) {
-        u0 u0Var = this.b;
-        if (u0Var.A()) {
-            return 0;
-        }
-        int i10 = this.a;
-        u0Var.u(i10);
-        a1 a1Var = u0Var.K[i10];
-        int v = a1Var.v(j3, u0Var.e0);
-        a1Var.H(v);
-        if (v == 0) {
-            u0Var.v(i10);
-        }
-        return v;
+    @Override // c3.i0
+    public final void g(e2.x xVar, int i10, int i11) {
+        h().g(xVar, i10, i11);
+    }
+
+    public final c3.i0 h() {
+        return this.d.get() == r0.c ? this.c : this.b;
+    }
+
+    @Override // c3.i0
+    public final void e(long j10) {
     }
 }

@@ -1,85 +1,108 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import android.view.View;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kg implements Utilities.Callback2 {
+public final /* synthetic */ class kg implements ch.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ xm b;
 
-    public /* synthetic */ kg(org.telegram.ui.ActionBar.n2 n2Var, int i10, TLObject tLObject, int i11) {
-        this.a = i11;
-        this.c = n2Var;
-        this.b = i10;
-        this.d = tLObject;
+    public /* synthetic */ kg(xm xmVar, int i10) {
+        this.a = i10;
+        this.b = xmVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        TLRPC.Updates updates;
-        int i10 = this.a;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        switch (i10) {
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // ch.a
+    public final void e(bh.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
+    }
+
+    @Override // ch.a
+    public final void f(Canvas canvas, RectF rectF) {
+        switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ei.l3((zn) obj4, this.b, (Boolean) obj, (TLRPC.WebPage) obj2, (TL_account.getWebPagePreview) obj3, 16));
-                break;
-            case 1:
-                LaunchActivity launchActivity = (LaunchActivity) obj4;
-                m70 m70Var = (m70) obj3;
-                TLRPC.ChatInviteJoinResult chatInviteJoinResult = (TLRPC.ChatInviteJoinResult) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                Pattern pattern = LaunchActivity.B1;
-                if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultOk) {
-                    TLRPC.Updates updates2 = ((TLRPC.TL_chatInviteJoinResultOk) chatInviteJoinResult).updates;
-                    MessagesController.getInstance(launchActivity.O).lambda$processUpdates$377(updates2, false);
-                    updates = updates2;
-                } else {
-                    if (chatInviteJoinResult instanceof TLRPC.TL_chatInviteJoinResultWebView) {
-                        AndroidUtilities.runOnUIThread(new m70(8, launchActivity, (TLRPC.TL_chatInviteJoinResultWebView) chatInviteJoinResult));
-                    }
-                    updates = null;
+                xm xmVar = this.b;
+                fo foVar = xmVar.J0;
+                fo foVar2 = foVar.da;
+                xm xmVar2 = foVar2 != null ? foVar2.X0 : foVar.X0;
+                float f7 = foVar.yc.e;
+                int i10 = (int) ((1.0f - f7) * 255.0f);
+                int i11 = (int) (255.0f * f7);
+                if (f7 > 0.0f) {
+                    canvas.drawColor(org.telegram.ui.ActionBar.g6.m1(f7 * 0.85f, foVar.getThemedColor(org.telegram.ui.ActionBar.g6.d6)));
                 }
-                AndroidUtilities.runOnUIThread(new ei.l3(launchActivity, m70Var, tL_error, updates, this.b, 26));
-                break;
-            default:
-                PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
-                TL_account.Passkey passkey = (TL_account.Passkey) obj3;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                ArrayList arrayList = passkeysActivity.b;
-                boolean z10 = ((TLRPC.Bool) obj) instanceof TLRPC.TL_boolFalse;
-                int i11 = this.b;
-                if (!z10) {
-                    if (tL_error2 != null) {
-                        org.telegram.ui.Components.ad.a0(passkeysActivity).f0(tL_error2, false);
-                        arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
-                        passkeysActivity.a.W2.N(true);
-                        break;
+                hh.d.b(new kg(xmVar, 1), canvas, rectF, foVar.x0, xmVar2, i10);
+                bi.o0 o0Var = foVar.L3;
+                if (o0Var != null) {
+                    hh.d.b(o0Var, canvas, rectF, o0Var, xmVar2, i11);
+                }
+                di.h1 h1Var = foVar.q1;
+                if (h1Var != null && h1Var.getVisibility() == 0) {
+                    int childCount = foVar.q1.getChildCount();
+                    for (int i12 = 0; i12 < childCount; i12++) {
+                        View childAt = foVar.q1.getChildAt(i12);
+                        if ((childAt instanceof ho) && childAt.getVisibility() == 0) {
+                            ho hoVar = (ho) childAt;
+                            go goVar = hoVar.a;
+                            xm xmVar3 = goVar.X0;
+                            Objects.requireNonNull(xmVar3);
+                            hh.d.a(new kg(xmVar3, 0), canvas, rectF, goVar.X0, hoVar);
+                        }
                     }
-                } else {
-                    org.telegram.ui.Components.ad.a0(passkeysActivity).e0("FALSE", false);
-                    arrayList.add(Utilities.clamp(i11, arrayList.size(), 0), passkey);
-                    passkeysActivity.a.W2.N(true);
                     break;
                 }
                 break;
+            default:
+                long uptimeMillis = SystemClock.uptimeMillis();
+                fo foVar3 = this.b.J0;
+                if (foVar3.x0.Z0()) {
+                    foVar3.x0.f(canvas, rectF);
+                    break;
+                } else {
+                    foVar3.x0.x1(canvas, rectF);
+                    for (int i13 = 0; i13 < foVar3.x0.getChildCount(); i13++) {
+                        View childAt2 = foVar3.x0.getChildAt(i13);
+                        if (!fo.e2(foVar3, childAt2, rectF)) {
+                            if (childAt2 instanceof org.telegram.ui.Cells.u1) {
+                                canvas.save();
+                                canvas.translate(childAt2.getX(), childAt2.getY());
+                                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) childAt2;
+                                if (u1Var.C1()) {
+                                    canvas.save();
+                                    canvas.translate(0.0f, u1Var.V);
+                                    u1Var.D1(canvas, true, false);
+                                    canvas.restore();
+                                }
+                                canvas.restore();
+                                foVar3.x0.drawChild(canvas, childAt2, uptimeMillis);
+                                if (u1Var.U2()) {
+                                    canvas.save();
+                                    canvas.translate(u1Var.getX(), u1Var.getY());
+                                    u1Var.X1(canvas);
+                                    canvas.restore();
+                                }
+                            } else if (childAt2 instanceof org.telegram.ui.Cells.x0) {
+                                foVar3.x0.drawChild(canvas, childAt2, uptimeMillis);
+                                canvas.save();
+                                canvas.translate(childAt2.getX(), childAt2.getY());
+                                ((org.telegram.ui.Cells.x0) childAt2).B(canvas);
+                                canvas.restore();
+                            } else {
+                                foVar3.x0.drawChild(canvas, childAt2, uptimeMillis);
+                            }
+                        }
+                    }
+                    foVar3.x0.y1(canvas, rectF);
+                    break;
+                }
         }
-    }
-
-    public /* synthetic */ kg(LaunchActivity launchActivity, m70 m70Var, int i10) {
-        this.a = 1;
-        this.c = launchActivity;
-        this.d = m70Var;
-        this.b = i10;
     }
 }

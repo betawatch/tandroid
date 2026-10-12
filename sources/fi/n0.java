@@ -1,53 +1,13 @@
 package fi;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.ty;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n0 implements MessagesStorage.LongCallback, MessagesStorage.BooleanCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
-    public final /* synthetic */ Object e;
-
-    public /* synthetic */ n0(b2 b2Var, n2 n2Var, int i10, long j3, boolean z10) {
-        this.d = b2Var;
-        this.e = n2Var;
-        this.a = i10;
-        this.b = j3;
-        this.c = z10;
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        ty tyVar = (ty) this.d;
-        TLRPC.Chat chat = (TLRPC.Chat) this.e;
-        ty.t0(this.a, this.b, chat, tyVar, this.c, z10);
-    }
-
-    public /* synthetic */ n0(ty tyVar, int i10, TLRPC.Chat chat, long j3, boolean z10) {
-        this.d = tyVar;
-        this.a = i10;
-        this.e = chat;
-        this.b = j3;
-        this.c = z10;
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public void run(long j3) {
-        b2 b2Var = (b2) this.d;
-        n2 n2Var = (n2) this.e;
-        b2Var.dismiss();
-        if (j3 == 0) {
-            return;
-        }
-        MessagesController.getInstance(this.a).linkCommunity(-j3, this.b, this.c, new o0(n2Var, j3, 0));
+public final class n0 extends LinearLayout implements qe.a {
+    @Override // qe.a
+    public final void a() {
+        ((ViewGroup) getParent()).removeView(this);
     }
 }

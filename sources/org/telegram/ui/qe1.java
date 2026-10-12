@@ -1,33 +1,66 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class qe1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ue1 b;
+public final class qe1 extends org.telegram.ui.Cells.u1 {
+    public final Path Ge;
+    public final Paint He;
+    public final /* synthetic */ int Ie;
+    public final /* synthetic */ int Je;
+    public final /* synthetic */ int Ke;
+    public final /* synthetic */ se1 Le;
 
-    public /* synthetic */ qe1(ue1 ue1Var, int i10) {
-        this.a = i10;
-        this.b = ue1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qe1(se1 se1Var, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11, int i12, int i13) {
+        super(context, i10, false, null, c6Var);
+        this.Le = se1Var;
+        this.Ie = i11;
+        this.Je = i12;
+        this.Ke = i13;
+        this.Ge = new Path();
+        this.He = new Paint(1);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ue1 ue1Var = this.b;
-                ue1Var.v = 0;
-                ue1Var.n.setVisibility(8);
-                break;
-            case 1:
-                this.b.v = 0;
-                break;
-            default:
-                this.b.F.setVisibility(8);
-                break;
-        }
+    @Override // org.telegram.ui.Cells.u1
+    public final void Y1(Canvas canvas) {
+        this.i6 = 0;
+        this.j6 = this.Y5.size() - 1;
+        super.Y1(canvas);
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int O2 = O2(this.Ie);
+        float H2 = H2(O2);
+        float G2 = G2(O2);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getPollButtonsLeft(), H2, getPollButtonsRight(), G2);
+        Path path = this.Ge;
+        path.rewind();
+        path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
+        Paint paint = this.He;
+        paint.setColor(0);
+        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.g6.m1(this.Le.x * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
+        canvas.clipPath(path);
+        S1(canvas);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(this.Je, this.Ke);
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void setPressed(boolean z10) {
     }
 }

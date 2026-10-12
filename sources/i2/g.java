@@ -1,47 +1,53 @@
 package i2;
 
-import java.util.Locale;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public long k;
-    public int l;
+    public final long a;
+    public final long b;
+    public long c = -9223372036854775807L;
+    public long d = -9223372036854775807L;
+    public long f = -9223372036854775807L;
+    public long g = -9223372036854775807L;
+    public float j = 0.97f;
+    public float i = 1.03f;
+    public float k = 1.0f;
+    public long l = -9223372036854775807L;
+    public long e = -9223372036854775807L;
+    public long h = -9223372036854775807L;
+    public long m = -9223372036854775807L;
+    public long n = -9223372036854775807L;
 
-    public final String toString() {
-        int i10 = this.a;
-        int i11 = this.b;
-        int i12 = this.c;
-        int i13 = this.d;
-        int i14 = this.e;
-        int i15 = this.f;
-        int i16 = this.g;
-        int i17 = this.h;
-        int i18 = this.i;
-        int i19 = this.j;
-        long j3 = this.k;
-        int i20 = this.l;
-        String str = e2.d0.a;
-        Locale locale = Locale.US;
-        StringBuilder k10 = hg.c.k("DecoderCounters {\n decoderInits=", i10, ",\n decoderReleases=", i11, "\n queuedInputBuffers=");
-        hg.c.u(k10, i12, "\n skippedInputBuffers=", i13, "\n renderedOutputBuffers=");
-        hg.c.u(k10, i14, "\n skippedOutputBuffers=", i15, "\n droppedBuffers=");
-        hg.c.u(k10, i16, "\n droppedInputBuffers=", i17, "\n maxConsecutiveDroppedBuffers=");
-        hg.c.u(k10, i18, "\n droppedToKeyframeEvents=", i19, "\n totalVideoFrameProcessingOffsetUs=");
-        k10.append(j3);
-        k10.append("\n videoFrameProcessingOffsetCount=");
-        k10.append(i20);
-        k10.append("\n}");
-        return k10.toString();
+    public g(long j10, long j11) {
+        this.a = j10;
+        this.b = j11;
+    }
+
+    public final void a() {
+        long j10;
+        long j11 = this.c;
+        if (j11 != -9223372036854775807L) {
+            j10 = this.d;
+            if (j10 == -9223372036854775807L) {
+                long j12 = this.f;
+                if (j12 != -9223372036854775807L && j11 < j12) {
+                    j11 = j12;
+                }
+                j10 = this.g;
+                if (j10 == -9223372036854775807L || j11 <= j10) {
+                    j10 = j11;
+                }
+            }
+        } else {
+            j10 = -9223372036854775807L;
+        }
+        if (this.e == j10) {
+            return;
+        }
+        this.e = j10;
+        this.h = j10;
+        this.m = -9223372036854775807L;
+        this.n = -9223372036854775807L;
+        this.l = -9223372036854775807L;
     }
 }

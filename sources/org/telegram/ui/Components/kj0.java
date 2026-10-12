@@ -1,164 +1,124 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.TelegramQRCodeWriter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class kj0 extends Drawable {
-    public final Drawable a;
-    public final Drawable b;
-    public final Paint c;
-    public final RectF d;
-    public int e;
-    public long f;
-    public float g;
-    public boolean h;
-    public boolean i;
+public class kj0 extends org.telegram.ui.ActionBar.e3 {
+    public final Bitmap b;
+    public final TextView c;
+    public final TextView d;
+    public final TextView e;
+    public final int f;
+    public final bk0 h;
 
-    public kj0(Context context) {
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = new RectF();
-        this.e = 0;
-        this.a = context.getResources().getDrawable(R.drawable.outline_shield_plain_24).mutate();
-        this.b = context.getResources().getDrawable(R.drawable.outline_shield_check).mutate();
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(1.66f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        this.f = SystemClock.elapsedRealtime();
-    }
-
-    public final void a(Drawable drawable) {
-        Rect bounds = getBounds();
-        drawable.setBounds(org.telegram.ui.Cells.c1.s(2, bounds.centerX(), drawable), org.telegram.ui.Cells.c1.c(2, bounds.centerY(), drawable), org.telegram.ui.Cells.c1.w(2, bounds.centerX(), drawable), org.telegram.ui.Cells.c1.v(2, bounds.centerY(), drawable));
-    }
-
-    public final void b(boolean z10, boolean z11, boolean z12) {
-        this.i = z10;
-        this.h = z11;
-        this.f = SystemClock.elapsedRealtime();
-        if (!z12) {
-            this.g = this.h ? 1.0f : 0.0f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kj0(Context context, String str, String str2, String str3, boolean z10) {
+        super(1, context, (org.telegram.ui.ActionBar.c6) null, false);
+        Bitmap bitmap = null;
+        fixNavigationBar();
+        setTitle(str, true);
+        ig.k kVar = new ig.k(context, 3);
+        kVar.setScaleType(ImageView.ScaleType.FIT_XY);
+        kVar.setOutlineProvider(new bi.a2(15));
+        kVar.setClipToOutline(true);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, AndroidUtilities.dp(16.0f), 0, 0);
+        Bitmap bitmap2 = this.b;
+        try {
+            HashMap hashMap = new HashMap();
+            hashMap.put(dc.b.a, ic.c.c);
+            hashMap.put(dc.b.c, 0);
+            TelegramQRCodeWriter telegramQRCodeWriter = new TelegramQRCodeWriter();
+            Bitmap encode = telegramQRCodeWriter.encode(str2, 768, 768, hashMap, bitmap2);
+            this.f = telegramQRCodeWriter.getImageSize();
+            bitmap = encode;
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        invalidateSelf();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00b8  */
-    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        boolean z10;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j3 = elapsedRealtime - this.f;
-        this.f = elapsedRealtime;
-        boolean z11 = this.i;
-        Drawable drawable = this.a;
-        if (!z11) {
-            a(drawable);
-            drawable.draw(canvas);
-        } else if (!this.h || this.g != 1.0f) {
-            a(drawable);
-            drawable.draw(canvas);
-            int i10 = (int) ((1.0f - this.g) * 255.0f);
-            Paint paint = this.c;
-            paint.setAlpha(i10);
-            this.e += (int) ((360 * j3) / 1000.0f);
-            int width = getBounds().width();
-            int height = getBounds().height();
-            int dp = AndroidUtilities.dp(4.0f);
-            RectF rectF = this.d;
-            rectF.set((width / 2) - dp, (height / 2) - dp, r0 + dp + dp, r4 + dp + dp);
-            canvas2 = canvas;
-            canvas2.drawArc(rectF, this.e - 90, 90.0f, false, paint);
-            invalidateSelf();
-            if (this.i && (this.h || this.g != 0.0f)) {
-                int i11 = (int) (this.g * 255.0f);
-                Drawable drawable2 = this.b;
-                drawable2.setAlpha(i11);
-                a(drawable2);
-                drawable2.draw(canvas2);
-            }
-            z10 = this.h;
-            if (z10) {
-                float f7 = this.g;
-                if (f7 != 1.0f) {
-                    float f10 = (j3 / 300.0f) + f7;
-                    this.g = f10;
-                    if (f10 > 1.0f) {
-                        this.g = 1.0f;
-                    }
-                    invalidateSelf();
-                    return;
-                }
-            }
-            if (z10) {
-                float f11 = this.g;
-                if (f11 != 0.0f) {
-                    float f12 = f11 - (j3 / 300.0f);
-                    this.g = f12;
-                    if (f12 < 0.0f) {
-                        this.g = 0.0f;
-                    }
-                    invalidateSelf();
-                    return;
-                }
-                return;
-            }
-            return;
-        }
-        canvas2 = canvas;
-        if (this.i) {
-            int i112 = (int) (this.g * 255.0f);
-            Drawable drawable22 = this.b;
-            drawable22.setAlpha(i112);
-            a(drawable22);
-            drawable22.draw(canvas2);
-        }
-        z10 = this.h;
+        this.b = bitmap;
+        kVar.setImageBitmap(bitmap);
+        bk0 bk0Var = new bk0(context);
+        this.h = bk0Var;
+        bk0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        bk0Var.setBackgroundColor(-1);
+        org.telegram.ui.nm0 nm0Var = new org.telegram.ui.nm0(this, context, kVar);
+        nm0Var.addView(kVar, w7.a6.d(-1.0f, -1));
+        nm0Var.addView(bk0Var, w7.a6.e(60, 60, 17));
+        linearLayout.addView(nm0Var, w7.a6.t(220, 220, 1, 30, 0, 30, 0));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setText(str3);
+        textView.setGravity(1);
+        linearLayout.addView(textView, w7.a6.a(-2.0f, 40.0f, 8.0f, 40.0f, 8.0f, -1, 0));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+        textView2.setGravity(17);
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTypeface(AndroidUtilities.bold());
+        textView2.setText(LocaleController.getString(R.string.ShareQrCode));
+        textView2.setOnClickListener(new rt(12, this, context));
+        linearLayout.addView(textView2, w7.a6.t(-1, 48, 80, 16, 15, 16, 3));
         if (z10) {
+            TextView textView3 = new TextView(context);
+            this.e = textView3;
+            textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+            textView3.setGravity(17);
+            textView3.setTextSize(1, 14.0f);
+            textView3.setText(LocaleController.getString(R.string.ShareLink));
+            textView3.setOnClickListener(new rt(13, str2, context));
+            linearLayout.addView(textView3, w7.a6.t(-1, 48, 80, 16, 3, 16, 16));
         }
-        if (z10) {
+        d();
+        ScrollView scrollView = new ScrollView(context);
+        scrollView.addView(linearLayout);
+        setCustomView(scrollView);
+    }
+
+    public final void d() {
+        int themedColor = getThemedColor(org.telegram.ui.ActionBar.g6.Sh);
+        TextView textView = this.d;
+        textView.setTextColor(themedColor);
+        int dp = AndroidUtilities.dp(24.0f);
+        int i10 = org.telegram.ui.ActionBar.g6.Oh;
+        int themedColor2 = getThemedColor(i10);
+        int themedColor3 = getThemedColor(org.telegram.ui.ActionBar.g6.Qh);
+        textView.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, themedColor2, themedColor3, themedColor3));
+        TextView textView2 = this.e;
+        if (textView2 != null) {
+            textView2.setTextColor(getThemedColor(i10));
+            textView2.setBackground(org.telegram.ui.ActionBar.g6.g0(i0.a.k(getThemedColor(i10), Math.min(255, Color.alpha(getThemedColor(org.telegram.ui.ActionBar.g6.i6)) * 2)), 7, -1));
         }
+        int i11 = org.telegram.ui.ActionBar.g6.y6;
+        int themedColor4 = getThemedColor(i11);
+        TextView textView3 = this.c;
+        textView3.setTextColor(themedColor4);
+        textView3.setTextColor(getThemedColor(i11));
+        if (getTitleView() != null) {
+            getTitleView().setTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.G6));
+        }
+        setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.g6.h5));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-        this.b.setColorFilter(colorFilter);
-        this.c.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public final void n(int i10) {
+        bk0 bk0Var = this.h;
+        bk0Var.setAutoRepeat(true);
+        bk0Var.f(i10, 60, 60, null);
+        bk0Var.d();
     }
 }

@@ -1,104 +1,37 @@
 package id;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d implements Collection {
-    public final Object[] a;
-    public final boolean b;
+public final class d implements Serializable {
+    public final Object a;
+    public final Object b;
 
-    public d(Object[] values, boolean z10) {
-        kotlin.jvm.internal.i.e(values, "values");
-        this.a = values;
-        this.b = z10;
+    public d(Object obj, Object obj2) {
+        this.a = obj;
+        this.b = obj2;
     }
 
-    @Override // java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final boolean contains(Object obj) {
-        return f.a(this.a, obj);
-    }
-
-    @Override // java.util.Collection
-    public final boolean containsAll(Collection elements) {
-        kotlin.jvm.internal.i.e(elements, "elements");
-        Collection collection = elements;
-        if (collection.isEmpty()) {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        Iterator it = collection.iterator();
-        while (it.hasNext()) {
-            if (!f.a(this.a, it.next())) {
-                return false;
-            }
+        if (!(obj instanceof d)) {
+            return false;
         }
-        return true;
+        d dVar = (d) obj;
+        return kotlin.jvm.internal.i.a(this.a, dVar.a) && kotlin.jvm.internal.i.a(this.b, dVar.b);
     }
 
-    @Override // java.util.Collection
-    public final boolean isEmpty() {
-        return this.a.length == 0;
+    public final int hashCode() {
+        Object obj = this.a;
+        int hashCode = (obj == null ? 0 : obj.hashCode()) * 31;
+        Object obj2 = this.b;
+        return hashCode + (obj2 != null ? obj2.hashCode() : 0);
     }
 
-    @Override // java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        Object[] array = this.a;
-        kotlin.jvm.internal.i.e(array, "array");
-        return new dd.b(array);
-    }
-
-    @Override // java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // java.util.Collection
-    public final int size() {
-        return this.a.length;
-    }
-
-    @Override // java.util.Collection
-    public final Object[] toArray() {
-        Object[] objArr = this.a;
-        kotlin.jvm.internal.i.e(objArr, "<this>");
-        if (this.b && objArr.getClass().equals(Object[].class)) {
-            return objArr;
-        }
-        Object[] copyOf = Arrays.copyOf(objArr, objArr.length, Object[].class);
-        kotlin.jvm.internal.i.d(copyOf, "copyOf(...)");
-        return copyOf;
-    }
-
-    @Override // java.util.Collection
-    public final Object[] toArray(Object[] array) {
-        kotlin.jvm.internal.i.e(array, "array");
-        return kotlin.jvm.internal.i.j(this, array);
+    public final String toString() {
+        return "(" + this.a + ", " + this.b + ')';
     }
 }

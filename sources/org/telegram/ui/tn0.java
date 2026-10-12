@@ -1,68 +1,52 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.view.View;
 import android.widget.FrameLayout;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import org.telegram.messenger.FileLog;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tn0 implements OnCompleteListener, org.telegram.ui.ActionBar.a2, yt {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vo0 b;
+public final class tn0 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public ImageView c;
+    public boolean d;
 
-    public /* synthetic */ tn0(vo0 vo0Var, int i10) {
-        this.a = i10;
-        this.b = vo0Var;
+    public final void a(String str, boolean z10) {
+        this.a.setText(str);
+        this.b.setText("");
+        this.d = z10;
+        setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.yt
-    public void U0(ut utVar) {
-        switch (this.a) {
-            case 2:
-                vo0 vo0Var = this.b;
-                vo0Var.A0 = utVar;
-                vo0Var.f[4].setText(utVar.a);
-                break;
-            default:
-                vo0 vo0Var2 = this.b;
-                vo0Var2.A0 = utVar;
-                vo0Var2.f[4].setText(utVar.a);
-                vo0Var2.B0 = utVar.d;
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                vo0 vo0Var = this.b;
-                vo0Var.I0(vo0Var.R0[0]);
-                break;
-            case 2:
-            default:
-                vo0 vo0Var2 = this.b;
-                vo0Var2.D0(true);
-                vo0Var2.z0();
-                break;
-            case 3:
-                this.b.A0(true);
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.d ? 1 : 0), TLObject.FLAG_30));
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        vo0 vo0Var = this.b;
-        vo0Var.getClass();
-        if (!task.isSuccessful()) {
-            FileLog.e("isReadyToPay failed", task.getException());
-            return;
-        }
-        FrameLayout frameLayout = vo0Var.O;
-        if (frameLayout != null) {
-            frameLayout.setVisibility(0);
-        }
+    public void setChecked(boolean z10) {
+        this.c.setVisibility(z10 ? 0 : 4);
+    }
+
+    public void setNeedDivider(boolean z10) {
+        this.d = z10;
+        setWillNotDraw(!z10);
+        invalidate();
+    }
+
+    public void setValue(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

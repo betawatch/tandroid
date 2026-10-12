@@ -1,15 +1,40 @@
 package androidx.biometric;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.hardware.biometrics.BiometricPrompt;
+import android.hardware.biometrics.BiometricPrompt$AuthenticationCallback;
+import android.os.CancellationSignal;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class l {
-    public static void a(BiometricPrompt.Builder builder, boolean z10) {
-        builder.setConfirmationRequired(z10);
+    public static void a(BiometricPrompt biometricPrompt, BiometricPrompt.CryptoObject cryptoObject, CancellationSignal cancellationSignal, Executor executor, BiometricPrompt$AuthenticationCallback biometricPrompt$AuthenticationCallback) {
+        biometricPrompt.authenticate(cryptoObject, cancellationSignal, executor, biometricPrompt$AuthenticationCallback);
     }
 
-    public static void b(BiometricPrompt.Builder builder, boolean z10) {
-        builder.setDeviceCredentialAllowed(z10);
+    public static void b(BiometricPrompt biometricPrompt, CancellationSignal cancellationSignal, Executor executor, BiometricPrompt$AuthenticationCallback biometricPrompt$AuthenticationCallback) {
+        biometricPrompt.authenticate(cancellationSignal, executor, biometricPrompt$AuthenticationCallback);
+    }
+
+    public static BiometricPrompt c(BiometricPrompt.Builder builder) {
+        return builder.build();
+    }
+
+    public static BiometricPrompt.Builder d(Context context) {
+        return new BiometricPrompt.Builder(context);
+    }
+
+    public static void e(BiometricPrompt.Builder builder, CharSequence charSequence) {
+        builder.setDescription(charSequence);
+    }
+
+    public static void f(BiometricPrompt.Builder builder, CharSequence charSequence, Executor executor, DialogInterface.OnClickListener onClickListener) {
+        builder.setNegativeButton(charSequence, executor, onClickListener);
+    }
+
+    public static void g(BiometricPrompt.Builder builder, CharSequence charSequence) {
+        builder.setTitle(charSequence);
     }
 }

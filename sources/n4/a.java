@@ -1,31 +1,58 @@
 package n4;
 
-import android.media.AudioAttributes;
-import j$.util.Objects;
+import android.os.IBinder;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class a {
-    public final AudioAttributes a;
+public final class a implements b {
+    public IBinder a;
 
-    public a(AudioAttributes audioAttributes) {
-        this.a = audioAttributes;
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof a) {
-            return Objects.equals(this.a, ((a) obj).a);
+    @Override // n4.b
+    public final void h(int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(i10);
+            if (!this.a.transact(12, obtain, null, 1)) {
+                int i11 = e.b;
+            }
+        } finally {
+            obtain.recycle();
         }
-        return false;
     }
 
-    public final int hashCode() {
-        AudioAttributes audioAttributes = this.a;
-        audioAttributes.getClass();
-        return audioAttributes.hashCode();
+    @Override // n4.b
+    public final void onRepeatModeChanged(int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(i10);
+            if (!this.a.transact(9, obtain, null, 1)) {
+                int i11 = e.b;
+            }
+        } finally {
+            obtain.recycle();
+        }
     }
 
-    public final String toString() {
-        return "AudioAttributesCompat: audioattributes=" + this.a;
+    @Override // n4.b
+    public final void t(y yVar) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
+            obtain.writeInt(1);
+            yVar.writeToParcel(obtain, 0);
+            if (!this.a.transact(3, obtain, null, 1)) {
+                int i10 = e.b;
+            }
+        } finally {
+            obtain.recycle();
+        }
     }
 }

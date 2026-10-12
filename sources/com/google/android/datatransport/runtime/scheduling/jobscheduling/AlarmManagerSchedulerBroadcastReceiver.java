@@ -1,18 +1,19 @@
 package com.google.android.datatransport.runtime.scheduling.jobscheduling;
 
-import aa.a;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Base64;
-import da.c;
+import androidx.biometric.e;
+import ea.b;
 import java.util.concurrent.Executor;
 import l5.i;
 import l5.s;
-import org.telegram.ui.Components.x21;
-import org.telegram.ui.t21;
+import org.telegram.ui.Components.m21;
+import org.telegram.ui.b31;
+import v5.a;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -24,13 +25,13 @@ public class AlarmManagerSchedulerBroadcastReceiver extends BroadcastReceiver {
         int intValue = Integer.valueOf(intent.getData().getQueryParameter("priority")).intValue();
         int i10 = intent.getExtras().getInt("attemptNumber");
         s.b(context);
-        a a2 = i.a();
-        a2.t(queryParameter);
-        a2.d = v5.a.b(intValue);
+        e a2 = i.a();
+        a2.v(queryParameter);
+        a2.d = a.b(intValue);
         if (queryParameter2 != null) {
             a2.c = Base64.decode(queryParameter2, 0);
         }
-        c cVar = s.a().d;
-        ((Executor) cVar.e).execute(new x21(cVar, a2.d(), i10, new t21(16), 18));
+        b bVar = s.a().d;
+        ((Executor) bVar.e).execute(new m21(bVar, a2.g(), i10, new b31(14), 18));
     }
 }

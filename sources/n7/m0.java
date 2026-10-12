@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.io.IOException;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class m0 {
     public static final k0 d;
@@ -50,13 +50,13 @@ public class m0 {
             throw new IllegalArgumentException();
         }
         int i14 = 0;
-        long j3 = 0;
+        long j10 = 0;
         for (int i15 = 0; i15 < i11; i15++) {
-            j3 = (j3 | (bArr[i10 + i15] & 255)) << 8;
+            j10 = (j10 | (bArr[i10 + i15] & 255)) << 8;
         }
         int i16 = (i11 + 1) * 8;
         while (i14 < i11 * 8) {
-            sb2.append(j0Var.b[((int) (j3 >>> ((i16 - i13) - i14))) & j0Var.c]);
+            sb2.append(j0Var.b[((int) (j10 >>> ((i16 - i13) - i14))) & j0Var.c]);
             i14 += i13;
         }
         if (this.b != null) {
@@ -76,8 +76,8 @@ public class m0 {
         try {
             a(sb2, bArr, i10);
             return sb2.toString();
-        } catch (IOException e7) {
-            throw new AssertionError(e7);
+        } catch (IOException e) {
+            throw new AssertionError(e);
         }
     }
 

@@ -8,24 +8,24 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ia0;
+import org.telegram.ui.Components.ha0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class b3 extends ia0 {
+public final class b3 extends ha0 {
     public final Paint M;
     public final /* synthetic */ d3 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b3(d3 d3Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(e6Var);
+    public b3(d3 d3Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(c6Var);
         this.N = d3Var;
         Paint paint = new Paint(1);
         this.M = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // org.telegram.ui.Components.ia0
+    @Override // org.telegram.ui.Components.ha0
     public final void b(Canvas canvas, Path path) {
         super.b(canvas, path);
         d3 d3Var = this.N;

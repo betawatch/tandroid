@@ -1,12 +1,21 @@
 package s4;
 
-import android.widget.EdgeEffect;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class m0 {
-    public EdgeEffect a(RecyclerView recyclerView, int i10) {
-        return new EdgeEffect(recyclerView.getContext());
+public abstract class m0 {
+    public void a(Rect rect, View view, RecyclerView recyclerView, y0 y0Var) {
+        ((o0) view.getLayoutParams()).b();
+        rect.set(0, 0, 0, 0);
+    }
+
+    public void b(Canvas canvas, RecyclerView recyclerView) {
+    }
+
+    public void c(Canvas canvas, RecyclerView recyclerView) {
     }
 }

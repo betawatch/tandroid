@@ -1,31 +1,45 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import java.util.HashMap;
 import java.util.regex.Pattern;
+import org.telegram.messenger.ContactsController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d90 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class d90 implements org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean e;
 
-    public /* synthetic */ d90(LaunchActivity launchActivity, int i10) {
-        this.a = i10;
-        this.b = launchActivity;
+    public /* synthetic */ d90(int i10, HashMap hashMap, boolean z10, boolean z11, int i11) {
+        this.a = i11;
+        this.b = i10;
+        this.c = hashMap;
+        this.d = z10;
+        this.e = z11;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
-        LaunchActivity launchActivity = this.b;
-        switch (i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        int i11 = this.a;
+        boolean z10 = this.e;
+        boolean z11 = this.d;
+        HashMap<String, ContactsController.Contact> hashMap = this.c;
+        int i12 = this.b;
+        switch (i11) {
             case 0:
-                launchActivity.w0.invalidate();
+                Pattern pattern = LaunchActivity.B1;
+                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, true);
+                break;
+            case 1:
+                Pattern pattern2 = LaunchActivity.B1;
+                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, false);
                 break;
             default:
-                Pattern pattern = LaunchActivity.B1;
-                launchActivity.getClass();
-                launchActivity.z0(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                Pattern pattern3 = LaunchActivity.B1;
+                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, true);
                 break;
         }
     }

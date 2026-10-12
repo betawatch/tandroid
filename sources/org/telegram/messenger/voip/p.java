@@ -1,37 +1,45 @@
 package org.telegram.messenger.voip;
 
-import android.content.Context;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Wallet.f5;
+import java.util.ArrayList;
+import org.telegram.messenger.voip.VoIPDebugToSend;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p implements Runnable {
+public final /* synthetic */ class p implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ p(Context context, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = context;
-        this.c = i10;
-        this.d = i11;
+    public /* synthetic */ p(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                VoIPGroupNotification.decline(this.b, this.c, this.d);
+                ((VoIPDebugToSend) this.b).lambda$done$3((VoIPDebugToSend.Data) this.c, (TL_phone.saveCallDebug) this.d, tLObject, tL_error);
+                break;
+            case 1:
+                ((GroupCallMessagesController) this.b).lambda$sendCallMessage$5((g) this.c, (GroupCallMessage) this.d, tLObject, tL_error);
+                break;
+            case 2:
+                VoIPService.lambda$startConferenceGroupCall$49((ArrayList) this.b, (ArrayList) this.c, (z) this.d, tLObject, tL_error);
+                break;
+            case 3:
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$45((TL_phone.PhoneCall) this.c, (TL_phone.exportGroupCallInvite) this.d, tLObject, tL_error);
                 break;
             default:
-                try {
-                    f5.f(this.b, this.c, this.d);
-                    break;
-                } catch (RuntimeException e7) {
-                    FileLog.e(e7);
-                }
+                VoIPService.lambda$startConferenceGroupCall$41((ArrayList) this.b, (ArrayList) this.c, (z) this.d, tLObject, tL_error);
+                break;
         }
     }
 }

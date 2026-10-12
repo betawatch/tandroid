@@ -1,19 +1,51 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.text.Editable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ge1 implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.Components.p80 a;
+public final class ge1 implements TextWatcher {
+    public final /* synthetic */ he1 a;
 
-    public ge1(org.telegram.ui.Components.p80 p80Var) {
-        this.a = p80Var;
+    public ge1(he1 he1Var) {
+        this.a = he1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        org.telegram.ui.Components.tc.e();
-        this.a.s();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        he1 he1Var = this.a;
+        if (he1Var.I) {
+            return;
+        }
+        if (he1Var.a.length() <= 0) {
+            he1Var.d.setText(he1Var.H);
+            return;
+        }
+        String str = "https://" + he1Var.getMessagesController().linkPrefix + "/addtheme/" + ((Object) he1Var.a.getText());
+        String formatString = LocaleController.formatString("ThemeHelpLink", R.string.ThemeHelpLink, str);
+        int indexOf = formatString.indexOf(str);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
+        if (indexOf >= 0) {
+            spannableStringBuilder.setSpan(new org.telegram.ui.Cells.i(str, he1Var, 8), indexOf, str.length() + indexOf, 33);
+        }
+        he1Var.d.setText(TextUtils.concat(he1Var.H, "\n\n", spannableStringBuilder));
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        he1 he1Var = this.a;
+        if (he1Var.G) {
+            return;
+        }
+        he1Var.Z(he1Var.a.getText().toString(), false);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

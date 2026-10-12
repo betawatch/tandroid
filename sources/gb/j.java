@@ -1,58 +1,99 @@
 package gb;
 
-import j$.util.concurrent.ConcurrentHashMap;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import j$.util.Objects;
+import java.net.Inet6Address;
+import java.net.InetAddress;
+import java.util.Comparator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class j implements db.v {
-    public static final i c;
-    public static final i d;
-    public final n4.x a;
-    public final ConcurrentHashMap b = new ConcurrentHashMap();
+public final class j implements Comparator {
+    public final /* synthetic */ int a;
 
-    static {
-        int i10 = 0;
-        c = new i(i10);
-        d = new i(i10);
+    public /* synthetic */ j(int i10) {
+        this.a = i10;
     }
 
-    public j(n4.x xVar) {
-        this.a = xVar;
-    }
-
-    public final db.u a(n4.x xVar, db.g gVar, kb.a aVar, eb.a aVar2, boolean z10) {
-        db.u uVar;
-        Object v22 = xVar.S(new kb.a(aVar2.value())).v2();
-        boolean nullSafe = aVar2.nullSafe();
-        if (v22 instanceof db.u) {
-            uVar = (db.u) v22;
-        } else if (v22 instanceof db.v) {
-            db.v vVar = (db.v) v22;
-            if (z10) {
-                db.v vVar2 = (db.v) this.b.putIfAbsent(aVar.a, vVar);
-                if (vVar2 != null) {
-                    vVar = vVar2;
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x005f, code lost:
+    
+        if (r0 == null) goto L36;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x006a, code lost:
+    
+        return -1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:?, code lost:
+    
+        return 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0068, code lost:
+    
+        if (r0 != false) goto L35;
+     */
+    @Override // java.util.Comparator
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                return ((Comparable) obj).compareTo((Comparable) obj2);
+            case 1:
+                Runnable runnable = (Runnable) obj;
+                Runnable runnable2 = (Runnable) obj2;
+                return (runnable2 instanceof hf.b ? ((hf.b) runnable2).a : 1) - (runnable instanceof hf.b ? ((hf.b) runnable).a : 1);
+            case 2:
+                Map.Entry entry = (Map.Entry) obj;
+                Map.Entry entry2 = (Map.Entry) obj2;
+                Objects.requireNonNull(entry);
+                Objects.requireNonNull(entry2);
+                Comparable comparable = (Comparable) entry.getKey();
+                Comparable comparable2 = (Comparable) entry2.getKey();
+                comparable.getClass();
+                comparable2.getClass();
+                return comparable.compareTo(comparable2);
+            case 3:
+                return ((q4.a) obj2).b() - ((q4.a) obj).b();
+            case 4:
+                s4.n nVar = (s4.n) obj;
+                s4.n nVar2 = (s4.n) obj2;
+                int i10 = nVar.a - nVar2.a;
+                return i10 == 0 ? nVar.b - nVar2.b : i10;
+            case 5:
+                s4.p pVar = (s4.p) obj;
+                s4.p pVar2 = (s4.p) obj2;
+                RecyclerView recyclerView = pVar.d;
+                if ((recyclerView == null) == (pVar2.d == null)) {
+                    boolean z10 = pVar.a;
+                    if (z10 == pVar2.a) {
+                        int i11 = pVar2.b - pVar.b;
+                        if (i11 != 0) {
+                            return i11;
+                        }
+                        int i12 = pVar.c - pVar2.c;
+                        if (i12 != 0) {
+                            return i12;
+                        }
+                        return 0;
+                    }
                 }
-            }
-            uVar = vVar.create(gVar, aVar);
-        } else {
-            boolean z11 = v22 instanceof db.o;
-            if (!z11) {
-                throw new IllegalArgumentException("Invalid attempt to bind an instance of " + v22.getClass().getName() + " as a @JsonAdapter for " + fb.d.k(aVar.b) + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
-            }
-            a0 a0Var = new a0(z11 ? (db.o) v22 : null, gVar, aVar, z10 ? c : d, nullSafe);
-            nullSafe = false;
-            uVar = a0Var;
+                break;
+            case 6:
+                InetAddress inetAddress = (InetAddress) obj;
+                if (inetAddress.getClass() == ((InetAddress) obj2).getClass()) {
+                    return 0;
+                }
+                return inetAddress instanceof Inet6Address ? -1 : 1;
+            case 7:
+                return ((z4.c) obj).b - ((z4.c) obj2).b;
+            default:
+                z4.d dVar = (z4.d) ((View) obj).getLayoutParams();
+                z4.d dVar2 = (z4.d) ((View) obj2).getLayoutParams();
+                boolean z11 = dVar.a;
+                return z11 != dVar2.a ? z11 ? 1 : -1 : dVar.e - dVar2.e;
         }
-        return (uVar == null || !nullSafe) ? uVar : uVar.nullSafe();
-    }
-
-    @Override // db.v
-    public final db.u create(db.g gVar, kb.a aVar) {
-        eb.a aVar2 = (eb.a) aVar.a.getAnnotation(eb.a.class);
-        if (aVar2 == null) {
-            return null;
-        }
-        return a(this.a, gVar, aVar, aVar2, true);
     }
 }

@@ -1,46 +1,36 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.util.Property;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class dd0 implements ValueAnimator.AnimatorUpdateListener {
-    public boolean a;
-    public final float[] b = {0.0f, 1.0f};
-    public final /* synthetic */ FrameLayout c;
-    public final /* synthetic */ ed0 d;
+public final class dd0 extends org.telegram.ui.Components.xv0 {
+    public final /* synthetic */ nd0 f2;
 
-    public dd0(ed0 ed0Var, FrameLayout frameLayout) {
-        this.d = ed0Var;
-        this.c = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dd0(nd0 nd0Var, Context context, org.telegram.ui.Components.pv0 pv0Var, nd0 nd0Var2, cd0 cd0Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, 0L, pv0Var, 0, null, null, null, 8, 0, nd0Var2, cd0Var, 0, c6Var, null);
+        this.f2 = nd0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float lerp = AndroidUtilities.lerp(this.b, valueAnimator.getAnimatedFraction());
-        if (lerp >= 0.7f && !this.a) {
-            ed0 ed0Var = this.d;
-            hd0 hd0Var = ed0Var.b;
-            hd0 hd0Var2 = ed0Var.b;
-            if (hd0Var.o0 != null) {
-                AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.playTogether(ObjectAnimator.ofFloat(hd0Var2.o0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(hd0Var2.o0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(hd0Var2.o0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
-                animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
-                animatorSet.setDuration(250L);
-                animatorSet.start();
-                this.a = true;
-            }
-        }
-        float interpolation = lerp <= 0.5f ? org.telegram.ui.Components.hs.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (org.telegram.ui.Components.hs.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (org.telegram.ui.Components.hs.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
-        FrameLayout frameLayout = this.c;
-        frameLayout.setScaleX(interpolation);
-        frameLayout.setScaleY(interpolation);
+    @Override // org.telegram.ui.Components.xv0
+    public final int B0() {
+        return 32;
+    }
+
+    @Override // org.telegram.ui.Components.xv0
+    public final boolean N() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.xv0
+    public final int S0() {
+        return 3;
+    }
+
+    @Override // org.telegram.ui.Components.xv0
+    public final TL_stories.MediaArea getStoriesArea() {
+        return this.f2.M0;
     }
 }

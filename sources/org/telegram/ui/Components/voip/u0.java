@@ -1,54 +1,98 @@
 package org.telegram.ui.Components.voip;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.io.File;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.cd0;
+import w7.a6;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class u0 implements z4.e {
-    public int a = 0;
-    public int b;
-    public final /* synthetic */ x0 c;
+public final class u0 extends z4.a {
+    public final /* synthetic */ v0 c;
 
-    public u0(x0 x0Var) {
-        this.c = x0Var;
+    public u0(v0 v0Var) {
+        this.c = v0Var;
     }
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r0v2, types: [boolean] */
-    @Override // z4.e
-    public final void a(int i10) {
-        int i11 = this.a;
-        x0 x0Var = this.c;
-        if (i11 == 0) {
-            if (i10 <= x0Var.y) {
-                x0Var.n = 1;
-            } else {
-                x0Var.n = 2;
-            }
-            x0.a(x0Var);
-            return;
-        }
-        if (i10 <= x0Var.y) {
-            this.b = 1;
+    @Override // z4.a
+    public final void a(z4.g gVar, Object obj) {
+        gVar.removeView((View) obj);
+    }
+
+    @Override // z4.a
+    public final int b() {
+        return this.c.f.length;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r13v11, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
+    @Override // z4.a
+    public final Object e(z4.g gVar, int i10) {
+        Bitmap bitmap;
+        ImageView imageView;
+        v0 v0Var = this.c;
+        boolean z10 = v0Var.y;
+        int i11 = 1;
+        if (z10 && i10 == 0) {
+            ?? frameLayout = new FrameLayout(v0Var.getContext());
+            frameLayout.setBackground(new cd0(true, -14602694, -13935795, -14395293, -14203560));
+            ImageView imageView2 = new ImageView(v0Var.getContext());
+            imageView2.setScaleType(ImageView.ScaleType.CENTER);
+            imageView2.setImageResource(R.drawable.screencast_big);
+            frameLayout.addView(imageView2, a6.a(82.0f, 0.0f, 0.0f, 0.0f, 60.0f, 82, 17));
+            TextView textView = new TextView(v0Var.getContext());
+            textView.setText(LocaleController.getString(R.string.VoipVideoPrivateScreenSharing));
+            textView.setGravity(17);
+            textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+            org.telegram.messenger.q.n(15.0f, -1, 1, textView);
+            frameLayout.addView(textView, a6.a(-2.0f, 21.0f, 28.0f, 21.0f, 0.0f, -1, 17));
+            imageView = frameLayout;
         } else {
-            this.b = 2;
+            ImageView imageView3 = new ImageView(v0Var.getContext());
+            imageView3.setTag(Integer.valueOf(i10));
+            try {
+                File filesDirFixed = ApplicationLoader.getFilesDirFixed();
+                StringBuilder sb2 = new StringBuilder("cthumb");
+                if (i10 != 0 && (i10 != 1 || !z10)) {
+                    i11 = 2;
+                }
+                sb2.append(i11);
+                sb2.append(".jpg");
+                bitmap = BitmapFactory.decodeFile(new File(filesDirFixed, sb2.toString()).getAbsolutePath());
+            } catch (Throwable unused) {
+                bitmap = null;
+            }
+            if (bitmap != null) {
+                imageView3.setImageBitmap(bitmap);
+            } else {
+                imageView3.setImageResource(R.drawable.icplaceholder);
+            }
+            imageView3.setScaleType(ImageView.ScaleType.FIT_XY);
+            imageView = imageView3;
         }
+        if (imageView.getParent() != null) {
+            ((ViewGroup) imageView.getParent()).removeView(imageView);
+        }
+        gVar.addView(imageView, 0);
+        return imageView;
     }
 
-    @Override // z4.e
-    public final void b(float f7, int i10, int i11) {
-        x0 x0Var = this.c;
-        x0Var.x = i10;
-        x0Var.w = f7;
-        x0Var.d();
+    @Override // z4.a
+    public final boolean f(View view, Object obj) {
+        return view.equals(obj);
     }
 
-    @Override // z4.e
-    public final void c(int i10) {
-        this.a = i10;
-        if (i10 == 0) {
-            int i11 = this.b;
-            x0 x0Var = this.c;
-            x0Var.n = i11;
-            x0.a(x0Var);
-        }
+    @Override // z4.a
+    public final void h(int i10) {
     }
 }

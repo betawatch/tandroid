@@ -1,131 +1,87 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class qo extends uu0 {
-    public final /* synthetic */ uo a;
+public final /* synthetic */ class qo implements org.telegram.ui.ActionBar.z1, MessagesStorage.LongCallback, id0, MessagesStorage.BooleanCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zo b;
 
-    public qo(uo uoVar) {
-        this.a = uoVar;
+    public /* synthetic */ qo(zo zoVar, int i10) {
+        this.a = i10;
+        this.b = zoVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0029, code lost:
-    
-        if (r0 != null) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0042, code lost:
-    
-        if (r0 != null) goto L25;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0082  */
-    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final ev0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        TLRPC.FileLocation fileLocation2;
-        uo uoVar = this.a;
-        long j3 = uoVar.C0;
-        ev0 ev0Var = null;
-        if (fileLocation != null) {
-            if (uoVar.D0 != null) {
-                TLRPC.User user = j3 == 0 ? null : uoVar.getMessagesController().getUser(Long.valueOf(j3));
-                if (user != null) {
-                    TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
-                    if (userProfilePhoto != null) {
-                        fileLocation2 = userProfilePhoto.photo_big;
-                    }
-                }
-                fileLocation2 = null;
-                if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
-                    int[] iArr = new int[2];
-                    uoVar.e.getLocationInWindow(iArr);
-                    ev0Var = new ev0();
-                    ev0Var.b = iArr[0];
-                    ev0Var.c = iArr[1];
-                    ai.z5 z5Var = uoVar.e;
-                    ev0Var.d = z5Var;
-                    ImageReceiver imageReceiver = z5Var.getImageReceiver();
-                    ev0Var.a = imageReceiver;
-                    if (j3 == 0) {
-                        j3 = -uoVar.w0;
-                    }
-                    ev0Var.f = j3;
-                    ev0Var.e = imageReceiver.getBitmapSafe();
-                    ev0Var.g = -1L;
-                    ev0Var.h = uoVar.e.getImageReceiver().getRoundRadius(true);
-                    ev0Var.k = uoVar.d.getScaleX();
-                    ev0Var.p = true;
-                }
-            } else {
-                TLRPC.Chat chat = uoVar.getMessagesController().getChat(Long.valueOf(uoVar.w0));
-                if (chat != null) {
-                    TLRPC.ChatPhoto chatPhoto = chat.photo;
-                    if (chatPhoto != null) {
-                        fileLocation2 = chatPhoto.photo_big;
-                    }
-                }
-                fileLocation2 = null;
-                if (fileLocation2 != null) {
-                    int[] iArr2 = new int[2];
-                    uoVar.e.getLocationInWindow(iArr2);
-                    ev0Var = new ev0();
-                    ev0Var.b = iArr2[0];
-                    ev0Var.c = iArr2[1];
-                    ai.z5 z5Var2 = uoVar.e;
-                    ev0Var.d = z5Var2;
-                    ImageReceiver imageReceiver2 = z5Var2.getImageReceiver();
-                    ev0Var.a = imageReceiver2;
-                    if (j3 == 0) {
-                    }
-                    ev0Var.f = j3;
-                    ev0Var.e = imageReceiver2.getBitmapSafe();
-                    ev0Var.g = -1L;
-                    ev0Var.h = uoVar.e.getImageReceiver().getRoundRadius(true);
-                    ev0Var.k = uoVar.d.getScaleX();
-                    ev0Var.p = true;
-                }
-            }
+    @Override // org.telegram.ui.id0
+    public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
+        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
+        tL_channelLocation.address = messageMedia.address;
+        tL_channelLocation.geo_point = messageMedia.geo;
+        zo zoVar = this.b;
+        TLRPC.ChatFull chatFull = zoVar.y0;
+        chatFull.location = tL_channelLocation;
+        chatFull.flags |= 32768;
+        zoVar.p0(false, true);
+        zoVar.getMessagesController().loadFullChat(zoVar.w0, 0, true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.j0();
+                break;
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+                this.b.j0();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
         }
-        return ev0Var;
     }
 
-    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
-    public final void G() {
-        this.a.e.getImageReceiver().setVisible(true, true);
-    }
-
-    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
-    public final boolean M() {
-        uo uoVar = this.a;
-        long j3 = uoVar.C0;
-        if (j3 == 0) {
-            return true;
+    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
+    public void run(boolean z10) {
+        zo zoVar = this.b;
+        zoVar.getClass();
+        if (AndroidUtilities.isTablet()) {
+            zoVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, Long.valueOf(-zoVar.w0));
+        } else {
+            zoVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
         }
-        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
-        tL_photos_updateProfilePhoto.bot = uoVar.getMessagesController().getInputUser(j3);
-        tL_photos_updateProfilePhoto.flags |= 2;
-        tL_photos_updateProfilePhoto.id = new TLRPC.TL_inputPhotoEmpty();
-        uoVar.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new m(this, 2));
-        return false;
+        zoVar.finishFragment();
+        zoVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-zoVar.x0.id), null, zoVar.x0, Boolean.valueOf(z10));
     }
 
-    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
-    public final void f(String str, String str2, boolean z10) {
-        this.a.s.p(str, str2, z10);
-    }
-
-    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
-    public final boolean t() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
-    public final int y() {
-        return 1;
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public void run(long j10) {
+        switch (this.a) {
+            case 4:
+                this.b.t0(Long.valueOf(j10));
+                break;
+            default:
+                zo zoVar = this.b;
+                if (j10 == 0) {
+                    zoVar.N0 = false;
+                    break;
+                } else {
+                    zoVar.w0 = j10;
+                    zoVar.x0 = zoVar.getMessagesController().getChat(Long.valueOf(j10));
+                    zoVar.N0 = false;
+                    TLRPC.ChatFull chatFull = zoVar.y0;
+                    if (chatFull != null) {
+                        chatFull.hidden_prehistory = true;
+                    }
+                    zoVar.j0();
+                    break;
+                }
+        }
     }
 }

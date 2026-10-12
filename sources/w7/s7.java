@@ -1,96 +1,9 @@
 package w7;
 
-import android.graphics.Paint;
-import android.os.Build;
-import android.text.TextDirectionHeuristic;
-import android.text.TextDirectionHeuristics;
-import android.text.TextPaint;
-import android.text.method.PasswordTransformationMethod;
-import android.view.ActionMode;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class s7 {
-    public static p0.c a(m.z0 z0Var) {
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 28) {
-            return new p0.c(b5.d.p(z0Var));
-        }
-        TextPaint textPaint = new TextPaint(z0Var.getPaint());
-        TextDirectionHeuristic textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_LTR;
-        int breakStrategy = z0Var.getBreakStrategy();
-        int hyphenationFrequency = z0Var.getHyphenationFrequency();
-        if (z0Var.getTransformationMethod() instanceof PasswordTransformationMethod) {
-            textDirectionHeuristic = TextDirectionHeuristics.LTR;
-        } else {
-            if (i10 < 28 || (z0Var.getInputType() & 15) != 3) {
-                boolean z10 = z0Var.getLayoutDirection() == 1;
-                switch (z0Var.getTextDirection()) {
-                    case 2:
-                        textDirectionHeuristic = TextDirectionHeuristics.ANYRTL_LTR;
-                        break;
-                    case 3:
-                        textDirectionHeuristic = TextDirectionHeuristics.LTR;
-                        break;
-                    case 4:
-                        textDirectionHeuristic = TextDirectionHeuristics.RTL;
-                        break;
-                    case 5:
-                        textDirectionHeuristic = TextDirectionHeuristics.LOCALE;
-                        break;
-                    case 6:
-                        break;
-                    case 7:
-                        textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_RTL;
-                        break;
-                    default:
-                        if (z10) {
-                            textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_RTL;
-                            break;
-                        }
-                        break;
-                }
-            } else {
-                byte directionality = Character.getDirectionality(b5.d.h(androidx.emoji2.text.v.e(z0Var.getTextLocale()))[0].codePointAt(0));
-                textDirectionHeuristic = (directionality == 1 || directionality == 2) ? TextDirectionHeuristics.RTL : TextDirectionHeuristics.LTR;
-            }
-        }
-        return new p0.c(textPaint, textDirectionHeuristic, breakStrategy, hyphenationFrequency);
-    }
-
-    public static void b(int i10, TextView textView) {
-        if (i10 < 0) {
-            throw new IllegalArgumentException();
-        }
-        if (Build.VERSION.SDK_INT >= 28) {
-            b5.d.w(i10, textView);
-            return;
-        }
-        Paint.FontMetricsInt fontMetricsInt = textView.getPaint().getFontMetricsInt();
-        int i11 = textView.getIncludeFontPadding() ? fontMetricsInt.top : fontMetricsInt.ascent;
-        if (i10 > Math.abs(i11)) {
-            textView.setPadding(textView.getPaddingLeft(), i10 + i11, textView.getPaddingRight(), textView.getPaddingBottom());
-        }
-    }
-
-    public static void c(int i10, TextView textView) {
-        if (i10 < 0) {
-            throw new IllegalArgumentException();
-        }
-        Paint.FontMetricsInt fontMetricsInt = textView.getPaint().getFontMetricsInt();
-        int i11 = textView.getIncludeFontPadding() ? fontMetricsInt.bottom : fontMetricsInt.descent;
-        if (i10 > Math.abs(i11)) {
-            textView.setPadding(textView.getPaddingLeft(), textView.getPaddingTop(), textView.getPaddingRight(), i10 - i11);
-        }
-    }
-
-    public static ActionMode.Callback d(ActionMode.Callback callback) {
-        return (!(callback instanceof u0.i) || Build.VERSION.SDK_INT < 26) ? callback : ((u0.i) callback).a;
-    }
-
-    public static ActionMode.Callback e(ActionMode.Callback callback, TextView textView) {
-        int i10 = Build.VERSION.SDK_INT;
-        return (i10 < 26 || i10 > 27 || (callback instanceof u0.i) || callback == null) ? callback : new u0.i(callback, textView);
+    public static int a(int i10) {
+        return (int) (Integer.rotateLeft((int) (i10 * (-862048943)), 15) * 461845907);
     }
 }

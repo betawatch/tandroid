@@ -1,40 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d90 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class d90 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e3 c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ d90(int i10, Object obj, boolean z10) {
+    public /* synthetic */ d90(db dbVar, Object obj, long j10, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = z10;
+        this.c = dbVar;
+        this.d = obj;
+        this.b = j10;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                i90 i90Var = (i90) this.b;
-                i90.y(i90Var.getContext(), i90Var.c, i90Var.n, this.c);
+                g90.n((g90) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                i90 i90Var2 = (i90) this.b;
-                i90.y(i90Var2.getContext(), i90Var2.c, i90Var2.n, this.c);
+                yh.f4.W((yh.f4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (zh.v2) obj, (pf.c) obj2);
                 break;
             default:
-                ci.lc lcVar = (ci.lc) this.b;
-                lcVar.z2 = false;
-                lcVar.X0.x(7, true);
-                if (this.c) {
-                    lcVar.p(true);
-                    break;
-                }
+                zh.a7.R((zh.a7) this.c, (l61) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ d90(g90 g90Var, long j10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+        this.a = 0;
+        this.c = g90Var;
+        this.b = j10;
+        this.d = tL_messages_importChatInvite;
     }
 }

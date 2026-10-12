@@ -1,42 +1,44 @@
 package com.google.firebase.messaging;
 
-import android.util.Log;
-import java.util.Arrays;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
+import com.google.android.gms.internal.cast.z5;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class w {
-    public static final Pattern d = Pattern.compile("[a-zA-Z0-9-_.~%]{1,900}");
-    public final String a;
-    public final String b;
-    public final String c;
+    public static WeakReference d;
+    public final SharedPreferences a;
+    public z5 b;
+    public final ScheduledThreadPoolExecutor c;
 
-    public w(String str, String str2) {
-        String str3;
-        if (str2 == null || !str2.startsWith("/topics/")) {
-            str3 = str2;
-        } else {
-            Log.w("FirebaseMessaging", "Format /topics/topic-name is deprecated. Only 'topic-name' should be used in " + str + ".");
-            str3 = str2.substring(8);
-        }
-        if (str3 == null || !d.matcher(str3).matches()) {
-            throw new IllegalArgumentException(a1.g.q("Invalid topic name: ", str3, " does not match the allowed format [a-zA-Z0-9-_.~%]{1,900}."));
-        }
-        this.a = str3;
-        this.b = str;
-        this.c = a1.g.D(str, "!", str2);
+    public w(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
+        this.c = scheduledThreadPoolExecutor;
+        this.a = sharedPreferences;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof w)) {
-            return false;
+    public final synchronized v a() {
+        v vVar;
+        String t10 = this.b.t();
+        Pattern pattern = v.d;
+        vVar = null;
+        if (!TextUtils.isEmpty(t10)) {
+            String[] split = t10.split("!", -1);
+            if (split.length == 2) {
+                vVar = new v(split[0], split[1]);
+            }
         }
-        w wVar = (w) obj;
-        return this.a.equals(wVar.a) && this.b.equals(wVar.b);
+        return vVar;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.b, this.a});
+    public final synchronized void b() {
+        this.b = z5.q(this.a, this.c);
+    }
+
+    public final synchronized void c(v vVar) {
+        this.b.u(vVar.c);
     }
 }

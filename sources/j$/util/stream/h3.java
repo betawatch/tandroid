@@ -20,12 +20,12 @@ public abstract class h3 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+        return j$.com.android.tools.r8.a.m(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+        return j$.com.android.tools.r8.a.o(this, i10);
     }
 
     @Override // j$.util.Spliterator
@@ -119,7 +119,7 @@ public abstract class h3 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final long estimateSize() {
-        long j3 = 0;
+        long j10 = 0;
         if (this.a == null) {
             return 0L;
         }
@@ -128,9 +128,9 @@ public abstract class h3 implements Spliterator {
             return spliterator.estimateSize();
         }
         for (int i10 = this.b; i10 < this.a.h(); i10++) {
-            j3 += this.a.a(i10).count();
+            j10 += this.a.a(i10).count();
         }
-        return j3;
+        return j10;
     }
 
     @Override // j$.util.Spliterator

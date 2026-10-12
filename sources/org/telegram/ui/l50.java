@@ -1,140 +1,32 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Shader;
-import android.os.SystemClock;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Utilities;
+import android.content.DialogInterface;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class l50 extends org.telegram.ui.ActionBar.j5 {
-    public LinearGradient M0;
-    public int N0;
-    public final Matrix O0;
-    public float P0;
-    public float Q0;
-    public float R0;
-    public float S0;
-    public float T0;
-    public long U0;
-    public final /* synthetic */ g60 V0;
+public final /* synthetic */ class l50 implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a2 b;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l50(g60 g60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.V0 = g60Var;
-        this.O0 = new Matrix();
-        this.P0 = -1.0f;
+    public /* synthetic */ l50(Object obj, org.telegram.ui.ActionBar.a2 a2Var, EditTextBoldCursor editTextBoldCursor, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = a2Var;
+        this.c = editTextBoldCursor;
     }
 
-    @Override // org.telegram.ui.ActionBar.j5
-    public final void d(int i10) {
-        super.d(i10);
-        int textWidth = getTextWidth();
-        if (textWidth != this.N0) {
-            float f7 = textWidth;
-            this.T0 = 1.3f * f7;
-            float textHeight = getTextHeight();
-            float f10 = f7 * 2.0f;
-            int x02 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.ih, false);
-            int x03 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.kh, false);
-            int i11 = org.telegram.ui.ActionBar.i6.jh;
-            this.M0 = new LinearGradient(0.0f, textHeight, f10, 0.0f, new int[]{x02, x03, org.telegram.ui.ActionBar.i6.x0(null, i11, false), org.telegram.ui.ActionBar.i6.x0(null, i11, false)}, new float[]{0.0f, 0.38f, 0.76f, 1.0f}, Shader.TileMode.CLAMP);
-            getPaint().setShader(this.M0);
-            this.N0 = textWidth;
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                ((q50) this.d).b.t1(null, this.b, this.c, true);
+                break;
+            default:
+                ((m50) this.d).n.b.t1(null, this.b, this.c, true);
+                break;
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x005e  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00c0  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x008c  */
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        float f7;
-        long j3;
-        float f10;
-        float d;
-        float f11;
-        if (this.M0 != null) {
-            g60 g60Var = this.V0;
-            ChatObject.Call call = g60Var.a1;
-            if (call != null && call.isScheduled()) {
-                long currentTimeMillis = (g60Var.a1.call.schedule_date * 1000) - g60Var.d.getConnectionsManager().getCurrentTimeMillis();
-                if (currentTimeMillis < 0) {
-                    f7 = 1.0f;
-                } else if (currentTimeMillis < 5000) {
-                    f7 = 1.0f - (currentTimeMillis / 5000.0f);
-                }
-                Matrix matrix = this.O0;
-                matrix.reset();
-                matrix.postTranslate((-this.N0) * 0.7f * f7, 0.0f);
-                long elapsedRealtime = SystemClock.elapsedRealtime();
-                j3 = elapsedRealtime - this.U0;
-                if (j3 > 20) {
-                    j3 = 17;
-                }
-                this.U0 = elapsedRealtime;
-                f10 = this.R0;
-                if (f10 != 0.0f || this.S0 >= f10) {
-                    this.R0 = Utilities.random.nextInt(200) + 1500;
-                    this.S0 = 0.0f;
-                    if (this.P0 == -1.0f) {
-                        this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
-                    }
-                    this.Q0 = this.P0;
-                    this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
-                }
-                float f12 = j3;
-                d = sc.v.d(f12 * 0.02f, g60Var.O0, 1.0f * f12, this.S0);
-                this.S0 = d;
-                f11 = this.R0;
-                if (d > f11) {
-                    this.S0 = f11;
-                }
-                float interpolation = org.telegram.ui.Components.hs.g.getInterpolation(this.S0 / f11);
-                float f13 = this.T0;
-                float f14 = this.Q0;
-                matrix.postTranslate(((((this.P0 - f14) * interpolation) + f14) * f13) - (f13 / 2.0f), 0.0f);
-                this.M0.setLocalMatrix(matrix);
-                invalidate();
-            }
-            f7 = 0.0f;
-            Matrix matrix2 = this.O0;
-            matrix2.reset();
-            matrix2.postTranslate((-this.N0) * 0.7f * f7, 0.0f);
-            long elapsedRealtime2 = SystemClock.elapsedRealtime();
-            j3 = elapsedRealtime2 - this.U0;
-            if (j3 > 20) {
-            }
-            this.U0 = elapsedRealtime2;
-            f10 = this.R0;
-            if (f10 != 0.0f) {
-            }
-            this.R0 = Utilities.random.nextInt(200) + 1500;
-            this.S0 = 0.0f;
-            if (this.P0 == -1.0f) {
-            }
-            this.Q0 = this.P0;
-            this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
-            float f122 = j3;
-            d = sc.v.d(f122 * 0.02f, g60Var.O0, 1.0f * f122, this.S0);
-            this.S0 = d;
-            f11 = this.R0;
-            if (d > f11) {
-            }
-            float interpolation2 = org.telegram.ui.Components.hs.g.getInterpolation(this.S0 / f11);
-            float f132 = this.T0;
-            float f142 = this.Q0;
-            matrix2.postTranslate(((((this.P0 - f142) * interpolation2) + f142) * f132) - (f132 / 2.0f), 0.0f);
-            this.M0.setLocalMatrix(matrix2);
-            invalidate();
-        }
-        super.onDraw(canvas);
     }
 }

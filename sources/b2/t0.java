@@ -1,49 +1,11 @@
 package b2;
 
-import android.os.Bundle;
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class t0 extends c1 {
-    public static final String c;
-    public final float b;
+public interface t0 {
+    x a();
 
-    static {
-        String str = e2.d0.a;
-        c = Integer.toString(1, 36);
-    }
+    void b(r0 r0Var);
 
-    public t0() {
-        this.b = -1.0f;
-    }
-
-    @Override // b2.c1
-    public final boolean b() {
-        return this.b != -1.0f;
-    }
-
-    @Override // b2.c1
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(c1.a, 1);
-        bundle.putFloat(c, this.b);
-        return bundle;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof t0) {
-            return this.b == ((t0) obj).b;
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Float.valueOf(this.b));
-    }
-
-    public t0(float f7) {
-        e2.d.a("percent must be in the range of [0, 100]", f7 >= 0.0f && f7 <= 100.0f);
-        this.b = f7;
-    }
+    byte[] c();
 }

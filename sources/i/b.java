@@ -1,8 +1,8 @@
 package i;
 
+import a0.h;
 import a0.i;
-import a0.j;
-import a0.n;
+import a0.m;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.ColorFilter;
@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.util.SparseArray;
 import android.util.StateSet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b extends Drawable.ConstantState {
     public boolean A;
@@ -23,8 +23,8 @@ public final class b extends Drawable.ConstantState {
     public boolean F;
     public boolean G;
     public int[][] H;
-    public i I;
-    public n J;
+    public h I;
+    public m J;
     public final e a;
     public Resources b;
     public int c;
@@ -137,8 +137,8 @@ public final class b extends Drawable.ConstantState {
             this.I = bVar.I;
             this.J = bVar.J;
         } else {
-            this.I = new i();
-            this.J = new n();
+            this.I = new h();
+            this.J = new m();
         }
     }
 
@@ -267,10 +267,10 @@ public final class b extends Drawable.ConstantState {
         if (i10 < 0) {
             return 0;
         }
-        n nVar = this.J;
+        m mVar = this.J;
         int i11 = 0;
-        int a2 = b0.a.a(nVar.c, i10, nVar.a);
-        if (a2 >= 0 && (r52 = nVar.b[a2]) != j.b) {
+        int a2 = b0.a.a(mVar.c, i10, mVar.a);
+        if (a2 >= 0 && (r52 = mVar.b[a2]) != i.b) {
             i11 = r52;
         }
         return i11.intValue();

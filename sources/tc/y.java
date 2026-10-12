@@ -1,0 +1,41 @@
+package tc;
+
+import java.io.BufferedOutputStream;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class y extends BufferedOutputStream {
+    public final void a(x xVar) {
+        byte[] bArr;
+        write((xVar.a ? 128 : 0) | (xVar.b ? 64 : 0) | (xVar.c ? 32 : 0) | (xVar.d ? 16 : 0) | (xVar.e & 15));
+        byte[] bArr2 = xVar.g;
+        int length = bArr2 == null ? 0 : bArr2.length;
+        write(length <= 125 ? length | 128 : length <= 65535 ? 254 : 255);
+        byte[] bArr3 = xVar.g;
+        int length2 = bArr3 == null ? 0 : bArr3.length;
+        if (length2 > 125) {
+            if (length2 <= 65535) {
+                bArr = new byte[]{(byte) ((length2 >> 8) & 255), (byte) (length2 & 255)};
+            } else {
+                bArr = new byte[8];
+                for (int i10 = 7; i10 >= 0; i10--) {
+                    bArr[i10] = (byte) (length2 & 255);
+                    length2 >>>= 8;
+                }
+            }
+            write(bArr);
+        }
+        byte[] bArr4 = new byte[4];
+        k.a.nextBytes(bArr4);
+        write(bArr4);
+        byte[] bArr5 = xVar.g;
+        if (bArr5 == null) {
+            return;
+        }
+        byte[] bArr6 = new byte[bArr5.length];
+        for (int i11 = 0; i11 < bArr5.length; i11++) {
+            bArr6[i11] = (byte) ((bArr5[i11] ^ bArr4[i11 % 4]) & 255);
+        }
+        write(bArr6);
+    }
+}

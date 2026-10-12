@@ -10,29 +10,29 @@ public final class h0 extends g0 {
     public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
 
     @Override // com.google.android.gms.internal.clearcut.g0
-    public final void a(Object obj, long j3) {
+    public final void a(Object obj, long j10) {
         Object unmodifiableList;
-        List list = (List) j1.k(obj, j3);
+        List list = (List) j1.k(obj, j10);
         if (list instanceof f0) {
-            unmodifiableList = ((f0) list).k();
+            unmodifiableList = ((f0) list).j();
         } else if (c.isAssignableFrom(list.getClass())) {
             return;
         } else {
             unmodifiableList = DesugarCollections.unmodifiableList(list);
         }
-        j1.d(obj, j3, unmodifiableList);
+        j1.d(obj, j10, unmodifiableList);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // com.google.android.gms.internal.clearcut.g0
-    public final void b(Object obj, long j3, Object obj2) {
+    public final void b(Object obj, long j10, Object obj2) {
         e0 e0Var;
-        List list = (List) j1.k(obj2, j3);
+        List list = (List) j1.k(obj2, j10);
         int size = list.size();
-        List list2 = (List) j1.k(obj, j3);
+        List list2 = (List) j1.k(obj, j10);
         if (list2.isEmpty()) {
             list2 = list2 instanceof f0 ? new e0(size) : new ArrayList(size);
-            j1.d(obj, j3, list2);
+            j1.d(obj, j10, list2);
         } else {
             if (c.isAssignableFrom(list2.getClass())) {
                 ArrayList arrayList = new ArrayList(list2.size() + size);
@@ -43,7 +43,7 @@ public final class h0 extends g0 {
                 e0Var2.addAll((d1) list2);
                 e0Var = e0Var2;
             }
-            j1.d(obj, j3, e0Var);
+            j1.d(obj, j10, e0Var);
             list2 = e0Var;
         }
         int size2 = list2.size();
@@ -54,6 +54,6 @@ public final class h0 extends g0 {
         if (size2 > 0) {
             list = list2;
         }
-        j1.d(obj, j3, list);
+        j1.d(obj, j10, list);
     }
 }

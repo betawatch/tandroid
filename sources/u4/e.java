@@ -6,30 +6,31 @@ import android.os.PersistableBundle;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
-import c0.l;
-import c5.v;
+import c0.m;
+import c5.w;
 import e0.n0;
-import i9.w;
+import j9.y;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
+import s9.j;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ l c;
+    public final /* synthetic */ m c;
     public final /* synthetic */ ShortcutInfoCompatSaverImpl d;
 
-    public /* synthetic */ e(ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl, ArrayList arrayList, l lVar, int i10) {
+    public /* synthetic */ e(ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl, ArrayList arrayList, m mVar, int i10) {
         this.a = i10;
         this.d = shortcutInfoCompatSaverImpl;
         this.b = arrayList;
-        this.c = lVar;
+        this.c = mVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0037, code lost:
@@ -70,9 +71,9 @@ public final class e implements Runnable {
                     i10++;
                     String str3 = (String) obj;
                     shortcutInfoCompatSaverImpl.b.remove(str3);
-                    w wVar = (w) shortcutInfoCompatSaverImpl.c.remove(str3);
-                    if (wVar != null) {
-                        wVar.cancel(false);
+                    y yVar = (y) shortcutInfoCompatSaverImpl.c.remove(str3);
+                    if (yVar != null) {
+                        yVar.cancel(false);
                     }
                 }
             default:
@@ -133,14 +134,14 @@ public final class e implements Runnable {
                                         String str4 = cVar2.b;
                                         shortcutInfoCompatSaverImpl2.b.put(str4, gVar);
                                         if (f7 != null) {
-                                            v vVar = new v(shortcutInfoCompatSaverImpl2, f7, str2, false, 10);
-                                            l lVar = new l();
-                                            shortcutInfoCompatSaverImpl2.e.submit(new s4.v(lVar, vVar, 5));
-                                            w wVar2 = (w) shortcutInfoCompatSaverImpl2.c.put(str4, lVar);
-                                            if (wVar2 != null) {
-                                                wVar2.cancel(false);
+                                            w wVar = new w(shortcutInfoCompatSaverImpl2, f7, str2, false, 10);
+                                            m mVar = new m();
+                                            shortcutInfoCompatSaverImpl2.e.submit(new j(5, mVar, wVar));
+                                            y yVar2 = (y) shortcutInfoCompatSaverImpl2.c.put(str4, mVar);
+                                            if (yVar2 != null) {
+                                                yVar2.cancel(false);
                                             }
-                                            lVar.a(new v(this, str4, lVar, false, 9), shortcutInfoCompatSaverImpl2.d);
+                                            mVar.a(new w(this, str4, mVar, false, 9), shortcutInfoCompatSaverImpl2.d);
                                         }
                                     }
                                 }

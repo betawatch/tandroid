@@ -2,28 +2,28 @@ package org.webrtc;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class SoftwareVideoDecoderFactory implements VideoDecoderFactory {
     private static final String TAG = "SoftwareVideoDecoderFactory";
     private final long nativeFactory = nativeCreateFactory();
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static native long nativeCreate(long j3, long j10, VideoCodecInfo videoCodecInfo);
+    public static native long nativeCreate(long j10, long j11, VideoCodecInfo videoCodecInfo);
 
     private static native long nativeCreateFactory();
 
-    private static native List<VideoCodecInfo> nativeGetSupportedCodecs(long j3);
+    private static native List<VideoCodecInfo> nativeGetSupportedCodecs(long j10);
 
-    private static native boolean nativeIsSupported(long j3, VideoCodecInfo videoCodecInfo);
+    private static native boolean nativeIsSupported(long j10, VideoCodecInfo videoCodecInfo);
 
     @Override // org.webrtc.VideoDecoderFactory
     public VideoDecoder createDecoder(final VideoCodecInfo videoCodecInfo) {
         if (nativeIsSupported(this.nativeFactory, videoCodecInfo)) {
             return new WrappedNativeVideoDecoder() { // from class: org.webrtc.SoftwareVideoDecoderFactory.1
                 @Override // org.webrtc.WrappedNativeVideoDecoder, org.webrtc.VideoDecoder
-                public long createNative(long j3) {
-                    return SoftwareVideoDecoderFactory.nativeCreate(SoftwareVideoDecoderFactory.this.nativeFactory, j3, videoCodecInfo);
+                public long createNative(long j10) {
+                    return SoftwareVideoDecoderFactory.nativeCreate(SoftwareVideoDecoderFactory.this.nativeFactory, j10, videoCodecInfo);
                 }
             };
         }

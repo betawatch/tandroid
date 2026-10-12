@@ -3,27 +3,27 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class n implements org.telegram.ui.Components.vy0 {
+public final class n implements org.telegram.ui.Components.ry0 {
     public final /* synthetic */ View a;
     public final /* synthetic */ TLRPC.StickerSetCovered b;
-    public final /* synthetic */ q c;
+    public final /* synthetic */ p c;
 
-    public n(q qVar, View view, TLRPC.StickerSetCovered stickerSetCovered) {
-        this.c = qVar;
+    public n(p pVar, View view, TLRPC.StickerSetCovered stickerSetCovered) {
+        this.c = pVar;
         this.a = view;
         this.b = stickerSetCovered;
     }
 
-    @Override // org.telegram.ui.Components.vy0
+    @Override // org.telegram.ui.Components.ry0
     public final void a() {
-        org.telegram.ui.Components.cj0 cj0Var = ((org.telegram.ui.Cells.w) this.a).f;
-        if (cj0Var != null) {
-            cj0Var.a(true, true);
+        org.telegram.ui.Components.yi0 yi0Var = ((org.telegram.ui.Cells.w) this.a).f;
+        if (yi0Var != null) {
+            yi0Var.a(true, true);
         }
-        a0.i iVar = this.c.a;
+        a0.h hVar = this.c.a;
         TLRPC.StickerSetCovered stickerSetCovered = this.b;
-        iVar.k(stickerSetCovered, stickerSetCovered.set.id);
+        hVar.k(stickerSetCovered, stickerSetCovered.set.id);
     }
 }

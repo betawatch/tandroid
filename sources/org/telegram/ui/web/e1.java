@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class e1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ g1 a;
@@ -20,15 +20,15 @@ public final class e1 extends org.telegram.ui.ActionBar.j {
         org.telegram.ui.ActionBar.k kVar2;
         if (i10 == -1) {
             g1 g1Var = this.a;
-            kVar = ((org.telegram.ui.ActionBar.n2) g1Var).actionBar;
+            kVar = ((org.telegram.ui.ActionBar.m2) g1Var).actionBar;
             if (!kVar.t()) {
                 g1Var.finishFragment();
                 return;
             }
-            kVar2 = ((org.telegram.ui.ActionBar.n2) g1Var).actionBar;
+            kVar2 = ((org.telegram.ui.ActionBar.m2) g1Var).actionBar;
             kVar2.s();
             g1Var.s.clear();
-            AndroidUtilities.forEachViews((RecyclerView) g1Var.a, (Utilities.Callback<View>) new ai.i(23));
+            AndroidUtilities.forEachViews((RecyclerView) g1Var.a, (Utilities.Callback<View>) new bi.f(23));
         }
     }
 }

@@ -1,23 +1,33 @@
 package rg;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class h {
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final int e;
+public interface h {
+    void B(boolean z10);
 
-    public h(int i10) {
-        this.a = i10;
-    }
+    void C();
 
-    public h(int i10, int i11, String str, String str2) {
-        this.a = 1;
-        this.b = i10;
-        this.c = str;
-        this.d = str2;
-        this.e = i11;
-    }
+    void f(boolean z10);
+
+    void g(boolean z10);
+
+    void h(j jVar);
+
+    void j();
+
+    void k();
+
+    void m(boolean z10);
+
+    boolean q();
+
+    boolean r();
+
+    void u(float f7, float f10, float[] fArr);
+
+    boolean v(j jVar);
+
+    int[] w(j jVar);
+
+    void y();
 }

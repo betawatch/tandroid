@@ -34,7 +34,7 @@ public final class n4 implements o4, i5 {
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.j5
@@ -65,18 +65,18 @@ public final class n4 implements o4, i5 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j3) {
+    public final void o(long j10) {
         this.a = true;
         this.b = 0L;
     }
 
     @Override // j$.util.stream.j5
-    public final void accept(long j3) {
+    public final void accept(long j10) {
         if (this.a) {
             this.a = false;
-            this.b = j3;
+            this.b = j10;
         } else {
-            this.b = this.c.applyAsLong(this.b, j3);
+            this.b = this.c.applyAsLong(this.b, j10);
         }
     }
 

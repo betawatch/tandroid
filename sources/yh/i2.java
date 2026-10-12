@@ -1,102 +1,33 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.y9;
+import org.telegram.ui.Components.ns0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class i2 extends FrameLayout {
-    public final y9 a;
-    public final o2 b;
-    public final org.telegram.ui.Components.r6 c;
-    public TL_stars.starGiftAttributeBackdrop d;
-    public TL_stars.starGiftAttributePattern e;
-    public float f;
+public final class i2 extends s4.k {
+    public final /* synthetic */ ns0 F;
 
-    public i2(Context context) {
-        super(context);
-        y9 y9Var = new y9(context);
-        this.a = y9Var;
-        y9Var.setRoundRadius(AndroidUtilities.dp(13.0f));
-        addView(y9Var, w7.x5.a(26.0f, 0.0f, 11.33f, 0.0f, 0.0f, 26, 49));
-        o2 o2Var = new o2(context);
-        this.b = o2Var;
-        o2Var.e = AndroidUtilities.dp(18.0f);
-        o2Var.a.setStrokeWidth(AndroidUtilities.dp(3.0f));
-        addView(o2Var, w7.x5.a(48.0f, 0.0f, 0.66f, 0.0f, 0.0f, 48, 49));
-        org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(context, false, false, false);
-        this.c = r6Var;
-        r6Var.setTypeface(AndroidUtilities.bold());
-        r6Var.setGravity(17);
-        r6Var.setTextSize(AndroidUtilities.dp(12.0f));
-        r6Var.setTextColor(-1);
-        addView(r6Var, w7.x5.a(14.0f, 0.0f, 39.0f, 0.0f, 0.0f, -1, 48));
-        c(0.0f, false);
-        w7.z5.a(this);
+    public i2(ns0 ns0Var) {
+        this.F = ns0Var;
     }
 
-    public final void a(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
-        this.d = stargiftattributebackdrop;
-        this.e = null;
-        y9 y9Var = this.a;
-        y9Var.setScaleX(1.0f);
-        y9Var.setScaleY(1.0f);
-        if (stargiftattributebackdrop == null) {
-            y9Var.setAlpha(1.0f);
-            y9Var.setImageDrawable(org.telegram.ui.ActionBar.i6.K(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.i6.m1(0.25f, -1)));
-            return;
-        }
-        y9Var.setAlpha(1.0f);
-        OvalShape ovalShape = new OvalShape();
-        ovalShape.resize(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f));
-        ShapeDrawable shapeDrawable = new ShapeDrawable(ovalShape);
-        shapeDrawable.setIntrinsicWidth(AndroidUtilities.dp(26.0f));
-        shapeDrawable.setIntrinsicHeight(AndroidUtilities.dp(26.0f));
-        shapeDrawable.getPaint().setShader(new RadialGradient(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-        y9Var.setImageDrawable(shapeDrawable);
+    @Override // s4.k
+    public final void M() {
+        this.F.o();
     }
 
-    public final void b(TL_stars.starGiftAttributePattern stargiftattributepattern) {
-        this.d = null;
-        this.e = stargiftattributepattern;
-        y9 y9Var = this.a;
-        if (stargiftattributepattern == null) {
-            y9Var.setAlpha(0.25f);
-            y9Var.setScaleX(0.75f);
-            y9Var.setScaleY(0.75f);
-            y9Var.setTranslationY(0.0f);
-            y9Var.setAnimatedEmojiDrawable(null);
-            y9Var.setImageResource(R.drawable.mini_roll);
-            return;
-        }
-        y9Var.setAlpha(1.0f);
-        y9Var.setScaleX(0.95f);
-        y9Var.setScaleY(0.95f);
-        y9Var.setTranslationY(AndroidUtilities.dp(2.0f));
-        org.telegram.ui.Components.s5 m10 = org.telegram.ui.Components.s5.m(UserConfig.selectedAccount, 9, stargiftattributepattern.document);
-        m10.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        y9Var.setAnimatedEmojiDrawable(m10);
+    @Override // s4.k
+    public final void O() {
+        this.F.o();
     }
 
-    public final void c(float f7, boolean z10) {
-        this.f = f7;
-        o2 o2Var = this.b;
-        o2Var.d = f7;
-        if (!z10) {
-            o2Var.b.d(f7, true);
-        }
-        o2Var.invalidate();
-        this.c.c(Math.round(f7 * 100.0f) + "%", z10, true);
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        this.F.o();
+    }
+
+    @Override // s4.k
+    public final void Q() {
+        this.F.o();
     }
 }

@@ -1,127 +1,195 @@
 package org.telegram.ui.Wallet;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ls0;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.zy0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class m0 {
-    public static final long[] j = {500, 1000, 3000, 5000, 10000};
-    public final int a;
-    public final String b;
-    public final ls0 c;
-    public boolean d;
-    public int e;
-    public int f;
-    public int g = -1;
-    public final l0 h;
-    public final l0 i;
+public final /* synthetic */ class m0 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    /* JADX WARN: Type inference failed for: r0v1, types: [org.telegram.ui.Wallet.l0] */
-    /* JADX WARN: Type inference failed for: r0v2, types: [org.telegram.ui.Wallet.l0] */
-    public m0(int i10, String str, ls0 ls0Var) {
-        final int i11 = 0;
-        this.h = new Runnable(this) { // from class: org.telegram.ui.Wallet.l0
-            public final /* synthetic */ m0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        m0 m0Var = this.b;
-                        if (m0Var.d) {
-                            m0Var.e++;
-                            if (m0Var.g >= 0) {
-                                ConnectionsManager.getInstance(m0Var.a).cancelRequest(m0Var.g, true);
-                                m0Var.g = -1;
-                            }
-                            m0Var.a();
-                            break;
-                        }
-                        break;
-                    default:
-                        m0 m0Var2 = this.b;
-                        if (m0Var2.d) {
-                            int i12 = m0Var2.e + 1;
-                            m0Var2.e = i12;
-                            TL_wallet.getTransactionsByMsgHash gettransactionsbymsghash = new TL_wallet.getTransactionsByMsgHash();
-                            gettransactionsbymsghash.msg_hash.add(m0Var2.b);
-                            AndroidUtilities.runOnUIThread(m0Var2.h, 30000L);
-                            m0Var2.g = ConnectionsManager.getInstance(m0Var2.a).sendRequestTyped(gettransactionsbymsghash, new org.telegram.messenger.a(), new org.telegram.ui.Components.o(m0Var2, i12, 1));
-                            break;
-                        }
-                        break;
-                }
-            }
-        };
-        final int i12 = 1;
-        this.i = new Runnable(this) { // from class: org.telegram.ui.Wallet.l0
-            public final /* synthetic */ m0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i12) {
-                    case 0:
-                        m0 m0Var = this.b;
-                        if (m0Var.d) {
-                            m0Var.e++;
-                            if (m0Var.g >= 0) {
-                                ConnectionsManager.getInstance(m0Var.a).cancelRequest(m0Var.g, true);
-                                m0Var.g = -1;
-                            }
-                            m0Var.a();
-                            break;
-                        }
-                        break;
-                    default:
-                        m0 m0Var2 = this.b;
-                        if (m0Var2.d) {
-                            int i122 = m0Var2.e + 1;
-                            m0Var2.e = i122;
-                            TL_wallet.getTransactionsByMsgHash gettransactionsbymsghash = new TL_wallet.getTransactionsByMsgHash();
-                            gettransactionsbymsghash.msg_hash.add(m0Var2.b);
-                            AndroidUtilities.runOnUIThread(m0Var2.h, 30000L);
-                            m0Var2.g = ConnectionsManager.getInstance(m0Var2.a).sendRequestTyped(gettransactionsbymsghash, new org.telegram.messenger.a(), new org.telegram.ui.Components.o(m0Var2, i122, 1));
-                            break;
-                        }
-                        break;
-                }
-            }
-        };
-        this.a = i10;
-        this.b = str;
-        this.c = ls0Var;
+    public /* synthetic */ m0(long j10, long j11, Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error, zh.r3 r3Var) {
+        this.e = r3Var;
+        this.b = callback;
+        this.f = tL_error;
+        this.h = tLObject;
+        this.c = j10;
+        this.d = j11;
     }
 
-    public final void a() {
-        if (this.d) {
-            int i10 = this.f;
-            long j3 = j[i10];
-            if (i10 < 4) {
-                this.f = i10 + 1;
-            }
-            AndroidUtilities.runOnUIThread(this.i, j3);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00e6 A[Catch: all -> 0x00c6, TryCatch #4 {all -> 0x00c6, blocks: (B:31:0x0085, B:32:0x009b, B:47:0x00c5, B:51:0x00df, B:53:0x00e6, B:80:0x00d2, B:83:0x00d5, B:84:0x00de), top: B:7:0x003e }] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00ef  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0100 A[LOOP:1: B:57:0x00fa->B:59:0x0100, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00eb  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x011e  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x012f A[LOOP:2: B:67:0x0129->B:69:0x012f, LOOP_END] */
+    /* JADX WARN: Type inference failed for: r10v0, types: [long] */
+    /* JADX WARN: Type inference failed for: r10v1 */
+    /* JADX WARN: Type inference failed for: r10v2 */
+    /* JADX WARN: Type inference failed for: r10v3, types: [java.util.LinkedHashMap] */
+    /* JADX WARN: Type inference failed for: r10v4 */
+    /* JADX WARN: Type inference failed for: r10v5, types: [java.util.LinkedHashMap] */
+    /* JADX WARN: Type inference failed for: r10v6 */
+    /* JADX WARN: Type inference failed for: r10v9, types: [java.util.LinkedHashMap, java.util.Map] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [java.lang.Object, org.telegram.ui.Wallet.o0] */
+    /* JADX WARN: Type inference failed for: r4v1, types: [java.util.LinkedHashMap] */
+    /* JADX WARN: Type inference failed for: r4v2, types: [org.telegram.ui.Wallet.g0] */
+    /* JADX WARN: Type inference failed for: r4v3 */
+    /* JADX WARN: Type inference failed for: r4v4, types: [org.telegram.ui.Wallet.g0] */
+    /* JADX WARN: Type inference failed for: r4v5 */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        Iterator it;
+        String message;
+        Iterator it2;
+        zy0 r10;
+        switch (this.a) {
+            case 0:
+                ?? r12 = (o0) this.e;
+                String str = (String) this.f;
+                g0 g0Var = (g0) this.h;
+                long j10 = this.c;
+                long j11 = this.d;
+                Utilities.Callback callback = this.b;
+                ?? r102 = j11;
+                ArrayList arrayList = new ArrayList();
+                ?? linkedHashMap = new LinkedHashMap();
+                try {
+                    try {
+                        try {
+                        } catch (Exception e) {
+                            e = e;
+                            FileLog.e(e);
+                            message = !(e instanceof n0) ? e.getMessage() : "STORAGE_BROKEN";
+                            if (linkedHashMap != 0) {
+                                linkedHashMap.close();
+                            }
+                            it2 = r102.values().iterator();
+                            while (it2.hasNext()) {
+                                ((g0) it2.next()).close();
+                            }
+                            r12.e(arrayList);
+                            AndroidUtilities.runOnUIThread(new bi.b8((Object) r12, callback, j10, message, 17));
+                            return;
+                        }
+                    } catch (Throwable th2) {
+                        th = th2;
+                        if (linkedHashMap != 0) {
+                            linkedHashMap.close();
+                        }
+                        it = r102.values().iterator();
+                        while (it.hasNext()) {
+                            ((g0) it.next()).close();
+                        }
+                        r12.e(arrayList);
+                        throw th;
+                    }
+                } catch (Exception e7) {
+                    e = e7;
+                    r102 = linkedHashMap;
+                } catch (Throwable th3) {
+                    th = th3;
+                    r102 = linkedHashMap;
+                }
+                if (str.isEmpty() || g0Var == null || g0Var.e()) {
+                    throw new n0("INVALID_ARGUMENT");
+                }
+                Object obj = o0.f;
+                synchronized (obj) {
+                    try {
+                        r12.c(j10);
+                        r10 = r12.r();
+                    } catch (Throwable th4) {
+                        th = th4;
+                        while (true) {
+                            try {
+                                throw th;
+                            } catch (Throwable th5) {
+                                th = th5;
+                            }
+                        }
+                    }
+                }
+                if (!((LinkedHashMap) r10.e).isEmpty() && r10.a != r102) {
+                    throw new n0("USER_MISMATCH");
+                }
+                r10.a = r102;
+                r12.s(r10, str, linkedHashMap, arrayList, j10);
+                r102 = linkedHashMap;
+                try {
+                    ((LinkedHashMap) r10.e).put(str, r12.j(r10, str, g0Var, arrayList, j10));
+                    r102.put(str, g0Var);
+                    r10.b = ConnectionsManager.getInstance(r12.b).getCurrentTime();
+                    synchronized (obj) {
+                        r12.c(j10);
+                        r12.v(r10, r102);
+                        r12.d(r10);
+                    }
+                    g0Var.close();
+                    Iterator it3 = r102.values().iterator();
+                    while (it3.hasNext()) {
+                        ((g0) it3.next()).close();
+                    }
+                    message = null;
+                } catch (Exception e10) {
+                    e = e10;
+                    linkedHashMap = g0Var;
+                    FileLog.e(e);
+                    if (!(e instanceof n0)) {
+                    }
+                    if (linkedHashMap != 0) {
+                    }
+                    it2 = r102.values().iterator();
+                    while (it2.hasNext()) {
+                    }
+                    r12.e(arrayList);
+                    AndroidUtilities.runOnUIThread(new bi.b8((Object) r12, callback, j10, message, 17));
+                    return;
+                } catch (Throwable th6) {
+                    th = th6;
+                    linkedHashMap = g0Var;
+                    if (linkedHashMap != 0) {
+                    }
+                    it = r102.values().iterator();
+                    while (it.hasNext()) {
+                    }
+                    r12.e(arrayList);
+                    throw th;
+                }
+                r12.e(arrayList);
+                AndroidUtilities.runOnUIThread(new bi.b8((Object) r12, callback, j10, message, 17));
+                return;
+            default:
+                zh.r3 r3Var = (zh.r3) this.e;
+                zh.r3.T(this.c, this.d, this.b, (TLObject) this.h, (TLRPC.TL_error) this.f, r3Var);
+                return;
         }
     }
 
-    public final void b() {
-        this.d = false;
-        this.e++;
-        AndroidUtilities.cancelRunOnUIThread(this.i);
-        AndroidUtilities.cancelRunOnUIThread(this.h);
-        if (this.g >= 0) {
-            ConnectionsManager.getInstance(this.a).cancelRequest(this.g, true);
-            this.g = -1;
-        }
+    public /* synthetic */ m0(o0 o0Var, String str, g0 g0Var, long j10, long j11, Utilities.Callback callback) {
+        this.e = o0Var;
+        this.f = str;
+        this.h = g0Var;
+        this.c = j10;
+        this.d = j11;
+        this.b = callback;
     }
 }

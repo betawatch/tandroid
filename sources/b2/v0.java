@@ -1,51 +1,36 @@
 package b2;
 
-import java.util.Locale;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class v0 {
-    public static final v0 d = new v0(1.0f, 1.0f);
-    public static final String e;
-    public static final String f;
-    public final float a;
-    public final float b;
-    public final int c;
+public class v0 {
+    public int a;
+    public int b;
 
-    static {
-        String str = e2.d0.a;
-        e = Integer.toString(0, 36);
-        f = Integer.toString(1, 36);
+    public /* synthetic */ v0(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
     }
 
-    public v0(float f7, float f10) {
-        e2.d.b(f7 > 0.0f);
-        e2.d.b(f10 > 0.0f);
-        this.a = f7;
-        this.b = f10;
-        this.c = Math.round(f7 * 1000.0f);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public int a() {
+        int i10 = this.b;
+        if (i10 == 2) {
+            return 10;
         }
-        if (obj != null && v0.class == obj.getClass()) {
-            v0 v0Var = (v0) obj;
-            if (this.a == v0Var.a && this.b == v0Var.b) {
-                return true;
-            }
+        if (i10 == 5) {
+            return 11;
         }
-        return false;
+        if (i10 == 29) {
+            return 12;
+        }
+        if (i10 != 42) {
+            return i10 != 22 ? i10 != 23 ? 0 : 15 : TLObject.FLAG_30;
+        }
+        return 16;
     }
 
-    public final int hashCode() {
-        return Float.floatToRawIntBits(this.b) + ((Float.floatToRawIntBits(this.a) + 527) * 31);
-    }
-
-    public final String toString() {
-        Object[] objArr = {Float.valueOf(this.a), Float.valueOf(this.b)};
-        String str = e2.d0.a;
-        return String.format(Locale.US, "PlaybackParameters(speed=%.2f, pitch=%.2f)", objArr);
+    public int b() {
+        return this.a | this.b;
     }
 }

@@ -1,61 +1,64 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class wy implements View.OnClickListener {
-    public final /* synthetic */ zy a;
+public interface wy {
+    boolean A();
 
-    public wy(zy zyVar) {
-        this.a = zyVar;
-    }
+    long a();
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        boolean[] zArr = new boolean[1];
-        zy zyVar = this.a;
-        a00 a00Var = zyVar.F;
-        org.telegram.ui.ActionBar.a3 a3Var = new org.telegram.ui.ActionBar.a3(a00Var.getContext(), null);
-        LinearLayout linearLayout = new LinearLayout(a00Var.getContext());
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(AndroidUtilities.dp(21.0f), 0, AndroidUtilities.dp(21.0f), 0);
-        ImageView imageView = new ImageView(a00Var.getContext());
-        imageView.setImageResource(R.drawable.smiles_info);
-        linearLayout.addView(imageView, w7.x5.t(-2, -2, 49, 0, 15, 0, 0));
-        TextView textView = new TextView(a00Var.getContext());
-        org.telegram.messenger.bi.j(15.0f, R.string.EmojiSuggestions, 1, textView);
-        int i10 = org.telegram.ui.ActionBar.i6.n5;
-        int i11 = a00.O2;
-        textView.setTextColor(a00Var.B(i10));
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView, w7.x5.t(-2, -2, 51, 0, 24, 0, 0));
-        TextView textView2 = new TextView(a00Var.getContext());
-        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.EmojiSuggestionsInfo)));
-        textView2.setTextSize(1, 15.0f);
-        textView2.setTextColor(a00Var.B(org.telegram.ui.ActionBar.i6.j5));
-        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        linearLayout.addView(textView2, w7.x5.t(-2, -2, 51, 0, 11, 0, 0));
-        TextView textView3 = new TextView(a00Var.getContext());
-        int i12 = R.string.EmojiSuggestionsUrl;
-        Object obj = zyVar.w;
-        if (obj == null) {
-            obj = a00Var.W0;
-        }
-        textView3.setText(LocaleController.formatString("EmojiSuggestionsUrl", i12, obj));
-        textView3.setTextSize(1, 15.0f);
-        textView3.setTextColor(a00Var.B(org.telegram.ui.ActionBar.i6.k5));
-        textView3.setGravity(LocaleController.isRTL ? 5 : 3);
-        linearLayout.addView(textView3, w7.x5.t(-2, -2, 51, 0, 18, 0, 16));
-        textView3.setOnClickListener(new vy(this, zArr, a3Var));
-        a3Var.b(linearLayout);
-        a3Var.a.show();
-    }
+    boolean b();
+
+    boolean c();
+
+    void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10);
+
+    void e(Object obj, Object obj2);
+
+    int f();
+
+    boolean g();
+
+    void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    void i(int i10);
+
+    boolean j();
+
+    boolean k();
+
+    void l(String str);
+
+    void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10);
+
+    void n();
+
+    void o(h61 h61Var);
+
+    float p();
+
+    void q();
+
+    void r(TLRPC.StickerSetCovered stickerSetCovered);
+
+    void s(int i10);
+
+    void t(ArrayList arrayList);
+
+    void u();
+
+    void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11);
+
+    void w();
+
+    void x(long j10, TLRPC.Document document, String str, boolean z10);
+
+    void y(long j10);
+
+    boolean z();
 }

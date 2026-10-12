@@ -1,79 +1,97 @@
 package qg;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
+import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.ui.bu0;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.eo;
+import org.telegram.ui.Components.u2;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class v implements pg.u {
-    public boolean a;
-    public final /* synthetic */ Bitmap b;
-    public final /* synthetic */ bu0 c;
+public final class v extends FrameLayout {
+    public final TextView a;
+    public final r b;
+    public final EditTextBoldCursor c;
+    public int d;
+    public boolean e;
+    public final /* synthetic */ x f;
 
-    public v(bu0 bu0Var, Bitmap bitmap) {
-        this.c = bu0Var;
-        this.b = bitmap;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v(x xVar, Context context) {
+        super(context);
+        this.f = xVar;
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.messenger.q.n(14.0f, -1711276033, 1, textView);
+        addView(textView, a6.a(-2.0f, 8.0f, 0.0f, 8.0f, 0.0f, -2, 3));
+        r rVar = new r(xVar, context);
+        this.b = rVar;
+        addView(rVar, a6.a(-1.0f, 0.0f, 16.0f, 78.0f, 0.0f, -1, 3));
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
+        this.c = editTextBoldCursor;
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        editTextBoldCursor.setBackground(g6.c0(AndroidUtilities.dp(10.0f), 436207615));
+        editTextBoldCursor.setPadding(0, 0, 0, 0);
+        editTextBoldCursor.setTextColor(-1);
+        editTextBoldCursor.setGravity(17);
+        editTextBoldCursor.setSingleLine();
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setImeActionLabel(LocaleController.getString(R.string.Done), 6);
+        editTextBoldCursor.setInputType(2);
+        editTextBoldCursor.setTypeface(AndroidUtilities.bold());
+        editTextBoldCursor.addTextChangedListener(new eo(this));
+        editTextBoldCursor.setOnFocusChangeListener(new ah.u0(this, 2));
+        editTextBoldCursor.setOnEditorActionListener(new u2(4));
+        addView(editTextBoldCursor, a6.e(72, 36, 85));
     }
 
-    @Override // pg.u
-    public final void a() {
-        this.a = true;
+    public final void a(int i10) {
+        this.d = i10;
+        this.b.c = i10;
+        TextView textView = this.a;
+        if (i10 == 0) {
+            textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersRed).toUpperCase());
+        } else if (i10 == 1) {
+            textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersGreen).toUpperCase());
+        } else if (i10 == 2) {
+            textView.setText(LocaleController.getString(R.string.PaintPaletteSlidersBlue).toUpperCase());
+        }
+        b();
     }
 
-    @Override // pg.u
-    public final void b(Canvas canvas) {
-        c0 c0Var = this.c.W0;
-        Matrix matrix = c0Var.getMatrix();
-        canvas.save();
-        canvas.translate(c0Var.getX(), c0Var.getY());
-        canvas.concat(matrix);
-        float width = c0Var.getWidth();
-        Bitmap bitmap = this.b;
-        canvas.scale(width / bitmap.getWidth(), c0Var.getHeight() / bitmap.getHeight(), 0.0f, 0.0f);
-        canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
-        canvas.restore();
+    public final void b() {
+        this.e = true;
+        r rVar = this.b;
+        rVar.d = i0.a.k(rVar.e.f, 255);
+        rVar.a();
+        rVar.invalidate();
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        int selectionStart = editTextBoldCursor.getSelectionStart();
+        int selectionEnd = editTextBoldCursor.getSelectionEnd();
+        int i10 = this.d;
+        x xVar = this.f;
+        if (i10 == 0) {
+            editTextBoldCursor.setText(String.valueOf(Color.red(xVar.f)));
+        } else if (i10 == 1) {
+            editTextBoldCursor.setText(String.valueOf(Color.green(xVar.f)));
+        } else if (i10 == 2) {
+            editTextBoldCursor.setText(String.valueOf(Color.blue(xVar.f)));
+        }
+        editTextBoldCursor.setSelection(selectionStart, selectionEnd);
+        this.e = false;
     }
 
-    @Override // pg.u
-    public final boolean c() {
-        return this.a;
-    }
-
-    @Override // pg.u
-    public final void d() {
-        this.a = false;
-    }
-
-    @Override // pg.u
-    public final View e() {
-        return this.c;
-    }
-
-    @Override // pg.u
-    public final FrameLayout f() {
-        return this.c.e1;
-    }
-
-    @Override // pg.u
-    public final boolean g() {
-        return this.b != null;
-    }
-
-    @Override // pg.u
-    public final void h(int i10) {
-        bu0 bu0Var = this.c;
-        bu0Var.x0(false);
-        pg.u0 u0Var = bu0Var.V1;
-        u0Var.h(i10, true);
-        u0Var.g();
-        bu0Var.setNewColor(i10);
-        j0 j0Var = bu0Var.G1;
-        j0Var.setSelectedColorIndex(u0Var.d());
-        j0Var.getAdapter().l();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
     }
 }

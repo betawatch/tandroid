@@ -1,40 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b9 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ g9 d;
+public final class b9 extends org.telegram.ui.r71 {
+    public boolean d2;
+    public final /* synthetic */ h9 e2;
 
-    public b9(g9 g9Var, float f7, float f10, boolean z10) {
-        this.d = g9Var;
-        this.a = f7;
-        this.b = f10;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b9(h9 h9Var, h9 h9Var2, Activity activity, int i10) {
+        super(h9Var2, activity, false, null, 4, true, null, 16, i10);
+        this.e2 = h9Var;
+        this.d2 = true;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        g9 g9Var = this.d;
-        g9Var.N = floatValue;
-        float lerp = AndroidUtilities.lerp(this.a, this.b, floatValue);
-        kVar = ((org.telegram.ui.ActionBar.n2) g9Var).actionBar;
-        kVar.getTitleTextView().setAlpha(g9Var.N);
-        if (g9Var.F && !this.c) {
-            g9Var.i0(1.0f - g9Var.N, false);
+    @Override // org.telegram.ui.r71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (this.d2) {
+            this.d2 = false;
+            this.e2.b.s(null);
         }
-        g9Var.r.setTranslationY(lerp);
-        g9Var.x.setTranslationY(lerp);
-        g9Var.fragmentView.invalidate();
-        kVar2 = ((org.telegram.ui.ActionBar.n2) g9Var).actionBar;
-        kVar2.invalidate();
+    }
+
+    @Override // org.telegram.ui.r71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i10;
+        TLRPC.TL_emojiList tL_emojiList;
+        boolean z10;
+        int i11;
+        boolean z11 = this.R;
+        h9 h9Var = this.e2;
+        if (z11) {
+            i11 = ((org.telegram.ui.ActionBar.m2) h9Var).currentAccount;
+            tL_emojiList = MediaDataController.getInstance(i11).profileAvatarConstructorDefault;
+        } else {
+            i10 = ((org.telegram.ui.ActionBar.m2) h9Var).currentAccount;
+            tL_emojiList = MediaDataController.getInstance(i10).groupAvatarConstructorDefault;
+        }
+        if (tL_emojiList != null) {
+            z10 = tL_emojiList.document_id.contains(Long.valueOf(document != null ? document.id : l4 != null ? l4.longValue() : 0L));
+        } else {
+            z10 = false;
+        }
+        h9Var.h0(z10, l4 != null ? l4.longValue() : 0L, document);
     }
 }

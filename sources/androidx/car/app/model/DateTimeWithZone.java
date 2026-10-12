@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class DateTimeWithZone {
     private static final long MAX_ZONE_OFFSET_SECONDS = TimeUnit.HOURS.toSeconds(1) * 18;
@@ -20,8 +20,8 @@ public final class DateTimeWithZone {
         this.mZoneShortName = null;
     }
 
-    public static DateTimeWithZone create(long j3, int i10, String str) {
-        if (j3 < 0) {
+    public static DateTimeWithZone create(long j10, int i10, String str) {
+        if (j10 < 0) {
             throw new IllegalArgumentException("Time since epoch must be greater than or equal to zero");
         }
         if (Math.abs(i10) > MAX_ZONE_OFFSET_SECONDS) {
@@ -31,7 +31,7 @@ public final class DateTimeWithZone {
         if (str.isEmpty()) {
             throw new IllegalArgumentException("The time zone short name can not be null or empty");
         }
-        return new DateTimeWithZone(j3, i10, str);
+        return new DateTimeWithZone(j10, i10, str);
     }
 
     public boolean equals(Object obj) {
@@ -69,20 +69,20 @@ public final class DateTimeWithZone {
         sb2.append(")  zone offset (s): ");
         sb2.append(this.mZoneOffsetSeconds);
         sb2.append(", zone: ");
-        return a1.g.t(sb2, this.mZoneShortName, "]");
+        return a1.g.s(sb2, this.mZoneShortName, "]");
     }
 
-    private DateTimeWithZone(long j3, int i10, String str) {
-        this.mTimeSinceEpochMillis = j3;
+    private DateTimeWithZone(long j10, int i10, String str) {
+        this.mTimeSinceEpochMillis = j10;
         this.mZoneOffsetSeconds = i10;
         this.mZoneShortName = str;
     }
 
-    public static DateTimeWithZone create(long j3, TimeZone timeZone) {
-        if (j3 >= 0) {
+    public static DateTimeWithZone create(long j10, TimeZone timeZone) {
+        if (j10 >= 0) {
             TimeUnit timeUnit = TimeUnit.MILLISECONDS;
             Objects.requireNonNull(timeZone);
-            return create(j3, (int) timeUnit.toSeconds(timeZone.getOffset(j3)), timeZone.getDisplayName(false, 0));
+            return create(j10, (int) timeUnit.toSeconds(timeZone.getOffset(j10)), timeZone.getDisplayName(false, 0));
         }
         throw new IllegalArgumentException("timeSinceEpochMillis must be greater than or equal to zero");
     }

@@ -1,117 +1,97 @@
 package ra;
 
-import a1.g;
-import m1.j;
+import java.io.IOException;
+import n6.o;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b {
-    public final String a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final long e;
-    public final long f;
-    public final String g;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
 
-    public b(String str, int i10, String str2, String str3, long j3, long j10, String str4) {
-        this.a = str;
-        this.b = i10;
-        this.c = str2;
-        this.d = str3;
-        this.e = j3;
-        this.f = j10;
-        this.g = str4;
+    public /* synthetic */ b(c cVar, int i10) {
+        this.a = i10;
+        this.b = cVar;
     }
 
-    public final a a() {
-        a aVar = new a(0);
-        aVar.c = this.a;
-        aVar.b = this.b;
-        aVar.d = this.c;
-        aVar.e = this.d;
-        aVar.g = Long.valueOf(this.e);
-        aVar.h = Long.valueOf(this.f);
-        aVar.f = this.g;
-        return aVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    /* JADX WARN: Finally extract failed */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x005c  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0065  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x006e  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        sa.a K;
+        sa.a i10;
+        int i11;
+        switch (this.a) {
+            case 0:
+                this.b.b();
+                return;
+            case 1:
+                c cVar = this.b;
+                synchronized (c.m) {
+                    try {
+                        l9.h hVar = cVar.a;
+                        hVar.a();
+                        o a2 = o.a(hVar.a);
+                        try {
+                            K = cVar.c.K();
+                            if (a2 != null) {
+                                a2.W();
+                            }
+                        } catch (Throwable th2) {
+                            if (a2 != null) {
+                                a2.W();
+                            }
+                            throw th2;
+                        }
+                    } finally {
+                    }
+                }
+                try {
+                    int i12 = K.b;
+                    if (!(i12 == 5)) {
+                        if (!(i12 == 3)) {
+                            if (cVar.d.a(K)) {
+                                i10 = cVar.c(K);
+                                cVar.f(i10);
+                                cVar.m(K, i10);
+                                if (i10.b == 4) {
+                                    cVar.l(i10.a);
+                                }
+                                i11 = i10.b;
+                                if (i11 != 5) {
+                                    cVar.j(new e());
+                                    return;
+                                } else if (i11 == 2 || i11 == 1) {
+                                    cVar.j(new IOException("Installation ID could not be validated with the Firebase servers (maybe it was deleted). Firebase Installations will need to create a new Installation ID and auth token. Please retry your last request."));
+                                    return;
+                                } else {
+                                    cVar.k(i10);
+                                    return;
+                                }
+                            }
+                            return;
+                        }
+                    }
+                    i10 = cVar.i(K);
+                    cVar.f(i10);
+                    cVar.m(K, i10);
+                    if (i10.b == 4) {
+                    }
+                    i11 = i10.b;
+                    if (i11 != 5) {
+                    }
+                } catch (e e) {
+                    cVar.j(e);
+                    return;
+                }
+            default:
+                this.b.b();
+                return;
         }
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        String str = bVar.g;
-        String str2 = bVar.d;
-        String str3 = bVar.c;
-        String str4 = bVar.a;
-        String str5 = this.a;
-        if (str5 == null) {
-            if (str4 != null) {
-                return false;
-            }
-        } else if (!str5.equals(str4)) {
-            return false;
-        }
-        if (!j.b(this.b, bVar.b)) {
-            return false;
-        }
-        String str6 = this.c;
-        if (str6 == null) {
-            if (str3 != null) {
-                return false;
-            }
-        } else if (!str6.equals(str3)) {
-            return false;
-        }
-        String str7 = this.d;
-        if (str7 == null) {
-            if (str2 != null) {
-                return false;
-            }
-        } else if (!str7.equals(str2)) {
-            return false;
-        }
-        if (this.e != bVar.e || this.f != bVar.f) {
-            return false;
-        }
-        String str8 = this.g;
-        return str8 == null ? str == null : str8.equals(str);
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = ((((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ j.c(this.b)) * 1000003;
-        String str2 = this.c;
-        int hashCode2 = (hashCode ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
-        String str3 = this.d;
-        int hashCode3 = (hashCode2 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003;
-        long j3 = this.e;
-        int i10 = (hashCode3 ^ ((int) (j3 ^ (j3 >>> 32)))) * 1000003;
-        long j10 = this.f;
-        int i11 = (i10 ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
-        String str4 = this.g;
-        return (str4 != null ? str4.hashCode() : 0) ^ i11;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("PersistedInstallationEntry{firebaseInstallationId=");
-        sb2.append(this.a);
-        sb2.append(", registrationStatus=");
-        int i10 = this.b;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? "null" : "REGISTER_ERROR" : "REGISTERED" : "UNREGISTERED" : "NOT_GENERATED" : "ATTEMPT_MIGRATION");
-        sb2.append(", authToken=");
-        sb2.append(this.c);
-        sb2.append(", refreshToken=");
-        sb2.append(this.d);
-        sb2.append(", expiresInSecs=");
-        sb2.append(this.e);
-        sb2.append(", tokenCreationEpochInSecs=");
-        sb2.append(this.f);
-        sb2.append(", fisError=");
-        return g.t(sb2, this.g, "}");
     }
 }

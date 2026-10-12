@@ -1,68 +1,216 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.core.widget.NestedScrollView;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class o71 extends NestedScrollView {
-    public boolean W;
-    public final /* synthetic */ p71 a0;
+public class o71 extends FrameLayout {
+    public ValueAnimator a;
+    public float b;
+    public boolean c;
+    public Boolean d;
+    public final /* synthetic */ q71 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o71(p71 p71Var, Context context) {
+    public o71(q71 q71Var, Context context) {
         super(context);
-        this.a0 = p71Var;
+        this.e = q71Var;
+        this.c = false;
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0, getPaddingTop(), getMeasuredWidth(), getMeasuredHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        float f7;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        canvas.save();
+        q71 q71Var = this.e;
+        Drawable drawable = q71Var.h;
+        RectF rectF = q71Var.x;
+        int i22 = q71Var.y;
+        i10 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingTop;
+        int dp = AndroidUtilities.dp(6.0f) + (i22 - i10);
+        int i23 = q71Var.y;
+        i11 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingTop;
+        int dp2 = (i23 - i11) - AndroidUtilities.dp(13.0f);
+        int dp3 = AndroidUtilities.dp(50.0f) + getMeasuredHeight();
+        i12 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingTop;
+        int i24 = i12 + dp3;
+        int i25 = AndroidUtilities.statusBarHeight;
+        int i26 = dp2 + i25;
+        int i27 = dp + i25;
+        int i28 = i24 - i25;
+        i13 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingTop;
+        float translationY = getTranslationY() + i13 + i26;
+        int i29 = AndroidUtilities.statusBarHeight;
+        if (translationY < i29 * 2) {
+            i21 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingTop;
+            int min = (int) Math.min(i29, ((r8 - i26) - i21) - getTranslationY());
+            i26 -= min;
+            i28 += min;
+            f7 = 1.0f - Math.min(1.0f, (min * 2) / AndroidUtilities.statusBarHeight);
+        } else {
+            f7 = 1.0f;
+        }
+        i14 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingTop;
+        float translationY2 = getTranslationY() + i14 + i26;
+        float f10 = AndroidUtilities.statusBarHeight;
+        if (translationY2 < f10) {
+            i20 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingTop;
+            i15 = (int) Math.min(f10, ((r7 - i26) - i20) - getTranslationY());
+        } else {
+            i15 = 0;
+        }
+        drawable.setBounds(0, i26, getMeasuredWidth(), i28);
+        drawable.draw(canvas);
+        if (!q71Var.S) {
+            if (f7 != 1.0f) {
+                org.telegram.ui.ActionBar.g6.t0.setColor(q71Var.F);
+                i16 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingLeft;
+                i17 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingTop;
+                int measuredWidth = getMeasuredWidth();
+                i18 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingLeft;
+                float f11 = measuredWidth - i18;
+                i19 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingTop;
+                rectF.set(i16, i17 + i26, f11, AndroidUtilities.dp(24.0f) + i19 + i26);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f) * f7, AndroidUtilities.dp(12.0f) * f7, org.telegram.ui.ActionBar.g6.t0);
+            }
+            int dp4 = AndroidUtilities.dp(36.0f);
+            rectF.set((getMeasuredWidth() - dp4) / 2, i27, (getMeasuredWidth() + dp4) / 2, AndroidUtilities.dp(4.0f) + i27);
+            org.telegram.ui.ActionBar.g6.t0.setColor(org.telegram.ui.ActionBar.g6.x0(null, q71Var.I, false));
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), org.telegram.ui.ActionBar.g6.t0);
+        }
+        if (i15 > 0) {
+            org.telegram.ui.ActionBar.g6.t0.setColor(q71Var.F);
+        }
+        boolean z10 = i15 > AndroidUtilities.statusBarHeight / 2;
+        Boolean bool = this.d;
+        if (bool == null || bool.booleanValue() != z10) {
+            boolean z11 = AndroidUtilities.computePerceivedBrightness(q71Var.getThemedColor(org.telegram.ui.ActionBar.g6.h5)) > 0.721f;
+            boolean z12 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.g6.v(q71Var.getThemedColor(org.telegram.ui.ActionBar.g6.s8), 855638016)) > 0.721f;
+            this.d = Boolean.valueOf(z10);
+            if (!z10) {
+                z11 = z12;
+            }
+            AndroidUtilities.setLightStatusBar(q71Var.getWindow(), z11);
+        }
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            float y3 = motionEvent.getY();
+            q71 q71Var = this.e;
+            if (y3 < q71Var.y) {
+                q71Var.dismiss();
+                return true;
+            }
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        p71.o(this.a0);
+        this.e.M();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x002d, code lost:
-    
-        if (r9 < (org.telegram.messenger.AndroidUtilities.dp(90.0f) + (r0 / 2))) goto L6;
-     */
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
+    @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
+        int i12;
+        int i13;
+        boolean z10;
+        int dp;
         int size = View.MeasureSpec.getSize(i11);
-        p71 p71Var = this.a0;
-        measureChildWithMargins(p71Var.f, i10, 0, i11, 0);
-        int measuredHeight = p71Var.f.getMeasuredHeight();
-        int i12 = (size / 5) * 2;
-        if (measuredHeight - (size - i12) >= AndroidUtilities.dp(90.0f)) {
+        this.c = true;
+        q71 q71Var = this.e;
+        bi.o0 o0Var = q71Var.d;
+        i12 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingLeft;
+        int i14 = AndroidUtilities.statusBarHeight;
+        i13 = ((org.telegram.ui.ActionBar.e3) q71Var).backgroundPaddingLeft;
+        setPadding(i12, i14, i13, 0);
+        this.c = false;
+        int paddingTop = size - getPaddingTop();
+        z10 = ((org.telegram.ui.ActionBar.e3) q71Var).keyboardVisible;
+        if (z10) {
+            dp = AndroidUtilities.dp(8.0f);
+            q71Var.setAllowNestedScroll(false);
+            int i15 = q71Var.y;
+            if (i15 != 0) {
+                float f7 = i15;
+                this.b = f7;
+                setTranslationY(f7);
+                ValueAnimator valueAnimator = this.a;
+                if (valueAnimator != null) {
+                    valueAnimator.removeAllListeners();
+                    this.a.cancel();
+                }
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(this.b, 0.0f);
+                this.a = ofFloat;
+                ofFloat.addUpdateListener(new q51(2, this));
+                this.a.setDuration(250L);
+                this.a.setInterpolator(org.telegram.ui.ActionBar.o1.w);
+                this.a.addListener(new u61(this, 2));
+                this.a.start();
+            } else if (this.a != null) {
+                setTranslationY(this.b);
+            }
+        } else {
+            dp = (paddingTop - ((paddingTop / 5) * 3)) + AndroidUtilities.dp(8.0f);
+            q71Var.setAllowNestedScroll(true);
         }
-        i12 = size - measuredHeight;
-        if (i12 < 0) {
-            i12 = 0;
-        }
-        if (getPaddingTop() != i12) {
-            this.W = true;
-            setPadding(0, i12, 0, 0);
-            this.W = false;
+        if (o0Var.getPaddingTop() != dp) {
+            this.c = true;
+            o0Var.setPadding(0, dp, 0, 0);
+            this.c = false;
         }
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        super.onScrollChanged(i10, i11, i12, i13);
-        p71.o(this.a0);
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.e.isDismissed() && super.onTouchEvent(motionEvent);
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
+    @Override // android.view.View, android.view.ViewParent
     public final void requestLayout() {
-        if (this.W) {
+        if (this.c) {
             return;
         }
         super.requestLayout();
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        invalidate();
     }
 }

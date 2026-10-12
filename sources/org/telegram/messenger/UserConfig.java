@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class UserConfig extends BaseController {
     private static volatile UserConfig[] Instance = new UserConfig[4];
@@ -101,7 +101,7 @@ public class UserConfig extends BaseController {
     private void checkPremiumSelf(TLRPC.User user, final TLRPC.User user2) {
         if (user != null && user2 != null && user.premium != user2.premium) {
             final int i10 = 0;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.tl
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.wl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -122,7 +122,7 @@ public class UserConfig extends BaseController {
             });
         } else if (user == null) {
             final int i11 = 1;
-            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.tl
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.messenger.wl
                 public final /* synthetic */ UserConfig b;
 
                 {
@@ -212,7 +212,7 @@ public class UserConfig extends BaseController {
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.premiumStatusChangedGlobal, new Object[0]);
         getMediaDataController().loadPremiumPromo(false);
         getMediaDataController().loadReactions(false, null);
-        ai.m9 storiesController = getMessagesController().getStoriesController();
+        bi.x8 storiesController = getMessagesController().getStoriesController();
         storiesController.R = false;
         storiesController.S = null;
     }
@@ -236,7 +236,7 @@ public class UserConfig extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadGlobalTTl$4(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new vg(16, this, tLObject));
+        AndroidUtilities.runOnUIThread(new xg(15, this, tLObject));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -316,8 +316,8 @@ public class UserConfig extends BaseController {
                             serializedData3.cleanup();
                         }
                         edit.apply();
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e) {
+                        FileLog.e(e);
                     }
                 } catch (Throwable th2) {
                     throw th2;
@@ -412,16 +412,16 @@ public class UserConfig extends BaseController {
     }
 
     public long getClientUserId() {
-        long j3;
+        long j10;
         synchronized (this.sync) {
             try {
                 TLRPC.User user = this.currentUser;
-                j3 = user != null ? user.id : 0L;
+                j10 = user != null ? user.id : 0L;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return j3;
+        return j10;
     }
 
     public TLRPC.User getCurrentUser() {
@@ -675,7 +675,7 @@ public class UserConfig extends BaseController {
             return;
         }
         this.ttlIsLoading = true;
-        getConnectionsManager().sendRequest(new TLRPC.TL_messages_getDefaultHistoryTTL(), new h0(this, 8));
+        getConnectionsManager().sendRequest(new TLRPC.TL_messages_getDefaultHistoryTTL(), new i0(this, 8));
     }
 
     public void resetSavedPassword() {
@@ -691,7 +691,7 @@ public class UserConfig extends BaseController {
     }
 
     public void saveConfig(boolean z10) {
-        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new bi.f(14, this, z10));
+        NotificationCenter.getInstance(this.currentAccount).doOnIdle(new ah.t(15, this, z10));
     }
 
     public void savePassword(byte[] bArr, byte[] bArr2) {
@@ -709,7 +709,7 @@ public class UserConfig extends BaseController {
         }
     }
 
-    public void setDialogsLoadOffset(int i10, int i11, int i12, long j3, long j10, long j11, long j12) {
+    public void setDialogsLoadOffset(int i10, int i11, int i12, long j10, long j11, long j12, long j13) {
         SharedPreferences.Editor edit = getPreferences().edit();
         StringBuilder sb2 = new StringBuilder("2dialogsLoadOffsetId");
         sb2.append(i10 == 0 ? "" : Integer.valueOf(i10));
@@ -719,16 +719,16 @@ public class UserConfig extends BaseController {
         edit.putInt(sb3.toString(), i12);
         StringBuilder sb4 = new StringBuilder("2dialogsLoadOffsetUserId");
         sb4.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putLong(sb4.toString(), j3);
+        edit.putLong(sb4.toString(), j10);
         StringBuilder sb5 = new StringBuilder("2dialogsLoadOffsetChatId");
         sb5.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putLong(sb5.toString(), j10);
+        edit.putLong(sb5.toString(), j11);
         StringBuilder sb6 = new StringBuilder("2dialogsLoadOffsetChannelId");
         sb6.append(i10 == 0 ? "" : Integer.valueOf(i10));
-        edit.putLong(sb6.toString(), j11);
+        edit.putLong(sb6.toString(), j12);
         StringBuilder sb7 = new StringBuilder("2dialogsLoadOffsetAccess");
         sb7.append(i10 != 0 ? Integer.valueOf(i10) : "");
-        edit.putLong(sb7.toString(), j12);
+        edit.putLong(sb7.toString(), j13);
         edit.putBoolean("hasValidDialogLoadIds", true);
         edit.commit();
     }

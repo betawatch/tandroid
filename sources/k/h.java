@@ -18,9 +18,9 @@ import l.n;
 import m.l1;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.s7;
+import v7.q7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h extends MenuInflater {
     public static final Class[] e;
@@ -172,7 +172,7 @@ public final class h extends MenuInflater {
                                 gVar.D = null;
                             }
                             if (obtainStyledAttributes2.hasValue(18)) {
-                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = s7.a(context, resourceId)) == null) {
+                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = q7.a(context, resourceId)) == null) {
                                     colorStateList = obtainStyledAttributes2.getColorStateList(18);
                                 }
                                 gVar.C = colorStateList;

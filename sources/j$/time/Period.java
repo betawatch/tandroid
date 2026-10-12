@@ -39,10 +39,10 @@ public final class Period implements Serializable {
             M++;
             i10 -= I.P();
         }
-        long j3 = M / 12;
+        long j10 = M / 12;
         int i11 = (int) (M % 12);
-        int i12 = (int) j3;
-        if (j3 == i12) {
+        int i12 = (int) j10;
+        if (j10 == i12) {
             return ((i12 | i11) | i10) == 0 ? d : new Period(i12, i11, i10);
         }
         throw new ArithmeticException();

@@ -1,0 +1,75 @@
+package bi;
+
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_stories;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class x7 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+
+    public /* synthetic */ x7(x8 x8Var, long j10, boolean z10, TL_stories.PeerStories peerStories, long j11, TLObject tLObject) {
+        this.e = x8Var;
+        this.c = j10;
+        this.b = z10;
+        this.f = peerStories;
+        this.d = j11;
+        this.h = tLObject;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                x8 x8Var = (x8) this.e;
+                TL_stories.PeerStories peerStories = (TL_stories.PeerStories) this.f;
+                TLObject tLObject = (TLObject) this.h;
+                x8Var.D.remove(Long.valueOf(this.c));
+                boolean z10 = this.b;
+                long j10 = this.d;
+                if (!z10) {
+                    peerStories = x8Var.y(j10);
+                }
+                if (peerStories != null) {
+                    if (tLObject instanceof TL_stories.TL_stories_stories) {
+                        TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
+                        for (int i10 = 0; i10 < tL_stories_stories.stories.size(); i10++) {
+                            for (int i11 = 0; i11 < peerStories.stories.size(); i11++) {
+                                if (peerStories.stories.get(i11).id == tL_stories_stories.stories.get(i10).id) {
+                                    peerStories.stories.set(i11, tL_stories_stories.stories.get(i10));
+                                    x8Var.W(j10, tL_stories_stories.stories.get(i10));
+                                }
+                            }
+                        }
+                        if (!z10) {
+                            k9 k9Var = x8Var.k;
+                            k9Var.b.getStorageQueue().postRunnable(new i9(k9Var, peerStories, 1));
+                        }
+                    }
+                    NotificationCenter.getInstance(x8Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
+                    break;
+                }
+                break;
+            default:
+                ((FileLoader) this.e).lambda$checkUploadNewDataAvailable$3(this.b, (String) this.f, this.c, this.d, (Float) this.h);
+                break;
+        }
+    }
+
+    public /* synthetic */ x7(FileLoader fileLoader, boolean z10, String str, long j10, long j11, Float f7) {
+        this.e = fileLoader;
+        this.b = z10;
+        this.f = str;
+        this.c = j10;
+        this.d = j11;
+        this.h = f7;
+    }
+}

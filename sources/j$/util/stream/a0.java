@@ -39,7 +39,7 @@ public final /* synthetic */ class a0 implements c0 {
 
     @Override // j$.util.stream.c0
     public final /* synthetic */ j$.util.b0 average() {
-        return j$.com.android.tools.r8.a.F(this.a.average());
+        return j$.com.android.tools.r8.a.E(this.a.average());
     }
 
     @Override // j$.util.stream.c0
@@ -92,12 +92,12 @@ public final /* synthetic */ class a0 implements c0 {
 
     @Override // j$.util.stream.c0
     public final /* synthetic */ j$.util.b0 findAny() {
-        return j$.com.android.tools.r8.a.F(this.a.findAny());
+        return j$.com.android.tools.r8.a.E(this.a.findAny());
     }
 
     @Override // j$.util.stream.c0
     public final /* synthetic */ j$.util.b0 findFirst() {
-        return j$.com.android.tools.r8.a.F(this.a.findFirst());
+        return j$.com.android.tools.r8.a.E(this.a.findFirst());
     }
 
     @Override // j$.util.stream.c0
@@ -135,8 +135,8 @@ public final /* synthetic */ class a0 implements c0 {
     }
 
     @Override // j$.util.stream.c0
-    public final /* synthetic */ c0 limit(long j3) {
-        return f(this.a.limit(j3));
+    public final /* synthetic */ c0 limit(long j10) {
+        return f(this.a.limit(j10));
     }
 
     @Override // j$.util.stream.c0
@@ -151,12 +151,12 @@ public final /* synthetic */ class a0 implements c0 {
 
     @Override // j$.util.stream.c0
     public final /* synthetic */ j$.util.b0 max() {
-        return j$.com.android.tools.r8.a.F(this.a.max());
+        return j$.com.android.tools.r8.a.E(this.a.max());
     }
 
     @Override // j$.util.stream.c0
     public final /* synthetic */ j$.util.b0 min() {
-        return j$.com.android.tools.r8.a.F(this.a.min());
+        return j$.com.android.tools.r8.a.E(this.a.min());
     }
 
     @Override // j$.util.stream.BaseStream
@@ -186,7 +186,7 @@ public final /* synthetic */ class a0 implements c0 {
 
     @Override // j$.util.stream.c0
     public final /* synthetic */ j$.util.b0 reduce(DoubleBinaryOperator doubleBinaryOperator) {
-        return j$.com.android.tools.r8.a.F(this.a.reduce(doubleBinaryOperator));
+        return j$.com.android.tools.r8.a.E(this.a.reduce(doubleBinaryOperator));
     }
 
     @Override // j$.util.stream.c0
@@ -205,8 +205,8 @@ public final /* synthetic */ class a0 implements c0 {
     }
 
     @Override // j$.util.stream.c0
-    public final /* synthetic */ c0 skip(long j3) {
-        return f(this.a.skip(j3));
+    public final /* synthetic */ c0 skip(long j10) {
+        return f(this.a.skip(j10));
     }
 
     @Override // j$.util.stream.c0

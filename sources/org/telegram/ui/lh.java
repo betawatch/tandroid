@@ -1,40 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lh implements Utilities.Callback {
+public final /* synthetic */ class lh implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Long d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ org.telegram.ui.Components.m80 b;
 
-    public /* synthetic */ lh(Object obj, long j3, long j10, Long l4, int i10) {
+    public /* synthetic */ lh(org.telegram.ui.Components.m80 m80Var, int i10) {
         this.a = i10;
-        this.e = obj;
-        this.b = j3;
-        this.c = j10;
-        this.d = l4;
+        this.b = m80Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        org.telegram.ui.Components.m80 m80Var = this.b;
+        switch (i10) {
             case 0:
-                zn.e0((zn) this.e, this.b, this.c, this.d, (Boolean) obj);
+                m80Var.s();
                 break;
             default:
-                Boolean bool = (Boolean) obj;
-                i10 = ((org.telegram.ui.ActionBar.n2) ((oj) this.e).b).currentAccount;
-                boolean z10 = false;
-                yh.m5 y3 = yh.m5.y(i10, false);
-                if (this.d.longValue() > 0 && bool.booleanValue()) {
-                    z10 = true;
-                }
-                y3.i0(this.b, this.c, z10, true);
+                Drawable[] drawableArr = PhotoViewer.U8;
+                m80Var.s();
                 break;
         }
     }

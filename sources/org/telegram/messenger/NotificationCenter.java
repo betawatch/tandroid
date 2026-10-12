@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class NotificationCenter {
     private static final long EXPIRE_NOTIFICATIONS_TIME = 5017;
@@ -391,7 +391,7 @@ public class NotificationCenter {
     private final SparseArray<AllowedNotifications> allowedNotifications = new SparseArray<>();
     SparseArray<Runnable> alreadyPostedRunnubles = new SparseArray<>();
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class AllowedNotifications {
         int[] allowedIds;
         final long time;
@@ -401,7 +401,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class DelayedPost {
         private Object[] args;
         private int id;
@@ -412,12 +412,12 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface NotificationCenterDelegate {
         void didReceivedNotification(int i10, int i11, Object... objArr);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface ObserversGroup {
         ObserversGroup add(int i10);
 
@@ -426,11 +426,11 @@ public class NotificationCenter {
         void removeAllObservers();
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class ObserversGroupImpl implements ObserversGroup {
         private NotificationCenterDelegate delegate;
         private ObserversGroupImpl globalGroup;
-        private final a0.l ids;
+        private final a0.k ids;
         private NotificationCenter notificationCenter;
 
         @Override // org.telegram.messenger.NotificationCenter.ObserversGroup
@@ -438,18 +438,18 @@ public class NotificationCenter {
             if (this.delegate == null) {
                 return this;
             }
-            a0.l lVar = this.ids;
-            int i11 = lVar.b + 1;
-            int[] iArr = lVar.a;
+            a0.k kVar = this.ids;
+            int i11 = kVar.b + 1;
+            int[] iArr = kVar.a;
             if (iArr.length < i11) {
                 int[] copyOf = Arrays.copyOf(iArr, Math.max(i11, (iArr.length * 3) / 2));
                 kotlin.jvm.internal.i.d(copyOf, "copyOf(this, newSize)");
-                lVar.a = copyOf;
+                kVar.a = copyOf;
             }
-            int[] iArr2 = lVar.a;
-            int i12 = lVar.b;
+            int[] iArr2 = kVar.a;
+            int i12 = kVar.b;
             iArr2[i12] = i10;
-            lVar.b = i12 + 1;
+            kVar.b = i12 + 1;
             this.notificationCenter.addObserverInternal(this.delegate, i10);
             return this;
         }
@@ -480,15 +480,15 @@ public class NotificationCenter {
             for (int i11 = 0; i11 < i10; i11++) {
                 NotificationCenter notificationCenter = this.notificationCenter;
                 NotificationCenterDelegate notificationCenterDelegate = this.delegate;
-                a0.l lVar = this.ids;
+                a0.k kVar = this.ids;
                 if (i11 < 0) {
-                    lVar.getClass();
-                } else if (i11 < lVar.b) {
-                    notificationCenter.removeObserver(notificationCenterDelegate, lVar.a[i11]);
+                    kVar.getClass();
+                } else if (i11 < kVar.b) {
+                    notificationCenter.removeObserver(notificationCenterDelegate, kVar.a[i11]);
                 }
-                StringBuilder j3 = hg.c.j(i11, "Index ", " must be in 0..");
-                j3.append(lVar.b - 1);
-                throw new IndexOutOfBoundsException(j3.toString());
+                StringBuilder k10 = i2.d.k(i11, "Index ", " must be in 0..");
+                k10.append(kVar.b - 1);
+                throw new IndexOutOfBoundsException(k10.toString());
             }
             this.ids.b = 0;
             this.notificationCenter = null;
@@ -496,20 +496,20 @@ public class NotificationCenter {
         }
 
         private ObserversGroupImpl(NotificationCenter notificationCenter, NotificationCenterDelegate notificationCenterDelegate) {
-            a0.l lVar = new a0.l();
-            lVar.a = new int[16];
-            this.ids = lVar;
+            a0.k kVar = new a0.k();
+            kVar.a = new int[16];
+            this.ids = kVar;
             this.notificationCenter = notificationCenter;
             this.delegate = notificationCenterDelegate;
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface PostponeNotificationCallback {
         boolean needPostpone(int i10, int i11, Object[] objArr);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class WeakObserversGroupImpl implements ObserversGroup, NotificationCenterDelegate {
         private final ObserversGroupImpl observersGroup;
         private final WeakReference<NotificationCenterDelegate> reference;
@@ -937,7 +937,7 @@ public class NotificationCenter {
             return;
         }
         alreadyLogged = true;
-        FileLog.e((Throwable) new RuntimeException(hg.c.h(i10, "Total observers more than 1000, need check for memory leak. ")), true);
+        FileLog.e((Throwable) new RuntimeException(i2.d.i(i10, "Total observers more than 1000, need check for memory leak. ")), true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -948,16 +948,16 @@ public class NotificationCenter {
             return;
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j3 = Long.MAX_VALUE;
+        long j10 = Long.MAX_VALUE;
         for (int i10 = 0; i10 < this.allowedNotifications.size(); i10++) {
-            long j10 = this.allowedNotifications.valueAt(i10).time;
-            if (elapsedRealtime - j10 > 1000) {
+            long j11 = this.allowedNotifications.valueAt(i10).time;
+            if (elapsedRealtime - j11 > 1000) {
                 if (arrayList == null) {
                     arrayList = new ArrayList();
                 }
                 arrayList.add(Integer.valueOf(this.allowedNotifications.keyAt(i10)));
             } else {
-                j3 = Math.min(j10, j3);
+                j10 = Math.min(j11, j10);
             }
         }
         if (arrayList != null) {
@@ -965,8 +965,8 @@ public class NotificationCenter {
                 onAnimationFinish(((Integer) arrayList.get(i11)).intValue());
             }
         }
-        if (j3 != Long.MAX_VALUE) {
-            AndroidUtilities.runOnUIThread(new wg(this, 0), Math.max(17L, EXPIRE_NOTIFICATIONS_TIME - (elapsedRealtime - j3)));
+        if (j10 != Long.MAX_VALUE) {
+            AndroidUtilities.runOnUIThread(new yg(this, 0), Math.max(17L, EXPIRE_NOTIFICATIONS_TIME - (elapsedRealtime - j10)));
         }
     }
 
@@ -982,18 +982,18 @@ public class NotificationCenter {
             if (intValue2 == -1) {
                 Log.i("ObserverDiff", "key=" + keyAt + " REMOVED (was " + intValue + ")");
             } else if (intValue != intValue2) {
-                StringBuilder k10 = hg.c.k("key=", keyAt, " CHANGED: ", intValue, " -> ");
-                k10.append(intValue2);
-                Log.i("ObserverDiff", k10.toString());
+                StringBuilder l4 = i2.d.l("key=", keyAt, " CHANGED: ", intValue, " -> ");
+                l4.append(intValue2);
+                Log.i("ObserverDiff", l4.toString());
             }
         }
         for (int i11 = 0; i11 < sparseArray2.size(); i11++) {
             int keyAt2 = sparseArray2.keyAt(i11);
             if (sparseArray.get(keyAt2, -1).intValue() == -1) {
-                StringBuilder j3 = hg.c.j(keyAt2, "key=", " ADDED (size=");
-                j3.append(sparseArray2.valueAt(i11));
-                j3.append(")");
-                Log.i("ObserverDiff", j3.toString());
+                StringBuilder k10 = i2.d.k(keyAt2, "key=", " ADDED (size=");
+                k10.append(sparseArray2.valueAt(i11));
+                k10.append(")");
+                Log.i("ObserverDiff", k10.toString());
             }
         }
     }
@@ -1055,7 +1055,7 @@ public class NotificationCenter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkForExpiredNotifications$0() {
-        this.checkForExpiredNotifications = new wg(this, 1);
+        this.checkForExpiredNotifications = new yg(this, 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1078,7 +1078,7 @@ public class NotificationCenter {
     }
 
     public static void listenEmojiLoading(View view) {
-        getGlobalInstance().listen(view, emojiLoaded, new b1(view, 2));
+        getGlobalInstance().listen(view, emojiLoaded, new d1(view, 2));
     }
 
     private void postNotificationDebounced(int i10, Object[] objArr) {
@@ -1086,9 +1086,9 @@ public class NotificationCenter {
         if (this.alreadyPostedRunnubles.indexOfKey(hashCode) >= 0) {
             return;
         }
-        y4 y4Var = new y4(this, i10, objArr, hashCode);
-        this.alreadyPostedRunnubles.put(hashCode, y4Var);
-        AndroidUtilities.runOnUIThread(y4Var, 250L);
+        b5 b5Var = new b5(this, i10, objArr, hashCode);
+        this.alreadyPostedRunnubles.put(hashCode, b5Var);
+        AndroidUtilities.runOnUIThread(b5Var, 250L);
     }
 
     public static void sanitize() {
@@ -1118,12 +1118,12 @@ public class NotificationCenter {
                             FileLog.e("MEMORY_LEAK observer " + keyAt + " with View with destroyed Context");
                             valueAt.remove(size);
                         }
-                    } else if (obj instanceof org.telegram.ui.ActionBar.n2) {
-                        if (((org.telegram.ui.ActionBar.n2) obj).isFinished) {
+                    } else if (obj instanceof org.telegram.ui.ActionBar.m2) {
+                        if (((org.telegram.ui.ActionBar.m2) obj).isFinished) {
                             FileLog.e("MEMORY_LEAK observer " + keyAt + " with destroyed BaseFragment");
                             valueAt.remove(size);
                         }
-                    } else if ((obj instanceof org.telegram.ui.ActionBar.f3) && ((org.telegram.ui.ActionBar.f3) obj).isDismissed()) {
+                    } else if ((obj instanceof org.telegram.ui.ActionBar.e3) && ((org.telegram.ui.ActionBar.e3) obj).isDismissed()) {
                         FileLog.e("MEMORY_LEAK observer " + keyAt + " with destroyed BottomSheet");
                         valueAt.remove(size);
                     }
@@ -1206,9 +1206,9 @@ public class NotificationCenter {
 
     public Runnable listen(View view, final int i10, final Utilities.Callback<Object[]> callback) {
         if (view == null || callback == null) {
-            return new w1(18);
+            return new y1(17);
         }
-        final NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.xg
+        final NotificationCenterDelegate notificationCenterDelegate = new NotificationCenterDelegate() { // from class: org.telegram.messenger.zg
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i11, int i12, Object[] objArr) {
                 NotificationCenter.lambda$listen$4(i10, callback, i11, i12, objArr);
@@ -1226,7 +1226,7 @@ public class NotificationCenter {
             }
         };
         view.addOnAttachStateChangeListener(onAttachStateChangeListener);
-        return new ei.l3(this, view, onAttachStateChangeListener, notificationCenterDelegate, i10, 11);
+        return new fi.l3(this, view, onAttachStateChangeListener, notificationCenterDelegate, i10, 11);
     }
 
     public void onAnimationFinish(int i10) {
@@ -1352,7 +1352,7 @@ public class NotificationCenter {
     }
 
     public void postNotificationNameOnUIThread(int i10, Object... objArr) {
-        AndroidUtilities.runOnUIThread(new r4(this, i10, objArr, 19));
+        AndroidUtilities.runOnUIThread(new u4(this, i10, objArr, 19));
     }
 
     public void removeDelayed(Runnable runnable) {
@@ -1430,7 +1430,7 @@ public class NotificationCenter {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public class UniqArrayList<T> extends ArrayList<T> {
         HashSet<T> set;
 
@@ -1520,9 +1520,9 @@ public class NotificationCenter {
         allowedNotifications.allowedIds = iArr;
         this.allowedNotifications.put(this.animationInProgressPointer, allowedNotifications);
         if (this.checkForExpiredNotifications == null) {
-            wg wgVar = new wg(this, i11);
-            this.checkForExpiredNotifications = wgVar;
-            AndroidUtilities.runOnUIThread(wgVar, EXPIRE_NOTIFICATIONS_TIME);
+            yg ygVar = new yg(this, i11);
+            this.checkForExpiredNotifications = ygVar;
+            AndroidUtilities.runOnUIThread(ygVar, EXPIRE_NOTIFICATIONS_TIME);
         }
         return this.animationInProgressPointer;
     }

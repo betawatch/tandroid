@@ -5,8 +5,9 @@ import android.os.Parcelable;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.Arrays;
 import org.json.JSONObject;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k extends o6.a {
     public final MediaInfo a;
@@ -25,11 +26,11 @@ public final class k extends o6.a {
     public static final g6.b y = new g6.b("MediaLoadRequestData", null);
     public static final Parcelable.Creator<k> CREATOR = new v(10);
 
-    public k(MediaInfo mediaInfo, n nVar, Boolean bool, long j3, double d, long[] jArr, JSONObject jSONObject, String str, String str2, String str3, String str4, long j10) {
+    public k(MediaInfo mediaInfo, n nVar, Boolean bool, long j10, double d, long[] jArr, JSONObject jSONObject, String str, String str2, String str3, String str4, long j11) {
         this.a = mediaInfo;
         this.b = nVar;
         this.c = bool;
-        this.d = j3;
+        this.d = j10;
         this.e = d;
         this.f = jArr;
         this.n = jSONObject;
@@ -37,7 +38,7 @@ public final class k extends o6.a {
         this.s = str2;
         this.v = str3;
         this.w = str4;
-        this.x = j10;
+        this.x = j11;
     }
 
     public final boolean equals(Object obj) {
@@ -59,22 +60,22 @@ public final class k extends o6.a {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.n;
         this.h = jSONObject == null ? null : jSONObject.toString();
-        int q6 = w7.d0.q(parcel, 20293);
-        w7.d0.k(parcel, 2, this.a, i10);
-        w7.d0.k(parcel, 3, this.b, i10);
-        w7.d0.a(parcel, 4, this.c);
-        w7.d0.s(parcel, 5, 8);
+        int q6 = g0.q(parcel, 20293);
+        g0.k(parcel, 2, this.a, i10);
+        g0.k(parcel, 3, this.b, i10);
+        g0.a(parcel, 4, this.c);
+        g0.s(parcel, 5, 8);
         parcel.writeLong(this.d);
-        w7.d0.s(parcel, 6, 8);
+        g0.s(parcel, 6, 8);
         parcel.writeDouble(this.e);
-        w7.d0.j(parcel, 7, this.f);
-        w7.d0.l(parcel, 8, this.h);
-        w7.d0.l(parcel, 9, this.r);
-        w7.d0.l(parcel, 10, this.s);
-        w7.d0.l(parcel, 11, this.v);
-        w7.d0.l(parcel, 12, this.w);
-        w7.d0.s(parcel, 13, 8);
+        g0.j(parcel, 7, this.f);
+        g0.l(parcel, 8, this.h);
+        g0.l(parcel, 9, this.r);
+        g0.l(parcel, 10, this.s);
+        g0.l(parcel, 11, this.v);
+        g0.l(parcel, 12, this.w);
+        g0.s(parcel, 13, 8);
         parcel.writeLong(this.x);
-        w7.d0.r(parcel, q6);
+        g0.r(parcel, q6);
     }
 }

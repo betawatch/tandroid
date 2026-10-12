@@ -1,31 +1,47 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import java.util.regex.Pattern;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fh implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class fh implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ fo b;
 
-    public /* synthetic */ fh(int i10, boolean[] zArr) {
+    public /* synthetic */ fh(fo foVar, int i10) {
         this.a = i10;
-        this.b = zArr;
+        this.b = foVar;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        int i10 = this.a;
-        boolean[] zArr = this.b;
-        switch (i10) {
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        switch (this.a) {
             case 0:
-                zArr[0] = true;
+                fo foVar = this.b;
+                if (foVar.getParentActivity() != null && foVar.fragmentView != null && i10 > 0) {
+                    org.telegram.ui.Components.zc.a0(foVar).m(org.telegram.ui.Components.yc.r, i10, 0, 0, foVar.ea).j();
+                    break;
+                }
                 break;
+            case 1:
+                fo foVar2 = this.b;
+                if (i10 != 0) {
+                    foVar2.j(i10, 0, false, 0, true, 0);
+                    break;
+                } else {
+                    foVar2.m6 = false;
+                    foVar2.M9();
+                    break;
+                }
             default:
-                Pattern pattern = LaunchActivity.B1;
-                zArr[0] = true;
-                break;
+                fo foVar3 = this.b;
+                if (i10 != 0) {
+                    foVar3.finishFragment();
+                    break;
+                } else {
+                    foVar3.Uc(true);
+                    break;
+                }
         }
     }
 }

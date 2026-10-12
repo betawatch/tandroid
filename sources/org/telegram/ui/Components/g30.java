@@ -1,53 +1,77 @@
 package org.telegram.ui.Components;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.rb1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class g30 extends s4.o {
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ j30 d;
+public final class g30 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public g30(j30 j30Var, ArrayList arrayList, ArrayList arrayList2) {
-        this.d = j30Var;
-        this.b = arrayList;
-        this.c = arrayList2;
+    public g30(rb1 rb1Var, ui uiVar, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.sk skVar, org.telegram.ui.fo foVar) {
+        this.f = rb1Var;
+        this.b = uiVar;
+        this.c = u1Var;
+        this.d = skVar;
+        this.e = foVar;
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        return true;
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        j30 j30Var = this.d;
-        if (i10 < size && i11 < j30Var.e.size()) {
-            return ((ChatObject.VideoParticipant) arrayList.get(i10)).equals(j30Var.e.get(i11));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                WindowManager windowManager = (WindowManager) this.f;
+                View view = this.b;
+                if (view.getParent() != null) {
+                    view.setVisibility(8);
+                    View view2 = this.c;
+                    view2.setVisibility(8);
+                    View view3 = this.d;
+                    view3.setVisibility(8);
+                    windowManager.removeView(view);
+                    windowManager.removeView(view2);
+                    windowManager.removeView(view3);
+                    windowManager.removeView((View) this.e);
+                    break;
+                }
+                break;
+            default:
+                rb1 rb1Var = (rb1) this.f;
+                rb1Var.D.unlock();
+                ui uiVar = (ui) this.b;
+                ((ArrayList) uiVar.c).remove(rb1Var);
+                uiVar.a();
+                ((ViewGroup) uiVar.d).invalidate();
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.c;
+                u1Var.setEnterTransitionInProgress(false);
+                u1Var.getTransitionParams().D0.set(u1Var.getBackgroundDrawableLeft(), u1Var.getBackgroundDrawableTop(), u1Var.getBackgroundDrawableRight(), u1Var.getBackgroundDrawableBottom());
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.d;
+                chatActivityEnterView.setTextTransitionIsRunning(false);
+                chatActivityEnterView.getEditField().setAlpha(1.0f);
+                org.telegram.ui.fo foVar = (org.telegram.ui.fo) this.e;
+                ((dp[]) foVar.a0.b)[0].c.setAlpha(1.0f);
+                ((dp[]) foVar.a0.b)[0].d.setAlpha(1.0f);
+                b6.release((View) null, rb1Var.H);
+                break;
         }
-        int size2 = i10 - arrayList.size();
-        int size3 = i11 - j30Var.e.size();
-        ArrayList arrayList2 = this.c;
-        if (size3 < 0 || size3 >= j30Var.f.size() || size2 < 0 || size2 >= arrayList2.size()) {
-            return MessageObject.getPeerId((i10 < arrayList.size() ? ((ChatObject.VideoParticipant) arrayList.get(i10)).participant : (TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == MessageObject.getPeerId((i11 < j30Var.e.size() ? ((ChatObject.VideoParticipant) j30Var.e.get(i11)).participant : (TLRPC.GroupCallParticipant) j30Var.f.get(size3)).peer);
-        }
-        return MessageObject.getPeerId(((TLRPC.GroupCallParticipant) arrayList2.get(size2)).peer) == MessageObject.getPeerId(((TLRPC.GroupCallParticipant) j30Var.f.get(size3)).peer);
     }
 
-    @Override // s4.o
-    public final int d() {
-        j30 j30Var = this.d;
-        return j30Var.f.size() + j30Var.e.size();
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.c.size() + this.b.size();
+    public g30(k30 k30Var, ah.x xVar, FrameLayout frameLayout, WindowManager windowManager, org.telegram.ui.y7 y7Var) {
+        this.b = k30Var;
+        this.c = xVar;
+        this.d = frameLayout;
+        this.f = windowManager;
+        this.e = y7Var;
     }
 }

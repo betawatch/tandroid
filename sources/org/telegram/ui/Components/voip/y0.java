@@ -1,54 +1,44 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.wi1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d1 b;
+public final class y0 extends GestureDetector.SimpleOnGestureListener {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ wi1 c;
 
-    public /* synthetic */ y0(d1 d1Var, int i10) {
-        this.a = i10;
-        this.b = d1Var;
+    public y0(wi1 wi1Var) {
+        this.c = wi1Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                d1 d1Var = this.b;
-                d1Var.getClass();
-                d1Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d1Var.invalidate();
-                break;
-            case 1:
-                d1 d1Var2 = this.b;
-                d1Var2.getClass();
-                d1Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float dp = d1Var2.I + AndroidUtilities.dp(28.0f);
-                float dp2 = d1Var2.J + AndroidUtilities.dp(52.0f);
-                float f7 = d1Var2.y;
-                d1Var2.G = dp - (dp * f7);
-                d1Var2.H = dp2 - (f7 * dp2);
-                d1Var2.invalidate();
-                break;
-            case 2:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d1 d1Var3 = this.b;
-                d1Var3.E = floatValue;
-                int dp3 = (AndroidUtilities.displaySize.x - AndroidUtilities.dp(36.0f)) - AndroidUtilities.dp(52.0f);
-                b1 b1Var = d1Var3.c;
-                b1Var.getLayoutParams().width = AndroidUtilities.dp(52.0f) + ((int) (dp3 * d1Var3.E));
-                b1Var.requestLayout();
-                break;
-            default:
-                d1 d1Var4 = this.b;
-                d1Var4.getClass();
-                d1Var4.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d1Var4.e();
-                break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        this.a = true;
+        return super.onDown(motionEvent);
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        float x10 = motionEvent.getX() - motionEvent2.getX();
+        float y3 = motionEvent.getY() - motionEvent2.getY();
+        if (Math.abs(x10) > AndroidUtilities.getPixelsInCM(0.4f, true) && Math.abs(x10) / 3.0f > y3 && this.a && !this.b) {
+            this.a = false;
+            org.telegram.ui.c0 c0Var = new org.telegram.ui.c0(this, x10, 2);
+            wi1 wi1Var = this.c;
+            ValueAnimator valueAnimator = wi1Var.U;
+            if (valueAnimator != null) {
+                this.b = true;
+                AndroidUtilities.runOnUIThread(c0Var, (valueAnimator.getDuration() - wi1Var.U.getCurrentPlayTime()) + 50);
+            } else {
+                c0Var.run();
+            }
         }
+        return super.onScroll(motionEvent, motionEvent2, f7, f10);
     }
 }

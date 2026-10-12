@@ -1,71 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.R;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class x7 extends s4.w {
-    public final /* synthetic */ l8 d;
+public final class x7 extends mm0 {
+    public boolean V2;
+    public final /* synthetic */ m8 W2;
 
-    public x7(l8 l8Var) {
-        this.d = l8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x7(m8 m8Var, Context context) {
+        super(context, null);
+        this.W2 = m8Var;
     }
 
-    @Override // s4.w
-    public final void a(RecyclerView recyclerView, s4.d1 d1Var) {
-        super.a(recyclerView, d1Var);
-        View view = d1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
+    @Override // org.telegram.ui.Components.mm0
+    public final boolean E0(float f7) {
+        m8 m8Var = this.W2;
+        return f7 < m8Var.E.getY() - ((float) m8Var.n.getTop());
     }
 
-    @Override // s4.w
-    public final int e(RecyclerView recyclerView, s4.d1 d1Var) {
-        if (d1Var.f != 0) {
-            return 0;
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        m8 m8Var = this.W2;
+        int i14 = m8Var.s0;
+        if (i14 != -1 && !m8Var.c.n0) {
+            this.V2 = true;
+            m8Var.r.h1(i14, m8Var.t0 - m8Var.n.getPaddingTop());
+            super.onLayout(false, i10, i11, i12, i13);
+            this.V2 = false;
+            m8Var.s0 = -1;
+            return;
         }
-        return s4.w.l(3, 0);
-    }
-
-    @Override // s4.w
-    public final boolean n(RecyclerView recyclerView, s4.d1 d1Var, s4.d1 d1Var2) {
-        int b10 = d1Var.b();
-        int b11 = d1Var2.b();
-        l8 l8Var = this.d;
-        if (!l8Var.v0) {
-            l8Var.w0.move(b10, b11);
-        } else {
-            if (b10 <= 0 || b11 <= 0) {
-                return false;
+        if (m8Var.r0) {
+            m8Var.r0 = false;
+            this.V2 = true;
+            if (m8Var.x0(true)) {
+                super.onLayout(false, i10, i11, i12, i13);
             }
-            l8Var.w0.move(b10 - 1, b11 - 1);
-        }
-        l8Var.x0.clear();
-        l8Var.x0.addAll(l8Var.w0.list);
-        l8Var.s.p(b10, b11);
-        return true;
-    }
-
-    @Override // s4.w
-    public final void p(s4.d1 d1Var, int i10) {
-        w7 w7Var = this.d.n;
-        if (d1Var != null) {
-            w7Var.d1(false);
-        }
-        if (i10 != 0) {
-            w7Var.I0(false);
-            if (d1Var != null) {
-                d1Var.a.setPressed(true);
-            }
-        }
-        if (d1Var != null) {
-            d1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+            this.V2 = false;
         }
     }
 
-    @Override // s4.w
-    public final void q(s4.d1 d1Var) {
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.V2) {
+            return;
+        }
+        super.requestLayout();
     }
 }

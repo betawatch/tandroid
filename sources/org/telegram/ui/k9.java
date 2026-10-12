@@ -1,116 +1,77 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.camera.CameraView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v9 b;
+public final class k9 extends FrameLayout {
+    public static final /* synthetic */ int e = 0;
+    public final TextView a;
+    public final TextView b;
+    public final View c;
+    public final org.telegram.ui.Components.bk0 d;
 
-    public /* synthetic */ k9(v9 v9Var, int i10) {
-        this.a = i10;
-        this.b = v9Var;
+    public k9(n9 n9Var, Context context, org.telegram.ui.Components.f10 f10Var) {
+        super(context);
+        addView(f10Var, w7.a6.d(-1.0f, -1));
+        this.c = f10Var;
+        org.telegram.ui.Components.bk0 bk0Var = new org.telegram.ui.Components.bk0(context);
+        this.d = bk0Var;
+        bk0Var.f(R.raw.utyan_call, 110, 110, null);
+        bk0Var.setAutoRepeat(false);
+        addView(bk0Var, w7.a6.a(110.0f, 52.0f, 17.0f, 52.0f, 60.0f, 110, 17));
+        bk0Var.setOnClickListener(new a(this, 10));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
+        textView.setText(LocaleController.getString(R.string.MakeYourFirstCall));
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(17);
+        addView(textView, w7.a6.a(-2.0f, 17.0f, 40.0f, 17.0f, 0.0f, -1, 17));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        String formatString = LocaleController.formatString(R.string.MakeYourFirstCallHint, Integer.valueOf(n9Var.getMessagesController().conferenceCallSizeLimit));
+        if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
+            formatString = formatString.replace('\n', ' ');
+        }
+        textView2.setText(formatString);
+        textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.c7, false));
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity(17);
+        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView2, w7.a6.a(-2.0f, 17.0f, 80.0f, 17.0f, 0.0f, -1, 17));
+        f10Var.setAlpha(0.0f);
+        bk0Var.setAlpha(0.0f);
+        textView.setAlpha(0.0f);
+        textView2.setAlpha(0.0f);
+        setOnTouchListener(new ci.d(4));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = 0;
-        switch (this.a) {
-            case 0:
-                this.b.Y();
-                break;
-            case 1:
-                v9 v9Var = this.b;
-                if (!v9Var.isFinishing()) {
-                    v9Var.R = null;
-                    v9Var.N = false;
-                    v9Var.e0.run();
-                    if (!v9Var.N) {
-                        AndroidUtilities.runOnUIThread(new k9(v9Var, 8), 500L);
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                v9 v9Var2 = this.b;
-                CameraView cameraView = v9Var2.c;
-                if (cameraView != null) {
-                    v9Var2.c0(cameraView.getTextureView().getBitmap());
-                    break;
-                }
-                break;
-            case 3:
-                this.b.finishFragment();
-                break;
-            case 4:
-                v9 v9Var3 = this.b;
-                u9 u9Var = v9Var3.M;
-                if (u9Var != null) {
-                    u9Var.K(v9Var3.R);
-                }
-                v9Var3.finishFragment();
-                break;
-            case 5:
-                v9 v9Var4 = this.b;
-                v9Var4.U = new pb.c();
-                Context context = ApplicationLoader.applicationContext;
-                com.google.android.gms.internal.vision.x1 x1Var = new com.google.android.gms.internal.vision.x1();
-                x1Var.a = 256;
-                v9Var4.V = new r8.n(new com.google.android.gms.internal.vision.u2(context, x1Var));
-                break;
-            case 6:
-                v9 v9Var5 = this.b;
-                if (v9Var5.f.getTag() != null) {
-                    v9Var5.f.setTag(null);
-                    v9Var5.f.animate().setDuration(200L).alpha(0.0f).setInterpolator(org.telegram.ui.Components.hs.f).start();
-                    break;
-                }
-                break;
-            case 7:
-                v9 v9Var6 = this.b;
-                CameraView cameraView2 = v9Var6.c;
-                if (cameraView2 != null && cameraView2.getCameraSession() != null) {
-                    CameraController.getInstance().stopPreview(v9Var6.c.getCameraSession());
-                }
-                AndroidUtilities.runOnUIThread(new k9(v9Var6, 4));
-                break;
-            default:
-                v9 v9Var7 = this.b;
-                float f7 = v9Var7.Z;
-                float f10 = v9Var7.N ? 1.0f : 0.0f;
-                v9Var7.a0 = f10;
-                if (f7 != f10) {
-                    ValueAnimator valueAnimator = v9Var7.Y;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    int i11 = 1;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(v9Var7.Z, v9Var7.a0);
-                    v9Var7.Y = ofFloat;
-                    ofFloat.addUpdateListener(new n9(v9Var7, i10));
-                    v9Var7.Y.setDuration((long) (Math.abs(v9Var7.Z - v9Var7.a0) * 300.0f));
-                    v9Var7.Y.setInterpolator(org.telegram.ui.Components.hs.f);
-                    v9Var7.Y.start();
-                    o1.k kVar = v9Var7.b0;
-                    if (kVar != null) {
-                        kVar.c();
-                    }
-                    o1.k kVar2 = new o1.k(new o1.j((v9Var7.N ? v9Var7.c0 : 1.0f - v9Var7.c0) * 500.0f));
-                    v9Var7.b0 = kVar2;
-                    kVar2.b(new l9(v9Var7, i11));
-                    v9Var7.b0.u = new o1.l(500.0f);
-                    v9Var7.b0.u.a(1.0f);
-                    v9Var7.b0.u.b(500.0f);
-                    v9Var7.b0.h();
-                    break;
-                }
-                break;
-        }
+    public final void a() {
+        this.d.animate().alpha(0.0f).setDuration(150L).start();
+        this.a.animate().alpha(0.0f).setDuration(150L).start();
+        this.b.animate().alpha(0.0f).setDuration(150L).start();
+        this.c.animate().alpha(1.0f).setDuration(150L).start();
+    }
+
+    public final void b() {
+        org.telegram.ui.Components.bk0 bk0Var = this.d;
+        bk0Var.animate().alpha(1.0f).setDuration(150L).start();
+        this.a.animate().alpha(1.0f).setDuration(150L).start();
+        this.b.animate().alpha(1.0f).setDuration(150L).start();
+        this.c.animate().alpha(0.0f).setDuration(150L).start();
+        bk0Var.d();
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
     }
 }

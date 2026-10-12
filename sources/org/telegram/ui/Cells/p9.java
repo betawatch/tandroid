@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public abstract class p9 extends ba {
     public final SparseArray p0 = new SparseArray();
@@ -40,8 +40,8 @@ public abstract class p9 extends ba {
         }
         try {
             str = richMessageLayout.getSelectionHtml(this.u, this.v);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
             str = null;
         }
         if (str == null || str.length() == 0) {
@@ -68,7 +68,7 @@ public abstract class p9 extends ba {
         u1Var.setSelectedBackgroundProgress(0.01f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.01f, 1.0f);
         int i10 = 1;
-        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.q2(u1Var, id2, i10));
+        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.p2(u1Var, id2, i10));
         ofFloat.addListener(new k1(i10, u1Var));
         ofFloat.setDuration(300L);
         ofFloat.start();
@@ -97,7 +97,7 @@ public abstract class p9 extends ba {
             animator.cancel();
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new ai.cb(3, this, z10));
+        ofFloat.addUpdateListener(new ah.k0(4, this, z10));
         ofFloat.setDuration(250L);
         ofFloat.start();
         sparseArray.put(this.w, ofFloat);
@@ -122,11 +122,11 @@ public abstract class p9 extends ba {
             Paint paint = this.p;
             Paint paint2 = this.o;
             if (z10) {
-                int i10 = org.telegram.ui.ActionBar.i6.Vb;
+                int i10 = org.telegram.ui.ActionBar.g6.Vb;
                 paint2.setColor(t(i10));
                 paint.setColor(t(i10));
             } else {
-                int i11 = org.telegram.ui.ActionBar.i6.uf;
+                int i11 = org.telegram.ui.ActionBar.g6.uf;
                 paint2.setColor(t(i11));
                 paint.setColor(t(i11));
             }
@@ -144,11 +144,11 @@ public abstract class p9 extends ba {
         Paint paint = this.p;
         Paint paint2 = this.o;
         if (isOutOwner) {
-            int i10 = org.telegram.ui.ActionBar.i6.Vb;
+            int i10 = org.telegram.ui.ActionBar.g6.Vb;
             paint2.setColor(t(i10));
             paint.setColor(t(i10));
         } else {
-            int i11 = org.telegram.ui.ActionBar.i6.uf;
+            int i11 = org.telegram.ui.ActionBar.g6.uf;
             paint2.setColor(t(i11));
             paint.setColor(t(i11));
         }
@@ -187,9 +187,9 @@ public abstract class p9 extends ba {
         this.u = i10;
         this.v = i11;
         w();
-        w7.h0 h0Var = this.D;
-        if (h0Var != null) {
-            h0Var.a(true);
+        w7.w5 w5Var = this.D;
+        if (w5Var != null) {
+            w5Var.a(true);
         }
         this.g = 0.0f;
         this.f = 0.0f;
@@ -224,7 +224,7 @@ public abstract class p9 extends ba {
             int i12 = this.c;
             rect.set(i12, this.d, richMessageLayout2.getMinWidth() + i12, richMessageLayout2.getHeight() + this.d);
         } else if (u1Var.P2() && u1Var.getCaptionLayout().textLayoutBlocks.size() > 0) {
-            MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) hg.c.g(1, u1Var.getCaptionLayout().textLayoutBlocks);
+            MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) i2.d.g(1, u1Var.getCaptionLayout().textLayoutBlocks);
             int i13 = this.c;
             rect.set(i13, this.d, textLayoutBlock.textLayout.getWidth() + i13, (int) (textLayoutBlock.textYOffset(u1Var.getCaptionLayout().textLayoutBlocks, t1Var) + this.d + textLayoutBlock.padTop + textLayoutBlock.textLayout.getHeight()));
         } else {
@@ -232,7 +232,7 @@ public abstract class p9 extends ba {
                 this.X = null;
                 return;
             }
-            MessageObject.TextLayoutBlock textLayoutBlock2 = (MessageObject.TextLayoutBlock) hg.c.g(1, messageObject.textLayoutBlocks);
+            MessageObject.TextLayoutBlock textLayoutBlock2 = (MessageObject.TextLayoutBlock) i2.d.g(1, messageObject.textLayoutBlocks);
             int i14 = this.c;
             rect.set(i14, this.d, textLayoutBlock2.textLayout.getWidth() + i14, (int) (textLayoutBlock2.textYOffset(messageObject.textLayoutBlocks, t1Var) + this.d + textLayoutBlock2.padTop + textLayoutBlock2.textLayout.getHeight()));
         }
@@ -404,7 +404,7 @@ public abstract class p9 extends ba {
                 if (z13) {
                     RichMessageLayout richMessageLayout = u1Var.getMessageObject() != null ? u1Var.getMessageObject().richLayout : null;
                     if (richMessageLayout != null && !richMessageLayout.textBlocks.isEmpty()) {
-                        z9 z9Var = (z9) hg.c.g(1, richMessageLayout.textBlocks);
+                        z9 z9Var = (z9) i2.d.g(1, richMessageLayout.textBlocks);
                         Layout layout2 = z9Var.getLayout();
                         staticLayout = layout2 instanceof StaticLayout ? (StaticLayout) layout2 : null;
                         f7 = z9Var.getY();

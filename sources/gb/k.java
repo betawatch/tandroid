@@ -1,17 +1,67 @@
 package gb;
 
-import java.io.Reader;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class k extends Reader {
-    @Override // java.io.Reader, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        throw new AssertionError();
+public final class k implements Iterator {
+    public m a;
+    public m b = null;
+    public int c;
+    public final /* synthetic */ n d;
+    public final /* synthetic */ int e;
+
+    public k(n nVar, int i10) {
+        this.e = i10;
+        this.d = nVar;
+        this.a = nVar.f.d;
+        this.c = nVar.e;
     }
 
-    @Override // java.io.Reader
-    public final int read(char[] cArr, int i10, int i11) {
-        throw new AssertionError();
+    public final Object a() {
+        return b();
+    }
+
+    public final m b() {
+        m mVar = this.a;
+        n nVar = this.d;
+        if (mVar == nVar.f) {
+            throw new NoSuchElementException();
+        }
+        if (nVar.e != this.c) {
+            throw new ConcurrentModificationException();
+        }
+        this.a = mVar.d;
+        this.b = mVar;
+        return mVar;
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.a != this.d.f;
+    }
+
+    @Override // java.util.Iterator
+    public Object next() {
+        switch (this.e) {
+            case 1:
+                return b().f;
+            default:
+                return a();
+        }
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        m mVar = this.b;
+        if (mVar == null) {
+            throw new IllegalStateException();
+        }
+        n nVar = this.d;
+        nVar.c(mVar, true);
+        this.b = null;
+        this.c = nVar.e;
     }
 }

@@ -14,7 +14,7 @@ public final class n3 extends p3 implements i5 {
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.i5
@@ -27,24 +27,24 @@ public final class n3 extends p3 implements i5 {
         this.h = jArr;
     }
 
-    public n3(n3 n3Var, Spliterator spliterator, long j3, long j10) {
-        super(n3Var, spliterator, j3, j10, n3Var.h.length);
+    public n3(n3 n3Var, Spliterator spliterator, long j10, long j11) {
+        super(n3Var, spliterator, j10, j11, n3Var.h.length);
         this.h = n3Var.h;
     }
 
     @Override // j$.util.stream.p3
-    public final p3 a(Spliterator spliterator, long j3, long j10) {
-        return new n3(this, spliterator, j3, j10);
+    public final p3 a(Spliterator spliterator, long j10, long j11) {
+        return new n3(this, spliterator, j10, j11);
     }
 
     @Override // j$.util.stream.p3, j$.util.stream.j5
-    public final void accept(long j3) {
+    public final void accept(long j10) {
         int i10 = this.f;
         if (i10 >= this.g) {
             throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
         long[] jArr = this.h;
         this.f = i10 + 1;
-        jArr[i10] = j3;
+        jArr[i10] = j10;
     }
 }

@@ -1,40 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class u60 extends org.telegram.ui.Components.w20 {
-    public final /* synthetic */ c70 r;
+public final class u60 implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ FrameLayout a;
+    public final /* synthetic */ x60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u60(c70 c70Var, Context context, int i10) {
-        super(context, i10);
-        this.r = c70Var;
+    public u60(x60 x60Var, FrameLayout frameLayout) {
+        this.b = x60Var;
+        this.a = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.w20
-    public final void a(org.telegram.ui.Components.d40 d40Var) {
-        super.a(d40Var);
-        c70.Z(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.w20
-    public final void b() {
-        super.b();
-        c70.Z(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.w20
-    public final void c(org.telegram.ui.Components.d40 d40Var) {
-        c70 c70Var = this.r;
-        if (d40Var == c70Var.X) {
-            c70Var.X = null;
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        this.a.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        x60 x60Var = this.b;
+        if (x60Var.z0 == null) {
+            x60Var.z0 = (ad) x60Var.y0(x60Var.Z);
         }
-        if (d40Var == c70Var.Y) {
-            c70Var.Y = null;
-        }
-        super.c(d40Var);
-        c70.Z(c70Var);
+        x60Var.z0.f.setOnClickListener(new t60(this, 0));
     }
 }

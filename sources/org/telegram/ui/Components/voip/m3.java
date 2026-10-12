@@ -1,51 +1,30 @@
 package org.telegram.ui.Components.voip;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o3 b;
+public final class m3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ n3 a;
 
-    public /* synthetic */ m3(o3 o3Var, int i10) {
-        this.a = i10;
-        this.b = o3Var;
+    public m3(n3 n3Var) {
+        this.a = n3Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o3 o3Var = this.b;
-                o3Var.n = floatValue;
-                o3Var.k.invalidate();
-                if (o3Var.n > 1.0f && o3Var.r == null) {
-                    ValueAnimator ofInt = ValueAnimator.ofInt(AndroidUtilities.dp(12), 0);
-                    o3Var.r = ofInt;
-                    ofInt.addUpdateListener(new m3(o3Var, 2));
-                    o3Var.r.setDuration(350 - valueAnimator.getCurrentPlayTime());
-                    o3Var.r.start();
-                    break;
-                }
-                break;
-            case 1:
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                o3 o3Var2 = this.b;
-                o3Var2.m = intValue;
-                o3Var2.k.invalidate();
-                break;
-            default:
-                int intValue2 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                o3 o3Var3 = this.b;
-                if (o3Var3.i <= o3Var3.o / 2) {
-                    intValue2 = -intValue2;
-                }
-                o3Var3.p = intValue2;
-                o3Var3.k.invalidate();
-                break;
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator, boolean z10) {
+        n3 n3Var = this.a;
+        n3Var.e = n3Var.c;
+        n3Var.f = n3Var.d;
+        n3Var.c = AndroidUtilities.dp(12.0f) + Utilities.random.nextInt(AndroidUtilities.dp(16.0f));
+        n3Var.d = AndroidUtilities.dp(12.0f) + Utilities.random.nextInt(AndroidUtilities.dp(16.0f));
+        ValueAnimator valueAnimator = n3Var.b;
+        if (valueAnimator != null) {
+            valueAnimator.start();
         }
     }
 }

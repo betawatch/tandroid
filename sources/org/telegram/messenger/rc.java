@@ -1,28 +1,35 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_update;
+import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rc implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TL_update.TL_updatePeerBlocked c;
+    public final /* synthetic */ zf.s c;
+    public final /* synthetic */ ConcurrentHashMap d;
+    public final /* synthetic */ ConcurrentHashMap e;
 
-    public /* synthetic */ rc(MessagesController messagesController, TL_update.TL_updatePeerBlocked tL_updatePeerBlocked, int i10) {
+    public /* synthetic */ rc(MessagesController messagesController, zf.s sVar, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = tL_updatePeerBlocked;
+        this.c = sVar;
+        this.d = concurrentHashMap;
+        this.e = concurrentHashMap2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$394(this.c);
+                this.b.lambda$processUpdateArray$404(this.c, this.d, this.e);
+                break;
+            case 1:
+                this.b.lambda$processUpdateArray$408(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$processUpdateArray$393(this.c);
+                this.b.lambda$processUpdateArray$403(this.c, this.d, this.e);
                 break;
         }
     }

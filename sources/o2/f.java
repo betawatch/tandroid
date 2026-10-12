@@ -2,28 +2,28 @@ package o2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f extends v2.b {
     public final List d;
     public final long e;
 
-    public f(long j3, List list) {
+    public f(long j10, List list) {
         super(0L, list.size() - 1);
-        this.e = j3;
+        this.e = j10;
         this.d = list;
     }
 
-    @Override // v2.l
-    public final long c() {
+    @Override // v2.m
+    public final long b() {
         a();
-        return this.e + ((p2.j) this.d.get((int) this.c)).e;
+        return this.e + ((p2.k) this.d.get((int) this.c)).e;
     }
 
-    @Override // v2.l
-    public final long h() {
+    @Override // v2.m
+    public final long p() {
         a();
-        p2.j jVar = (p2.j) this.d.get((int) this.c);
-        return this.e + jVar.e + jVar.c;
+        p2.k kVar = (p2.k) this.d.get((int) this.c);
+        return this.e + kVar.e + kVar.c;
     }
 }

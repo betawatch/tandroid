@@ -1,27 +1,58 @@
 package org.telegram.ui;
 
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class j1 {
-    public final ArrayList a = new ArrayList();
-    public final HashMap b = new HashMap();
-    public final int c = MediaDataController.MAX_STYLE_RUNS_COUNT;
-    public final /* synthetic */ k1 d;
+public final class j1 extends s4.g0 {
+    public final /* synthetic */ m1 c;
 
-    public j1(k1 k1Var) {
-        this.d = k1Var;
+    public j1(m1 m1Var) {
+        this.c = m1Var;
     }
 
-    public final float a(float[] fArr, int i10, int i11) {
-        float f7 = 0.0f;
-        while (i10 < i11) {
-            f7 += fArr[i10];
-            i10++;
+    @Override // s4.g0
+    public final int h() {
+        TL_iv.pageBlockCollage pageblockcollage = this.c.s;
+        if (pageblockcollage == null) {
+            return 0;
         }
-        return this.c / f7;
+        return pageblockcollage.items.size();
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        ArrayList<TL_iv.PageBlock> arrayList = this.c.s.items;
+        return arrayList.get((arrayList.size() - i10) - 1) instanceof TL_iv.pageBlockPhoto ? 0 : 1;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        m1 m1Var = this.c;
+        l1 l1Var = m1Var.v;
+        ArrayList<TL_iv.PageBlock> arrayList = m1Var.s.items;
+        TL_iv.PageBlock pageBlock = arrayList.get((arrayList.size() - i10) - 1);
+        int i11 = b1Var.f;
+        View view = b1Var.a;
+        if (i11 == 0) {
+            f2 f2Var = (f2) view;
+            f2Var.R = (MessageObject.GroupedMessagePosition) l1Var.b.get(pageBlock);
+            f2Var.a((TL_iv.pageBlockPhoto) pageBlock, m1Var.w.E.cached_page, false, true);
+        } else {
+            z2 z2Var = (z2) view;
+            z2Var.T = (MessageObject.GroupedMessagePosition) l1Var.b.get(pageBlock);
+            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
+            z2Var.b(pageblockvideo, (a3) m1Var.x.y.f(pageblockvideo.video_id), false, true);
+        }
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        m1 m1Var = this.c;
+        return new org.telegram.ui.Components.wl0(i10 != 0 ? new z2(m1Var.getContext(), m1Var.x, m1Var.w, 2) : new f2(m1Var.getContext(), m1Var.x, m1Var.w, 2));
     }
 }

@@ -1,82 +1,21 @@
 package a3;
 
 import android.content.Context;
-import b2.v0;
-import i2.p0;
-import i2.r1;
-import i2.t0;
-import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class q implements t0 {
-    public boolean a;
-    public boolean b;
-    public final Object c;
-    public final Object d;
-    public Object e;
-    public Object f;
-
-    public q(p0 p0Var, e2.x xVar) {
-        this.d = p0Var;
-        this.c = new r1(xVar);
-        this.a = true;
-    }
-
-    @Override // i2.t0
-    public long a() {
-        if (this.a) {
-            return ((r1) this.c).a();
-        }
-        t0 t0Var = (t0) this.f;
-        t0Var.getClass();
-        return t0Var.a();
-    }
-
-    @Override // i2.t0
-    public boolean b() {
-        if (this.a) {
-            ((r1) this.c).getClass();
-            return false;
-        }
-        t0 t0Var = (t0) this.f;
-        t0Var.getClass();
-        return t0Var.b();
-    }
-
-    public void c(i2.f fVar) {
-        t0 t0Var;
-        t0 i10 = fVar.i();
-        if (i10 == null || i10 == (t0Var = (t0) this.f)) {
-            return;
-        }
-        if (t0Var != null) {
-            throw new i2.n(2, new IllegalStateException("Multiple renderer media clocks enabled."), MediaDataController.MAX_STYLE_RUNS_COUNT);
-        }
-        this.f = i10;
-        this.e = fVar;
-        i10.f((v0) ((r1) this.c).e);
-    }
-
-    @Override // i2.t0
-    public void f(v0 v0Var) {
-        t0 t0Var = (t0) this.f;
-        if (t0Var != null) {
-            t0Var.f(v0Var);
-            v0Var = ((t0) this.f).h();
-        }
-        ((r1) this.c).f(v0Var);
-    }
-
-    @Override // i2.t0
-    public v0 h() {
-        t0 t0Var = (t0) this.f;
-        return t0Var != null ? t0Var.h() : (v0) ((r1) this.c).e;
-    }
+public final class q {
+    public final Context a;
+    public final a0 b;
+    public u c;
+    public boolean d;
+    public boolean f;
+    public long g = 15000;
+    public final b0 h = new b0();
+    public e2.g0 e = e2.g0.a;
 
     public q(Context context, a0 a0Var) {
-        this.c = context.getApplicationContext();
-        this.d = a0Var;
-        this.f = e2.x.a;
+        this.a = context.getApplicationContext();
+        this.b = a0Var;
     }
 }

@@ -1,93 +1,85 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fs extends Drawable {
-    public final Drawable a;
-    public final Drawable b;
-    public int d;
-    public int e;
-    public final ArrayList c = new ArrayList();
-    public boolean f = false;
-    public final org.telegram.ui.Components.g6 g = new org.telegram.ui.Components.g6(new cj(this, 14), 420, org.telegram.ui.Components.hs.h);
-    public int h = 255;
+public final class fs extends ks {
+    public final /* synthetic */ int M;
+    public final /* synthetic */ int N;
+    public final /* synthetic */ hs O;
 
-    public fs(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fs(hs hsVar, Context context, int i10, int i11) {
+        super(context);
+        this.O = hsVar;
+        this.M = i10;
+        this.N = i11;
+        this.e = 1.0f;
+        this.f = new o1.k(this, ks.I);
+        this.h = new o1.k(this, ks.J);
+        this.n = new o1.k(this, ks.K);
+        this.r = new o1.k(this, ks.L);
+        this.s = true;
+        this.v = 1.0f;
+        this.w = 1.0f;
+        this.H = false;
+        setBackground(null);
+        setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
+        setMovementMethod(null);
+        addTextChangedListener(new n0(this, 5));
     }
 
-    public final void a(int i10, int i11) {
-        this.d = i10;
-        this.e = i11;
-    }
-
-    public final void b(boolean z10) {
-        if (this.f == z10) {
-            return;
+    @Override // android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        if (keyEvent.getKeyCode() == 4) {
+            return false;
         }
-        this.f = z10;
-        ArrayList arrayList = this.c;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ((View) obj).invalidate();
+        int keyCode = keyEvent.getKeyCode();
+        hs hsVar = this.O;
+        int length = hsVar.f.length;
+        int i10 = this.M;
+        if (i10 >= length) {
+            return false;
         }
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float e7 = this.g.e(this.f);
-        int i10 = this.h;
-        Drawable drawable = this.a;
-        drawable.setAlpha(i10);
-        drawable.setBounds(getBounds());
-        drawable.draw(canvas);
-        if (e7 > 0.0f) {
-            Drawable drawable2 = this.b;
-            drawable2.setAlpha((int) (this.h * e7));
-            drawable2.setBounds(getBounds().left + this.d, getBounds().top + this.e, drawable2.getIntrinsicWidth() + getBounds().left + this.d, drawable2.getIntrinsicHeight() + getBounds().top + this.e);
-            float lerp = AndroidUtilities.lerp(0.5f, 1.0f, e7);
-            canvas.save();
-            canvas.scale(lerp, lerp, drawable2.getBounds().centerX(), drawable2.getBounds().centerY());
-            drawable2.draw(canvas);
-            canvas.restore();
+        if (keyEvent.getAction() != 1) {
+            return isFocused();
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.h = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-        this.b.setColorFilter(colorFilter);
+        if (keyCode == 67 && hsVar.f[i10].length() == 1) {
+            hsVar.f[i10].m();
+            hsVar.f[i10].setText("");
+            return true;
+        }
+        if (keyCode == 67 && hsVar.f[i10].length() == 0 && i10 > 0) {
+            ks[] ksVarArr = hsVar.f;
+            ksVarArr[i10 - 1].setSelection(ksVarArr[i10 - 1].length());
+            for (int i11 = 0; i11 < i10; i11++) {
+                if (i11 == i10 - 1) {
+                    hsVar.f[i10 - 1].requestFocus();
+                } else {
+                    hsVar.f[i11].clearFocus();
+                }
+            }
+            hsVar.f[i10 - 1].m();
+            hsVar.f[i10 - 1].setText("");
+            return true;
+        }
+        if (keyCode >= 7 && keyCode <= 16) {
+            String num = Integer.toString(keyCode - 7);
+            if (hsVar.f[i10].getText() != null && num.equals(hsVar.f[i10].getText().toString())) {
+                if (i10 >= this.N - 1) {
+                    hsVar.a();
+                } else {
+                    hsVar.f[i10 + 1].requestFocus();
+                }
+                return true;
+            }
+            if (hsVar.f[i10].length() > 0) {
+                hsVar.f[i10].m();
+            }
+            hsVar.f[i10].setText(num);
+        }
+        return true;
     }
 }

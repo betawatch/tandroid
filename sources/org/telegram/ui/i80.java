@@ -1,60 +1,26 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class i80 implements TextWatcher {
-    public final /* synthetic */ j80 a;
+public final /* synthetic */ class i80 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p80 b;
 
-    public i80(j80 j80Var) {
-        this.a = j80Var;
+    public /* synthetic */ i80(p80 p80Var, int i10) {
+        this.a = i10;
+        this.b = p80Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        l80 l80Var = this.a.f;
-        if (l80Var.d.d.length() != 0) {
-            l80Var.E = true;
-            l80Var.y = true;
-            h80 h80Var = l80Var.s;
-            if (!h80Var.h) {
-                h80Var.h = true;
-                h80Var.l();
-            }
-            l80Var.s.E(l80Var.d.d.toString());
-            l80Var.h.setFastScrollVisible(false);
-            l80Var.h.setVerticalScrollBarEnabled(true);
-            l80Var.r.e(true, true);
-            l80Var.r.setStickerType(1);
-            l80Var.r.d.setText(LocaleController.getString(R.string.NoResult));
-            l80Var.r.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                p80 p80Var = this.b;
+                p80Var.h.postOnAnimation(new i80(p80Var, 1));
+                break;
+            default:
+                this.b.Y();
+                break;
         }
-        l80Var.E = false;
-        l80Var.y = false;
-        h80 h80Var2 = l80Var.s;
-        if (h80Var2.h) {
-            h80Var2.h = false;
-            h80Var2.l();
-        }
-        l80Var.s.E(null);
-        l80Var.h.setFastScrollVisible(true);
-        l80Var.h.setVerticalScrollBarEnabled(false);
-        l80Var.r.e(false, true);
-        l80Var.r.setStickerType(0);
-        l80Var.r.d.setText(LocaleController.getString(R.string.NoContacts));
-        l80Var.r.e.setText("");
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

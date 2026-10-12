@@ -1,84 +1,60 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class k6 extends FrameLayout {
-    public final k0 a;
-    public final org.telegram.ui.Components.q6 b;
-    public final org.telegram.ui.Components.q6 c;
+public final class k6 extends org.telegram.ui.Components.md0 {
+    public final /* synthetic */ d7 D0;
 
-    public k6(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k6(d7 d7Var, Context context) {
         super(context);
-        k0 k0Var = new k0(this, context, 3);
-        this.a = k0Var;
-        int i10 = org.telegram.ui.ActionBar.i6.Oh;
-        k0Var.setBackground(org.telegram.ui.ActionBar.y5.f(new float[]{24.0f}, i10));
-        k0Var.setImportantForAccessibility(1);
-        w7.z5.b(k0Var, 0.02f, 1.2f);
-        if (LocaleController.isRTL) {
-            TextView textView = new TextView(context);
-            textView.setText(LocaleController.getString(R.string.ClearCache));
-            textView.setGravity(17);
-            textView.setTextSize(1, 14.0f);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Sh, false));
-            k0Var.addView(textView, w7.x5.e(-2, -1, 17));
+        this.D0 = d7Var;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x003a  */
+    @Override // org.telegram.ui.Components.ow0, android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void dispatchDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.b5 b5Var;
+        org.telegram.ui.ActionBar.b5 b5Var2;
+        super.dispatchDraw(canvas);
+        boolean Z = Z();
+        d7 d7Var = this.D0;
+        if (Z) {
+            float f7 = d7Var.j0;
+            if (f7 != 0.0f) {
+                d7Var.j0 = f7 - 0.16f;
+                invalidate();
+                d7Var.j0 = Utilities.clamp(d7Var.j0, 1.0f, 0.0f);
+                b5Var = ((org.telegram.ui.ActionBar.m2) d7Var).parentLayout;
+                if (b5Var == null) {
+                    b5Var2 = ((org.telegram.ui.ActionBar.m2) d7Var).parentLayout;
+                    ActionBarLayout actionBarLayout = (ActionBarLayout) b5Var2;
+                    actionBarLayout.p(canvas, (int) (d7Var.h0 * 255.0f * d7Var.j0), org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
+                    return;
+                }
+                return;
+            }
         }
-        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(true, true, true);
-        this.b = q6Var;
-        org.telegram.ui.Components.hs hsVar = org.telegram.ui.Components.hs.h;
-        q6Var.n(0.25f, 300L, hsVar);
-        q6Var.setCallback(k0Var);
-        q6Var.w(AndroidUtilities.dp(14.0f));
-        q6Var.t(LocaleController.getString(R.string.ClearCache), true, true);
-        q6Var.b = 5;
-        q6Var.x(AndroidUtilities.bold());
-        int i11 = org.telegram.ui.ActionBar.i6.Sh;
-        q6Var.u(org.telegram.ui.ActionBar.i6.x0(null, i11, false));
-        org.telegram.ui.Components.q6 q6Var2 = new org.telegram.ui.Components.q6(true, true, true);
-        this.c = q6Var2;
-        q6Var2.n(0.25f, 300L, hsVar);
-        q6Var2.setCallback(k0Var);
-        q6Var2.w(AndroidUtilities.dp(14.0f));
-        q6Var2.x(AndroidUtilities.bold());
-        q6Var2.u(org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.x0(null, i10, false), org.telegram.ui.ActionBar.i6.m1(0.7f, org.telegram.ui.ActionBar.i6.x0(null, i11, false))));
-        q6Var2.t("", true, true);
-        k0Var.setContentDescription(TextUtils.concat(q6Var.i, "\t", q6Var2.i));
-        addView(k0Var, w7.x5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 119));
-    }
-
-    public final void a(long j3, boolean z10) {
-        String string = z10 ? LocaleController.getString(R.string.ClearCache) : LocaleController.getString(R.string.ClearSelectedCache);
-        org.telegram.ui.Components.q6 q6Var = this.b;
-        q6Var.t(string, true, true);
-        String formatFileSize = j3 <= 0 ? "" : AndroidUtilities.formatFileSize(j3);
-        org.telegram.ui.Components.q6 q6Var2 = this.c;
-        q6Var2.t(formatFileSize, true, true);
-        setDisabled(j3 <= 0);
-        k0 k0Var = this.a;
-        k0Var.invalidate();
-        k0Var.setContentDescription(TextUtils.concat(q6Var.i, "\t", q6Var2.i));
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
-    }
-
-    public void setDisabled(boolean z10) {
-        k0 k0Var = this.a;
-        k0Var.animate().cancel();
-        k0Var.animate().alpha(z10 ? 0.65f : 1.0f).start();
-        k0Var.setClickable(!z10);
+        if (!Z) {
+            float f10 = d7Var.j0;
+            if (f10 != 1.0f) {
+                d7Var.j0 = f10 + 0.16f;
+                invalidate();
+            }
+        }
+        d7Var.j0 = Utilities.clamp(d7Var.j0, 1.0f, 0.0f);
+        b5Var = ((org.telegram.ui.ActionBar.m2) d7Var).parentLayout;
+        if (b5Var == null) {
+        }
     }
 }

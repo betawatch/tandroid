@@ -3,14 +3,14 @@ package org.webrtc;
 import android.graphics.Matrix;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class VideoFrame implements RefCounted {
     private final Buffer buffer;
     private final int rotation;
     private final long timestampNs;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface Buffer extends RefCounted {
         Buffer cropAndScale(int i10, int i11, int i12, int i13, int i14, int i15);
 
@@ -29,7 +29,7 @@ public class VideoFrame implements RefCounted {
         I420Buffer toI420();
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface I420Buffer extends Buffer {
         @Override // org.webrtc.VideoFrame.Buffer
         int getBufferType();
@@ -47,10 +47,10 @@ public class VideoFrame implements RefCounted {
         int getStrideY();
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface TextureBuffer extends Buffer {
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public enum Type {
             OES(36197),
             RGB(3553);
@@ -79,7 +79,7 @@ public class VideoFrame implements RefCounted {
         int getUnscaledWidth();
     }
 
-    public VideoFrame(Buffer buffer, int i10, long j3) {
+    public VideoFrame(Buffer buffer, int i10, long j10) {
         if (buffer == null) {
             throw new IllegalArgumentException("buffer not allowed to be null");
         }
@@ -88,7 +88,7 @@ public class VideoFrame implements RefCounted {
         }
         this.buffer = buffer;
         this.rotation = i10;
-        this.timestampNs = j3;
+        this.timestampNs = j10;
     }
 
     public Buffer getBuffer() {

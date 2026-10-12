@@ -1,29 +1,52 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c51 extends org.telegram.ui.Components.k81 {
-    public final /* synthetic */ SecretMediaViewer m0;
+public final class c51 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
+    public final Path a;
+    public dh.d b;
 
-    public c51(SecretMediaViewer secretMediaViewer) {
-        this.m0 = secretMediaViewer;
+    public c51(Activity activity) {
+        super(activity);
+        this.a = new Path();
     }
 
-    @Override // org.telegram.ui.Components.k81
-    public final void B() {
-        super.B();
-        this.m0.W.a(false, true);
+    @Override // org.telegram.ui.ActionBar.x5
+    public final void d() {
+        dh.d dVar = this.b;
+        if (dVar != null) {
+            dVar.v();
+        }
     }
 
-    @Override // org.telegram.ui.Components.k81
-    public final void C() {
-        super.C();
-        this.m0.W.a(true, true);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.a);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.k81
-    public final void P(boolean z10) {
-        super.P(z10);
-        this.m0.W.a(z10, true);
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), i10 - AndroidUtilities.dp(9.0f), i11 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
+    }
+
+    public void setBlurredBackground(dh.d dVar) {
+        this.b = dVar;
+        setBackground(dVar);
     }
 }

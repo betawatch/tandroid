@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class FastDateFormat extends Format implements DateParser, DatePrinter {
     public static final int FULL = 0;
@@ -120,8 +120,8 @@ public class FastDateFormat extends Format implements DateParser, DatePrinter {
     }
 
     @Override // org.telegram.messenger.time.DatePrinter
-    public String format(long j3) {
-        return this.printer.format(j3);
+    public String format(long j10) {
+        return this.printer.format(j10);
     }
 
     @Override // org.telegram.messenger.time.DateParser
@@ -176,8 +176,8 @@ public class FastDateFormat extends Format implements DateParser, DatePrinter {
     }
 
     @Override // org.telegram.messenger.time.DatePrinter
-    public StringBuffer format(long j3, StringBuffer stringBuffer) {
-        return this.printer.format(j3, stringBuffer);
+    public StringBuffer format(long j10, StringBuffer stringBuffer) {
+        return this.printer.format(j10, stringBuffer);
     }
 
     @Override // org.telegram.messenger.time.DatePrinter

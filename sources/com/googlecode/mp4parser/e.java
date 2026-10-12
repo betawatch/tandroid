@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class e implements f5.f, Iterator, Closeable {
     public static final d c = new d("eof ");
@@ -14,7 +14,7 @@ public abstract class e implements f5.f, Iterator, Closeable {
     public ArrayList b;
 
     static {
-        qc.c.a(e.class);
+        rc.c.a(e.class);
     }
 
     public final void a(f5.b bVar) {
@@ -26,11 +26,11 @@ public abstract class e implements f5.f, Iterator, Closeable {
     }
 
     public final long b() {
-        long j3 = 0;
+        long j10 = 0;
         for (int i10 = 0; i10 < this.b.size(); i10++) {
-            j3 += ((f5.b) this.b.get(i10)).getSize();
+            j10 += ((f5.b) this.b.get(i10)).getSize();
         }
-        return j3;
+        return j10;
     }
 
     public final void c(WritableByteChannel writableByteChannel) {

@@ -4,9 +4,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class j extends p {
+public final class j extends o {
     public final /* synthetic */ int r;
     public final /* synthetic */ h s;
 
@@ -17,12 +17,12 @@ public final class j extends p {
         this.s = hVar;
     }
 
-    @Override // e6.p
+    @Override // e6.o
     public final void n() {
         switch (this.r) {
             case 0:
                 g6.m mVar = this.s.c;
-                g6.n o9 = o();
+                g6.n o10 = o();
                 mVar.getClass();
                 JSONObject jSONObject = new JSONObject();
                 long b10 = mVar.b();
@@ -36,7 +36,7 @@ public final class j extends p {
                 } catch (JSONException unused) {
                 }
                 mVar.c(b10, jSONObject.toString());
-                mVar.p.a(b10, o9);
+                mVar.p.a(b10, o10);
                 break;
             case 1:
                 this.s.c.d(o(), -1, null);
@@ -49,7 +49,7 @@ public final class j extends p {
                 break;
             case 4:
                 g6.m mVar2 = this.s.c;
-                g6.n o10 = o();
+                g6.n o11 = o();
                 mVar2.getClass();
                 JSONObject jSONObject2 = new JSONObject();
                 long b11 = mVar2.b();
@@ -60,11 +60,11 @@ public final class j extends p {
                 } catch (JSONException unused2) {
                 }
                 mVar2.c(b11, jSONObject2.toString());
-                mVar2.r.a(b11, o10);
+                mVar2.r.a(b11, o11);
                 break;
             case 5:
                 g6.m mVar3 = this.s.c;
-                g6.n o11 = o();
+                g6.n o12 = o();
                 mVar3.getClass();
                 JSONObject jSONObject3 = new JSONObject();
                 long b12 = mVar3.b();
@@ -75,11 +75,11 @@ public final class j extends p {
                 } catch (JSONException unused3) {
                 }
                 mVar3.c(b12, jSONObject3.toString());
-                mVar3.k.a(b12, o11);
+                mVar3.k.a(b12, o12);
                 break;
             default:
                 g6.m mVar4 = this.s.c;
-                g6.n o12 = o();
+                g6.n o13 = o();
                 mVar4.getClass();
                 JSONObject jSONObject4 = new JSONObject();
                 long b13 = mVar4.b();
@@ -90,7 +90,7 @@ public final class j extends p {
                 } catch (JSONException unused4) {
                 }
                 mVar4.c(b13, jSONObject4.toString());
-                mVar4.l.a(b13, o12);
+                mVar4.l.a(b13, o13);
                 break;
         }
     }

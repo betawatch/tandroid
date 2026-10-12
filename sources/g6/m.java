@@ -10,16 +10,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import v7.t7;
+import v7.r7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m extends p {
     public static final String v;
     public long e;
     public c6.q f;
     public Long g;
-    public a6.i h;
+    public ya.c h;
     public int i;
     public final o j;
     public final o k;
@@ -125,7 +125,7 @@ public final class m extends p {
             if (i10 != 0) {
                 jSONObject.put("jump", i10);
             }
-            String b11 = t7.b(num);
+            String b11 = r7.b(num);
             if (b11 != null) {
                 jSONObject.put("repeatMode", b11);
             }
@@ -136,23 +136,23 @@ public final class m extends p {
         } catch (JSONException unused) {
         }
         c(b10, jSONObject.toString());
-        this.q.a(b10, new n4.x(this, nVar, false, 18));
+        this.q.a(b10, new n4.s(this, nVar, false, 18));
     }
 
-    public final long e(double d, long j3, long j10) {
+    public final long e(double d, long j10, long j11) {
         long elapsedRealtime = SystemClock.elapsedRealtime() - this.e;
         if (elapsedRealtime < 0) {
             elapsedRealtime = 0;
         }
         if (elapsedRealtime == 0) {
-            return j3;
-        }
-        long j11 = j3 + ((long) (elapsedRealtime * d));
-        if (j10 > 0 && j11 > j10) {
             return j10;
         }
-        if (j11 >= 0) {
+        long j12 = j10 + ((long) (elapsedRealtime * d));
+        if (j11 > 0 && j12 > j11) {
             return j11;
+        }
+        if (j12 >= 0) {
+            return j12;
         }
         return 0L;
     }
@@ -176,12 +176,12 @@ public final class m extends p {
     }
 
     public final void i() {
-        a6.i iVar = this.h;
-        if (iVar != null) {
-            e6.h hVar = (e6.h) iVar.b;
+        ya.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
-                throw a1.g.k(it);
+                throw a1.g.j(it);
             }
             Iterator it2 = hVar.i.iterator();
             while (it2.hasNext()) {
@@ -191,12 +191,12 @@ public final class m extends p {
     }
 
     public final void j() {
-        a6.i iVar = this.h;
-        if (iVar != null) {
-            e6.h hVar = (e6.h) iVar.b;
+        ya.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
-                throw a1.g.k(it);
+                throw a1.g.j(it);
             }
             Iterator it2 = hVar.i.iterator();
             while (it2.hasNext()) {
@@ -206,12 +206,12 @@ public final class m extends p {
     }
 
     public final void k() {
-        a6.i iVar = this.h;
-        if (iVar != null) {
-            e6.h hVar = (e6.h) iVar.b;
+        ya.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
-                throw a1.g.k(it);
+                throw a1.g.j(it);
             }
             Iterator it2 = hVar.i.iterator();
             while (it2.hasNext()) {
@@ -221,9 +221,9 @@ public final class m extends p {
     }
 
     public final void l() {
-        a6.i iVar = this.h;
-        if (iVar != null) {
-            e6.h hVar = (e6.h) iVar.b;
+        ya.c cVar = this.h;
+        if (cVar != null) {
+            e6.h hVar = (e6.h) cVar.b;
             Iterator it = hVar.j.values().iterator();
             if (it.hasNext()) {
                 if (it.next() != null) {
@@ -239,7 +239,7 @@ public final class m extends p {
             }
             Iterator it2 = hVar.h.iterator();
             if (it2.hasNext()) {
-                throw a1.g.k(it2);
+                throw a1.g.j(it2);
             }
             Iterator it3 = hVar.i.iterator();
             while (it3.hasNext()) {
@@ -275,8 +275,8 @@ public final class m extends p {
                         long longValue = l4.longValue();
                         c6.q qVar3 = this.f;
                         if (qVar3 != null && (jVar = qVar3.K) != null) {
-                            long j3 = jVar.b;
-                            r3 = !jVar.d ? e(1.0d, j3, -1L) : j3;
+                            long j10 = jVar.b;
+                            r3 = !jVar.d ? e(1.0d, j10, -1L) : j10;
                         }
                         return Math.min(longValue, r3);
                     }
@@ -292,8 +292,8 @@ public final class m extends p {
             }
             if (this.e != 0) {
                 double d = qVar.d;
-                long j10 = qVar.h;
-                return (d == 0.0d || qVar.e != 2) ? j10 : e(d, j10, mediaInfo.e);
+                long j11 = qVar.h;
+                return (d == 0.0d || qVar.e != 2) ? j11 : e(d, j11, mediaInfo.e);
             }
         }
         return 0L;

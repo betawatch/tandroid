@@ -1,107 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class y81 extends View {
-    public ShapeDrawable a;
-    public Drawable b;
-    public StaticLayout c;
-    public TextPaint d;
-    public long e;
-    public float f;
-    public float h;
-    public boolean n;
+public final /* synthetic */ class y81 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k91 b;
 
-    public final void a(boolean z10) {
-        this.n = z10;
-        invalidate();
+    public /* synthetic */ y81(k91 k91Var, int i10) {
+        this.a = i10;
+        this.b = k91Var;
     }
 
-    public final void b() {
-        this.d.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.pf, false));
-        int dp = AndroidUtilities.dp(5.0f);
-        int i10 = org.telegram.ui.ActionBar.i6.qf;
-        this.a = org.telegram.ui.ActionBar.i6.c0(dp, org.telegram.ui.ActionBar.i6.x0(null, i10, false));
-        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.x0(null, i10, false), PorterDuff.Mode.MULTIPLY));
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Drawable drawable = this.b;
-        if (this.c == null) {
-            return;
-        }
-        if (this.n) {
-            float f7 = this.h;
-            if (f7 != 1.0f) {
-                float f10 = f7 + 0.12f;
-                this.h = f10;
-                if (f10 > 1.0f) {
-                    this.h = 1.0f;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                k91 k91Var = this.b;
+                k91Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View[] viewArr = k91Var.e;
+                View view = viewArr[1];
+                if (view != null) {
+                    if (k91Var.y) {
+                        k91Var.E(view, (1.0f - floatValue) * viewArr[0].getMeasuredWidth());
+                        k91Var.E(viewArr[0], (-r1.getMeasuredWidth()) * floatValue);
+                    } else {
+                        k91Var.E(view, (1.0f - floatValue) * (-viewArr[0].getMeasuredWidth()));
+                        k91Var.E(viewArr[0], r1.getMeasuredWidth() * floatValue);
+                    }
+                    k91Var.c = floatValue;
+                    k91Var.w(true);
+                    a91 a91Var = k91Var.M;
+                    if (a91Var != null) {
+                        a91Var.v.invalidate();
+                        k91Var.M.v.f1();
+                        k91Var.M.invalidate();
+                        break;
+                    }
                 }
-                invalidate();
-            }
-        } else {
-            float f11 = this.h;
-            if (f11 != 0.0f) {
-                float f12 = f11 - 0.12f;
-                this.h = f12;
-                if (f12 < 0.0f) {
-                    this.h = 0.0f;
-                }
-                invalidate();
-            }
-            if (this.h == 0.0f) {
-                return;
-            }
-        }
-        float f13 = this.h;
-        int i10 = (int) ((f13 > 0.5f ? 1.0f : f13 / 0.5f) * 255.0f);
-        canvas.save();
-        float f14 = this.h;
-        canvas.scale(f14, f14, this.f, getMeasuredHeight());
-        canvas.translate(this.f - (this.c.getWidth() / 2.0f), 0.0f);
-        this.a.setBounds(-AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f) + this.c.getWidth(), (int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight()));
-        drawable.setBounds(org.telegram.ui.Cells.c1.s(2, this.c.getWidth() / 2, drawable), (int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight()), org.telegram.ui.Cells.c1.w(2, this.c.getWidth() / 2, drawable), drawable.getIntrinsicHeight() + ((int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight())));
-        drawable.setAlpha(i10);
-        this.a.setAlpha(i10);
-        this.d.setAlpha(i10);
-        drawable.draw(canvas);
-        this.a.draw(canvas);
-        canvas.translate(0.0f, AndroidUtilities.dpf2(1.0f));
-        this.c.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(this.b.getIntrinsicHeight() + AndroidUtilities.dp(4.0f) + this.c.getHeight(), TLObject.FLAG_30));
-    }
-
-    public void setCx(float f7) {
-        this.f = f7;
-        invalidate();
-    }
-
-    public void setTime(int i10) {
-        long j3 = i10;
-        if (j3 != this.e) {
-            this.e = j3;
-            String formatShortDuration = AndroidUtilities.formatShortDuration(i10);
-            TextPaint textPaint = this.d;
-            this.c = new StaticLayout(formatShortDuration, textPaint, (int) textPaint.measureText(formatShortDuration), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, true);
+                break;
+            case 1:
+                k91 k91Var2 = this.b;
+                k91Var2.getClass();
+                k91Var2.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 2:
+                k91 k91Var3 = this.b;
+                k91Var3.N.onAnimationUpdate(valueAnimator);
+                k91Var3.M.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k91Var3.M.v.f1();
+                k91Var3.M.invalidate();
+                break;
+            default:
+                k91 k91Var4 = this.b;
+                k91Var4.getClass();
+                k91Var4.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
         }
     }
 }

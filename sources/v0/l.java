@@ -11,11 +11,10 @@ import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.text.TextUtils;
 import java.util.concurrent.Executor;
-import k2.g0;
-import n6.t;
+import ji.d4;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class l implements j {
     public final CredentialManager a;
@@ -33,19 +32,19 @@ public final class l implements j {
     @Override // v0.j
     public final void onCreateCredential(Context context, b bVar, CancellationSignal cancellationSignal, Executor executor, i iVar) {
         kotlin.jvm.internal.i.e(context, "context");
-        g0 g0Var = (g0) iVar;
+        d4 d4Var = (d4) iVar;
         CredentialManager credentialManager = this.a;
         if (credentialManager == null) {
-            g0Var.onError(new w0.c("Your device doesn't support credential manager", 3));
+            d4Var.onError(new w0.c("Your device doesn't support credential manager", 3));
             return;
         }
-        k kVar = new k(g0Var, (e) bVar, this);
+        k kVar = new k(d4Var, (e) bVar, this);
         kotlin.jvm.internal.i.b(credentialManager);
         Bundle bundle = bVar.a;
-        t tVar = bVar.c;
+        m4.c cVar = bVar.c;
         Bundle bundle2 = new Bundle();
-        bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_ID", (String) tVar.b);
-        CharSequence charSequence = (CharSequence) tVar.c;
+        bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_ID", (String) cVar.b);
+        CharSequence charSequence = (CharSequence) cVar.c;
         if (!TextUtils.isEmpty(charSequence)) {
             bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_DISPLAY_NAME", charSequence);
         }

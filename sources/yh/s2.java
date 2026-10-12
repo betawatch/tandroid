@@ -1,102 +1,55 @@
 package yh;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.hs;
+import java.util.Comparator;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class s2 extends Drawable {
-    public Drawable g;
-    public int h;
-    public int i;
-    public final Paint b = new Paint(1);
-    public final Shader[] c = new Shader[2];
-    public final Matrix d = new Matrix();
-    public final org.telegram.ui.Components.g6 e = new org.telegram.ui.Components.g6(1.0f, new f0(this, 5), 0, 420, hs.h);
-    public final RectF f = new RectF();
-    public final int a = 1;
+public final /* synthetic */ class s2 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g4 b;
 
-    public final void a(int i10, int i11) {
-        if (this.h == i10 && this.i == i11) {
-            return;
-        }
-        Shader[] shaderArr = this.c;
-        shaderArr[0] = shaderArr[1];
-        if (this.a == 0) {
-            this.h = i10;
-            this.i = i11;
-            shaderArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        } else {
-            float dp = AndroidUtilities.dp(340.0f);
-            this.h = i10;
-            this.i = i11;
-            shaderArr[1] = new RadialGradient(0.0f, 0.0f, dp, new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        }
-        this.e.d(0.0f, true);
-        invalidateSelf();
+    public /* synthetic */ s2(g4 g4Var, int i10) {
+        this.a = i10;
+        this.b = g4Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.f;
-        rectF.set(bounds);
-        rectF.right = rectF.width() + rectF.left;
-        int i10 = 0;
-        float d = this.e.d(1.0f, false);
-        while (true) {
-            Shader[] shaderArr = this.c;
-            if (i10 >= shaderArr.length) {
-                break;
-            }
-            if (shaderArr[i10] != null) {
-                float pow = (float) Math.pow(1.0f - Math.abs(i10 - d), 0.25d);
-                if (pow > 0.0f) {
-                    Matrix matrix = this.d;
-                    matrix.reset();
-                    if (this.a == 1) {
-                        matrix.postTranslate(rectF.centerX(), AndroidUtilities.dp(145.0f));
-                    } else {
-                        matrix.postScale(getBounds().width() / 100.0f, 1.0f);
-                    }
-                    shaderArr[i10].setLocalMatrix(matrix);
-                    Shader shader = shaderArr[i10];
-                    Paint paint = this.b;
-                    paint.setShader(shader);
-                    paint.setAlpha((int) (pow * 255.0f));
-                    canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                t3 t3Var = this.b.d;
+                Integer num = (Integer) t3Var.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
+                Integer num2 = (Integer) t3Var.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
+                if (num == null) {
+                    return 1;
                 }
-            }
-            i10++;
+                if (num2 == null) {
+                    return -1;
+                }
+                return num2.intValue() - num.intValue();
+            case 1:
+                t3 t3Var2 = this.b.d;
+                Integer num3 = (Integer) t3Var2.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
+                Integer num4 = (Integer) t3Var2.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
+                if (num3 == null) {
+                    return 1;
+                }
+                if (num4 == null) {
+                    return -1;
+                }
+                return num4.intValue() - num3.intValue();
+            default:
+                t3 t3Var3 = this.b.d;
+                Integer num5 = (Integer) t3Var3.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
+                Integer num6 = (Integer) t3Var3.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
+                if (num5 == null) {
+                    return 1;
+                }
+                if (num6 == null) {
+                    return -1;
+                }
+                return num6.intValue() - num5.intValue();
         }
-        if (this.g != null) {
-            canvas.save();
-            canvas.translate(rectF.centerX(), AndroidUtilities.dp(145.0f));
-            i0.a(canvas, 0, this.g, rectF.width(), AndroidUtilities.dp(290.0f), 2.0f, 1.0f);
-            canvas.restore();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

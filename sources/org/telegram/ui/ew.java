@@ -1,43 +1,58 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.HashSet;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ew implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ ty b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ HashSet f;
+public final /* synthetic */ class ew implements org.telegram.ui.Components.am0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yy b;
 
-    public /* synthetic */ ew(ty tyVar, int i10, ArrayList arrayList, boolean z10, HashSet hashSet) {
-        this.b = tyVar;
-        this.d = i10;
-        this.c = arrayList;
-        this.e = z10;
-        this.f = hashSet;
+    public /* synthetic */ ew(yy yyVar, int i10) {
+        this.a = i10;
+        this.b = yyVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.am0
+    public final void a(int i10, View view) {
         switch (this.a) {
             case 0:
-                ty.n0(this.b, this.d, this.c, this.e, this.f);
+                yy yyVar = this.b;
+                Object obj = yyVar.C0.v0.G(i10).G;
+                if (!(obj instanceof MessageObject)) {
+                    if (obj instanceof bi.g8) {
+                        bi.g8 g8Var = (bi.g8) obj;
+                        Bundle g10 = org.telegram.ui.Cells.d0.g(3, TeXSymbolParser.TYPE_ATTR);
+                        g10.putString("hashtag", g8Var.C);
+                        g10.putInt("storiesCount", g8Var.J);
+                        yyVar.presentFragment(new org.telegram.ui.Components.cb0(g10, null));
+                        break;
+                    }
+                } else {
+                    MessageObject messageObject = (MessageObject) obj;
+                    Bundle bundle = new Bundle();
+                    if (messageObject.getDialogId() >= 0) {
+                        bundle.putLong("user_id", messageObject.getDialogId());
+                    } else {
+                        bundle.putLong("chat_id", -messageObject.getDialogId());
+                    }
+                    bundle.putInt("message_id", messageObject.getId());
+                    fo foVar = new fo(bundle);
+                    yy.a4(foVar, messageObject);
+                    yyVar.presentFragment(foVar);
+                    break;
+                }
                 break;
             default:
-                this.b.o4(this.c, this.d, false, this.e, this.f);
+                yy yyVar2 = this.b;
+                yyVar2.b0.I0(true);
+                ArrayList arrayList = yyVar2.b0.V2;
+                yyVar2.g3(arrayList.isEmpty() ? hg.r0.a3[i10] : (hg.p0) arrayList.get(i10));
                 break;
         }
-    }
-
-    public /* synthetic */ ew(ty tyVar, ArrayList arrayList, int i10, boolean z10, HashSet hashSet) {
-        this.b = tyVar;
-        this.c = arrayList;
-        this.d = i10;
-        this.e = z10;
-        this.f = hashSet;
     }
 }

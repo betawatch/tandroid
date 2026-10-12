@@ -1,31 +1,39 @@
 package i2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.os.Looper;
+import v7.u6;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class n1 {
-    public static final n1 c = new n1(0, false);
-    public final int a;
-    public final boolean b;
+    public final m1 a;
+    public final l1 b;
+    public int c;
+    public Object d;
+    public final Looper e;
+    public boolean f;
 
-    public n1(int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
+    public n1(l1 l1Var, m1 m1Var, b2.p1 p1Var, int i10, Looper looper) {
+        this.b = l1Var;
+        this.a = m1Var;
+        this.e = looper;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final synchronized void a(boolean z10) {
+        synchronized (this) {
+            notifyAll();
         }
-        if (obj != null && n1.class == obj.getClass()) {
-            n1 n1Var = (n1) obj;
-            if (this.a == n1Var.a && this.b == n1Var.b) {
-                return true;
-            }
-        }
-        return false;
     }
 
-    public final int hashCode() {
-        return (this.a << 1) + (this.b ? 1 : 0);
+    public final void b() {
+        u6.p(!this.f);
+        this.f = true;
+        r0 r0Var = (r0) this.b;
+        if (!r0Var.Z && r0Var.s.getThread().isAlive()) {
+            r0Var.n.b(14, this).b();
+        } else {
+            e2.a.l("ExoPlayerImplInternal", "Ignoring messages sent after release.");
+            a(false);
+        }
     }
 }

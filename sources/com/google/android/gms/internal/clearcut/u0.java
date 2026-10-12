@@ -24,7 +24,7 @@ public final class u0 extends com.google.android.gms.common.api.j {
         com.google.android.gms.common.api.b bVar = this.d;
         Context context = this.a;
         if (i10 == 2) {
-            a6.h.a.j("getFallbackSignInIntent()", new Object[0]);
+            a6.h.a.k("getFallbackSignInIntent()", new Object[0]);
             Intent a2 = a6.h.a(context, (GoogleSignInOptions) bVar);
             a2.setAction("com.google.android.gms.auth.APPAUTH_SIGN_IN");
             return a2;
@@ -32,7 +32,7 @@ public final class u0 extends com.google.android.gms.common.api.j {
         if (i10 == 3) {
             return a6.h.a(context, (GoogleSignInOptions) bVar);
         }
-        a6.h.a.j("getNoImplementationSignInIntent()", new Object[0]);
+        a6.h.a.k("getNoImplementationSignInIntent()", new Object[0]);
         Intent a10 = a6.h.a(context, (GoogleSignInOptions) bVar);
         a10.setAction("com.google.android.gms.auth.NO_IMPL");
         return a10;
@@ -41,7 +41,7 @@ public final class u0 extends com.google.android.gms.common.api.j {
     public Task g() {
         BasePendingResult basePendingResult;
         boolean z10 = h() == 3;
-        a6.h.a.j("Signing out", new Object[0]);
+        a6.h.a.k("Signing out", new Object[0]);
         a6.h.b(this.a);
         com.google.android.gms.common.api.internal.t0 t0Var = this.h;
         if (z10) {
@@ -53,7 +53,7 @@ public final class u0 extends com.google.android.gms.common.api.j {
             t0Var.b.d(1, gVar);
             basePendingResult = gVar;
         }
-        return n6.l.n(basePendingResult, new t7.t());
+        return n6.l.n(basePendingResult, new rb.b(14));
     }
 
     public synchronized int h() {

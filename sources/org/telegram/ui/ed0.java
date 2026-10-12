@@ -1,39 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ed0 extends FrameLayout {
-    public final HashMap a;
-    public final /* synthetic */ hd0 b;
+public final class ed0 extends s4.r0 {
+    public final /* synthetic */ nd0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ed0(hd0 hd0Var, Context context) {
-        super(context);
-        this.b = hd0Var;
-        this.a = new HashMap();
+    public ed0(nd0 nd0Var) {
+        this.a = nd0Var;
     }
 
-    public final void a() {
-        IMapsProvider.IMap iMap = this.b.I;
-        if (iMap == null) {
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        boolean z10 = i10 != 0;
+        nd0 nd0Var = this.a;
+        nd0Var.Q = z10;
+        if (z10 || nd0Var.L == null) {
             return;
         }
-        IMapsProvider.IProjection projection = iMap.getProjection();
-        for (Map.Entry entry : this.a.entrySet()) {
-            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
-            View view = (View) entry.getValue();
-            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
-            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
-            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+        nd0Var.L = null;
+    }
+
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        nd0 nd0Var = this.a;
+        nd0Var.z0(false);
+        if (nd0Var.L != null) {
+            nd0Var.N += i11;
         }
     }
 }

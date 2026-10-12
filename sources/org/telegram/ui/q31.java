@@ -1,42 +1,19 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
-    public final /* synthetic */ org.telegram.ui.Components.ci0 e;
+public final class q31 extends i71 {
+    public final /* synthetic */ s31 e;
 
-    public /* synthetic */ q31(org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Components.ci0 ci0Var, int i10) {
-        this.a = i10;
-        this.b = n2Var;
-        this.c = context;
-        this.d = e6Var;
-        this.e = ci0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q31(s31 s31Var, p31 p31Var) {
+        super(p31Var);
+        this.e = s31Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Components.ad.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new nv(this.c, 4), this.d)).j();
-                AndroidUtilities.runOnUIThread(this.e);
-                break;
-            case 1:
-                org.telegram.ui.Components.ad.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new nv(this.c, 3), this.d)).j();
-                AndroidUtilities.runOnUIThread(this.e);
-                break;
-            default:
-                org.telegram.ui.Components.ad.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new nv(this.c, 7), this.d)).j();
-                AndroidUtilities.runOnUIThread(this.e);
-                break;
-        }
+    @Override // org.telegram.ui.i71, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.n = null;
     }
 }

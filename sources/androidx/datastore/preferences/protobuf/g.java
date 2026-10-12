@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class g implements Iterable, Serializable {
     public static final g c = new g(z.b);
@@ -21,18 +21,18 @@ public class g implements Iterable, Serializable {
         this.b = bArr;
     }
 
-    public static g i(int i10, int i11, byte[] bArr) {
+    public static g h(int i10, int i11, byte[] bArr) {
         byte[] copyOfRange;
         int i12 = i10 + i11;
         int length = bArr.length;
         if (((i12 - i10) | i10 | i12 | (length - i12)) < 0) {
             if (i10 < 0) {
-                throw new IndexOutOfBoundsException(hg.c.i(i10, "Beginning index: ", " < 0"));
+                throw new IndexOutOfBoundsException(i2.d.j(i10, "Beginning index: ", " < 0"));
             }
             if (i12 < i10) {
-                throw new IndexOutOfBoundsException(a1.g.m(i10, i12, "Beginning index larger than ending index: ", ", "));
+                throw new IndexOutOfBoundsException(a1.g.l(i10, i12, "Beginning index larger than ending index: ", ", "));
             }
-            throw new IndexOutOfBoundsException(a1.g.m(i12, length, "End index: ", " >= "));
+            throw new IndexOutOfBoundsException(a1.g.l(i12, length, "End index: ", " >= "));
         }
         switch (d.a) {
             case 0:
@@ -70,20 +70,20 @@ public class g implements Iterable, Serializable {
             throw new IllegalArgumentException("Length too large: " + size + size());
         }
         if (size > gVar.size()) {
-            StringBuilder j3 = hg.c.j(size, "Ran off end of other: 0, ", ", ");
-            j3.append(gVar.size());
-            throw new IllegalArgumentException(j3.toString());
+            StringBuilder k10 = i2.d.k(size, "Ran off end of other: 0, ", ", ");
+            k10.append(gVar.size());
+            throw new IllegalArgumentException(k10.toString());
         }
         byte[] bArr = gVar.b;
-        int n10 = n() + size;
-        int n11 = n();
-        int n12 = gVar.n();
-        while (n11 < n10) {
-            if (this.b[n11] != bArr[n12]) {
+        int m10 = m() + size;
+        int m11 = m();
+        int m12 = gVar.m();
+        while (m11 < m10) {
+            if (this.b[m11] != bArr[m12]) {
                 return false;
             }
-            n11++;
-            n12++;
+            m11++;
+            m12++;
         }
         return true;
     }
@@ -94,9 +94,9 @@ public class g implements Iterable, Serializable {
             return i10;
         }
         int size = size();
-        int n10 = n();
+        int m10 = m();
         int i11 = size;
-        for (int i12 = n10; i12 < n10 + size; i12++) {
+        for (int i12 = m10; i12 < m10 + size; i12++) {
             i11 = (i11 * 31) + this.b[i12];
         }
         if (i11 == 0) {
@@ -111,7 +111,7 @@ public class g implements Iterable, Serializable {
         return new e(this);
     }
 
-    public int n() {
+    public int m() {
         return 0;
     }
 

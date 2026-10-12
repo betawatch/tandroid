@@ -1,29 +1,30 @@
 package yh;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
-    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
+    public final /* synthetic */ m2 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ t1(s3 s3Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
-        this.a = i10;
-        this.b = s3Var;
-        this.c = tL_payments_paymentResult;
+    public /* synthetic */ t1(m2 m2Var, int i10, int i11) {
+        this.a = i11;
+        this.b = m2Var;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MessagesController.getInstance(this.b.currentAccount).lambda$processUpdates$377(this.c.updates, false);
+                this.b.f.scrollBy(0, this.c);
                 break;
             default:
-                MessagesController.getInstance(this.b.currentAccount).lambda$processUpdates$377(this.c.updates, false);
+                h2 h2Var = this.b.f;
+                if (h2Var != null) {
+                    h2Var.setSpanCount(this.c);
+                    break;
+                }
                 break;
         }
     }

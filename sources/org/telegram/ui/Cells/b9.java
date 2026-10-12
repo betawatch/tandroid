@@ -1,22 +1,22 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import org.telegram.ui.Components.ea0;
+import org.telegram.ui.Components.da0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b9 extends ea0 {
+public final class b9 extends da0 {
     public final /* synthetic */ int L;
     public final /* synthetic */ c9 M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b9(c9 c9Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, e6Var);
+    public /* synthetic */ b9(c9 c9Var, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
+        super(context, c6Var);
         this.L = i10;
         this.M = c9Var;
     }
 
-    @Override // org.telegram.ui.Components.ea0
+    @Override // org.telegram.ui.Components.da0
     public final int c() {
         switch (this.L) {
             case 0:
@@ -26,7 +26,7 @@ public final class b9 extends ea0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ea0
+    @Override // org.telegram.ui.Components.da0
     public final int d(int i10) {
         switch (this.L) {
         }

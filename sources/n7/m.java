@@ -9,16 +9,16 @@ import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class m extends h implements List, RandomAccess, j$.util.List {
     public static final i b = new i(x.e, 0);
 
-    public static x t(int i10, Object[] objArr) {
+    public static x s(int i10, Object[] objArr) {
         return i10 == 0 ? x.e : new x(i10, objArr);
     }
 
-    public static x u(Object[] objArr) {
+    public static x t(Object[] objArr) {
         if (objArr.length == 0) {
             return x.e;
         }
@@ -26,10 +26,10 @@ public abstract class m extends h implements List, RandomAccess, j$.util.List {
         int length = objArr2.length;
         for (int i10 = 0; i10 < length; i10++) {
             if (objArr2[i10] == null) {
-                throw new NullPointerException(hg.c.h(i10, "at index "));
+                throw new NullPointerException(i2.d.i(i10, "at index "));
             }
         }
-        return t(length, objArr2);
+        return s(length, objArr2);
     }
 
     @Override // java.util.List
@@ -79,6 +79,15 @@ public abstract class m extends h implements List, RandomAccess, j$.util.List {
         return false;
     }
 
+    @Override // n7.h
+    public int h(Object[] objArr) {
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = get(i10);
+        }
+        return size;
+    }
+
     @Override // java.util.Collection, java.util.List
     public final int hashCode() {
         int size = size();
@@ -87,15 +96,6 @@ public abstract class m extends h implements List, RandomAccess, j$.util.List {
             i10 = (i10 * 31) + get(i11).hashCode();
         }
         return i10;
-    }
-
-    @Override // n7.h
-    public int i(Object[] objArr) {
-        int size = size();
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = get(i10);
-        }
-        return size;
     }
 
     public int indexOf(Object obj) {
@@ -134,12 +134,20 @@ public abstract class m extends h implements List, RandomAccess, j$.util.List {
     }
 
     @Override // n7.h
-    public final d0 p() {
+    public final d0 o() {
         return listIterator(0);
     }
 
-    public m r() {
+    public m q() {
         return size() <= 1 ? this : new k(this);
+    }
+
+    @Override // java.util.List
+    /* renamed from: r, reason: merged with bridge method [inline-methods] */
+    public m subList(int i10, int i11) {
+        a.m(i10, i11, size());
+        int i12 = i11 - i10;
+        return i12 == size() ? this : i12 == 0 ? x.e : new l(this, i10, i12);
     }
 
     @Override // java.util.List
@@ -153,14 +161,6 @@ public abstract class m extends h implements List, RandomAccess, j$.util.List {
     }
 
     @Override // java.util.List
-    /* renamed from: s, reason: merged with bridge method [inline-methods] */
-    public m subList(int i10, int i11) {
-        a.m(i10, i11, size());
-        int i12 = i11 - i10;
-        return i12 == size() ? this : i12 == 0 ? x.e : new l(this, i10, i12);
-    }
-
-    @Override // java.util.List
     public final Object set(int i10, Object obj) {
         throw new UnsupportedOperationException();
     }
@@ -171,7 +171,7 @@ public abstract class m extends h implements List, RandomAccess, j$.util.List {
     }
 
     @Override // java.util.List
-    /* renamed from: v, reason: merged with bridge method [inline-methods] */
+    /* renamed from: u, reason: merged with bridge method [inline-methods] */
     public final i listIterator(int i10) {
         int size = size();
         if (i10 < 0 || i10 > size) {

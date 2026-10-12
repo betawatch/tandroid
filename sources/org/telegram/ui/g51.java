@@ -1,31 +1,66 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
 import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g51 implements View.OnClickListener {
+public final class g51 extends Fade {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k51 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ SecretMediaViewer d;
 
-    public /* synthetic */ g51(k51 k51Var, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g51(SecretMediaViewer secretMediaViewer, boolean z10, boolean z11, int i10) {
+        super(1);
         this.a = i10;
-        this.b = k51Var;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                k51 k51Var = this.b;
-                if (k51Var.Y == null) {
-                    k51Var.dismiss();
-                    break;
-                }
+        switch (i10) {
+            case 1:
+                this.d = secretMediaViewer;
+                this.b = z10;
+                this.c = z11;
+                super(2);
                 break;
             default:
-                this.b.dismiss();
+                this.d = secretMediaViewer;
+                this.b = z10;
+                this.c = z11;
                 break;
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 0:
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.Z) {
+                    onAppear.addListener(new lj0(this, 21));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new f21(this, 4));
+                }
+                return onAppear;
+            default:
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
+    }
+
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.Z) {
+                    onDisappear.addListener(new lj0(this, 22));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new f21(this, 5));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
         }
     }
 }

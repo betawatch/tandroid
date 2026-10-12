@@ -1,57 +1,44 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class qj extends org.telegram.ui.Components.uo {
-    public final /* synthetic */ zn v0;
+public final /* synthetic */ class qj implements MessagesStorage.IntCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qj(zn znVar, Context context, zn znVar2, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, znVar2, z10, e6Var);
-        this.v0 = znVar;
+    public /* synthetic */ qj(int i10, Object obj, boolean z10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.uo
-    public final boolean a() {
-        boolean z10;
-        zn znVar = this.v0;
-        if (znVar.Pa || znVar.isInPreviewMode()) {
-            return false;
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        switch (this.a) {
+            case 0:
+                fo foVar = ((sj) this.c).b;
+                if (i10 > 0 && foVar.getParentActivity() != null) {
+                    org.telegram.ui.Components.zc.a0(foVar).m(this.b ? org.telegram.ui.Components.yc.G : org.telegram.ui.Components.yc.I, i10, 0, 0, foVar.ea).j();
+                    break;
+                }
+                break;
+            default:
+                rj rjVar = (rj) this.c;
+                fo foVar2 = rjVar.b.b;
+                if (i10 < 50) {
+                    foVar2.va(foVar2.d4, true);
+                    break;
+                } else {
+                    TLRPC.Chat chat = foVar2.e;
+                    TLRPC.User user = foVar2.f;
+                    boolean z10 = this.b;
+                    org.telegram.ui.Components.g5.r(foVar2, true, chat, user, false, false, false, z10, new b1(rjVar, z10));
+                    break;
+                }
         }
-        z10 = ((org.telegram.ui.ActionBar.n2) znVar).inBubbleMode;
-        if (z10 || znVar.j0 == null || znVar.s3) {
-            return false;
-        }
-        return !znVar.K9() || znVar.h4;
-    }
-
-    @Override // org.telegram.ui.Components.uo
-    public final boolean d() {
-        zn znVar = this.v0;
-        TLRPC.User user = znVar.f;
-        if (user != null && user.linked_community_id != 0) {
-            znVar.showDialog(new fi.k0(znVar, znVar.f.linked_community_id, null, null));
-            return true;
-        }
-        TLRPC.Chat chat = znVar.e;
-        if (chat == null || chat.linked_community_id == 0) {
-            return false;
-        }
-        znVar.showDialog(new fi.k0(znVar, znVar.e.linked_community_id, null, null));
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.uo
-    public final void f() {
-        zn znVar = this.v0;
-        znVar.qa(znVar.J9() ? "" : null);
-    }
-
-    @Override // org.telegram.ui.Components.uo
-    public final boolean p() {
-        return this.v0.R3 == 3;
     }
 }

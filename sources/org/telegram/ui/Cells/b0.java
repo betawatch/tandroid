@@ -8,28 +8,28 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g31;
-import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.c31;
+import org.telegram.ui.Components.h11;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public abstract class b0 extends View {
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.c6 a;
     public final c0 b;
-    public final g31 c;
+    public final c31 c;
     public int d;
     public float e;
 
-    public b0(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
+    public b0(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
-        this.a = e6Var;
-        this.b = new c0(context, i10, e6Var);
-        g31 g31Var = new g31(i10, this, e6Var, true);
-        this.c = g31Var;
-        g31Var.e = new l11("", 14.0f, AndroidUtilities.bold());
+        this.a = c6Var;
+        this.b = new c0(context, i10, c6Var);
+        c31 c31Var = new c31(i10, this, c6Var, true);
+        this.c = c31Var;
+        c31Var.e = new h11("", 14.0f, AndroidUtilities.bold());
     }
 
     public final void a(float f7, int i10) {
@@ -52,11 +52,11 @@ public abstract class b0 extends View {
         int measuredWidth2 = getMeasuredWidth();
         float f7 = sideMenuWidth;
         float f10 = f7 / 2.0f;
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
-        if (e6Var != null) {
-            e6Var.m(f10, this.e, measuredWidth2, this.d);
+        org.telegram.ui.ActionBar.c6 c6Var = this.a;
+        if (c6Var != null) {
+            c6Var.l(f10, this.e, measuredWidth2, this.d);
         } else {
-            org.telegram.ui.ActionBar.i6.q(f10, this.e, measuredWidth2, this.d);
+            org.telegram.ui.ActionBar.g6.q(f10, this.e, measuredWidth2, this.d);
         }
         this.c.c(canvas, getWidth(), f7, 0.0f, 1.0f, 1.0f, false);
         c0Var.setBounds(i10, dp, c0Var.h + i10, c0Var.i + dp);
@@ -65,27 +65,27 @@ public abstract class b0 extends View {
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), bi.C(40.0f, this.b.i, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), yh.D(40.0f, this.b.i, TLObject.FLAG_30));
     }
 
-    public void setDialogId(long j3) {
+    public void setDialogId(long j10) {
         c0 c0Var = this.b;
-        l11 l11Var = c0Var.d;
-        TLRPC.User user = MessagesController.getInstance(c0Var.b).getUser(Long.valueOf(j3));
-        l11 l11Var2 = c0Var.e;
-        l11Var2.n(1);
-        l11Var2.q(9999.0f);
-        l11Var2.r(LocaleController.formatString(R.string.BotForumAskForStartNewChat, UserObject.getUserName(user)));
-        float b10 = (l11Var2.b() / 2.0f) * 1.2f;
-        l11Var2.n(4);
+        h11 h11Var = c0Var.d;
+        TLRPC.User user = MessagesController.getInstance(c0Var.b).getUser(Long.valueOf(j10));
+        h11 h11Var2 = c0Var.e;
+        h11Var2.n(1);
+        h11Var2.q(9999.0f);
+        h11Var2.r(LocaleController.formatString(R.string.BotForumAskForStartNewChat, UserObject.getUserName(user)));
+        float b10 = (h11Var2.b() / 2.0f) * 1.2f;
+        h11Var2.n(4);
         float f7 = (int) (AndroidUtilities.displaySize.x * 0.95f);
-        l11Var2.q(Math.min(f7, b10));
-        if (l11Var2.b.getLineCount() > 2) {
-            l11Var2.q(Math.min(f7, b10 * 1.2f));
+        h11Var2.q(Math.min(f7, b10));
+        if (h11Var2.b.getLineCount() > 2) {
+            h11Var2.q(Math.min(f7, b10 * 1.2f));
         }
-        float min = Math.min(Math.max(Math.max(0.0f, l11Var2.b()), l11Var.b()) + AndroidUtilities.dp(32.0f), f7);
-        float j10 = l11Var2.j() + l11Var.j() + AndroidUtilities.dp(17.0f) + 0.0f + AndroidUtilities.dp(70.0f) + AndroidUtilities.dp(14.0f) + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(5.0f);
+        float min = Math.min(Math.max(Math.max(0.0f, h11Var2.b()), h11Var.b()) + AndroidUtilities.dp(32.0f), f7);
+        float j11 = h11Var2.j() + h11Var.j() + AndroidUtilities.dp(17.0f) + 0.0f + AndroidUtilities.dp(70.0f) + AndroidUtilities.dp(14.0f) + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(5.0f);
         c0Var.h = (int) min;
-        c0Var.i = (int) j10;
+        c0Var.i = (int) j11;
     }
 }

@@ -23,7 +23,7 @@ public final class v1 extends com.google.android.gms.common.api.internal.e {
             w1 w1Var = cVar2.r;
             int c10 = w1Var.c();
             byte[] bArr = new byte[c10];
-            n1.a(w1Var, bArr, c10);
+            n1.b(w1Var, bArr, c10);
             cVar2.b = bArr;
             a2 a2Var = (a2) z1Var.u();
             Parcel obtain = Parcel.obtain();
@@ -37,8 +37,8 @@ public final class v1 extends com.google.android.gms.common.api.internal.e {
             } finally {
                 obtain.recycle();
             }
-        } catch (RuntimeException e7) {
-            Log.e("ClearcutLoggerApiImpl", "derived ClearcutLogger.MessageProducer ", e7);
+        } catch (RuntimeException e) {
+            Log.e("ClearcutLoggerApiImpl", "derived ClearcutLogger.MessageProducer ", e);
             o(new Status(10, "MessageProducer", null, null));
         }
     }

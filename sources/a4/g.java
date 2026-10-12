@@ -1,9 +1,10 @@
 package a4;
 
-import e2.d0;
-import e2.v;
+import e2.m0;
+import e2.x;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g {
     public final /* synthetic */ int a;
@@ -14,22 +15,13 @@ public final class g {
 
     public g() {
         this.a = 2;
-        this.b = d0.b;
+        this.b = m0.b;
     }
 
     public void a() {
         int i10;
-        int i11;
-        switch (this.a) {
-            case 2:
-                int i12 = this.c;
-                e2.d.g(i12 >= 0 && (i12 < (i10 = this.e) || (i12 == i10 && this.d == 0)));
-                break;
-            default:
-                int i13 = this.d;
-                e2.d.g(i13 >= 0 && (i13 < (i11 = this.c) || (i13 == i11 && this.e == 0)));
-                break;
-        }
+        int i11 = this.c;
+        u6.p(i11 >= 0 && (i11 < (i10 = this.e) || (i11 == i10 && this.d == 0)));
     }
 
     public int b() {
@@ -45,72 +37,29 @@ public final class g {
         a();
     }
 
-    public boolean d(int i10) {
-        int i11 = this.d;
-        int i12 = i10 / 8;
-        int i13 = i11 + i12;
-        int i14 = (this.e + i10) - (i12 * 8);
-        if (i14 > 7) {
-            i13++;
-            i14 -= 8;
-        }
-        while (true) {
-            i11++;
-            if (i11 > i13 || i13 >= this.c) {
-                break;
-            }
-            if (r(i11)) {
-                i13++;
-                i11 += 2;
-            }
-        }
-        int i15 = this.c;
-        if (i13 >= i15) {
-            return i13 == i15 && i14 == 0;
-        }
-        return true;
-    }
-
-    public boolean e() {
-        int i10 = this.d;
-        int i11 = this.e;
-        int i12 = 0;
-        while (this.d < this.c && !h()) {
-            i12++;
-        }
-        boolean z10 = this.d == this.c;
-        this.d = i10;
-        this.e = i11;
-        return !z10 && d((i12 * 2) + 1);
-    }
-
-    public int f() {
-        e2.d.g(this.d == 0);
+    public int d() {
+        u6.p(this.d == 0);
         return this.c;
     }
 
-    public int g() {
+    public int e() {
         return (this.c * 8) + this.d;
     }
 
-    public boolean h() {
+    public boolean f() {
         switch (this.a) {
             case 1:
                 boolean z10 = (((this.b[this.d] & 255) >> this.e) & 1) == 1;
-                t(1);
+                o(1);
                 return z10;
-            case 2:
-                boolean z11 = (this.b[this.c] & (128 >> this.d)) != 0;
-                s();
-                return z11;
             default:
-                boolean z12 = (this.b[this.d] & (128 >> this.e)) != 0;
-                s();
-                return z12;
+                boolean z11 = (this.b[this.c] & (128 >> this.d)) != 0;
+                n();
+                return z11;
         }
     }
 
-    public int i(int i10) {
+    public int g(int i10) {
         switch (this.a) {
             case 1:
                 int i11 = this.d;
@@ -124,9 +73,9 @@ public final class g {
                     i12++;
                 }
                 int i14 = i13 & ((-1) >>> (32 - i10));
-                t(i10);
+                o(i10);
                 return i14;
-            case 2:
+            default:
                 if (i10 == 0) {
                     return 0;
                 }
@@ -152,36 +101,10 @@ public final class g {
                     this.c = i20 + 1;
                     i15 |= (bArr3[i20] & 255) << i19;
                 }
-            default:
-                this.e += i10;
-                int i21 = 0;
-                while (true) {
-                    int i22 = this.e;
-                    if (i22 <= 8) {
-                        byte[] bArr4 = this.b;
-                        int i23 = this.d;
-                        int i24 = ((-1) >>> (32 - i10)) & (i21 | ((bArr4[i23] & 255) >> (8 - i22)));
-                        if (i22 == 8) {
-                            this.e = 0;
-                            this.d = i23 + (r(i23 + 1) ? 2 : 1);
-                        }
-                        a();
-                        return i24;
-                    }
-                    int i25 = i22 - 8;
-                    this.e = i25;
-                    byte[] bArr5 = this.b;
-                    int i26 = this.d;
-                    i21 |= (bArr5[i26] & 255) << i25;
-                    if (!r(i26 + 1)) {
-                        r3 = 1;
-                    }
-                    this.d = i26 + r3;
-                }
         }
     }
 
-    public void j(int i10, byte[] bArr) {
+    public void h(int i10, byte[] bArr) {
         int i11 = i10 >> 3;
         for (int i12 = 0; i12 < i11; i12++) {
             byte[] bArr2 = this.b;
@@ -220,90 +143,55 @@ public final class g {
         a();
     }
 
-    public long k(int i10) {
+    public long i(int i10) {
         if (i10 <= 32) {
-            int i11 = i(i10);
-            String str = d0.a;
-            return 4294967295L & i11;
+            int g10 = g(i10);
+            String str = m0.a;
+            return 4294967295L & g10;
         }
-        int i12 = i(i10 - 32);
-        int i13 = i(32);
-        String str2 = d0.a;
-        return (4294967295L & i13) | ((i12 & 4294967295L) << 32);
+        int g11 = g(i10 - 32);
+        int g12 = g(32);
+        String str2 = m0.a;
+        return (4294967295L & g12) | ((g11 & 4294967295L) << 32);
     }
 
-    public void l(int i10, byte[] bArr) {
-        e2.d.g(this.d == 0);
+    public void j(int i10, byte[] bArr) {
+        u6.p(this.d == 0);
         System.arraycopy(this.b, this.c, bArr, 0, i10);
         this.c += i10;
         a();
     }
 
-    public int m() {
-        int i10 = 0;
-        while (!h()) {
-            i10++;
-        }
-        return ((1 << i10) - 1) + (i10 > 0 ? i(i10) : 0);
-    }
-
-    public int n() {
-        int m10 = m();
-        return ((m10 + 1) / 2) * (m10 % 2 == 0 ? -1 : 1);
-    }
-
-    public void o(int i10, byte[] bArr) {
+    public void k(int i10, byte[] bArr) {
         this.b = bArr;
         this.c = 0;
         this.d = 0;
         this.e = i10;
     }
 
-    public void p(v vVar) {
-        o(vVar.c, vVar.a);
-        q(vVar.b * 8);
+    public void l(x xVar) {
+        k(xVar.c, xVar.a);
+        m(xVar.b * 8);
     }
 
-    public void q(int i10) {
+    public void m(int i10) {
         int i11 = i10 / 8;
         this.c = i11;
         this.d = i10 - (i11 * 8);
         a();
     }
 
-    public boolean r(int i10) {
-        if (2 > i10 || i10 >= this.c) {
-            return false;
+    public void n() {
+        int i10 = this.d + 1;
+        this.d = i10;
+        if (i10 == 8) {
+            this.d = 0;
+            this.c++;
         }
-        byte[] bArr = this.b;
-        return bArr[i10] == 3 && bArr[i10 + (-2)] == 0 && bArr[i10 - 1] == 0;
+        a();
     }
 
-    public void s() {
-        switch (this.a) {
-            case 2:
-                int i10 = this.d + 1;
-                this.d = i10;
-                if (i10 == 8) {
-                    this.d = 0;
-                    this.c++;
-                }
-                a();
-                break;
-            default:
-                int i11 = this.e + 1;
-                this.e = i11;
-                if (i11 == 8) {
-                    this.e = 0;
-                    int i12 = this.d;
-                    this.d = i12 + (r(i12 + 1) ? 2 : 1);
-                }
-                a();
-                break;
-        }
-    }
-
-    public void t(int i10) {
+    public void o(int i10) {
         int i11;
         switch (this.a) {
             case 1:
@@ -321,9 +209,9 @@ public final class g {
                 if (i15 < 0 || (i15 >= (i11 = this.c) && (i15 != i11 || this.e != 0))) {
                     z10 = false;
                 }
-                e2.d.g(z10);
+                u6.p(z10);
                 break;
-            case 2:
+            default:
                 int i16 = i10 / 8;
                 int i17 = this.c + i16;
                 this.c = i17;
@@ -335,32 +223,11 @@ public final class g {
                 }
                 a();
                 break;
-            default:
-                int i19 = this.d;
-                int i20 = i10 / 8;
-                int i21 = i19 + i20;
-                this.d = i21;
-                int i22 = (i10 - (i20 * 8)) + this.e;
-                this.e = i22;
-                if (i22 > 7) {
-                    this.d = i21 + 1;
-                    this.e = i22 - 8;
-                }
-                while (true) {
-                    i19++;
-                    if (i19 > this.d) {
-                        a();
-                        break;
-                    } else if (r(i19)) {
-                        this.d++;
-                        i19 += 2;
-                    }
-                }
         }
     }
 
-    public void u(int i10) {
-        e2.d.g(this.d == 0);
+    public void p(int i10) {
+        u6.p(this.d == 0);
         this.c += i10;
         a();
     }
@@ -369,15 +236,6 @@ public final class g {
         this.a = 1;
         this.b = bArr;
         this.c = bArr.length;
-    }
-
-    public g(byte[] bArr, int i10, int i11) {
-        this.a = 3;
-        this.b = bArr;
-        this.d = i10;
-        this.c = i11;
-        this.e = 0;
-        a();
     }
 
     public g(byte[] bArr, int i10) {

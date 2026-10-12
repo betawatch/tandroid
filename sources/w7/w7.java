@@ -1,80 +1,96 @@
 package w7;
 
-import android.os.Bundle;
-import org.json.JSONObject;
+import android.graphics.Paint;
+import android.os.Build;
+import android.text.TextDirectionHeuristic;
+import android.text.TextDirectionHeuristics;
+import android.text.TextPaint;
+import android.text.method.PasswordTransformationMethod;
+import android.view.ActionMode;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class w7 {
-    public static b2.g a(String str, Bundle data) {
-        kotlin.jvm.internal.i.e(data, "data");
-        try {
-            switch (str.hashCode()) {
-                case -1678407252:
-                    if (str.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
-                        try {
-                            String string = data.getString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON");
-                            kotlin.jvm.internal.i.b(string);
-                            v0.m mVar = new v0.m("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", data);
-                            if (string.length() != 0) {
-                                try {
-                                    new JSONObject(string);
-                                    return mVar;
-                                } catch (Exception unused) {
-                                }
-                            }
-                            throw new IllegalArgumentException("credentialJson must not be empty, and must be a valid JSON");
-                        } catch (Exception unused2) {
-                            throw new z0.a();
-                        }
-                    }
-                    throw new z0.a();
-                case -1072734346:
-                    if (str.equals("androidx.credentials.TYPE_RESTORE_CREDENTIAL")) {
-                        String string2 = data.getString("androidx.credentials.BUNDLE_KEY_GET_RESTORE_CREDENTIAL_RESPONSE");
-                        if (string2 == null) {
-                            throw new w0.k("The device does not contain a restore credential.");
-                        }
-                        v0.m mVar2 = new v0.m("androidx.credentials.TYPE_RESTORE_CREDENTIAL", data);
-                        if (string2.length() != 0) {
-                            try {
-                                new JSONObject(string2);
-                                return mVar2;
-                            } catch (Exception unused3) {
-                            }
-                        }
-                        throw new IllegalArgumentException("authenticationResponseJson must not be empty, and must be a valid JSON");
-                    }
-                    throw new z0.a();
-                case -543568185:
-                    if (str.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
-                        try {
-                            String string3 = data.getString("androidx.credentials.BUNDLE_KEY_ID");
-                            String string4 = data.getString("androidx.credentials.BUNDLE_KEY_PASSWORD");
-                            kotlin.jvm.internal.i.b(string3);
-                            kotlin.jvm.internal.i.b(string4);
-                            return new v0.m(string4, 2, data);
-                        } catch (Exception unused4) {
-                            throw new z0.a();
-                        }
-                    }
-                    throw new z0.a();
-                case -95037569:
-                    if (str.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
-                        try {
-                            String string5 = data.getString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON");
-                            kotlin.jvm.internal.i.b(string5);
-                            return new v0.m(string5, 3, data);
-                        } catch (Exception unused5) {
-                            throw new z0.a();
-                        }
-                    }
-                    throw new z0.a();
-                default:
-                    throw new z0.a();
-            }
-        } catch (z0.a unused6) {
-            return new v0.m(str, 0, data);
+    public static p0.c a(m.z0 z0Var) {
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 28) {
+            return new p0.c(b5.d.p(z0Var));
         }
+        TextPaint textPaint = new TextPaint(z0Var.getPaint());
+        TextDirectionHeuristic textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_LTR;
+        int breakStrategy = z0Var.getBreakStrategy();
+        int hyphenationFrequency = z0Var.getHyphenationFrequency();
+        if (z0Var.getTransformationMethod() instanceof PasswordTransformationMethod) {
+            textDirectionHeuristic = TextDirectionHeuristics.LTR;
+        } else {
+            if (i10 < 28 || (z0Var.getInputType() & 15) != 3) {
+                boolean z10 = z0Var.getLayoutDirection() == 1;
+                switch (z0Var.getTextDirection()) {
+                    case 2:
+                        textDirectionHeuristic = TextDirectionHeuristics.ANYRTL_LTR;
+                        break;
+                    case 3:
+                        textDirectionHeuristic = TextDirectionHeuristics.LTR;
+                        break;
+                    case 4:
+                        textDirectionHeuristic = TextDirectionHeuristics.RTL;
+                        break;
+                    case 5:
+                        textDirectionHeuristic = TextDirectionHeuristics.LOCALE;
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_RTL;
+                        break;
+                    default:
+                        if (z10) {
+                            textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_RTL;
+                            break;
+                        }
+                        break;
+                }
+            } else {
+                byte directionality = Character.getDirectionality(b5.d.h(androidx.emoji2.text.w.e(z0Var.getTextLocale()))[0].codePointAt(0));
+                textDirectionHeuristic = (directionality == 1 || directionality == 2) ? TextDirectionHeuristics.RTL : TextDirectionHeuristics.LTR;
+            }
+        }
+        return new p0.c(textPaint, textDirectionHeuristic, breakStrategy, hyphenationFrequency);
+    }
+
+    public static void b(int i10, TextView textView) {
+        if (i10 < 0) {
+            throw new IllegalArgumentException();
+        }
+        if (Build.VERSION.SDK_INT >= 28) {
+            b5.d.w(i10, textView);
+            return;
+        }
+        Paint.FontMetricsInt fontMetricsInt = textView.getPaint().getFontMetricsInt();
+        int i11 = textView.getIncludeFontPadding() ? fontMetricsInt.top : fontMetricsInt.ascent;
+        if (i10 > Math.abs(i11)) {
+            textView.setPadding(textView.getPaddingLeft(), i10 + i11, textView.getPaddingRight(), textView.getPaddingBottom());
+        }
+    }
+
+    public static void c(int i10, TextView textView) {
+        if (i10 < 0) {
+            throw new IllegalArgumentException();
+        }
+        Paint.FontMetricsInt fontMetricsInt = textView.getPaint().getFontMetricsInt();
+        int i11 = textView.getIncludeFontPadding() ? fontMetricsInt.bottom : fontMetricsInt.descent;
+        if (i10 > Math.abs(i11)) {
+            textView.setPadding(textView.getPaddingLeft(), textView.getPaddingTop(), textView.getPaddingRight(), i10 - i11);
+        }
+    }
+
+    public static ActionMode.Callback d(ActionMode.Callback callback) {
+        return (!(callback instanceof u0.i) || Build.VERSION.SDK_INT < 26) ? callback : ((u0.i) callback).a;
+    }
+
+    public static ActionMode.Callback e(ActionMode.Callback callback, TextView textView) {
+        int i10 = Build.VERSION.SDK_INT;
+        return (i10 < 26 || i10 > 27 || (callback instanceof u0.i) || callback == null) ? callback : new u0.i(callback, textView);
     }
 }

@@ -1,6 +1,5 @@
 package h8;
 
-import ae.x;
 import android.R;
 import android.content.Context;
 import android.content.Intent;
@@ -10,23 +9,22 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.mediarouter.app.a0;
+import androidx.mediarouter.app.z;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import m2.t;
-import n6.q;
-import v7.h8;
+import n6.r;
+import v7.a8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j {
-    public aa.a a;
+    public androidx.biometric.e a;
     public Bundle b;
     public LinkedList c;
     public final d e;
     public final Context f;
-    public t g;
-    public final t d = new t(this, 22);
+    public u9.d g;
+    public final u9.d d = new u9.d(this);
     public final ArrayList h = new ArrayList();
 
     public j(d dVar, Context context) {
@@ -38,8 +36,8 @@ public final class j {
         k6.d dVar2 = k6.d.d;
         Context context = dVar.getContext();
         int d = dVar2.d(context, k6.e.a);
-        String c10 = q.c(context, d);
-        String b10 = q.b(context, d);
+        String c10 = r.c(context, d);
+        String b10 = r.b(context, d);
         LinearLayout linearLayout = new LinearLayout(dVar.getContext());
         linearLayout.setOrientation(1);
         linearLayout.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
@@ -55,7 +53,7 @@ public final class j {
             button.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
             button.setText(b10);
             linearLayout.addView(button);
-            button.setOnClickListener(new a0(context, b11));
+            button.setOnClickListener(new z(context, b11));
         }
     }
 
@@ -90,21 +88,21 @@ public final class j {
                 synchronized (e.class) {
                     e.b(context);
                 }
-                i8.g W0 = h8.a(context).W0(new x6.b(context));
+                i8.g W0 = a8.a(context).W0(new x6.b(context));
                 if (W0 == null) {
                     return;
                 }
-                this.g.C(new aa.a(this.e, W0));
+                this.g.a(new androidx.biometric.e(this.e, W0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    this.a.n((f) obj);
+                    this.a.p((f) obj);
                 }
                 arrayList.clear();
-            } catch (RemoteException e7) {
-                throw new x(e7);
+            } catch (RemoteException e) {
+                throw new androidx.car.app.j(e);
             } catch (k6.f unused) {
             }
         }

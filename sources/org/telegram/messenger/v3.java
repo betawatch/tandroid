@@ -1,16 +1,31 @@
 package org.telegram.messenger;
 
-import android.app.Notification;
-import android.graphics.SurfaceTexture;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class v3 {
-    public static /* synthetic */ Notification.Builder a(FilesMigrationService filesMigrationService, String str) {
-        return new Notification.Builder(filesMigrationService, str);
+public final /* synthetic */ class v3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FileUploadOperation b;
+
+    public /* synthetic */ v3(FileUploadOperation fileUploadOperation, int i10) {
+        this.a = i10;
+        this.b = fileUploadOperation;
     }
 
-    public static /* synthetic */ SurfaceTexture b() {
-        return new SurfaceTexture(false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$start$0();
+                break;
+            case 1:
+                this.b.lambda$cancel$3();
+                break;
+            case 2:
+                this.b.lambda$startUploadRequest$7();
+                break;
+            default:
+                this.b.lambda$onNetworkChanged$2();
+                break;
+        }
     }
 }

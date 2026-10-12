@@ -1,37 +1,70 @@
 package e2;
 
-import java.util.concurrent.ThreadFactory;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Wallet.WalletEngine2;
+import android.os.SystemClock;
+import b2.m1;
+import b2.p1;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c0 implements ThreadFactory {
-    public final /* synthetic */ int a;
+public final class c0 {
+    public final int a;
+    public Object b;
+    public int c;
+    public int d;
+    public boolean e;
+    public long f;
+    public final /* synthetic */ e0 g;
 
-    public /* synthetic */ c0(int i10) {
+    public c0(e0 e0Var, int i10) {
+        this.g = e0Var;
         this.a = i10;
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        Thread lambda$new$0;
-        switch (this.a) {
-            case 0:
-                return new Thread(runnable, "ExoPlayer:AudioTrackReleaseThread");
-            case 1:
-                return new Thread(runnable, "RoundVideoFiles");
-            case 2:
-                return new Thread(runnable, "RoundVideoOutput");
-            case 3:
-                return new Thread(runnable, "Lottie-" + ck0.P0.getAndIncrement());
-            case 4:
-                return new Thread(runnable, "LottieLow-" + ck0.Q0.getAndIncrement());
-            case 5:
-                return new Thread(runnable, "GramWalletStorage");
-            default:
-                lambda$new$0 = WalletEngine2.lambda$new$0(runnable);
-                return lambda$new$0;
+    public final void a() {
+        long duration;
+        e0 e0Var = this.g;
+        m1 m1Var = e0Var.e;
+        i0 i0Var = e0Var.f;
+        i2.h0 h0Var = e0Var.a;
+        p1 y02 = h0Var.y0();
+        Object l4 = y02.p() ? null : y02.l(h0Var.A());
+        int m0 = h0Var.m0();
+        int N = h0Var.N();
+        long M0 = h0Var.M0();
+        if (l4 == null || m0 != -1) {
+            duration = m0 != -1 ? h0Var.getDuration() : -9223372036854775807L;
+        } else {
+            y02.g(l4, m1Var);
+            M0 -= m0.h0(m1Var.e);
+            duration = m0.h0(m1Var.d);
         }
+        boolean j02 = h0Var.j0();
+        if (!j02 || duration == -9223372036854775807L || M0 < duration) {
+            i0Var.e(3);
+            if (j02 && duration != -9223372036854775807L) {
+                i0Var.a.sendEmptyMessageDelayed(3, (int) Math.ceil((duration - M0) / h0Var.h().a));
+            }
+            this.e = false;
+            return;
+        }
+        e0Var.d.getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        boolean z10 = this.e;
+        int i10 = this.a;
+        if (z10 && Objects.equals(l4, this.b) && m0 == this.c && N == this.d) {
+            if (elapsedRealtime - this.f >= i10) {
+                e0Var.c.a.A1(new i2.m(2, new f0(3, i10), 1003));
+                return;
+            }
+            return;
+        }
+        this.e = true;
+        this.f = elapsedRealtime;
+        this.b = l4;
+        this.c = m0;
+        this.d = N;
+        i0Var.e(3);
+        i0Var.a.sendEmptyMessageDelayed(3, i10);
     }
 }

@@ -1,21 +1,18 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class s3 implements ia.d {
+public final class s3 implements ja.d {
     public static final s3 a = new s3();
-    public static final ia.c b = new ia.c("inferenceCommonLogEvent", hg.c.m(sc.v.l(h.class, new e(1))));
-    public static final ia.c c = new ia.c("options", hg.c.m(sc.v.l(h.class, new e(2))));
-    public static final ia.c d = new ia.c("identifyLanguageResult", hg.c.m(sc.v.l(h.class, new e(3))));
-    public static final ia.c e = new ia.c("identifyPossibleLanguagesResult", hg.c.m(sc.v.l(h.class, new e(4))));
+    public static final ja.c b = new ja.c("confidence", i2.d.n(t8.b.k(h.class, new e(1))));
+    public static final ja.c c = new ja.c("languageCode", i2.d.n(t8.b.k(h.class, new e(2))));
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
-        h7 h7Var = (h7) obj;
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, h7Var.a);
-        eVar.a(c, h7Var.b);
-        eVar.a(d, h7Var.c);
-        eVar.a(e, null);
+        c7 c7Var = (c7) obj;
+        ja.e eVar = (ja.e) obj2;
+        c7Var.getClass();
+        eVar.d(b, null);
+        eVar.d(c, c7Var.a);
     }
 }

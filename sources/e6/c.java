@@ -2,11 +2,11 @@ package e6;
 
 import android.os.Looper;
 import android.util.SparseIntArray;
-import ci.n2;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.internal.cast.a0;
 import d6.c0;
+import di.n2;
 import j$.util.DesugarCollections;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -14,14 +14,14 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c {
     public long b;
     public final h c;
     public ArrayList d;
     public final SparseIntArray e;
-    public final s f;
+    public final r f;
     public final ArrayList g;
     public final ArrayDeque h;
     public final a0 i;
@@ -42,7 +42,7 @@ public final class c {
         int i10 = 1;
         this.j = new n2(this, i10);
         hVar.p(new c0(this, i10));
-        this.f = new s(this);
+        this.f = new r(this);
         this.b = e();
         d();
     }
@@ -118,20 +118,20 @@ public final class c {
                 basePendingResult2 = h.t();
             }
             this.l = basePendingResult2;
-            basePendingResult2.i(new r(this, 0));
+            basePendingResult2.i(new q(this, 0));
         }
     }
 
     public final long e() {
-        c6.q e7 = this.c.e();
-        if (e7 == null) {
+        c6.q e = this.c.e();
+        if (e == null) {
             return 0L;
         }
-        MediaInfo mediaInfo = e7.a;
+        MediaInfo mediaInfo = e.a;
         int i10 = mediaInfo == null ? -1 : mediaInfo.b;
-        int i11 = e7.e;
-        int i12 = e7.f;
-        int i13 = e7.w;
+        int i11 = e.e;
+        int i12 = e.f;
+        int i13 = e.w;
         if (i11 == 1) {
             if (i12 != 1) {
                 if (i12 != 2) {
@@ -146,7 +146,7 @@ public final class c {
                 return 0L;
             }
         }
-        return e7.b;
+        return e.b;
     }
 
     public final void f() {

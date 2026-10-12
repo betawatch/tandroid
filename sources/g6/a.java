@@ -2,7 +2,7 @@ package g6;
 
 import android.os.SystemClock;
 import android.text.TextUtils;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.regex.Pattern;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final Pattern a = Pattern.compile("urn:x-cast:[-A-Za-z0-9_]+(\\.[-A-Za-z0-9_]+)*");
@@ -43,7 +43,7 @@ public abstract class a {
         int length = iArr.length;
         int i10 = 0;
         while (i10 < length) {
-            i10 = e2.e(iArr[i10], i10, 1, arrayList);
+            i10 = k3.f(iArr[i10], i10, 1, arrayList);
         }
         return arrayList;
     }

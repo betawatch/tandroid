@@ -1,54 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import android.widget.LinearLayout;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class xw0 extends LinearLayout {
-    public boolean a() {
-        return this instanceof org.telegram.ui.fe0;
+public class xw0 extends s4.c0 {
+    public final es r;
+    public int s;
+    public float t;
+
+    public xw0(Context context) {
+        super(context);
+        this.r = es.f;
+        this.t = 1.0f;
     }
 
-    public boolean b() {
-        return this instanceof org.telegram.ui.fe0;
+    @Override // s4.c0, s4.x0
+    public final void g(View view, s4.w0 w0Var) {
+        int j10 = j(o(), view);
+        int k10 = k(p(), view);
+        int m10 = m((int) Math.sqrt((k10 * k10) + (j10 * j10)));
+        if (m10 > 0) {
+            w0Var.b(-j10, -k10, m10, this.r);
+        }
+        AndroidUtilities.runOnUIThread(new lr0(this, 9), Math.max(0, m10));
     }
 
-    public boolean c(boolean z10) {
-        return true;
+    @Override // s4.c0
+    public final int k(int i10, View view) {
+        return super.k(i10, view) - this.s;
     }
 
-    public String getHeaderName() {
-        return "";
+    @Override // s4.c0
+    public final int m(int i10) {
+        return Math.round(Math.min(super.m(i10), 500) * this.t);
     }
 
-    public void d() {
+    @Override // s4.c0
+    public final int n(int i10) {
+        return Math.round(Math.min(super.n(i10), ImageReceiver.DEFAULT_CROSSFADE_DURATION) * this.t);
     }
 
-    public void f() {
-    }
-
-    public void g() {
-    }
-
-    public void h(String str) {
-    }
-
-    public void i() {
-    }
-
-    public void j() {
-    }
-
-    public void k(Bundle bundle) {
-    }
-
-    public void l(Bundle bundle) {
-    }
-
-    public void n() {
-    }
-
-    public void m(Bundle bundle, boolean z10) {
+    @Override // s4.c0
+    public final void q(s4.w0 w0Var) {
+        PointF a2 = a(this.a);
+        if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
+            w0Var.d = this.a;
+            h();
+            return;
+        }
+        s4.x0.b(a2);
+        this.k = a2;
+        this.o = (int) (a2.x * 10000.0f);
+        this.p = (int) (a2.y * 10000.0f);
+        w0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
     }
 }

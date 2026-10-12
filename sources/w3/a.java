@@ -1,8 +1,8 @@
 package w3;
 
-import e2.v;
+import e2.x;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a {
     public final int a;
@@ -10,20 +10,20 @@ public final class a {
     public int c;
     public long d;
     public final boolean e;
-    public final v f;
-    public final v g;
+    public final x f;
+    public final x g;
     public int h;
     public int i;
 
-    public a(v vVar, v vVar2, boolean z10) {
-        this.g = vVar;
-        this.f = vVar2;
+    public a(x xVar, x xVar2, boolean z10) {
+        this.g = xVar;
+        this.f = xVar2;
         this.e = z10;
-        vVar2.J(12);
-        this.a = vVar2.B();
-        vVar.J(12);
-        this.i = vVar.B();
-        c3.b.c("first_chunk must be 1", vVar.j() == 1);
+        xVar2.N(12);
+        this.a = xVar2.E();
+        xVar.N(12);
+        this.i = xVar.E();
+        c3.b.b("first_chunk must be 1", xVar.m() == 1);
         this.b = -1;
     }
 
@@ -34,15 +34,15 @@ public final class a {
             return false;
         }
         boolean z10 = this.e;
-        v vVar = this.f;
-        this.d = z10 ? vVar.C() : vVar.z();
+        x xVar = this.f;
+        this.d = z10 ? xVar.G() : xVar.C();
         if (this.b == this.h) {
-            v vVar2 = this.g;
-            this.c = vVar2.B();
-            vVar2.K(4);
+            x xVar2 = this.g;
+            this.c = xVar2.E();
+            xVar2.O(4);
             int i11 = this.i - 1;
             this.i = i11;
-            this.h = i11 > 0 ? vVar2.B() - 1 : -1;
+            this.h = i11 > 0 ? xVar2.E() - 1 : -1;
         }
         return true;
     }

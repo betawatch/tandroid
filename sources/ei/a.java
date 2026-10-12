@@ -1,37 +1,77 @@
 package ei;
 
-import ci.y8;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import androidx.profileinstaller.ProfileInstallerInitializer;
+import java.util.Random;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import zh.t;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements Utilities.Callback {
+public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+    public final /* synthetic */ Context b;
 
-    public /* synthetic */ a(l lVar, int i10) {
+    public /* synthetic */ a(Context context, int i10) {
         this.a = i10;
-        this.b = lVar;
+        this.b = context;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new y8(15, this.b, (TLRPC.UserFull) obj));
+                new t(this.b).show();
                 break;
             case 1:
-                l lVar = this.b;
-                lVar.Y.commission_permille = ((Integer) obj).intValue();
-                lVar.J0();
+                pf.d.s(this.b, LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfoLink));
+                break;
+            case 2:
+                (Build.VERSION.SDK_INT >= 28 ? r4.g.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new a(this.b, 3), new Random().nextInt(Math.max(MediaDataController.MAX_STYLE_RUNS_COUNT, 1)) + 5000);
+                break;
+            case 3:
+                new ThreadPoolExecutor(0, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue()).execute(new a(this.b, 4));
+                break;
+            case 4:
+                r4.d.s(this.b, new a3.b(2), r4.d.a, false);
+                break;
+            case 5:
+                new t(this.b).show();
+                break;
+            case 6:
+                pf.d.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 7:
+                new t(this.b).show();
+                break;
+            case 8:
+                pf.d.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 9:
+                pf.d.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 10:
+                pf.d.s(this.b, LocaleController.getString(R.string.PaidContentInfoLink));
+                break;
+            case 11:
+                pf.d.s(this.b, LocaleController.getString(R.string.StarsSubscribeInfoLink));
                 break;
             default:
-                l lVar2 = this.b;
-                lVar2.Y.duration_months = ((Integer) lVar2.a0.get(((Integer) obj).intValue())).intValue();
-                lVar2.J0();
+                pf.d.s(this.b, LocaleController.getString(R.string.StarsReactionTermsLink));
                 break;
         }
+    }
+
+    public /* synthetic */ a(ProfileInstallerInitializer profileInstallerInitializer, Context context) {
+        this.a = 2;
+        this.b = context;
     }
 }

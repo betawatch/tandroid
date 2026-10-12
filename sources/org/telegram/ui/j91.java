@@ -1,0 +1,169 @@
+package org.telegram.ui;
+
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class j91 extends LinearLayout implements org.telegram.ui.ActionBar.x5 {
+    public final org.telegram.ui.ActionBar.c6 a;
+    public final org.telegram.ui.Components.k9 b;
+    public final org.telegram.ui.Components.z9 c;
+    public final org.telegram.ui.ActionBar.h5 d;
+    public final TextView e;
+    public final ImageView f;
+    public final org.telegram.ui.Components.q5 h;
+    public final org.telegram.ui.Components.q5 n;
+
+    public j91(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context);
+        this.a = c6Var;
+        setOrientation(0);
+        this.b = new org.telegram.ui.Components.k9((org.telegram.ui.ActionBar.c6) null);
+        org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
+        this.c = z9Var;
+        z9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
+        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
+        this.d = h5Var;
+        h5Var.setTextSize(15);
+        h5Var.setTypeface(AndroidUtilities.bold());
+        h5Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
+        this.h = new org.telegram.ui.Components.q5(AndroidUtilities.dp(24.0f), 7, h5Var, false);
+        this.n = new org.telegram.ui.Components.q5(AndroidUtilities.dp(24.0f), 7, h5Var, false);
+        h5Var.addOnAttachStateChangeListener(new j5(this, 4));
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setPadding(AndroidUtilities.dp(6.66f), 0, AndroidUtilities.dp(6.66f), 0);
+        textView.setTextSize(1, 11.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(17);
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Sh, c6Var));
+        textView.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, c6Var)));
+        ImageView imageView = new ImageView(context);
+        this.f = imageView;
+        imageView.setImageResource(R.drawable.msg_arrowright);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.m6, c6Var), PorterDuff.Mode.SRC_IN));
+        if (!LocaleController.isRTL) {
+            h5Var.setGravity(19);
+            addView(z9Var, w7.a6.t(28, 28, 19, 18, 0, 18, 0));
+            addView(h5Var, w7.a6.p(0, -1, 1.0f, 119, 0, 0, 18, 0));
+            addView(textView, w7.a6.p(-2, 20, 0.0f, 16, 0, 0, 0, 0));
+            addView(imageView, w7.a6.p(24, 24, 0.0f, 21, 0, 0, 12, 0));
+            return;
+        }
+        h5Var.setGravity(21);
+        imageView.setScaleX(-1.0f);
+        addView(imageView, w7.a6.p(24, 24, 0.0f, 19, 12, 0, 0, 0));
+        addView(textView, w7.a6.p(-2, 20, 0.0f, 16, 0, 0, 0, 0));
+        addView(h5Var, w7.a6.p(0, -1, 1.0f, 119, 18, 0, 0, 0));
+        addView(z9Var, w7.a6.t(28, 28, 21, 18, 0, 18, 0));
+    }
+
+    @Override // org.telegram.ui.ActionBar.x5
+    public final void d() {
+        int i10 = org.telegram.ui.ActionBar.g6.G6;
+        org.telegram.ui.ActionBar.c6 c6Var = this.a;
+        this.d.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
+        this.e.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, c6Var)));
+        this.f.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.m6, c6Var), PorterDuff.Mode.SRC_IN));
+        this.n.k(Integer.valueOf(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.zh, c6Var)));
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0065  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void set(int i10) {
+        Long emojiStatusDocumentId;
+        TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
+        org.telegram.ui.Components.k9 k9Var = this.b;
+        k9Var.m(i10, currentUser);
+        org.telegram.ui.Components.z9 z9Var = this.c;
+        z9Var.getImageReceiver().setCurrentAccount(i10);
+        z9Var.e(currentUser, k9Var);
+        String userName = UserObject.getUserName(currentUser);
+        org.telegram.ui.ActionBar.h5 h5Var = this.d;
+        h5Var.l(userName, false);
+        Integer valueOf = Integer.valueOf(i10);
+        org.telegram.ui.Components.q5 q5Var = this.h;
+        q5Var.x = valueOf;
+        Integer valueOf2 = Integer.valueOf(i10);
+        org.telegram.ui.Components.q5 q5Var2 = this.n;
+        q5Var2.x = valueOf2;
+        int i11 = org.telegram.ui.ActionBar.g6.zh;
+        org.telegram.ui.ActionBar.c6 c6Var = this.a;
+        q5Var.k(Integer.valueOf(org.telegram.ui.ActionBar.g6.w0(i11, c6Var)));
+        if (currentUser != null) {
+            long j10 = currentUser.bot_verification_icon;
+            if (j10 != 0) {
+                q5Var.j(j10, false);
+                emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(currentUser);
+                q5Var2.k(Integer.valueOf(org.telegram.ui.ActionBar.g6.w0(i11, c6Var)));
+                if (emojiStatusDocumentId == null) {
+                    q5Var2.j(emojiStatusDocumentId.longValue(), false);
+                } else if (currentUser == null || !currentUser.premium) {
+                    q5Var2.g(null, false);
+                } else {
+                    q5Var2.g(getContext().getResources().getDrawable(R.drawable.msg_premium_liststar).mutate(), false);
+                }
+                if (q5Var.d()) {
+                    q5Var = null;
+                }
+                h5Var.setLeftDrawable(q5Var);
+                if (q5Var2.d()) {
+                    q5Var2 = null;
+                }
+                h5Var.i(q5Var2);
+                int mainUnreadCount = MessagesStorage.getInstance(i10).getMainUnreadCount();
+                int i12 = mainUnreadCount <= 0 ? 8 : 0;
+                TextView textView = this.e;
+                textView.setVisibility(i12);
+                textView.setText(LocaleController.formatNumber(mainUnreadCount, ','));
+            }
+        }
+        q5Var.g(null, false);
+        emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(currentUser);
+        q5Var2.k(Integer.valueOf(org.telegram.ui.ActionBar.g6.w0(i11, c6Var)));
+        if (emojiStatusDocumentId == null) {
+        }
+        if (q5Var.d()) {
+        }
+        h5Var.setLeftDrawable(q5Var);
+        if (q5Var2.d()) {
+        }
+        h5Var.i(q5Var2);
+        int mainUnreadCount2 = MessagesStorage.getInstance(i10).getMainUnreadCount();
+        if (mainUnreadCount2 <= 0) {
+        }
+        TextView textView2 = this.e;
+        textView2.setVisibility(i12);
+        textView2.setText(LocaleController.formatNumber(mainUnreadCount2, ','));
+    }
+}

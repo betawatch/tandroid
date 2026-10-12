@@ -1,35 +1,454 @@
 package rg;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Paint;
+import android.graphics.PointF;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.util.SparseIntArray;
+import android.view.TextureView;
+import android.view.View;
+import android.view.ViewGroup;
+import di.a6;
+import di.k8;
+import di.z6;
+import java.io.File;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d5;
+import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.la;
+import org.telegram.ui.x5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g1 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l1 b;
+public abstract class g1 extends j {
+    public boolean A0;
+    public boolean B0;
+    public final SparseIntArray C0;
+    public final com.google.firebase.messaging.m D0;
+    public d5 E0;
+    public d5 F0;
+    public d5 G0;
+    public d5 H0;
+    public d5 I0;
+    public d5 J0;
+    public d5 K0;
+    public d5 L0;
+    public final x5 q0;
+    public final z0 r0;
+    public final ArrayList s0;
+    public final MessageObject.GroupedMessages t0;
+    public boolean u0;
+    public boolean v0;
+    public TextureView w0;
+    public boolean x0;
+    public int y0;
+    public int z0;
 
-    public /* synthetic */ g1(l1 l1Var, int i10) {
-        this.a = i10;
-        this.b = l1Var;
+    public g1(Context context, PointF pointF, ArrayList arrayList, la laVar, boolean z10, z6 z6Var) {
+        super(context, pointF);
+        ii.a aVar;
+        TLRPC.Message message;
+        TLRPC.Message tL_messageService;
+        Boolean D;
+        TLRPC.MessageFwdHeader messageFwdHeader;
+        TLRPC.Peer peer;
+        this.s0 = new ArrayList();
+        this.y0 = 1;
+        this.z0 = 1;
+        this.A0 = true;
+        this.B0 = g6.I.q();
+        this.C0 = new SparseIntArray();
+        a6 a6Var = (a6) this;
+        com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m();
+        mVar.f = a6Var;
+        TextPaint textPaint = new TextPaint();
+        mVar.a = textPaint;
+        TextPaint textPaint2 = new TextPaint();
+        mVar.b = textPaint2;
+        TextPaint textPaint3 = new TextPaint();
+        mVar.c = textPaint3;
+        new Paint(3);
+        mVar.d = new Paint(3);
+        Paint paint = new Paint(3);
+        mVar.e = paint;
+        textPaint.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
+        textPaint2.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
+        textPaint3.setTextSize(AndroidUtilities.dp(15.0f));
+        textPaint3.setTypeface(AndroidUtilities.bold());
+        paint.setColor(352321536);
+        this.D0 = mVar;
+        setRotation(0.0f);
+        setScale(1.0f);
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            MessageObject messageObject = (MessageObject) arrayList.get(i10);
+            TLRPC.Message message2 = messageObject.messageOwner;
+            int i11 = message2.date;
+            if (message2 instanceof TLRPC.TL_message) {
+                tL_messageService = new TLRPC.TL_message();
+            } else if (message2 instanceof TLRPC.TL_messageService) {
+                tL_messageService = new TLRPC.TL_messageService();
+            } else {
+                message = message2;
+                D = k8.D(messageObject);
+                if (D != null && D.booleanValue() && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
+                    message.from_id = peer;
+                    message.peer_id = peer;
+                    message.flags &= -5;
+                    message.fwd_from = null;
+                }
+                message.voiceTranscriptionOpen = false;
+                int i12 = messageObject.currentAccount;
+                MessageObject messageObject2 = new MessageObject(i12, message, messageObject.replyMessageObject, MessagesController.getInstance(i12).getUsers(), MessagesController.getInstance(messageObject.currentAccount).getChats(), null, null, true, true, 0L, true, z10, false);
+                messageObject2.setType();
+                this.s0.add(messageObject2);
+            }
+            tL_messageService.id = message2.id;
+            tL_messageService.from_id = message2.from_id;
+            tL_messageService.peer_id = message2.peer_id;
+            tL_messageService.date = message2.date;
+            tL_messageService.expire_date = message2.expire_date;
+            tL_messageService.action = message2.action;
+            tL_messageService.message = message2.message;
+            tL_messageService.media = message2.media;
+            tL_messageService.flags = message2.flags;
+            tL_messageService.mentioned = message2.mentioned;
+            tL_messageService.media_unread = message2.media_unread;
+            tL_messageService.out = message2.out;
+            tL_messageService.unread = message2.unread;
+            tL_messageService.entities = message2.entities;
+            tL_messageService.via_bot_name = message2.via_bot_name;
+            tL_messageService.reply_markup = message2.reply_markup;
+            tL_messageService.views = message2.views;
+            tL_messageService.forwards = message2.forwards;
+            tL_messageService.replies = message2.replies;
+            tL_messageService.edit_date = message2.edit_date;
+            tL_messageService.silent = message2.silent;
+            tL_messageService.post = message2.post;
+            tL_messageService.from_scheduled = message2.from_scheduled;
+            tL_messageService.legacy = message2.legacy;
+            tL_messageService.edit_hide = message2.edit_hide;
+            tL_messageService.pinned = message2.pinned;
+            tL_messageService.fwd_from = message2.fwd_from;
+            tL_messageService.via_bot_id = message2.via_bot_id;
+            tL_messageService.reply_to = message2.reply_to;
+            tL_messageService.post_author = message2.post_author;
+            tL_messageService.grouped_id = message2.grouped_id;
+            tL_messageService.reactions = message2.reactions;
+            tL_messageService.restriction_reason = message2.restriction_reason;
+            tL_messageService.ttl_period = message2.ttl_period;
+            tL_messageService.noforwards = message2.noforwards;
+            tL_messageService.invert_media = message2.invert_media;
+            tL_messageService.send_state = message2.send_state;
+            tL_messageService.fwd_msg_id = message2.fwd_msg_id;
+            tL_messageService.attachPath = message2.attachPath;
+            tL_messageService.params = message2.params;
+            tL_messageService.random_id = message2.random_id;
+            tL_messageService.local_id = message2.local_id;
+            tL_messageService.dialog_id = message2.dialog_id;
+            tL_messageService.ttl = message2.ttl;
+            tL_messageService.destroyTime = message2.destroyTime;
+            tL_messageService.destroyTimeMillis = message2.destroyTimeMillis;
+            tL_messageService.layer = message2.layer;
+            tL_messageService.seq_in = message2.seq_in;
+            tL_messageService.seq_out = message2.seq_out;
+            tL_messageService.with_my_score = message2.with_my_score;
+            tL_messageService.replyMessage = message2.replyMessage;
+            tL_messageService.reqId = message2.reqId;
+            tL_messageService.realId = message2.realId;
+            tL_messageService.stickerVerified = message2.stickerVerified;
+            tL_messageService.isThreadMessage = message2.isThreadMessage;
+            tL_messageService.voiceTranscription = message2.voiceTranscription;
+            tL_messageService.voiceTranscriptionOpen = message2.voiceTranscriptionOpen;
+            tL_messageService.voiceTranscriptionRated = message2.voiceTranscriptionRated;
+            tL_messageService.voiceTranscriptionFinal = message2.voiceTranscriptionFinal;
+            tL_messageService.voiceTranscriptionForce = message2.voiceTranscriptionForce;
+            tL_messageService.voiceTranscriptionId = message2.voiceTranscriptionId;
+            tL_messageService.premiumEffectWasPlayed = message2.premiumEffectWasPlayed;
+            tL_messageService.originalLanguage = message2.originalLanguage;
+            tL_messageService.translatedToLanguage = message2.translatedToLanguage;
+            tL_messageService.translatedText = message2.translatedText;
+            tL_messageService.replyStory = message2.replyStory;
+            message = tL_messageService;
+            D = k8.D(messageObject);
+            if (D != null) {
+                message.from_id = peer;
+                message.peer_id = peer;
+                message.flags &= -5;
+                message.fwd_from = null;
+            }
+            message.voiceTranscriptionOpen = false;
+            int i122 = messageObject.currentAccount;
+            MessageObject messageObject22 = new MessageObject(i122, message, messageObject.replyMessageObject, MessagesController.getInstance(i122).getUsers(), MessagesController.getInstance(messageObject.currentAccount).getChats(), null, null, true, true, 0L, true, z10, false);
+            messageObject22.setType();
+            this.s0.add(messageObject22);
+        }
+        this.t0 = null;
+        if (this.s0.size() > 1) {
+            MessageObject.GroupedMessages groupedMessages = new MessageObject.GroupedMessages();
+            this.t0 = groupedMessages;
+            groupedMessages.messages.addAll(this.s0);
+            groupedMessages.groupId = ((MessageObject) this.s0.get(0)).getGroupId();
+            groupedMessages.calculate();
+        }
+        x5 x5Var = new x5(a6Var, context);
+        this.q0 = x5Var;
+        addView(x5Var, w7.a6.d(-1.0f, -1));
+        z0 z0Var = new z0(a6Var, context, this.D0);
+        this.r0 = z0Var;
+        z0Var.setAdapter(new c1(a6Var, context, laVar, z6Var, z10));
+        d1 d1Var = new d1(a6Var);
+        d1Var.O = new e1(a6Var);
+        z0Var.setLayoutManager(d1Var);
+        z0Var.i(new f1());
+        x5Var.addView(z0Var, w7.a6.d(-1.0f, -1));
+        if (z6Var != null && z6Var.g) {
+            ji.p1 p1Var = new ji.p1(a6Var, 8);
+            ii.a aVar2 = new ii.a(a6Var, 7);
+            z6Var.b = p1Var;
+            z6Var.c = aVar2;
+            TextureView textureView = z6Var.a;
+            if (textureView != null) {
+                p1Var.run(textureView);
+            }
+            if (z6Var.d && (aVar = z6Var.c) != null) {
+                aVar.run(Integer.valueOf(z6Var.e), Integer.valueOf(z6Var.f));
+            }
+        }
+        k();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                l1 l1Var = this.b;
-                l1Var.getClass();
-                l1Var.G0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l1Var.container.invalidate();
-                break;
-            default:
-                l1 l1Var2 = this.b;
-                l1Var2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l1Var2.N0.getLayoutParams().height = AndroidUtilities.lerp(l1Var2.O0[0].getHeight(), l1Var2.O0[1].getHeight(), floatValue);
-                l1Var2.N0.requestLayout();
-                break;
+    /* JADX INFO: Access modifiers changed from: private */
+    public org.telegram.ui.Cells.u1 getCell() {
+        z0 z0Var = this.r0;
+        if (z0Var == null) {
+            return null;
         }
+        for (int i10 = 0; i10 < z0Var.getChildCount(); i10++) {
+            if (z0Var.getChildAt(i10) instanceof org.telegram.ui.Cells.u1) {
+                return (org.telegram.ui.Cells.u1) z0Var.getChildAt(i10);
+            }
+        }
+        return null;
+    }
+
+    @Override // rg.j
+    public final i a() {
+        return new r0(this, getContext());
+    }
+
+    @Override // rg.j
+    public float getBounceScale() {
+        return 0.02f;
+    }
+
+    @Override // rg.j
+    public il0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new il0();
+        }
+        float scaleX = viewGroup.getScaleX();
+        return new il0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), (getScale() * getMeasuredWidth() * scaleX) + AndroidUtilities.dp(71.0f), (getScale() * getMeasuredHeight() * scaleX) + AndroidUtilities.dp(71.0f));
+    }
+
+    @Override // rg.j
+    public final void k() {
+        setX(getPositionX() - (getMeasuredWidth() / 2.0f));
+        setY(getPositionY() - (getMeasuredHeight() / 2.0f));
+        m();
+        if (this.v0) {
+            s();
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x002b, code lost:
+    
+        if (((org.telegram.messenger.MessageObject) r0.get(0)).contentType == 1) goto L12;
+     */
+    @Override // android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i10, int i11) {
+        boolean z10;
+        x5 x5Var = this.q0;
+        x5Var.measure(i10, i11);
+        setMeasuredDimension(x5Var.getMeasuredWidth(), x5Var.getMeasuredHeight());
+        k();
+        if (this.A0) {
+            ArrayList arrayList = this.s0;
+            if (arrayList != null) {
+                z10 = true;
+                if (arrayList.size() == 1) {
+                }
+            }
+            z10 = false;
+            float min = Math.min((View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(z10 ? 0.0f : 44.0f)) / getMeasuredWidth(), (View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(z10 ? 0.0f : 192.0f)) / getMeasuredHeight());
+            if (min < 1.0f) {
+                setScale(min);
+            }
+            PointF position = getPosition();
+            if (!z10) {
+                position.x -= Math.min(1.0f, min) * AndroidUtilities.dp(19.0f);
+            }
+            setPosition(position);
+            this.A0 = false;
+        }
+    }
+
+    public final float r(RectF rectF) {
+        float y3;
+        float f7;
+        float f10;
+        float f11;
+        float f12 = 2.14748365E9f;
+        float f13 = -2.14748365E9f;
+        int i10 = 0;
+        float f14 = 2.14748365E9f;
+        float f15 = -2.14748365E9f;
+        while (true) {
+            z0 z0Var = this.r0;
+            if (i10 >= z0Var.getChildCount()) {
+                rectF.set(f12, f14, f15, f13);
+                return AndroidUtilities.dp(SharedConfig.bubbleRadius);
+            }
+            View childAt = z0Var.getChildAt(i10);
+            boolean z10 = childAt instanceof org.telegram.ui.Cells.u1;
+            x5 x5Var = this.q0;
+            if (z10) {
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) childAt;
+                if (u1Var.getMessageObject() == null || !u1Var.getMessageObject().isRoundVideo() || u1Var.getPhotoImage() == null) {
+                    float x10 = childAt.getX() + x5Var.getX() + u1Var.getBackgroundDrawableLeft() + AndroidUtilities.dp(1.0f);
+                    if (this.t0 == null) {
+                        x10 += AndroidUtilities.dp(8.0f);
+                    }
+                    float x11 = ((childAt.getX() + x5Var.getX()) + u1Var.getBackgroundDrawableRight()) - AndroidUtilities.dp(1.66f);
+                    float dp = AndroidUtilities.dp(2.0f) + childAt.getY() + x5Var.getY() + u1Var.getBackgroundDrawableTop();
+                    y3 = ((childAt.getY() + x5Var.getY()) + u1Var.getBackgroundDrawableBottom()) - AndroidUtilities.dp(1.0f);
+                    f7 = x10;
+                    f10 = x11;
+                    f11 = dp;
+                } else {
+                    f7 = u1Var.getPhotoImage().getImageX() + u1Var.getX() + x5Var.getX();
+                    f10 = u1Var.getPhotoImage().getImageX2() + u1Var.getX() + x5Var.getX();
+                    f11 = u1Var.getPhotoImage().getImageY() + u1Var.getY() + x5Var.getY();
+                    y3 = u1Var.getPhotoImage().getImageY2() + u1Var.getY() + x5Var.getY();
+                }
+                f12 = Math.min(Math.min(f12, f7), f10);
+                f15 = Math.max(Math.max(f15, f7), f10);
+                f14 = Math.min(Math.min(f14, f11), y3);
+                f13 = Math.max(Math.max(f13, f11), y3);
+            } else if (childAt instanceof org.telegram.ui.Cells.x0) {
+                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) childAt;
+                if (x0Var.L()) {
+                    float x12 = x0Var.getX() + x5Var.getX() + x0Var.getBoundsLeft();
+                    float x13 = x0Var.getX() + x5Var.getX() + x0Var.getBoundsRight();
+                    float y10 = x0Var.getY() + x5Var.getY();
+                    float y11 = x0Var.getY() + x5Var.getY() + x0Var.getMeasuredHeight();
+                    f12 = Math.min(Math.min(f12, x12), x13);
+                    f15 = Math.max(Math.max(f15, x12), x13);
+                    f14 = Math.min(Math.min(f14, y10), y11);
+                    f13 = Math.max(Math.max(f13, y10), y11);
+                }
+            }
+            i10++;
+        }
+    }
+
+    public final void s() {
+        z0 z0Var = this.r0;
+        z0Var.invalidate();
+        for (int i10 = 0; i10 < z0Var.getChildCount(); i10++) {
+            z0Var.getChildAt(i10).invalidate();
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00ab A[LOOP:1: B:36:0x00a5->B:38:0x00ab, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0071  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void setupTheme(k8 k8Var) {
+        SparseIntArray R0;
+        int[] iArr;
+        int i10;
+        e6 k10;
+        if (k8Var == null) {
+            this.C0.clear();
+            return;
+        }
+        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
+        String str = "Blue";
+        String string = sharedPreferences.getString("lastDayTheme", "Blue");
+        if (g6.O0(string) == null || g6.O0(string).q()) {
+            string = "Blue";
+        }
+        String str2 = "Dark Blue";
+        String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
+        if (g6.O0(string2) == null || !g6.O0(string2).q()) {
+            string2 = "Dark Blue";
+        }
+        f6 f6Var = g6.I;
+        if (!string.equals(string2)) {
+            str2 = string2;
+        } else if (f6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+            str2 = string2;
+            boolean z10 = k8Var.y0;
+            this.B0 = z10;
+            f6 O0 = !z10 ? g6.O0(str2) : g6.O0(str);
+            String[] strArr = new String[1];
+            String str3 = O0.d;
+            R0 = str3 == null ? g6.R0(null, str3, strArr) : g6.R0(new File(O0.b), null, strArr);
+            this.C0.clear();
+            iArr = g6.ql;
+            if (iArr != null) {
+                for (int i11 = 0; i11 < iArr.length; i11++) {
+                    this.C0.put(i11, iArr[i11]);
+                }
+            }
+            for (i10 = 0; i10 < R0.size(); i10++) {
+                this.C0.put(R0.keyAt(i10), R0.valueAt(i10));
+            }
+            k10 = O0.k(false);
+            if (k10 != null) {
+                k10.c(R0, this.C0);
+            }
+            s();
+        }
+        str = string;
+        boolean z102 = k8Var.y0;
+        this.B0 = z102;
+        if (!z102) {
+        }
+        String[] strArr2 = new String[1];
+        String str32 = O0.d;
+        if (str32 == null) {
+        }
+        this.C0.clear();
+        iArr = g6.ql;
+        if (iArr != null) {
+        }
+        while (i10 < R0.size()) {
+        }
+        k10 = O0.k(false);
+        if (k10 != null) {
+        }
+        s();
     }
 }

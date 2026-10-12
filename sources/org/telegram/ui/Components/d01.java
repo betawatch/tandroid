@@ -1,22 +1,11 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface d01 extends org.telegram.ui.Cells.z9 {
-    void attach(View view);
+public final class d01 {
+    public int a;
 
-    void detach(View view);
-
-    void draw(Canvas canvas, View view);
-
-    int getEmojiOnlyCount();
-
-    void setRow(int i10);
-
-    void setX(int i10);
-
-    void setY(int i10);
+    public d01(int i10) {
+        this.a = i10;
+    }
 }

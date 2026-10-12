@@ -1,71 +1,176 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
+import android.view.KeyEvent;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ci extends View {
+public final class ci implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yi b;
+    public boolean b;
+    public boolean c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ci(yi yiVar, Context context, int i10) {
-        super(context);
+    public /* synthetic */ ci(KeyEvent.Callback callback, int i10) {
         this.a = i10;
-        this.b = yiVar;
+        this.d = callback;
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        int i10;
         switch (this.a) {
             case 0:
-                super.draw(canvas);
-                this.b.b0.draw(canvas);
-                break;
+                vi viVar = (vi) this.d;
+                s6 s6Var = viVar.v;
+                ai aiVar = viVar.H0;
+                s6 s6Var2 = viVar.s;
+                if (this.c != TextUtils.isEmpty(editable)) {
+                    ni niVar = viVar.B0;
+                    if (niVar != null) {
+                        niVar.E(niVar.getSelectedItemsCount());
+                    }
+                    this.c = !this.c;
+                }
+                boolean z11 = false;
+                if (this.b) {
+                    for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                        editable.removeSpan(imageSpan);
+                    }
+                    Emoji.replaceEmoji(editable, aiVar.getEditText().getPaint().getFontMetricsInt(), false);
+                    this.b = false;
+                }
+                int codePointCount = Character.codePointCount(editable, 0, editable.length());
+                viVar.L = codePointCount;
+                viVar.e.a(codePointCount > 0, true);
+                int i11 = viVar.K;
+                if (i11 <= 0 || (i10 = i11 - viVar.L) > 100) {
+                    s6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new l6(this, 7));
+                    s6Var.setAlpha(0.0f);
+                    z10 = true;
+                } else {
+                    if (i10 < -9999) {
+                        i10 = -9999;
+                    }
+                    long j10 = i10;
+                    s6Var2.c(LocaleController.formatNumber(j10, ','), s6Var2.getVisibility() == 0, true);
+                    if (s6Var2.getVisibility() != 0) {
+                        s6Var2.setVisibility(0);
+                        s6Var2.setAlpha(0.0f);
+                        s6Var2.setScaleX(0.5f);
+                        s6Var2.setScaleY(0.5f);
+                    }
+                    s6Var2.animate().setListener(null).cancel();
+                    s6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+                    if (i10 < 0) {
+                        s6Var2.setTextColor(viVar.getThemedColor(org.telegram.ui.ActionBar.g6.p7));
+                        z10 = false;
+                    } else {
+                        s6Var2.setTextColor(viVar.getThemedColor(org.telegram.ui.ActionBar.g6.y6));
+                        z10 = true;
+                    }
+                    s6Var.c(LocaleController.formatNumber(j10, ','), false, true);
+                    s6Var.setAlpha(1.0f);
+                }
+                if (viVar.X0 != z10) {
+                    viVar.X0 = z10;
+                    viVar.L0.invalidate();
+                }
+                if (!viVar.c0) {
+                    if (aiVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(aiVar.getText().toString().trim())) {
+                        z11 = true;
+                    }
+                    viVar.Q1(z11);
+                }
+                viVar.f1(true);
+                return;
             default:
-                super.draw(canvas);
-                break;
+                org.telegram.ui.Wallet.h8 h8Var = (org.telegram.ui.Wallet.h8) this.d;
+                if (!this.b) {
+                    h8Var.f(editable);
+                    return;
+                }
+                this.b = false;
+                this.c = true;
+                try {
+                    editable.append('.');
+                    this.c = false;
+                    h8Var.b.setSelection(editable.length());
+                    return;
+                } catch (Throwable th2) {
+                    this.c = false;
+                    throw th2;
+                }
         }
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                yi yiVar = this.b;
-                String format = String.format("%d", Integer.valueOf(Math.max(1, yiVar.B0.getSelectedItemsCount())));
-                int max = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(yiVar.M0.measureText(format))), AndroidUtilities.dp(24.0f));
-                int measuredWidth = getMeasuredWidth() / 2;
-                yiVar.M0.setColor(i0.a.k(yiVar.getThemedColor(org.telegram.ui.ActionBar.i6.C5), (int) (((yiVar.Y0 * 0.42d) + 0.58d) * Color.alpha(r5))));
-                yiVar.O0.setColor(yiVar.getThemedColor(org.telegram.ui.ActionBar.i6.h5));
-                int i10 = max / 2;
-                yiVar.N0.set(measuredWidth - i10, 0.0f, i10 + measuredWidth, getMeasuredHeight());
-                canvas.drawRoundRect(yiVar.N0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), yiVar.O0);
-                yiVar.O0.setColor(yiVar.getThemedColor(org.telegram.ui.ActionBar.i6.W9));
-                yiVar.N0.set(AndroidUtilities.dp(2.0f) + r6, AndroidUtilities.dp(2.0f), r3 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
-                canvas.drawRoundRect(yiVar.N0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), yiVar.O0);
-                canvas.drawText(format, measuredWidth - (r2 / 2), AndroidUtilities.dp(16.2f), yiVar.M0);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         switch (this.a) {
             case 0:
-                super.onSizeChanged(i10, i11, i12, i13);
-                this.b.b0.setBounds(0, (i11 - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(48.0f), i10, i11);
                 break;
             default:
-                super.onSizeChanged(i10, i11, i12, i13);
+                org.telegram.ui.Wallet.h8 h8Var = (org.telegram.ui.Wallet.h8) this.d;
+                org.telegram.ui.Wallet.d8 d8Var = h8Var.b;
+                if (charSequence.length() > 0 && i11 == charSequence.length() && i12 == 0 && d8Var.getLayout() != null) {
+                    h8Var.M = d8Var.getLayout().getLineLeft(0) - d8Var.getScrollX();
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                vi viVar = (vi) this.d;
+                if (i12 - i11 >= 1) {
+                    this.b = true;
+                }
+                if (viVar.E2 == null) {
+                    vi.S(viVar);
+                }
+                if (viVar.E2.getAdapter() != null) {
+                    viVar.E2.setReversed(false);
+                    viVar.E2.getAdapter().U(charSequence, viVar.H0.getEditText().getSelectionStart(), null, false, false);
+                    viVar.Y1();
+                    break;
+                }
+                break;
+            default:
+                boolean z10 = false;
+                this.b = i12 > 0 && TextUtils.equals(charSequence, "0");
+                org.telegram.ui.Wallet.h8 h8Var = (org.telegram.ui.Wallet.h8) this.d;
+                if (!h8Var.Q && !this.c) {
+                    if (i11 != 0 || i12 != 0) {
+                        org.telegram.ui.Wallet.b6 b6Var = h8Var.c;
+                        if (i12 > 0 && i12 >= i11) {
+                            z10 = true;
+                        }
+                        if (b6Var.x && b6Var.r && b6Var.y == -1) {
+                            bk0 bk0Var = b6Var.h;
+                            if (bk0Var == null) {
+                                b6Var.d0 = Math.max(-360.0f, Math.min(360.0f, b6Var.d0 + (z10 ? -160.0f : 160.0f)));
+                                break;
+                            } else if (!bk0Var.b()) {
+                                b6Var.h.setProgress(0.0f);
+                                b6Var.h.d();
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+        }
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

@@ -1,11 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.view.View;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface p8 {
-    void Q0(int i10, int i11);
+public final /* synthetic */ class p8 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vh0 b;
 
-    void dismiss();
+    public /* synthetic */ p8(vh0 vh0Var, int i10) {
+        this.a = i10;
+        this.b = vh0Var;
+    }
 
-    void h1();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.b(true);
+                break;
+            default:
+                this.b.b(true);
+                break;
+        }
+    }
 }

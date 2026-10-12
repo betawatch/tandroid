@@ -1,28 +1,19 @@
 package ac;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import x7.fa;
+import x7.ha;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d {
-    public boolean a;
-    public boolean b;
-    public boolean c;
+    public final e a;
+    public final rb.d b;
+    public final fa c;
 
-    public d() {
-        this.a = false;
-        this.b = false;
-        this.c = false;
-    }
-
-    public k2.e a() {
-        if (this.a || !(this.b || this.c)) {
-            return new k2.e(this);
-        }
-        throw new IllegalStateException("Secondary offload attribute fields are true but primary isFormatSupported is false");
-    }
-
-    public /* synthetic */ d(boolean z10, boolean z11, boolean z12) {
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
+    public d(e eVar, rb.d dVar) {
+        fa b10 = ha.b();
+        this.a = eVar;
+        this.b = dVar;
+        this.c = b10;
     }
 }

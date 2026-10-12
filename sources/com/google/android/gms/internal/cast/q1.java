@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class q1 extends f5 {
     private static final q1 zzb;
@@ -24,7 +24,7 @@ public final class q1 extends f5 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new g6(zzb, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001᠌\u0000\u0002᠌\u0001\u0003᠌\u0002\u0004ဇ\u0003\u0005င\u0004", new Object[]{"zzd", "zze", z0.k, "zzf", z0.i, "zzg", z0.j, "zzh", "zzi"});
+            return new h6(zzb, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001᠌\u0000\u0002᠌\u0001\u0003᠌\u0002\u0004ဇ\u0003\u0005င\u0004", new Object[]{"zzd", "zze", z0.k, "zzf", z0.i, "zzg", z0.j, "zzh", "zzi"});
         }
         if (i11 == 3) {
             return new q1();

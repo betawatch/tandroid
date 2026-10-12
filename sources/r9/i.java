@@ -1,74 +1,27 @@
 package r9;
 
-import i9.s;
-import java.util.ArrayDeque;
-import java.util.concurrent.Executor;
-import java.util.concurrent.RejectedExecutionException;
-import java.util.logging.Logger;
-import l5.o;
-import n6.l;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i implements Executor {
-    public static final Logger f = Logger.getLogger(i.class.getName());
-    public final Executor a;
-    public final ArrayDeque b = new ArrayDeque();
-    public int c = 1;
-    public long d = 0;
-    public final s e = new s(this);
+public final class i {
+    public final r a;
+    public final boolean b;
 
-    public i(Executor executor) {
-        l.h(executor);
-        this.a = executor;
+    public i(r rVar, boolean z10) {
+        this.a = rVar;
+        this.b = z10;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        l.h(runnable);
-        synchronized (this.b) {
-            int i10 = this.c;
-            if (i10 != 4 && i10 != 3) {
-                long j3 = this.d;
-                o oVar = new o(1, runnable);
-                this.b.add(oVar);
-                this.c = 2;
-                try {
-                    this.a.execute(this.e);
-                    if (this.c != 2) {
-                        return;
-                    }
-                    synchronized (this.b) {
-                        try {
-                            if (this.d == j3 && this.c == 2) {
-                                this.c = 3;
-                            }
-                        } finally {
-                        }
-                    }
-                    return;
-                } catch (Error | RuntimeException e7) {
-                    synchronized (this.b) {
-                        try {
-                            int i11 = this.c;
-                            boolean z10 = true;
-                            if ((i11 != 1 && i11 != 2) || !this.b.removeLastOccurrence(oVar)) {
-                                z10 = false;
-                            }
-                            if (!(e7 instanceof RejectedExecutionException) || z10) {
-                                throw e7;
-                            }
-                        } finally {
-                        }
-                    }
-                    return;
-                }
+    public final boolean equals(Object obj) {
+        if (obj instanceof i) {
+            i iVar = (i) obj;
+            if (iVar.a.equals(this.a) && iVar.b == this.b) {
+                return true;
             }
-            this.b.add(runnable);
         }
+        return false;
     }
 
-    public final String toString() {
-        return "SequentialExecutor@" + System.identityHashCode(this) + "{" + this.a + "}";
+    public final int hashCode() {
+        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ Boolean.valueOf(this.b).hashCode();
     }
 }

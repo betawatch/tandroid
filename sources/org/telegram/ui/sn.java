@@ -1,48 +1,100 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sn implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xn b;
+public final class sn extends View {
+    public final ArrayList a;
+    public final ArrayList b;
+    public final /* synthetic */ fo c;
 
-    public /* synthetic */ sn(xn xnVar, int i10) {
-        this.a = i10;
-        this.b = xnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sn(fo foVar, Context context) {
+        super(context);
+        this.c = foVar;
+        this.a = new ArrayList();
+        this.b = new ArrayList();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        org.telegram.ui.ActionBar.d5 d5Var2;
-        switch (this.a) {
-            case 0:
-                SparseIntArray sparseIntArray = new SparseIntArray();
-                xn xnVar = this.b;
-                xnVar.e = sparseIntArray;
-                zn znVar = xnVar.V;
-                org.telegram.ui.ActionBar.f5 f5Var = (org.telegram.ui.ActionBar.f5) znVar.getThemedDrawable("drawableMsgOut");
-                xnVar.I = f5Var;
-                d5Var = ((org.telegram.ui.ActionBar.n2) znVar).parentLayout;
-                f5Var.J = d5Var.getMessageDrawableOutStart();
-                org.telegram.ui.ActionBar.f5 f5Var2 = (org.telegram.ui.ActionBar.f5) znVar.getThemedDrawable("drawableMsgOutMedia");
-                xnVar.J = f5Var2;
-                d5Var2 = ((org.telegram.ui.ActionBar.n2) znVar).parentLayout;
-                f5Var2.J = d5Var2.getMessageDrawableOutMediaStart();
-                xnVar.I.K = 0.0f;
-                xnVar.J.K = 0.0f;
-                znVar.yc();
-                xnVar.k(0.0f);
-                break;
-            default:
-                xn xnVar2 = this.b;
-                xnVar2.I.J = null;
-                xnVar2.J.J = null;
-                xnVar2.e = null;
-                xnVar2.k(1.0f);
-                break;
+    public final void a() {
+        ArrayList arrayList = this.a;
+        arrayList.clear();
+        fo foVar = this.c;
+        arrayList.add(foVar.K1);
+        arrayList.add(foVar.x0);
+        arrayList.add(foVar.X);
+        arrayList.add(foVar.K3);
+        arrayList.add(foVar.I1);
+        arrayList.add(foVar.X2);
+        arrayList.add(foVar.Y);
+        arrayList.add(foVar.j1);
+        arrayList.add(foVar.S);
+        arrayList.add(foVar.R1);
+        arrayList.removeAll(Collections.singleton(null));
+    }
+
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        fo foVar = this.c;
+        foVar.rc = true;
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((View) obj).setVisibility(0);
+        }
+        arrayList.clear();
+        foVar.rc = false;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        a();
+        fo foVar = this.c;
+        foVar.rc = true;
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            View view = (View) obj;
+            if (view.getVisibility() == 0) {
+                view.setVisibility(8);
+                this.b.add(view);
+            }
+        }
+        foVar.rc = false;
+    }
+
+    @Override // android.view.View
+    public void setTranslationX(float f7) {
+        super.setTranslationX(f7);
+        a();
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            View view = (View) obj;
+            if (view != null) {
+                view.setTranslationX(f7);
+            }
         }
     }
 }

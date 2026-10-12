@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import ae.d0;
+import be.c0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public interface zzcr {
-    d0 zza();
+    c0 zza();
 
-    d0 zzb();
+    c0 zzb();
 
-    d0 zzc();
+    c0 zzc();
 
-    d0 zzd();
+    c0 zzd();
 }

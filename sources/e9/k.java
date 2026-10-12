@@ -1,63 +1,48 @@
 package e9;
 
-import java.util.List;
-import java.util.ListIterator;
+import java.util.Comparator;
+import java.util.SortedMap;
+import java.util.SortedSet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class k extends c implements ListIterator {
-    public final /* synthetic */ l e;
+public class k extends f implements SortedSet {
+    public final /* synthetic */ p1 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(l lVar) {
-        super(lVar);
-        this.e = lVar;
+    public k(p1 p1Var, SortedMap sortedMap) {
+        super(p1Var, sortedMap);
+        this.d = p1Var;
     }
 
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        l lVar = this.e;
-        boolean isEmpty = lVar.isEmpty();
-        c().add(obj);
-        ((v0) lVar.h).e++;
-        if (isEmpty) {
-            lVar.i();
-        }
+    @Override // java.util.SortedSet
+    public final Comparator comparator() {
+        return h().comparator();
     }
 
-    public final ListIterator c() {
-        a();
-        return (ListIterator) this.b;
+    @Override // java.util.SortedSet
+    public final Object first() {
+        return h().firstKey();
     }
 
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return c().hasPrevious();
+    public SortedMap h() {
+        return (SortedMap) this.b;
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return c().nextIndex();
+    public SortedSet headSet(Object obj) {
+        return new k(this.d, h().headMap(obj));
     }
 
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        return c().previous();
+    @Override // java.util.SortedSet
+    public final Object last() {
+        return h().lastKey();
     }
 
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return c().previousIndex();
+    public SortedSet subSet(Object obj, Object obj2) {
+        return new k(this.d, h().subMap(obj, obj2));
     }
 
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        c().set(obj);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(l lVar, int i10) {
-        super(lVar, ((List) lVar.c).listIterator(i10));
-        this.e = lVar;
+    public SortedSet tailSet(Object obj) {
+        return new k(this.d, h().tailMap(obj));
     }
 }

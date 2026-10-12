@@ -1,7 +1,27 @@
 package rg;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import org.telegram.ui.hu0;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class m {
-    public static final String[] a = {"Hello", "Привіт", "Привет", "Bonjour", "Hola", "Ciao", "Olá", "여보세요", "你好", "Salve", "Sveiki", "Halo", "გამარჯობა", "Hallå", "Salam", "Tere", "Dia dhuit", "こんにちは", "Сайн уу", "Bongu", "Ahoj", "γεια", "Zdravo", "नमस्ते", "Habari", "Hallo", "ជំរាបសួរ", "مرحبًا", "ನಮಸ್ಕಾರ", "Салам", "Silav li wir", "سڵاو", "Kif inti", "Talofa", "Thobela", "हॅलो", "ሰላም", "Здраво", "ഹലോ", "ہیلو", "ꯍꯦꯜꯂꯣ", "Alô", "வணக்கம்", "Mhoro", "Moni", "Alo", "สวัสดี", "Salom", "Բարեւ"};
+public final /* synthetic */ class m implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hu0 b;
+
+    public /* synthetic */ m(hu0 hu0Var, int i10) {
+        this.a = i10;
+        this.b = hu0Var;
+    }
+
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                o0.Z(this.b, (Integer) obj);
+                break;
+            default:
+                o0.c0(this.b, (Integer) obj);
+                break;
+        }
+    }
 }

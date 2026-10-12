@@ -1,10 +1,32 @@
 package u2;
 
-import android.os.Handler;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i0 {
-    public Handler a;
-    public Object b;
+public final /* synthetic */ class i0 implements e2.j {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a5.a b;
+    public final /* synthetic */ u c;
+    public final /* synthetic */ c0 d;
+
+    public /* synthetic */ i0(a5.a aVar, u uVar, c0 c0Var, int i10) {
+        this.a = i10;
+        this.b = aVar;
+        this.c = uVar;
+        this.d = c0Var;
+    }
+
+    @Override // e2.j
+    public final void accept(Object obj) {
+        k0 k0Var = (k0) obj;
+        switch (this.a) {
+            case 0:
+                a5.a aVar = this.b;
+                k0Var.f(aVar.b, (g0) aVar.c, this.c, this.d);
+                break;
+            default:
+                a5.a aVar2 = this.b;
+                k0Var.k(aVar2.b, (g0) aVar2.c, this.c, this.d);
+                break;
+        }
+    }
 }

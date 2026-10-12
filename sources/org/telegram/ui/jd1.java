@@ -1,29 +1,45 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class jd1 extends org.telegram.ui.Components.mr0 {
-    public final /* synthetic */ ld1 b1;
+public final class jd1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ ce1 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jd1(ld1 ld1Var, Activity activity, String str, String str2) {
-        super(activity, null, str, false, str2, false, null);
-        this.b1 = ld1Var;
+    public jd1(ce1 ce1Var, boolean z10, int i10, int i11, boolean z11) {
+        this.e = ce1Var;
+        this.a = z10;
+        this.b = i10;
+        this.c = i11;
+        this.d = z11;
     }
 
-    @Override // org.telegram.ui.Components.mr0
-    public final void S0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            int m10 = iVar.m();
-            ld1 ld1Var = this.b1;
-            if (m10 == 1) {
-                ld1Var.a.l0.m(((TLRPC.Dialog) iVar.n(0)).id, Integer.valueOf(i10), 61);
-            } else {
-                ld1Var.a.l0.k(0L, 61, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ce1 ce1Var = this.e;
+        FrameLayout[] frameLayoutArr = ce1Var.L0;
+        ce1Var.r1 = null;
+        int i10 = this.c;
+        int i11 = this.b;
+        boolean z10 = this.a;
+        if (z10 && frameLayoutArr[i11].getVisibility() == 0) {
+            frameLayoutArr[i11].setAlpha(1.0f);
+            frameLayoutArr[i11].setVisibility(4);
+        } else if (!z10) {
+            frameLayoutArr[i10].setVisibility(4);
+        }
+        int i12 = ce1Var.b;
+        if (i12 == 1 || i12 == 2) {
+            ce1Var.J0[this.d ? (char) 0 : (char) 2].setVisibility(4);
+        } else if (i10 == 1) {
+            frameLayoutArr[i11].setAlpha(0.0f);
         }
     }
 }

@@ -1,161 +1,86 @@
 package qg;
 
-import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.PointF;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.bi;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ml0;
-import w7.x5;
+import org.telegram.ui.Components.iw0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class t0 extends j {
-    public final s0 q0;
-    public boolean r0;
-    public int s0;
-    public int t0;
-    public TLRPC.MessageMedia u0;
-    public TL_stories.MediaArea v0;
+public final class t0 {
+    public final float a;
+    public final float b;
+    public final PointF c;
+    public final PointF d;
+    public final float e;
+    public final PointF f;
+    public final PointF g;
 
-    public t0(Context context, PointF pointF, int i10, TLRPC.MessageMedia messageMedia, TL_stories.MediaArea mediaArea, float f7, int i11) {
-        super(context, pointF);
-        s0 s0Var = new s0(context, f7);
-        this.q0 = s0Var;
-        s0Var.setMaxWidth(i11);
-        r(i10, messageMedia, mediaArea);
-        s0Var.e(0, this.s0);
-        addView(s0Var, x5.e(-2, -2, 51));
-        setClipChildren(false);
-        setClipToPadding(false);
-        k();
-    }
-
-    public static String q(double d) {
-        double abs = Math.abs(d);
-        double floor = Math.floor(abs);
-        String o9 = a1.g.o((int) floor, "°", new StringBuilder(""));
-        double floor2 = Math.floor((abs - floor) * 60.0d);
-        StringBuilder v = a1.g.v(o9);
-        v.append(floor2 <= 0.0d ? "0" : "");
-        v.append(floor2 < 10.0d ? "0" : "");
-        String o10 = a1.g.o((int) floor2, "'", v);
-        double floor3 = Math.floor(Math.floor(floor2) * 60.0d);
-        StringBuilder v9 = a1.g.v(o10);
-        v9.append(floor3 <= 0.0d ? "0" : "");
-        v9.append(floor3 < 10.0d ? "0" : "");
-        return a1.g.o((int) floor3, "\"", v9);
-    }
-
-    @Override // qg.j
-    public final i a() {
-        return new p0(this, getContext());
-    }
-
-    public int getColor() {
-        return this.s0;
-    }
-
-    @Override // qg.j
-    public float getMaxScale() {
-        return 1.5f;
-    }
-
-    @Override // qg.j
-    public ml0 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new ml0();
+    public t0(t8.a aVar, Bitmap bitmap, iw0 iw0Var, boolean z10) {
+        PointF pointF = null;
+        PointF pointF2 = null;
+        PointF pointF3 = null;
+        PointF pointF4 = null;
+        for (t8.d dVar : aVar.b) {
+            PointF pointF5 = dVar.a;
+            int i10 = dVar.b;
+            if (i10 == 4) {
+                pointF = b(pointF5, bitmap, iw0Var, z10);
+            } else if (i10 == 5) {
+                pointF3 = b(pointF5, bitmap, iw0Var, z10);
+            } else if (i10 == 10) {
+                pointF2 = b(pointF5, bitmap, iw0Var, z10);
+            } else if (i10 == 11) {
+                pointF4 = b(pointF5, bitmap, iw0Var, z10);
+            }
         }
-        float scaleX = viewGroup.getScaleX();
-        float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
-        float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float y3 = bi.y(dp, 2.0f, getPositionX(), scaleX);
-        return new ml0(y3, bi.y(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + y3) - y3, dp2 * scaleX);
-    }
-
-    @Override // qg.j
-    public float getStickyPaddingBottom() {
-        return this.q0.J;
-    }
-
-    @Override // qg.j
-    public float getStickyPaddingLeft() {
-        return this.q0.I;
-    }
-
-    @Override // qg.j
-    public float getStickyPaddingRight() {
-        return this.q0.I;
-    }
-
-    @Override // qg.j
-    public float getStickyPaddingTop() {
-        return this.q0.J;
-    }
-
-    public int getType() {
-        return this.t0;
-    }
-
-    public int getTypesCount() {
-        return this.q0.getTypesCount() - (!this.r0 ? 1 : 0);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        k();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        k();
-    }
-
-    public final void r(int i10, TLRPC.MessageMedia messageMedia, TL_stories.MediaArea mediaArea) {
-        String str;
-        this.u0 = messageMedia;
-        this.v0 = mediaArea;
-        String str2 = null;
-        if (messageMedia instanceof TLRPC.TL_messageMediaGeo) {
-            TLRPC.GeoPoint geoPoint = messageMedia.geo;
-            double d = geoPoint.lat;
-            double d10 = geoPoint._long;
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(q(d));
-            sb2.append(d > 0.0d ? "N" : "S");
-            sb2.append(" ");
-            sb2.append(q(d10));
-            sb2.append(d10 > 0.0d ? "E" : "W");
-            str = sb2.toString();
-        } else if (messageMedia instanceof TLRPC.TL_messageMediaVenue) {
-            String upperCase = messageMedia.title.toUpperCase();
-            str2 = ((TLRPC.TL_messageMediaVenue) messageMedia).emoji;
-            str = upperCase;
-        } else {
-            str = "";
+        if (pointF != null && pointF2 != null) {
+            if (pointF.x < pointF2.x) {
+                PointF pointF6 = pointF2;
+                pointF2 = pointF;
+                pointF = pointF6;
+            }
+            PointF pointF7 = new PointF((pointF2.x * 0.5f) + (pointF.x * 0.5f), (pointF2.y * 0.5f) + (pointF.y * 0.5f));
+            this.d = pointF7;
+            float hypot = (float) Math.hypot(pointF2.x - pointF.x, pointF2.y - pointF.y);
+            this.e = hypot;
+            this.b = (float) Math.toDegrees(Math.atan2(pointF2.y - pointF.y, pointF2.x - pointF.x) + 3.141592653589793d);
+            this.a = 2.35f * hypot;
+            float f7 = hypot * 0.8f;
+            double radians = (float) Math.toRadians(r0 - 90.0f);
+            this.c = new PointF((((float) Math.cos(radians)) * f7) + pointF7.x, (f7 * ((float) Math.sin(radians))) + pointF7.y);
         }
-        s0 s0Var = this.q0;
-        s0Var.d(i10, str2);
-        s0Var.setText(str);
-        m();
+        if (pointF3 == null || pointF4 == null) {
+            return;
+        }
+        if (pointF3.x < pointF4.x) {
+            PointF pointF8 = pointF4;
+            pointF4 = pointF3;
+            pointF3 = pointF8;
+        }
+        PointF pointF9 = new PointF((pointF4.x * 0.5f) + (pointF3.x * 0.5f), (pointF4.y * 0.5f) + (pointF3.y * 0.5f));
+        this.f = pointF9;
+        float f10 = this.e * 0.7f;
+        double radians2 = (float) Math.toRadians(this.b + 90.0f);
+        this.g = new PointF((((float) Math.cos(radians2)) * f10) + pointF9.x, (f10 * ((float) Math.sin(radians2))) + pointF9.y);
     }
 
-    public void setColor(int i10) {
-        this.r0 = true;
-        this.s0 = i10;
+    public static PointF b(PointF pointF, Bitmap bitmap, iw0 iw0Var, boolean z10) {
+        return new PointF((iw0Var.a * pointF.x) / (z10 ? bitmap.getHeight() : bitmap.getWidth()), (iw0Var.b * pointF.y) / (z10 ? bitmap.getWidth() : bitmap.getHeight()));
     }
 
-    public void setMaxWidth(int i10) {
-        this.q0.setMaxWidth(i10);
-    }
-
-    public void setType(int i10) {
-        this.t0 = i10;
-        this.q0.e(i10, this.s0);
+    public final PointF a(int i10) {
+        if (i10 == 0) {
+            return this.c;
+        }
+        if (i10 == 1) {
+            return this.d;
+        }
+        if (i10 == 2) {
+            return this.f;
+        }
+        if (i10 != 3) {
+            return null;
+        }
+        return this.g;
     }
 }

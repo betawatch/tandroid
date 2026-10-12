@@ -11,13 +11,14 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class f4 extends v7.r5 implements i9.w {
+public abstract class f4 extends v7.s5 implements j9.y {
     public static final boolean d;
     public static final Logger e;
-    public static final v7.p5 f;
+    public static final v7.q5 f;
     public static final Object h;
     public volatile Object a;
     public volatile z3 b;
@@ -25,7 +26,7 @@ public abstract class f4 extends v7.r5 implements i9.w {
 
     static {
         boolean z10;
-        v7.p5 b4Var;
+        v7.q5 b4Var;
         Throwable th2;
         Throwable th3;
         try {
@@ -91,7 +92,7 @@ public abstract class f4 extends v7.r5 implements i9.w {
                 LockSupport.unpark(thread);
             }
         }
-        f4Var.e();
+        f4Var.d();
         z3 a2 = f.a(f4Var);
         z3 z3Var = null;
         while (a2 != null) {
@@ -115,7 +116,7 @@ public abstract class f4 extends v7.r5 implements i9.w {
         try {
             executor.execute(runnable);
         } catch (RuntimeException e7) {
-            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.vision.e2.j("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
+            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.play_billing.k3.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
         }
     }
 
@@ -135,7 +136,7 @@ public abstract class f4 extends v7.r5 implements i9.w {
         return obj;
     }
 
-    @Override // i9.w
+    @Override // j9.y
     public final void a(Runnable runnable, Executor executor) {
         z3 z3Var;
         z3 z3Var2 = z3.d;
@@ -156,7 +157,7 @@ public abstract class f4 extends v7.r5 implements i9.w {
     /* JADX WARN: Multi-variable type inference failed */
     public String c() {
         if (this instanceof ScheduledFuture) {
-            return org.telegram.ui.Cells.c1.h(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return org.telegram.ui.Cells.d0.i(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -186,7 +187,7 @@ public abstract class f4 extends v7.r5 implements i9.w {
             Object f7 = f(this);
             sb2.append("SUCCESS, result=[");
             if (f7 == null) {
-                sb2.append("null");
+                sb2.append(BuildConfig.BETA_URL);
             } else if (f7 == this) {
                 sb2.append("this future");
             } else {
@@ -223,9 +224,9 @@ public abstract class f4 extends v7.r5 implements i9.w {
         if (e4Var2 != e4Var) {
             e4 e4Var3 = new e4();
             do {
-                v7.p5 p5Var = f;
-                p5Var.c(e4Var3, e4Var2);
-                if (p5Var.g(this, e4Var2, e4Var3)) {
+                v7.q5 q5Var = f;
+                q5Var.c(e4Var3, e4Var2);
+                if (q5Var.g(this, e4Var2, e4Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -335,27 +336,27 @@ public abstract class f4 extends v7.r5 implements i9.w {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object get(long j3, TimeUnit timeUnit) {
-        long j10;
+    public final Object get(long j10, TimeUnit timeUnit) {
+        long j11;
         long nanoTime;
         e4 e4Var = e4.c;
-        long nanos = timeUnit.toNanos(j3);
+        long nanos = timeUnit.toNanos(j10);
         if (!Thread.interrupted()) {
             Object obj = this.a;
             if (obj != null) {
                 return k(obj);
             }
-            long j11 = 0;
+            long j12 = 0;
             long nanoTime2 = nanos > 0 ? System.nanoTime() + nanos : 0L;
             if (nanos >= 1000) {
                 e4 e4Var2 = this.c;
                 if (e4Var2 != e4Var) {
                     e4 e4Var3 = new e4();
                     while (true) {
-                        v7.p5 p5Var = f;
-                        p5Var.c(e4Var3, e4Var2);
-                        if (p5Var.g(this, e4Var2, e4Var3)) {
-                            j10 = j11;
+                        v7.q5 q5Var = f;
+                        q5Var.c(e4Var3, e4Var2);
+                        if (q5Var.g(this, e4Var2, e4Var3)) {
+                            j11 = j12;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
                                 if (!Thread.interrupted()) {
@@ -375,12 +376,12 @@ public abstract class f4 extends v7.r5 implements i9.w {
                                 }
                             }
                         } else {
-                            long j12 = j11;
+                            long j13 = j12;
                             e4Var2 = this.c;
                             if (e4Var2 == e4Var) {
                                 break;
                             }
-                            j11 = j12;
+                            j12 = j13;
                         }
                     }
                 }
@@ -388,8 +389,8 @@ public abstract class f4 extends v7.r5 implements i9.w {
                 obj3.getClass();
                 return k(obj3);
             }
-            j10 = 0;
-            if (nanos > j10) {
+            j11 = 0;
+            if (nanos > j11) {
                 Object obj4 = this.a;
                 if (obj4 != null) {
                     return k(obj4);
@@ -397,7 +398,7 @@ public abstract class f4 extends v7.r5 implements i9.w {
                 if (!Thread.interrupted()) {
                     nanoTime = nanoTime2 - System.nanoTime();
                     nanos = nanoTime;
-                    if (nanos > j10) {
+                    if (nanos > j11) {
                     }
                 } else {
                     throw new InterruptedException();
@@ -407,17 +408,17 @@ public abstract class f4 extends v7.r5 implements i9.w {
                 String obj5 = timeUnit.toString();
                 Locale locale = Locale.ROOT;
                 String lowerCase = obj5.toLowerCase(locale);
-                String str = "Waited " + j3 + " " + timeUnit.toString().toLowerCase(locale);
-                if (nanos + 1000 < j10) {
+                String str = "Waited " + j10 + " " + timeUnit.toString().toLowerCase(locale);
+                if (nanos + 1000 < j11) {
                     String concat = str.concat(" (plus ");
-                    long j13 = -nanos;
-                    long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
-                    long nanos2 = j13 - timeUnit.toNanos(convert);
+                    long j14 = -nanos;
+                    long convert = timeUnit.convert(j14, TimeUnit.NANOSECONDS);
+                    long nanos2 = j14 - timeUnit.toNanos(convert);
                     boolean z10 = true;
-                    if (convert != j10 && nanos2 <= 1000) {
+                    if (convert != j11 && nanos2 <= 1000) {
                         z10 = false;
                     }
-                    if (convert > j10) {
+                    if (convert > j11) {
                         String str2 = concat + convert + " " + lowerCase;
                         if (z10) {
                             str2 = str2.concat(",");
@@ -439,6 +440,6 @@ public abstract class f4 extends v7.r5 implements i9.w {
         }
     }
 
-    public void e() {
+    public void d() {
     }
 }

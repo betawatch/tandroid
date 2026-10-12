@@ -1,14 +1,5 @@
 package org.telegram.ui.web;
 
-import ai.ab;
-import ai.ea;
-import ai.g5;
-import ai.p5;
-import ai.q3;
-import ai.t5;
-import ai.z3;
-import ai.z5;
-import ai.za;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -42,10 +33,18 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.car.app.navigation.model.Maneuver;
-import ei.b5;
-import ei.e5;
-import ei.k3;
-import ei.o4;
+import bi.f3;
+import bi.ia;
+import bi.ja;
+import bi.k5;
+import bi.n9;
+import bi.o3;
+import bi.q4;
+import bi.t4;
+import fi.c5;
+import fi.e5;
+import fi.k3;
+import fi.p4;
 import j$.util.Objects;
 import java.io.File;
 import java.net.HttpURLConnection;
@@ -57,7 +56,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
-import m.f3;
+import ji.d4;
+import ji.m5;
 import org.chromium.support_lib_boundary.ScriptHandlerBoundaryInterface;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -81,38 +81,38 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.d5;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.e3;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.l3;
 import org.telegram.ui.ActionBar.m3;
-import org.telegram.ui.ActionBar.n3;
 import org.telegram.ui.Cells.e9;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.fr;
-import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.og0;
-import org.telegram.ui.Components.tc;
-import org.telegram.ui.Components.x21;
-import org.telegram.ui.Components.y9;
+import org.telegram.ui.Components.cr;
+import org.telegram.ui.Components.k9;
+import org.telegram.ui.Components.m21;
+import org.telegram.ui.Components.sc;
+import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.zc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.Wallet.x4;
-import org.telegram.ui.a80;
-import org.telegram.ui.ii1;
-import org.telegram.ui.q9;
-import org.telegram.ui.rr0;
-import org.telegram.ui.v9;
-import w7.b6;
-import w7.x5;
+import org.telegram.ui.Wallet.t8;
+import org.telegram.ui.fi1;
+import org.telegram.ui.ss0;
+import org.telegram.ui.u9;
+import org.telegram.ui.ul0;
+import org.telegram.ui.z9;
+import w7.a6;
+import w7.e6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public abstract class b1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean P0 = true;
@@ -131,7 +131,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     public int H;
     public int H0;
     public int I;
-    public ea I0;
+    public n9 I0;
     public String J;
     public final s J0;
     public String K;
@@ -150,36 +150,36 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     public boolean S;
     public boolean T;
     public TLRPC.User U;
-    public og0 V;
+    public v70 V;
     public Activity W;
     public y0 a;
     public boolean a0;
     public String b;
     public String b0;
-    public g0 c;
-    public org.telegram.ui.ActionBar.b2 c0;
+    public h0 c;
+    public org.telegram.ui.ActionBar.a2 c0;
     public a1 d;
     public int d0;
-    public final e6 e;
+    public final c6 e;
     public long e0;
     public final TextView f;
     public long f0;
-    public q9 g0;
+    public u9 g0;
     public boolean h;
     public boolean h0;
     public String i0;
-    public ei.r j0;
-    public ei.w0 k0;
-    public ei.l0 l0;
-    public ei.t1 m0;
+    public fi.r j0;
+    public fi.v0 k0;
+    public fi.k0 l0;
+    public fi.s1 m0;
     public final org.telegram.ui.Components.voip.h n;
-    public ei.t1 n0;
+    public fi.s1 n0;
     public final boolean o0;
     public int p0;
     public boolean q0;
     public SvgHelper.SvgDrawable r;
     public BotWebViewContainer$BotWebViewProxy r0;
-    public final z5 s;
+    public final k5 s;
     public long s0;
     public boolean t0;
     public BotWebViewContainer$WebViewProxy u0;
@@ -193,13 +193,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     public boolean y0;
     public float z0;
 
-    public b1(int i10, Context context, e6 e6Var, boolean z10) {
+    public b1(int i10, Context context, c6 c6Var, boolean z10) {
         super(context);
         org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
         this.n = hVar;
-        int i11 = i6.Oh;
+        int i11 = g6.Oh;
         this.y = j(i11);
-        int i12 = i6.Sh;
+        int i12 = g6.Sh;
         this.E = j(i12);
         this.F = "";
         this.H = j(i11);
@@ -217,30 +217,30 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         Q0 = i13 + 1;
         this.N0 = i13;
         this.o0 = z10;
-        this.e = e6Var;
+        this.e = c6Var;
         g("created new webview container");
         if (context instanceof Activity) {
             this.W = (Activity) context;
         }
         hVar.k = false;
         hVar.b(i10, 153);
-        z5 z5Var = new z5(this, context);
-        this.s = z5Var;
-        int j3 = j(i6.Ki);
-        this.p0 = j3;
-        z5Var.setColorFilter(new PorterDuffColorFilter(j3, PorterDuff.Mode.SRC_IN));
-        z5Var.getImageReceiver().setAspectFit(true);
-        addView(z5Var, x5.e(-1, -2, 48));
+        k5 k5Var = new k5(this, context);
+        this.s = k5Var;
+        int j10 = j(g6.Ki);
+        this.p0 = j10;
+        k5Var.setColorFilter(new PorterDuffColorFilter(j10, PorterDuff.Mode.SRC_IN));
+        k5Var.getImageReceiver().setAspectFit(true);
+        addView(k5Var, a6.e(-1, -2, 48));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setText(LocaleController.getString(R.string.BotWebViewNotAvailablePlaceholder));
-        textView.setTextColor(j(i6.y6));
+        textView.setTextColor(j(g6.y6));
         textView.setTextSize(1, 15.0f);
         textView.setGravity(17);
         textView.setVisibility(8);
         int dp = AndroidUtilities.dp(16.0f);
         textView.setPadding(dp, dp, dp, dp);
-        addView(textView, x5.e(-1, -2, 17));
+        addView(textView, a6.e(-1, -2, 17));
         setFocusable(false);
     }
 
@@ -267,7 +267,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
 
     public static WebResourceResponse M(String str, String str2, Map map) {
         try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(of.f.v(Uri.parse(str2), "https", null, S(AndroidUtilities.getHostAuthority(str2)), null)).openConnection();
+            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(pf.d.v(Uri.parse(str2), "https", null, S(AndroidUtilities.getHostAuthority(str2)), null)).openConnection();
             httpURLConnection.setRequestMethod(str);
             if (map != null) {
                 for (Map.Entry entry : map.entrySet()) {
@@ -276,8 +276,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             }
             httpURLConnection.connect();
             return new WebResourceResponse(httpURLConnection.getContentType().split(";", 2)[0], httpURLConnection.getContentEncoding(), httpURLConnection.getInputStream());
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
             return null;
         }
     }
@@ -285,8 +285,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     public static String S(String str) {
         try {
             str = IDN.toASCII(str, 1);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         String[] split = str.split("\\.");
         StringBuilder sb2 = new StringBuilder();
@@ -305,7 +305,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         b1Var.getClass();
         for (String str : strArr) {
             if (b1Var.getContext().checkSelfPermission(str) != 0) {
-                b1Var.V = new og0(b1Var, aVar, strArr, 21);
+                b1Var.V = new v70(b1Var, aVar, strArr, 25);
                 Activity activity = b1Var.W;
                 if (activity != null) {
                     activity.requestPermissions(strArr, 4000);
@@ -334,7 +334,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             R0 = new HashMap();
         }
         R0.put(S, hostAuthority);
-        return of.f.v(Uri.parse(str), "https", null, S, null);
+        return pf.d.v(Uri.parse(str), "https", null, S, null);
     }
 
     public static String k(String str) {
@@ -374,8 +374,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
 
     private void setupFlickerParams(boolean z10) {
         this.v = z10;
-        z5 z5Var = this.s;
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) z5Var.getLayoutParams();
+        k5 k5Var = this.s;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) k5Var.getLayoutParams();
         layoutParams.gravity = z10 ? 17 : 48;
         if (z10) {
             int dp = AndroidUtilities.dp(100.0f);
@@ -385,7 +385,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             layoutParams.width = -1;
             layoutParams.height = -2;
         }
-        z5Var.requestLayout();
+        k5Var.requestLayout();
     }
 
     private void setupWebView(y0 y0Var) {
@@ -403,14 +403,14 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         }
         StringBuilder sb2 = new StringBuilder(".");
         sb2.append(MessagesController.getInstance(UserConfig.selectedAccount).tonProxyAddress);
-        return (hostAuthority.endsWith(sb2.toString()) && (str2 = (String) R0.get(hostAuthority)) != null) ? of.f.v(Uri.parse(str), "tonsite", null, str2, null) : str;
+        return (hostAuthority.endsWith(sb2.toString()) && (str2 = (String) R0.get(hostAuthority)) != null) ? pf.d.v(Uri.parse(str), "tonsite", null, str2, null) : str;
     }
 
-    public static void w(int i10, y0 y0Var, ea eaVar, String str, JSONObject jSONObject) {
+    public static void w(int i10, y0 y0Var, n9 n9Var, String str, JSONObject jSONObject) {
         if (y0Var == null) {
             return;
         }
-        NotificationCenter.getInstance(i10).doOnIdle(new rr0(y0Var, eaVar, str, jSONObject, 22));
+        NotificationCenter.getInstance(i10).doOnIdle(new ss0(y0Var, n9Var, str, jSONObject, 20));
     }
 
     public final boolean C() {
@@ -437,34 +437,34 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
     	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
      */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x09a3  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x09b4  */
-    /* JADX WARN: Removed duplicated region for block: B:393:0x0d29  */
+    /* JADX WARN: Removed duplicated region for block: B:177:0x09a2  */
+    /* JADX WARN: Removed duplicated region for block: B:179:0x09b3  */
+    /* JADX WARN: Removed duplicated region for block: B:393:0x0d28  */
     /* JADX WARN: Removed duplicated region for block: B:399:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:441:0x0e06  */
+    /* JADX WARN: Removed duplicated region for block: B:441:0x0e05  */
     /* JADX WARN: Removed duplicated region for block: B:443:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:654:0x11d4  */
-    /* JADX WARN: Removed duplicated region for block: B:656:0x11e0  */
+    /* JADX WARN: Removed duplicated region for block: B:654:0x11d3  */
+    /* JADX WARN: Removed duplicated region for block: B:656:0x11df  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void E(BotWebViewContainer$BotWebViewProxy botWebViewContainer$BotWebViewProxy, final ea eaVar, String str, String str2) {
+    public final void E(BotWebViewContainer$BotWebViewProxy botWebViewContainer$BotWebViewProxy, final n9 n9Var, String str, String str2) {
         char c10;
         BotWebViewVibrationEffect botWebViewVibrationEffect;
         int i10;
         int i11;
         final int i12;
-        q9 q9Var;
+        u9 u9Var;
         final b1 b1Var;
         final b1 b1Var2;
-        ea eaVar2;
+        n9 n9Var2;
         TextView textView;
         TextView textView2;
         TextView textView3;
-        long j3;
+        long j10;
         int i13;
         TLRPC.User user;
-        long j10;
+        long j11;
         String str3;
         boolean z10;
         boolean z11;
@@ -482,14 +482,14 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         boolean z14;
         boolean z15;
         String g10;
-        long j11;
+        long j12;
         boolean z16;
         if (this.o0) {
             if (this.a == null || this.c == null) {
                 g("onEventReceived " + str + ": no webview or delegate!");
                 return;
             }
-            if (!o(eaVar)) {
+            if (!o(n9Var)) {
                 g("onEventReceived ignore " + str + " after document change");
                 return;
             }
@@ -950,13 +950,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             }
             char c11 = c10;
             s sVar = this.J0;
-            long j12 = 1000;
-            e6 e6Var = this.e;
+            long j13 = 1000;
+            c6 c6Var = this.e;
             BotWebViewVibrationEffect botWebViewVibrationEffect2 = null;
             String str11 = null;
             String str12 = null;
             String str13 = null;
-            m3 m3Var = null;
+            l3 l3Var = null;
             botWebViewVibrationEffect2 = null;
             botWebViewVibrationEffect2 = null;
             botWebViewVibrationEffect2 = null;
@@ -988,11 +988,11 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
                         invokewebviewcustommethod.params = tL_dataJSON;
                         tL_dataJSON.data = obj;
-                        ConnectionsManager.getInstance(i14).sendRequest(invokewebviewcustommethod, new za(this, string, i14, y0Var, eaVar, 11));
+                        ConnectionsManager.getInstance(i14).sendRequest(invokewebviewcustommethod, new ia(this, string, i14, y0Var, n9Var, 11));
                         return;
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                        if (e7 instanceof JSONException) {
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        if (e instanceof JSONException) {
                             i("JSON Parse error");
                             return;
                         } else {
@@ -1001,13 +1001,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         }
                     }
                 case 1:
-                    if (!this.h0 || (q9Var = this.g0) == null) {
+                    if (!this.h0 || (u9Var = this.g0) == null) {
                         return;
                     }
-                    q9Var.dismiss();
+                    u9Var.dismiss();
                     return;
                 case 2:
-                    v(eaVar);
+                    v(n9Var);
                     return;
                 case 3:
                     try {
@@ -1019,8 +1019,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         }
                         G(parse, optString, jSONObject2.optBoolean("try_instant_view"), true, false);
                         return;
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                         return;
                     }
                 case 4:
@@ -1028,7 +1028,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         return;
                     }
                     if (this.l0 == null) {
-                        this.l0 = ei.l0.c(getContext(), this.M, this.U.id);
+                        this.l0 = fi.k0.c(getContext(), this.M, this.U.id);
                     }
                     try {
                         JSONObject jSONObject3 = new JSONObject(str2);
@@ -1036,18 +1036,18 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         String string4 = jSONObject3.getString("file_name");
                         if (this.l0.d(string3) != null) {
                             this.l0.b(string3, string4);
-                            x(eaVar, "file_download_requested", A("downloading", "status"));
+                            x(n9Var, "file_download_requested", A("downloading", "status"));
                             return;
                         }
                         TL_bots.checkDownloadFileParams checkdownloadfileparams = new TL_bots.checkDownloadFileParams();
                         checkdownloadfileparams.bot = MessagesController.getInstance(this.M).getInputUser(this.U);
                         checkdownloadfileparams.file_name = string4;
                         checkdownloadfileparams.url = string3;
-                        ConnectionsManager.getInstance(this.M).sendRequest(checkdownloadfileparams, new q3(this, eaVar, string3, string4, 13));
+                        ConnectionsManager.getInstance(this.M).sendRequest(checkdownloadfileparams, new f3(this, n9Var, string3, string4, 13));
                         return;
-                    } catch (Exception e11) {
-                        FileLog.e(e11);
-                        x(eaVar, "file_download_requested", A("cancelled", "status"));
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
+                        x(n9Var, "file_download_requested", A("cancelled", "status"));
                         return;
                     }
                 case 5:
@@ -1081,68 +1081,68 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                                         try {
                                             final z0 z0Var = (z0) arrayList.get(0);
                                             final int i17 = 0;
-                                            alertDialog$Builder.k(z0Var.b, new org.telegram.ui.ActionBar.a2(b1Var) { // from class: org.telegram.ui.web.p
+                                            alertDialog$Builder.k(z0Var.b, new org.telegram.ui.ActionBar.z1(b1Var) { // from class: org.telegram.ui.web.p
                                                 public final /* synthetic */ b1 b;
 
                                                 {
                                                     this.b = b1Var;
                                                 }
 
-                                                @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i18) {
+                                                @Override // org.telegram.ui.ActionBar.z1
+                                                public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i18) {
                                                     switch (i17) {
                                                         case 0:
-                                                            ea eaVar3 = eaVar;
+                                                            n9 n9Var3 = n9Var;
                                                             z0 z0Var2 = z0Var;
                                                             AtomicBoolean atomicBoolean2 = atomicBoolean;
                                                             b1 b1Var3 = this.b;
                                                             b1Var3.getClass();
-                                                            b2Var.dismiss();
+                                                            a2Var.dismiss();
                                                             try {
                                                                 b1Var3.P = System.currentTimeMillis();
-                                                                b1Var3.x(eaVar3, "popup_closed", new JSONObject().put("button_id", z0Var2.a));
+                                                                b1Var3.x(n9Var3, "popup_closed", new JSONObject().put("button_id", z0Var2.a));
                                                                 atomicBoolean2.set(true);
+                                                                break;
+                                                            } catch (JSONException e11) {
+                                                                FileLog.e(e11);
+                                                                return;
+                                                            }
+                                                        case 1:
+                                                            n9 n9Var4 = n9Var;
+                                                            z0 z0Var3 = z0Var;
+                                                            AtomicBoolean atomicBoolean3 = atomicBoolean;
+                                                            b1 b1Var4 = this.b;
+                                                            b1Var4.getClass();
+                                                            a2Var.dismiss();
+                                                            try {
+                                                                b1Var4.P = System.currentTimeMillis();
+                                                                b1Var4.x(n9Var4, "popup_closed", new JSONObject().put("button_id", z0Var3.a));
+                                                                atomicBoolean3.set(true);
                                                                 break;
                                                             } catch (JSONException e12) {
                                                                 FileLog.e(e12);
                                                                 return;
                                                             }
-                                                        case 1:
-                                                            ea eaVar4 = eaVar;
-                                                            z0 z0Var3 = z0Var;
-                                                            AtomicBoolean atomicBoolean3 = atomicBoolean;
-                                                            b1 b1Var4 = this.b;
-                                                            b1Var4.getClass();
-                                                            b2Var.dismiss();
-                                                            try {
-                                                                b1Var4.P = System.currentTimeMillis();
-                                                                b1Var4.x(eaVar4, "popup_closed", new JSONObject().put("button_id", z0Var3.a));
-                                                                atomicBoolean3.set(true);
-                                                                break;
-                                                            } catch (JSONException e13) {
-                                                                FileLog.e(e13);
-                                                                return;
-                                                            }
                                                         default:
-                                                            ea eaVar5 = eaVar;
+                                                            n9 n9Var5 = n9Var;
                                                             z0 z0Var4 = z0Var;
                                                             AtomicBoolean atomicBoolean4 = atomicBoolean;
                                                             b1 b1Var5 = this.b;
                                                             b1Var5.getClass();
-                                                            b2Var.dismiss();
+                                                            a2Var.dismiss();
                                                             try {
                                                                 b1Var5.P = System.currentTimeMillis();
-                                                                b1Var5.x(eaVar5, "popup_closed", new JSONObject().put("button_id", z0Var4.a));
+                                                                b1Var5.x(n9Var5, "popup_closed", new JSONObject().put("button_id", z0Var4.a));
                                                                 atomicBoolean4.set(true);
                                                                 break;
-                                                            } catch (JSONException e14) {
-                                                                FileLog.e(e14);
+                                                            } catch (JSONException e13) {
+                                                                FileLog.e(e13);
                                                             }
                                                     }
                                                 }
                                             });
-                                        } catch (JSONException e12) {
-                                            e = e12;
+                                        } catch (JSONException e11) {
+                                            e = e11;
                                             FileLog.e(e);
                                             return;
                                         }
@@ -1150,62 +1150,62 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                                     if (arrayList.size() >= 2) {
                                         final z0 z0Var2 = (z0) arrayList.get(1);
                                         final int i18 = 1;
-                                        alertDialog$Builder.h(z0Var2.b, new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.web.p
+                                        alertDialog$Builder.h(z0Var2.b, new org.telegram.ui.ActionBar.z1(this) { // from class: org.telegram.ui.web.p
                                             public final /* synthetic */ b1 b;
 
                                             {
                                                 this.b = this;
                                             }
 
-                                            @Override // org.telegram.ui.ActionBar.a2
-                                            public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i182) {
+                                            @Override // org.telegram.ui.ActionBar.z1
+                                            public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i182) {
                                                 switch (i18) {
                                                     case 0:
-                                                        ea eaVar3 = eaVar;
+                                                        n9 n9Var3 = n9Var;
                                                         z0 z0Var22 = z0Var2;
                                                         AtomicBoolean atomicBoolean2 = atomicBoolean;
                                                         b1 b1Var3 = this.b;
                                                         b1Var3.getClass();
-                                                        b2Var.dismiss();
+                                                        a2Var.dismiss();
                                                         try {
                                                             b1Var3.P = System.currentTimeMillis();
-                                                            b1Var3.x(eaVar3, "popup_closed", new JSONObject().put("button_id", z0Var22.a));
+                                                            b1Var3.x(n9Var3, "popup_closed", new JSONObject().put("button_id", z0Var22.a));
                                                             atomicBoolean2.set(true);
                                                             break;
-                                                        } catch (JSONException e122) {
-                                                            FileLog.e(e122);
+                                                        } catch (JSONException e112) {
+                                                            FileLog.e(e112);
                                                             return;
                                                         }
                                                     case 1:
-                                                        ea eaVar4 = eaVar;
+                                                        n9 n9Var4 = n9Var;
                                                         z0 z0Var3 = z0Var2;
                                                         AtomicBoolean atomicBoolean3 = atomicBoolean;
                                                         b1 b1Var4 = this.b;
                                                         b1Var4.getClass();
-                                                        b2Var.dismiss();
+                                                        a2Var.dismiss();
                                                         try {
                                                             b1Var4.P = System.currentTimeMillis();
-                                                            b1Var4.x(eaVar4, "popup_closed", new JSONObject().put("button_id", z0Var3.a));
+                                                            b1Var4.x(n9Var4, "popup_closed", new JSONObject().put("button_id", z0Var3.a));
                                                             atomicBoolean3.set(true);
                                                             break;
-                                                        } catch (JSONException e13) {
-                                                            FileLog.e(e13);
+                                                        } catch (JSONException e12) {
+                                                            FileLog.e(e12);
                                                             return;
                                                         }
                                                     default:
-                                                        ea eaVar5 = eaVar;
+                                                        n9 n9Var5 = n9Var;
                                                         z0 z0Var4 = z0Var2;
                                                         AtomicBoolean atomicBoolean4 = atomicBoolean;
                                                         b1 b1Var5 = this.b;
                                                         b1Var5.getClass();
-                                                        b2Var.dismiss();
+                                                        a2Var.dismiss();
                                                         try {
                                                             b1Var5.P = System.currentTimeMillis();
-                                                            b1Var5.x(eaVar5, "popup_closed", new JSONObject().put("button_id", z0Var4.a));
+                                                            b1Var5.x(n9Var5, "popup_closed", new JSONObject().put("button_id", z0Var4.a));
                                                             atomicBoolean4.set(true);
                                                             break;
-                                                        } catch (JSONException e14) {
-                                                            FileLog.e(e14);
+                                                        } catch (JSONException e13) {
+                                                            FileLog.e(e13);
                                                         }
                                                 }
                                             }
@@ -1217,78 +1217,78 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                                         final int i19 = 2;
                                         b1Var2 = this;
                                         try {
-                                            org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(b1Var2) { // from class: org.telegram.ui.web.p
+                                            org.telegram.ui.ActionBar.z1 z1Var = new org.telegram.ui.ActionBar.z1(b1Var2) { // from class: org.telegram.ui.web.p
                                                 public final /* synthetic */ b1 b;
 
                                                 {
                                                     this.b = b1Var2;
                                                 }
 
-                                                @Override // org.telegram.ui.ActionBar.a2
-                                                public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i182) {
+                                                @Override // org.telegram.ui.ActionBar.z1
+                                                public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i182) {
                                                     switch (i19) {
                                                         case 0:
-                                                            ea eaVar3 = eaVar;
+                                                            n9 n9Var3 = n9Var;
                                                             z0 z0Var22 = z0Var3;
                                                             AtomicBoolean atomicBoolean2 = atomicBoolean;
                                                             b1 b1Var3 = this.b;
                                                             b1Var3.getClass();
-                                                            b2Var.dismiss();
+                                                            a2Var.dismiss();
                                                             try {
                                                                 b1Var3.P = System.currentTimeMillis();
-                                                                b1Var3.x(eaVar3, "popup_closed", new JSONObject().put("button_id", z0Var22.a));
+                                                                b1Var3.x(n9Var3, "popup_closed", new JSONObject().put("button_id", z0Var22.a));
                                                                 atomicBoolean2.set(true);
                                                                 break;
-                                                            } catch (JSONException e122) {
-                                                                FileLog.e(e122);
+                                                            } catch (JSONException e112) {
+                                                                FileLog.e(e112);
                                                                 return;
                                                             }
                                                         case 1:
-                                                            ea eaVar4 = eaVar;
+                                                            n9 n9Var4 = n9Var;
                                                             z0 z0Var32 = z0Var3;
                                                             AtomicBoolean atomicBoolean3 = atomicBoolean;
                                                             b1 b1Var4 = this.b;
                                                             b1Var4.getClass();
-                                                            b2Var.dismiss();
+                                                            a2Var.dismiss();
                                                             try {
                                                                 b1Var4.P = System.currentTimeMillis();
-                                                                b1Var4.x(eaVar4, "popup_closed", new JSONObject().put("button_id", z0Var32.a));
+                                                                b1Var4.x(n9Var4, "popup_closed", new JSONObject().put("button_id", z0Var32.a));
                                                                 atomicBoolean3.set(true);
                                                                 break;
-                                                            } catch (JSONException e13) {
-                                                                FileLog.e(e13);
+                                                            } catch (JSONException e12) {
+                                                                FileLog.e(e12);
                                                                 return;
                                                             }
                                                         default:
-                                                            ea eaVar5 = eaVar;
+                                                            n9 n9Var5 = n9Var;
                                                             z0 z0Var4 = z0Var3;
                                                             AtomicBoolean atomicBoolean4 = atomicBoolean;
                                                             b1 b1Var5 = this.b;
                                                             b1Var5.getClass();
-                                                            b2Var.dismiss();
+                                                            a2Var.dismiss();
                                                             try {
                                                                 b1Var5.P = System.currentTimeMillis();
-                                                                b1Var5.x(eaVar5, "popup_closed", new JSONObject().put("button_id", z0Var4.a));
+                                                                b1Var5.x(n9Var5, "popup_closed", new JSONObject().put("button_id", z0Var4.a));
                                                                 atomicBoolean4.set(true);
                                                                 break;
-                                                            } catch (JSONException e14) {
-                                                                FileLog.e(e14);
+                                                            } catch (JSONException e13) {
+                                                                FileLog.e(e13);
                                                             }
                                                     }
                                                 }
                                             };
-                                            eaVar2 = eaVar;
-                                            alertDialog$Builder.i(str14, a2Var);
-                                        } catch (JSONException e13) {
-                                            e = e13;
+                                            n9Var2 = n9Var;
+                                            alertDialog$Builder.i(str14, z1Var);
+                                        } catch (JSONException e12) {
+                                            e = e12;
                                             FileLog.e(e);
                                             return;
                                         }
                                     } else {
                                         b1Var2 = this;
-                                        eaVar2 = eaVar;
+                                        n9Var2 = n9Var;
                                     }
-                                    alertDialog$Builder.j(new ei.t0(b1Var2, atomicBoolean, eaVar2, 4));
+                                    alertDialog$Builder.j(new fi.s0(b1Var2, atomicBoolean, n9Var2, 4));
                                     b1Var2.c0 = alertDialog$Builder.o();
                                     if (arrayList.size() >= 1) {
                                         z0 z0Var4 = (z0) arrayList.get(0);
@@ -1319,8 +1319,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         } else {
                             break;
                         }
-                    } catch (JSONException e14) {
-                        e = e14;
+                    } catch (JSONException e13) {
+                        e = e13;
                     }
                     break;
                 case 6:
@@ -1336,10 +1336,10 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug = new TLRPC.TL_inputInvoiceSlug();
                         tL_inputInvoiceSlug.slug = optString3;
                         tL_payments_getPaymentForm.invoice = tL_inputInvoiceSlug;
-                        ConnectionsManager.getInstance(b1Var.M).sendRequest(tL_payments_getPaymentForm, new t5(b1Var, optString3, tL_inputInvoiceSlug, 14));
+                        ConnectionsManager.getInstance(b1Var.M).sendRequest(tL_payments_getPaymentForm, new bi.e5(b1Var, optString3, tL_inputInvoiceSlug, 14));
                         return;
-                    } catch (JSONException e15) {
-                        FileLog.e(e15);
+                    } catch (JSONException e14) {
+                        FileLog.e(e14);
                         break;
                     }
                 case 7:
@@ -1347,7 +1347,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     if (b1Var.U != null && System.currentTimeMillis() - b1Var.P <= 10000) {
                         try {
                             JSONObject jSONObject5 = new JSONObject(str2);
-                            j3 = Long.parseLong(jSONObject5.getString("custom_emoji_id"));
+                            j10 = Long.parseLong(jSONObject5.getString("custom_emoji_id"));
                             try {
                                 i13 = jSONObject5.getInt("duration");
                             } catch (Exception unused) {
@@ -1357,14 +1357,14 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                                 }
                             }
                         } catch (Exception unused2) {
-                            j3 = 0;
+                            j10 = 0;
                         }
                         user = b1Var.U;
                         if (user != null) {
-                            b1Var.x(eaVar, "emoji_status_failed", A("UNKNOWN_ERROR", "error"));
+                            b1Var.x(n9Var, "emoji_status_failed", A("UNKNOWN_ERROR", "error"));
                             return;
                         } else {
-                            b5.f(b1Var.M, user, j3, i13, new q(b1Var, eaVar, 4));
+                            c5.f(b1Var.M, user, j10, i13, new q(b1Var, n9Var, 4));
                             break;
                         }
                     }
@@ -1385,19 +1385,19 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                             optString4 = "left";
                         }
                         try {
-                            j10 = Long.parseLong(jSONObject6.getString("icon_custom_emoji_id"));
+                            j11 = Long.parseLong(jSONObject6.getString("icon_custom_emoji_id"));
                         } catch (Throwable unused3) {
-                            j10 = 0;
+                            j11 = 0;
                         }
                         b1Var.H = parseColor;
                         b1Var.I = parseColor2;
                         b1Var.J = trim;
                         b1Var.K = optString4;
                         b1Var.L = str2;
-                        b1Var.c.l(z17, optBoolean, trim, j10, parseColor, parseColor2, z18, z19, optString4);
+                        b1Var.c.l(z17, optBoolean, trim, j11, parseColor, parseColor2, z18, z19, optString4);
                         break;
-                    } catch (Exception e16) {
-                        FileLog.e(e16);
+                    } catch (Exception e15) {
+                        FileLog.e(e15);
                         break;
                     }
                     break;
@@ -1406,8 +1406,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     try {
                         b1Var.c.k(new JSONObject(str2).optBoolean("need_confirmation"));
                         return;
-                    } catch (JSONException e17) {
-                        FileLog.e(e17);
+                    } catch (JSONException e16) {
+                        FileLog.e(e16);
                         break;
                     }
                 case '\n':
@@ -1419,18 +1419,18 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                             if (b1Var.W.checkSelfPermission("android.permission.CAMERA") == 0) {
                                 Activity activity = b1Var.W;
                                 if (activity != null) {
-                                    b1Var.g0 = v9.e0(activity, false, 3, new f3(b1Var, 11));
+                                    b1Var.g0 = z9.e0(activity, false, 3, new d4(b1Var, 16));
                                     return;
                                 }
                                 break;
                             } else {
-                                NotificationCenter.getGlobalInstance().addObserver(new c0(b1Var, eaVar), NotificationCenter.onRequestPermissionResultReceived);
+                                NotificationCenter.getGlobalInstance().addObserver(new d0(b1Var, n9Var), NotificationCenter.onRequestPermissionResultReceived);
                                 b1Var.W.requestPermissions(new String[]{"android.permission.CAMERA"}, 5000);
                                 return;
                             }
                         }
-                    } catch (JSONException e18) {
-                        FileLog.e(e18);
+                    } catch (JSONException e17) {
+                        FileLog.e(e17);
                         break;
                     }
                     break;
@@ -1439,17 +1439,17 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         try {
                             JSONObject jSONObject7 = new JSONObject();
                             jSONObject7.put("status", "cancelled");
-                            x(eaVar, "phone_requested", jSONObject7);
+                            x(n9Var, "phone_requested", jSONObject7);
                             return;
-                        } catch (Exception e19) {
-                            FileLog.e(e19);
+                        } catch (Exception e18) {
+                            FileLog.e(e18);
                             return;
                         }
                     }
                     final int i20 = this.M;
                     final y0 y0Var2 = this.a;
                     final String[] strArr = {"cancelled"};
-                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getContext(), e6Var);
+                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getContext(), c6Var);
                     alertDialog$Builder2.l(LocaleController.getString(R.string.ShareYouPhoneNumberTitle));
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     String userName = UserObject.getUserName(this.U);
@@ -1464,32 +1464,32 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.AreYouSureShareMyContactInfoBotUnblock));
                     }
                     alertDialog$Builder2.g(spannableStringBuilder);
-                    alertDialog$Builder2.k(LocaleController.getString(R.string.ShareContact), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.web.v
-                        @Override // org.telegram.ui.ActionBar.a2
-                        public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i21) {
+                    alertDialog$Builder2.k(LocaleController.getString(R.string.ShareContact), new org.telegram.ui.ActionBar.z1() { // from class: org.telegram.ui.web.v
+                        @Override // org.telegram.ui.ActionBar.z1
+                        public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i21) {
                             strArr[0] = null;
-                            b2Var.dismiss();
+                            a2Var.dismiss();
                             b1 b1Var3 = b1.this;
                             boolean z21 = z20;
                             int i22 = i20;
                             y0 y0Var3 = y0Var2;
-                            ea eaVar3 = eaVar;
+                            n9 n9Var3 = n9Var;
                             if (z21) {
-                                MessagesController.getInstance(b1Var3.M).unblockPeer(b1Var3.U.id, new x21(b1Var3, i22, y0Var3, eaVar3, 15));
+                                MessagesController.getInstance(b1Var3.M).unblockPeer(b1Var3.U.id, new m21(b1Var3, i22, y0Var3, n9Var3, 16));
                                 return;
                             }
                             SendMessagesHelper.getInstance(b1Var3.M).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(b1Var3.M).getCurrentUser(), b1Var3.U.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
                             try {
                                 JSONObject jSONObject8 = new JSONObject();
                                 jSONObject8.put("status", "sent");
-                                b1.w(i22, y0Var3, eaVar3, "phone_requested", jSONObject8);
-                            } catch (Exception e20) {
-                                FileLog.e(e20);
+                                b1.w(i22, y0Var3, n9Var3, "phone_requested", jSONObject8);
+                            } catch (Exception e19) {
+                                FileLog.e(e19);
                             }
                         }
                     });
-                    alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), new a80(20));
-                    X(4, alertDialog$Builder2.a(), new w(strArr, i20, y0Var2, eaVar, 0));
+                    alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), new ul0(15));
+                    X(4, alertDialog$Builder2.a(), new w(strArr, i20, y0Var2, n9Var, 0));
                     return;
                 case '\f':
                     z();
@@ -1501,17 +1501,17 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     if (this.n0 == null) {
                         getContext();
                         int i21 = this.M;
-                        this.n0 = new ei.t1(UserConfig.getInstance(i21).getClientUserId(), this.U.id, i21, true);
+                        this.n0 = new fi.s1(UserConfig.getInstance(i21).getClientUserId(), this.U.id, i21, true);
                     }
-                    l(eaVar, this.n0, str2, "secure_storage_key_received", "secure_storage_failed");
+                    l(n9Var, this.n0, str2, "secure_storage_key_received", "secure_storage_failed");
                     return;
                 case 14:
                     if (this.k0 == null) {
-                        ei.w0 e20 = ei.w0.e(getContext(), this.M, this.U.id);
-                        this.k0 = e20;
-                        e20.f.add(sVar);
+                        fi.v0 e19 = fi.v0.e(getContext(), this.M, this.U.id);
+                        this.k0 = e19;
+                        e19.f.add(sVar);
                     }
-                    this.I0 = eaVar;
+                    this.I0 = n9Var;
                     sVar.run();
                     return;
                 case 15:
@@ -1519,35 +1519,35 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         return;
                     }
                     this.P = 0L;
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
                     if (U == null || U.getParentLayout() == null) {
                         return;
                     }
-                    d5 parentLayout = U.getParentLayout();
+                    b5 parentLayout = U.getParentLayout();
                     U.presentFragment(ProfileActivity.m4(this.U.id));
                     AndroidUtilities.scrollToFragmentRow(parentLayout, "botPermissionBiometry");
-                    g0 g0Var = this.c;
-                    if (g0Var != null) {
-                        g0Var.b();
+                    h0 h0Var = this.c;
+                    if (h0Var != null) {
+                        h0Var.b();
                         return;
                     }
                     return;
                 case 16:
-                    n(!((getParent() instanceof o4) && ((o4) getParent()).d()), true);
+                    n(!((getParent() instanceof p4) && ((p4) getParent()).d()), true);
                     return;
                 case 17:
                     if (this.U == null || System.currentTimeMillis() - this.P > 10000) {
                         return;
                     }
-                    b5.a(this.M, this.U.id, new q(this, eaVar, 0));
+                    c5.a(this.M, this.U.id, new q(this, n9Var, 0));
                     return;
                 case 18:
-                    ei.a1 z21 = this.c.z();
+                    fi.z0 z21 = this.c.z();
                     if (z21 == null || !z21.h()) {
-                        x(eaVar, "device_orientation_failed", A("UNSUPPORTED", "error"));
+                        x(n9Var, "device_orientation_failed", A("UNSUPPORTED", "error"));
                         return;
                     } else {
-                        x(eaVar, "device_orientation_stopped", null);
+                        x(n9Var, "device_orientation_stopped", null);
                         return;
                     }
                 case 19:
@@ -1557,9 +1557,9 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     if (this.m0 == null) {
                         getContext();
                         int i22 = this.M;
-                        this.m0 = new ei.t1(UserConfig.getInstance(i22).getClientUserId(), this.U.id, i22, false);
+                        this.m0 = new fi.s1(UserConfig.getInstance(i22).getClientUserId(), this.U.id, i22, false);
                     }
-                    U(eaVar, this.m0, str2, "device_storage_key_saved", "device_storage_failed");
+                    U(n9Var, this.m0, str2, "device_storage_key_saved", "device_storage_failed");
                     return;
                 case 20:
                     if (this.U == null) {
@@ -1568,9 +1568,9 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     if (this.m0 == null) {
                         getContext();
                         int i23 = this.M;
-                        this.m0 = new ei.t1(UserConfig.getInstance(i23).getClientUserId(), this.U.id, i23, false);
+                        this.m0 = new fi.s1(UserConfig.getInstance(i23).getClientUserId(), this.U.id, i23, false);
                     }
-                    l(eaVar, this.m0, str2, "device_storage_key_received", "device_storage_failed");
+                    l(n9Var, this.m0, str2, "device_storage_key_received", "device_storage_failed");
                     return;
                 case 21:
                     try {
@@ -1579,21 +1579,21 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         str3 = null;
                     }
                     e();
-                    ei.r rVar = this.j0;
+                    fi.r rVar = this.j0;
                     if (rVar == null) {
                         return;
                     }
                     if (rVar.e) {
-                        rVar.j(str3, true, null, new ai.q0(2, rVar, new q(this, eaVar, 3)));
+                        rVar.j(str3, true, null, new bi.j0(2, rVar, new q(this, n9Var, 3)));
                         return;
                     }
                     try {
                         JSONObject jSONObject8 = new JSONObject();
                         jSONObject8.put("status", "failed");
-                        x(eaVar, "biometry_auth_requested", jSONObject8);
+                        x(n9Var, "biometry_auth_requested", jSONObject8);
                         return;
-                    } catch (Exception e21) {
-                        FileLog.e(e21);
+                    } catch (Exception e20) {
+                        FileLog.e(e20);
                         return;
                     }
                 case 22:
@@ -1602,9 +1602,9 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     } catch (Exception unused5) {
                         z10 = false;
                     }
-                    g0 g0Var2 = this.c;
-                    if (g0Var2 != null) {
-                        g0Var2.p(z10);
+                    h0 h0Var2 = this.c;
+                    if (h0Var2 != null) {
+                        h0Var2.p(z10);
                         return;
                     }
                     return;
@@ -1617,17 +1617,17 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         } catch (Exception unused6) {
                             z12 = true;
                             g("allowScroll " + z11 + " " + z12);
-                            if (getParent() instanceof o4) {
+                            if (getParent() instanceof p4) {
                             }
                         }
                     } catch (Exception unused7) {
                         z11 = true;
                     }
                     g("allowScroll " + z11 + " " + z12);
-                    if (getParent() instanceof o4) {
+                    if (getParent() instanceof p4) {
                         return;
                     }
-                    ((o4) getParent()).a(z11, z12);
+                    ((p4) getParent()).a(z11, z12);
                     return;
                 case 24:
                     try {
@@ -1639,8 +1639,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         }
                         G(Uri.parse("https://t.me/" + optString5), null, false, true, optBoolean2);
                         return;
-                    } catch (JSONException e22) {
-                        FileLog.e(e22);
+                    } catch (JSONException e21) {
+                        FileLog.e(e21);
                         return;
                     }
                 case 25:
@@ -1650,9 +1650,9 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     if (this.n0 == null) {
                         getContext();
                         int i24 = this.M;
-                        this.n0 = new ei.t1(UserConfig.getInstance(i24).getClientUserId(), this.U.id, i24, true);
+                        this.n0 = new fi.s1(UserConfig.getInstance(i24).getClientUserId(), this.U.id, i24, true);
                     }
-                    R(eaVar, this.n0, str2);
+                    R(n9Var, this.n0, str2);
                     return;
                 case 26:
                     if (System.currentTimeMillis() - this.P > 10000 || System.currentTimeMillis() - this.Q < 2000) {
@@ -1667,17 +1667,17 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                             str6 = jSONObject10.optString("text");
                             try {
                                 optJSONObject = jSONObject10.optJSONObject("widget_link");
-                            } catch (Exception e23) {
-                                e = e23;
+                            } catch (Exception e22) {
+                                e = e22;
                                 str4 = null;
                             }
-                        } catch (Exception e24) {
-                            e = e24;
+                        } catch (Exception e23) {
+                            e = e23;
                             str4 = null;
                             str6 = null;
                         }
-                    } catch (Exception e25) {
-                        e = e25;
+                    } catch (Exception e24) {
+                        e = e24;
                         str4 = null;
                         str5 = null;
                         str6 = null;
@@ -1688,8 +1688,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                             str9 = optJSONObject.optString("name");
                             str7 = str5;
                             str8 = str6;
-                        } catch (Exception e26) {
-                            e = e26;
+                        } catch (Exception e25) {
+                            e = e25;
                             FileLog.e(e);
                             str7 = str5;
                             str8 = str6;
@@ -1703,12 +1703,12 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                             return;
                         }
                         if (!MessagesController.getInstance(this.M).storiesEnabled()) {
-                            new rg.y0((org.telegram.ui.ActionBar.n2) new z3(this), 14, true).show();
+                            new sg.y0((org.telegram.ui.ActionBar.m2) new o3(this), 14, true).show();
                             return;
                         }
-                        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(this.W);
-                        new HttpGetFileTask(new z(this, b2Var, str8, str10, str9), null).execute(str7);
-                        b2Var.q(250L);
+                        org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(this.W);
+                        new HttpGetFileTask(new z(this, a2Var, str8, str10, str9), null).execute(str7);
+                        a2Var.q(250L);
                         return;
                     }
                     str7 = str5;
@@ -1723,37 +1723,37 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         return;
                     }
                     if (this.k0 == null) {
-                        ei.w0 e27 = ei.w0.e(getContext(), this.M, this.U.id);
-                        this.k0 = e27;
-                        e27.f.add(sVar);
+                        fi.v0 e26 = fi.v0.e(getContext(), this.M, this.U.id);
+                        this.k0 = e26;
+                        e26.f.add(sVar);
                     }
-                    this.I0 = eaVar;
+                    this.I0 = n9Var;
                     if (this.k0.g()) {
-                        this.k0.j(new r(this, eaVar, 0));
+                        this.k0.j(new r(this, n9Var, 0));
                         return;
                     } else {
-                        this.k0.i(new q(this, eaVar, 1));
+                        this.k0.i(new q(this, n9Var, 1));
                         return;
                     }
                 case 28:
-                    ei.a1 z22 = this.c.z();
+                    fi.z0 z22 = this.c.z();
                     try {
-                        j12 = new JSONObject(str2).getLong("refresh_rate");
+                        j13 = new JSONObject(str2).getLong("refresh_rate");
                     } catch (Exception unused8) {
                     }
-                    long clamp = Utilities.clamp(j12, 1000L, 20L);
+                    long clamp = Utilities.clamp(j13, 1000L, 20L);
                     if (z22 == null || !z22.d(clamp)) {
-                        x(eaVar, "gyroscope_failed", A("UNSUPPORTED", "error"));
+                        x(n9Var, "gyroscope_failed", A("UNSUPPORTED", "error"));
                         return;
                     } else {
-                        x(eaVar, "gyroscope_started", null);
+                        x(n9Var, "gyroscope_started", null);
                         return;
                     }
                 case 29:
                     try {
                         z13 = new JSONObject(str2).optBoolean("return_back");
-                    } catch (Exception e28) {
-                        FileLog.e(e28);
+                    } catch (Exception e27) {
+                        FileLog.e(e27);
                         z13 = false;
                     }
                     this.c.y();
@@ -1772,21 +1772,21 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         if (this.E0 == null || (launchActivity = LaunchActivity.G1) == null || launchActivity.P() == null) {
                             return;
                         }
-                        n3 P = LaunchActivity.G1.P();
-                        ArrayList<m3> tabs = P.getTabs();
+                        m3 P = LaunchActivity.G1.P();
+                        ArrayList<l3> tabs = P.getTabs();
                         int i25 = 0;
                         while (true) {
                             if (i25 < tabs.size()) {
-                                m3 m3Var2 = tabs.get(i25);
-                                if (!this.E0.equals(m3Var2.a) || m3Var2.b == this.a) {
+                                l3 l3Var2 = tabs.get(i25);
+                                if (!this.E0.equals(l3Var2.a) || l3Var2.b == this.a) {
                                     i25++;
                                 } else {
-                                    m3Var = m3Var2;
+                                    l3Var = l3Var2;
                                 }
                             }
                         }
-                        if (m3Var != null) {
-                            P.e(m3Var);
+                        if (l3Var != null) {
+                            P.e(l3Var);
                             return;
                         }
                         return;
@@ -1800,13 +1800,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         String string6 = new JSONObject(str2).getString("req_id");
                         if (this.c.h() && System.currentTimeMillis() - this.P <= 10000) {
                             CharSequence text = ((ClipboardManager) getContext().getSystemService("clipboard")).getText();
-                            x(eaVar, "clipboard_text_received", new JSONObject().put("req_id", string6).put("data", text != null ? text.toString() : ""));
+                            x(n9Var, "clipboard_text_received", new JSONObject().put("req_id", string6).put("data", text != null ? text.toString() : ""));
                             return;
                         }
-                        x(eaVar, "clipboard_text_received", new JSONObject().put("req_id", string6));
+                        x(n9Var, "clipboard_text_received", new JSONObject().put("req_id", string6));
                         return;
-                    } catch (JSONException e29) {
-                        FileLog.e(e29);
+                    } catch (JSONException e28) {
+                        FileLog.e(e28);
                         return;
                     }
                 case ' ':
@@ -1820,12 +1820,12 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     }
                     return;
                 case '!':
-                    ei.a1 z23 = this.c.z();
+                    fi.z0 z23 = this.c.z();
                     if (z23 == null || !z23.g()) {
-                        x(eaVar, "gyroscope_failed", A("UNSUPPORTED", "error"));
+                        x(n9Var, "gyroscope_failed", A("UNSUPPORTED", "error"));
                         return;
                     } else {
-                        x(eaVar, "gyroscope_stopped", null);
+                        x(n9Var, "gyroscope_stopped", null);
                         return;
                     }
                 case '\"':
@@ -1835,9 +1835,9 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     if (this.n0 == null) {
                         getContext();
                         int i26 = this.M;
-                        this.n0 = new ei.t1(UserConfig.getInstance(i26).getClientUserId(), this.U.id, i26, true);
+                        this.n0 = new fi.s1(UserConfig.getInstance(i26).getClientUserId(), this.U.id, i26, true);
                     }
-                    d(eaVar, this.n0, str2, "secure_storage_cleared", "secure_storage_cleared");
+                    d(n9Var, this.n0, str2, "secure_storage_cleared", "secure_storage_cleared");
                     return;
                 case '#':
                     if (this.U == null) {
@@ -1846,31 +1846,31 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     if (this.m0 == null) {
                         getContext();
                         int i27 = this.M;
-                        this.m0 = new ei.t1(UserConfig.getInstance(i27).getClientUserId(), this.U.id, i27, false);
+                        this.m0 = new fi.s1(UserConfig.getInstance(i27).getClientUserId(), this.U.id, i27, false);
                     }
-                    d(eaVar, this.m0, str2, "device_storage_cleared", "device_storage_failed");
+                    d(n9Var, this.m0, str2, "device_storage_cleared", "device_storage_failed");
                     return;
                 case '$':
-                    ei.a1 z24 = this.c.z();
+                    fi.z0 z24 = this.c.z();
                     try {
-                        j12 = new JSONObject(str2).getLong("refresh_rate");
+                        j13 = new JSONObject(str2).getLong("refresh_rate");
                     } catch (Exception unused9) {
                     }
-                    long clamp2 = Utilities.clamp(j12, 1000L, 20L);
+                    long clamp2 = Utilities.clamp(j13, 1000L, 20L);
                     if (z24 == null || !z24.c(clamp2)) {
-                        x(eaVar, "accelerometer_failed", A("UNSUPPORTED", "error"));
+                        x(n9Var, "accelerometer_failed", A("UNSUPPORTED", "error"));
                         return;
                     } else {
-                        x(eaVar, "accelerometer_started", null);
+                        x(n9Var, "accelerometer_started", null);
                         return;
                     }
                 case '%':
-                    ei.a1 z25 = this.c.z();
+                    fi.z0 z25 = this.c.z();
                     if (z25 == null || !z25.f()) {
-                        x(eaVar, "accelerometer_failed", A("UNSUPPORTED", "error"));
+                        x(n9Var, "accelerometer_failed", A("UNSUPPORTED", "error"));
                         return;
                     } else {
-                        x(eaVar, "accelerometer_stopped", null);
+                        x(n9Var, "accelerometer_stopped", null);
                         return;
                     }
                 case '&':
@@ -1880,23 +1880,23 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     try {
                         String string7 = new JSONObject(str2).getString("id");
                         if (TextUtils.isEmpty(string7)) {
-                            x(eaVar, "prepared_message_failed", A("MESSAGE_EXPIRED", "error"));
+                            x(n9Var, "prepared_message_failed", A("MESSAGE_EXPIRED", "error"));
                             return;
                         } else {
-                            ei.p1.R(getContext(), this.M, this.U.id, string7, this.e, new s(this, 0), new org.telegram.tgnet.e(this, eaVar, botWebViewContainer$BotWebViewProxy, 4));
+                            fi.o1.R(getContext(), this.M, this.U.id, string7, this.e, new s(this, 0), new org.telegram.tgnet.e(this, n9Var, botWebViewContainer$BotWebViewProxy, 4));
                             return;
                         }
-                    } catch (Exception e30) {
-                        FileLog.e(e30);
-                        x(eaVar, "prepared_message_failed", A("MESSAGE_EXPIRED", "error"));
+                    } catch (Exception e29) {
+                        FileLog.e(e29);
+                        x(n9Var, "prepared_message_failed", A("MESSAGE_EXPIRED", "error"));
                         return;
                     }
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     try {
                         this.c.e(new JSONObject(str2).optString("data"));
                         return;
-                    } catch (JSONException e31) {
-                        FileLog.e(e31);
+                    } catch (JSONException e30) {
+                        FileLog.e(e30);
                         return;
                     }
                 case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
@@ -1907,32 +1907,32 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         return;
                     }
                     if (MediaDataController.getInstance(this.M).isShortcutAdded(this.U.id, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT)) {
-                        x(eaVar, "home_screen_added", null);
+                        x(n9Var, "home_screen_added", null);
                         return;
                     } else {
-                        MediaDataController.getInstance(this.M).installShortcut(this.U.id, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT, new r(this, eaVar, 2));
+                        MediaDataController.getInstance(this.M).installShortcut(this.U.id, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT, new r(this, n9Var, 2));
                         return;
                     }
                 case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
                     try {
                         z14 = true;
-                        try {
-                            z15 = new JSONObject(str2).optBoolean("blur", true);
-                        } catch (Exception unused10) {
-                            z15 = z14;
-                            g10 = this.c.g(z14, z15);
-                            if (g10 != null) {
-                            }
-                        }
-                    } catch (Exception unused11) {
+                    } catch (Exception unused10) {
                         z14 = true;
+                    }
+                    try {
+                        z15 = new JSONObject(str2).optBoolean("blur", true);
+                    } catch (Exception unused11) {
+                        z15 = z14;
+                        g10 = this.c.g(z14, z15);
+                        if (g10 != null) {
+                        }
                     }
                     g10 = this.c.g(z14, z15);
                     if (g10 != null) {
-                        x(eaVar, "fullscreen_changed", B("is_fullscreen", Boolean.TRUE, "blur_enabled", Boolean.valueOf(z15)));
+                        x(n9Var, "fullscreen_changed", B("is_fullscreen", Boolean.TRUE, "blur_enabled", Boolean.valueOf(z15)));
                         return;
                     } else {
-                        x(eaVar, "fullscreen_failed", A(g10, "error"));
+                        x(n9Var, "fullscreen_failed", A(g10, "error"));
                         return;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CW /* 43 */:
@@ -1945,8 +1945,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         }
                         this.c.v(this.U, jSONObject11.getString("query"), arrayList2);
                         return;
-                    } catch (JSONException e32) {
-                        FileLog.e(e32);
+                    } catch (JSONException e31) {
+                        FileLog.e(e31);
                         return;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CW /* 44 */:
@@ -1956,17 +1956,17 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     if (this.n0 == null) {
                         getContext();
                         int i29 = this.M;
-                        this.n0 = new ei.t1(UserConfig.getInstance(i29).getClientUserId(), this.U.id, i29, true);
+                        this.n0 = new fi.s1(UserConfig.getInstance(i29).getClientUserId(), this.U.id, i29, true);
                     }
-                    U(eaVar, this.n0, str2, "secure_storage_key_saved", "secure_storage_failed");
+                    U(n9Var, this.n0, str2, "secure_storage_key_saved", "secure_storage_failed");
                     return;
                 case Maneuver.TYPE_ROUNDABOUT_ENTER_CCW /* 45 */:
                     String g11 = this.c.g(false, true);
                     if (g11 == null) {
-                        x(eaVar, "fullscreen_changed", A(Boolean.FALSE, "is_fullscreen"));
+                        x(n9Var, "fullscreen_changed", A(Boolean.FALSE, "is_fullscreen"));
                         return;
                     } else {
-                        x(eaVar, "fullscreen_failed", A(g11, "error"));
+                        x(n9Var, "fullscreen_failed", A(g11, "error"));
                         return;
                     }
                 case Maneuver.TYPE_ROUNDABOUT_EXIT_CCW /* 46 */:
@@ -1984,8 +1984,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                                 }
                             });
                             return;
-                        } catch (Exception e33) {
-                            FileLog.e(e33);
+                        } catch (Exception e32) {
+                            FileLog.e(e32);
                             return;
                         }
                     }
@@ -1995,16 +1995,16 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         return;
                     }
                     this.P = 0L;
-                    org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
                     if (U2 == null || U2.getParentLayout() == null) {
                         return;
                     }
-                    d5 parentLayout2 = U2.getParentLayout();
+                    b5 parentLayout2 = U2.getParentLayout();
                     U2.presentFragment(ProfileActivity.m4(this.U.id));
                     AndroidUtilities.scrollToFragmentRow(parentLayout2, "botPermissionLocation");
-                    g0 g0Var3 = this.c;
-                    if (g0Var3 != null) {
-                        g0Var3.b();
+                    h0 h0Var3 = this.c;
+                    if (h0Var3 != null) {
+                        h0Var3.b();
                         return;
                     }
                     return;
@@ -2017,8 +2017,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                             return;
                         }
                         return;
-                    } catch (JSONException e34) {
-                        FileLog.e(e34);
+                    } catch (JSONException e33) {
+                        FileLog.e(e33);
                         return;
                     }
                 case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
@@ -2027,13 +2027,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     } catch (Exception unused12) {
                     }
                     e();
-                    ei.r rVar2 = this.j0;
+                    fi.r rVar2 = this.j0;
                     if (rVar2 == null) {
                         return;
                     }
                     boolean z27 = rVar2.f;
                     if (z27) {
-                        v(eaVar);
+                        v(n9Var);
                         return;
                     }
                     if (rVar2.e) {
@@ -2041,11 +2041,11 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                             rVar2.f = true;
                             rVar2.k();
                         }
-                        v(eaVar);
+                        v(n9Var);
                         return;
                     }
-                    final Runnable[] runnableArr = {new ii1(24, this, eaVar)};
-                    AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getContext(), e6Var);
+                    final Runnable[] runnableArr = {new t8(5, this, n9Var)};
+                    AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getContext(), c6Var);
                     if (TextUtils.isEmpty(str12)) {
                         alertDialog$Builder3.l(LocaleController.getString(R.string.BotAllowBiometryTitle));
                         i12 = 0;
@@ -2055,15 +2055,15 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         alertDialog$Builder3.l(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotAllowBiometryMessage, UserObject.getUserName(this.U))));
                         alertDialog$Builder3.g(str12);
                     }
-                    alertDialog$Builder3.k(LocaleController.getString(R.string.Allow), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.web.y
+                    alertDialog$Builder3.k(LocaleController.getString(R.string.Allow), new org.telegram.ui.ActionBar.z1(this) { // from class: org.telegram.ui.web.y
                         public final /* synthetic */ b1 b;
 
                         {
                             this.b = this;
                         }
 
-                        @Override // org.telegram.ui.ActionBar.a2
-                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i30) {
+                        @Override // org.telegram.ui.ActionBar.z1
+                        public final void g(org.telegram.ui.ActionBar.a2 a2Var2, int i30) {
                             switch (i12) {
                                 case 0:
                                     Runnable[] runnableArr2 = runnableArr;
@@ -2071,13 +2071,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                                         runnableArr2[0] = null;
                                     }
                                     b1 b1Var3 = this.b;
-                                    ei.r rVar3 = b1Var3.j0;
+                                    fi.r rVar3 = b1Var3.j0;
                                     rVar3.f = true;
                                     rVar3.k();
-                                    ei.r rVar4 = b1Var3.j0;
-                                    q qVar = new q(b1Var3, eaVar, 2);
+                                    fi.r rVar4 = b1Var3.j0;
+                                    q qVar = new q(b1Var3, n9Var, 2);
                                     rVar4.getClass();
-                                    rVar4.j(null, true, null, new ai.q0(2, rVar4, qVar));
+                                    rVar4.j(null, true, null, new bi.j0(2, rVar4, qVar));
                                     break;
                                 default:
                                     b1 b1Var4 = this.b;
@@ -2086,25 +2086,25 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                                     if (runnableArr3[0] != null) {
                                         runnableArr3[0] = null;
                                     }
-                                    ei.r rVar5 = b1Var4.j0;
+                                    fi.r rVar5 = b1Var4.j0;
                                     rVar5.f = true;
                                     rVar5.d = true;
                                     rVar5.k();
-                                    b1Var4.v(eaVar);
+                                    b1Var4.v(n9Var);
                                     break;
                             }
                         }
                     });
                     final int i30 = 1;
-                    alertDialog$Builder3.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.web.y
+                    alertDialog$Builder3.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.z1(this) { // from class: org.telegram.ui.web.y
                         public final /* synthetic */ b1 b;
 
                         {
                             this.b = this;
                         }
 
-                        @Override // org.telegram.ui.ActionBar.a2
-                        public final void f(org.telegram.ui.ActionBar.b2 b2Var2, int i302) {
+                        @Override // org.telegram.ui.ActionBar.z1
+                        public final void g(org.telegram.ui.ActionBar.a2 a2Var2, int i302) {
                             switch (i30) {
                                 case 0:
                                     Runnable[] runnableArr2 = runnableArr;
@@ -2112,13 +2112,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                                         runnableArr2[0] = null;
                                     }
                                     b1 b1Var3 = this.b;
-                                    ei.r rVar3 = b1Var3.j0;
+                                    fi.r rVar3 = b1Var3.j0;
                                     rVar3.f = true;
                                     rVar3.k();
-                                    ei.r rVar4 = b1Var3.j0;
-                                    q qVar = new q(b1Var3, eaVar, 2);
+                                    fi.r rVar4 = b1Var3.j0;
+                                    q qVar = new q(b1Var3, n9Var, 2);
                                     rVar4.getClass();
-                                    rVar4.j(null, true, null, new ai.q0(2, rVar4, qVar));
+                                    rVar4.j(null, true, null, new bi.j0(2, rVar4, qVar));
                                     break;
                                 default:
                                     b1 b1Var4 = this.b;
@@ -2127,16 +2127,16 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                                     if (runnableArr3[0] != null) {
                                         runnableArr3[0] = null;
                                     }
-                                    ei.r rVar5 = b1Var4.j0;
+                                    fi.r rVar5 = b1Var4.j0;
                                     rVar5.f = true;
                                     rVar5.d = true;
                                     rVar5.k();
-                                    b1Var4.v(eaVar);
+                                    b1Var4.v(n9Var);
                                     break;
                             }
                         }
                     });
-                    alertDialog$Builder3.j(new g5(runnableArr, 6));
+                    alertDialog$Builder3.j(new t4(runnableArr, 6));
                     alertDialog$Builder3.o();
                     return;
                 case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
@@ -2212,8 +2212,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                             }
                         }
                         return;
-                    } catch (Exception e35) {
-                        FileLog.e(e35);
+                    } catch (Exception e34) {
+                        FileLog.e(e34);
                         return;
                     }
                 case '3':
@@ -2227,26 +2227,26 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         boolean z29 = jSONObject14.optBoolean("is_progress_visible", false) && z28;
                         boolean z30 = jSONObject14.optBoolean("has_shine_effect", false) && z28;
                         try {
-                            j11 = Long.parseLong(jSONObject14.getString("icon_custom_emoji_id"));
+                            j12 = Long.parseLong(jSONObject14.getString("icon_custom_emoji_id"));
                         } catch (Throwable unused13) {
-                            j11 = 0;
+                            j12 = 0;
                         }
                         this.y = parseColor3;
                         this.E = parseColor4;
                         this.F = trim2;
                         this.G = str2;
-                        this.c.q(z28, optBoolean4, trim2, j11, parseColor3, parseColor4, z29, z30);
+                        this.c.q(z28, optBoolean4, trim2, j12, parseColor3, parseColor4, z29, z30);
                         return;
-                    } catch (Exception e36) {
-                        FileLog.e(e36);
+                    } catch (Exception e35) {
+                        FileLog.e(e35);
                         return;
                     }
                 case '4':
                     try {
                         this.c.x(new JSONObject(str2).optBoolean("allow_vertical_swipe"));
                         return;
-                    } catch (JSONException e37) {
-                        FileLog.e(e37);
+                    } catch (JSONException e36) {
+                        FileLog.e(e36);
                         return;
                     }
                 case '5':
@@ -2258,18 +2258,18 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                             return;
                         }
                         return;
-                    } catch (JSONException e38) {
-                        FileLog.e(e38);
+                    } catch (JSONException e37) {
+                        FileLog.e(e37);
                         return;
                     }
                 case '6':
-                    x(eaVar, "home_screen_checked", A((this.U == null || Build.VERSION.SDK_INT < 26) ? "unsupported" : MediaDataController.getInstance(this.M).isShortcutAdded(this.U.id, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT) ? "added" : "missed", "status"));
+                    x(n9Var, "home_screen_checked", A((this.U == null || Build.VERSION.SDK_INT < 26) ? "unsupported" : MediaDataController.getInstance(this.M).isShortcutAdded(this.U.id, MediaDataController.SHORTCUT_TYPE_ATTACHED_BOT) ? "added" : "missed", "status"));
                     return;
                 case '7':
                     try {
                         str11 = new JSONObject(str2).optString("req_id");
-                    } catch (Exception e39) {
-                        FileLog.e(e39);
+                    } catch (Exception e38) {
+                        FileLog.e(e38);
                     }
                     if (str11 == null) {
                         return;
@@ -2277,23 +2277,23 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     TL_bots.getRequestedWebViewButton getrequestedwebviewbutton = new TL_bots.getRequestedWebViewButton();
                     getrequestedwebviewbutton.bot = MessagesController.getInstance(this.M).getInputUser(this.U);
                     getrequestedwebviewbutton.webapp_req_id = str11;
-                    ConnectionsManager.getInstance(this.M).sendRequestTyped(getrequestedwebviewbutton, new a3.b(1), new u(this, eaVar, str11, 0));
+                    ConnectionsManager.getInstance(this.M).sendRequestTyped(getrequestedwebviewbutton, new a3.b(1), new u(this, n9Var, str11, 0));
                     return;
                 case '8':
-                    ei.a1 z31 = this.c.z();
+                    fi.z0 z31 = this.c.z();
                     try {
                         JSONObject jSONObject15 = new JSONObject(str2);
-                        j12 = jSONObject15.getLong("refresh_rate");
+                        j13 = jSONObject15.getLong("refresh_rate");
                         z16 = jSONObject15.optBoolean("need_absolute", false);
                     } catch (Exception unused14) {
                         z16 = false;
                     }
-                    long clamp3 = Utilities.clamp(j12, 1000L, 20L);
+                    long clamp3 = Utilities.clamp(j13, 1000L, 20L);
                     if (z31 == null || !z31.e(clamp3, z16)) {
-                        x(eaVar, "device_orientation_failed", A("UNSUPPORTED", "error"));
+                        x(n9Var, "device_orientation_failed", A("UNSUPPORTED", "error"));
                         return;
                     } else {
-                        x(eaVar, "device_orientation_started", null);
+                        x(n9Var, "device_orientation_started", null);
                         return;
                     }
                 case '9':
@@ -2305,26 +2305,26 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         } catch (Exception unused15) {
                         }
                         e();
-                        ei.r rVar3 = this.j0;
+                        fi.r rVar3 = this.j0;
                         if (rVar3 == null) {
                             return;
                         }
                         if (rVar3.e) {
-                            rVar3.l(str13, string8, new ai.d5(this, string8, eaVar, 9));
+                            rVar3.l(str13, string8, new q4(this, string8, n9Var, 9));
                             return;
                         }
                         try {
                             JSONObject jSONObject17 = new JSONObject();
                             jSONObject17.put("status", "failed");
-                            x(eaVar, "biometry_token_updated", jSONObject17);
+                            x(n9Var, "biometry_token_updated", jSONObject17);
                             return;
-                        } catch (Exception e40) {
-                            FileLog.e(e40);
+                        } catch (Exception e39) {
+                            FileLog.e(e39);
                             return;
                         }
-                    } catch (Exception e41) {
-                        FileLog.e(e41);
-                        if (e41 instanceof JSONException) {
+                    } catch (Exception e40) {
+                        FileLog.e(e40);
+                        if (e40 instanceof JSONException) {
                             i("JSON Parse error");
                             return;
                         } else {
@@ -2335,15 +2335,15 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                 case ':':
                     try {
                         String optString10 = new JSONObject(str2).optString("color", null);
-                        int w02 = TextUtils.isEmpty(optString10) ? i6.w0(i6.a7, e6Var) : Color.parseColor(optString10);
-                        g0 g0Var4 = this.c;
-                        if (g0Var4 != null) {
-                            g0Var4.r(w02);
+                        int w02 = TextUtils.isEmpty(optString10) ? g6.w0(g6.a7, c6Var) : Color.parseColor(optString10);
+                        h0 h0Var4 = this.c;
+                        if (h0Var4 != null) {
+                            h0Var4.r(w02);
                             return;
                         }
                         return;
-                    } catch (Exception e42) {
-                        FileLog.e(e42);
+                    } catch (Exception e41) {
+                        FileLog.e(e41);
                         return;
                     }
                 case ';':
@@ -2362,24 +2362,24 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         int hashCode3 = optString12.hashCode();
                         if (hashCode3 != -1265068311) {
                             if (hashCode3 == -210781868 && optString12.equals("secondary_bg_color")) {
-                                i10 = i6.a7;
+                                i10 = g6.a7;
                                 i11 = i10;
                             }
                             i11 = -1;
                         } else {
                             if (optString12.equals("bg_color")) {
-                                i10 = i6.d6;
+                                i10 = g6.d6;
                                 i11 = i10;
                             }
                             i11 = -1;
                         }
                         if (i11 >= 0) {
-                            this.c.u(i11, i6.w0(i11, e6Var), false);
+                            this.c.u(i11, g6.w0(i11, c6Var), false);
                             return;
                         }
                         return;
-                    } catch (Exception e43) {
-                        FileLog.e(e43);
+                    } catch (Exception e42) {
+                        FileLog.e(e42);
                         return;
                     }
                 case '<':
@@ -2389,8 +2389,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     try {
                         this.c.m(Color.parseColor(new JSONObject(str2).optString("color", "#ffffff")) | (-16777216));
                         return;
-                    } catch (Exception e44) {
-                        FileLog.e(e44);
+                    } catch (Exception e43) {
+                        FileLog.e(e43);
                         return;
                     }
                 case '>':
@@ -2399,16 +2399,16 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                         y0 y0Var3 = this.a;
                         TL_bots.canSendMessage cansendmessage = new TL_bots.canSendMessage();
                         cansendmessage.bot = MessagesController.getInstance(this.M).getInputUser(this.U);
-                        ConnectionsManager.getInstance(this.M).sendRequest(cansendmessage, new ab(this, i31, y0Var3, eaVar, 8));
+                        ConnectionsManager.getInstance(this.M).sendRequest(cansendmessage, new ja(this, i31, y0Var3, n9Var, 8));
                         return;
                     }
                     try {
                         JSONObject jSONObject19 = new JSONObject();
                         jSONObject19.put("status", "cancelled");
-                        x(eaVar, "write_access_requested", jSONObject19);
+                        x(n9Var, "write_access_requested", jSONObject19);
                         return;
-                    } catch (Exception e45) {
-                        FileLog.e(e45);
+                    } catch (Exception e44) {
+                        FileLog.e(e44);
                         return;
                     }
                 case '?':
@@ -2432,8 +2432,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                 return;
             }
             this.b0 = null;
-        } catch (JSONException e7) {
-            FileLog.e(e7);
+        } catch (JSONException e) {
+            FileLog.e(e);
         }
     }
 
@@ -2441,10 +2441,10 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         if (System.currentTimeMillis() - this.P <= 10000 || !z11) {
             this.P = 0L;
             boolean[] zArr = {false};
-            if (of.f.f(uri, false, zArr) && !zArr[0] && this.c != null) {
+            if (pf.d.f(uri, false, zArr) && !zArr[0] && this.c != null) {
                 setKeyboardFocusable(false);
             }
-            of.f.r(getContext(), uri, true, z10, false, null, str, false, true, z12);
+            pf.d.r(getContext(), uri, true, z10, false, null, str, false, true, z12);
         }
     }
 
@@ -2537,14 +2537,14 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             if (this.L != null) {
                 E(this.r0, f(), "web_app_setup_secondary_button", this.L);
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void R(ea eaVar, ei.t1 t1Var, String str) {
-        if (t1Var == null || this.U == null) {
+    public final void R(n9 n9Var, fi.s1 s1Var, String str) {
+        if (s1Var == null || this.U == null) {
             return;
         }
         try {
@@ -2553,86 +2553,86 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             try {
                 String optString = jSONObject.optString("key");
                 if (optString == null) {
-                    x(eaVar, "secure_storage_failed", B("req_id", string, "error", "KEY_INVALID"));
+                    x(n9Var, "secure_storage_failed", B("req_id", string, "error", "KEY_INVALID"));
                     return;
                 }
                 try {
-                    ArrayList h = t1Var.h(optString);
+                    ArrayList h = s1Var.h(optString);
                     if (h.isEmpty()) {
-                        x(eaVar, "secure_storage_failed", B("req_id", string, "error", "RESTORE_UNAVAILABLE"));
+                        x(n9Var, "secure_storage_failed", B("req_id", string, "error", "RESTORE_UNAVAILABLE"));
                         return;
                     }
                     Context context = getContext();
-                    z zVar = new z(this, eaVar, string, t1Var, optString);
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                    e6 resourceProvider = U != null ? U.getResourceProvider() : null;
+                    z zVar = new z(this, n9Var, string, s1Var, optString);
+                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                    c6 resourceProvider = U != null ? U.getResourceProvider() : null;
                     int i10 = 1;
                     String[] strArr = new String[1];
                     boolean[] zArr = new boolean[1];
-                    org.telegram.ui.ActionBar.f3 i11 = bi.i(1, context, resourceProvider, false);
-                    LinearLayout e7 = bi.e(context, 1);
-                    y9 y9Var = new y9(context);
-                    TLRPC.User user = MessagesController.getInstance(t1Var.a).getUser(Long.valueOf(t1Var.b));
-                    j9 j9Var = new j9((e6) null);
-                    j9Var.r(user);
-                    y9Var.e(user, j9Var);
-                    e7.addView(y9Var, x5.t(80, 80, 49, 0, 21, 0, 13));
-                    int i12 = i6.G6;
-                    TextView b10 = b6.b(context, 20.0f, i12, true, null);
-                    bi.m(R.string.BotRestoreStorageTitle, b10, 17);
-                    e7.addView(b10, x5.t(-1, -2, 7, 32, 0, 32, 10));
-                    TextView b11 = b6.b(context, 14.0f, i12, false, null);
+                    e3 i11 = yh.i(1, context, resourceProvider, false);
+                    LinearLayout e = yh.e(context, 1);
+                    org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
+                    TLRPC.User user = MessagesController.getInstance(s1Var.a).getUser(Long.valueOf(s1Var.b));
+                    k9 k9Var = new k9((c6) null);
+                    k9Var.r(user);
+                    z9Var.e(user, k9Var);
+                    e.addView(z9Var, a6.t(80, 80, 49, 0, 21, 0, 13));
+                    int i12 = g6.G6;
+                    TextView b10 = e6.b(context, 20.0f, i12, true, null);
+                    yh.l(R.string.BotRestoreStorageTitle, b10, 17);
+                    e.addView(b10, a6.t(-1, -2, 7, 32, 0, 32, 10));
+                    TextView b11 = e6.b(context, 14.0f, i12, false, null);
                     b11.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotRestoreStorageText, DialogObject.getDialogTitle(user))));
                     b11.setGravity(17);
-                    e7.addView(b11, x5.t(-1, -2, 7, 32, 0, 32, 19));
+                    e.addView(b11, a6.t(-1, -2, 7, 32, 0, 32, 19));
                     e9 e9Var = new e9(context, resourceProvider);
-                    e9Var.setBackground(new fr(new ColorDrawable(i6.w0(i6.a7, resourceProvider)), i6.V0(context, R.drawable.greydivider, i6.w0(i6.b7, resourceProvider))));
+                    e9Var.setBackground(new cr(new ColorDrawable(g6.w0(g6.a7, resourceProvider)), g6.V0(context, R.drawable.greydivider, g6.w0(g6.b7, resourceProvider))));
                     e9Var.setFixedSize(12);
-                    e7.addView(e9Var, x5.t(-1, 12, 7, 0, 0, 0, 0));
+                    e.addView(e9Var, a6.t(-1, 12, 7, 0, 0, 0, 0));
                     m4 m4Var = new m4(context, resourceProvider);
                     m4Var.setText(LocaleController.getString(R.string.BotRestoreStorageHeader));
-                    e7.addView(m4Var, x5.t(-1, -2, 7, 0, 0, 0, 0));
-                    ci.d dVar = new ci.d(context, resourceProvider, true);
+                    e.addView(m4Var, a6.t(-1, -2, 7, 0, 0, 0, 0));
+                    di.d dVar = new di.d(context, resourceProvider, true);
                     boolean z10 = false;
                     ArrayList arrayList = new ArrayList();
                     int i13 = 0;
                     while (i13 < h.size()) {
-                        ei.s1 s1Var = (ei.s1) h.get(i13);
-                        ei.r1 r1Var = new ei.r1(s1Var, i13 < h.size() - i10 ? i10 : z10, context);
-                        r1Var.setBackground(i6.g0(i6.w0(i6.i6, resourceProvider), 2, -1));
-                        LinearLayout linearLayout = e7;
+                        fi.r1 r1Var = (fi.r1) h.get(i13);
+                        fi.q1 q1Var = new fi.q1(r1Var, i13 < h.size() - i10 ? i10 : z10, context);
+                        q1Var.setBackground(g6.g0(g6.w0(g6.i6, resourceProvider), 2, -1));
+                        LinearLayout linearLayout = e;
                         String[] strArr2 = strArr;
-                        r1Var.setOnClickListener(new p5(strArr2, s1Var, arrayList, dVar, 2));
-                        linearLayout.addView(r1Var, x5.n(-1, 56));
-                        arrayList.add(r1Var);
-                        e7 = linearLayout;
+                        q1Var.setOnClickListener(new bi.b5(strArr2, r1Var, arrayList, dVar, 2));
+                        linearLayout.addView(q1Var, a6.n(-1, 56));
+                        arrayList.add(q1Var);
+                        e = linearLayout;
                         strArr = strArr2;
                         i10 = 1;
                         i13++;
                         z10 = false;
                     }
                     String[] strArr3 = strArr;
-                    LinearLayout linearLayout2 = e7;
+                    LinearLayout linearLayout2 = e;
                     dVar.g(LocaleController.getString(R.string.BotRestoreStorageButton), false, true);
                     dVar.setEnabled(strArr3[0] != null);
-                    linearLayout2.addView(dVar, x5.t(-1, 48, 7, 8, 8, 8, 4));
+                    linearLayout2.addView(dVar, a6.t(-1, 48, 7, 8, 8, 8, 4));
                     i11.customView = linearLayout2;
-                    i11.fixNavigationBar(i6.w0(i6.h5, resourceProvider));
-                    dVar.setOnClickListener(new p5(zArr, zVar, strArr3, i11, 3));
-                    i11.setOnDismissListener(new ei.e0(1, zArr, zVar));
+                    i11.fixNavigationBar(g6.w0(g6.h5, resourceProvider));
+                    dVar.setOnClickListener(new bi.b5(zArr, zVar, strArr3, i11, 3));
+                    i11.setOnDismissListener(new fi.d0(1, zArr, zVar));
                     i11.show();
-                } catch (Exception e10) {
-                    x(eaVar, "secure_storage_failed", B("req_id", string, "error", e10.getMessage()));
+                } catch (Exception e7) {
+                    x(n9Var, "secure_storage_failed", B("req_id", string, "error", e7.getMessage()));
                 }
             } catch (Exception unused) {
-                x(eaVar, "secure_storage_failed", B("req_id", string, "error", "KEY_INVALID"));
+                x(n9Var, "secure_storage_failed", B("req_id", string, "error", "KEY_INVALID"));
             }
-        } catch (Exception e11) {
-            FileLog.e(e11);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             if (TextUtils.isEmpty("")) {
                 return;
             }
-            x(eaVar, "secure_storage_failed", B("req_id", "", "error", "UNKNOWN_ERROR"));
+            x(n9Var, "secure_storage_failed", B("req_id", "", "error", "UNKNOWN_ERROR"));
         }
     }
 
@@ -2652,20 +2652,20 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             g("setPageLoaded: already loaded");
             return;
         }
-        z5 z5Var = this.s;
-        if (!z10 || y0Var3 == null || z5Var == null) {
+        k5 k5Var = this.s;
+        if (!z10 || y0Var3 == null || k5Var == null) {
             if (y0Var3 != null) {
                 y0Var3.setAlpha(1.0f);
             }
-            if (z5Var != null) {
-                z5Var.setAlpha(0.0f);
-                z5Var.setVisibility(8);
+            if (k5Var != null) {
+                k5Var.setAlpha(0.0f);
+                k5Var.setVisibility(8);
             }
         } else {
             AnimatorSet animatorSet = new AnimatorSet();
             Property property = View.ALPHA;
-            animatorSet.playTogether(ObjectAnimator.ofFloat(this.a, (Property<y0, Float>) property, 1.0f), ObjectAnimator.ofFloat(z5Var, (Property<z5, Float>) property, 0.0f));
-            animatorSet.addListener(new x4(this, 6));
+            animatorSet.playTogether(ObjectAnimator.ofFloat(this.a, (Property<y0, Float>) property, 1.0f), ObjectAnimator.ofFloat(k5Var, (Property<k5, Float>) property, 0.0f));
+            animatorSet.addListener(new fi1(this, 9));
             animatorSet.start();
         }
         this.b = str;
@@ -2674,8 +2674,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         this.c.getClass();
     }
 
-    public final void U(ea eaVar, ei.t1 t1Var, String str, String str2, String str3) {
-        if (t1Var == null || this.U == null) {
+    public final void U(n9 n9Var, fi.s1 s1Var, String str, String str2, String str3) {
+        if (s1Var == null || this.U == null) {
             return;
         }
         try {
@@ -2684,28 +2684,28 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             try {
                 String optString = jSONObject.optString("key");
                 if (optString == null) {
-                    x(eaVar, str3, B("req_id", string, "error", "KEY_INVALID"));
+                    x(n9Var, str3, B("req_id", string, "error", "KEY_INVALID"));
                     return;
                 }
                 try {
                     try {
-                        t1Var.n(optString, jSONObject.optString("value"));
-                        x(eaVar, str2, A(string, "req_id"));
-                    } catch (RuntimeException e7) {
-                        x(eaVar, str3, B("req_id", string, "error", e7.getMessage()));
+                        s1Var.n(optString, jSONObject.optString("value"));
+                        x(n9Var, str2, A(string, "req_id"));
+                    } catch (RuntimeException e) {
+                        x(n9Var, str3, B("req_id", string, "error", e.getMessage()));
                     }
                 } catch (Exception unused) {
-                    x(eaVar, str3, B("req_id", string, "error", "VALUE_INVALID"));
+                    x(n9Var, str3, B("req_id", string, "error", "VALUE_INVALID"));
                 }
             } catch (Exception unused2) {
-                x(eaVar, str3, B("req_id", string, "error", "KEY_INVALID"));
+                x(n9Var, str3, B("req_id", string, "error", "KEY_INVALID"));
             }
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             if (TextUtils.isEmpty("")) {
                 return;
             }
-            x(eaVar, str3, B("req_id", "", "error", "UNKNOWN_ERROR"));
+            x(n9Var, str3, B("req_id", "", "error", "UNKNOWN_ERROR"));
         }
     }
 
@@ -2715,17 +2715,17 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             return;
         }
         y0Var.removeJavascriptInterface("TelegramWebviewProxy");
-        if (!com.google.android.gms.internal.cast.o.a("WEB_MESSAGE_LISTENER")) {
+        if (!a.a.a("WEB_MESSAGE_LISTENER")) {
             g("Bot WebMessageListener is unsupported; native bridge disabled");
             return;
         }
         Set singleton = Collections.singleton("*");
         y0 y0Var2 = this.a;
         if (!y0Var2.R) {
-            a5.b.a(y0Var2, "TelegramWebviewProxyMessage", singleton, new m4.w(y0Var2, 14));
+            a5.b.a(y0Var2, "TelegramWebviewProxyMessage", singleton, new m5(y0Var2, 18));
             this.a.R = true;
         }
-        if (com.google.android.gms.internal.cast.o.a("DOCUMENT_START_SCRIPT")) {
+        if (a.a.a("DOCUMENT_START_SCRIPT")) {
             y0 y0Var3 = this.a;
             if (y0Var3.S == null) {
                 boolean z10 = a5.b.a;
@@ -2733,7 +2733,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
                 }
                 b5.o c10 = a5.b.c(y0Var3);
-                y0Var3.S = new a4.l((ScriptHandlerBoundaryInterface) te.b.a(ScriptHandlerBoundaryInterface.class, c10.a.addDocumentStartJavaScript("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};", (String[]) singleton.toArray(new String[0]))), 3);
+                y0Var3.S = new a6.i((ScriptHandlerBoundaryInterface) androidx.activity.result.c.a(ScriptHandlerBoundaryInterface.class, c10.a.addDocumentStartJavaScript("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};", (String[]) singleton.toArray(new String[0]))), 6);
             }
         }
     }
@@ -2752,23 +2752,23 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         }
         try {
             WebView.setWebContentsDebuggingEnabled(SharedConfig.debugWebView && !r());
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         if (y0Var == null) {
             Context context = getContext();
             boolean z10 = this.o0;
-            long j3 = 0;
+            long j10 = 0;
             if (z10 && (user = this.U) != null) {
-                j3 = user.id;
+                j10 = user.id;
             }
-            y0Var2 = new y0(context, z10, j3);
+            y0Var2 = new y0(context, z10, j10);
         } else {
             y0Var2 = y0Var;
         }
         this.a = y0Var2;
         if (this.o0) {
-            y0Var2.setBackgroundColor(j(i6.d6));
+            y0Var2.setBackgroundColor(j(g6.d6));
         } else {
             CookieManager cookieManager = CookieManager.getInstance();
             cookieManager.setAcceptCookie(true);
@@ -2845,8 +2845,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                 replaceAll = sb3.toString();
             }
             settings.setUserAgentString(replaceAll);
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         settings.setTextSize(WebSettings.TextSize.NORMAL);
         File file = new File(ApplicationLoader.getFilesDirFixed(), "webview_database");
@@ -2889,14 +2889,14 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         P0 = false;
     }
 
-    public final void X(int i10, org.telegram.ui.ActionBar.b2 b2Var, Runnable runnable) {
-        if (b2Var == null || m(i10)) {
+    public final void X(int i10, org.telegram.ui.ActionBar.a2 a2Var, Runnable runnable) {
+        if (a2Var == null || m(i10)) {
             return;
         }
-        b2Var.setOnDismissListener(new ei.e0(14, this, runnable));
-        this.c0 = b2Var;
-        b2Var.h0 = false;
-        b2Var.show();
+        a2Var.setOnDismissListener(new fi.d0(14, this, runnable));
+        this.c0 = a2Var;
+        a2Var.h0 = false;
+        a2Var.show();
         if (this.K0 != i10) {
             this.K0 = i10;
             this.L0 = 0;
@@ -2930,49 +2930,49 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         }
     }
 
-    public final void d(ea eaVar, ei.t1 t1Var, String str, String str2, String str3) {
-        if (t1Var == null || this.U == null) {
+    public final void d(n9 n9Var, fi.s1 s1Var, String str, String str2, String str3) {
+        if (s1Var == null || this.U == null) {
             return;
         }
         try {
             String string = new JSONObject(str).getString("req_id");
             try {
-                t1Var.m(new JSONObject());
-                x(eaVar, str2, A(string, "req_id"));
-            } catch (RuntimeException e7) {
-                x(eaVar, str3, B("req_id", string, "error", e7.getMessage()));
+                s1Var.m(new JSONObject());
+                x(n9Var, str2, A(string, "req_id"));
+            } catch (RuntimeException e) {
+                x(n9Var, str3, B("req_id", string, "error", e.getMessage()));
             }
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             if (TextUtils.isEmpty("")) {
                 return;
             }
-            x(eaVar, str3, B("req_id", "", "error", "UNKNOWN_ERROR"));
+            x(n9Var, str3, B("req_id", "", "error", "UNKNOWN_ERROR"));
         }
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        og0 og0Var;
+        v70 v70Var;
         Uri[] uriArr;
         if (i10 == NotificationCenter.didSetNewTheme) {
             y0 y0Var = this.a;
             if (y0Var != null) {
-                y0Var.setBackgroundColor(j(i6.d6));
+                y0Var.setBackgroundColor(j(g6.d6));
             }
             if (!this.q0) {
-                int i12 = i6.Ki;
-                int j3 = j(i12);
-                this.p0 = j3;
-                PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(j3, PorterDuff.Mode.SRC_IN);
-                z5 z5Var = this.s;
-                z5Var.setColorFilter(porterDuffColorFilter);
+                int i12 = g6.Ki;
+                int j10 = j(i12);
+                this.p0 = j10;
+                PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(j10, PorterDuff.Mode.SRC_IN);
+                k5 k5Var = this.s;
+                k5Var.setColorFilter(porterDuffColorFilter);
                 SvgHelper.SvgDrawable svgDrawable = this.r;
                 if (svgDrawable != null) {
                     svgDrawable.setColor(this.p0);
                     this.r.setupGradient(i12, this.e, 1.0f, false);
                 }
-                z5Var.invalidate();
+                k5Var.invalidate();
             }
             z();
             return;
@@ -2980,10 +2980,10 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         if (i10 != NotificationCenter.onActivityResultReceived) {
             if (i10 == NotificationCenter.onRequestPermissionResultReceived) {
                 int intValue = ((Integer) objArr[0]).intValue();
-                if (intValue != 4000 || (og0Var = this.V) == null) {
+                if (intValue != 4000 || (v70Var = this.V) == null) {
                     return;
                 }
-                og0Var.run();
+                v70Var.run();
                 this.V = null;
                 return;
             }
@@ -3014,13 +3014,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     }
 
     @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
         if (view == this.s) {
             if (this.v) {
                 canvas.save();
                 canvas.translate(0.0f, (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - ((View) getParent()).getTranslationY()) / 2.0f);
             }
-            boolean drawChild = super.drawChild(canvas, view, j3);
+            boolean drawChild = super.drawChild(canvas, view, j10);
             if (this.v) {
                 canvas.restore();
             }
@@ -3035,7 +3035,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         if (view == this.f) {
             canvas.save();
             canvas.translate(0.0f, (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - ((View) getParent()).getTranslationY()) / 2.0f);
-            boolean drawChild2 = super.drawChild(canvas, view, j3);
+            boolean drawChild2 = super.drawChild(canvas, view, j10);
             canvas.restore();
             return drawChild2;
         }
@@ -3047,33 +3047,33 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                 return true;
             }
         }
-        return super.drawChild(canvas, view, j3);
+        return super.drawChild(canvas, view, j10);
     }
 
     public final void e() {
         if (this.U == null) {
             return;
         }
-        ei.r rVar = this.j0;
+        fi.r rVar = this.j0;
         if (rVar == null) {
-            this.j0 = ei.r.c(getContext(), this.M, this.U.id);
+            this.j0 = fi.r.c(getContext(), this.M, this.U.id);
         } else {
             rVar.h();
         }
     }
 
-    public final ea f() {
+    public final n9 f() {
         y0 y0Var = this.a;
-        long j3 = this.s0;
+        long j10 = this.s0;
         boolean z10 = this.t0;
         String str = this.F0;
-        ea eaVar = new ea();
-        eaVar.c = this;
-        eaVar.d = y0Var;
-        eaVar.a = j3;
-        eaVar.b = z10;
-        eaVar.e = str;
-        return eaVar;
+        n9 n9Var = new n9();
+        n9Var.c = this;
+        n9Var.d = y0Var;
+        n9Var.a = j10;
+        n9Var.b = z10;
+        n9Var.e = str;
+        return n9Var;
     }
 
     public final void g(String str) {
@@ -3085,12 +3085,12 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public int getMinHeight() {
-        if (!(getParent() instanceof o4)) {
+        if (!(getParent() instanceof p4)) {
             return 0;
         }
-        o4 o4Var = (o4) getParent();
-        if (o4Var.J) {
-            return (int) ((o4Var.getMeasuredHeight() - o4Var.getOffsetY()) + this.z0);
+        p4 p4Var = (p4) getParent();
+        if (p4Var.J) {
+            return (int) ((p4Var.getMeasuredHeight() - p4Var.getOffsetY()) + this.z0);
         }
         return 0;
     }
@@ -3140,9 +3140,9 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             if (this.n0 != null) {
                 this.n0 = null;
             }
-            ei.w0 w0Var = this.k0;
-            if (w0Var != null) {
-                w0Var.f.remove(this.J0);
+            fi.v0 v0Var = this.k0;
+            if (v0Var != null) {
+                v0Var.f.remove(this.J0);
                 this.k0 = null;
                 this.I0 = null;
             }
@@ -3150,18 +3150,18 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public final void i(String str) {
-        new ad(this, this.e).Q(R.raw.error, 36, str).j();
+        new zc(this, this.e).Q(R.raw.error, 36, str).j();
     }
 
     public final int j(int i10) {
-        e6 e6Var = this.e;
-        return e6Var != null ? e6Var.x0(i10) : i6.x0(null, i10, false);
+        c6 c6Var = this.e;
+        return c6Var != null ? c6Var.F0(i10) : g6.x0(null, i10, false);
     }
 
-    public final void l(ea eaVar, ei.t1 t1Var, String str, String str2, String str3) {
+    public final void l(n9 n9Var, fi.s1 s1Var, String str, String str2, String str3) {
         Object obj;
         JSONObject jSONObject;
-        if (t1Var == null || this.U == null) {
+        if (s1Var == null || this.U == null) {
             return;
         }
         try {
@@ -3170,13 +3170,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             try {
                 String optString = jSONObject2.optString("key");
                 if (optString == null) {
-                    x(eaVar, str3, B("req_id", string, "error", "KEY_INVALID"));
+                    x(n9Var, str3, B("req_id", string, "error", "KEY_INVALID"));
                     return;
                 }
                 try {
-                    Pair f7 = t1Var.f(optString);
-                    if (!t1Var.d || (obj = f7.first) != null) {
-                        x(eaVar, str2, B("req_id", string, "value", f7.first));
+                    Pair f7 = s1Var.f(optString);
+                    if (!s1Var.d || (obj = f7.first) != null) {
+                        x(n9Var, str2, B("req_id", string, "value", f7.first));
                         return;
                     }
                     Object obj2 = f7.second;
@@ -3188,19 +3188,19 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                     } catch (Exception unused) {
                         jSONObject = null;
                     }
-                    x(eaVar, str2, jSONObject);
-                } catch (RuntimeException e7) {
-                    x(eaVar, str3, B("req_id", string, "error", e7.getMessage()));
+                    x(n9Var, str2, jSONObject);
+                } catch (RuntimeException e) {
+                    x(n9Var, str3, B("req_id", string, "error", e.getMessage()));
                 }
             } catch (Exception unused2) {
-                x(eaVar, str3, B("req_id", string, "error", "KEY_INVALID"));
+                x(n9Var, str3, B("req_id", string, "error", "KEY_INVALID"));
             }
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             if (TextUtils.isEmpty("")) {
                 return;
             }
-            x(eaVar, str3, B("req_id", "", "error", "UNKNOWN_ERROR"));
+            x(n9Var, str3, B("req_id", "", "error", "UNKNOWN_ERROR"));
         }
     }
 
@@ -3219,12 +3219,12 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
     public final void n(boolean z10, boolean z11) {
         boolean z12;
         invalidate();
-        if ((this.N || z11) && (z12 = this.o0) && (getParent() instanceof o4)) {
-            o4 o4Var = (o4) getParent();
+        if ((this.N || z11) && (z12 = this.o0) && (getParent() instanceof p4)) {
+            p4 p4Var = (p4) getParent();
             if (z10) {
-                this.O = o4Var.getSwipeOffsetY() == o4Var.getTopActionBarOffsetY() + (-o4Var.getOffsetY());
+                this.O = p4Var.getSwipeOffsetY() == p4Var.getTopActionBarOffsetY() + (-p4Var.getOffsetY());
             }
-            int max = Math.max(getMinHeight(), (int) (o4Var.getTopActionBarOffsetY() + ((o4Var.getMeasuredHeight() - o4Var.getOffsetY()) - o4Var.getSwipeOffsetY()) + this.z0));
+            int max = Math.max(getMinHeight(), (int) (p4Var.getTopActionBarOffsetY() + ((p4Var.getMeasuredHeight() - p4Var.getOffsetY()) - p4Var.getSwipeOffsetY()) + this.z0));
             if (!z11 && max == this.w0 && this.x0 == z10 && this.y0 == this.O) {
                 return;
             }
@@ -3233,20 +3233,20 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             this.y0 = this.O;
             String str = "{height:" + (max / AndroidUtilities.density) + ",is_state_stable:" + z10 + ",is_expanded:" + this.O + "}";
             if (!z12 || q()) {
-                NotificationCenter.getInstance(this.M).doOnIdle(new x(this, a1.g.q("window.Telegram.WebView.receiveEvent('viewport_changed', ", str, ");"), 0));
+                NotificationCenter.getInstance(this.M).doOnIdle(new x(this, a1.g.p("window.Telegram.WebView.receiveEvent('viewport_changed', ", str, ");"), 0));
             } else {
                 g("notifyEvent viewport_changed dropped for untrusted document");
             }
         }
     }
 
-    public final boolean o(ea eaVar) {
+    public final boolean o(n9 n9Var) {
         boolean z10;
-        if (eaVar == null) {
+        if (n9Var == null) {
             return false;
         }
-        String str = (String) eaVar.e;
-        if (((b1) eaVar.c) != this || ((y0) eaVar.d) != this.a || eaVar.a != this.s0 || (z10 = eaVar.b) != this.t0) {
+        String str = (String) n9Var.e;
+        if (((b1) n9Var.c) != this || ((y0) n9Var.d) != this.a || n9Var.a != this.s0 || (z10 = n9Var.b) != this.t0) {
             return false;
         }
         if (z10) {
@@ -3262,7 +3262,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewTheme);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.onActivityResultReceived);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.onRequestPermissionResultReceived);
-        tc.a(this, new ai.x4(this, 9));
+        sc.a(this, new ah.m0(this, 10));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -3272,7 +3272,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.didSetNewTheme);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onActivityResultReceived);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onRequestPermissionResultReceived);
-        tc.h(this);
+        sc.h(this);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -3308,18 +3308,18 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         return this.O0 != null;
     }
 
-    public final void s(int i10, long j3) {
+    public final void s(int i10, long j10) {
         TLRPC.TL_attachMenuBot tL_attachMenuBot;
         TL_bots.BotInfo botInfo;
         TL_bots.botAppSettings botappsettings;
-        TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
-        TLRPC.UserFull userFull = MessagesController.getInstance(i10).getUserFull(j3);
+        TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
+        TLRPC.UserFull userFull = MessagesController.getInstance(i10).getUserFull(j10);
         String publicUsername = UserObject.getPublicUsername(user);
-        z5 z5Var = this.s;
+        k5 k5Var = this.s;
         if (publicUsername != null && publicUsername.equals("DurgerKingBot")) {
-            z5Var.setVisibility(0);
-            z5Var.setAlpha(1.0f);
-            z5Var.f(null, null, SvgHelper.getDrawable(R.raw.durgerking_placeholder, Integer.valueOf(j(i6.a7))));
+            k5Var.setVisibility(0);
+            k5Var.setAlpha(1.0f);
+            k5Var.f(null, null, SvgHelper.getDrawable(R.raw.durgerking_placeholder, Integer.valueOf(j(g6.a7))));
             setupFlickerParams(false);
             return;
         }
@@ -3334,7 +3334,7 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
             TLRPC.TL_attachMenuBot tL_attachMenuBot2 = arrayList.get(i11);
             i11++;
             tL_attachMenuBot = tL_attachMenuBot2;
-            if (tL_attachMenuBot.bot_id == j3) {
+            if (tL_attachMenuBot.bot_id == j10) {
                 break;
             }
         }
@@ -3347,25 +3347,25 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
                 z10 = false;
             }
             if (placeholderStaticAttachMenuBotIcon != null) {
-                z5Var.setVisibility(0);
-                z5Var.setAlpha(1.0f);
-                z5Var.h(ImageLocation.getForDocument(placeholderStaticAttachMenuBotIcon.icon), null, null, tL_attachMenuBot);
+                k5Var.setVisibility(0);
+                k5Var.setAlpha(1.0f);
+                k5Var.h(ImageLocation.getForDocument(placeholderStaticAttachMenuBotIcon.icon), null, null, tL_attachMenuBot);
                 setupFlickerParams(z10);
                 return;
             }
             return;
         }
-        e6 e6Var = this.e;
+        c6 c6Var = this.e;
         if (userFull != null && (botInfo = userFull.bot_info) != null && (botappsettings = botInfo.app_settings) != null && botappsettings.placeholder_svg_path != null) {
-            z5Var.setVisibility(0);
-            z5Var.setAlpha(1.0f);
+            k5Var.setVisibility(0);
+            k5Var.setAlpha(1.0f);
             SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(userFull.bot_info.app_settings.placeholder_svg_path, 512, 512);
             this.r = drawableByPath;
             if (drawableByPath != null) {
                 drawableByPath.setColor(this.p0);
-                this.r.setupGradient(i6.Ki, e6Var, 1.0f, false);
+                this.r.setupGradient(g6.Ki, c6Var, 1.0f, false);
             }
-            z5Var.f(null, null, this.r);
+            k5Var.f(null, null, this.r);
             setupFlickerParams(true);
             return;
         }
@@ -3380,15 +3380,15 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         path.addRoundRect(rectF, 18.0f, 18.0f, direction);
         rectF.set(271.645f, 271.645f, 405.335f, 405.335f);
         path.addRoundRect(rectF, 18.0f, 18.0f, direction);
-        z5Var.setVisibility(0);
-        z5Var.setAlpha(1.0f);
+        k5Var.setVisibility(0);
+        k5Var.setAlpha(1.0f);
         SvgHelper.SvgDrawable drawableByPath2 = SvgHelper.getDrawableByPath(path, 512, 512);
         this.r = drawableByPath2;
         if (drawableByPath2 != null) {
             drawableByPath2.setColor(this.p0);
-            this.r.setupGradient(i6.Ki, e6Var, 1.0f, false);
+            this.r.setupGradient(g6.Ki, c6Var, 1.0f, false);
         }
-        z5Var.f(null, null, this.r);
+        k5Var.f(null, null, this.r);
         setupFlickerParams(true);
     }
 
@@ -3396,26 +3396,26 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         this.U = user;
     }
 
-    public void setDelegate(g0 g0Var) {
-        this.c = g0Var;
+    public void setDelegate(h0 h0Var) {
+        this.c = h0Var;
     }
 
     public void setFlickerViewColor(int i10) {
-        int b10 = AndroidUtilities.computePerceivedBrightness(i10) > 0.7f ? i6.b(0.0f, -0.15f, i10) : i6.b(0.025f, 0.15f, i10);
+        int b10 = AndroidUtilities.computePerceivedBrightness(i10) > 0.7f ? g6.b(0.0f, -0.15f, i10) : g6.b(0.025f, 0.15f, i10);
         if (this.p0 == b10) {
             return;
         }
         this.p0 = b10;
         PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(b10, PorterDuff.Mode.SRC_IN);
-        z5 z5Var = this.s;
-        z5Var.setColorFilter(porterDuffColorFilter);
+        k5 k5Var = this.s;
+        k5Var.setColorFilter(porterDuffColorFilter);
         SvgHelper.SvgDrawable svgDrawable = this.r;
         if (svgDrawable != null) {
             svgDrawable.setColor(this.p0);
-            this.r.setupGradient(i6.Ki, this.e, 1.0f, false);
+            this.r.setupGradient(g6.Ki, this.e, 1.0f, false);
         }
         this.q0 = true;
-        z5Var.invalidate();
+        k5Var.invalidate();
         invalidate();
     }
 
@@ -3497,24 +3497,24 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         NotificationCenter.getInstance(i10).doOnIdle(new x(this, str, 1));
     }
 
-    public final void v(ea eaVar) {
+    public final void v(n9 n9Var) {
         if (this.U == null) {
             return;
         }
         e();
-        ei.r rVar = this.j0;
+        fi.r rVar = this.j0;
         if (rVar == null) {
             return;
         }
         try {
-            x(eaVar, "biometry_info_received", rVar.f());
-        } catch (Exception e7) {
-            FileLog.e(e7);
+            x(n9Var, "biometry_info_received", rVar.f());
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
-    public final void x(ea eaVar, String str, JSONObject jSONObject) {
-        if (o(eaVar)) {
+    public final void x(n9 n9Var, String str, JSONObject jSONObject) {
+        if (o(n9Var)) {
             y(str, jSONObject);
             return;
         }
@@ -3535,8 +3535,8 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         JSONObject q6;
         try {
             q6 = k3.q(this.e, true);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
         if (q6 != null) {
             jSONObject = new JSONObject().put("theme_params", q6);
@@ -3546,13 +3546,13 @@ public abstract class b1 extends FrameLayout implements NotificationCenter.Notif
         y("theme_changed", jSONObject);
     }
 
+    public void H() {
+    }
+
     public void K(y0 y0Var) {
     }
 
     public void setKeyboardFocusable(boolean z10) {
-    }
-
-    public void H() {
     }
 
     public void D(boolean z10, String str) {

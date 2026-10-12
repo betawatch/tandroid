@@ -1,6 +1,7 @@
 package j$.util.stream;
 
 import j$.util.Spliterator;
+import j$.util.function.IntConsumer$-CC;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 
@@ -9,17 +10,17 @@ public final class s7 extends u7 implements j$.util.x0, IntConsumer {
     public int f;
 
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.j(this, consumer);
+        j$.com.android.tools.r8.a.i(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.A(this, consumer);
+        return j$.com.android.tools.r8.a.z(this, consumer);
     }
 
     @Override // j$.util.stream.x7

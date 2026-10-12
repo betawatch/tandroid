@@ -1,32 +1,27 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e50 implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ Object d;
+public final class e50 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ n60 a;
 
-    public /* synthetic */ e50(Object obj, org.telegram.ui.ActionBar.b2 b2Var, EditTextBoldCursor editTextBoldCursor, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = b2Var;
-        this.c = editTextBoldCursor;
+    public e50(n60 n60Var) {
+        this.a = n60Var;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                ((j50) this.d).b.t1(null, this.b, this.c, true);
-                break;
-            default:
-                ((f50) this.d).n.b.t1(null, this.b, this.c, true);
-                break;
-        }
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        ViewGroup viewGroup;
+        n60 n60Var = this.a;
+        n60Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
+        n60Var.a2.j(null);
+        AndroidUtilities.updateVisibleRows(n60Var.m2);
+        viewGroup = ((org.telegram.ui.ActionBar.e3) n60Var).containerView;
+        viewGroup.requestLayout();
+        return false;
     }
 }

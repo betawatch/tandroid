@@ -1,61 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ek implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ FrameLayout d;
+public final class ek extends mm0 {
+    public final /* synthetic */ int V2;
+    public final Paint W2;
+    public final /* synthetic */ pk X2;
 
-    public /* synthetic */ ek(FrameLayout frameLayout, int i10, float f7, int i11) {
-        this.a = i11;
-        this.d = frameLayout;
-        this.b = i10;
-        this.c = f7;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                sk skVar = (sk) this.d;
-                hk hkVar = skVar.r;
-                hk hkVar2 = skVar.s;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int i10 = this.b;
-                float f7 = this.c;
-                if (i10 != 1) {
-                    hkVar2.setTranslationX(f7 * floatValue);
-                    hkVar2.setAlpha(Math.max(0.0f, 1.0f - floatValue));
-                    hkVar2.invalidate();
-                    hkVar.setAlpha(floatValue);
-                    float f10 = (floatValue * 0.05f) + 0.95f;
-                    hkVar.setScaleX(f10);
-                    hkVar.setScaleY(f10);
-                    hkVar2.invalidate();
-                    break;
-                } else {
-                    hkVar.setTranslationX(f7 * floatValue);
-                    hkVar.setAlpha(1.0f - floatValue);
-                    hkVar.invalidate();
-                    hkVar2.setAlpha(floatValue);
-                    float f11 = (floatValue * 0.05f) + 0.95f;
-                    hkVar2.setScaleX(f11);
-                    hkVar2.setScaleY(f11);
-                    break;
-                }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ek(pk pkVar, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
+        super(context, c6Var);
+        this.V2 = i10;
+        switch (i10) {
+            case 1:
+                this.X2 = pkVar;
+                super(context, c6Var);
+                this.W2 = new Paint();
+                break;
             default:
-                pc0 pc0Var = (pc0) this.d;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f12 = 1.0f - floatValue2;
-                int i11 = (int) ((pc0Var.R * floatValue2) + (this.b * f12));
-                pc0Var.T = i11;
-                pc0Var.e((pc0Var.S * floatValue2) + (this.c * f12), i11);
+                this.X2 = pkVar;
+                this.W2 = new Paint();
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.V2) {
+            case 0:
+                if (this.X2.n == 2 && getChildCount() > 0) {
+                    float f7 = 2.14748365E9f;
+                    for (int i10 = 0; i10 < getChildCount(); i10++) {
+                        if (getChildAt(i10).getY() < f7) {
+                            f7 = getChildAt(i10).getY();
+                        }
+                    }
+                    this.W2.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                if (this.X2.n == 1 && getChildCount() > 0) {
+                    float f10 = 2.14748365E9f;
+                    for (int i11 = 0; i11 < getChildCount(); i11++) {
+                        if (getChildAt(i11).getY() < f10) {
+                            f10 = getChildAt(i11).getY();
+                        }
+                    }
+                    this.W2.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h5, false));
+                }
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.V2) {
+            case 0:
+                if (this.X2.n == 0) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

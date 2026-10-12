@@ -1,64 +1,10 @@
 package n2;
 
-import ai.s1;
-import e2.d0;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArrayList;
-import u2.f0;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j {
-    public final int a;
-    public final f0 b;
-    public final CopyOnWriteArrayList c;
-
-    public j(CopyOnWriteArrayList copyOnWriteArrayList, int i10, f0 f0Var) {
-        this.c = copyOnWriteArrayList;
-        this.a = i10;
-        this.b = f0Var;
-    }
-
-    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, n2.k] */
-    public final void a() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            i iVar = (i) it.next();
-            d0.T(iVar.a, new h(this, iVar.b, 2));
-        }
-    }
-
-    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, n2.k] */
-    public final void b() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            i iVar = (i) it.next();
-            d0.T(iVar.a, new h(this, iVar.b, 1));
-        }
-    }
-
-    public final void c(int i10) {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            i iVar = (i) it.next();
-            d0.T(iVar.a, new s1(this, iVar.b, i10, 16));
-        }
-    }
-
-    public final void d(Exception exc) {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            i iVar = (i) it.next();
-            d0.T(iVar.a, new gg.t(this, iVar.b, exc, 27));
-        }
-    }
-
-    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, n2.k] */
-    public final void e() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            i iVar = (i) it.next();
-            d0.T(iVar.a, new h(this, iVar.b, 0));
-        }
-    }
+    public Handler a;
+    public Object b;
 }

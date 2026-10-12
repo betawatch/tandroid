@@ -1,43 +1,45 @@
 package q3;
 
-import e9.a1;
-import e9.g0;
-import e9.i0;
-import e9.q;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class k {
-    public static final a1 a;
+public final class k extends i {
+    public final String b;
+    public final String c;
+    public final String d;
 
-    static {
-        g0 g0Var = i0.b;
-        Object[] objArr = new Object[192];
-        objArr[0] = "Blues";
-        objArr[1] = "Classic Rock";
-        objArr[2] = "Country";
-        objArr[3] = "Dance";
-        objArr[4] = "Disco";
-        objArr[5] = "Funk";
-        objArr[6] = "Grunge";
-        objArr[7] = "Hip-Hop";
-        objArr[8] = "Jazz";
-        objArr[9] = "Metal";
-        objArr[10] = "New Age";
-        objArr[11] = "Oldies";
-        System.arraycopy(new String[]{"Other", "Pop", "R&B", "Rap", "Reggae", "Rock", "Techno", "Industrial", "Alternative", "Ska", "Death Metal", "Pranks", "Soundtrack", "Euro-Techno", "Ambient", "Trip-Hop", "Vocal", "Jazz+Funk", "Fusion", "Trance", "Classical", "Instrumental", "Acid", "House", "Game", "Sound Clip", "Gospel", "Noise", "AlternRock", "Bass", "Soul", "Punk", "Space", "Meditative", "Instrumental Pop", "Instrumental Rock", "Ethnic", "Gothic", "Darkwave", "Techno-Industrial", "Electronic", "Pop-Folk", "Eurodance", "Dream", "Southern Rock", "Comedy", "Cult", "Gangsta", "Top 40", "Christian Rap", "Pop/Funk", "Jungle", "Native American", "Cabaret", "New Wave", "Psychadelic", "Rave", "Showtunes", "Trailer", "Lo-Fi", "Tribal", "Acid Punk", "Acid Jazz", "Polka", "Retro", "Musical", "Rock & Roll", "Hard Rock", "Folk", "Folk-Rock", "National Folk", "Swing", "Fast Fusion", "Bebob", "Latin", "Revival", "Celtic", "Bluegrass", "Avantgarde", "Gothic Rock", "Progressive Rock", "Psychedelic Rock", "Symphonic Rock", "Slow Rock", "Big Band", "Chorus", "Easy Listening", "Acoustic", "Humour", "Speech", "Chanson", "Opera", "Chamber Music", "Sonata", "Symphony", "Booty Bass", "Primus", "Porn Groove", "Satire", "Slow Jam", "Club", "Tango", "Samba", "Folklore", "Ballad", "Power Ballad", "Rhythmic Soul", "Freestyle", "Duet", "Punk Rock", "Drum Solo", "A capella", "Euro-House", "Dance Hall", "Goa", "Drum & Bass", "Club-House", "Hardcore", "Terror", "Indie", "BritPop", "Afro-Punk", "Polsk Punk", "Beat", "Christian Gangsta Rap", "Heavy Metal", "Black Metal", "Crossover", "Contemporary Christian", "Christian Rock", "Merengue", "Salsa", "Thrash Metal", "Anime", "Jpop", "Synthpop", "Abstract", "Art Rock", "Baroque", "Bhangra", "Big beat", "Breakbeat", "Chillout", "Downtempo", "Dub", "EBM", "Eclectic", "Electro", "Electroclash", "Emo", "Experimental", "Garage", "Global", "IDM", "Illbient", "Industro-Goth", "Jam Band", "Krautrock", "Leftfield", "Lounge", "Math Rock", "New Romantic", "Nu-Breakz", "Post-Punk", "Post-Rock", "Psytrance", "Shoegaze", "Space Rock", "Trop Rock", "World Music", "Neoclassical", "Audiobook", "Audio theatre", "Neue Deutsche Welle", "Podcast", "Indie-Rock", "G-Funk", "Dubstep", "Garage Rock", "Psybient"}, 0, objArr, 12, 180);
-        q.d(192, objArr);
-        a = i0.t(192, objArr);
+    public k(String str, String str2, String str3) {
+        super("----");
+        this.b = str;
+        this.c = str2;
+        this.d = str3;
     }
 
-    public static String a(int i10) {
-        if (i10 < 0) {
-            return null;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        a1 a1Var = a;
-        if (i10 < a1Var.d) {
-            return (String) a1Var.get(i10);
+        if (obj != null && k.class == obj.getClass()) {
+            k kVar = (k) obj;
+            if (Objects.equals(this.c, kVar.c) && Objects.equals(this.b, kVar.b) && Objects.equals(this.d, kVar.d)) {
+                return true;
+            }
         }
-        return null;
+        return false;
+    }
+
+    public final int hashCode() {
+        String str = this.b;
+        int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
+        String str2 = this.c;
+        int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+        String str3 = this.d;
+        return hashCode2 + (str3 != null ? str3.hashCode() : 0);
+    }
+
+    @Override // q3.i
+    public final String toString() {
+        return this.a + ": domain=" + this.b + ", description=" + this.c;
     }
 }

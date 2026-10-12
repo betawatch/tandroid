@@ -1,40 +1,39 @@
 package k2;
 
-import hg.o1;
+import j$.util.function.Function$-CC;
+import java.util.function.Function;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.au;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements Runnable {
+public final /* synthetic */ class f implements Function {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n4.x b;
-    public final /* synthetic */ Exception c;
 
-    public /* synthetic */ f(n4.x xVar, Exception exc, int i10) {
+    public /* synthetic */ f(int i10) {
         this.a = i10;
-        this.b = xVar;
-        this.c = exc;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public /* synthetic */ Function andThen(Function function) {
         int i10 = this.a;
-        Exception exc = this.c;
-        n4.x xVar = this.b;
-        switch (i10) {
-            case 0:
-                j jVar = (j) xVar.c;
-                String str = e2.d0.a;
-                j2.f fVar = ((i2.c0) jVar).a.s;
-                j2.a p5 = fVar.p();
-                fVar.q(p5, 1029, new o1(p5, exc, 29));
-                break;
-            default:
-                j jVar2 = (j) xVar.c;
-                String str2 = e2.d0.a;
-                j2.f fVar2 = ((i2.c0) jVar2).a.s;
-                j2.a p10 = fVar2.p();
-                fVar2.q(p10, 1014, new j2.c(p10, exc, 23));
+        return Function$-CC.$default$andThen(this, function);
+    }
+
+    @Override // java.util.function.Function
+    public final Object apply(Object obj) {
+        switch (this.a) {
+            case 4:
+                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
+                if (channelParticipant != null) {
+                    break;
+                }
                 break;
         }
+        return ((au) obj).a;
+    }
+
+    public /* synthetic */ Function compose(Function function) {
+        int i10 = this.a;
+        return Function$-CC.$default$compose(this, function);
     }
 }

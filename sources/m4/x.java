@@ -1,17 +1,33 @@
 package m4;
 
-import android.os.Handler;
-import android.os.Looper;
+import java.util.List;
+import v7.c8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class x extends Handler {
-    public gg.t a;
-    public final /* synthetic */ b0 b;
+public final class x {
+    public final e9.n0 a;
+    public final int b;
+    public final long c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x(b0 b0Var, Looper looper) {
-        super(looper);
-        this.b = b0Var;
+    public x(long j10, int i10, List list) {
+        this.a = e9.n0.u(list);
+        this.b = i10;
+        this.c = j10;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof x)) {
+            return false;
+        }
+        x xVar = (x) obj;
+        return this.a.equals(xVar.a) && this.b == xVar.b && this.c == xVar.c;
+    }
+
+    public final int hashCode() {
+        return c8.b(this.c) + (((this.a.hashCode() * 31) + this.b) * 31);
     }
 }

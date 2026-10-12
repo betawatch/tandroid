@@ -2,7 +2,7 @@ package org.telegram.messenger.video;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import f5.s;
 import f5.z;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
@@ -38,15 +38,15 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
         private long presentationTime;
 
-        public SamplePresentationTime(int i10, long j3) {
+        public SamplePresentationTime(int i10, long j10) {
             this.index = i10;
-            this.presentationTime = j3;
+            this.presentationTime = j10;
         }
     }
 
@@ -87,16 +87,16 @@ public class Track {
             bVar.r = mediaFormat.getInteger("sample-rate");
             bVar.f = 1;
             bVar.n = 16;
-            lc.b bVar2 = new lc.b("esds");
-            mc.g gVar = new mc.g();
+            mc.b bVar2 = new mc.b("esds");
+            nc.g gVar = new nc.g();
             gVar.i = 0;
             gVar.o = new ArrayList();
             gVar.d = 0;
-            mc.m mVar = new mc.m();
+            nc.m mVar = new nc.m();
             mVar.d = 2;
             gVar.n = mVar;
             String string = mediaFormat.containsKey("mime") ? mediaFormat.getString("mime") : "audio/mp4-latm";
-            mc.d dVar = new mc.d();
+            nc.d dVar = new nc.d();
             dVar.k = new ArrayList();
             if ("audio/mpeg".equals(string)) {
                 dVar.d = 105;
@@ -115,7 +115,7 @@ public class Track {
                 dVar.h = 96000L;
             }
             dVar.i = this.timeScale;
-            mc.a aVar = new mc.a();
+            nc.a aVar = new nc.a();
             aVar.e = 2;
             aVar.f = samplingFrequencyIndexMap.get(Integer.valueOf((int) bVar.r)).intValue();
             aVar.h = bVar.h;
@@ -137,8 +137,8 @@ public class Track {
             if (gVar.g > 0) {
                 e5.b.p(gVar.l, allocate);
             }
-            mc.d dVar2 = gVar.m;
-            mc.a aVar2 = dVar2.j;
+            nc.d dVar2 = gVar.m;
+            nc.a aVar2 = dVar2.j;
             if (aVar2 == null) {
                 i12 = 0;
             } else {
@@ -149,7 +149,7 @@ public class Track {
             }
             ByteBuffer allocate2 = ByteBuffer.allocate(i12 + 15);
             e5.b.r(4, allocate2);
-            mc.a aVar3 = dVar2.j;
+            nc.a aVar3 = dVar2.j;
             if (aVar3 != null) {
                 if (aVar3.e != 2) {
                     throw new UnsupportedOperationException("can't serialize that yet");
@@ -162,7 +162,7 @@ public class Track {
             e5.b.q(dVar2.g, allocate2);
             allocate2.putInt((int) dVar2.h);
             allocate2.putInt((int) dVar2.i);
-            mc.a aVar4 = dVar2.j;
+            nc.a aVar4 = dVar2.j;
             if (aVar4 != null) {
                 if (aVar4.e != 2) {
                     throw new UnsupportedOperationException("can't serialize that yet");
@@ -173,7 +173,7 @@ public class Track {
                     throw new UnsupportedOperationException("can't serialize that yet");
                 }
                 allocate3.put((byte) 2);
-                mc.c cVar = new mc.c(1, allocate3);
+                nc.c cVar = new nc.c(1, allocate3);
                 cVar.c(aVar4.e, 5);
                 cVar.c(aVar4.f, 4);
                 if (aVar4.f == 15) {
@@ -182,7 +182,7 @@ public class Track {
                 cVar.c(aVar4.h, 4);
                 allocate2.put(allocate3.array());
             }
-            mc.m mVar2 = gVar.n;
+            nc.m mVar2 = gVar.n;
             mVar2.getClass();
             ByteBuffer allocate4 = ByteBuffer.allocate(3);
             e5.b.r(6, allocate4);
@@ -190,7 +190,7 @@ public class Track {
             allocate4.put((byte) (mVar2.d & 255));
             allocate.put(allocate2.array());
             allocate.put(allocate4.array());
-            e2.q(se.a.c(lc.a.h, bVar2, bVar2, allocate));
+            k3.p(te.a.c(mc.a.h, bVar2, bVar2, allocate));
             bVar2.e = allocate;
             bVar.a(bVar2);
             this.sampleDescriptionBox.a(bVar);
@@ -268,8 +268,8 @@ public class Track {
                 parseFromCsd.n = this.height;
                 this.sampleDescriptionBox.a(parseFromCsd);
                 return;
-            } catch (IOException e7) {
-                e7.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
                 return;
             }
         }
@@ -281,8 +281,8 @@ public class Track {
         cVar3.s = 72.0d;
         cVar3.h = this.width;
         cVar3.n = this.height;
-        rc.a aVar5 = new rc.a("avcC");
-        rc.b bVar3 = new rc.b();
+        sc.a aVar5 = new sc.a("avcC");
+        sc.b bVar3 = new sc.b();
         bVar3.f = new ArrayList();
         bVar3.g = new ArrayList();
         bVar3.h = true;
@@ -309,9 +309,9 @@ public class Track {
             byte[] bArr5 = new byte[byteBuffer2.remaining()];
             byteBuffer2.get(bArr5);
             arrayList2.add(bArr5);
-            e2.q(se.a.c(rc.a.h, aVar5, aVar5, arrayList));
+            k3.p(te.a.c(sc.a.h, aVar5, aVar5, arrayList));
             aVar5.a.f = arrayList;
-            e2.q(se.a.c(rc.a.n, aVar5, aVar5, arrayList2));
+            k3.p(te.a.c(sc.a.n, aVar5, aVar5, arrayList2));
             aVar5.a.g = arrayList2;
         }
         if (mediaFormat.containsKey("level")) {
@@ -374,17 +374,17 @@ public class Track {
         } else {
             aVar5.e(100);
         }
-        e2.q(se.a.c(rc.a.s, aVar5, aVar5, new Integer(-1)));
+        k3.p(te.a.c(sc.a.s, aVar5, aVar5, new Integer(-1)));
         aVar5.a.j = -1;
-        e2.q(se.a.c(rc.a.v, aVar5, aVar5, new Integer(-1)));
+        k3.p(te.a.c(sc.a.v, aVar5, aVar5, new Integer(-1)));
         aVar5.a.k = -1;
-        e2.q(se.a.c(rc.a.r, aVar5, aVar5, new Integer(-1)));
+        k3.p(te.a.c(sc.a.r, aVar5, aVar5, new Integer(-1)));
         aVar5.a.i = -1;
-        e2.q(se.a.c(rc.a.b, aVar5, aVar5, new Integer(1)));
+        k3.p(te.a.c(sc.a.b, aVar5, aVar5, new Integer(1)));
         aVar5.a.a = 1;
-        e2.q(se.a.c(rc.a.f, aVar5, aVar5, new Integer(3)));
+        k3.p(te.a.c(sc.a.f, aVar5, aVar5, new Integer(3)));
         aVar5.a.e = 3;
-        e2.q(se.a.c(rc.a.d, aVar5, aVar5, new Integer(0)));
+        k3.p(te.a.c(sc.a.d, aVar5, aVar5, new Integer(0)));
         aVar5.a.c = 0;
         cVar3.a(aVar5);
         this.sampleDescriptionBox.a(cVar3);
@@ -405,9 +405,9 @@ public class Track {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void addSample(long j3, MediaCodec.BufferInfo bufferInfo) {
+    public void addSample(long j10, MediaCodec.BufferInfo bufferInfo) {
         boolean z10 = this.isAudio ? false : true;
-        this.samples.add(new Sample(j3, bufferInfo.size));
+        this.samples.add(new Sample(j10, bufferInfo.size));
         LinkedList<Integer> linkedList = this.syncSamples;
         if (linkedList != null && z10) {
             linkedList.add(Integer.valueOf(this.samples.size()));
@@ -490,15 +490,15 @@ public class Track {
 
     public void prepare() {
         int i10;
-        long j3;
-        long j10 = 0;
+        long j10;
+        long j11 = 0;
         this.duration = 0L;
         ArrayList arrayList = new ArrayList(this.samplePresentationTimes);
         int i11 = 0;
         Collections.sort(this.samplePresentationTimes, new b(i11));
         this.sampleDurations = new long[this.samplePresentationTimes.size()];
-        long j11 = Long.MAX_VALUE;
-        long j12 = 0;
+        long j12 = Long.MAX_VALUE;
+        long j13 = 0;
         int i12 = 0;
         boolean z10 = false;
         while (true) {
@@ -506,28 +506,28 @@ public class Track {
                 break;
             }
             SamplePresentationTime samplePresentationTime = this.samplePresentationTimes.get(i12);
-            long j13 = samplePresentationTime.presentationTime - j12;
-            j12 = samplePresentationTime.presentationTime;
-            this.sampleDurations[samplePresentationTime.index] = j13;
+            long j14 = samplePresentationTime.presentationTime - j13;
+            j13 = samplePresentationTime.presentationTime;
+            this.sampleDurations[samplePresentationTime.index] = j14;
             if (samplePresentationTime.index != 0) {
-                j3 = j10;
-                this.duration += j13;
+                j10 = j11;
+                this.duration += j14;
             } else {
-                j3 = j10;
+                j10 = j11;
             }
-            if (j13 > j3 && j13 < 2147483647L) {
-                j11 = Math.min(j11, j13);
+            if (j14 > j10 && j14 < 2147483647L) {
+                j12 = Math.min(j12, j14);
             }
             if (samplePresentationTime.index != i12) {
                 z10 = true;
             }
             i12++;
-            j10 = j3;
+            j11 = j10;
         }
         long[] jArr = this.sampleDurations;
         if (jArr.length > 0) {
-            jArr[0] = j11;
-            this.duration += j11;
+            jArr[0] = j12;
+            this.duration += j12;
         }
         for (i10 = 1; i10 < arrayList.size(); i10++) {
             ((SamplePresentationTime) arrayList.get(i10)).dt = this.sampleDurations[i10] + ((SamplePresentationTime) arrayList.get(i10 - 1)).dt;

@@ -56,7 +56,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     LongStream k();
 
-    IntStream limit(long j3);
+    IntStream limit(long j10);
 
     IntStream map(IntUnaryOperator intUnaryOperator);
 
@@ -84,7 +84,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
     @Override // j$.util.stream.BaseStream
     IntStream sequential();
 
-    IntStream skip(long j3);
+    IntStream skip(long j10);
 
     IntStream sorted();
 
@@ -132,7 +132,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalDouble average() {
-            return j$.com.android.tools.r8.a.J(IntStream.this.average());
+            return j$.com.android.tools.r8.a.I(IntStream.this.average());
         }
 
         @Override // java.util.stream.IntStream
@@ -179,12 +179,12 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt findAny() {
-            return j$.com.android.tools.r8.a.K(IntStream.this.findAny());
+            return j$.com.android.tools.r8.a.J(IntStream.this.findAny());
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt findFirst() {
-            return j$.com.android.tools.r8.a.K(IntStream.this.findFirst());
+            return j$.com.android.tools.r8.a.J(IntStream.this.findFirst());
         }
 
         @Override // java.util.stream.IntStream
@@ -221,8 +221,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // java.util.stream.IntStream
-        public final /* synthetic */ java.util.stream.IntStream limit(long j3) {
-            return convert(IntStream.this.limit(j3));
+        public final /* synthetic */ java.util.stream.IntStream limit(long j10) {
+            return convert(IntStream.this.limit(j10));
         }
 
         @Override // java.util.stream.IntStream
@@ -247,12 +247,12 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt max() {
-            return j$.com.android.tools.r8.a.K(IntStream.this.max());
+            return j$.com.android.tools.r8.a.J(IntStream.this.max());
         }
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt min() {
-            return j$.com.android.tools.r8.a.K(IntStream.this.min());
+            return j$.com.android.tools.r8.a.J(IntStream.this.min());
         }
 
         @Override // java.util.stream.IntStream
@@ -289,7 +289,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ OptionalInt reduce(IntBinaryOperator intBinaryOperator) {
-            return j$.com.android.tools.r8.a.K(IntStream.this.reduce(intBinaryOperator));
+            return j$.com.android.tools.r8.a.J(IntStream.this.reduce(intBinaryOperator));
         }
 
         /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.BaseStream, java.util.stream.IntStream] */
@@ -304,8 +304,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // java.util.stream.IntStream
-        public final /* synthetic */ java.util.stream.IntStream skip(long j3) {
-            return convert(IntStream.this.skip(j3));
+        public final /* synthetic */ java.util.stream.IntStream skip(long j10) {
+            return convert(IntStream.this.skip(j10));
         }
 
         @Override // java.util.stream.IntStream
@@ -389,7 +389,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // j$.util.stream.IntStream
         public final /* synthetic */ j$.util.b0 average() {
-            return j$.com.android.tools.r8.a.F(this.a.average());
+            return j$.com.android.tools.r8.a.E(this.a.average());
         }
 
         @Override // j$.util.stream.IntStream
@@ -437,12 +437,12 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // j$.util.stream.IntStream
         public final /* synthetic */ j$.util.c0 findAny() {
-            return j$.com.android.tools.r8.a.G(this.a.findAny());
+            return j$.com.android.tools.r8.a.F(this.a.findAny());
         }
 
         @Override // j$.util.stream.IntStream
         public final /* synthetic */ j$.util.c0 findFirst() {
-            return j$.com.android.tools.r8.a.G(this.a.findFirst());
+            return j$.com.android.tools.r8.a.F(this.a.findFirst());
         }
 
         @Override // j$.util.stream.IntStream
@@ -490,8 +490,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream limit(long j3) {
-            return convert(this.a.limit(j3));
+        public final /* synthetic */ IntStream limit(long j10) {
+            return convert(this.a.limit(j10));
         }
 
         @Override // j$.util.stream.IntStream
@@ -506,12 +506,12 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // j$.util.stream.IntStream
         public final /* synthetic */ j$.util.c0 max() {
-            return j$.com.android.tools.r8.a.G(this.a.max());
+            return j$.com.android.tools.r8.a.F(this.a.max());
         }
 
         @Override // j$.util.stream.IntStream
         public final /* synthetic */ j$.util.c0 min() {
-            return j$.com.android.tools.r8.a.G(this.a.min());
+            return j$.com.android.tools.r8.a.F(this.a.min());
         }
 
         @Override // j$.util.stream.IntStream
@@ -551,7 +551,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // j$.util.stream.IntStream
         public final /* synthetic */ j$.util.c0 reduce(IntBinaryOperator intBinaryOperator) {
-            return j$.com.android.tools.r8.a.G(this.a.reduce(intBinaryOperator));
+            return j$.com.android.tools.r8.a.F(this.a.reduce(intBinaryOperator));
         }
 
         @Override // j$.util.stream.BaseStream
@@ -565,8 +565,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream skip(long j3) {
-            return convert(this.a.skip(j3));
+        public final /* synthetic */ IntStream skip(long j10) {
+            return convert(this.a.skip(j10));
         }
 
         @Override // j$.util.stream.IntStream

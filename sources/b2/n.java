@@ -1,77 +1,25 @@
 package b2;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import j$.util.Objects;
-import java.util.Arrays;
+import android.os.Build;
+import android.os.IBinder;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class n implements Parcelable {
-    public static final Parcelable.Creator<n> CREATOR = new m(1);
-    public int a;
-    public final UUID b;
-    public final String c;
-    public final String d;
-    public final byte[] e;
+public abstract class n {
+    public static final int a;
+    public static final UUID b;
+    public static final UUID c;
+    public static final UUID d;
+    public static final UUID e;
+    public static final UUID f;
 
-    public n(UUID uuid, String str, String str2, byte[] bArr) {
-        uuid.getClass();
-        this.b = uuid;
-        this.c = str;
-        str2.getClass();
-        this.d = r0.n(str2);
-        this.e = bArr;
-    }
-
-    public final boolean a(UUID uuid) {
-        UUID uuid2 = i.a;
-        UUID uuid3 = this.b;
-        return uuid2.equals(uuid3) || uuid.equals(uuid3);
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof n)) {
-            return false;
-        }
-        if (obj == this) {
-            return true;
-        }
-        n nVar = (n) obj;
-        return Objects.equals(this.c, nVar.c) && Objects.equals(this.d, nVar.d) && Objects.equals(this.b, nVar.b) && Arrays.equals(this.e, nVar.e);
-    }
-
-    public final int hashCode() {
-        if (this.a == 0) {
-            int hashCode = this.b.hashCode() * 31;
-            String str = this.c;
-            this.a = Arrays.hashCode(this.e) + a1.g.h((hashCode + (str == null ? 0 : str.hashCode())) * 31, 31, this.d);
-        }
-        return this.a;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        UUID uuid = this.b;
-        parcel.writeLong(uuid.getMostSignificantBits());
-        parcel.writeLong(uuid.getLeastSignificantBits());
-        parcel.writeString(this.c);
-        parcel.writeString(this.d);
-        parcel.writeByteArray(this.e);
-    }
-
-    public n(Parcel parcel) {
-        this.b = new UUID(parcel.readLong(), parcel.readLong());
-        this.c = parcel.readString();
-        String readString = parcel.readString();
-        String str = e2.d0.a;
-        this.d = readString;
-        this.e = parcel.createByteArray();
+    static {
+        a = Build.VERSION.SDK_INT >= 30 ? IBinder.getSuggestedMaxIpcSizeBytes() : 65536;
+        b = new UUID(0L, 0L);
+        c = new UUID(1186680826959645954L, -5988876978535335093L);
+        d = new UUID(-2129748144642739255L, 8654423357094679310L);
+        e = new UUID(-1301668207276963122L, -6645017420763422227L);
+        f = new UUID(-7348484286925749626L, -6083546864340672619L);
     }
 }

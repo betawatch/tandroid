@@ -1,30 +1,64 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesStorage;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ay implements org.telegram.ui.Components.f5 {
-    public final /* synthetic */ ty a;
+public final class ay extends ScrollView {
+    public final /* synthetic */ int a;
 
-    public ay(ty tyVar) {
-        this.a = tyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ay(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.f5
-    public final void J(int i10, int i11, boolean z10) {
-        ty tyVar = this.a;
-        ArrayList arrayList = tyVar.I2;
-        tyVar.K2 = i10;
-        tyVar.L2 = i11;
-        if (tyVar.C2 == null || arrayList.isEmpty()) {
-            return;
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) Math.min(View.MeasureSpec.getSize(i11), Math.min(AndroidUtilities.displaySize.y * 0.35f, AndroidUtilities.dp(400.0f))), View.MeasureSpec.getMode(i11)));
+                break;
+            case 1:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 2:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(320.0f)), TLObject.FLAG_31));
+                break;
+            case 3:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(360.0f)), TLObject.FLAG_31));
+                break;
+            case 4:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
+                break;
         }
-        ArrayList arrayList2 = new ArrayList();
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i12)).longValue(), 0L));
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup
+    public boolean onRequestFocusInDescendants(int i10, Rect rect) {
+        switch (this.a) {
+            case 1:
+                return false;
+            default:
+                return super.onRequestFocusInDescendants(i10, rect);
         }
-        tyVar.C2.w(tyVar, arrayList2, tyVar.B1.getFieldText(), false, z10, i10, i11, null);
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
+        switch (this.a) {
+            case 1:
+                rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+                rect.top = AndroidUtilities.dp(20.0f) + rect.top;
+                rect.bottom = AndroidUtilities.dp(50.0f) + rect.bottom;
+                break;
+        }
+        return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

@@ -1,49 +1,145 @@
 package org.telegram.ui.Components;
 
 import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
+import java.io.File;
+import java.net.URLEncoder;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class f81 implements g2.h {
-    public final g2.h a;
-    public final long b;
+public final class f81 {
+    public int a;
+    public boolean b;
+    public long c;
+    public Uri d;
+    public long e;
+    public Uri f;
+    public TLRPC.Document g;
+    public TLRPC.Document h;
+    public int i;
+    public int j;
+    public long k;
+    public double l;
+    public String m;
 
-    public f81(ExtendedDefaultDataSource extendedDefaultDataSource, long j3) {
-        this.a = extendedDefaultDataSource;
-        this.b = j3;
+    public static Uri a(int i10, int i11, TLRPC.Document document) {
+        StringBuilder k10 = i2.d.k(i10, "?account=", "&id=");
+        k10.append(document.id);
+        k10.append("&hash=");
+        k10.append(document.access_hash);
+        k10.append("&dc=");
+        k10.append(document.dc_id);
+        k10.append("&size=");
+        k10.append(document.size);
+        k10.append("&mime=");
+        k10.append(URLEncoder.encode(document.mime_type, "UTF-8"));
+        k10.append("&rid=");
+        k10.append(i11);
+        k10.append("&name=");
+        k10.append(URLEncoder.encode(FileLoader.getDocumentFileName(document), "UTF-8"));
+        k10.append("&reference=");
+        byte[] bArr = document.file_reference;
+        if (bArr == null) {
+            bArr = new byte[0];
+        }
+        k10.append(Utilities.bytesToHex(bArr));
+        return Uri.parse("tg://" + MessageObject.getFileName(document) + k10.toString());
     }
 
-    @Override // g2.h
-    public final void addTransferListener(g2.c0 c0Var) {
-        this.a.addTransferListener(c0Var);
+    public static f81 d(int i10, TLRPC.Document document, TLRPC.Document document2, int i11, boolean z10) {
+        TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo;
+        String str;
+        f81 f81Var = new f81();
+        int i12 = 0;
+        while (true) {
+            if (i12 >= document.attributes.size()) {
+                tL_documentAttributeVideo = null;
+                break;
+            }
+            TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i12);
+            if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
+                tL_documentAttributeVideo = (TLRPC.TL_documentAttributeVideo) documentAttribute;
+                break;
+            }
+            i12++;
+        }
+        String lowerCase = (tL_documentAttributeVideo == null || (str = tL_documentAttributeVideo.video_codec) == null) ? null : str.toLowerCase();
+        f81Var.a = i10;
+        f81Var.g = document;
+        f81Var.c = document.id;
+        f81Var.d = a(i10, i11, document);
+        if (document2 != null) {
+            f81Var.h = document2;
+            f81Var.e = document2.id;
+            f81Var.f = a(i10, i11, document2);
+            File pathToAttach = FileLoader.getInstance(i10).getPathToAttach(document2, null, false, z10);
+            if (pathToAttach == null || !pathToAttach.exists()) {
+                File pathToAttach2 = FileLoader.getInstance(i10).getPathToAttach(document2, null, true, z10);
+                if (pathToAttach2 != null && pathToAttach2.exists()) {
+                    f81Var.f = Uri.fromFile(pathToAttach2);
+                }
+            } else {
+                f81Var.f = Uri.fromFile(pathToAttach);
+            }
+        }
+        f81Var.m = lowerCase;
+        long j10 = document.size;
+        f81Var.k = j10;
+        if (tL_documentAttributeVideo != null) {
+            double d = tL_documentAttributeVideo.duration;
+            f81Var.i = tL_documentAttributeVideo.w;
+            f81Var.j = tL_documentAttributeVideo.h;
+            f81Var.l = j10 / d;
+        }
+        File pathToAttach3 = FileLoader.getInstance(i10).getPathToAttach(document, null, false, z10);
+        if (pathToAttach3 != null && pathToAttach3.exists()) {
+            f81Var.d = Uri.fromFile(pathToAttach3);
+            return f81Var;
+        }
+        File pathToAttach4 = FileLoader.getInstance(i10).getPathToAttach(document, null, true, z10);
+        if (pathToAttach4 != null && pathToAttach4.exists()) {
+            f81Var.d = Uri.fromFile(pathToAttach4);
+        }
+        return f81Var;
     }
 
-    @Override // g2.h
-    public final void close() {
-        this.a.close();
+    public final boolean b() {
+        Uri uri = this.d;
+        return uri != null && "file".equalsIgnoreCase(uri.getScheme());
     }
 
-    @Override // g2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
+    public final boolean c() {
+        Uri uri = this.f;
+        return uri != null && "file".equalsIgnoreCase(uri.getScheme());
     }
 
-    @Override // g2.h
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // g2.h
-    public final long open(g2.m mVar) {
-        g2.l a2 = mVar.a();
-        a2.b = mVar.e + this.b;
-        return this.a.open(a2.d());
-    }
-
-    @Override // b2.k
-    public final int read(byte[] bArr, int i10, int i11) {
-        return this.a.read(bArr, i10, i11);
+    public final void e(boolean z10) {
+        if (!b() && this.g != null) {
+            File pathToAttach = FileLoader.getInstance(this.a).getPathToAttach(this.g, null, false, z10);
+            if (pathToAttach == null || !pathToAttach.exists()) {
+                File pathToAttach2 = FileLoader.getInstance(this.a).getPathToAttach(this.g, null, true, z10);
+                if (pathToAttach2 != null && pathToAttach2.exists()) {
+                    this.d = Uri.fromFile(pathToAttach2);
+                }
+            } else {
+                this.d = Uri.fromFile(pathToAttach);
+            }
+        }
+        if (c() || this.h == null) {
+            return;
+        }
+        File pathToAttach3 = FileLoader.getInstance(this.a).getPathToAttach(this.h, null, false, z10);
+        if (pathToAttach3 != null && pathToAttach3.exists()) {
+            this.f = Uri.fromFile(pathToAttach3);
+            return;
+        }
+        File pathToAttach4 = FileLoader.getInstance(this.a).getPathToAttach(this.h, null, true, z10);
+        if (pathToAttach4 == null || !pathToAttach4.exists()) {
+            return;
+        }
+        this.f = Uri.fromFile(pathToAttach4);
     }
 }

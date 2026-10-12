@@ -1,33 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ad0 extends gg.t0 {
-    public final /* synthetic */ hd0 N;
+public final class ad0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ nd0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ad0(hd0 hd0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
-        super(context, e6Var, false, z10);
-        this.N = hd0Var;
+    public ad0(nd0 nd0Var) {
+        this.a = nd0Var;
     }
 
-    @Override // s4.i0
-    public final void l() {
-        hd0 hd0Var = this.N;
-        org.telegram.ui.ActionBar.v0 v0Var = hd0Var.w;
-        if (v0Var != null) {
-            v0Var.setShowSearchProgress(hd0Var.W.J);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        nd0 nd0Var = this.a;
+        if (i10 == -1) {
+            nd0Var.finishFragment();
+            return;
         }
-        TextView textView = hd0Var.r;
-        if (textView != null) {
-            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, hd0Var.W.x)));
+        if (i10 != 1) {
+            if (i10 == 5) {
+                nd0Var.r0(false);
+                return;
+            } else {
+                if (i10 == 6) {
+                    nd0Var.q0(null);
+                    return;
+                }
+                return;
+            }
         }
-        super.l();
+        try {
+            TLRPC.GeoPoint geoPoint = nd0Var.B0.messageOwner.media.geo;
+            double d = geoPoint.lat;
+            double d10 = geoPoint._long;
+            nd0Var.getParentActivity().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d10 + "?q=" + d + "," + d10)));
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 }

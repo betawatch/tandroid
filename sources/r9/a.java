@@ -1,32 +1,70 @@
 package r9;
 
-import android.os.StrictMode;
-import java.util.Locale;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicLong;
-import org.telegram.ui.web.w1;
+import b2.n0;
+import j$.util.DesugarCollections;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import ji.m5;
+import w7.f7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a implements ThreadFactory {
-    public static final ThreadFactory e = Executors.defaultThreadFactory();
-    public final AtomicLong a = new AtomicLong();
-    public final String b;
-    public final int c;
-    public final StrictMode.ThreadPolicy d;
+public final class a {
+    public final String a;
+    public final Set b;
+    public final Set c;
+    public final int d;
+    public final int e;
+    public final d f;
+    public final Set g;
 
-    public a(String str, int i10, StrictMode.ThreadPolicy threadPolicy) {
-        this.b = str;
-        this.c = i10;
-        this.d = threadPolicy;
+    public a(String str, Set set, Set set2, int i10, int i11, d dVar, Set set3) {
+        this.a = str;
+        this.b = DesugarCollections.unmodifiableSet(set);
+        this.c = DesugarCollections.unmodifiableSet(set2);
+        this.d = i10;
+        this.e = i11;
+        this.f = dVar;
+        this.g = DesugarCollections.unmodifiableSet(set3);
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        Thread newThread = e.newThread(new w1(13, this, runnable));
-        Locale locale = Locale.ROOT;
-        newThread.setName(this.b + " Thread #" + this.a.getAndIncrement());
-        return newThread;
+    public static n0 a(Class cls) {
+        return new n0(cls, new Class[0]);
+    }
+
+    public static n0 b(r rVar) {
+        r[] rVarArr = new r[0];
+        n0 n0Var = new n0();
+        n0Var.d = null;
+        HashSet hashSet = new HashSet();
+        n0Var.c = hashSet;
+        n0Var.e = new HashSet();
+        n0Var.a = 0;
+        n0Var.b = 0;
+        n0Var.g = new HashSet();
+        hashSet.add(rVar);
+        for (r rVar2 : rVarArr) {
+            f7.a(rVar2, "Null interface");
+        }
+        Collections.addAll((HashSet) n0Var.c, rVarArr);
+        return n0Var;
+    }
+
+    public static a c(Object obj, Class cls, Class... clsArr) {
+        HashSet hashSet = new HashSet();
+        HashSet hashSet2 = new HashSet();
+        HashSet hashSet3 = new HashSet();
+        hashSet.add(r.a(cls));
+        for (Class cls2 : clsArr) {
+            f7.a(cls2, "Null interface");
+            hashSet.add(r.a(cls2));
+        }
+        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new m5(obj, 27), hashSet3);
+    }
+
+    public final String toString() {
+        return "Component<" + Arrays.toString(this.b.toArray()) + ">{" + this.d + ", type=" + this.e + ", deps=" + Arrays.toString(this.c.toArray()) + "}";
     }
 }

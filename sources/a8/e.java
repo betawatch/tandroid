@@ -8,9 +8,9 @@ import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import kotlin.jvm.internal.i;
-import v7.g5;
+import v7.h5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e extends Binder implements b, IInterface {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class e extends Binder implements b, IInterface {
         switch (this.a) {
             case 0:
                 i.e(status, "status");
-                g5.a(status, bVar, this.b);
+                h5.a(status, bVar, this.b);
                 break;
         }
     }
@@ -44,7 +44,7 @@ public final class e extends Binder implements b, IInterface {
             l8.d dVar = (l8.d) a.a(parcel, l8.d.CREATOR);
             int dataAvail = parcel.dataAvail();
             if (dataAvail > 0) {
-                throw new BadParcelableException(hg.c.h(dataAvail, "Parcel data not fully consumed, unread size: "));
+                throw new BadParcelableException(i2.d.i(dataAvail, "Parcel data not fully consumed, unread size: "));
             }
             s(status, dVar);
             return true;
@@ -56,7 +56,7 @@ public final class e extends Binder implements b, IInterface {
         l8.b bVar = (l8.b) a.a(parcel, l8.b.CREATOR);
         int dataAvail2 = parcel.dataAvail();
         if (dataAvail2 > 0) {
-            throw new BadParcelableException(hg.c.h(dataAvail2, "Parcel data not fully consumed, unread size: "));
+            throw new BadParcelableException(i2.d.i(dataAvail2, "Parcel data not fully consumed, unread size: "));
         }
         S(status2, bVar);
         return true;
@@ -69,7 +69,7 @@ public final class e extends Binder implements b, IInterface {
                 break;
             default:
                 i.e(status, "status");
-                g5.a(status, dVar, this.b);
+                h5.a(status, dVar, this.b);
                 break;
         }
     }

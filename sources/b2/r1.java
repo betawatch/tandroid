@@ -1,40 +1,24 @@
 package b2;
 
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class r1 {
-    public static final String f;
-    public static final String g;
-    public static final String h;
-    public static final String i;
-    public final int a;
-    public final l1 b;
-    public final boolean c;
-    public final int[] d;
-    public final boolean[] e;
+    public static final String c;
+    public static final String d;
+    public final q1 a;
+    public final e9.n0 b;
 
     static {
-        String str = e2.d0.a;
-        f = Integer.toString(0, 36);
-        g = Integer.toString(1, 36);
-        h = Integer.toString(3, 36);
-        i = Integer.toString(4, 36);
+        String str = e2.m0.a;
+        c = Integer.toString(0, 36);
+        d = Integer.toString(1, 36);
     }
 
-    public r1(l1 l1Var, boolean z10, int[] iArr, boolean[] zArr) {
-        int i10 = l1Var.a;
-        this.a = i10;
-        boolean z11 = false;
-        e2.d.b(i10 == iArr.length && i10 == zArr.length);
-        this.b = l1Var;
-        if (z10 && i10 > 1) {
-            z11 = true;
-        }
-        this.c = z11;
-        this.d = (int[]) iArr.clone();
-        this.e = (boolean[]) zArr.clone();
+    public r1(q1 q1Var, int i10) {
+        this(q1Var, e9.n0.y(Integer.valueOf(i10)));
     }
 
     public final boolean equals(Object obj) {
@@ -43,7 +27,7 @@ public final class r1 {
         }
         if (obj != null && r1.class == obj.getClass()) {
             r1 r1Var = (r1) obj;
-            if (this.c == r1Var.c && this.b.equals(r1Var.b) && Arrays.equals(this.d, r1Var.d) && Arrays.equals(this.e, r1Var.e)) {
+            if (this.a.equals(r1Var.a) && this.b.equals(r1Var.b)) {
                 return true;
             }
         }
@@ -51,6 +35,14 @@ public final class r1 {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.e) + ((Arrays.hashCode(this.d) + (((this.b.hashCode() * 31) + (this.c ? 1 : 0)) * 31)) * 31);
+        return (this.b.hashCode() * 31) + this.a.hashCode();
+    }
+
+    public r1(q1 q1Var, List list) {
+        if (!list.isEmpty() && (((Integer) Collections.min(list)).intValue() < 0 || ((Integer) Collections.max(list)).intValue() >= q1Var.a)) {
+            throw new IndexOutOfBoundsException();
+        }
+        this.a = q1Var;
+        this.b = e9.n0.u(list);
     }
 }

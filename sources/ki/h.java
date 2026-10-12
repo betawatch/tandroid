@@ -1,25 +1,44 @@
 package ki;
 
-import android.util.Size;
+import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.ui.Cells.i0;
+import org.telegram.ui.Cells.za;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class h {
-    public final m0 a;
-    public final n0 b;
-    public final o0 c;
-    public final Size d;
-    public final Size e;
-    public final float f;
-    public final boolean g;
+public final class h implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ n c;
+    public final /* synthetic */ View d;
 
-    public h(m0 m0Var, n0 n0Var, o0 o0Var, Size size, Size size2, float f7, boolean z10) {
-        this.a = m0Var;
-        this.b = n0Var;
-        this.c = o0Var;
-        this.d = size;
-        this.e = size2;
-        this.f = f7;
-        this.g = z10;
+    public /* synthetic */ h(n nVar, View view, float f7, int i10) {
+        this.a = i10;
+        this.c = nVar;
+        this.d = view;
+        this.b = f7;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n nVar = this.c;
+                float measuredHeight = ((nVar.G.getMeasuredHeight() - nVar.F.s9) - r2.Ba) / 2.0f;
+                i0 i0Var = (i0) this.d;
+                float measuredHeight2 = (measuredHeight - (i0Var.getMeasuredHeight() / 2.0f)) + nVar.F.s9;
+                i0Var.setTranslationY(((((float) i0Var.getTop()) > measuredHeight2 ? measuredHeight2 - i0Var.getTop() : 0.0f) * floatValue) + ((1.0f - floatValue) * this.b));
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n nVar2 = this.c;
+                float measuredHeight3 = ((nVar2.G.getMeasuredHeight() - nVar2.F.s9) - r2.Ba) / 2.0f;
+                za zaVar = (za) this.d;
+                float measuredHeight4 = (measuredHeight3 - (zaVar.getMeasuredHeight() / 2.0f)) + nVar2.F.s9;
+                zaVar.setTranslationY(((((float) zaVar.getTop()) > measuredHeight4 ? measuredHeight4 - zaVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
+                break;
+        }
     }
 }

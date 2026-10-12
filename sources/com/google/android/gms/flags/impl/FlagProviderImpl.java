@@ -4,14 +4,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.util.Log;
-import c5.u;
+import c5.v;
 import d7.e;
-import v7.y6;
-import w7.f0;
+import v7.a7;
+import w7.i0;
 import x6.a;
 import x6.b;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class FlagProviderImpl extends e {
     public boolean a;
@@ -30,9 +30,9 @@ public class FlagProviderImpl extends e {
         SharedPreferences sharedPreferences = this.b;
         Boolean valueOf = Boolean.valueOf(z10);
         try {
-            valueOf = (Boolean) f0.a(new u(sharedPreferences, str, valueOf, 4));
-        } catch (Exception e7) {
-            String valueOf2 = String.valueOf(e7.getMessage());
+            valueOf = (Boolean) i0.a(new v(sharedPreferences, str, valueOf, 4));
+        } catch (Exception e) {
+            String valueOf2 = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
         }
         return valueOf.booleanValue();
@@ -46,25 +46,25 @@ public class FlagProviderImpl extends e {
         SharedPreferences sharedPreferences = this.b;
         Integer valueOf = Integer.valueOf(i10);
         try {
-            valueOf = (Integer) f0.a(new u(sharedPreferences, str, valueOf, 5));
-        } catch (Exception e7) {
-            String valueOf2 = String.valueOf(e7.getMessage());
+            valueOf = (Integer) i0.a(new v(sharedPreferences, str, valueOf, 5));
+        } catch (Exception e) {
+            String valueOf2 = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
         }
         return valueOf.intValue();
     }
 
     @Override // d7.f
-    public long getLongFlagValue(String str, long j3, int i10) {
+    public long getLongFlagValue(String str, long j10, int i10) {
         if (!this.a) {
-            return j3;
+            return j10;
         }
         SharedPreferences sharedPreferences = this.b;
-        Long valueOf = Long.valueOf(j3);
+        Long valueOf = Long.valueOf(j10);
         try {
-            valueOf = (Long) f0.a(new u(sharedPreferences, str, valueOf, 6));
-        } catch (Exception e7) {
-            String valueOf2 = String.valueOf(e7.getMessage());
+            valueOf = (Long) i0.a(new v(sharedPreferences, str, valueOf, 6));
+        } catch (Exception e) {
+            String valueOf2 = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf2.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf2) : new String("Flag value not available, returning default: "));
         }
         return valueOf.longValue();
@@ -76,9 +76,9 @@ public class FlagProviderImpl extends e {
             return str2;
         }
         try {
-            return (String) f0.a(new u(this.b, str, str2, 7));
-        } catch (Exception e7) {
-            String valueOf = String.valueOf(e7.getMessage());
+            return (String) i0.a(new v(this.b, str, str2, 7));
+        } catch (Exception e) {
+            String valueOf = String.valueOf(e.getMessage());
             Log.w("FlagDataUtils", valueOf.length() != 0 ? "Flag value not available, returning default: ".concat(valueOf) : new String("Flag value not available, returning default: "));
             return str2;
         }
@@ -91,11 +91,11 @@ public class FlagProviderImpl extends e {
             return;
         }
         try {
-            this.b = y6.a(context.createPackageContext("com.google.android.gms", 0));
+            this.b = a7.a(context.createPackageContext("com.google.android.gms", 0));
             this.a = true;
         } catch (PackageManager.NameNotFoundException unused) {
-        } catch (Exception e7) {
-            String valueOf = String.valueOf(e7.getMessage());
+        } catch (Exception e) {
+            String valueOf = String.valueOf(e.getMessage());
             Log.w("FlagProviderImpl", valueOf.length() != 0 ? "Could not retrieve sdk flags, continuing with defaults: ".concat(valueOf) : new String("Could not retrieve sdk flags, continuing with defaults: "));
         }
     }

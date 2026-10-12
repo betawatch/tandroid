@@ -1,19 +1,29 @@
 package org.telegram.messenger;
 
-import java.util.List;
-import org.telegram.messenger.TelegramMediaSession;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i4 implements TelegramMediaSession.BrowseChildrenCallback {
-    public final /* synthetic */ Runnable a;
+public final /* synthetic */ class i4 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback b;
 
-    public /* synthetic */ i4(Runnable runnable) {
-        this.a = runnable;
+    public /* synthetic */ i4(int i10, Utilities.Callback callback) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // org.telegram.messenger.TelegramMediaSession.BrowseChildrenCallback
-    public void onResult(List list) {
-        TelegramMediaSession.lambda$ensureLoaded$2(this.a, list);
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                GiftAuctionController.lambda$requestAuctionUpgrades$5(this.b, (TL_stars.starGiftUpgradeAttributes) obj, (TLRPC.TL_error) obj2);
+                break;
+            default:
+                MediaDataController.lambda$searchStickerSets$250(this.b, (TLRPC.messages_FoundStickerSets) obj, (TLRPC.TL_error) obj2);
+                break;
+        }
     }
 }

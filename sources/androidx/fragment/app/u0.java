@@ -1,20 +1,16 @@
 package androidx.fragment.app;
 
-import android.view.ViewGroup;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class u0 {
-    public boolean a;
+public abstract /* synthetic */ class u0 {
+    public static final /* synthetic */ int[] a;
 
-    public abstract void a(ViewGroup viewGroup);
-
-    public void b(androidx.activity.b backEvent, ViewGroup container) {
-        kotlin.jvm.internal.i.e(backEvent, "backEvent");
-        kotlin.jvm.internal.i.e(container, "container");
-    }
-
-    public void c(ViewGroup container) {
-        kotlin.jvm.internal.i.e(container, "container");
+    static {
+        int[] iArr = new int[m1.j.d(3).length];
+        try {
+            iArr[0] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        a = iArr;
     }
 }

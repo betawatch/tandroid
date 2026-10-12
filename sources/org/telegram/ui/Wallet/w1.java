@@ -1,15 +1,15 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class w1 extends org.telegram.ui.ActionBar.g5 {
-    public final /* synthetic */ ci.d f;
+public final class w1 extends org.telegram.ui.ActionBar.e5 {
+    public final /* synthetic */ di.d f;
 
-    public w1(ci.d dVar) {
+    public w1(di.d dVar) {
         this.f = dVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5, org.telegram.ui.ActionBar.z2
+    @Override // org.telegram.ui.ActionBar.e5, org.telegram.ui.ActionBar.y2
     public final boolean h() {
         return !this.f.N;
     }

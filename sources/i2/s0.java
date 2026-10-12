@@ -1,32 +1,19 @@
 package i2;
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class s0 {
-    public final long a;
-    public final float b;
-    public final long c;
+    public final j2.k a;
+    public final b2.p1 b;
+    public final u2.g0 c;
+    public final long d;
+    public final float e;
 
-    public s0(r0 r0Var) {
-        this.a = r0Var.a;
-        this.b = r0Var.b;
-        this.c = r0Var.c;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof s0)) {
-            return false;
-        }
-        s0 s0Var = (s0) obj;
-        return this.a == s0Var.a && this.b == s0Var.b && this.c == s0Var.c;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), Float.valueOf(this.b), Long.valueOf(this.c));
+    public s0(j2.k kVar, b2.p1 p1Var, u2.g0 g0Var, long j10, float f7, boolean z10, long j11) {
+        this.a = kVar;
+        this.b = p1Var;
+        this.c = g0Var;
+        this.d = j10;
+        this.e = f7;
     }
 }

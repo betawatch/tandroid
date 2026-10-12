@@ -2,15 +2,15 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.a2 b;
 
-    public /* synthetic */ c2(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public /* synthetic */ c2(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         this.a = i10;
-        this.b = b2Var;
+        this.b = a2Var;
     }
 
     @Override // java.lang.Runnable
@@ -20,8 +20,8 @@ public final /* synthetic */ class c2 implements Runnable {
                 try {
                     this.b.dismiss();
                     break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             default:

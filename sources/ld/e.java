@@ -1,22 +1,13 @@
 package ld;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import v7.i8;
 
-/* JADX WARN: Method from annotation default annotation not found: i */
-/* JADX WARN: Method from annotation default annotation not found: n */
-/* JADX WARN: Method from annotation default annotation not found: s */
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-@Retention(RetentionPolicy.RUNTIME)
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public @interface e {
-    String c() default "";
-
-    String f() default "";
-
-    int[] l() default {};
-
-    String m() default "";
-
-    int v() default 1;
+public final class e extends md.c {
+    @Override // md.a
+    public final Object invokeSuspend(Object obj) {
+        i8.b(obj);
+        return obj;
+    }
 }

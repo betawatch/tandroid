@@ -26,7 +26,6 @@ import j$.util.concurrent.l;
 import j$.util.d0;
 import j$.util.e0;
 import j$.util.function.b;
-import j$.util.function.d;
 import j$.util.function.f;
 import j$.util.i0;
 import j$.util.m0;
@@ -55,79 +54,80 @@ import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 import java.util.function.IntConsumer;
 import java.util.function.LongConsumer;
+import org.telegram.messenger.BuildConfig;
 import sun.misc.Unsafe;
 
 /* loaded from: classes2.dex */
 public abstract /* synthetic */ class a {
-    public static /* synthetic */ long O(long j3, long j10) {
-        long j11 = j3 + j10;
-        if (((j10 ^ j3) < 0) || ((j3 ^ j11) >= 0)) {
-            return j11;
+    public static /* synthetic */ long N(long j10, long j11) {
+        long j12 = j10 + j11;
+        if (((j11 ^ j10) < 0) || ((j10 ^ j12) >= 0)) {
+            return j12;
         }
         throw new ArithmeticException();
     }
 
-    public static /* synthetic */ Map.Entry P(Object obj, Object obj2) {
+    public static /* synthetic */ Map.Entry O(Object obj, Object obj2) {
         return new AbstractMap.SimpleImmutableEntry(Objects.requireNonNull(obj), Objects.requireNonNull(obj2));
     }
 
-    public static /* synthetic */ boolean Q(Unsafe unsafe, Object obj, long j3, l lVar) {
+    public static /* synthetic */ boolean P(Unsafe unsafe, Object obj, long j10, l lVar) {
         while (true) {
             Unsafe unsafe2 = unsafe;
             Object obj2 = obj;
-            long j10 = j3;
+            long j11 = j10;
             l lVar2 = lVar;
-            if (unsafe2.compareAndSwapObject(obj2, j10, (Object) null, lVar2)) {
+            if (unsafe2.compareAndSwapObject(obj2, j11, (Object) null, lVar2)) {
                 return true;
             }
-            if (unsafe2.getObject(obj2, j10) != null) {
+            if (unsafe2.getObject(obj2, j11) != null) {
                 return false;
             }
             unsafe = unsafe2;
             obj = obj2;
-            j3 = j10;
+            j10 = j11;
             lVar = lVar2;
         }
     }
 
-    public static /* synthetic */ long R(long j3, long j10) {
-        long j11 = j3 % j10;
-        if (j11 == 0) {
+    public static /* synthetic */ long Q(long j10, long j11) {
+        long j12 = j10 % j11;
+        if (j12 == 0) {
             return 0L;
         }
-        return (((j3 ^ j10) >> 63) | 1) > 0 ? j11 : j11 + j10;
+        return (((j10 ^ j11) >> 63) | 1) > 0 ? j12 : j12 + j11;
     }
 
-    public static /* synthetic */ long S(long j3, long j10) {
-        long j11 = j3 / j10;
-        return (j3 - (j10 * j11) != 0 && (((j3 ^ j10) >> 63) | 1) < 0) ? j11 - 1 : j11;
+    public static /* synthetic */ long R(long j10, long j11) {
+        long j12 = j10 / j11;
+        return (j10 - (j11 * j12) != 0 && (((j10 ^ j11) >> 63) | 1) < 0) ? j12 - 1 : j12;
     }
 
-    public static /* synthetic */ long T(long j3, long j10) {
-        int numberOfLeadingZeros = Long.numberOfLeadingZeros(~j10) + Long.numberOfLeadingZeros(j10) + Long.numberOfLeadingZeros(~j3) + Long.numberOfLeadingZeros(j3);
+    public static /* synthetic */ long S(long j10, long j11) {
+        int numberOfLeadingZeros = Long.numberOfLeadingZeros(~j11) + Long.numberOfLeadingZeros(j11) + Long.numberOfLeadingZeros(~j10) + Long.numberOfLeadingZeros(j10);
         if (numberOfLeadingZeros > 65) {
-            return j3 * j10;
+            return j10 * j11;
         }
         if (numberOfLeadingZeros >= 64) {
-            if ((j10 != Long.MIN_VALUE) | (j3 >= 0)) {
-                long j11 = j3 * j10;
-                if (j3 == 0 || j11 / j3 == j10) {
-                    return j11;
+            if ((j11 != Long.MIN_VALUE) | (j10 >= 0)) {
+                long j12 = j10 * j11;
+                if (j10 == 0 || j12 / j10 == j11) {
+                    return j12;
                 }
             }
         }
         throw new ArithmeticException();
     }
 
-    public static /* synthetic */ long U(long j3, long j10) {
-        long j11 = j3 - j10;
-        if (((j10 ^ j3) >= 0) || ((j3 ^ j11) >= 0)) {
-            return j11;
+    public static /* synthetic */ long T(long j10, long j11) {
+        long j12 = j10 - j11;
+        if (((j11 ^ j10) >= 0) || ((j10 ^ j12) >= 0)) {
+            return j12;
         }
         throw new ArithmeticException();
     }
 
-    public static Optional I(j$.util.Optional optional) {
+    public static Optional H(j$.util.Optional optional) {
         if (optional == null) {
             return null;
         }
@@ -137,7 +137,7 @@ public abstract /* synthetic */ class a {
         return Optional.empty();
     }
 
-    public static j$.util.Optional E(Optional optional) {
+    public static j$.util.Optional D(Optional optional) {
         if (optional == null) {
             return null;
         }
@@ -147,7 +147,7 @@ public abstract /* synthetic */ class a {
         return j$.util.Optional.empty();
     }
 
-    public static b0 F(OptionalDouble optionalDouble) {
+    public static b0 E(OptionalDouble optionalDouble) {
         if (optionalDouble == null) {
             return null;
         }
@@ -173,39 +173,23 @@ public abstract /* synthetic */ class a {
         };
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.d] */
-    public static d c(final IntConsumer intConsumer, final IntConsumer intConsumer2) {
-        Objects.requireNonNull(intConsumer2);
-        return new IntConsumer() { // from class: j$.util.function.d
-            public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer3) {
-                return j$.com.android.tools.r8.a.c(this, intConsumer3);
-            }
-
-            @Override // java.util.function.IntConsumer
-            public final void accept(int i10) {
-                IntConsumer.this.accept(i10);
-                intConsumer2.accept(i10);
-            }
-        };
-    }
-
     /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.f] */
-    public static f d(final LongConsumer longConsumer, final LongConsumer longConsumer2) {
+    public static f c(final LongConsumer longConsumer, final LongConsumer longConsumer2) {
         Objects.requireNonNull(longConsumer2);
         return new LongConsumer() { // from class: j$.util.function.f
             public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer3) {
-                return j$.com.android.tools.r8.a.d(this, longConsumer3);
+                return j$.com.android.tools.r8.a.c(this, longConsumer3);
             }
 
             @Override // java.util.function.LongConsumer
-            public final void accept(long j3) {
-                LongConsumer.this.accept(j3);
-                longConsumer2.accept(j3);
+            public final void accept(long j10) {
+                LongConsumer.this.accept(j10);
+                longConsumer2.accept(j10);
             }
         };
     }
 
-    public static d0 H(OptionalLong optionalLong) {
+    public static d0 G(OptionalLong optionalLong) {
         if (optionalLong == null) {
             return null;
         }
@@ -215,17 +199,17 @@ public abstract /* synthetic */ class a {
         return new d0(optionalLong.getAsLong());
     }
 
-    public static String D(long j3, String str, Locale locale) {
+    public static String C(long j10, String str, Locale locale) {
         TimeZone timeZone = TimeZone.getTimeZone("UTC");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(str, locale);
         simpleDateFormat.setTimeZone(timeZone);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(timeZone);
-        calendar.set(0, (int) j3, 0, 0, 0, 0);
+        calendar.set(0, (int) j10, 0, 0, 0, 0);
         return simpleDateFormat.format(calendar.getTime());
     }
 
-    public static c0 G(OptionalInt optionalInt) {
+    public static c0 F(OptionalInt optionalInt) {
         if (optionalInt == null) {
             return null;
         }
@@ -235,7 +219,7 @@ public abstract /* synthetic */ class a {
         return new c0(optionalInt.getAsInt());
     }
 
-    public static void h(ConcurrentMap concurrentMap, BiConsumer biConsumer) {
+    public static void g(ConcurrentMap concurrentMap, BiConsumer biConsumer) {
         Objects.requireNonNull(biConsumer);
         for (Map.Entry entry : concurrentMap.entrySet()) {
             try {
@@ -245,12 +229,12 @@ public abstract /* synthetic */ class a {
         }
     }
 
-    public static String V(Object obj, Object obj2) {
+    public static String U(Object obj, Object obj2) {
         String str;
         String obj3;
-        String str2 = "null";
+        String str2 = BuildConfig.BETA_URL;
         if (obj == null || (str = obj.toString()) == null) {
-            str = "null";
+            str = BuildConfig.BETA_URL;
         }
         int length = str.length();
         if (obj2 != null && (obj3 = obj2.toString()) != null) {
@@ -264,17 +248,17 @@ public abstract /* synthetic */ class a {
         return new String(cArr);
     }
 
-    public static String C(long j3, String str, Locale locale) {
+    public static String B(long j10, String str, Locale locale) {
         TimeZone timeZone = TimeZone.getTimeZone("UTC");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(str, locale);
         simpleDateFormat.setTimeZone(timeZone);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(timeZone);
-        calendar.set(2016, 1, (int) j3, 0, 0, 0);
+        calendar.set(2016, 1, (int) j10, 0, 0, 0);
         return simpleDateFormat.format(calendar.getTime());
     }
 
-    public static void M(Iterator it, Consumer consumer) {
+    public static void L(Iterator it, Consumer consumer) {
         if (it instanceof y) {
             ((y) it).forEachRemaining(consumer);
             return;
@@ -285,7 +269,7 @@ public abstract /* synthetic */ class a {
         }
     }
 
-    public static OptionalDouble J(b0 b0Var) {
+    public static OptionalDouble I(b0 b0Var) {
         if (b0Var == null) {
             return null;
         }
@@ -299,7 +283,7 @@ public abstract /* synthetic */ class a {
         throw new NoSuchElementException("No value present");
     }
 
-    public static OptionalInt K(c0 c0Var) {
+    public static OptionalInt J(c0 c0Var) {
         if (c0Var == null) {
             return null;
         }
@@ -313,7 +297,7 @@ public abstract /* synthetic */ class a {
         throw new NoSuchElementException("No value present");
     }
 
-    public static OptionalLong L(d0 d0Var) {
+    public static OptionalLong K(d0 d0Var) {
         if (d0Var == null) {
             return null;
         }
@@ -327,11 +311,11 @@ public abstract /* synthetic */ class a {
         throw new NoSuchElementException("No value present");
     }
 
-    public static boolean r(j$.time.chrono.l lVar, o oVar) {
+    public static boolean q(j$.time.chrono.l lVar, o oVar) {
         return oVar instanceof j$.time.temporal.a ? oVar == j$.time.temporal.a.ERA : oVar != null && oVar.j(lVar);
     }
 
-    public static k N(j$.time.temporal.l lVar) {
+    public static k M(j$.time.temporal.l lVar) {
         Objects.requireNonNull(lVar, "temporal");
         Object obj = (k) lVar.m(p.b);
         r rVar = r.c;
@@ -341,7 +325,7 @@ public abstract /* synthetic */ class a {
         return (k) obj;
     }
 
-    public static int l(ChronoZonedDateTime chronoZonedDateTime, o oVar) {
+    public static int k(ChronoZonedDateTime chronoZonedDateTime, o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             int i10 = h.a[((j$.time.temporal.a) oVar).ordinal()];
             if (i10 == 1) {
@@ -355,14 +339,14 @@ public abstract /* synthetic */ class a {
         return p.a(chronoZonedDateTime, oVar);
     }
 
-    public static int m(j$.time.chrono.l lVar, o oVar) {
+    public static int l(j$.time.chrono.l lVar, o oVar) {
         if (oVar == j$.time.temporal.a.ERA) {
             return lVar.getValue();
         }
         return p.a(lVar, oVar);
     }
 
-    public static long o(j$.time.chrono.l lVar, o oVar) {
+    public static long n(j$.time.chrono.l lVar, o oVar) {
         if (oVar == j$.time.temporal.a.ERA) {
             return lVar.getValue();
         }
@@ -372,7 +356,7 @@ public abstract /* synthetic */ class a {
         return oVar.m(lVar);
     }
 
-    public static k W(String str) {
+    public static k V(String str) {
         ConcurrentHashMap concurrentHashMap = j$.time.chrono.a.a;
         Objects.requireNonNull(str, "id");
         while (true) {
@@ -421,14 +405,14 @@ public abstract /* synthetic */ class a {
         }
     }
 
-    public static Object v(j$.time.chrono.l lVar, j$.time.format.a aVar) {
+    public static Object u(j$.time.chrono.l lVar, j$.time.format.a aVar) {
         if (aVar == p.c) {
             return ChronoUnit.ERAS;
         }
         return p.c(lVar, aVar);
     }
 
-    public static Object t(ChronoLocalDateTime chronoLocalDateTime, j$.time.format.a aVar) {
+    public static Object s(ChronoLocalDateTime chronoLocalDateTime, j$.time.format.a aVar) {
         if (aVar == p.a || aVar == p.e || aVar == p.d) {
             return null;
         }
@@ -444,34 +428,34 @@ public abstract /* synthetic */ class a {
         return aVar.a(chronoLocalDateTime);
     }
 
-    public static boolean q(j$.time.chrono.b bVar, o oVar) {
+    public static boolean p(j$.time.chrono.b bVar, o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             return ((j$.time.temporal.a) oVar).isDateBased();
         }
         return oVar != null && oVar.j(bVar);
     }
 
-    public static long n(Spliterator spliterator) {
+    public static long m(Spliterator spliterator) {
         if ((spliterator.characteristics() & 64) == 0) {
             return -1L;
         }
         return spliterator.estimateSize();
     }
 
-    public static boolean p(Spliterator spliterator, int i10) {
+    public static boolean o(Spliterator spliterator, int i10) {
         return (spliterator.characteristics() & i10) == i10;
     }
 
-    public static Instant y(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {
+    public static Instant x(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {
         return Instant.I(chronoLocalDateTime.toEpochSecond(zoneOffset), chronoLocalDateTime.b().d);
     }
 
-    public static long w(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {
+    public static long v(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {
         Objects.requireNonNull(zoneOffset, "offset");
         return ((chronoLocalDateTime.f().z() * 86400) + chronoLocalDateTime.b().S()) - zoneOffset.getTotalSeconds();
     }
 
-    public static Object u(ChronoZonedDateTime chronoZonedDateTime, j$.time.format.a aVar) {
+    public static Object t(ChronoZonedDateTime chronoZonedDateTime, j$.time.format.a aVar) {
         if (aVar == p.e || aVar == p.a) {
             return chronoZonedDateTime.getZone();
         }
@@ -490,12 +474,12 @@ public abstract /* synthetic */ class a {
         return aVar.a(chronoZonedDateTime);
     }
 
-    public static int f(ChronoLocalDateTime chronoLocalDateTime, ChronoLocalDateTime chronoLocalDateTime2) {
+    public static int e(ChronoLocalDateTime chronoLocalDateTime, ChronoLocalDateTime chronoLocalDateTime2) {
         int compareTo = chronoLocalDateTime.f().compareTo(chronoLocalDateTime2.f());
         return (compareTo == 0 && (compareTo = chronoLocalDateTime.b().compareTo(chronoLocalDateTime2.b())) == 0) ? ((j$.time.chrono.a) chronoLocalDateTime.a()).getId().compareTo(chronoLocalDateTime2.a().getId()) : compareTo;
     }
 
-    public static Object s(j$.time.chrono.b bVar, j$.time.format.a aVar) {
+    public static Object r(j$.time.chrono.b bVar, j$.time.format.a aVar) {
         if (aVar == p.a || aVar == p.e || aVar == p.d || aVar == p.g) {
             return null;
         }
@@ -512,16 +496,16 @@ public abstract /* synthetic */ class a {
         return temporal.c(bVar.z(), j$.time.temporal.a.EPOCH_DAY);
     }
 
-    public static long x(ChronoZonedDateTime chronoZonedDateTime) {
+    public static long w(ChronoZonedDateTime chronoZonedDateTime) {
         return ((chronoZonedDateTime.f().z() * 86400) + chronoZonedDateTime.b().S()) - chronoZonedDateTime.h().getTotalSeconds();
     }
 
-    public static int g(ChronoZonedDateTime chronoZonedDateTime, ChronoZonedDateTime chronoZonedDateTime2) {
+    public static int f(ChronoZonedDateTime chronoZonedDateTime, ChronoZonedDateTime chronoZonedDateTime2) {
         int compare = Long.compare(chronoZonedDateTime.F(), chronoZonedDateTime2.F());
         return (compare == 0 && (compare = chronoZonedDateTime.b().d - chronoZonedDateTime2.b().d) == 0 && (compare = chronoZonedDateTime.r().C(chronoZonedDateTime2.r())) == 0 && (compare = chronoZonedDateTime.getZone().getId().compareTo(chronoZonedDateTime2.getZone().getId())) == 0) ? ((j$.time.chrono.a) chronoZonedDateTime.a()).getId().compareTo(chronoZonedDateTime2.a().getId()) : compare;
     }
 
-    public static boolean A(x0 x0Var, Consumer consumer) {
+    public static boolean z(x0 x0Var, Consumer consumer) {
         if (consumer instanceof IntConsumer) {
             return x0Var.tryAdvance((IntConsumer) consumer);
         }
@@ -533,7 +517,7 @@ public abstract /* synthetic */ class a {
         return x0Var.tryAdvance((IntConsumer) new i0(consumer, 0));
     }
 
-    public static void j(x0 x0Var, Consumer consumer) {
+    public static void i(x0 x0Var, Consumer consumer) {
         if (consumer instanceof IntConsumer) {
             x0Var.forEachRemaining((IntConsumer) consumer);
         } else {
@@ -546,7 +530,7 @@ public abstract /* synthetic */ class a {
         }
     }
 
-    public static int e(j$.time.chrono.b bVar, j$.time.chrono.b bVar2) {
+    public static int d(j$.time.chrono.b bVar, j$.time.chrono.b bVar2) {
         int compare = Long.compare(bVar.z(), bVar2.z());
         if (compare != 0) {
             return compare;
@@ -554,7 +538,7 @@ public abstract /* synthetic */ class a {
         return ((j$.time.chrono.a) bVar.a()).getId().compareTo(bVar2.a().getId());
     }
 
-    public static boolean B(a1 a1Var, Consumer consumer) {
+    public static boolean A(a1 a1Var, Consumer consumer) {
         if (consumer instanceof LongConsumer) {
             return a1Var.tryAdvance((LongConsumer) consumer);
         }
@@ -566,7 +550,7 @@ public abstract /* synthetic */ class a {
         return a1Var.tryAdvance((LongConsumer) new m0(consumer, 0));
     }
 
-    public static void k(a1 a1Var, Consumer consumer) {
+    public static void j(a1 a1Var, Consumer consumer) {
         if (consumer instanceof LongConsumer) {
             a1Var.forEachRemaining((LongConsumer) consumer);
         } else {
@@ -579,7 +563,7 @@ public abstract /* synthetic */ class a {
         }
     }
 
-    public static boolean z(u0 u0Var, Consumer consumer) {
+    public static boolean y(u0 u0Var, Consumer consumer) {
         if (consumer instanceof DoubleConsumer) {
             return u0Var.tryAdvance((DoubleConsumer) consumer);
         }
@@ -591,7 +575,7 @@ public abstract /* synthetic */ class a {
         return u0Var.tryAdvance((DoubleConsumer) new e0(consumer, 0));
     }
 
-    public static void i(u0 u0Var, Consumer consumer) {
+    public static void h(u0 u0Var, Consumer consumer) {
         if (consumer instanceof DoubleConsumer) {
             u0Var.forEachRemaining((DoubleConsumer) consumer);
         } else {

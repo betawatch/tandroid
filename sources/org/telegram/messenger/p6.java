@@ -1,71 +1,55 @@
 package org.telegram.messenger;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
+import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Serializable n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ p6(int i10, Object obj, int i11) {
-        this.a = i11;
-        this.b = i10;
-        this.c = obj;
+    public /* synthetic */ p6(MediaController mediaController, File file, TLRPC.TL_document tL_document, int i10, boolean z10, int i11, boolean z11, long j10) {
+        this.h = mediaController;
+        this.n = file;
+        this.r = tL_document;
+        this.c = i10;
+        this.b = z10;
+        this.e = i11;
+        this.f = z11;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaController.4) this.c).lambda$onCallStateChanged$0(this.b);
-                break;
-            case 1:
-                MessagesController.1.lambda$setLocal$2(this.b, (TLRPC.TL_help_appConfig) this.c);
-                break;
-            case 2:
-                MessagesController.4.lambda$setLocal$2(this.b, (TLRPC.messages_AvailableEffects) this.c);
-                break;
-            case 3:
-                MessagesController.5.lambda$setLocal$1(this.b, (TL_account.TL_webBrowserSettings) this.c);
-                break;
-            case 4:
-                AutoDeleteMediaTask.lambda$run$1(this.b, (File) this.c);
-                break;
-            case 5:
-                FileLoader.lambda$deleteFiles$16((ArrayList) this.c, this.b);
-                break;
-            case 6:
-                ((FilesMigrationService) this.c).lambda$updateProgress$1(this.b);
-                break;
-            case 7:
-                MediaController.lambda$saveFile$47((org.telegram.ui.ActionBar.b2) this.c, this.b);
-                break;
-            case 8:
-                PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
-                break;
-            case 9:
-                PushListenerController.lambda$processRemoteMessage$2(this.b, (TLRPC.TL_updates) this.c);
-                break;
-            case 10:
-                SendMessagesHelper.lambda$handleError$122(this.b, (AccountInstance) this.c);
+                ((MediaController) this.h).lambda$stopRecordingInternal$41((File) this.n, (TLRPC.TL_document) this.r, this.c, this.b, this.e, this.f, this.d);
                 break;
             default:
-                Utilities.lambda$doCallbacks$0(this.b, (Utilities.Callback[]) this.c);
+                ((MessagesStorage) this.h).lambda$updatePinnedMessages$138(this.b, (HashMap) this.n, this.c, this.d, (ArrayList) this.r, this.e, this.f);
                 break;
         }
     }
 
-    public /* synthetic */ p6(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public /* synthetic */ p6(MessagesStorage messagesStorage, boolean z10, HashMap hashMap, int i10, long j10, ArrayList arrayList, int i11, boolean z11) {
+        this.h = messagesStorage;
+        this.b = z10;
+        this.n = hashMap;
+        this.c = i10;
+        this.d = j10;
+        this.r = arrayList;
+        this.e = i11;
+        this.f = z11;
     }
 }

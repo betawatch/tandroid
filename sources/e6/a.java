@@ -6,9 +6,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 import c7.r0;
-import w7.d0;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public final String a;
@@ -47,24 +47,24 @@ public final class a extends o6.a {
                 } else {
                     throw new ClassCastException();
                 }
-            } catch (RemoteException e7) {
-                h.a(e7, "Unable to call %s on %s.", "getWrappedClientObject", l.class.getSimpleName());
+            } catch (RemoteException e) {
+                h.a(e, "Unable to call %s on %s.", "getWrappedClientObject", l.class.getSimpleName());
             }
         }
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.l(parcel, 2, this.a);
-        d0.l(parcel, 3, this.b);
+        int q6 = g0.q(parcel, 20293);
+        g0.l(parcel, 2, this.a);
+        g0.l(parcel, 3, this.b);
         l lVar = this.c;
-        d0.f(parcel, 4, lVar == null ? null : lVar.b);
-        d0.k(parcel, 5, this.d, i10);
-        d0.s(parcel, 6, 4);
+        g0.f(parcel, 4, lVar == null ? null : lVar.b);
+        g0.k(parcel, 5, this.d, i10);
+        g0.s(parcel, 6, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        d0.s(parcel, 7, 4);
+        g0.s(parcel, 7, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        d0.r(parcel, q6);
+        g0.r(parcel, q6);
     }
 }

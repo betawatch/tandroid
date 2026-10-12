@@ -1,7 +1,17 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f7 {
-    public final d7 a;
+public abstract class f7 {
+    public static float a(float f7, float f10, float f11, float f12) {
+        double d = f7 - f11;
+        double d10 = f10 - f12;
+        return (float) Math.sqrt((d10 * d10) + (d * d));
+    }
+
+    public static float b(int i10, int i11, int i12, int i13) {
+        double d = i10 - i12;
+        double d10 = i11 - i13;
+        return (float) Math.sqrt((d10 * d10) + (d * d));
+    }
 }

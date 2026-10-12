@@ -1,0 +1,57 @@
+package eh;
+
+import b2.e1;
+import e2.j;
+import e2.o;
+import m4.e0;
+import m4.n1;
+import m4.v;
+import org.telegram.ui.ActionBar.c6;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class c implements d, o, e0, j {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+
+    public /* synthetic */ c(int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = i10;
+        this.c = i11;
+    }
+
+    @Override // e2.j
+    public void accept(Object obj) {
+        switch (this.a) {
+            case 4:
+                ((n1) obj).L(this.b, this.c);
+                break;
+            default:
+                ((n1) obj).s0(this.b, this.c);
+                break;
+        }
+    }
+
+    @Override // m4.e0
+    public void d(v vVar, int i10) {
+        vVar.d(i10, this.b, this.c);
+    }
+
+    @Override // eh.d
+    public int f(c6 c6Var, boolean z10) {
+        return z10 ? this.b : this.c;
+    }
+
+    @Override // e2.o
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 1:
+                ((e1) obj).onSurfaceSizeChanged(this.b, this.c);
+                break;
+            default:
+                ((e1) obj).onSurfaceSizeChanged(this.b, this.c);
+                break;
+        }
+    }
+}

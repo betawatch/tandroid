@@ -1,33 +1,32 @@
 package s9;
 
-import android.os.Bundle;
-import android.util.Log;
-import androidx.emoji2.text.f;
-import java.util.ArrayList;
-import t7.t;
+import android.os.StrictMode;
+import java.util.Locale;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicLong;
+import org.telegram.ui.Wallet.t8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a implements u9.a {
-    public final /* synthetic */ f a;
+public final class a implements ThreadFactory {
+    public static final ThreadFactory e = Executors.defaultThreadFactory();
+    public final AtomicLong a = new AtomicLong();
+    public final String b;
+    public final int c;
+    public final StrictMode.ThreadPolicy d;
 
-    public /* synthetic */ a(f fVar) {
-        this.a = fVar;
+    public a(String str, int i10, StrictMode.ThreadPolicy threadPolicy) {
+        this.b = str;
+        this.c = i10;
+        this.d = threadPolicy;
     }
 
-    @Override // u9.a
-    public void P(Bundle bundle) {
-        ((qb.b) this.a.a).P(bundle);
-    }
-
-    public void a(s0.b bVar) {
-        f fVar = this.a;
-        synchronized (fVar) {
-            ((ArrayList) fVar.b).add(bVar);
-            ((t) fVar.c).getClass();
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", "Could not register handler for breadcrumbs events.", null);
-            }
-        }
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        Thread newThread = e.newThread(new t8(29, this, runnable));
+        Locale locale = Locale.ROOT;
+        newThread.setName(this.b + " Thread #" + this.a.getAndIncrement());
+        return newThread;
     }
 }

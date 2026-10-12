@@ -10,7 +10,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d6 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class d6 implements Runnable {
                 this.b.i();
                 return;
             case 1:
-                yf.e eVar = this.b.z0;
+                zf.f fVar = this.b.z0;
                 return;
             case 2:
                 f6 f6Var = this.b;
@@ -48,13 +48,13 @@ public final /* synthetic */ class d6 implements Runnable {
                     return;
                 }
                 f6Var2.g0 = System.currentTimeMillis();
-                if (ck0.T0 == null) {
-                    ck0.T0 = new DispatchQueue("cache generator queue");
+                if (yj0.T0 == null) {
+                    yj0.T0 = new DispatchQueue("cache generator queue");
                 }
                 f6Var2.C0 = true;
                 f6Var2.e = null;
-                yf.e.A++;
-                DispatchQueue dispatchQueue = ck0.T0;
+                zf.f.A++;
+                DispatchQueue dispatchQueue = yj0.T0;
                 d6 d6Var = new d6(f6Var2, 7);
                 f6Var2.D0 = d6Var;
                 dispatchQueue.postRunnable(d6Var);
@@ -165,14 +165,14 @@ public final /* synthetic */ class d6 implements Runnable {
                     System.currentTimeMillis();
                     com.google.android.gms.internal.cast.a aVar = f6Var4.A0;
                     int i12 = aVar.a;
-                    yf.e eVar2 = f6Var4.z0;
-                    int f10 = eVar2.f(f6Var4.v.b, eVar2.i);
-                    aVar.a = eVar2.i;
-                    if (eVar2.q && !eVar2.e.isEmpty()) {
-                        int i13 = eVar2.i + 1;
-                        eVar2.i = i13;
-                        if (i13 >= eVar2.e.size()) {
-                            eVar2.i = 0;
+                    zf.f fVar2 = f6Var4.z0;
+                    int f10 = fVar2.f(f6Var4.v.b, fVar2.i);
+                    aVar.a = fVar2.i;
+                    if (fVar2.q && !fVar2.e.isEmpty()) {
+                        int i13 = fVar2.i + 1;
+                        fVar2.i = i13;
+                        if (i13 >= fVar2.e.size()) {
+                            fVar2.i = 0;
                         }
                     }
                     if (f10 != -1 && f6Var4.A0.a < i12) {
@@ -220,7 +220,7 @@ public final /* synthetic */ class d6 implements Runnable {
                 }
                 if (f6Var4.L >= 0) {
                     f6Var4.d[3] = (int) f6Var4.L;
-                    long j3 = f6Var4.L;
+                    long j10 = f6Var4.L;
                     synchronized (f6Var4.Q) {
                         f6Var4.L = -1L;
                     }
@@ -228,7 +228,7 @@ public final /* synthetic */ class d6 implements Runnable {
                     if (animatedFileDrawableStream != null) {
                         animatedFileDrawableStream.reset();
                     }
-                    f6Var4.d0.g(j3, true);
+                    f6Var4.d0.g(j10, true);
                     z10 = true;
                 } else {
                     z10 = false;
@@ -257,7 +257,7 @@ public final /* synthetic */ class d6 implements Runnable {
                 return;
             case 6:
                 f6 f6Var5 = this.b;
-                qe.b bVar = f6Var5.s0;
+                re.b bVar = f6Var5.s0;
                 Iterator it2 = bVar.iterator();
                 while (it2.hasNext()) {
                     ((View) it2.next()).invalidate();
@@ -277,7 +277,7 @@ public final /* synthetic */ class d6 implements Runnable {
             default:
                 f6 f6Var7 = this.b;
                 if (f6Var7.D0 != null) {
-                    yf.e.c();
+                    zf.f.c();
                     f6Var7.D0 = null;
                 }
                 f6Var7.C0 = false;

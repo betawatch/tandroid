@@ -2,13 +2,13 @@ package y2;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.ui.mb1;
+import org.telegram.ui.es0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class q {
-    public static final mb1 g = new mb1(20);
-    public static final mb1 h = new mb1(21);
+    public static final es0 g = new es0(24);
+    public static final es0 h = new es0(25);
     public int d;
     public int e;
     public int f;
@@ -82,6 +82,6 @@ public final class q {
         if (arrayList.isEmpty()) {
             return Float.NaN;
         }
-        return ((p) hg.c.g(1, arrayList)).c;
+        return ((p) i2.d.g(1, arrayList)).c;
     }
 }

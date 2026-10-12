@@ -4,7 +4,7 @@ import java.util.List;
 
 /* loaded from: classes.dex */
 public interface f0 extends List {
-    List e();
+    List d();
 
-    f0 k();
+    f0 j();
 }

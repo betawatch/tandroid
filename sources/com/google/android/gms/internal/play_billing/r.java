@@ -8,32 +8,32 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
-import v7.u5;
-import v7.x5;
+import v7.v5;
+import v7.y5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class r extends o implements List, RandomAccess, j$.util.List {
     public static final p b = new p(v.e, 0);
 
-    public static v t(int i10, Object[] objArr) {
+    public static v s(int i10, Object[] objArr) {
         return i10 == 0 ? v.e : new v(i10, objArr);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static r u(List list) {
+    public static r t(List list) {
         if (!(list instanceof o)) {
             Object[] array = list.toArray();
             int length = array.length;
-            x5.a(length, array);
-            return t(length, array);
+            y5.a(length, array);
+            return s(length, array);
         }
-        r p5 = ((o) list).p();
-        if (!p5.q()) {
-            return p5;
+        r o10 = ((o) list).o();
+        if (!o10.p()) {
+            return o10;
         }
-        Object[] array2 = p5.toArray(o.a);
-        return t(array2.length, array2);
+        Object[] array2 = o10.toArray(o.a);
+        return s(array2.length, array2);
     }
 
     @Override // java.util.List
@@ -87,6 +87,15 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
         return false;
     }
 
+    @Override // com.google.android.gms.internal.play_billing.o
+    public int h(Object[] objArr) {
+        int size = size();
+        for (int i10 = 0; i10 < size; i10++) {
+            objArr[i10] = get(i10);
+        }
+        return size;
+    }
+
     @Override // java.util.Collection, java.util.List
     public final int hashCode() {
         int size = size();
@@ -95,15 +104,6 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
             i10 = (i10 * 31) + get(i11).hashCode();
         }
         return i10;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.o
-    public int i(Object[] objArr) {
-        int size = size();
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = get(i10);
-        }
-        return size;
     }
 
     @Override // java.util.List
@@ -144,6 +144,14 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     }
 
     @Override // java.util.List
+    /* renamed from: r */
+    public r subList(int i10, int i11) {
+        v5.c(i10, i11, size());
+        int i12 = i11 - i10;
+        return i12 == size() ? this : i12 == 0 ? v.e : new q(this, i10, i12);
+    }
+
+    @Override // java.util.List
     public final Object remove(int i10) {
         throw new UnsupportedOperationException();
     }
@@ -151,14 +159,6 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     @Override // java.util.List, j$.util.List
     public /* synthetic */ void replaceAll(UnaryOperator unaryOperator) {
         List.-CC.$default$replaceAll(this, unaryOperator);
-    }
-
-    @Override // java.util.List
-    /* renamed from: s */
-    public r subList(int i10, int i11) {
-        u5.c(i10, i11, size());
-        int i12 = i11 - i10;
-        return i12 == size() ? this : i12 == 0 ? v.e : new q(this, i10, i12);
     }
 
     @Override // java.util.List
@@ -172,14 +172,14 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     }
 
     @Override // java.util.List
-    /* renamed from: v, reason: merged with bridge method [inline-methods] */
+    /* renamed from: u, reason: merged with bridge method [inline-methods] */
     public final p listIterator(int i10) {
-        u5.b(i10, size());
+        v5.b(i10, size());
         return isEmpty() ? b : new p(this, i10);
     }
 
     @Override // com.google.android.gms.internal.play_billing.o
-    public final r p() {
+    public final r o() {
         return this;
     }
 }

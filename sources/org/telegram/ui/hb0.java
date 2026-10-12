@@ -1,34 +1,48 @@
 package org.telegram.ui;
 
-import android.window.OnBackInvokedCallback;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class hb0 implements OnBackInvokedCallback {
-    public final /* synthetic */ LaunchActivity a;
+public final class hb0 implements sf.c {
+    public final nb0 a;
+    public final /* synthetic */ LaunchActivity b;
 
     public hb0(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+        this.b = launchActivity;
+        Pattern pattern = LaunchActivity.B1;
+        this.a = new nb0(launchActivity, false);
     }
 
-    public final void onBackInvoked() {
-        if (AndroidUtilities.isTablet()) {
-            this.a.onBackPressed();
-            return;
-        }
-        if (this.a.c0(true)) {
-            LaunchActivity launchActivity = this.a;
-            ActionBarLayout actionBarLayout = launchActivity.q0;
-            if (actionBarLayout == null) {
-                launchActivity.onBackPressed();
-            } else if (!actionBarLayout.c1) {
-                actionBarLayout.G();
-            } else {
-                actionBarLayout.c1 = false;
-                actionBarLayout.e(false);
-            }
-        }
+    @Override // sf.c
+    public final void b() {
+        Pattern pattern = LaunchActivity.B1;
+        this.b.getWindow();
+    }
+
+    @Override // sf.c
+    public final void d() {
+        this.a.a(false);
+    }
+
+    @Override // sf.c
+    public final void f() {
+        Pattern pattern = LaunchActivity.B1;
+        LaunchActivity launchActivity = this.b;
+        launchActivity.getClass();
+        this.a.a(true);
+        launchActivity.getWindow();
+    }
+
+    @Override // sf.c
+    public final /* synthetic */ void a() {
+    }
+
+    @Override // sf.c
+    public final /* synthetic */ void c() {
+    }
+
+    @Override // sf.c
+    public final /* synthetic */ void e() {
     }
 }

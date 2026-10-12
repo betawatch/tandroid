@@ -2,26 +2,61 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class mk0 extends qm0 {
-    public final /* synthetic */ uk0 V2;
+public final class mk0 extends LinearLayout {
+    public boolean a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mk0(uk0 uk0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.V2 = uk0Var;
+    public mk0(Context context) {
+        super(context);
     }
 
-    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        uk0 uk0Var = this.V2;
-        vb0 vb0Var = uk0Var.J;
-        if (vb0Var != null) {
-            vb0Var.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), 0));
+        int i12;
+        ik0 ik0Var = null;
+        if (this.a) {
+            i12 = 0;
+        } else {
+            i12 = 0;
+            for (int i13 = 0; i13 < getChildCount(); i13++) {
+                if (getChildAt(i13) instanceof qk0) {
+                    ik0Var = ((qk0) getChildAt(i13)).e;
+                    if (ik0Var.getAdapter().h() == ik0Var.getChildCount()) {
+                        int childCount = ik0Var.getChildCount();
+                        for (int i14 = 0; i14 < childCount; i14++) {
+                            ik0Var.getChildAt(i14).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), 0), i11);
+                            if (ik0Var.getChildAt(i14).getMeasuredWidth() > i12) {
+                                i12 = ik0Var.getChildAt(i14).getMeasuredWidth();
+                            }
+                        }
+                        i12 += AndroidUtilities.dp(16.0f);
+                    }
+                }
+            }
         }
-        super.onMeasure(i10, i11);
-        uk0Var.j();
+        int size = View.MeasureSpec.getSize(i10);
+        if (size < AndroidUtilities.dp(240.0f)) {
+            size = AndroidUtilities.dp(240.0f);
+        }
+        if (size > AndroidUtilities.dp(280.0f)) {
+            size = AndroidUtilities.dp(280.0f);
+        }
+        if (size < 0) {
+            size = 0;
+        }
+        if (i12 == 0 || i12 >= size) {
+            i12 = size;
+        }
+        if (ik0Var != null) {
+            for (int i15 = 0; i15 < ik0Var.getChildCount(); i15++) {
+                ik0Var.getChildAt(i15).measure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), i11);
+            }
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i12, TLObject.FLAG_30), i11);
     }
 }

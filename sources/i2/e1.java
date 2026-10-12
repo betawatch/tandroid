@@ -1,15 +1,33 @@
 package i2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final class e1 {
-    public final u2.a a;
-    public final y0 b;
-    public final d1 c;
+import android.util.Pair;
 
-    public e1(u2.a aVar, y0 y0Var, d1 d1Var) {
-        this.a = aVar;
-        this.b = y0Var;
-        this.c = d1Var;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class e1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g1 b;
+    public final /* synthetic */ Pair c;
+
+    public /* synthetic */ e1(g1 g1Var, Pair pair, int i10) {
+        this.a = i10;
+        this.b = g1Var;
+        this.c = pair;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                j2.f fVar = this.b.b.h;
+                Pair pair = this.c;
+                fVar.h(((Integer) pair.first).intValue(), (u2.g0) pair.second);
+                break;
+            default:
+                j2.f fVar2 = this.b.b.h;
+                Pair pair2 = this.c;
+                fVar2.j(((Integer) pair2.first).intValue(), (u2.g0) pair2.second);
+                break;
+        }
     }
 }

@@ -18,7 +18,7 @@ import androidx.core.widget.NestedScrollView;
 import java.lang.ref.WeakReference;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e {
     public final Context a;
@@ -47,7 +47,7 @@ public final class e {
     public final c z;
     public boolean g = false;
     public int t = -1;
-    public final androidx.mediarouter.app.x A = new androidx.mediarouter.app.x(this, 5);
+    public final androidx.mediarouter.app.w A = new androidx.mediarouter.app.w(this, 5);
 
     public e(Context context, f fVar, Window window) {
         this.a = context;

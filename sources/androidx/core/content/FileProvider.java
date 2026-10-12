@@ -13,7 +13,7 @@ import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import f0.d;
 import java.io.File;
 import java.io.IOException;
@@ -21,9 +21,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParserException;
-import sc.v;
+import t8.b;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class FileProvider extends ContentProvider {
     public static final String[] e = {"_display_name", "_size"};
@@ -39,7 +39,7 @@ public class FileProvider extends ContentProvider {
     }
 
     public static String a(String str) {
-        return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : e2.i(1, 0, str);
+        return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : k3.j(1, 0, str);
     }
 
     public static d c(Context context, String str, int i10) {
@@ -79,7 +79,7 @@ public class FileProvider extends ContentProvider {
                 }
             }
             if (entry == null) {
-                throw new IllegalArgumentException(v.i("Failed to find configured root that contains ", canonicalPath));
+                throw new IllegalArgumentException(b.h("Failed to find configured root that contains ", canonicalPath));
             }
             String path2 = ((File) entry.getValue()).getPath();
             return new Uri.Builder().scheme("content").authority(c10.a).encodedPath(Uri.encode((String) entry.getKey()) + '/' + Uri.encode(path2.endsWith("/") ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), "/")).build();
@@ -92,7 +92,7 @@ public class FileProvider extends ContentProvider {
         d dVar = new d(str);
         ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider(str, 128);
         if (resolveContentProvider == null) {
-            throw new IllegalArgumentException(v.i("Couldn't find meta-data for provider with authority ", str));
+            throw new IllegalArgumentException(b.h("Couldn't find meta-data for provider with authority ", str));
         }
         if (resolveContentProvider.metaData == null && i10 != 0) {
             Bundle bundle = new Bundle(1);
@@ -243,7 +243,7 @@ public class FileProvider extends ContentProvider {
             i10 = 939524096;
         } else {
             if (!"rwt".equals(str)) {
-                throw new IllegalArgumentException(v.i("Invalid mode: ", str));
+                throw new IllegalArgumentException(b.h("Invalid mode: ", str));
             }
             i10 = 1006632960;
         }

@@ -10,7 +10,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglBase14;
 import org.webrtc.VideoEncoderFactory;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private static final List<String> H264_HW_EXCEPTION_MODELS = Arrays.asList("SAMSUNG-SGH-I337", "Nexus 7", "Nexus 4");
@@ -24,7 +24,7 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
     private final boolean enableIntelVp8Encoder;
     private final EglBase14.Context sharedContext;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static /* synthetic */ class 1 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
@@ -71,8 +71,8 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
             }
             try {
                 mediaCodecInfo = MediaCodecList.getCodecInfoAt(i10);
-            } catch (IllegalArgumentException e7) {
-                Logging.e(TAG, "Cannot retrieve encoder codec info", e7);
+            } catch (IllegalArgumentException e) {
+                Logging.e(TAG, "Cannot retrieve encoder codec info", e);
             }
             if (mediaCodecInfo != null && mediaCodecInfo.isEncoder() && isSupportedCodec(mediaCodecInfo, videoCodecMimeType)) {
                 return mediaCodecInfo;
@@ -171,12 +171,12 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
 
     @Override // org.webrtc.VideoEncoderFactory
     public final /* synthetic */ VideoEncoderFactory.VideoEncoderSelector getEncoderSelector() {
-        return y.a(this);
+        return z.a(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory
     public final /* synthetic */ VideoCodecInfo[] getImplementations() {
-        return y.b(this);
+        return z.b(this);
     }
 
     @Override // org.webrtc.VideoEncoderFactory

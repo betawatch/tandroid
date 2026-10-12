@@ -1,28 +1,48 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Outline;
-import android.graphics.Path;
-import android.os.Build;
-import android.view.View;
-import android.view.ViewOutlineProvider;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class u extends ViewOutlineProvider {
-    public final Path a = new Path();
+public final class u implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ m2 b;
+    public final /* synthetic */ m2 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ ActionBarLayout e;
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        float dp = AndroidUtilities.dp(29.0f);
-        float dp2 = AndroidUtilities.dp(12.0f);
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(0.0f, 0.0f, view.getWidth(), view.getHeight(), new float[]{dp, dp, dp, dp, dp2, dp2, dp2, dp2}, Path.Direction.CW);
-        if (Build.VERSION.SDK_INT >= 30) {
-            outline.setPath(path);
-        } else {
-            outline.setConvexPath(path);
+    public u(ActionBarLayout actionBarLayout, boolean z10, m2 m2Var, m2 m2Var2, boolean z11) {
+        this.e = actionBarLayout;
+        this.a = z10;
+        this.b = m2Var;
+        this.c = m2Var2;
+        this.d = z11;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        ActionBarLayout actionBarLayout = this.e;
+        if (actionBarLayout.d != this) {
+            return;
+        }
+        actionBarLayout.d = null;
+        if (this.a) {
+            m2 m2Var = this.b;
+            if (m2Var != null) {
+                m2Var.onTransitionAnimationStart(false, false);
+            }
+            this.c.onTransitionAnimationStart(true, false);
+            actionBarLayout.d0(true, true, this.d);
+            return;
+        }
+        Runnable runnable = actionBarLayout.e;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            if (actionBarLayout.R0) {
+                actionBarLayout.e.run();
+            } else {
+                AndroidUtilities.runOnUIThread(actionBarLayout.e, 200L);
+            }
         }
     }
 }

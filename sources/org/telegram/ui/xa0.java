@@ -1,43 +1,105 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import java.util.regex.Pattern;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xa0 implements Runnable {
+public final /* synthetic */ class xa0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ya0 b;
-    public final /* synthetic */ AccountInstance c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ o00 c;
+    public final /* synthetic */ Long d;
 
-    public /* synthetic */ xa0(ya0 ya0Var, AccountInstance accountInstance, long j3, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
+    public /* synthetic */ xa0(LaunchActivity launchActivity, o00 o00Var, Long l4, int i10) {
         this.a = i10;
-        this.b = ya0Var;
-        this.c = accountInstance;
-        this.d = j3;
-        this.e = n2Var;
+        this.b = launchActivity;
+        this.c = o00Var;
+        this.d = l4;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        org.telegram.ui.Components.zc X;
+        int i10;
+        int i11;
+        org.telegram.ui.Components.zc X2;
+        int i12;
+        int i13;
+        int i14 = this.a;
+        Long l4 = this.d;
+        o00 o00Var = this.c;
+        LaunchActivity launchActivity = this.b;
+        TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
+        switch (i14) {
             case 0:
-                AndroidUtilities.runOnUIThread(new xa0(this.b, this.c, this.d, this.e, 1));
+                Pattern pattern = LaunchActivity.B1;
+                try {
+                    o00Var.run();
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+                if (storyItem != null) {
+                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
+                        if (R != null) {
+                            storyItem.dialogId = l4.longValue();
+                            bi.sb createOverlayStoryViewer = R.createOverlayStoryViewer();
+                            createOverlayStoryViewer.v();
+                            createOverlayStoryViewer.F(launchActivity, storyItem, null);
+                            break;
+                        }
+                    } else {
+                        X = org.telegram.ui.Components.zc.X();
+                        if (X != null) {
+                            i10 = R.raw.story_bomb1;
+                            i11 = R.string.StoryNotFound;
+                        }
+                    }
+                } else {
+                    X = org.telegram.ui.Components.zc.X();
+                    if (X != null) {
+                        i10 = R.raw.story_bomb2;
+                        i11 = R.string.StoryNotFound;
+                    }
+                }
+                org.telegram.messenger.q.r(i11, X, i10, 36);
                 break;
             default:
-                AccountInstance accountInstance = this.c;
-                MessagesController messagesController = accountInstance.getMessagesController();
-                long j3 = this.d;
-                long j10 = -j3;
-                ChatObject.Call groupCall = messagesController.getGroupCall(j10, false);
-                TLRPC.Chat chat = accountInstance.getMessagesController().getChat(Long.valueOf(j10));
-                accountInstance.getMessagesController().getInputPeer(j3);
-                org.telegram.ui.Components.voip.f2.l(chat, null, false, Boolean.valueOf(groupCall == null || !groupCall.call.rtmp_stream), this.b.g, this.e, accountInstance);
+                Pattern pattern2 = LaunchActivity.B1;
+                try {
+                    o00Var.run();
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+                org.telegram.ui.ActionBar.m2 R2 = LaunchActivity.R();
+                if (storyItem != null) {
+                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
+                        if (R2 != null) {
+                            storyItem.dialogId = l4.longValue();
+                            bi.sb createOverlayStoryViewer2 = R2.createOverlayStoryViewer();
+                            createOverlayStoryViewer2.v();
+                            createOverlayStoryViewer2.F(launchActivity, storyItem, null);
+                            break;
+                        }
+                    } else {
+                        X2 = org.telegram.ui.Components.zc.X();
+                        if (X2 != null) {
+                            i12 = R.raw.story_bomb1;
+                            i13 = R.string.StoryNotFound;
+                        }
+                    }
+                } else {
+                    X2 = org.telegram.ui.Components.zc.X();
+                    if (X2 != null) {
+                        i12 = R.raw.story_bomb2;
+                        i13 = R.string.StoryNotFound;
+                    }
+                }
+                org.telegram.messenger.q.r(i13, X2, i12, 36);
                 break;
         }
     }

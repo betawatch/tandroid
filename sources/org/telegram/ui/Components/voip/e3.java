@@ -1,26 +1,35 @@
 package org.telegram.ui.Components.voip;
 
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.ui.Components.dx0;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e3 extends View {
-    public dx0 a;
-    public boolean b;
+public final /* synthetic */ class e3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j3 b;
+    public final /* synthetic */ int c;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        dx0 dx0Var;
-        if (this.b || (dx0Var = this.a) == null) {
-            return;
-        }
-        dx0Var.b(canvas, this);
+    public /* synthetic */ e3(j3 j3Var, int i10, int i11) {
+        this.a = i11;
+        this.b = j3Var;
+        this.c = i10;
     }
 
-    public void setState(boolean z10) {
-        this.b = z10;
-        invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new e3(this.b, this.c, 2));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new e3(this.b, this.c, 3));
+                break;
+            case 2:
+                this.b.c(this.c);
+                break;
+            default:
+                this.b.a(this.c);
+                break;
+        }
     }
 }

@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -20,91 +20,91 @@ public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ r2(Context context, String str, long j3, boolean z10, of.e eVar) {
+    public /* synthetic */ r2(Context context, String str, long j10, boolean z10, pf.c cVar) {
         this.d = context;
         this.e = str;
-        this.b = j3;
+        this.b = j10;
         this.c = z10;
-        this.f = eVar;
+        this.f = cVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Wallet.h0 h0Var;
-        dz0 r10;
+        org.telegram.ui.Wallet.g0 g0Var;
+        zy0 r10;
         switch (this.a) {
             case 0:
-                of.f.q((Context) this.d, Uri.parse((String) this.e), this.b == 0, this.c, (of.e) this.f);
+                pf.d.q((Context) this.d, Uri.parse((String) this.e), this.b == 0, this.c, (pf.c) this.f);
                 return;
             case 1:
-                l8.C((l8) this.d, this.b, this.c, (TLRPC.Document) this.e, (Runnable) this.f);
+                m8.B((m8) this.d, this.b, this.c, (TLRPC.Document) this.e, (Runnable) this.f);
                 return;
             default:
-                org.telegram.ui.Wallet.p0 p0Var = (org.telegram.ui.Wallet.p0) this.d;
-                long j3 = this.b;
+                org.telegram.ui.Wallet.o0 o0Var = (org.telegram.ui.Wallet.o0) this.d;
+                long j10 = this.b;
                 String str = (String) this.e;
                 boolean z10 = this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.f;
-                org.telegram.ui.Wallet.h0 h0Var2 = null;
+                org.telegram.ui.Wallet.g0 g0Var2 = null;
                 try {
-                    Object obj = org.telegram.ui.Wallet.p0.f;
+                    Object obj = org.telegram.ui.Wallet.o0.f;
                     synchronized (obj) {
-                        p0Var.c(j3);
-                        r10 = p0Var.r();
+                        o0Var.c(j10);
+                        r10 = o0Var.r();
                     }
                     if (((LinkedHashMap) r10.e).containsKey(str)) {
-                        h0Var = p0Var.h(r10, str, j3);
+                        g0Var = o0Var.h(r10, str, j10);
                         try {
                             synchronized (obj) {
                                 try {
-                                    p0Var.c(j3);
+                                    o0Var.c(j10);
                                     if (z10) {
-                                        r10.b = ConnectionsManager.getInstance(p0Var.b).getCurrentTime();
-                                        if (p0Var.d.exists()) {
-                                            p0Var.v(r10, new LinkedHashMap());
+                                        r10.b = ConnectionsManager.getInstance(o0Var.b).getCurrentTime();
+                                        if (o0Var.d.exists()) {
+                                            o0Var.v(r10, new LinkedHashMap());
                                         } else {
-                                            if (!p0Var.q().edit().putInt("lastUsageDate", r10.b).commit()) {
+                                            if (!o0Var.q().edit().putInt("lastUsageDate", r10.b).commit()) {
                                                 throw new IOException("usage write");
                                             }
-                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.t21(6));
+                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.b31(7));
                                         }
                                     }
-                                } catch (Exception e7) {
-                                    FileLog.e(e7);
+                                } catch (Exception e) {
+                                    FileLog.e(e);
                                 } finally {
                                 }
                             }
-                            h0Var2 = h0Var;
-                        } catch (Exception e10) {
-                            e = e10;
+                            g0Var2 = g0Var;
+                        } catch (Exception e7) {
+                            e = e7;
                             FileLog.e(e);
-                            if (h0Var != null) {
-                                h0Var.close();
+                            if (g0Var != null) {
+                                g0Var.close();
                             }
-                            AndroidUtilities.runOnUIThread(new o31(p0Var, h0Var2, callback, j3, 8));
+                            AndroidUtilities.runOnUIThread(new bi.b8(o0Var, g0Var2, callback, j10, 18));
                             return;
                         }
                     }
-                } catch (Exception e11) {
-                    e = e11;
-                    h0Var = null;
+                } catch (Exception e10) {
+                    e = e10;
+                    g0Var = null;
                 }
-                AndroidUtilities.runOnUIThread(new o31(p0Var, h0Var2, callback, j3, 8));
+                AndroidUtilities.runOnUIThread(new bi.b8(o0Var, g0Var2, callback, j10, 18));
                 return;
         }
     }
 
-    public /* synthetic */ r2(l8 l8Var, long j3, boolean z10, TLRPC.Document document, Runnable runnable) {
-        this.d = l8Var;
-        this.b = j3;
+    public /* synthetic */ r2(m8 m8Var, long j10, boolean z10, TLRPC.Document document, Runnable runnable) {
+        this.d = m8Var;
+        this.b = j10;
         this.c = z10;
         this.e = document;
         this.f = runnable;
     }
 
-    public /* synthetic */ r2(org.telegram.ui.Wallet.p0 p0Var, long j3, String str, boolean z10, Utilities.Callback callback) {
-        this.d = p0Var;
-        this.b = j3;
+    public /* synthetic */ r2(org.telegram.ui.Wallet.o0 o0Var, long j10, String str, boolean z10, Utilities.Callback callback) {
+        this.d = o0Var;
+        this.b = j10;
         this.e = str;
         this.c = z10;
         this.f = callback;

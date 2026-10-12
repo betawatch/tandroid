@@ -6,14 +6,19 @@ import android.util.Base64;
 import android.util.Pair;
 import android.util.Xml;
 import androidx.car.app.navigation.model.Maneuver;
-import b2.r0;
-import b2.s0;
+import b2.b0;
+import b2.i0;
+import b2.t;
 import b2.w;
-import e2.d0;
-import e9.a1;
-import e9.g0;
-import e9.i0;
+import b2.w0;
+import b2.x;
+import b2.x0;
+import e2.m0;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -29,9 +34,10 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
-import v7.r6;
+import v7.s6;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e extends DefaultHandler implements y2.n {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -49,19 +55,19 @@ public final class e extends DefaultHandler implements y2.n {
         }
     }
 
-    public static long a(ArrayList arrayList, long j3, long j10, int i10, long j11) {
+    public static long a(ArrayList arrayList, long j10, long j11, int i10, long j12) {
         int i11;
         if (i10 >= 0) {
             i11 = i10 + 1;
         } else {
-            String str = d0.a;
-            i11 = (int) ((((j11 - j3) + j10) - 1) / j10);
+            String str = m0.a;
+            i11 = (int) ((((j12 - j10) + j11) - 1) / j11);
         }
         for (int i12 = 0; i12 < i11; i12++) {
-            arrayList.add(new q(j3, j10));
-            j3 += j10;
+            arrayList.add(new q(j10, j11));
+            j10 += j11;
         }
-        return j3;
+        return j10;
     }
 
     public static void b(XmlPullParser xmlPullParser) {
@@ -200,11 +206,11 @@ public final class e extends DefaultHandler implements y2.n {
                             }
                         }
                     } else {
-                        String[] a02 = d0.a0(str);
-                        if (a02.length != 0) {
-                            List z10 = new a5.a(new a4.l(new d9.b('.'), 13)).z(r6.b(a02[0].trim()));
-                            if (z10.size() == 4 && ((String) z10.get(0)).equals("ac-4")) {
-                                String str2 = (String) z10.get(3);
+                        String[] d02 = m0.d0(str);
+                        if (d02.length != 0) {
+                            List B = new a5.a(new ya.c(new d9.e('.', 0), 14)).B(s6.c(d02[0].trim()));
+                            if (B.size() == 4 && ((String) B.get(0)).equals("ac-4")) {
+                                String str2 = (String) B.get(3);
                                 str2.getClass();
                                 if (!str2.equals("03")) {
                                     if (str2.equals("04")) {
@@ -231,32 +237,32 @@ public final class e extends DefaultHandler implements y2.n {
             case 7:
                 String attributeValue5 = xmlPullParser.getAttributeValue(null, "value");
                 if (attributeValue5 != null) {
-                    String b10 = r6.b(attributeValue5);
-                    b10.getClass();
-                    switch (b10.hashCode()) {
+                    String c12 = s6.c(attributeValue5);
+                    c12.getClass();
+                    switch (c12.hashCode()) {
                         case 1596796:
-                            if (b10.equals("4000")) {
+                            if (c12.equals("4000")) {
                                 c11 = 0;
                                 break;
                             }
                             c11 = 65535;
                             break;
                         case 2937391:
-                            if (b10.equals("a000")) {
+                            if (c12.equals("a000")) {
                                 c11 = 1;
                                 break;
                             }
                             c11 = 65535;
                             break;
                         case 3094034:
-                            if (b10.equals("f800")) {
+                            if (c12.equals("f800")) {
                                 c11 = 2;
                                 break;
                             }
                             c11 = 65535;
                             break;
                         case 3094035:
-                            if (b10.equals("f801")) {
+                            if (c12.equals("f801")) {
                                 c11 = 3;
                                 break;
                             }
@@ -308,14 +314,14 @@ public final class e extends DefaultHandler implements y2.n {
         }
         do {
             xmlPullParser.next();
-        } while (!e2.d.l(xmlPullParser, "AudioChannelConfiguration"));
+        } while (!e2.a.h(xmlPullParser, "AudioChannelConfiguration"));
         return i12;
     }
 
-    public static long d(XmlPullParser xmlPullParser, long j3) {
+    public static long d(XmlPullParser xmlPullParser, long j10) {
         String attributeValue = xmlPullParser.getAttributeValue(null, "availabilityTimeOffset");
         if (attributeValue == null) {
-            return j3;
+            return j10;
         }
         if ("INF".equals(attributeValue)) {
             return Long.MAX_VALUE;
@@ -337,24 +343,24 @@ public final class e extends DefaultHandler implements y2.n {
             } else {
                 b(xmlPullParser);
             }
-        } while (!e2.d.l(xmlPullParser, "BaseURL"));
-        if (str != null && e2.a.h(str)[0] != -1) {
+        } while (!e2.a.h(xmlPullParser, "BaseURL"));
+        if (str != null && e2.e.c(str)[0] != -1) {
             if (attributeValue3 == null) {
                 attributeValue3 = str;
             }
-            return e9.q.p(new b(parseInt, parseInt2, str, attributeValue3));
+            return e9.s.q(new b(parseInt, parseInt2, str, attributeValue3));
         }
         ArrayList arrayList2 = new ArrayList();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             b bVar = (b) arrayList.get(i10);
-            String l4 = e2.a.l(bVar.a, str);
-            String str2 = attributeValue3 == null ? l4 : attributeValue3;
+            String f7 = e2.e.f(bVar.a, str);
+            String str2 = attributeValue3 == null ? f7 : attributeValue3;
             if (z10) {
                 parseInt = bVar.c;
                 parseInt2 = bVar.d;
                 str2 = bVar.b;
             }
-            arrayList2.add(new b(parseInt, parseInt2, l4, str2));
+            arrayList2.add(new b(parseInt, parseInt2, f7, str2));
         }
         return arrayList2;
     }
@@ -401,32 +407,32 @@ public final class e extends DefaultHandler implements y2.n {
         String str4;
         String attributeValue = xmlPullParser.getAttributeValue(null, "schemeIdUri");
         if (attributeValue != null) {
-            String b10 = r6.b(attributeValue);
-            b10.getClass();
-            switch (b10.hashCode()) {
+            String c11 = s6.c(attributeValue);
+            c11.getClass();
+            switch (c11.hashCode()) {
                 case -1980789791:
-                    if (b10.equals("urn:uuid:e2719d58-a985-b3c9-781a-b030af78d30e")) {
+                    if (c11.equals("urn:uuid:e2719d58-a985-b3c9-781a-b030af78d30e")) {
                         c10 = 0;
                         break;
                     }
                     c10 = 65535;
                     break;
                 case 489446379:
-                    if (b10.equals("urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95")) {
+                    if (c11.equals("urn:uuid:9a04f079-9840-4286-ab92-e65be0885f95")) {
                         c10 = 1;
                         break;
                     }
                     c10 = 65535;
                     break;
                 case 755418770:
-                    if (b10.equals("urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed")) {
+                    if (c11.equals("urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed")) {
                         c10 = 2;
                         break;
                     }
                     c10 = 65535;
                     break;
                 case 1812765994:
-                    if (b10.equals("urn:mpeg:dash:mp4protection:2011")) {
+                    if (c11.equals("urn:mpeg:dash:mp4protection:2011")) {
                         c10 = 3;
                         break;
                     }
@@ -438,21 +444,21 @@ public final class e extends DefaultHandler implements y2.n {
             }
             switch (c10) {
                 case 0:
-                    r72 = b2.i.c;
+                    r72 = b2.n.d;
                     str = null;
                     str2 = null;
                     str3 = str2;
                     r82 = str2;
                     break;
                 case 1:
-                    r72 = b2.i.e;
+                    r72 = b2.n.f;
                     str = null;
                     str2 = null;
                     str3 = str2;
                     r82 = str2;
                     break;
                 case 2:
-                    r72 = b2.i.d;
+                    r72 = b2.n.e;
                     str = null;
                     str2 = null;
                     str3 = str2;
@@ -484,12 +490,12 @@ public final class e extends DefaultHandler implements y2.n {
                         for (int i11 = 0; i11 < split.length; i11++) {
                             uuidArr[i11] = UUID.fromString(split[i11]);
                         }
-                        r72 = b2.i.b;
+                        r72 = b2.n.c;
                         str3 = null;
-                        r82 = w3.p.a(r72, uuidArr, null);
+                        r82 = w3.q.a(r72, uuidArr, null);
                         break;
                     } else {
-                        e2.a.n("MpdParser", "Ignoring <ContentProtection> with schemeIdUri=\"urn:mpeg:dash:mp4protection:2011\" (ClearKey) due to missing required default_KID attribute.");
+                        e2.a.l("MpdParser", "Ignoring <ContentProtection> with schemeIdUri=\"urn:mpeg:dash:mp4protection:2011\" (ClearKey) due to missing required default_KID attribute.");
                         r72 = null;
                         str2 = r72;
                         str3 = str2;
@@ -500,10 +506,10 @@ public final class e extends DefaultHandler implements y2.n {
             }
             do {
                 xmlPullParser.next();
-                if ((!e2.d.m(xmlPullParser, "clearkey:Laurl") || e2.d.m(xmlPullParser, "dashif:Laurl")) && xmlPullParser.next() == 4) {
+                if ((!e2.a.i(xmlPullParser, "clearkey:Laurl") || e2.a.i(xmlPullParser, "dashif:Laurl")) && xmlPullParser.next() == 4) {
                     str3 = xmlPullParser.getText();
                     r82 = r82;
-                } else if (e2.d.m(xmlPullParser, "ms:laurl")) {
+                } else if (e2.a.i(xmlPullParser, "ms:laurl")) {
                     str3 = xmlPullParser.getAttributeValue(null, "licenseUrl");
                     r82 = r82;
                 } else {
@@ -515,10 +521,10 @@ public final class e extends DefaultHandler implements y2.n {
                         }
                         if (name.equals("pssh") && xmlPullParser.next() == 4) {
                             byte[] decode = Base64.decode(xmlPullParser.getText(), 0);
-                            j6.l j3 = w3.p.j(decode);
-                            UUID uuid = j3 == null ? null : (UUID) j3.b;
+                            j6.l i12 = w3.q.i(decode);
+                            UUID uuid = i12 == null ? null : (UUID) i12.b;
                             if (uuid == null) {
-                                e2.a.n("MpdParser", "Skipping malformed cenc:pssh data");
+                                e2.a.l("MpdParser", "Skipping malformed cenc:pssh data");
                                 r72 = uuid;
                                 r82 = 0;
                             } else {
@@ -529,16 +535,16 @@ public final class e extends DefaultHandler implements y2.n {
                         }
                     }
                     if (r82 == 0) {
-                        ?? r10 = b2.i.e;
-                        if (r10.equals(r72) && e2.d.m(xmlPullParser, "mspr:pro") && xmlPullParser.next() == 4) {
-                            r82 = w3.p.a(r10, null, Base64.decode(xmlPullParser.getText(), 0));
+                        ?? r10 = b2.n.f;
+                        if (r10.equals(r72) && e2.a.i(xmlPullParser, "mspr:pro") && xmlPullParser.next() == 4) {
+                            r82 = w3.q.a(r10, null, Base64.decode(xmlPullParser.getText(), 0));
                         }
                     }
                     b(xmlPullParser);
                     r82 = r82;
                 }
-            } while (!e2.d.l(xmlPullParser, "ContentProtection"));
-            return Pair.create(str, r72 != null ? new b2.n(r72, str3, "video/mp4", r82) : null);
+            } while (!e2.a.h(xmlPullParser, "ContentProtection"));
+            return Pair.create(str, r72 != null ? new b2.s(r72, str3, "video/mp4", r82) : null);
         }
         str = null;
         r72 = null;
@@ -547,12 +553,12 @@ public final class e extends DefaultHandler implements y2.n {
         r82 = str2;
         do {
             xmlPullParser.next();
-            if (e2.d.m(xmlPullParser, "clearkey:Laurl")) {
+            if (e2.a.i(xmlPullParser, "clearkey:Laurl")) {
             }
             str3 = xmlPullParser.getText();
             r82 = r82;
-        } while (!e2.d.l(xmlPullParser, "ContentProtection"));
-        return Pair.create(str, r72 != null ? new b2.n(r72, str3, "video/mp4", r82) : null);
+        } while (!e2.a.h(xmlPullParser, "ContentProtection"));
+        return Pair.create(str, r72 != null ? new b2.s(r72, str3, "video/mp4", r82) : null);
     }
 
     public static int g(XmlPullParser xmlPullParser) {
@@ -585,16 +591,16 @@ public final class e extends DefaultHandler implements y2.n {
         String str2 = attributeValue3 != null ? attributeValue3 : null;
         do {
             xmlPullParser.next();
-        } while (!e2.d.l(xmlPullParser, str));
+        } while (!e2.a.h(xmlPullParser, str));
         return new f(attributeValue, attributeValue2, str2);
     }
 
-    public static long i(XmlPullParser xmlPullParser, String str, long j3) {
+    public static long i(XmlPullParser xmlPullParser, String str, long j10) {
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         if (attributeValue == null) {
-            return j3;
+            return j10;
         }
-        Matcher matcher = d0.e.matcher(attributeValue);
+        Matcher matcher = m0.e.matcher(attributeValue);
         if (!matcher.matches()) {
             return (long) (Double.parseDouble(attributeValue) * 3600.0d * 1000.0d);
         }
@@ -628,30 +634,17 @@ public final class e extends DefaultHandler implements y2.n {
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:192:0x0fda A[LOOP:5: B:183:0x041d->B:192:0x0fda, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x0e52 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:359:0x0cc3 A[LOOP:11: B:350:0x06a0->B:359:0x0cc3, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:360:0x08f0 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:379:0x09bb  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x09cd  */
-    /* JADX WARN: Removed duplicated region for block: B:389:0x09e5  */
-    /* JADX WARN: Removed duplicated region for block: B:407:0x0a29  */
-    /* JADX WARN: Removed duplicated region for block: B:417:0x0a4e  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x13bd A[LOOP:1: B:35:0x00d3->B:43:0x13bd, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x1389 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:457:0x0af7  */
-    /* JADX WARN: Removed duplicated region for block: B:473:0x0b6c  */
-    /* JADX WARN: Removed duplicated region for block: B:476:0x0b7a  */
-    /* JADX WARN: Removed duplicated region for block: B:479:0x0b8c  */
-    /* JADX WARN: Removed duplicated region for block: B:482:0x0c5a  */
-    /* JADX WARN: Removed duplicated region for block: B:485:0x0c76  */
-    /* JADX WARN: Removed duplicated region for block: B:492:0x0c95  */
-    /* JADX WARN: Removed duplicated region for block: B:498:0x0c7d  */
-    /* JADX WARN: Removed duplicated region for block: B:499:0x0c5d  */
-    /* JADX WARN: Removed duplicated region for block: B:500:0x0b9a  */
-    /* JADX WARN: Removed duplicated region for block: B:546:0x0b83  */
-    /* JADX WARN: Removed duplicated region for block: B:547:0x0b75  */
-    /* JADX WARN: Removed duplicated region for block: B:551:0x0b44 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x101e A[LOOP:5: B:183:0x041e->B:192:0x101e, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x0e96 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:361:0x0cfe A[LOOP:11: B:352:0x06b6->B:361:0x0cfe, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x091c A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:381:0x09e7  */
+    /* JADX WARN: Removed duplicated region for block: B:384:0x09f9  */
+    /* JADX WARN: Removed duplicated region for block: B:391:0x0a1e  */
+    /* JADX WARN: Removed duplicated region for block: B:405:0x0a53 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x1401 A[LOOP:1: B:35:0x00d3->B:43:0x1401, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x13cd A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:556:0x0a0f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -660,1889 +653,1886 @@ public final class e extends DefaultHandler implements y2.n {
         boolean z10;
         int i11;
         int i12;
-        long j3;
+        long j10;
         ArrayList arrayList;
         boolean z11;
-        long j10;
         long j11;
-        ArrayList arrayList2;
         long j12;
+        ArrayList arrayList2;
         long j13;
-        ArrayList arrayList3;
         long j14;
+        ArrayList arrayList3;
+        long j15;
         ArrayList arrayList4;
         String str;
         String str2;
         ArrayList arrayList5;
         ArrayList arrayList6;
-        long j15;
+        long j16;
         ArrayList arrayList7;
         String str3;
         String str4;
-        long j16;
         long j17;
+        long j18;
         String str5;
         String str6;
-        long j18;
-        String str7;
-        String str8;
-        long j19;
-        String str9;
-        String str10;
         ByteArrayOutputStream byteArrayOutputStream;
+        String str7;
+        long j19;
+        String str8;
+        String str9;
         long j20;
+        String str10;
+        long j21;
         ByteArrayOutputStream byteArrayOutputStream2;
         ArrayList arrayList8;
-        long j21;
+        long j22;
         ArrayList arrayList9;
         ArrayList arrayList10;
-        String str11;
         ArrayList arrayList11;
+        String str11;
         String str12;
         String str13;
         String str14;
         String str15;
-        float f7;
         String str16;
         String str17;
         ArrayList arrayList12;
+        ArrayList arrayList13;
         String str18;
         String str19;
         String str20;
-        ArrayList arrayList13;
-        long j22;
-        String str21;
         ArrayList arrayList14;
+        long j23;
+        String str21;
         String str22;
         String str23;
-        ArrayList arrayList15;
-        int i13;
-        ArrayList arrayList16;
-        long j23;
-        ArrayList arrayList17;
         String str24;
-        int i14;
+        int i13;
+        ArrayList arrayList15;
+        ArrayList arrayList16;
+        long j24;
+        ArrayList arrayList17;
         String str25;
+        int i14;
         String str26;
+        String str27;
         ArrayList arrayList18;
         int parseInt;
-        String str27;
         String str28;
         String str29;
         String str30;
+        int parseInt2;
         String str31;
+        float f7;
+        int parseInt3;
+        float f10;
         String str32;
-        long j24;
         String str33;
+        String str34;
+        String str35;
+        String str36;
+        String str37;
         ArrayList arrayList19;
         int i15;
-        String str34;
+        String str38;
         int i16;
         int i17;
         ArrayList arrayList20;
         ArrayList arrayList21;
-        String str35;
+        String str39;
         long j25;
         ArrayList arrayList22;
-        String str36;
-        ArrayList arrayList23;
         long j26;
-        String str37;
+        String str40;
+        ArrayList arrayList23;
+        long j27;
+        String str41;
         ArrayList arrayList24;
         ArrayList arrayList25;
-        String str38;
+        String str42;
         s sVar;
         int i18;
-        String str39;
-        String str40;
-        String str41;
+        String str43;
+        String str44;
+        String str45;
         String d10;
         ArrayList arrayList26;
-        String str42;
-        String str43;
+        String str46;
+        String str47;
+        b2.o oVar;
         int i19;
+        long j28;
         ArrayList arrayList27;
+        Pair pair;
+        int parseInt4;
+        String str48;
         int i20;
         int i21;
+        String str49;
+        String str50;
         int i22;
-        ArrayList arrayList28;
-        Pair pair;
-        int parseInt2;
-        int i23;
-        String str44;
-        int i24;
-        int i25;
-        String str45;
-        String str46;
-        int i26;
         m kVar;
-        String str47;
-        ArrayList arrayList29;
-        long j27;
-        int i27 = 0;
+        String str51;
+        ArrayList arrayList28;
+        long j29;
+        int i23 = 0;
         String[] strArr = new String[0];
-        String str48 = null;
+        String str52 = null;
         String attributeValue = xmlPullParser.getAttributeValue(null, "profiles");
         if (attributeValue != null) {
             strArr = attributeValue.split(",");
         }
         int length = strArr.length;
-        int i28 = 0;
+        int i24 = 0;
         while (true) {
             i10 = 1;
-            if (i28 >= length) {
+            if (i24 >= length) {
                 z10 = false;
                 break;
             }
-            if (strArr[i28].startsWith("urn:dvb:dash:profile:dvb-dash:")) {
+            if (strArr[i24].startsWith("urn:dvb:dash:profile:dvb-dash:")) {
                 z10 = true;
                 break;
             }
-            i28++;
+            i24++;
         }
         String attributeValue2 = xmlPullParser.getAttributeValue(null, "availabilityStartTime");
-        long j28 = -9223372036854775807L;
-        long S = attributeValue2 == null ? -9223372036854775807L : d0.S(attributeValue2);
-        long i29 = i(xmlPullParser, "mediaPresentationDuration", -9223372036854775807L);
-        long i30 = i(xmlPullParser, "minBufferTime", -9223372036854775807L);
+        long j30 = -9223372036854775807L;
+        long V = attributeValue2 == null ? -9223372036854775807L : m0.V(attributeValue2);
+        long i25 = i(xmlPullParser, "mediaPresentationDuration", -9223372036854775807L);
+        long i26 = i(xmlPullParser, "minBufferTime", -9223372036854775807L);
         boolean equals = "dynamic".equals(xmlPullParser.getAttributeValue(null, TeXSymbolParser.TYPE_ATTR));
-        long i31 = equals ? i(xmlPullParser, "minimumUpdatePeriod", -9223372036854775807L) : -9223372036854775807L;
-        long i32 = equals ? i(xmlPullParser, "timeShiftBufferDepth", -9223372036854775807L) : -9223372036854775807L;
-        long i33 = equals ? i(xmlPullParser, "suggestedPresentationDelay", -9223372036854775807L) : -9223372036854775807L;
+        long i27 = equals ? i(xmlPullParser, "minimumUpdatePeriod", -9223372036854775807L) : -9223372036854775807L;
+        long i28 = equals ? i(xmlPullParser, "timeShiftBufferDepth", -9223372036854775807L) : -9223372036854775807L;
+        long i29 = equals ? i(xmlPullParser, "suggestedPresentationDelay", -9223372036854775807L) : -9223372036854775807L;
         String attributeValue3 = xmlPullParser.getAttributeValue(null, "publishTime");
-        long S2 = attributeValue3 == null ? -9223372036854775807L : d0.S(attributeValue3);
-        long j29 = equals ? 0L : -9223372036854775807L;
-        ArrayList p5 = e9.q.p(new b(z10 ? 1 : TLObject.FLAG_31, 1, uri.toString(), uri.toString()));
+        long V2 = attributeValue3 == null ? -9223372036854775807L : m0.V(attributeValue3);
+        long j31 = equals ? 0L : -9223372036854775807L;
+        ArrayList q6 = e9.s.q(new b(z10 ? 1 : TLObject.FLAG_31, 1, uri.toString(), uri.toString()));
+        ArrayList arrayList29 = new ArrayList();
         ArrayList arrayList30 = new ArrayList();
-        ArrayList arrayList31 = new ArrayList();
-        long j30 = equals ? -9223372036854775807L : 0L;
-        int i34 = 0;
-        int i35 = 0;
+        long j32 = equals ? -9223372036854775807L : 0L;
+        int i30 = 0;
+        int i31 = 0;
         i iVar = null;
         c5.a aVar = null;
         Uri uri2 = null;
-        b2.d0 d0Var = null;
+        i0 i0Var = null;
         while (true) {
             xmlPullParser.next();
-            String str49 = "BaseURL";
-            if (e2.d.m(xmlPullParser, "BaseURL")) {
-                if (i34 == 0) {
-                    j29 = d(xmlPullParser, j29);
-                    i34 = i10;
+            String str53 = "BaseURL";
+            if (e2.a.i(xmlPullParser, "BaseURL")) {
+                if (i30 == 0) {
+                    j31 = d(xmlPullParser, j31);
+                    i30 = i10;
                 }
-                arrayList31.addAll(e(xmlPullParser, p5, z10));
-                arrayList = p5;
-                arrayList2 = arrayList31;
-                j13 = j30;
+                arrayList30.addAll(e(xmlPullParser, q6, z10));
+                arrayList = q6;
+                arrayList2 = arrayList30;
+                j14 = j32;
                 z11 = z10;
-                i11 = i27;
+                i11 = i23;
                 i12 = i10;
-                arrayList3 = arrayList30;
-                j11 = j28;
+                arrayList3 = arrayList29;
+                j12 = j30;
             } else {
-                i11 = i27;
+                i11 = i23;
                 i12 = i10;
-                String str50 = "lang";
-                if (e2.d.m(xmlPullParser, "ProgramInformation")) {
-                    String attributeValue4 = xmlPullParser.getAttributeValue(str48, "moreInformationURL");
-                    String str51 = attributeValue4 == null ? str48 : attributeValue4;
-                    String attributeValue5 = xmlPullParser.getAttributeValue(str48, "lang");
-                    String str52 = attributeValue5 == null ? str48 : attributeValue5;
-                    String str53 = str48;
-                    String str54 = str53;
-                    String str55 = str54;
+                String str54 = "lang";
+                if (e2.a.i(xmlPullParser, "ProgramInformation")) {
+                    String attributeValue4 = xmlPullParser.getAttributeValue(str52, "moreInformationURL");
+                    String str55 = attributeValue4 == null ? str52 : attributeValue4;
+                    String attributeValue5 = xmlPullParser.getAttributeValue(str52, "lang");
+                    String str56 = attributeValue5 == null ? str52 : attributeValue5;
+                    String str57 = str52;
+                    String str58 = str57;
+                    String str59 = str58;
                     while (true) {
                         xmlPullParser.next();
-                        j3 = j28;
-                        if (e2.d.m(xmlPullParser, "Title")) {
-                            str53 = xmlPullParser.nextText();
-                        } else if (e2.d.m(xmlPullParser, "Source")) {
-                            str54 = xmlPullParser.nextText();
-                        } else if (e2.d.m(xmlPullParser, "Copyright")) {
-                            str55 = xmlPullParser.nextText();
+                        j10 = j30;
+                        if (e2.a.i(xmlPullParser, "Title")) {
+                            str57 = xmlPullParser.nextText();
+                        } else if (e2.a.i(xmlPullParser, "Source")) {
+                            str58 = xmlPullParser.nextText();
+                        } else if (e2.a.i(xmlPullParser, "Copyright")) {
+                            str59 = xmlPullParser.nextText();
                         } else {
                             b(xmlPullParser);
                         }
-                        String str56 = str53;
-                        String str57 = str54;
-                        String str58 = str55;
-                        if (e2.d.l(xmlPullParser, "ProgramInformation")) {
-                            i iVar2 = new i(str56, str57, str58, str51, str52);
-                            arrayList = p5;
-                            arrayList2 = arrayList31;
-                            j13 = j30;
+                        String str60 = str57;
+                        String str61 = str58;
+                        String str62 = str59;
+                        if (e2.a.h(xmlPullParser, "ProgramInformation")) {
+                            i iVar2 = new i(str60, str61, str62, str55, str56);
+                            arrayList = q6;
+                            arrayList2 = arrayList30;
+                            j14 = j32;
                             z11 = z10;
-                            arrayList3 = arrayList30;
+                            arrayList3 = arrayList29;
                             iVar = iVar2;
                         } else {
-                            str53 = str56;
-                            str54 = str57;
-                            str55 = str58;
-                            j28 = j3;
+                            str57 = str60;
+                            str58 = str61;
+                            str59 = str62;
+                            j30 = j10;
                         }
                     }
                 } else {
-                    j3 = j28;
-                    if (e2.d.m(xmlPullParser, "UTCTiming")) {
-                        arrayList = p5;
-                        arrayList2 = arrayList31;
-                        j13 = j30;
-                        aVar = new c5.a(2, xmlPullParser.getAttributeValue(str48, "schemeIdUri"), xmlPullParser.getAttributeValue(str48, "value"));
-                    } else if (e2.d.m(xmlPullParser, "Location")) {
-                        uri2 = e2.a.m(uri.toString(), xmlPullParser.nextText());
-                        arrayList = p5;
-                        arrayList2 = arrayList31;
-                        j13 = j30;
+                    j10 = j30;
+                    if (e2.a.i(xmlPullParser, "UTCTiming")) {
+                        arrayList = q6;
+                        arrayList2 = arrayList30;
+                        j14 = j32;
+                        aVar = new c5.a(2, xmlPullParser.getAttributeValue(str52, "schemeIdUri"), xmlPullParser.getAttributeValue(str52, "value"));
+                    } else if (e2.a.i(xmlPullParser, "Location")) {
+                        uri2 = e2.e.g(uri.toString(), xmlPullParser.nextText());
+                        arrayList = q6;
+                        arrayList2 = arrayList30;
+                        j14 = j32;
                     } else {
-                        if (e2.d.m(xmlPullParser, "ServiceDescription")) {
-                            float f10 = -3.4028235E38f;
+                        if (e2.a.i(xmlPullParser, "ServiceDescription")) {
                             float f11 = -3.4028235E38f;
-                            long j31 = j3;
-                            long j32 = j31;
-                            long j33 = j32;
+                            float f12 = -3.4028235E38f;
+                            long j33 = j10;
+                            long j34 = j33;
+                            long j35 = j34;
                             while (true) {
                                 xmlPullParser.next();
-                                if (e2.d.m(xmlPullParser, "Latency")) {
-                                    arrayList = p5;
+                                if (e2.a.i(xmlPullParser, "Latency")) {
+                                    arrayList = q6;
                                     String attributeValue6 = xmlPullParser.getAttributeValue(null, "target");
-                                    j31 = attributeValue6 == null ? j3 : Long.parseLong(attributeValue6);
+                                    j33 = attributeValue6 == null ? j10 : Long.parseLong(attributeValue6);
                                     String attributeValue7 = xmlPullParser.getAttributeValue(null, "min");
-                                    j32 = attributeValue7 == null ? j3 : Long.parseLong(attributeValue7);
+                                    j34 = attributeValue7 == null ? j10 : Long.parseLong(attributeValue7);
                                     String attributeValue8 = xmlPullParser.getAttributeValue(null, "max");
-                                    j33 = attributeValue8 == null ? j3 : Long.parseLong(attributeValue8);
+                                    j35 = attributeValue8 == null ? j10 : Long.parseLong(attributeValue8);
                                 } else {
-                                    arrayList = p5;
-                                    if (e2.d.m(xmlPullParser, "PlaybackRate")) {
+                                    arrayList = q6;
+                                    if (e2.a.i(xmlPullParser, "PlaybackRate")) {
                                         String attributeValue9 = xmlPullParser.getAttributeValue(null, "min");
-                                        f10 = attributeValue9 == null ? -3.4028235E38f : Float.parseFloat(attributeValue9);
+                                        f11 = attributeValue9 == null ? -3.4028235E38f : Float.parseFloat(attributeValue9);
                                         String attributeValue10 = xmlPullParser.getAttributeValue(null, "max");
-                                        f11 = attributeValue10 == null ? -3.4028235E38f : Float.parseFloat(attributeValue10);
+                                        f12 = attributeValue10 == null ? -3.4028235E38f : Float.parseFloat(attributeValue10);
                                     }
                                 }
-                                long j34 = j31;
-                                long j35 = j29;
-                                long j36 = j32;
-                                long j37 = i32;
-                                long j38 = j33;
-                                if (e2.d.l(xmlPullParser, "ServiceDescription")) {
-                                    b2.d0 d0Var2 = new b2.d0();
-                                    d0Var2.a = j34;
-                                    d0Var2.b = j36;
-                                    d0Var2.c = j38;
-                                    d0Var2.d = f10;
-                                    d0Var2.e = f11;
-                                    d0Var = d0Var2;
+                                long j36 = j33;
+                                long j37 = j31;
+                                long j38 = j34;
+                                long j39 = i28;
+                                long j40 = j35;
+                                if (e2.a.h(xmlPullParser, "ServiceDescription")) {
+                                    i0 i0Var2 = new i0();
+                                    i0Var2.a = j36;
+                                    i0Var2.b = j38;
+                                    i0Var2.c = j40;
+                                    i0Var2.d = f11;
+                                    i0Var2.e = f12;
+                                    i0Var = i0Var2;
                                     z11 = z10;
-                                    j29 = j35;
-                                    j10 = j37;
-                                    j11 = j3;
-                                    arrayList2 = arrayList31;
-                                    j13 = j30;
-                                    arrayList3 = arrayList30;
+                                    j31 = j37;
+                                    j11 = j39;
+                                    j12 = j10;
+                                    arrayList2 = arrayList30;
+                                    j14 = j32;
+                                    arrayList3 = arrayList29;
                                 } else {
-                                    j33 = j38;
-                                    i32 = j37;
-                                    p5 = arrayList;
-                                    j32 = j36;
-                                    j29 = j35;
-                                    j31 = j34;
+                                    j35 = j40;
+                                    i28 = j39;
+                                    q6 = arrayList;
+                                    j34 = j38;
+                                    j31 = j37;
+                                    j33 = j36;
                                 }
                             }
                         } else {
-                            arrayList = p5;
-                            long j39 = j29;
-                            long j40 = i32;
-                            if (e2.d.m(xmlPullParser, "Period") && i35 == 0) {
-                                ArrayList arrayList32 = !arrayList31.isEmpty() ? arrayList31 : arrayList;
-                                String str59 = "id";
+                            arrayList = q6;
+                            long j41 = j31;
+                            long j42 = i28;
+                            if (e2.a.i(xmlPullParser, "Period") && i31 == 0) {
+                                ArrayList arrayList31 = !arrayList30.isEmpty() ? arrayList30 : arrayList;
+                                String str63 = "id";
                                 String attributeValue11 = xmlPullParser.getAttributeValue(null, "id");
-                                long i36 = i(xmlPullParser, "start", j30);
-                                String str60 = "duration";
-                                String str61 = "value";
-                                long j41 = S != j3 ? S + i36 : j3;
-                                long i37 = i(xmlPullParser, "duration", j3);
+                                long i32 = i(xmlPullParser, "start", j32);
+                                String str64 = "duration";
+                                String str65 = "value";
+                                long j43 = V != j10 ? V + i32 : j10;
+                                long i33 = i(xmlPullParser, "duration", j10);
+                                ArrayList arrayList32 = new ArrayList();
                                 ArrayList arrayList33 = new ArrayList();
                                 ArrayList arrayList34 = new ArrayList();
-                                ArrayList arrayList35 = new ArrayList();
-                                long j42 = j3;
-                                String str62 = "schemeIdUri";
-                                String str63 = "Period";
-                                int i38 = i11;
-                                long j43 = j39;
+                                long j44 = j10;
+                                String str66 = "schemeIdUri";
+                                String str67 = "Period";
+                                int i34 = i11;
+                                long j45 = j41;
                                 s sVar2 = null;
                                 while (true) {
                                     xmlPullParser.next();
-                                    if (e2.d.m(xmlPullParser, str49)) {
-                                        if (i38 == 0) {
-                                            j43 = d(xmlPullParser, j43);
-                                            i38 = i12;
+                                    if (e2.a.i(xmlPullParser, str53)) {
+                                        if (i34 == 0) {
+                                            j45 = d(xmlPullParser, j45);
+                                            i34 = i12;
                                         }
-                                        arrayList35.addAll(e(xmlPullParser, arrayList32, z10));
-                                        arrayList4 = arrayList32;
-                                        str5 = str59;
-                                        str = str49;
-                                        str4 = str60;
-                                        str3 = str61;
+                                        arrayList34.addAll(e(xmlPullParser, arrayList31, z10));
+                                        arrayList4 = arrayList31;
+                                        str5 = str63;
+                                        str = str53;
+                                        str4 = str64;
+                                        str3 = str65;
                                         z11 = z10;
-                                        j14 = j43;
-                                        str2 = str50;
-                                        j10 = j40;
-                                        j16 = j41;
-                                        arrayList7 = arrayList33;
-                                        arrayList5 = arrayList34;
-                                        str6 = str63;
-                                        j11 = -9223372036854775807L;
-                                        arrayList6 = arrayList35;
-                                        arrayList2 = arrayList31;
-                                        j17 = i37;
-                                        j12 = j39;
-                                        j15 = j30;
+                                        j15 = j45;
+                                        str2 = str54;
+                                        j11 = j42;
+                                        j17 = j43;
+                                        arrayList7 = arrayList32;
+                                        arrayList5 = arrayList33;
+                                        str6 = str67;
+                                        j12 = -9223372036854775807L;
+                                        arrayList6 = arrayList34;
+                                        arrayList2 = arrayList30;
+                                        j18 = i33;
+                                        j13 = j41;
+                                        j16 = j32;
                                     } else {
-                                        j14 = j43;
-                                        String str64 = "SegmentTemplate";
-                                        if (e2.d.m(xmlPullParser, "AdaptationSet")) {
-                                            if (arrayList35.isEmpty()) {
-                                                arrayList8 = arrayList32;
+                                        j15 = j45;
+                                        String str68 = "SegmentTemplate";
+                                        if (e2.a.i(xmlPullParser, "AdaptationSet")) {
+                                            if (arrayList34.isEmpty()) {
+                                                arrayList8 = arrayList31;
                                                 arrayList4 = arrayList8;
                                             } else {
-                                                arrayList4 = arrayList32;
-                                                arrayList8 = arrayList35;
+                                                arrayList4 = arrayList31;
+                                                arrayList8 = arrayList34;
                                             }
-                                            String attributeValue12 = xmlPullParser.getAttributeValue(null, str59);
+                                            String attributeValue12 = xmlPullParser.getAttributeValue(null, str63);
                                             long parseLong = attributeValue12 == null ? -1L : Long.parseLong(attributeValue12);
                                             int g10 = g(xmlPullParser);
-                                            String str65 = "AdaptationSet";
+                                            String str69 = "AdaptationSet";
                                             String attributeValue13 = xmlPullParser.getAttributeValue(null, "mimeType");
-                                            ArrayList arrayList36 = arrayList35;
-                                            ArrayList arrayList37 = arrayList31;
+                                            ArrayList arrayList35 = arrayList34;
+                                            ArrayList arrayList36 = arrayList30;
                                             String attributeValue14 = xmlPullParser.getAttributeValue(null, "codecs");
-                                            long j44 = j30;
+                                            long j46 = j32;
                                             String attributeValue15 = xmlPullParser.getAttributeValue(null, "scte214:supplementalCodecs");
-                                            xmlPullParser.getAttributeValue(null, "scte214:supplementalProfiles");
-                                            String str66 = str60;
-                                            String attributeValue16 = xmlPullParser.getAttributeValue(null, "width");
-                                            int parseInt3 = attributeValue16 == null ? -1 : Integer.parseInt(attributeValue16);
-                                            String str67 = str61;
-                                            String attributeValue17 = xmlPullParser.getAttributeValue(null, "height");
-                                            int parseInt4 = attributeValue17 == null ? -1 : Integer.parseInt(attributeValue17);
-                                            float j45 = j(xmlPullParser, -1.0f);
-                                            String str68 = "SegmentList";
-                                            String str69 = "SegmentBase";
-                                            String attributeValue18 = xmlPullParser.getAttributeValue(null, "audioSamplingRate");
-                                            int parseInt5 = attributeValue18 == null ? -1 : Integer.parseInt(attributeValue18);
-                                            String attributeValue19 = xmlPullParser.getAttributeValue(null, str50);
-                                            String str70 = "audioSamplingRate";
-                                            String attributeValue20 = xmlPullParser.getAttributeValue(null, "label");
+                                            String attributeValue16 = xmlPullParser.getAttributeValue(null, "scte214:supplementalProfiles");
+                                            String str70 = str64;
+                                            String attributeValue17 = xmlPullParser.getAttributeValue(null, "width");
+                                            int parseInt5 = attributeValue17 == null ? -1 : Integer.parseInt(attributeValue17);
+                                            String str71 = str65;
+                                            String attributeValue18 = xmlPullParser.getAttributeValue(null, "height");
+                                            int parseInt6 = attributeValue18 == null ? -1 : Integer.parseInt(attributeValue18);
+                                            float j47 = j(xmlPullParser, -1.0f);
+                                            String str72 = "SegmentList";
+                                            String str73 = "SegmentBase";
+                                            String attributeValue19 = xmlPullParser.getAttributeValue(null, "audioSamplingRate");
+                                            int parseInt7 = attributeValue19 == null ? -1 : Integer.parseInt(attributeValue19);
+                                            String attributeValue20 = xmlPullParser.getAttributeValue(null, str54);
+                                            String str74 = "audioSamplingRate";
+                                            String attributeValue21 = xmlPullParser.getAttributeValue(null, "label");
+                                            ArrayList arrayList37 = new ArrayList();
+                                            String str75 = attributeValue21;
                                             ArrayList arrayList38 = new ArrayList();
-                                            String str71 = attributeValue20;
-                                            ArrayList arrayList39 = new ArrayList();
-                                            ArrayList arrayList40 = arrayList38;
+                                            ArrayList arrayList39 = arrayList37;
+                                            ArrayList arrayList40 = new ArrayList();
                                             ArrayList arrayList41 = new ArrayList();
+                                            float f13 = j47;
                                             ArrayList arrayList42 = new ArrayList();
-                                            float f12 = j45;
+                                            String str76 = "height";
                                             ArrayList arrayList43 = new ArrayList();
-                                            String str72 = "height";
+                                            String str77 = "width";
                                             ArrayList arrayList44 = new ArrayList();
-                                            String str73 = "width";
+                                            String str78 = "scte214:supplementalProfiles";
                                             ArrayList arrayList45 = new ArrayList();
-                                            String str74 = "scte214:supplementalProfiles";
                                             ArrayList arrayList46 = new ArrayList();
-                                            ArrayList arrayList47 = new ArrayList();
-                                            String str75 = str59;
-                                            String str76 = "mimeType";
-                                            String str77 = "codecs";
-                                            int i39 = i11;
+                                            String str79 = str63;
+                                            String str80 = "mimeType";
+                                            String str81 = "codecs";
+                                            int i35 = i11;
                                             s sVar3 = sVar2;
-                                            long j46 = j42;
-                                            long j47 = j14;
-                                            String str78 = attributeValue19;
-                                            int i40 = -1;
-                                            String str79 = "scte214:supplementalCodecs";
-                                            int i41 = g10;
-                                            String str80 = null;
+                                            long j48 = j44;
+                                            long j49 = j15;
+                                            String str82 = attributeValue20;
+                                            int i36 = -1;
+                                            String str83 = "scte214:supplementalCodecs";
+                                            int i37 = g10;
+                                            String str84 = null;
                                             while (true) {
                                                 xmlPullParser.next();
-                                                if (e2.d.m(xmlPullParser, str49)) {
-                                                    if (i39 == 0) {
-                                                        j47 = d(xmlPullParser, j47);
-                                                        i39 = i12;
+                                                if (e2.a.i(xmlPullParser, str53)) {
+                                                    if (i35 == 0) {
+                                                        j49 = d(xmlPullParser, j49);
+                                                        i35 = i12;
                                                     }
-                                                    j21 = j47;
-                                                    arrayList47.addAll(e(xmlPullParser, arrayList8, z10));
+                                                    j22 = j49;
+                                                    arrayList46.addAll(e(xmlPullParser, arrayList8, z10));
                                                 } else {
-                                                    j21 = j47;
-                                                    if (e2.d.m(xmlPullParser, "ContentProtection")) {
-                                                        Pair f13 = f(xmlPullParser);
-                                                        Object obj = f13.first;
+                                                    j22 = j49;
+                                                    if (e2.a.i(xmlPullParser, "ContentProtection")) {
+                                                        Pair f14 = f(xmlPullParser);
+                                                        Object obj = f14.first;
                                                         if (obj != null) {
-                                                            str80 = (String) obj;
+                                                            str84 = (String) obj;
                                                         }
-                                                        Object obj2 = f13.second;
+                                                        Object obj2 = f14.second;
                                                         if (obj2 != null) {
-                                                            arrayList39.add((b2.n) obj2);
+                                                            arrayList38.add((b2.s) obj2);
                                                         }
-                                                    } else if (e2.d.m(xmlPullParser, "ContentComponent")) {
-                                                        String attributeValue21 = xmlPullParser.getAttributeValue(null, str50);
-                                                        if (str78 == null) {
-                                                            str78 = attributeValue21;
-                                                        } else if (attributeValue21 != null) {
-                                                            e2.d.g(str78.equals(attributeValue21));
+                                                    } else if (e2.a.i(xmlPullParser, "ContentComponent")) {
+                                                        String attributeValue22 = xmlPullParser.getAttributeValue(null, str54);
+                                                        if (str82 == null) {
+                                                            str82 = attributeValue22;
+                                                        } else if (attributeValue22 != null) {
+                                                            u6.p(str82.equals(attributeValue22));
                                                         }
                                                         int g11 = g(xmlPullParser);
-                                                        if (i41 == -1) {
-                                                            i41 = g11;
+                                                        if (i37 == -1) {
+                                                            i37 = g11;
                                                         } else if (g11 != -1) {
-                                                            e2.d.g(i41 == g11 ? i12 : i11);
+                                                            u6.p(i37 == g11 ? i12 : i11);
                                                         }
-                                                        arrayList10 = arrayList8;
-                                                        str11 = str78;
-                                                        str = str49;
-                                                        arrayList11 = arrayList45;
+                                                        arrayList11 = arrayList8;
+                                                        str24 = str82;
+                                                        str = str53;
                                                         z11 = z10;
-                                                        arrayList9 = arrayList39;
-                                                        arrayList15 = arrayList42;
-                                                        arrayList7 = arrayList33;
-                                                        arrayList5 = arrayList34;
-                                                        str14 = str66;
-                                                        str15 = str67;
-                                                        str22 = str68;
-                                                        str23 = str69;
-                                                        arrayList17 = arrayList40;
-                                                        arrayList16 = arrayList41;
-                                                        f7 = f12;
-                                                        str16 = str74;
-                                                        str17 = str75;
-                                                        arrayList12 = arrayList47;
-                                                        str18 = str79;
-                                                        str19 = str77;
-                                                        str20 = str76;
-                                                        j22 = j41;
+                                                        arrayList9 = arrayList38;
+                                                        arrayList10 = arrayList41;
+                                                        arrayList7 = arrayList32;
+                                                        arrayList5 = arrayList33;
+                                                        str13 = str70;
+                                                        str14 = str71;
+                                                        str22 = str72;
+                                                        str23 = str73;
+                                                        arrayList17 = arrayList39;
+                                                        arrayList16 = arrayList40;
+                                                        str15 = str77;
+                                                        str16 = str78;
+                                                        str17 = str79;
+                                                        arrayList12 = arrayList46;
+                                                        str18 = str83;
+                                                        str19 = str81;
+                                                        str20 = str80;
+                                                        j23 = j43;
                                                         str21 = attributeValue14;
+                                                        arrayList15 = arrayList42;
+                                                        j11 = j42;
+                                                        j18 = i33;
+                                                        arrayList6 = arrayList35;
+                                                        arrayList2 = arrayList36;
+                                                        i14 = i37;
+                                                        str25 = str54;
+                                                        j13 = j41;
+                                                        str11 = str68;
+                                                        j16 = j46;
                                                         arrayList14 = arrayList43;
-                                                        j10 = j40;
-                                                        j17 = i37;
-                                                        arrayList6 = arrayList36;
-                                                        arrayList2 = arrayList37;
-                                                        i14 = i41;
-                                                        str24 = str50;
-                                                        j12 = j39;
-                                                        str12 = str64;
-                                                        j15 = j44;
                                                         arrayList13 = arrayList44;
-                                                        str25 = str65;
-                                                        if (e2.d.l(xmlPullParser, str25)) {
+                                                        str26 = str69;
+                                                        if (e2.a.h(xmlPullParser, str26)) {
                                                             i12 = 1;
-                                                            str65 = str25;
-                                                            arrayList40 = arrayList17;
-                                                            arrayList41 = arrayList16;
-                                                            str69 = str23;
-                                                            str64 = str12;
-                                                            arrayList37 = arrayList2;
-                                                            arrayList45 = arrayList11;
+                                                            str69 = str26;
+                                                            arrayList39 = arrayList17;
+                                                            arrayList40 = arrayList16;
+                                                            str73 = str23;
+                                                            arrayList36 = arrayList2;
                                                             arrayList44 = arrayList13;
-                                                            arrayList47 = arrayList12;
-                                                            j47 = j21;
-                                                            arrayList42 = arrayList15;
-                                                            arrayList8 = arrayList10;
-                                                            f12 = f7;
-                                                            str49 = str;
-                                                            arrayList33 = arrayList7;
-                                                            arrayList34 = arrayList5;
-                                                            str67 = str15;
-                                                            str66 = str14;
-                                                            str50 = str24;
-                                                            str68 = str22;
-                                                            j44 = j15;
-                                                            j39 = j12;
-                                                            i41 = i14;
-                                                            arrayList39 = arrayList9;
-                                                            i37 = j17;
-                                                            arrayList36 = arrayList6;
-                                                            attributeValue14 = str21;
-                                                            str78 = str11;
-                                                            j40 = j10;
                                                             arrayList43 = arrayList14;
+                                                            arrayList46 = arrayList12;
+                                                            j49 = j22;
+                                                            arrayList41 = arrayList10;
+                                                            arrayList8 = arrayList11;
+                                                            str53 = str;
+                                                            arrayList32 = arrayList7;
+                                                            arrayList33 = arrayList5;
+                                                            str71 = str14;
+                                                            str70 = str13;
+                                                            str72 = str22;
+                                                            str68 = str11;
+                                                            j46 = j16;
+                                                            j41 = j13;
+                                                            arrayList38 = arrayList9;
+                                                            i33 = j18;
+                                                            str54 = str25;
+                                                            attributeValue14 = str21;
+                                                            i37 = i14;
+                                                            str82 = str24;
+                                                            arrayList35 = arrayList6;
+                                                            j42 = j11;
+                                                            arrayList42 = arrayList15;
                                                             z10 = z11;
-                                                            j41 = j22;
-                                                            str75 = str17;
-                                                            str76 = str20;
-                                                            str77 = str19;
-                                                            str79 = str18;
-                                                            str74 = str16;
+                                                            j43 = j23;
+                                                            str79 = str17;
+                                                            str80 = str20;
+                                                            str81 = str19;
+                                                            str83 = str18;
+                                                            str78 = str16;
+                                                            str77 = str15;
                                                         } else {
-                                                            ArrayList arrayList48 = new ArrayList(arrayList46.size());
-                                                            int i42 = i11;
-                                                            while (i42 < arrayList46.size()) {
-                                                                ArrayList arrayList49 = arrayList46;
-                                                                d dVar = (d) arrayList49.get(i42);
-                                                                b2.r a2 = dVar.a.a();
-                                                                if (str71 == null || !arrayList17.isEmpty()) {
-                                                                    str45 = str71;
-                                                                    a2.c = i0.v(arrayList17);
+                                                            ArrayList arrayList47 = new ArrayList(arrayList45.size());
+                                                            int i38 = i11;
+                                                            while (i38 < arrayList45.size()) {
+                                                                ArrayList arrayList48 = arrayList45;
+                                                                d dVar = (d) arrayList48.get(i38);
+                                                                w a2 = dVar.a.a();
+                                                                if (str75 == null || !arrayList17.isEmpty()) {
+                                                                    str49 = str75;
+                                                                    a2.c = n0.u(arrayList17);
                                                                 } else {
-                                                                    str45 = str71;
-                                                                    a2.b = str45;
+                                                                    str49 = str75;
+                                                                    a2.b = str49;
                                                                 }
-                                                                String str81 = dVar.d;
-                                                                if (str81 == null) {
-                                                                    str81 = str80;
+                                                                String str85 = dVar.d;
+                                                                if (str85 == null) {
+                                                                    str85 = str84;
                                                                 }
-                                                                ArrayList arrayList50 = dVar.e;
-                                                                ArrayList arrayList51 = arrayList17;
-                                                                arrayList50.addAll(arrayList9);
-                                                                long j48 = j17;
-                                                                if (arrayList50.isEmpty()) {
-                                                                    str46 = str24;
-                                                                    i26 = i42;
-                                                                    arrayList46 = arrayList49;
+                                                                ArrayList arrayList49 = dVar.e;
+                                                                ArrayList arrayList50 = arrayList17;
+                                                                arrayList49.addAll(arrayList9);
+                                                                long j50 = j18;
+                                                                if (arrayList49.isEmpty()) {
+                                                                    str50 = str25;
+                                                                    i22 = i38;
+                                                                    arrayList45 = arrayList48;
                                                                 } else {
-                                                                    int i43 = i11;
+                                                                    int i39 = i11;
                                                                     while (true) {
-                                                                        if (i43 < arrayList50.size()) {
-                                                                            b2.n nVar = (b2.n) arrayList50.get(i43);
-                                                                            str46 = str24;
-                                                                            if (!b2.i.c.equals(nVar.b) || (str47 = nVar.c) == null) {
-                                                                                i43++;
-                                                                                str24 = str46;
+                                                                        if (i39 < arrayList49.size()) {
+                                                                            b2.s sVar4 = (b2.s) arrayList49.get(i39);
+                                                                            str50 = str25;
+                                                                            if (!b2.n.d.equals(sVar4.b) || (str51 = sVar4.c) == null) {
+                                                                                i39++;
+                                                                                str25 = str50;
                                                                             } else {
-                                                                                arrayList50.remove(i43);
+                                                                                arrayList49.remove(i39);
                                                                             }
                                                                         } else {
-                                                                            str46 = str24;
-                                                                            str47 = null;
+                                                                            str50 = str25;
+                                                                            str51 = null;
                                                                         }
                                                                     }
-                                                                    if (str47 != null) {
-                                                                        int i44 = i11;
-                                                                        while (i44 < arrayList50.size()) {
-                                                                            b2.n nVar2 = (b2.n) arrayList50.get(i44);
-                                                                            int i45 = i42;
-                                                                            if (b2.i.b.equals(nVar2.b) && nVar2.c == null) {
-                                                                                arrayList29 = arrayList49;
-                                                                                arrayList50.set(i44, new b2.n(b2.i.c, str47, nVar2.d, nVar2.e));
+                                                                    if (str51 != null) {
+                                                                        int i40 = i11;
+                                                                        while (i40 < arrayList49.size()) {
+                                                                            b2.s sVar5 = (b2.s) arrayList49.get(i40);
+                                                                            int i41 = i38;
+                                                                            if (b2.n.c.equals(sVar5.b) && sVar5.c == null) {
+                                                                                arrayList28 = arrayList48;
+                                                                                arrayList49.set(i40, new b2.s(b2.n.d, str51, sVar5.d, sVar5.e));
                                                                             } else {
-                                                                                arrayList29 = arrayList49;
+                                                                                arrayList28 = arrayList48;
                                                                             }
-                                                                            i44++;
-                                                                            i42 = i45;
-                                                                            arrayList49 = arrayList29;
+                                                                            i40++;
+                                                                            i38 = i41;
+                                                                            arrayList48 = arrayList28;
                                                                         }
                                                                     }
-                                                                    i26 = i42;
-                                                                    arrayList46 = arrayList49;
-                                                                    for (int size = arrayList50.size() - 1; size >= 0; size--) {
-                                                                        b2.n nVar3 = (b2.n) arrayList50.get(size);
-                                                                        if (nVar3.e == null) {
-                                                                            int i46 = i11;
+                                                                    i22 = i38;
+                                                                    arrayList45 = arrayList48;
+                                                                    for (int size = arrayList49.size() - 1; size >= 0; size--) {
+                                                                        b2.s sVar6 = (b2.s) arrayList49.get(size);
+                                                                        if (sVar6.e == null) {
+                                                                            int i42 = i11;
                                                                             while (true) {
-                                                                                if (i46 < arrayList50.size()) {
-                                                                                    b2.n nVar4 = (b2.n) arrayList50.get(i46);
-                                                                                    if (nVar4.e != null && nVar3.e == null && nVar4.a(nVar3.b)) {
-                                                                                        arrayList50.remove(size);
+                                                                                if (i42 < arrayList49.size()) {
+                                                                                    b2.s sVar7 = (b2.s) arrayList49.get(i42);
+                                                                                    if (sVar7.e != null && sVar6.e == null && sVar7.a(sVar6.b)) {
+                                                                                        arrayList49.remove(size);
                                                                                     } else {
-                                                                                        i46++;
+                                                                                        i42++;
                                                                                     }
                                                                                 }
                                                                             }
                                                                         }
                                                                     }
-                                                                    a2.u = new b2.o(str81, arrayList50);
+                                                                    a2.v = new t(str85, arrayList49);
                                                                 }
-                                                                ArrayList arrayList52 = dVar.f;
-                                                                arrayList52.addAll(arrayList16);
-                                                                b2.s sVar4 = new b2.s(a2);
-                                                                i0 i0Var = dVar.b;
-                                                                s sVar5 = dVar.c;
-                                                                ArrayList arrayList53 = dVar.g;
-                                                                ArrayList arrayList54 = dVar.h;
-                                                                if (sVar5 instanceof r) {
-                                                                    kVar = new l(sVar4, i0Var, (r) sVar5, arrayList52, arrayList53, arrayList54);
+                                                                ArrayList arrayList51 = dVar.f;
+                                                                arrayList51.addAll(arrayList16);
+                                                                x xVar = new x(a2);
+                                                                n0 n0Var = dVar.b;
+                                                                s sVar8 = dVar.c;
+                                                                ArrayList arrayList52 = dVar.g;
+                                                                ArrayList arrayList53 = dVar.h;
+                                                                if (sVar8 instanceof r) {
+                                                                    kVar = new l(xVar, n0Var, (r) sVar8, arrayList51, arrayList52, arrayList53);
                                                                 } else {
-                                                                    if (!(sVar5 instanceof n)) {
+                                                                    if (!(sVar8 instanceof n)) {
                                                                         throw new IllegalArgumentException("segmentBase must be of type SingleSegmentBase or MultiSegmentBase");
                                                                     }
-                                                                    kVar = new k(sVar4, i0Var, (n) sVar5, arrayList52, arrayList53, arrayList54);
+                                                                    kVar = new k(xVar, n0Var, (n) sVar8, arrayList51, arrayList52, arrayList53);
                                                                 }
-                                                                arrayList48.add(kVar);
-                                                                i42 = i26 + 1;
-                                                                str71 = str45;
-                                                                arrayList17 = arrayList51;
-                                                                str24 = str46;
-                                                                j17 = j48;
+                                                                arrayList47.add(kVar);
+                                                                i38 = i22 + 1;
+                                                                str75 = str49;
+                                                                arrayList17 = arrayList50;
+                                                                str25 = str50;
+                                                                j18 = j50;
                                                             }
-                                                            str2 = str24;
+                                                            str2 = str25;
                                                             i12 = 1;
-                                                            arrayList7.add(new a(parseLong, i14, arrayList48, arrayList15, arrayList13, arrayList11));
-                                                            j16 = j22;
-                                                            str3 = str15;
-                                                            str4 = str14;
+                                                            arrayList7.add(new a(parseLong, i14, arrayList47, arrayList10, arrayList14, arrayList13));
+                                                            j17 = j23;
+                                                            str3 = str14;
+                                                            str4 = str13;
                                                             str5 = str17;
-                                                            j11 = -9223372036854775807L;
+                                                            j12 = -9223372036854775807L;
                                                         }
                                                     } else {
-                                                        if (e2.d.m(xmlPullParser, "Role")) {
-                                                            arrayList43.add(h(xmlPullParser, "Role"));
+                                                        if (e2.a.i(xmlPullParser, "Role")) {
+                                                            arrayList42.add(h(xmlPullParser, "Role"));
                                                         } else {
-                                                            String str82 = "AudioChannelConfiguration";
-                                                            if (e2.d.m(xmlPullParser, "AudioChannelConfiguration")) {
-                                                                i40 = c(xmlPullParser, attributeValue14);
+                                                            String str86 = "AudioChannelConfiguration";
+                                                            if (e2.a.i(xmlPullParser, "AudioChannelConfiguration")) {
+                                                                i36 = c(xmlPullParser, attributeValue14);
                                                             } else {
-                                                                String str83 = "ContentProtection";
-                                                                if (e2.d.m(xmlPullParser, "Accessibility")) {
-                                                                    arrayList42.add(h(xmlPullParser, "Accessibility"));
-                                                                } else if (e2.d.m(xmlPullParser, "EssentialProperty")) {
-                                                                    arrayList44.add(h(xmlPullParser, "EssentialProperty"));
+                                                                String str87 = "ContentProtection";
+                                                                if (e2.a.i(xmlPullParser, "Accessibility")) {
+                                                                    arrayList41.add(h(xmlPullParser, "Accessibility"));
+                                                                } else if (e2.a.i(xmlPullParser, "EssentialProperty")) {
+                                                                    arrayList43.add(h(xmlPullParser, "EssentialProperty"));
                                                                 } else {
-                                                                    arrayList9 = arrayList39;
-                                                                    if (e2.d.m(xmlPullParser, "SupplementalProperty")) {
-                                                                        arrayList45.add(h(xmlPullParser, "SupplementalProperty"));
-                                                                        arrayList10 = arrayList8;
-                                                                        str11 = str78;
-                                                                        i13 = i41;
-                                                                        str = str49;
-                                                                        arrayList11 = arrayList45;
+                                                                    arrayList9 = arrayList38;
+                                                                    if (e2.a.i(xmlPullParser, "SupplementalProperty")) {
+                                                                        arrayList44.add(h(xmlPullParser, "SupplementalProperty"));
+                                                                        arrayList11 = arrayList8;
+                                                                        str24 = str82;
+                                                                        i13 = i37;
+                                                                        str = str53;
                                                                         z11 = z10;
-                                                                        arrayList15 = arrayList42;
-                                                                        str24 = str50;
-                                                                        arrayList7 = arrayList33;
-                                                                        arrayList5 = arrayList34;
-                                                                        str12 = str64;
-                                                                        str13 = str65;
-                                                                        str14 = str66;
-                                                                        str15 = str67;
-                                                                        str22 = str68;
-                                                                        str23 = str69;
-                                                                        arrayList17 = arrayList40;
-                                                                        arrayList16 = arrayList41;
-                                                                        f7 = f12;
-                                                                        str16 = str74;
-                                                                        str17 = str75;
-                                                                        j23 = j46;
-                                                                        arrayList12 = arrayList47;
-                                                                        str18 = str79;
-                                                                        str19 = str77;
-                                                                        str20 = str76;
-                                                                        j22 = j41;
-                                                                        str21 = attributeValue14;
-                                                                        arrayList14 = arrayList43;
-                                                                        j10 = j40;
-                                                                        j17 = i37;
-                                                                        arrayList6 = arrayList36;
-                                                                        arrayList2 = arrayList37;
-                                                                        j12 = j39;
-                                                                        j15 = j44;
+                                                                        arrayList10 = arrayList41;
+                                                                        str25 = str54;
+                                                                        arrayList7 = arrayList32;
+                                                                        arrayList5 = arrayList33;
+                                                                        str11 = str68;
+                                                                        str12 = str69;
+                                                                        str13 = str70;
+                                                                        str14 = str71;
+                                                                        str22 = str72;
+                                                                        str23 = str73;
+                                                                        arrayList17 = arrayList39;
+                                                                        arrayList16 = arrayList40;
+                                                                        str15 = str77;
+                                                                        str16 = str78;
+                                                                        str17 = str79;
+                                                                        j24 = j48;
+                                                                        arrayList12 = arrayList46;
                                                                         arrayList13 = arrayList44;
-                                                                        j46 = j23;
+                                                                        str18 = str83;
+                                                                        str19 = str81;
+                                                                        str20 = str80;
+                                                                        j23 = j43;
+                                                                        str21 = attributeValue14;
+                                                                        arrayList15 = arrayList42;
+                                                                        j11 = j42;
+                                                                        j18 = i33;
+                                                                        arrayList6 = arrayList35;
+                                                                        arrayList2 = arrayList36;
+                                                                        j13 = j41;
+                                                                        j16 = j46;
+                                                                        arrayList14 = arrayList43;
+                                                                        j48 = j24;
                                                                         i14 = i13;
-                                                                        str25 = str13;
-                                                                        if (e2.d.l(xmlPullParser, str25)) {
+                                                                        str26 = str12;
+                                                                        if (e2.a.h(xmlPullParser, str26)) {
                                                                         }
                                                                     } else {
-                                                                        String str84 = str50;
-                                                                        ArrayList arrayList55 = arrayList42;
-                                                                        if (e2.d.m(xmlPullParser, "Representation")) {
-                                                                            arrayList10 = arrayList8;
-                                                                            if (arrayList47.isEmpty()) {
-                                                                                str26 = "Representation";
-                                                                                arrayList18 = arrayList10;
+                                                                        String str88 = str54;
+                                                                        arrayList10 = arrayList41;
+                                                                        if (e2.a.i(xmlPullParser, "Representation")) {
+                                                                            arrayList11 = arrayList8;
+                                                                            if (arrayList46.isEmpty()) {
+                                                                                str27 = "Representation";
+                                                                                arrayList18 = arrayList11;
                                                                             } else {
-                                                                                str26 = "Representation";
-                                                                                arrayList18 = arrayList47;
+                                                                                str27 = "Representation";
+                                                                                arrayList18 = arrayList46;
                                                                             }
-                                                                            String str85 = "SupplementalProperty";
-                                                                            String str86 = str75;
-                                                                            String str87 = "EssentialProperty";
-                                                                            String attributeValue22 = xmlPullParser.getAttributeValue(null, str86);
-                                                                            String str88 = str86;
-                                                                            String attributeValue23 = xmlPullParser.getAttributeValue(null, "bandwidth");
-                                                                            if (attributeValue23 == null) {
-                                                                                str27 = str76;
+                                                                            String str89 = "SupplementalProperty";
+                                                                            String str90 = str79;
+                                                                            String str91 = "EssentialProperty";
+                                                                            String attributeValue23 = xmlPullParser.getAttributeValue(null, str90);
+                                                                            String str92 = str90;
+                                                                            String attributeValue24 = xmlPullParser.getAttributeValue(null, "bandwidth");
+                                                                            if (attributeValue24 == null) {
+                                                                                str28 = str80;
                                                                                 parseInt = -1;
                                                                             } else {
-                                                                                String str89 = str76;
-                                                                                parseInt = Integer.parseInt(attributeValue23);
-                                                                                str27 = str89;
+                                                                                String str93 = str80;
+                                                                                parseInt = Integer.parseInt(attributeValue24);
+                                                                                str28 = str93;
                                                                             }
-                                                                            String attributeValue24 = xmlPullParser.getAttributeValue(null, str27);
-                                                                            String str90 = str77;
-                                                                            str20 = str27;
-                                                                            String str91 = attributeValue24 == null ? attributeValue13 : attributeValue24;
-                                                                            String attributeValue25 = xmlPullParser.getAttributeValue(null, str90);
-                                                                            String str92 = str79;
-                                                                            str19 = str90;
-                                                                            String str93 = attributeValue25 == null ? attributeValue14 : attributeValue25;
-                                                                            String attributeValue26 = xmlPullParser.getAttributeValue(null, str92);
-                                                                            String str94 = str74;
-                                                                            str18 = str92;
-                                                                            String str95 = attributeValue26 == null ? attributeValue15 : attributeValue26;
-                                                                            xmlPullParser.getAttributeValue(null, str94);
-                                                                            str16 = str94;
-                                                                            String str96 = str73;
+                                                                            String attributeValue25 = xmlPullParser.getAttributeValue(null, str28);
+                                                                            String str94 = str81;
+                                                                            str20 = str28;
+                                                                            String str95 = attributeValue25 == null ? attributeValue13 : attributeValue25;
+                                                                            String attributeValue26 = xmlPullParser.getAttributeValue(null, str94);
+                                                                            String str96 = str83;
+                                                                            str19 = str94;
+                                                                            String str97 = attributeValue26 == null ? attributeValue14 : attributeValue26;
                                                                             String attributeValue27 = xmlPullParser.getAttributeValue(null, str96);
-                                                                            int parseInt6 = attributeValue27 == null ? parseInt3 : Integer.parseInt(attributeValue27);
-                                                                            str73 = str96;
-                                                                            String str97 = str72;
-                                                                            String attributeValue28 = xmlPullParser.getAttributeValue(null, str97);
-                                                                            int parseInt7 = attributeValue28 == null ? parseInt4 : Integer.parseInt(attributeValue28);
-                                                                            str72 = str97;
-                                                                            float f14 = f12;
-                                                                            String str98 = "InbandEventStream";
-                                                                            float j49 = j(xmlPullParser, f14);
-                                                                            String str99 = str70;
-                                                                            String attributeValue29 = xmlPullParser.getAttributeValue(null, str99);
-                                                                            int parseInt8 = attributeValue29 == null ? parseInt5 : Integer.parseInt(attributeValue29);
-                                                                            str70 = str99;
-                                                                            ArrayList arrayList56 = new ArrayList();
-                                                                            ArrayList arrayList57 = new ArrayList();
-                                                                            ArrayList arrayList58 = new ArrayList(arrayList44);
-                                                                            ArrayList arrayList59 = new ArrayList(arrayList45);
-                                                                            ArrayList arrayList60 = new ArrayList();
-                                                                            ArrayList arrayList61 = arrayList44;
-                                                                            int i47 = parseInt8;
-                                                                            String str100 = attributeValue14;
-                                                                            int i48 = i41;
-                                                                            int i49 = i11;
-                                                                            s sVar6 = sVar3;
-                                                                            long j50 = j46;
-                                                                            int i50 = i40;
-                                                                            long j51 = j21;
-                                                                            String str101 = null;
+                                                                            String str98 = str78;
+                                                                            str18 = str96;
+                                                                            String str99 = attributeValue27 == null ? attributeValue15 : attributeValue27;
+                                                                            String attributeValue28 = xmlPullParser.getAttributeValue(null, str98);
+                                                                            String str100 = str77;
+                                                                            str16 = str98;
+                                                                            String str101 = attributeValue28 == null ? attributeValue16 : attributeValue28;
+                                                                            String attributeValue29 = xmlPullParser.getAttributeValue(null, str100);
+                                                                            if (attributeValue29 == null) {
+                                                                                String str102 = str76;
+                                                                                str29 = str100;
+                                                                                str30 = str102;
+                                                                                parseInt2 = parseInt5;
+                                                                            } else {
+                                                                                String str103 = str76;
+                                                                                str29 = str100;
+                                                                                str30 = str103;
+                                                                                parseInt2 = Integer.parseInt(attributeValue29);
+                                                                            }
+                                                                            String attributeValue30 = xmlPullParser.getAttributeValue(null, str30);
+                                                                            if (attributeValue30 == null) {
+                                                                                float f15 = f13;
+                                                                                str31 = str30;
+                                                                                f7 = f15;
+                                                                                parseInt3 = parseInt6;
+                                                                            } else {
+                                                                                float f16 = f13;
+                                                                                str31 = str30;
+                                                                                f7 = f16;
+                                                                                parseInt3 = Integer.parseInt(attributeValue30);
+                                                                            }
+                                                                            String str104 = "InbandEventStream";
+                                                                            float j51 = j(xmlPullParser, f7);
+                                                                            String str105 = str74;
+                                                                            String attributeValue31 = xmlPullParser.getAttributeValue(null, str105);
+                                                                            int parseInt8 = attributeValue31 == null ? parseInt7 : Integer.parseInt(attributeValue31);
+                                                                            str74 = str105;
+                                                                            ArrayList arrayList54 = new ArrayList();
+                                                                            ArrayList arrayList55 = new ArrayList();
+                                                                            ArrayList arrayList56 = new ArrayList(arrayList43);
+                                                                            ArrayList arrayList57 = new ArrayList(arrayList44);
+                                                                            ArrayList arrayList58 = new ArrayList();
+                                                                            ArrayList arrayList59 = arrayList43;
+                                                                            int i43 = parseInt8;
+                                                                            String str106 = attributeValue14;
+                                                                            int i44 = i37;
+                                                                            int i45 = i11;
+                                                                            s sVar9 = sVar3;
+                                                                            long j52 = j48;
+                                                                            int i46 = i36;
+                                                                            long j53 = j22;
+                                                                            String str107 = null;
                                                                             while (true) {
                                                                                 xmlPullParser.next();
-                                                                                if (e2.d.m(xmlPullParser, str49)) {
-                                                                                    if (i49 == 0) {
-                                                                                        j51 = d(xmlPullParser, j51);
-                                                                                        i49 = i12;
+                                                                                if (e2.a.i(xmlPullParser, str53)) {
+                                                                                    if (i45 == 0) {
+                                                                                        j53 = d(xmlPullParser, j53);
+                                                                                        i45 = i12;
                                                                                     }
-                                                                                    f7 = f14;
-                                                                                    arrayList60.addAll(e(xmlPullParser, arrayList18, z10));
+                                                                                    f10 = f7;
+                                                                                    arrayList58.addAll(e(xmlPullParser, arrayList18, z10));
                                                                                 } else {
-                                                                                    f7 = f14;
-                                                                                    if (e2.d.m(xmlPullParser, str82)) {
-                                                                                        i50 = c(xmlPullParser, str93);
+                                                                                    f10 = f7;
+                                                                                    if (e2.a.i(xmlPullParser, str86)) {
+                                                                                        i46 = c(xmlPullParser, str97);
                                                                                     } else {
-                                                                                        String str102 = str69;
-                                                                                        if (e2.d.m(xmlPullParser, str102)) {
-                                                                                            str28 = str82;
-                                                                                            sVar6 = o(xmlPullParser, (r) sVar6);
-                                                                                            str30 = str102;
-                                                                                            str31 = str78;
-                                                                                            str = str49;
-                                                                                            arrayList11 = arrayList45;
+                                                                                        String str108 = str73;
+                                                                                        if (e2.a.i(xmlPullParser, str108)) {
+                                                                                            str32 = str86;
+                                                                                            str34 = str108;
+                                                                                            str35 = str82;
+                                                                                            str = str53;
                                                                                             z11 = z10;
-                                                                                            str32 = str93;
-                                                                                            arrayList7 = arrayList33;
-                                                                                            arrayList5 = arrayList34;
-                                                                                            str33 = str65;
-                                                                                            str14 = str66;
-                                                                                            str15 = str67;
-                                                                                            str29 = str68;
-                                                                                            str36 = str98;
-                                                                                            arrayList19 = arrayList46;
+                                                                                            str36 = str97;
+                                                                                            arrayList7 = arrayList32;
+                                                                                            arrayList5 = arrayList33;
+                                                                                            str37 = str69;
+                                                                                            str13 = str70;
+                                                                                            str14 = str71;
+                                                                                            str33 = str72;
+                                                                                            str15 = str29;
+                                                                                            arrayList19 = arrayList45;
                                                                                             i15 = parseInt;
-                                                                                            str34 = str83;
-                                                                                            str38 = str26;
-                                                                                            str17 = str88;
-                                                                                            i16 = i48;
-                                                                                            arrayList23 = arrayList56;
-                                                                                            arrayList25 = arrayList59;
-                                                                                            i17 = i47;
-                                                                                            arrayList12 = arrayList47;
-                                                                                            arrayList21 = arrayList60;
+                                                                                            str38 = str87;
+                                                                                            str42 = str27;
+                                                                                            str17 = str92;
+                                                                                            str40 = str104;
+                                                                                            i16 = i44;
+                                                                                            sVar = o(xmlPullParser, (r) sVar9);
+                                                                                            arrayList25 = arrayList57;
+                                                                                            i17 = i43;
+                                                                                            arrayList12 = arrayList46;
+                                                                                            arrayList21 = arrayList58;
                                                                                             arrayList22 = arrayList18;
-                                                                                            str12 = str64;
-                                                                                            str35 = str87;
-                                                                                            sVar = sVar6;
-                                                                                            j25 = j51;
-                                                                                            j24 = i37;
-                                                                                            j22 = j41;
-                                                                                            str39 = str101;
-                                                                                            str21 = str100;
-                                                                                            arrayList20 = arrayList43;
-                                                                                            j12 = j39;
-                                                                                            j10 = j40;
-                                                                                            arrayList6 = arrayList36;
-                                                                                            arrayList2 = arrayList37;
-                                                                                            j15 = j44;
-                                                                                            arrayList13 = arrayList61;
-                                                                                            j26 = j50;
-                                                                                            arrayList24 = arrayList58;
-                                                                                            i18 = i50;
-                                                                                            if (e2.d.l(xmlPullParser, str38)) {
-                                                                                                if (r0.i(str91)) {
-                                                                                                    if (str32 != null) {
-                                                                                                        String[] a02 = d0.a0(str32);
-                                                                                                        int length2 = a02.length;
-                                                                                                        for (int i51 = i11; i51 < length2; i51++) {
-                                                                                                            d10 = r0.d(a02[i51]);
-                                                                                                            if (d10 != null && r0.i(d10)) {
-                                                                                                                str40 = d10;
-                                                                                                                str41 = str91;
+                                                                                            str11 = str68;
+                                                                                            str76 = str31;
+                                                                                            str39 = str91;
+                                                                                            str43 = str107;
+                                                                                            f13 = f10;
+                                                                                            j26 = j53;
+                                                                                            arrayList13 = arrayList44;
+                                                                                            j25 = i33;
+                                                                                            j23 = j43;
+                                                                                            str21 = str106;
+                                                                                            arrayList23 = arrayList54;
+                                                                                            arrayList20 = arrayList42;
+                                                                                            j13 = j41;
+                                                                                            j11 = j42;
+                                                                                            arrayList6 = arrayList35;
+                                                                                            arrayList2 = arrayList36;
+                                                                                            j16 = j46;
+                                                                                            arrayList14 = arrayList59;
+                                                                                            j27 = j52;
+                                                                                            arrayList24 = arrayList56;
+                                                                                            i18 = i46;
+                                                                                            if (e2.a.h(xmlPullParser, str42)) {
+                                                                                                if (w0.i(str95)) {
+                                                                                                    if (str36 != null) {
+                                                                                                        String[] d02 = m0.d0(str36);
+                                                                                                        int length2 = d02.length;
+                                                                                                        for (int i47 = i11; i47 < length2; i47++) {
+                                                                                                            d10 = w0.d(d02[i47]);
+                                                                                                            if (d10 != null && w0.i(d10)) {
+                                                                                                                str44 = d10;
+                                                                                                                str45 = str95;
                                                                                                             }
                                                                                                         }
                                                                                                     }
                                                                                                     d10 = null;
-                                                                                                    str40 = d10;
-                                                                                                    str41 = str91;
-                                                                                                } else if (r0.m(str91)) {
-                                                                                                    if (str32 != null) {
-                                                                                                        String[] a03 = d0.a0(str32);
-                                                                                                        int length3 = a03.length;
-                                                                                                        for (int i52 = i11; i52 < length3; i52++) {
-                                                                                                            d10 = r0.d(a03[i52]);
-                                                                                                            if (d10 != null && r0.m(d10)) {
-                                                                                                                str40 = d10;
-                                                                                                                str41 = str91;
+                                                                                                    str44 = d10;
+                                                                                                    str45 = str95;
+                                                                                                } else if (w0.m(str95)) {
+                                                                                                    if (str36 != null) {
+                                                                                                        String[] d03 = m0.d0(str36);
+                                                                                                        int length3 = d03.length;
+                                                                                                        for (int i48 = i11; i48 < length3; i48++) {
+                                                                                                            d10 = w0.d(d03[i48]);
+                                                                                                            if (d10 != null && w0.m(d10)) {
+                                                                                                                str44 = d10;
+                                                                                                                str45 = str95;
                                                                                                             }
                                                                                                         }
                                                                                                     }
                                                                                                     d10 = null;
-                                                                                                    str40 = d10;
-                                                                                                    str41 = str91;
-                                                                                                } else if (r0.l(str91) || r0.k(str91)) {
-                                                                                                    str40 = str91;
-                                                                                                    str41 = str40;
+                                                                                                    str44 = d10;
+                                                                                                    str45 = str95;
+                                                                                                } else if (w0.l(str95) || w0.k(str95)) {
+                                                                                                    str44 = str95;
+                                                                                                    str45 = str44;
                                                                                                 } else {
-                                                                                                    str41 = str91;
-                                                                                                    if ("application/mp4".equals(str41)) {
-                                                                                                        str40 = r0.d(str32);
-                                                                                                        if ("text/vtt".equals(str40)) {
-                                                                                                            str40 = "application/x-mp4-vtt";
+                                                                                                    str45 = str95;
+                                                                                                    if ("application/mp4".equals(str45)) {
+                                                                                                        str44 = w0.d(str36);
+                                                                                                        if ("text/vtt".equals(str44)) {
+                                                                                                            str44 = "application/x-mp4-vtt";
                                                                                                         }
                                                                                                     } else {
-                                                                                                        str40 = null;
+                                                                                                        str44 = null;
                                                                                                     }
                                                                                                 }
-                                                                                                if ("audio/eac3".equals(str40)) {
-                                                                                                    int i53 = i11;
-                                                                                                    while (i53 < arrayList25.size()) {
-                                                                                                        f fVar = (f) arrayList25.get(i53);
-                                                                                                        int i54 = i53;
-                                                                                                        String str103 = fVar.a;
-                                                                                                        String str104 = fVar.b;
+                                                                                                if ("audio/eac3".equals(str44)) {
+                                                                                                    int i49 = i11;
+                                                                                                    while (i49 < arrayList25.size()) {
+                                                                                                        f fVar = (f) arrayList25.get(i49);
+                                                                                                        int i50 = i49;
+                                                                                                        String str109 = fVar.a;
+                                                                                                        String str110 = fVar.b;
                                                                                                         arrayList26 = arrayList25;
-                                                                                                        if (("tag:dolby.com,2018:dash:EC3_ExtensionType:2018".equals(str103) && "JOC".equals(str104)) || ("tag:dolby.com,2014:dash:DolbyDigitalPlusExtensionType:2014".equals(str103) && "ec+3".equals(str104))) {
-                                                                                                            str40 = "audio/eac3-joc";
-                                                                                                            if ("audio/eac3-joc".equals(str40)) {
-                                                                                                                str43 = "ec+3";
-                                                                                                                str42 = str95;
-                                                                                                                if (r0.j(str43, str42)) {
-                                                                                                                    str40 = "video/dolby-vision";
-                                                                                                                    str43 = str42 != null ? str42 : str43;
+                                                                                                        if (("tag:dolby.com,2018:dash:EC3_ExtensionType:2018".equals(str109) && "JOC".equals(str110)) || ("tag:dolby.com,2014:dash:DolbyDigitalPlusExtensionType:2014".equals(str109) && "ec+3".equals(str110))) {
+                                                                                                            str44 = "audio/eac3-joc";
+                                                                                                            if ("audio/eac3-joc".equals(str44)) {
+                                                                                                                str47 = "ec+3";
+                                                                                                                str46 = str99;
+                                                                                                                if (w0.j(str47, str46)) {
+                                                                                                                    oVar = null;
+                                                                                                                } else {
+                                                                                                                    b2.o x10 = m0.x(str47, str46, str101);
+                                                                                                                    String str111 = str46 != null ? str46 : str47;
+                                                                                                                    oVar = x10;
+                                                                                                                    str44 = "video/dolby-vision";
+                                                                                                                    str47 = str111;
                                                                                                                 }
                                                                                                                 i19 = i11;
-                                                                                                                int i55 = i19;
-                                                                                                                while (i19 < arrayList20.size()) {
-                                                                                                                    ArrayList arrayList62 = arrayList20;
-                                                                                                                    int i56 = i19;
-                                                                                                                    f fVar2 = (f) arrayList62.get(i19);
-                                                                                                                    long j52 = j24;
-                                                                                                                    if (r6.a("urn:mpeg:dash:role:2011", fVar2.a)) {
-                                                                                                                        String str105 = fVar2.b;
-                                                                                                                        i55 |= (str105 != null && (str105.equals("forced_subtitle") || str105.equals("forced-subtitle"))) ? 2 : i11;
-                                                                                                                    }
-                                                                                                                    i19 = i56 + 1;
-                                                                                                                    arrayList20 = arrayList62;
-                                                                                                                    j24 = j52;
-                                                                                                                }
-                                                                                                                long j53 = j24;
-                                                                                                                arrayList27 = arrayList20;
-                                                                                                                i20 = i11;
-                                                                                                                int i57 = i20;
-                                                                                                                while (i20 < arrayList27.size()) {
-                                                                                                                    f fVar3 = (f) arrayList27.get(i20);
-                                                                                                                    int i58 = i20;
-                                                                                                                    if (r6.a("urn:mpeg:dash:role:2011", fVar3.a)) {
-                                                                                                                        i57 |= m(fVar3.b);
-                                                                                                                    }
-                                                                                                                    i20 = i58 + 1;
-                                                                                                                }
-                                                                                                                int i59 = i57;
-                                                                                                                i21 = i11;
-                                                                                                                int i60 = i21;
-                                                                                                                while (i21 < arrayList55.size()) {
-                                                                                                                    ArrayList arrayList63 = arrayList55;
-                                                                                                                    int i61 = i21;
-                                                                                                                    f fVar4 = (f) arrayList63.get(i21);
-                                                                                                                    int i62 = i60;
-                                                                                                                    String str106 = fVar4.a;
-                                                                                                                    String str107 = str41;
-                                                                                                                    String str108 = fVar4.b;
-                                                                                                                    if (r6.a("urn:mpeg:dash:role:2011", str106)) {
-                                                                                                                        i25 = m(str108);
-                                                                                                                    } else if (r6.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar4.a)) {
-                                                                                                                        if (str108 != null) {
-                                                                                                                            switch (str108.hashCode()) {
-                                                                                                                                case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
-                                                                                                                                    if (str108.equals("1")) {
-                                                                                                                                        i24 = i11;
-                                                                                                                                        break;
-                                                                                                                                    }
-                                                                                                                                    i24 = -1;
-                                                                                                                                    break;
-                                                                                                                                case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
-                                                                                                                                    if (str108.equals("2")) {
-                                                                                                                                        i24 = i12;
-                                                                                                                                        break;
-                                                                                                                                    }
-                                                                                                                                    i24 = -1;
-                                                                                                                                    break;
-                                                                                                                                case 51:
-                                                                                                                                    if (str108.equals("3")) {
-                                                                                                                                        i24 = 2;
-                                                                                                                                        break;
-                                                                                                                                    }
-                                                                                                                                    i24 = -1;
-                                                                                                                                    break;
-                                                                                                                                case 52:
-                                                                                                                                    if (str108.equals("4")) {
-                                                                                                                                        i24 = 3;
-                                                                                                                                        break;
-                                                                                                                                    }
-                                                                                                                                    i24 = -1;
-                                                                                                                                    break;
-                                                                                                                                case 53:
-                                                                                                                                default:
-                                                                                                                                    i24 = -1;
-                                                                                                                                    break;
-                                                                                                                                case 54:
-                                                                                                                                    if (str108.equals("6")) {
-                                                                                                                                        i24 = 4;
-                                                                                                                                        break;
-                                                                                                                                    }
-                                                                                                                                    i24 = -1;
-                                                                                                                                    break;
-                                                                                                                            }
-                                                                                                                            switch (i24) {
-                                                                                                                                case 0:
-                                                                                                                                    i25 = 512;
-                                                                                                                                    break;
-                                                                                                                                case 1:
-                                                                                                                                    i25 = 2048;
-                                                                                                                                    break;
-                                                                                                                                case 2:
-                                                                                                                                    i25 = 4;
-                                                                                                                                    break;
-                                                                                                                                case 3:
-                                                                                                                                    i25 = 8;
-                                                                                                                                    break;
-                                                                                                                                case 4:
-                                                                                                                                    i25 = i12;
-                                                                                                                                    break;
-                                                                                                                            }
-                                                                                                                        }
-                                                                                                                        i25 = i11;
-                                                                                                                    } else {
-                                                                                                                        i60 = i62;
-                                                                                                                        i21 = i61 + 1;
-                                                                                                                        arrayList55 = arrayList63;
-                                                                                                                        str41 = str107;
-                                                                                                                    }
-                                                                                                                    i60 = i62 | i25;
-                                                                                                                    i21 = i61 + 1;
-                                                                                                                    arrayList55 = arrayList63;
-                                                                                                                    str41 = str107;
-                                                                                                                }
-                                                                                                                String str109 = str41;
-                                                                                                                ArrayList arrayList64 = arrayList55;
-                                                                                                                int n10 = i59 | i60 | n(arrayList24) | n(arrayList26);
-                                                                                                                i22 = i11;
+                                                                                                                int i51 = i19;
                                                                                                                 while (true) {
-                                                                                                                    if (i22 >= arrayList24.size()) {
-                                                                                                                        f fVar5 = (f) arrayList24.get(i22);
-                                                                                                                        arrayList28 = arrayList24;
-                                                                                                                        if ((r6.a("http://dashif.org/thumbnail_tile", fVar5.a) || r6.a("http://dashif.org/guidelines/thumbnail_tile", fVar5.a)) && (str44 = fVar5.b) != null) {
-                                                                                                                            String str110 = d0.a;
-                                                                                                                            String[] split = str44.split("x", -1);
-                                                                                                                            if (split.length != 2) {
-                                                                                                                                continue;
-                                                                                                                            } else {
-                                                                                                                                try {
-                                                                                                                                    pair = Pair.create(Integer.valueOf(Integer.parseInt(split[i11])), Integer.valueOf(Integer.parseInt(split[i12])));
-                                                                                                                                } catch (NumberFormatException unused) {
-                                                                                                                                    continue;
-                                                                                                                                }
-                                                                                                                            }
+                                                                                                                    j28 = j25;
+                                                                                                                    if (i19 >= arrayList20.size()) {
+                                                                                                                        ArrayList arrayList60 = arrayList20;
+                                                                                                                        f fVar2 = (f) arrayList60.get(i19);
+                                                                                                                        String str112 = str45;
+                                                                                                                        if (s6.a("urn:mpeg:dash:role:2011", fVar2.a)) {
+                                                                                                                            String str113 = fVar2.b;
+                                                                                                                            i51 |= (str113 != null && (str113.equals("forced_subtitle") || str113.equals("forced-subtitle"))) ? 2 : i11;
                                                                                                                         }
-                                                                                                                        i22++;
-                                                                                                                        arrayList24 = arrayList28;
+                                                                                                                        i19++;
+                                                                                                                        str45 = str112;
+                                                                                                                        arrayList20 = arrayList60;
+                                                                                                                        j25 = j28;
                                                                                                                     } else {
-                                                                                                                        arrayList28 = arrayList24;
-                                                                                                                        pair = null;
-                                                                                                                    }
-                                                                                                                }
-                                                                                                                b2.r rVar = new b2.r();
-                                                                                                                rVar.a = attributeValue22;
-                                                                                                                rVar.p = r0.n(str109);
-                                                                                                                rVar.q = r0.n(str40);
-                                                                                                                rVar.j = str43;
-                                                                                                                rVar.i = i15;
-                                                                                                                rVar.e = i55;
-                                                                                                                rVar.f = n10;
-                                                                                                                String str111 = str31;
-                                                                                                                rVar.d = str111;
-                                                                                                                rVar.P = pair == null ? ((Integer) pair.first).intValue() : -1;
-                                                                                                                rVar.Q = pair == null ? ((Integer) pair.second).intValue() : -1;
-                                                                                                                if (r0.m(str40)) {
-                                                                                                                    int i63 = parseInt6;
-                                                                                                                    int i64 = parseInt7;
-                                                                                                                    if (r0.i(str40)) {
-                                                                                                                        rVar.I = i18;
-                                                                                                                        rVar.J = i17;
-                                                                                                                    } else if (r0.l(str40)) {
-                                                                                                                        if ("application/cea-608".equals(str40)) {
-                                                                                                                            int i65 = i11;
-                                                                                                                            while (i65 < arrayList64.size()) {
-                                                                                                                                f fVar6 = (f) arrayList64.get(i65);
-                                                                                                                                String str112 = fVar6.a;
-                                                                                                                                String str113 = fVar6.b;
-                                                                                                                                if ("urn:scte:dash:cc:cea-608:2015".equals(str112) && str113 != null) {
-                                                                                                                                    Matcher matcher = c.matcher(str113);
-                                                                                                                                    if (matcher.matches()) {
-                                                                                                                                        parseInt2 = Integer.parseInt(matcher.group(i12));
-                                                                                                                                        rVar.N = parseInt2;
-                                                                                                                                    } else {
-                                                                                                                                        e2.a.n("MpdParser", "Unable to parse CEA-608 channel number from: ".concat(str113));
+                                                                                                                        ArrayList arrayList61 = arrayList20;
+                                                                                                                        String str114 = str45;
+                                                                                                                        int i52 = i11;
+                                                                                                                        int i53 = i52;
+                                                                                                                        while (i52 < arrayList61.size()) {
+                                                                                                                            f fVar3 = (f) arrayList61.get(i52);
+                                                                                                                            ArrayList arrayList62 = arrayList61;
+                                                                                                                            if (s6.a("urn:mpeg:dash:role:2011", fVar3.a)) {
+                                                                                                                                i53 |= m(fVar3.b);
+                                                                                                                            }
+                                                                                                                            i52++;
+                                                                                                                            arrayList61 = arrayList62;
+                                                                                                                        }
+                                                                                                                        ArrayList arrayList63 = arrayList61;
+                                                                                                                        int i54 = i11;
+                                                                                                                        int i55 = i54;
+                                                                                                                        while (i54 < arrayList10.size()) {
+                                                                                                                            ArrayList arrayList64 = arrayList10;
+                                                                                                                            int i56 = i54;
+                                                                                                                            f fVar4 = (f) arrayList64.get(i54);
+                                                                                                                            int i57 = i55;
+                                                                                                                            String str115 = fVar4.a;
+                                                                                                                            int i58 = i53;
+                                                                                                                            String str116 = fVar4.b;
+                                                                                                                            if (s6.a("urn:mpeg:dash:role:2011", str115)) {
+                                                                                                                                i21 = m(str116);
+                                                                                                                            } else if (s6.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar4.a)) {
+                                                                                                                                if (str116 != null) {
+                                                                                                                                    switch (str116.hashCode()) {
+                                                                                                                                        case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
+                                                                                                                                            if (str116.equals("1")) {
+                                                                                                                                                i20 = i11;
+                                                                                                                                                break;
+                                                                                                                                            }
+                                                                                                                                            i20 = -1;
+                                                                                                                                            break;
+                                                                                                                                        case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                                                                                                                                            if (str116.equals("2")) {
+                                                                                                                                                i20 = i12;
+                                                                                                                                                break;
+                                                                                                                                            }
+                                                                                                                                            i20 = -1;
+                                                                                                                                            break;
+                                                                                                                                        case 51:
+                                                                                                                                            if (str116.equals("3")) {
+                                                                                                                                                i20 = 2;
+                                                                                                                                                break;
+                                                                                                                                            }
+                                                                                                                                            i20 = -1;
+                                                                                                                                            break;
+                                                                                                                                        case 52:
+                                                                                                                                            if (str116.equals("4")) {
+                                                                                                                                                i20 = 3;
+                                                                                                                                                break;
+                                                                                                                                            }
+                                                                                                                                            i20 = -1;
+                                                                                                                                            break;
+                                                                                                                                        case 53:
+                                                                                                                                        default:
+                                                                                                                                            i20 = -1;
+                                                                                                                                            break;
+                                                                                                                                        case 54:
+                                                                                                                                            if (str116.equals("6")) {
+                                                                                                                                                i20 = 4;
+                                                                                                                                                break;
+                                                                                                                                            }
+                                                                                                                                            i20 = -1;
+                                                                                                                                            break;
+                                                                                                                                    }
+                                                                                                                                    switch (i20) {
+                                                                                                                                        case 0:
+                                                                                                                                            i21 = 512;
+                                                                                                                                            break;
+                                                                                                                                        case 1:
+                                                                                                                                            i21 = 2048;
+                                                                                                                                            break;
+                                                                                                                                        case 2:
+                                                                                                                                            i21 = 4;
+                                                                                                                                            break;
+                                                                                                                                        case 3:
+                                                                                                                                            i21 = 8;
+                                                                                                                                            break;
+                                                                                                                                        case 4:
+                                                                                                                                            i21 = i12;
+                                                                                                                                            break;
                                                                                                                                     }
                                                                                                                                 }
-                                                                                                                                i65++;
-                                                                                                                                i12 = 1;
+                                                                                                                                i21 = i11;
+                                                                                                                            } else {
+                                                                                                                                i55 = i57;
+                                                                                                                                i54 = i56 + 1;
+                                                                                                                                arrayList10 = arrayList64;
+                                                                                                                                i53 = i58;
                                                                                                                             }
-                                                                                                                            parseInt2 = -1;
-                                                                                                                            rVar.N = parseInt2;
-                                                                                                                        } else {
-                                                                                                                            if ("application/cea-708".equals(str40)) {
-                                                                                                                                for (int i66 = i11; i66 < arrayList64.size(); i66++) {
-                                                                                                                                    f fVar7 = (f) arrayList64.get(i66);
-                                                                                                                                    String str114 = fVar7.a;
-                                                                                                                                    String str115 = fVar7.b;
-                                                                                                                                    if ("urn:scte:dash:cc:cea-708:2015".equals(str114) && str115 != null) {
-                                                                                                                                        Matcher matcher2 = d.matcher(str115);
-                                                                                                                                        if (matcher2.matches()) {
-                                                                                                                                            parseInt2 = Integer.parseInt(matcher2.group(1));
-                                                                                                                                            rVar.N = parseInt2;
-                                                                                                                                        } else {
-                                                                                                                                            e2.a.n("MpdParser", "Unable to parse CEA-708 service block number from: ".concat(str115));
+                                                                                                                            i55 = i57 | i21;
+                                                                                                                            i54 = i56 + 1;
+                                                                                                                            arrayList10 = arrayList64;
+                                                                                                                            i53 = i58;
+                                                                                                                        }
+                                                                                                                        ArrayList arrayList65 = arrayList10;
+                                                                                                                        int n10 = i53 | i55 | n(arrayList24) | n(arrayList26);
+                                                                                                                        int i59 = i11;
+                                                                                                                        while (true) {
+                                                                                                                            if (i59 < arrayList24.size()) {
+                                                                                                                                f fVar5 = (f) arrayList24.get(i59);
+                                                                                                                                arrayList27 = arrayList24;
+                                                                                                                                if ((s6.a("http://dashif.org/thumbnail_tile", fVar5.a) || s6.a("http://dashif.org/guidelines/thumbnail_tile", fVar5.a)) && (str48 = fVar5.b) != null) {
+                                                                                                                                    String str117 = m0.a;
+                                                                                                                                    String[] split = str48.split("x", -1);
+                                                                                                                                    if (split.length != 2) {
+                                                                                                                                        continue;
+                                                                                                                                    } else {
+                                                                                                                                        try {
+                                                                                                                                            pair = Pair.create(Integer.valueOf(Integer.parseInt(split[i11])), Integer.valueOf(Integer.parseInt(split[i12])));
+                                                                                                                                        } catch (NumberFormatException unused) {
+                                                                                                                                            continue;
                                                                                                                                         }
                                                                                                                                     }
                                                                                                                                 }
+                                                                                                                                i59++;
+                                                                                                                                arrayList24 = arrayList27;
+                                                                                                                            } else {
+                                                                                                                                arrayList27 = arrayList24;
+                                                                                                                                pair = null;
                                                                                                                             }
-                                                                                                                            parseInt2 = -1;
-                                                                                                                            rVar.N = parseInt2;
                                                                                                                         }
-                                                                                                                        if (e2.d.l(xmlPullParser, str25)) {
+                                                                                                                        w wVar = new w();
+                                                                                                                        wVar.a = attributeValue23;
+                                                                                                                        wVar.q = w0.n(str114);
+                                                                                                                        wVar.r = w0.n(str44);
+                                                                                                                        wVar.j = str47;
+                                                                                                                        wVar.i = i15;
+                                                                                                                        wVar.e = i51;
+                                                                                                                        wVar.f = n10;
+                                                                                                                        wVar.H = oVar;
+                                                                                                                        String str118 = str35;
+                                                                                                                        wVar.d = str118;
+                                                                                                                        wVar.Q = pair != null ? ((Integer) pair.first).intValue() : -1;
+                                                                                                                        wVar.R = pair != null ? ((Integer) pair.second).intValue() : -1;
+                                                                                                                        if (w0.m(str44)) {
+                                                                                                                            wVar.y = parseInt2;
+                                                                                                                            wVar.z = parseInt3;
+                                                                                                                            wVar.C = j51;
+                                                                                                                        } else {
+                                                                                                                            int i60 = parseInt2;
+                                                                                                                            int i61 = parseInt3;
+                                                                                                                            if (w0.i(str44)) {
+                                                                                                                                wVar.J = i18;
+                                                                                                                                wVar.K = i17;
+                                                                                                                            } else if (w0.l(str44)) {
+                                                                                                                                if ("application/cea-608".equals(str44)) {
+                                                                                                                                    int i62 = i11;
+                                                                                                                                    while (i62 < arrayList65.size()) {
+                                                                                                                                        f fVar6 = (f) arrayList65.get(i62);
+                                                                                                                                        String str119 = fVar6.a;
+                                                                                                                                        String str120 = fVar6.b;
+                                                                                                                                        if ("urn:scte:dash:cc:cea-608:2015".equals(str119) && str120 != null) {
+                                                                                                                                            Matcher matcher = c.matcher(str120);
+                                                                                                                                            if (matcher.matches()) {
+                                                                                                                                                parseInt4 = Integer.parseInt(matcher.group(i12));
+                                                                                                                                                wVar.O = parseInt4;
+                                                                                                                                            } else {
+                                                                                                                                                e2.a.l("MpdParser", "Unable to parse CEA-608 channel number from: ".concat(str120));
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                        i62++;
+                                                                                                                                        i12 = 1;
+                                                                                                                                    }
+                                                                                                                                    parseInt4 = -1;
+                                                                                                                                    wVar.O = parseInt4;
+                                                                                                                                } else {
+                                                                                                                                    if ("application/cea-708".equals(str44)) {
+                                                                                                                                        for (int i63 = i11; i63 < arrayList65.size(); i63++) {
+                                                                                                                                            f fVar7 = (f) arrayList65.get(i63);
+                                                                                                                                            String str121 = fVar7.a;
+                                                                                                                                            String str122 = fVar7.b;
+                                                                                                                                            if ("urn:scte:dash:cc:cea-708:2015".equals(str121) && str122 != null) {
+                                                                                                                                                Matcher matcher2 = d.matcher(str122);
+                                                                                                                                                if (matcher2.matches()) {
+                                                                                                                                                    parseInt4 = Integer.parseInt(matcher2.group(1));
+                                                                                                                                                    wVar.O = parseInt4;
+                                                                                                                                                } else {
+                                                                                                                                                    e2.a.l("MpdParser", "Unable to parse CEA-708 service block number from: ".concat(str122));
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                    parseInt4 = -1;
+                                                                                                                                    wVar.O = parseInt4;
+                                                                                                                                }
+                                                                                                                                if (e2.a.h(xmlPullParser, str26)) {
+                                                                                                                                }
+                                                                                                                            } else if (w0.k(str44)) {
+                                                                                                                                wVar.y = i60;
+                                                                                                                                wVar.z = i61;
+                                                                                                                            }
                                                                                                                         }
-                                                                                                                    } else if (r0.k(str40)) {
-                                                                                                                        rVar.x = i63;
-                                                                                                                        rVar.y = i64;
+                                                                                                                        x xVar2 = new x(wVar);
+                                                                                                                        d dVar2 = new d(xVar2, !arrayList21.isEmpty() ? arrayList21 : arrayList22, sVar != null ? sVar : new r(null, 1L, 0L, 0L, 0L), str43, arrayList23, arrayList55, arrayList27, arrayList26);
+                                                                                                                        int h = w0.h(xVar2.s);
+                                                                                                                        int i64 = i16;
+                                                                                                                        if (i64 != -1) {
+                                                                                                                            if (h != -1) {
+                                                                                                                                u6.p(i64 == h ? 1 : i11);
+                                                                                                                            }
+                                                                                                                            h = i64;
+                                                                                                                        }
+                                                                                                                        ArrayList arrayList66 = arrayList19;
+                                                                                                                        arrayList66.add(dVar2);
+                                                                                                                        arrayList45 = arrayList66;
+                                                                                                                        str24 = str118;
+                                                                                                                        i14 = h;
+                                                                                                                        arrayList10 = arrayList65;
+                                                                                                                        arrayList15 = arrayList63;
+                                                                                                                        arrayList17 = arrayList39;
+                                                                                                                        arrayList16 = arrayList40;
+                                                                                                                        str25 = str88;
+                                                                                                                        j18 = j28;
+                                                                                                                        str26 = str37;
+                                                                                                                        str22 = str33;
+                                                                                                                        str23 = str34;
                                                                                                                     }
-                                                                                                                } else {
-                                                                                                                    rVar.x = parseInt6;
-                                                                                                                    rVar.y = parseInt7;
-                                                                                                                    rVar.B = j49;
                                                                                                                 }
-                                                                                                                b2.s sVar7 = new b2.s(rVar);
-                                                                                                                d dVar2 = new d(sVar7, arrayList21.isEmpty() ? arrayList21 : arrayList22, sVar == null ? sVar : new r(null, 1L, 0L, 0L, 0L), str39, arrayList23, arrayList57, arrayList28, arrayList26);
-                                                                                                                int h = r0.h(sVar7.r);
-                                                                                                                i23 = i16;
-                                                                                                                if (i23 != -1) {
-                                                                                                                    if (h != -1) {
-                                                                                                                        e2.d.g(i23 == h ? 1 : i11);
-                                                                                                                    }
-                                                                                                                    h = i23;
-                                                                                                                }
-                                                                                                                ArrayList arrayList65 = arrayList19;
-                                                                                                                arrayList65.add(dVar2);
-                                                                                                                arrayList46 = arrayList65;
-                                                                                                                str11 = str111;
-                                                                                                                arrayList15 = arrayList64;
-                                                                                                                i14 = h;
-                                                                                                                arrayList14 = arrayList27;
-                                                                                                                arrayList17 = arrayList40;
-                                                                                                                arrayList16 = arrayList41;
-                                                                                                                str24 = str84;
-                                                                                                                j17 = j53;
-                                                                                                                str25 = str33;
-                                                                                                                str22 = str29;
-                                                                                                                str23 = str30;
                                                                                                             }
                                                                                                         } else {
-                                                                                                            i53 = i54 + 1;
+                                                                                                            i49 = i50 + 1;
                                                                                                             arrayList25 = arrayList26;
                                                                                                         }
                                                                                                     }
                                                                                                     arrayList26 = arrayList25;
-                                                                                                    str40 = "audio/eac3";
-                                                                                                    if ("audio/eac3-joc".equals(str40)) {
+                                                                                                    str44 = "audio/eac3";
+                                                                                                    if ("audio/eac3-joc".equals(str44)) {
                                                                                                     }
                                                                                                 } else {
                                                                                                     arrayList26 = arrayList25;
                                                                                                 }
-                                                                                                str42 = str95;
-                                                                                                str43 = str32;
-                                                                                                if (r0.j(str43, str42)) {
+                                                                                                str46 = str99;
+                                                                                                str47 = str36;
+                                                                                                if (w0.j(str47, str46)) {
                                                                                                 }
                                                                                                 i19 = i11;
-                                                                                                int i552 = i19;
-                                                                                                while (i19 < arrayList20.size()) {
-                                                                                                }
-                                                                                                long j532 = j24;
-                                                                                                arrayList27 = arrayList20;
-                                                                                                i20 = i11;
-                                                                                                int i572 = i20;
-                                                                                                while (i20 < arrayList27.size()) {
-                                                                                                }
-                                                                                                int i592 = i572;
-                                                                                                i21 = i11;
-                                                                                                int i602 = i21;
-                                                                                                while (i21 < arrayList55.size()) {
-                                                                                                }
-                                                                                                String str1092 = str41;
-                                                                                                ArrayList arrayList642 = arrayList55;
-                                                                                                int n102 = i592 | i602 | n(arrayList24) | n(arrayList26);
-                                                                                                i22 = i11;
+                                                                                                int i512 = i19;
                                                                                                 while (true) {
-                                                                                                    if (i22 >= arrayList24.size()) {
+                                                                                                    j28 = j25;
+                                                                                                    if (i19 >= arrayList20.size()) {
                                                                                                     }
-                                                                                                    i22++;
-                                                                                                    arrayList24 = arrayList28;
+                                                                                                    i19++;
+                                                                                                    str45 = str112;
+                                                                                                    arrayList20 = arrayList60;
+                                                                                                    j25 = j28;
                                                                                                 }
-                                                                                                b2.r rVar2 = new b2.r();
-                                                                                                rVar2.a = attributeValue22;
-                                                                                                rVar2.p = r0.n(str1092);
-                                                                                                rVar2.q = r0.n(str40);
-                                                                                                rVar2.j = str43;
-                                                                                                rVar2.i = i15;
-                                                                                                rVar2.e = i552;
-                                                                                                rVar2.f = n102;
-                                                                                                String str1112 = str31;
-                                                                                                rVar2.d = str1112;
-                                                                                                rVar2.P = pair == null ? ((Integer) pair.first).intValue() : -1;
-                                                                                                rVar2.Q = pair == null ? ((Integer) pair.second).intValue() : -1;
-                                                                                                if (r0.m(str40)) {
-                                                                                                }
-                                                                                                b2.s sVar72 = new b2.s(rVar2);
-                                                                                                if (sVar == null) {
-                                                                                                }
-                                                                                                d dVar22 = new d(sVar72, arrayList21.isEmpty() ? arrayList21 : arrayList22, sVar == null ? sVar : new r(null, 1L, 0L, 0L, 0L), str39, arrayList23, arrayList57, arrayList28, arrayList26);
-                                                                                                int h10 = r0.h(sVar72.r);
-                                                                                                i23 = i16;
-                                                                                                if (i23 != -1) {
-                                                                                                }
-                                                                                                ArrayList arrayList652 = arrayList19;
-                                                                                                arrayList652.add(dVar22);
-                                                                                                arrayList46 = arrayList652;
-                                                                                                str11 = str1112;
-                                                                                                arrayList15 = arrayList642;
-                                                                                                i14 = h10;
-                                                                                                arrayList14 = arrayList27;
-                                                                                                arrayList17 = arrayList40;
-                                                                                                arrayList16 = arrayList41;
-                                                                                                str24 = str84;
-                                                                                                j17 = j532;
-                                                                                                str25 = str33;
-                                                                                                str22 = str29;
-                                                                                                str23 = str30;
                                                                                             } else {
-                                                                                                arrayList58 = arrayList24;
-                                                                                                arrayList59 = arrayList25;
-                                                                                                long j54 = j24;
-                                                                                                i50 = i18;
-                                                                                                str26 = str38;
-                                                                                                j51 = j25;
-                                                                                                str98 = str36;
-                                                                                                arrayList56 = arrayList23;
-                                                                                                str83 = str34;
-                                                                                                str100 = str21;
-                                                                                                arrayList45 = arrayList11;
-                                                                                                j50 = j26;
-                                                                                                arrayList61 = arrayList13;
-                                                                                                arrayList47 = arrayList12;
-                                                                                                str82 = str28;
-                                                                                                str101 = str39;
-                                                                                                f14 = f7;
-                                                                                                str49 = str;
-                                                                                                str93 = str32;
-                                                                                                i48 = i16;
-                                                                                                arrayList46 = arrayList19;
-                                                                                                str78 = str31;
-                                                                                                i47 = i17;
-                                                                                                str67 = str15;
-                                                                                                str66 = str14;
-                                                                                                str68 = str29;
-                                                                                                str69 = str30;
+                                                                                                arrayList56 = arrayList24;
+                                                                                                arrayList57 = arrayList25;
+                                                                                                arrayList54 = arrayList23;
+                                                                                                long j54 = j25;
+                                                                                                i46 = i18;
+                                                                                                str27 = str42;
+                                                                                                j53 = j26;
+                                                                                                str104 = str40;
+                                                                                                str87 = str38;
+                                                                                                str106 = str21;
+                                                                                                arrayList44 = arrayList13;
+                                                                                                j52 = j27;
+                                                                                                arrayList59 = arrayList14;
+                                                                                                arrayList46 = arrayList12;
+                                                                                                str86 = str32;
+                                                                                                f7 = f13;
+                                                                                                str31 = str76;
+                                                                                                str107 = str43;
+                                                                                                str53 = str;
+                                                                                                str97 = str36;
+                                                                                                i44 = i16;
+                                                                                                arrayList45 = arrayList19;
+                                                                                                str82 = str35;
+                                                                                                i43 = i17;
+                                                                                                str71 = str14;
+                                                                                                str70 = str13;
+                                                                                                str72 = str33;
+                                                                                                str73 = str34;
                                                                                                 i12 = 1;
-                                                                                                j44 = j15;
-                                                                                                arrayList37 = arrayList2;
-                                                                                                arrayList36 = arrayList6;
-                                                                                                j39 = j12;
-                                                                                                sVar6 = sVar;
-                                                                                                i37 = j54;
-                                                                                                str88 = str17;
-                                                                                                j40 = j10;
-                                                                                                str64 = str12;
-                                                                                                arrayList43 = arrayList20;
+                                                                                                str68 = str11;
+                                                                                                arrayList36 = arrayList2;
+                                                                                                arrayList35 = arrayList6;
                                                                                                 arrayList18 = arrayList22;
+                                                                                                str29 = str15;
+                                                                                                sVar9 = sVar;
+                                                                                                arrayList32 = arrayList7;
+                                                                                                str69 = str37;
+                                                                                                j42 = j11;
                                                                                                 z10 = z11;
-                                                                                                str91 = str91;
-                                                                                                j41 = j22;
-                                                                                                arrayList33 = arrayList7;
+                                                                                                arrayList42 = arrayList20;
+                                                                                                j46 = j16;
+                                                                                                j41 = j13;
+                                                                                                i33 = j54;
+                                                                                                str92 = str17;
+                                                                                                str95 = str95;
+                                                                                                j43 = j23;
                                                                                                 parseInt = i15;
-                                                                                                str65 = str33;
-                                                                                                str87 = str35;
-                                                                                                arrayList60 = arrayList21;
-                                                                                                arrayList34 = arrayList5;
+                                                                                                str91 = str39;
+                                                                                                arrayList58 = arrayList21;
+                                                                                                arrayList33 = arrayList5;
                                                                                             }
                                                                                         } else {
-                                                                                            str28 = str82;
-                                                                                            String str116 = str68;
-                                                                                            if (e2.d.m(xmlPullParser, str116)) {
-                                                                                                arrayList12 = arrayList47;
-                                                                                                str = str49;
-                                                                                                long d11 = d(xmlPullParser, j50);
-                                                                                                str29 = str116;
-                                                                                                str30 = str102;
-                                                                                                str31 = str78;
-                                                                                                str32 = str93;
-                                                                                                long j55 = i37;
-                                                                                                long j56 = j41;
-                                                                                                arrayList7 = arrayList33;
-                                                                                                arrayList5 = arrayList34;
-                                                                                                str33 = str65;
-                                                                                                str14 = str66;
-                                                                                                str15 = str67;
-                                                                                                arrayList19 = arrayList46;
+                                                                                            str32 = str86;
+                                                                                            String str123 = str72;
+                                                                                            if (e2.a.i(xmlPullParser, str123)) {
+                                                                                                arrayList12 = arrayList46;
+                                                                                                str = str53;
+                                                                                                long d11 = d(xmlPullParser, j52);
+                                                                                                str33 = str123;
+                                                                                                str34 = str108;
+                                                                                                str35 = str82;
+                                                                                                str36 = str97;
+                                                                                                long j55 = i33;
+                                                                                                long j56 = j43;
+                                                                                                arrayList7 = arrayList32;
+                                                                                                arrayList5 = arrayList33;
+                                                                                                str37 = str69;
+                                                                                                str13 = str70;
+                                                                                                str14 = str71;
+                                                                                                str15 = str29;
+                                                                                                arrayList19 = arrayList45;
                                                                                                 i15 = parseInt;
-                                                                                                str34 = str83;
-                                                                                                str17 = str88;
-                                                                                                str21 = str100;
-                                                                                                i16 = i48;
-                                                                                                i17 = i47;
-                                                                                                ArrayList arrayList66 = arrayList45;
-                                                                                                arrayList20 = arrayList43;
-                                                                                                arrayList21 = arrayList60;
-                                                                                                j12 = j39;
-                                                                                                long j57 = j40;
-                                                                                                arrayList6 = arrayList36;
-                                                                                                arrayList2 = arrayList37;
-                                                                                                j15 = j44;
-                                                                                                str35 = str87;
-                                                                                                arrayList13 = arrayList61;
-                                                                                                s p10 = p(xmlPullParser, (o) sVar6, j56, j55, j51, d11, j57);
-                                                                                                j24 = j55;
-                                                                                                j22 = j56;
-                                                                                                j26 = d11;
-                                                                                                j25 = j51;
-                                                                                                str36 = str98;
-                                                                                                str38 = str26;
-                                                                                                arrayList24 = arrayList58;
-                                                                                                arrayList25 = arrayList59;
-                                                                                                i18 = i50;
-                                                                                                z11 = z10;
-                                                                                                arrayList11 = arrayList66;
-                                                                                                j10 = j57;
+                                                                                                str38 = str87;
+                                                                                                str17 = str92;
+                                                                                                str21 = str106;
+                                                                                                i16 = i44;
+                                                                                                i17 = i43;
+                                                                                                ArrayList arrayList67 = arrayList44;
+                                                                                                arrayList20 = arrayList42;
+                                                                                                arrayList21 = arrayList58;
+                                                                                                j13 = j41;
+                                                                                                long j57 = j42;
+                                                                                                arrayList6 = arrayList35;
+                                                                                                arrayList2 = arrayList36;
+                                                                                                j16 = j46;
+                                                                                                str76 = str31;
+                                                                                                str39 = str91;
+                                                                                                arrayList14 = arrayList59;
+                                                                                                f13 = f10;
+                                                                                                j25 = j55;
+                                                                                                j27 = d11;
+                                                                                                j26 = j53;
                                                                                                 arrayList22 = arrayList18;
-                                                                                                str12 = str64;
-                                                                                                sVar = p10;
-                                                                                                arrayList23 = arrayList56;
+                                                                                                str11 = str68;
+                                                                                                arrayList13 = arrayList67;
+                                                                                                j23 = j56;
+                                                                                                z11 = z10;
+                                                                                                str42 = str27;
+                                                                                                str40 = str104;
+                                                                                                sVar = p(xmlPullParser, (o) sVar9, j56, j55, j53, d11, j57);
+                                                                                                arrayList24 = arrayList56;
+                                                                                                arrayList25 = arrayList57;
+                                                                                                i18 = i46;
+                                                                                                j11 = j57;
+                                                                                                str43 = str107;
+                                                                                                arrayList23 = arrayList54;
                                                                                             } else {
-                                                                                                str29 = str116;
-                                                                                                str30 = str102;
-                                                                                                str31 = str78;
-                                                                                                long j58 = j51;
-                                                                                                arrayList12 = arrayList47;
-                                                                                                str = str49;
-                                                                                                str32 = str93;
-                                                                                                j24 = i37;
-                                                                                                long j59 = j41;
-                                                                                                arrayList7 = arrayList33;
-                                                                                                arrayList5 = arrayList34;
-                                                                                                String str117 = str64;
-                                                                                                str33 = str65;
-                                                                                                str14 = str66;
-                                                                                                str15 = str67;
-                                                                                                arrayList19 = arrayList46;
+                                                                                                str33 = str123;
+                                                                                                str34 = str108;
+                                                                                                str35 = str82;
+                                                                                                arrayList12 = arrayList46;
+                                                                                                str = str53;
+                                                                                                str36 = str97;
+                                                                                                long j58 = j43;
+                                                                                                arrayList7 = arrayList32;
+                                                                                                arrayList5 = arrayList33;
+                                                                                                str37 = str69;
+                                                                                                str13 = str70;
+                                                                                                str14 = str71;
+                                                                                                str15 = str29;
+                                                                                                arrayList19 = arrayList45;
                                                                                                 i15 = parseInt;
-                                                                                                str34 = str83;
-                                                                                                str17 = str88;
-                                                                                                str21 = str100;
-                                                                                                i16 = i48;
-                                                                                                i17 = i47;
-                                                                                                ArrayList arrayList67 = arrayList45;
-                                                                                                arrayList20 = arrayList43;
-                                                                                                arrayList21 = arrayList60;
-                                                                                                j12 = j39;
-                                                                                                long j60 = j40;
-                                                                                                arrayList6 = arrayList36;
-                                                                                                arrayList2 = arrayList37;
-                                                                                                j15 = j44;
-                                                                                                str35 = str87;
-                                                                                                arrayList13 = arrayList61;
-                                                                                                if (e2.d.m(xmlPullParser, str117)) {
-                                                                                                    j10 = j60;
-                                                                                                    long d12 = d(xmlPullParser, j50);
+                                                                                                str38 = str87;
+                                                                                                str17 = str92;
+                                                                                                str21 = str106;
+                                                                                                i16 = i44;
+                                                                                                i17 = i43;
+                                                                                                ArrayList arrayList68 = arrayList44;
+                                                                                                arrayList20 = arrayList42;
+                                                                                                arrayList21 = arrayList58;
+                                                                                                long j59 = j42;
+                                                                                                arrayList6 = arrayList35;
+                                                                                                arrayList2 = arrayList36;
+                                                                                                str76 = str31;
+                                                                                                str39 = str91;
+                                                                                                f13 = f10;
+                                                                                                long j60 = j53;
+                                                                                                j25 = i33;
+                                                                                                String str124 = str68;
+                                                                                                j13 = j41;
+                                                                                                j16 = j46;
+                                                                                                arrayList14 = arrayList59;
+                                                                                                if (e2.a.i(xmlPullParser, str124)) {
+                                                                                                    j11 = j59;
+                                                                                                    long d12 = d(xmlPullParser, j52);
+                                                                                                    z11 = z10;
                                                                                                     arrayList22 = arrayList18;
-                                                                                                    str12 = str117;
-                                                                                                    z11 = z10;
-                                                                                                    j25 = j58;
-                                                                                                    s q6 = q(xmlPullParser, (p) sVar6, arrayList67, j59, j24, j25, d12, j10);
-                                                                                                    arrayList11 = arrayList67;
-                                                                                                    j22 = j59;
-                                                                                                    j26 = d12;
-                                                                                                    str36 = str98;
-                                                                                                    str38 = str26;
-                                                                                                    sVar = q6;
-                                                                                                    arrayList23 = arrayList56;
+                                                                                                    str11 = str124;
+                                                                                                    j26 = j60;
+                                                                                                    s q10 = q(xmlPullParser, (p) sVar9, arrayList68, j58, j25, j26, d12, j11);
+                                                                                                    arrayList13 = arrayList68;
+                                                                                                    j23 = j58;
+                                                                                                    j27 = d12;
+                                                                                                    str42 = str27;
+                                                                                                    str40 = str104;
+                                                                                                    sVar = q10;
+                                                                                                    arrayList23 = arrayList54;
                                                                                                 } else {
-                                                                                                    ArrayList arrayList68 = arrayList18;
-                                                                                                    str12 = str117;
-                                                                                                    j25 = j58;
-                                                                                                    arrayList11 = arrayList67;
-                                                                                                    arrayList22 = arrayList68;
                                                                                                     z11 = z10;
-                                                                                                    j10 = j60;
-                                                                                                    if (e2.d.m(xmlPullParser, str34)) {
-                                                                                                        Pair f15 = f(xmlPullParser);
-                                                                                                        Object obj3 = f15.first;
+                                                                                                    arrayList13 = arrayList68;
+                                                                                                    j11 = j59;
+                                                                                                    arrayList22 = arrayList18;
+                                                                                                    str11 = str124;
+                                                                                                    j26 = j60;
+                                                                                                    if (e2.a.i(xmlPullParser, str38)) {
+                                                                                                        Pair f17 = f(xmlPullParser);
+                                                                                                        Object obj3 = f17.first;
                                                                                                         if (obj3 != null) {
-                                                                                                            str101 = (String) obj3;
+                                                                                                            str107 = (String) obj3;
                                                                                                         }
-                                                                                                        Object obj4 = f15.second;
+                                                                                                        Object obj4 = f17.second;
                                                                                                         if (obj4 != null) {
-                                                                                                            arrayList23 = arrayList56;
-                                                                                                            arrayList23.add((b2.n) obj4);
+                                                                                                            arrayList23 = arrayList54;
+                                                                                                            arrayList23.add((b2.s) obj4);
                                                                                                         } else {
-                                                                                                            arrayList23 = arrayList56;
+                                                                                                            arrayList23 = arrayList54;
                                                                                                         }
-                                                                                                        j26 = j50;
-                                                                                                        j22 = j59;
-                                                                                                        str36 = str98;
-                                                                                                        str38 = str26;
-                                                                                                        sVar = sVar6;
+                                                                                                        j27 = j52;
+                                                                                                        j23 = j58;
+                                                                                                        str42 = str27;
+                                                                                                        str40 = str104;
+                                                                                                        sVar = sVar9;
                                                                                                     } else {
-                                                                                                        str36 = str98;
-                                                                                                        arrayList23 = arrayList56;
-                                                                                                        if (e2.d.m(xmlPullParser, str36)) {
-                                                                                                            j26 = j50;
-                                                                                                            arrayList57.add(h(xmlPullParser, str36));
-                                                                                                            j22 = j59;
-                                                                                                            str37 = str85;
-                                                                                                            arrayList24 = arrayList58;
+                                                                                                        str40 = str104;
+                                                                                                        arrayList23 = arrayList54;
+                                                                                                        if (e2.a.i(xmlPullParser, str40)) {
+                                                                                                            j27 = j52;
+                                                                                                            arrayList55.add(h(xmlPullParser, str40));
+                                                                                                            j23 = j58;
+                                                                                                            str41 = str89;
+                                                                                                            arrayList24 = arrayList56;
                                                                                                         } else {
-                                                                                                            j26 = j50;
-                                                                                                            ArrayList arrayList69 = arrayList57;
-                                                                                                            if (e2.d.m(xmlPullParser, str35)) {
-                                                                                                                arrayList57 = arrayList69;
-                                                                                                                arrayList24 = arrayList58;
-                                                                                                                arrayList24.add(h(xmlPullParser, str35));
-                                                                                                                j22 = j59;
-                                                                                                                str37 = str85;
+                                                                                                            j27 = j52;
+                                                                                                            ArrayList arrayList69 = arrayList55;
+                                                                                                            if (e2.a.i(xmlPullParser, str39)) {
+                                                                                                                arrayList55 = arrayList69;
+                                                                                                                arrayList24 = arrayList56;
+                                                                                                                arrayList24.add(h(xmlPullParser, str39));
+                                                                                                                j23 = j58;
+                                                                                                                str41 = str89;
                                                                                                             } else {
-                                                                                                                arrayList57 = arrayList69;
-                                                                                                                str37 = str85;
-                                                                                                                arrayList24 = arrayList58;
-                                                                                                                if (e2.d.m(xmlPullParser, str37)) {
-                                                                                                                    j22 = j59;
-                                                                                                                    arrayList25 = arrayList59;
-                                                                                                                    arrayList25.add(h(xmlPullParser, str37));
+                                                                                                                arrayList55 = arrayList69;
+                                                                                                                str41 = str89;
+                                                                                                                arrayList24 = arrayList56;
+                                                                                                                if (e2.a.i(xmlPullParser, str41)) {
+                                                                                                                    j23 = j58;
+                                                                                                                    arrayList25 = arrayList57;
+                                                                                                                    arrayList25.add(h(xmlPullParser, str41));
                                                                                                                 } else {
-                                                                                                                    j22 = j59;
-                                                                                                                    arrayList25 = arrayList59;
+                                                                                                                    j23 = j58;
+                                                                                                                    arrayList25 = arrayList57;
                                                                                                                     b(xmlPullParser);
                                                                                                                 }
-                                                                                                                str85 = str37;
-                                                                                                                str38 = str26;
-                                                                                                                sVar = sVar6;
-                                                                                                                i18 = i50;
+                                                                                                                str89 = str41;
+                                                                                                                str42 = str27;
+                                                                                                                sVar = sVar9;
+                                                                                                                i18 = i46;
+                                                                                                                str43 = str107;
                                                                                                             }
                                                                                                         }
-                                                                                                        arrayList25 = arrayList59;
-                                                                                                        str85 = str37;
-                                                                                                        str38 = str26;
-                                                                                                        sVar = sVar6;
-                                                                                                        i18 = i50;
+                                                                                                        arrayList25 = arrayList57;
+                                                                                                        str89 = str41;
+                                                                                                        str42 = str27;
+                                                                                                        sVar = sVar9;
+                                                                                                        i18 = i46;
+                                                                                                        str43 = str107;
                                                                                                     }
                                                                                                 }
-                                                                                                arrayList24 = arrayList58;
-                                                                                                arrayList25 = arrayList59;
-                                                                                                i18 = i50;
+                                                                                                arrayList24 = arrayList56;
+                                                                                                arrayList25 = arrayList57;
+                                                                                                i18 = i46;
+                                                                                                str43 = str107;
                                                                                             }
-                                                                                            str39 = str101;
-                                                                                            if (e2.d.l(xmlPullParser, str38)) {
+                                                                                            if (e2.a.h(xmlPullParser, str42)) {
                                                                                             }
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                str31 = str78;
-                                                                                str = str49;
-                                                                                arrayList11 = arrayList45;
+                                                                                str35 = str82;
+                                                                                str = str53;
                                                                                 z11 = z10;
-                                                                                str32 = str93;
-                                                                                arrayList7 = arrayList33;
-                                                                                arrayList5 = arrayList34;
-                                                                                str33 = str65;
-                                                                                str14 = str66;
-                                                                                str15 = str67;
-                                                                                str29 = str68;
-                                                                                str30 = str69;
-                                                                                str36 = str98;
-                                                                                arrayList19 = arrayList46;
+                                                                                str36 = str97;
+                                                                                arrayList7 = arrayList32;
+                                                                                arrayList5 = arrayList33;
+                                                                                str37 = str69;
+                                                                                str13 = str70;
+                                                                                str14 = str71;
+                                                                                str33 = str72;
+                                                                                str34 = str73;
+                                                                                str15 = str29;
+                                                                                arrayList19 = arrayList45;
                                                                                 i15 = parseInt;
-                                                                                str34 = str83;
-                                                                                str17 = str88;
-                                                                                i16 = i48;
-                                                                                arrayList23 = arrayList56;
-                                                                                arrayList25 = arrayList59;
-                                                                                i17 = i47;
-                                                                                str28 = str82;
-                                                                                arrayList12 = arrayList47;
-                                                                                arrayList21 = arrayList60;
+                                                                                str38 = str87;
+                                                                                str17 = str92;
+                                                                                str40 = str104;
+                                                                                i16 = i44;
+                                                                                sVar = sVar9;
+                                                                                arrayList25 = arrayList57;
+                                                                                i17 = i43;
+                                                                                str32 = str86;
+                                                                                arrayList12 = arrayList46;
+                                                                                arrayList21 = arrayList58;
                                                                                 arrayList22 = arrayList18;
-                                                                                str12 = str64;
-                                                                                str35 = str87;
-                                                                                str38 = str26;
-                                                                                sVar = sVar6;
-                                                                                j25 = j51;
-                                                                                j24 = i37;
-                                                                                j22 = j41;
-                                                                                str39 = str101;
-                                                                                str21 = str100;
-                                                                                arrayList20 = arrayList43;
-                                                                                j12 = j39;
-                                                                                j10 = j40;
-                                                                                arrayList6 = arrayList36;
-                                                                                arrayList2 = arrayList37;
-                                                                                j15 = j44;
-                                                                                arrayList13 = arrayList61;
-                                                                                j26 = j50;
-                                                                                arrayList24 = arrayList58;
-                                                                                i18 = i50;
-                                                                                if (e2.d.l(xmlPullParser, str38)) {
+                                                                                str11 = str68;
+                                                                                str76 = str31;
+                                                                                str39 = str91;
+                                                                                str42 = str27;
+                                                                                str43 = str107;
+                                                                                f13 = f10;
+                                                                                j26 = j53;
+                                                                                arrayList13 = arrayList44;
+                                                                                j25 = i33;
+                                                                                j23 = j43;
+                                                                                str21 = str106;
+                                                                                arrayList23 = arrayList54;
+                                                                                arrayList20 = arrayList42;
+                                                                                j13 = j41;
+                                                                                j11 = j42;
+                                                                                arrayList6 = arrayList35;
+                                                                                arrayList2 = arrayList36;
+                                                                                j16 = j46;
+                                                                                arrayList14 = arrayList59;
+                                                                                j27 = j52;
+                                                                                arrayList24 = arrayList56;
+                                                                                i18 = i46;
+                                                                                if (e2.a.h(xmlPullParser, str42)) {
                                                                                 }
                                                                             }
                                                                         } else {
-                                                                            arrayList10 = arrayList8;
-                                                                            str11 = str78;
-                                                                            str = str49;
-                                                                            arrayList11 = arrayList45;
+                                                                            arrayList11 = arrayList8;
+                                                                            str = str53;
                                                                             z11 = z10;
-                                                                            long j61 = i37;
-                                                                            arrayList7 = arrayList33;
-                                                                            arrayList5 = arrayList34;
-                                                                            str12 = str64;
-                                                                            str13 = str65;
-                                                                            str14 = str66;
-                                                                            str15 = str67;
-                                                                            String str118 = str68;
-                                                                            f7 = f12;
-                                                                            str16 = str74;
-                                                                            str17 = str75;
-                                                                            arrayList12 = arrayList47;
-                                                                            j12 = j39;
-                                                                            j15 = j44;
-                                                                            str18 = str79;
-                                                                            str19 = str77;
-                                                                            str20 = str76;
+                                                                            long j61 = i33;
+                                                                            arrayList7 = arrayList32;
+                                                                            arrayList5 = arrayList33;
+                                                                            str11 = str68;
+                                                                            str12 = str69;
+                                                                            str13 = str70;
+                                                                            str14 = str71;
+                                                                            String str125 = str72;
+                                                                            str15 = str77;
+                                                                            str16 = str78;
+                                                                            str17 = str79;
+                                                                            arrayList12 = arrayList46;
                                                                             arrayList13 = arrayList44;
-                                                                            j22 = j41;
-                                                                            String str119 = str69;
-                                                                            str21 = attributeValue14;
-                                                                            int i67 = i41;
+                                                                            j13 = j41;
+                                                                            j16 = j46;
+                                                                            str18 = str83;
+                                                                            str19 = str81;
+                                                                            str20 = str80;
                                                                             arrayList14 = arrayList43;
-                                                                            j10 = j40;
-                                                                            arrayList6 = arrayList36;
-                                                                            arrayList2 = arrayList37;
-                                                                            if (e2.d.m(xmlPullParser, str119)) {
+                                                                            ArrayList arrayList70 = arrayList42;
+                                                                            j11 = j42;
+                                                                            j23 = j43;
+                                                                            arrayList6 = arrayList35;
+                                                                            arrayList2 = arrayList36;
+                                                                            String str126 = str73;
+                                                                            str21 = attributeValue14;
+                                                                            int i65 = i37;
+                                                                            if (e2.a.i(xmlPullParser, str126)) {
                                                                                 sVar3 = o(xmlPullParser, (r) sVar3);
-                                                                                str23 = str119;
-                                                                                arrayList15 = arrayList55;
-                                                                                i14 = i67;
-                                                                                arrayList17 = arrayList40;
-                                                                                arrayList16 = arrayList41;
-                                                                                str24 = str84;
-                                                                                j17 = j61;
-                                                                                str25 = str13;
-                                                                                str22 = str118;
+                                                                                str23 = str126;
+                                                                                str24 = str82;
+                                                                                i14 = i65;
+                                                                                arrayList15 = arrayList70;
+                                                                                arrayList17 = arrayList39;
+                                                                                arrayList16 = arrayList40;
+                                                                                str25 = str88;
+                                                                                j18 = j61;
+                                                                                str26 = str12;
+                                                                                str22 = str125;
                                                                             } else {
-                                                                                str22 = str118;
-                                                                                if (e2.d.m(xmlPullParser, str22)) {
-                                                                                    long d13 = d(xmlPullParser, j46);
-                                                                                    str23 = str119;
-                                                                                    arrayList15 = arrayList55;
-                                                                                    i13 = i67;
-                                                                                    sVar3 = p(xmlPullParser, (o) sVar3, j22, j61, j21, d13, j10);
-                                                                                    j10 = j10;
-                                                                                    j17 = j61;
-                                                                                    j46 = d13;
+                                                                                str22 = str125;
+                                                                                if (e2.a.i(xmlPullParser, str22)) {
+                                                                                    long d13 = d(xmlPullParser, j48);
+                                                                                    str23 = str126;
+                                                                                    str24 = str82;
+                                                                                    i13 = i65;
+                                                                                    arrayList15 = arrayList70;
+                                                                                    sVar3 = p(xmlPullParser, (o) sVar3, j23, j61, j22, d13, j11);
+                                                                                    j11 = j11;
+                                                                                    j18 = j61;
+                                                                                    j48 = d13;
                                                                                 } else {
-                                                                                    str23 = str119;
-                                                                                    arrayList15 = arrayList55;
-                                                                                    i13 = i67;
-                                                                                    long j62 = j46;
-                                                                                    j17 = j61;
-                                                                                    if (e2.d.m(xmlPullParser, str12)) {
+                                                                                    str23 = str126;
+                                                                                    str24 = str82;
+                                                                                    i13 = i65;
+                                                                                    arrayList15 = arrayList70;
+                                                                                    long j62 = j48;
+                                                                                    j18 = j61;
+                                                                                    if (e2.a.i(xmlPullParser, str11)) {
                                                                                         long d14 = d(xmlPullParser, j62);
-                                                                                        sVar3 = q(xmlPullParser, (p) sVar3, arrayList11, j22, j17, j21, d14, j10);
-                                                                                        j46 = d14;
+                                                                                        sVar3 = q(xmlPullParser, (p) sVar3, arrayList13, j23, j18, j22, d14, j11);
+                                                                                        j48 = d14;
                                                                                     } else {
-                                                                                        if (e2.d.m(xmlPullParser, "InbandEventStream")) {
-                                                                                            arrayList16 = arrayList41;
+                                                                                        if (e2.a.i(xmlPullParser, "InbandEventStream")) {
+                                                                                            arrayList16 = arrayList40;
                                                                                             arrayList16.add(h(xmlPullParser, "InbandEventStream"));
-                                                                                            j23 = j62;
-                                                                                            arrayList17 = arrayList40;
-                                                                                            str24 = str84;
+                                                                                            j24 = j62;
+                                                                                            arrayList17 = arrayList39;
+                                                                                            str25 = str88;
                                                                                         } else {
-                                                                                            arrayList16 = arrayList41;
-                                                                                            if (e2.d.m(xmlPullParser, "Label")) {
-                                                                                                str24 = str84;
-                                                                                                String attributeValue30 = xmlPullParser.getAttributeValue(null, str24);
-                                                                                                String str120 = "";
+                                                                                            arrayList16 = arrayList40;
+                                                                                            if (e2.a.i(xmlPullParser, "Label")) {
+                                                                                                str25 = str88;
+                                                                                                String attributeValue32 = xmlPullParser.getAttributeValue(null, str25);
+                                                                                                String str127 = "";
                                                                                                 while (true) {
                                                                                                     xmlPullParser.next();
-                                                                                                    j23 = j62;
+                                                                                                    j24 = j62;
                                                                                                     if (xmlPullParser.getEventType() == 4) {
-                                                                                                        str120 = xmlPullParser.getText();
+                                                                                                        str127 = xmlPullParser.getText();
                                                                                                     } else {
                                                                                                         b(xmlPullParser);
                                                                                                     }
-                                                                                                    if (e2.d.l(xmlPullParser, "Label")) {
-                                                                                                        arrayList17 = arrayList40;
-                                                                                                        arrayList17.add(new w(attributeValue30, str120));
+                                                                                                    if (e2.a.h(xmlPullParser, "Label")) {
+                                                                                                        arrayList17 = arrayList39;
+                                                                                                        arrayList17.add(new b0(attributeValue32, str127));
                                                                                                     } else {
-                                                                                                        j62 = j23;
+                                                                                                        j62 = j24;
                                                                                                     }
                                                                                                 }
                                                                                             } else {
-                                                                                                j23 = j62;
-                                                                                                arrayList17 = arrayList40;
-                                                                                                str24 = str84;
+                                                                                                j24 = j62;
+                                                                                                arrayList17 = arrayList39;
+                                                                                                str25 = str88;
                                                                                                 if (xmlPullParser.getEventType() == 2) {
                                                                                                     b(xmlPullParser);
                                                                                                 }
-                                                                                                j46 = j23;
+                                                                                                j48 = j24;
                                                                                                 i14 = i13;
-                                                                                                str25 = str13;
-                                                                                                if (e2.d.l(xmlPullParser, str25)) {
+                                                                                                str26 = str12;
+                                                                                                if (e2.a.h(xmlPullParser, str26)) {
                                                                                                 }
                                                                                             }
                                                                                         }
-                                                                                        j46 = j23;
+                                                                                        j48 = j24;
                                                                                         i14 = i13;
-                                                                                        str25 = str13;
-                                                                                        if (e2.d.l(xmlPullParser, str25)) {
+                                                                                        str26 = str12;
+                                                                                        if (e2.a.h(xmlPullParser, str26)) {
                                                                                         }
                                                                                     }
                                                                                 }
-                                                                                arrayList17 = arrayList40;
-                                                                                arrayList16 = arrayList41;
-                                                                                str24 = str84;
+                                                                                arrayList17 = arrayList39;
+                                                                                arrayList16 = arrayList40;
+                                                                                str25 = str88;
                                                                                 i14 = i13;
-                                                                                str25 = str13;
+                                                                                str26 = str12;
                                                                             }
                                                                         }
-                                                                        if (e2.d.l(xmlPullParser, str25)) {
+                                                                        if (e2.a.h(xmlPullParser, str26)) {
                                                                         }
                                                                     }
                                                                 }
                                                             }
                                                         }
-                                                        arrayList10 = arrayList8;
-                                                        str11 = str78;
-                                                        i13 = i41;
-                                                        str = str49;
-                                                        arrayList11 = arrayList45;
+                                                        arrayList11 = arrayList8;
+                                                        str24 = str82;
+                                                        i13 = i37;
+                                                        str = str53;
                                                         z11 = z10;
-                                                        arrayList9 = arrayList39;
-                                                        arrayList15 = arrayList42;
-                                                        str24 = str50;
-                                                        arrayList7 = arrayList33;
-                                                        arrayList5 = arrayList34;
-                                                        str12 = str64;
-                                                        str13 = str65;
-                                                        str14 = str66;
-                                                        str15 = str67;
-                                                        str22 = str68;
-                                                        str23 = str69;
-                                                        arrayList17 = arrayList40;
-                                                        arrayList16 = arrayList41;
-                                                        f7 = f12;
-                                                        str16 = str74;
-                                                        str17 = str75;
-                                                        j23 = j46;
-                                                        arrayList12 = arrayList47;
-                                                        str18 = str79;
-                                                        str19 = str77;
-                                                        str20 = str76;
-                                                        j22 = j41;
-                                                        str21 = attributeValue14;
-                                                        arrayList14 = arrayList43;
-                                                        j10 = j40;
-                                                        j17 = i37;
-                                                        arrayList6 = arrayList36;
-                                                        arrayList2 = arrayList37;
-                                                        j12 = j39;
-                                                        j15 = j44;
+                                                        arrayList9 = arrayList38;
+                                                        arrayList10 = arrayList41;
+                                                        str25 = str54;
+                                                        arrayList7 = arrayList32;
+                                                        arrayList5 = arrayList33;
+                                                        str11 = str68;
+                                                        str12 = str69;
+                                                        str13 = str70;
+                                                        str14 = str71;
+                                                        str22 = str72;
+                                                        str23 = str73;
+                                                        arrayList17 = arrayList39;
+                                                        arrayList16 = arrayList40;
+                                                        str15 = str77;
+                                                        str16 = str78;
+                                                        str17 = str79;
+                                                        j24 = j48;
+                                                        arrayList12 = arrayList46;
                                                         arrayList13 = arrayList44;
-                                                        j46 = j23;
+                                                        str18 = str83;
+                                                        str19 = str81;
+                                                        str20 = str80;
+                                                        j23 = j43;
+                                                        str21 = attributeValue14;
+                                                        arrayList15 = arrayList42;
+                                                        j11 = j42;
+                                                        j18 = i33;
+                                                        arrayList6 = arrayList35;
+                                                        arrayList2 = arrayList36;
+                                                        j13 = j41;
+                                                        j16 = j46;
+                                                        arrayList14 = arrayList43;
+                                                        j48 = j24;
                                                         i14 = i13;
-                                                        str25 = str13;
-                                                        if (e2.d.l(xmlPullParser, str25)) {
+                                                        str26 = str12;
+                                                        if (e2.a.h(xmlPullParser, str26)) {
                                                         }
                                                     }
                                                 }
-                                                arrayList10 = arrayList8;
-                                                str11 = str78;
-                                                str = str49;
-                                                arrayList11 = arrayList45;
+                                                arrayList11 = arrayList8;
+                                                str24 = str82;
+                                                str = str53;
                                                 z11 = z10;
-                                                arrayList9 = arrayList39;
-                                                arrayList15 = arrayList42;
-                                                arrayList7 = arrayList33;
-                                                arrayList5 = arrayList34;
-                                                str14 = str66;
-                                                str15 = str67;
-                                                str22 = str68;
-                                                str23 = str69;
-                                                arrayList17 = arrayList40;
-                                                arrayList16 = arrayList41;
-                                                f7 = f12;
-                                                str16 = str74;
-                                                str17 = str75;
-                                                arrayList12 = arrayList47;
-                                                str18 = str79;
-                                                str19 = str77;
-                                                str20 = str76;
-                                                j22 = j41;
+                                                arrayList9 = arrayList38;
+                                                arrayList10 = arrayList41;
+                                                arrayList7 = arrayList32;
+                                                arrayList5 = arrayList33;
+                                                str13 = str70;
+                                                str14 = str71;
+                                                str22 = str72;
+                                                str23 = str73;
+                                                arrayList17 = arrayList39;
+                                                arrayList16 = arrayList40;
+                                                str15 = str77;
+                                                str16 = str78;
+                                                str17 = str79;
+                                                arrayList12 = arrayList46;
+                                                str18 = str83;
+                                                str19 = str81;
+                                                str20 = str80;
+                                                j23 = j43;
                                                 str21 = attributeValue14;
+                                                arrayList15 = arrayList42;
+                                                j11 = j42;
+                                                j18 = i33;
+                                                arrayList6 = arrayList35;
+                                                arrayList2 = arrayList36;
+                                                i14 = i37;
+                                                str25 = str54;
+                                                j13 = j41;
+                                                str11 = str68;
+                                                j16 = j46;
                                                 arrayList14 = arrayList43;
-                                                j10 = j40;
-                                                j17 = i37;
-                                                arrayList6 = arrayList36;
-                                                arrayList2 = arrayList37;
-                                                i14 = i41;
-                                                str24 = str50;
-                                                j12 = j39;
-                                                str12 = str64;
-                                                j15 = j44;
                                                 arrayList13 = arrayList44;
-                                                str25 = str65;
-                                                if (e2.d.l(xmlPullParser, str25)) {
+                                                str26 = str69;
+                                                if (e2.a.h(xmlPullParser, str26)) {
                                                 }
                                             }
                                         } else {
-                                            arrayList4 = arrayList32;
-                                            String str121 = str59;
-                                            str = str49;
-                                            String str122 = str60;
-                                            String str123 = str61;
+                                            arrayList4 = arrayList31;
+                                            String str128 = str63;
+                                            str = str53;
+                                            String str129 = str64;
+                                            String str130 = str65;
                                             z11 = z10;
-                                            str2 = str50;
-                                            j10 = j40;
-                                            long j63 = i37;
-                                            long j64 = j41;
-                                            ArrayList arrayList70 = arrayList33;
-                                            arrayList5 = arrayList34;
-                                            arrayList6 = arrayList35;
-                                            arrayList2 = arrayList31;
-                                            j12 = j39;
-                                            j15 = j30;
-                                            if (e2.d.m(xmlPullParser, "EventStream")) {
-                                                String str124 = str62;
-                                                String attributeValue31 = xmlPullParser.getAttributeValue(null, str124);
-                                                String str125 = attributeValue31 == null ? "" : attributeValue31;
-                                                String str126 = str123;
-                                                String attributeValue32 = xmlPullParser.getAttributeValue(null, str126);
-                                                String str127 = attributeValue32 == null ? "" : attributeValue32;
-                                                String attributeValue33 = xmlPullParser.getAttributeValue(null, "timescale");
-                                                long parseLong2 = attributeValue33 == null ? 1L : Long.parseLong(attributeValue33);
-                                                String attributeValue34 = xmlPullParser.getAttributeValue(null, "presentationTimeOffset");
-                                                long parseLong3 = attributeValue34 == null ? 0L : Long.parseLong(attributeValue34);
-                                                ArrayList arrayList71 = new ArrayList();
+                                            str2 = str54;
+                                            j11 = j42;
+                                            long j63 = i33;
+                                            long j64 = j43;
+                                            ArrayList arrayList71 = arrayList32;
+                                            arrayList5 = arrayList33;
+                                            arrayList6 = arrayList34;
+                                            arrayList2 = arrayList30;
+                                            j13 = j41;
+                                            j16 = j32;
+                                            if (e2.a.i(xmlPullParser, "EventStream")) {
+                                                String str131 = str66;
+                                                String attributeValue33 = xmlPullParser.getAttributeValue(null, str131);
+                                                String str132 = attributeValue33 == null ? "" : attributeValue33;
+                                                String str133 = str130;
+                                                String attributeValue34 = xmlPullParser.getAttributeValue(null, str133);
+                                                String str134 = attributeValue34 == null ? "" : attributeValue34;
+                                                String attributeValue35 = xmlPullParser.getAttributeValue(null, "timescale");
+                                                long parseLong2 = attributeValue35 == null ? 1L : Long.parseLong(attributeValue35);
+                                                String attributeValue36 = xmlPullParser.getAttributeValue(null, "presentationTimeOffset");
+                                                long parseLong3 = attributeValue36 == null ? 0L : Long.parseLong(attributeValue36);
+                                                ArrayList arrayList72 = new ArrayList();
                                                 ByteArrayOutputStream byteArrayOutputStream3 = new ByteArrayOutputStream(512);
                                                 while (true) {
                                                     xmlPullParser.next();
-                                                    if (e2.d.m(xmlPullParser, "Event")) {
-                                                        str10 = str121;
-                                                        String attributeValue35 = xmlPullParser.getAttributeValue(null, str10);
-                                                        long parseLong4 = attributeValue35 == null ? 0L : Long.parseLong(attributeValue35);
-                                                        str9 = str122;
-                                                        String attributeValue36 = xmlPullParser.getAttributeValue(null, str9);
-                                                        long parseLong5 = attributeValue36 == null ? -9223372036854775807L : Long.parseLong(attributeValue36);
-                                                        String attributeValue37 = xmlPullParser.getAttributeValue(null, "presentationTime");
-                                                        long parseLong6 = attributeValue37 == null ? 0L : Long.parseLong(attributeValue37);
-                                                        String str128 = d0.a;
+                                                    if (e2.a.i(xmlPullParser, "Event")) {
+                                                        str9 = str128;
+                                                        String attributeValue37 = xmlPullParser.getAttributeValue(null, str9);
+                                                        long parseLong4 = attributeValue37 == null ? 0L : Long.parseLong(attributeValue37);
+                                                        str8 = str129;
+                                                        String attributeValue38 = xmlPullParser.getAttributeValue(null, str8);
+                                                        long parseLong5 = attributeValue38 == null ? -9223372036854775807L : Long.parseLong(attributeValue38);
+                                                        String attributeValue39 = xmlPullParser.getAttributeValue(null, "presentationTime");
+                                                        long parseLong6 = attributeValue39 == null ? 0L : Long.parseLong(attributeValue39);
+                                                        String str135 = m0.a;
                                                         RoundingMode roundingMode = RoundingMode.DOWN;
-                                                        long X = d0.X(parseLong5, 1000L, parseLong2, roundingMode);
-                                                        long X2 = d0.X(parseLong6 - parseLong3, 1000000L, parseLong2, roundingMode);
-                                                        arrayList7 = arrayList70;
+                                                        long a02 = m0.a0(parseLong5, 1000L, parseLong2, roundingMode);
+                                                        long a03 = m0.a0(parseLong6 - parseLong3, 1000000L, parseLong2, roundingMode);
+                                                        arrayList7 = arrayList71;
                                                         j19 = parseLong2;
-                                                        str62 = str124;
-                                                        String attributeValue38 = xmlPullParser.getAttributeValue(null, "messageData");
-                                                        if (attributeValue38 == null) {
-                                                            attributeValue38 = null;
+                                                        str66 = str131;
+                                                        String attributeValue40 = xmlPullParser.getAttributeValue(null, "messageData");
+                                                        if (attributeValue40 == null) {
+                                                            attributeValue40 = null;
                                                         }
                                                         byteArrayOutputStream3.reset();
                                                         XmlSerializer newSerializer = Xml.newSerializer();
-                                                        str3 = str126;
+                                                        str3 = str133;
                                                         newSerializer.setOutput(byteArrayOutputStream3, StandardCharsets.UTF_8.name());
                                                         xmlPullParser.nextToken();
-                                                        while (!e2.d.l(xmlPullParser, "Event")) {
+                                                        while (!e2.a.h(xmlPullParser, "Event")) {
                                                             switch (xmlPullParser.getEventType()) {
                                                                 case 0:
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     newSerializer.startDocument(null, Boolean.FALSE);
                                                                     break;
                                                                 case 1:
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     newSerializer.endDocument();
                                                                     break;
                                                                 case 2:
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     newSerializer.startTag(xmlPullParser.getNamespace(), xmlPullParser.getName());
-                                                                    int i68 = i11;
-                                                                    while (i68 < xmlPullParser.getAttributeCount()) {
-                                                                        newSerializer.attribute(xmlPullParser.getAttributeNamespace(i68), xmlPullParser.getAttributeName(i68), xmlPullParser.getAttributeValue(i68));
-                                                                        i68++;
+                                                                    int i66 = i11;
+                                                                    while (i66 < xmlPullParser.getAttributeCount()) {
+                                                                        newSerializer.attribute(xmlPullParser.getAttributeNamespace(i66), xmlPullParser.getAttributeName(i66), xmlPullParser.getAttributeValue(i66));
+                                                                        i66++;
                                                                         byteArrayOutputStream3 = byteArrayOutputStream3;
                                                                     }
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     break;
                                                                 case 3:
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     newSerializer.endTag(xmlPullParser.getNamespace(), xmlPullParser.getName());
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     break;
                                                                 case 4:
                                                                     newSerializer.text(xmlPullParser.getText());
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     break;
                                                                 case 5:
                                                                     newSerializer.cdsect(xmlPullParser.getText());
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     break;
                                                                 case 6:
                                                                     newSerializer.entityRef(xmlPullParser.getText());
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     break;
                                                                 case 7:
                                                                     newSerializer.ignorableWhitespace(xmlPullParser.getText());
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     break;
                                                                 case 8:
                                                                     newSerializer.processingInstruction(xmlPullParser.getText());
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     break;
                                                                 case 9:
                                                                     newSerializer.comment(xmlPullParser.getText());
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     break;
                                                                 case 10:
                                                                     newSerializer.docdecl(xmlPullParser.getText());
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     break;
                                                                 default:
-                                                                    j20 = parseLong3;
+                                                                    j21 = parseLong3;
                                                                     byteArrayOutputStream2 = byteArrayOutputStream3;
                                                                     break;
                                                             }
                                                             xmlPullParser.nextToken();
-                                                            parseLong3 = j20;
                                                             byteArrayOutputStream3 = byteArrayOutputStream2;
+                                                            parseLong3 = j21;
                                                         }
-                                                        j18 = parseLong3;
+                                                        j20 = parseLong3;
                                                         byteArrayOutputStream = byteArrayOutputStream3;
                                                         newSerializer.flush();
                                                         byte[] byteArray = byteArrayOutputStream.toByteArray();
-                                                        Long valueOf = Long.valueOf(X2);
-                                                        if (attributeValue38 != null) {
-                                                            byteArray = attributeValue38.getBytes(StandardCharsets.UTF_8);
+                                                        Long valueOf = Long.valueOf(a03);
+                                                        if (attributeValue40 != null) {
+                                                            byteArray = attributeValue40.getBytes(StandardCharsets.UTF_8);
                                                         }
-                                                        str7 = str125;
-                                                        str8 = str127;
-                                                        arrayList71.add(Pair.create(valueOf, new n3.a(str125, str127, X, parseLong4, byteArray)));
+                                                        str7 = str132;
+                                                        str10 = str134;
+                                                        arrayList72.add(Pair.create(valueOf, new n3.a(str132, str134, a02, parseLong4, byteArray)));
                                                     } else {
-                                                        arrayList7 = arrayList70;
-                                                        str62 = str124;
-                                                        str3 = str126;
-                                                        j18 = parseLong3;
-                                                        str7 = str125;
-                                                        str8 = str127;
-                                                        j19 = parseLong2;
-                                                        str9 = str122;
-                                                        str10 = str121;
+                                                        arrayList7 = arrayList71;
+                                                        str66 = str131;
+                                                        str3 = str133;
                                                         byteArrayOutputStream = byteArrayOutputStream3;
+                                                        str7 = str132;
+                                                        j19 = parseLong2;
+                                                        str8 = str129;
+                                                        str9 = str128;
+                                                        j20 = parseLong3;
+                                                        str10 = str134;
                                                         b(xmlPullParser);
                                                     }
-                                                    if (e2.d.l(xmlPullParser, "EventStream")) {
-                                                        long[] jArr = new long[arrayList71.size()];
-                                                        n3.a[] aVarArr = new n3.a[arrayList71.size()];
-                                                        for (int i69 = i11; i69 < arrayList71.size(); i69++) {
-                                                            Pair pair2 = (Pair) arrayList71.get(i69);
-                                                            jArr[i69] = ((Long) pair2.first).longValue();
-                                                            aVarArr[i69] = (n3.a) pair2.second;
+                                                    if (e2.a.h(xmlPullParser, "EventStream")) {
+                                                        long[] jArr = new long[arrayList72.size()];
+                                                        n3.a[] aVarArr = new n3.a[arrayList72.size()];
+                                                        for (int i67 = i11; i67 < arrayList72.size(); i67++) {
+                                                            Pair pair2 = (Pair) arrayList72.get(i67);
+                                                            jArr[i67] = ((Long) pair2.first).longValue();
+                                                            aVarArr[i67] = (n3.a) pair2.second;
                                                         }
-                                                        arrayList5.add(new g(str7, str8, jArr, aVarArr));
-                                                        str4 = str9;
-                                                        j16 = j64;
-                                                        j17 = j63;
-                                                        j11 = -9223372036854775807L;
-                                                        str5 = str10;
+                                                        arrayList5.add(new g(str7, str10, jArr, aVarArr));
+                                                        str4 = str8;
+                                                        j17 = j64;
+                                                        j18 = j63;
+                                                        j12 = -9223372036854775807L;
+                                                        str5 = str9;
                                                     } else {
-                                                        str125 = str7;
-                                                        str127 = str8;
-                                                        str121 = str10;
-                                                        str122 = str9;
-                                                        str124 = str62;
-                                                        parseLong3 = j18;
+                                                        str132 = str7;
+                                                        str134 = str10;
+                                                        str128 = str9;
+                                                        str129 = str8;
+                                                        str131 = str66;
                                                         byteArrayOutputStream3 = byteArrayOutputStream;
-                                                        str126 = str3;
-                                                        arrayList70 = arrayList7;
+                                                        parseLong3 = j20;
+                                                        str133 = str3;
+                                                        arrayList71 = arrayList7;
                                                         parseLong2 = j19;
                                                     }
                                                 }
                                             } else {
-                                                arrayList7 = arrayList70;
-                                                str3 = str123;
-                                                str4 = str122;
-                                                if (e2.d.m(xmlPullParser, "SegmentBase")) {
+                                                arrayList7 = arrayList71;
+                                                str3 = str130;
+                                                str4 = str129;
+                                                if (e2.a.i(xmlPullParser, "SegmentBase")) {
                                                     sVar2 = o(xmlPullParser, null);
                                                     arrayList5 = arrayList5;
-                                                    str6 = str63;
-                                                    j16 = j64;
-                                                    j17 = j63;
-                                                    j11 = -9223372036854775807L;
-                                                    str5 = str121;
-                                                } else if (e2.d.m(xmlPullParser, "SegmentList")) {
-                                                    j11 = -9223372036854775807L;
+                                                    str6 = str67;
+                                                    j17 = j64;
+                                                    j18 = j63;
+                                                    j12 = -9223372036854775807L;
+                                                    str5 = str128;
+                                                } else if (e2.a.i(xmlPullParser, "SegmentList")) {
+                                                    j12 = -9223372036854775807L;
                                                     long d15 = d(xmlPullParser, -9223372036854775807L);
                                                     arrayList5 = arrayList5;
-                                                    str5 = str121;
-                                                    sVar2 = p(xmlPullParser, null, j64, j63, j14, d15, j10);
-                                                    j10 = j10;
-                                                    j17 = j63;
-                                                    j16 = j64;
-                                                    j42 = d15;
+                                                    str5 = str128;
+                                                    sVar2 = p(xmlPullParser, null, j64, j63, j15, d15, j11);
+                                                    j11 = j11;
+                                                    j18 = j63;
+                                                    j17 = j64;
+                                                    j44 = d15;
                                                 } else {
                                                     arrayList5 = arrayList5;
-                                                    j16 = j64;
-                                                    j17 = j63;
-                                                    j11 = -9223372036854775807L;
-                                                    str5 = str121;
-                                                    if (e2.d.m(xmlPullParser, str64)) {
+                                                    j17 = j64;
+                                                    j18 = j63;
+                                                    j12 = -9223372036854775807L;
+                                                    str5 = str128;
+                                                    if (e2.a.i(xmlPullParser, str68)) {
                                                         long d16 = d(xmlPullParser, -9223372036854775807L);
-                                                        g0 g0Var = i0.b;
-                                                        sVar2 = q(xmlPullParser, null, a1.e, j16, j17, j14, d16, j10);
-                                                        j42 = d16;
-                                                    } else if (e2.d.m(xmlPullParser, "AssetIdentifier")) {
+                                                        l0 l0Var = n0.b;
+                                                        sVar2 = q(xmlPullParser, null, x1.e, j17, j18, j15, d16, j11);
+                                                        j44 = d16;
+                                                    } else if (e2.a.i(xmlPullParser, "AssetIdentifier")) {
                                                         h(xmlPullParser, "AssetIdentifier");
                                                     } else {
                                                         b(xmlPullParser);
@@ -2550,110 +2540,110 @@ public final class e extends DefaultHandler implements y2.n {
                                                 }
                                             }
                                         }
-                                        str6 = str63;
+                                        str6 = str67;
                                     }
-                                    if (e2.d.l(xmlPullParser, str6)) {
-                                        Pair create = Pair.create(new h(attributeValue11, i36, arrayList7, arrayList5), Long.valueOf(j17));
+                                    if (e2.a.h(xmlPullParser, str6)) {
+                                        Pair create = Pair.create(new h(attributeValue11, i32, arrayList7, arrayList5), Long.valueOf(j18));
                                         h hVar = (h) create.first;
-                                        if (hVar.b != j11) {
+                                        if (hVar.b != j12) {
                                             long longValue = ((Long) create.second).longValue();
-                                            j27 = longValue == j11 ? j11 : longValue + hVar.b;
-                                            arrayList3 = arrayList30;
+                                            j29 = longValue == j12 ? j12 : longValue + hVar.b;
+                                            arrayList3 = arrayList29;
                                             arrayList3.add(hVar);
                                         } else {
                                             if (!equals) {
-                                                throw s0.b("Unable to determine start of period " + arrayList30.size(), null);
+                                                throw x0.b("Unable to determine start of period " + arrayList29.size(), null);
                                             }
-                                            arrayList3 = arrayList30;
-                                            i35 = i12;
-                                            j27 = j15;
+                                            arrayList3 = arrayList29;
+                                            i31 = i12;
+                                            j29 = j16;
                                         }
-                                        j13 = j27;
+                                        j14 = j29;
                                     } else {
-                                        str63 = str6;
-                                        j41 = j16;
-                                        j30 = j15;
-                                        j39 = j12;
-                                        j43 = j14;
-                                        arrayList32 = arrayList4;
-                                        str60 = str4;
-                                        str59 = str5;
-                                        str50 = str2;
-                                        str49 = str;
-                                        arrayList33 = arrayList7;
-                                        arrayList34 = arrayList5;
-                                        i37 = j17;
-                                        arrayList31 = arrayList2;
-                                        arrayList35 = arrayList6;
-                                        j40 = j10;
+                                        str67 = str6;
+                                        j43 = j17;
+                                        j32 = j16;
+                                        j41 = j13;
+                                        j45 = j15;
+                                        arrayList31 = arrayList4;
+                                        str64 = str4;
+                                        str63 = str5;
+                                        str54 = str2;
+                                        str53 = str;
+                                        arrayList32 = arrayList7;
+                                        arrayList33 = arrayList5;
+                                        i33 = j18;
+                                        arrayList30 = arrayList2;
+                                        arrayList34 = arrayList6;
+                                        j42 = j11;
                                         z10 = z11;
-                                        str61 = str3;
+                                        str65 = str3;
                                     }
                                 }
                             } else {
                                 z11 = z10;
-                                j10 = j40;
-                                j11 = j3;
-                                arrayList2 = arrayList31;
-                                j12 = j39;
-                                j13 = j30;
-                                arrayList3 = arrayList30;
+                                j11 = j42;
+                                j12 = j10;
+                                arrayList2 = arrayList30;
+                                j13 = j41;
+                                j14 = j32;
+                                arrayList3 = arrayList29;
                                 b(xmlPullParser);
                             }
-                            j29 = j12;
+                            j31 = j13;
                         }
-                        if (!e2.d.l(xmlPullParser, "MPD")) {
-                            if (i29 == j11) {
-                                if (j13 != j11) {
-                                    i29 = j13;
+                        if (!e2.a.h(xmlPullParser, "MPD")) {
+                            if (i25 == j12) {
+                                if (j14 != j12) {
+                                    i25 = j14;
                                 } else if (!equals) {
-                                    throw s0.b("Unable to determine duration of static manifest.", null);
+                                    throw x0.b("Unable to determine duration of static manifest.", null);
                                 }
                             }
                             if (arrayList3.isEmpty()) {
-                                throw s0.b("No periods found.", null);
+                                throw x0.b("No periods found.", null);
                             }
-                            return new c(S, i29, i30, equals, i31, j10, i33, S2, iVar, aVar, d0Var, uri2, arrayList3);
+                            return new c(V, i25, i26, equals, i27, j11, i29, V2, iVar, aVar, i0Var, uri2, arrayList3);
                         }
-                        arrayList30 = arrayList3;
-                        i32 = j10;
-                        j28 = j11;
-                        i27 = i11;
+                        arrayList29 = arrayList3;
+                        i28 = j11;
+                        j30 = j12;
+                        i23 = i11;
                         i10 = i12;
-                        j30 = j13;
-                        arrayList31 = arrayList2;
-                        p5 = arrayList;
+                        j32 = j14;
+                        arrayList30 = arrayList2;
+                        q6 = arrayList;
                         z10 = z11;
-                        str48 = null;
+                        str52 = null;
                     }
                     z11 = z10;
-                    arrayList3 = arrayList30;
+                    arrayList3 = arrayList29;
                 }
-                j11 = j3;
+                j12 = j10;
             }
-            j10 = i32;
-            if (!e2.d.l(xmlPullParser, "MPD")) {
+            j11 = i28;
+            if (!e2.a.h(xmlPullParser, "MPD")) {
             }
         }
     }
 
     public static j l(XmlPullParser xmlPullParser, String str, String str2) {
-        long j3;
         long j10;
+        long j11;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         String attributeValue2 = xmlPullParser.getAttributeValue(null, str2);
         if (attributeValue2 != null) {
             String[] split = attributeValue2.split("-");
-            j3 = Long.parseLong(split[0]);
+            j10 = Long.parseLong(split[0]);
             if (split.length == 2) {
-                j10 = (Long.parseLong(split[1]) - j3) + 1;
-                return new j(j3, j10, attributeValue);
+                j11 = (Long.parseLong(split[1]) - j10) + 1;
+                return new j(j10, j11, attributeValue);
             }
         } else {
-            j3 = 0;
+            j10 = 0;
         }
-        j10 = -1;
-        return new j(j3, j10, attributeValue);
+        j11 = -1;
+        return new j(j10, j11, attributeValue);
     }
 
     public static int m(String str) {
@@ -2691,7 +2681,7 @@ public final class e extends DefaultHandler implements y2.n {
     public static int n(ArrayList arrayList) {
         int i10 = 0;
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (r6.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i11)).a)) {
+            if (s6.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i11)).a)) {
                 i10 = 16384;
             }
         }
@@ -2699,81 +2689,81 @@ public final class e extends DefaultHandler implements y2.n {
     }
 
     public static r o(XmlPullParser xmlPullParser, r rVar) {
-        long j3 = rVar != null ? rVar.b : 1L;
+        long j10 = rVar != null ? rVar.b : 1L;
         String attributeValue = xmlPullParser.getAttributeValue(null, "timescale");
         if (attributeValue != null) {
-            j3 = Long.parseLong(attributeValue);
+            j10 = Long.parseLong(attributeValue);
         }
-        long j10 = j3;
-        long j11 = rVar != null ? rVar.c : 0L;
+        long j11 = j10;
+        long j12 = rVar != null ? rVar.c : 0L;
         String attributeValue2 = xmlPullParser.getAttributeValue(null, "presentationTimeOffset");
         if (attributeValue2 != null) {
-            j11 = Long.parseLong(attributeValue2);
+            j12 = Long.parseLong(attributeValue2);
         }
-        long j12 = j11;
-        long j13 = rVar != null ? rVar.d : 0L;
-        long j14 = rVar != null ? rVar.e : 0L;
+        long j13 = j12;
+        long j14 = rVar != null ? rVar.d : 0L;
+        long j15 = rVar != null ? rVar.e : 0L;
         String attributeValue3 = xmlPullParser.getAttributeValue(null, "indexRange");
         if (attributeValue3 != null) {
             String[] split = attributeValue3.split("-");
-            j13 = Long.parseLong(split[0]);
-            j14 = (Long.parseLong(split[1]) - j13) + 1;
+            j14 = Long.parseLong(split[0]);
+            j15 = (Long.parseLong(split[1]) - j14) + 1;
         }
-        long j15 = j14;
-        long j16 = j13;
+        long j16 = j15;
+        long j17 = j14;
         j jVar = rVar != null ? rVar.a : null;
         while (true) {
             xmlPullParser.next();
-            if (e2.d.m(xmlPullParser, "Initialization")) {
+            if (e2.a.i(xmlPullParser, "Initialization")) {
                 jVar = l(xmlPullParser, "sourceURL", "range");
             } else {
                 b(xmlPullParser);
             }
             j jVar2 = jVar;
-            if (e2.d.l(xmlPullParser, "SegmentBase")) {
-                return new r(jVar2, j10, j12, j16, j15);
+            if (e2.a.h(xmlPullParser, "SegmentBase")) {
+                return new r(jVar2, j11, j13, j17, j16);
             }
             jVar = jVar2;
         }
     }
 
-    public static o p(XmlPullParser xmlPullParser, o oVar, long j3, long j10, long j11, long j12, long j13) {
-        long j14 = oVar != null ? oVar.b : 1L;
+    public static o p(XmlPullParser xmlPullParser, o oVar, long j10, long j11, long j12, long j13, long j14) {
+        long j15 = oVar != null ? oVar.b : 1L;
         List list = null;
         String attributeValue = xmlPullParser.getAttributeValue(null, "timescale");
         if (attributeValue != null) {
-            j14 = Long.parseLong(attributeValue);
+            j15 = Long.parseLong(attributeValue);
         }
-        long j15 = j14;
-        long j16 = oVar != null ? oVar.c : 0L;
+        long j16 = j15;
+        long j17 = oVar != null ? oVar.c : 0L;
         String attributeValue2 = xmlPullParser.getAttributeValue(null, "presentationTimeOffset");
         if (attributeValue2 != null) {
-            j16 = Long.parseLong(attributeValue2);
+            j17 = Long.parseLong(attributeValue2);
         }
-        long j17 = j16;
-        long j18 = oVar != null ? oVar.e : -9223372036854775807L;
+        long j18 = j17;
+        long j19 = oVar != null ? oVar.e : -9223372036854775807L;
         String attributeValue3 = xmlPullParser.getAttributeValue(null, "duration");
         if (attributeValue3 != null) {
-            j18 = Long.parseLong(attributeValue3);
+            j19 = Long.parseLong(attributeValue3);
         }
-        long j19 = j18;
-        long j20 = oVar != null ? oVar.d : 1L;
+        long j20 = j19;
+        long j21 = oVar != null ? oVar.d : 1L;
         String attributeValue4 = xmlPullParser.getAttributeValue(null, "startNumber");
         if (attributeValue4 != null) {
-            j20 = Long.parseLong(attributeValue4);
+            j21 = Long.parseLong(attributeValue4);
         }
-        long j21 = j20;
-        long j22 = j12 == -9223372036854775807L ? j11 : j12;
-        long j23 = j22 == Long.MAX_VALUE ? -9223372036854775807L : j22;
+        long j22 = j21;
+        long j23 = j13 == -9223372036854775807L ? j12 : j13;
+        long j24 = j23 == Long.MAX_VALUE ? -9223372036854775807L : j23;
         j jVar = null;
         List list2 = null;
         do {
             xmlPullParser.next();
-            if (e2.d.m(xmlPullParser, "Initialization")) {
+            if (e2.a.i(xmlPullParser, "Initialization")) {
                 jVar = l(xmlPullParser, "sourceURL", "range");
-            } else if (e2.d.m(xmlPullParser, "SegmentTimeline")) {
-                list2 = r(xmlPullParser, j15, j10);
-            } else if (e2.d.m(xmlPullParser, "SegmentURL")) {
+            } else if (e2.a.i(xmlPullParser, "SegmentTimeline")) {
+                list2 = r(xmlPullParser, j16, j11);
+            } else if (e2.a.i(xmlPullParser, "SegmentURL")) {
                 if (list == null) {
                     list = new ArrayList();
                 }
@@ -2781,7 +2771,7 @@ public final class e extends DefaultHandler implements y2.n {
             } else {
                 b(xmlPullParser);
             }
-        } while (!e2.d.l(xmlPullParser, "SegmentList"));
+        } while (!e2.a.h(xmlPullParser, "SegmentList"));
         if (oVar != null) {
             if (jVar == null) {
                 jVar = oVar.a;
@@ -2793,65 +2783,65 @@ public final class e extends DefaultHandler implements y2.n {
                 list = oVar.j;
             }
         }
-        return new o(jVar, j15, j17, j21, j19, list2, j23, list, d0.P(j13), d0.P(j3));
+        return new o(jVar, j16, j18, j22, j20, list2, j24, list, m0.S(j14), m0.S(j10));
     }
 
-    public static p q(XmlPullParser xmlPullParser, p pVar, List list, long j3, long j10, long j11, long j12, long j13) {
-        long j14;
-        long j15 = pVar != null ? pVar.b : 1L;
+    public static p q(XmlPullParser xmlPullParser, p pVar, List list, long j10, long j11, long j12, long j13, long j14) {
+        long j15;
+        long j16 = pVar != null ? pVar.b : 1L;
         j jVar = null;
         String attributeValue = xmlPullParser.getAttributeValue(null, "timescale");
         if (attributeValue != null) {
-            j15 = Long.parseLong(attributeValue);
+            j16 = Long.parseLong(attributeValue);
         }
-        long j16 = j15;
-        long j17 = pVar != null ? pVar.c : 0L;
+        long j17 = j16;
+        long j18 = pVar != null ? pVar.c : 0L;
         String attributeValue2 = xmlPullParser.getAttributeValue(null, "presentationTimeOffset");
         if (attributeValue2 != null) {
-            j17 = Long.parseLong(attributeValue2);
+            j18 = Long.parseLong(attributeValue2);
         }
-        long j18 = j17;
-        long j19 = pVar != null ? pVar.e : -9223372036854775807L;
+        long j19 = j18;
+        long j20 = pVar != null ? pVar.e : -9223372036854775807L;
         String attributeValue3 = xmlPullParser.getAttributeValue(null, "duration");
         if (attributeValue3 != null) {
-            j19 = Long.parseLong(attributeValue3);
+            j20 = Long.parseLong(attributeValue3);
         }
-        long j20 = j19;
-        long j21 = pVar != null ? pVar.d : 1L;
+        long j21 = j20;
+        long j22 = pVar != null ? pVar.d : 1L;
         String attributeValue4 = xmlPullParser.getAttributeValue(null, "startNumber");
         if (attributeValue4 != null) {
-            j21 = Long.parseLong(attributeValue4);
+            j22 = Long.parseLong(attributeValue4);
         }
-        long j22 = j21;
+        long j23 = j22;
         int i10 = 0;
         while (true) {
             if (i10 >= list.size()) {
-                j14 = -1;
+                j15 = -1;
                 break;
             }
             f fVar = (f) list.get(i10);
-            if (r6.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
-                j14 = Long.parseLong(fVar.b);
+            if (s6.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
+                j15 = Long.parseLong(fVar.b);
                 break;
             }
             i10++;
         }
-        long j23 = j14;
-        long j24 = j12 == -9223372036854775807L ? j11 : j12;
-        long j25 = j24 == Long.MAX_VALUE ? -9223372036854775807L : j24;
-        la.h s10 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
-        la.h s11 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
+        long j24 = j15;
+        long j25 = j13 == -9223372036854775807L ? j12 : j13;
+        long j26 = j25 == Long.MAX_VALUE ? -9223372036854775807L : j25;
+        li.k s10 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
+        li.k s11 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
         List list2 = null;
         do {
             xmlPullParser.next();
-            if (e2.d.m(xmlPullParser, "Initialization")) {
+            if (e2.a.i(xmlPullParser, "Initialization")) {
                 jVar = l(xmlPullParser, "sourceURL", "range");
-            } else if (e2.d.m(xmlPullParser, "SegmentTimeline")) {
-                list2 = r(xmlPullParser, j16, j10);
+            } else if (e2.a.i(xmlPullParser, "SegmentTimeline")) {
+                list2 = r(xmlPullParser, j17, j11);
             } else {
                 b(xmlPullParser);
             }
-        } while (!e2.d.l(xmlPullParser, "SegmentTemplate"));
+        } while (!e2.a.h(xmlPullParser, "SegmentTemplate"));
         if (pVar != null) {
             if (jVar == null) {
                 jVar = pVar.a;
@@ -2860,53 +2850,53 @@ public final class e extends DefaultHandler implements y2.n {
                 list2 = pVar.f;
             }
         }
-        return new p(jVar, j16, j18, j22, j23, j20, list2, j25, s11, s10, d0.P(j13), d0.P(j3));
+        return new p(jVar, j17, j19, j23, j24, j21, list2, j26, s11, s10, m0.S(j14), m0.S(j10));
     }
 
-    public static ArrayList r(XmlPullParser xmlPullParser, long j3, long j10) {
-        long j11;
+    public static ArrayList r(XmlPullParser xmlPullParser, long j10, long j11) {
+        long j12;
         ArrayList arrayList = new ArrayList();
-        long j12 = 0;
-        long j13 = -9223372036854775807L;
+        long j13 = 0;
+        long j14 = -9223372036854775807L;
         boolean z10 = false;
         int i10 = 0;
         do {
             xmlPullParser.next();
-            if (e2.d.m(xmlPullParser, "S")) {
+            if (e2.a.i(xmlPullParser, "S")) {
                 String attributeValue = xmlPullParser.getAttributeValue(null, "t");
                 long parseLong = attributeValue == null ? -9223372036854775807L : Long.parseLong(attributeValue);
                 if (z10) {
                     int i11 = i10;
-                    j11 = parseLong;
-                    j12 = a(arrayList, j12, j13, i11, j11);
+                    j12 = parseLong;
+                    j13 = a(arrayList, j13, j14, i11, j12);
                 } else {
-                    j11 = parseLong;
+                    j12 = parseLong;
                 }
-                if (j11 != -9223372036854775807L) {
-                    j12 = j11;
+                if (j12 != -9223372036854775807L) {
+                    j13 = j12;
                 }
                 String attributeValue2 = xmlPullParser.getAttributeValue(null, "d");
-                j13 = attributeValue2 == null ? -9223372036854775807L : Long.parseLong(attributeValue2);
+                j14 = attributeValue2 == null ? -9223372036854775807L : Long.parseLong(attributeValue2);
                 String attributeValue3 = xmlPullParser.getAttributeValue(null, "r");
                 i10 = attributeValue3 == null ? 0 : Integer.parseInt(attributeValue3);
                 z10 = true;
             } else {
                 b(xmlPullParser);
             }
-        } while (!e2.d.l(xmlPullParser, "SegmentTimeline"));
+        } while (!e2.a.h(xmlPullParser, "SegmentTimeline"));
         if (z10) {
-            String str = d0.a;
-            a(arrayList, j12, j13, i10, d0.X(j10, j3, 1000L, RoundingMode.DOWN));
+            String str = m0.a;
+            a(arrayList, j13, j14, i10, m0.a0(j11, j10, 1000L, RoundingMode.DOWN));
         }
         return arrayList;
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:31:0x0100. Please report as an issue. */
-    public static la.h s(XmlPullParser xmlPullParser, String str, la.h hVar) {
+    public static li.k s(XmlPullParser xmlPullParser, String str, li.k kVar) {
         String str2;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         if (attributeValue == null) {
-            return hVar;
+            return kVar;
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
@@ -2962,20 +2952,23 @@ public final class e extends DefaultHandler implements y2.n {
                 i10 = indexOf2 + 1;
             }
         }
-        return new la.h(arrayList, arrayList2, arrayList3, 2);
+        return new li.k(arrayList, arrayList2, arrayList3, 2);
     }
 
     @Override // y2.n
-    public final Object t2(Uri uri, g2.k kVar) {
+    public final Object d2(Uri uri, g2.k kVar) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             newPullParser.setInput(kVar, null);
             if (newPullParser.next() == 2 && "MPD".equals(newPullParser.getName())) {
                 return k(newPullParser, uri);
             }
-            throw s0.b("inputStream does not contain a valid media presentation description", null);
+            throw x0.b("inputStream does not contain a valid media presentation description", null);
         } catch (XmlPullParserException e7) {
-            throw s0.b(null, e7);
+            if (e7.getDetail() instanceof IOException) {
+                throw ((IOException) e7.getDetail());
+            }
+            throw x0.b(null, e7);
         }
     }
 }

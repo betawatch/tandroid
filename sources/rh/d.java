@@ -1,67 +1,100 @@
 package rh;
 
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.es;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class d extends qh.e {
-    public final MediaController.PhotoEntry b;
-    public final SendMessagesHelper.SendingMediaInfo c;
+public final class d extends View {
+    public final Drawable a;
+    public final ne.b b;
+    public final int c;
+    public e d;
 
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0090  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public d(SendMessagesHelper.SendingMediaInfo sendingMediaInfo) {
-        ImageLocation imageLocation;
-        ImageLocation imageLocation2;
-        this.c = sendingMediaInfo;
-        MediaController.PhotoEntry photoEntry = sendingMediaInfo.originalPhotoEntry;
-        this.b = photoEntry;
-        this.a.setRoundRadius(AndroidUtilities.dp(7.0f));
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setOrientation(0, true);
-        String str = photoEntry.coverPath;
-        if (str != null) {
-            imageLocation = ImageLocation.getForPath(str);
-        } else {
-            String str2 = photoEntry.thumbPath;
-            if (str2 != null) {
-                imageLocation = ImageLocation.getForPath(str2);
-            } else if (photoEntry.path == null) {
-                imageReceiver.clearImage();
-                imageLocation = null;
-            } else {
-                if (!photoEntry.isVideo || photoEntry.isLivePhoto()) {
-                    ImageLocation forPath = ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path);
-                    imageReceiver.setOrientation(photoEntry.orientation, photoEntry.invert, true);
-                    imageLocation2 = forPath;
-                    if (imageLocation2 == null) {
-                        imageReceiver.setImage(imageLocation2, null, null, null, null, 0);
-                        return;
-                    } else {
-                        imageReceiver.clearImage();
-                        return;
-                    }
-                }
-                imageLocation = ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path);
-            }
+    public d(Context context, int i10) {
+        super(context);
+        this.b = new ne.b(this, es.h, 380L);
+        this.c = i10;
+        Drawable mutate = context.getResources().getDrawable(R.drawable.outline_poll_attach_24).mutate();
+        this.a = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(g6.x0(null, g6.o7, false), PorterDuff.Mode.SRC_IN));
+    }
+
+    public final void a(e eVar, boolean z10) {
+        e eVar2;
+        e eVar3;
+        this.b.a(eVar != null, z10);
+        if (isAttachedToWindow() && (eVar3 = this.d) != null) {
+            eVar3.b();
         }
-        imageLocation2 = imageLocation;
-        if (imageLocation2 == null) {
+        this.d = eVar;
+        if (!isAttachedToWindow() || (eVar2 = this.d) == null) {
+            return;
+        }
+        eVar2.a(this);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        e eVar = this.d;
+        if (eVar != null) {
+            eVar.a(this);
         }
     }
 
-    @Override // qh.e
-    public final void c(Canvas canvas, int i10, int i11) {
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(0.0f, 0.0f, i10, i11);
-        imageReceiver.draw(canvas);
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        e eVar = this.d;
+        if (eVar != null) {
+            eVar.b();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float f7 = this.b.e;
+        if (f7 < 1.0f) {
+            canvas.save();
+            float f10 = 1.0f - f7;
+            canvas.scale(f10, f10, width, height);
+            this.a.draw(canvas);
+            canvas.restore();
+        }
+        if (f7 > 0.0f) {
+            float f11 = this.c;
+            int dp = AndroidUtilities.dp(f11);
+            int width2 = (getWidth() - dp) / 2;
+            int height2 = (getHeight() - dp) / 2;
+            canvas.save();
+            canvas.translate(width2, height2);
+            canvas.scale(f7, f7, AndroidUtilities.dp(f11) / 2.0f, AndroidUtilities.dp(f11) / 2.0f);
+            e eVar = this.d;
+            if (eVar != null) {
+                eVar.c(canvas, AndroidUtilities.dp(f11), AndroidUtilities.dp(f11));
+            }
+            canvas.restore();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        int dp = AndroidUtilities.dp(24.0f);
+        int i14 = (i10 - dp) / 2;
+        int i15 = (i11 - dp) / 2;
+        this.a.setBounds(i14, i15, i14 + dp, dp + i15);
     }
 }

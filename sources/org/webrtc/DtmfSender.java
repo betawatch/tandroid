@@ -1,12 +1,12 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class DtmfSender {
     private long nativeDtmfSender;
 
-    public DtmfSender(long j3) {
-        this.nativeDtmfSender = j3;
+    public DtmfSender(long j10) {
+        this.nativeDtmfSender = j10;
     }
 
     private void checkDtmfSenderExists() {
@@ -15,15 +15,15 @@ public class DtmfSender {
         }
     }
 
-    private static native boolean nativeCanInsertDtmf(long j3);
+    private static native boolean nativeCanInsertDtmf(long j10);
 
-    private static native int nativeDuration(long j3);
+    private static native int nativeDuration(long j10);
 
-    private static native boolean nativeInsertDtmf(long j3, String str, int i10, int i11);
+    private static native boolean nativeInsertDtmf(long j10, String str, int i10, int i11);
 
-    private static native int nativeInterToneGap(long j3);
+    private static native int nativeInterToneGap(long j10);
 
-    private static native String nativeTones(long j3);
+    private static native String nativeTones(long j10);
 
     public boolean canInsertDtmf() {
         checkDtmfSenderExists();

@@ -1,52 +1,13 @@
 package w7;
 
-import android.util.SparseBooleanArray;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class s {
-    public static b2.x0 a(b2.x0 x0Var, b2.x0 x0Var2) {
-        if (x0Var != null) {
-            b2.q qVar = x0Var.a;
-            if (x0Var2 != null) {
-                SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
-                for (int i10 = 0; i10 < qVar.a.size(); i10++) {
-                    if (x0Var2.a(qVar.a(i10))) {
-                        int a2 = qVar.a(i10);
-                        e2.d.g(!false);
-                        sparseBooleanArray.append(a2, true);
-                    }
-                }
-                e2.d.g(!false);
-                return new b2.x0(new b2.q(sparseBooleanArray));
-            }
-        }
-        return b2.x0.b;
+    public static float a(float f7, float f10, float f11) {
+        return f7 < f10 ? f10 : f7 > f11 ? f11 : f7;
     }
 
-    public static void b(b2.b1 b1Var, m4.s sVar) {
-        int i10 = sVar.b;
-        long j3 = sVar.c;
-        e9.i0 i0Var = sVar.a;
-        if (i10 == -1) {
-            if (b1Var.m0(20)) {
-                b1Var.I0(i0Var);
-                return;
-            } else {
-                if (i0Var.isEmpty()) {
-                    return;
-                }
-                b1Var.p0((b2.k0) i0Var.get(0));
-                return;
-            }
-        }
-        if (b1Var.m0(20)) {
-            b1Var.T(j3, sVar.b, i0Var);
-        } else {
-            if (i0Var.isEmpty()) {
-                return;
-            }
-            b1Var.k((b2.k0) i0Var.get(0), j3);
-        }
+    public static int b(int i10, int i11, int i12) {
+        return i10 < i11 ? i11 : i10 > i12 ? i12 : i10;
     }
 }

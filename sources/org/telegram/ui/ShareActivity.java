@@ -18,11 +18,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public class ShareActivity extends Activity {
     public static final /* synthetic */ int b = 0;
-    public org.telegram.ui.Components.mr0 a;
+    public org.telegram.ui.Components.jr0 a;
 
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
@@ -64,13 +64,13 @@ public class ShareActivity extends Activity {
         MessageObject messageObject = new MessageObject(UserConfig.selectedAccount, TLdeserialize, false, true);
         messageObject.messageOwner.with_my_score = true;
         try {
-            org.telegram.ui.Components.mr0 O0 = org.telegram.ui.Components.mr0.O0(this, messageObject, null, false, string2);
+            org.telegram.ui.Components.jr0 O0 = org.telegram.ui.Components.jr0.O0(this, messageObject, null, false, string2);
             this.a = O0;
             O0.setCanceledOnTouchOutside(true);
-            this.a.setOnDismissListener(new r5(this, 15));
+            this.a.setOnDismissListener(new v5(this, 15));
             this.a.show();
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
             finish();
         }
     }
@@ -79,14 +79,14 @@ public class ShareActivity extends Activity {
     public final void onPause() {
         super.onPause();
         try {
-            org.telegram.ui.Components.mr0 mr0Var = this.a;
-            if (mr0Var == null || !mr0Var.isShowing()) {
+            org.telegram.ui.Components.jr0 jr0Var = this.a;
+            if (jr0Var == null || !jr0Var.isShowing()) {
                 return;
             }
             this.a.dismiss();
             this.a = null;
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

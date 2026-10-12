@@ -1,50 +1,27 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
-import org.telegram.messenger.FileLog;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w80 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m70 b;
+public final class w80 extends s4.k {
+    public final /* synthetic */ LanguageSelectActivity F;
 
-    public /* synthetic */ w80(m70 m70Var, int i10) {
-        this.a = i10;
-        this.b = m70Var;
+    public w80(LanguageSelectActivity languageSelectActivity) {
+        this.F = languageSelectActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        m70 m70Var = this.b;
-        switch (i10) {
-            case 0:
-                Pattern pattern = LaunchActivity.B1;
-                try {
-                    m70Var.run();
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
-                }
-            case 1:
-                Pattern pattern2 = LaunchActivity.B1;
-                try {
-                    m70Var.run();
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
-            default:
-                Pattern pattern3 = LaunchActivity.B1;
-                try {
-                    m70Var.run();
-                    break;
-                } catch (Exception e11) {
-                    FileLog.e(e11);
-                }
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        View view;
+        LanguageSelectActivity languageSelectActivity = this.F;
+        languageSelectActivity.b.invalidate();
+        org.telegram.ui.Components.mm0 mm0Var = languageSelectActivity.b;
+        int i10 = mm0Var.C1;
+        if (i10 == -1 || (view = mm0Var.D1) == null) {
+            return;
         }
+        mm0Var.i1(i10, view);
+        mm0Var.invalidate();
     }
 }

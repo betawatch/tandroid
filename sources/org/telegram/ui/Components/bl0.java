@@ -1,31 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class bl0 extends og.a {
-    public final zg.n0 c;
+public final class bl0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ el0 b;
 
-    public bl0(int i10, zg.n0 n0Var) {
-        super(i10, false);
-        this.c = n0Var;
+    public /* synthetic */ bl0(el0 el0Var, int i10) {
+        this.a = i10;
+        this.b = el0Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                if (this.b.a.getImageReceiver().getLottieAnimation() != null && !this.b.a.getImageReceiver().getLottieAnimation().k0 && !this.b.a.getImageReceiver().getLottieAnimation().y()) {
+                    this.b.a.getImageReceiver().getLottieAnimation().start();
+                }
+                this.b.E = false;
+                break;
+            default:
+                el0 el0Var = this.b;
+                gl0 gl0Var = el0Var.P;
+                try {
+                    el0Var.performHapticFeedback(0);
+                } catch (Exception unused) {
+                }
+                gl0Var.m0 = gl0Var.T.indexOf(el0Var.e);
+                gl0Var.l0 = el0Var.e;
+                gl0Var.invalidate();
+                break;
         }
-        if (obj != null && bl0.class == obj.getClass()) {
-            bl0 bl0Var = (bl0) obj;
-            int i10 = this.a;
-            int i11 = bl0Var.a;
-            if (i10 == i11 && (i10 == 0 || i10 == 3)) {
-                zg.n0 n0Var = this.c;
-                return n0Var != null && n0Var.equals(bl0Var.c);
-            }
-            if (i10 == i11) {
-                return true;
-            }
-        }
-        return false;
     }
 }

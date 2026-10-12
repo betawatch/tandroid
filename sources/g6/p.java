@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class p {
     public final b a;
     public final String b;
-    public aa.a c;
+    public androidx.biometric.e c;
     public final List d;
 
     public p(String str) {
@@ -30,23 +30,23 @@ public abstract class p {
     }
 
     public final long b() {
-        aa.a aVar = this.c;
-        if (aVar != null) {
-            return ((AtomicLong) aVar.c).getAndIncrement();
+        androidx.biometric.e eVar = this.c;
+        if (eVar != null) {
+            return ((AtomicLong) eVar.c).getAndIncrement();
         }
         b bVar = this.a;
         Log.e(bVar.a, bVar.d("Attempt to generate requestId without a sink", new Object[0]));
         return 0L;
     }
 
-    public final void c(long j3, String str) {
-        aa.a aVar = this.c;
-        if (aVar == null) {
+    public final void c(long j10, String str) {
+        androidx.biometric.e eVar = this.c;
+        if (eVar == null) {
             b bVar = this.a;
             Log.e(bVar.a, bVar.d("Attempt to send text message without a sink", new Object[0]));
             return;
         }
-        f0 f0Var = (f0) aVar.b;
+        f0 f0Var = (f0) eVar.b;
         if (f0Var == null) {
             throw new IllegalStateException("Device is not connected");
         }
@@ -61,9 +61,9 @@ public abstract class p {
             Log.w(bVar2.a, bVar2.d("Message send failed. Message exceeds maximum size", new Object[0]));
             throw new IllegalArgumentException("Message exceeds maximum size524288");
         }
-        com.google.android.gms.common.api.internal.v e7 = com.google.android.gms.common.api.internal.w.e();
-        e7.c = new b0(e0Var, str2, str, 1);
-        e7.a = 8405;
-        e0Var.e(1, e7.a()).addOnFailureListener(new e6.n(aVar, j3, 0));
+        com.google.android.gms.common.api.internal.v b10 = com.google.android.gms.common.api.internal.w.b();
+        b10.c = new b0(e0Var, str2, str, 1);
+        b10.a = 8405;
+        e0Var.e(1, b10.a()).addOnFailureListener(new ad.d(eVar, j10, 3));
     }
 }

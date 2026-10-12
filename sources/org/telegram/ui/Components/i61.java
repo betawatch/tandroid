@@ -1,41 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class i61 {
-    public String[] a = new String[0];
+public final class i61 extends MetricAffectingSpan {
+    public Typeface a;
+    public int b;
+    public int c;
 
-    public boolean a() {
-        return false;
+    public i61(Typeface typeface) {
+        this.c = -1;
+        this.a = typeface;
     }
 
-    public String[] b() {
-        return this.a;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i10 = this.c;
+        if (i10 >= 0) {
+            this.b = org.telegram.ui.ActionBar.g6.x0(null, i10, false);
+        }
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        int i11 = this.b;
+        if (i11 != 0) {
+            textPaint.setColor(i11);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
     }
 
-    public boolean c() {
-        return false;
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
     }
 
-    public boolean d(b61 b61Var, MotionEvent motionEvent) {
-        return false;
+    public i61() {
+        Typeface typeface = Typeface.DEFAULT;
+        this.c = -1;
+        this.a = typeface;
     }
 
-    public boolean e(b61 b61Var, j jVar, MotionEvent motionEvent) {
-        return false;
-    }
-
-    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
-
-    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
-
-    public void i(String[] strArr) {
-        this.a = strArr;
-    }
-
-    public void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
+    public i61(Typeface typeface, int i10) {
+        this.c = -1;
+        this.a = typeface;
+        this.b = i10;
     }
 }

@@ -1,118 +1,130 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fi0 {
-    public int a;
-    public final bd b;
-    public final g6 e;
-    public Drawable i;
-    public Drawable j;
-    public ck0 k;
-    public l11 l;
-    public ia0 r;
-    public boolean s;
-    public boolean t;
-    public int u;
-    public long w;
-    public int x;
-    public final /* synthetic */ ii0 y;
-    public final RectF c = new RectF();
-    public final RectF d = new RectF();
-    public final RectF f = new RectF();
-    public final RectF g = new RectF();
-    public final Rect h = new Rect();
-    public float m = 1.0f;
-    public boolean n = false;
-    public boolean o = false;
-    public boolean p = false;
-    public final float q = 1.0f;
-    public int v = 0;
+public final /* synthetic */ class fi0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gi0 b;
 
-    public fi0(ii0 ii0Var) {
-        this.y = ii0Var;
-        this.b = new bd(ii0Var);
-        this.e = new g6(ii0Var, 0L, 250L, hs.f);
+    public /* synthetic */ fi0(gi0 gi0Var, int i10) {
+        this.a = i10;
+        this.b = gi0Var;
     }
 
-    public final void a() {
-        float d = this.e.d(1.0f, false);
-        if (d == 1.0f) {
-            this.n = false;
-            if (this.o) {
-                this.p = true;
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
+    
+        if (r3.getHeight() != r5.b.getHeight()) goto L30;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i10;
+        ui0[] ui0VarArr;
+        switch (this.a) {
+            case 0:
+                gi0 gi0Var = this.b;
+                synchronized (gi0Var.b) {
+                    ui0[] ui0VarArr2 = gi0Var.c;
+                    ui0 ui0Var = ui0VarArr2[0];
+                    ui0[] ui0VarArr3 = gi0Var.d;
+                    i10 = 2;
+                    ui0VarArr = new ui0[]{ui0Var, ui0VarArr3[0], ui0VarArr2[1], ui0VarArr3[1], ui0VarArr2[2], ui0VarArr3[2]};
+                }
+                boolean z10 = false;
+                for (int i11 = 0; i11 < 6; i11 += 2) {
+                    ui0 ui0Var2 = ui0VarArr[i11];
+                    ui0 ui0Var3 = ui0VarArr[i11 + 1];
+                    if (ui0Var2 != null && !ui0Var2.c && ui0Var2.f) {
+                        ui0Var2.e = true;
+                        if (ui0Var3 != null) {
+                            Bitmap bitmap = ui0Var3.b;
+                            if (!ui0Var3.d) {
+                                if (bitmap.getWidth() == ui0Var2.b.getWidth()) {
+                                    break;
+                                }
+                            }
+                        }
+                        if (ui0Var3 != null) {
+                            ui0Var3.a();
+                        }
+                        ui0Var3 = new ui0();
+                        Bitmap createBitmap = Bitmap.createBitmap(ui0Var2.b.getWidth(), ui0Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
+                        ui0Var3.b = createBitmap;
+                        ui0Var3.a = new Canvas(createBitmap);
+                        synchronized (gi0Var.b) {
+                            ui0[] ui0VarArr4 = gi0Var.d;
+                            int i12 = 0;
+                            while (true) {
+                                ui0[] ui0VarArr5 = gi0Var.c;
+                                if (i12 >= ui0VarArr5.length) {
+                                    i12 = 0;
+                                } else if (ui0VarArr5[i12] != ui0Var2) {
+                                    i12++;
+                                }
+                            }
+                            ui0VarArr4[i12] = ui0Var3;
+                        }
+                        Bitmap bitmap2 = ui0Var2.b;
+                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / 180));
+                        synchronized (gi0Var.b) {
+                            if (!ui0Var3.d) {
+                                ui0Var3.f = false;
+                                ui0Var3.b.eraseColor(0);
+                            }
+                            ui0Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
+                            ui0Var3.f = true;
+                            Bitmap bitmap3 = ui0Var3.b;
+                            int i13 = 0;
+                            while (true) {
+                                ui0[] ui0VarArr6 = gi0Var.c;
+                                if (i13 >= ui0VarArr6.length) {
+                                    i13 = 0;
+                                } else if (ui0VarArr6[i13] != ui0Var2) {
+                                    i13++;
+                                }
+                            }
+                            gi0Var.b(bitmap3, i13);
+                        }
+                        if (!ui0Var2.d) {
+                            ui0Var2.f = false;
+                            ui0Var2.b.eraseColor(0);
+                        }
+                        ui0Var2.e = false;
+                        if (!ui0Var2.d && ui0Var2.c) {
+                            ui0Var2.d = true;
+                            ui0Var2.b.recycle();
+                        }
+                        z10 = true;
+                    }
+                }
+                if (z10 && gi0Var.e && gi0Var.h != null) {
+                    gi0Var.postInvalidateOnAnimation();
+                }
+                if (gi0Var.e && (gi0Var.F || gi0Var.H)) {
+                    AndroidUtilities.runOnUIThread(new fi0(gi0Var, i10));
+                    return;
+                } else {
+                    gi0Var.e = false;
+                    return;
+                }
+            case 1:
+                gi0 gi0Var2 = this.b;
+                gi0Var2.H = true;
+                gi0Var2.postInvalidateOnAnimation();
                 return;
-            }
-            return;
+            default:
+                gi0 gi0Var3 = this.b;
+                gi0Var3.d();
+                vi0.a.postRunnable(gi0Var3.s);
+                return;
         }
-        RectF rectF = this.g;
-        float f7 = rectF.left;
-        RectF rectF2 = this.f;
-        float lerp = AndroidUtilities.lerp(f7, rectF2.left, d);
-        RectF rectF3 = this.d;
-        rectF3.left = lerp;
-        rectF3.right = AndroidUtilities.lerp(rectF.right, rectF2.right, d);
-    }
-
-    public final float b() {
-        boolean z10 = this.o;
-        g6 g6Var = this.e;
-        if (z10) {
-            return 1.0f - g6Var.d(1.0f, false);
-        }
-        if (this.n) {
-            return g6Var.d(1.0f, false);
-        }
-        return 1.0f;
-    }
-
-    public final void c(String str) {
-        l11 l11Var = new l11(str, 11.0f, AndroidUtilities.bold());
-        l11Var.n(3);
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        l11Var.a();
-        this.l = l11Var;
-    }
-
-    public final void d(int i10, int i11, int i12) {
-        ii0 ii0Var = this.y;
-        if (i10 != 0) {
-            ck0 ck0Var = new ck0(i10, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), false, null);
-            ck0Var.R(ii0Var);
-            ck0Var.start();
-            this.k = ck0Var;
-        } else {
-            this.k = null;
-        }
-        this.i = i11 != 0 ? ii0Var.getResources().getDrawable(i11).mutate() : null;
-        this.j = i12 != 0 ? ii0Var.getResources().getDrawable(i12).mutate() : null;
-        ck0 ck0Var2 = this.k;
-        Rect rect = this.h;
-        if (ck0Var2 != null) {
-            ck0Var2.setBounds(rect);
-        }
-        Drawable drawable = this.i;
-        if (drawable != null) {
-            drawable.setBounds(rect);
-        }
-        Drawable drawable2 = this.j;
-        if (drawable2 != null) {
-            drawable2.setBounds(rect);
-        }
-    }
-
-    public fi0(ii0 ii0Var, gi0 gi0Var) {
-        this.y = ii0Var;
-        this.b = new bd(ii0Var);
-        this.e = new g6(ii0Var, 0L, 250L, hs.f);
-        d(0, gi0Var.b, gi0Var.c);
-        c(LocaleController.getString(gi0Var.a));
     }
 }

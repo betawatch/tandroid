@@ -1,54 +1,75 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class j01 implements ci.cc {
-    public final /* synthetic */ ProfileActivity a;
+public final class j01 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ ProfileActivity c;
 
-    public j01(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public /* synthetic */ j01(ProfileActivity profileActivity, boolean z10, int i10) {
+        this.a = i10;
+        this.c = profileActivity;
+        this.b = z10;
     }
 
-    @Override // ci.cc
-    public final ci.gc a(long j3) {
-        ProfileActivity profileActivity = this.a;
-        if (j3 != profileActivity.a()) {
-            return null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                this.c.f0 = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
-        profileActivity.e0.setRoundRadiusForExpand((int) AndroidUtilities.lerp(profileActivity.c4(), 0.0f, profileActivity.k2));
-        oz0 oz0Var = profileActivity.e0;
-        boolean isForum = ChatObject.isForum(profileActivity.E2);
-        if (oz0Var == null || oz0Var.getRootView() == null) {
-            return null;
-        }
-        float scaleX = ((View) oz0Var.getParent()).getScaleX();
-        float imageWidth = oz0Var.getImageReceiver().getImageWidth() * scaleX;
-        float f7 = isForum ? 0.32f * imageWidth : imageWidth;
-        ci.ec ecVar = new ci.ec(oz0Var, 0);
-        float[] fArr = new float[2];
-        oz0Var.getRootView().getLocationOnScreen(new int[2]);
-        AndroidUtilities.getViewPositionInParent(oz0Var, (ViewGroup) oz0Var.getRootView(), fArr);
-        float imageX = (oz0Var.getImageReceiver().getImageX() * scaleX) + r4[0] + fArr[0];
-        float imageY = (oz0Var.getImageReceiver().getImageY() * scaleX) + r4[1] + fArr[1];
-        ecVar.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
-        ecVar.e = oz0Var.getImageReceiver();
-        ecVar.b = f7;
-        return ecVar;
     }
 
-    @Override // ci.cc
-    public final void b(long j3, ai.j jVar) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.e0.setHasStories(profileActivity.j4());
-        if (j3 == profileActivity.a() && profileActivity.o2 && profileActivity.k2 > 0.0f) {
-            profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
-            profileActivity.a.post(new xb0(profileActivity, 14));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10;
+        org.telegram.ui.Cells.z3 z3Var;
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.c;
+                boolean z10 = this.b;
+                ProfileActivity.n1(profileActivity, z10);
+                profileActivity.Y.setClickable(true);
+                if (z10) {
+                    org.telegram.ui.ActionBar.u0 u0Var = profileActivity.U0;
+                    if (u0Var.F.getWidth() != 0 && !u0Var.e.isFocused()) {
+                        u0Var.e.requestFocus();
+                        AndroidUtilities.showKeyboard(u0Var.e);
+                    }
+                }
+                profileActivity.k4(true);
+                profileActivity.V1 = null;
+                profileActivity.fragmentView.invalidate();
+                if (z10) {
+                    profileActivity.U4 = true;
+                    profileActivity.F4();
+                    Activity parentActivity = profileActivity.getParentActivity();
+                    i10 = ((org.telegram.ui.ActionBar.m2) profileActivity).classGuid;
+                    AndroidUtilities.requestAdjustResize(parentActivity, i10);
+                    profileActivity.P.setPreventMoving(false);
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity2 = this.c;
+                if (profileActivity2.f0 != null && (z3Var = profileActivity2.g0) != null) {
+                    if (!this.b) {
+                        z3Var.setVisibility(4);
+                    }
+                    profileActivity2.f0 = null;
+                    break;
+                }
+                break;
         }
-        AndroidUtilities.runOnUIThread(jVar, 30L);
     }
 }

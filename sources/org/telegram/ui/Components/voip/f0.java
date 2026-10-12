@@ -1,32 +1,55 @@
 package org.telegram.ui.Components.voip;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.ImageView;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.y30;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.e40;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f0 extends ImageView {
-    public final /* synthetic */ y30 a;
+public final class f0 extends View {
+    public final /* synthetic */ org.telegram.ui.Cells.z a;
+    public final /* synthetic */ e40 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(y30 y30Var, Context context) {
+    public f0(e40 e40Var, Context context, org.telegram.ui.Cells.z zVar) {
         super(context);
-        this.a = y30Var;
+        this.b = e40Var;
+        this.a = zVar;
     }
 
     @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        y30 y30Var = this.a;
-        y30Var.f0.invalidate();
-        y30Var.invalidate();
+    public final void dispatchDraw(Canvas canvas) {
+        e40 e40Var = this.b;
+        float measuredWidth = e40Var.d0.getMeasuredWidth();
+        bs bsVar = e40Var.c0;
+        float measuredWidth2 = (e40Var.e0.getMeasuredWidth() * bsVar.g) + ((1.0f - bsVar.g) * measuredWidth);
+        canvas.save();
+        int dp = AndroidUtilities.dp(50.0f) + ((int) measuredWidth2);
+        int measuredHeight = getMeasuredHeight();
+        org.telegram.ui.Cells.z zVar = this.a;
+        zVar.setBounds(0, 0, dp, measuredHeight);
+        zVar.draw(canvas);
+        super.dispatchDraw(canvas);
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
+    @Override // android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        this.a.setState(getDrawableState());
+    }
+
+    @Override // android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        this.a.jumpToCurrentState();
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.a == drawable || super.verifyDrawable(drawable);
     }
 }

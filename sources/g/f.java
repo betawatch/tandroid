@@ -22,10 +22,10 @@ import androidx.core.widget.NestedScrollView;
 import java.util.WeakHashMap;
 import m.v1;
 import org.telegram.messenger.beta.R;
-import r0.b0;
-import r0.i0;
+import r0.c0;
+import r0.j0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class f extends t implements DialogInterface {
     public final e f;
@@ -44,7 +44,7 @@ public class f extends t implements DialogInterface {
         return typedValue.resourceId;
     }
 
-    @Override // g.t, androidx.activity.m, android.app.Dialog
+    @Override // g.t, androidx.activity.n, android.app.Dialog
     public void onCreate(Bundle bundle) {
         int i10;
         ListAdapter listAdapter;
@@ -105,8 +105,8 @@ public class f extends t implements DialogInterface {
         }
         Button button = (Button) b12.findViewById(android.R.id.button1);
         eVar.h = button;
-        androidx.mediarouter.app.x xVar = eVar.A;
-        button.setOnClickListener(xVar);
+        androidx.mediarouter.app.w wVar = eVar.A;
+        button.setOnClickListener(wVar);
         if (TextUtils.isEmpty(null)) {
             eVar.h.setVisibility(8);
             i10 = 0;
@@ -117,7 +117,7 @@ public class f extends t implements DialogInterface {
         }
         Button button2 = (Button) b12.findViewById(android.R.id.button2);
         eVar.i = button2;
-        button2.setOnClickListener(xVar);
+        button2.setOnClickListener(wVar);
         if (TextUtils.isEmpty(eVar.j)) {
             eVar.i.setVisibility(8);
         } else {
@@ -127,7 +127,7 @@ public class f extends t implements DialogInterface {
         }
         Button button3 = (Button) b12.findViewById(android.R.id.button3);
         eVar.l = button3;
-        button3.setOnClickListener(xVar);
+        button3.setOnClickListener(wVar);
         if (TextUtils.isEmpty(null)) {
             eVar.l.setVisibility(8);
         } else {
@@ -220,8 +220,8 @@ public class f extends t implements DialogInterface {
                 int i12 = z12 ? 2 : 0;
                 View findViewById11 = window.findViewById(R.id.scrollIndicatorUp);
                 View findViewById12 = window.findViewById(R.id.scrollIndicatorDown);
-                WeakHashMap weakHashMap = i0.a;
-                b0.b(view2, i11 | i12, 3);
+                WeakHashMap weakHashMap = j0.a;
+                c0.b(view2, i11 | i12, 3);
                 if (findViewById11 != null) {
                     b11.removeView(findViewById11);
                 }
@@ -245,7 +245,7 @@ public class f extends t implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i10, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.i(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.j(keyEvent)) {
             return super.onKeyDown(i10, keyEvent);
         }
         return true;
@@ -254,7 +254,7 @@ public class f extends t implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i10, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.i(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.j(keyEvent)) {
             return super.onKeyUp(i10, keyEvent);
         }
         return true;

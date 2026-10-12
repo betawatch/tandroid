@@ -1,34 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.webkit.RenderProcessGoneDetail;
 import android.webkit.WebView;
-import org.telegram.tgnet.tl.TL_iv;
+import android.webkit.WebViewClient;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class s1 extends WebView {
-    public final /* synthetic */ t1 a;
+public final class s1 extends WebViewClient {
+    public final /* synthetic */ v1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s1(t1 t1Var, Context context) {
-        super(context);
-        this.a = t1Var;
-        setFocusable(false);
+    public s1(v1 v1Var) {
+        this.a = v1Var;
     }
 
-    @Override // android.webkit.WebView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        t1 t1Var = this.a;
-        t1Var.s = true;
-        TL_iv.pageBlockEmbed pageblockembed = t1Var.v;
-        if (pageblockembed != null) {
-            if (pageblockembed.allow_scrolling) {
-                requestDisallowInterceptTouchEvent(true);
-            } else {
-                t1Var.x.f0.requestDisallowInterceptTouchEvent(true);
+    @Override // android.webkit.WebViewClient
+    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
+        try {
+            LaunchActivity launchActivity = LaunchActivity.G1;
+            if (launchActivity != null && launchActivity.isFinishing()) {
+                return true;
             }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a.getContext(), 0, null);
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
+            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new tu0(this, 8));
+            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+            alertDialog$Builder.o();
+            return true;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return false;
         }
-        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.webkit.WebViewClient
+    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        v1 v1Var = this.a;
+        if (!v1Var.s) {
+            return false;
+        }
+        pf.d.s(v1Var.x.L, str);
+        return true;
     }
 }

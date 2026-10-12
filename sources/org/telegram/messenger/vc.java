@@ -1,27 +1,59 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class vc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ boolean c;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
 
-    public /* synthetic */ vc(int i10, MessagesController messagesController, boolean z10) {
-        this.a = i10;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class vc implements Utilities.Callback {
+    public final /* synthetic */ int a = 2;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+
+    public /* synthetic */ vc(MessagesController messagesController, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, TLRPC.Chat chat, Runnable runnable) {
         this.b = messagesController;
-        this.c = z10;
+        this.e = tL_messages_invitedUsers;
+        this.f = iArr;
+        this.d = i10;
+        this.g = chat;
+        this.c = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkPromoInfo$163(this.c);
+                this.b.lambda$openByUserName$458((pf.c) this.e, (org.telegram.ui.ActionBar.a2[]) this.f, (org.telegram.ui.ActionBar.m2) this.g, (boolean[]) this.c, this.d, (Long) obj);
+                break;
+            case 1:
+                this.b.lambda$openApp$503((boolean[]) this.c, (TL_bots.BotInfo[]) this.e, (TLRPC.User) this.f, this.d, (f3) this.g, (TL_bots.BotInfo) obj);
                 break;
             default:
-                this.b.lambda$removeFolderTemporarily$483(this.c);
+                this.b.lambda$addUsersToChat$296((TLRPC.TL_messages_invitedUsers) this.e, (int[]) this.f, this.d, (TLRPC.Chat) this.g, (Runnable) this.c, (TLRPC.TL_messages_invitedUsers) obj);
                 break;
         }
+    }
+
+    public /* synthetic */ vc(MessagesController messagesController, pf.c cVar, org.telegram.ui.ActionBar.a2[] a2VarArr, org.telegram.ui.ActionBar.m2 m2Var, boolean[] zArr, int i10) {
+        this.b = messagesController;
+        this.e = cVar;
+        this.f = a2VarArr;
+        this.g = m2Var;
+        this.c = zArr;
+        this.d = i10;
+    }
+
+    public /* synthetic */ vc(MessagesController messagesController, boolean[] zArr, TL_bots.BotInfo[] botInfoArr, TLRPC.User user, int i10, f3 f3Var) {
+        this.b = messagesController;
+        this.c = zArr;
+        this.e = botInfoArr;
+        this.f = user;
+        this.d = i10;
+        this.g = f3Var;
     }
 }

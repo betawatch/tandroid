@@ -1,47 +1,69 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v3 b;
+public final class s3 {
+    public TextPaint a;
+    public final SparseArray b = new SparseArray();
+    public final SparseArray c = new SparseArray();
+    public final SparseArray d = new SparseArray();
+    public final SparseArray e = new SparseArray();
+    public final SparseArray f = new SparseArray();
+    public final SparseArray g = new SparseArray();
+    public final SparseArray h = new SparseArray();
+    public final SparseArray i = new SparseArray();
+    public final SparseArray j = new SparseArray();
+    public final SparseArray k = new SparseArray();
+    public final SparseArray l = new SparseArray();
+    public final SparseArray m = new SparseArray();
+    public final SparseArray n = new SparseArray();
+    public final SparseArray o = new SparseArray();
+    public final SparseArray p = new SparseArray();
+    public final SparseArray q = new SparseArray();
+    public final SparseArray r = new SparseArray();
+    public final SparseArray s = new SparseArray();
+    public final SparseArray t = new SparseArray();
+    public final SparseArray u = new SparseArray();
+    public final SparseArray v = new SparseArray();
+    public final SparseArray w = new SparseArray();
+    public final SparseArray x = new SparseArray();
+    public final SparseArray y = new SparseArray();
+    public final SparseArray z = new SparseArray();
+    public final SparseArray A = new SparseArray();
 
-    public /* synthetic */ s3(v3 v3Var, int i10) {
-        this.a = i10;
-        this.b = v3Var;
+    public static void a(k4 k4Var, SparseArray sparseArray) {
+        for (int i10 = 0; i10 < sparseArray.size(); i10++) {
+            int keyAt = sparseArray.keyAt(i10);
+            TextPaint textPaint = (TextPaint) sparseArray.valueAt(i10);
+            if (textPaint != null) {
+                if ((keyAt & 8) == 0 && (keyAt & 512) == 0) {
+                    textPaint.setColor(k4Var.b());
+                } else {
+                    textPaint.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.J6, false));
+                }
+            }
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v3 v3Var = this.b;
-                v3Var.I = floatValue;
-                v3Var.c.invalidate();
-                v3Var.i();
-                v3Var.h();
-                break;
-            case 1:
-                v3 v3Var2 = this.b;
-                v3Var2.getClass();
-                v3Var2.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v3Var2.n();
-                v3Var2.i();
-                v3Var2.h();
-                break;
-            default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v3 v3Var3 = this.b;
-                v3Var3.x = floatValue2;
-                if (!v3Var3.n) {
-                    v3Var3.n();
-                }
-                v3Var3.i();
-                v3Var3.h();
-                break;
+    public static void b(int i10, TextPaint textPaint, Typeface typeface, Typeface typeface2, Typeface typeface3, Typeface typeface4) {
+        int i11 = i10 & 1;
+        if (i11 != 0 && (i10 & 2) != 0) {
+            textPaint.setTypeface(typeface2);
+            return;
+        }
+        if (i11 != 0) {
+            textPaint.setTypeface(typeface3);
+        } else if ((i10 & 2) != 0) {
+            textPaint.setTypeface(typeface4);
+        } else {
+            if ((i10 & 4) != 0) {
+                return;
+            }
+            textPaint.setTypeface(typeface);
         }
     }
 }

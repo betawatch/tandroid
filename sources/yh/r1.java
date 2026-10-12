@@ -1,32 +1,39 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.j91;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r1 implements RequestDelegate {
+public final /* synthetic */ class r1 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
-    public final /* synthetic */ TwoStepVerificationActivity c;
+    public final /* synthetic */ q2 b;
 
-    public /* synthetic */ r1(s3 s3Var, TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
+    public /* synthetic */ r1(q2 q2Var, int i10) {
         this.a = i10;
-        this.b = s3Var;
-        this.c = twoStepVerificationActivity;
+        this.b = q2Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new s0(this.b, tL_error, this.c, tLObject));
+                q2 q2Var = this.b;
+                q2Var.e.b((String) obj, new r1(q2Var, 1));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new s0(this.b, tL_error, tLObject, this.c));
+                q2 q2Var2 = this.b;
+                q2Var2.f(true);
+                j91 j91Var = q2Var2.n;
+                int i10 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
+                j91Var.d(i10, q2Var2.e.f(i10) + 1);
+                org.telegram.ui.ActionBar.m2 m2Var = q2Var2.a;
+                if (m2Var instanceof ProfileActivity) {
+                    ((ProfileActivity) m2Var).G4(true);
+                }
+                q2Var2.n();
                 break;
         }
     }

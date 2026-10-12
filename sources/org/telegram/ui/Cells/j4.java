@@ -13,9 +13,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.h11;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class j4 implements DownloadController.FileDownloadProgressListener {
     public TLRPC.MessageExtendedMedia E;
@@ -25,7 +25,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
     public final int I;
     public final int J;
     public int K;
-    public l11 L;
+    public h11 L;
     public boolean M;
     public int a;
     public int b;
@@ -63,7 +63,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
         if (this.x) {
             int i12 = this.J;
             this.K = i12;
-            this.L = new l11(AndroidUtilities.formatLongDuration(i12), 12.0f, null);
+            this.L = new h11(AndroidUtilities.formatLongDuration(i12), 12.0f, null);
         }
         ImageReceiver imageReceiver = new ImageReceiver(u1Var);
         this.f = imageReceiver;
@@ -99,13 +99,13 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
         this.y = false;
         int i10 = this.n;
         int i11 = this.r;
-        String l4 = a1.g.l(i10, i11, "_");
+        String k10 = a1.g.k(i10, i11, "_");
         boolean z10 = messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview;
         ImageReceiver imageReceiver = this.f;
         if (z10) {
             this.h = true;
             this.v = null;
-            this.f.setImage(ImageLocation.getForObject(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, messageObject.messageOwner), sc.v.v(l4, "_b2"), null, null, messageObject, 0);
+            this.f.setImage(ImageLocation.getForObject(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, messageObject.messageOwner), t8.b.u(k10, "_b2"), null, null, messageObject, 0);
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.4f);
             AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, -0.1f);
@@ -116,7 +116,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
             boolean z11 = messageObject.isRepostPreview;
             this.h = z11;
             if (z11) {
-                l4 = sc.v.v(l4, "_b3");
+                k10 = t8.b.u(k10, "_b3");
             }
             imageReceiver.setColorFilter(null);
             TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
@@ -124,7 +124,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
             if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
                 TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = (TLRPC.TL_messageMediaPhoto) messageMedia;
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaPhoto.photo.sizes, AndroidUtilities.getPhotoSize(), true, null, true);
-                this.f.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, tL_messageMediaPhoto.photo), l4, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaPhoto.photo.sizes, Math.min(i10, i11) / 100, false, closestPhotoSizeWithSize, false), tL_messageMediaPhoto.photo), l4, 0L, null, messageObject, 0);
+                this.f.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, tL_messageMediaPhoto.photo), k10, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaPhoto.photo.sizes, Math.min(i10, i11) / 100, false, closestPhotoSizeWithSize, false), tL_messageMediaPhoto.photo), k10, 0L, null, messageObject, 0);
                 return;
             }
             if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
@@ -137,7 +137,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
                     TLRPC.Document document2 = tL_messageMediaDocument.document;
                     if (document2 != null) {
                         TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, AndroidUtilities.getPhotoSize(), true, null, true);
-                        this.f.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize2, tL_messageMediaDocument.document), l4, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaDocument.document.thumbs, Math.min(i10, i11), false, closestPhotoSizeWithSize2, false), tL_messageMediaDocument.document), l4, 0L, null, messageObject, 0);
+                        this.f.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize2, tL_messageMediaDocument.document), k10, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaDocument.document.thumbs, Math.min(i10, i11), false, closestPhotoSizeWithSize2, false), tL_messageMediaDocument.document), k10, 0L, null, messageObject, 0);
                         return;
                     }
                     return;
@@ -148,10 +148,10 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
                 ImageLocation forDocument2 = ImageLocation.getForDocument(closestPhotoSizeWithSize3, tL_messageMediaDocument.document);
                 ImageLocation forDocument3 = ImageLocation.getForDocument(closestPhotoSizeWithSize4, tL_messageMediaDocument.document);
                 ImageLocation imageLocation = this.y ? forDocument : null;
-                StringBuilder v = a1.g.v(l4);
-                v.append(this.y ? "_g" : "");
-                String str = l4;
-                this.f.setImage(imageLocation, v.toString(), forDocument2, str, forDocument3, str, null, 0L, null, messageObject, 0);
+                StringBuilder u10 = a1.g.u(k10);
+                u10.append(this.y ? "_g" : "");
+                String str = k10;
+                this.f.setImage(imageLocation, u10.toString(), forDocument2, str, forDocument3, str, null, 0L, null, messageObject, 0);
             }
         }
     }
@@ -162,8 +162,8 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onProgressDownload(String str, long j3, long j10) {
-        float min = j10 == 0 ? 0.0f : Math.min(1.0f, j3 / j10);
+    public final void onProgressDownload(String str, long j10, long j11) {
+        float min = j11 == 0 ? 0.0f : Math.min(1.0f, j10 / j11);
         this.E.downloadProgress = min;
         this.G.o(min, true);
         b(min < 1.0f ? 3 : a());
@@ -171,8 +171,8 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
-    public final void onProgressUpload(String str, long j3, long j10, boolean z10) {
-        float min = j10 == 0 ? 0.0f : Math.min(1.0f, j3 / j10);
+    public final void onProgressUpload(String str, long j10, long j11, boolean z10) {
+        float min = j11 == 0 ? 0.0f : Math.min(1.0f, j10 / j11);
         this.E.uploadProgress = min;
         this.G.o(min, true);
         b(min < 1.0f ? 3 : this.w ? 6 : a());

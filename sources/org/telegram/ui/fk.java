@@ -1,77 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fk extends org.telegram.ui.Cells.w0 {
-    public final /* synthetic */ zn t2;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fk(Context context, org.telegram.ui.ActionBar.e6 e6Var, zn znVar) {
-        super(context, e6Var, false);
-        this.t2 = znVar;
-    }
-
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        zn znVar = this.t2;
-        if (znVar.B8 != null) {
+public final class fk extends s4.m0 {
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
+        org.telegram.ui.Cells.u1 u1Var;
+        MessageObject.GroupedMessages currentMessagesGroup;
+        MessageObject.GroupedMessagePosition currentPosition;
+        int i10 = 0;
+        rect.bottom = 0;
+        if (!(view instanceof org.telegram.ui.Cells.u1) || (currentMessagesGroup = (u1Var = (org.telegram.ui.Cells.u1) view).getCurrentMessagesGroup()) == null || (currentPosition = u1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
             return;
         }
-        float y3 = ((znVar.x0.getY() + znVar.s9) - getY()) - AndroidUtilities.dp(4.0f);
-        if (y3 <= 0.0f) {
-            super.onDraw(canvas);
-        } else if (y3 < getMeasuredHeight()) {
-            canvas.save();
-            canvas.clipRect(0.0f, y3, getMeasuredWidth(), getMeasuredHeight());
-            super.onDraw(canvas);
-            canvas.restore();
+        Point point = AndroidUtilities.displaySize;
+        float max = Math.max(point.x, point.y) * 0.5f;
+        int extraInsetHeight = u1Var.getExtraInsetHeight();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= currentPosition.siblingHeights.length) {
+                break;
+            }
+            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
+            i11++;
         }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
+        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
+        int size = currentMessagesGroup.posArray.size();
+        while (true) {
+            if (i10 < size) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
+                byte b10 = groupedMessagePosition.minY;
+                byte b11 = currentPosition.minY;
+                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
+                    round = org.telegram.messenger.q.C(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
+                    break;
+                }
+                i10++;
+            } else {
+                break;
+            }
         }
-        zn znVar = this.t2;
-        kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
-        if (kVar.t() || znVar.F9()) {
-            return false;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
-        }
-        zn znVar = this.t2;
-        kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
-        if (kVar.t() || znVar.F9()) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        setVisibility(f7 > 0.0f ? 0 : 4);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            invalidate();
-        }
-        super.setTranslationY(f7);
+        rect.bottom = -round;
     }
 }

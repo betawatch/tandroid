@@ -1,44 +1,69 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
 import android.content.Context;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a90;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e2 extends a90 {
-    public final /* synthetic */ TLRPC.User c;
-    public final /* synthetic */ TLRPC.Chat d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ TLRPC.InputPeer f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ boolean n;
-    public final /* synthetic */ boolean r;
-    public final /* synthetic */ Activity s;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 v;
-    public final /* synthetic */ AccountInstance w;
-    public final /* synthetic */ boolean x;
+public final class e2 extends FrameLayout {
+    public String a;
+    public final ImageView b;
+    public final TextView c;
+    public boolean d;
+    public final o1 e;
+    public final RectF f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e2(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12, Activity activity, org.telegram.ui.ActionBar.n2 n2Var, AccountInstance accountInstance, boolean z13) {
-        super(context, chat);
-        this.c = user;
-        this.d = chat2;
-        this.e = str;
-        this.f = inputPeer;
-        this.h = z10;
-        this.n = z11;
-        this.r = z12;
-        this.s = activity;
-        this.v = n2Var;
-        this.w = accountInstance;
-        this.x = z13;
+    public e2(Context context, o1 o1Var, int i10) {
+        super(context);
+        this.f = new RectF();
+        setFocusable(true);
+        setFocusableInTouchMode(true);
+        this.e = o1Var;
+        o1Var.a(this);
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        addView(imageView, a6.a(24.0f, 8.0f, 2.0f, 8.0f, 2.0f, 24, 16));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextColor(-1);
+        textView.setTextSize(1, 14.0f);
+        addView(textView, a6.a(-2.0f, i10 != 0 ? 36.0f : 14.0f, 2.0f, 14.0f, 2.0f, -2, 16));
     }
 
-    @Override // org.telegram.ui.Components.a90
-    public final void o() {
-        f2.b(this.c, this.d, this.e, this.f, false, this.h, this.n, this.r, this.s, this.v, this.w, false, true, this.x);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.f;
+        rectF.set(0.0f, 0.0f, width, height);
+        float x10 = ((View) getParent()).getX() + getX();
+        float y3 = ((View) getParent()).getY() + getY();
+        o1 o1Var = this.e;
+        o1Var.d(x10, y3);
+        Paint paint = o1Var.l;
+        int alpha = (this.d ? paint : o1Var.b()).getAlpha();
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), alpha, 31);
+        (this.d ? paint : o1Var.b()).setAlpha(255);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.d ? paint : o1Var.b());
+        if (!this.d) {
+            paint = o1Var.b();
+        }
+        paint.setAlpha(alpha);
+        if (o1Var.e) {
+            int alpha2 = ((Paint) o1Var.d.a).getAlpha();
+            ((Paint) o1Var.d.a).setAlpha(255);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), (Paint) o1Var.d.a);
+            ((Paint) o1Var.d.a).setAlpha(alpha2);
+        }
+        canvas.restore();
+        super.dispatchDraw(canvas);
     }
 }

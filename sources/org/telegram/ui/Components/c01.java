@@ -1,41 +1,37 @@
 package org.telegram.ui.Components;
 
+import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class c01 {
-    public int a;
-    public int b;
-    public int c;
+public final class c01 extends ViewGroup.MarginLayoutParams {
+    public e01 a;
+    public e01 b;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public c01() {
-        c();
+        super(-2, -2);
+        e01 e01Var = e01.e;
+        this.a = e01Var;
+        this.b = e01Var;
+        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
+        this.a = e01Var;
+        this.b = e01Var;
     }
 
-    public int a(l01 l01Var, e01 e01Var, xz0 xz0Var, int i10, boolean z10) {
-        return this.a - xz0Var.a(e01Var, i10);
-    }
-
-    public void b(int i10, int i11) {
-        this.a = Math.max(this.a, i10);
-        this.b = Math.max(this.b, i11);
-    }
-
-    public void c() {
-        this.a = TLObject.FLAG_31;
-        this.b = TLObject.FLAG_31;
-        this.c = 2;
-    }
-
-    public int d(boolean z10) {
-        if (!z10) {
-            int i10 = this.c;
-            xz0 xz0Var = l01.R;
-            if ((i10 & 2) != 0) {
-                return 100000;
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        return this.a + this.b;
+        if (obj == null || c01.class != obj.getClass()) {
+            return false;
+        }
+        c01 c01Var = (c01) obj;
+        return this.b.equals(c01Var.b) && this.a.equals(c01Var.a);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

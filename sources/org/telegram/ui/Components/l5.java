@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l5 implements Runnable {
     public final /* synthetic */ int a;
@@ -59,8 +59,8 @@ public final /* synthetic */ class l5 implements Runnable {
                                     arrayList2.add(TLdeserialize);
                                     hashSet.remove(Long.valueOf(TLdeserialize.id));
                                 }
-                            } catch (Exception e7) {
-                                FileLog.e(e7);
+                            } catch (Exception e) {
+                                FileLog.e(e);
                             }
                             if (byteBufferValue != null) {
                                 byteBufferValue.reuse();
@@ -72,15 +72,15 @@ public final /* synthetic */ class l5 implements Runnable {
                                 ArrayList<Long> arrayList3 = new ArrayList<>(hashSet);
                                 TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
                                 tL_messages_getCustomEmojiDocuments.document_id = arrayList3;
-                                ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.oo(3, o5Var, arrayList3));
+                                ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.to(3, o5Var, arrayList3));
                             }
                         } else {
                             NotificationCenter.getInstance(i10).doOnIdle(new m5(o5Var, arrayList2, hashSet, 0));
                         }
                         queryFinalized.dispose();
                         break;
-                    } catch (SQLiteException e10) {
-                        messagesStorage.checkSQLException(e10);
+                    } catch (SQLiteException e7) {
+                        messagesStorage.checkSQLException(e7);
                         return;
                     }
                 }
@@ -95,8 +95,8 @@ public final /* synthetic */ class l5 implements Runnable {
                             NativeByteBuffer nativeByteBuffer2 = null;
                             try {
                                 nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
-                            } catch (Exception e11) {
-                                e = e11;
+                            } catch (Exception e10) {
+                                e = e10;
                             }
                             try {
                                 document.serializeToStream(nativeByteBuffer);
@@ -104,8 +104,8 @@ public final /* synthetic */ class l5 implements Runnable {
                                 executeFast.bindLong(1, document.id);
                                 executeFast.bindByteBuffer(2, nativeByteBuffer);
                                 executeFast.step();
-                            } catch (Exception e12) {
-                                e = e12;
+                            } catch (Exception e11) {
+                                e = e11;
                                 nativeByteBuffer2 = nativeByteBuffer;
                                 e.printStackTrace();
                                 nativeByteBuffer = nativeByteBuffer2;
@@ -119,8 +119,8 @@ public final /* synthetic */ class l5 implements Runnable {
                     }
                     executeFast.dispose();
                     break;
-                } catch (SQLiteException e13) {
-                    FileLog.e(e13);
+                } catch (SQLiteException e12) {
+                    FileLog.e(e12);
                 }
         }
     }

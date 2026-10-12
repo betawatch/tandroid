@@ -1,92 +1,58 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tv implements DialogInterface.OnClickListener {
+public final /* synthetic */ class tv implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ Context b;
 
-    public /* synthetic */ tv(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+    public /* synthetic */ tv(Context context, int i10) {
         this.a = i10;
-        this.b = notificationCenterDelegate;
+        this.b = context;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        int i11 = 0;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ty tyVar = (ty) this.b;
-                if (i10 != 0) {
-                    if (i10 == 1 && tyVar.e0 != null) {
-                        while (true) {
-                            sy[] syVarArr = tyVar.e0;
-                            if (i11 >= syVarArr.length) {
-                                break;
-                            } else {
-                                sy syVar = syVarArr[i11];
-                                if (syVar.s == 0 && syVar.getVisibility() == 0) {
-                                    org.telegram.ui.Cells.s2 N3 = ty.N3(tyVar.e0[i11]);
-                                    py pyVar = tyVar.e0[i11].a;
-                                    int i12 = py.t3;
-                                    pyVar.A1(true, N3);
-                                }
-                                i11++;
-                            }
-                        }
-                    }
-                } else {
-                    tyVar.getMessagesStorage().readAllDialogs(1);
-                    break;
-                }
+                org.telegram.ui.ActionBar.g6.J(this.b, false);
                 break;
             case 1:
-                vg0 vg0Var = (vg0) this.b;
-                if (i10 != 0) {
-                    ProfileActivity.H4(vg0Var.V.getParentActivity(), false);
+                Activity findActivity = AndroidUtilities.findActivity(this.b);
+                if (findActivity == null) {
+                    findActivity = LaunchActivity.G1;
+                }
+                if (findActivity != null && !findActivity.isFinishing()) {
+                    findActivity.moveTaskToBack(true);
                     break;
-                } else {
-                    BuildVars.LOGS_ENABLED = !BuildVars.LOGS_ENABLED;
-                    ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).commit();
-                    org.telegram.ui.Components.ad.a0(vg0Var.V).Q(R.raw.chats_infotip, 36, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").j();
-                    if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.q.r(new StringBuilder("app start time = "), ApplicationLoader.startTime);
-                        try {
-                            FileLog.d("buildVersion = " + ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode);
-                            break;
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
-                            return;
-                        }
-                    }
                 }
                 break;
             case 2:
-                nn0 nn0Var = (nn0) this.b;
-                if (i10 != 0) {
-                    if (i10 != 1) {
-                        nn0Var.getClass();
-                        break;
-                    } else {
-                        nn0Var.w = "female";
-                        nn0Var.Y[4].setText(LocaleController.getString(R.string.PassportFemale));
-                        break;
-                    }
-                } else {
-                    nn0Var.w = "male";
-                    nn0Var.Y[4].setText(LocaleController.getString(R.string.PassportMale));
-                    break;
-                }
+                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 3:
+                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 4:
+                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 5:
+                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 6:
+                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 7:
+                pf.d.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
             default:
-                i91.d0((i91) this.b, i10);
+                pf.d.s(this.b, LocaleController.getString(R.string.WebAppDisclaimerUrl));
                 break;
         }
     }

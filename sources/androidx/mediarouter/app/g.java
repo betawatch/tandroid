@@ -1,123 +1,290 @@
 package androidx.mediarouter.app;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.IntentSender;
+import android.content.pm.PackageManager;
+import android.hardware.SensorManager;
 import android.os.Build;
-import android.util.Log;
-import android.view.KeyEvent;
-import ci.e7;
-import ci.y8;
-import com.google.firebase.messaging.FirebaseMessaging;
-import j$.util.Objects;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.text.method.LinkMovementMethod;
+import android.view.ContextThemeWrapper;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.Executor;
-import org.telegram.ui.Components.rg;
-import org.telegram.ui.Components.sk;
-import p4.s0;
+import java.util.Collections;
+import java.util.List;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g extends BroadcastReceiver {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class g extends g.t {
+    public LinearLayout E;
+    public Button F;
+    public ProgressBar G;
+    public ListView H;
+    public d I;
+    public final f J;
+    public boolean K;
+    public long L;
+    public final ab.o0 M;
+    public final p4.y f;
+    public final c h;
+    public p4.s n;
+    public ArrayList r;
+    public TextView s;
+    public TextView v;
+    public RelativeLayout w;
+    public TextView x;
+    public TextView y;
 
-    public /* synthetic */ g() {
-        this.a = 1;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public g(Context context) {
+        super(r3, r1 == 0 ? v7.a0.e(r3) : r1);
+        int i10 = 0;
+        ContextThemeWrapper a2 = v7.a0.a(context, false);
+        int g10 = v7.a0.g(a2, R.attr.mediaRouteTheme);
+        this.n = p4.s.c;
+        this.M = new ab.o0(this, 1);
+        this.f = p4.y.d(getContext());
+        this.h = new c(this, i10);
+        this.J = new f(this, 0);
     }
 
-    public void a() {
-        if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
-            Log.d("FirebaseMessaging", "Connectivity change received registered");
+    @Override // g.t, android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        try {
+            getContext().unregisterReceiver(this.J);
+        } catch (IllegalArgumentException unused) {
         }
-        ((FirebaseMessaging) ((com.google.firebase.messaging.v) this.b).d).b.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+        super.dismiss();
     }
 
-    @Override // android.content.BroadcastReceiver
-    public final void onReceive(Context context, Intent intent) {
-        KeyEvent keyEvent;
-        switch (this.a) {
-            case 0:
-                if ("android.intent.action.SCREEN_OFF".equals(intent.getAction())) {
-                    ((h) this.b).dismiss();
-                    return;
+    public final void e(List list) {
+        this.L = SystemClock.uptimeMillis();
+        this.r.clear();
+        this.r.addAll(list);
+        this.I.notifyDataSetChanged();
+        ab.o0 o0Var = this.M;
+        o0Var.removeMessages(3);
+        o0Var.removeMessages(2);
+        if (!list.isEmpty()) {
+            i(1);
+        } else {
+            i(0);
+            o0Var.sendMessageDelayed(o0Var.obtainMessage(2), 5000L);
+        }
+    }
+
+    public final void f() {
+        if (this.K) {
+            this.f.getClass();
+            p4.y.b();
+            ArrayList arrayList = new ArrayList(p4.y.c().j);
+            int size = arrayList.size();
+            while (true) {
+                int i10 = size - 1;
+                if (size <= 0) {
+                    break;
                 }
-                return;
-            case 1:
-                com.google.firebase.messaging.v vVar = (com.google.firebase.messaging.v) this.b;
-                if (vVar != null && vVar.a()) {
-                    if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
-                        Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
-                    }
-                    com.google.firebase.messaging.v vVar2 = (com.google.firebase.messaging.v) this.b;
-                    ((FirebaseMessaging) vVar2.d).getClass();
-                    FirebaseMessaging.b(vVar2, 0L);
-                    ((FirebaseMessaging) ((com.google.firebase.messaging.v) this.b).d).b.unregisterReceiver(this);
-                    this.b = null;
-                    return;
+                p4.w wVar = (p4.w) arrayList.get(i10);
+                if (wVar.d() || !wVar.g || !wVar.h(this.n)) {
+                    arrayList.remove(i10);
                 }
+                size = i10;
+            }
+            Collections.sort(arrayList, e.b);
+            if (SystemClock.uptimeMillis() - this.L >= 300) {
+                e(arrayList);
                 return;
-            case 2:
-                ((Executor) ((e2.u) this.b).c).execute(new y8(13, this, context));
-                return;
-            case 3:
-                ((g.o) this.b).k();
-                return;
-            case 4:
-                try {
-                    ((IntentSender) this.b).sendIntent(context, 0, null, null, null);
-                    return;
-                } catch (IntentSender.SendIntentException unused) {
-                    return;
+            }
+            ab.o0 o0Var = this.M;
+            o0Var.removeMessages(1);
+            o0Var.sendMessageAtTime(o0Var.obtainMessage(1, arrayList), this.L + 300);
+        }
+    }
+
+    public final void h(p4.s sVar) {
+        if (sVar == null) {
+            throw new IllegalArgumentException("selector must not be null");
+        }
+        if (this.n.equals(sVar)) {
+            return;
+        }
+        this.n = sVar;
+        if (this.K) {
+            p4.y yVar = this.f;
+            c cVar = this.h;
+            yVar.h(cVar);
+            yVar.a(sVar, cVar, 1);
+        }
+        f();
+    }
+
+    public final void i(int i10) {
+        if (i10 == 0) {
+            setTitle(R.string.mr_chooser_title);
+            this.H.setVisibility(8);
+            this.v.setVisibility(0);
+            this.G.setVisibility(0);
+            this.E.setVisibility(8);
+            this.F.setVisibility(8);
+            this.y.setVisibility(8);
+            this.w.setVisibility(8);
+            return;
+        }
+        if (i10 == 1) {
+            setTitle(R.string.mr_chooser_title);
+            this.H.setVisibility(0);
+            this.v.setVisibility(8);
+            this.G.setVisibility(8);
+            this.E.setVisibility(8);
+            this.F.setVisibility(8);
+            this.y.setVisibility(8);
+            this.w.setVisibility(8);
+            return;
+        }
+        if (i10 == 2) {
+            setTitle(R.string.mr_chooser_title);
+            this.H.setVisibility(8);
+            this.v.setVisibility(8);
+            this.G.setVisibility(0);
+            this.E.setVisibility(8);
+            this.F.setVisibility(8);
+            this.y.setVisibility(4);
+            this.w.setVisibility(0);
+            return;
+        }
+        if (i10 != 3) {
+            return;
+        }
+        setTitle(R.string.mr_chooser_zero_routes_found_title);
+        this.H.setVisibility(8);
+        this.v.setVisibility(8);
+        this.G.setVisibility(8);
+        this.E.setVisibility(0);
+        this.F.setVisibility(0);
+        this.y.setVisibility(0);
+        this.w.setVisibility(0);
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.K = true;
+        this.f.a(this.n, this.h, 1);
+        f();
+        ab.o0 o0Var = this.M;
+        o0Var.removeMessages(2);
+        o0Var.removeMessages(3);
+        o0Var.removeMessages(1);
+        o0Var.sendMessageDelayed(o0Var.obtainMessage(2), 5000L);
+    }
+
+    @Override // g.t, androidx.activity.n, android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        String string;
+        boolean z10;
+        super.onCreate(bundle);
+        setContentView(R.layout.mr_chooser_dialog);
+        this.r = new ArrayList();
+        this.I = new d(getContext(), this.r);
+        this.s = (TextView) findViewById(R.id.mr_chooser_title);
+        this.v = (TextView) findViewById(R.id.mr_chooser_searching);
+        this.w = (RelativeLayout) findViewById(R.id.mr_chooser_wifi_warning_container);
+        this.x = (TextView) findViewById(R.id.mr_chooser_wifi_warning_description);
+        this.y = (TextView) findViewById(R.id.mr_chooser_wifi_learn_more);
+        this.E = (LinearLayout) findViewById(R.id.mr_chooser_ok_button_container);
+        this.F = (Button) findViewById(R.id.mr_chooser_ok_button);
+        this.G = (ProgressBar) findViewById(R.id.mr_chooser_search_progress_bar);
+        Context context = getContext();
+        boolean z11 = false;
+        int i10 = 1;
+        if (v7.y.a == null) {
+            if (!v7.y.c(context)) {
+                PackageManager packageManager = context.getPackageManager();
+                if (v7.y.e == null) {
+                    v7.y.e = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
                 }
-            case 5:
-                if (isInitialStickyBroadcast()) {
-                    return;
+                if (!v7.y.e.booleanValue() && !v7.y.a(context) && !v7.y.d(context)) {
+                    z10 = true;
+                    v7.y.a = Boolean.valueOf(z10);
                 }
-                e7 e7Var = (e7) this.b;
-                e7Var.a(k2.b.b(context, intent, (b2.e) e7Var.j, (a4.l) e7Var.i));
-                return;
-            case 6:
-                if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
-                    ((n4.j) ((m2.t) ((m4.l0) this.b).k.c).b).a.dispatchMediaButtonEvent(keyEvent);
-                    return;
+            }
+            z10 = false;
+            v7.y.a = Boolean.valueOf(z10);
+        }
+        if (!v7.y.a.booleanValue()) {
+            if (v7.y.c == null) {
+                SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+                if (Build.VERSION.SDK_INT >= 30 && sensorManager != null && sensorManager.getDefaultSensor(36) != null) {
+                    z11 = true;
                 }
-                return;
-            case 7:
-                rg rgVar = new rg(this, 22);
-                if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((sk) this.b).r.postDelayed(rgVar, 1000L);
-                    return;
+                v7.y.c = Boolean.valueOf(z11);
+            }
+            if (!v7.y.c.booleanValue()) {
+                if (v7.y.c(context) || v7.y.b(context.getResources())) {
+                    string = context.getString(R.string.mr_chooser_wifi_warning_description_tablet);
+                } else if (v7.y.d(context)) {
+                    string = context.getString(R.string.mr_chooser_wifi_warning_description_tv);
                 } else {
-                    rgVar.run();
-                    return;
-                }
-            case 8:
-                ((s0) this.b).c();
-                return;
-            default:
-                if ("PIP_CUSTOM_EVENT".equals(intent.getAction())) {
-                    String stringExtra = intent.getStringExtra("source_id");
-                    intent.getIntExtra("action_id", -1);
-                    ArrayList arrayList = (ArrayList) ((qf.c) this.b).c.get(stringExtra);
-                    if (arrayList == null) {
-                        return;
+                    PackageManager packageManager2 = context.getPackageManager();
+                    if (v7.y.e == null) {
+                        v7.y.e = Boolean.valueOf(packageManager2.hasSystemFeature("android.hardware.type.watch"));
                     }
-                    Iterator it = arrayList.iterator();
-                    if (it.hasNext()) {
-                        throw a1.g.k(it);
-                    }
-                    return;
+                    string = v7.y.e.booleanValue() ? context.getString(R.string.mr_chooser_wifi_warning_description_watch) : v7.y.a(context) ? context.getString(R.string.mr_chooser_wifi_warning_description_car) : context.getString(R.string.mr_chooser_wifi_warning_description_unknown);
                 }
-                return;
+                this.x.setText(string);
+                this.y.setMovementMethod(LinkMovementMethod.getInstance());
+                this.F.setOnClickListener(new ah.g0(this, i10));
+                ListView listView = (ListView) findViewById(R.id.mr_chooser_list);
+                this.H = listView;
+                listView.setAdapter((ListAdapter) this.I);
+                this.H.setOnItemClickListener(this.I);
+                this.H.setEmptyView(findViewById(android.R.id.empty));
+                getWindow().setLayout(v7.z.a(getContext()), -2);
+                getContext().registerReceiver(this.J, new IntentFilter("android.intent.action.SCREEN_OFF"));
+            }
         }
+        string = context.getString(R.string.mr_chooser_wifi_warning_description_phone);
+        this.x.setText(string);
+        this.y.setMovementMethod(LinkMovementMethod.getInstance());
+        this.F.setOnClickListener(new ah.g0(this, i10));
+        ListView listView2 = (ListView) findViewById(R.id.mr_chooser_list);
+        this.H = listView2;
+        listView2.setAdapter((ListAdapter) this.I);
+        this.H.setOnItemClickListener(this.I);
+        this.H.setEmptyView(findViewById(android.R.id.empty));
+        getWindow().setLayout(v7.z.a(getContext()), -2);
+        getContext().registerReceiver(this.J, new IntentFilter("android.intent.action.SCREEN_OFF"));
     }
 
-    public /* synthetic */ g(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onDetachedFromWindow() {
+        this.K = false;
+        this.f.h(this.h);
+        ab.o0 o0Var = this.M;
+        o0Var.removeMessages(1);
+        o0Var.removeMessages(2);
+        o0Var.removeMessages(3);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // g.t, android.app.Dialog
+    public final void setTitle(CharSequence charSequence) {
+        this.s.setText(charSequence);
+    }
+
+    @Override // g.t, android.app.Dialog
+    public final void setTitle(int i10) {
+        this.s.setText(i10);
     }
 }

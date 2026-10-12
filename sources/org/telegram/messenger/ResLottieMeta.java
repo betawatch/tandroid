@@ -4,14 +4,14 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class ResLottieMeta {
     private static final String ASSET_NAME = "lottie_meta.bin";
     private static final int ENTRY_SIZE = 8;
     public static final long NOT_FOUND = -1;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class Holder {
         private static final long[] DATA = ResLottieMeta.load();
 
@@ -28,13 +28,13 @@ public final class ResLottieMeta {
         int i11 = 0;
         while (i11 <= length) {
             int i12 = (i11 + length) >>> 1;
-            long j3 = jArr[i12];
-            int resIdOf = resIdOf(j3);
+            long j10 = jArr[i12];
+            int resIdOf = resIdOf(j10);
             if (resIdOf < i10) {
                 i11 = i12 + 1;
             } else {
                 if (resIdOf <= i10) {
-                    return j3;
+                    return j10;
                 }
                 length = i12 - 1;
             }
@@ -42,16 +42,16 @@ public final class ResLottieMeta {
         return -1L;
     }
 
-    public static int fpsOf(long j3) {
-        return (int) ((j3 >>> 24) & 255);
+    public static int fpsOf(long j10) {
+        return (int) ((j10 >>> 24) & 255);
     }
 
-    public static int frameCountOf(long j3) {
-        return (int) (j3 & 8388607);
+    public static int frameCountOf(long j10) {
+        return (int) (j10 & 8388607);
     }
 
-    public static boolean isMonoColorOf(long j3) {
-        return (j3 & 8388608) != 0;
+    public static boolean isMonoColorOf(long j10) {
+        return (j10 & 8388608) != 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -73,17 +73,17 @@ public final class ResLottieMeta {
                 return jArr;
             } finally {
             }
-        } catch (IOException e7) {
-            throw new RuntimeException("Unable to load lottie_meta.bin", e7);
-        } catch (RuntimeException e10) {
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to load lottie_meta.bin", e);
+        } catch (RuntimeException e7) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("Unable to load lottie_meta.bin", e10);
+                FileLog.e("Unable to load lottie_meta.bin", e7);
             }
-            throw e10;
+            throw e7;
         }
     }
 
-    public static int resIdOf(long j3) {
-        return (int) (j3 >>> 32);
+    public static int resIdOf(long j10) {
+        return (int) (j10 >>> 32);
     }
 }

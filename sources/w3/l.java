@@ -1,21 +1,23 @@
 package w3;
 
-import c3.h0;
+import b2.x;
 import c3.i0;
+import c3.j0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class l {
-    public final q a;
-    public final t b;
-    public final h0 c;
-    public final i0 d;
+    public final r a;
+    public final u b;
+    public final i0 c;
+    public final j0 d;
     public int e;
+    public x f;
 
-    public l(q qVar, t tVar, h0 h0Var) {
-        this.a = qVar;
-        this.b = tVar;
-        this.c = h0Var;
-        this.d = "audio/true-hd".equals(qVar.g.r) ? new i0() : null;
+    public l(r rVar, u uVar, i0 i0Var) {
+        this.a = rVar;
+        this.b = uVar;
+        this.c = i0Var;
+        this.d = "audio/true-hd".equals(rVar.g.s) ? new j0() : null;
     }
 }

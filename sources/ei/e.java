@@ -1,56 +1,40 @@
 package ei;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_payments;
+import android.app.Activity;
+import android.view.ViewGroup;
+import ci.u;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.z61;
+import s4.b1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+public final class e extends z61 {
+    public final /* synthetic */ i N;
 
-    public /* synthetic */ e(l lVar, int i10) {
-        this.a = i10;
-        this.b = lVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e(i iVar, mm0 mm0Var, Activity activity, int i10, int i11, u uVar, c6 c6Var) {
+        super(mm0Var, activity, i10, i11, true, uVar, c6Var);
+        this.N = iVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                l lVar = this.b;
-                lVar.T.f(lVar.Y.end_date == 0 ? null : xg.l.f((r2 - lVar.getConnectionsManager().getCurrentTime()) * 1000), true);
-                if (lVar.Y.end_date != 0 && lVar.b0) {
-                    AndroidUtilities.runOnUIThread(lVar.V, 1000L);
-                    break;
-                }
-                break;
-            case 1:
-                TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
-                l lVar2 = this.b;
-                updatestarrefprogram.bot = lVar2.getMessagesController().getInputUser(lVar2.P);
-                TL_payments.starRefProgram starrefprogram = lVar2.Y;
-                updatestarrefprogram.commission_permille = starrefprogram.commission_permille;
-                int i10 = starrefprogram.duration_months;
-                updatestarrefprogram.duration_months = i10;
-                if (i10 > 0) {
-                    updatestarrefprogram.flags |= 1;
-                    starrefprogram.duration_months = i10 | 1;
-                } else {
-                    updatestarrefprogram.flags &= -2;
-                    starrefprogram.duration_months = i10 & (-2);
-                }
-                org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(lVar2.getParentActivity(), 3, null);
-                b2Var.q(150L);
-                lVar2.getConnectionsManager().sendRequest(updatestarrefprogram, new b(lVar2, b2Var, 1));
-                break;
-            default:
-                l lVar3 = this.b;
-                of.f.s(lVar3.getParentActivity(), LocaleController.getString((lVar3.W || lVar3.Y.end_date != 0) ? R.string.AffiliateProgramUpdateInfoLink : R.string.AffiliateProgramStartInfoLink));
-                break;
+    @Override // org.telegram.ui.Components.z61, s4.g0
+    public final b1 x(ViewGroup viewGroup, int i10) {
+        c6 c6Var;
+        if (i10 != 42) {
+            return super.x(viewGroup, i10);
         }
+        i iVar = this.N;
+        Activity parentActivity = iVar.getParentActivity();
+        int i11 = g6.L6;
+        c6Var = ((m2) iVar).resourceProvider;
+        m4 m4Var = new m4(parentActivity, i11, 21, 0, false, c6Var);
+        m4Var.setHeight(25);
+        return new wl0(m4Var);
     }
 }

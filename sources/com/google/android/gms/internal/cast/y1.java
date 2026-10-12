@@ -4,7 +4,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class y1 extends f5 {
     private static final y1 zzb;
@@ -24,11 +24,11 @@ public final class y1 extends f5 {
     }
 
     public y1() {
-        f6 f6Var = f6.d;
-        this.zzh = f6Var;
-        this.zzi = f6Var;
-        this.zzj = f6Var;
-        this.zzk = f6Var;
+        g6 g6Var = g6.d;
+        this.zzh = g6Var;
+        this.zzi = g6Var;
+        this.zzj = g6Var;
+        this.zzk = g6Var;
     }
 
     public static x1 l() {
@@ -40,9 +40,9 @@ public final class y1 extends f5 {
         y1Var.zzd |= 1;
     }
 
-    public static /* synthetic */ void n(y1 y1Var, long j3) {
+    public static /* synthetic */ void n(y1 y1Var, long j10) {
         y1Var.zzd |= 2;
-        y1Var.zzf = j3;
+        y1Var.zzf = j10;
     }
 
     public static void o(y1 y1Var, ArrayList arrayList) {
@@ -62,12 +62,12 @@ public final class y1 extends f5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String i11 = hg.c.i(list.size() - size, "Element at index ", " is null.");
+                String j10 = i2.d.j(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
                     if (size3 < size) {
-                        throw new NullPointerException(i11);
+                        throw new NullPointerException(j10);
                     }
                     list.remove(size3);
                 }
@@ -94,12 +94,12 @@ public final class y1 extends f5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String i11 = hg.c.i(list.size() - size, "Element at index ", " is null.");
+                String j10 = i2.d.j(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
                     if (size3 < size) {
-                        throw new NullPointerException(i11);
+                        throw new NullPointerException(j10);
                     }
                     list.remove(size3);
                 }
@@ -126,12 +126,12 @@ public final class y1 extends f5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String i11 = hg.c.i(list.size() - size, "Element at index ", " is null.");
+                String j10 = i2.d.j(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
                     if (size3 < size) {
-                        throw new NullPointerException(i11);
+                        throw new NullPointerException(j10);
                     }
                     list.remove(size3);
                 }
@@ -158,12 +158,12 @@ public final class y1 extends f5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String i11 = hg.c.i(list.size() - size, "Element at index ", " is null.");
+                String j10 = i2.d.j(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
                     if (size3 < size) {
-                        throw new NullPointerException(i11);
+                        throw new NullPointerException(j10);
                     }
                     list.remove(size3);
                 }
@@ -180,7 +180,7 @@ public final class y1 extends f5 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new g6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0004\u0000\u0001ဉ\u0000\u0002စ\u0001\u0003᠌\u0002\u0004\u001b\u0005\u001b\u0006\u001b\u0007\u001b", new Object[]{"zzd", "zze", "zzf", "zzg", z0.v, "zzh", w1.class, "zzi", u1.class, "zzj", c2.class, "zzk", a2.class});
+            return new h6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0004\u0000\u0001ဉ\u0000\u0002စ\u0001\u0003᠌\u0002\u0004\u001b\u0005\u001b\u0006\u001b\u0007\u001b", new Object[]{"zzd", "zze", "zzf", "zzg", z0.v, "zzh", w1.class, "zzi", u1.class, "zzj", c2.class, "zzk", a2.class});
         }
         if (i11 == 3) {
             return new y1();

@@ -9,12 +9,12 @@ import java.util.function.DoubleConsumer;
 public final class g7 extends x6 implements j$.util.u0 {
     @Override // j$.util.Spliterator
     public final /* synthetic */ void forEachRemaining(Consumer consumer) {
-        j$.com.android.tools.r8.a.i(this, consumer);
+        j$.com.android.tools.r8.a.h(this, consumer);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean tryAdvance(Consumer consumer) {
-        return j$.com.android.tools.r8.a.z(this, consumer);
+        return j$.com.android.tools.r8.a.y(this, consumer);
     }
 
     @Override // j$.util.stream.x6
@@ -53,12 +53,12 @@ public final class g7 extends x6 implements j$.util.u0 {
         boolean a2 = a();
         if (a2) {
             m6 m6Var = (m6) this.h;
-            long j3 = this.g;
-            int k10 = m6Var.k(j3);
+            long j10 = this.g;
+            int k10 = m6Var.k(j10);
             if (m6Var.c == 0 && k10 == 0) {
-                d = ((double[]) m6Var.e)[(int) j3];
+                d = ((double[]) m6Var.e)[(int) j10];
             } else {
-                d = ((double[][]) m6Var.f)[k10][(int) (j3 - m6Var.d[k10])];
+                d = ((double[][]) m6Var.f)[k10][(int) (j10 - m6Var.d[k10])];
             }
             doubleConsumer.accept(d);
         }

@@ -1,27 +1,82 @@
 package y9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final class k implements ia.d {
-    public static final k a = new k();
-    public static final ia.c b = ia.c.c("execution");
-    public static final ia.c c = ia.c.c("customAttributes");
-    public static final ia.c d = ia.c.c("internalKeys");
-    public static final ia.c e = ia.c.c("background");
-    public static final ia.c f = ia.c.c("currentProcessDetails");
-    public static final ia.c g = ia.c.c("appProcessDetails");
-    public static final ia.c h = ia.c.c("uiOrientation");
+import android.util.Log;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
 
-    @Override // ia.a
-    public final void a(Object obj, Object obj2) {
-        ia.e eVar = (ia.e) obj2;
-        m0 m0Var = (m0) ((u1) obj);
-        eVar.a(b, m0Var.a);
-        eVar.a(c, m0Var.b);
-        eVar.a(d, m0Var.c);
-        eVar.a(e, m0Var.d);
-        eVar.a(f, m0Var.e);
-        eVar.a(g, m0Var.f);
-        eVar.e(h, m0Var.g);
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class k implements c {
+    public static final Charset c = Charset.forName("UTF-8");
+    public final File a;
+    public j b;
+
+    public k(File file) {
+        this.a = file;
+    }
+
+    @Override // y9.c
+    public final void a() {
+        x9.h.c(this.b, "There was a problem closing the Crashlytics log file.");
+        this.b = null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0085 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:5:0x0070  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x007d  */
+    @Override // y9.c
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String e() {
+        ic.a aVar;
+        byte[] bArr;
+        File file = this.a;
+        if (file.exists()) {
+            if (this.b == null) {
+                try {
+                    this.b = new j(file);
+                } catch (IOException e) {
+                    Log.e("FirebaseCrashlytics", "Could not open log file: " + file, e);
+                }
+            }
+            j jVar = this.b;
+            if (jVar != null) {
+                int[] iArr = {0};
+                int i10 = 16;
+                if (jVar.c != 0) {
+                    g gVar = jVar.e;
+                    int i11 = gVar.a;
+                    int i12 = gVar.b;
+                    int i13 = jVar.d.a;
+                    i10 = i11 >= i13 ? 16 + (i11 - i13) + 4 + i12 : (((i11 + 4) + i12) + jVar.b) - i13;
+                }
+                byte[] bArr2 = new byte[i10];
+                try {
+                    jVar.a(new e(bArr2, iArr));
+                } catch (IOException e7) {
+                    Log.e("FirebaseCrashlytics", "A problem occurred while reading the Crashlytics log file.", e7);
+                }
+                aVar = new ic.a(bArr2, iArr[0]);
+                if (aVar != null) {
+                    bArr = null;
+                } else {
+                    int i14 = aVar.b;
+                    bArr = new byte[i14];
+                    System.arraycopy(aVar.a, 0, bArr, 0, i14);
+                }
+                if (bArr == null) {
+                    return new String(bArr, c);
+                }
+                return null;
+            }
+        }
+        aVar = null;
+        if (aVar != null) {
+        }
+        if (bArr == null) {
+        }
     }
 }

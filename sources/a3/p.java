@@ -5,7 +5,7 @@ import android.graphics.SurfaceTexture;
 import android.os.Build;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class p extends Surface {
     public static int d;
@@ -21,26 +21,26 @@ public final class p extends Surface {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0048 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x003a A[Catch: k -> 0x0046, TRY_LEAVE, TryCatch #0 {k -> 0x0046, blocks: (B:3:0x0001, B:7:0x003a, B:16:0x000d, B:18:0x0018, B:22:0x0025, B:25:0x0032), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x003a A[Catch: m -> 0x0046, TRY_LEAVE, TryCatch #0 {m -> 0x0046, blocks: (B:3:0x0001, B:7:0x003a, B:16:0x000d, B:18:0x0018, B:22:0x0025, B:25:0x0032), top: B:2:0x0001 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static int a(Context context) {
-        boolean j3;
+        boolean d10;
         try {
             int i10 = Build.VERSION.SDK_INT;
             if (i10 >= 24 && ((i10 >= 26 || (!"samsung".equals(Build.MANUFACTURER) && !"XT1650".equals(Build.MODEL))) && (i10 >= 26 || context.getPackageManager().hasSystemFeature("android.hardware.vr.high_performance")))) {
-                j3 = e2.a.j("EGL_EXT_protected_content");
-                if (j3) {
+                d10 = e2.e.d("EGL_EXT_protected_content");
+                if (d10) {
                     return 0;
                 }
-                return e2.a.j("EGL_KHR_surfaceless_context") ? 1 : 2;
+                return e2.e.d("EGL_KHR_surfaceless_context") ? 1 : 2;
             }
-            j3 = false;
-            if (j3) {
+            d10 = false;
+            if (d10) {
             }
-        } catch (e2.k e7) {
-            e2.a.e("PlaceholderSurface", "Failed to determine secure mode due to GL error: " + e7.getMessage());
+        } catch (e2.m e7) {
+            e2.a.c("PlaceholderSurface", "Failed to determine secure mode due to GL error: " + e7.getMessage());
             return 0;
         }
     }

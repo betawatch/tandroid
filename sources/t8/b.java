@@ -1,79 +1,145 @@
 package t8;
 
-import android.content.Context;
-import android.util.Log;
-import com.google.android.gms.internal.vision.u2;
+import android.os.Bundle;
+import android.os.Parcel;
+import e9.k0;
+import e9.n0;
+import j$.util.DesugarCollections;
+import java.io.File;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import n4.s;
+import org.telegram.messenger.AndroidUtilities;
+import rg.b0;
+import v7.e;
+import x7.z;
+import z3.m;
+import z3.n;
+import z7.w;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b {
-    public int a;
-    public int b;
-    public boolean c;
-    public final Object d;
-
-    public b(Context context) {
-        this.a = 0;
-        this.c = true;
-        this.b = 0;
-        this.d = context;
+public abstract /* synthetic */ class b {
+    public static z3.c a(n nVar, byte[] bArr, int i10) {
+        k0 t10 = n0.t();
+        nVar.u0(bArr, 0, i10, m.c, new b0(t10, 23));
+        return new z3.c(t10.f());
     }
 
-    public c a() {
-        boolean z10;
-        u8.b bVar = new u8.b();
-        int i10 = this.b;
-        bVar.a = i10;
-        int i11 = this.a;
-        bVar.b = i11;
-        boolean z11 = false;
-        bVar.c = 0;
-        bVar.d = false;
-        bVar.e = this.c;
-        bVar.f = -1.0f;
-        if (i10 == 2 || i11 != 2) {
-            z10 = true;
-        } else {
-            Log.e("FaceDetector", "Contour is not supported for non-SELFIE mode.");
-            z10 = false;
+    public static /* synthetic */ int b(int i10) {
+        int i11 = 1;
+        if (i10 != 1) {
+            i11 = 2;
+            if (i10 != 2) {
+                i11 = 3;
+                if (i10 != 3) {
+                    if (i10 == 4) {
+                        return 4;
+                    }
+                    throw null;
+                }
+            }
         }
-        if (bVar.b == 2 && bVar.c == 1) {
-            Log.e("FaceDetector", "Classification is not supported with contour.");
-        } else {
-            z11 = z10;
-        }
-        if (z11) {
-            return new c(new u2((Context) this.d, bVar));
-        }
-        throw new IllegalArgumentException("Invalid build options");
+        return i11;
     }
 
-    public void b(int i10) {
-        if (i10 == 0 || i10 == 1 || i10 == 2) {
-            this.a = i10;
-            return;
-        }
-        StringBuilder sb2 = new StringBuilder(34);
-        sb2.append("Invalid landmark type: ");
-        sb2.append(i10);
-        throw new IllegalArgumentException(sb2.toString());
+    public static float c(float f7, float f10, float f11, float f12) {
+        return (f7 * f10) + f11 + f12;
     }
 
-    public void c(int i10) {
-        if (i10 == 0 || i10 == 1 || i10 == 2) {
-            this.b = i10;
-            return;
-        }
-        StringBuilder sb2 = new StringBuilder(25);
-        sb2.append("Invalid mode: ");
-        sb2.append(i10);
-        throw new IllegalArgumentException(sb2.toString());
+    public static int d(Float f7, float f10) {
+        return AndroidUtilities.dp(f7.floatValue() * f10);
     }
 
-    public b(ef.a... aVarArr) {
-        this.a = -1;
-        this.b = -1;
-        this.c = false;
-        this.d = aVarArr;
+    public static Bundle e(long j10, String str) {
+        Bundle bundle = new Bundle();
+        bundle.putLong(str, j10);
+        return bundle;
+    }
+
+    public static ja.c f(int i10, s sVar) {
+        z7.s sVar2 = new z7.s(i10);
+        if (((HashMap) sVar.c) == null) {
+            sVar.c = new HashMap();
+        }
+        ((HashMap) sVar.c).put(w.class, sVar2);
+        return new ja.c((String) sVar.b, ((HashMap) sVar.c) == null ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(new HashMap((HashMap) sVar.c)));
+    }
+
+    public static Object g(int i10, List list) {
+        return list.get(list.size() - i10);
+    }
+
+    public static String h(String str, String str2) {
+        return str + str2;
+    }
+
+    public static StringBuilder i(String str, String str2) {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(str);
+        sb2.append(str2);
+        return sb2;
+    }
+
+    public static UnsupportedOperationException j(Parcel parcel) {
+        f8.a.b(parcel);
+        return new UnsupportedOperationException();
+    }
+
+    public static HashMap k(Class cls, e eVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put(cls, eVar);
+        return hashMap;
+    }
+
+    public static HashMap l(Class cls, w7.a aVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put(cls, aVar);
+        return hashMap;
+    }
+
+    public static HashMap m(Class cls, z zVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put(cls, zVar);
+        return hashMap;
+    }
+
+    public static HashMap n(Class cls, z7.s sVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put(cls, sVar);
+        return hashMap;
+    }
+
+    public static e o(int i10, HashMap hashMap) {
+        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
+        return new e(i10);
+    }
+
+    public static w7.a p(int i10, HashMap hashMap) {
+        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
+        return new w7.a(i10);
+    }
+
+    public static z q(int i10, HashMap hashMap) {
+        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
+        return new z(i10);
+    }
+
+    public static z7.s r(int i10, HashMap hashMap) {
+        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
+        return new z7.s(i10);
+    }
+
+    public static void s(HashMap hashMap) {
+        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
+    }
+
+    public static boolean t(String str) {
+        return new File(str).exists();
+    }
+
+    public static String u(String str, String str2) {
+        return str + str2;
     }
 }

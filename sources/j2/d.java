@@ -1,17 +1,17 @@
 package j2;
 
-import ai.v7;
 import android.content.SharedPreferences;
 import android.widget.EditText;
-import e2.m;
-import e2.v;
+import bi.g7;
+import e2.o;
+import e2.x;
 import java.util.List;
-import m4.a1;
-import m4.b0;
-import m4.b1;
+import m4.f0;
 import m4.f1;
-import m4.r;
-import m4.y0;
+import m4.h1;
+import m4.j1;
+import m4.n1;
+import m4.w;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
@@ -24,83 +24,96 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.bw0;
-import z3.n;
+import org.telegram.ui.ActionBar.z1;
+import org.telegram.ui.Components.xv0;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements m, y0, a1, RequestDelegateTimestamp, a2, MessagesStorage.StringCallback, e2.h {
+public final /* synthetic */ class d implements o, f1, h1, RequestDelegateTimestamp, z1, MessagesStorage.StringCallback, e2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ d(long j3, int i10, Object obj, int i11) {
+    public /* synthetic */ d(long j10, int i10, Object obj, int i11) {
         this.a = i11;
-        this.c = j3;
+        this.c = j10;
         this.b = i10;
         this.d = obj;
     }
 
-    @Override // e2.h
+    @Override // e2.j
     public void accept(Object obj) {
-        n nVar = (n) this.d;
-        z3.a aVar = (z3.a) obj;
-        e2.d.h(nVar.h);
-        byte[] l32 = na.d.l3(aVar.a, aVar.c);
-        v vVar = nVar.c;
-        vVar.getClass();
-        vVar.H(l32.length, l32);
-        nVar.a.d(l32.length, vVar);
-        long j3 = aVar.b;
-        long j10 = this.c;
-        if (j3 == -9223372036854775807L) {
-            e2.d.g(nVar.h.w == Long.MAX_VALUE);
+        z3.o oVar = (z3.o) this.d;
+        z3.b bVar = (z3.b) obj;
+        oVar.h.getClass();
+        byte[] s22 = sb.a.s2(bVar.a, bVar.c);
+        x xVar = oVar.c;
+        xVar.getClass();
+        xVar.L(s22.length, s22);
+        oVar.a.d(s22.length, xVar);
+        long j10 = bVar.b;
+        long j11 = this.c;
+        if (j10 == -9223372036854775807L) {
+            u6.p(oVar.h.x == Long.MAX_VALUE);
         } else {
-            long j11 = nVar.h.w;
-            j10 = j11 == Long.MAX_VALUE ? j10 + j3 : j3 + j11;
+            long j12 = oVar.h.x;
+            j11 = j12 == Long.MAX_VALUE ? j11 + j10 : j10 + j12;
         }
-        nVar.a.c(j10, this.b | 1, l32.length, 0, null);
+        oVar.a.c(j11, this.b | 1, s22.length, 0, null);
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(b2 b2Var, int i10) {
+    @Override // m4.h1
+    public Object c(f0 f0Var, w wVar, int i10) {
+        List list = (List) this.d;
+        int i11 = this.b;
+        return f0Var.q(wVar, list, i11 == -1 ? f0Var.t.n0() : i11, i11 == -1 ? f0Var.t.M0() : this.c);
+    }
+
+    @Override // m4.f1
+    public void e(n1 n1Var, w wVar) {
+        j1 j1Var = (j1) this.d;
+        n1Var.r(j1Var.K0(wVar, n1Var, this.b), this.c);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(a2 a2Var, int i10) {
         int i11 = this.a;
         Object obj = this.d;
         int i12 = this.b;
-        long j3 = this.c;
+        long j10 = this.c;
         switch (i11) {
             case 4:
                 EditText editText = (EditText) obj;
-                if (j3 > 0) {
+                if (j10 > 0) {
                     TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
                     String trim = editText.getText().toString().replace("\n", " ").replaceAll(" +", " ").trim();
                     if (userFull != null) {
                         String str = userFull.about;
                         if ((str != null ? str : "").equals(trim)) {
                             AndroidUtilities.hideKeyboard(editText);
-                            b2Var.dismiss();
+                            a2Var.dismiss();
                             break;
                         } else {
                             userFull.about = trim;
-                            NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(j3), userFull);
+                            NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.userInfoDidLoad, Long.valueOf(j10), userFull);
                         }
                     }
                     TL_account.updateProfile updateprofile = new TL_account.updateProfile();
                     updateprofile.about = trim;
                     updateprofile.flags |= 4;
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j3));
-                    ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new v7(12), 2);
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j10));
+                    ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new g7(12), 2);
                 } else {
-                    long j10 = -j3;
-                    TLRPC.ChatFull chatFull = MessagesController.getInstance(i12).getChatFull(j10);
+                    long j11 = -j10;
+                    TLRPC.ChatFull chatFull = MessagesController.getInstance(i12).getChatFull(j11);
                     String obj2 = editText.getText().toString();
                     if (chatFull != null) {
                         String str2 = chatFull.about;
                         if ((str2 != null ? str2 : "").equals(obj2)) {
                             AndroidUtilities.hideKeyboard(editText);
-                            b2Var.dismiss();
+                            a2Var.dismiss();
                             break;
                         } else {
                             chatFull.about = obj2;
@@ -110,16 +123,16 @@ public final /* synthetic */ class d implements m, y0, a1, RequestDelegateTimest
                             notificationCenter.lambda$postNotificationNameOnUIThread$1(i13, chatFull, 0, bool, bool);
                         }
                     }
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j3));
-                    MessagesController.getInstance(i12).updateChatAbout(j10, obj2, chatFull);
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j10));
+                    MessagesController.getInstance(i12).updateChatAbout(j11, obj2, chatFull);
                 }
-                b2Var.dismiss();
+                a2Var.dismiss();
                 break;
             default:
                 Runnable runnable = (Runnable) obj;
                 SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(UserConfig.selectedAccount).edit();
-                if (j3 != 0) {
-                    edit.putInt("color_" + j3, 0);
+                if (j10 != 0) {
+                    edit.putInt("color_" + j10, 0);
                 } else if (i12 == 1) {
                     edit.putInt("MessagesLed", 0);
                 } else if (i12 == 0) {
@@ -140,52 +153,39 @@ public final /* synthetic */ class d implements m, y0, a1, RequestDelegateTimest
         }
     }
 
-    @Override // m4.y0
-    public void g(f1 f1Var, r rVar) {
-        b1 b1Var = (b1) this.d;
-        f1Var.s(b1Var.J0(rVar, f1Var, this.b), this.c);
-    }
-
-    @Override // m4.a1
-    public Object h(b0 b0Var, r rVar, int i10) {
-        List list = (List) this.d;
-        int i11 = this.b;
-        return b0Var.q(rVar, list, i11 == -1 ? b0Var.t.l0() : i11, i11 == -1 ? b0Var.t.J0() : this.c);
-    }
-
-    @Override // e2.m
+    @Override // e2.o
     public void invoke(Object obj) {
         ((b) obj).f((a) this.d, this.b, this.c);
     }
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        bw0.i((bw0) this.d, this.c, this.b, str);
+        xv0.i((xv0) this.d, this.c, this.b, str);
     }
 
-    public /* synthetic */ d(a aVar, int i10, long j3, long j10) {
+    public /* synthetic */ d(a aVar, int i10, long j10, long j11) {
         this.a = 0;
         this.d = aVar;
         this.b = i10;
-        this.c = j3;
+        this.c = j10;
     }
 
     @Override // org.telegram.tgnet.RequestDelegateTimestamp
-    public void run(TLObject tLObject, TLRPC.TL_error tL_error, long j3) {
-        ((VoIPService) this.d).lambda$createGroupInstance$78(this.b, this.c, tLObject, tL_error, j3);
+    public void run(TLObject tLObject, TLRPC.TL_error tL_error, long j10) {
+        ((VoIPService) this.d).lambda$createGroupInstance$78(this.b, this.c, tLObject, tL_error, j10);
     }
 
-    public /* synthetic */ d(Object obj, int i10, long j3, int i11) {
+    public /* synthetic */ d(Object obj, int i10, long j10, int i11) {
         this.a = i11;
         this.d = obj;
         this.b = i10;
-        this.c = j3;
+        this.c = j10;
     }
 
-    public /* synthetic */ d(Object obj, long j3, int i10, int i11) {
+    public /* synthetic */ d(Object obj, long j10, int i10, int i11) {
         this.a = i11;
         this.d = obj;
-        this.c = j3;
+        this.c = j10;
         this.b = i10;
     }
 }

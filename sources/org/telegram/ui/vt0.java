@@ -1,55 +1,86 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class vt0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wt0 b;
+public final class vt0 extends org.telegram.ui.Components.h81 {
+    public final /* synthetic */ PhotoViewer m0;
 
-    public vt0(wt0 wt0Var, int i10) {
-        this.b = wt0Var;
-        this.a = i10;
+    public vt0(PhotoViewer photoViewer) {
+        this.m0 = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.b.b.k8) {
-            PhotoViewer photoViewer = this.b.b;
-            if (photoViewer.r1) {
-                photoViewer.B3();
-            }
+    @Override // org.telegram.ui.Components.h81
+    public final void B() {
+        super.B();
+        PhotoViewer photoViewer = this.m0;
+        if (photoViewer.u4 == 0) {
+            PhotoViewer.Y(photoViewer, false);
         }
-        if (this.a == 3) {
-            PhotoViewer photoViewer2 = this.b.b;
-            photoViewer2.G2(photoViewer2.P4, false, true, true);
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        PhotoViewer photoViewer = this.b.b;
-        photoViewer.P0.setVisibility(0);
-        if (photoViewer.E3()) {
-            photoViewer.n0.setVisibility(0);
-        } else {
-            photoViewer.S0.setVisibility(0);
-        }
-        photoViewer.F.setVisibility(0);
-        if (photoViewer.i2) {
-            su0 su0Var = photoViewer.Q1;
-            su0Var.setVisibility(su0Var.getTag() != null ? 0 : 4);
-        }
-        if (photoViewer.d2 || photoViewer.e2) {
+        if (photoViewer.O8) {
             return;
         }
-        int i10 = photoViewer.c2;
-        if ((i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.g7.size() > 1)) && !photoViewer.f4) {
-            photoViewer.N0.setVisibility(0);
-            photoViewer.O0.setVisibility(0);
-            photoViewer.s3();
+        b5.d.D(n());
+        b5.d.x(false);
+    }
+
+    @Override // org.telegram.ui.Components.h81
+    public final void C() {
+        super.C();
+        PhotoViewer photoViewer = this.m0;
+        PhotoViewer.Y(photoViewer, true);
+        if (photoViewer.O8) {
+            return;
         }
+        b5.d.D(n());
+        b5.d.x(true);
+    }
+
+    @Override // org.telegram.ui.Components.h81
+    public final void K(long j10) {
+        L(j10, false);
+        PhotoViewer photoViewer = this.m0;
+        if (photoViewer.r1) {
+            PhotoViewer.Z(photoViewer, j10);
+        }
+        if (photoViewer.O8) {
+            return;
+        }
+        b5.d.D(j10);
+    }
+
+    @Override // org.telegram.ui.Components.h81
+    public final void Q(float f7) {
+        super.Q(f7);
+        if (this.m0.O8) {
+            return;
+        }
+        b5.d.z(f7);
+    }
+
+    @Override // org.telegram.ui.Components.h81, b2.e1
+    public final void onRenderedFirstFrame() {
+        b2.a1 h;
+        super.onRenderedFirstFrame();
+        PhotoViewer photoViewer = this.m0;
+        boolean z10 = true;
+        photoViewer.R = true;
+        if (photoViewer.D2) {
+            photoViewer.e0.invalidate();
+        }
+        photoViewer.z3();
+        if (!b5.d.u() && !photoViewer.r) {
+            z10 = false;
+        }
+        O(z10);
+        if (photoViewer.O8) {
+            return;
+        }
+        b5.d.D(n());
+        i2.h0 h0Var = this.d;
+        float f7 = 1.0f;
+        if (h0Var != null && (h = h0Var.h()) != null) {
+            f7 = h.a;
+        }
+        b5.d.z(f7);
     }
 }

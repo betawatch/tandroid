@@ -4,11 +4,11 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.e71;
-import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.h71;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -20,16 +20,16 @@ public final /* synthetic */ class m implements Runnable {
     }
 
     private final void a() {
-        a0 a0Var = (a0) this.b;
-        synchronized (a0Var) {
-            if (a0Var.a) {
+        z zVar = (z) this.b;
+        synchronized (zVar) {
+            if (zVar.a) {
                 return;
             }
-            a0Var.a = true;
-            Runnable runnable = a0Var.b;
+            zVar.a = true;
+            Runnable runnable = zVar.b;
             if (runnable != null) {
                 runnable.run();
-                a0Var.b = null;
+                zVar.b = null;
             }
         }
     }
@@ -39,16 +39,16 @@ public final /* synthetic */ class m implements Runnable {
         View d;
         switch (this.a) {
             case 0:
-                y yVar = (y) this.b;
-                synchronized (yVar) {
-                    if (yVar.a) {
+                x xVar = (x) this.b;
+                synchronized (xVar) {
+                    if (xVar.a) {
                         return;
                     }
-                    yVar.a = true;
-                    Runnable runnable = yVar.b;
+                    xVar.a = true;
+                    Runnable runnable = xVar.b;
                     if (runnable != null) {
                         runnable.run();
-                        yVar.b = null;
+                        xVar.b = null;
                     }
                     return;
                 }
@@ -56,14 +56,14 @@ public final /* synthetic */ class m implements Runnable {
                 a();
                 return;
             case 2:
-                ((h0) this.b).close();
+                ((g0) this.b).close();
                 return;
             case 3:
-                v0 v0Var = (v0) this.b;
-                v0Var.c("AUTH_CANCELED");
-                v0Var.e();
-                if (w7.f6.b == v0Var) {
-                    w7.f6.b = null;
+                u0 u0Var = (u0) this.b;
+                u0Var.c("AUTH_CANCELED");
+                u0Var.e();
+                if (w7.i6.b == u0Var) {
+                    w7.i6.b = null;
                     return;
                 }
                 return;
@@ -71,22 +71,22 @@ public final /* synthetic */ class m implements Runnable {
                 ((h2) this.b).dismiss();
                 return;
             case 5:
-                ((org.telegram.ui.Cells.w0) this.b).invalidate();
+                ((org.telegram.ui.Cells.x0) this.b).invalidate();
                 return;
             case 6:
-                AndroidUtilities.removeFromParent((ci.d4) this.b);
+                AndroidUtilities.removeFromParent((di.d4) this.b);
                 return;
             case 7:
                 v4 v4Var = (v4) this.b;
-                e71 e71Var = v4Var.c;
-                if (e71Var == null || e71Var.getScrollState() != 0) {
+                b71 b71Var = v4Var.c;
+                if (b71Var == null || b71Var.getScrollState() != 0) {
                     return;
                 }
-                k71 n02 = v4Var.j.n0();
+                h71 n02 = v4Var.j.n0();
                 if ((n02 == null || n02.getScrollState() == 0) && (d = v4Var.d(v4Var.c.V2)) != null) {
-                    s4.d0 d0Var = v4Var.c.V2;
-                    d0Var.getClass();
-                    int i10 = new int[]{0, s4.p0.z(d) - d0Var.F()}[1];
+                    s4.b0 b0Var = v4Var.c.V2;
+                    b0Var.getClass();
+                    int i10 = new int[]{0, s4.n0.z(d) - b0Var.F()}[1];
                     if (i10 != 0) {
                         v4Var.c.v0(0, i10, null);
                         return;
@@ -95,25 +95,25 @@ public final /* synthetic */ class m implements Runnable {
                 }
                 return;
             case 8:
-                ((d5) this.b).performClick();
+                ((c5) this.b).performClick();
                 return;
             case 9:
-                ((q5) this.b).performClick();
+                ((p5) this.b).performClick();
                 return;
             case 10:
                 ((WalletEngine2) this.b).lambda$close$53();
                 return;
             case 11:
-                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.b;
-                if (ad.a(n2Var)) {
-                    ad.a0(n2Var).M(LocaleController.getString(R.string.WalletCreated), LocaleController.getString(R.string.WalletCreatedInfo), R.raw.contact_check).j();
+                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.b;
+                if (zc.a(m2Var)) {
+                    zc.a0(m2Var).M(LocaleController.getString(R.string.WalletCreated), LocaleController.getString(R.string.WalletCreatedInfo), R.raw.contact_check).j();
                     return;
                 }
                 return;
             case 12:
-                p7 p7Var = (p7) this.b;
-                p7Var.removeSelfFromStack();
-                Runnable runnable2 = p7Var.f;
+                o7 o7Var = (o7) this.b;
+                o7Var.removeSelfFromStack();
+                Runnable runnable2 = o7Var.f;
                 if (runnable2 != null) {
                     runnable2.run();
                     return;
@@ -123,7 +123,7 @@ public final /* synthetic */ class m implements Runnable {
                 ((org.telegram.ui.Cells.u3) this.b).requestLayout();
                 return;
             case 14:
-                ad.a0((s8) this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                zc.a0((r8) this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 return;
             default:
                 ((z8) this.b).U();

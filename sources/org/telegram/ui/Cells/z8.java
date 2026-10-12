@@ -8,10 +8,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class z8 extends FrameLayout {
     public static Paint d;
@@ -27,13 +27,13 @@ public final class z8 extends FrameLayout {
         }
         TextView textView = new TextView(context);
         this.a = textView;
-        bi.u(textView, -14606047, 1, 16.0f, 1);
+        yh.t(textView, -14606047, 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setPadding(0, 0, 0, AndroidUtilities.dp(3.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.x5.a(-1.0f, z10 ? 21 : 57, 0.0f, z10 ? 57 : 21, 0.0f, -1, (z10 ? 5 : 3) | 48));
+        addView(textView, w7.a6.a(-1.0f, z10 ? 21 : 57, 0.0f, z10 ? 57 : 21, 0.0f, -1, (z10 ? 5 : 3) | 48));
     }
 
     @Override // android.view.View

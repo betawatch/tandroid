@@ -1,76 +1,62 @@
 package org.telegram.messenger;
 
-import android.text.Spannable;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ y4(Object obj, int i10, int i11, Serializable serializable, int i12) {
-        this.a = i12;
-        this.e = obj;
-        this.b = i10;
-        this.c = i11;
-        this.d = serializable;
+    public /* synthetic */ y4(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
+        this.a = i11;
+        this.d = obj;
+        this.e = tLObject;
+        this.b = z10;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((ImageLoader.5) this.e).lambda$fileDidFailedLoad$6((String) this.d, this.b, this.c);
+                ((ImageLoader.5) this.d).lambda$fileDidFailedUpload$4(this.c, (String) this.e, this.b);
                 break;
             case 1:
-                CodeHighlighting.lambda$highlight$5((Spannable) this.e, this.b, this.c, (String) this.d);
+                ((LocaleController) this.d).lambda$loadRemoteLanguages$11((Vector) this.e, this.b, this.c);
                 break;
             case 2:
-                ((MediaDataController) this.e).lambda$loadReactions$11((List) this.d, this.b, this.c);
+                ((MediaDataController) this.d).lambda$loadStickers$91(this.c, this.b, (Utilities.Callback) this.e);
                 break;
             case 3:
-                ((MediaDataController) this.e).lambda$putReactionsToCache$16((ArrayList) this.d, this.b, this.c);
-                break;
-            case 4:
-                ((MessagesController) this.e).lambda$getDifference$349((TLRPC.updates_Difference) this.d, this.b, this.c);
-                break;
-            case 5:
-                ((MessagesController.DialogPhotos) this.e).lambda$load$0((TLRPC.photos_Photos) this.d, this.b, this.c);
-                break;
-            case 6:
-                ((MessagesController.DialogPhotos) this.e).lambda$load$2((TLRPC.messages_Messages) this.d, this.b, this.c);
-                break;
-            case 7:
-                ((MessagesStorage) this.e).lambda$saveSecretParams$7(this.b, this.c, (byte[]) this.d);
+                ((MessagesStorage) this.d).lambda$loadUserInfo$129((TLRPC.User) this.e, this.b, this.c);
                 break;
             default:
-                ((NotificationCenter) this.e).lambda$postNotificationDebounced$2(this.b, (Object[]) this.d, this.c);
+                ((SendMessagesHelper) this.d).lambda$toggleTodo$36(this.c, this.b, (Runnable) this.e);
                 break;
         }
     }
 
-    public /* synthetic */ y4(Object obj, Object obj2, int i10, int i11, int i12) {
-        this.a = i12;
+    public /* synthetic */ y4(BaseController baseController, int i10, boolean z10, Object obj, int i11) {
+        this.a = i11;
+        this.d = baseController;
+        this.c = i10;
+        this.b = z10;
         this.e = obj;
-        this.d = obj2;
-        this.b = i10;
-        this.c = i11;
     }
 
-    public /* synthetic */ y4(NotificationCenter notificationCenter, int i10, Object[] objArr, int i11) {
-        this.a = 8;
-        this.e = notificationCenter;
-        this.b = i10;
-        this.d = objArr;
-        this.c = i11;
+    public /* synthetic */ y4(ImageLoader.5 r22, int i10, String str, boolean z10) {
+        this.a = 0;
+        this.d = r22;
+        this.c = i10;
+        this.e = str;
+        this.b = z10;
     }
 }

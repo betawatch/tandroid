@@ -1,7 +1,58 @@
 package u2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface g0 {
-    void a(a aVar, b2.k1 k1Var);
+public final class g0 {
+    public final Object a;
+    public final int b;
+    public final int c;
+    public final long d;
+    public final int e;
+
+    public g0(Object obj) {
+        this(obj, -1L);
+    }
+
+    public final g0 a(Object obj) {
+        if (this.a.equals(obj)) {
+            return this;
+        }
+        long j10 = this.d;
+        return new g0(this.b, this.c, this.e, j10, obj);
+    }
+
+    public final boolean b() {
+        return this.b != -1;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof g0)) {
+            return false;
+        }
+        g0 g0Var = (g0) obj;
+        return this.a.equals(g0Var.a) && this.b == g0Var.b && this.c == g0Var.c && this.d == g0Var.d && this.e == g0Var.e;
+    }
+
+    public final int hashCode() {
+        return ((((((((this.a.hashCode() + 527) * 31) + this.b) * 31) + this.c) * 31) + ((int) this.d)) * 31) + this.e;
+    }
+
+    public g0(Object obj, long j10) {
+        this(-1, -1, -1, j10, obj);
+    }
+
+    public g0(Object obj, long j10, int i10) {
+        this(-1, -1, i10, j10, obj);
+    }
+
+    public g0(int i10, int i11, int i12, long j10, Object obj) {
+        this.a = obj;
+        this.b = i10;
+        this.c = i11;
+        this.d = j10;
+        this.e = i12;
+    }
 }

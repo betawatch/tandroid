@@ -1,7 +1,34 @@
 package ad;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b {
-    public final /* synthetic */ int a;
+    public static final Pattern d = Pattern.compile("[ |\t]*([^/^ ^;^,]+/[^ ^;^,]+)", 2);
+    public static final Pattern e = Pattern.compile("[ |\t]*(charset)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
+    public static final Pattern f = Pattern.compile("[ |\t]*(boundary)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
+    public final String a;
+    public final String b;
+    public final String c;
+
+    public b(String str) {
+        this.a = str;
+        if (str != null) {
+            Matcher matcher = d.matcher(str);
+            this.b = matcher.find() ? matcher.group(1) : "";
+            Matcher matcher2 = e.matcher(str);
+            this.c = matcher2.find() ? matcher2.group(2) : null;
+        } else {
+            this.b = "";
+            this.c = "UTF-8";
+        }
+        if ("multipart/form-data".equalsIgnoreCase(this.b)) {
+            Matcher matcher3 = f.matcher(str);
+            if (matcher3.find()) {
+                matcher3.group(2);
+            }
+        }
+    }
 }

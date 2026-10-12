@@ -12,9 +12,9 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.messenger.beta.R;
 import w7.o6;
-import w7.s7;
+import w7.w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m extends Button implements u0.k {
     public final e2.c a;
@@ -24,8 +24,8 @@ public final class m extends Button implements u0.k {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public m(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, R.attr.buttonStyle);
-        b3.a(context);
-        a3.a(this, getContext());
+        c3.a(context);
+        b3.a(this, getContext());
         e2.c cVar = new e2.c(this);
         this.a = cVar;
         cVar.f(attributeSet, R.attr.buttonStyle);
@@ -115,7 +115,7 @@ public final class m extends Button implements u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return s7.d(super.getCustomSelectionActionModeCallback());
+        return w7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -239,7 +239,7 @@ public final class m extends Button implements u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(s7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(w7.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

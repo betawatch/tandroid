@@ -47,12 +47,12 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
         } else {
             Objects.requireNonNull(temporal, "temporal");
             try {
-                if (!j$.time.chrono.r.c.equals(j$.com.android.tools.r8.a.N(temporal))) {
+                if (!j$.time.chrono.r.c.equals(j$.com.android.tools.r8.a.M(temporal))) {
                     temporal = LocalDate.I(temporal);
                 }
                 of2 = of(temporal.j(j$.time.temporal.a.YEAR), temporal.j(j$.time.temporal.a.MONTH_OF_YEAR));
-            } catch (b e7) {
-                throw new b("Unable to obtain YearMonth from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e7);
+            } catch (b e) {
+                throw new b("Unable to obtain YearMonth from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
             }
         }
         if (qVar instanceof ChronoUnit) {
@@ -143,9 +143,9 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
     public int lengthOfMonth() {
         j J = j.J(this.b);
         j$.time.chrono.r rVar = j$.time.chrono.r.c;
-        long j3 = this.a;
+        long j10 = this.a;
         rVar.getClass();
-        return J.H(j$.time.chrono.r.k(j3));
+        return J.H(j$.time.chrono.r.k(j10));
     }
 
     @Override // j$.time.temporal.Temporal
@@ -156,38 +156,38 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: L, reason: merged with bridge method [inline-methods] */
-    public final YearMonth c(long j3, j$.time.temporal.o oVar) {
+    public final YearMonth c(long j10, j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return (YearMonth) oVar.q(this, j3);
+            return (YearMonth) oVar.q(this, j10);
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        aVar.w(j3);
+        aVar.w(j10);
         int i10 = s.a[aVar.ordinal()];
         if (i10 == 1) {
-            int i11 = (int) j3;
+            int i11 = (int) j10;
             j$.time.temporal.a.MONTH_OF_YEAR.w(i11);
             return K(this.a, i11);
         }
         if (i10 == 2) {
-            return I(j3 - G());
+            return I(j10 - G());
         }
         if (i10 == 3) {
             if (this.a < 1) {
-                j3 = 1 - j3;
+                j10 = 1 - j10;
             }
-            int i12 = (int) j3;
+            int i12 = (int) j10;
             j$.time.temporal.a.YEAR.w(i12);
             return K(i12, this.b);
         }
         if (i10 == 4) {
-            int i13 = (int) j3;
+            int i13 = (int) j10;
             j$.time.temporal.a.YEAR.w(i13);
             return K(i13, this.b);
         }
         if (i10 != 5) {
             throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
         }
-        if (y(j$.time.temporal.a.ERA) == j3) {
+        if (y(j$.time.temporal.a.ERA) == j10) {
             return this;
         }
         int i14 = 1 - this.a;
@@ -197,50 +197,50 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final YearMonth d(long j3, j$.time.temporal.q qVar) {
+    public final YearMonth d(long j10, j$.time.temporal.q qVar) {
         if (!(qVar instanceof ChronoUnit)) {
-            return (YearMonth) qVar.j(this, j3);
+            return (YearMonth) qVar.j(this, j10);
         }
         switch (s.b[((ChronoUnit) qVar).ordinal()]) {
             case 1:
-                return I(j3);
+                return I(j10);
             case 2:
-                return J(j3);
+                return J(j10);
             case 3:
-                return J(j$.com.android.tools.r8.a.T(j3, 10));
+                return J(j$.com.android.tools.r8.a.S(j10, 10));
             case 4:
-                return J(j$.com.android.tools.r8.a.T(j3, 100));
+                return J(j$.com.android.tools.r8.a.S(j10, 100));
             case 5:
-                return J(j$.com.android.tools.r8.a.T(j3, MediaDataController.MAX_STYLE_RUNS_COUNT));
+                return J(j$.com.android.tools.r8.a.S(j10, MediaDataController.MAX_STYLE_RUNS_COUNT));
             case 6:
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-                return c(j$.com.android.tools.r8.a.O(y(aVar), j3), aVar);
+                return c(j$.com.android.tools.r8.a.N(y(aVar), j10), aVar);
             default:
                 throw new j$.time.temporal.r("Unsupported unit: " + qVar);
         }
     }
 
-    public final YearMonth J(long j3) {
-        if (j3 == 0) {
+    public final YearMonth J(long j10) {
+        if (j10 == 0) {
             return this;
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
-        return K(aVar.b.a(this.a + j3, aVar), this.b);
+        return K(aVar.b.a(this.a + j10, aVar), this.b);
     }
 
-    public final YearMonth I(long j3) {
-        if (j3 == 0) {
+    public final YearMonth I(long j10) {
+        if (j10 == 0) {
             return this;
         }
-        long j10 = (this.a * 12) + (this.b - 1) + j3;
+        long j11 = (this.a * 12) + (this.b - 1) + j10;
         j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
-        long j11 = 12;
-        return K(aVar.b.a(j$.com.android.tools.r8.a.S(j10, j11), aVar), ((int) j$.com.android.tools.r8.a.R(j10, j11)) + 1);
+        long j12 = 12;
+        return K(aVar.b.a(j$.com.android.tools.r8.a.R(j11, j12), aVar), ((int) j$.com.android.tools.r8.a.Q(j11, j12)) + 1);
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal w(long j3, ChronoUnit chronoUnit) {
-        return j3 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j3, chronoUnit);
+    public final Temporal w(long j10, ChronoUnit chronoUnit) {
+        return j10 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j10, chronoUnit);
     }
 
     @Override // j$.time.temporal.l
@@ -256,7 +256,7 @@ public final class YearMonth implements Temporal, j$.time.temporal.m, Comparable
 
     @Override // j$.time.temporal.m
     public final Temporal q(Temporal temporal) {
-        if (!j$.com.android.tools.r8.a.N(temporal).equals(j$.time.chrono.r.c)) {
+        if (!j$.com.android.tools.r8.a.M(temporal).equals(j$.time.chrono.r.c)) {
             throw new b("Adjustment only supported on ISO date-time");
         }
         return temporal.c(G(), j$.time.temporal.a.PROLEPTIC_MONTH);

@@ -1,26 +1,17 @@
 package bg;
 
-import java.nio.ShortBuffer;
-import na.d;
-import qb.b;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface a {
-    public static final d i;
-    public static final rb.a j;
-    public static final ob.a k;
-    public static final b l;
+public abstract class a {
+    public float a = 1.0f;
 
-    static {
-        int i10 = 4;
-        i = new d(i10);
-        j = new rb.a(i10);
-        k = new ob.a(i10);
-        l = new b(i10);
-    }
+    public abstract short a();
 
-    int R1(int i10, int i11, int i12);
+    public abstract int b();
 
-    void Y0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
+    public abstract boolean c();
+
+    public abstract void d();
+
+    public abstract void e(int i10, int i11);
 }

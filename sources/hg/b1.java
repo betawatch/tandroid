@@ -1,164 +1,64 @@
 package hg;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import java.nio.charset.StandardCharsets;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gl;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.j5;
-import org.telegram.ui.Components.q6;
-import org.telegram.ui.Wallet.j8;
+import java.util.ArrayList;
+import java.util.Comparator;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b1 extends EditTextBoldCursor {
-    public final /* synthetic */ int b = 0;
-    public int c;
-    public final j5 d;
-    public final q6 e;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate f;
+public final class b1 implements Comparator {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ ArrayList b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b1(e1 e1Var, Activity activity) {
-        super(activity);
-        this.f = e1Var;
-        this.d = new j5(this);
-        q6 q6Var = new q6(false, true, true);
-        this.e = q6Var;
-        q6Var.n(0.2f, 160L, hs.h);
-        q6Var.w(AndroidUtilities.dp(15.33f));
-        q6Var.setCallback(this);
-        q6Var.b = 5;
+    public b1(ArrayList arrayList, ArrayList arrayList2) {
+        this.a = arrayList;
+        this.b = arrayList2;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.b) {
-            case 0:
-                super.dispatchDraw(canvas);
-                int a2 = this.d.a(i6.w0(this.c < 0 ? i6.p7 : i6.P5, ((e1) this.f).getResourceProvider()), false);
-                q6 q6Var = this.e;
-                q6Var.u(a2);
-                q6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-                q6Var.draw(canvas);
-                break;
-            case 1:
-                super.dispatchDraw(canvas);
-                int a10 = this.d.a(i6.w0(this.c <= 0 ? i6.p7 : i6.P5, ((gl) this.f).a), false);
-                q6 q6Var2 = this.e;
-                q6Var2.u(a10);
-                int dp = AndroidUtilities.dp(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
-                int height = getHeight() + getScrollY();
-                q6Var2.setBounds(dp - AndroidUtilities.dp(48.0f), height - Math.min(AndroidUtilities.dp(44.0f), getHeight()), dp, height);
-                q6Var2.draw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                int a11 = this.d.a(i6.w0(this.c <= 0 ? i6.p7 : i6.P5, ((j8) this.f).getResourceProvider()), false);
-                q6 q6Var3 = this.e;
-                q6Var3.u(a11);
-                int dp2 = AndroidUtilities.dp(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
-                int height2 = getHeight() + getScrollY();
-                q6Var3.setBounds(dp2 - AndroidUtilities.dp(48.0f), height2 - Math.min(AndroidUtilities.dp(44.0f), getHeight()), dp2, height2);
-                q6Var3.draw(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.tu, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.b) {
-            case 0:
-                super.onTextChanged(charSequence, i10, i11, i12);
-                q6 q6Var = this.e;
-                if (q6Var != null) {
-                    this.c = 96 - charSequence.length();
-                    q6Var.a();
-                    String str = "";
-                    if (this.c <= 12) {
-                        str = "" + this.c;
+    public final int a(i1 i1Var) {
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = this.a;
+            if (i11 >= arrayList.size()) {
+                while (true) {
+                    ArrayList arrayList2 = this.b;
+                    if (i10 >= Math.min(20, arrayList2.size())) {
+                        return -1;
                     }
-                    q6Var.t(str, true, true);
-                    break;
+                    if (((TLRPC.Document) arrayList2.get(i10)).id == i1Var.a.id) {
+                        return (arrayList2.size() - i10) + MediaController.VIDEO_BITRATE_480;
+                    }
+                    i10++;
                 }
-                break;
-            case 1:
-                super.onTextChanged(charSequence, i10, i11, i12);
-                q6 q6Var2 = this.e;
-                if (q6Var2 != null) {
-                    this.c = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
-                    q6Var2.a();
-                    int i13 = this.c;
-                    q6Var2.t(i13 <= 100 ? Integer.toString(i13) : "", isAttachedToWindow(), true);
-                    invalidate();
-                    break;
+            } else {
+                if (((TLRPC.Document) arrayList.get(i11)).id == i1Var.a.id) {
+                    return i11 + 2000000;
                 }
-                break;
-            default:
-                super.onTextChanged(charSequence, i10, i11, i12);
-                q6 q6Var3 = this.e;
-                if (q6Var3 != null) {
-                    this.c = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
-                    q6Var3.a();
-                    int i14 = this.c;
-                    q6Var3.t(i14 <= 100 ? Integer.toString(i14) : "", isAttachedToWindow(), true);
-                    invalidate();
-                    break;
-                }
-                break;
+                i11++;
+            }
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        switch (this.b) {
-            case 0:
-                if (drawable == this.e || super.verifyDrawable(drawable)) {
-                }
-                break;
-            case 1:
-                if (drawable == this.e || super.verifyDrawable(drawable)) {
-                }
-                break;
-            default:
-                if (drawable == this.e || super.verifyDrawable(drawable)) {
-                }
-                break;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        i1 i1Var = (i1) obj;
+        i1 i1Var2 = (i1) obj2;
+        boolean isAnimatedStickerDocument = MessageObject.isAnimatedStickerDocument(i1Var.a, true);
+        if (isAnimatedStickerDocument == MessageObject.isAnimatedStickerDocument(i1Var2.a, true)) {
+            int a2 = a(i1Var);
+            int a10 = a(i1Var2);
+            if (a2 > a10) {
+                return -1;
+            }
+            if (a2 >= a10) {
+                return 0;
+            }
+        } else if (isAnimatedStickerDocument) {
+            return -1;
         }
-        return true;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b1(gl glVar, Context context) {
-        super(context);
-        this.f = glVar;
-        this.c = 960;
-        this.d = new j5(this);
-        q6 q6Var = new q6(false, true, true);
-        this.e = q6Var;
-        q6Var.n(0.2f, 160L, hs.h);
-        q6Var.w(AndroidUtilities.dp(15.33f));
-        q6Var.b = 5;
-        q6Var.setCallback(this);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b1(j8 j8Var, Activity activity) {
-        super(activity);
-        this.f = j8Var;
-        this.c = 960;
-        this.d = new j5(this);
-        q6 q6Var = new q6(false, true, true);
-        this.e = q6Var;
-        q6Var.n(0.2f, 160L, hs.h);
-        q6Var.w(AndroidUtilities.dp(15.33f));
-        q6Var.b = 5;
-        q6Var.setCallback(this);
+        return 1;
     }
 }

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class z0 extends c1 {
     public final int a;
@@ -15,10 +15,10 @@ public final class z0 extends c1 {
     public z0(r rVar) {
         rVar.getClass();
         this.b = rVar;
-        d0 p5 = rVar.entrySet().p();
+        d0 o10 = rVar.entrySet().o();
         int i10 = 0;
-        while (p5.hasNext()) {
-            Map.Entry entry = (Map.Entry) p5.next();
+        while (o10.hasNext()) {
+            Map.Entry entry = (Map.Entry) o10.next();
             int a2 = ((c1) entry.getKey()).a();
             i10 = i10 < a2 ? a2 : i10;
             int a10 = ((c1) entry.getValue()).a();
@@ -52,14 +52,14 @@ public final class z0 extends c1 {
         if (rVar2.d.size() != rVar.d.size()) {
             return rVar2.d.size() - rVar.d.size();
         }
-        d0 p5 = rVar2.entrySet().p();
-        d0 p10 = rVar.entrySet().p();
+        d0 o10 = rVar2.entrySet().o();
+        d0 o11 = rVar.entrySet().o();
         do {
-            if (!p5.hasNext() && !p10.hasNext()) {
+            if (!o10.hasNext() && !o11.hasNext()) {
                 return 0;
             }
-            Map.Entry entry = (Map.Entry) p5.next();
-            Map.Entry entry2 = (Map.Entry) p10.next();
+            Map.Entry entry = (Map.Entry) o10.next();
+            Map.Entry entry2 = (Map.Entry) o11.next();
             int compareTo2 = ((c1) entry.getKey()).compareTo((c1) entry2.getKey());
             if (compareTo2 != 0) {
                 return compareTo2;
@@ -89,19 +89,19 @@ public final class z0 extends c1 {
             return "{}";
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        d0 p5 = rVar.entrySet().p();
-        while (p5.hasNext()) {
-            Map.Entry entry = (Map.Entry) p5.next();
+        d0 o10 = rVar.entrySet().o();
+        while (o10.hasNext()) {
+            Map.Entry entry = (Map.Entry) o10.next();
             linkedHashMap.put(((c1) entry.getKey()).toString().replace("\n", "\n  "), ((c1) entry.getValue()).toString().replace("\n", "\n  "));
         }
-        na.d dVar = new na.d(14);
+        sb.a aVar = new sb.a(14);
         StringBuilder sb2 = new StringBuilder("{\n  ");
         try {
-            a.g(sb2, linkedHashMap.entrySet().iterator(), dVar);
+            a.g(sb2, linkedHashMap.entrySet().iterator(), aVar);
             sb2.append("\n}");
             return sb2.toString();
-        } catch (IOException e7) {
-            throw new AssertionError(e7);
+        } catch (IOException e) {
+            throw new AssertionError(e);
         }
     }
 

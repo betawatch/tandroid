@@ -2,7 +2,7 @@ package v7;
 
 import android.net.Uri;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class d0 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -11,7 +11,7 @@ public abstract class d0 {
         if (str == null) {
             return -1;
         }
-        String n10 = b2.r0.n(str);
+        String n10 = b2.w0.n(str);
         n10.getClass();
         switch (n10.hashCode()) {
             case -2123537834:

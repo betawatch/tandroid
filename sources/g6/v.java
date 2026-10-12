@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import m.q3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class v extends n6.g {
     public static final b n0 = new b("CastClientImpl", null);
@@ -40,11 +40,11 @@ public final class v extends n6.g {
     public Bundle l0;
     public final HashMap m0;
 
-    public v(Context context, Looper looper, q3 q3Var, CastDevice castDevice, long j3, d0 d0Var, Bundle bundle, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
+    public v(Context context, Looper looper, q3 q3Var, CastDevice castDevice, long j10, d0 d0Var, Bundle bundle, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
         super(context, looper, 10, q3Var, kVar, lVar, 0);
         this.V = castDevice;
         this.W = d0Var;
-        this.Y = j3;
+        this.Y = j10;
         this.Z = bundle;
         this.X = new HashMap();
         new AtomicLong(0L);
@@ -60,10 +60,10 @@ public final class v extends n6.g {
         I();
     }
 
-    public static void G(v vVar, long j3, int i10) {
+    public static void G(v vVar, long j10, int i10) {
         com.google.android.gms.common.api.internal.f fVar;
         synchronized (vVar.m0) {
-            fVar = (com.google.android.gms.common.api.internal.f) vVar.m0.remove(Long.valueOf(j3));
+            fVar = (com.google.android.gms.common.api.internal.f) vVar.m0.remove(Long.valueOf(j10));
         }
         if (fVar != null) {
             fVar.a(new Status(i10, null, null, null));
@@ -131,8 +131,8 @@ public final class v extends n6.g {
                     } finally {
                         super.disconnect();
                     }
-                } catch (RemoteException | IllegalStateException e7) {
-                    bVar.a(e7, "Error while disconnecting the controller interface", new Object[0]);
+                } catch (RemoteException | IllegalStateException e) {
+                    bVar.a(e, "Error while disconnecting the controller interface", new Object[0]);
                 }
                 return;
             }

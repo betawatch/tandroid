@@ -16,7 +16,7 @@ import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -26,11 +26,11 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
     private Context mContext;
     private Paint roundPaint;
     private ArrayList<Long> dids = new ArrayList<>();
-    private a0.i dialogs = new a0.i();
+    private a0.h dialogs = new a0.h();
 
     public ContactsRemoteViewsFactory(Context context, Intent intent) {
         this.mContext = context;
-        org.telegram.ui.ActionBar.i6.S(context);
+        org.telegram.ui.ActionBar.g6.S(context);
         this.appWidgetId = intent.getIntExtra("appWidgetId", 0);
         SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
         int i10 = sharedPreferences.getInt("account" + this.appWidgetId, -1);
@@ -68,7 +68,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
         TLRPC.FileLocation fileLocation;
         Bitmap decodeFile;
         int i11;
-        org.telegram.ui.Components.j9 j9Var;
+        org.telegram.ui.Components.k9 k9Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         if (this.deleted) {
             RemoteViews remoteViews = new RemoteViews(this.mContext.getPackageName(), R.layout.widget_deleted);
@@ -137,19 +137,19 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
                 Canvas canvas = new Canvas(createBitmap);
                 if (decodeFile == null) {
                     if (user != null) {
-                        j9Var = new org.telegram.ui.Components.j9(0, user);
+                        k9Var = new org.telegram.ui.Components.k9(0, user);
                         if (UserObject.isReplyUser(user)) {
-                            j9Var.g(12);
+                            k9Var.g(12);
                         } else if (UserObject.isUserSelf(user)) {
-                            j9Var.g(1);
+                            k9Var.g(1);
                         }
                     } else {
-                        org.telegram.ui.Components.j9 j9Var2 = new org.telegram.ui.Components.j9((org.telegram.ui.ActionBar.e6) null);
-                        j9Var2.k(this.accountInstance.getCurrentAccount(), chat);
-                        j9Var = j9Var2;
+                        org.telegram.ui.Components.k9 k9Var2 = new org.telegram.ui.Components.k9((org.telegram.ui.ActionBar.c6) null);
+                        k9Var2.k(this.accountInstance.getCurrentAccount(), chat);
+                        k9Var = k9Var2;
                     }
-                    j9Var.setBounds(0, 0, dp, dp);
-                    j9Var.draw(canvas);
+                    k9Var.setBounds(0, 0, dp, dp);
+                    k9Var.draw(canvas);
                 } else {
                     Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                     BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);
@@ -214,7 +214,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
         }
         ArrayList<TLRPC.User> arrayList = new ArrayList<>();
         ArrayList<TLRPC.Chat> arrayList2 = new ArrayList<>();
-        this.accountInstance.getMessagesStorage().getWidgetDialogs(this.appWidgetId, 1, this.dids, this.dialogs, new a0.i(), arrayList, arrayList2);
+        this.accountInstance.getMessagesStorage().getWidgetDialogs(this.appWidgetId, 1, this.dids, this.dialogs, new a0.h(), arrayList, arrayList2);
         this.accountInstance.getMessagesController().putUsers(arrayList, true);
         this.accountInstance.getMessagesController().putChats(arrayList2, true);
     }

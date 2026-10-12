@@ -7,7 +7,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class x {
     public final CharSequence a;
@@ -17,9 +17,9 @@ public final class x {
     public String e;
     public Uri f;
 
-    public x(CharSequence charSequence, long j3, n0 n0Var) {
+    public x(CharSequence charSequence, long j10, n0 n0Var) {
         this.a = charSequence;
-        this.b = j3;
+        this.b = j10;
         this.c = n0Var;
     }
 
@@ -63,13 +63,13 @@ public final class x {
     public final Notification.MessagingStyle.Message b() {
         Notification.MessagingStyle.Message a2;
         int i10 = Build.VERSION.SDK_INT;
-        long j3 = this.b;
+        long j10 = this.b;
         CharSequence charSequence = this.a;
         n0 n0Var = this.c;
         if (i10 >= 28) {
-            a2 = w.b(charSequence, j3, n0Var != null ? b5.d.E(n0Var) : null);
+            a2 = w.b(charSequence, j10, n0Var != null ? b5.d.E(n0Var) : null);
         } else {
-            a2 = v.a(charSequence, j3, n0Var != null ? n0Var.a : null);
+            a2 = v.a(charSequence, j10, n0Var != null ? n0Var.a : null);
         }
         String str = this.e;
         if (str != null) {

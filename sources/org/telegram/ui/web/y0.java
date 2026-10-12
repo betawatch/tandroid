@@ -15,15 +15,15 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.m3;
+import org.telegram.ui.ActionBar.e3;
+import org.telegram.ui.o3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class y0 extends WebView {
     public static final /* synthetic */ int V = 0;
     public boolean E;
-    public f3 F;
+    public e3 F;
     public int G;
     public int H;
     public Runnable I;
@@ -36,7 +36,7 @@ public final class y0 extends WebView {
     public final HashMap P;
     public b1 Q;
     public boolean R;
-    public a4.l S;
+    public a6.i S;
     public a1 T;
     public Runnable U;
     public final int a;
@@ -54,7 +54,7 @@ public final class y0 extends WebView {
     public int x;
     public String y;
 
-    public y0(Context context, boolean z10, long j3) {
+    public y0(Context context, boolean z10, long j10) {
         super(context);
         int i10 = b1.Q0;
         b1.Q0 = i10 + 1;
@@ -63,9 +63,9 @@ public final class y0 extends WebView {
         this.P = new HashMap();
         this.c = z10;
         c("created new webview " + this);
-        setOnLongClickListener(new k0(this));
-        setWebViewClient(new m0(this, z10, context));
-        setWebChromeClient(new v0(this, context, z10, j3));
+        setOnLongClickListener(new l0(this));
+        setWebViewClient(new n0(this, z10, context));
+        setWebChromeClient(new v0(this, context, z10, j10));
         setFindListener(new w0(this));
         if (z10) {
             return;
@@ -77,8 +77,8 @@ public final class y0 extends WebView {
         if (y0Var.c) {
             return;
         }
-        m2 a2 = m2.a(y0Var);
-        n2 b10 = n2.b();
+        l2 a2 = l2.a(y0Var);
+        m2 b10 = m2.b();
         if (a2 == null) {
             b10.getClass();
         } else {
@@ -99,35 +99,35 @@ public final class y0 extends WebView {
         d1.c(c1Var);
     }
 
-    public final void b(m2 m2Var) {
-        g0 g0Var;
-        if (m2Var == null) {
+    public final void b(l2 l2Var) {
+        h0 h0Var;
+        if (l2Var == null) {
             return;
         }
         b1 b1Var = this.Q;
         boolean z10 = false;
-        if (b1Var != null && (g0Var = b1Var.c) != null) {
-            int i10 = m2Var.e;
+        if (b1Var != null && (h0Var = b1Var.c) != null) {
+            int i10 = l2Var.e;
             if (i10 != 0) {
-                g0Var.o(i10, true);
+                h0Var.o(i10, true);
                 this.s = true;
             }
-            int i11 = m2Var.f;
+            int i11 = l2Var.f;
             if (i11 != 0) {
                 this.Q.c.o(i11, false);
                 this.v = true;
             } else {
                 i11 = -1;
             }
-            Bitmap bitmap = m2Var.i;
+            Bitmap bitmap = l2Var.i;
             if (bitmap != null) {
                 b1 b1Var2 = this.Q;
                 this.O = bitmap;
                 b1Var2.getClass();
                 this.M = true;
             }
-            if (!TextUtils.isEmpty(m2Var.d)) {
-                String str = m2Var.d;
+            if (!TextUtils.isEmpty(l2Var.d)) {
+                String str = l2Var.d;
                 this.r = str;
                 b1 b1Var3 = this.Q;
                 this.K = str;
@@ -159,7 +159,7 @@ public final class y0 extends WebView {
     }
 
     public final void d(String str) {
-        evaluateJavascript(str, new h0(0));
+        evaluateJavascript(str, new i0(0));
     }
 
     @Override // android.webkit.WebView
@@ -174,17 +174,17 @@ public final class y0 extends WebView {
     }
 
     @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        return super.drawChild(canvas, view, j3);
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        return super.drawChild(canvas, view, j10);
     }
 
-    public final void e(String str, m2 m2Var) {
-        f3 f3Var = this.F;
-        if (f3Var != null) {
-            f3Var.dismiss();
+    public final void e(String str, l2 l2Var) {
+        e3 e3Var = this.F;
+        if (e3Var != null) {
+            e3Var.dismiss();
             this.F = null;
         }
-        b(m2Var);
+        b(l2Var);
         this.d = str;
         String b10 = b1.b(str);
         c("loadUrl " + b10 + " with cached meta");
@@ -258,31 +258,31 @@ public final class y0 extends WebView {
     @Override // android.webkit.WebView
     public final void loadData(String str, String str2, String str3) {
         this.d = null;
-        StringBuilder x10 = a1.g.x("loadData ", str, " ", str2, " ");
-        x10.append(str3);
-        c(x10.toString());
+        StringBuilder w9 = a1.g.w("loadData ", str, " ", str2, " ");
+        w9.append(str3);
+        c(w9.toString());
         super.loadData(str, str2, str3);
     }
 
     @Override // android.webkit.WebView
     public final void loadDataWithBaseURL(String str, String str2, String str3, String str4, String str5) {
         this.d = null;
-        StringBuilder x10 = a1.g.x("loadDataWithBaseURL ", str, " ", str2, " ");
-        a1.g.A(x10, str3, " ", str4, " ");
-        x10.append(str5);
-        c(x10.toString());
+        StringBuilder w9 = a1.g.w("loadDataWithBaseURL ", str, " ", str2, " ");
+        a1.g.A(w9, str3, " ", str4, " ");
+        w9.append(str5);
+        c(w9.toString());
         super.loadDataWithBaseURL(str, str2, str3, str4, str5);
     }
 
     @Override // android.webkit.WebView
     public final void loadUrl(String str) {
-        f3 f3Var = this.F;
-        if (f3Var != null) {
-            f3Var.dismiss();
+        e3 e3Var = this.F;
+        if (e3Var != null) {
+            e3Var.dismiss();
             this.F = null;
         }
         if (!this.c) {
-            b(n2.b().a(AndroidUtilities.getHostAuthority(str, true)));
+            b(m2.b().a(AndroidUtilities.getHostAuthority(str, true)));
         }
         this.d = str;
         String b10 = b1.b(str);
@@ -349,7 +349,7 @@ public final class y0 extends WebView {
         if (a1Var != null) {
             getScrollX();
             getScrollY();
-            ((m3) ((org.telegram.ui.g) a1Var).b).K.f0();
+            ((o3) ((org.telegram.ui.g) a1Var).b).K.f0();
         }
         getScrollX();
         getScrollY();
@@ -451,13 +451,13 @@ public final class y0 extends WebView {
 
     @Override // android.webkit.WebView
     public final void loadUrl(String str, Map map) {
-        f3 f3Var = this.F;
-        if (f3Var != null) {
-            f3Var.dismiss();
+        e3 e3Var = this.F;
+        if (e3Var != null) {
+            e3Var.dismiss();
             this.F = null;
         }
         if (!this.c) {
-            b(n2.b().a(AndroidUtilities.getHostAuthority(str, true)));
+            b(m2.b().a(AndroidUtilities.getHostAuthority(str, true)));
         }
         this.d = str;
         String b10 = b1.b(str);

@@ -1,26 +1,14 @@
 package fd;
 
-import cf.p;
-import java.util.regex.Pattern;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g extends h {
-    public static final Pattern e = Pattern.compile("^(?:<[A-Za-z][A-Za-z0-9-]*(?:\\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\\s*=\\s*(?:[^\"'=<>`\\x00-\\x20]+|'[^']*'|\"[^\"]*\"))?)*\\s*/?>|</[A-Za-z][A-Za-z0-9-]*\\s*[>]|<!---->|<!--(?:-?[^>-])(?:-?[^-])*-->|[<][?].*?[?][>]|<![A-Z]+\\s+[^>]*>|<!\\[CDATA\\[[\\s\\S]*?\\]\\]>)", 2);
-
-    @Override // fd.h
-    public final p b() {
-        String a2 = a(e);
-        if (a2 == null) {
-            return null;
-        }
-        cf.d dVar = new cf.d(1);
-        dVar.h = a2;
-        return dVar;
+public final class g extends f2.e {
+    public g() {
+        super(6, 1);
     }
 
-    @Override // fd.h
-    public final char d() {
-        return '<';
+    @Override // f2.e
+    public final f2.e b() {
+        return this;
     }
 }

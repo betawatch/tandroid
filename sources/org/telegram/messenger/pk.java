@@ -1,148 +1,119 @@
 package org.telegram.messenger;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
-import android.text.SpannableString;
-import android.util.LongSparseArray;
-import android.util.SparseIntArray;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import java.io.IOException;
+import java.util.Locale;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ud0;
+import org.telegram.ui.ThemeActivity;
+import org.telegram.ui.fo;
+import org.telegram.ui.qn;
+import org.telegram.ui.un0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class pk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class pk implements org.telegram.ui.ActionBar.z1, e2.j {
+    public final /* synthetic */ int a = 3;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ pk(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = obj2;
-        this.e = obj3;
-        this.b = obj4;
+    public /* synthetic */ pk(a5.a aVar, u2.u uVar, u2.c0 c0Var, IOException iOException, boolean z10) {
+        this.c = aVar;
+        this.d = uVar;
+        this.e = c0Var;
+        this.f = iOException;
+        this.b = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // e2.j
+    public void accept(Object obj) {
+        a5.a aVar = (a5.a) this.c;
+        ((u2.k0) obj).g(aVar.b, (u2.g0) aVar.c, (u2.u) this.d, (u2.c0) this.e, (IOException) this.f, this.b);
+    }
+
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        int i11;
+        int i12 = this.a;
+        boolean z10 = this.b;
+        Object obj = this.f;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        switch (i12) {
             case 0:
-                ((SendMessagesHelper.ImportingHistory.1) this.d).lambda$run$0((TLObject) this.c, (TLRPC.TL_messages_initHistoryImport) this.e, (TLRPC.TL_error) this.b);
+                ((SendMessagesHelper) obj4).lambda$sendCallback$44(this.b, (MessageObject) obj3, (TL_keyboard.KeyboardButtonProto) obj2, (fo) obj, a2Var, i10);
                 break;
             case 1:
-                ((SendMessagesHelper.ImportingStickers.1) this.d).lambda$run$0((TLRPC.TL_error) this.b, (TLRPC.TL_stickers_createStickerSet) this.e, (TLObject) this.c);
-                break;
-            case 2:
-                ((TranslateController) this.d).lambda$detectPhotoLanguage$41((MessageObject) this.c, (TranslateController.MessageKey) this.e, (Utilities.Callback) this.b);
-                break;
-            case 3:
-                ((TranslateController) this.d).lambda$detectStoryLanguage$31((TL_stories.StoryItem) this.c, (String) this.e, (TranslateController.StoryKey) this.b);
-                break;
-            case 4:
-                AndroidUtilities.lambda$showProxyAlert$21((boolean[]) this.d, (org.telegram.ui.Components.cd[]) this.c, (oi.b) this.e, (Activity) this.b);
-                break;
-            case 5:
-                CodeHighlighting.lambda$highlightEditable$1((String) this.d, (String) this.c, (SpannableString) this.e, (Utilities.Callback) this.b);
-                break;
-            case 6:
-                ((FilePathDatabase) this.d).lambda$lookupFiles$7((ArrayList) this.c, (LongSparseArray) this.e, (CountDownLatch) this.b);
-                break;
-            case 7:
-                ((FilePathDatabase) this.d).lambda$checkMediaExistance$2((ArrayList) this.c, (long[]) this.e, (CountDownLatch) this.b);
-                break;
-            case 8:
-                ((FileRefController) this.d).lambda$requestReferenceFromServer$0((String) this.c, (String) this.e, (ai.u8) this.b);
-                break;
-            case 9:
-                ((ImageLoader) this.d).lambda$replaceImageInCache$5((String) this.c, (String) this.e, (ImageLocation) this.b);
-                break;
-            case 10:
-                ((LocationController) this.d).lambda$loadSharingLocations$16((ArrayList) this.c, (ArrayList) this.e, (ArrayList) this.b);
-                break;
-            case 11:
-                ((MediaController) this.d).lambda$generateWaveform$39((String) this.c, (String) this.e, (MessageObject) this.b);
-                break;
-            case 12:
-                ((MediaController) this.d).lambda$prepareResumedRecording$24((File) this.c, (TLRPC.TL_document) this.e, (MediaDataController.DraftVoice) this.b);
-                break;
-            case 13:
-                ((MediaController) this.d).lambda$generateWaveform$38((String) this.c, (byte[]) this.e, (MessageObject) this.b);
-                break;
-            case 14:
-                ((MediaDataController) this.d).lambda$getEmojiSuggestions$220((String[]) this.c, (MediaDataController.KeywordResultCallback) this.e, (ArrayList) this.b);
-                break;
-            case 15:
-                MediaDataController.lambda$getEmojiSuggestions$223((CountDownLatch) this.d, (MediaDataController.KeywordResultCallback) this.c, (ArrayList) this.e, (String) this.b);
-                break;
-            case 16:
-                MediaDataController.lambda$getAnimatedEmojiByKeywords$217((String) this.d, (ArrayList) this.c, (ArrayList) this.e, (Utilities.Callback) this.b);
-                break;
-            case 17:
-                ((MediaDataController) this.d).lambda$getEmojiNames$219((String[]) this.c, (String) this.e, (Utilities.Callback) this.b);
-                break;
-            case 18:
-                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$228((boolean[]) this.c, (ArrayList[]) this.e, (u6) this.b);
-                break;
-            case 19:
-                ((MediaDataController) this.d).lambda$loadSavedReactions$240((TLRPC.TL_error) this.b, (TLObject) this.c, (SharedPreferences) this.e);
-                break;
-            case 20:
-                ((MessagesController) this.d).lambda$addUsersToChannel$271((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_inviteToChannel) this.e);
-                break;
-            case 21:
-                ((MessagesController) this.d).lambda$getDifference$356((TLRPC.updates_Difference) this.c, (a0.i) this.e, (a0.i) this.b);
-                break;
-            case 22:
-                ((MessagesController) this.d).lambda$createChat$255((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_createChat) this.e);
-                break;
-            case 23:
-                ((MessagesController) this.d).lambda$createChat$258((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_createChannel) this.e);
-                break;
-            case 24:
-                ((MessagesController) this.d).lambda$setUserAdminRole$105((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_editChatAdmin) this.e);
-                break;
-            case 25:
-                ((MessagesController) this.d).lambda$completeDialogsReset$210((TLRPC.messages_Dialogs) this.c, (a0.i) this.e, (a0.i) this.b);
-                break;
-            case 26:
-                ((MessagesController) this.d).lambda$getDifference$355((ArrayList) this.c, (TLRPC.updates_Difference) this.e, (a0.i) this.b);
-                break;
-            case 27:
-                ((MessagesStorage) this.d).lambda$putEncryptedChat$178((TLRPC.EncryptedChat) this.c, (TLRPC.User) this.e, (TLRPC.Dialog) this.b);
-                break;
-            case 28:
-                ((MessagesStorage) this.d).lambda$addRecentLocalFile$82((TLRPC.Document) this.c, (String) this.e, (String) this.b);
-                break;
+                qn qnVar = (qn) obj4;
+                TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
+                fo foVar = qnVar.a;
+                org.telegram.ui.vc vcVar = new org.telegram.ui.vc(11, qnVar, (org.telegram.ui.Cells.u1) obj3);
+                if (!((boolean[]) obj2)[0]) {
+                    vcVar.run(Boolean.FALSE);
+                    break;
+                } else if (!z10 && (contentsettings == null || !contentsettings.sensitive_can_change)) {
+                    vcVar.run(Boolean.TRUE);
+                    break;
+                } else {
+                    Activity parentActivity = foVar.getParentActivity();
+                    i11 = ((org.telegram.ui.ActionBar.m2) foVar).currentAccount;
+                    ThemeActivity.C0(i11, parentActivity, new org.telegram.ui.vc(12, qnVar, vcVar), foVar.getResourceProvider());
+                    break;
+                }
             default:
-                ((MessagesStorage) this.d).lambda$markMessagesAsRead$219((LongSparseIntArray) this.c, (LongSparseIntArray) this.e, (SparseIntArray) this.b);
+                ud0 ud0Var = (ud0) obj4;
+                ud0 ud0Var2 = (ud0) obj3;
+                ud0 ud0Var3 = (ud0) obj2;
+                hg.b2 b2Var = (hg.b2) obj;
+                if (z10) {
+                    org.telegram.ui.Components.g5.c(ud0Var, ud0Var2, ud0Var3);
+                }
+                int value = ud0Var3.getValue();
+                int value2 = ud0Var2.getValue();
+                int value3 = ud0Var.getValue();
+                un0 un0Var = (un0) b2Var.c;
+                int i13 = b2Var.b;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) b2Var.d;
+                if (i13 == 8) {
+                    int[] iArr = un0Var.x;
+                    iArr[0] = value;
+                    iArr[1] = value2 + 1;
+                    iArr[2] = value3;
+                } else {
+                    un0Var.getClass();
+                }
+                editTextBoldCursor.setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(value3), Integer.valueOf(value2 + 1), Integer.valueOf(value)));
                 break;
         }
     }
 
-    public /* synthetic */ pk(BaseController baseController, TLRPC.TL_error tL_error, Object obj, Object obj2, int i10) {
-        this.a = i10;
-        this.d = baseController;
-        this.b = tL_error;
-        this.c = obj;
-        this.e = obj2;
+    public /* synthetic */ pk(SendMessagesHelper sendMessagesHelper, boolean z10, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, fo foVar) {
+        this.c = sendMessagesHelper;
+        this.b = z10;
+        this.d = messageObject;
+        this.e = keyboardButtonProto;
+        this.f = foVar;
     }
 
-    public /* synthetic */ pk(SendMessagesHelper.ImportingStickers.1 r22, TLRPC.TL_error tL_error, TLRPC.TL_stickers_createStickerSet tL_stickers_createStickerSet, TLObject tLObject) {
-        this.a = 1;
-        this.d = r22;
-        this.b = tL_error;
-        this.e = tL_stickers_createStickerSet;
-        this.c = tLObject;
+    public /* synthetic */ pk(qn qnVar, org.telegram.ui.Cells.u1 u1Var, boolean[] zArr, boolean z10, TL_account.contentSettings contentsettings) {
+        this.c = qnVar;
+        this.d = u1Var;
+        this.e = zArr;
+        this.b = z10;
+        this.f = contentsettings;
+    }
+
+    public /* synthetic */ pk(boolean z10, ud0 ud0Var, ud0 ud0Var2, ud0 ud0Var3, hg.b2 b2Var) {
+        this.b = z10;
+        this.c = ud0Var;
+        this.d = ud0Var2;
+        this.e = ud0Var3;
+        this.f = b2Var;
     }
 }

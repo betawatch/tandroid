@@ -1,56 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class n9 implements me.h, pe.a {
-    public final ImageReceiver a;
-    public final j9 b;
-    public long c;
-    public boolean d;
-    public final /* synthetic */ o9 e;
+public class n9 extends View {
+    public final m9 a;
+    public sg.a1 b;
+    public h11 c;
+    public Paint d;
 
-    public n9(o9 o9Var, ViewGroup viewGroup) {
-        this.e = o9Var;
-        ImageReceiver imageReceiver = new ImageReceiver(viewGroup);
-        this.a = imageReceiver;
-        imageReceiver.setRoundRadius(o9Var.e / 2);
-        j9 j9Var = new j9((org.telegram.ui.ActionBar.e6) null);
-        this.b = j9Var;
-        j9Var.u(AndroidUtilities.dp(22.0f));
+    public n9(Context context, boolean z10) {
+        super(context);
+        this.a = new m9(this, z10);
     }
 
-    @Override // pe.a
-    public final void a() {
-        if (this.d) {
-            this.d = false;
-            this.a.onDetachedFromWindow();
+    public final void a(boolean z10) {
+        this.a.b(z10, true);
+    }
+
+    public final void b(int i10, TLObject tLObject, int i11) {
+        this.a.l(i10, tLObject, i11);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.g();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.h();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        this.a.i(canvas);
+        if (this.c != null) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(getWidth() - AndroidUtilities.dp(22.0f), getHeight() - AndroidUtilities.dp(22.0f), getWidth() - AndroidUtilities.dp(0.0f), getHeight() - AndroidUtilities.dp(0.0f));
+            this.b.e(rectF);
+            canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) + AndroidUtilities.dp(1.33f), this.d);
+            canvas.drawCircle(rectF.centerX(), rectF.centerY(), rectF.width() / 2.0f, this.b.f);
+            this.c.c(rectF.centerX() - (this.c.c / 2.0f), rectF.centerY(), 1.0f, -1, canvas);
         }
-        this.c = 0L;
     }
 
-    @Override // me.h
-    public final int b(boolean z10) {
-        if (z10) {
-            return 0;
-        }
-        return -this.e.f;
+    @Override // android.view.View
+    public void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        int measuredWidth = getMeasuredWidth();
+        m9 m9Var = this.a;
+        m9Var.p = measuredWidth;
+        m9Var.o = getMeasuredHeight();
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof n9) && this.c == ((n9) obj).c;
+    public void setAvatarsTextSize(int i10) {
+        this.a.j(i10);
     }
 
-    @Override // me.h
-    public final int getHeight() {
-        return this.e.e;
+    public void setCentered(boolean z10) {
+        this.a.l = z10;
     }
 
-    @Override // me.h
-    public final int getWidth() {
-        return this.e.e;
+    public void setCount(int i10) {
+        this.a.k(i10);
+    }
+
+    public void setDelegate(Runnable runnable) {
+        this.a.j = runnable;
+    }
+
+    public void setSize(int i10) {
+        this.a.s = i10;
+    }
+
+    public void setStepFactor(float f7) {
+        this.a.t = f7;
+    }
+
+    public void setStyle(int i10) {
+        m9 m9Var = this.a;
+        m9Var.k = i10;
+        m9Var.f();
     }
 }

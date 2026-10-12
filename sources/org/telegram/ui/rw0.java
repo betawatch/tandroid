@@ -1,49 +1,59 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class rw0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PopupNotificationActivity b;
+public final class rw0 extends org.telegram.ui.Cells.u1 {
+    public final /* synthetic */ int Ge;
+    public final /* synthetic */ int He;
+    public final /* synthetic */ int Ie;
 
-    public /* synthetic */ rw0(PopupNotificationActivity popupNotificationActivity, int i10) {
-        this.a = i10;
-        this.b = popupNotificationActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ rw0(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11, int i12, int i13) {
+        super(context, i10, false, null, c6Var);
+        this.Ge = i13;
+        this.He = i11;
+        this.Ie = i12;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
+    @Override // org.telegram.ui.Cells.u1
+    public final void Y1(Canvas canvas) {
+        switch (this.Ge) {
             case 0:
-                PopupNotificationActivity popupNotificationActivity = this.b;
-                FrameLayout frameLayout = popupNotificationActivity.f;
-                if (frameLayout != null) {
-                    frameLayout.getViewTreeObserver().removeOnPreDrawListener(this);
-                }
-                int A = org.telegram.messenger.bi.A(48.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
-                FrameLayout frameLayout2 = popupNotificationActivity.f;
-                frameLayout2.setPadding(frameLayout2.getPaddingLeft(), A, popupNotificationActivity.f.getPaddingRight(), A);
+                this.i6 = 0;
+                this.j6 = this.Y5.size() - 1;
+                super.Y1(canvas);
                 break;
             default:
-                PopupNotificationActivity popupNotificationActivity2 = this.b;
-                popupNotificationActivity2.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                if (!popupNotificationActivity2.c() && !popupNotificationActivity2.X) {
-                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) popupNotificationActivity2.n.getLayoutParams();
-                    marginLayoutParams.topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                    marginLayoutParams.bottomMargin = AndroidUtilities.dp(48.0f);
-                    marginLayoutParams.width = -1;
-                    marginLayoutParams.height = -1;
-                    popupNotificationActivity2.n.setLayoutParams(marginLayoutParams);
-                    popupNotificationActivity2.a(0);
-                    break;
-                }
+                this.i6 = 0;
+                this.j6 = this.Y5.size() - 1;
+                super.Y1(canvas);
                 break;
         }
-        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.Ge) {
+            case 0:
+                setMeasuredDimension(this.He, this.Ie);
+                break;
+            default:
+                setMeasuredDimension(this.He, this.Ie);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void setPressed(boolean z10) {
+        int i10 = this.Ge;
+    }
+
+    private final void A4(boolean z10) {
+    }
+
+    private final void B4(boolean z10) {
     }
 }

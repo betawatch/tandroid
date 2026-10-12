@@ -8,7 +8,7 @@ import z7.hb;
 import z7.lg;
 import z7.wf;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -16,10 +16,10 @@ public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ da(fa faVar, r0 r0Var, long j3) {
+    public /* synthetic */ da(fa faVar, r0 r0Var, long j10) {
         this.c = faVar;
         this.d = r0Var;
-        this.b = j3;
+        this.b = j10;
     }
 
     @Override // java.lang.Runnable
@@ -56,7 +56,7 @@ public final /* synthetic */ class da implements Runnable {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 if (faVar.c(o7Var, elapsedRealtime)) {
                     faVar.i.put(o7Var, Long.valueOf(elapsedRealtime));
-                    qb.m.a.execute(new org.telegram.ui.Wallet.n5(faVar, 11));
+                    rb.m.a.execute(new org.telegram.ui.Wallet.m5(faVar, 10));
                     return;
                 }
                 return;
@@ -90,17 +90,17 @@ public final /* synthetic */ class da implements Runnable {
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
                 if (wfVar.d(hbVar, elapsedRealtime2)) {
                     wfVar.i.put(hbVar, Long.valueOf(elapsedRealtime2));
-                    qb.m.a.execute(new org.telegram.ui.Wallet.n5(wfVar));
+                    rb.m.a.execute(new org.telegram.ui.Wallet.m5(wfVar));
                     return;
                 }
                 return;
         }
     }
 
-    public /* synthetic */ da(wf wfVar, z7.i1 i1Var, long j3) {
+    public /* synthetic */ da(wf wfVar, z7.i1 i1Var, long j10) {
         hb hbVar = hb.b;
         this.c = wfVar;
         this.d = i1Var;
-        this.b = j3;
+        this.b = j10;
     }
 }

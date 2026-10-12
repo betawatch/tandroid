@@ -3,8 +3,9 @@ package c6;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c extends o6.a {
     public final long a;
@@ -15,12 +16,12 @@ public final class c extends o6.a {
     public static final g6.b f = new g6.b("AdBreakStatus", null);
     public static final Parcelable.Creator<c> CREATOR = new v(9);
 
-    public c(long j3, long j10, String str, String str2, long j11) {
-        this.a = j3;
-        this.b = j10;
+    public c(long j10, long j11, String str, String str2, long j12) {
+        this.a = j10;
+        this.b = j11;
         this.c = str;
         this.d = str2;
-        this.e = j11;
+        this.e = j12;
     }
 
     public final boolean equals(Object obj) {
@@ -40,15 +41,15 @@ public final class c extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.d0.q(parcel, 20293);
-        w7.d0.s(parcel, 2, 8);
+        int q6 = g0.q(parcel, 20293);
+        g0.s(parcel, 2, 8);
         parcel.writeLong(this.a);
-        w7.d0.s(parcel, 3, 8);
+        g0.s(parcel, 3, 8);
         parcel.writeLong(this.b);
-        w7.d0.l(parcel, 4, this.c);
-        w7.d0.l(parcel, 5, this.d);
-        w7.d0.s(parcel, 6, 8);
+        g0.l(parcel, 4, this.c);
+        g0.l(parcel, 5, this.d);
+        g0.s(parcel, 6, 8);
         parcel.writeLong(this.e);
-        w7.d0.r(parcel, q6);
+        g0.r(parcel, q6);
     }
 }

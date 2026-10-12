@@ -2,18 +2,18 @@ package com.google.android.recaptcha.internal;
 
 import android.content.ContentResolver;
 import android.os.Build;
-import hd.c;
-import hd.g;
-import v7.z7;
+import id.c;
+import id.g;
+import v7.h8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzx implements zzar {
     private final c zza;
 
     public zzx() {
         int i10 = zzby.zza;
-        this.zza = z7.a(zzw.zza);
+        this.zza = h8.a(zzw.zza);
     }
 
     public static final /* synthetic */ ContentResolver zzb(zzx zzxVar) {
@@ -26,29 +26,29 @@ public final class zzx implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, jd.c cVar) {
+    public final /* synthetic */ Object zzc(String str, kd.c cVar) {
         return zzam.zza(this, str, cVar);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, jd.c cVar) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, kd.c cVar) {
         Object zzd;
         zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), cVar);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, jd.c cVar) {
+    public final Object zze(String str, kd.c cVar) {
         return new zzhg(new zzv(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzf(zzxp zzxpVar, jd.c cVar) {
+    public final /* synthetic */ Object zzf(zzxp zzxpVar, kd.c cVar) {
         return zzam.zzc(this, zzxpVar, cVar);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzg(Exception exc, jd.c cVar) {
+    public final Object zzg(Exception exc, kd.c cVar) {
         int i10 = Build.VERSION.SDK_INT;
         zzys zzf = zzyt.zzf();
         zzf.zzr(16);

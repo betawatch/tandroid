@@ -1,14 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class iz extends org.telegram.ui.Components.k71 {
-    @Override // org.telegram.ui.Components.qm0
-    public final Integer W0(int i10) {
-        org.telegram.ui.Components.p61 G = this.W2.G(i10);
-        if (G == null || G.d != 2) {
-            return super.W0(i10);
+public final class iz implements ImageReceiver.ImageReceiverDelegate {
+    public final /* synthetic */ jz a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ kz d;
+
+    public iz(kz kzVar, jz jzVar, boolean z10, MessageObject messageObject) {
+        this.d = kzVar;
+        this.a = jzVar;
+        this.b = z10;
+        this.c = messageObject;
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        jz jzVar = this.a;
+        if (jzVar.r.getLottieAnimation() != null) {
+            jzVar.r.getLottieAnimation().N(0, false, true);
         }
-        return 0;
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        org.telegram.messenger.l5.a(this, i10, str, drawable);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void onAnimationReady(ImageReceiver imageReceiver) {
+        MessageObject messageObject;
+        if (this.b && (messageObject = this.c) != null && messageObject.isAnimatedAnimatedEmoji() && imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().x == null) {
+            try {
+                this.d.G.performHapticFeedback(3, 1);
+            } catch (Exception unused) {
+            }
+        }
     }
 }

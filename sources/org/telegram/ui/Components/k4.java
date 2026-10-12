@@ -4,14 +4,14 @@ import android.content.Context;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class k4 extends ud0 {
     public final /* synthetic */ int[] w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k4(Context context, org.telegram.ui.ActionBar.e6 e6Var, int[] iArr) {
-        super(context, e6Var);
+    public k4(Context context, org.telegram.ui.ActionBar.c6 c6Var, int[] iArr) {
+        super(context, c6Var);
         this.w0 = iArr;
     }
 

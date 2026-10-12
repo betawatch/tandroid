@@ -1,6 +1,5 @@
 package androidx.emoji2.text;
 
-import ai.aa;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
@@ -10,7 +9,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class EmojiCompatInitializer implements v4.b {
     @Override // v4.b
@@ -20,13 +19,13 @@ public class EmojiCompatInitializer implements v4.b {
 
     @Override // v4.b
     public final Object b(Context context) {
-        q qVar = new q(new k6.h(context, 2));
-        qVar.a = 1;
+        r rVar = new r(new androidx.biometric.t(context, 1));
+        rVar.a = 1;
         if (l.j == null) {
             synchronized (l.i) {
                 try {
                     if (l.j == null) {
-                        l.j = new l(qVar);
+                        l.j = new l(rVar);
                     }
                 } finally {
                 }
@@ -54,7 +53,7 @@ public class EmojiCompatInitializer implements v4.b {
         m10.a(new androidx.lifecycle.e(this) { // from class: androidx.emoji2.text.EmojiCompatInitializer.1
             @Override // androidx.lifecycle.e
             public final void a(androidx.lifecycle.t tVar) {
-                (Build.VERSION.SDK_INT >= 28 ? b.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new aa(1), 500L);
+                (Build.VERSION.SDK_INT >= 28 ? b.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new n(0), 500L);
                 m10.b(this);
             }
 

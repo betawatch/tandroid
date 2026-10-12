@@ -1,210 +1,216 @@
 package org.telegram.ui.Components;
 
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.util.SparseIntArray;
-import java.io.File;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class w21 extends BitmapDrawable {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public w21(File file, DocumentObject.ThemeDocument themeDocument) {
-        super(r17);
-        int i10;
-        int i11;
-        int i12;
-        BitmapDrawable bitmapDrawable;
-        org.telegram.ui.ActionBar.f5[] f5VarArr;
-        Bitmap bitmap;
-        cd0 cd0Var;
-        boolean z10;
-        Bitmap bitmap2;
-        Bitmap decodeFile;
-        int i13;
-        new RectF();
-        Paint paint = new Paint();
-        Bitmap createBitmap = Bitmaps.createBitmap(560, 678, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        SparseIntArray R0 = org.telegram.ui.ActionBar.i6.R0(null, themeDocument.baseTheme.d, null);
-        SparseIntArray clone = R0.clone();
-        themeDocument.accent.c(R0, clone);
-        int G0 = org.telegram.ui.ActionBar.i6.G0(clone, org.telegram.ui.ActionBar.i6.s8);
-        int G02 = org.telegram.ui.ActionBar.i6.G0(clone, org.telegram.ui.ActionBar.i6.v8);
-        int G03 = org.telegram.ui.ActionBar.i6.G0(clone, org.telegram.ui.ActionBar.i6.Sd);
-        int G04 = org.telegram.ui.ActionBar.i6.G0(clone, org.telegram.ui.ActionBar.i6.Xd);
-        int G05 = org.telegram.ui.ActionBar.i6.G0(clone, org.telegram.ui.ActionBar.i6.ra);
-        int G06 = org.telegram.ui.ActionBar.i6.G0(clone, org.telegram.ui.ActionBar.i6.Aa);
-        int i14 = clone.get(org.telegram.ui.ActionBar.i6.Nd);
-        int i15 = clone.get(org.telegram.ui.ActionBar.i6.Od);
-        int i16 = clone.get(org.telegram.ui.ActionBar.i6.Pd);
-        int i17 = clone.get(org.telegram.ui.ActionBar.i6.Qd);
-        int i18 = clone.get(org.telegram.ui.ActionBar.i6.Rd);
-        Drawable mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-        org.telegram.ui.ActionBar.i6.x1(G02, mutate);
-        Drawable mutate2 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-        org.telegram.ui.ActionBar.i6.x1(G02, mutate2);
-        Drawable mutate3 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-        org.telegram.ui.ActionBar.i6.x1(G04, mutate3);
-        Drawable mutate4 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-        org.telegram.ui.ActionBar.i6.x1(G04, mutate4);
-        org.telegram.ui.ActionBar.f5[] f5VarArr2 = new org.telegram.ui.ActionBar.f5[2];
-        int i19 = 0;
-        while (i19 < 2) {
-            Drawable drawable = mutate4;
-            v21 v21Var = new v21(i19 == 1, clone);
-            f5VarArr2[i19] = v21Var;
-            org.telegram.ui.ActionBar.i6.x1(i19 == 1 ? G06 : G05, v21Var);
-            i19++;
-            mutate4 = drawable;
-        }
-        Drawable drawable2 = mutate4;
-        if (i16 != 0) {
-            cd0 cd0Var2 = new cd0(true, i14, i15, i16, i17);
-            i10 = i14;
-            i11 = i15;
-            bitmap = createBitmap;
-            f5VarArr = f5VarArr2;
-            cd0Var = cd0Var2;
-            i12 = 120;
-            bitmapDrawable = null;
-        } else {
-            i10 = i14;
-            i11 = i15;
-            int width = createBitmap.getWidth();
-            int height = createBitmap.getHeight() - 120;
-            GradientDrawable.Orientation d = x9.d(i18);
-            i12 = 120;
-            f5VarArr = f5VarArr2;
-            Resources resources = ApplicationLoader.applicationContext.getResources();
-            Rect e7 = x9.e(d, width, height);
-            bitmap = createBitmap;
-            Bitmap createBitmap2 = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            Utilities.drawDitheredGradient(createBitmap2, new int[]{i10, i11}, e7.left, e7.top, e7.right, e7.bottom);
-            bitmapDrawable = new BitmapDrawable(resources, createBitmap2);
-            cd0Var = null;
-        }
-        int patternColor = AndroidUtilities.getPatternColor(AndroidUtilities.getAverageColor(i10, i11));
-        if (bitmapDrawable != null) {
-            z10 = false;
-            bitmapDrawable.setBounds(0, i12, bitmap.getWidth(), bitmap.getHeight() - 120);
-            bitmapDrawable.draw(canvas);
-        } else {
-            z10 = false;
-        }
-        if (file != null) {
-            if ("application/x-tgwallpattern".equals(themeDocument.mime_type)) {
-                decodeFile = SvgHelper.getBitmap(file, 560, 678, z10);
+public final class w21 extends Drawable {
+    public final TextPaint a;
+    public final Paint b;
+    public StaticLayout c;
+    public float d;
+    public int e;
+    public int f;
+    public Drawable g;
+    public int h;
+    public final Context i;
+    public final org.telegram.ui.ActionBar.c6 j;
+    public boolean k;
+    public boolean l;
+    public boolean m;
+    public ColorFilter n;
+
+    public w21(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        this.b = new Paint(1);
+        Paint paint = new Paint(1);
+        this.d = 0.0f;
+        this.e = 0;
+        this.f = -1;
+        this.i = context;
+        this.j = c6Var;
+        textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
+        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        paint.setStyle(Paint.Style.STROKE);
+    }
+
+    public static w21 a(int i10) {
+        w21 w21Var = new w21(ApplicationLoader.applicationContext, null);
+        w21Var.b(i10);
+        w21Var.l = true;
+        return w21Var;
+    }
+
+    public final void b(int i10) {
+        String str;
+        if (this.f != i10) {
+            this.f = i10;
+            boolean z10 = this.m;
+            Context context = this.i;
+            if (z10) {
+                this.g = context.getDrawable(R.drawable.msg_autodelete_badge2).mutate();
             } else {
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inSampleSize = 1;
-                options.inJustDecodeBounds = true;
-                BitmapFactory.decodeFile(file.getAbsolutePath(), options);
-                float f7 = options.outWidth;
-                float f10 = options.outHeight;
-                float f11 = 560;
-                float f12 = 678;
-                float min = Math.min(f7 / f11, f10 / f12);
-                min = min < 1.2f ? 1.0f : min;
-                options.inJustDecodeBounds = false;
-                if (min <= 1.0f || (f7 <= f11 && f10 <= f12)) {
-                    options.inSampleSize = (int) min;
-                } else {
-                    int i20 = 1;
-                    while (true) {
-                        i13 = i20 * 2;
-                        if (i20 * 4 >= min) {
-                            break;
-                        } else {
-                            i20 = i13;
-                        }
-                    }
-                    options.inSampleSize = i13;
-                }
-                decodeFile = BitmapFactory.decodeFile(file.getAbsolutePath(), options);
+                Drawable mutate = context.getDrawable(i10 == 0 ? R.drawable.msg_mini_autodelete : R.drawable.msg_mini_autodelete_empty).mutate();
+                this.g = mutate;
+                mutate.setColorFilter(this.n);
             }
-            bitmap2 = decodeFile;
-            if (bitmap2 != null) {
-                if (cd0Var != null) {
-                    cd0Var.t(bitmap2, (int) (themeDocument.accent.p * 100.0f));
-                    cd0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
-                    cd0Var.draw(canvas);
-                } else {
-                    Paint paint2 = new Paint(2);
-                    if (themeDocument.accent.p >= 0.0f) {
-                        paint2.setColorFilter(new PorterDuffColorFilter(patternColor, PorterDuff.Mode.SRC_IN));
-                    }
-                    paint2.setAlpha(255);
-                    float max = Math.max(560 / bitmap2.getWidth(), 678 / bitmap2.getHeight());
-                    int width2 = (int) (bitmap2.getWidth() * max);
-                    canvas.save();
-                    canvas.translate((560 - width2) / 2, (678 - ((int) (bitmap2.getHeight() * max))) / 2);
-                    canvas.scale(max, max);
-                    canvas.drawBitmap(bitmap2, 0.0f, 0.0f, paint2);
-                    canvas.restore();
+            invalidateSelf();
+            int i11 = this.f;
+            if (i11 >= 1 && i11 < 60) {
+                str = i2.d.i(i10, "");
+                if (str.length() < 2) {
+                    str = org.telegram.messenger.q.h(R.string.SecretChatTimerSeconds, a1.g.u(str));
+                }
+            } else if (i11 >= 60 && i11 < 3600) {
+                str = "" + (i10 / 60);
+                if (str.length() < 2) {
+                    str = org.telegram.messenger.q.h(R.string.SecretChatTimerMinutes, a1.g.u(str));
+                }
+            } else if (i11 >= 3600 && i11 < 86400) {
+                str = "" + ((i10 / 60) / 60);
+                if (str.length() < 2) {
+                    str = org.telegram.messenger.q.h(R.string.SecretChatTimerHours, a1.g.u(str));
+                }
+            } else if (i11 >= 86400 && i11 < 604800) {
+                str = "" + (((i10 / 60) / 60) / 24);
+                if (str.length() < 2) {
+                    str = org.telegram.messenger.q.h(R.string.SecretChatTimerDays, a1.g.u(str));
+                }
+            } else if (i11 < 2678400) {
+                str = "" + ((((i10 / 60) / 60) / 24) / 7);
+                if (str.length() < 2) {
+                    str = org.telegram.messenger.q.h(R.string.SecretChatTimerWeeks, a1.g.u(str));
+                } else if (str.length() > 2) {
+                    str = "c";
+                }
+            } else if (i11 < 31449600) {
+                str = "" + ((((i10 / 60) / 60) / 24) / 30);
+                if (str.length() < 2) {
+                    str = org.telegram.messenger.q.h(R.string.SecretChatTimerMonths, a1.g.u(str));
+                }
+            } else {
+                str = "" + ((((i10 / 60) / 60) / 24) / 364);
+                if (str.length() < 2) {
+                    str = org.telegram.messenger.q.h(R.string.SecretChatTimerYears, a1.g.u(str));
                 }
             }
+            String str2 = str;
+            float dp = AndroidUtilities.dp(11.0f);
+            TextPaint textPaint = this.a;
+            textPaint.setTextSize(dp);
+            float measureText = textPaint.measureText(str2);
+            this.d = measureText;
+            if (measureText > AndroidUtilities.dp(13.0f)) {
+                textPaint.setTextSize(AndroidUtilities.dp(9.0f));
+                this.d = textPaint.measureText(str2);
+            }
+            if (this.d > AndroidUtilities.dp(13.0f)) {
+                textPaint.setTextSize(AndroidUtilities.dp(6.0f));
+                this.d = textPaint.measureText(str2);
+            }
+            try {
+                StaticLayout staticLayout = new StaticLayout(str2, textPaint, (int) Math.ceil(this.d), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                this.c = staticLayout;
+                this.e = staticLayout.getHeight();
+            } catch (Exception e) {
+                this.c = null;
+                FileLog.e(e);
+            }
+            invalidateSelf();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int dp = AndroidUtilities.dp(23.0f);
+        int dp2 = AndroidUtilities.dp(23.0f);
+        boolean z10 = this.m;
+        Paint paint = this.b;
+        TextPaint textPaint = this.a;
+        org.telegram.ui.ActionBar.c6 c6Var = this.j;
+        if (z10) {
+            textPaint.setColor(-1);
+        } else if (this.l) {
+            textPaint.setColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.F8, c6Var));
         } else {
-            bitmap2 = null;
+            if (!this.k) {
+                paint.setColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.s8, c6Var));
+            }
+            textPaint.setColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.A8, c6Var));
         }
-        if (bitmap2 == null && cd0Var != null) {
-            cd0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
-            cd0Var.draw(canvas);
+        if (this.g != null) {
+            if (!this.l && !this.m) {
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), getBounds().width() / 2.0f, paint);
+                int w02 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.A8, c6Var);
+                if (this.h != w02) {
+                    this.h = w02;
+                    this.g.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
+                }
+            }
+            if (this.m) {
+                this.g.setBounds(getBounds().left, getBounds().top, this.g.getIntrinsicWidth() + getBounds().left, this.g.getIntrinsicHeight() + getBounds().top);
+                this.g.draw(canvas);
+            } else {
+                Rect rect = AndroidUtilities.rectTmp2;
+                rect.set(getBounds().centerX() - AndroidUtilities.dp(10.5f), getBounds().centerY() - AndroidUtilities.dp(10.5f), this.g.getIntrinsicWidth() + (getBounds().centerX() - AndroidUtilities.dp(10.5f)), this.g.getIntrinsicHeight() + (getBounds().centerY() - AndroidUtilities.dp(10.5f)));
+                this.g.setBounds(rect);
+                this.g.draw(canvas);
+            }
         }
-        paint.setColor(G0);
-        canvas.drawRect(0.0f, 0.0f, bitmap.getWidth(), 120.0f, paint);
-        if (mutate != null) {
-            int intrinsicHeight = (120 - mutate.getIntrinsicHeight()) / 2;
-            mutate.setBounds(13, intrinsicHeight, mutate.getIntrinsicWidth() + 13, mutate.getIntrinsicHeight() + intrinsicHeight);
-            mutate.draw(canvas);
+        if (this.f == 0 || this.c == null) {
+            return;
         }
-        if (mutate2 != null) {
-            int width3 = (bitmap.getWidth() - mutate2.getIntrinsicWidth()) - 10;
-            int intrinsicHeight2 = (120 - mutate2.getIntrinsicHeight()) / 2;
-            mutate2.setBounds(width3, intrinsicHeight2, mutate2.getIntrinsicWidth() + width3, mutate2.getIntrinsicHeight() + intrinsicHeight2);
-            mutate2.draw(canvas);
+        int i10 = AndroidUtilities.density != 3.0f ? 0 : -1;
+        canvas.save();
+        if (this.m) {
+            canvas.translate((float) (((getBounds().width() / 2) - Math.ceil(this.d / 2.0f)) + i10), (getBounds().height() - this.e) / 2.0f);
+            this.c.draw(canvas);
+        } else {
+            canvas.translate(((int) ((dp / 2) - Math.ceil(this.d / 2.0f))) + i10, (dp2 - this.e) / 2.0f);
+            this.c.draw(canvas);
         }
-        f5VarArr[1].setBounds(161, 216, bitmap.getWidth() - 20, 308);
-        f5VarArr[1].n(0, 560, 522);
-        f5VarArr[1].draw(canvas);
-        f5VarArr[1].setBounds(161, 430, bitmap.getWidth() - 20, 522);
-        f5VarArr[1].n(430, 560, 522);
-        f5VarArr[1].draw(canvas);
-        f5VarArr[0].setBounds(20, 323, 399, 415);
-        f5VarArr[0].n(323, 560, 522);
-        f5VarArr[0].draw(canvas);
-        paint.setColor(G03);
-        canvas.drawRect(0.0f, bitmap.getHeight() - 120, bitmap.getWidth(), bitmap.getHeight(), paint);
-        if (mutate3 != null) {
-            int intrinsicHeight3 = ((120 - mutate3.getIntrinsicHeight()) / 2) + (bitmap.getHeight() - 120);
-            mutate3.setBounds(22, intrinsicHeight3, mutate3.getIntrinsicWidth() + 22, mutate3.getIntrinsicHeight() + intrinsicHeight3);
-            mutate3.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(23.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(23.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.n = colorFilter;
+        if (this.l) {
+            this.g.setColorFilter(colorFilter);
         }
-        if (drawable2 != null) {
-            int width4 = (bitmap.getWidth() - drawable2.getIntrinsicWidth()) - 22;
-            int intrinsicHeight4 = ((120 - drawable2.getIntrinsicHeight()) / 2) + (bitmap.getHeight() - 120);
-            drawable2.setBounds(width4, intrinsicHeight4, drawable2.getIntrinsicWidth() + width4, drawable2.getIntrinsicHeight() + intrinsicHeight4);
-            drawable2.draw(canvas);
-        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 }

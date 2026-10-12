@@ -13,12 +13,12 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.PowerManager;
-import hg.c;
+import i2.d;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class JobIntentService extends Service {
     static final boolean DEBUG = false;
@@ -33,7 +33,7 @@ public abstract class JobIntentService extends Service {
     boolean mStopped = false;
     boolean mDestroyed = false;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public final class CommandProcessor extends AsyncTask<Void, Void, Void> {
         public CommandProcessor() {
         }
@@ -64,14 +64,14 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface CompatJobEngine {
         IBinder compatGetBinder();
 
         GenericWorkItem dequeueWork();
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class CompatWorkEnqueuer extends WorkEnqueuer {
         private final Context mContext;
         private final PowerManager.WakeLock mLaunchWakeLock;
@@ -156,7 +156,7 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public final class CompatWorkItem implements GenericWorkItem {
         final Intent mIntent;
         final int mStartId;
@@ -177,14 +177,14 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface GenericWorkItem {
         void complete();
 
         Intent getIntent();
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class JobServiceEngineImpl extends JobServiceEngine implements CompatJobEngine {
         static final boolean DEBUG = false;
         static final String TAG = "JobServiceEngineImpl";
@@ -192,7 +192,7 @@ public abstract class JobIntentService extends Service {
         JobParameters mParams;
         final JobIntentService mService;
 
-        /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+        /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
         public final class WrapperWorkItem implements GenericWorkItem {
             final JobWorkItem mJobWork;
 
@@ -267,7 +267,7 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class JobWorkEnqueuer extends WorkEnqueuer {
         private final JobInfo mJobInfo;
         private final JobScheduler mJobScheduler;
@@ -447,7 +447,7 @@ public abstract class JobIntentService extends Service {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static abstract class WorkEnqueuer {
         final ComponentName mComponentName;
         boolean mHasJobId;
@@ -467,9 +467,9 @@ public abstract class JobIntentService extends Service {
                 if (this.mJobId == i10) {
                     return;
                 }
-                StringBuilder j3 = c.j(i10, "Given job ID ", " is different than previous ");
-                j3.append(this.mJobId);
-                throw new IllegalArgumentException(j3.toString());
+                StringBuilder k10 = d.k(i10, "Given job ID ", " is different than previous ");
+                k10.append(this.mJobId);
+                throw new IllegalArgumentException(k10.toString());
             }
         }
 

@@ -1,44 +1,42 @@
 package fi;
 
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.zn;
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
+public final /* synthetic */ class p0 implements org.telegram.ui.ActionBar.z1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Activity b;
 
-    public /* synthetic */ p0(int i10, zn znVar, boolean z10) {
-        this.d = i10;
-        this.b = znVar;
-        this.c = z10;
+    public /* synthetic */ p0(Activity activity, int i10) {
+        this.a = i10;
+        this.b = activity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
             case 0:
-                int i10 = this.d;
-                zn znVar = this.b;
-                if (i10 != 2) {
-                    znVar.Z9();
-                    znVar.cc();
+                Activity activity = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    activity.startActivity(intent);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
                 }
-                u0.f(ad.a0(znVar), i10, this.c);
-                break;
             default:
-                boolean z10 = this.c;
-                this.b.Cc(this.d, z10);
+                Activity activity2 = this.b;
+                Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                intent2.setData(Uri.fromParts("package", activity2.getPackageName(), null));
+                activity2.startActivity(intent2);
                 break;
         }
-    }
-
-    public /* synthetic */ p0(zn znVar, boolean z10, int i10) {
-        this.b = znVar;
-        this.c = z10;
-        this.d = i10;
     }
 }

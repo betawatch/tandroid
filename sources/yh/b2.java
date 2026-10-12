@@ -1,27 +1,31 @@
 package yh;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class b2 extends ClickableSpan {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ s3 b;
+public final /* synthetic */ class b2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m2 b;
 
-    public b2(s3 s3Var, long j3) {
-        this.b = s3Var;
-        this.a = j3;
+    public /* synthetic */ b2(m2 m2Var, int i10) {
+        this.a = i10;
+        this.b = m2Var;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.b.Y1(this.a);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(textPaint.linkColor);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.setReordering(true);
+                break;
+            case 1:
+                this.b.setReordering(true);
+                break;
+            case 2:
+                this.b.f(false);
+                break;
+            default:
+                this.b.setReordering(true);
+                break;
+        }
     }
 }

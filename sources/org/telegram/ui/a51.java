@@ -1,62 +1,39 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.lang.reflect.Method;
-import org.telegram.messenger.FileLog;
+import android.app.Activity;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class a51 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.kn0 b;
+public final class a51 extends org.telegram.ui.Components.s6 {
+    public boolean s;
+    public final org.telegram.ui.Components.g6 v;
+    public final /* synthetic */ SaveToGallerySettingsActivity w;
 
-    public /* synthetic */ a51(org.telegram.ui.Components.kn0 kn0Var, int i10) {
-        this.a = i10;
-        this.b = kn0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a51(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
+        super(activity, true, true, false);
+        this.w = saveToGallerySettingsActivity;
+        this.v = new org.telegram.ui.Components.g6(this);
+        getDrawable().J = true;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
-                secretMediaViewer.Z.getNextView().setText((CharSequence) null);
-                cu0 cu0Var = secretMediaViewer.a0;
-                cu0Var.l0 = false;
-                if (cu0Var.m0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) cu0Var.o0.getLayoutParams()).topMargin = cu0Var.m0;
-                    cu0Var.m0 = -1;
-                    cu0Var.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                ((SecretMediaViewer) this.b.b).Z.setTranslationY(0.0f);
-                break;
-        }
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f7 = this.s ? 1.0f : 0.0f;
+        org.telegram.ui.Components.g6 g6Var = this.v;
+        g6Var.d(f7, false);
+        int i10 = org.telegram.ui.ActionBar.g6.y6;
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.w;
+        setTextColor(i0.a.d(g6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.g6.n6)));
+        super.dispatchDraw(canvas);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                cu0 cu0Var = ((SecretMediaViewer) this.b.b).a0;
-                Method method = cu0Var.f0;
-                if (method != null) {
-                    try {
-                        method.invoke(cu0Var, null);
-                        break;
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                        return;
-                    }
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+    public final void e(boolean z10, boolean z11) {
+        if (this.s != z10) {
+            this.s = z10;
+            this.v.d(z10 ? 1.0f : 0.0f, z11);
+            invalidate();
         }
     }
 }

@@ -1,37 +1,85 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.KeyEvent;
+import android.util.SparseArray;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fj extends FrameLayout {
-    public final /* synthetic */ zn a;
+public final class fj {
+    public boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ fo d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fj(zn znVar, Activity activity) {
-        super(activity);
-        this.a = znVar;
+    public fj(fo foVar, boolean z10, SparseArray sparseArray) {
+        this.d = foVar;
+        this.b = z10;
+        this.c = sparseArray;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-            this.a.D7(true);
+    public final boolean a(int i10) {
+        fo foVar = this.d;
+        int i11 = i10 - foVar.A0.J;
+        if (i11 < 0 || i11 >= foVar.u6.size()) {
+            return false;
         }
-        return super.dispatchKeyEvent(keyEvent);
+        MessageObject messageObject = (MessageObject) foVar.u6.get(i11);
+        if (messageObject.contentType != 0) {
+            return false;
+        }
+        SparseArray sparseArray = this.c;
+        boolean z10 = this.b;
+        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
+            return z10 && sparseArray.get(messageObject.getId(), null) != null;
+        }
+        return true;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int min = Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(300.0f));
-        if (min == 0) {
-            min = AndroidUtilities.dp(300.0f);
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i10, boolean z10, float f7, float f10) {
+        s4.b1 K;
+        fo foVar = this.d;
+        ArrayList arrayList = foVar.u6;
+        SparseArray[] sparseArrayArr = foVar.W5;
+        int i11 = i10 - foVar.A0.J;
+        if (this.b) {
+            z10 = !z10;
         }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_31));
+        if (i11 < 0 || i11 >= arrayList.size()) {
+            return;
+        }
+        MessageObject messageObject = (MessageObject) arrayList.get(i11);
+        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
+            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
+                if (z10) {
+                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
+                        this.a = true;
+                        K = foVar.x0.K(i10);
+                        if (K != null) {
+                            View view = K.a;
+                            if (view instanceof org.telegram.ui.Cells.u1) {
+                                fo.c2(foVar, view, false, f7, f10);
+                                return;
+                            }
+                        }
+                        foVar.A6(messageObject, false, true);
+                        foVar.hc();
+                        foVar.ad(false);
+                    }
+                }
+                this.a = false;
+                K = foVar.x0.K(i10);
+                if (K != null) {
+                }
+                foVar.A6(messageObject, false, true);
+                foVar.hc();
+                foVar.ad(false);
+            }
+        }
     }
 }

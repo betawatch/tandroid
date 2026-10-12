@@ -3,7 +3,7 @@ package l5;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h {
     public final String a;
@@ -13,12 +13,12 @@ public final class h {
     public final long e;
     public final Map f;
 
-    public h(String str, Integer num, l lVar, long j3, long j10, HashMap hashMap) {
+    public h(String str, Integer num, l lVar, long j10, long j11, HashMap hashMap) {
         this.a = str;
         this.b = num;
         this.c = lVar;
-        this.d = j3;
-        this.e = j10;
+        this.d = j10;
+        this.e = j11;
         this.f = hashMap;
     }
 
@@ -35,23 +35,23 @@ public final class h {
         return Integer.valueOf(str2).intValue();
     }
 
-    public final com.google.firebase.messaging.n c() {
-        com.google.firebase.messaging.n nVar = new com.google.firebase.messaging.n();
+    public final com.google.firebase.messaging.m c() {
+        com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m();
         String str = this.a;
         if (str == null) {
             throw new NullPointerException("Null transportName");
         }
-        nVar.a = str;
-        nVar.b = this.b;
+        mVar.a = str;
+        mVar.b = this.b;
         l lVar = this.c;
         if (lVar == null) {
             throw new NullPointerException("Null encodedPayload");
         }
-        nVar.c = lVar;
-        nVar.d = Long.valueOf(this.d);
-        nVar.e = Long.valueOf(this.e);
-        nVar.f = new HashMap(this.f);
-        return nVar;
+        mVar.c = lVar;
+        mVar.d = Long.valueOf(this.d);
+        mVar.e = Long.valueOf(this.e);
+        mVar.f = new HashMap(this.f);
+        return mVar;
     }
 
     public final boolean equals(Object obj) {
@@ -73,10 +73,10 @@ public final class h {
         int hashCode = (this.a.hashCode() ^ 1000003) * 1000003;
         Integer num = this.b;
         int hashCode2 = (((hashCode ^ (num == null ? 0 : num.hashCode())) * 1000003) ^ this.c.hashCode()) * 1000003;
-        long j3 = this.d;
-        int i10 = (hashCode2 ^ ((int) (j3 ^ (j3 >>> 32)))) * 1000003;
-        long j10 = this.e;
-        return ((i10 ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003) ^ this.f.hashCode();
+        long j10 = this.d;
+        int i10 = (hashCode2 ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
+        long j11 = this.e;
+        return ((i10 ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003) ^ this.f.hashCode();
     }
 
     public final String toString() {

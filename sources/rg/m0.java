@@ -1,33 +1,133 @@
 package rg;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.yh;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.s6;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class m0 extends org.telegram.ui.Cells.q {
-    public v1 e;
-    public Paint f;
-    public float h;
+public final class m0 extends FrameLayout {
+    public final /* synthetic */ int a = 3;
+    public Object b;
+    public KeyEvent.Callback c;
 
-    @Override // org.telegram.ui.Cells.q, android.view.View
-    public final void draw(Canvas canvas) {
-        int dp = AndroidUtilities.dp(10.0f);
-        v1 v1Var = this.e;
-        v1Var.c.set(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), getMeasuredWidth() - AndroidUtilities.dp(5.0f), getMeasuredHeight() - AndroidUtilities.dp(5.0f));
-        float f7 = -dp;
-        v1Var.a.set(f7, f7, getWidth() + dp, getHeight() + dp);
-        canvas.save();
-        float f10 = 1.0f - this.h;
-        canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        v1Var.d(canvas);
-        canvas.restore();
-        invalidate();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.f);
-        super.draw(canvas);
+    public /* synthetic */ m0(Context context) {
+        super(context);
+    }
+
+    public void a(int i10, CharSequence charSequence, boolean z10) {
+        ImageView imageView = (ImageView) this.b;
+        if (z10) {
+            AndroidUtilities.updateImageViewImageAnimated(imageView, i10);
+        } else {
+            imageView.setImageResource(i10);
+        }
+        ((TextView) this.c).setText(charSequence);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                ((sg.a1) this.b).d(0, 0.0f, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(0.0f, AndroidUtilities.dp(2.0f), getMeasuredWidth(), AndroidUtilities.dp(18.0f) + getMeasuredHeight());
+                canvas.save();
+                canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                sg.a1 a1Var = (sg.a1) this.b;
+                a1Var.f.setAlpha(((sg.y0) this.c).K);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(24.0f) - 1, AndroidUtilities.dp(24.0f) - 1, a1Var.f);
+                canvas.restore();
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                Path path = (Path) this.b;
+                n0 n0Var = (n0) this.c;
+                if (n0Var.h == null || (!((z10 = n0Var.f) && view == n0Var.d) && (z10 || view != n0Var.c))) {
+                    return super.drawChild(canvas, view, j10);
+                }
+                float measuredWidth = ((z10 ? n0Var.e : 1.0f - n0Var.e) * getMeasuredWidth()) / 2.0f;
+                canvas.save();
+                path.rewind();
+                path.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, measuredWidth, Path.Direction.CW);
+                canvas.clipPath(path);
+                boolean drawChild = super.drawChild(canvas, view, j10);
+                canvas.restore();
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j10);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                super.onMeasure(i10, yh.D(2.0f, ((sg.y0) this.c).s, TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m0(sg.y0 y0Var, Context context, sg.a1 a1Var) {
+        super(context);
+        this.c = y0Var;
+        this.b = a1Var;
+    }
+
+    public m0(Context context, c6 c6Var) {
+        super(context);
+        LinearLayout e = yh.e(context, 1);
+        s6 s6Var = new s6(context, false, false, false);
+        this.b = s6Var;
+        int i10 = g6.G6;
+        s6Var.setTextColor(g6.w0(i10, c6Var));
+        s6Var.setTextSize(AndroidUtilities.dp(17.0f));
+        s6Var.setTypeface(AndroidUtilities.bold());
+        e.addView(s6Var, a6.q(-2, 23, 1));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 11.0f);
+        textView.setTextColor(g6.w0(i10, c6Var));
+        textView.setSingleLine();
+        textView.setMaxLines(1);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        e.addView(textView, a6.q(-2, -2, 1));
+        addView(e, a6.e(-2, -2, 17));
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m0(n0 n0Var, Context context) {
+        super(context);
+        this.c = n0Var;
+        this.b = new Path();
     }
 }

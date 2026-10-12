@@ -1,29 +1,136 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.core.widget.NestedScrollView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class st extends ReplacementSpan {
-    public int b;
-    public final Paint a = new Paint(1);
-    public float c = 3.0f;
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int color = paint.getColor();
-        Paint paint2 = this.a;
-        if (color != 0) {
-            paint2.setColor(paint.getColor());
-        }
-        canvas.drawCircle(f7 + (AndroidUtilities.dpf2(this.c) / 2.0f), ((i14 - i12) / 2) + this.b, AndroidUtilities.dpf2(3.0f) / 2.0f, paint2);
+public final class st extends org.telegram.ui.ActionBar.e3 {
+    public static /* synthetic */ void n(st stVar) {
+        stVar.dismiss();
+        DownloadController.getInstance(stVar.currentAccount).clearRecentDownloadedFiles();
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return AndroidUtilities.dp(this.c);
+    public static void o(Activity activity, org.telegram.ui.ActionBar.m2 m2Var) {
+        if (m2Var == null || activity == null) {
+            return;
+        }
+        final st stVar = new st(activity, false);
+        stVar.setApplyBottomPadding(false);
+        stVar.setApplyTopPadding(false);
+        int i10 = org.telegram.ui.ActionBar.g6.d6;
+        stVar.fixNavigationBar(stVar.getThemedColor(i10));
+        LinearLayout linearLayout = new LinearLayout(activity);
+        linearLayout.setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(activity);
+        frameLayout.addView(linearLayout);
+        ImageView imageView = new ImageView(activity);
+        imageView.setBackground(org.telegram.ui.ActionBar.g6.g0(stVar.getThemedColor(org.telegram.ui.ActionBar.g6.i6), 1, -1));
+        imageView.setColorFilter(stVar.getThemedColor(org.telegram.ui.ActionBar.g6.Ji));
+        imageView.setImageResource(R.drawable.ic_layer_close);
+        final int i11 = 0;
+        imageView.setOnClickListener(new View.OnClickListener(stVar) { // from class: org.telegram.ui.Components.qt
+            public final /* synthetic */ st b;
+
+            {
+                this.b = stVar;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i11) {
+                    case 0:
+                        this.b.dismiss();
+                        break;
+                    default:
+                        st.n(this.b);
+                        break;
+                }
+            }
+        });
+        int dp = AndroidUtilities.dp(8.0f);
+        imageView.setPadding(dp, dp, dp, dp);
+        frameLayout.addView(imageView, w7.a6.a(36.0f, 6.0f, 8.0f, 8.0f, 0.0f, 36, 8388661));
+        xx0 xx0Var = new xx0(activity, stVar.currentAccount);
+        xx0Var.setStickerNum(9);
+        xx0Var.getImageReceiver().setAutoRepeat(1);
+        linearLayout.addView(xx0Var, w7.a6.t(110, 110, 1, 0, 26, 0, 0));
+        TextView textView = new TextView(activity);
+        textView.setGravity(1);
+        int i12 = org.telegram.ui.ActionBar.g6.j5;
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i12, false));
+        textView.setTextSize(1, 20.0f);
+        textView.setText(LocaleController.getString(R.string.DownloadedFiles));
+        linearLayout.addView(textView, w7.a6.a(-2.0f, 21.0f, 20.0f, 21.0f, 0.0f, -1, 0));
+        TextView textView2 = new TextView(activity);
+        textView2.setGravity(1);
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i12, false));
+        textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
+        textView2.setText(LocaleController.formatString("DownloadedFilesMessage", R.string.DownloadedFilesMessage, new Object[0]));
+        linearLayout.addView(textView2, w7.a6.a(-2.0f, 28.0f, 7.0f, 28.0f, 0.0f, -1, 0));
+        TextView textView3 = new TextView(activity);
+        textView3.setGravity(17);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView3.setEllipsize(truncateAt);
+        textView3.setSingleLine(true);
+        textView3.setTextSize(1, 14.0f);
+        textView3.setTypeface(AndroidUtilities.bold());
+        textView3.setText(LocaleController.getString(R.string.ManageDeviceStorage));
+        textView3.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Sh, false));
+        int dp2 = AndroidUtilities.dp(8.0f);
+        int i13 = org.telegram.ui.ActionBar.g6.Oh;
+        int x02 = org.telegram.ui.ActionBar.g6.x0(null, i13, false);
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.g6.x0(null, i10, false), 120);
+        textView3.setBackground(org.telegram.ui.ActionBar.g6.j0(dp2, dp2, dp2, dp2, x02, k10, k10));
+        linearLayout.addView(textView3, w7.a6.a(48.0f, 14.0f, 28.0f, 14.0f, 6.0f, -1, 0));
+        TextView textView4 = new TextView(activity);
+        textView4.setGravity(17);
+        textView4.setEllipsize(truncateAt);
+        textView4.setSingleLine(true);
+        textView4.setTextSize(1, 14.0f);
+        textView4.setTypeface(AndroidUtilities.bold());
+        textView4.setText(LocaleController.getString(R.string.ClearDownloadsList));
+        textView4.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i13, false));
+        int dp3 = AndroidUtilities.dp(8.0f);
+        int k11 = i0.a.k(org.telegram.ui.ActionBar.g6.x0(null, i13, false), 120);
+        textView4.setBackground(org.telegram.ui.ActionBar.g6.j0(dp3, dp3, dp3, dp3, 0, k11, k11));
+        textView4.setLetterSpacing(0.025f);
+        linearLayout.addView(textView4, w7.a6.a(48.0f, 14.0f, 0.0f, 14.0f, 6.0f, -1, 0));
+        NestedScrollView nestedScrollView = new NestedScrollView(activity);
+        nestedScrollView.addView(frameLayout);
+        stVar.setCustomView(nestedScrollView);
+        textView3.setOnClickListener(new rt(0, stVar, m2Var));
+        final int i14 = 1;
+        textView4.setOnClickListener(new View.OnClickListener(stVar) { // from class: org.telegram.ui.Components.qt
+            public final /* synthetic */ st b;
+
+            {
+                this.b = stVar;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i14) {
+                    case 0:
+                        this.b.dismiss();
+                        break;
+                    default:
+                        st.n(this.b);
+                        break;
+                }
+            }
+        });
+        stVar.show();
     }
 }

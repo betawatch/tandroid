@@ -1,19 +1,19 @@
 package com.google.android.gms.tasks;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class NativeOnCompleteListener implements OnCompleteListener<Object> {
     private final long zza;
 
-    public NativeOnCompleteListener(long j3) {
-        this.zza = j3;
+    public NativeOnCompleteListener(long j10) {
+        this.zza = j10;
     }
 
-    public static void createAndAddCallback(Task<Object> task, long j3) {
-        task.addOnCompleteListener(new NativeOnCompleteListener(j3));
+    public static void createAndAddCallback(Task<Object> task, long j10) {
+        task.addOnCompleteListener(new NativeOnCompleteListener(j10));
     }
 
-    public native void nativeOnComplete(long j3, Object obj, boolean z10, boolean z11, String str);
+    public native void nativeOnComplete(long j10, Object obj, boolean z10, boolean z11, String str);
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
     public void onComplete(Task<Object> task) {

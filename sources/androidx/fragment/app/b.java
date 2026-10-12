@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b implements Parcelable {
     public static final Parcelable.Creator<b> CREATOR = new w.a(10);
@@ -35,22 +35,22 @@ public final class b implements Parcelable {
         this.d = new int[size];
         int i10 = 0;
         for (int i11 = 0; i11 < size; i11++) {
-            r0 r0Var = (r0) aVar.a.get(i11);
+            p0 p0Var = (p0) aVar.a.get(i11);
             int i12 = i10 + 1;
-            this.a[i10] = r0Var.a;
+            this.a[i10] = p0Var.a;
             ArrayList arrayList = this.b;
-            s sVar = r0Var.b;
-            arrayList.add(sVar != null ? sVar.e : null);
+            r rVar = p0Var.b;
+            arrayList.add(rVar != null ? rVar.e : null);
             int[] iArr = this.a;
-            iArr[i12] = r0Var.c ? 1 : 0;
-            iArr[i10 + 2] = r0Var.d;
-            iArr[i10 + 3] = r0Var.e;
+            iArr[i12] = p0Var.c ? 1 : 0;
+            iArr[i10 + 2] = p0Var.d;
+            iArr[i10 + 3] = p0Var.e;
             int i13 = i10 + 5;
-            iArr[i10 + 4] = r0Var.f;
+            iArr[i10 + 4] = p0Var.f;
             i10 += 6;
-            iArr[i13] = r0Var.g;
-            this.c[i11] = r0Var.h.ordinal();
-            this.d[i11] = r0Var.i.ordinal();
+            iArr[i13] = p0Var.g;
+            this.c[i11] = p0Var.h.ordinal();
+            this.d[i11] = p0Var.i.ordinal();
         }
         this.e = aVar.f;
         this.f = aVar.h;

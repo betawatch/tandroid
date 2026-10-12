@@ -9,14 +9,14 @@ import android.text.TextUtils;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g extends Binder implements b {
     public final WeakReference a;
 
-    public g(androidx.mediarouter.app.r rVar) {
+    public g(androidx.mediarouter.app.q qVar) {
         attachInterface(this, "android.support.v4.media.session.IMediaControllerCallback");
-        this.a = new WeakReference(rVar);
+        this.a = new WeakReference(qVar);
     }
 
     @Override // android.support.v4.media.session.b
@@ -26,9 +26,9 @@ public final class g extends Binder implements b {
 
     @Override // android.support.v4.media.session.b
     public final void C0(PlaybackStateCompat playbackStateCompat) {
-        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
-        if (rVar != null) {
-            rVar.e(2, playbackStateCompat, null);
+        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
+        if (qVar != null) {
+            qVar.e(2, playbackStateCompat, null);
         }
     }
 
@@ -59,17 +59,17 @@ public final class g extends Binder implements b {
 
     @Override // android.support.v4.media.session.b
     public final void h(int i10) {
-        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
-        if (rVar != null) {
-            rVar.e(12, Integer.valueOf(i10), null);
+        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
+        if (qVar != null) {
+            qVar.e(12, Integer.valueOf(i10), null);
         }
     }
 
     @Override // android.support.v4.media.session.b
     public final void onRepeatModeChanged(int i10) {
-        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
-        if (rVar != null) {
-            rVar.e(9, Integer.valueOf(i10), null);
+        androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.a.get();
+        if (qVar != null) {
+            qVar.e(9, Integer.valueOf(i10), null);
         }
     }
 
@@ -86,32 +86,32 @@ public final class g extends Binder implements b {
         switch (i10) {
             case 1:
                 String readString = parcel.readString();
-                Bundle bundle = (Bundle) k9.b.a(parcel, Bundle.CREATOR);
-                androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) weakReference.get();
-                if (rVar != null) {
-                    rVar.e(1, readString, bundle);
+                Bundle bundle = (Bundle) qb.a.a(parcel, Bundle.CREATOR);
+                androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) weakReference.get();
+                if (qVar != null) {
+                    qVar.e(1, readString, bundle);
                 }
                 return true;
             case 2:
                 e0();
                 return true;
             case 3:
-                C0((PlaybackStateCompat) k9.b.a(parcel, PlaybackStateCompat.CREATOR));
+                C0((PlaybackStateCompat) qb.a.a(parcel, PlaybackStateCompat.CREATOR));
                 return true;
             case 4:
-                g0((MediaMetadataCompat) k9.b.a(parcel, MediaMetadataCompat.CREATOR));
+                g0((MediaMetadataCompat) qb.a.a(parcel, MediaMetadataCompat.CREATOR));
                 return true;
             case 5:
                 F(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
                 return true;
             case 6:
-                c0((CharSequence) k9.b.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
+                c0((CharSequence) qb.a.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
                 return true;
             case 7:
-                C((Bundle) k9.b.a(parcel, Bundle.CREATOR));
+                C((Bundle) qb.a.a(parcel, Bundle.CREATOR));
                 return true;
             case 8:
-                E0((ParcelableVolumeInfo) k9.b.a(parcel, ParcelableVolumeInfo.CREATOR));
+                E0((ParcelableVolumeInfo) qb.a.a(parcel, ParcelableVolumeInfo.CREATOR));
                 return true;
             case 9:
                 onRepeatModeChanged(parcel.readInt());
@@ -121,9 +121,9 @@ public final class g extends Binder implements b {
                 return true;
             case 11:
                 boolean z10 = parcel.readInt() != 0;
-                androidx.mediarouter.app.r rVar2 = (androidx.mediarouter.app.r) weakReference.get();
-                if (rVar2 != null) {
-                    rVar2.e(11, Boolean.valueOf(z10), null);
+                androidx.mediarouter.app.q qVar2 = (androidx.mediarouter.app.q) weakReference.get();
+                if (qVar2 != null) {
+                    qVar2.e(11, Boolean.valueOf(z10), null);
                     return true;
                 }
                 return true;
@@ -131,9 +131,9 @@ public final class g extends Binder implements b {
                 h(parcel.readInt());
                 return true;
             case 13:
-                androidx.mediarouter.app.r rVar3 = (androidx.mediarouter.app.r) weakReference.get();
-                if (rVar3 != null) {
-                    rVar3.e(13, null, null);
+                androidx.mediarouter.app.q qVar3 = (androidx.mediarouter.app.q) weakReference.get();
+                if (qVar3 != null) {
+                    qVar3.e(13, null, null);
                     return true;
                 }
                 return true;

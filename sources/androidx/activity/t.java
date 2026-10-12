@@ -1,35 +1,38 @@
 package androidx.activity;
 
-import androidx.fragment.app.b0;
+import android.window.BackEvent;
+import android.window.OnBackAnimationCallback;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class t implements c {
-    public final b0 a;
-    public final /* synthetic */ v b;
+public final class t implements OnBackAnimationCallback {
+    public final /* synthetic */ td.l a;
+    public final /* synthetic */ td.l b;
+    public final /* synthetic */ td.a c;
+    public final /* synthetic */ td.a d;
 
-    public t(v vVar, b0 onBackPressedCallback) {
-        kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
-        this.b = vVar;
-        this.a = onBackPressedCallback;
+    public t(td.l lVar, td.l lVar2, td.a aVar, td.a aVar2) {
+        this.a = lVar;
+        this.b = lVar2;
+        this.c = aVar;
+        this.d = aVar2;
     }
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [kotlin.jvm.internal.h, sd.a] */
-    @Override // androidx.activity.c
-    public final void cancel() {
-        v vVar = this.b;
-        id.e eVar = vVar.b;
-        b0 b0Var = this.a;
-        eVar.remove(b0Var);
-        if (kotlin.jvm.internal.i.a(vVar.c, b0Var)) {
-            b0Var.a();
-            vVar.c = null;
-        }
-        b0Var.b.remove(this);
-        ?? r02 = b0Var.c;
-        if (r02 != 0) {
-            r02.invoke();
-        }
-        b0Var.c = null;
+    public final void onBackCancelled() {
+        this.d.invoke();
+    }
+
+    public final void onBackInvoked() {
+        this.c.invoke();
+    }
+
+    public final void onBackProgressed(BackEvent backEvent) {
+        kotlin.jvm.internal.i.e(backEvent, "backEvent");
+        this.b.invoke(new b(backEvent));
+    }
+
+    public final void onBackStarted(BackEvent backEvent) {
+        kotlin.jvm.internal.i.e(backEvent, "backEvent");
+        this.a.invoke(new b(backEvent));
     }
 }

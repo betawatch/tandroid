@@ -1,47 +1,49 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class of1 extends AnimatorListenerAdapter {
+public final class of1 extends s4.r0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ fg1 c;
+    public final /* synthetic */ lg1 b;
 
-    public /* synthetic */ of1(fg1 fg1Var, boolean z10, int i10) {
+    public /* synthetic */ of1(lg1 lg1Var, int i10) {
         this.a = i10;
-        this.c = fg1Var;
-        this.b = z10;
+        this.b = lg1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        boolean z10;
+        lg1 lg1Var;
+        bh.f fVar;
         switch (this.a) {
             case 0:
-                super.onAnimationEnd(animator);
-                boolean z10 = this.b;
-                float f7 = z10 ? 1.0f : 0.0f;
-                fg1 fg1Var = this.c;
-                fg1Var.S0(f7);
-                if (!z10) {
-                    Activity parentActivity = fg1Var.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.n2) fg1Var).classGuid;
-                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i10);
-                    fg1Var.r0.setVisibility(8);
-                    fg1Var.Q0(true);
-                    break;
-                } else {
-                    fg1Var.q0.setVisibility(8);
+                lg1 lg1Var2 = this.b;
+                int L0 = lg1Var2.F.L0();
+                if (L0 != -1) {
+                    s4.b1 K = recyclerView.K(L0);
+                    int top = K != null ? K.a.getTop() : 0;
+                    if (L0 == 0) {
+                        int i12 = 0 - top;
+                        z10 = top < 0;
+                        Math.abs(i12);
+                    } else {
+                        z10 = L0 > 0;
+                    }
+                    lg1Var2.G0(z10 || !lg1Var2.K, true);
                     break;
                 }
+                break;
+            case 1:
+                this.b.y0();
+                break;
             default:
-                if (!this.b) {
-                    this.c.o0.setVisibility(8);
+                if (Build.VERSION.SDK_INT >= 31 && (fVar = (lg1Var = this.b).f1) != null) {
+                    fVar.f(i10, i11);
+                    lg1Var.x0();
                     break;
                 }
                 break;

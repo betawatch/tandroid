@@ -1,120 +1,203 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
+import android.os.SystemClock;
+import android.view.View;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xg implements zv0, ny {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class xg implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fo b;
 
-    public /* synthetic */ xg(zn znVar, boolean z10, MessageObject messageObject, int i10) {
-        this.c = znVar;
-        this.a = z10;
-        this.d = messageObject;
-        this.b = i10;
+    public /* synthetic */ xg(fo foVar, int i10) {
+        this.a = i10;
+        this.b = foVar;
     }
 
-    @Override // org.telegram.ui.ny
-    public /* synthetic */ boolean C() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ny
-    public /* synthetic */ boolean K(ty tyVar) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.zv0
-    public void a(TLRPC.MessageMedia messageMedia) {
-        int i10;
-        zn znVar = (zn) this.c;
-        MessageObject messageObject = (MessageObject) this.d;
-        if (!this.a) {
-            if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
-                TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
-                if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
-                    ((TLRPC.TL_messageMediaToDo) messageMedia).completions = ((TLRPC.TL_messageMediaToDo) messageMedia2).completions;
+    @Override // java.lang.Runnable
+    public final void run() {
+        di.d4 d4Var;
+        int i10 = this.a;
+        fo foVar = this.b;
+        switch (i10) {
+            case 0:
+                sk skVar = foVar.Y;
+                if (skVar != null && foVar.Cc != null) {
+                    if (skVar.r0()) {
+                        foVar.Y.k0(false);
+                        AndroidUtilities.showKeyboard(foVar.Cc.a);
+                        foVar.Cc.b.a.a(false, true);
+                        break;
+                    } else {
+                        foVar.Y.T0(false, false, false);
+                        foVar.Y.q1();
+                        foVar.Cc.b.a.a(true, true);
+                        break;
+                    }
                 }
-            }
-            messageObject.messageOwner.media = messageMedia;
-            znVar.getSendMessagesHelper().editMessage(messageObject, null, null, null, null, null, null, false, false, null);
-            return;
-        }
-        TLRPC.TL_messages_appendTodoList tL_messages_appendTodoList = new TLRPC.TL_messages_appendTodoList();
-        tL_messages_appendTodoList.peer = znVar.getMessagesController().getInputPeer(messageObject.getDialogId());
-        tL_messages_appendTodoList.msg_id = messageObject.getId();
-        if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
-            TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
-            int i11 = 0;
-            int i12 = 0;
-            while (true) {
-                i10 = this.b;
-                if (i11 >= i10) {
+                break;
+            case 1:
+                ArrayList arrayList = foVar.u6;
+                foVar.Hb = System.currentTimeMillis();
+                if (foVar.x0 != null && foVar.A0 != null) {
+                    int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    int i12 = TLObject.FLAG_31;
+                    for (int i13 = 0; i13 < foVar.x0.getChildCount(); i13++) {
+                        View childAt = foVar.x0.getChildAt(i13);
+                        if (childAt instanceof org.telegram.ui.Cells.u1) {
+                            org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) childAt;
+                            if (u1Var.getCurrentMessagesGroup() != null) {
+                                for (int i14 = 0; i14 < u1Var.getCurrentMessagesGroup().messages.size(); i14++) {
+                                    int id2 = u1Var.getCurrentMessagesGroup().messages.get(i14).getId();
+                                    i11 = Math.min(i11, id2);
+                                    i12 = Math.max(i12, id2);
+                                }
+                            } else if (u1Var.getMessageObject() != null) {
+                                int id3 = u1Var.getMessageObject().getId();
+                                i11 = Math.min(i11, id3);
+                                i12 = Math.max(i12, id3);
+                            }
+                        }
+                    }
+                    if (i11 <= i12) {
+                        ArrayList arrayList2 = new ArrayList();
+                        for (int i15 = 0; i15 < arrayList.size(); i15++) {
+                            MessageObject messageObject = (MessageObject) arrayList.get(i15);
+                            MessageObject.GroupedMessages groupedMessages = (MessageObject.GroupedMessages) foVar.x6.f(messageObject.getGroupId());
+                            if (groupedMessages == null) {
+                                int id4 = messageObject.getId();
+                                foVar.getMessagesController().getTranslateController().checkTranslation(messageObject, id4 >= i11 + (-7) && id4 <= i12 + 7);
+                            } else if (!arrayList2.contains(Long.valueOf(groupedMessages.groupId))) {
+                                for (int i16 = 0; i16 < groupedMessages.messages.size(); i16++) {
+                                    MessageObject messageObject2 = groupedMessages.messages.get(i16);
+                                    if (messageObject2 != null) {
+                                        int id5 = messageObject2.getId();
+                                        foVar.getMessagesController().getTranslateController().checkTranslation(messageObject2, id5 >= i11 + (-7) && id5 <= i12 + 7);
+                                    }
+                                }
+                                arrayList2.add(Long.valueOf(groupedMessages.groupId));
+                            }
+                        }
+                    }
+                }
+                if (foVar.L4 > 0 && foVar.J4 != null) {
+                    foVar.getMessagesController().getTranslateController().checkTranslation((MessageObject) foVar.J4.get(Integer.valueOf(foVar.L4)), true);
+                }
+                foVar.Yc();
+                break;
+            case 2:
+                foVar.xa();
+                break;
+            case 3:
+                AndroidUtilities.removeFromParent(foVar.J0);
+                break;
+            case 4:
+                foVar.h9();
+                foVar.Cc(0, true);
+                break;
+            case 5:
+                foVar.j8(false, true, 0.0f);
+                break;
+            case 6:
+                foVar.X9();
+                break;
+            case 7:
+                foVar.lc(false);
+                break;
+            case 8:
+                foVar.v9(2);
+                break;
+            case 9:
+                foVar.j8(false, true, 0.0f);
+                break;
+            case 10:
+                fo.x0(foVar);
+                break;
+            case 11:
+                foVar.j8(false, true, 0.0f);
+                break;
+            case 12:
+                AndroidUtilities.removeFromParent(foVar.L0);
+                break;
+            case 13:
+                foVar.j8(false, true, 0.0f);
+                break;
+            case 14:
+                foVar.Q6();
+                break;
+            case 15:
+                foVar.a = (foVar.a + 1) % 3;
+                break;
+            case 16:
+                foVar.b = !foVar.b;
+                break;
+            case 17:
+                foVar.D7(true);
+                org.telegram.messenger.q.r(R.string.TranscriptionReportSent, org.telegram.ui.Components.zc.a0(foVar), R.raw.chats_infotip, 36);
+                break;
+            case 18:
+                foVar.A0.M.clear();
+                rm rmVar = foVar.A0;
+                rmVar.L = false;
+                rmVar.O(true);
+                foVar.Tb(false);
+                break;
+            case 19:
+                foVar.t9();
+                foVar.w9();
+                foVar.u7();
+                foVar.w7();
+                break;
+            case 20:
+                foVar.ya = false;
+                foVar.yc();
+                break;
+            case 21:
+                foVar.ic = 0;
+                foVar.jc = false;
+                foVar.x0.f1();
+                break;
+            case 22:
+                foVar.v9(5);
+                break;
+            case 23:
+                foVar.Cc(0, foVar.P5 != 0 && SystemClock.elapsedRealtime() >= foVar.P5 + 150);
+                break;
+            case 24:
+                vk vkVar = foVar.R2;
+                if ((vkVar == null || vkVar.getVisibility() != 0) && (d4Var = foVar.w1) != null) {
+                    d4Var.u();
                     break;
                 }
-                i12 = Math.max(i12, tL_messageMediaToDo.todo.list.get(i11).id);
-                i11++;
-            }
-            while (i10 < tL_messageMediaToDo.todo.list.size()) {
-                TLRPC.TodoItem todoItem = tL_messageMediaToDo.todo.list.get(i10);
-                if (todoItem.id <= i12) {
-                    todoItem.id = i12 + 1;
-                }
-                tL_messages_appendTodoList.list.add(todoItem);
-                i12 = Math.max(i12, todoItem.id);
-                i10++;
-            }
-            TLRPC.MessageMedia messageMedia3 = messageObject.messageOwner.media;
-            if (messageMedia3 instanceof TLRPC.TL_messageMediaToDo) {
-                tL_messageMediaToDo.completions = ((TLRPC.TL_messageMediaToDo) messageMedia3).completions;
-            }
+                break;
+            case 25:
+                foVar.n7();
+                break;
+            case 26:
+                foVar.v9(5);
+                break;
+            case 27:
+                foVar.d7(false);
+                break;
+            case 28:
+                FrameLayout.LayoutParams e = w7.a6.e(-1, -2, 87);
+                e.bottomMargin = foVar.Y.getMeasuredHeight();
+                foVar.X0.addView(foVar.y1, e);
+                foVar.y1.setTranslationY(-AndroidUtilities.navigationBarHeight);
+                foVar.y1.m(0.0f, foVar.Y.getEmojiButton().getX() + AndroidUtilities.dp(22.0f));
+                foVar.y1.u();
+                break;
+            default:
+                int i17 = fo.Hc;
+                foVar.c7();
+                break;
         }
-        messageObject.messageOwner.media = messageMedia;
-        znVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
-    }
-
-    @Override // org.telegram.ui.ny
-    public boolean w(ty tyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, fg1 fg1Var) {
-        LaunchActivity launchActivity = (LaunchActivity) this.c;
-        String str = (String) this.d;
-        Pattern pattern = LaunchActivity.B1;
-        long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        Bundle bundle = new Bundle();
-        bundle.putBoolean("scrollToTopOnResume", true);
-        bundle.putBoolean("hasUrl", this.a);
-        if (DialogObject.isEncryptedDialog(j3)) {
-            bundle.putInt("enc_id", DialogObject.getEncryptedChatId(j3));
-        } else if (DialogObject.isUserDialog(j3)) {
-            bundle.putLong("user_id", j3);
-        } else {
-            bundle.putLong("chat_id", -j3);
-        }
-        int i12 = this.b;
-        if (MessagesController.getInstance(i12).checkCanOpenChat(bundle, tyVar)) {
-            NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-            MediaDataController.getInstance(i12).saveDraft(j3, 0, str, null, null, false, 0L);
-            ((ActionBarLayout) launchActivity.O()).S(new zn(bundle), true, false);
-        }
-        return true;
-    }
-
-    public /* synthetic */ xg(LaunchActivity launchActivity, boolean z10, int i10, String str) {
-        this.c = launchActivity;
-        this.a = z10;
-        this.b = i10;
-        this.d = str;
     }
 }

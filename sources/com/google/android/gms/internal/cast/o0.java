@@ -3,7 +3,7 @@ package com.google.android.gms.internal.cast;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class o0 extends k0 {
     public final transient j0 d;
@@ -30,26 +30,26 @@ public final class o0 extends k0 {
     }
 
     @Override // com.google.android.gms.internal.cast.e0
-    public final int i(Object[] objArr) {
+    public final int h(Object[] objArr) {
         h0 h0Var = this.b;
         if (h0Var == null) {
-            h0Var = s();
+            h0Var = r();
             this.b = h0Var;
         }
-        return h0Var.i(objArr);
+        return h0Var.h(objArr);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public final Iterator iterator() {
         h0 h0Var = this.b;
         if (h0Var == null) {
-            h0Var = s();
+            h0Var = r();
             this.b = h0Var;
         }
         return h0Var.listIterator(0);
     }
 
-    public final h0 s() {
+    public final h0 r() {
         return new n0(this);
     }
 

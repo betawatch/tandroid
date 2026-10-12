@@ -1,391 +1,411 @@
 package rg;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Rect;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
-import android.graphics.Shader;
-import android.os.SystemClock;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.lx0;
-import w7.x5;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.bh;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.yj0;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class q1 extends ViewGroup {
-    public q1 E;
-    public int F;
-    public int G;
-    public final Matrix H;
-    public long I;
-    public int J;
-    public float K;
-    public boolean L;
-    public boolean M;
-    public final dq a;
-    public final TextView b;
-    public final TextView c;
-    public final TextView d;
-    public final TextView e;
-    public final int f;
-    public final int h;
-    public lx0 n;
-    public final TextView r;
-    public final int s;
-    public final int v;
-    public int w;
-    public LinearGradient x;
-    public final Paint y;
+public final class q1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+    public static final List w = Arrays.asList(new n1(0, 1, 20, 0), new n1(0, 2, 20, 40), new n1(1, 0, 0, 20), new n1(1, 2, 60, 40), new n1(2, 0, 40, 20), new n1(2, 1, 40, 60));
+    public int a;
+    public final bk0 b;
+    public final ImageView c;
+    public final ImageView d;
+    public final View e;
+    public final p1 f;
+    public o1 h;
+    public int n;
+    public int r;
+    public int s;
+    public String v;
 
     public q1(Context context) {
         super(context);
-        this.f = 12;
-        this.h = 8;
-        this.s = i6.d6;
-        this.v = i6.a7;
-        this.y = new Paint();
-        this.H = new Matrix();
-        dq dqVar = new dq(context, 24, null);
-        this.a = dqVar;
-        dqVar.setDrawBackgroundAsArc(10);
-        int i10 = i6.g7;
-        dqVar.b(i10, i10, i6.k7);
-        addView(dqVar);
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 16.0f);
-        textView.setTextColor(i6.x0(null, i6.G6, false));
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setSingleLine();
-        addView(textView, x5.a(-2.0f, 0.0f, 8.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
-        TextView textView2 = new TextView(context);
-        this.r = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(-1);
-        textView2.setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), 0);
-        textView2.setTypeface(AndroidUtilities.bold());
-        addView(textView2, x5.a(-2.0f, 0.0f, 0.0f, 0.0f, 8.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
-        TextView textView3 = new TextView(context);
-        this.d = textView3;
-        textView3.setTextSize(1, 14.0f);
-        int i11 = i6.y6;
-        textView3.setTextColor(i6.x0(null, i11, false));
-        textView3.getPaint().setStrikeThruText(true);
-        textView3.setSingleLine();
-        addView(textView3, x5.a(-2.0f, 0.0f, 0.0f, 0.0f, 8.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
-        TextView textView4 = new TextView(context);
-        this.e = textView4;
-        textView4.setTextSize(1, 14.0f);
-        textView4.setTextColor(i6.x0(null, i11, false));
-        textView4.setSingleLine();
-        addView(textView4, x5.a(-2.0f, 0.0f, 0.0f, 0.0f, 8.0f, -2, (LocaleController.isRTL ? 5 : 3) | 80));
-        TextView textView5 = new TextView(context);
-        this.c = textView5;
-        textView5.setTextSize(1, 15.0f);
-        textView5.setTextColor(i6.x0(null, i11, false));
-        textView5.setSingleLine();
-        addView(textView5, x5.e(-2, -2, 8388613));
-        setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f));
-        setClipToPadding(false);
+        this.a = 0;
         setWillNotDraw(false);
-    }
+        View view = new View(context);
+        this.e = view;
+        final int i10 = 0;
+        view.setOnClickListener(new View.OnClickListener(this) { // from class: rg.m1
+            public final /* synthetic */ q1 b;
 
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0065, code lost:
-    
-        if (r11.g == null) goto L22;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x010b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(lx0 lx0Var, boolean z10) {
-        boolean z11;
-        this.n = lx0Var;
-        this.M = z10;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = lx0Var.a;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = lx0Var.a;
-        int i10 = tL_premiumSubscriptionOption.months;
-        TextView textView = this.b;
-        if (i10 == 1) {
-            textView.setText(LocaleController.getString(R.string.PremiumTierMonthly));
-        } else if (i10 == 6) {
-            textView.setText(LocaleController.getString(R.string.PremiumTierSemiannual));
-        } else if (i10 != 12) {
-            textView.setText((i10 <= 12 || i10 % 12 != 0) ? LocaleController.formatPluralString("Months", i10, new Object[0]) : LocaleController.formatPluralString("PremiumTierAnnualYears", i10 / 12, new Object[0]));
-        } else {
-            textView.setText(LocaleController.getString(R.string.PremiumTierAnnual));
-        }
-        if (!BuildVars.useInvoiceBilling()) {
-            if (BillingController.getInstance().isReady()) {
-                lx0Var.a();
+            {
+                this.b = this;
             }
-            z11 = true;
-            this.L = z11;
-            TextView textView2 = this.c;
-            TextView textView3 = this.d;
-            TextView textView4 = this.r;
-            TextView textView5 = this.e;
-            if (z11) {
-                if (lx0Var.c() <= 0) {
-                    textView4.setVisibility(8);
-                    textView3.setVisibility(8);
-                    textView5.setVisibility(8);
-                } else {
-                    textView4.setText(LocaleController.formatString(R.string.GiftPremiumOptionDiscount, Integer.valueOf(lx0Var.c())));
-                    textView4.setVisibility(0);
-                    textView3.setVisibility(0);
-                    textView5.setVisibility(0);
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i10) {
+                    case 0:
+                        this.b.h.a();
+                        break;
+                    case 1:
+                        q1 q1Var = this.b;
+                        q1Var.d((q1Var.a + 1) % 3, true);
+                        break;
+                    case 2:
+                        this.b.h.c();
+                        break;
+                    case 3:
+                        this.b.h.t();
+                        break;
+                    default:
+                        this.b.h.D();
+                        break;
                 }
-                textView3.setText((BuildVars.useInvoiceBilling() || tL_premiumSubscriptionOption2.store_product == null) ? BillingController.getInstance().formatCurrency(lx0Var.e, lx0Var.b()) : lx0Var.f == null ? "" : BillingController.getInstance().formatCurrency(lx0Var.e, lx0Var.b(), 6));
-                textView5.setText(LocaleController.formatString(R.string.PricePerYear, lx0Var.f()));
-                textView2.setText(LocaleController.formatString(R.string.PricePerMonthMe, lx0Var.e()));
-                if (tL_premiumSubscriptionOption2.current) {
-                    textView5.setVisibility(0);
-                    textView5.setText(LocaleController.getString(R.string.YourCurrentPlan));
-                }
-            } else {
-                textView4.setText(LocaleController.formatString(R.string.GiftPremiumOptionDiscount, 10));
-                textView4.setVisibility(0);
-                textView3.setVisibility(0);
-                textView5.setVisibility(0);
-                textView3.setText("USD00.00");
-                textView5.setText(LocaleController.formatString(R.string.PricePerYear, Integer.valueOf(MediaDataController.MAX_STYLE_RUNS_COUNT)));
-                textView2.setText(LocaleController.formatString(R.string.PricePerMonthMe, 100));
             }
-            requestLayout();
-        }
-        z11 = false;
-        this.L = z11;
-        TextView textView22 = this.c;
-        TextView textView32 = this.d;
-        TextView textView42 = this.r;
-        TextView textView52 = this.e;
-        if (z11) {
-        }
-        requestLayout();
+        });
+        addView(view, a6.a(24.0f, 0.0f, 0.0f, 16.0f, 0.0f, 24, 48));
+        bk0 bk0Var = new bk0(context);
+        this.b = bk0Var;
+        bk0Var.f(R.raw.photo_text_allign, 24, 24, null);
+        yj0 animatedDrawable = bk0Var.getAnimatedDrawable();
+        animatedDrawable.h = true;
+        animatedDrawable.P(20);
+        animatedDrawable.M(20);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        bk0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        final int i11 = 1;
+        bk0Var.setOnClickListener(new View.OnClickListener(this) { // from class: rg.m1
+            public final /* synthetic */ q1 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i11) {
+                    case 0:
+                        this.b.h.a();
+                        break;
+                    case 1:
+                        q1 q1Var = this.b;
+                        q1Var.d((q1Var.a + 1) % 3, true);
+                        break;
+                    case 2:
+                        this.b.h.c();
+                        break;
+                    case 3:
+                        this.b.h.t();
+                        break;
+                    default:
+                        this.b.h.D();
+                        break;
+                }
+            }
+        });
+        bk0Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
+        addView(bk0Var, a6.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        imageView.setImageResource(R.drawable.msg_text_outlined);
+        imageView.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
+        final int i12 = 2;
+        imageView.setOnClickListener(new View.OnClickListener(this) { // from class: rg.m1
+            public final /* synthetic */ q1 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i12) {
+                    case 0:
+                        this.b.h.a();
+                        break;
+                    case 1:
+                        q1 q1Var = this.b;
+                        q1Var.d((q1Var.a + 1) % 3, true);
+                        break;
+                    case 2:
+                        this.b.h.c();
+                        break;
+                    case 3:
+                        this.b.h.t();
+                        break;
+                    default:
+                        this.b.h.D();
+                        break;
+                }
+            }
+        });
+        addView(imageView, a6.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
+        ImageView imageView2 = new ImageView(context);
+        this.d = imageView2;
+        imageView2.setImageResource(R.drawable.msg_add);
+        imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        imageView2.setBackground(g6.g0(1090519039, 1, -1));
+        final int i13 = 3;
+        imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: rg.m1
+            public final /* synthetic */ q1 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i13) {
+                    case 0:
+                        this.b.h.a();
+                        break;
+                    case 1:
+                        q1 q1Var = this.b;
+                        q1Var.d((q1Var.a + 1) % 3, true);
+                        break;
+                    case 2:
+                        this.b.h.c();
+                        break;
+                    case 3:
+                        this.b.h.t();
+                        break;
+                    default:
+                        this.b.h.D();
+                        break;
+                }
+            }
+        });
+        imageView2.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
+        addView(imageView2, a6.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
+        p1 p1Var = new p1(context);
+        this.f = p1Var;
+        p1Var.setCurrent(true);
+        final int i14 = 4;
+        p1Var.setOnClickListener(new View.OnClickListener(this) { // from class: rg.m1
+            public final /* synthetic */ q1 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i14) {
+                    case 0:
+                        this.b.h.a();
+                        break;
+                    case 1:
+                        q1 q1Var = this.b;
+                        q1Var.d((q1Var.a + 1) % 3, true);
+                        break;
+                    case 2:
+                        this.b.h.c();
+                        break;
+                    case 3:
+                        this.b.h.t();
+                        break;
+                    default:
+                        this.b.h.D();
+                        break;
+                }
+            }
+        });
+        addView(p1Var, a6.o(-2, -2, 0.0f, 21));
     }
 
-    public final void b(View view) {
-        Rect rect = AndroidUtilities.rectTmp2;
-        rect.right = view.getMeasuredWidth() + rect.left;
-        rect.bottom = view.getMeasuredHeight() + rect.top;
-        if (LocaleController.isRTL) {
-            int i10 = rect.right;
-            rect.right = getWidth() - rect.left;
-            rect.left = getWidth() - i10;
+    public final void a(int i10) {
+        if (i10 == 0) {
+            i10 = R.drawable.msg_add;
         }
-        view.layout(rect.left, rect.top, rect.right, rect.bottom);
-    }
-
-    public final void c(boolean z10, boolean z11) {
-        this.a.a(z10, z11);
-    }
-
-    public final void d() {
-        q1 q1Var = this.E;
-        if (q1Var != null) {
-            q1Var.d();
-            return;
-        }
-        int x02 = i6.x0(null, this.s, false);
-        int x03 = i6.x0(null, this.v, false);
-        if (this.G == x03 && this.F == x02) {
-            return;
-        }
-        this.F = x02;
-        this.G = x03;
-        int dp = AndroidUtilities.dp(200.0f);
-        this.w = dp;
-        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, dp, 0.0f, new int[]{x03, x02, x02, x03}, new float[]{0.0f, 0.4f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
-        this.x = linearGradient;
-        this.y.setShader(linearGradient);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        if (!this.L) {
-            super.dispatchDraw(canvas);
-            return;
-        }
-        q1 q1Var = this.E;
-        Paint paint = q1Var != null ? q1Var.y : this.y;
-        drawChild(canvas, this.a, getDrawingTime());
-        d();
-        e();
-        RectF rectF = AndroidUtilities.rectTmp;
-        TextView textView = this.c;
-        rectF.set(textView.getLeft(), AndroidUtilities.dp(4.0f) + textView.getTop(), textView.getRight(), textView.getBottom() - AndroidUtilities.dp(4.0f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
-        TextView textView2 = this.d;
-        rectF.set(textView2.getLeft(), AndroidUtilities.dp(3.0f) + textView2.getTop(), textView2.getRight(), textView2.getBottom() - AndroidUtilities.dp(3.0f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
-        TextView textView3 = this.b;
-        rectF.set(textView3.getLeft(), AndroidUtilities.dp(4.0f) + textView3.getTop(), textView3.getRight(), textView3.getBottom() - AndroidUtilities.dp(4.0f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
-        invalidate();
-    }
-
-    public final void e() {
-        q1 q1Var = this.E;
-        if (q1Var != null) {
-            q1Var.e();
-            return;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long abs = Math.abs(this.I - elapsedRealtime);
-        if (abs > 17) {
-            abs = 16;
-        }
-        if (abs < 4) {
-            abs = 0;
-        }
-        int measuredWidth = getMeasuredWidth();
-        this.I = elapsedRealtime;
-        int i10 = (int) (((abs * measuredWidth) / 400.0f) + this.J);
-        this.J = i10;
-        if (i10 >= measuredWidth * 4) {
-            this.J = (-this.w) * 2;
-        }
-        float f7 = this.J + this.K;
-        Matrix matrix = this.H;
-        matrix.setTranslate(f7, 0.0f);
-        LinearGradient linearGradient = this.x;
-        if (linearGradient != null) {
-            linearGradient.setLocalMatrix(matrix);
+        if (this.s != i10) {
+            this.s = i10;
+            AndroidUtilities.updateImageViewImageAnimated(this.d, i10);
         }
     }
 
-    public lx0 getTier() {
-        return this.n;
+    public final void b(RectF rectF) {
+        p1 p1Var = this.f;
+        rectF.set(AndroidUtilities.dp(8.0f) + p1Var.getLeft(), p1Var.getTop(), AndroidUtilities.dp(8.0f) + p1Var.getRight(), p1Var.getBottom());
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.M) {
-            boolean z10 = LocaleController.isRTL;
-            TextView textView = this.b;
+    public final void c(View view) {
+        if (view.getVisibility() != 8) {
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
+            int i10 = this.r + layoutParams.leftMargin;
+            this.r = i10;
+            view.layout(i10, (getMeasuredHeight() - layoutParams.height) / 2, this.r + layoutParams.width, (getMeasuredHeight() + layoutParams.height) / 2);
+            this.r = layoutParams.width + layoutParams.rightMargin + this.r;
+        }
+    }
+
+    public final void d(int i10, boolean z10) {
+        int i11 = this.a;
+        this.a = i10;
+        List list = w;
+        bk0 bk0Var = this.b;
+        if (i11 == i10) {
+            yj0 animatedDrawable = bk0Var.getAnimatedDrawable();
+            n1 n1Var = (n1) list.get(0);
+            Iterator it = list.iterator();
+            while (true) {
+                if (!it.hasNext()) {
+                    break;
+                }
+                n1 n1Var2 = (n1) it.next();
+                if (this.a == n1Var2.b) {
+                    n1Var = n1Var2;
+                    break;
+                }
+            }
+            animatedDrawable.M(n1Var.d);
+            animatedDrawable.P(n1Var.d);
             if (z10) {
-                canvas.drawLine(0.0f, getHeight() - 1, textView.getRight(), getHeight() - 1, i6.k0);
-            } else {
-                canvas.drawLine(textView.getLeft(), getHeight() - 1, getWidth(), getHeight() - 1, i6.k0);
+                this.h.e(i10);
+                return;
+            }
+            return;
+        }
+        n1 n1Var3 = (n1) list.get(0);
+        Iterator it2 = list.iterator();
+        while (true) {
+            if (!it2.hasNext()) {
+                break;
+            }
+            n1 n1Var4 = (n1) it2.next();
+            if (i11 == n1Var4.a && this.a == n1Var4.b) {
+                n1Var3 = n1Var4;
+                break;
             }
         }
+        yj0 animatedDrawable2 = bk0Var.getAnimatedDrawable();
+        animatedDrawable2.M(n1Var3.c);
+        animatedDrawable2.P(n1Var3.d);
+        animatedDrawable2.start();
+        if (z10) {
+            this.h.e(i10);
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        String str;
+        if (i10 != NotificationCenter.customTypefacesLoaded || (str = this.v) == null) {
+            return;
+        }
+        setTypeface(str);
+        this.v = null;
+    }
+
+    public final void e(int i10, boolean z10) {
+        if (this.n == i10) {
+            return;
+        }
+        this.n = i10;
+        int i11 = i10 != 1 ? i10 != 2 ? i10 != 3 ? R.drawable.msg_photo_text_framed : R.drawable.msg_photo_text_regular : R.drawable.msg_photo_text_framed3 : R.drawable.msg_photo_text_framed2;
+        ImageView imageView = this.c;
+        if (z10) {
+            AndroidUtilities.updateImageViewImageAnimated(imageView, i11);
+        } else {
+            imageView.setImageResource(i11);
+        }
+    }
+
+    public View getColorClickableView() {
+        return this.e;
+    }
+
+    public bh getEmojiButton() {
+        return null;
+    }
+
+    public p1 getTypefaceCell() {
+        return this.f;
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        Rect rect = AndroidUtilities.rectTmp2;
-        int i14 = this.h;
-        int paddingLeft = getPaddingLeft() + AndroidUtilities.dp(i14);
-        int measuredHeight = getMeasuredHeight();
-        dq dqVar = this.a;
-        rect.set(paddingLeft, (int) ((measuredHeight - dqVar.getMeasuredHeight()) / 2.0f), 0, 0);
-        b(dqVar);
-        int measuredHeight2 = getMeasuredHeight();
-        TextView textView = this.c;
-        int measuredHeight3 = (int) ((measuredHeight2 - textView.getMeasuredHeight()) / 2.0f);
-        int i15 = i14 + this.f;
-        int measuredWidth = dqVar.getMeasuredWidth() + AndroidUtilities.dp(i15 + 24);
-        TextView textView2 = this.d;
-        int measuredWidth2 = measuredWidth + (textView2.getVisibility() == 0 ? textView2.getMeasuredWidth() : 0);
-        TextView textView3 = this.e;
-        int paddingLeft2 = getPaddingLeft() + textView3.getMeasuredWidth() + measuredWidth2;
-        int measuredWidth3 = getMeasuredWidth() - textView.getMeasuredWidth();
-        TextView textView4 = this.r;
-        if (paddingLeft2 > measuredWidth3 && textView4.getVisibility() == 0) {
-            measuredHeight3 = getPaddingTop() + AndroidUtilities.dp(2.0f);
-        }
-        rect.set(((getMeasuredWidth() - textView.getMeasuredWidth()) - AndroidUtilities.dp(16.0f)) - getPaddingRight(), measuredHeight3, 0, 0);
-        b(textView);
-        float f7 = i15;
-        int paddingLeft3 = getPaddingLeft() + dqVar.getMeasuredWidth() + AndroidUtilities.dp(f7);
-        int visibility = textView3.getVisibility();
-        TextView textView5 = this.b;
-        rect.set(paddingLeft3, visibility == 8 ? (int) ((getMeasuredHeight() - textView5.getMeasuredHeight()) / 2.0f) : getPaddingTop(), 0, 0);
-        b(textView5);
-        if (textView4.getVisibility() == 0) {
-            rect.set(textView5.getMeasuredWidth() + getPaddingLeft() + dqVar.getMeasuredWidth() + AndroidUtilities.dp(i15 + 6), AndroidUtilities.dp(2.0f) + getPaddingTop(), 0, 0);
-            b(textView4);
-        }
-        rect.set(getPaddingLeft() + dqVar.getMeasuredWidth() + AndroidUtilities.dp(f7), (getMeasuredHeight() - textView2.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
-        b(textView2);
-        rect.set(getPaddingLeft() + dqVar.getMeasuredWidth() + AndroidUtilities.dp(f7) + (textView2.getVisibility() == 0 ? AndroidUtilities.dp(6.0f) + textView2.getMeasuredWidth() : 0), (getMeasuredHeight() - textView3.getMeasuredHeight()) - getPaddingBottom(), 0, 0);
-        b(textView3);
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.customTypefacesLoaded);
     }
 
-    @Override // android.view.View
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.customTypefacesLoaded);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        this.r = getPaddingLeft();
+        c(this.e);
+        c(this.b);
+        c(this.c);
+        c(this.d);
+        int measuredWidth = getMeasuredWidth() - getPaddingRight();
+        p1 p1Var = this.f;
+        p1Var.layout(measuredWidth - p1Var.getMeasuredWidth(), (getMeasuredHeight() - p1Var.getMeasuredHeight()) / 2, getMeasuredWidth() - getPaddingRight(), (p1Var.getMeasuredHeight() + getMeasuredHeight()) / 2);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i10);
-        int dp = AndroidUtilities.dp(58.0f);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30);
-        dq dqVar = this.a;
-        dqVar.measure(makeMeasureSpec, makeMeasureSpec);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(size - dqVar.getMeasuredWidth(), TLObject.FLAG_31);
-        int makeMeasureSpec3 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
-        TextView textView = this.c;
-        textView.measure(makeMeasureSpec2, makeMeasureSpec3);
-        this.b.measure(View.MeasureSpec.makeMeasureSpec((size - dqVar.getMeasuredWidth()) - textView.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
-        TextView textView2 = this.r;
-        if (textView2.getVisibility() == 0) {
-            textView2.measure(View.MeasureSpec.makeMeasureSpec((size - dqVar.getMeasuredWidth()) - textView.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
-        } else {
-            textView2.measure(View.MeasureSpec.makeMeasureSpec(0, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, TLObject.FLAG_30));
+        int size2 = View.MeasureSpec.getSize(i11);
+        int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
+        for (int i12 = 0; i12 < getChildCount(); i12++) {
+            View childAt = getChildAt(i12);
+            p1 p1Var = this.f;
+            if (childAt == p1Var) {
+                p1Var.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31));
+            } else {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(layoutParams.height, TLObject.FLAG_30));
+                paddingLeft -= (childAt.getMeasuredWidth() + layoutParams.leftMargin) + layoutParams.rightMargin;
+            }
         }
-        int makeMeasureSpec4 = View.MeasureSpec.makeMeasureSpec(size - dqVar.getMeasuredWidth(), TLObject.FLAG_31);
-        int makeMeasureSpec5 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
-        TextView textView3 = this.d;
-        textView3.measure(makeMeasureSpec4, makeMeasureSpec5);
-        int c10 = bi.c(6.0f, (size - dqVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
-        int makeMeasureSpec6 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
-        TextView textView4 = this.e;
-        textView4.measure(c10, makeMeasureSpec6);
-        if (textView4.getVisibility() != 0) {
-            dp -= AndroidUtilities.dp(8.0f);
+        setMeasuredDimension(size, size2);
+    }
+
+    public void setAlignment(int i10) {
+        d(i10, false);
+    }
+
+    public void setDelegate(o1 o1Var) {
+        this.h = o1Var;
+    }
+
+    public void setOutlineType(int i10) {
+        e(i10, false);
+    }
+
+    public void setTypeface(String str) {
+        this.v = str;
+        p1 p1Var = this.f;
+        if (p1Var == null) {
+            return;
         }
-        setMeasuredDimension(size, dp);
+        for (qg.j0 j0Var : qg.j0.c()) {
+            if (j0Var.a.equals(str)) {
+                p1Var.setTypeface(j0Var.d());
+                String str2 = j0Var.c;
+                if (str2 == null) {
+                    str2 = LocaleController.getString(j0Var.b);
+                }
+                p1Var.setText(str2);
+                return;
+            }
+        }
     }
 
-    public void setCirclePaintProvider(GenericProvider<Void, Paint> genericProvider) {
-        this.a.setCirclePaintProvider(genericProvider);
-    }
-
-    @Override // android.view.View
-    public void setEnabled(boolean z10) {
-        super.setEnabled(z10);
-        this.b.setAlpha(z10 ? 1.0f : 0.6f);
-        this.c.setAlpha(z10 ? 1.0f : 0.6f);
-        this.a.setAlpha(z10 ? 1.0f : 0.6f);
-    }
-
-    public void setGlobalGradientView(q1 q1Var) {
-        this.E = q1Var;
-    }
-
-    public void setParentXOffset(float f7) {
-        this.K = f7;
-    }
-
-    public void setProgressDelegate(eq eqVar) {
-        this.a.setProgressDelegate(eqVar);
+    public void setTypefaceListView(v1 v1Var) {
     }
 }

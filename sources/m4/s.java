@@ -1,33 +1,48 @@
 package m4;
 
-import java.util.List;
-import v7.w7;
+import android.content.Context;
+import android.os.Bundle;
+import e9.x1;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.ui.LaunchActivity;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class s {
-    public final e9.i0 a;
-    public final int b;
-    public final long c;
+    public static final AtomicReference n = new AtomicReference(null);
+    public final Context a;
+    public final b2.g1 b;
+    public String c;
+    public final pb.a d;
+    public final Bundle e;
+    public final Bundle f;
+    public e2.d g;
+    public final boolean h;
+    public final x1 i;
+    public final x1 j;
+    public final x1 k;
+    public final boolean l;
+    public boolean m;
 
-    public s(long j3, int i10, List list) {
-        this.a = e9.i0.v(list);
-        this.b = i10;
-        this.c = j3;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof s)) {
-            return false;
-        }
-        s sVar = (s) obj;
-        return this.a.equals(sVar.a) && this.b == sVar.b && this.c == sVar.c;
-    }
-
-    public final int hashCode() {
-        return w7.b(this.c) + (((this.a.hashCode() * 31) + this.b) * 31);
+    public s(LaunchActivity launchActivity, b2.g1 g1Var) {
+        pb.a aVar = new pb.a(13);
+        Context applicationContext = launchActivity.getApplicationContext();
+        applicationContext.getClass();
+        this.a = applicationContext;
+        g1Var.getClass();
+        this.b = g1Var;
+        u6.g(g1Var.P());
+        this.c = "";
+        this.d = aVar;
+        this.e = new Bundle();
+        this.f = new Bundle();
+        e9.l0 l0Var = e9.n0.b;
+        x1 x1Var = x1.e;
+        this.i = x1Var;
+        this.j = x1Var;
+        this.h = true;
+        this.l = true;
+        this.k = x1Var;
     }
 }

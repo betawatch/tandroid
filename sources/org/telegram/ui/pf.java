@@ -1,27 +1,28 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.function.ToIntFunction;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pf implements DialogInterface.OnShowListener {
+public final /* synthetic */ class pf implements ToIntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ pf(zn znVar, int i10) {
+    public /* synthetic */ pf(Object obj, int i10) {
         this.a = i10;
-        this.b = znVar;
+        this.b = obj;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // java.util.function.ToIntFunction
+    public final int applyAsInt(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.Rb(false);
-                break;
+                return ((Integer) ((HashMap) this.b).get((View) obj)).intValue();
             default:
-                this.b.Rb(false);
-                break;
+                return ((Integer) ((ArrayList) this.b).get(((Integer) obj).intValue())).intValue();
         }
     }
 }

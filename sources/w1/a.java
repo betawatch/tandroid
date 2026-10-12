@@ -4,14 +4,14 @@ import a6.d;
 import androidx.lifecycle.a0;
 import androidx.lifecycle.t;
 import androidx.lifecycle.z;
-import b2.p;
+import b2.u;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a extends z {
     public final d l;
     public t m;
-    public p n;
+    public u n;
 
     public a(d dVar) {
         this.l = dVar;
@@ -45,12 +45,12 @@ public final class a extends z {
 
     public final void k() {
         t tVar = this.m;
-        p pVar = this.n;
-        if (tVar == null || pVar == null) {
+        u uVar = this.n;
+        if (tVar == null || uVar == null) {
             return;
         }
-        super.i(pVar);
-        d(tVar, pVar);
+        super.i(uVar);
+        d(tVar, uVar);
     }
 
     public final String toString() {

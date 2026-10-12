@@ -1,50 +1,34 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ed implements View.OnClickListener {
+public final class ed implements ResultCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ md b;
+    public final /* synthetic */ fd b;
 
-    public /* synthetic */ ed(md mdVar, int i10) {
+    public ed(fd fdVar, int i10) {
+        this.b = fdVar;
         this.a = i10;
-        this.b = mdVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                md.X(this.b, view);
-                break;
-            case 1:
-                md mdVar = this.b;
-                mdVar.v.n(mdVar.x != null, new dd(mdVar, 1), new r5(mdVar, 2), 0);
-                mdVar.J.M(0);
-                mdVar.J.P(43);
-                mdVar.h.d();
-                break;
-            case 2:
-                md mdVar2 = this.b;
-                if (!mdVar2.j0) {
-                    mdVar2.f0();
-                    break;
-                } else if (mdVar2.a0) {
-                    mdVar2.a0 = false;
-                    mdVar2.h0();
-                    break;
-                }
-                break;
-            default:
-                md mdVar3 = this.b;
-                if (!mdVar3.a0) {
-                    mdVar3.a0 = true;
-                    mdVar3.h0();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        NotificationCenter.getInstance(this.a).doOnIdle(new fc(2, this, (List) obj));
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

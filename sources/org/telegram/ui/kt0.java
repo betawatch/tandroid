@@ -1,59 +1,113 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import org.telegram.messenger.video.VideoFramesRewinder;
-import org.telegram.messenger.video.VideoPlayerRewinder;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class kt0 extends VideoPlayerRewinder {
-    public final /* synthetic */ PhotoViewer a;
+public final class kt0 extends s4.x0 {
+    public final float k;
+    public final LinearInterpolator i = new LinearInterpolator();
+    public final DecelerateInterpolator j = new DecelerateInterpolator(1.5f);
+    public int l = 0;
+    public int m = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kt0(PhotoViewer photoViewer, VideoFramesRewinder videoFramesRewinder) {
-        super(videoFramesRewinder);
-        this.a = photoViewer;
+    public kt0(Context context) {
+        this.k = 25.0f / context.getResources().getDisplayMetrics().densityDpi;
     }
 
-    @Override // org.telegram.messenger.video.VideoPlayerRewinder
-    public final void onRewindCanceled() {
-        MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-        PhotoViewer photoViewer = this.a;
-        PhotoViewer.k(photoViewer, obtain);
-        photoViewer.z1.f(false);
-        org.telegram.ui.Components.gh0.p0.Q.f(false);
-    }
-
-    @Override // org.telegram.messenger.video.VideoPlayerRewinder
-    public final void onRewindStart(boolean z10) {
-        PhotoViewer photoViewer = this.a;
-        photoViewer.z1.e(false);
-        photoViewer.z1.d(!z10);
-        photoViewer.z1.f(true);
-        photoViewer.e0.invalidate();
-        org.telegram.ui.Components.gh0.v(z10);
-    }
-
-    @Override // org.telegram.messenger.video.VideoPlayerRewinder
-    public final void updateRewindProgressUi(long j3, float f7, boolean z10) {
-        PhotoViewer photoViewer = this.a;
-        photoViewer.z1.g(Math.abs(j3));
-        if (z10) {
-            photoViewer.q3.h(f7, false);
-            photoViewer.r3.invalidate();
+    @Override // s4.x0
+    public final PointF a(int i10) {
+        s4.n0 n0Var = this.c;
+        if (n0Var instanceof s4.b0) {
+            return ((s4.b0) n0Var).E0(i10);
         }
-        org.telegram.ui.Components.gh0 gh0Var = org.telegram.ui.Components.gh0.p0;
-        gh0Var.Q.g(0L);
-        if (z10) {
-            gh0Var.Z = f7;
-            ai.o4 o4Var = gh0Var.b0;
-            if (o4Var != null) {
-                o4Var.invalidate();
-            }
-            org.telegram.ui.Components.fh0 fh0Var = gh0Var.h;
-            if (fh0Var != null) {
-                fh0Var.invalidate();
+        return null;
+    }
+
+    @Override // s4.x0
+    public final void d(int i10, int i11, s4.w0 w0Var) {
+        if (this.b.x.r() == 0) {
+            h();
+            return;
+        }
+        int i12 = this.l;
+        int i13 = i12 - i10;
+        if (i12 * i13 <= 0) {
+            i13 = 0;
+        }
+        this.l = i13;
+        int i14 = this.m;
+        int i15 = i14 - i11;
+        int i16 = i14 * i15 > 0 ? i15 : 0;
+        this.m = i16;
+        if (i13 == 0 && i16 == 0) {
+            PointF a2 = a(this.a);
+            if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
+                w0Var.d = this.a;
+                h();
+            } else {
+                s4.x0.b(a2);
+                this.l = (int) (a2.x * 10000.0f);
+                this.m = (int) (a2.y * 10000.0f);
+                w0Var.b((int) (this.l * 1.2f), (int) (this.m * 1.2f), (int) (((int) Math.ceil(Math.abs(10000) * this.k)) * 1.2f), this.i);
             }
         }
+    }
+
+    @Override // s4.x0
+    public final void f() {
+        this.m = 0;
+        this.l = 0;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x003c, code lost:
+    
+        if (r4 < 0) goto L16;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
+    @Override // s4.x0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, s4.w0 w0Var) {
+        int i10;
+        int max;
+        s4.n0 n0Var = this.c;
+        if (n0Var != null && n0Var.d()) {
+            s4.o0 o0Var = (s4.o0) view.getLayoutParams();
+            int x10 = s4.n0.x(view) - ((ViewGroup.MarginLayoutParams) o0Var).leftMargin;
+            int y3 = s4.n0.y(view) + ((ViewGroup.MarginLayoutParams) o0Var).rightMargin;
+            int D = n0Var.D();
+            int E = n0Var.m - n0Var.E();
+            if (x10 <= D || y3 >= E) {
+                int i11 = y3 - x10;
+                int i12 = (E - D) - i11;
+                int i13 = i11 + i12;
+                i10 = i12 - x10;
+                if (i10 <= 0) {
+                    i10 = i13 - y3;
+                }
+                max = Math.max(180, (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d));
+                if (max <= 0) {
+                    w0Var.b(-i10, 0, Math.max(400, max), this.j);
+                    return;
+                }
+                return;
+            }
+        }
+        i10 = 0;
+        max = Math.max(180, (int) Math.ceil(((int) Math.ceil(Math.abs(i10) * this.k)) / 0.3356d));
+        if (max <= 0) {
+        }
+    }
+
+    @Override // s4.x0
+    public final void e() {
     }
 }

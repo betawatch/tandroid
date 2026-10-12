@@ -1,71 +1,77 @@
 package v2;
 
-import b2.s;
-import c3.g0;
+import b2.p;
+import b2.x;
 import c3.h0;
-import c3.n;
-import e2.d0;
-import e2.v;
+import c3.i0;
+import e2.m0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class c implements h0 {
+public final class c implements i0 {
     public final int a;
-    public final s b;
-    public final n c = new n();
-    public s d;
-    public h0 e;
-    public long f;
+    public final x b;
+    public final c3.n c = new c3.n();
+    public final d d;
+    public x e;
+    public i0 f;
+    public long g;
 
-    public c(int i10, int i11, s sVar) {
+    public c(int i10, int i11, x xVar, d dVar) {
         this.a = i11;
-        this.b = sVar;
+        this.b = xVar;
+        this.d = dVar;
     }
 
-    @Override // c3.h0
-    public final int a(b2.k kVar, int i10, boolean z10) {
-        return e(kVar, i10, z10);
+    @Override // c3.i0
+    public final int a(p pVar, int i10, boolean z10) {
+        return f(pVar, i10, z10);
     }
 
-    @Override // c3.h0
-    public final void b(s sVar) {
-        s sVar2 = this.b;
-        if (sVar2 != null) {
-            sVar = sVar.d(sVar2);
+    @Override // c3.i0
+    public final void b(x xVar) {
+        this.d.getClass();
+        x xVar2 = this.b;
+        if (xVar2 != null) {
+            xVar = xVar.d(xVar2);
         }
-        this.d = sVar;
-        h0 h0Var = this.e;
-        String str = d0.a;
-        h0Var.b(sVar);
+        this.e = xVar;
+        i0 i0Var = this.f;
+        String str = m0.a;
+        i0Var.b(xVar);
     }
 
-    @Override // c3.h0
-    public final void c(long j3, int i10, int i11, int i12, g0 g0Var) {
-        long j10 = this.f;
-        if (j10 != -9223372036854775807L && j3 >= j10) {
-            this.e = this.c;
+    @Override // c3.i0
+    public final void c(long j10, int i10, int i11, int i12, h0 h0Var) {
+        long j11 = this.g;
+        if (j11 != -9223372036854775807L && j10 >= j11) {
+            this.f = this.c;
         }
-        h0 h0Var = this.e;
-        String str = d0.a;
-        h0Var.c(j3, i10, i11, i12, g0Var);
+        i0 i0Var = this.f;
+        String str = m0.a;
+        i0Var.c(j10, i10, i11, i12, h0Var);
     }
 
-    @Override // c3.h0
-    public final /* synthetic */ void d(int i10, v vVar) {
-        a1.g.a(this, vVar, i10);
+    @Override // c3.i0
+    public final /* synthetic */ void d(int i10, e2.x xVar) {
+        a1.g.a(this, xVar, i10);
     }
 
-    @Override // c3.h0
-    public final int e(b2.k kVar, int i10, boolean z10) {
-        h0 h0Var = this.e;
-        String str = d0.a;
-        return h0Var.a(kVar, i10, z10);
+    @Override // c3.i0
+    public final int f(p pVar, int i10, boolean z10) {
+        i0 i0Var = this.f;
+        String str = m0.a;
+        return i0Var.a(pVar, i10, z10);
     }
 
-    @Override // c3.h0
-    public final void f(v vVar, int i10, int i11) {
-        h0 h0Var = this.e;
-        String str = d0.a;
-        h0Var.d(i10, vVar);
+    @Override // c3.i0
+    public final void g(e2.x xVar, int i10, int i11) {
+        i0 i0Var = this.f;
+        String str = m0.a;
+        i0Var.d(i10, xVar);
+    }
+
+    @Override // c3.i0
+    public final /* synthetic */ void e(long j10) {
     }
 }

@@ -1,24 +1,25 @@
 package j4;
 
-import b2.r0;
-import c3.h0;
-import i2.m0;
+import b2.w0;
+import c3.i0;
+import e2.m0;
+import i2.o0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
     public final c0 a;
-    public final e2.v b;
+    public final e2.x b;
     public final boolean[] c = new boolean[4];
     public final l d;
-    public final m0 e;
+    public final o0 e;
     public m f;
     public long g;
     public String h;
-    public h0 i;
+    public i0 i;
     public boolean j;
     public long k;
 
@@ -28,8 +29,8 @@ public final class n implements i {
         lVar.e = new byte[128];
         this.d = lVar;
         this.k = -9223372036854775807L;
-        this.e = new m0(178);
-        this.b = new e2.v();
+        this.e = new o0(178);
+        this.b = new e2.x();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:44:0x025f  */
@@ -41,45 +42,45 @@ public final class n implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(e2.v vVar) {
+    public final void a(e2.x xVar) {
         int i10;
         int i11;
         boolean z10;
         int i12;
         int i13;
         float f7;
-        e2.d.h(this.f);
-        e2.d.h(this.i);
-        int i14 = vVar.b;
-        int i15 = vVar.c;
-        byte[] bArr = vVar.a;
-        this.g += vVar.a();
-        this.i.d(vVar.a(), vVar);
+        this.f.getClass();
+        this.i.getClass();
+        int i14 = xVar.b;
+        int i15 = xVar.c;
+        byte[] bArr = xVar.a;
+        this.g += xVar.a();
+        this.i.d(xVar.a(), xVar);
         while (true) {
-            int b10 = f2.p.b(bArr, i14, i15, this.c);
+            int c10 = f2.p.c(bArr, i14, i15, this.c);
             l lVar = this.d;
-            m0 m0Var = this.e;
-            if (b10 == i15) {
+            o0 o0Var = this.e;
+            if (c10 == i15) {
                 if (!this.j) {
                     lVar.a(i14, i15, bArr);
                 }
                 this.f.a(i14, i15, bArr);
-                if (m0Var != null) {
-                    m0Var.a(i14, i15, bArr);
+                if (o0Var != null) {
+                    o0Var.a(i14, i15, bArr);
                     return;
                 }
                 return;
             }
-            int i16 = b10 + 3;
-            byte b11 = vVar.a[i16];
-            int i17 = b11 & 255;
-            int i18 = b10 - i14;
+            int i16 = c10 + 3;
+            byte b10 = xVar.a[i16];
+            int i17 = b10 & 255;
+            int i18 = c10 - i14;
             if (this.j) {
                 i10 = i15;
                 i11 = i16;
             } else {
                 if (i18 > 0) {
-                    lVar.a(i14, b10, bArr);
+                    lVar.a(i14, c10, bArr);
                 }
                 int i19 = i18 < 0 ? -i18 : 0;
                 int i20 = lVar.b;
@@ -89,7 +90,7 @@ public final class n implements i {
                         i11 = i16;
                         i13 = 0;
                         if (i17 != 181) {
-                            e2.a.n("H263Reader", "Unexpected start code value");
+                            e2.a.l("H263Reader", "Unexpected start code value");
                             lVar.a = false;
                             lVar.c = 0;
                             lVar.b = 0;
@@ -105,166 +106,166 @@ public final class n implements i {
                             if (i17 == 179 || i17 == 181) {
                                 lVar.c -= i19;
                                 lVar.a = false;
-                                h0 h0Var = this.i;
+                                i0 i0Var = this.i;
                                 int i21 = lVar.d;
                                 String str = this.h;
                                 str.getClass();
                                 byte[] copyOf = Arrays.copyOf(lVar.e, lVar.c);
                                 a4.g gVar = new a4.g(copyOf, copyOf.length);
-                                gVar.u(i21);
-                                gVar.u(4);
-                                gVar.s();
-                                gVar.t(8);
-                                if (gVar.h()) {
-                                    gVar.t(4);
-                                    gVar.t(3);
+                                gVar.p(i21);
+                                gVar.p(4);
+                                gVar.n();
+                                gVar.o(8);
+                                if (gVar.f()) {
+                                    gVar.o(4);
+                                    gVar.o(3);
                                 }
-                                int i22 = gVar.i(4);
-                                if (i22 == 15) {
-                                    int i23 = gVar.i(8);
-                                    int i24 = gVar.i(8);
-                                    if (i24 == 0) {
-                                        e2.a.n("H263Reader", "Invalid aspect ratio");
+                                int g10 = gVar.g(4);
+                                if (g10 == 15) {
+                                    int g11 = gVar.g(8);
+                                    int g12 = gVar.g(8);
+                                    if (g12 == 0) {
+                                        e2.a.l("H263Reader", "Invalid aspect ratio");
                                         f7 = 1.0f;
-                                        if (gVar.h()) {
-                                            gVar.t(2);
-                                            gVar.t(1);
-                                            if (gVar.h()) {
-                                                gVar.t(15);
-                                                gVar.s();
-                                                gVar.t(15);
-                                                gVar.s();
-                                                gVar.t(15);
-                                                gVar.s();
-                                                gVar.t(3);
-                                                gVar.t(11);
-                                                gVar.s();
-                                                gVar.t(15);
-                                                gVar.s();
+                                        if (gVar.f()) {
+                                            gVar.o(2);
+                                            gVar.o(1);
+                                            if (gVar.f()) {
+                                                gVar.o(15);
+                                                gVar.n();
+                                                gVar.o(15);
+                                                gVar.n();
+                                                gVar.o(15);
+                                                gVar.n();
+                                                gVar.o(3);
+                                                gVar.o(11);
+                                                gVar.n();
+                                                gVar.o(15);
+                                                gVar.n();
                                             }
                                         }
-                                        if (gVar.i(2) != 0) {
-                                            e2.a.n("H263Reader", "Unhandled video object layer shape");
+                                        if (gVar.g(2) != 0) {
+                                            e2.a.l("H263Reader", "Unhandled video object layer shape");
                                         }
-                                        gVar.s();
-                                        int i25 = gVar.i(16);
-                                        gVar.s();
-                                        if (gVar.h()) {
-                                            if (i25 == 0) {
-                                                e2.a.n("H263Reader", "Invalid vop_increment_time_resolution");
+                                        gVar.n();
+                                        int g13 = gVar.g(16);
+                                        gVar.n();
+                                        if (gVar.f()) {
+                                            if (g13 == 0) {
+                                                e2.a.l("H263Reader", "Invalid vop_increment_time_resolution");
                                             } else {
-                                                int i26 = 0;
-                                                for (int i27 = i25 - 1; i27 > 0; i27 >>= 1) {
-                                                    i26++;
+                                                int i22 = 0;
+                                                for (int i23 = g13 - 1; i23 > 0; i23 >>= 1) {
+                                                    i22++;
                                                 }
-                                                gVar.t(i26);
+                                                gVar.o(i22);
                                             }
                                         }
-                                        gVar.s();
-                                        int i28 = gVar.i(13);
-                                        gVar.s();
-                                        int i29 = gVar.i(13);
-                                        gVar.s();
-                                        gVar.s();
-                                        b2.r rVar = new b2.r();
-                                        rVar.a = str;
-                                        rVar.p = r0.n("video/mp2t");
-                                        rVar.q = r0.n("video/mp4v-es");
-                                        rVar.x = i28;
-                                        rVar.y = i29;
-                                        rVar.D = f7;
-                                        rVar.t = Collections.singletonList(copyOf);
-                                        hg.c.s(rVar, h0Var);
+                                        gVar.n();
+                                        int g14 = gVar.g(13);
+                                        gVar.n();
+                                        int g15 = gVar.g(13);
+                                        gVar.n();
+                                        gVar.n();
+                                        b2.w wVar = new b2.w();
+                                        wVar.a = str;
+                                        wVar.q = w0.n("video/mp2t");
+                                        wVar.r = w0.n("video/mp4v-es");
+                                        wVar.y = g14;
+                                        wVar.z = g15;
+                                        wVar.E = f7;
+                                        wVar.u = Collections.singletonList(copyOf);
+                                        i2.d.s(wVar, i0Var);
                                         this.j = true;
                                     } else {
-                                        f7 = i23 / i24;
-                                        if (gVar.h()) {
+                                        f7 = g11 / g12;
+                                        if (gVar.f()) {
                                         }
-                                        if (gVar.i(2) != 0) {
+                                        if (gVar.g(2) != 0) {
                                         }
-                                        gVar.s();
-                                        int i252 = gVar.i(16);
-                                        gVar.s();
-                                        if (gVar.h()) {
+                                        gVar.n();
+                                        int g132 = gVar.g(16);
+                                        gVar.n();
+                                        if (gVar.f()) {
                                         }
-                                        gVar.s();
-                                        int i282 = gVar.i(13);
-                                        gVar.s();
-                                        int i292 = gVar.i(13);
-                                        gVar.s();
-                                        gVar.s();
-                                        b2.r rVar2 = new b2.r();
-                                        rVar2.a = str;
-                                        rVar2.p = r0.n("video/mp2t");
-                                        rVar2.q = r0.n("video/mp4v-es");
-                                        rVar2.x = i282;
-                                        rVar2.y = i292;
-                                        rVar2.D = f7;
-                                        rVar2.t = Collections.singletonList(copyOf);
-                                        hg.c.s(rVar2, h0Var);
+                                        gVar.n();
+                                        int g142 = gVar.g(13);
+                                        gVar.n();
+                                        int g152 = gVar.g(13);
+                                        gVar.n();
+                                        gVar.n();
+                                        b2.w wVar2 = new b2.w();
+                                        wVar2.a = str;
+                                        wVar2.q = w0.n("video/mp2t");
+                                        wVar2.r = w0.n("video/mp4v-es");
+                                        wVar2.y = g142;
+                                        wVar2.z = g152;
+                                        wVar2.E = f7;
+                                        wVar2.u = Collections.singletonList(copyOf);
+                                        i2.d.s(wVar2, i0Var);
                                         this.j = true;
                                     }
-                                } else if (i22 < 7) {
-                                    f7 = l[i22];
-                                    if (gVar.h()) {
+                                } else if (g10 < 7) {
+                                    f7 = l[g10];
+                                    if (gVar.f()) {
                                     }
-                                    if (gVar.i(2) != 0) {
+                                    if (gVar.g(2) != 0) {
                                     }
-                                    gVar.s();
-                                    int i2522 = gVar.i(16);
-                                    gVar.s();
-                                    if (gVar.h()) {
+                                    gVar.n();
+                                    int g1322 = gVar.g(16);
+                                    gVar.n();
+                                    if (gVar.f()) {
                                     }
-                                    gVar.s();
-                                    int i2822 = gVar.i(13);
-                                    gVar.s();
-                                    int i2922 = gVar.i(13);
-                                    gVar.s();
-                                    gVar.s();
-                                    b2.r rVar22 = new b2.r();
-                                    rVar22.a = str;
-                                    rVar22.p = r0.n("video/mp2t");
-                                    rVar22.q = r0.n("video/mp4v-es");
-                                    rVar22.x = i2822;
-                                    rVar22.y = i2922;
-                                    rVar22.D = f7;
-                                    rVar22.t = Collections.singletonList(copyOf);
-                                    hg.c.s(rVar22, h0Var);
+                                    gVar.n();
+                                    int g1422 = gVar.g(13);
+                                    gVar.n();
+                                    int g1522 = gVar.g(13);
+                                    gVar.n();
+                                    gVar.n();
+                                    b2.w wVar22 = new b2.w();
+                                    wVar22.a = str;
+                                    wVar22.q = w0.n("video/mp2t");
+                                    wVar22.r = w0.n("video/mp4v-es");
+                                    wVar22.y = g1422;
+                                    wVar22.z = g1522;
+                                    wVar22.E = f7;
+                                    wVar22.u = Collections.singletonList(copyOf);
+                                    i2.d.s(wVar22, i0Var);
                                     this.j = true;
                                 } else {
-                                    e2.a.n("H263Reader", "Invalid aspect ratio");
+                                    e2.a.l("H263Reader", "Invalid aspect ratio");
                                     f7 = 1.0f;
-                                    if (gVar.h()) {
+                                    if (gVar.f()) {
                                     }
-                                    if (gVar.i(2) != 0) {
+                                    if (gVar.g(2) != 0) {
                                     }
-                                    gVar.s();
-                                    int i25222 = gVar.i(16);
-                                    gVar.s();
-                                    if (gVar.h()) {
+                                    gVar.n();
+                                    int g13222 = gVar.g(16);
+                                    gVar.n();
+                                    if (gVar.f()) {
                                     }
-                                    gVar.s();
-                                    int i28222 = gVar.i(13);
-                                    gVar.s();
-                                    int i29222 = gVar.i(13);
-                                    gVar.s();
-                                    gVar.s();
-                                    b2.r rVar222 = new b2.r();
-                                    rVar222.a = str;
-                                    rVar222.p = r0.n("video/mp2t");
-                                    rVar222.q = r0.n("video/mp4v-es");
-                                    rVar222.x = i28222;
-                                    rVar222.y = i29222;
-                                    rVar222.D = f7;
-                                    rVar222.t = Collections.singletonList(copyOf);
-                                    hg.c.s(rVar222, h0Var);
+                                    gVar.n();
+                                    int g14222 = gVar.g(13);
+                                    gVar.n();
+                                    int g15222 = gVar.g(13);
+                                    gVar.n();
+                                    gVar.n();
+                                    b2.w wVar222 = new b2.w();
+                                    wVar222.a = str;
+                                    wVar222.q = w0.n("video/mp2t");
+                                    wVar222.r = w0.n("video/mp4v-es");
+                                    wVar222.y = g14222;
+                                    wVar222.z = g15222;
+                                    wVar222.E = f7;
+                                    wVar222.u = Collections.singletonList(copyOf);
+                                    i2.d.s(wVar222, i0Var);
                                     this.j = true;
                                 }
                             } else {
                                 i13 = 0;
                             }
-                        } else if ((b11 & 240) != 32) {
-                            e2.a.n("H263Reader", "Unexpected start code value");
+                        } else if ((b10 & 240) != 32) {
+                            e2.a.l("H263Reader", "Unexpected start code value");
                             i13 = 0;
                             lVar.a = false;
                             lVar.c = 0;
@@ -278,7 +279,7 @@ public final class n implements i {
                         i11 = i16;
                         i13 = 0;
                         if (i17 > 31) {
-                            e2.a.n("H263Reader", "Unexpected start code value");
+                            e2.a.l("H263Reader", "Unexpected start code value");
                             lVar.a = false;
                             lVar.c = 0;
                             lVar.b = 0;
@@ -297,52 +298,52 @@ public final class n implements i {
                 }
                 lVar.a(i13, 3, l.f);
             }
-            this.f.a(i14, b10, bArr);
-            if (m0Var != null) {
+            this.f.a(i14, c10, bArr);
+            if (o0Var != null) {
                 if (i18 > 0) {
-                    m0Var.a(i14, b10, bArr);
+                    o0Var.a(i14, c10, bArr);
                     i12 = 0;
                 } else {
                     i12 = -i18;
                 }
-                if (m0Var.e(i12)) {
-                    int m10 = f2.p.m(m0Var.e, (byte[]) m0Var.f);
-                    String str2 = e2.d0.a;
-                    byte[] bArr2 = (byte[]) m0Var.f;
-                    e2.v vVar2 = this.b;
-                    vVar2.H(m10, bArr2);
-                    this.a.a(this.k, vVar2);
+                if (o0Var.e(i12)) {
+                    int p5 = f2.p.p(o0Var.e, (byte[]) o0Var.f);
+                    String str2 = m0.a;
+                    byte[] bArr2 = (byte[]) o0Var.f;
+                    e2.x xVar2 = this.b;
+                    xVar2.L(p5, bArr2);
+                    this.a.a(this.k, xVar2);
                 }
                 if (i17 == 178) {
                     z10 = true;
-                    if (vVar.a[b10 + 2] == 1) {
-                        m0Var.h(i17);
+                    if (xVar.a[c10 + 2] == 1) {
+                        o0Var.h(i17);
                     }
-                    int i30 = i10 - b10;
-                    this.f.b(i30, this.g - i30, this.j);
+                    int i24 = i10 - c10;
+                    this.f.b(i24, this.g - i24, this.j);
                     m mVar = this.f;
-                    long j3 = this.k;
+                    long j10 = this.k;
                     mVar.e = i17;
                     mVar.d = false;
                     mVar.b = (i17 != 182 || i17 == 179) ? z10 : false;
                     mVar.c = i17 != 182 ? z10 : false;
                     mVar.f = 0;
-                    mVar.h = j3;
+                    mVar.h = j10;
                     i15 = i10;
                     i14 = i11;
                 }
             }
             z10 = true;
-            int i302 = i10 - b10;
-            this.f.b(i302, this.g - i302, this.j);
+            int i242 = i10 - c10;
+            this.f.b(i242, this.g - i242, this.j);
             m mVar2 = this.f;
-            long j32 = this.k;
+            long j102 = this.k;
             mVar2.e = i17;
             mVar2.d = false;
             mVar2.b = (i17 != 182 || i17 == 179) ? z10 : false;
             mVar2.c = i17 != 182 ? z10 : false;
             mVar2.f = 0;
-            mVar2.h = j32;
+            mVar2.h = j102;
             i15 = i10;
             i14 = i11;
         }
@@ -350,7 +351,7 @@ public final class n implements i {
 
     @Override // j4.i
     public final void c() {
-        f2.p.a(this.c);
+        f2.p.b(this.c);
         l lVar = this.d;
         lVar.a = false;
         lVar.c = 0;
@@ -362,9 +363,9 @@ public final class n implements i {
             mVar.d = false;
             mVar.e = -1;
         }
-        m0 m0Var = this.e;
-        if (m0Var != null) {
-            m0Var.g();
+        o0 o0Var = this.e;
+        if (o0Var != null) {
+            o0Var.g();
         }
         this.g = 0L;
         this.k = -9223372036854775807L;
@@ -376,15 +377,15 @@ public final class n implements i {
         f0Var.c();
         this.h = (String) f0Var.e;
         f0Var.c();
-        h0 f22 = qVar.f2(f0Var.c, 2);
-        this.i = f22;
-        this.f = new m(f22);
+        i0 a02 = qVar.a0(f0Var.c, 2);
+        this.i = a02;
+        this.f = new m(a02);
         this.a.b(qVar, f0Var);
     }
 
     @Override // j4.i
     public final void e(boolean z10) {
-        e2.d.h(this.f);
+        this.f.getClass();
         if (z10) {
             this.f.b(0, this.g, this.j);
             m mVar = this.f;
@@ -396,7 +397,7 @@ public final class n implements i {
     }
 
     @Override // j4.i
-    public final void f(int i10, long j3) {
-        this.k = j3;
+    public final void f(int i10, long j10) {
+        this.k = j10;
     }
 }

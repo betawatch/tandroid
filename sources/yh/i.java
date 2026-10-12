@@ -1,106 +1,48 @@
 package yh;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
+import org.telegram.ui.ActionBar.c6;
+import zh.e8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o b;
+public final class i extends e8 {
+    public final /* synthetic */ n m0;
 
-    public /* synthetic */ i(o oVar, int i10) {
-        this.a = i10;
-        this.b = oVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(n nVar, Context context, c6 c6Var) {
+        super(context, c6Var);
+        this.m0 = nVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final o oVar = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.j
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                o oVar2 = oVar;
-                                oVar2.getClass();
-                                oVar2.j = new ArrayList();
-                                oVar2.i = false;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof Vector) {
-                                    Vector vector = (Vector) tLObject2;
-                                    for (int i11 = 0; i11 < vector.objects.size(); i11++) {
-                                        oVar2.j.add((TLRPC.User) vector.objects.get(i11));
-                                    }
-                                    MessagesController.getInstance(oVar2.a).putUsers(oVar2.j, false);
-                                    break;
-                                }
-                                break;
-                            default:
-                                o oVar3 = oVar;
-                                int i12 = oVar3.a;
-                                oVar3.l = new ArrayList();
-                                oVar3.k = false;
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TLRPC.messages_Chats) {
-                                    TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject3;
-                                    MessagesController.getInstance(i12).putChats(messages_chats.chats, false);
-                                    oVar3.l.addAll(messages_chats.chats);
-                                }
-                                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.adminedChannelsLoaded, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i11 = 1;
-                final o oVar2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: yh.j
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                o oVar22 = oVar2;
-                                oVar22.getClass();
-                                oVar22.j = new ArrayList();
-                                oVar22.i = false;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof Vector) {
-                                    Vector vector = (Vector) tLObject2;
-                                    for (int i112 = 0; i112 < vector.objects.size(); i112++) {
-                                        oVar22.j.add((TLRPC.User) vector.objects.get(i112));
-                                    }
-                                    MessagesController.getInstance(oVar22.a).putUsers(oVar22.j, false);
-                                    break;
-                                }
-                                break;
-                            default:
-                                o oVar3 = oVar2;
-                                int i12 = oVar3.a;
-                                oVar3.l = new ArrayList();
-                                oVar3.k = false;
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TLRPC.messages_Chats) {
-                                    TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject3;
-                                    MessagesController.getInstance(i12).putChats(messages_chats.chats, false);
-                                    oVar3.l.addAll(messages_chats.chats);
-                                }
-                                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.adminedChannelsLoaded, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // zh.e8
+    public final boolean d(float f7) {
+        if (getProgress() <= 0.99d && f7 <= getMeasuredWidth() * 0.9f) {
+            return false;
         }
+        n.V(this.m0);
+        return true;
+    }
+
+    @Override // zh.e8, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - AndroidUtilities.dp(48.0f)) {
+            return false;
+        }
+        super.dispatchTouchEvent(motionEvent);
+        return true;
+    }
+
+    @Override // zh.e8
+    public final void e(int i10) {
+        n.U(this.m0, i10);
+    }
+
+    @Override // zh.e8
+    public final void setValue(int i10) {
+        super.setValue(i10);
+        n.U(this.m0, i10);
     }
 }

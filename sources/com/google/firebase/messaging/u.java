@@ -1,48 +1,149 @@
 package com.google.firebase.messaging;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.PowerManager;
 import android.util.Log;
-import java.io.File;
 import java.io.IOException;
-import org.telegram.messenger.ApplicationLoader;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class u {
-    public final SharedPreferences a;
+public final class u implements Runnable {
+    public final /* synthetic */ int a;
+    public final long b;
+    public final Object c;
+    public final Object d;
+    public final Object e;
 
-    public u(Context context) {
-        boolean isEmpty;
-        SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.android.gms.appid", 0);
-        this.a = sharedPreferences;
-        File file = new File(context.getNoBackupFilesDir(), "com.google.android.gms.appid-no-backup");
-        if (file.exists()) {
-            return;
-        }
+    public u(FirebaseMessaging firebaseMessaging, long j10) {
+        this.a = 0;
+        this.e = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.x("firebase-iid-executor"));
+        this.d = firebaseMessaging;
+        this.b = j10;
+        PowerManager.WakeLock newWakeLock = ((PowerManager) firebaseMessaging.b.getSystemService("power")).newWakeLock(1, "fiid-sync");
+        this.c = newWakeLock;
+        newWakeLock.setReferenceCounted(false);
+    }
+
+    public boolean a() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) ((FirebaseMessaging) this.d).b.getSystemService("connectivity");
+        NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    public boolean b() {
         try {
-            if (file.createNewFile()) {
-                synchronized (this) {
-                    isEmpty = sharedPreferences.getAll().isEmpty();
+            if (((FirebaseMessaging) this.d).a() == null) {
+                Log.e("FirebaseMessaging", "Token retrieval failed: null");
+                return false;
+            }
+            if (!Log.isLoggable("FirebaseMessaging", 3)) {
+                return true;
+            }
+            Log.d("FirebaseMessaging", "Token successfully retrieved");
+            return true;
+        } catch (IOException e) {
+            String message = e.getMessage();
+            if (!"SERVICE_NOT_AVAILABLE".equals(message) && !"INTERNAL_SERVER_ERROR".equals(message) && !"InternalServerError".equals(message)) {
+                if (e.getMessage() != null) {
+                    throw e;
                 }
-                if (isEmpty) {
+                Log.w("FirebaseMessaging", "Token retrieval failed without exception message. Will retry token retrieval");
+                return false;
+            }
+            Log.w("FirebaseMessaging", "Token retrieval failed: " + e.getMessage() + ". Will retry token retrieval");
+            return false;
+        } catch (SecurityException unused) {
+            Log.w("FirebaseMessaging", "Token retrieval failed with SecurityException. Will retry token retrieval");
+            return false;
+        }
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                PowerManager.WakeLock wakeLock = (PowerManager.WakeLock) this.c;
+                s j10 = s.j();
+                FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.d;
+                if (j10.l(firebaseMessaging.b)) {
+                    wakeLock.acquire();
+                }
+                try {
+                    try {
+                        synchronized (firebaseMessaging) {
+                            firebaseMessaging.j = true;
+                        }
+                        if (!firebaseMessaging.i.e()) {
+                            firebaseMessaging.e(false);
+                            if (!s.j().l(firebaseMessaging.b)) {
+                                return;
+                            }
+                        } else if (!s.j().k(firebaseMessaging.b) || a()) {
+                            if (b()) {
+                                firebaseMessaging.e(false);
+                            } else {
+                                firebaseMessaging.f(this.b);
+                            }
+                            if (!s.j().l(firebaseMessaging.b)) {
+                                return;
+                            }
+                        } else {
+                            androidx.mediarouter.app.f fVar = new androidx.mediarouter.app.f();
+                            fVar.b = this;
+                            fVar.a();
+                            if (!s.j().l(firebaseMessaging.b)) {
+                                return;
+                            }
+                        }
+                    } catch (IOException e) {
+                        Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e.getMessage() + ". Won't retry the operation.");
+                        firebaseMessaging.e(false);
+                        if (!s.j().l(firebaseMessaging.b)) {
+                            return;
+                        }
+                    }
+                    wakeLock.release();
+                    return;
+                } catch (Throwable th2) {
+                    if (s.j().l(firebaseMessaging.b)) {
+                        wakeLock.release();
+                    }
+                    throw th2;
+                }
+            default:
+                x9.n nVar = (x9.n) this.e;
+                x9.r rVar = nVar.n;
+                if (rVar == null || !rVar.e.get()) {
+                    long j11 = this.b / 1000;
+                    String e7 = nVar.e();
+                    if (e7 == null) {
+                        Log.w("FirebaseCrashlytics", "Tried to write a non-fatal exception while no session was open.", null);
+                        return;
+                    }
+                    m mVar = nVar.m;
+                    Throwable th3 = (Throwable) this.c;
+                    Thread thread = (Thread) this.d;
+                    mVar.getClass();
+                    String concat = "Persisting non-fatal event for session ".concat(e7);
+                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                        Log.v("FirebaseCrashlytics", concat, null);
+                    }
+                    mVar.v(th3, thread, e7, "error", j11, false);
                     return;
                 }
-                Log.i("FirebaseMessaging", "App restored, clearing state");
-                a();
-            }
-        } catch (IOException e7) {
-            if (Log.isLoggable("FirebaseMessaging", 3)) {
-                Log.d("FirebaseMessaging", "Error creating file in no backup dir: " + e7.getMessage());
-            }
+                return;
         }
     }
 
-    public synchronized void a() {
-        this.a.edit().clear().commit();
-    }
-
-    public u(int i10, int i11) {
-        this.a = ApplicationLoader.applicationContext.getSharedPreferences(a1.g.m(i10, i11, "pip_layout_", "_"), 0);
+    public u(x9.n nVar, long j10, Throwable th2, Thread thread) {
+        this.a = 1;
+        this.e = nVar;
+        this.b = j10;
+        this.c = th2;
+        this.d = thread;
     }
 }

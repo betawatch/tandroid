@@ -7,7 +7,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class fd0 {
     public final Paint a;
@@ -53,7 +53,7 @@ public final class fd0 {
                 return paint;
             }
         } else {
-            float a2 = w7.o.a((i10 * (-i11)) / 25500.0f, 0.0f, 1.0f);
+            float a2 = w7.s.a((i10 * (-i11)) / 25500.0f, 0.0f, 1.0f);
             if (b11 || this.i != a2 || this.h != 2) {
                 this.h = 2;
                 this.i = a2;

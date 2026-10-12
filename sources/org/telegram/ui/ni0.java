@@ -1,57 +1,59 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ni0 extends s4.i0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
-    public final /* synthetic */ dj0 e;
+public final /* synthetic */ class ni0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hj0 b;
+    public final /* synthetic */ EditText c;
 
-    public ni0(dj0 dj0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.e = dj0Var;
-        this.c = context;
-        this.d = e6Var;
+    public /* synthetic */ ni0(hj0 hj0Var, EditText editText, int i10) {
+        this.a = i10;
+        this.b = hj0Var;
+        this.c = editText;
     }
 
-    @Override // s4.i0
-    public final int h() {
-        return this.e.N.size();
-    }
-
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
-        dj0 dj0Var = this.e;
-        ArrayList arrayList = dj0Var.N;
-        MessageObject messageObject = (MessageObject) arrayList.get((h() - 1) - i10);
-        org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) d1Var.a;
-        MessageObject.GroupedMessages l4 = dj0Var.l(messageObject);
-        int i11 = 0;
-        u1Var.setInvalidatesParent(l4 != null);
-        u1Var.X3(messageObject, l4, false, false, false, false);
-        if (!dj0Var.P.i() && arrayList.size() >= 10) {
-            i11 = arrayList.size() % 10;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                hj0 hj0Var = this.b;
+                if (!hj0Var.p0) {
+                    try {
+                        Window window = hj0Var.getWindow();
+                        WindowManager.LayoutParams attributes = window.getAttributes();
+                        attributes.flags &= -131073;
+                        window.setAttributes(attributes);
+                        hj0Var.p0 = true;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                    }
+                }
+                AndroidUtilities.runOnUIThread(new ni0(hj0Var, this.c, 1), 100L);
+                break;
+            default:
+                hj0 hj0Var2 = this.b;
+                int[] iArr = hj0Var2.o0;
+                AndroidUtilities.showKeyboard(this.c);
+                org.telegram.ui.Components.wg wgVar = hj0Var2.W;
+                if (wgVar != null) {
+                    wgVar.getLocationOnScreen(iArr);
+                    int i10 = iArr[0];
+                    int width = hj0Var2.W.getWidth();
+                    org.telegram.ui.Components.wg wgVar2 = hj0Var2.W;
+                    wgVar2.getHeight();
+                    iArr[0] = org.telegram.ui.Cells.d0.b(6.0f, width - wgVar2.m(), i10);
+                    hj0Var2.X.setScaleX(hj0Var2.W.getScaleX());
+                    hj0Var2.X.setScaleY(hj0Var2.W.getScaleY());
+                    break;
+                }
+                break;
         }
-        if (i10 != i11 || messageObject.needDrawForwarded()) {
-            return;
-        }
-        dj0Var.Q = u1Var;
-        Point point = AndroidUtilities.displaySize;
-        u1Var.Z3(point.x, point.y);
-        dj0Var.R = messageObject.getId();
-    }
-
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        dj0 dj0Var = this.e;
-        cj0 cj0Var = new cj0(dj0Var, this.c, dj0Var.c, this.d);
-        cj0Var.setDelegate(new na.d(17));
-        return new org.telegram.ui.Components.am0(cj0Var);
     }
 }

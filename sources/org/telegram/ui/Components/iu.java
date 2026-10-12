@@ -1,27 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class iu extends q6 {
-    public final /* synthetic */ int d0;
-    public final /* synthetic */ EditTextBoldCursor e0;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_payments;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ iu(int i10, EditTextBoldCursor editTextBoldCursor) {
-        super(false, false, false);
-        this.d0 = i10;
-        this.e0 = editTextBoldCursor;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class iu implements org.telegram.ui.ActionBar.z1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ iu(int i10, int i11, org.telegram.ui.ActionBar.m2 m2Var) {
+        this.a = i10;
+        this.b = i11;
+        this.c = m2Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        switch (this.d0) {
-            case 0:
-                this.e0.invalidate();
-                break;
-            default:
-                this.e0.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.c;
+        pf.c g10 = a2Var.g(-1, true, true);
+        g10.d();
+        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+        tL_resolveStarGiftOffer.offer_msg_id = this.a;
+        int i11 = this.b;
+        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_resolveStarGiftOffer, new fi.g1(i11, m2Var, g10, a2Var));
+    }
+
+    public /* synthetic */ iu(nu nuVar, int i10, int i11) {
+        this.c = nuVar;
+        this.a = i10;
+        this.b = i11;
     }
 }

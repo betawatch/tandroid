@@ -1,51 +1,76 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ap implements Utilities.Callback {
-    public final /* synthetic */ p80 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 f;
+public final class ap extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
+    public final /* synthetic */ int T;
+    public Object U;
 
-    public /* synthetic */ ap(p80 p80Var, int i10, long j3, long j10, org.telegram.ui.zn znVar, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.a = p80Var;
-        this.b = i10;
-        this.c = j3;
-        this.d = j10;
-        this.e = znVar;
-        this.f = e6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ap(Context context, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var, int i12) {
+        super(i10, i11, context, c6Var);
+        this.T = i12;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        Integer num = (Integer) obj;
-        this.a.u();
-        int intValue = num.intValue();
-        int i10 = this.b;
-        long j3 = this.c;
-        long j10 = this.d;
-        org.telegram.ui.ActionBar.n2 n2Var = this.e;
-        org.telegram.ui.ActionBar.e6 e6Var = this.f;
-        if (intValue != 0) {
-            NotificationsController.getInstance(i10).muteUntil(j3, j10, num.intValue());
-            if (ad.a(n2Var)) {
-                ad.z(n2Var, 5, num.intValue(), e6Var).j();
-                return;
-            }
-            return;
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        switch (this.T) {
+            case 0:
+                canvas.save();
+                Path path = (Path) this.U;
+                path.rewind();
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                path.addRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
+                canvas.clipPath(path);
+                boolean drawChild = super.drawChild(canvas, view, j10);
+                canvas.restore();
+                return drawChild;
+            case 1:
+                canvas.save();
+                Path path2 = (Path) this.U;
+                path2.rewind();
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                rectF2.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                path2.addRoundRect(rectF2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
+                canvas.clipPath(path2);
+                boolean drawChild2 = super.drawChild(canvas, view, j10);
+                canvas.restore();
+                return drawChild2;
+            default:
+                return super.drawChild(canvas, view, j10);
         }
-        if (MessagesController.getInstance(i10).isDialogMuted(j3, j10)) {
-            NotificationsController.getInstance(i10).muteDialog(j3, j10, false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        int i12;
+        switch (this.T) {
+            case 2:
+                m80 m80Var = (m80) this.U;
+                if (this == m80Var.A && (i12 = m80Var.X) > 0) {
+                    i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11));
+                }
+                super.onMeasure(i10, i11);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
         }
-        if (ad.a(n2Var)) {
-            ad.z(n2Var, 4, num.intValue(), e6Var).j();
-        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ap(m80 m80Var, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11) {
+        super(i10, i11, context, c6Var);
+        this.T = 2;
+        this.U = m80Var;
     }
 }

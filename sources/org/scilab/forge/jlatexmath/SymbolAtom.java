@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.BitSet;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class SymbolAtom extends CharSymbol {
     public static Map<String, SymbolAtom> symbols = new TeXSymbolParser().readSymbols();
@@ -43,8 +43,8 @@ public class SymbolAtom extends CharSymbol {
     public static void addSymbolAtom(String str) {
         try {
             addSymbolAtom(new FileInputStream(str), str);
-        } catch (FileNotFoundException e7) {
-            throw new ResourceParseException(str, e7);
+        } catch (FileNotFoundException e) {
+            throw new ResourceParseException(str, e);
         }
     }
 

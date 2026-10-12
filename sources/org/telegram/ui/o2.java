@@ -1,63 +1,93 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class o2 extends z4.a {
-    public final /* synthetic */ q2 c;
+public final class o2 implements z4.e {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public o2(q2 q2Var) {
-        this.c = q2Var;
+    public /* synthetic */ o2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // z4.a
-    public final void a(z4.g gVar, Object obj) {
-        gVar.removeView(((n2) obj).b);
-    }
-
-    @Override // z4.a
-    public final int b() {
-        TL_iv.pageBlockSlideshow pageblockslideshow = this.c.d;
-        if (pageblockslideshow == null) {
-            return 0;
+    @Override // z4.e
+    public final void a(float f7, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                s2 s2Var = (s2) this.b;
+                float measuredWidth = s2Var.a.getMeasuredWidth();
+                if (measuredWidth != 0.0f) {
+                    s2Var.s = com.google.android.gms.internal.play_billing.k3.c(s2Var.v, measuredWidth, (i10 * measuredWidth) + i11, measuredWidth);
+                    s2Var.c.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                h80 h80Var = (h80) this.b;
+                org.telegram.ui.Components.ua uaVar = h80Var.e;
+                uaVar.b = f7;
+                uaVar.c = i10;
+                uaVar.invalidate();
+                float measuredWidth2 = h80Var.d.getMeasuredWidth();
+                if (measuredWidth2 != 0.0f) {
+                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (h80Var.H * measuredWidth2)) / measuredWidth2);
+                    break;
+                }
+                break;
         }
-        return pageblockslideshow.items.size();
     }
 
-    @Override // z4.a
-    public final int c(Object obj) {
-        return this.c.d.items.contains(((n2) obj).a) ? -1 : -2;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // z4.a
-    public final Object e(z4.g gVar, int i10) {
-        x2 x2Var;
-        q2 q2Var = this.c;
-        g4 g4Var = q2Var.w;
-        i4 i4Var = q2Var.x;
-        TL_iv.PageBlock pageBlock = q2Var.d.items.get(i10);
-        if (pageBlock instanceof TL_iv.pageBlockPhoto) {
-            d2 d2Var = new d2(q2Var.getContext(), i4Var, g4Var, 1);
-            d2Var.a((TL_iv.pageBlockPhoto) pageBlock, g4Var.E.cached_page, false, true);
-            x2Var = d2Var;
-        } else {
-            x2 x2Var2 = new x2(q2Var.getContext(), i4Var, g4Var, 1);
-            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
-            x2Var2.b(pageblockvideo, (y2) i4Var.y.f(pageblockvideo.video_id), false, true);
-            x2Var = x2Var2;
+    @Override // z4.e
+    public final void b(int i10) {
+        switch (this.a) {
+            case 0:
+                s2 s2Var = (s2) this.b;
+                s2Var.v = i10;
+                s2Var.c.invalidate();
+                break;
+            case 1:
+                ((h80) this.b).H = i10;
+                break;
+            default:
+                ((ce1) this.b).a0.invalidate();
+                break;
         }
-        gVar.addView(x2Var);
-        n2 n2Var = new n2();
-        n2Var.b = x2Var;
-        n2Var.a = pageBlock;
-        return n2Var;
     }
 
-    @Override // z4.a
-    public final boolean f(View view, Object obj) {
-        return ((n2) obj).b == view;
+    @Override // z4.e
+    public final void c(int i10) {
+        switch (this.a) {
+            case 1:
+                h80 h80Var = (h80) this.b;
+                if (i10 != 1) {
+                    if (i10 == 0 || i10 == 2) {
+                        if (h80Var.K) {
+                            h80Var.K = false;
+                        }
+                        if (h80Var.w != h80Var.d.getCurrentItem()) {
+                            h80Var.w = h80Var.d.getCurrentItem();
+                            break;
+                        }
+                    }
+                } else {
+                    h80Var.K = true;
+                    h80Var.d.getCurrentItem();
+                    h80Var.d.getMeasuredWidth();
+                    break;
+                }
+                break;
+        }
+    }
+
+    private final void d(int i10) {
+    }
+
+    private final void e(int i10) {
+    }
+
+    private final void f(float f7, int i10, int i11) {
     }
 }

@@ -1,36 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class f21 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ThemeEditorView b;
+public final class f21 extends s4.r0 {
+    public final /* synthetic */ ThemeEditorView.EditorAlert a;
 
-    public /* synthetic */ f21(ThemeEditorView themeEditorView, int i10) {
-        this.a = i10;
-        this.b = themeEditorView;
+    public f21(ThemeEditorView.EditorAlert editorAlert) {
+        this.a = editorAlert;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ThemeEditorView themeEditorView = this.b;
-                d21 d21Var = themeEditorView.a;
-                if (d21Var != null) {
-                    d21Var.setBackground(null);
-                    themeEditorView.h.removeView(themeEditorView.a);
-                    break;
-                }
-                break;
-            default:
-                ThemeEditorView themeEditorView2 = this.b;
-                org.telegram.ui.ActionBar.i6.s1(themeEditorView2.m, true, false, false);
-                themeEditorView2.a();
-                break;
-        }
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ThemeEditorView.EditorAlert.u(this.a);
     }
 }

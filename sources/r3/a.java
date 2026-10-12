@@ -1,35 +1,23 @@
 package r3;
 
-import b2.m0;
-import b2.o0;
-import b2.s;
-import v7.w7;
+import a1.g;
+import e2.m0;
+import j$.util.Objects;
+import java.util.Locale;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a implements o0 {
+public final class a {
     public final long a;
     public final long b;
-    public final long c;
-    public final long d;
-    public final long e;
+    public final int c;
 
-    public a(long j3, long j10, long j11, long j12, long j13) {
-        this.a = j3;
-        this.b = j10;
-        this.c = j11;
-        this.d = j12;
-        this.e = j13;
-    }
-
-    @Override // b2.o0
-    public final /* synthetic */ s a() {
-        return null;
-    }
-
-    @Override // b2.o0
-    public final /* synthetic */ byte[] c() {
-        return null;
+    public a(long j10, long j11, int i10) {
+        u6.g(j10 < j11);
+        this.a = j10;
+        this.b = j11;
+        this.c = i10;
     }
 
     public final boolean equals(Object obj) {
@@ -38,7 +26,7 @@ public final class a implements o0 {
         }
         if (obj != null && a.class == obj.getClass()) {
             a aVar = (a) obj;
-            if (this.a == aVar.a && this.b == aVar.b && this.c == aVar.c && this.d == aVar.d && this.e == aVar.e) {
+            if (this.a == aVar.a && this.b == aVar.b && this.c == aVar.c) {
                 return true;
             }
         }
@@ -46,14 +34,16 @@ public final class a implements o0 {
     }
 
     public final int hashCode() {
-        return w7.b(this.e) + ((w7.b(this.d) + ((w7.b(this.c) + ((w7.b(this.b) + ((w7.b(this.a) + 527) * 31)) * 31)) * 31)) * 31);
+        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b), Integer.valueOf(this.c));
     }
 
     public final String toString() {
-        return "Motion photo metadata: photoStartPosition=" + this.a + ", photoSize=" + this.b + ", photoPresentationTimestampUs=" + this.c + ", videoStartPosition=" + this.d + ", videoSize=" + this.e;
-    }
-
-    @Override // b2.o0
-    public final /* synthetic */ void b(m0 m0Var) {
+        String str = m0.a;
+        Locale locale = Locale.US;
+        StringBuilder t10 = g.t(this.a, "Segment: startTimeMs=", ", endTimeMs=");
+        t10.append(this.b);
+        t10.append(", speedDivisor=");
+        t10.append(this.c);
+        return t10.toString();
     }
 }

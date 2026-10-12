@@ -1,37 +1,57 @@
 package b2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.os.Bundle;
+import android.os.IBinder;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class l {
-    public static final l c = new l(new t1());
-    public static final String d;
-    public static final String e;
-    public final int a = 0;
-    public final int b = 0;
+    public static final int b = n.a;
+    public final i a;
 
-    static {
-        String str = e2.d0.a;
-        Integer.toString(0, 36);
-        d = Integer.toString(1, 36);
-        e = Integer.toString(2, 36);
-        Integer.toString(3, 36);
-    }
-
-    public l(t1 t1Var) {
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public l(byte[] bArr) {
+        e9.k0 t10 = e9.n0.t();
+        int length = bArr.length;
+        int i10 = b;
+        int g10 = e2.m0.g(length, i10);
+        for (int i11 = 0; i11 < g10; i11++) {
+            Bundle bundle = new Bundle();
+            int i12 = i11 * i10;
+            bundle.putByteArray("bytes", Arrays.copyOfRange(bArr, i12, Math.min(i12 + i10, bArr.length)));
+            t10.c(bundle);
         }
-        if (!(obj instanceof l)) {
-            return false;
-        }
-        l lVar = (l) obj;
-        return this.a == lVar.a && this.b == lVar.b;
+        this.a = new i(t10.f());
     }
 
-    public final int hashCode() {
-        return (((16337 + this.a) * 31) + this.b) * 31;
+    public static byte[] a(Bundle bundle) {
+        IBinder binder = bundle.getBinder(m.g);
+        if (binder != null) {
+            try {
+                e9.n0 a2 = i.a(binder);
+                if (a2.isEmpty()) {
+                    return e2.m0.b;
+                }
+                byte[] byteArray = ((Bundle) e9.s.m(a2)).getByteArray("bytes");
+                if (byteArray != null) {
+                    int size = a2.size() - 1;
+                    int i10 = b;
+                    int i11 = size * i10;
+                    byte[] bArr = new byte[byteArray.length + i11];
+                    System.arraycopy(byteArray, 0, bArr, i11, byteArray.length);
+                    for (int i12 = 0; i12 < size; i12++) {
+                        byte[] byteArray2 = ((Bundle) a2.get(i12)).getByteArray("bytes");
+                        if (byteArray2 != null && byteArray2.length == i10) {
+                            System.arraycopy(byteArray2, 0, bArr, i12 * i10, i10);
+                        }
+                    }
+                    return bArr;
+                }
+            } catch (RuntimeException e) {
+                e2.a.m("BundleableByteArray", "Failed to read byte array from bundle list retriever", e);
+                return null;
+            }
+        }
+        return null;
     }
 }

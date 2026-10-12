@@ -1,84 +1,22 @@
 package w7;
 
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.net.Uri;
-import android.text.TextUtils;
-import android.util.Log;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.LaunchActivity;
+import java.util.Date;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class q8 {
-    public static String a;
-
-    public static String a(LaunchActivity launchActivity) {
-        PackageManager packageManager;
-        ApplicationInfo applicationInfo;
-        String str = a;
-        if (str != null) {
-            return str;
-        }
-        PackageManager packageManager2 = launchActivity.getPackageManager();
-        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("http://www.example.com"));
-        ResolveInfo resolveActivity = packageManager2.resolveActivity(intent, 0);
-        String str2 = resolveActivity != null ? resolveActivity.activityInfo.packageName : null;
-        List<ResolveInfo> queryIntentActivities = packageManager2.queryIntentActivities(intent, 0);
-        ArrayList arrayList = new ArrayList();
-        for (ResolveInfo resolveInfo : queryIntentActivities) {
-            Intent intent2 = new Intent();
-            intent2.setAction("android.support.customtabs.action.CustomTabsService");
-            intent2.setPackage(resolveInfo.activityInfo.packageName);
-            if (packageManager2.resolveService(intent2, 0) != null) {
-                arrayList.add(resolveInfo.activityInfo.packageName);
-            }
-        }
-        if (arrayList.isEmpty()) {
-            a = null;
-        } else if (arrayList.size() == 1) {
-            a = (String) arrayList.get(0);
-        } else {
-            if (!TextUtils.isEmpty(str2)) {
-                try {
-                    List<ResolveInfo> queryIntentActivities2 = launchActivity.getPackageManager().queryIntentActivities(intent, 64);
-                    if (queryIntentActivities2 != null && queryIntentActivities2.size() != 0) {
-                        for (ResolveInfo resolveInfo2 : queryIntentActivities2) {
-                            IntentFilter intentFilter = resolveInfo2.filter;
-                            if (intentFilter != null && intentFilter.countDataAuthorities() != 0 && intentFilter.countDataPaths() != 0 && resolveInfo2.activityInfo != null) {
-                                break;
-                            }
-                        }
-                    }
-                } catch (RuntimeException unused) {
-                    Log.e("CustomTabsHelper", "Runtime exception while getting specialized handlers");
-                }
-                if (arrayList.contains(str2)) {
-                    a = str2;
-                }
-            }
-            if (arrayList.contains("com.android.chrome")) {
-                a = "com.android.chrome";
-            } else if (arrayList.contains("com.chrome.beta")) {
-                a = "com.chrome.beta";
-            } else if (arrayList.contains("com.chrome.dev")) {
-                a = "com.chrome.dev";
-            } else if (arrayList.contains("com.google.android.apps.chrome")) {
-                a = "com.google.android.apps.chrome";
-            }
-        }
-        try {
-            if ("com.sec.android.app.sbrowser".equalsIgnoreCase(a) && (applicationInfo = (packageManager = ApplicationLoader.applicationContext.getPackageManager()).getApplicationInfo("com.android.chrome", 0)) != null && applicationInfo.enabled) {
-                packageManager.getPackageInfo("com.android.chrome", 1);
-                a = "com.android.chrome";
-            }
-        } catch (Throwable unused2) {
-        }
-        return a;
+    public static u2.c a(String str) {
+        JSONObject jSONObject = new JSONObject(str);
+        String a2 = m9.a(jSONObject.getString("id"));
+        long j10 = jSONObject.getLong("created");
+        jSONObject.getBoolean("livemode");
+        String str2 = "card".equals(m9.a(jSONObject.getString(TeXSymbolParser.TYPE_ATTR))) ? "card" : null;
+        Boolean valueOf = Boolean.valueOf(jSONObject.getBoolean("used"));
+        JSONObject jSONObject2 = jSONObject.getJSONObject("card");
+        wc.a aVar = new wc.a(null, Integer.valueOf(jSONObject2.getInt("exp_month")), Integer.valueOf(jSONObject2.getInt("exp_year")), null, m9.a(jSONObject2.optString("name")), m9.a(jSONObject2.optString("address_line1")), m9.a(jSONObject2.optString("address_line2")), m9.a(jSONObject2.optString("address_city")), m9.a(jSONObject2.optString("address_state")), m9.a(jSONObject2.optString("address_zip")), m9.a(jSONObject2.optString("address_country")), o9.a(m9.a(jSONObject2.optString("brand"))), m9.a(jSONObject2.optString("last4")), m9.a(jSONObject2.optString("fingerprint")), o9.b(m9.a(jSONObject2.optString("funding"))), m9.a(jSONObject2.optString("country")), m9.a(jSONObject2.optString("currency")));
+        new Date(j10 * 1000);
+        return new u2.c(a2, valueOf, aVar, str2);
     }
 }

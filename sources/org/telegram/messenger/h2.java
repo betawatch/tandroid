@@ -1,51 +1,47 @@
 package org.telegram.messenger;
 
-import android.content.Context;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.messenger.LocationController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h2 implements RequestDelegate {
+public final /* synthetic */ class h2 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ h2(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+    public /* synthetic */ h2(Object obj, long j10, Object obj2, Object obj3, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+        this.c = obj;
+        this.b = j10;
+        this.d = obj2;
+        this.e = obj3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                ((FactCheckController) this.b).lambda$loadMissing$2((TLRPC.TL_getFactCheck) this.c, (ArrayList) this.d, (HashMap) this.e, tLObject, tL_error);
+                ((FactCheckController) this.c).lambda$loadMissing$3(this.b, (ArrayList) this.d, (HashMap) this.e, (ArrayList) obj);
                 break;
             case 1:
-                ((LocationController) this.b).lambda$broadcastLastKnownLocation$7((LocationController.SharingLocationInfo) this.c, (int[]) this.d, (TLRPC.TL_messages_editMessage) this.e, tLObject, tL_error);
-                break;
-            case 2:
-                ((MessagesController) this.b).lambda$didReceivedNotification$44((org.telegram.ui.ActionBar.b6) this.c, (TLRPC.TL_wallPaperSettings) this.d, (String) this.e, tLObject, tL_error);
-                break;
-            case 3:
-                ((MessagesController) this.b).lambda$deleteUserChannelHistory$132((TLRPC.Chat) this.c, (TLRPC.User) this.d, (TLRPC.Chat) this.e, tLObject, tL_error);
-                break;
-            case 4:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$30((Context) this.c, (org.telegram.ui.ActionBar.b2) this.d, (TLRPC.User) this.e, tLObject, tL_error);
+                ((MessagesController) this.c).lambda$checkSensitive$451(this.b, (boolean[]) this.d, (Runnable) this.e, (Boolean) obj);
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$sendVote$35((MessageObject) this.c, (String) this.d, (Runnable) this.e, tLObject, tL_error);
+                ((TranslateController) this.c).lambda$checkTranslation$6((MessageObject) this.d, (String) this.e, this.b, (TLRPC.TL_textWithEntities) obj);
                 break;
         }
+    }
+
+    public /* synthetic */ h2(TranslateController translateController, MessageObject messageObject, String str, long j10) {
+        this.a = 2;
+        this.c = translateController;
+        this.d = messageObject;
+        this.e = str;
+        this.b = j10;
     }
 }

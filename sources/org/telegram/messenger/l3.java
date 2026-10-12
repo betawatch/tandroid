@@ -1,31 +1,46 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FileRefController b;
-    public final /* synthetic */ TLRPC.TL_messages_sendMedia c;
-    public final /* synthetic */ Object[] d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Serializable h;
 
-    public /* synthetic */ l3(FileRefController fileRefController, TLRPC.TL_messages_sendMedia tL_messages_sendMedia, Object[] objArr, int i10) {
-        this.a = i10;
-        this.b = fileRefController;
-        this.c = tL_messages_sendMedia;
-        this.d = objArr;
+    public /* synthetic */ l3(FilePathDatabase filePathDatabase, long j10, int i10, int i11, String str, int i12) {
+        this.f = filePathDatabase;
+        this.c = j10;
+        this.b = i10;
+        this.d = i11;
+        this.h = str;
+        this.e = i12;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onUpdateObjectReference$31(this.c, this.d);
+                ((FilePathDatabase) this.f).lambda$putPath$1(this.c, this.b, this.d, (String) this.h, this.e);
                 break;
             default:
-                this.b.lambda$sendErrorToObject$42(this.c, this.d);
+                ((MessagesStorage) this.f).lambda$updateRepliesCount$194(this.b, this.c, this.d, (ArrayList) this.h, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ l3(MessagesStorage messagesStorage, int i10, long j10, int i11, ArrayList arrayList, int i12) {
+        this.f = messagesStorage;
+        this.b = i10;
+        this.c = j10;
+        this.d = i11;
+        this.h = arrayList;
+        this.e = i12;
     }
 }

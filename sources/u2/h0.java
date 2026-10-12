@@ -1,32 +1,7 @@
 package u2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h0 implements e2.h {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a5.a b;
-    public final /* synthetic */ t c;
-    public final /* synthetic */ b0 d;
-
-    public /* synthetic */ h0(a5.a aVar, t tVar, b0 b0Var, int i10) {
-        this.a = i10;
-        this.b = aVar;
-        this.c = tVar;
-        this.d = b0Var;
-    }
-
-    @Override // e2.h
-    public final void accept(Object obj) {
-        j0 j0Var = (j0) obj;
-        switch (this.a) {
-            case 0:
-                a5.a aVar = this.b;
-                j0Var.e(aVar.b, (f0) aVar.c, this.c, this.d);
-                break;
-            default:
-                a5.a aVar2 = this.b;
-                j0Var.j(aVar2.b, (f0) aVar2.c, this.c, this.d);
-                break;
-        }
-    }
+public interface h0 {
+    void a(a aVar, b2.p1 p1Var);
 }

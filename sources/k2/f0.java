@@ -1,27 +1,26 @@
 package k2;
 
-import android.content.Context;
-import android.media.AudioAttributes;
-import android.media.AudioFormat;
 import android.media.AudioTrack;
-import android.os.Build;
+import android.media.AudioTrack$StreamEventCallback;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f0 implements u {
-    public final AudioTrack a(k kVar, b2.e eVar, int i10, Context context) {
-        int i11 = Build.VERSION.SDK_INT;
-        int i12 = kVar.b;
-        int i13 = kVar.c;
-        int i14 = kVar.a;
-        String str = e2.d0.a;
-        AudioTrack.Builder sessionId = new AudioTrack.Builder().setAudioAttributes(kVar.d ? new AudioAttributes.Builder().setContentType(3).setFlags(16).setUsage(1).build() : (AudioAttributes) eVar.b().a).setAudioFormat(new AudioFormat.Builder().setSampleRate(i12).setChannelMask(i13).setEncoding(i14).build()).setTransferMode(1).setBufferSizeInBytes(kVar.f).setSessionId(i10);
-        if (i11 >= 29) {
-            sessionId.setOffloadedPlayback(kVar.e);
-        }
-        if (i11 >= 34 && context != null) {
-            sessionId.setContext(context);
-        }
-        return sessionId.build();
+public final class f0 extends AudioTrack$StreamEventCallback {
+    public final /* synthetic */ g0 a;
+
+    public f0(g0 g0Var) {
+        this.a = g0Var;
+    }
+
+    public final void onDataRequest(AudioTrack audioTrack, int i10) {
+        this.a.c.j.e(-1, new j2.e(27));
+    }
+
+    public final void onPresentationEnded(AudioTrack audioTrack) {
+        this.a.c.j.e(-1, new j2.e(28));
+    }
+
+    public final void onTearDown(AudioTrack audioTrack) {
+        this.a.c.j.e(-1, new j2.e(27));
     }
 }

@@ -1,42 +1,92 @@
 package e9;
 
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.Map;
+import java.util.Set;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class o0 implements Iterator {
-    public static final o0 a;
-    public static final /* synthetic */ o0[] b;
+public class o0 extends q implements f1, Serializable {
+    public final transient c2 e;
+    public final transient int f;
 
-    static {
-        o0 o0Var = new o0("INSTANCE", 0);
-        a = o0Var;
-        b = new o0[]{o0Var};
+    public o0(c2 c2Var, int i10) {
+        this.e = c2Var;
+        this.f = i10;
     }
 
-    public static o0 valueOf(String str) {
-        return (o0) Enum.valueOf(o0.class, str);
+    @Override // e9.p, e9.n1
+    public final Collection a() {
+        return (i0) super.a();
     }
 
-    public static o0[] values() {
-        return (o0[]) b.clone();
+    @Override // e9.p
+    public final boolean c(Object obj) {
+        return obj != null && super.c(obj);
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return false;
+    @Override // e9.n1
+    public final void clear() {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        throw new NoSuchElementException();
+    @Override // e9.p
+    public final Map d() {
+        throw new AssertionError("should never be called");
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new IllegalStateException("no calls to next() since the last call to remove()");
+    @Override // e9.p
+    public final Collection e() {
+        return new s0(this);
+    }
+
+    @Override // e9.p
+    public final Set f() {
+        throw new AssertionError("unreachable");
+    }
+
+    @Override // e9.p
+    public final Iterator g() {
+        return new r0(this);
+    }
+
+    @Override // e9.n1
+    public final Collection get(Object obj) {
+        n0 n0Var = (n0) this.e.get(obj);
+        if (n0Var != null) {
+            return n0Var;
+        }
+        l0 l0Var = n0.b;
+        return x1.e;
+    }
+
+    @Override // e9.p, e9.n1
+    /* renamed from: h, reason: merged with bridge method [inline-methods] */
+    public q0 b() {
+        return this.e;
+    }
+
+    @Override // e9.p, e9.n1
+    public final Set keySet() {
+        c2 c2Var = this.e;
+        y0 y0Var = c2Var.b;
+        if (y0Var != null) {
+            return y0Var;
+        }
+        a2 c10 = c2Var.c();
+        c2Var.b = c10;
+        return c10;
+    }
+
+    @Override // e9.p, e9.n1
+    public final boolean remove(Object obj, Object obj2) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // e9.n1
+    public final int size() {
+        return this.f;
     }
 }

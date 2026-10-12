@@ -1,37 +1,36 @@
 package com.google.android.recaptcha.internal;
 
-import hd.i;
-import jd.c;
-import kd.a;
-import ld.j;
-import sd.p;
-import v7.a8;
+import kd.c;
+import ld.a;
+import md.i;
+import td.p;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-final class zzfu extends j implements p {
+final class zzfu extends i implements p {
     int zza;
     final /* synthetic */ zzgb zzb;
     final /* synthetic */ long zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfu(zzgb zzgbVar, long j3, c cVar) {
+    public zzfu(zzgb zzgbVar, long j10, c cVar) {
         super(2, cVar);
         this.zzb = zzgbVar;
-        this.zzc = j3;
+        this.zzc = j10;
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final c create(Object obj, c cVar) {
         zzfu zzfuVar = new zzfu(this.zzb, this.zzc, cVar);
         zzfuVar.zzd = obj;
         return zzfuVar;
     }
 
-    @Override // sd.p
+    @Override // td.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
+        return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(id.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:23:0x0040, code lost:
@@ -44,7 +43,7 @@ final class zzfu extends j implements p {
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0064  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x006a A[Catch: Exception -> 0x0011, TRY_ENTER, TryCatch #0 {Exception -> 0x0011, blocks: (B:6:0x000d, B:7:0x0055, B:13:0x006a, B:14:0x0078, B:17:0x0042), top: B:2:0x0007 }] */
-    @Override // ld.a
+    @Override // md.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -58,26 +57,26 @@ final class zzfu extends j implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                a8.b(obj);
+                i8.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
-                long j3 = this.zzc;
+                long j10 = this.zzc;
                 this.zzd = zzhkVar;
                 this.zza = 1;
-                obj = zzgbVar.zzq(j3, this);
+                obj = zzgbVar.zzq(j10, this);
             } else if (i10 == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                a8.b(obj);
+                i8.b(obj);
             } else {
                 if (i10 != 2) {
-                    a8.b(obj);
+                    i8.b(obj);
                     longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue < 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                a8.b(obj);
+                i8.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;
@@ -91,10 +90,10 @@ final class zzfu extends j implements p {
             }
             this.zzd = null;
             this.zza = 2;
-        } catch (Exception e7) {
-            zzcg zzcgVar2 = e7 instanceof zzcg ? (zzcg) e7 : null;
+        } catch (Exception e) {
+            zzcg zzcgVar2 = e instanceof zzcg ? (zzcg) e : null;
             if (zzcgVar2 == null) {
-                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e7.getMessage(), null, 8, null);
+                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e.getMessage(), null, 8, null);
             }
             zzgb zzgbVar3 = this.zzb;
             zzdv zze = zzgbVar3.zze();

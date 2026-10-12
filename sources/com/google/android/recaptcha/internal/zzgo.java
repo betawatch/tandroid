@@ -4,16 +4,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import id.g;
-import id.h;
-import id.o;
 import java.util.ArrayList;
 import java.util.List;
+import jd.g;
+import jd.h;
+import jd.o;
 import kotlin.jvm.internal.e;
 import kotlin.jvm.internal.i;
-import sd.l;
+import td.l;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzgo extends SQLiteOpenHelper {
     public static final zzgn zza = new zzgn(null);
@@ -56,7 +56,7 @@ public final class zzgo extends SQLiteOpenHelper {
             return 0;
         }
         return getWritableDatabase().delete("ce", "id IN ".concat(String.valueOf(g.h(list, ", ", "(", ")", new l() { // from class: com.google.android.recaptcha.internal.zzgm
-            @Override // sd.l
+            @Override // td.l
             public final Object invoke(Object obj) {
                 zzgn zzgnVar = zzgo.zza;
                 return String.valueOf(((zzgp) obj).zza());
@@ -88,9 +88,9 @@ public final class zzgo extends SQLiteOpenHelper {
                 try {
                     int i10 = query.getInt(query.getColumnIndexOrThrow("id"));
                     String string = query.getString(query.getColumnIndexOrThrow("ss"));
-                    long j3 = query.getLong(query.getColumnIndexOrThrow("ts"));
+                    long j10 = query.getLong(query.getColumnIndexOrThrow("ts"));
                     i.b(string);
-                    arrayList.add(new zzgp(string, j3, i10));
+                    arrayList.add(new zzgp(string, j10, i10));
                 } catch (Exception unused) {
                     arrayList = o.a;
                 }

@@ -1,49 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class cj0 extends org.telegram.ui.Cells.u1 {
-    public int Ge;
-    public int He;
-    public int Ie;
-    public final /* synthetic */ dj0 Je;
+public final class cj0 extends ki.n {
+    public Runnable W;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cj0(dj0 dj0Var, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, i10, true, null, e6Var);
-        this.Je = dj0Var;
-        this.Ge = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.He = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        this.Ie = -1;
-    }
-
-    @Override // android.view.View
-    public final boolean isPressed() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (!this.Zc.w0 || i11 == 0 || this.Ge == Integer.MAX_VALUE || i13 == 0 || this.He == Integer.MAX_VALUE) {
-            return;
+    @Override // ki.n, s4.k
+    public final void N() {
+        super.N();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.W = null;
         }
-        if (this.Ie == (getMessageObject() == null ? 0 : getMessageObject().getId())) {
-            if (!this.Je.w0) {
-                setTranslationY(-(i11 - this.Ge));
-                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.hs.h).start();
-            }
-            this.Ge = getTop();
-            this.He = getBottom();
-            this.Ie = getMessageObject() != null ? getMessageObject().getId() : 0;
+        bj0 bj0Var = new bj0(this, 0);
+        this.W = bj0Var;
+        AndroidUtilities.runOnUIThread(bj0Var);
+    }
+
+    @Override // ki.n
+    public final void W() {
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.W = null;
+        }
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d("chatItemAnimator disable notifications");
         }
     }
 
-    @Override // org.telegram.ui.Cells.u1
-    public final vh.f w3() {
-        return vh.f.d(1, this, this.Je.F);
+    @Override // ki.n, s4.k, s4.l0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+        }
+        bj0 bj0Var = new bj0(this, 1);
+        this.W = bj0Var;
+        AndroidUtilities.runOnUIThread(bj0Var);
+    }
+
+    @Override // s4.k
+    public final void F() {
     }
 }

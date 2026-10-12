@@ -1,0 +1,89 @@
+package di;
+
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.tl.TL_account;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class v0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ ArrayList c;
+
+    public /* synthetic */ v0(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
+        this.a = i10;
+        this.b = messagesStorage;
+        this.c = arrayList;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                MessagesStorage messagesStorage = this.b;
+                ArrayList arrayList = this.c;
+                try {
+                    SQLiteDatabase database = messagesStorage.getDatabase();
+                    if (database == null) {
+                        return;
+                    }
+                    database.executeFast("DELETE FROM story_drafts WHERE id IN (" + TextUtils.join(", ", arrayList) + ")").stepThis().dispose();
+                    return;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            case 1:
+                MessagesStorage messagesStorage2 = this.b;
+                ArrayList arrayList2 = this.c;
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
+                    try {
+                        SQLiteDatabase database2 = messagesStorage2.getDatabase();
+                        database2.executeFast("DELETE FROM business_links").stepThis().dispose();
+                        sQLitePreparedStatement = database2.executeFast("REPLACE INTO business_links VALUES(?, ?)");
+                        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                            TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) arrayList2.get(i10);
+                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tL_businessChatLink.getObjectSize());
+                            tL_businessChatLink.serializeToStream(nativeByteBuffer);
+                            sQLitePreparedStatement.requery();
+                            sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
+                            sQLitePreparedStatement.bindInteger(2, i10);
+                            sQLitePreparedStatement.step();
+                        }
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                        if (sQLitePreparedStatement == null) {
+                            return;
+                        }
+                    }
+                    sQLitePreparedStatement.dispose();
+                    return;
+                } catch (Throwable th2) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th2;
+                }
+            default:
+                MessagesStorage messagesStorage3 = this.b;
+                ArrayList arrayList3 = this.c;
+                try {
+                    messagesStorage3.getDatabase().executeFast("DELETE FROM quick_replies_messages WHERE topic_id IN (" + TextUtils.join(", ", arrayList3) + ")").stepThis().dispose();
+                    return;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                    return;
+                }
+        }
+    }
+}

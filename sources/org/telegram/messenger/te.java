@@ -1,30 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class te implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ TLRPC.Message c;
+    public final /* synthetic */ long c;
     public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ te(int i10, long j3, MessagesStorage messagesStorage, TLRPC.Message message) {
+    public /* synthetic */ te(MessagesStorage messagesStorage, long j10, long j11, String str, int i10) {
         this.a = i10;
         this.b = messagesStorage;
-        this.c = message;
-        this.d = j3;
+        this.c = j10;
+        this.d = j11;
+        this.e = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateMessageCustomParams$110(this.c, this.d);
+                this.b.lambda$updateRanksInLastMessages$45(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$markMessageAsSendErrorWithParams$210(this.c, this.d);
+                this.b.lambda$updateRanksInLastMessages$46(this.c, this.d, this.e);
                 break;
         }
     }

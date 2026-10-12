@@ -2,11 +2,11 @@ package b2;
 
 import android.net.Uri;
 import java.util.Arrays;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a {
-    public static final String h;
     public static final String i;
     public static final String j;
     public static final String k;
@@ -17,52 +17,58 @@ public final class a {
     public static final String p;
     public static final String q;
     public static final String r;
+    public static final String s;
+    public static final String t;
     public final int a;
     public final int b;
     public final Uri[] c;
-    public final k0[] d;
+    public final p0[] d;
     public final int[] e;
     public final long[] f;
     public final String[] g;
+    public final b[] h;
 
     static {
-        String str = e2.d0.a;
-        h = Integer.toString(0, 36);
-        i = Integer.toString(1, 36);
-        j = Integer.toString(2, 36);
-        k = Integer.toString(3, 36);
-        l = Integer.toString(4, 36);
-        m = Integer.toString(5, 36);
-        n = Integer.toString(6, 36);
-        o = Integer.toString(7, 36);
-        p = Integer.toString(8, 36);
-        q = Integer.toString(9, 36);
-        r = Integer.toString(10, 36);
+        String str = e2.m0.a;
+        i = Integer.toString(0, 36);
+        j = Integer.toString(1, 36);
+        k = Integer.toString(2, 36);
+        l = Integer.toString(3, 36);
+        m = Integer.toString(4, 36);
+        n = Integer.toString(5, 36);
+        o = Integer.toString(6, 36);
+        p = Integer.toString(7, 36);
+        q = Integer.toString(8, 36);
+        r = Integer.toString(9, 36);
+        s = Integer.toString(10, 36);
+        t = Integer.toString(11, 36);
     }
 
-    public a(int i10, int i11, int[] iArr, k0[] k0VarArr, long[] jArr, String[] strArr) {
+    public a(int i10, int i11, int[] iArr, p0[] p0VarArr, long[] jArr, String[] strArr, b[] bVarArr) {
         Uri uri;
         int i12 = 0;
-        e2.d.b(iArr.length == k0VarArr.length);
+        u6.g(iArr.length == p0VarArr.length);
+        u6.g(iArr.length == bVarArr.length);
         this.a = i10;
         this.b = i11;
         this.e = iArr;
-        this.d = k0VarArr;
+        this.d = p0VarArr;
         this.f = jArr;
-        this.c = new Uri[k0VarArr.length];
+        this.c = new Uri[p0VarArr.length];
         while (true) {
             Uri[] uriArr = this.c;
             if (i12 >= uriArr.length) {
                 this.g = strArr;
+                this.h = bVarArr;
                 return;
             }
-            k0 k0Var = k0VarArr[i12];
-            if (k0Var == null) {
+            p0 p0Var = p0VarArr[i12];
+            if (p0Var == null) {
                 uri = null;
             } else {
-                f0 f0Var = k0Var.b;
-                f0Var.getClass();
-                uri = f0Var.a;
+                k0 k0Var = p0Var.b;
+                k0Var.getClass();
+                uri = k0Var.a;
             }
             uriArr[i12] = uri;
             i12++;
@@ -90,12 +96,12 @@ public final class a {
             return false;
         }
         a aVar = (a) obj;
-        return this.a == aVar.a && this.b == aVar.b && Arrays.equals(this.d, aVar.d) && Arrays.equals(this.e, aVar.e) && Arrays.equals(this.f, aVar.f) && Arrays.equals(this.g, aVar.g);
+        return this.a == aVar.a && this.b == aVar.b && Arrays.equals(this.d, aVar.d) && Arrays.equals(this.e, aVar.e) && Arrays.equals(this.f, aVar.f) && Arrays.equals(this.g, aVar.g) && Arrays.equals(this.h, aVar.h);
     }
 
     public final int hashCode() {
         int i10 = ((this.a * 31) + this.b) * 31;
         int i11 = (int) 0;
-        return (((((Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((Arrays.hashCode(this.d) + ((i10 + i11) * 31)) * 31)) * 31)) * 31) + i11) * 961) + Arrays.hashCode(this.g)) * 31;
+        return (Arrays.hashCode(this.h) + ((((((Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((Arrays.hashCode(this.d) + ((i10 + i11) * 31)) * 31)) * 31)) * 31) + i11) * 961) + Arrays.hashCode(this.g)) * 31)) * 31;
     }
 }

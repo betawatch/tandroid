@@ -13,11 +13,12 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.LinearLayout;
 import androidx.appcompat.view.menu.ActionMenuItemView;
+import ji.w4;
 import l.j;
 import l.k;
 import l.m;
 import l.z;
-import m.f3;
+import l2.f;
 import m.g;
 import m.h;
 import m.i;
@@ -26,9 +27,8 @@ import m.v1;
 import m.w1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import t7.t;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class ActionMenuView extends w1 implements j, z {
     public k F;
@@ -36,7 +36,7 @@ public class ActionMenuView extends w1 implements j, z {
     public int H;
     public boolean I;
     public h J;
-    public f3 K;
+    public f K;
     public boolean L;
     public int M;
     public final int N;
@@ -125,12 +125,12 @@ public class ActionMenuView extends w1 implements j, z {
             Context context = getContext();
             k kVar = new k(context);
             this.F = kVar;
-            kVar.e = new pb.c(this, 29);
+            kVar.e = new w4(this, 5);
             h hVar = new h(context);
             this.J = hVar;
             hVar.w = true;
             hVar.x = true;
-            hVar.e = new t();
+            hVar.e = new oa.d(13);
             this.F.b(hVar, this.G);
             h hVar2 = this.J;
             hVar2.n = this;
@@ -341,7 +341,7 @@ public class ActionMenuView extends w1 implements j, z {
         int i25 = 0;
         boolean z12 = false;
         int i26 = 0;
-        long j3 = 0;
+        long j10 = 0;
         while (true) {
             i12 = this.O;
             if (i25 >= childCount2) {
@@ -400,7 +400,7 @@ public class ActionMenuView extends w1 implements j, z {
                 i19 = i30 - i15;
                 i22 = Math.max(i22, childAt.getMeasuredHeight());
                 if (i15 == 1) {
-                    j3 |= 1 << i25;
+                    j10 |= 1 << i25;
                 }
             }
             i25++;
@@ -416,7 +416,7 @@ public class ActionMenuView extends w1 implements j, z {
         boolean z17 = false;
         while (i26 > 0 && i34 > 0) {
             int i35 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-            long j10 = 0;
+            long j11 = 0;
             int i36 = 0;
             int i37 = 0;
             while (i37 < childCount2) {
@@ -426,11 +426,11 @@ public class ActionMenuView extends w1 implements j, z {
                 if (jVar4.d) {
                     int i39 = jVar4.b;
                     if (i39 < i35) {
-                        j10 = 1 << i37;
+                        j11 = 1 << i37;
                         i35 = i39;
                         i36 = 1;
                     } else if (i39 == i35) {
-                        j10 |= 1 << i37;
+                        j11 |= 1 << i37;
                         i36++;
                     }
                 }
@@ -440,7 +440,7 @@ public class ActionMenuView extends w1 implements j, z {
             }
             i13 = i22;
             boolean z19 = z16;
-            j3 |= j10;
+            j10 |= j11;
             if (i36 > i34) {
                 break;
             }
@@ -450,8 +450,8 @@ public class ActionMenuView extends w1 implements j, z {
                 View childAt2 = getChildAt(i41);
                 m.j jVar5 = (m.j) childAt2.getLayoutParams();
                 boolean z20 = z12;
-                long j11 = 1 << i41;
-                if ((j10 & j11) != 0) {
+                long j12 = 1 << i41;
+                if ((j11 & j12) != 0) {
                     if (z19 && jVar5.e) {
                         r11 = 1;
                         r11 = 1;
@@ -465,7 +465,7 @@ public class ActionMenuView extends w1 implements j, z {
                     jVar5.f = r11;
                     i34--;
                 } else if (jVar5.b == i40) {
-                    j3 |= j11;
+                    j10 |= j12;
                 }
                 i41++;
                 z12 = z20;
@@ -476,21 +476,21 @@ public class ActionMenuView extends w1 implements j, z {
         }
         i13 = i22;
         boolean z21 = !z12 && i23 == 1;
-        if (i34 > 0 && j3 != 0 && (i34 < i23 - 1 || z21 || i24 > 1)) {
-            float bitCount = Long.bitCount(j3);
+        if (i34 > 0 && j10 != 0 && (i34 < i23 - 1 || z21 || i24 > 1)) {
+            float bitCount = Long.bitCount(j10);
             if (!z21) {
-                if ((j3 & 1) != 0 && !((m.j) getChildAt(0).getLayoutParams()).e) {
+                if ((j10 & 1) != 0 && !((m.j) getChildAt(0).getLayoutParams()).e) {
                     bitCount -= 0.5f;
                 }
                 int i42 = childCount2 - 1;
-                if ((j3 & (1 << i42)) != 0 && !((m.j) getChildAt(i42).getLayoutParams()).e) {
+                if ((j10 & (1 << i42)) != 0 && !((m.j) getChildAt(i42).getLayoutParams()).e) {
                     bitCount -= 0.5f;
                 }
             }
             int i43 = bitCount > 0.0f ? (int) ((i34 * i33) / bitCount) : 0;
             boolean z22 = z17;
             for (int i44 = 0; i44 < childCount2; i44++) {
-                if ((j3 & (1 << i44)) != 0) {
+                if ((j10 & (1 << i44)) != 0) {
                     View childAt3 = getChildAt(i44);
                     m.j jVar6 = (m.j) childAt3.getLayoutParams();
                     if (childAt3 instanceof ActionMenuItemView) {

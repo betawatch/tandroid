@@ -1,31 +1,26 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ uk0 b;
-    public final /* synthetic */ TLObject c;
+public final class lk0 extends f10 {
+    public final /* synthetic */ qk0 U;
 
-    public /* synthetic */ lk0(uk0 uk0Var, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = uk0Var;
-        this.c = tLObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lk0(qk0 qk0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, c6Var);
+        this.U = qk0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                uk0 uk0Var = this.b;
-                NotificationCenter.getInstance(uk0Var.b).doOnIdle(new lk0(uk0Var, this.c, 1));
-                break;
-            default:
-                uk0.a(this.b, this.c);
-                break;
+    @Override // org.telegram.ui.Components.f10
+    public final int getAdditionalHeight() {
+        ub0 ub0Var;
+        qk0 qk0Var = this.U;
+        if (qk0Var.H.isEmpty() || (ub0Var = qk0Var.J) == null) {
+            return 0;
         }
+        return AndroidUtilities.dp(8.0f) + ub0Var.getMeasuredHeight();
     }
 }

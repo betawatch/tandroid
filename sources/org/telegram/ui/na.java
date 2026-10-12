@@ -1,40 +1,142 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.view.KeyEvent;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class na implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class na implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ oa b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ na(oa oaVar, int i10) {
+    public /* synthetic */ na(Object obj, int i10) {
         this.a = i10;
-        this.b = oaVar;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.u0 u0Var;
+        org.telegram.ui.Cells.u1 u1Var;
+        org.telegram.ui.ActionBar.u0 u0Var2;
         switch (this.a) {
             case 0:
-                oa oaVar = this.b;
-                oaVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                oaVar.n = floatValue;
-                oaVar.f.setTranslationX(floatValue * AndroidUtilities.dp(16.0f));
-                oaVar.d.setAlpha(oaVar.n);
-                break;
+                pa paVar = (pa) this.b;
+                if (i10 != 6 || (u0Var = paVar.c.a) == null) {
+                    return false;
+                }
+                u0Var.performClick();
+                return true;
+            case 1:
+                fo foVar = (fo) this.b;
+                if (i10 == 6) {
+                    rh.c cVar = foVar.Cc;
+                    if (cVar != null && (u1Var = cVar.n) != null) {
+                        foVar.ya(u1Var);
+                        return true;
+                    }
+                } else {
+                    foVar.getClass();
+                }
+                return false;
+            case 2:
+                zo zoVar = (zo) this.b;
+                if (i10 != 6 || (u0Var2 = zoVar.a) == null) {
+                    return false;
+                }
+                u0Var2.performClick();
+                return true;
+            case 3:
+                hs hsVar = (hs) this.b;
+                if (i10 == 5) {
+                    hsVar.a();
+                    return true;
+                }
+                hsVar.getClass();
+                return false;
+            case 4:
+                return i10 == 6 && ((j70) this.b).o0();
+            case 5:
+                ue0 ue0Var = (ue0) this.b;
+                if (i10 == 5) {
+                    ue0Var.h(null);
+                    return true;
+                }
+                ue0Var.getClass();
+                return false;
+            case 6:
+                cf0 cf0Var = (cf0) this.b;
+                if (i10 == 5) {
+                    cf0Var.h(null);
+                    return true;
+                }
+                cf0Var.getClass();
+                return false;
+            case 7:
+                qf0 qf0Var = (qf0) this.b;
+                if (i10 == 5) {
+                    qf0Var.h(null);
+                    return true;
+                }
+                qf0Var.getClass();
+                return false;
+            case 8:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
+                int i11 = passcodeActivity.E;
+                if (i11 == 0) {
+                    passcodeActivity.k0();
+                    return true;
+                }
+                if (i11 != 1) {
+                    return false;
+                }
+                passcodeActivity.j0();
+                return true;
+            case 9:
+                qn0 qn0Var = (qn0) this.b;
+                if (i10 == 5) {
+                    qn0Var.h(null);
+                    return true;
+                }
+                qn0Var.getClass();
+                return false;
+            case 10:
+                v21 v21Var = (v21) this.b;
+                v21Var.getClass();
+                if (i10 != 5) {
+                    if (i10 != 6) {
+                        return false;
+                    }
+                    v21Var.finishFragment();
+                    return true;
+                }
+                int intValue = ((Integer) textView.getTag()).intValue() + 1;
+                EditTextBoldCursor[] editTextBoldCursorArr = v21Var.a;
+                if (intValue >= editTextBoldCursorArr.length) {
+                    return true;
+                }
+                editTextBoldCursorArr[intValue].requestFocus();
+                return true;
+            case 11:
+                b81 b81Var = (b81) this.b;
+                if (keyEvent == null) {
+                    return false;
+                }
+                if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
+                    return false;
+                }
+                AndroidUtilities.hideKeyboard(b81Var.c0);
+                return false;
             default:
-                oa oaVar2 = this.b;
-                oaVar2.getClass();
-                oaVar2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int i10 = org.telegram.ui.ActionBar.i6.z6;
-                org.telegram.ui.ActionBar.e6 e6Var = oaVar2.b;
-                int d = i0.a.d(oaVar2.E, org.telegram.ui.ActionBar.i6.w0(i10, e6Var), org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.n6, e6Var));
-                oaVar2.e.b(d);
-                oaVar2.f.setTextColor(d);
-                break;
+                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
+                twoStepVerificationActivity.getClass();
+                if (i10 != 5 && i10 != 6) {
+                    return false;
+                }
+                twoStepVerificationActivity.t0();
+                return true;
         }
     }
 }

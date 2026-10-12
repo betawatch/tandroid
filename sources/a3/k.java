@@ -3,19 +3,19 @@ package a3;
 import android.content.Context;
 import android.os.Handler;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k {
     public final Context a;
     public boolean b;
-    public r2.l c;
+    public r2.k c;
     public long d;
     public Handler e;
-    public i2.c0 f;
+    public i2.b0 f;
     public int g;
 
     public k(Context context) {
         this.a = context;
-        this.c = new r2.h(context, 0);
+        this.c = new k0.b(context, false);
     }
 }

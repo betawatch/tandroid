@@ -1,121 +1,62 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xl0 implements TextView.OnEditorActionListener {
+public final class xl0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ nn0 b;
+    public final /* synthetic */ PasscodeActivity b;
 
-    public /* synthetic */ xl0(nn0 nn0Var, int i10) {
+    public /* synthetic */ xl0(PasscodeActivity passcodeActivity, int i10) {
         this.a = i10;
-        this.b = nn0Var;
+        this.b = passcodeActivity;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         switch (this.a) {
             case 0:
-                nn0 nn0Var = this.b;
-                if (i10 != 5) {
-                    if (i10 != 6) {
-                        nn0Var.getClass();
-                        break;
-                    } else {
-                        nn0Var.L.callOnClick();
-                        break;
-                    }
-                } else {
-                    nn0Var.Y[2].requestFocus();
-                    break;
-                }
-            case 1:
-                nn0 nn0Var2 = this.b;
-                nn0Var2.getClass();
-                if (i10 == 5) {
-                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr = nn0Var2.Y;
-                    if (intValue < editTextBoldCursorArr.length) {
-                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
-                            nn0Var2.Y[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            nn0Var2.Y[intValue].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 2:
-                nn0 nn0Var3 = this.b;
-                nn0Var3.getClass();
-                if (i10 == 5) {
-                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr2 = nn0Var3.a0;
-                    if (intValue2 < editTextBoldCursorArr2.length) {
-                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
-                            nn0Var3.a0[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            nn0Var3.a0[intValue2].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 3:
-                nn0 nn0Var4 = this.b;
-                nn0Var4.getClass();
-                if (i10 == 6 || i10 == 5) {
-                    nn0Var4.L.callOnClick();
-                    break;
-                }
-                break;
-            case 4:
-                nn0 nn0Var5 = this.b;
-                nn0Var5.getClass();
-                if (i10 == 5) {
-                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr3 = nn0Var5.Y;
-                    if (intValue3 < editTextBoldCursorArr3.length) {
-                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
-                            nn0Var5.Y[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            nn0Var5.Y[intValue3].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 5:
-                nn0 nn0Var6 = this.b;
-                nn0Var6.getClass();
-                if (i10 == 5 || i10 == 6) {
-                    nn0Var6.L.callOnClick();
+                PasscodeActivity passcodeActivity = this.b;
+                sl0 sl0Var = passcodeActivity.S;
+                if (passcodeActivity.R) {
+                    passcodeActivity.n.removeCallbacks(sl0Var);
+                    sl0Var.run();
                     break;
                 }
                 break;
             default:
-                nn0 nn0Var7 = this.b;
-                nn0Var7.getClass();
-                if (i10 == 6 || i10 == 5) {
-                    nn0Var7.L.callOnClick();
+                PasscodeActivity passcodeActivity2 = this.b;
+                sl0 sl0Var2 = passcodeActivity2.S;
+                if (passcodeActivity2.R) {
+                    passcodeActivity2.n.removeCallbacks(sl0Var2);
+                    sl0Var2.run();
                     break;
                 }
                 break;
         }
-        return true;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(Editable editable) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

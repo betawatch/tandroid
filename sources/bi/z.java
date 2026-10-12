@@ -1,503 +1,188 @@
 package bi;
 
-import ai.l9;
-import ai.m9;
-import ai.v8;
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import android.view.View;
-import android.widget.FrameLayout;
-import ci.l8;
+import j$.util.DesugarArrays;
+import j$.util.stream.Collectors;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.de;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.n91;
-import org.telegram.ui.Components.qm0;
-import org.telegram.ui.Components.qs0;
-import org.telegram.ui.Components.yi;
-import w7.x5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public abstract class z extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public static LongSparseArray E;
-    public static LongSparseArray F;
-    public final n2 a;
-    public final int b;
-    public final e6 c;
-    public final long d;
-    public final v8 e;
-    public final ArrayList f;
-    public final ArrayList h;
-    public final a n;
-    public final n91 r;
-    public Boolean s;
-    public int v;
-    public float w;
-    public ValueAnimator x;
-    public int y;
-
-    public z(Context context, n2 n2Var, long j3) {
-        super(context);
-        this.f = new ArrayList();
-        this.h = new ArrayList();
-        this.s = null;
-        this.v = AndroidUtilities.displaySize.y;
-        this.y = Utilities.clamp(SharedConfig.storiesColumnsCount, 6, 2);
-        this.a = n2Var;
-        int currentAccount = n2Var.getCurrentAccount();
-        this.b = currentAccount;
-        e6 resourceProvider = n2Var.getResourceProvider();
-        this.c = resourceProvider;
-        this.d = j3;
-        setBackgroundColor(i6.v(i6.w0(i6.d6, resourceProvider), i6.m1(0.04f, i6.w0(i6.G6, resourceProvider))));
-        if (F == null) {
-            F = new LongSparseArray();
-        }
-        long j10 = currentAccount;
-        LongSparseArray longSparseArray = (LongSparseArray) F.get(j10);
-        if (longSparseArray == null) {
-            LongSparseArray longSparseArray2 = F;
-            LongSparseArray longSparseArray3 = new LongSparseArray();
-            longSparseArray2.put(j10, longSparseArray3);
-            longSparseArray = longSparseArray3;
-        }
-        v8 v8Var = (v8) longSparseArray.get(j3);
-        if (v8Var == null) {
-            v8 v8Var2 = new v8(currentAccount, j3, "", null);
-            longSparseArray.put(j3, v8Var2);
-            v8Var = v8Var2;
-        }
-        this.e = v8Var;
-        qs0 qs0Var = (qs0) this;
-        a aVar = new a(qs0Var, context);
-        this.n = aVar;
-        aVar.setAllowDisallowInterceptTouch(true);
-        aVar.setAdapter(new b(qs0Var, context));
-        addView(aVar, x5.e(-1, -1, 119));
-        n91 n10 = aVar.n(9, true);
-        this.r = n10;
-        n10.r = 12;
-        n10.setPreTabClick(new a1.c(qs0Var, 11));
-        addView(n10, x5.e(-1, 42, 48));
-        i(false);
+public abstract class z {
+    public static int[] a() {
+        return new int[]{10000, 3600, 400, 20, -10787210, -8681059, -14341066, 2000, 1800, 280, 10, -2013375, -1482439, -7666429, 500, RichMessageLayout.PART_MAX_HEIGHT_DP, 200, 7, -1214690, -1214690, -6606592, MediaDataController.MAX_LINKS_COUNT, 600, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 4, -1926647, -1926647, -6668800, 100, 300, 110, 3, -12539616, -12539616, -15244800, 50, 120, 80, 2, -12147733, -12147733, -16756594, 10, 60, 60, 1, -6988581, -6988581, -11991141, 0, 30, 30, 0, -6988581, -6988581, -11991141};
     }
 
-    public final void a(String str) {
-        n2 n2Var = this.a;
-        if (n2Var == null || n2Var.getParentActivity() == null) {
-            return;
-        }
-        yi yiVar = new yi(n2Var.getParentActivity(), this.a, false, false, false, this.c);
-        yiVar.N1(1, false);
-        yiVar.W0 = true;
-        yiVar.V0 = false;
-        yiVar.m1.setText(LocaleController.getString(R.string.ChoosePhotoOrVideo));
-        yiVar.j0.f0();
-        yiVar.c2 = new c(this, yiVar, str);
-        yiVar.t1();
-        yiVar.show();
-    }
-
-    public final void b(String str) {
-        v8 v8Var;
-        TLRPC.MessageMedia messageMedia;
-        if (TextUtils.isEmpty(str)) {
-            return;
-        }
-        this.e.G.remove(str);
-        this.h.remove(str);
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.f;
-            if (i10 >= arrayList.size()) {
-                v8Var = null;
-                break;
-            }
-            v8Var = (v8) arrayList.get(i10);
-            if (v8Var != null && TextUtils.equals(v8Var.E, str)) {
-                break;
-            } else {
-                i10++;
+    public static int b(int i10, int i11, int i12) {
+        int[] iArr = MessagesController.getInstance(i10).starsGroupcallMessageLimits;
+        for (int i13 = 0; i13 < iArr.length / 7; i13++) {
+            int i14 = i13 * 7;
+            if (i11 >= iArr[i14]) {
+                return iArr[i14 + 1 + i12];
             }
         }
-        if (v8Var != null) {
-            ArrayList arrayList2 = v8Var.i;
-            TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
-            int i11 = this.b;
-            deletepreviewmedia.bot = MessagesController.getInstance(i11).getInputUser(this.d);
-            deletepreviewmedia.lang_code = str;
-            for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-                TL_stories.StoryItem storyItem = ((MessageObject) arrayList2.get(i12)).storyItem;
-                if (storyItem != null && (messageMedia = storyItem.media) != null) {
-                    deletepreviewmedia.media.add(MessagesController.toInputMedia(messageMedia));
-                }
-            }
-            ConnectionsManager.getInstance(i11).sendRequest(deletepreviewmedia, null);
-        }
-        i(true);
-        this.r.d(-1, 0);
-    }
-
-    public abstract boolean c(MessageObject messageObject);
-
-    public final boolean d() {
-        v8 v8Var;
-        View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof u) || (v8Var = ((u) currentView).a) == null) {
-            return true;
-        }
-        ArrayList arrayList = v8Var.i;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (!c((MessageObject) arrayList.get(i10))) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12 = NotificationCenter.storiesListUpdated;
-        a aVar = this.n;
-        int i13 = 0;
-        if (i10 != i12) {
-            if (i10 == NotificationCenter.storiesUpdated) {
-                i(true);
-                View[] viewPages = aVar.getViewPages();
-                int length = viewPages.length;
-                while (i13 < length) {
-                    View view = viewPages[i13];
-                    if (view instanceof u) {
-                        ((u) view).v.l();
-                    }
-                    i13++;
-                }
-                return;
-            }
-            return;
-        }
-        Object obj = objArr[0];
-        v8 v8Var = this.e;
-        if (obj == v8Var) {
-            i(true);
-            View[] viewPages2 = aVar.getViewPages();
-            int length2 = viewPages2.length;
-            while (i13 < length2) {
-                View view2 = viewPages2[i13];
-                if (view2 instanceof u) {
-                    u uVar = (u) view2;
-                    if (uVar.a == v8Var) {
-                        uVar.v.l();
-                    }
-                }
-                i13++;
-            }
-            return;
-        }
-        if (this.f.indexOf(obj) >= 0) {
-            View[] viewPages3 = aVar.getViewPages();
-            for (View view3 : viewPages3) {
-                if (view3 instanceof u) {
-                    u uVar2 = (u) view3;
-                    if (uVar2.a == objArr[0]) {
-                        uVar2.v.l();
-                    }
-                }
-            }
-        }
-    }
-
-    public abstract boolean e(MessageObject messageObject);
-
-    public final void f() {
-        v8 v8Var;
-        View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof u) || (v8Var = ((u) currentView).a) == null) {
-            return;
-        }
-        ArrayList arrayList = v8Var.i;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (!c((MessageObject) arrayList.get(i10))) {
-                e((MessageObject) arrayList.get(i10));
-            }
-        }
-    }
-
-    public abstract boolean g(MessageObject messageObject);
-
-    public String getBotPreviewsSubtitle() {
-        int i10;
-        int i11;
-        TLRPC.MessageMedia messageMedia;
-        StringBuilder sb2 = new StringBuilder();
-        View currentView = this.n.getCurrentView();
-        if (currentView instanceof u) {
-            v8 v8Var = ((u) currentView).a;
-            if (v8Var != null) {
-                ArrayList arrayList = v8Var.i;
-                i10 = 0;
-                i11 = 0;
-                for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                    MessageObject messageObject = (MessageObject) arrayList.get(i12);
-                    TL_stories.StoryItem storyItem = messageObject.storyItem;
-                    if (storyItem != null && (messageMedia = storyItem.media) != null) {
-                        if (MessageObject.isVideoDocument(messageMedia.document)) {
-                            i11++;
-                        } else if (messageObject.storyItem.media.photo != null) {
-                            i10++;
-                        }
-                    }
-                }
-            } else {
-                i10 = 0;
-                i11 = 0;
-            }
-            if (i10 == 0 && i11 == 0) {
-                return LocaleController.getString(R.string.BotPreviewEmpty);
-            }
-            if (i10 > 0) {
-                sb2.append(LocaleController.formatPluralString("Images", i10, new Object[0]));
-            }
-            if (i11 > 0) {
-                if (sb2.length() > 0) {
-                    sb2.append(", ");
-                }
-                sb2.append(LocaleController.formatPluralString("Videos", i11, new Object[0]));
-            }
-        }
-        return sb2.toString();
-    }
-
-    public String getCurrentLang() {
-        View view;
-        v8 v8Var;
-        a aVar = this.n;
-        View[] viewPages = aVar.getViewPages();
-        if (Math.abs(aVar.getCurrentPosition() - aVar.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
-            view = viewPages[0];
-        }
-        if (!(view instanceof u) || (v8Var = ((u) view).a) == null) {
-            return null;
-        }
-        return v8Var.E;
-    }
-
-    public v8 getCurrentList() {
-        v8 v8Var;
-        View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof u) || (v8Var = ((u) currentView).a) == null) {
-            return null;
-        }
-        return v8Var;
-    }
-
-    public qm0 getCurrentListView() {
-        View currentView = this.n.getCurrentView();
-        if (currentView instanceof u) {
-            return ((u) currentView).f;
-        }
-        return null;
-    }
-
-    public int getItemsCount() {
-        v8 v8Var;
-        View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof u) || (v8Var = ((u) currentView).a) == null) {
-            return 0;
-        }
-        return v8Var.i.size();
-    }
-
-    public int getStartedTrackingX() {
         return 0;
     }
 
-    public final void h() {
-        v8 v8Var;
-        View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof u) || (v8Var = ((u) currentView).a) == null) {
-            return;
-        }
-        ArrayList arrayList = v8Var.i;
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (c((MessageObject) arrayList.get(i10))) {
-                g((MessageObject) arrayList.get(i10));
-            }
-        }
-    }
-
-    public final void i(boolean z10) {
-        v8 v8Var;
-        l8 l8Var;
-        ArrayList arrayList = new ArrayList(this.e.G);
-        ArrayList arrayList2 = this.h;
-        int size = arrayList2.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList2.get(i10);
-            i10++;
-            String str = (String) obj;
-            if (!arrayList.contains(str)) {
-                arrayList.add(str);
-            }
-        }
-        m9 storiesController = MessagesController.getInstance(this.b).getStoriesController();
-        long j3 = this.d;
-        ArrayList E2 = storiesController.E(j3);
-        if (E2 != null) {
-            int size2 = E2.size();
-            int i11 = 0;
-            while (i11 < size2) {
-                Object obj2 = E2.get(i11);
-                i11++;
-                l9 l9Var = (l9) obj2;
-                if (l9Var != null && (l8Var = l9Var.c) != null && l8Var.J0 == j3 && !TextUtils.isEmpty(l8Var.K0) && !arrayList.contains(l8Var.K0)) {
-                    arrayList.add(l8Var.K0);
-                }
-            }
-        }
-        ArrayList arrayList3 = this.f;
-        ArrayList arrayList4 = new ArrayList(arrayList3);
-        arrayList3.clear();
-        int size3 = arrayList.size();
-        int i12 = 0;
-        while (i12 < size3) {
-            Object obj3 = arrayList.get(i12);
-            i12++;
-            String str2 = (String) obj3;
-            int i13 = 0;
-            while (true) {
-                if (i13 >= arrayList4.size()) {
-                    v8Var = null;
-                    break;
-                } else {
-                    if (TextUtils.equals(((v8) arrayList4.get(i13)).E, str2)) {
-                        v8Var = (v8) arrayList4.get(i13);
-                        break;
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00ab, code lost:
+    
+        if (r6.equals("color_bg") == false) goto L42;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int[] c(TLRPC.TL_jsonArray tL_jsonArray) {
+        boolean z10;
+        int[] iArr = new int[tL_jsonArray.value.size() * 7];
+        for (int i10 = 0; i10 < tL_jsonArray.value.size(); i10++) {
+            TLRPC.JSONValue jSONValue = tL_jsonArray.value.get(i10);
+            if (jSONValue instanceof TLRPC.TL_jsonObject) {
+                ArrayList<TLRPC.TL_jsonObjectValue> arrayList = ((TLRPC.TL_jsonObject) jSONValue).value;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue = arrayList.get(i11);
+                    i11++;
+                    TLRPC.TL_jsonObjectValue tL_jsonObjectValue2 = tL_jsonObjectValue;
+                    TLRPC.JSONValue jSONValue2 = tL_jsonObjectValue2.value;
+                    int i12 = 2;
+                    int i13 = -1;
+                    if (jSONValue2 instanceof TLRPC.TL_jsonNumber) {
+                        int i14 = (int) ((TLRPC.TL_jsonNumber) jSONValue2).value;
+                        String str = tL_jsonObjectValue2.key;
+                        str.getClass();
+                        switch (str.hashCode()) {
+                            case -1544802595:
+                                if (str.equals("text_length_max")) {
+                                    z10 = false;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case -1186480213:
+                                if (str.equals("pin_period")) {
+                                    z10 = true;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case 109757537:
+                                if (str.equals("stars")) {
+                                    z10 = 2;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            case 1686749675:
+                                if (str.equals("emoji_max")) {
+                                    z10 = 3;
+                                    break;
+                                }
+                                z10 = -1;
+                                break;
+                            default:
+                                z10 = -1;
+                                break;
+                        }
+                        switch (z10) {
+                            case false:
+                                break;
+                            case true:
+                                i12 = 1;
+                                break;
+                            case true:
+                                i12 = 0;
+                                break;
+                            case true:
+                                i12 = 3;
+                                break;
+                            default:
+                                i12 = -1;
+                                break;
+                        }
+                        if (i12 >= 0) {
+                            iArr[(i10 * 7) + i12] = i14;
+                        }
+                    } else if (jSONValue2 instanceof TLRPC.TL_jsonString) {
+                        String str2 = ((TLRPC.TL_jsonString) jSONValue2).value;
+                        String str3 = tL_jsonObjectValue2.key;
+                        str3.getClass();
+                        switch (str3.hashCode()) {
+                            case -1354842834:
+                                if (str3.equals("color1")) {
+                                    i12 = 0;
+                                    break;
+                                }
+                                i12 = -1;
+                                break;
+                            case -1354842833:
+                                if (str3.equals("color2")) {
+                                    i12 = 1;
+                                    break;
+                                }
+                                i12 = -1;
+                                break;
+                            case -628825439:
+                                break;
+                            default:
+                                i12 = -1;
+                                break;
+                        }
+                        switch (i12) {
+                            case 0:
+                                i13 = 4;
+                                break;
+                            case 1:
+                                i13 = 5;
+                                break;
+                            case 2:
+                                i13 = 6;
+                                break;
+                        }
+                        if (i13 >= 0) {
+                            try {
+                                iArr[(i10 * 7) + i13] = (int) Long.parseLong("FF" + str2, 16);
+                            } catch (Exception e) {
+                                FileLog.e(e);
+                            }
+                        }
                     }
-                    i13++;
-                }
-            }
-            if (v8Var == null) {
-                v8 v8Var2 = new v8(this.b, this.d, str2, null);
-                v8Var2.H(null);
-                v8Var = v8Var2;
-            }
-            arrayList3.add(v8Var);
-        }
-        a aVar = this.n;
-        aVar.o(true);
-        SpannableString spannableString = new SpannableString(org.telegram.messenger.q.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
-        er erVar = new er(R.drawable.msg_filled_plus, 0);
-        erVar.setScale(0.9f, 0.9f);
-        erVar.spaceScaleX = 0.85f;
-        spannableString.setSpan(erVar, 0, 1, 33);
-        n91 n91Var = this.r;
-        n91Var.a(-1, spannableString);
-        n91Var.x.l();
-        boolean z11 = arrayList3.size() + 1 > 1;
-        Boolean bool = this.s;
-        if (bool == null || bool.booleanValue() != z11) {
-            ValueAnimator valueAnimator = this.x;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.s = Boolean.valueOf(z11);
-            if (!z10) {
-                this.w = z11 ? 1.0f : 0.0f;
-                n91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
-                aVar.setTranslationY(AndroidUtilities.dp(z11 ? 42.0f : 0.0f));
-                return;
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, z11 ? 1.0f : 0.0f);
-            this.x = ofFloat;
-            ofFloat.addUpdateListener(new ai.a(this, 14));
-            this.x.addListener(new ai.n(4, this, z11));
-            this.x.setDuration(320L);
-            this.x.setInterpolator(hs.h);
-            this.x.start();
-        }
-    }
-
-    public final void j() {
-        View currentView = this.n.getCurrentView();
-        if (currentView instanceof u) {
-            u uVar = (u) currentView;
-            j jVar = uVar.f;
-            for (int i10 = 0; i10 < jVar.getChildCount(); i10++) {
-                View childAt = jVar.getChildAt(i10);
-                if (childAt instanceof t7) {
-                    t7 t7Var = (t7) childAt;
-                    t7Var.i(uVar.W.c(t7Var.getMessageObject()), true);
                 }
             }
         }
+        return iArr;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (E == null) {
-            E = new LongSparseArray();
+    public static int[] d(String str) {
+        if (str == null || str.length() == 0) {
+            return a();
         }
-        LongSparseArray longSparseArray = E;
-        int i10 = this.b;
-        LongSparseArray longSparseArray2 = (LongSparseArray) longSparseArray.get(i10);
-        if (longSparseArray2 == null) {
-            LongSparseArray longSparseArray3 = new LongSparseArray();
-            E.put(i10, longSparseArray3);
-            longSparseArray2 = longSparseArray3;
+        try {
+            return DesugarArrays.stream(str.split(",")).mapToInt(new org.telegram.messenger.g4(1)).toArray();
+        } catch (Exception e) {
+            FileLog.e(e);
+            return a();
         }
-        longSparseArray2.put(this.d, this);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesListUpdated);
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.storiesUpdated);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (E == null) {
-            E = new LongSparseArray();
-        }
-        LongSparseArray longSparseArray = E;
-        int i10 = this.b;
-        LongSparseArray longSparseArray2 = (LongSparseArray) longSparseArray.get(i10);
-        if (longSparseArray2 != null) {
-            longSparseArray2.remove(this.d);
-        }
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.storiesListUpdated);
-        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.storiesUpdated);
-    }
-
-    public void setVisibleHeight(int i10) {
-        this.v = i10;
-        View[] viewPages = this.n.getViewPages();
-        if (viewPages != null) {
-            for (View view : viewPages) {
-                if (view instanceof u) {
-                    ((u) view).setVisibleHeight(i10);
+    public static boolean e(int[] iArr, int[] iArr2) {
+        if (iArr2 != null && iArr.length == iArr2.length) {
+            for (int i10 = 0; i10 < iArr.length; i10++) {
+                if (iArr[i10] == iArr2[i10]) {
                 }
             }
+            return true;
         }
+        return false;
+    }
+
+    public static String f(int[] iArr) {
+        return (String) DesugarArrays.stream(iArr).mapToObj(new de(0)).collect(Collectors.joining(","));
     }
 }

@@ -1,59 +1,36 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class im0 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ nn0 d;
+public final /* synthetic */ class im0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ un0 b;
 
-    public im0(nn0 nn0Var, EditTextBoldCursor editTextBoldCursor, String str) {
-        this.d = nn0Var;
-        this.b = editTextBoldCursor;
-        this.c = str;
+    public /* synthetic */ im0(un0 un0Var, int i10) {
+        this.a = i10;
+        this.b = un0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        if (this.a) {
-            return;
-        }
-        boolean z10 = true;
-        this.a = true;
-        int i10 = 0;
-        while (true) {
-            if (i10 >= editable.length()) {
-                z10 = false;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new uf0(this.b, tL_error, tLObject, 10));
                 break;
-            }
-            char charAt = editable.charAt(i10);
-            if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && !((charAt >= '0' && charAt <= '9') || charAt == '-' || charAt == ' '))) {
+            case 1:
+                AndroidUtilities.runOnUIThread(new wc0(29, this.b, tL_error));
                 break;
-            } else {
-                i10++;
-            }
+            case 2:
+                AndroidUtilities.runOnUIThread(new em0(this.b, 5));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new wc0(28, this.b, tLObject));
+                break;
         }
-        this.a = false;
-        EditTextBoldCursor editTextBoldCursor = this.b;
-        if (z10) {
-            editTextBoldCursor.setErrorText(LocaleController.getString(R.string.PassportUseLatinOnly));
-        } else {
-            nn0.I0(this.d, editTextBoldCursor, this.c, editable, false);
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

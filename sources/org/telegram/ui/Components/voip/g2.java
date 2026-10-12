@@ -1,69 +1,37 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.animation.ValueAnimator;
+import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
-import w7.x5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class g2 extends FrameLayout {
-    public String a;
-    public final ImageView b;
-    public final TextView c;
-    public boolean d;
-    public final q1 e;
-    public final RectF f;
+public final class g2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k2 b;
 
-    public g2(Context context, q1 q1Var, int i10) {
-        super(context);
-        this.f = new RectF();
-        setFocusable(true);
-        setFocusableInTouchMode(true);
-        this.e = q1Var;
-        q1Var.a(this);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        addView(imageView, x5.a(24.0f, 8.0f, 2.0f, 8.0f, 2.0f, 24, 16));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 14.0f);
-        addView(textView, x5.a(-2.0f, i10 != 0 ? 36.0f : 14.0f, 2.0f, 14.0f, 2.0f, -2, 16));
+    public /* synthetic */ g2(k2 k2Var, int i10) {
+        this.a = i10;
+        this.b = k2Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.f;
-        rectF.set(0.0f, 0.0f, width, height);
-        float x10 = ((View) getParent()).getX() + getX();
-        float y3 = ((View) getParent()).getY() + getY();
-        q1 q1Var = this.e;
-        q1Var.d(x10, y3);
-        Paint paint = q1Var.l;
-        int alpha = (this.d ? paint : q1Var.b()).getAlpha();
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), alpha, 31);
-        (this.d ? paint : q1Var.b()).setAlpha(255);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.d ? paint : q1Var.b());
-        if (!this.d) {
-            paint = q1Var.b();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k2 k2Var = this.b;
+                WindowManager.LayoutParams layoutParams = k2Var.d;
+                layoutParams.x = (int) floatValue;
+                AndroidUtilities.updateViewLayout(k2Var.c, k2Var.a, layoutParams);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                k2 k2Var2 = this.b;
+                WindowManager.LayoutParams layoutParams2 = k2Var2.d;
+                layoutParams2.y = (int) floatValue2;
+                AndroidUtilities.updateViewLayout(k2Var2.c, k2Var2.a, layoutParams2);
+                break;
         }
-        paint.setAlpha(alpha);
-        if (q1Var.e) {
-            int alpha2 = ((Paint) q1Var.d.a).getAlpha();
-            ((Paint) q1Var.d.a).setAlpha(255);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), (Paint) q1Var.d.a);
-            ((Paint) q1Var.d.a).setAlpha(alpha2);
-        }
-        canvas.restore();
-        super.dispatchDraw(canvas);
     }
 }

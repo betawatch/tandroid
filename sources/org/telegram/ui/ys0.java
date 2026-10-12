@@ -1,50 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import org.telegram.messenger.SharedConfig;
+import android.app.Activity;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ys0 extends org.telegram.ui.Components.w81 {
-    public final org.telegram.ui.Components.qa g0;
-    public final /* synthetic */ PhotoViewer h0;
+public final class ys0 extends org.telegram.ui.Components.ty0 {
+    public final /* synthetic */ zs0 v0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ys0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.h0 = photoViewer;
-        new Path();
-        this.g0 = new org.telegram.ui.Components.qa(photoViewer.b0, this, 0, false);
+    public ys0(zs0 zs0Var, Activity activity, MessageObject messageObject, TLObject tLObject, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(activity, messageObject, tLObject, c6Var);
+        this.v0 = zs0Var;
     }
 
-    @Override // org.telegram.ui.Components.w81
-    public final void b(Canvas canvas, RectF rectF) {
-        canvas.save();
-        canvas.clipRect(rectF);
-        float f7 = -getX();
-        PhotoViewer photoViewer = this.h0;
-        canvas.translate(f7 - photoViewer.R7.getX(), (-getY()) - photoViewer.R7.getY());
-        photoViewer.T0(canvas, this.g0, -14803426, 855638016, false, true, false);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        int i10;
-        if (SharedConfig.photoViewerBlur && ((i10 = this.h0.n4) == 1 || i10 == 2 || i10 == 3)) {
-            return;
-        }
-        super.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            super.setTranslationY(f7);
-            this.h0.e0.invalidate();
+    @Override // org.telegram.ui.Components.ty0, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public final void dismiss() {
+        super.dismiss();
+        PhotoViewer photoViewer = this.v0.b;
+        if (photoViewer.U3 == this) {
+            photoViewer.U3 = null;
         }
     }
 }

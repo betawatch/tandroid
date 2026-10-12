@@ -1,22 +1,23 @@
 package j4;
 
 import android.util.Pair;
-import b2.r0;
-import c3.h0;
-import i2.m0;
+import b2.w0;
+import c3.i0;
+import e2.m0;
+import i2.o0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k implements i {
     public static final double[] r = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
     public String a;
-    public h0 b;
+    public i0 b;
     public final c0 c;
     public final String d;
-    public final e2.v e;
-    public final m0 f;
+    public final e2.x e;
+    public final o0 f;
     public final boolean[] g = new boolean[4];
     public final j h;
     public long i;
@@ -36,8 +37,8 @@ public final class k implements i {
         jVar.d = new byte[128];
         this.h = jVar;
         if (c0Var != null) {
-            this.f = new m0(178);
-            this.e = new e2.v();
+            this.f = new o0(178);
+            this.e = new e2.x();
         } else {
             this.f = null;
             this.e = null;
@@ -55,43 +56,43 @@ public final class k implements i {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(e2.v vVar) {
+    public final void a(e2.x xVar) {
         j jVar;
-        m0 m0Var;
+        o0 o0Var;
         int i10;
         boolean z10;
-        long j3;
         long j10;
+        long j11;
         boolean z11;
         boolean z12;
-        long j11;
+        long j12;
         int i11;
         float f7;
         int i12;
         float f10;
         int i13;
-        long j12;
-        e2.d.h(this.b);
-        int i14 = vVar.b;
-        int i15 = vVar.c;
-        byte[] bArr = vVar.a;
-        this.i += vVar.a();
-        this.b.d(vVar.a(), vVar);
+        long j13;
+        this.b.getClass();
+        int i14 = xVar.b;
+        int i15 = xVar.c;
+        byte[] bArr = xVar.a;
+        this.i += xVar.a();
+        this.b.d(xVar.a(), xVar);
         while (true) {
-            int b10 = f2.p.b(bArr, i14, i15, this.g);
+            int c10 = f2.p.c(bArr, i14, i15, this.g);
             jVar = this.h;
-            m0Var = this.f;
-            if (b10 == i15) {
+            o0Var = this.f;
+            if (c10 == i15) {
                 break;
             }
-            int i16 = b10 + 3;
-            int i17 = vVar.a[i16] & 255;
-            int i18 = b10 - i14;
+            int i16 = c10 + 3;
+            int i17 = xVar.a[i16] & 255;
+            int i18 = c10 - i14;
             if (this.k) {
                 i10 = i15;
             } else {
                 if (i18 > 0) {
-                    jVar.a(i14, b10, bArr);
+                    jVar.a(i14, c10, bArr);
                 }
                 int i19 = i18 < 0 ? -i18 : 0;
                 if (jVar.a) {
@@ -106,10 +107,10 @@ public final class k implements i {
                         str.getClass();
                         byte[] copyOf = Arrays.copyOf(jVar.d, jVar.b);
                         int i21 = copyOf[4] & 255;
-                        byte b11 = copyOf[5];
+                        byte b10 = copyOf[5];
                         i10 = i15;
-                        int i22 = ((b11 & 255) >> 4) | (i21 << 4);
-                        int i23 = (copyOf[6] & 255) | ((b11 & 15) << 8);
+                        int i22 = ((b10 & 255) >> 4) | (i21 << 4);
+                        int i23 = (copyOf[6] & 255) | ((b10 & 15) << 8);
                         int i24 = (copyOf[7] & 240) >> 4;
                         if (i24 == 2) {
                             f7 = i23 * 4;
@@ -119,29 +120,29 @@ public final class k implements i {
                             i12 = i22 * 9;
                         } else if (i24 != 4) {
                             f10 = 1.0f;
-                            b2.r rVar = new b2.r();
-                            rVar.a = str;
-                            rVar.p = r0.n(this.d);
-                            rVar.q = r0.n("video/mpeg2");
-                            rVar.x = i22;
-                            rVar.y = i23;
-                            rVar.D = f10;
-                            rVar.t = Collections.singletonList(copyOf);
-                            b2.s sVar = new b2.s(rVar);
+                            b2.w wVar = new b2.w();
+                            wVar.a = str;
+                            wVar.q = w0.n(this.d);
+                            wVar.r = w0.n("video/mpeg2");
+                            wVar.y = i22;
+                            wVar.z = i23;
+                            wVar.E = f10;
+                            wVar.u = Collections.singletonList(copyOf);
+                            b2.x xVar2 = new b2.x(wVar);
                             i13 = (copyOf[7] & 15) - 1;
                             if (i13 >= 0 || i13 >= 8) {
-                                j12 = 0;
+                                j13 = 0;
                             } else {
                                 double d = r[i13];
-                                byte b12 = copyOf[jVar.c + 9];
-                                int i25 = (b12 & 96) >> 5;
-                                if (i25 != (b12 & 31)) {
+                                byte b11 = copyOf[jVar.c + 9];
+                                int i25 = (b11 & 96) >> 5;
+                                if (i25 != (b11 & 31)) {
                                     d = ((i25 + 1.0d) / (r6 + 1)) * d;
                                 }
-                                j12 = (long) (1000000.0d / d);
+                                j13 = (long) (1000000.0d / d);
                             }
-                            Pair create = Pair.create(sVar, Long.valueOf(j12));
-                            this.b.b((b2.s) create.first);
+                            Pair create = Pair.create(xVar2, Long.valueOf(j13));
+                            this.b.b((b2.x) create.first);
                             this.l = ((Long) create.second).longValue();
                             this.k = true;
                         } else {
@@ -149,21 +150,21 @@ public final class k implements i {
                             i12 = i22 * 100;
                         }
                         f10 = f7 / i12;
-                        b2.r rVar2 = new b2.r();
-                        rVar2.a = str;
-                        rVar2.p = r0.n(this.d);
-                        rVar2.q = r0.n("video/mpeg2");
-                        rVar2.x = i22;
-                        rVar2.y = i23;
-                        rVar2.D = f10;
-                        rVar2.t = Collections.singletonList(copyOf);
-                        b2.s sVar2 = new b2.s(rVar2);
+                        b2.w wVar2 = new b2.w();
+                        wVar2.a = str;
+                        wVar2.q = w0.n(this.d);
+                        wVar2.r = w0.n("video/mpeg2");
+                        wVar2.y = i22;
+                        wVar2.z = i23;
+                        wVar2.E = f10;
+                        wVar2.u = Collections.singletonList(copyOf);
+                        b2.x xVar22 = new b2.x(wVar2);
                         i13 = (copyOf[7] & 15) - 1;
                         if (i13 >= 0) {
                         }
-                        j12 = 0;
-                        Pair create2 = Pair.create(sVar2, Long.valueOf(j12));
-                        this.b.b((b2.s) create2.first);
+                        j13 = 0;
+                        Pair create2 = Pair.create(xVar22, Long.valueOf(j13));
+                        this.b.b((b2.x) create2.first);
                         this.l = ((Long) create2.second).longValue();
                         this.k = true;
                     }
@@ -175,44 +176,44 @@ public final class k implements i {
                 }
                 jVar.a(0, 3, j.e);
             }
-            if (m0Var != null) {
+            if (o0Var != null) {
                 if (i18 > 0) {
-                    m0Var.a(i14, b10, bArr);
+                    o0Var.a(i14, c10, bArr);
                     i11 = 0;
                 } else {
                     i11 = -i18;
                 }
-                if (m0Var.e(i11)) {
-                    int m10 = f2.p.m(m0Var.e, (byte[]) m0Var.f);
-                    String str2 = e2.d0.a;
-                    byte[] bArr2 = (byte[]) m0Var.f;
-                    e2.v vVar2 = this.e;
-                    vVar2.H(m10, bArr2);
-                    this.c.a(this.o, vVar2);
+                if (o0Var.e(i11)) {
+                    int p5 = f2.p.p(o0Var.e, (byte[]) o0Var.f);
+                    String str2 = m0.a;
+                    byte[] bArr2 = (byte[]) o0Var.f;
+                    e2.x xVar3 = this.e;
+                    xVar3.L(p5, bArr2);
+                    this.c.a(this.o, xVar3);
                 }
                 if (i17 == 178) {
                     z10 = true;
-                    if (vVar.a[b10 + 2] == 1) {
-                        m0Var.h(i17);
+                    if (xVar.a[c10 + 2] == 1) {
+                        o0Var.h(i17);
                     }
                     if (i17 != 0 || i17 == 179) {
-                        int i26 = i10 - b10;
+                        int i26 = i10 - c10;
                         if (this.q && this.k) {
-                            j11 = this.o;
-                            if (j11 != -9223372036854775807L) {
-                                j3 = -9223372036854775807L;
-                                this.b.c(j11, this.p ? 1 : 0, ((int) (this.i - this.n)) - i26, i26, null);
+                            j12 = this.o;
+                            if (j12 != -9223372036854775807L) {
+                                j10 = -9223372036854775807L;
+                                this.b.c(j12, this.p ? 1 : 0, ((int) (this.i - this.n)) - i26, i26, null);
                                 if (this.j || this.q) {
                                     this.n = this.i - i26;
-                                    j10 = this.m;
-                                    if (j10 == j3) {
-                                        long j13 = this.o;
-                                        j10 = j13 != j3 ? j13 + this.l : j3;
+                                    j11 = this.m;
+                                    if (j11 == j10) {
+                                        long j14 = this.o;
+                                        j11 = j14 != j10 ? j14 + this.l : j10;
                                     }
-                                    this.o = j10;
+                                    this.o = j11;
                                     z11 = false;
                                     this.p = false;
-                                    this.m = j3;
+                                    this.m = j10;
                                     z12 = true;
                                     this.j = true;
                                 } else {
@@ -222,17 +223,17 @@ public final class k implements i {
                                 this.q = i17 == 0 ? z12 : z11;
                             }
                         }
-                        j3 = -9223372036854775807L;
+                        j10 = -9223372036854775807L;
                         if (this.j) {
                         }
                         this.n = this.i - i26;
-                        j10 = this.m;
-                        if (j10 == j3) {
+                        j11 = this.m;
+                        if (j11 == j10) {
                         }
-                        this.o = j10;
+                        this.o = j11;
                         z11 = false;
                         this.p = false;
-                        this.m = j3;
+                        this.m = j10;
                         z12 = true;
                         this.j = true;
                         this.q = i17 == 0 ? z12 : z11;
@@ -246,23 +247,23 @@ public final class k implements i {
             z10 = true;
             if (i17 != 0) {
             }
-            int i262 = i10 - b10;
+            int i262 = i10 - c10;
             if (this.q) {
-                j11 = this.o;
-                if (j11 != -9223372036854775807L) {
+                j12 = this.o;
+                if (j12 != -9223372036854775807L) {
                 }
             }
-            j3 = -9223372036854775807L;
+            j10 = -9223372036854775807L;
             if (this.j) {
             }
             this.n = this.i - i262;
-            j10 = this.m;
-            if (j10 == j3) {
+            j11 = this.m;
+            if (j11 == j10) {
             }
-            this.o = j10;
+            this.o = j11;
             z11 = false;
             this.p = false;
-            this.m = j3;
+            this.m = j10;
             z12 = true;
             this.j = true;
             this.q = i17 == 0 ? z12 : z11;
@@ -272,21 +273,21 @@ public final class k implements i {
         if (!this.k) {
             jVar.a(i14, i15, bArr);
         }
-        if (m0Var != null) {
-            m0Var.a(i14, i15, bArr);
+        if (o0Var != null) {
+            o0Var.a(i14, i15, bArr);
         }
     }
 
     @Override // j4.i
     public final void c() {
-        f2.p.a(this.g);
+        f2.p.b(this.g);
         j jVar = this.h;
         jVar.a = false;
         jVar.b = 0;
         jVar.c = 0;
-        m0 m0Var = this.f;
-        if (m0Var != null) {
-            m0Var.g();
+        o0 o0Var = this.f;
+        if (o0Var != null) {
+            o0Var.g();
         }
         this.i = 0L;
         this.j = false;
@@ -300,7 +301,7 @@ public final class k implements i {
         f0Var.c();
         this.a = (String) f0Var.e;
         f0Var.c();
-        this.b = qVar.f2(f0Var.c, 2);
+        this.b = qVar.a0(f0Var.c, 2);
         c0 c0Var = this.c;
         if (c0Var != null) {
             c0Var.b(qVar, f0Var);
@@ -309,7 +310,7 @@ public final class k implements i {
 
     @Override // j4.i
     public final void e(boolean z10) {
-        e2.d.h(this.b);
+        this.b.getClass();
         if (z10) {
             boolean z11 = this.p;
             this.b.c(this.o, z11 ? 1 : 0, (int) (this.i - this.n), 0, null);
@@ -317,7 +318,7 @@ public final class k implements i {
     }
 
     @Override // j4.i
-    public final void f(int i10, long j3) {
-        this.m = j3;
+    public final void f(int i10, long j10) {
+        this.m = j10;
     }
 }

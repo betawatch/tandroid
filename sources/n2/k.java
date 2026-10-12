@@ -1,17 +1,62 @@
 package n2;
 
-import u2.f0;
+import e2.m0;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+import u2.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface k {
-    void a(int i10, f0 f0Var, int i11);
+public final class k {
+    public final int a;
+    public final g0 b;
+    public final CopyOnWriteArrayList c;
 
-    void b(int i10, f0 f0Var, Exception exc);
+    public k(CopyOnWriteArrayList copyOnWriteArrayList, int i10, g0 g0Var) {
+        this.c = copyOnWriteArrayList;
+        this.a = i10;
+        this.b = g0Var;
+    }
 
-    void g(int i10, f0 f0Var);
+    public final void a(oa.d dVar) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            j jVar = (j) it.next();
+            m0.W(jVar.a, new h(this, jVar.b, dVar, 1));
+        }
+    }
 
-    void i(int i10, f0 f0Var);
+    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, n2.l] */
+    public final void b() {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            j jVar = (j) it.next();
+            m0.W(jVar.a, new i(this, jVar.b, 1));
+        }
+    }
 
-    void k(int i10, f0 f0Var);
+    public final void c(int i10) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            j jVar = (j) it.next();
+            m0.W(jVar.a, new ah.o(this, jVar.b, i10, 17));
+        }
+    }
+
+    public final void d(Exception exc) {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            j jVar = (j) it.next();
+            m0.W(jVar.a, new h(this, jVar.b, exc, 0));
+        }
+    }
+
+    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, n2.l] */
+    public final void e() {
+        Iterator it = this.c.iterator();
+        while (it.hasNext()) {
+            j jVar = (j) it.next();
+            m0.W(jVar.a, new i(this, jVar.b, 0));
+        }
+    }
 }

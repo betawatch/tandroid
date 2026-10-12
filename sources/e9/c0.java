@@ -1,37 +1,50 @@
 package e9;
 
-import java.util.Collection;
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class c0 extends k0 {
-    @Override // e9.k0
-    public final d0 d() {
-        throw new AssertionError("should never be called");
+public final class c0 extends v1 implements Serializable {
+    public final Comparator[] a;
+
+    public c0(r rVar, r rVar2) {
+        this.a = new Comparator[]{rVar, rVar2};
     }
 
-    @Override // e9.k0
-    /* renamed from: e */
-    public final d0 values() {
-        z0 z0Var = ((z0) this).n;
-        m0 m0Var = z0Var.b;
-        if (m0Var != null) {
-            return m0Var;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i10 = 0;
+        while (true) {
+            Comparator[] comparatorArr = this.a;
+            if (i10 >= comparatorArr.length) {
+                return 0;
+            }
+            int compare = comparatorArr[i10].compare(obj, obj2);
+            if (compare != 0) {
+                return compare;
+            }
+            i10++;
         }
-        d1 c10 = z0Var.c();
-        z0Var.b = c10;
-        return c10;
     }
 
-    @Override // e9.k0, java.util.Map
-    public final Collection values() {
-        z0 z0Var = ((z0) this).n;
-        m0 m0Var = z0Var.b;
-        if (m0Var != null) {
-            return m0Var;
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        d1 c10 = z0Var.c();
-        z0Var.b = c10;
-        return c10;
+        if (obj instanceof c0) {
+            return Arrays.equals(this.a, ((c0) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(this.a);
+    }
+
+    public final String toString() {
+        return a1.g.s(new StringBuilder("Ordering.compound("), Arrays.toString(this.a), ")");
     }
 }

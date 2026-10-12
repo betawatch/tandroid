@@ -6,27 +6,27 @@ import android.view.View;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.l61;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i3 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ a5 a;
+public final /* synthetic */ class i3 implements org.telegram.ui.ActionBar.z1, Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ z4 a;
 
-    public /* synthetic */ i3(a5 a5Var) {
-        this.a = a5Var;
+    public /* synthetic */ i3(z4 z4Var) {
+        this.a = z4Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        a5 a5Var = this.a;
-        a5Var.getClass();
+    @Override // org.telegram.ui.ActionBar.z1
+    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+        z4 z4Var = this.a;
+        z4Var.getClass();
         try {
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            a5Var.getParentActivity().startActivity(intent);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+            z4Var.getParentActivity().startActivity(intent);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -44,6 +44,6 @@ public final /* synthetic */ class i3 implements org.telegram.ui.ActionBar.a2, U
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        this.a.W((p61) obj, (View) obj2);
+        this.a.W((l61) obj, (View) obj2);
     }
 }

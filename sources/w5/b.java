@@ -1,10 +1,10 @@
 package w5;
 
 import java.util.Arrays;
+import m4.c;
 import n6.l;
-import org.telegram.ui.ActionBar.b5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b implements com.google.android.gms.common.api.b {
     public static final b c;
@@ -12,14 +12,14 @@ public final class b implements com.google.android.gms.common.api.b {
     public final String b;
 
     static {
-        b5 b5Var = new b5(19, (byte) 0);
-        b5Var.b = Boolean.FALSE;
-        c = new b(b5Var);
+        c cVar = new c(27, (byte) 0);
+        cVar.b = Boolean.FALSE;
+        c = new b(cVar);
     }
 
-    public b(b5 b5Var) {
-        this.a = ((Boolean) b5Var.b).booleanValue();
-        this.b = (String) b5Var.c;
+    public b(c cVar) {
+        this.a = ((Boolean) cVar.b).booleanValue();
+        this.b = (String) cVar.c;
     }
 
     public final boolean equals(Object obj) {

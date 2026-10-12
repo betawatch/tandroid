@@ -6,32 +6,23 @@ import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class z extends k.a implements l.i {
     public final Context c;
     public final l.k d;
-    public n4.x e;
+    public n4.s e;
     public WeakReference f;
     public final /* synthetic */ a0 h;
 
-    public z(a0 a0Var, Context context, n4.x xVar) {
+    public z(a0 a0Var, Context context, n4.s sVar) {
         this.h = a0Var;
         this.c = context;
-        this.e = xVar;
+        this.e = sVar;
         l.k kVar = new l.k(context);
         kVar.l = 1;
         this.d = kVar;
         kVar.e = this;
-    }
-
-    @Override // l.i
-    public final boolean A(l.k kVar, MenuItem menuItem) {
-        n4.x xVar = this.e;
-        if (xVar != null) {
-            return ((oi.f) xVar.b).G(this, menuItem);
-        }
-        return false;
     }
 
     @Override // k.a
@@ -44,7 +35,7 @@ public final class z extends k.a implements l.i {
             a0Var.j = this;
             a0Var.k = this.e;
         } else {
-            this.e.X(this);
+            this.e.r(this);
         }
         this.e = null;
         a0Var.a(false);
@@ -93,7 +84,7 @@ public final class z extends k.a implements l.i {
         l.k kVar = this.d;
         kVar.w();
         try {
-            this.e.Y(this, kVar);
+            this.e.s(this, kVar);
         } finally {
             kVar.v();
         }
@@ -146,5 +137,14 @@ public final class z extends k.a implements l.i {
     public final void o(boolean z10) {
         this.b = z10;
         this.h.f.setTitleOptional(z10);
+    }
+
+    @Override // l.i
+    public final boolean p(l.k kVar, MenuItem menuItem) {
+        n4.s sVar = this.e;
+        if (sVar != null) {
+            return ((qi.e) sVar.b).y(this, menuItem);
+        }
+        return false;
     }
 }

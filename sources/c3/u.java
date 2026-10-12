@@ -1,11 +1,12 @@
 package c3;
 
-import b2.p0;
-import b2.r0;
+import b2.u0;
+import b2.w0;
+import e2.m0;
 import java.nio.ByteOrder;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class u {
     public final int a;
@@ -18,24 +19,24 @@ public final class u {
     public final int h;
     public final int i;
     public final long j;
-    public final pf.b k;
-    public final p0 l;
+    public final qf.b k;
+    public final u0 l;
 
     public u(byte[] bArr, int i10) {
         a4.g gVar = new a4.g(bArr, bArr.length);
-        gVar.q(i10 * 8);
-        this.a = gVar.i(16);
-        this.b = gVar.i(16);
-        this.c = gVar.i(24);
-        this.d = gVar.i(24);
-        int i11 = gVar.i(20);
-        this.e = i11;
-        this.f = d(i11);
-        this.g = gVar.i(3) + 1;
-        int i12 = gVar.i(5) + 1;
-        this.h = i12;
-        this.i = a(i12);
-        this.j = gVar.k(36);
+        gVar.m(i10 * 8);
+        this.a = gVar.g(16);
+        this.b = gVar.g(16);
+        this.c = gVar.g(24);
+        this.d = gVar.g(24);
+        int g10 = gVar.g(20);
+        this.e = g10;
+        this.f = d(g10);
+        this.g = gVar.g(3) + 1;
+        int g11 = gVar.g(5) + 1;
+        this.h = g11;
+        this.i = a(g11);
+        this.j = gVar.i(36);
         this.k = null;
         this.l = null;
     }
@@ -89,36 +90,36 @@ public final class u {
     }
 
     public final long b() {
-        long j3 = this.j;
-        if (j3 == 0) {
+        long j10 = this.j;
+        if (j10 == 0) {
             return -9223372036854775807L;
         }
-        return (j3 * 1000000) / this.e;
+        return (j10 * 1000000) / this.e;
     }
 
-    public final b2.s c(byte[] bArr, p0 p0Var) {
+    public final b2.x c(byte[] bArr, u0 u0Var) {
         bArr[4] = Byte.MIN_VALUE;
         int i10 = this.d;
         if (i10 <= 0) {
             i10 = -1;
         }
-        p0 p0Var2 = this.l;
-        if (p0Var2 != null) {
-            p0Var = p0Var2.b(p0Var);
+        u0 u0Var2 = this.l;
+        if (u0Var2 != null) {
+            u0Var = u0Var2.b(u0Var);
         }
-        b2.r rVar = new b2.r();
-        rVar.q = r0.n("audio/flac");
-        rVar.r = i10;
-        rVar.I = this.g;
-        rVar.J = this.e;
-        String str = e2.d0.a;
-        rVar.K = e2.d0.A(this.h, ByteOrder.LITTLE_ENDIAN);
-        rVar.t = Collections.singletonList(bArr);
-        rVar.k = p0Var;
-        return new b2.s(rVar);
+        b2.w wVar = new b2.w();
+        wVar.r = w0.n("audio/flac");
+        wVar.s = i10;
+        wVar.J = this.g;
+        wVar.K = this.e;
+        String str = m0.a;
+        wVar.L = m0.D(this.h, ByteOrder.LITTLE_ENDIAN);
+        wVar.u = Collections.singletonList(bArr);
+        wVar.k = u0Var;
+        return new b2.x(wVar);
     }
 
-    public u(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j3, pf.b bVar, p0 p0Var) {
+    public u(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j10, qf.b bVar, u0 u0Var) {
         this.a = i10;
         this.b = i11;
         this.c = i12;
@@ -128,8 +129,8 @@ public final class u {
         this.g = i15;
         this.h = i16;
         this.i = a(i16);
-        this.j = j3;
+        this.j = j10;
         this.k = bVar;
-        this.l = p0Var;
+        this.l = u0Var;
     }
 }

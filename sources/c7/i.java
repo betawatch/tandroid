@@ -6,7 +6,7 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class i extends l {
     public static final Parcelable.Creator<i> CREATOR = new r0(15);
@@ -18,35 +18,35 @@ public final class i extends l {
 
     public i(byte[] bArr, byte[] bArr2, byte[] bArr3, byte[] bArr4, byte[] bArr5) {
         n6.l.h(bArr);
-        n7.s0 t10 = n7.s0.t(bArr.length, bArr);
+        n7.s0 s10 = n7.s0.s(bArr.length, bArr);
         n6.l.h(bArr2);
-        n7.s0 t11 = n7.s0.t(bArr2.length, bArr2);
+        n7.s0 s11 = n7.s0.s(bArr2.length, bArr2);
         n6.l.h(bArr3);
-        n7.s0 t12 = n7.s0.t(bArr3.length, bArr3);
+        n7.s0 s12 = n7.s0.s(bArr3.length, bArr3);
         n6.l.h(bArr4);
-        n7.s0 t13 = n7.s0.t(bArr4.length, bArr4);
-        n7.s0 t14 = bArr5 == null ? null : n7.s0.t(bArr5.length, bArr5);
-        this.a = t10;
-        this.b = t11;
-        this.c = t12;
-        this.d = t13;
-        this.e = t14;
+        n7.s0 s13 = n7.s0.s(bArr4.length, bArr4);
+        n7.s0 s14 = bArr5 == null ? null : n7.s0.s(bArr5.length, bArr5);
+        this.a = s10;
+        this.b = s11;
+        this.c = s12;
+        this.d = s13;
+        this.e = s14;
     }
 
     public final JSONObject b() {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("clientDataJSON", u6.b.c(this.b.u()));
-            jSONObject.put("authenticatorData", u6.b.c(this.c.u()));
-            jSONObject.put("signature", u6.b.c(this.d.u()));
+            jSONObject.put("clientDataJSON", u6.b.c(this.b.t()));
+            jSONObject.put("authenticatorData", u6.b.c(this.c.t()));
+            jSONObject.put("signature", u6.b.c(this.d.t()));
             n7.s0 s0Var = this.e;
             if (s0Var == null) {
                 return jSONObject;
             }
-            jSONObject.put("userHandle", u6.b.c(s0Var == null ? null : s0Var.u()));
+            jSONObject.put("userHandle", u6.b.c(s0Var == null ? null : s0Var.t()));
             return jSONObject;
-        } catch (JSONException e7) {
-            throw new RuntimeException("Error encoding AuthenticatorAssertionResponse to JSON object", e7);
+        } catch (JSONException e) {
+            throw new RuntimeException("Error encoding AuthenticatorAssertionResponse to JSON object", e);
         }
     }
 
@@ -63,33 +63,33 @@ public final class i extends l {
     }
 
     public final String toString() {
-        la.h hVar = new la.h(getClass().getSimpleName());
+        li.k kVar = new li.k(getClass().getSimpleName());
         n7.k0 k0Var = n7.m0.d;
-        byte[] u10 = this.a.u();
-        hVar.a0(k0Var.c(u10.length, u10), "keyHandle");
-        byte[] u11 = this.b.u();
-        hVar.a0(k0Var.c(u11.length, u11), "clientDataJSON");
-        byte[] u12 = this.c.u();
-        hVar.a0(k0Var.c(u12.length, u12), "authenticatorData");
-        byte[] u13 = this.d.u();
-        hVar.a0(k0Var.c(u13.length, u13), "signature");
+        byte[] t10 = this.a.t();
+        kVar.Y(k0Var.c(t10.length, t10), "keyHandle");
+        byte[] t11 = this.b.t();
+        kVar.Y(k0Var.c(t11.length, t11), "clientDataJSON");
+        byte[] t12 = this.c.t();
+        kVar.Y(k0Var.c(t12.length, t12), "authenticatorData");
+        byte[] t13 = this.d.t();
+        kVar.Y(k0Var.c(t13.length, t13), "signature");
         n7.s0 s0Var = this.e;
-        byte[] u14 = s0Var == null ? null : s0Var.u();
-        if (u14 != null) {
-            hVar.a0(k0Var.c(u14.length, u14), "userHandle");
+        byte[] t14 = s0Var == null ? null : s0Var.t();
+        if (t14 != null) {
+            kVar.Y(k0Var.c(t14.length, t14), "userHandle");
         }
-        return hVar.toString();
+        return kVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.d0.q(parcel, 20293);
-        w7.d0.c(parcel, 2, this.a.u());
-        w7.d0.c(parcel, 3, this.b.u());
-        w7.d0.c(parcel, 4, this.c.u());
-        w7.d0.c(parcel, 5, this.d.u());
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.c(parcel, 2, this.a.t());
+        w7.g0.c(parcel, 3, this.b.t());
+        w7.g0.c(parcel, 4, this.c.t());
+        w7.g0.c(parcel, 5, this.d.t());
         n7.s0 s0Var = this.e;
-        w7.d0.c(parcel, 6, s0Var == null ? null : s0Var.u());
-        w7.d0.r(parcel, q6);
+        w7.g0.c(parcel, 6, s0Var == null ? null : s0Var.t());
+        w7.g0.r(parcel, q6);
     }
 }

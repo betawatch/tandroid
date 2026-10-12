@@ -1,120 +1,29 @@
 package hg;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.tq;
-import org.telegram.ui.Components.y9;
-import org.telegram.ui.zn;
-import w7.x5;
+import org.telegram.ui.xy;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class f extends FrameLayout {
-    public final int a;
-    public final j9 b;
-    public final y9 c;
-    public final LinearLayout d;
-    public final r6 e;
-    public final r6 f;
-    public final tq h;
-    public final ImageView n;
-    public boolean r;
-    public long s;
-    public long v;
-    public int w;
-    public String x;
-    public float y;
+public final /* synthetic */ class f implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m b;
 
-    public f(Activity activity, e6 e6Var, zn znVar) {
-        super(activity);
-        this.a = znVar.getCurrentAccount();
-        this.r = false;
-        y9 y9Var = new y9(activity);
-        this.c = y9Var;
-        TLRPC.User user = znVar.getMessagesController().getUser(Long.valueOf(this.v));
-        j9 j9Var = new j9((e6) null);
-        this.b = j9Var;
-        j9Var.r(user);
-        y9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
-        y9Var.e(user, j9Var);
-        addView(y9Var, x5.a(32.0f, 10.0f, 0.0f, 10.0f, 0.0f, 32, 19));
-        LinearLayout linearLayout = new LinearLayout(activity);
-        this.d = linearLayout;
-        linearLayout.setOrientation(1);
-        r6 r6Var = new r6(activity, false, false, false);
-        this.e = r6Var;
-        r6Var.n = false;
-        r6Var.getDrawable().r(true, false);
-        r6Var.setTypeface(AndroidUtilities.bold());
-        r6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        r6Var.setText(UserObject.getUserName(user));
-        r6Var.setTextColor(i6.w0(i6.G6, e6Var));
-        r6Var.setEllipsizeByGradient(true);
-        linearLayout.addView(r6Var, x5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
-        r6 r6Var2 = new r6(activity, false, false, false);
-        this.f = r6Var2;
-        r6Var2.n = false;
-        r6Var2.getDrawable().r(true, false);
-        r6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        r6Var2.setText(LocaleController.getString(R.string.BizBotStatusManages));
-        r6Var2.setTextColor(i6.w0(i6.ge, e6Var));
-        r6Var2.setEllipsizeByGradient(true);
-        linearLayout.addView(r6Var2, x5.n(-1, 17));
-        addView(linearLayout, x5.a(-2.0f, 52.0f, 0.0f, 49.0f, 0.0f, -2, 16));
-        tq tqVar = new tq(activity);
-        this.h = tqVar;
-        tqVar.getDrawable().r(true, true);
-        tqVar.b(0.75f, 350L, hs.h);
-        tqVar.setScaleProperty(0.6f);
-        tqVar.setTypeface(AndroidUtilities.bold());
-        int dp = AndroidUtilities.dp(14.0f);
-        int i10 = i6.Oh;
-        int w02 = i6.w0(i10, e6Var);
-        int v = i6.v(i6.w0(i10, e6Var), i6.m1(0.12f, -1));
-        tqVar.setBackgroundDrawable(i6.j0(dp, dp, dp, dp, w02, v, v));
-        tqVar.setTextSize(AndroidUtilities.dp(14.0f));
-        tqVar.setGravity(5);
-        tqVar.setTextColor(i6.w0(i6.Sh, e6Var));
-        tqVar.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), 0);
-        tqVar.setOnClickListener(new ai.v0(this, 24));
-        tqVar.setOnWidthUpdatedListener(new e(this, 0));
-        tqVar.setText(LocaleController.getString(this.r ? R.string.BizBotStart : R.string.BizBotStop));
-        addView(tqVar, x5.a(28.0f, 0.0f, 0.0f, 46.0f, 0.0f, 64, 21));
-        ImageView imageView = new ImageView(activity);
-        this.n = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.msg_mini_customize);
-        imageView.setBackground(i6.N(i6.w0(i6.i6, e6Var), 0, 0));
-        imageView.setColorFilter(new PorterDuffColorFilter(i6.w0(i6.de, e6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setOnClickListener(new ai.d0(this, znVar, e6Var, 7));
-        addView(imageView, x5.a(32.0f, 8.0f, 0.0f, 6.0f, 0.0f, 32, 21));
+    public /* synthetic */ f(m mVar, int i10) {
+        this.a = i10;
+        this.b = mVar;
     }
 
-    public final void a() {
-        float f7 = this.y;
-        float c10 = this.h.getDrawable().c() + f7 + r1.getPaddingLeft() + r1.getPaddingRight() + AndroidUtilities.dp(12.0f);
-        this.e.setRightPadding(c10);
-        this.f.setRightPadding(c10);
-    }
-
-    public void setLeftMargin(float f7) {
-        this.y = f7;
-        this.c.setTranslationX(f7);
-        this.d.setTranslationX(f7);
-        a();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                for (xy xyVar : this.b.R.e0) {
+                    ((s4.b0) xyVar.a.getLayoutManager()).u = false;
+                }
+                break;
+            default:
+                this.b.J();
+                break;
+        }
     }
 }

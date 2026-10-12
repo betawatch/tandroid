@@ -1,48 +1,22 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.DialogInterface;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class lt0 extends org.telegram.ui.Components.k10 {
-    public final /* synthetic */ ts0 e;
-    public final /* synthetic */ PhotoViewer f;
+public final class lt0 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ PhotoViewer a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lt0(PhotoViewer photoViewer, ts0 ts0Var) {
-        super(false);
-        this.f = photoViewer;
-        this.e = ts0Var;
+    public lt0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.hp0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        PhotoViewer photoViewer = this.f;
-        int[] iArr = photoViewer.m3;
-        sb2.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
-        sb2.append(' ');
-        sb2.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
-        String sb3 = sb2.toString();
-        StringBuilder sb4 = new StringBuilder();
-        int[] iArr2 = photoViewer.n3;
-        sb4.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
-        sb4.append(' ');
-        sb4.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
-        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb3, sb4.toString());
-    }
-
-    @Override // org.telegram.ui.Components.k10
-    public final float k() {
-        return this.f.q3.c();
-    }
-
-    @Override // org.telegram.ui.Components.k10
-    public final void l(float f7) {
-        this.e.b(f7);
-        PhotoViewer photoViewer = this.f;
-        photoViewer.q3.h(f7, false);
-        photoViewer.r3.invalidate();
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        ImageView imageView = this.a.E3;
+        if (imageView != null) {
+            imageView.animate().alpha(0.0f).withEndAction(new yk0(this, 16)).setDuration(150L).start();
+        }
     }
 }

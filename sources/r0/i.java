@@ -1,36 +1,24 @@
 package r0;
 
-import android.view.DisplayCutout;
-import j$.util.Objects;
+import android.content.Context;
+import android.view.VelocityTracker;
+import ji.d4;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class i {
-    public final DisplayCutout a;
+    public final Context a;
+    public final d4 b;
+    public VelocityTracker c;
+    public float d;
+    public int e = -1;
+    public int f = -1;
+    public int g = -1;
+    public final int[] h = {ConnectionsManager.DEFAULT_DATACENTER_ID, 0};
 
-    public i(DisplayCutout displayCutout) {
-        this.a = displayCutout;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || i.class != obj.getClass()) {
-            return false;
-        }
-        return Objects.equals(this.a, ((i) obj).a);
-    }
-
-    public final int hashCode() {
-        DisplayCutout displayCutout = this.a;
-        if (displayCutout == null) {
-            return 0;
-        }
-        return displayCutout.hashCode();
-    }
-
-    public final String toString() {
-        return "DisplayCutoutCompat{" + this.a + "}";
+    public i(Context context, d4 d4Var) {
+        this.a = context;
+        this.b = d4Var;
     }
 }

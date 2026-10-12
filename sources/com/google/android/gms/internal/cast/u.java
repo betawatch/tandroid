@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class u {
     public static final g6.b i = new g6.b("SessionTransController", null);
@@ -43,8 +43,8 @@ public final class u {
         c0.i iVar = this.g;
         if (iVar != null) {
             iVar.d = true;
-            c0.k kVar = iVar.b;
-            if (kVar != null && kVar.b.cancel(true)) {
+            c0.l lVar = iVar.b;
+            if (lVar != null && lVar.b.cancel(true)) {
                 iVar.a = null;
                 iVar.b = null;
                 iVar.c = null;
@@ -73,9 +73,9 @@ public final class u {
                 default:
                     a5.a aVar = new a5.a(11, 2);
                     aVar.c = Integer.valueOf(i10);
-                    ci.u5 u5Var = (ci.u5) y0Var.b;
-                    aVar.d = Boolean.valueOf(((d) u5Var.b).d == 2);
-                    ci.u5.E(u5Var, new w6(aVar));
+                    z5 z5Var = (z5) y0Var.b;
+                    aVar.d = Boolean.valueOf(((d) z5Var.c).d == 2);
+                    z5.E(z5Var, new x6(aVar));
                     break;
             }
         }

@@ -1,93 +1,148 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class u70 extends r71 {
-    public float f;
-    public float h;
-    public final Paint n;
-    public float r;
-    public la.h s;
-    public final /* synthetic */ d80 v;
+public final /* synthetic */ class u70 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w70 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u70(d80 d80Var, Context context) {
-        super(d80Var, context);
-        this.v = d80Var;
-        this.n = new Paint();
+    public /* synthetic */ u70(w70 w70Var, String str, int i10) {
+        this.a = i10;
+        this.b = w70Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.r71, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        String str;
+        String publicUsername;
+        ArrayList arrayList;
+        boolean z10;
         int i10;
-        d80 d80Var = this.v;
-        int i11 = d80Var.y;
-        i10 = ((org.telegram.ui.ActionBar.f3) d80Var).backgroundPaddingTop;
-        d80Var.V.setTranslationY(AndroidUtilities.dp(64.0f) + AndroidUtilities.dp(6.0f) + (i11 - i10));
-        float f7 = d80Var.o0 + d80Var.u0;
-        ay0 ay0Var = d80Var.s;
-        if (ay0Var.getVisibility() != 0) {
-            this.f = f7;
-            this.h = f7;
-        } else if (this.h != f7) {
-            this.h = f7;
-            this.r = (f7 - this.f) * 0.10666667f;
-        }
-        float f10 = this.f;
-        float f11 = this.h;
-        if (f10 != f11) {
-            float f12 = this.r;
-            float f13 = f10 + f12;
-            this.f = f13;
-            if (f12 > 0.0f && f13 > f11) {
-                this.f = f11;
-            } else if (f12 >= 0.0f || f13 >= f11) {
-                invalidate();
-            } else {
-                this.f = f11;
-            }
-        }
-        ay0Var.setTranslationY(d80Var.y + this.f);
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        d80 d80Var = this.v;
-        if (view != d80Var.V) {
-            return super.drawChild(canvas, view, j3);
-        }
-        canvas.save();
-        canvas.clipRect(0.0f, view.getY() - AndroidUtilities.dp(4.0f), getMeasuredWidth(), view.getY() + d80Var.k0 + 1.0f);
-        canvas.drawColor(i0.a.k(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false), (int) (d80Var.h0 * 255.0f)));
-        int k10 = i0.a.k(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d7, false), (int) (d80Var.h0 * 255.0f));
-        Paint paint = this.n;
-        paint.setColor(k10);
-        canvas.drawRect(0.0f, view.getY() + d80Var.k0, getMeasuredWidth(), view.getY() + d80Var.k0 + 1.0f, paint);
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        la.h hVar = this.s;
-        if (hVar != null) {
-            ((w71) hVar.b).b = true;
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final void onViewAdded(View view) {
-        if (view == this.v.t0 && this.s == null) {
-            this.s = new la.h(view);
+        Object obj;
+        switch (this.a) {
+            case 0:
+                w70 w70Var = this.b;
+                String str2 = this.c;
+                w70Var.getClass();
+                AndroidUtilities.runOnUIThread(new u70(w70Var, str2, 1));
+                break;
+            case 1:
+                w70 w70Var2 = this.b;
+                String str3 = this.c;
+                hg.a2 a2Var = w70Var2.e;
+                org.telegram.ui.mu muVar = w70Var2.n.m0;
+                boolean z11 = false;
+                boolean z12 = muVar != null;
+                if (muVar != null) {
+                    z11 = true;
+                }
+                a2Var.g(str3, true, z12, true, z11, 0L, false, 0, 0);
+                DispatchQueue dispatchQueue = Utilities.searchQueue;
+                u70 u70Var = new u70(w70Var2, str3, 2);
+                w70Var2.h = u70Var;
+                dispatchQueue.postRunnable(u70Var);
+                break;
+            default:
+                w70 w70Var3 = this.b;
+                String str4 = this.c;
+                ArrayList arrayList2 = w70Var3.n.e0;
+                String lowerCase = str4.trim().toLowerCase();
+                if (lowerCase.length() != 0) {
+                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
+                    if (lowerCase.equals(translitString) || translitString.length() == 0) {
+                        translitString = null;
+                    }
+                    int i11 = 0;
+                    boolean z13 = true;
+                    int i12 = (translitString != null ? 1 : 0) + 1;
+                    String[] strArr = new String[i12];
+                    strArr[0] = lowerCase;
+                    if (translitString != null) {
+                        strArr[1] = translitString;
+                    }
+                    ArrayList arrayList3 = new ArrayList();
+                    ArrayList arrayList4 = new ArrayList();
+                    int i13 = 0;
+                    while (i13 < arrayList2.size()) {
+                        TLObject tLObject = (TLObject) arrayList2.get(i13);
+                        boolean z14 = tLObject instanceof TLRPC.User;
+                        if (z14) {
+                            TLRPC.User user = (TLRPC.User) tLObject;
+                            str = ContactsController.formatName(user.first_name, user.last_name).toLowerCase();
+                            publicUsername = UserObject.getPublicUsername(user);
+                        } else {
+                            TLRPC.Chat chat = (TLRPC.Chat) tLObject;
+                            str = chat.title;
+                            publicUsername = ChatObject.getPublicUsername(chat);
+                        }
+                        String translitString2 = LocaleController.getInstance().getTranslitString(str);
+                        if (str.equals(translitString2)) {
+                            translitString2 = null;
+                        }
+                        int i14 = i11;
+                        while (true) {
+                            if (i11 < i12) {
+                                String str5 = strArr[i11];
+                                if (str.startsWith(str5) || org.telegram.messenger.yh.v(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.yh.v(" ", str5, translitString2)))) {
+                                    i10 = 1;
+                                } else {
+                                    if (publicUsername != null && publicUsername.startsWith(str5)) {
+                                        i14 = 2;
+                                    }
+                                    i10 = i14;
+                                }
+                                if (i10 != 0) {
+                                    arrayList = arrayList2;
+                                    z10 = true;
+                                    if (i10 != 1) {
+                                        obj = null;
+                                        arrayList4.add(AndroidUtilities.generateSearchName(t8.b.h("@", publicUsername), null, "@" + str5));
+                                    } else if (z14) {
+                                        TLRPC.User user2 = (TLRPC.User) tLObject;
+                                        arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str5));
+                                        obj = null;
+                                    } else {
+                                        obj = null;
+                                        arrayList4.add(AndroidUtilities.generateSearchName(((TLRPC.Chat) tLObject).title, null, str5));
+                                    }
+                                    arrayList3.add(tLObject);
+                                } else {
+                                    i11++;
+                                    int i15 = i10;
+                                    z13 = true;
+                                    arrayList2 = arrayList2;
+                                    i14 = i15;
+                                }
+                            } else {
+                                arrayList = arrayList2;
+                                z10 = z13;
+                            }
+                        }
+                        i13++;
+                        z13 = z10;
+                        arrayList2 = arrayList;
+                        i11 = 0;
+                    }
+                    AndroidUtilities.runOnUIThread(new v70(w70Var3, arrayList3, arrayList4, 0));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new v70(w70Var3, new ArrayList(), new ArrayList(), 0));
+                    break;
+                }
+                break;
         }
     }
 }

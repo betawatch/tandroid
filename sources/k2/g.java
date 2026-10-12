@@ -1,41 +1,31 @@
 package k2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n4.x b;
-    public final /* synthetic */ i2.g c;
+public final class g {
+    public static final g d = new bc.d().a();
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
 
-    public /* synthetic */ g(n4.x xVar, i2.g gVar, int i10) {
-        this.a = i10;
-        this.b = xVar;
-        this.c = gVar;
+    public g(bc.d dVar) {
+        this.a = dVar.a;
+        this.b = dVar.b;
+        this.c = dVar.c;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                n4.x xVar = this.b;
-                i2.g gVar = this.c;
-                synchronized (gVar) {
-                }
-                j jVar = (j) xVar.c;
-                String str = e2.d0.a;
-                j2.f fVar = ((i2.c0) jVar).a.s;
-                j2.a n10 = fVar.n((u2.f0) fVar.d.e);
-                fVar.q(n10, 1013, new j2.c(n10, gVar, 11));
-                break;
-            default:
-                n4.x xVar2 = this.b;
-                i2.g gVar2 = this.c;
-                j jVar2 = (j) xVar2.c;
-                String str2 = e2.d0.a;
-                j2.f fVar2 = ((i2.c0) jVar2).a.s;
-                j2.a p5 = fVar2.p();
-                fVar2.q(p5, 1007, new j2.c(p5, gVar2, 4));
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || g.class != obj.getClass()) {
+            return false;
+        }
+        g gVar = (g) obj;
+        return this.a == gVar.a && this.b == gVar.b && this.c == gVar.c;
+    }
+
+    public final int hashCode() {
+        return ((this.a ? 1 : 0) << 2) + ((this.b ? 1 : 0) << 1) + (this.c ? 1 : 0);
     }
 }

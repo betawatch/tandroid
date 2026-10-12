@@ -1,17 +1,25 @@
 package cc;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import b2.h;
+import n6.o;
+import rb.g;
+import z7.wf;
+import z7.yf;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c extends h {
-    public static final c c;
+    public final g b;
 
-    static {
-        c cVar = new c();
-        c = cVar;
-        cVar.setStackTrace(h.b);
+    public c(g gVar) {
+        super(5);
+        this.b = gVar;
     }
 
-    public static c a() {
-        return h.a ? new c() : c;
+    @Override // b2.h
+    public final Object Q0(Object obj) {
+        wf b10 = yf.b();
+        g gVar = this.b;
+        return new f(gVar, (bc.e) obj, b10, new o(gVar.b(), 29));
     }
 }

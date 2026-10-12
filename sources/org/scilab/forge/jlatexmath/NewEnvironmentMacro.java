@@ -1,31 +1,31 @@
 package org.scilab.forge.jlatexmath;
 
 import a1.g;
-import sc.v;
+import t8.b;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class NewEnvironmentMacro extends NewCommandMacro {
     public static void addNewEnvironment(String str, String str2, String str3, int i10) {
-        String v = v.v(str, "@env");
-        StringBuilder j3 = v.j(str2, " #");
-        int i11 = i10 + 1;
-        j3.append(i11);
-        j3.append(" ");
-        j3.append(str3);
-        NewCommandMacro.addNewCommand(v, j3.toString(), i11);
+        String u10 = b.u(str, "@env");
+        StringBuilder i11 = b.i(str2, " #");
+        int i12 = i10 + 1;
+        i11.append(i12);
+        i11.append(" ");
+        i11.append(str3);
+        NewCommandMacro.addNewCommand(u10, i11.toString(), i12);
     }
 
     public static void addReNewEnvironment(String str, String str2, String str3, int i10) {
         if (NewCommandMacro.macrocode.get(str + "@env") == null) {
-            throw new ParseException(g.q("Environment ", str, "is not defined ! Use newenvironment instead ..."));
+            throw new ParseException(g.p("Environment ", str, "is not defined ! Use newenvironment instead ..."));
         }
-        String v = v.v(str, "@env");
-        StringBuilder j3 = v.j(str2, " #");
-        int i11 = i10 + 1;
-        j3.append(i11);
-        j3.append(" ");
-        j3.append(str3);
-        NewCommandMacro.addReNewCommand(v, j3.toString(), i11);
+        String u10 = b.u(str, "@env");
+        StringBuilder i11 = b.i(str2, " #");
+        int i12 = i10 + 1;
+        i11.append(i12);
+        i11.append(" ");
+        i11.append(str3);
+        NewCommandMacro.addReNewCommand(u10, i11.toString(), i12);
     }
 }

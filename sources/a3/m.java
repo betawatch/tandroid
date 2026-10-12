@@ -2,33 +2,54 @@ package a3;
 
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
+import android.view.Surface;
+import b2.b2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m implements Handler.Callback {
     public final Handler a;
     public final /* synthetic */ n b;
 
-    public m(n nVar, r2.m mVar) {
+    public m(n nVar, r2.l lVar) {
         this.b = nVar;
-        Handler o9 = e2.d0.o(this);
-        this.a = o9;
-        mVar.d(this, o9);
+        Handler q6 = e2.m0.q(this);
+        this.a = q6;
+        lVar.h(this, q6);
     }
 
-    public final void a(long j3) {
+    public final void a(long j10) {
+        Surface surface;
         n nVar = this.b;
-        if (this != nVar.G1 || nVar.b0 == null) {
+        n4.s sVar = nVar.b1;
+        if (this != nVar.M1 || nVar.d0 == null) {
             return;
         }
-        if (j3 == Long.MAX_VALUE) {
-            nVar.L0 = true;
+        if (j10 == Long.MAX_VALUE) {
+            nVar.M0 = true;
             return;
         }
         try {
-            nVar.H0(j3);
-        } catch (i2.n e7) {
-            nVar.M0 = e7;
+            nVar.C0(j10);
+            b2 b2Var = nVar.H1;
+            if (!b2Var.equals(b2.d) && !b2Var.equals(nVar.I1)) {
+                nVar.I1 = b2Var;
+                sVar.D(b2Var);
+            }
+            nVar.O0.e++;
+            a0 a0Var = nVar.e1;
+            boolean z10 = a0Var.e != 3;
+            a0Var.e = 3;
+            a0Var.l.getClass();
+            a0Var.g = e2.m0.S(SystemClock.elapsedRealtime());
+            if (z10 && (surface = nVar.r1) != null) {
+                sVar.y(surface);
+                nVar.u1 = true;
+            }
+            nVar.h0(j10);
+        } catch (i2.m e) {
+            nVar.N0 = e;
         }
     }
 
@@ -39,7 +60,7 @@ public final class m implements Handler.Callback {
         }
         int i10 = message.arg1;
         int i11 = message.arg2;
-        String str = e2.d0.a;
+        String str = e2.m0.a;
         a(((i10 & 4294967295L) << 32) | (4294967295L & i11));
         return true;
     }

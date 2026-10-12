@@ -1,30 +1,27 @@
 package k2;
 
 import android.content.ContentResolver;
-import android.content.Context;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Handler;
-import ci.e7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d extends ContentObserver {
     public final ContentResolver a;
     public final Uri b;
-    public final /* synthetic */ e7 c;
+    public final /* synthetic */ e c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(e7 e7Var, Handler handler, ContentResolver contentResolver, Uri uri) {
+    public d(e eVar, Handler handler, ContentResolver contentResolver, Uri uri) {
         super(handler);
-        this.c = e7Var;
+        this.c = eVar;
         this.a = contentResolver;
         this.b = uri;
     }
 
     @Override // android.database.ContentObserver
     public final void onChange(boolean z10) {
-        e7 e7Var = this.c;
-        e7Var.a(b.c((Context) e7Var.b, (b2.e) e7Var.j, (a4.l) e7Var.i));
+        this.c.c();
     }
 }

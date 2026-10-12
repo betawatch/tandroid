@@ -1,32 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class f01 implements kq {
-    public final /* synthetic */ ty a;
-    public final /* synthetic */ g01 b;
+public final class f01 extends org.telegram.ui.Components.jr0 {
+    public final /* synthetic */ ProfileActivity b1;
 
-    public f01(g01 g01Var, ty tyVar) {
-        this.b = g01Var;
-        this.a = tyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f01(ProfileActivity profileActivity, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.b1 = profileActivity;
     }
 
-    @Override // org.telegram.ui.kq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        g01 g01Var = this.b;
-        g01Var.b.N1 = true;
-        this.a.removeSelfFromStack();
-        NotificationCenter notificationCenter = g01Var.b.getNotificationCenter();
-        ProfileActivity profileActivity = g01Var.b;
-        int i11 = NotificationCenter.closeChats;
-        notificationCenter.removeObserver(profileActivity, i11);
-        g01Var.b.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.kq
-    public final void a(TLRPC.User user) {
+    @Override // org.telegram.ui.Components.jr0
+    public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new hz0(this, hVar, i10, 3), 250L);
+        }
     }
 }

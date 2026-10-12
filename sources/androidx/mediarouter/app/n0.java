@@ -1,39 +1,400 @@
 package androidx.mediarouter.app;
 
-import android.widget.SeekBar;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.media.MediaMetadata;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.SystemClock;
+import android.renderscript.Allocation;
+import android.renderscript.Element;
+import android.renderscript.RenderScript;
+import android.renderscript.ScriptIntrinsicBlur;
+import android.support.v4.media.MediaDescriptionCompat;
+import android.support.v4.media.MediaMetadataCompat;
+import android.support.v4.media.session.MediaSessionCompat$Token;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.ContextThemeWrapper;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import ji.w4;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class n0 implements SeekBar.OnSeekBarChangeListener {
-    public final /* synthetic */ o0 a;
+public final class n0 extends g.t {
+    public static final /* synthetic */ int j0 = 0;
+    public boolean E;
+    public boolean F;
+    public long G;
+    public final ab.o0 H;
+    public RecyclerView I;
+    public l0 J;
+    public m0 K;
+    public HashMap L;
+    public p4.w M;
+    public HashMap N;
+    public boolean O;
+    public boolean P;
+    public boolean Q;
+    public ImageButton R;
+    public Button S;
+    public ImageView T;
+    public View U;
+    public ImageView V;
+    public TextView W;
+    public TextView X;
+    public String Y;
+    public qf.b Z;
+    public final q a0;
+    public MediaDescriptionCompat b0;
+    public e0 c0;
+    public Bitmap d0;
+    public Uri e0;
+    public final p4.y f;
+    public boolean f0;
+    public Bitmap g0;
+    public final c h;
+    public int h0;
+    public final boolean i0;
+    public p4.s n;
+    public p4.w r;
+    public final ArrayList s;
+    public final ArrayList v;
+    public final ArrayList w;
+    public final ArrayList x;
+    public final Context y;
 
-    public n0(o0 o0Var) {
-        this.a = o0Var;
+    static {
+        Log.isLoggable("MediaRouteCtrlDialog", 3);
     }
 
-    @Override // android.widget.SeekBar.OnSeekBarChangeListener
-    public final void onProgressChanged(SeekBar seekBar, int i10, boolean z10) {
-        if (z10) {
-            p4.v vVar = (p4.v) seekBar.getTag();
-            g0 g0Var = (g0) this.a.L.get(vVar.c);
-            if (g0Var != null) {
-                g0Var.u(i10 == 0);
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public n0(Context context) {
+        super(r2, r0 == 0 ? v7.a0.e(r2) : r0);
+        ContextThemeWrapper a2 = v7.a0.a(context, false);
+        int g10 = v7.a0.g(a2, R.attr.mediaRouteTheme);
+        this.n = p4.s.c;
+        this.s = new ArrayList();
+        this.v = new ArrayList();
+        this.w = new ArrayList();
+        this.x = new ArrayList();
+        int i10 = 3;
+        this.H = new ab.o0(this, i10);
+        Context context2 = getContext();
+        this.y = context2;
+        this.f = p4.y.d(context2);
+        this.i0 = p4.y.g();
+        this.h = new c(this, i10);
+        this.r = p4.y.f();
+        this.a0 = new q(this, 1);
+        h(p4.y.e());
+    }
+
+    public final void e(List list) {
+        for (int size = list.size() - 1; size >= 0; size--) {
+            p4.w wVar = (p4.w) list.get(size);
+            if (wVar.d() || !wVar.g || !wVar.h(this.n) || this.r == wVar) {
+                list.remove(size);
             }
-            vVar.j(i10);
         }
     }
 
-    @Override // android.widget.SeekBar.OnSeekBarChangeListener
-    public final void onStartTrackingTouch(SeekBar seekBar) {
-        o0 o0Var = this.a;
-        if (o0Var.M != null) {
-            o0Var.H.removeMessages(2);
+    public final void f() {
+        MediaDescriptionCompat mediaDescriptionCompat = this.b0;
+        Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
+        Uri uri = mediaDescriptionCompat != null ? mediaDescriptionCompat.f : null;
+        e0 e0Var = this.c0;
+        Bitmap bitmap2 = e0Var == null ? this.d0 : e0Var.a;
+        Uri uri2 = e0Var == null ? this.e0 : e0Var.b;
+        if (bitmap2 != bitmap || (bitmap2 == null && !Objects.equals(uri2, uri))) {
+            e0 e0Var2 = this.c0;
+            if (e0Var2 != null) {
+                e0Var2.cancel(true);
+            }
+            e0 e0Var3 = new e0(this);
+            this.c0 = e0Var3;
+            e0Var3.execute(new Void[0]);
         }
-        o0Var.M = (p4.v) seekBar.getTag();
     }
 
-    @Override // android.widget.SeekBar.OnSeekBarChangeListener
-    public final void onStopTrackingTouch(SeekBar seekBar) {
-        this.a.H.sendEmptyMessageDelayed(2, 500L);
+    public final void h(MediaSessionCompat$Token mediaSessionCompat$Token) {
+        MediaMetadataCompat mediaMetadataCompat;
+        qf.b bVar = this.Z;
+        q qVar = this.a0;
+        if (bVar != null) {
+            bVar.g0(qVar);
+            this.Z = null;
+        }
+        if (mediaSessionCompat$Token != null && this.F) {
+            qf.b bVar2 = new qf.b(this.y, mediaSessionCompat$Token);
+            this.Z = bVar2;
+            bVar2.a0(qVar);
+            MediaMetadata metadata = ((android.support.v4.media.session.h) this.Z.b).a.getMetadata();
+            if (metadata != null) {
+                a0.f fVar = MediaMetadataCompat.d;
+                Parcel obtain = Parcel.obtain();
+                metadata.writeToParcel(obtain, 0);
+                obtain.setDataPosition(0);
+                mediaMetadataCompat = MediaMetadataCompat.CREATOR.createFromParcel(obtain);
+                obtain.recycle();
+                mediaMetadataCompat.b = metadata;
+            } else {
+                mediaMetadataCompat = null;
+            }
+            this.b0 = mediaMetadataCompat != null ? mediaMetadataCompat.a() : null;
+            f();
+            k();
+        }
+    }
+
+    public final void i(p4.s sVar) {
+        if (sVar == null) {
+            throw new IllegalArgumentException("selector must not be null");
+        }
+        if (this.n.equals(sVar)) {
+            return;
+        }
+        this.n = sVar;
+        if (this.F) {
+            p4.y yVar = this.f;
+            c cVar = this.h;
+            yVar.h(cVar);
+            yVar.a(sVar, cVar, 1);
+            l();
+        }
+    }
+
+    public final void j() {
+        Context context = this.y;
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.z.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+        this.d0 = null;
+        this.e0 = null;
+        f();
+        k();
+        n();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00dc  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0100  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x010b  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x00f7  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00de  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void k() {
+        boolean isEmpty;
+        boolean isEmpty2;
+        if ((this.M != null || this.O) ? true : !this.E) {
+            this.Q = true;
+            return;
+        }
+        this.Q = false;
+        if (!this.r.g() || this.r.d()) {
+            dismiss();
+        }
+        if (this.f0) {
+            Bitmap bitmap = this.g0;
+            if (!(bitmap != null && bitmap.isRecycled()) && this.g0 != null) {
+                this.V.setVisibility(0);
+                this.V.setImageBitmap(this.g0);
+                this.V.setBackgroundColor(this.h0);
+                this.U.setVisibility(0);
+                Bitmap bitmap2 = this.g0;
+                RenderScript create = RenderScript.create(this.y);
+                Allocation createFromBitmap = Allocation.createFromBitmap(create, bitmap2);
+                Allocation createTyped = Allocation.createTyped(create, createFromBitmap.getType());
+                ScriptIntrinsicBlur create2 = ScriptIntrinsicBlur.create(create, Element.U8_4(create));
+                create2.setRadius(10.0f);
+                create2.setInput(createFromBitmap);
+                create2.forEach(createTyped);
+                Bitmap copy = bitmap2.copy(bitmap2.getConfig(), true);
+                createTyped.copyTo(copy);
+                createFromBitmap.destroy();
+                createTyped.destroy();
+                create2.destroy();
+                create.destroy();
+                this.T.setImageBitmap(copy);
+                this.f0 = false;
+                this.g0 = null;
+                this.h0 = 0;
+                MediaDescriptionCompat mediaDescriptionCompat = this.b0;
+                CharSequence charSequence = mediaDescriptionCompat != null ? null : mediaDescriptionCompat.b;
+                isEmpty = TextUtils.isEmpty(charSequence);
+                MediaDescriptionCompat mediaDescriptionCompat2 = this.b0;
+                CharSequence charSequence2 = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.c : null;
+                isEmpty2 = TextUtils.isEmpty(charSequence2);
+                if (isEmpty) {
+                    this.W.setText(charSequence);
+                } else {
+                    this.W.setText(this.Y);
+                }
+                if (!isEmpty2) {
+                    this.X.setVisibility(8);
+                    return;
+                } else {
+                    this.X.setText(charSequence2);
+                    this.X.setVisibility(0);
+                    return;
+                }
+            }
+        }
+        Bitmap bitmap3 = this.g0;
+        if (bitmap3 != null && bitmap3.isRecycled()) {
+            Log.w("MediaRouteCtrlDialog", "Can't set artwork image with recycled bitmap: " + this.g0);
+        }
+        this.V.setVisibility(8);
+        this.U.setVisibility(8);
+        this.T.setImageBitmap(null);
+        this.f0 = false;
+        this.g0 = null;
+        this.h0 = 0;
+        MediaDescriptionCompat mediaDescriptionCompat3 = this.b0;
+        if (mediaDescriptionCompat3 != null) {
+        }
+        isEmpty = TextUtils.isEmpty(charSequence);
+        MediaDescriptionCompat mediaDescriptionCompat22 = this.b0;
+        if (mediaDescriptionCompat22 != null) {
+        }
+        isEmpty2 = TextUtils.isEmpty(charSequence2);
+        if (isEmpty) {
+        }
+        if (!isEmpty2) {
+        }
+    }
+
+    public final void l() {
+        ArrayList arrayList = this.s;
+        arrayList.clear();
+        ArrayList arrayList2 = this.v;
+        arrayList2.clear();
+        ArrayList arrayList3 = this.w;
+        arrayList3.clear();
+        arrayList.addAll(DesugarCollections.unmodifiableList(this.r.v));
+        p4.v vVar = this.r.a;
+        vVar.getClass();
+        p4.y.b();
+        for (p4.w wVar : DesugarCollections.unmodifiableList(vVar.b)) {
+            w4 b10 = this.r.b(wVar);
+            if (b10 != null) {
+                p4.o oVar = (p4.o) b10.b;
+                if (oVar != null && oVar.d) {
+                    arrayList2.add(wVar);
+                }
+                if (oVar != null && oVar.e) {
+                    arrayList3.add(wVar);
+                }
+            }
+        }
+        e(arrayList2);
+        e(arrayList3);
+        e eVar = e.d;
+        Collections.sort(arrayList, eVar);
+        Collections.sort(arrayList2, eVar);
+        Collections.sort(arrayList3, eVar);
+        this.J.G();
+    }
+
+    public final void n() {
+        if (this.F) {
+            if (SystemClock.uptimeMillis() - this.G < 300) {
+                ab.o0 o0Var = this.H;
+                o0Var.removeMessages(1);
+                o0Var.sendEmptyMessageAtTime(1, this.G + 300);
+                return;
+            }
+            if ((this.M != null || this.O) ? true : !this.E) {
+                this.P = true;
+                return;
+            }
+            this.P = false;
+            if (!this.r.g() || this.r.d()) {
+                dismiss();
+            }
+            this.G = SystemClock.uptimeMillis();
+            this.J.F();
+        }
+    }
+
+    public final void o() {
+        if (this.P) {
+            n();
+        }
+        if (this.Q) {
+            k();
+        }
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.F = true;
+        this.f.a(this.n, this.h, 1);
+        l();
+        h(p4.y.e());
+    }
+
+    @Override // g.t, androidx.activity.n, android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        setContentView(R.layout.mr_cast_dialog);
+        View decorView = getWindow().getDecorView();
+        Context context = this.y;
+        decorView.setBackgroundColor(context.getColor(v7.a0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        ImageButton imageButton = (ImageButton) findViewById(R.id.mr_cast_close_button);
+        this.R = imageButton;
+        imageButton.setColorFilter(-1);
+        this.R.setOnClickListener(new d0(this, 0));
+        Button button = (Button) findViewById(R.id.mr_cast_stop_button);
+        this.S = button;
+        button.setTextColor(-1);
+        this.S.setOnClickListener(new d0(this, 1));
+        this.J = new l0(this);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_cast_list);
+        this.I = recyclerView;
+        recyclerView.setAdapter(this.J);
+        this.I.setLayoutManager(new s4.b0());
+        this.K = new m0(this);
+        this.L = new HashMap();
+        this.N = new HashMap();
+        this.T = (ImageView) findViewById(R.id.mr_cast_meta_background);
+        this.U = findViewById(R.id.mr_cast_meta_black_scrim);
+        this.V = (ImageView) findViewById(R.id.mr_cast_meta_art);
+        TextView textView = (TextView) findViewById(R.id.mr_cast_meta_title);
+        this.W = textView;
+        textView.setTextColor(-1);
+        TextView textView2 = (TextView) findViewById(R.id.mr_cast_meta_subtitle);
+        this.X = textView2;
+        textView2.setTextColor(-1);
+        this.Y = context.getResources().getString(R.string.mr_cast_dialog_title_view_placeholder);
+        this.E = true;
+        j();
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.F = false;
+        this.f.h(this.h);
+        this.H.removeCallbacksAndMessages(null);
+        h(null);
     }
 }

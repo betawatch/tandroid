@@ -1,29 +1,43 @@
 package org.telegram.ui;
 
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.webrtc.RendererCommon;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class mi1 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ wi1 a;
+public final /* synthetic */ class mi1 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dj1 b;
+    public final /* synthetic */ VoIPService c;
 
-    public mi1(wi1 wi1Var) {
-        this.a = wi1Var;
+    public /* synthetic */ mi1(dj1 dj1Var, VoIPService voIPService, int i10) {
+        this.a = i10;
+        this.b = dj1Var;
+        this.c = voIPService;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        wi1 wi1Var = this.a;
-        com.google.android.gms.internal.cast.p pVar = wi1Var.l1;
-        if (pVar != null) {
-            pVar.run();
-            wi1Var.l1 = null;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                dj1 dj1Var = this.b;
+                AndroidUtilities.runOnUIThread(new ni1(dj1Var, 8));
+                int i10 = dj1Var.L;
+                if (i10 > 0) {
+                    this.c.sendCallRating(i10);
+                    break;
+                }
+                break;
+            default:
+                dj1 dj1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new ni1(dj1Var2, 10));
+                int i11 = dj1Var2.L;
+                if (i11 > 0) {
+                    this.c.sendCallRating(i11);
+                    break;
+                }
+                break;
         }
-        AndroidUtilities.runOnUIThread(new nz0(this, 23));
-    }
-
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

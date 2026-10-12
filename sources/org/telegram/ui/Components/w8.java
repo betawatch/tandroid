@@ -1,32 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class w8 extends cr {
-    public final /* synthetic */ int f0;
+public final class w8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h9 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w8(Context context, boolean z10, br brVar, int i10) {
-        super(context, z10, brVar);
-        this.f0 = i10;
+    public /* synthetic */ w8(h9 h9Var, int i10) {
+        this.a = i10;
+        this.b = h9Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.f0) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
+                super.onAnimationEnd(animator);
+                this.b.f = false;
                 break;
             default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
+                h9 h9Var = this.b;
+                h9Var.i0(h9Var.F ? 1.0f : 0.0f, false);
+                h9Var.F = false;
                 break;
         }
     }

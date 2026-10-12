@@ -1,36 +1,86 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v9 implements Utilities.Callback2 {
+public final /* synthetic */ class v9 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ v9(MessagesController messagesController, Utilities.Callback2 callback2, int i10) {
+    public /* synthetic */ v9(MessagesController messagesController, long j10, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = callback2;
+        this.c = j10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$toggleChatNoForwards$277(this.c, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$setDefaultBannedRole$96(this.c);
                 break;
             case 1:
-                this.b.lambda$fetchCommunityPendingJoinRequests$245(this.c, (TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$setChatReactions$473(this.c);
                 break;
             case 2:
-                this.b.lambda$fetchCommunityJoinedChats$246(this.c, (TL_communities.ParticipantJoinedChats) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$deleteParticipantFromChat$311(this.c);
+                break;
+            case 3:
+                this.b.lambda$setBoostsToUnblockRestrictions$94(this.c);
+                break;
+            case 4:
+                this.b.lambda$deleteDialog$139(this.c);
+                break;
+            case 5:
+                this.b.lambda$addUserToChat$297(this.c);
+                break;
+            case 6:
+                this.b.lambda$addUserToChat$308(this.c);
+                break;
+            case 7:
+                this.b.lambda$addUserToChat$306(this.c);
+                break;
+            case 8:
+                this.b.lambda$processUpdateArray$386(this.c);
+                break;
+            case 9:
+                this.b.lambda$getSavedReactionTags$491(this.c);
+                break;
+            case 10:
+                this.b.lambda$getChannelDifference$333(this.c);
+                break;
+            case 11:
+                this.b.lambda$getChannelDifference$334(this.c);
+                break;
+            case 12:
+                this.b.lambda$getChannelDifference$335(this.c);
+                break;
+            case 13:
+                this.b.lambda$getChannelDifference$336(this.c);
+                break;
+            case 14:
+                this.b.lambda$setChannelSlowMode$92(this.c);
+                break;
+            case 15:
+                this.b.lambda$deleteParticipantFromChat$314(this.c);
+                break;
+            case 16:
+                this.b.lambda$deleteDialog$138(this.c);
+                break;
+            case 17:
+                this.b.lambda$removeDialog$133(this.c);
+                break;
+            case 18:
+                this.b.lambda$setParticipantBannedRole$89(this.c);
+                break;
+            case 19:
+                this.b.lambda$getChannelDifference$343(this.c);
+                break;
+            case 20:
+                this.b.lambda$getChannelDifference$344(this.c);
                 break;
             default:
-                this.b.lambda$fetchChatsToAddToCommunity$251(this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$getChannelDifference$342(this.c);
                 break;
         }
     }

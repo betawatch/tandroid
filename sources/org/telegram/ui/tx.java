@@ -1,157 +1,105 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class tx extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ty c;
+public final class tx extends r71 {
+    public final /* synthetic */ i71[] d2;
+    public final /* synthetic */ yy e2;
 
-    public /* synthetic */ tx(ty tyVar, boolean z10, int i10) {
-        this.a = i10;
-        this.c = tyVar;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tx(yy yyVar, yy yyVar2, Activity activity, Integer num, org.telegram.ui.ActionBar.c6 c6Var, i71[] i71VarArr) {
+        super(yyVar2, activity, true, num, 0, c6Var);
+        this.e2 = yyVar;
+        this.d2 = i71VarArr;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ty tyVar = this.c;
-                tyVar.o3.unlock();
-                if (tyVar.w1 == animator) {
-                    if (this.b) {
-                        tyVar.e0[0].a.c1();
-                    } else {
-                        py pyVar = tyVar.e0[0].a;
-                        if (pyVar.g1) {
-                            pyVar.g1 = false;
-                            pyVar.K0(false);
-                        }
-                    }
-                    tyVar.w1 = null;
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.ui.r71
+    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
         int i10;
-        org.telegram.ui.ActionBar.v0 v0Var;
-        switch (this.a) {
-            case 0:
-                ty tyVar = this.c;
-                tyVar.o3.unlock();
-                if (tyVar.w1 == animator) {
-                    tyVar.x4(false, true);
-                    boolean z10 = this.b;
-                    if (z10) {
-                        tyVar.e0[0].a.c1();
-                        kx kxVar = tyVar.E0;
-                        if (kxVar != null) {
-                            kxVar.setVisibility(8);
-                        }
-                        tyVar.q3 = true;
-                        Activity parentActivity = tyVar.getParentActivity();
-                        i10 = ((org.telegram.ui.ActionBar.n2) tyVar).classGuid;
-                        AndroidUtilities.requestAdjustResize(parentActivity, i10);
-                        tyVar.j0.setVisibility(8);
-                        nx nxVar = tyVar.F3;
-                        if (nxVar != null) {
-                            nxVar.setVisibility(8);
-                        }
-                    } else {
-                        tyVar.r3 = false;
-                        dy dyVar = tyVar.C0;
-                        if (dyVar != null) {
-                            dyVar.setVisibility(8);
-                        }
-                        jy jyVar = tyVar.X;
-                        if (jyVar != null) {
-                            jyVar.c();
-                        }
-                        dy dyVar2 = tyVar.C0;
-                        if (dyVar2 != null) {
-                            dyVar2.A0.clear();
-                            dyVar2.J();
-                        }
-                        py pyVar = tyVar.e0[0].a;
-                        if (pyVar.g1) {
-                            pyVar.g1 = false;
-                            pyVar.K0(false);
-                        }
-                        tyVar.q3 = false;
-                        nx nxVar2 = tyVar.F3;
-                        if (nxVar2 != null) {
-                            nxVar2.setVisibility(0);
-                        }
+        if (tL_starGiftUnique == null) {
+            return true;
+        }
+        i10 = ((org.telegram.ui.ActionBar.m2) this.e2).currentAccount;
+        return zh.n5.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.ui.r71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        TLRPC.TL_emojiStatus tL_emojiStatus;
+        TLRPC.EmojiStatus emojiStatus;
+        int i10;
+        int i11;
+        int i12;
+        org.telegram.ui.ActionBar.c6 c6Var;
+        i71[] i71VarArr = this.d2;
+        yy yyVar = this.e2;
+        if (l4 == null) {
+            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
+        } else {
+            if (tL_starGiftUnique != null) {
+                i10 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
+                TL_stars.SavedStarGift n10 = zh.n5.y(i10, false).n(tL_starGiftUnique.id);
+                if (n10 != null && MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) < 2) {
+                    MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
+                    Context context = getContext();
+                    i11 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
+                    i12 = ((org.telegram.ui.ActionBar.m2) yyVar).currentAccount;
+                    long clientUserId = UserConfig.getInstance(i12).getClientUserId();
+                    c6Var = ((org.telegram.ui.ActionBar.m2) yyVar).resourceProvider;
+                    zh.r3 r3Var = new zh.r3(context, i11, clientUserId, c6Var, null);
+                    r3Var.l2(n10, null);
+                    r3Var.o2();
+                    r3Var.show();
+                    i71 i71Var = i71VarArr[0];
+                    if (i71Var != null) {
+                        yyVar.M0 = null;
+                        i71Var.dismiss();
+                        return;
                     }
-                    View view = tyVar.fragmentView;
-                    if (view != null) {
-                        view.requestLayout();
-                    }
-                    tyVar.A4(z10 ? 1.0f : 0.0f);
-                    tyVar.e0[0].a.setVerticalScrollBarEnabled(true);
-                    dy dyVar3 = tyVar.C0;
-                    if (dyVar3 != null) {
-                        dyVar3.setBackground(null);
-                    }
-                    tyVar.w1 = null;
-                    break;
+                    return;
                 }
-                break;
-            case 1:
-                ty tyVar2 = this.c;
-                tyVar2.O3 = null;
-                if (!this.b && (v0Var = tyVar2.m0) != null) {
-                    v0Var.setVisibility(8);
-                    break;
+                TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
+                tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
+                tL_emojiStatus = tL_inputEmojiStatusCollectible;
+                if (num != null) {
+                    tL_inputEmojiStatusCollectible.flags |= 1;
+                    tL_inputEmojiStatusCollectible.until = num.intValue();
+                    tL_emojiStatus = tL_inputEmojiStatusCollectible;
                 }
-                break;
-            default:
-                ty tyVar3 = this.c;
-                tyVar3.I = null;
-                boolean z11 = this.b;
-                tyVar3.K = z11;
-                if (!z11 && !tyVar3.L) {
-                    tyVar3.E0.setVisibility(8);
+            } else {
+                TLRPC.TL_emojiStatus tL_emojiStatus2 = new TLRPC.TL_emojiStatus();
+                tL_emojiStatus2.document_id = l4.longValue();
+                tL_emojiStatus = tL_emojiStatus2;
+                if (num != null) {
+                    tL_emojiStatus2.flags |= 1;
+                    tL_emojiStatus2.until = num.intValue();
+                    tL_emojiStatus = tL_emojiStatus2;
                 }
-                if (z11) {
-                    tyVar3.x3 = -AndroidUtilities.dp(81.0f);
-                    tyVar3.z4(-tyVar3.R3());
-                } else {
-                    tyVar3.z4(0.0f);
-                    tyVar3.x3 = AndroidUtilities.dp(81.0f);
-                }
-                int i11 = 0;
-                while (true) {
-                    sy[] syVarArr = tyVar3.e0;
-                    if (i11 >= syVarArr.length) {
-                        View view2 = tyVar3.fragmentView;
-                        if (view2 != null) {
-                            view2.requestLayout();
-                            break;
-                        }
-                    } else {
-                        sy syVar = syVarArr[i11];
-                        if (syVar != null) {
-                            syVar.a.requestLayout();
-                        }
-                        i11++;
-                    }
-                }
-                break;
+            }
+            emojiStatus = tL_emojiStatus;
+        }
+        yyVar.getMessagesController().updateEmojiStatus(emojiStatus, tL_starGiftUnique);
+        if (l4 != null) {
+            org.telegram.ui.Cells.o oVar = yyVar.E3;
+            ah.i1 i1Var = new ah.i1();
+            long longValue = l4.longValue();
+            i1Var.g = longValue;
+            i1Var.h = longValue;
+            oVar.a(i1Var);
+        }
+        i71 i71Var2 = i71VarArr[0];
+        if (i71Var2 != null) {
+            yyVar.M0 = null;
+            i71Var2.dismiss();
         }
     }
 }

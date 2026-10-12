@@ -1,19 +1,19 @@
 package com.googlecode.mp4parser;
 
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
-import m2.t;
+import ji.w4;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class c extends a {
-    public static final /* synthetic */ t c;
-    public static final /* synthetic */ t d;
+    public static final /* synthetic */ w4 c;
+    public static final /* synthetic */ w4 d;
     public int a;
     public int b;
 
     static {
-        se.a aVar = new se.a(c.class, "AbstractFullBox.java");
+        te.a aVar = new te.a(c.class, "AbstractFullBox.java");
         c = aVar.e(aVar.d("setVersion", "com.googlecode.mp4parser.AbstractFullBox", "int", "version", "void"));
         d = aVar.e(aVar.d("setFlags", "com.googlecode.mp4parser.AbstractFullBox", "int", "flags", "void"));
     }
@@ -43,7 +43,7 @@ public abstract class c extends a {
     }
 
     public final void g(int i10) {
-        e2.q(se.a.c(d, this, this, new Integer(i10)));
+        k3.p(te.a.c(d, this, this, new Integer(i10)));
         this.b = i10;
     }
 
@@ -53,7 +53,7 @@ public abstract class c extends a {
     }
 
     public final void h() {
-        e2.q(se.a.c(c, this, this, new Integer(1)));
+        k3.p(te.a.c(c, this, this, new Integer(1)));
         this.a = 1;
     }
 

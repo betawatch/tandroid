@@ -1,36 +1,71 @@
 package b2;
 
-import android.os.Bundle;
+import java.util.Arrays;
+import java.util.List;
+import v7.c8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class u0 extends Exception {
-    public static final String d;
-    public static final String e;
-    public static final String f;
-    public static final String h;
-    public static final String n;
-    public static final String r;
-    public final int a;
+public final class u0 {
+    public final t0[] a;
     public final long b;
-    public final Bundle c;
 
-    static {
-        String str = e2.d0.a;
-        d = Integer.toString(0, 36);
-        e = Integer.toString(1, 36);
-        f = Integer.toString(2, 36);
-        h = Integer.toString(3, 36);
-        n = Integer.toString(4, 36);
-        r = Integer.toString(5, 36);
+    public u0(t0... t0VarArr) {
+        this(-9223372036854775807L, t0VarArr);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u0(String str, Throwable th2, int i10, long j3) {
-        super(str, th2);
-        Bundle bundle = Bundle.EMPTY;
-        this.a = i10;
-        this.c = bundle;
-        this.b = j3;
+    public final u0 a(t0... t0VarArr) {
+        if (t0VarArr.length == 0) {
+            return this;
+        }
+        String str = e2.m0.a;
+        t0[] t0VarArr2 = this.a;
+        Object[] copyOf = Arrays.copyOf(t0VarArr2, t0VarArr2.length + t0VarArr.length);
+        System.arraycopy(t0VarArr, 0, copyOf, t0VarArr2.length, t0VarArr.length);
+        return new u0(this.b, (t0[]) copyOf);
+    }
+
+    public final u0 b(u0 u0Var) {
+        return u0Var == null ? this : a(u0Var.a);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && u0.class == obj.getClass()) {
+            u0 u0Var = (u0) obj;
+            if (Arrays.equals(this.a, u0Var.a) && this.b == u0Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return c8.b(this.b) + (Arrays.hashCode(this.a) * 31);
+    }
+
+    public final String toString() {
+        String str;
+        StringBuilder sb2 = new StringBuilder("entries=");
+        sb2.append(Arrays.toString(this.a));
+        long j10 = this.b;
+        if (j10 == -9223372036854775807L) {
+            str = "";
+        } else {
+            str = ", presentationTimeUs=" + j10;
+        }
+        sb2.append(str);
+        return sb2.toString();
+    }
+
+    public u0(long j10, t0... t0VarArr) {
+        this.b = j10;
+        this.a = t0VarArr;
+    }
+
+    public u0(List list) {
+        this((t0[]) list.toArray(new t0[0]));
     }
 }

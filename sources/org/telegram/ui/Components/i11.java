@@ -1,45 +1,72 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.style.ReplacementSpan;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i11 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k11 b;
+public final class i11 extends ReplacementSpan {
+    public static final /* synthetic */ int f = 0;
+    public ImageReceiver a;
+    public int b;
+    public int c;
+    public final boolean d;
+    public final int e;
 
-    public /* synthetic */ i11(k11 k11Var, int i10) {
-        this.a = i10;
-        this.b = k11Var;
+    public i11(View view, Bitmap bitmap, int i10, int i11, int i12, int i13) {
+        this.b = i10;
+        this.c = i11;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.a = imageReceiver;
+        imageReceiver.setInvalidateAll(true);
+        imageReceiver.setImageBitmap(bitmap);
+        imageReceiver.setColorFilter(new PorterDuffColorFilter(i12, PorterDuff.Mode.SRC_IN));
+        this.e = i13;
+        this.d = true;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.a();
-                break;
-            case 1:
-                k11 k11Var = this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(k11Var.getContext());
-                alertDialog$Builder.a.T = LocaleController.getString(R.string.TosDeclineDeleteAccount);
-                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Deactivate), new i11(k11Var, 2));
-                hg.c.p(R.string.Cancel, alertDialog$Builder, null);
-                break;
-            default:
-                k11 k11Var2 = this.b;
-                org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(k11Var2.getContext(), 3, null);
-                b2Var2.g0 = false;
-                TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
-                deleteaccount.reason = "Decline ToS update";
-                ConnectionsManager.getInstance(k11Var2.d).sendRequest(deleteaccount, new org.telegram.ui.oo(16, k11Var2, b2Var2));
-                b2Var2.show();
-                break;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int i15 = this.b;
+        int i16 = this.c;
+        ImageReceiver imageReceiver = this.a;
+        canvas.save();
+        if (this.d) {
+            imageReceiver.setImageCoords((int) f7, i13 - (i16 - this.e), i15, i16);
+        } else {
+            imageReceiver.setImageCoords((int) f7, i2.d.z(org.telegram.messenger.q.D(4.0f, i14, i12), i16, 2, i12), i15, i16);
         }
+        imageReceiver.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        int i12 = this.c;
+        if (fontMetricsInt != null) {
+            if (this.d) {
+                int i13 = this.e;
+                int i14 = -(i12 - i13);
+                fontMetricsInt.ascent = i14;
+                fontMetricsInt.top = i14;
+                fontMetricsInt.descent = i13;
+                fontMetricsInt.bottom = i13;
+            } else {
+                int dp = ((-i12) / 2) - AndroidUtilities.dp(4.0f);
+                fontMetricsInt.ascent = dp;
+                fontMetricsInt.top = dp;
+                int dp2 = (i12 - (i12 / 2)) - AndroidUtilities.dp(4.0f);
+                fontMetricsInt.descent = dp2;
+                fontMetricsInt.bottom = dp2;
+            }
+        }
+        return this.b;
     }
 }

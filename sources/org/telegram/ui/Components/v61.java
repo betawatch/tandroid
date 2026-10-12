@@ -1,38 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.ui.LaunchActivity;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.method.LinkMovementMethod;
+import android.text.style.CharacterStyle;
+import android.view.MotionEvent;
+import android.widget.TextView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class v61 extends URLSpan {
-    public final t11 a;
-    public boolean b;
+public final class v61 extends LinkMovementMethod {
+    public final /* synthetic */ UndoView a;
 
-    public v61(String str, t11 t11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = t11Var;
+    public v61(UndoView undoView) {
+        this.a = undoView;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        if (this.b && (view.getContext() instanceof LaunchActivity)) {
-            ((LaunchActivity) view.getContext()).X0 = true;
-        }
-        of.f.p(view.getContext(), Uri.parse(getURL()), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int color = textPaint.getColor();
-        super.updateDrawState(textPaint);
-        t11 t11Var = this.a;
-        if (t11Var != null) {
-            t11Var.a(textPaint);
-            textPaint.setUnderlineText(textPaint.linkColor == color);
+    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
+    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
+        CharacterStyle[] characterStyleArr;
+        try {
+            if (motionEvent.getAction() != 0 || ((characterStyleArr = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class)) != null && characterStyleArr.length != 0)) {
+                if (motionEvent.getAction() != 1) {
+                    return super.onTouchEvent(textView, spannable, motionEvent);
+                }
+                CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class);
+                if (characterStyleArr2 != null && characterStyleArr2.length > 0) {
+                    this.a.b(characterStyleArr2[0]);
+                }
+                Selection.removeSelection(spannable);
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return false;
         }
     }
 }

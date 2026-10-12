@@ -1,57 +1,6 @@
 package b2;
 
-import android.net.Uri;
-import android.os.Bundle;
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class m0 {
-    public CharSequence A;
-    public Integer B;
-    public Integer C;
-    public CharSequence D;
-    public CharSequence E;
-    public CharSequence F;
-    public Integer G;
-    public Bundle H;
-    public e9.i0 I;
-    public CharSequence a;
-    public CharSequence b;
-    public CharSequence c;
-    public CharSequence d;
-    public CharSequence e;
-    public CharSequence f;
-    public CharSequence g;
-    public Long h;
-    public c1 i;
-    public c1 j;
-    public byte[] k;
-    public Integer l;
-    public Uri m;
-    public Integer n;
-    public Integer o;
-    public Integer p;
-    public Boolean q;
-    public Boolean r;
-    public Integer s;
-    public Integer t;
-    public Integer u;
-    public Integer v;
-    public Integer w;
-    public Integer x;
-    public CharSequence y;
-    public CharSequence z;
-
-    public m0() {
-        e9.g0 g0Var = e9.i0.b;
-        this.I = e9.a1.e;
-    }
-
-    public final void a(int i10, byte[] bArr) {
-        if (this.k == null || i10 == 3 || !Objects.equals(this.l, 3)) {
-            this.k = (byte[]) bArr.clone();
-            this.l = Integer.valueOf(i10);
-        }
-    }
+public final class m0 extends o0 {
 }

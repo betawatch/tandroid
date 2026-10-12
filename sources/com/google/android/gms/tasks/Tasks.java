@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import n6.l;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class Tasks {
     private Tasks() {
@@ -90,9 +90,9 @@ public final class Tasks {
         return whenAllSuccess(TaskExecutors.MAIN_THREAD, collection);
     }
 
-    public static <T> Task<T> withTimeout(Task<T> task, long j3, TimeUnit timeUnit) {
+    public static <T> Task<T> withTimeout(Task<T> task, long j10, TimeUnit timeUnit) {
         l.i(task, "Task must not be null");
-        l.a("Timeout must be positive", j3 > 0);
+        l.a("Timeout must be positive", j10 > 0);
         l.i(timeUnit, "TimeUnit must not be null");
         final zzb zzbVar = new zzb();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(zzbVar);
@@ -102,7 +102,7 @@ public final class Tasks {
             public final void run() {
                 TaskCompletionSource.this.trySetException(new TimeoutException());
             }
-        }, timeUnit.toMillis(j3));
+        }, timeUnit.toMillis(j10));
         task.addOnCompleteListener(new OnCompleteListener() { // from class: com.google.android.gms.tasks.zzy
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task2) {
@@ -193,7 +193,7 @@ public final class Tasks {
         return forResult(null);
     }
 
-    public static <TResult> TResult await(Task<TResult> task, long j3, TimeUnit timeUnit) {
+    public static <TResult> TResult await(Task<TResult> task, long j10, TimeUnit timeUnit) {
         if (Looper.getMainLooper() != Looper.myLooper()) {
             Looper myLooper = Looper.myLooper();
             if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
@@ -206,7 +206,7 @@ public final class Tasks {
             }
             zzad zzadVar = new zzad(null);
             zzb(task, zzadVar);
-            if (zzadVar.zzb(j3, timeUnit)) {
+            if (zzadVar.zzb(j10, timeUnit)) {
                 return (TResult) zza(task);
             }
             throw new TimeoutException("Timed out waiting for Task");

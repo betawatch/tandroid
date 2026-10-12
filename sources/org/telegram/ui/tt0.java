@@ -1,65 +1,29 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.SurfaceView;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class tt0 extends l4 {
-    public final /* synthetic */ PhotoViewer h;
+public final class tt0 extends org.telegram.ui.Components.p81 {
+    public final /* synthetic */ PhotoViewer h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tt0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.h = photoViewer;
+    public tt0(PhotoViewer photoViewer, Context context, wr0 wr0Var) {
+        super(context, wr0Var);
+        this.h0 = photoViewer;
     }
 
     @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (this.h.T8) {
-            return;
-        }
-        super.draw(canvas);
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        PhotoViewer.X(this.h0);
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        PhotoViewer photoViewer = this.h;
-        if (view == photoViewer.E3 && photoViewer.g4) {
-            return true;
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 == 0) {
+            PhotoViewer.X(this.h0);
         }
-        return super.drawChild(canvas, view, j3);
-    }
-
-    @Override // org.telegram.ui.l4, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        PhotoViewer photoViewer = this.h;
-        ImageView imageView = photoViewer.x3;
-        if (imageView != null) {
-            ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
-            layoutParams.width = getMeasuredWidth();
-            layoutParams.height = getMeasuredHeight();
-        }
-        TextureView textureView = photoViewer.B2;
-        if (textureView instanceof org.telegram.ui.Components.z71) {
-            textureView.setPivotX(textureView.getMeasuredWidth() / 2);
-            photoViewer.E2.setPivotX(photoViewer.B2.getMeasuredWidth() / 2);
-        } else {
-            if (textureView != null) {
-                textureView.setPivotX(0.0f);
-            }
-            SurfaceView surfaceView = photoViewer.C2;
-            if (surfaceView != null) {
-                surfaceView.setPivotX(0.0f);
-            }
-            photoViewer.E2.setPivotX(0.0f);
-        }
-        photoViewer.z0();
     }
 }

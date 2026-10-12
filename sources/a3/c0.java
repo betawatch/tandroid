@@ -1,24 +1,24 @@
 package a3;
 
 import android.hardware.display.DisplayManager;
+import android.view.Choreographer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class c0 implements DisplayManager.DisplayListener {
-    public final DisplayManager a;
-    public final /* synthetic */ e0 b;
+public abstract class c0 implements DisplayManager.DisplayListener {
+    public final Choreographer a;
+    public final DisplayManager b;
+    public volatile long c = -9223372036854775807L;
+    public volatile long d = -9223372036854775807L;
 
-    public c0(e0 e0Var, DisplayManager displayManager) {
-        this.b = e0Var;
-        this.a = displayManager;
+    public c0(Choreographer choreographer, DisplayManager displayManager) {
+        this.a = choreographer;
+        this.b = displayManager;
     }
 
-    @Override // android.hardware.display.DisplayManager.DisplayListener
-    public final void onDisplayChanged(int i10) {
-        if (i10 == 0) {
-            e0.a(this.b, this.a.getDisplay(0));
-        }
-    }
+    public abstract void a();
+
+    public abstract void b();
 
     @Override // android.hardware.display.DisplayManager.DisplayListener
     public final void onDisplayAdded(int i10) {

@@ -11,7 +11,7 @@ public final class s4 extends u4 implements i5 {
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {
-        return j$.com.android.tools.r8.a.d(this, longConsumer);
+        return j$.com.android.tools.r8.a.c(this, longConsumer);
     }
 
     @Override // j$.util.stream.i5
@@ -30,7 +30,7 @@ public final class s4 extends u4 implements i5 {
     }
 
     @Override // j$.util.stream.u4, j$.util.stream.j5
-    public final void accept(long j3) {
+    public final void accept(long j10) {
         this.b++;
     }
 }

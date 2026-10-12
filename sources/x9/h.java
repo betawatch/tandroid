@@ -1,67 +1,132 @@
 package x9;
 
-import java.io.InputStream;
-import java.io.RandomAccessFile;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.res.Resources;
+import android.os.Build;
+import android.os.Debug;
+import android.util.Log;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Scanner;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class h extends InputStream {
-    public int a;
-    public int b;
-    public final /* synthetic */ j c;
+public abstract class h {
+    public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
-    public h(j jVar, g gVar) {
-        this.c = jVar;
-        this.a = jVar.d(gVar.a + 4);
-        this.b = gVar.b;
+    public static ExecutorService a(String str) {
+        ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), new c5.x(str, new AtomicLong(1L)), new ThreadPoolExecutor.DiscardPolicy()));
+        TimeUnit timeUnit = TimeUnit.SECONDS;
+        Runtime.getRuntime().addShutdownHook(new Thread(new u(str, unconfigurableExecutorService), "Crashlytics Shutdown Hook for ".concat(str)));
+        return unconfigurableExecutorService;
     }
 
-    @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        if (bArr == null) {
-            throw new NullPointerException("buffer");
+    public static synchronized long b(Context context) {
+        long j10;
+        synchronized (h.class) {
+            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+            ((ActivityManager) context.getSystemService("activity")).getMemoryInfo(memoryInfo);
+            j10 = memoryInfo.totalMem;
         }
-        if ((i10 | i11) < 0 || i11 > bArr.length - i10) {
-            throw new ArrayIndexOutOfBoundsException();
+        return j10;
+    }
+
+    public static void c(Closeable closeable, String str) {
+        if (closeable != null) {
+            try {
+                closeable.close();
+            } catch (IOException e) {
+                Log.e("FirebaseCrashlytics", str, e);
+            }
         }
-        int i12 = this.b;
-        if (i12 <= 0) {
-            return -1;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v1, types: [int] */
+    /* JADX WARN: Type inference failed for: r0v5 */
+    /* JADX WARN: Type inference failed for: r0v6 */
+    public static int d() {
+        boolean g10 = g();
+        ?? r02 = g10;
+        if (h()) {
+            r02 = (g10 ? 1 : 0) | 2;
         }
-        if (i11 > i12) {
-            i11 = i12;
-        }
-        int i13 = this.a;
-        j jVar = this.c;
-        RandomAccessFile randomAccessFile = jVar.a;
-        int d = jVar.d(i13);
-        int i14 = d + i11;
-        int i15 = jVar.b;
-        if (i14 <= i15) {
-            randomAccessFile.seek(d);
-            randomAccessFile.readFully(bArr, i10, i11);
+        return (Debug.isDebuggerConnected() || Debug.waitingForDebugger()) ? r02 | 4 : r02;
+    }
+
+    public static int e(Context context, String str, String str2) {
+        String packageName;
+        Resources resources = context.getResources();
+        int i10 = context.getApplicationContext().getApplicationInfo().icon;
+        if (i10 > 0) {
+            try {
+                packageName = context.getResources().getResourcePackageName(i10);
+                if ("android".equals(packageName)) {
+                    packageName = context.getPackageName();
+                }
+            } catch (Resources.NotFoundException unused) {
+                packageName = context.getPackageName();
+            }
         } else {
-            int i16 = i15 - d;
-            randomAccessFile.seek(d);
-            randomAccessFile.readFully(bArr, i10, i16);
-            randomAccessFile.seek(16L);
-            randomAccessFile.readFully(bArr, i10 + i16, i11 - i16);
+            packageName = context.getPackageName();
         }
-        this.a = jVar.d(this.a + i11);
-        this.b -= i11;
-        return i11;
+        return resources.getIdentifier(str, str2, packageName);
     }
 
-    @Override // java.io.InputStream
-    public final int read() {
-        if (this.b == 0) {
-            return -1;
+    public static String f(byte[] bArr) {
+        char[] cArr = new char[bArr.length * 2];
+        for (int i10 = 0; i10 < bArr.length; i10++) {
+            byte b10 = bArr[i10];
+            int i11 = i10 * 2;
+            char[] cArr2 = a;
+            cArr[i11] = cArr2[(b10 & 255) >>> 4];
+            cArr[i11 + 1] = cArr2[b10 & 15];
         }
-        j jVar = this.c;
-        jVar.a.seek(this.a);
-        int read = jVar.a.read();
-        this.a = jVar.d(this.a + 1);
-        this.b--;
-        return read;
+        return new String(cArr);
+    }
+
+    public static boolean g() {
+        if (Build.PRODUCT.contains("sdk")) {
+            return true;
+        }
+        String str = Build.HARDWARE;
+        return str.contains("goldfish") || str.contains("ranchu");
+    }
+
+    public static boolean h() {
+        boolean g10 = g();
+        String str = Build.TAGS;
+        if ((g10 || str == null || !str.contains("test-keys")) && !t8.b.t("/system/app/Superuser.apk")) {
+            return !g10 && new File("/system/xbin/su").exists();
+        }
+        return true;
+    }
+
+    public static String i(String str) {
+        byte[] bytes = str.getBytes();
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
+            messageDigest.update(bytes);
+            return f(messageDigest.digest());
+        } catch (NoSuchAlgorithmException e) {
+            Log.e("FirebaseCrashlytics", "Could not create hashing algorithm: SHA-1, returning empty string.", e);
+            return "";
+        }
+    }
+
+    public static String j(FileInputStream fileInputStream) {
+        Scanner useDelimiter = new Scanner(fileInputStream).useDelimiter("\\A");
+        return useDelimiter.hasNext() ? useDelimiter.next() : "";
     }
 }

@@ -20,13 +20,12 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import n6.l;
 import org.telegram.tgnet.TLObject;
-import t7.t;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e {
-    public static final na.d b;
-    public static final ob.a c;
+    public static final rb.b b;
+    public static final sb.a c;
     public static Boolean d = null;
     public static String e = null;
     public static boolean f = false;
@@ -34,15 +33,16 @@ public final class e {
     public static Boolean h;
     public static final ThreadLocal i = new ThreadLocal();
     public static final n1 j = new n1(3);
-    public static final t k = new t();
+    public static final pb.a k;
     public static j l;
     public static k m;
     public final Context a;
 
     static {
         int i10 = 27;
-        b = new na.d(i10);
-        c = new ob.a(i10);
+        k = new pb.a(i10);
+        b = new rb.b(i10);
+        c = new sb.a(i10);
     }
 
     public e(Context context) {
@@ -69,7 +69,7 @@ public final class e {
     }
 
     public static e c(Context context, d dVar, String str) {
-        long j3;
+        long j10;
         e eVar;
         Boolean bool;
         x6.a V0;
@@ -90,18 +90,18 @@ public final class e {
         long longValue = l4.longValue();
         try {
             n1Var.set(Long.valueOf(SystemClock.uptimeMillis()));
-            a3.l q6 = dVar.q(context, str, k);
-            j3 = longValue;
+            a3.l p5 = dVar.p(context, str, k);
+            j10 = longValue;
             try {
-                Log.i("DynamiteModule", "Considering local module " + str + ":" + q6.a + " and remote module " + str + ":" + q6.b);
-                int i10 = q6.c;
+                Log.i("DynamiteModule", "Considering local module " + str + ":" + p5.a + " and remote module " + str + ":" + p5.b);
+                int i10 = p5.c;
                 if (i10 != 0) {
                     if (i10 == -1) {
-                        if (q6.a != 0) {
+                        if (p5.a != 0) {
                             i10 = -1;
                         }
                     }
-                    if (i10 != 1 || q6.b != 0) {
+                    if (i10 != 1 || p5.b != 0) {
                         if (i10 == -1) {
                             Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
                             eVar = new e(applicationContext);
@@ -110,7 +110,7 @@ public final class e {
                                 throw new b("VersionPolicy returned invalid code:" + i10);
                             }
                             try {
-                                int i11 = q6.b;
+                                int i11 = p5.b;
                                 try {
                                     synchronized (e.class) {
                                         if (!g(context)) {
@@ -189,15 +189,15 @@ public final class e {
                                 }
                             } catch (b e11) {
                                 Log.w("DynamiteModule", "Failed to load remote module: " + e11.getMessage());
-                                int i12 = q6.a;
-                                if (i12 == 0 || dVar.q(context, str, new com.google.android.gms.internal.cast.a(i12)).c != -1) {
+                                int i12 = p5.a;
+                                if (i12 == 0 || dVar.p(context, str, new com.google.android.gms.internal.cast.a(i12)).c != -1) {
                                     throw new b("Remote load failed. No local fallback found.", e11);
                                 }
                                 Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
                                 eVar = new e(applicationContext);
                             }
                         }
-                        if (j3 == 0) {
+                        if (j10 == 0) {
                             j.remove();
                         } else {
                             j.set(l4);
@@ -210,10 +210,10 @@ public final class e {
                         return eVar;
                     }
                 }
-                throw new b("No acceptable module " + str + " found. Local version is " + q6.a + " and remote version is " + q6.b + ".");
+                throw new b("No acceptable module " + str + " found. Local version is " + p5.a + " and remote version is " + p5.b + ".");
             } catch (Throwable th3) {
                 th = th3;
-                if (j3 == 0) {
+                if (j10 == 0) {
                     j.remove();
                 } else {
                     j.set(l4);
@@ -227,7 +227,7 @@ public final class e {
             }
         } catch (Throwable th4) {
             th = th4;
-            j3 = longValue;
+            j10 = longValue;
         }
     }
 

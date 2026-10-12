@@ -1,5 +1,6 @@
 package j$.util;
 
+import j$.util.function.IntConsumer$-CC;
 import j$.util.stream.j5;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
@@ -29,6 +30,6 @@ public final /* synthetic */ class i0 implements IntConsumer {
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
         switch (this.a) {
         }
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 }

@@ -1,121 +1,42 @@
 package w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.content.Context;
+import android.content.Intent;
+import android.os.Looper;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class b9 {
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterative(DepthRegionTraversal.java:31)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visit(SwitchOverStringVisitor.java:60)
-     */
-    public static final w0.d a(CharSequence charSequence, String str) {
-        switch (str.hashCode()) {
-            case -2055374133:
-                if (str.equals("android.credentials.CreateCredentialException.TYPE_USER_CANCELED")) {
-                    return new w0.b(charSequence);
-                }
-                break;
-            case -1166690414:
-                if (str.equals("androidx.credentials.TYPE_CREATE_CREDENTIAL_UNSUPPORTED_EXCEPTION")) {
-                    return new w0.c(charSequence, 3);
-                }
-                break;
-            case -580283253:
-                if (str.equals("androidx.credentials.TYPE_CREATE_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION")) {
-                    return new w0.c(charSequence, 1);
-                }
-                break;
-            case 1316905704:
-                if (str.equals("android.credentials.CreateCredentialException.TYPE_UNKNOWN")) {
-                    return new w0.c(charSequence, 2);
-                }
-                break;
-            case 2092588512:
-                if (str.equals("android.credentials.CreateCredentialException.TYPE_INTERRUPTED")) {
-                    return new w0.e(charSequence);
-                }
-                break;
-            case 2131915191:
-                if (str.equals("android.credentials.CreateCredentialException.TYPE_NO_CREATE_OPTIONS")) {
-                    return new w0.f(charSequence);
-                }
-                break;
-        }
-        if (!yd.j.h(str, "androidx.credentials.TYPE_CREATE_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION")) {
-            return new w0.c(charSequence, str);
-        }
-        int i10 = y0.a.c;
-        String obj = charSequence != null ? charSequence.toString() : null;
-        try {
-            if (!yd.j.b(str, "androidx.credentials.TYPE_CREATE_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION")) {
-                throw new z0.a();
-            }
-            int i11 = y0.a.c;
-            return r8.a(str, obj);
-        } catch (z0.a unused) {
-            return new w0.c(obj, str);
-        }
+    public static com.google.android.gms.internal.clearcut.u0 a(Context context, GoogleSignInOptions googleSignInOptions) {
+        n6.l.h(googleSignInOptions);
+        return new com.google.android.gms.internal.clearcut.u0(context, w5.a.a, googleSignInOptions, new com.google.android.gms.common.api.i(new com.google.android.gms.common.api.internal.a(), Looper.getMainLooper()));
     }
 
-    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
-    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
-    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterative(DepthRegionTraversal.java:31)
-    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visit(SwitchOverStringVisitor.java:60)
-     */
-    public static final w0.i b(CharSequence charSequence, String str) {
-        switch (str.hashCode()) {
-            case -781118336:
-                if (str.equals("android.credentials.GetCredentialException.TYPE_UNKNOWN")) {
-                    return new w0.h(charSequence, 2);
+    public static Task b(Intent intent) {
+        z5.b bVar;
+        GoogleSignInAccount googleSignInAccount;
+        a5.a aVar = a6.h.a;
+        Status status = Status.h;
+        if (intent == null) {
+            bVar = new z5.b(null, status);
+        } else {
+            Status status2 = (Status) intent.getParcelableExtra("googleSignInStatus");
+            GoogleSignInAccount googleSignInAccount2 = (GoogleSignInAccount) intent.getParcelableExtra("googleSignInAccount");
+            if (googleSignInAccount2 == null) {
+                if (status2 != null) {
+                    status = status2;
                 }
-                break;
-            case -408155724:
-                if (str.equals("androidx.credentials.TYPE_GET_CREDENTIAL_UNSUPPORTED_EXCEPTION")) {
-                    return new w0.h(charSequence, 3);
-                }
-                break;
-            case -45448328:
-                if (str.equals("android.credentials.GetCredentialException.TYPE_INTERRUPTED")) {
-                    return new w0.j(charSequence);
-                }
-                break;
-            case 580557411:
-                if (str.equals("android.credentials.GetCredentialException.TYPE_USER_CANCELED")) {
-                    return new w0.g(charSequence);
-                }
-                break;
-            case 627896683:
-                if (str.equals("android.credentials.GetCredentialException.TYPE_NO_CREDENTIAL")) {
-                    return new w0.k(charSequence);
-                }
-                break;
-            case 1594095913:
-                if (str.equals("androidx.credentials.TYPE_GET_CREDENTIAL_PROVIDER_CONFIGURATION_EXCEPTION")) {
-                    return new w0.h(charSequence, 1);
-                }
-                break;
-        }
-        if (!yd.j.h(str, "androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION")) {
-            return new w0.h(charSequence, str);
-        }
-        int i10 = y0.b.c;
-        String obj = charSequence != null ? charSequence.toString() : null;
-        try {
-            if (!yd.j.h(str, "androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION")) {
-                throw new z0.a();
+                bVar = new z5.b(null, status);
+            } else {
+                bVar = new z5.b(googleSignInAccount2, Status.e);
             }
-            int i11 = y0.b.c;
-            return t8.a(str, obj);
-        } catch (z0.a unused) {
-            return new w0.h(obj, str);
         }
+        Status status3 = bVar.a;
+        return (!status3.b() || (googleSignInAccount = bVar.b) == null) ? Tasks.forException(n6.l.m(status3)) : Tasks.forResult(googleSignInAccount);
     }
 }

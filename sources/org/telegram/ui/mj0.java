@@ -1,28 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class mj0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sj0 b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 
-    public /* synthetic */ mj0(sj0 sj0Var, int i10) {
-        this.a = i10;
-        this.b = sj0Var;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class mj0 extends org.telegram.ui.Components.ro {
+    public final /* synthetic */ qj0 v0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mj0(qj0 qj0Var, Context context) {
+        super(context, null, false, null);
+        this.v0 = qj0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.dismiss();
-                break;
-            case 1:
-                this.b.V(true, false);
-                break;
-            default:
-                this.b.V(true, false);
-                break;
+    @Override // org.telegram.ui.Components.ro, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        qj0 qj0Var = this.v0;
+        qj0Var.W.setImageCoords(qj0Var.b0.getAvatarImageView().getX(), qj0Var.b0.getAvatarImageView().getY(), qj0Var.b0.getAvatarImageView().getWidth(), qj0Var.b0.getAvatarImageView().getHeight());
+        if (qj0Var.Y) {
+            canvas.save();
+            canvas.scale(0.9f, 0.9f, qj0Var.W.getCenterX(), qj0Var.W.getCenterY());
+            qj0Var.W.draw(canvas);
+            canvas.restore();
         }
+        if (qj0Var.X) {
+            int centerX = (int) (qj0Var.W.getCenterX() - (org.telegram.ui.ActionBar.g6.U0.getIntrinsicWidth() / 2));
+            int centerY = (int) (qj0Var.W.getCenterY() - (org.telegram.ui.ActionBar.g6.U0.getIntrinsicHeight() / 2));
+            Drawable drawable = org.telegram.ui.ActionBar.g6.U0;
+            drawable.setBounds(centerX, centerY, drawable.getIntrinsicWidth() + centerX, org.telegram.ui.ActionBar.g6.U0.getIntrinsicHeight() + centerY);
+            org.telegram.ui.ActionBar.g6.U0.draw(canvas);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ro, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.v0.W.onAttachedToWindow();
+    }
+
+    @Override // org.telegram.ui.Components.ro, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.v0.W.onDetachedFromWindow();
     }
 }

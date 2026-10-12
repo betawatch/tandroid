@@ -1,62 +1,96 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vt implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public interface vt {
+    MessageObject A();
 
-    public /* synthetic */ vt(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
+    boolean B();
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                return ((Comparator) this.b).compare(((ut) obj).a, ((ut) obj2).a);
-            case 1:
-                LongSparseIntArray longSparseIntArray = (LongSparseIntArray) this.b;
-                int i10 = longSparseIntArray.get(((Long) obj).longValue());
-                int i11 = longSparseIntArray.get(((Long) obj2).longValue());
-                if (i10 > i11) {
-                    return 1;
-                }
-                return i10 < i11 ? -1 : 0;
-            case 2:
-                LocaleController.LocaleInfo localeInfo = (LocaleController.LocaleInfo) this.b;
-                LocaleController.LocaleInfo localeInfo2 = (LocaleController.LocaleInfo) obj;
-                LocaleController.LocaleInfo localeInfo3 = (LocaleController.LocaleInfo) obj2;
-                if (localeInfo2 != localeInfo) {
-                    if (localeInfo3 != localeInfo) {
-                        int i12 = localeInfo2.serverIndex;
-                        int i13 = localeInfo3.serverIndex;
-                        if (i12 == i13) {
-                            return localeInfo2.name.compareTo(localeInfo3.name);
-                        }
-                        if (i12 <= i13) {
-                            if (i12 >= i13) {
-                                return 0;
-                            }
-                        }
-                    }
-                    return 1;
-                }
-                return -1;
-            default:
-                StickersActivity stickersActivity = (StickersActivity) this.b;
-                int indexOf = stickersActivity.e.indexOf((TLRPC.TL_messages_stickerSet) obj);
-                int indexOf2 = stickersActivity.e.indexOf((TLRPC.TL_messages_stickerSet) obj2);
-                if (indexOf < 0 || indexOf2 < 0) {
-                    return 0;
-                }
-                return indexOf - indexOf2;
-        }
-    }
+    void C(TLRPC.Document document);
+
+    boolean D();
+
+    boolean E(TLRPC.Document document);
+
+    void F(TLRPC.Document document);
+
+    String G(boolean z10);
+
+    void H(TLRPC.Document document);
+
+    boolean I();
+
+    boolean J();
+
+    void K();
+
+    void L();
+
+    void M(TLRPC.InputStickerSet inputStickerSet, boolean z10);
+
+    boolean N(TLRPC.Document document);
+
+    void O(String str);
+
+    Boolean P(TLRPC.Document document);
+
+    boolean Q();
+
+    long a();
+
+    boolean b();
+
+    boolean c();
+
+    TLRPC.TL_messageMediaPoll d();
+
+    boolean e(TLRPC.Document document);
+
+    void f(CharSequence charSequence, String str, mt mtVar);
+
+    boolean g();
+
+    TLRPC.PollAnswer h();
+
+    boolean i();
+
+    void j(SendMessagesHelper.ImportingSticker importingSticker);
+
+    boolean k();
+
+    boolean l(int i10);
+
+    void m(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11);
+
+    void n(String str);
+
+    void o(TLRPC.Document document);
+
+    boolean p();
+
+    void q(TLRPC.Document document);
+
+    void r();
+
+    void s(int i10, int i11, Object obj, TLObject tLObject, boolean z10);
+
+    void t();
+
+    org.telegram.ui.Components.m80 u(ah.v vVar);
+
+    void v(TLRPC.Document document);
+
+    void w(TLRPC.StickerSet stickerSet, String str);
+
+    void x(TLObject tLObject, Object obj);
+
+    boolean y();
+
+    void z(String str);
 }

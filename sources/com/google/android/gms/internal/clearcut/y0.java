@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 /* loaded from: classes.dex */
 public final class y0 {
     public Object A;
-    public final aa.b a;
+    public final ba.a a;
     public final Object[] b;
     public final Class c;
     public final int d;
@@ -37,11 +37,11 @@ public final class y0 {
 
     public y0(Class cls, String str, Object[] objArr) {
         this.c = cls;
-        aa.b bVar = new aa.b(str, 1);
-        this.a = bVar;
+        ba.a aVar = new ba.a(str, 1);
+        this.a = aVar;
         this.b = objArr;
-        this.d = bVar.a();
-        int a2 = bVar.a();
+        this.d = aVar.a();
+        int a2 = aVar.a();
         this.e = a2;
         if (a2 == 0) {
             this.f = 0;
@@ -54,16 +54,16 @@ public final class y0 {
             this.m = null;
             return;
         }
-        int a10 = bVar.a();
+        int a10 = aVar.a();
         this.f = a10;
-        int a11 = bVar.a();
-        this.g = bVar.a();
-        this.h = bVar.a();
-        this.k = bVar.a();
-        this.j = bVar.a();
-        this.i = bVar.a();
-        this.l = bVar.a();
-        int a12 = bVar.a();
+        int a11 = aVar.a();
+        this.g = aVar.a();
+        this.h = aVar.a();
+        this.k = aVar.a();
+        this.j = aVar.a();
+        this.i = aVar.a();
+        this.l = aVar.a();
+        int a12 = aVar.a();
         this.m = a12 != 0 ? new int[a12] : null;
         this.n = (a10 << 1) + a11;
     }
@@ -85,17 +85,17 @@ public final class y0 {
             sb2.append(str);
             sb2.append(" for ");
             sb2.append(name);
-            throw new RuntimeException(a1.g.t(sb2, " not found. Known fields are ", arrays));
+            throw new RuntimeException(a1.g.s(sb2, " not found. Known fields are ", arrays));
         }
     }
 
     public final boolean a() {
-        aa.b bVar = this.a;
-        if (bVar.c >= bVar.b.length()) {
+        ba.a aVar = this.a;
+        if (aVar.c >= aVar.b.length()) {
             return false;
         }
-        this.s = bVar.a();
-        int a2 = bVar.a();
+        this.s = aVar.a();
+        int a2 = aVar.a();
         this.t = a2;
         int i10 = a2 & 255;
         this.u = i10;
@@ -116,8 +116,8 @@ public final class y0 {
         int i15 = this.p;
         Class cls = a1.a;
         if (i11 >= 40) {
-            long j3 = i14;
-            int i16 = (((i11 - i15) + 10) > (((j3 + 3) * 3) + (2 * j3) + 3) ? 1 : (((i11 - i15) + 10) == (((j3 + 3) * 3) + (2 * j3) + 3) ? 0 : -1));
+            long j10 = i14;
+            int i16 = (((i11 - i15) + 10) > (((j10 + 3) * 3) + (2 * j10) + 3) ? 1 : (((i11 - i15) + 10) == (((j10 + 3) * 3) + (2 * j10) + 3) ? 0 : -1));
         }
         if ((a2 & 1024) != 0) {
             int i17 = this.o;
@@ -129,7 +129,7 @@ public final class y0 {
         this.A = null;
         int i18 = this.d;
         if (i10 > i12) {
-            this.v = bVar.a();
+            this.v = aVar.a();
             int i19 = this.u;
             if (i19 == t.b.a + 51 || i19 == t.d.a + 51) {
                 this.y = c();
@@ -142,7 +142,7 @@ public final class y0 {
         }
         this.x = b(this.c, (String) c());
         if ((i18 & 1) == 1 && this.u <= t.d.a) {
-            this.w = bVar.a();
+            this.w = aVar.a();
         }
         int i20 = this.u;
         if (i20 == t.b.a || i20 == t.d.a) {

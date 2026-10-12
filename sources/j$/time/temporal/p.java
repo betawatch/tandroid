@@ -42,14 +42,14 @@ public abstract class p {
         return aVar.a(lVar);
     }
 
-    public static Temporal b(Temporal temporal, long j3, q qVar) {
-        long j10;
-        if (j3 == Long.MIN_VALUE) {
+    public static Temporal b(Temporal temporal, long j10, q qVar) {
+        long j11;
+        if (j10 == Long.MIN_VALUE) {
             temporal = temporal.d(Long.MAX_VALUE, qVar);
-            j10 = 1;
+            j11 = 1;
         } else {
-            j10 = -j3;
+            j11 = -j10;
         }
-        return temporal.d(j10, qVar);
+        return temporal.d(j11, qVar);
     }
 }

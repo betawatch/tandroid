@@ -1,22 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class eu0 extends mr0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b1;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eu0(Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(context, null, str, false, str2, false, e6Var);
-        this.b1 = n2Var;
-    }
-
-    @Override // org.telegram.ui.Components.mr0
-    public final void S0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        AndroidUtilities.runOnUIThread(new zk(this.b1, iVar, i10, 15), 100L);
+public final class eu0 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getWidth(), AndroidUtilities.dp(24.0f) + view.getHeight(), AndroidUtilities.dp(24.0f));
     }
 }

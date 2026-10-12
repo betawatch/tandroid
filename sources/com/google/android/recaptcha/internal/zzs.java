@@ -5,17 +5,16 @@ import com.google.android.gms.common.api.b;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.Task;
-import hd.f;
-import hd.i;
-import jd.c;
-import kd.a;
-import ld.j;
-import sd.p;
-import v7.a8;
+import id.f;
+import kd.c;
+import ld.a;
+import md.i;
+import td.p;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-final class zzs extends j implements p {
+final class zzs extends i implements p {
     final /* synthetic */ zzu zza;
     final /* synthetic */ zzxn zzb;
 
@@ -26,42 +25,42 @@ final class zzs extends j implements p {
         this.zzb = zzxnVar;
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final c create(Object obj, c cVar) {
         return new zzs(this.zza, this.zzb, cVar);
     }
 
-    @Override // sd.p
+    @Override // td.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzs) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
+        return ((zzs) create((zzhk) obj, (c) obj2)).invokeSuspend(id.i.a);
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final Object invokeSuspend(Object obj) {
         zzcz zzczVar;
         a aVar = a.a;
-        a8.b(obj);
+        i8.b(obj);
         zzu zzuVar = this.zza;
         zzczVar = zzuVar.zza;
         if (!zzczVar.zzb(zzu.zzl(zzuVar))) {
-            return new f(a8.a(new zzcg(zzce.zzb, zzcd.zzar, null, null, 12, null)));
+            return new f(i8.a(new zzcg(zzce.zzb, zzcd.zzar, null, null, 12, null)));
         }
         zzxn zzxnVar = this.zzb;
         if (!zzxnVar.zzR() || zzxnVar.zzg().zzf().zzn()) {
-            return new f(a8.a(new zzcg(zzce.zzb, zzcd.zzaD, null, null, 12, null)));
+            return new f(i8.a(new zzcg(zzce.zzb, zzcd.zzaD, null, null, 12, null)));
         }
         zzuVar.zzb = zzxnVar.zzg().zzf().zzm();
         l8.c cVar = new l8.c();
         Application context = zzu.zzl(zzuVar);
         kotlin.jvm.internal.i.e(context, "context");
-        a8.f fVar = new a8.f(context, a8.f.k, b.t, com.google.android.gms.common.api.i.c);
-        v e7 = w.e();
-        e7.d = new k6.c[]{l8.f.b};
-        e7.c = new a6.i(cVar, 2);
-        e7.a = 34001;
-        Task e10 = fVar.e(0, e7.a());
-        kotlin.jvm.internal.i.d(e10, "doRead(...)");
-        zzuVar.zzc = zzdf.zza(e10);
-        return new f(i.a);
+        a8.f fVar = new a8.f(context, a8.f.k, b.p, com.google.android.gms.common.api.i.c);
+        v b10 = w.b();
+        b10.d = new k6.c[]{l8.f.b};
+        b10.c = new a6.i(cVar, 2);
+        b10.a = 34001;
+        Task e = fVar.e(0, b10.a());
+        kotlin.jvm.internal.i.d(e, "doRead(...)");
+        zzuVar.zzc = zzdf.zza(e);
+        return new f(id.i.a);
     }
 }

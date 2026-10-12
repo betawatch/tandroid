@@ -1,60 +1,36 @@
 package org.telegram.ui;
 
-import android.util.LongSparseArray;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fj1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ WallpapersListActivity a;
+public final class fj1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Cells.u1 a;
+    public final /* synthetic */ org.telegram.ui.Components.ui b;
+    public final /* synthetic */ gj1 c;
 
-    public fj1(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
+    public fj1(gj1 gj1Var, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.Components.ui uiVar) {
+        this.c = gj1Var;
+        this.a = u1Var;
+        this.b = uiVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        WallpapersListActivity wallpapersListActivity = this.a;
-        LongSparseArray longSparseArray = wallpapersListActivity.i0;
-        if (i10 == -1) {
-            kVar = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
-            if (!kVar.t()) {
-                wallpapersListActivity.finishFragment();
-                return;
-            }
-            longSparseArray.clear();
-            kVar2 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
-            kVar2.s();
-            wallpapersListActivity.D0();
-            return;
-        }
-        if (i10 != 4) {
-            if (i10 == 3) {
-                ty tyVar = new ty(org.telegram.messenger.bi.d(3, "onlySelect", "dialogsType", true));
-                tyVar.C2 = new dj1(this);
-                wallpapersListActivity.presentFragment(tyVar);
-                return;
-            }
-            return;
-        }
-        if (wallpapersListActivity.getParentActivity() == null) {
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
-        alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteBackground", longSparseArray.size(), new Object[0]);
-        alertDialog$Builder.a.T = LocaleController.formatString("DeleteChatBackgroundsAlert", R.string.DeleteChatBackgroundsAlert, new Object[0]);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new dj1(this));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        wallpapersListActivity.showDialog(b2Var);
-        TextView textView = (TextView) b2Var.d(-1);
-        if (textView != null) {
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.q7, false));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.a.setEnterTransitionInProgress(false);
+        org.telegram.ui.Components.ui uiVar = this.b;
+        ArrayList arrayList = (ArrayList) uiVar.c;
+        gj1 gj1Var = this.c;
+        arrayList.remove(gj1Var);
+        uiVar.a();
+        ((ViewGroup) uiVar.d).invalidate();
+        ChatActivityEnterView.RecordCircle recordCircle = gj1Var.g;
+        if (recordCircle != null) {
+            recordCircle.N = false;
         }
     }
 }

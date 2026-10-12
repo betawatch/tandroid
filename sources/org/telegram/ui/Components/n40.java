@@ -1,101 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class n40 extends eb {
-    public final LinearLayout X;
-    public c71 Y;
+public final class n40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ o40 c;
 
-    public n40(Activity activity, org.telegram.ui.ActionBar.e6 e6Var, TLRPC.User user, TLObject tLObject, org.telegram.ui.dq dqVar) {
-        super(activity, null, false, false, 1, e6Var);
-        fixNavigationBar();
-        LinearLayout linearLayout = new LinearLayout(activity);
-        this.X = linearLayout;
-        linearLayout.setOrientation(1);
-        linearLayout.setClipChildren(false);
-        linearLayout.setClipToPadding(false);
-        FrameLayout frameLayout = new FrameLayout(activity);
-        org.telegram.ui.l01 Q = Q(activity, AndroidUtilities.dp(60.0f), user);
-        org.telegram.ui.l01 Q2 = Q(activity, AndroidUtilities.dp(60.0f), tLObject);
-        ImageView imageView = new ImageView(activity);
-        imageView.setImageResource(R.drawable.msg_arrow_avatar);
-        imageView.setColorFilter(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.z6, e6Var));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        LinearLayout linearLayout2 = new LinearLayout(activity);
-        linearLayout2.setOrientation(0);
-        linearLayout2.setGravity(16);
-        linearLayout2.setClipChildren(false);
-        linearLayout2.addView(Q, w7.x5.n(60, 60));
-        linearLayout2.addView(imageView, w7.x5.t(24, 24, 16, 7, 0, 7, 0));
-        linearLayout2.addView(Q2, w7.x5.n(60, 60));
-        frameLayout.addView(linearLayout2, w7.x5.e(-2, -2, 17));
-        linearLayout.addView(frameLayout, w7.x5.t(-1, -2, 1, 0, 23, 0, 19));
-        TextView textView = new TextView(activity);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(17);
-        org.telegram.messenger.bi.j(20.0f, R.string.GuardBotReplaceTitle, 1, textView);
-        int i10 = org.telegram.ui.ActionBar.i6.G6;
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(i10, e6Var));
-        linearLayout.addView(textView, w7.x5.t(-1, -2, 17, 20, 0, 20, 6));
-        String shortName = DialogObject.getShortName(user);
-        String shortName2 = DialogObject.getShortName(tLObject);
-        TextView textView2 = new TextView(activity);
-        textView2.setGravity(17);
-        textView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GuardBotReplaceMessage, shortName, shortName2)));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(i10, e6Var));
-        textView2.setLineSpacing(AndroidUtilities.dp(2.66f), 1.0f);
-        linearLayout.addView(textView2, w7.x5.t(-1, -2, 17, 24, 0, 24, 29));
-        ci.d dVar = new ci.d(activity, e6Var, true);
-        dVar.e();
-        dVar.g(LocaleController.formatString(R.string.GuardBotReplaceUseNew, shortName2), false, true);
-        dVar.setOnClickListener(new ut(6, this, dqVar));
-        linearLayout.addView(dVar, w7.x5.k(14.0f, 0.0f, 14.0f, 10.0f, -1, 48));
-        ci.d dVar2 = new ci.d(activity, e6Var, true);
-        dVar2.e();
-        dVar2.d();
-        dVar2.g(LocaleController.formatString(R.string.GuardBotReplaceKeepCurrent, shortName), false, true);
-        dVar2.setOnClickListener(new f0(this, 23));
-        linearLayout.addView(dVar2, w7.x5.k(14.0f, 0.0f, 14.0f, 14.0f, -1, 48));
-        qm0 qm0Var = this.d;
-        int i11 = this.backgroundPaddingLeft;
-        qm0Var.setPadding(i11, 0, i11, 0);
-        this.Y.N(false);
+    public /* synthetic */ n40(o40 o40Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = o40Var;
+        this.b = z10;
     }
 
-    public static org.telegram.ui.l01 Q(Context context, int i10, TLObject tLObject) {
-        org.telegram.ui.l01 l01Var = new org.telegram.ui.l01(context);
-        l01Var.setRoundRadius(i10 / 2);
-        j9 j9Var = new j9((org.telegram.ui.ActionBar.e6) null);
-        j9Var.p(tLObject);
-        l01Var.setImageDrawable(j9Var);
-        l01Var.setLayoutParams(new FrameLayout.LayoutParams(i10, i10));
-        return l01Var;
-    }
-
-    @Override // org.telegram.ui.Components.eb
-    public final CharSequence B() {
-        return "";
-    }
-
-    @Override // org.telegram.ui.Components.eb
-    public final pm0 x(qm0 qm0Var) {
-        c71 c71Var = new c71(this.d, getContext(), this.currentAccount, 0, true, new d(this, 14), this.resourcesProvider);
-        this.Y = c71Var;
-        c71Var.r = false;
-        return c71Var;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.go goVar;
+        bi.o0 o0Var;
+        switch (this.a) {
+            case 0:
+                float f7 = this.b ? 1.0f : 0.0f;
+                o40 o40Var = this.c;
+                o40Var.w = f7;
+                o40Var.e.setTranslationY(f7 * AndroidUtilities.dp(48.0f));
+                o40Var.e.setPadding(0, 0, 0, (int) (o40Var.w * AndroidUtilities.dp(48.0f)));
+                break;
+            default:
+                boolean z10 = this.b;
+                float f10 = z10 ? 1.0f : 0.0f;
+                o40 o40Var2 = this.c;
+                o40Var2.E = f10;
+                o40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, f10));
+                o40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, o40Var2.E));
+                org.telegram.ui.nk nkVar = o40Var2.f;
+                if (nkVar != null && (goVar = nkVar.a) != null && (o0Var = goVar.L3) != null) {
+                    o0Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, o40Var2.E));
+                    o40Var2.f.a.L3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, o40Var2.E));
+                }
+                o40Var2.h.setAlpha(o40Var2.E);
+                if (!z10) {
+                    o40Var2.h.setVisibility(8);
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,59 +1,57 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.ce1;
+import org.telegram.ui.rj1;
+import org.telegram.ui.sj1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class jj extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final TextView b;
-    public final TextView c;
+public final class jj extends org.telegram.ui.Cells.cb {
+    public final /* synthetic */ int w;
+    public final /* synthetic */ lm0 x;
 
-    public jj(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.a = e6Var;
-        setPadding(0, AndroidUtilities.dp(42.0f), 0, AndroidUtilities.dp(42.0f));
-        setTag(-33024);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.x5.q(-1, -2, 17));
-        y9 y9Var = new y9(context);
-        y9Var.setImageDrawable(new ck0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
-        linearLayout.addView(y9Var, w7.x5.t(120, 120, 17, 0, 0, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(17);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.t(-1, -2, 17, 32, 12, 32, 8), context);
-        this.c = h;
-        h.setTextSize(1, 14.0f);
-        h.setGravity(17);
-        linearLayout.addView(h, w7.x5.t(-1, -2, 17, 32, 0, 32, 0));
-        e();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ jj(lm0 lm0Var, Context context, int i10) {
+        super(context, 5);
+        this.w = i10;
+        this.x = lm0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void e() {
-        int i10 = org.telegram.ui.ActionBar.i6.G6;
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
-        this.b.setTextColor(org.telegram.ui.ActionBar.i6.w0(i10, e6Var));
-        this.c.setTextColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.y6, e6Var));
+    @Override // org.telegram.ui.Cells.cb
+    public final void a(int i10, Object obj) {
+        switch (this.w) {
+            case 0:
+                q0.a aVar = ((kj) ((bb) this.x).f).x;
+                if (aVar != null) {
+                    aVar.accept(obj);
+                    break;
+                }
+                break;
+            case 1:
+                WallpapersListActivity.r0(((rj1) this.x).d, this, obj, i10);
+                break;
+            default:
+                ((sj1) this.x).E.presentFragment(new ce1(obj, null, true));
+                break;
+        }
     }
 
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    @Override // org.telegram.ui.Cells.cb
+    public boolean b(Object obj, int i10) {
+        switch (this.w) {
+            case 1:
+                return WallpapersListActivity.s0(((rj1) this.x).d, this, obj, i10);
+            default:
+                return super.b(obj, i10);
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jj(bb bbVar, Context context) {
+        super(context, 1);
+        this.w = 0;
+        this.x = bbVar;
     }
 }

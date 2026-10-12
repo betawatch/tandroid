@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n1 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,13 +18,13 @@ public final /* synthetic */ class n1 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.ActionBar.n2 R;
+        org.telegram.ui.ActionBar.m2 R;
         switch (this.a) {
             case 0:
                 if (this.b != null && (R = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                    l2Var.a = true;
-                    R.showAsSheet(new PrivacyControlActivity(11, false), l2Var);
+                    org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                    k2Var.a = true;
+                    R.showAsSheet(new PrivacyControlActivity(11, false), k2Var);
                     break;
                 }
                 break;

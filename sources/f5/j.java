@@ -1,20 +1,21 @@
 package f5;
 
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import j$.util.DesugarCollections;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
+import ji.w4;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ m2.t E;
-    public static final /* synthetic */ m2.t F;
-    public static final /* synthetic */ m2.t w;
-    public static final /* synthetic */ m2.t x;
-    public static final /* synthetic */ m2.t y;
+    public static final /* synthetic */ w4 E;
+    public static final /* synthetic */ w4 F;
+    public static final /* synthetic */ w4 w;
+    public static final /* synthetic */ w4 x;
+    public static final /* synthetic */ w4 y;
     public String e;
     public String f;
     public long h;
@@ -24,7 +25,7 @@ public final class j extends com.googlecode.mp4parser.c {
     public long v;
 
     static {
-        se.a aVar = new se.a(j.class, "HandlerBox.java");
+        te.a aVar = new te.a(j.class, "HandlerBox.java");
         w = aVar.e(aVar.d("getHandlerType", "com.coremedia.iso.boxes.HandlerBox", "", "", "java.lang.String"));
         x = aVar.e(aVar.d("setName", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "name", "void"));
         y = aVar.e(aVar.d("setHandlerType", "com.coremedia.iso.boxes.HandlerBox", "java.lang.String", "handlerType", "void"));
@@ -70,11 +71,11 @@ public final class j extends com.googlecode.mp4parser.c {
             if (!str.endsWith(WebViewProviderFactoryBoundaryInterface.MULTI_COOKIE_VALUE_SEPARATOR)) {
                 this.s = false;
             } else {
-                this.f = e2.i(1, 0, this.f);
+                this.f = k3.j(1, 0, this.f);
                 this.s = true;
             }
-        } catch (UnsupportedEncodingException e7) {
-            throw new Error(e7);
+        } catch (UnsupportedEncodingException e) {
+            throw new Error(e);
         }
     }
 
@@ -101,14 +102,14 @@ public final class j extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = se.a.b(F, this, this);
+        com.google.firebase.messaging.s b10 = te.a.b(F, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("HandlerBox[handlerType=");
-        e2.q(se.a.b(w, this, this));
+        k3.p(te.a.b(w, this, this));
         sb2.append(this.e);
         sb2.append(";name=");
-        e2.q(se.a.b(E, this, this));
-        return a1.g.t(sb2, this.f, "]");
+        k3.p(te.a.b(E, this, this));
+        return a1.g.s(sb2, this.f, "]");
     }
 }

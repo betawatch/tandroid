@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     private volatile boolean canceled;
@@ -90,8 +90,8 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     }
 
     public int read(int i10, int i11) {
-        long j3;
         long j10;
+        long j11;
         synchronized (this.sync) {
             try {
                 if (this.canceled) {
@@ -106,25 +106,25 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                 if (i11 == 0) {
                     return 0;
                 }
-                long j11 = 0;
-                while (j11 == 0) {
+                long j12 = 0;
+                while (j12 == 0) {
                     try {
-                        j3 = i10;
-                        long[] downloadedLengthFromOffset = this.loadOperation.getDownloadedLengthFromOffset(j3, i11);
-                        j10 = downloadedLengthFromOffset[0];
+                        j10 = i10;
+                        long[] downloadedLengthFromOffset = this.loadOperation.getDownloadedLengthFromOffset(j10, i11);
+                        j11 = downloadedLengthFromOffset[0];
                         try {
                             if (!this.finishedLoadingFile && downloadedLengthFromOffset[1] != 0) {
                                 this.finishedLoadingFile = true;
                                 this.finishedFilePath = this.loadOperation.getCacheFileFinal().getAbsolutePath();
                             }
-                        } catch (Exception e7) {
-                            e = e7;
-                            j11 = j10;
+                        } catch (Exception e) {
+                            e = e;
+                            j12 = j11;
                         }
-                    } catch (Exception e10) {
-                        e = e10;
+                    } catch (Exception e7) {
+                        e = e7;
                     }
-                    if (j10 == 0) {
+                    if (j11 == 0) {
                         synchronized (this.sync) {
                             try {
                                 if (this.canceled) {
@@ -132,14 +132,14 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                                     return 0;
                                 }
                                 this.countDownLatch = new CountDownLatch(1);
-                                if (this.loadOperation.isPaused() || this.lastOffset != j3 || this.preview) {
-                                    FileLoadOperation loadStreamFile = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, this.location, this.parentObject, j3, this.preview, this.loadingPriority);
+                                if (this.loadOperation.isPaused() || this.lastOffset != j10 || this.preview) {
+                                    FileLoadOperation loadStreamFile = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, this.location, this.parentObject, j10, this.preview, this.loadingPriority);
                                     FileLoadOperation fileLoadOperation = this.loadOperation;
                                     if (fileLoadOperation != loadStreamFile) {
                                         fileLoadOperation.removeStreamListener(this);
                                         this.loadOperation = loadStreamFile;
                                     }
-                                    this.lastOffset = j3 + j10;
+                                    this.lastOffset = j10 + j11;
                                 }
                                 synchronized (this.sync) {
                                     try {
@@ -162,16 +162,16 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                                 }
                             } finally {
                             }
-                            e = e7;
-                            j11 = j10;
+                            e = e;
+                            j12 = j11;
                             FileLog.e((Throwable) e, false);
-                            return (int) j11;
+                            return (int) j12;
                         }
                     }
-                    j11 = j10;
+                    j12 = j11;
                 }
-                this.lastOffset = i10 + j11;
-                return (int) j11;
+                this.lastOffset = i10 + j12;
+                return (int) j12;
             } finally {
             }
         }

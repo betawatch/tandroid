@@ -1,38 +1,35 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nh implements Utilities.Callback2 {
-    public final /* synthetic */ int a = 0;
+public final /* synthetic */ class nh implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ nh(Context context, int i10, Utilities.Callback2 callback2) {
-        this.c = callback2;
-        this.d = context;
+    public /* synthetic */ nh(int i10, int i11, int i12) {
+        this.a = i12;
         this.b = i10;
+        this.c = i11;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                PasskeysController.lambda$create$7((Utilities.Callback2) this.c, (Context) this.d, this.b, (v0.c) obj, (Throwable) obj2);
+                PasskeysController.lambda$login$11(this.b, this.c);
+                break;
+            case 1:
+                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(this.b, this.c);
+                break;
+            case 2:
+                ConnectionsManager.lambda$onConnectionStateChanged$15(this.b, this.c);
                 break;
             default:
-                ((TranslateController) this.c).lambda$pushToSummarize$19(this.b, (Utilities.Callback) this.d, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
                 break;
         }
-    }
-
-    public /* synthetic */ nh(TranslateController translateController, int i10, Utilities.Callback callback) {
-        this.c = translateController;
-        this.b = i10;
-        this.d = callback;
     }
 }

@@ -1,58 +1,20 @@
 package c0;
 
-import i9.w;
-import java.lang.ref.WeakReference;
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class k implements w {
-    public final WeakReference a;
-    public final j b = new j(this);
+public final class k extends h {
+    public final /* synthetic */ l n;
 
-    public k(i iVar) {
-        this.a = new WeakReference(iVar);
+    public k(l lVar) {
+        this.n = lVar;
     }
 
-    @Override // i9.w
-    public final void a(Runnable runnable, Executor executor) {
-        this.b.a(runnable, executor);
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z10) {
-        i iVar = (i) this.a.get();
-        boolean cancel = this.b.cancel(z10);
-        if (cancel && iVar != null) {
-            iVar.a = null;
-            iVar.b = null;
-            iVar.c.k(null);
+    @Override // c0.h
+    public final String i() {
+        i iVar = (i) this.n.a.get();
+        if (iVar == null) {
+            return "Completer object has been garbage collected, future will fail soon";
         }
-        return cancel;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.b.get();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return this.b.a instanceof a;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return this.b.isDone();
-    }
-
-    public final String toString() {
-        return this.b.toString();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j3, TimeUnit timeUnit) {
-        return this.b.get(j3, timeUnit);
+        return "tag=[" + iVar.a + "]";
     }
 }

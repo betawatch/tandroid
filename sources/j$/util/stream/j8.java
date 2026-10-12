@@ -14,9 +14,9 @@ public final class j8 extends e5 implements o8 {
     }
 
     @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j3) {
+    public final void accept(long j10) {
         LongPredicate longPredicate = null;
-        longPredicate.test(j3);
+        longPredicate.test(j10);
         throw null;
     }
 }

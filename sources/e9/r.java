@@ -1,27 +1,44 @@
 package e9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final class r extends t {
-    public final /* synthetic */ int f;
-    public final /* synthetic */ v h;
+import java.io.Serializable;
+import java.util.Arrays;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r(v vVar, int i10) {
-        super(vVar);
-        this.f = i10;
-        this.h = vVar;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class r extends v1 implements Serializable {
+    public final d9.k a;
+    public final v1 b;
+
+    public r(d9.k kVar, v1 v1Var) {
+        this.a = kVar;
+        this.b = v1Var;
     }
 
-    @Override // e9.t
-    public final Object a(int i10) {
-        switch (this.f) {
-            case 0:
-                return this.h.i()[i10];
-            case 1:
-                return new u(this.h, i10);
-            default:
-                return this.h.j()[i10];
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        d9.k kVar = this.a;
+        return this.b.compare(kVar.apply(obj), kVar.apply(obj2));
+    }
+
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
+        if (obj instanceof r) {
+            r rVar = (r) obj;
+            if (this.a.equals(rVar.a) && this.b.equals(rVar.b)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b});
+    }
+
+    public final String toString() {
+        return this.b + ".onResultOf(" + this.a + ")";
     }
 }

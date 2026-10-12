@@ -3,7 +3,7 @@ package r7;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class p {
     public static final StringBuilder a;
@@ -15,47 +15,47 @@ public abstract class p {
         a = new StringBuilder(33);
     }
 
-    public static void a(StringBuilder sb2, long j3) {
-        if (j3 == 0) {
+    public static void a(StringBuilder sb2, long j10) {
+        if (j10 == 0) {
             sb2.append("0s");
             return;
         }
         sb2.ensureCapacity(sb2.length() + 27);
         boolean z10 = false;
-        if (j3 < 0) {
+        if (j10 < 0) {
             sb2.append("-");
-            if (j3 != Long.MIN_VALUE) {
-                j3 = -j3;
+            if (j10 != Long.MIN_VALUE) {
+                j10 = -j10;
             } else {
-                j3 = Long.MAX_VALUE;
+                j10 = Long.MAX_VALUE;
                 z10 = true;
             }
         }
-        if (j3 >= 86400000) {
-            sb2.append(j3 / 86400000);
+        if (j10 >= 86400000) {
+            sb2.append(j10 / 86400000);
             sb2.append("d");
-            j3 %= 86400000;
+            j10 %= 86400000;
         }
         if (true == z10) {
-            j3 = 25975808;
+            j10 = 25975808;
         }
-        if (j3 >= 3600000) {
-            sb2.append(j3 / 3600000);
+        if (j10 >= 3600000) {
+            sb2.append(j10 / 3600000);
             sb2.append("h");
-            j3 %= 3600000;
+            j10 %= 3600000;
         }
-        if (j3 >= 60000) {
-            sb2.append(j3 / 60000);
+        if (j10 >= 60000) {
+            sb2.append(j10 / 60000);
             sb2.append("m");
-            j3 %= 60000;
+            j10 %= 60000;
         }
-        if (j3 >= 1000) {
-            sb2.append(j3 / 1000);
+        if (j10 >= 1000) {
+            sb2.append(j10 / 1000);
             sb2.append("s");
-            j3 %= 1000;
+            j10 %= 1000;
         }
-        if (j3 > 0) {
-            sb2.append(j3);
+        if (j10 > 0) {
+            sb2.append(j10);
             sb2.append("ms");
         }
     }

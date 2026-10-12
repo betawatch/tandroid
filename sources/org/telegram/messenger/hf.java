@@ -1,44 +1,38 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import org.telegram.ui.fo;
+import org.webrtc.TextureViewRenderer;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ int b;
     public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ hf(MessagesStorage messagesStorage, int i10, int i11) {
-        this.a = i11;
-        this.b = messagesStorage;
-        this.c = i10;
+    public /* synthetic */ hf(Object obj, int i10, int i11, int i12, int i13, int i14) {
+        this.a = i14;
+        this.f = obj;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$readAllDialogs$65(this.c);
+                ((MessagesStorage) this.f).lambda$saveDiffParams$35(this.b, this.c, this.d, this.e);
                 break;
             case 1:
-                this.b.lambda$checkIfFolderEmptyInternal$245(this.c);
-                break;
-            case 2:
-                this.b.lambda$clearDownloadQueue$184(this.c);
-                break;
-            case 3:
-                this.b.lambda$putMessagesInternal$196(this.c);
-                break;
-            case 4:
-                this.b.lambda$getDownloadQueue$186(this.c);
-                break;
-            case 5:
-                this.b.lambda$getUnsentMessages$152(this.c);
-                break;
-            case 6:
-                this.b.lambda$checkIfFolderEmpty$246(this.c);
+                fo.w1((fo) this.f, this.b, this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$clearWidgetDialogs$167(this.c);
+                ((TextureViewRenderer) this.f).lambda$onFrameResolutionChanged$0(this.b, this.c, this.d, this.e);
                 break;
         }
     }

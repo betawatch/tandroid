@@ -1,14 +1,59 @@
 package gb;
 
-import java.util.Date;
+import eb.u;
+import eb.v;
+import java.lang.reflect.Modifier;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import v7.r8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class g {
-    public static final f a = new f(Date.class);
+public final class g implements v, Cloneable {
+    public static final g c = new g();
+    public List a;
+    public final List b;
 
-    public g(Class cls) {
+    public g() {
+        List list = Collections.EMPTY_LIST;
+        this.a = list;
+        this.b = list;
     }
 
-    public abstract Date a(Date date);
+    /* renamed from: a, reason: merged with bridge method [inline-methods] */
+    public final g clone() {
+        try {
+            return (g) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(e);
+        }
+    }
+
+    public final boolean b(Class cls, boolean z10) {
+        if (!z10 && !Enum.class.isAssignableFrom(cls)) {
+            r8 r8Var = jb.c.a;
+            if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
+                return true;
+            }
+        }
+        Iterator it = (z10 ? this.a : this.b).iterator();
+        while (it.hasNext()) {
+            if (((eb.a) it.next()).shouldSkipClass(cls)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // eb.v
+    public final u create(eb.g gVar, lb.a aVar) {
+        Class cls = aVar.a;
+        boolean b10 = b(cls, true);
+        boolean b11 = b(cls, false);
+        if (b10 || b11) {
+            return new f(this, b11, b10, gVar, aVar);
+        }
+        return null;
+    }
 }

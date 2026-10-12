@@ -23,17 +23,17 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.kr;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.hr;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public abstract class ba {
     public final m9 A;
     public final Rect B;
     public aa C;
-    public w7.h0 D;
-    public qm0 E;
+    public w7.w5 D;
+    public mm0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -53,7 +53,7 @@ public abstract class ba {
     public float V;
     public w9 W;
     public w9 X;
-    public org.telegram.ui.ActionBar.h4 Y;
+    public org.telegram.ui.ActionBar.g4 Y;
     public boolean Z;
     public int a;
     public final r9 a0;
@@ -68,7 +68,7 @@ public abstract class ba {
     public float f;
     public final j9 f0;
     public float g;
-    public org.telegram.ui.ActionBar.e6 g0;
+    public org.telegram.ui.ActionBar.c6 g0;
     public final int[] h = new int[2];
     public boolean h0;
     public boolean i;
@@ -76,7 +76,7 @@ public abstract class ba {
     public boolean j;
     public boolean j0;
     public boolean k;
-    public org.telegram.ui.u k0;
+    public org.telegram.ui.t k0;
     public final int l;
     public ValueAnimator l0;
     public final int m;
@@ -86,7 +86,7 @@ public abstract class ba {
     public final Paint o;
     public final v9 o0;
     public final Paint p;
-    public final kr q;
+    public final hr q;
     public final Path r;
     public int s;
     public int t;
@@ -102,10 +102,10 @@ public abstract class ba {
         Paint paint = new Paint(1);
         this.o = paint;
         this.p = new Paint(1);
-        kr krVar = new kr();
-        this.q = krVar;
+        hr hrVar = new hr();
+        this.q = hrVar;
         this.r = new Path();
-        new s9().a = krVar;
+        new s9().a = hrVar;
         this.u = -1;
         this.v = -1;
         this.A = new m9(this, new l9(this));
@@ -130,7 +130,7 @@ public abstract class ba {
         float dp = AndroidUtilities.dp(6.0f);
         this.n = dp;
         paint.setPathEffect(new CornerPathEffect(dp));
-        krVar.d = 1.0f;
+        hrVar.d = 1.0f;
     }
 
     public static void a(ba baVar, int i10) {
@@ -151,7 +151,7 @@ public abstract class ba {
         int[] l4 = baVar.l();
         int lineTop = (int) (((((layout.getLineTop(lineForOffset) + baVar.b) + l4[1]) - lineBottom) - AndroidUtilities.dp(8.0f)) + r9Var.c);
         Object obj = baVar.W;
-        if (obj instanceof org.telegram.ui.u2) {
+        if (obj instanceof org.telegram.ui.w2) {
             i11 = l4[0];
             lineRight = ((View) obj).getMeasuredWidth() + i11;
         } else {
@@ -354,8 +354,8 @@ public abstract class ba {
         return false;
     }
 
-    public final void Q(ai.t3 t3Var) {
-        this.D = t3Var;
+    public final void Q(bi.i3 i3Var) {
+        this.D = i3Var;
     }
 
     public final void R() {
@@ -363,8 +363,8 @@ public abstract class ba {
     }
 
     public final void S(ViewGroup viewGroup) {
-        if (viewGroup instanceof qm0) {
-            this.E = (qm0) viewGroup;
+        if (viewGroup instanceof mm0) {
+            this.E = (mm0) viewGroup;
         }
         this.F = viewGroup;
     }
@@ -372,15 +372,15 @@ public abstract class ba {
     public final void T() {
         if (this.C != null && !this.i && x() && d()) {
             if (!this.P) {
-                org.telegram.ui.ActionBar.h4 h4Var = this.Y;
+                org.telegram.ui.ActionBar.g4 g4Var = this.Y;
                 m9 m9Var = this.A;
-                if (h4Var == null) {
-                    org.telegram.ui.ActionBar.h4 h4Var2 = new org.telegram.ui.ActionBar.h4(this.C.getContext(), m9Var, this.C, new org.telegram.ui.ActionBar.w4(this.C.getContext(), this.C, 1, q(), null));
-                    this.Y = h4Var2;
-                    m9Var.onCreateActionMode(h4Var2, h4Var2.c);
+                if (g4Var == null) {
+                    org.telegram.ui.ActionBar.g4 g4Var2 = new org.telegram.ui.ActionBar.g4(this.C.getContext(), m9Var, this.C, new org.telegram.ui.ActionBar.v4(this.C.getContext(), this.C, 1, q(), null));
+                    this.Y = g4Var2;
+                    m9Var.onCreateActionMode(g4Var2, g4Var2.c);
                 }
-                org.telegram.ui.ActionBar.h4 h4Var3 = this.Y;
-                m9Var.onPrepareActionMode(h4Var3, h4Var3.c);
+                org.telegram.ui.ActionBar.g4 g4Var3 = this.Y;
+                m9Var.onPrepareActionMode(g4Var3, g4Var3.c);
                 this.Y.hide(1L);
             }
             AndroidUtilities.cancelRunOnUIThread(this.n0);
@@ -444,9 +444,9 @@ public abstract class ba {
             this.C.c();
         }
         this.V = 0.0f;
-        w7.h0 h0Var = this.D;
-        if (h0Var != null) {
-            h0Var.a(false);
+        w7.w5 w5Var = this.D;
+        if (w5Var != null) {
+            w5Var.a(false);
         }
         this.s = -1;
         this.t = -1;
@@ -461,7 +461,7 @@ public abstract class ba {
         float f10;
         float f11;
         int i13;
-        kr krVar;
+        hr hrVar;
         float f12;
         v9 v9Var = this.o0;
         v9Var.reset();
@@ -478,23 +478,23 @@ public abstract class ba {
         int i14 = 0;
         while (true) {
             i13 = v9Var.c;
-            krVar = this.q;
+            hrVar = this.q;
             f12 = this.n;
             if (i14 >= i13) {
                 break;
             }
             RectF rectF = (RectF) v9Var.b.get(i14);
-            rectF.set((int) (Math.max(f7, rectF.left) - (z10 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.vision.e2.y(rectF.top, f11, f10, f11), (int) (Math.max(f7, rectF.right) + (z11 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.vision.e2.y(rectF.bottom, f11, f10, f11));
-            krVar.addRect(rectF, Path.Direction.CW);
+            rectF.set((int) (Math.max(f7, rectF.left) - (z10 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.play_billing.k3.y(rectF.top, f11, f10, f11), (int) (Math.max(f7, rectF.right) + (z11 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.play_billing.k3.y(rectF.bottom, f11, f10, f11));
+            hrVar.addRect(rectF, Path.Direction.CW);
             i14++;
         }
         if (i13 != 0 || z11) {
             return;
         }
         try {
-            krVar.addRect(((int) layout.getPrimaryHorizontal(i11)) - (f12 / 2.0f), layout.getLineTop(i10), (f12 / 4.0f) + ((int) layout.getPrimaryHorizontal(i12)), layout.getLineBottom(i10), Path.Direction.CW);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+            hrVar.addRect(((int) layout.getPrimaryHorizontal(i11)) - (f12 / 2.0f), layout.getLineTop(i10), (f12 / 4.0f) + ((int) layout.getPrimaryHorizontal(i12)), layout.getLineBottom(i10), Path.Direction.CW);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -515,14 +515,14 @@ public abstract class ba {
         ba baVar;
         int i17;
         float lineRight;
-        kr krVar;
+        hr hrVar;
         if (layout == null || layout.getText() == null) {
             return;
         }
         int clamp = Utilities.clamp(i10, layout.getText().length(), 0);
         int clamp2 = Utilities.clamp(i11, layout.getText().length(), 0);
-        kr krVar2 = this.q;
-        krVar2.reset();
+        hr hrVar2 = this.q;
+        hrVar2.reset();
         Path path2 = this.r;
         path2.reset();
         float f11 = this.n;
@@ -566,7 +566,7 @@ public abstract class ba {
                     if (rect != null) {
                         RectF rectF = AndroidUtilities.rectTmp;
                         rectF.set(rect);
-                        krVar2.addRect(rectF, Path.Direction.CW);
+                        hrVar2.addRect(rectF, Path.Direction.CW);
                     }
                     i13 = lineForOffset + 1;
                     while (i13 < lineForOffset2) {
@@ -576,7 +576,7 @@ public abstract class ba {
                         int max2 = Math.max(lineLeft, lineRight2);
                         float max3 = Math.max(f7, min2);
                         float f13 = i18;
-                        krVar2.addRect(max3 - f13, layout.getLineTop(i13), Math.max(f7, max2) + f13, layout.getLineBottom(i13) + 1, Path.Direction.CW);
+                        hrVar2.addRect(max3 - f13, layout.getLineTop(i13), Math.max(f7, max2) + f13, layout.getLineBottom(i13) + 1, Path.Direction.CW);
                         i13++;
                         lineForOffset2 = lineForOffset2;
                         i18 = i18;
@@ -632,13 +632,13 @@ public abstract class ba {
             if (i22 >= 26) {
                 canvas.clipOutRect(rect2);
             }
-            krVar = krVar2;
+            hrVar = hrVar2;
         } else {
             if (!z10 || layout.isRtlCharAt(i16)) {
-                krVar = krVar2;
+                hrVar = hrVar2;
             } else {
                 Rect rect3 = AndroidUtilities.rectTmp2;
-                krVar = krVar2;
+                hrVar = hrVar2;
                 rect3.set((int) primaryHorizontal2, (int) (lineBottom - f10), (int) Math.min(primaryHorizontal2 + f10, layout.getLineRight(i15)), (int) lineBottom);
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(rect3);
@@ -659,8 +659,8 @@ public abstract class ba {
                 }
             }
         }
-        krVar.a();
-        canvas.drawPath(krVar, baVar.o);
+        hrVar.a();
+        canvas.drawPath(hrVar, baVar.o);
         if (z12) {
             canvas.restore();
             canvas.drawPath(path, baVar.p);
@@ -719,7 +719,7 @@ public abstract class ba {
         return 0;
     }
 
-    public org.telegram.ui.ActionBar.e6 q() {
+    public org.telegram.ui.ActionBar.c6 q() {
         return this.g0;
     }
 
@@ -734,20 +734,20 @@ public abstract class ba {
     public abstract CharSequence s(w9 w9Var, boolean z10);
 
     public int t(int i10) {
-        return org.telegram.ui.ActionBar.i6.w0(i10, this.g0);
+        return org.telegram.ui.ActionBar.g6.w0(i10, this.g0);
     }
 
     public final void u() {
-        org.telegram.ui.ActionBar.h4 h4Var;
+        org.telegram.ui.ActionBar.g4 g4Var;
         if (this.Y != null && this.P) {
             this.P = false;
             this.n0.run();
         }
         this.P = false;
-        if (x() || (h4Var = this.Y) == null) {
+        if (x() || (g4Var = this.Y) == null) {
             return;
         }
-        h4Var.finish();
+        g4Var.finish();
         this.Y = null;
     }
 

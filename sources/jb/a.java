@@ -1,73 +1,30 @@
 package jb;
 
-import db.g;
-import db.j;
-import db.u;
-import db.v;
-import java.sql.Date;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.TimeZone;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import v7.r8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a extends u {
-    public static final a b = new a();
-    public final SimpleDateFormat a;
-
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-    public class a implements v {
-        @Override // db.v
-        public final u create(g gVar, kb.a aVar) {
-            if (aVar.a == Date.class) {
-                return new a(0);
-            }
-            return null;
-        }
+public final class a extends r8 {
+    @Override // v7.r8
+    public final Method a(Class cls, Field field) {
+        throw new UnsupportedOperationException("Records are not supported on this JVM, this method should not be called");
     }
 
-    public /* synthetic */ a(int i10) {
-        this();
+    @Override // v7.r8
+    public final Constructor b(Class cls) {
+        throw new UnsupportedOperationException("Records are not supported on this JVM, this method should not be called");
     }
 
-    @Override // db.u
-    public final Object read(lb.a aVar) {
-        Date date;
-        if (aVar.x() == 9) {
-            aVar.t();
-            return null;
-        }
-        String v = aVar.v();
-        synchronized (this) {
-            TimeZone timeZone = this.a.getTimeZone();
-            try {
-                try {
-                    date = new Date(this.a.parse(v).getTime());
-                } catch (ParseException e7) {
-                    throw new j("Failed parsing '" + v + "' as SQL Date; at path " + aVar.j(), e7);
-                }
-            } finally {
-                this.a.setTimeZone(timeZone);
-            }
-        }
-        return date;
+    @Override // v7.r8
+    public final String[] c(Class cls) {
+        throw new UnsupportedOperationException("Records are not supported on this JVM, this method should not be called");
     }
 
-    @Override // db.u
-    public final void write(lb.b bVar, Object obj) {
-        String format;
-        Date date = (Date) obj;
-        if (date == null) {
-            bVar.i();
-            return;
-        }
-        synchronized (this) {
-            format = this.a.format((java.util.Date) date);
-        }
-        bVar.r(format);
-    }
-
-    private a() {
-        this.a = new SimpleDateFormat("MMM d, yyyy");
+    @Override // v7.r8
+    public final boolean d(Class cls) {
+        return false;
     }
 }

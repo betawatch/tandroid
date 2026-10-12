@@ -1,98 +1,54 @@
 package org.telegram.ui.Components.voip;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.io.File;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.cd0;
-import w7.x5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class w0 extends z4.a {
-    public final /* synthetic */ x0 c;
+public final /* synthetic */ class w0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b1 b;
 
-    public w0(x0 x0Var) {
-        this.c = x0Var;
+    public /* synthetic */ w0(b1 b1Var, int i10) {
+        this.a = i10;
+        this.b = b1Var;
     }
 
-    @Override // z4.a
-    public final void a(z4.g gVar, Object obj) {
-        gVar.removeView((View) obj);
-    }
-
-    @Override // z4.a
-    public final int b() {
-        return this.c.f.length;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r13v11, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
-    @Override // z4.a
-    public final Object e(z4.g gVar, int i10) {
-        Bitmap bitmap;
-        ImageView imageView;
-        x0 x0Var = this.c;
-        boolean z10 = x0Var.y;
-        int i11 = 1;
-        if (z10 && i10 == 0) {
-            ?? frameLayout = new FrameLayout(x0Var.getContext());
-            frameLayout.setBackground(new cd0(true, -14602694, -13935795, -14395293, -14203560));
-            ImageView imageView2 = new ImageView(x0Var.getContext());
-            imageView2.setScaleType(ImageView.ScaleType.CENTER);
-            imageView2.setImageResource(R.drawable.screencast_big);
-            frameLayout.addView(imageView2, x5.a(82.0f, 0.0f, 0.0f, 0.0f, 60.0f, 82, 17));
-            TextView textView = new TextView(x0Var.getContext());
-            textView.setText(LocaleController.getString(R.string.VoipVideoPrivateScreenSharing));
-            textView.setGravity(17);
-            textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-            org.telegram.messenger.q.m(15.0f, -1, 1, textView);
-            frameLayout.addView(textView, x5.a(-2.0f, 21.0f, 28.0f, 21.0f, 0.0f, -1, 17));
-            imageView = frameLayout;
-        } else {
-            ImageView imageView3 = new ImageView(x0Var.getContext());
-            imageView3.setTag(Integer.valueOf(i10));
-            try {
-                File filesDirFixed = ApplicationLoader.getFilesDirFixed();
-                StringBuilder sb2 = new StringBuilder("cthumb");
-                if (i10 != 0 && (i10 != 1 || !z10)) {
-                    i11 = 2;
-                }
-                sb2.append(i11);
-                sb2.append(".jpg");
-                bitmap = BitmapFactory.decodeFile(new File(filesDirFixed, sb2.toString()).getAbsolutePath());
-            } catch (Throwable unused) {
-                bitmap = null;
-            }
-            if (bitmap != null) {
-                imageView3.setImageBitmap(bitmap);
-            } else {
-                imageView3.setImageResource(R.drawable.icplaceholder);
-            }
-            imageView3.setScaleType(ImageView.ScaleType.FIT_XY);
-            imageView = imageView3;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                b1 b1Var = this.b;
+                b1Var.getClass();
+                b1Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b1Var.invalidate();
+                break;
+            case 1:
+                b1 b1Var2 = this.b;
+                b1Var2.getClass();
+                b1Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float dp = b1Var2.I + AndroidUtilities.dp(28.0f);
+                float dp2 = b1Var2.J + AndroidUtilities.dp(52.0f);
+                float f7 = b1Var2.y;
+                b1Var2.G = dp - (dp * f7);
+                b1Var2.H = dp2 - (f7 * dp2);
+                b1Var2.invalidate();
+                break;
+            case 2:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b1 b1Var3 = this.b;
+                b1Var3.E = floatValue;
+                int dp3 = (AndroidUtilities.displaySize.x - AndroidUtilities.dp(36.0f)) - AndroidUtilities.dp(52.0f);
+                z0 z0Var = b1Var3.c;
+                z0Var.getLayoutParams().width = AndroidUtilities.dp(52.0f) + ((int) (dp3 * b1Var3.E));
+                z0Var.requestLayout();
+                break;
+            default:
+                b1 b1Var4 = this.b;
+                b1Var4.getClass();
+                b1Var4.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b1Var4.e();
+                break;
         }
-        if (imageView.getParent() != null) {
-            ((ViewGroup) imageView.getParent()).removeView(imageView);
-        }
-        gVar.addView(imageView, 0);
-        return imageView;
-    }
-
-    @Override // z4.a
-    public final boolean f(View view, Object obj) {
-        return view.equals(obj);
-    }
-
-    @Override // z4.a
-    public final void h(int i10) {
     }
 }

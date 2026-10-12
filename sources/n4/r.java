@@ -1,61 +1,64 @@
 package n4;
 
-import android.content.Context;
 import android.media.session.MediaSession;
-import android.os.Bundle;
-import android.os.RemoteCallbackList;
-import java.util.List;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class r {
-    public final MediaSession a;
-    public final q b;
-    public final w c;
-    public final Bundle e;
-    public f0 g;
-    public List h;
-    public m i;
-    public int j;
-    public int k;
-    public p l;
-    public z m;
-    public final Object d = new Object();
-    public final RemoteCallbackList f = new RemoteCallbackList();
+public final class r implements Parcelable {
+    public static final Parcelable.Creator<r> CREATOR = new m8.h(6);
+    public final MediaSession.Token b;
+    public d c;
+    public final Object a = new Object();
+    public y4.d d = null;
 
-    public r(Context context, String str, Bundle bundle) {
-        MediaSession a2 = a(context, str, bundle);
-        this.a = a2;
-        q qVar = new q(this);
-        this.b = qVar;
-        this.c = new w(a2.getSessionToken(), qVar);
-        this.e = bundle;
-        a2.setFlags(3);
+    public r(MediaSession.Token token, m mVar) {
+        this.b = token;
+        this.c = mVar;
     }
 
-    public MediaSession a(Context context, String str, Bundle bundle) {
-        return new MediaSession(context, str);
-    }
-
-    public final p b() {
-        p pVar;
-        synchronized (this.d) {
-            pVar = this.l;
+    public final d a() {
+        d dVar;
+        synchronized (this.a) {
+            dVar = this.c;
         }
-        return pVar;
+        return dVar;
     }
 
-    public z c() {
-        z zVar;
-        synchronized (this.d) {
-            zVar = this.m;
+    public final void b(d dVar) {
+        synchronized (this.a) {
+            this.c = dVar;
         }
-        return zVar;
     }
 
-    public void d(z zVar) {
-        synchronized (this.d) {
-            this.m = zVar;
+    public final void c(y4.d dVar) {
+        synchronized (this.a) {
+            this.d = dVar;
         }
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof r) {
+            return this.b.equals(((r) obj).b);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode();
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeParcelable(this.b, i10);
     }
 }

@@ -1,5 +1,6 @@
 package j$.util;
 
+import j$.util.function.IntConsumer$-CC;
 import java.util.NoSuchElementException;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
@@ -11,7 +12,7 @@ public final class g1 implements l0, IntConsumer, y {
     public final /* synthetic */ x0 c;
 
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
     @Override // j$.util.q0

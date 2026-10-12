@@ -1,7 +1,21 @@
 package ea;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface a {
-    StackTraceElement[] l(StackTraceElement[] stackTraceElementArr);
+public final class a {
+    public final com.google.android.gms.internal.cast.a a;
+    public final bc.d b;
+    public final long c;
+    public final double d;
+    public final double e;
+    public final int f;
+
+    public a(long j10, com.google.android.gms.internal.cast.a aVar, bc.d dVar, double d, double d10, int i10) {
+        this.c = j10;
+        this.a = aVar;
+        this.b = dVar;
+        this.d = d;
+        this.e = d10;
+        this.f = i10;
+    }
 }

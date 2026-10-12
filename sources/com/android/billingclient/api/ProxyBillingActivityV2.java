@@ -5,16 +5,16 @@ import android.app.PendingIntent;
 import android.content.IntentSender;
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import androidx.activity.l;
+import androidx.activity.m;
 import androidx.activity.result.c;
 import androidx.activity.result.g;
-import androidx.fragment.app.f0;
+import androidx.fragment.app.d0;
 import com.google.android.gms.internal.play_billing.u;
-import xa.d;
+import k6.h;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class ProxyBillingActivityV2 extends l {
+public class ProxyBillingActivityV2 extends m {
     public c J;
     public c K;
     public c L;
@@ -22,12 +22,12 @@ public class ProxyBillingActivityV2 extends l {
     public ResultReceiver N;
     public ResultReceiver O;
 
-    @Override // androidx.activity.l, e0.f, android.app.Activity
+    @Override // androidx.activity.m, e0.f, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.J = r(new pb.c(this, 10), new f0(3));
-        this.K = r(new d(this, 8), new f0(3));
-        this.L = r(new i(this, 10), new f0(3));
+        this.J = r(new ya.c(this, 9), new d0(3));
+        this.K = r(new i(this, 9), new d0(3));
+        this.L = r(new h(this, 12), new d0(3));
         if (bundle != null) {
             if (bundle.containsKey("alternative_billing_only_dialog_result_receiver")) {
                 this.M = (ResultReceiver) bundle.getParcelable("alternative_billing_only_dialog_result_receiver");
@@ -49,7 +49,7 @@ public class ProxyBillingActivityV2 extends l {
             kotlin.jvm.internal.i.e(pendingIntent, "pendingIntent");
             IntentSender intentSender = pendingIntent.getIntentSender();
             kotlin.jvm.internal.i.d(intentSender, "pendingIntent.intentSender");
-            cVar.a(new g(intentSender, null, 0, 0));
+            cVar.b(new g(intentSender, null, 0, 0));
             return;
         }
         if (getIntent().hasExtra("external_payment_dialog_pending_intent")) {
@@ -59,7 +59,7 @@ public class ProxyBillingActivityV2 extends l {
             kotlin.jvm.internal.i.e(pendingIntent2, "pendingIntent");
             IntentSender intentSender2 = pendingIntent2.getIntentSender();
             kotlin.jvm.internal.i.d(intentSender2, "pendingIntent.intentSender");
-            cVar2.a(new g(intentSender2, null, 0, 0));
+            cVar2.b(new g(intentSender2, null, 0, 0));
             return;
         }
         if (getIntent().hasExtra("external_offer_flow_pending_intent")) {
@@ -69,11 +69,11 @@ public class ProxyBillingActivityV2 extends l {
             kotlin.jvm.internal.i.e(pendingIntent3, "pendingIntent");
             IntentSender intentSender3 = pendingIntent3.getIntentSender();
             kotlin.jvm.internal.i.d(intentSender3, "pendingIntent.intentSender");
-            cVar3.a(new g(intentSender3, null, 0, 0));
+            cVar3.b(new g(intentSender3, null, 0, 0));
         }
     }
 
-    @Override // androidx.activity.l, e0.f, android.app.Activity
+    @Override // androidx.activity.m, e0.f, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         ResultReceiver resultReceiver = this.M;

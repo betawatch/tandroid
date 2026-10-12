@@ -1,34 +1,18 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class df0 implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate[] c;
+public final /* synthetic */ class df0 implements u0.g, f5 {
+    public final /* synthetic */ of0 a;
 
-    public df0(int i10, Utilities.Callback callback, NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
-        this.a = i10;
-        this.b = callback;
-        this.c = notificationCenterDelegateArr;
+    public /* synthetic */ df0(of0 of0Var) {
+        this.a = of0Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12 = NotificationCenter.activityPermissionsGranted;
-        if (i10 == i12) {
-            int intValue = ((Integer) objArr[0]).intValue();
-            int[] iArr = (int[]) objArr[2];
-            if (intValue == this.a) {
-                Utilities.Callback callback = this.b;
-                if (callback != null) {
-                    callback.run(iArr);
-                }
-                NotificationCenter.getGlobalInstance().removeObserver(this.c[0], i12);
-            }
-        }
+    @Override // org.telegram.ui.Components.f5
+    public void J(int i10, int i11, boolean z10) {
+        of0 of0Var = this.a;
+        of0Var.K.b(of0Var.N, z10, i10, 0L);
+        of0Var.dismiss();
     }
 }

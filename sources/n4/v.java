@@ -1,22 +1,39 @@
 package n4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.ResultReceiver;
+import android.text.TextUtils;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class v implements Parcelable {
-    public static final Parcelable.Creator<v> CREATOR = new m8.h(6);
-    public ResultReceiver a;
+public class v {
+    public final String a;
+    public final int b;
+    public final int c;
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
+    public v(String str, int i10, int i11) {
+        this.a = str;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        this.a.writeToParcel(parcel, i10);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof v)) {
+            return false;
+        }
+        v vVar = (v) obj;
+        int i10 = vVar.c;
+        String str = vVar.a;
+        int i11 = vVar.b;
+        int i12 = this.c;
+        String str2 = this.a;
+        int i13 = this.b;
+        return (i13 < 0 || i11 < 0) ? TextUtils.equals(str2, str) && i12 == i10 : TextUtils.equals(str2, str) && i13 == i11 && i12 == i10;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a, Integer.valueOf(this.c));
     }
 }

@@ -1,23 +1,18 @@
 package q3;
 
+import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class m extends j {
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int[] e;
-    public final int[] f;
+public final class m extends i {
+    public final String b;
+    public final byte[] c;
 
-    public m(int i10, int i11, int i12, int[] iArr, int[] iArr2) {
-        super("MLLT");
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = iArr;
-        this.f = iArr2;
+    public m(String str, byte[] bArr) {
+        super("PRIV");
+        this.b = str;
+        this.c = bArr;
     }
 
     public final boolean equals(Object obj) {
@@ -26,7 +21,7 @@ public final class m extends j {
         }
         if (obj != null && m.class == obj.getClass()) {
             m mVar = (m) obj;
-            if (this.b == mVar.b && this.c == mVar.c && this.d == mVar.d && Arrays.equals(this.e, mVar.e) && Arrays.equals(this.f, mVar.f)) {
+            if (Objects.equals(this.b, mVar.b) && Arrays.equals(this.c, mVar.c)) {
                 return true;
             }
         }
@@ -34,6 +29,12 @@ public final class m extends j {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((((((527 + this.b) * 31) + this.c) * 31) + this.d) * 31)) * 31);
+        String str = this.b;
+        return Arrays.hashCode(this.c) + ((527 + (str != null ? str.hashCode() : 0)) * 31);
+    }
+
+    @Override // q3.i
+    public final String toString() {
+        return this.a + ": owner=" + this.b;
     }
 }

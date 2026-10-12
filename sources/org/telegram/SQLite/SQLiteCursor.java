@@ -6,7 +6,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class SQLiteCursor {
     public static final int FIELD_TYPE_BYTEARRAY = 4;
@@ -41,23 +41,23 @@ public class SQLiteCursor {
         }
     }
 
-    public native byte[] columnByteArrayValue(long j3, int i10);
+    public native byte[] columnByteArrayValue(long j10, int i10);
 
-    public native long columnByteBufferValue(long j3, int i10);
+    public native long columnByteBufferValue(long j10, int i10);
 
-    public native int columnCount(long j3);
+    public native int columnCount(long j10);
 
-    public native double columnDoubleValue(long j3, int i10);
+    public native double columnDoubleValue(long j10, int i10);
 
-    public native int columnIntValue(long j3, int i10);
+    public native int columnIntValue(long j10, int i10);
 
-    public native int columnIsNull(long j3, int i10);
+    public native int columnIsNull(long j10, int i10);
 
-    public native long columnLongValue(long j3, int i10);
+    public native long columnLongValue(long j10, int i10);
 
-    public native String columnStringValue(long j3, int i10);
+    public native String columnStringValue(long j10, int i10);
 
-    public native int columnType(long j3, int i10);
+    public native int columnType(long j10, int i10);
 
     public void dispose() {
         this.preparedStatement.dispose();
@@ -116,8 +116,8 @@ public class SQLiteCursor {
                     }
                     Thread.sleep(500L);
                     step = this.preparedStatement.step();
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                 }
                 if (step == 0) {
                     break;

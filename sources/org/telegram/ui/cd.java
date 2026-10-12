@@ -1,39 +1,18 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cd implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ md b;
-
-    public /* synthetic */ cd(md mdVar, int i10) {
-        this.a = i10;
-        this.b = mdVar;
+public final class cd extends org.telegram.ui.Components.v21 {
+    @Override // org.telegram.ui.Components.v21
+    public final String b() {
+        return LocaleController.getString(R.string.ChannelNoWallpaper);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(24, this.b, tLObject));
-                break;
-            case 1:
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    AndroidUtilities.runOnUIThread(new dd(this.b, 3));
-                    break;
-                }
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(22, this.b, tL_error));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new r1(this.b, tL_error, tLObject, 11));
-                break;
-        }
+    @Override // org.telegram.ui.Components.v21
+    public final int c() {
+        return 13;
     }
 }

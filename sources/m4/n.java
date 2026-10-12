@@ -1,33 +1,8 @@
 package m4;
 
-import android.os.Bundle;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class n {
-    public static final String a;
-    public static final String b;
-    public static final String c;
-    public static final String d;
-
-    static {
-        String str = e2.d0.a;
-        a = Integer.toString(0, 36);
-        b = Integer.toString(1, 36);
-        c = Integer.toString(2, 36);
-        d = Integer.toString(3, 36);
-    }
-
-    public static n a(Bundle bundle) {
-        Bundle bundle2 = bundle.getBundle(a);
-        bundle.getBoolean(b, false);
-        bundle.getBoolean(c, false);
-        bundle.getBoolean(d, false);
-        if (bundle2 == null) {
-            bundle2 = Bundle.EMPTY;
-        }
-        n nVar = new n();
-        new Bundle(bundle2);
-        return nVar;
-    }
+public interface n extends IInterface {
 }

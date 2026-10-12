@@ -1,39 +1,25 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
-    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ LocationSharingService b;
 
-    public /* synthetic */ y5(org.telegram.ui.ActionBar.b2 b2Var, boolean[] zArr, int i10) {
+    public /* synthetic */ y5(LocationSharingService locationSharingService, int i10) {
         this.a = i10;
-        this.b = b2Var;
-        this.c = zArr;
+        this.b = locationSharingService;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MediaController.lambda$saveFile$45(this.c, this.b);
-                break;
-            case 1:
-                MediaController.lambda$saveFile$49(this.b, this.c);
-                break;
-            case 2:
-                MediaController.lambda$saveFile$52(this.c, this.b);
+                this.b.lambda$onCreate$1();
                 break;
             default:
-                MediaController.lambda$saveFile$54(this.b, this.c);
+                this.b.lambda$didReceivedNotification$2();
                 break;
         }
-    }
-
-    public /* synthetic */ y5(boolean[] zArr, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        this.a = i10;
-        this.c = zArr;
-        this.b = b2Var;
     }
 }

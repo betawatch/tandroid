@@ -1,52 +1,40 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoadOperation;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class cb implements RequestDelegate {
+public final /* synthetic */ class cb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ TLRPC.TL_messages_peerDialogs f;
+    public final /* synthetic */ a0.h h;
+    public final /* synthetic */ TLRPC.TL_messages_dialogs n;
 
-    public /* synthetic */ cb(Object obj, int i10, Object obj2, int i11) {
+    public /* synthetic */ cb(MessagesController messagesController, int i10, ArrayList arrayList, boolean z10, TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs, a0.h hVar, TLRPC.TL_messages_dialogs tL_messages_dialogs, int i11) {
         this.a = i11;
-        this.c = obj;
-        this.b = i10;
-        this.d = obj2;
+        this.b = messagesController;
+        this.c = i10;
+        this.d = arrayList;
+        this.e = z10;
+        this.f = tL_messages_peerDialogs;
+        this.h = hVar;
+        this.n = tL_messages_dialogs;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$481(this.b, (MessagesController.ChatlistUpdatesStat) this.d, tLObject, tL_error);
-                break;
-            case 1:
-                ((FileLoadOperation) this.c).lambda$startDownloadRequest$29(this.b, (FileLoadOperation.RequestInfo) this.d, tLObject, tL_error);
-                break;
-            case 2:
-                ((MediaDataController) this.c).lambda$toggleStickerSetInternal$117((TLRPC.StickerSet) this.d, this.b, tLObject, tL_error);
-                break;
-            case 3:
-                ((MediaDataController) this.c).lambda$loadStickers$97(this.b, (Utilities.Callback) this.d, tLObject, tL_error);
+                this.b.lambda$loadPinnedDialogs$365(this.c, this.d, this.e, this.f, this.h, this.n);
                 break;
             default:
-                ((MessagesController) this.c).lambda$registerForPush$323(this.b, (String) this.d, tLObject, tL_error);
+                this.b.lambda$loadPinnedDialogs$364(this.c, this.d, this.e, this.f, this.h, this.n);
                 break;
         }
-    }
-
-    public /* synthetic */ cb(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
-        this.a = 2;
-        this.c = mediaDataController;
-        this.d = stickerSet;
-        this.b = i10;
     }
 }

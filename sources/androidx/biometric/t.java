@@ -1,43 +1,31 @@
 package androidx.biometric;
 
-import android.security.identity.IdentityCredential;
-import java.security.Signature;
-import javax.crypto.Cipher;
-import javax.crypto.Mac;
+import a3.l0;
+import android.content.Context;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class t {
-    public final Signature a;
-    public final Cipher b;
-    public final Mac c;
-    public final IdentityCredential d;
+public final class t implements androidx.emoji2.text.k {
+    public final Context a;
 
-    public t(Signature signature) {
-        this.a = signature;
-        this.b = null;
-        this.c = null;
-        this.d = null;
+    public t(Context context, int i10) {
+        switch (i10) {
+            case 1:
+                this.a = context.getApplicationContext();
+                break;
+            default:
+                this.a = context.getApplicationContext();
+                break;
+        }
     }
 
-    public t(Cipher cipher) {
-        this.a = null;
-        this.b = cipher;
-        this.c = null;
-        this.d = null;
-    }
-
-    public t(Mac mac) {
-        this.a = null;
-        this.b = null;
-        this.c = mac;
-        this.d = null;
-    }
-
-    public t(IdentityCredential identityCredential) {
-        this.a = null;
-        this.b = null;
-        this.c = null;
-        this.d = identityCredential;
+    @Override // androidx.emoji2.text.k
+    public void a(v7.t tVar) {
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new androidx.emoji2.text.a("EmojiCompatInitializer", 0));
+        threadPoolExecutor.allowCoreThreadTimeOut(true);
+        threadPoolExecutor.execute(new l0(this, tVar, threadPoolExecutor, 3));
     }
 }

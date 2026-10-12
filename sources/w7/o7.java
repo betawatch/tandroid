@@ -1,42 +1,69 @@
 package w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class o7 {
-    public static void a(int i10, int i11) {
-        String a2;
-        if (i10 < 0 || i10 >= i11) {
-            if (i10 < 0) {
-                a2 = p7.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
-            } else {
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
-                }
-                a2 = p7.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+     */
+    public static final Class a(xd.c cVar) {
+        kotlin.jvm.internal.i.e(cVar, "<this>");
+        Class a2 = ((kotlin.jvm.internal.c) cVar).a();
+        if (a2.isPrimitive()) {
+            String name = a2.getName();
+            switch (name.hashCode()) {
+                case -1325958191:
+                    if (name.equals("double")) {
+                        return Double.class;
+                    }
+                    break;
+                case 104431:
+                    if (name.equals("int")) {
+                        return Integer.class;
+                    }
+                    break;
+                case 3039496:
+                    if (name.equals("byte")) {
+                        return Byte.class;
+                    }
+                    break;
+                case 3052374:
+                    if (name.equals("char")) {
+                        return Character.class;
+                    }
+                    break;
+                case 3327612:
+                    if (name.equals("long")) {
+                        return Long.class;
+                    }
+                    break;
+                case 3625364:
+                    if (name.equals("void")) {
+                        return Void.class;
+                    }
+                    break;
+                case 64711720:
+                    if (name.equals("boolean")) {
+                        return Boolean.class;
+                    }
+                    break;
+                case 97526364:
+                    if (name.equals("float")) {
+                        return Float.class;
+                    }
+                    break;
+                case 109413500:
+                    if (name.equals("short")) {
+                        return Short.class;
+                    }
+                    break;
             }
-            throw new IndexOutOfBoundsException(a2);
         }
-    }
-
-    public static void b(int i10, int i11) {
-        if (i10 < 0 || i10 > i11) {
-            throw new IndexOutOfBoundsException(d(i10, i11, "index"));
-        }
-    }
-
-    public static void c(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 < i10 || i11 > i12) {
-            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? d(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? d(i11, i12, "end index") : p7.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
-        }
-    }
-
-    public static String d(int i10, int i11, String str) {
-        if (i10 < 0) {
-            return p7.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
-        }
-        if (i11 >= 0) {
-            return p7.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
-        }
-        throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
+        return a2;
     }
 }

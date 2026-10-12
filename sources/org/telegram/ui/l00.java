@@ -1,25 +1,25 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.style.ImageSpan;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class l00 extends ImageSpan {
-    public int a;
+public final /* synthetic */ class l00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l10 b;
 
-    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        if (paint.getColor() != this.a && getDrawable() != null) {
-            Drawable drawable = getDrawable();
-            int color = paint.getColor();
-            this.a = color;
-            drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
+    public /* synthetic */ l00(l10 l10Var, int i10) {
+        this.a = i10;
+        this.b = l10Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                l10.V(this.b);
+                break;
+            default:
+                l10.W(this.b);
+                break;
         }
-        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
     }
 }

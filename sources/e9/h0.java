@@ -1,73 +1,23 @@
 package e9;
 
-import java.util.Iterator;
-import java.util.ListIterator;
-import v7.t6;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class h0 extends i0 {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ i0 e;
-
-    public h0(i0 i0Var, int i10, int i11) {
-        this.e = i0Var;
-        this.c = i10;
-        this.d = i11;
+public abstract class h0 {
+    public static int b(int i10, int i11) {
+        if (i11 < 0) {
+            throw new IllegalArgumentException("cannot store more than MAX_VALUE elements");
+        }
+        if (i11 <= i10) {
+            return i10;
+        }
+        int i12 = i10 + (i10 >> 1) + 1;
+        if (i12 < i11) {
+            i12 = Integer.highestOneBit(i11 - 1) << 1;
+        }
+        return i12 < 0 ? ConnectionsManager.DEFAULT_DATACENTER_ID : i12;
     }
 
-    @Override // e9.i0, java.util.List
-    /* renamed from: C */
-    public final i0 subList(int i10, int i11) {
-        t6.f(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
-    }
-
-    @Override // java.util.List
-    public final Object get(int i10) {
-        t6.c(i10, this.d);
-        return this.e.get(i10 + this.c);
-    }
-
-    @Override // e9.i0, e9.d0, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        return listIterator(0);
-    }
-
-    @Override // e9.i0, java.util.List
-    public final ListIterator listIterator() {
-        return listIterator(0);
-    }
-
-    @Override // e9.d0
-    public final Object[] o() {
-        return this.e.o();
-    }
-
-    @Override // e9.d0
-    public final int p() {
-        return this.e.q() + this.c + this.d;
-    }
-
-    @Override // e9.d0
-    public final int q() {
-        return this.e.q() + this.c;
-    }
-
-    @Override // e9.d0
-    public final boolean r() {
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
-    }
-
-    @Override // e9.i0, java.util.List
-    public final /* bridge */ /* synthetic */ ListIterator listIterator(int i10) {
-        return listIterator(i10);
-    }
+    public abstract h0 a(Object obj);
 }

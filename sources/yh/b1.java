@@ -1,66 +1,26 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
-    public final /* synthetic */ long c;
+public final class b1 extends zh.r3 {
+    public final /* synthetic */ p1 s1;
 
-    public /* synthetic */ b1(s3 s3Var, long j3, int i10) {
-        this.a = i10;
-        this.b = s3Var;
-        this.c = j3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b1(p1 p1Var, Context context, int i10, long j10, c6 c6Var) {
+        super(context, i10, j10, c6Var, null);
+        this.s1 = p1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                s3 s3Var = this.b;
-                a1 a1Var = s3Var.o1;
-                s3Var.s2(1, true, null);
-                if (this.c > 0) {
-                    AndroidUtilities.cancelRunOnUIThread(a1Var);
-                    AndroidUtilities.runOnUIThread(a1Var);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.Y1(this.c);
-                break;
-            case 2:
-                s3.Q0(this.b, this.c);
-                break;
-            case 3:
-                s3.e1(this.b, this.c);
-                break;
-            case 4:
-                this.b.Y1(this.c);
-                break;
-            case 5:
-                s3.m0(this.b, this.c);
-                break;
-            case 6:
-                this.b.Y1(this.c);
-                break;
-            case 7:
-                s3.Q(this.b, this.c);
-                break;
-            case 8:
-                this.b.Y1(this.c);
-                break;
-            case 9:
-                s3.C0(this.b, this.c);
-                break;
-            case 10:
-                this.b.Y1(this.c);
-                break;
-            default:
-                this.b.Y1(this.c);
-                break;
-        }
+    @Override // zh.r3, org.telegram.ui.ActionBar.e3, org.telegram.ui.ActionBar.i2
+    public final zc getBulletinFactory() {
+        c6 c6Var;
+        p1 p1Var = this.s1;
+        org.telegram.ui.ActionBar.c3 c3Var = p1Var.container;
+        c6Var = p1Var.resourcesProvider;
+        return new zc(c3Var, c6Var);
     }
 }

@@ -10,7 +10,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public class RadialProgressView extends View {
     public float E;
@@ -47,12 +47,12 @@ public class RadialProgressView extends View {
         this.n = f13;
         canvas.drawArc(rectF, f12, f13, false, this.w);
         long currentTimeMillis = System.currentTimeMillis();
-        long j3 = currentTimeMillis - this.a;
-        if (j3 > 17) {
-            j3 = 17;
+        long j10 = currentTimeMillis - this.a;
+        if (j10 > 17) {
+            j10 = 17;
         }
         this.a = currentTimeMillis;
-        b(j3);
+        b(j10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
@@ -60,8 +60,8 @@ public class RadialProgressView extends View {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(long j3) {
-        this.b = (((360 * j3) / 2000.0f) + this.b) - (((int) (r1 / 360.0f)) * 360);
+    public final void b(long j10) {
+        this.b = (((360 * j10) / 2000.0f) + this.b) - (((int) (r1 / 360.0f)) * 360);
         boolean z10 = this.H;
         if (z10) {
             float f7 = this.I;
@@ -76,7 +76,7 @@ public class RadialProgressView extends View {
                     float f12 = this.E;
                     float f13 = f11 - f12;
                     if (f13 > 0.0f) {
-                        int i10 = (int) (this.F + j3);
+                        int i10 = (int) (this.F + j10);
                         this.F = i10;
                         float f14 = i10;
                         if (f14 >= 200.0f) {
@@ -93,7 +93,7 @@ public class RadialProgressView extends View {
                     DecelerateInterpolator decelerateInterpolator = this.s;
                     AccelerateInterpolator accelerateInterpolator = this.v;
                     if (f15 == 0.0f) {
-                        float f16 = this.e + j3;
+                        float f16 = this.e + j10;
                         this.e = f16;
                         if (f16 >= 500.0f) {
                             this.e = 500.0f;
@@ -159,12 +159,12 @@ public class RadialProgressView extends View {
         this.n = f10;
         canvas.drawArc(rectF, f7, f10, false, this.w);
         long currentTimeMillis = System.currentTimeMillis();
-        long j3 = currentTimeMillis - this.a;
-        if (j3 > 17) {
-            j3 = 17;
+        long j10 = currentTimeMillis - this.a;
+        if (j10 > 17) {
+            j10 = 17;
         }
         this.a = currentTimeMillis;
-        b(j3);
+        b(j10);
     }
 
     @Override // android.view.View
@@ -211,12 +211,12 @@ public class RadialProgressView extends View {
         this.h = z10;
     }
 
-    public RadialProgressView(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public RadialProgressView(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
         this.f = new RectF();
         this.J = true;
         this.x = AndroidUtilities.dp(40.0f);
-        this.r = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.h6, e6Var);
+        this.r = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h6, c6Var);
         this.s = new DecelerateInterpolator();
         this.v = new AccelerateInterpolator();
         Paint paint = new Paint(1);

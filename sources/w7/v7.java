@@ -1,58 +1,23 @@
 package w7;
 
-import android.os.Bundle;
-import org.json.JSONObject;
+import android.os.Build;
+import android.widget.EdgeEffect;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class v7 {
-    public static v0.c a(String type, Bundle data) {
-        kotlin.jvm.internal.i.e(type, "type");
-        kotlin.jvm.internal.i.e(data, "data");
-        try {
-            int hashCode = type.hashCode();
-            if (hashCode != -1678407252) {
-                if (hashCode != -543568185) {
-                    if (hashCode == -95037569 && type.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
-                        try {
-                            String string = data.getString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON");
-                            kotlin.jvm.internal.i.b(string);
-                            return new v0.f(string, data);
-                        } catch (Exception unused) {
-                            throw new z0.a();
-                        }
-                    }
-                } else if (type.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
-                    return new v0.d("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
-                }
-                throw new z0.a();
-            }
-            if (type.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
-                try {
-                    String string2 = data.getString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON");
-                    kotlin.jvm.internal.i.b(string2);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON", string2);
-                    v0.d dVar = new v0.d("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", bundle);
-                    if (string2.length() != 0) {
-                        try {
-                            new JSONObject(string2);
-                            return dVar;
-                        } catch (Exception unused2) {
-                        }
-                    }
-                    throw new IllegalArgumentException("responseJson must not be empty, and must be a valid JSON");
-                } catch (Exception unused3) {
-                    throw new z0.a();
-                }
-            }
-            throw new z0.a();
-        } catch (z0.a unused4) {
-            v0.d dVar2 = new v0.d(type, data);
-            if (type.length() > 0) {
-                return dVar2;
-            }
-            throw new IllegalArgumentException("type should not be empty");
+    public static float a(EdgeEffect edgeEffect) {
+        if (Build.VERSION.SDK_INT >= 31) {
+            return u0.c.b(edgeEffect);
         }
+        return 0.0f;
+    }
+
+    public static float b(EdgeEffect edgeEffect, float f7, float f10) {
+        if (Build.VERSION.SDK_INT >= 31) {
+            return u0.c.c(edgeEffect, f7, f10);
+        }
+        u0.b.a(edgeEffect, f7, f10);
+        return f7;
     }
 }

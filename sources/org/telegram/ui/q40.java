@@ -1,50 +1,32 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class q40 extends qv0 {
-    public final /* synthetic */ g60 T;
+public final class q40 implements org.telegram.ui.ActionBar.y2 {
+    public final /* synthetic */ n60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q40(g60 g60Var, ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
-        this.T = g60Var;
+    public q40(n60 n60Var) {
+        this.a = n60Var;
     }
 
-    @Override // org.telegram.ui.qv0
-    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        g60 g60Var = this.T;
-        a40 a40Var = g60Var.b;
-        b40 b40Var = g60Var.C2;
-        if (f7 > 0.0f) {
-            float x10 = b40Var.getX();
-            viewGroup = ((org.telegram.ui.ActionBar.f3) g60Var).containerView;
-            float x11 = viewGroup.getX() + x10;
-            float y3 = b40Var.getY();
-            viewGroup2 = ((org.telegram.ui.ActionBar.f3) g60Var).containerView;
-            float y10 = viewGroup2.getY() + y3;
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(x11, y10, a40Var.getMeasuredWidth() + x11, a40Var.getMeasuredHeight() + y10);
-            canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
-            canvas.translate(x11, y10);
-            b40Var.draw(canvas);
-            canvas.restore();
+    @Override // org.telegram.ui.ActionBar.y2
+    public final boolean h() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.y2
+    public final void onOpenAnimationEnd() {
+        CountDownLatch groupCallBottomSheetLatch;
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
+            groupCallBottomSheetLatch.countDown();
         }
-    }
-
-    @Override // org.telegram.ui.qv0
-    public final void e() {
-        a40 a40Var = this.T.b;
-        super.e();
-        for (int i10 = 0; i10 < a40Var.getChildCount(); i10++) {
-            a40Var.getChildAt(i10).invalidate();
+        n60 n60Var = this.a;
+        if (n60Var.F1 == 6) {
+            n60.C0(n60Var);
         }
     }
 }

@@ -1,56 +1,41 @@
 package e9;
 
-import java.io.Serializable;
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
+import j$.util.Objects;
+import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class r0 extends AbstractList implements RandomAccess, Serializable {
-    public final List a;
-    public final d9.e b;
+public final class r0 extends m2 {
+    public final m2 a;
+    public Object b;
+    public m2 c;
 
-    public r0(List list, d9.e eVar) {
-        list.getClass();
-        this.a = list;
-        this.b = eVar;
+    public r0(o0 o0Var) {
+        c2 c2Var = o0Var.e;
+        y0 y0Var = c2Var.a;
+        if (y0Var == null) {
+            y0Var = c2Var.b();
+            c2Var.a = y0Var;
+        }
+        this.a = y0Var.iterator();
+        this.b = null;
+        this.c = c1.d;
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i10) {
-        return this.b.apply(this.a.get(i10));
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.c.hasNext() || this.a.hasNext();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean isEmpty() {
-        return this.a.isEmpty();
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        return listIterator();
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i10) {
-        return new q0(this, this.a.listIterator(i10), 0);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object remove(int i10) {
-        return this.b.apply(this.a.remove(i10));
-    }
-
-    @Override // java.util.AbstractList
-    public final void removeRange(int i10, int i11) {
-        this.a.subList(i10, i11).clear();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.a.size();
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (!this.c.hasNext()) {
+            Map.Entry entry = (Map.Entry) this.a.next();
+            this.b = entry.getKey();
+            this.c = ((i0) entry.getValue()).iterator();
+        }
+        Object obj = this.b;
+        Objects.requireNonNull(obj);
+        return new j0(obj, this.c.next());
     }
 }

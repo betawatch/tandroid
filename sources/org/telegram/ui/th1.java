@@ -1,54 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class th1 extends LinearLayout {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final ImageView b;
-    public final LinearLayout c;
-    public final TextView d;
-    public final TextView e;
-    public final ImageView f;
-    public boolean h;
-    public boolean n;
+public final /* synthetic */ class th1 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    public th1(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        setOrientation(0);
-        this.a = e6Var;
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        addView(imageView, w7.x5.t(40, 40, 19, 12, 0, 12, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.c = linearLayout;
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(linearLayout, w7.x5.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 16.0f);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.t(-1, -2, 7, 0, 0, 0, 0), context);
-        this.e = h;
-        h.setTextSize(1, 13.0f);
-        linearLayout.addView(h, w7.x5.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.f = imageView2;
-        imageView2.setScaleType(scaleType);
-        addView(imageView2, w7.x5.t(40, 40, 21, 12, 0, 12, 0));
+    public /* synthetic */ th1(UserInfoActivity userInfoActivity, int i10) {
+        this.a = i10;
+        this.b = userInfoActivity;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                UserInfoActivity userInfoActivity = this.b;
+                userInfoActivity.J = (TL_account.TL_birthday) obj;
+                org.telegram.ui.Components.b71 b71Var = userInfoActivity.x;
+                if (b71Var != null) {
+                    b71Var.W2.N(true);
+                }
+                userInfoActivity.b0(true);
+                break;
+            default:
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                UserInfoActivity userInfoActivity2 = this.b;
+                if (userInfoActivity2.K != chat) {
+                    userInfoActivity2.K = chat;
+                    if (chat != null) {
+                        org.telegram.messenger.q.r(R.string.EditProfileChannelSet, org.telegram.ui.Components.zc.a0(userInfoActivity2), R.raw.contact_check, 36);
+                    }
+                    userInfoActivity2.b0(true);
+                    org.telegram.ui.Components.b71 b71Var2 = userInfoActivity2.x;
+                    if (b71Var2 != null) {
+                        b71Var2.W2.N(true);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

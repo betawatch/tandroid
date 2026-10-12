@@ -1,67 +1,66 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m51 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k71 b;
+    public final /* synthetic */ r51 b;
 
-    public /* synthetic */ m51(k71 k71Var, int i10) {
+    public /* synthetic */ m51(r51 r51Var, int i10) {
         this.a = i10;
-        this.b = k71Var;
+        this.b = r51Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                k71 k71Var = this.b;
-                k71Var.getClass();
-                HashSet hashSet = zg.d0.a;
-                gf.c cacheOutQueue = ImageLoader.getInstance().getCacheOutQueue();
-                if (cacheOutQueue.b == null) {
-                    cacheOutQueue.b = new CountDownLatch(1);
+                r51 r51Var = this.b;
+                m51 m51Var = r51Var.Z;
+                if (r51Var.w != null) {
+                    r51Var.a0 = r2.n() / r51Var.w.p();
+                    p51 p51Var = r51Var.N;
+                    if (p51Var != null) {
+                        p51Var.Xd = (r51Var.w.p() - r51Var.w.n()) / 1000;
+                        r51Var.N.q4();
+                        org.telegram.ui.Components.jp0 seekBarWaveform = r51Var.N.getSeekBarWaveform();
+                        if (seekBarWaveform != null) {
+                            float f7 = r51Var.a0;
+                            seekBarWaveform.J = true;
+                            seekBarWaveform.K = f7;
+                            org.telegram.ui.Cells.u1 u1Var = seekBarWaveform.n;
+                            if (u1Var != null) {
+                                u1Var.invalidate();
+                            }
+                        }
+                    }
+                    if (r51Var.w.y()) {
+                        AndroidUtilities.cancelRunOnUIThread(m51Var);
+                        AndroidUtilities.runOnUIThread(m51Var, 16L);
+                        break;
+                    }
                 }
-                zg.d0.b = true;
-                zg.d0.e = false;
-                zg.d0.g = false;
-                AndroidUtilities.runOnUIThread(new m51(k71Var, 2), 0L);
                 break;
             case 1:
-                k71 k71Var2 = this.b;
-                ArrayList arrayList = k71Var2.A1;
-                if (arrayList != null) {
-                    arrayList.clear();
-                }
-                ArrayList arrayList2 = k71Var2.B1;
-                if (arrayList2 != null) {
-                    arrayList2.clear();
-                }
-                ArrayList arrayList3 = k71Var2.D1;
-                if (arrayList3 != null) {
-                    arrayList3.clear();
-                }
-                k71Var2.q0.E(true);
+                super/*android.app.Dialog*/.dismiss();
                 break;
             case 2:
-                this.b.U1.start();
-                break;
-            case 3:
-                this.b.B(true, true, true);
+                super/*android.app.Dialog*/.dismiss();
                 break;
             default:
-                k71 k71Var3 = this.b;
-                NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
-                m51 m51Var = k71Var3.R1;
-                globalInstance.removeDelayed(m51Var);
-                NotificationCenter.getGlobalInstance().doOnIdle(m51Var);
+                r51 r51Var2 = this.b;
+                if (r51Var2.d == null) {
+                    AndroidUtilities.runOnUIThread(new m51(r51Var2, 2));
+                    org.telegram.ui.Cells.u1 u1Var2 = r51Var2.O;
+                    if (u1Var2 != null) {
+                        u1Var2.setVisibility(0);
+                        r51Var2.O.invalidate();
+                    }
+                }
+                MediaController.getInstance().tryResumePausedAudio();
                 break;
         }
     }

@@ -1,21 +1,22 @@
 package m4;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface q {
-    void a(int i10, l lVar);
-
-    void b(int i10);
-
-    void c(int i10, b2.x0 x0Var);
-
-    void d(int i10, h1 h1Var);
-
-    void e(int i10, k1 k1Var, boolean z10, boolean z11, int i11);
-
-    void f();
-
-    void g(int i10, d1 d1Var, b2.x0 x0Var, boolean z10, boolean z11);
-
-    void i(int i10, l1 l1Var);
+public abstract class q extends Binder implements m {
+    public static m F0(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("androidx.media3.session.IMediaController");
+        if (queryLocalInterface != null && (queryLocalInterface instanceof m)) {
+            return (m) queryLocalInterface;
+        }
+        l lVar = new l();
+        lVar.a = iBinder;
+        return lVar;
+    }
 }

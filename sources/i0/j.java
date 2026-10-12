@@ -12,11 +12,11 @@ import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import v7.d8;
+import v7.y7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class j extends d8 {
+public final class j extends y7 {
     public static Font g(FontFamily fontFamily, int i10) {
         FontStyle fontStyle = new FontStyle((i10 & 1) != 0 ? 700 : 400, (i10 & 2) != 0 ? 1 : 0);
         Font font = fontFamily.getFont(0);
@@ -41,8 +41,8 @@ public final class j extends d8 {
             o0.h hVar = hVarArr[i10];
             try {
                 openFileDescriptor = contentResolver.openFileDescriptor(hVar.a, "r", null);
-            } catch (IOException e7) {
-                Log.w("TypefaceCompatApi29Impl", "Font load failed", e7);
+            } catch (IOException e) {
+                Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             }
             if (openFileDescriptor == null) {
                 i10 = openFileDescriptor == null ? i10 + 1 : 0;
@@ -75,7 +75,7 @@ public final class j extends d8 {
         return (Math.abs(fontStyle.getWeight() - fontStyle2.getWeight()) / 100) + (fontStyle.getSlant() == fontStyle2.getSlant() ? 0 : 2);
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public final Typeface a(Context context, h0.e eVar, Resources resources, int i10) {
         try {
             FontFamily.Builder builder = null;
@@ -95,13 +95,13 @@ public final class j extends d8 {
             }
             FontFamily build2 = builder.build();
             return new Typeface.CustomFallbackBuilder(build2).setStyle(g(build2, i10).getStyle()).build();
-        } catch (Exception e7) {
-            Log.w("TypefaceCompatApi29Impl", "Font load failed", e7);
+        } catch (Exception e) {
+            Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             return null;
         }
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public final Typeface b(Context context, o0.h[] hVarArr, int i10) {
         try {
             FontFamily h = h(hVarArr, context.getContentResolver());
@@ -109,13 +109,13 @@ public final class j extends d8 {
                 return null;
             }
             return new Typeface.CustomFallbackBuilder(h).setStyle(g(h, i10).getStyle()).build();
-        } catch (Exception e7) {
-            Log.w("TypefaceCompatApi29Impl", "Font load failed", e7);
+        } catch (Exception e) {
+            Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             return null;
         }
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public final Typeface c(Context context, List list, int i10) {
         ContentResolver contentResolver = context.getContentResolver();
         try {
@@ -131,29 +131,29 @@ public final class j extends d8 {
                 }
             }
             return customFallbackBuilder.setStyle(g(h, i10).getStyle()).build();
-        } catch (Exception e7) {
-            Log.w("TypefaceCompatApi29Impl", "Font load failed", e7);
+        } catch (Exception e) {
+            Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             return null;
         }
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public final Typeface d(Context context, InputStream inputStream) {
         throw new RuntimeException("Do not use this function in API 29 or later.");
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public final Typeface e(Context context, Resources resources, int i10, String str, int i11) {
         try {
             Font build = new Font.Builder(resources, i10).build();
             return new Typeface.CustomFallbackBuilder(new FontFamily.Builder(build).build()).setStyle(build.getStyle()).build();
-        } catch (Exception e7) {
-            Log.w("TypefaceCompatApi29Impl", "Font load failed", e7);
+        } catch (Exception e) {
+            Log.w("TypefaceCompatApi29Impl", "Font load failed", e);
             return null;
         }
     }
 
-    @Override // v7.d8
+    @Override // v7.y7
     public final o0.h f(o0.h[] hVarArr, int i10) {
         throw new RuntimeException("Do not use this function in API 29 or later.");
     }

@@ -1,19 +1,9 @@
 package v7;
 
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class o5 {
-    public static int a(int i10, int i11) {
-        if (i11 < 0) {
-            throw new AssertionError("cannot store more than MAX_VALUE elements");
-        }
-        int i12 = i10 + (i10 >> 1) + 1;
-        if (i12 < i11) {
-            int highestOneBit = Integer.highestOneBit(i11 - 1);
-            i12 = highestOneBit + highestOneBit;
-        }
-        return i12 < 0 ? ConnectionsManager.DEFAULT_DATACENTER_ID : i12;
+    public static int a(int i10) {
+        return (int) (Integer.rotateLeft((int) (i10 * (-862048943)), 15) * 461845907);
     }
 }

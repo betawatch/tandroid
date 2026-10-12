@@ -1,46 +1,45 @@
 package x3;
 
-import b2.r;
-import b2.r0;
-import b2.s;
+import b2.w;
+import b2.w0;
 import c3.u;
-import e2.v;
+import e2.x;
 import java.util.Arrays;
-import n6.t;
-import u2.x0;
+import n6.o;
+import u2.z0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c extends i {
     public u n;
-    public x0 o;
+    public z0 o;
 
     @Override // x3.i
-    public final long b(v vVar) {
-        byte[] bArr = vVar.a;
+    public final long b(x xVar) {
+        byte[] bArr = xVar.a;
         if (bArr[0] != -1) {
             return -1L;
         }
         int i10 = (bArr[2] & 255) >> 4;
         if (i10 == 6 || i10 == 7) {
-            vVar.K(4);
-            vVar.E();
+            xVar.O(4);
+            xVar.I();
         }
-        int t10 = c3.b.t(i10, vVar);
-        vVar.J(0);
-        return t10;
+        int s10 = c3.b.s(i10, xVar);
+        xVar.N(0);
+        return s10;
     }
 
     @Override // x3.i
-    public final boolean c(v vVar, long j3, t tVar) {
-        byte[] bArr = vVar.a;
+    public final boolean c(x xVar, long j10, o oVar) {
+        byte[] bArr = xVar.a;
         u uVar = this.n;
         if (uVar == null) {
             u uVar2 = new u(bArr, 17);
             this.n = uVar2;
-            r a2 = uVar2.c(Arrays.copyOfRange(bArr, 9, vVar.c), null).a();
-            a2.p = r0.n("audio/ogg");
-            tVar.b = new s(a2);
+            w a2 = uVar2.c(Arrays.copyOfRange(bArr, 9, xVar.c), null).a();
+            a2.q = w0.n("audio/ogg");
+            oVar.b = new b2.x(a2);
             return true;
         }
         byte b10 = bArr[0];
@@ -48,23 +47,23 @@ public final class c extends i {
             if (b10 != -1) {
                 return true;
             }
-            x0 x0Var = this.o;
-            if (x0Var != null) {
-                x0Var.a = j3;
-                tVar.c = x0Var;
+            z0 z0Var = this.o;
+            if (z0Var != null) {
+                z0Var.a = j10;
+                oVar.c = z0Var;
             }
-            ((s) tVar.b).getClass();
+            ((b2.x) oVar.b).getClass();
             return false;
         }
-        pf.b u10 = c3.b.u(vVar);
-        u uVar3 = new u(uVar.a, uVar.b, uVar.c, uVar.d, uVar.e, uVar.g, uVar.h, uVar.j, u10, uVar.l);
+        qf.b t10 = c3.b.t(xVar);
+        u uVar3 = new u(uVar.a, uVar.b, uVar.c, uVar.d, uVar.e, uVar.g, uVar.h, uVar.j, t10, uVar.l);
         this.n = uVar3;
-        x0 x0Var2 = new x0();
-        x0Var2.c = uVar3;
-        x0Var2.d = u10;
-        x0Var2.a = -1L;
-        x0Var2.b = -1L;
-        this.o = x0Var2;
+        z0 z0Var2 = new z0();
+        z0Var2.c = uVar3;
+        z0Var2.d = t10;
+        z0Var2.a = -1L;
+        z0Var2.b = -1L;
+        this.o = z0Var2;
         return true;
     }
 

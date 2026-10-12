@@ -2,7 +2,7 @@ package a9;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class n extends l {
     public static final Object[] f;
@@ -30,14 +30,14 @@ public final class n extends l {
         return false;
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
+    @Override // a9.h
+    public final int h(Object[] objArr) {
+        System.arraycopy(this.d, 0, objArr, 0, 0);
         return 0;
     }
 
-    @Override // a9.h
-    public final int i(Object[] objArr) {
-        System.arraycopy(this.d, 0, objArr, 0, 0);
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
         return 0;
     }
 
@@ -53,17 +53,17 @@ public final class n extends l {
     }
 
     @Override // a9.h
+    public final int m() {
+        return 0;
+    }
+
+    @Override // a9.h
     public final int n() {
         return 0;
     }
 
     @Override // a9.h
-    public final int o() {
-        return 0;
-    }
-
-    @Override // a9.h
-    public final Object[] p() {
+    public final Object[] o() {
         return this.d;
     }
 

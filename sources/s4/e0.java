@@ -1,168 +1,244 @@
 package s4;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.util.DisplayMetrics;
+import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import org.telegram.messenger.BuildVars;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class e0 extends z0 {
-    public static final boolean q = BuildVars.DEBUG_VERSION;
-    public PointF k;
-    public final DisplayMetrics l;
-    public float n;
-    public final LinearInterpolator i = new LinearInterpolator();
-    public final DecelerateInterpolator j = new DecelerateInterpolator();
-    public boolean m = false;
-    public int o = 0;
-    public int p = 0;
+public final class e0 extends androidx.emoji2.text.g {
+    public final /* synthetic */ int d;
 
-    public e0(Context context) {
-        this.l = context.getResources().getDisplayMetrics();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ e0(b0 b0Var, int i10) {
+        super(b0Var);
+        this.d = i10;
     }
 
-    @Override // s4.z0
-    public final void d(int i10, int i11, y0 y0Var) {
-        PointF pointF;
-        if (this.b.x.r() == 0) {
-            h();
-            return;
+    @Override // androidx.emoji2.text.g
+    public final int a(View view) {
+        int y3;
+        int i10;
+        switch (this.d) {
+            case 0:
+                o0 o0Var = (o0) view.getLayoutParams();
+                ((b0) this.b).getClass();
+                y3 = n0.y(view);
+                i10 = ((ViewGroup.MarginLayoutParams) o0Var).rightMargin;
+                break;
+            default:
+                o0 o0Var2 = (o0) view.getLayoutParams();
+                ((b0) this.b).getClass();
+                y3 = n0.v(view);
+                i10 = ((ViewGroup.MarginLayoutParams) o0Var2).bottomMargin;
+                break;
         }
-        if (q && (pointF = this.k) != null && (pointF.x * i10 < 0.0f || pointF.y * i11 < 0.0f)) {
-            throw new IllegalStateException("Scroll happened in the opposite direction of the target. Some calculations are wrong");
+        return y3 + i10;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int b(View view) {
+        int measuredWidth;
+        int i10;
+        switch (this.d) {
+            case 0:
+                o0 o0Var = (o0) view.getLayoutParams();
+                ((b0) this.b).getClass();
+                Rect rect = ((o0) view.getLayoutParams()).b;
+                measuredWidth = view.getMeasuredWidth() + rect.left + rect.right + ((ViewGroup.MarginLayoutParams) o0Var).leftMargin;
+                i10 = ((ViewGroup.MarginLayoutParams) o0Var).rightMargin;
+                break;
+            default:
+                o0 o0Var2 = (o0) view.getLayoutParams();
+                ((b0) this.b).getClass();
+                Rect rect2 = ((o0) view.getLayoutParams()).b;
+                measuredWidth = view.getMeasuredHeight() + rect2.top + rect2.bottom + ((ViewGroup.MarginLayoutParams) o0Var2).topMargin;
+                i10 = ((ViewGroup.MarginLayoutParams) o0Var2).bottomMargin;
+                break;
         }
-        int i12 = this.o;
-        int i13 = i12 - i10;
-        if (i12 * i13 <= 0) {
-            i13 = 0;
+        return measuredWidth + i10;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int c(View view) {
+        int measuredHeight;
+        int i10;
+        switch (this.d) {
+            case 0:
+                o0 o0Var = (o0) view.getLayoutParams();
+                ((b0) this.b).getClass();
+                Rect rect = ((o0) view.getLayoutParams()).b;
+                measuredHeight = view.getMeasuredHeight() + rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) o0Var).topMargin;
+                i10 = ((ViewGroup.MarginLayoutParams) o0Var).bottomMargin;
+                break;
+            default:
+                o0 o0Var2 = (o0) view.getLayoutParams();
+                ((b0) this.b).getClass();
+                Rect rect2 = ((o0) view.getLayoutParams()).b;
+                measuredHeight = view.getMeasuredWidth() + rect2.left + rect2.right + ((ViewGroup.MarginLayoutParams) o0Var2).leftMargin;
+                i10 = ((ViewGroup.MarginLayoutParams) o0Var2).rightMargin;
+                break;
         }
-        this.o = i13;
-        int i14 = this.p;
-        int i15 = i14 - i11;
-        int i16 = i14 * i15 > 0 ? i15 : 0;
-        this.p = i16;
-        if (i13 == 0 && i16 == 0) {
-            q(y0Var);
+        return measuredHeight + i10;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int d(View view) {
+        int x10;
+        int i10;
+        switch (this.d) {
+            case 0:
+                o0 o0Var = (o0) view.getLayoutParams();
+                ((b0) this.b).getClass();
+                x10 = n0.x(view);
+                i10 = ((ViewGroup.MarginLayoutParams) o0Var).leftMargin;
+                break;
+            default:
+                o0 o0Var2 = (o0) view.getLayoutParams();
+                ((b0) this.b).getClass();
+                x10 = n0.z(view);
+                i10 = ((ViewGroup.MarginLayoutParams) o0Var2).topMargin;
+                break;
+        }
+        return x10 - i10;
+    }
+
+    @Override // androidx.emoji2.text.g
+    public final int e() {
+        switch (this.d) {
+            case 0:
+                return ((b0) this.b).m;
+            default:
+                return ((b0) this.b).n;
         }
     }
 
-    @Override // s4.z0
-    public final void f() {
-        this.p = 0;
-        this.o = 0;
-        this.k = null;
+    @Override // androidx.emoji2.text.g
+    public final int f() {
+        int i10;
+        int E;
+        switch (this.d) {
+            case 0:
+                b0 b0Var = (b0) this.b;
+                i10 = b0Var.m;
+                E = b0Var.E();
+                break;
+            default:
+                b0 b0Var2 = (b0) this.b;
+                i10 = b0Var2.n;
+                E = b0Var2.C();
+                break;
+        }
+        return i10 - E;
     }
 
-    @Override // s4.z0
-    public void g(View view, y0 y0Var) {
-        int j3 = j(o(), view);
-        int k10 = k(p(), view);
-        int m10 = m((int) Math.sqrt((k10 * k10) + (j3 * j3)));
-        if (m10 > 0) {
-            y0Var.b(-j3, -k10, m10, this.j);
+    @Override // androidx.emoji2.text.g
+    public final int g() {
+        switch (this.d) {
+            case 0:
+                return ((b0) this.b).E();
+            default:
+                return ((b0) this.b).C();
         }
     }
 
-    public int i(int i10, int i11, int i12, int i13, int i14) {
-        if (i14 == -1) {
-            return i12 - i10;
+    @Override // androidx.emoji2.text.g
+    public final int h() {
+        switch (this.d) {
+            case 0:
+                return ((b0) this.b).k;
+            default:
+                return ((b0) this.b).l;
         }
-        if (i14 != 0) {
-            if (i14 == 1) {
-                return i13 - i11;
-            }
-            throw new IllegalArgumentException("snap preference should be one of the constants defined in SmoothScroller, starting with SNAP_");
-        }
-        int i15 = i12 - i10;
-        if (i15 > 0) {
-            return i15;
-        }
-        int i16 = i13 - i11;
-        if (i16 < 0) {
-            return i16;
-        }
-        return 0;
     }
 
-    public final int j(int i10, View view) {
-        p0 p0Var = this.c;
-        if (p0Var == null || !p0Var.d()) {
-            return 0;
+    @Override // androidx.emoji2.text.g
+    public final int i() {
+        switch (this.d) {
+            case 0:
+                return ((b0) this.b).l;
+            default:
+                return ((b0) this.b).k;
         }
-        q0 q0Var = (q0) view.getLayoutParams();
-        return i(p0.x(view) - ((ViewGroup.MarginLayoutParams) q0Var).leftMargin, p0.y(view) + ((ViewGroup.MarginLayoutParams) q0Var).rightMargin, p0Var.D(), p0Var.m - p0Var.E(), i10);
     }
 
-    public int k(int i10, View view) {
-        p0 p0Var = this.c;
-        if (p0Var == null || !p0Var.e()) {
-            return 0;
+    @Override // androidx.emoji2.text.g
+    public final int j() {
+        switch (this.d) {
+            case 0:
+                return ((b0) this.b).D();
+            default:
+                return ((b0) this.b).J();
         }
-        q0 q0Var = (q0) view.getLayoutParams();
-        return i(p0.z(view) - ((ViewGroup.MarginLayoutParams) q0Var).topMargin, p0.v(view) + ((ViewGroup.MarginLayoutParams) q0Var).bottomMargin, p0Var.F(), p0Var.n - p0Var.C(), i10);
     }
 
-    public float l(DisplayMetrics displayMetrics) {
-        return 25.0f / displayMetrics.densityDpi;
+    @Override // androidx.emoji2.text.g
+    public final int k() {
+        switch (this.d) {
+            case 0:
+                b0 b0Var = (b0) this.b;
+                return (b0Var.m - b0Var.D()) - b0Var.E();
+            default:
+                return ((b0) this.b).K();
+        }
     }
 
-    public int m(int i10) {
-        return (int) Math.ceil(n(i10) / 0.3356d);
+    @Override // androidx.emoji2.text.g
+    public final int l(View view) {
+        switch (this.d) {
+            case 0:
+                b0 b0Var = (b0) this.b;
+                Rect rect = (Rect) this.c;
+                b0Var.L(view, rect);
+                return rect.right;
+            default:
+                b0 b0Var2 = (b0) this.b;
+                Rect rect2 = (Rect) this.c;
+                b0Var2.L(view, rect2);
+                return rect2.bottom;
+        }
     }
 
-    public int n(int i10) {
-        float abs = Math.abs(i10);
-        if (!this.m) {
-            this.n = l(this.l);
-            this.m = true;
+    @Override // androidx.emoji2.text.g
+    public final int m(View view) {
+        switch (this.d) {
+            case 0:
+                b0 b0Var = (b0) this.b;
+                Rect rect = (Rect) this.c;
+                b0Var.L(view, rect);
+                return rect.left;
+            default:
+                b0 b0Var2 = (b0) this.b;
+                Rect rect2 = (Rect) this.c;
+                b0Var2.L(view, rect2);
+                return rect2.top;
         }
-        return (int) Math.ceil(abs * this.n);
     }
 
-    public final int o() {
-        PointF pointF = this.k;
-        if (pointF == null) {
-            return 0;
+    @Override // androidx.emoji2.text.g
+    public final void n(int i10) {
+        switch (this.d) {
+            case 0:
+                RecyclerView recyclerView = ((b0) this.b).b;
+                if (recyclerView != null) {
+                    int C = recyclerView.e.C();
+                    for (int i11 = 0; i11 < C; i11++) {
+                        recyclerView.e.B(i11).offsetLeftAndRight(i10);
+                    }
+                    break;
+                }
+                break;
+            default:
+                RecyclerView recyclerView2 = ((b0) this.b).b;
+                if (recyclerView2 != null) {
+                    int C2 = recyclerView2.e.C();
+                    for (int i12 = 0; i12 < C2; i12++) {
+                        recyclerView2.e.B(i12).offsetTopAndBottom(i10);
+                    }
+                    break;
+                }
+                break;
         }
-        float f7 = pointF.x;
-        if (f7 == 0.0f) {
-            return 0;
-        }
-        return f7 > 0.0f ? 1 : -1;
-    }
-
-    public int p() {
-        PointF pointF = this.k;
-        if (pointF == null) {
-            return 0;
-        }
-        float f7 = pointF.y;
-        if (f7 == 0.0f) {
-            return 0;
-        }
-        return f7 > 0.0f ? 1 : -1;
-    }
-
-    public void q(y0 y0Var) {
-        PointF a2 = a(this.a);
-        if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
-            y0Var.d = this.a;
-            h();
-            return;
-        }
-        z0.b(a2);
-        this.k = a2;
-        this.o = (int) (a2.x * 10000.0f);
-        this.p = (int) (a2.y * 10000.0f);
-        y0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.i);
-    }
-
-    @Override // s4.z0
-    public final void e() {
     }
 }

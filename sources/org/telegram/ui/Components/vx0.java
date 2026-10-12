@@ -1,57 +1,31 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vx0 implements RequestDelegate {
+public final class vx0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback4 b;
+    public final /* synthetic */ wx0 b;
 
-    public /* synthetic */ vx0(Utilities.Callback4 callback4, int i10) {
+    public /* synthetic */ vx0(wx0 wx0Var, int i10) {
         this.a = i10;
-        this.b = callback4;
+        this.b = wx0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                boolean z10 = tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified;
-                Utilities.Callback4 callback4 = this.b;
-                if (!z10) {
-                    if (!(tLObject instanceof TLRPC.TL_messages_emojiGroups)) {
-                        callback4.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
-                        break;
-                    } else {
-                        callback4.run(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r5.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool = Boolean.TRUE;
-                    callback4.run(bool, null, 0L, bool);
-                    break;
-                }
+                this.b.s.setVisibility(8);
+                break;
+            case 1:
+                this.b.s.setVisibility(8);
+                break;
             default:
-                boolean z11 = tLObject instanceof TLRPC.TL_emojiListNotModified;
-                Utilities.Callback4 callback42 = this.b;
-                if (!z11) {
-                    if (!(tLObject instanceof TLRPC.TL_emojiList)) {
-                        callback42.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
-                        break;
-                    } else {
-                        TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) tLObject;
-                        callback42.run(Boolean.FALSE, tL_emojiList, Long.valueOf(tL_emojiList.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool2 = Boolean.TRUE;
-                    callback42.run(bool2, null, 0L, bool2);
-                    break;
-                }
+                this.b.s.setVisibility(8);
+                break;
         }
     }
 }

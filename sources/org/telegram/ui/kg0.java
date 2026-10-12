@@ -1,170 +1,331 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.PointF;
-import android.graphics.Typeface;
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.telephony.SignalStrength;
+import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.Space;
 import android.widget.TextView;
+import java.util.List;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class kg0 extends FrameLayout {
-    public static final /* synthetic */ int E = 0;
-    public final ug0 a;
-    public final ViewGroup b;
-    public final View c;
-    public final View d;
-    public final View e;
-    public final org.telegram.ui.Components.k41 f;
-    public final org.telegram.ui.Components.p20 h;
-    public final TextView n;
-    public final TextView r;
-    public final TextView s;
-    public final TextView v;
-    public final FrameLayout w;
-    public boolean x;
-    public final PointF y;
+public final class kg0 extends org.telegram.ui.Components.tw0 {
+    public final ImageView a;
+    public final di.d b;
+    public final zh.s[] c;
+    public Bundle d;
+    public String e;
+    public boolean f;
+    public String h;
+    public String n;
+    public long r;
+    public int s;
+    public final /* synthetic */ bh0 v;
 
-    public kg0(Context context, ViewGroup viewGroup, View view, String str, final ug0 ug0Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kg0(bh0 bh0Var, Context context) {
         super(context);
-        PointF pointF = new PointF();
-        this.y = pointF;
-        this.b = viewGroup;
-        this.c = view;
-        this.a = ug0Var;
-        View view2 = new View(getContext());
-        this.d = view2;
-        view2.setOnClickListener(new hg0(this));
-        addView(view2, w7.x5.d(-1.0f, -1));
-        View view3 = new View(getContext());
-        this.e = view3;
-        view3.setBackgroundColor(TLObject.FLAG_30);
-        view3.setAlpha(0.0f);
-        addView(view3, w7.x5.d(-1.0f, -1));
-        org.telegram.ui.Components.k41 k41Var = new org.telegram.ui.Components.k41(getContext());
-        this.f = k41Var;
-        k41Var.setTransformType(1);
-        k41Var.setDrawBackground(false);
-        org.telegram.ui.Components.p20 p20Var = new org.telegram.ui.Components.p20(context, null, false);
-        this.h = p20Var;
-        p20Var.addView(k41Var, w7.x5.e(56, 56, 17));
-        p20Var.a(k41Var);
-        final int i10 = 0;
-        p20Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ig0
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view4) {
-                switch (i10) {
-                    case 0:
-                        ug0Var.a(this);
-                        break;
-                    default:
-                        ug0Var.a(this);
-                        break;
-                }
-            }
-        });
-        p20Var.setContentDescription(LocaleController.getString(R.string.Done));
-        addView(p20Var, w7.x5.e(56, 56, 51));
+        org.telegram.ui.ActionBar.c6 c6Var;
+        org.telegram.ui.ActionBar.c6 c6Var2;
+        org.telegram.ui.ActionBar.c6 c6Var3;
+        org.telegram.ui.ActionBar.c6 c6Var4;
+        this.v = bh0Var;
+        zh.s[] sVarArr = {r4, r4, r4};
+        this.c = sVarArr;
+        this.s = -1;
+        setOrientation(1);
+        setClipChildren(false);
+        setClipToPadding(false);
+        setPadding(0, 0, 0, AndroidUtilities.dp(16.0f));
         FrameLayout frameLayout = new FrameLayout(context);
-        this.w = frameLayout;
-        addView(frameLayout, w7.x5.a(140.0f, 24.0f, 0.0f, 24.0f, 0.0f, -1, 49));
+        frameLayout.setClipChildren(false);
+        frameLayout.setClipToPadding(false);
+        addView(frameLayout, w7.a6.n(-1, 200));
+        fi.f fVar = new fi.f(context, 3);
+        frameLayout.addView(fVar, w7.a6.e(-1, 200, 119));
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setImageResource(R.drawable.ic_ab_other);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        int i10 = org.telegram.ui.ActionBar.g6.G6;
+        c6Var = ((org.telegram.ui.ActionBar.m2) bh0Var).resourceProvider;
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), PorterDuff.Mode.SRC_IN));
+        imageView.setBackground(org.telegram.ui.ActionBar.g6.g0(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i6, false), 1, -1));
+        frameLayout.addView(imageView, w7.a6.a(32.0f, 0.0f, 16.0f, -2.0f, 0.0f, 32, 53));
+        jg0 jg0Var = new jg0(context, 1, 1, 0);
+        jg0Var.setStarParticlesView(fVar);
+        Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        int i11 = org.telegram.ui.ActionBar.g6.Mj;
+        canvas.drawColor(i0.a.d(0.5f, org.telegram.ui.ActionBar.g6.x0(null, i11, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h5, false)));
+        jg0Var.setBackgroundBitmap(createBitmap);
+        tg.g gVar = jg0Var.b;
+        gVar.z = i11;
+        gVar.A = org.telegram.ui.ActionBar.g6.Lj;
+        gVar.b();
+        frameLayout.addView(jg0Var, w7.a6.e(160, 160, 1));
         TextView textView = new TextView(context);
-        this.n = textView;
-        textView.setText(LocaleController.getString(R.string.ConfirmCorrectNumber));
-        textView.setTextSize(1, 14.0f);
-        textView.setSingleLine();
-        TextView g10 = org.telegram.ui.Cells.c1.g(frameLayout, textView, w7.x5.a(-2.0f, 24.0f, 20.0f, 24.0f, 0.0f, -1, LocaleController.isRTL ? 5 : 3), context);
-        this.r = g10;
-        g10.setText(str);
-        g10.setTextSize(1, 18.0f);
-        g10.setTypeface(AndroidUtilities.bold());
-        g10.setSingleLine();
-        frameLayout.addView(g10, w7.x5.a(-2.0f, 24.0f, 48.0f, 24.0f, 0.0f, -1, LocaleController.isRTL ? 5 : 3));
-        int dp = AndroidUtilities.dp(16.0f);
-        TextView textView2 = new TextView(context);
-        this.s = textView2;
-        textView2.setText(LocaleController.getString(R.string.Edit));
-        textView2.setSingleLine();
-        textView2.setTextSize(1, 16.0f);
-        int dp2 = AndroidUtilities.dp(6.0f);
-        int i11 = org.telegram.ui.ActionBar.i6.Wh;
-        textView2.setBackground(org.telegram.ui.ActionBar.i6.H0(dp2, org.telegram.ui.ActionBar.i6.x0(null, i11, false)));
-        textView2.setOnClickListener(new hg0(this, ug0Var));
-        Typeface typeface = Typeface.DEFAULT_BOLD;
-        textView2.setTypeface(typeface);
-        int i12 = dp / 2;
-        textView2.setPadding(dp, i12, dp, i12);
-        float f7 = 8;
-        TextView g11 = org.telegram.ui.Cells.c1.g(frameLayout, textView2, w7.x5.a(-2.0f, f7, f7, f7, f7, -2, (LocaleController.isRTL ? 5 : 3) | 80), context);
-        this.v = g11;
-        g11.setText(LocaleController.getString(R.string.CheckPhoneNumberYes));
-        g11.setSingleLine();
-        g11.setTextSize(1, 16.0f);
-        g11.setBackground(org.telegram.ui.ActionBar.i6.H0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.i6.x0(null, i11, false)));
-        final int i13 = 1;
-        g11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.ig0
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view4) {
-                switch (i13) {
-                    case 0:
-                        ug0Var.a(this);
-                        break;
-                    default:
-                        ug0Var.a(this);
-                        break;
-                }
-            }
-        });
-        g11.setTypeface(typeface);
-        g11.setPadding(dp, i12, dp, i12);
-        frameLayout.addView(g11, w7.x5.a(-2.0f, f7, f7, f7, f7, -2, (LocaleController.isRTL ? 3 : 5) | 80));
-        hh.j.b(view, viewGroup, pointF);
-        p20Var.setTranslationX(pointF.x);
-        p20Var.setTranslationY(pointF.y);
-        requestLayout();
-        b();
+        textView.setText(LocaleController.getString(R.string.SMSFeeTitle));
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i10, false));
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(17);
+        frameLayout.addView(textView, w7.a6.a(-2.0f, 16.0f, 152.0f, 16.0f, 0.0f, -1, 49));
+        c6Var2 = ((org.telegram.ui.ActionBar.m2) bh0Var).resourceProvider;
+        zh.s sVar = new zh.s(context, 1, c6Var2);
+        sVar.a(LocaleController.getString(R.string.SMSFee1Title), LocaleController.getString(R.string.SMSFee1Text), R.drawable.menu_high_price);
+        addView(sVarArr[0], w7.a6.t(-1, -2, 55, 0, 0, 0, 6));
+        c6Var3 = ((org.telegram.ui.ActionBar.m2) bh0Var).resourceProvider;
+        zh.s sVar2 = new zh.s(context, 1, c6Var3);
+        sVar2.a(LocaleController.getString(R.string.SMSFee2Title), LocaleController.getString(R.string.SMSFee2Text), R.drawable.menu_feature_code);
+        addView(sVarArr[1], w7.a6.t(-1, -2, 55, 0, 0, 0, 6));
+        c6Var4 = ((org.telegram.ui.ActionBar.m2) bh0Var).resourceProvider;
+        zh.s sVar3 = new zh.s(context, 1, c6Var4);
+        sVar3.a(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SMSFee3Title), new gg0(this, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)), LocaleController.getString(R.string.SMSFee3Text), R.drawable.menu_feature_hands);
+        addView(sVarArr[2], w7.a6.t(-1, -2, 55, 0, 0, 0, 6));
+        addView(new Space(context), w7.a6.o(0, 0, 1.0f, 119));
+        di.d f7 = org.telegram.messenger.yh.f(24, context, null, true);
+        this.b = f7;
+        f7.setLoading(true);
+        addView(f7, w7.a6.t(-1, 48, 7, 0, 16, 0, 16));
     }
 
-    public final void a() {
-        if (this.x) {
+    public static /* synthetic */ void o(kg0 kg0Var, String str, String str2, String str3) {
+        try {
+            PackageInfo packageInfo = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0);
+            Locale locale = Locale.US;
+            String str4 = packageInfo.versionName + " (" + packageInfo.versionCode + ")";
+            Intent intent = new Intent("android.intent.action.SENDTO");
+            intent.setData(Uri.parse("mailto:"));
+            if (TextUtils.isEmpty(str)) {
+                intent.putExtra("android.intent.extra.EMAIL", new String[]{"sms@telegram.org"});
+            } else {
+                intent.putExtra("android.intent.extra.EMAIL", new String[]{str});
+            }
+            if (TextUtils.isEmpty(str2)) {
+                intent.putExtra("android.intent.extra.SUBJECT", "Android Registration/Login Billing Issue #billing_issue");
+            } else {
+                intent.putExtra("android.intent.extra.SUBJECT", str2);
+            }
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append("Technical Details (PLEASE DO NOT EDIT OR REMOVE)\n");
+            sb2.append("Device: ");
+            sb2.append(Build.MANUFACTURER);
+            sb2.append(" ");
+            sb2.append(Build.MODEL);
+            sb2.append("\n");
+            sb2.append("OS version: SDK ");
+            int i10 = Build.VERSION.SDK_INT;
+            sb2.append(i10);
+            sb2.append("\n");
+            sb2.append("Locale: ");
+            sb2.append(Locale.getDefault());
+            sb2.append("\n");
+            sb2.append("\n");
+            sb2.append("Target Phone: +");
+            sb2.append(str3);
+            sb2.append("\n");
+            sb2.append("\n");
+            try {
+                SubscriptionManager from = SubscriptionManager.from(kg0Var.getContext());
+                List<SubscriptionInfo> completeActiveSubscriptionInfoList = i10 >= 30 ? from.getCompleteActiveSubscriptionInfoList() : null;
+                if ((completeActiveSubscriptionInfoList == null || completeActiveSubscriptionInfoList.isEmpty()) && i10 >= 28) {
+                    completeActiveSubscriptionInfoList = from.getAccessibleSubscriptionInfoList();
+                }
+                if (completeActiveSubscriptionInfoList == null || completeActiveSubscriptionInfoList.isEmpty()) {
+                    completeActiveSubscriptionInfoList = from.getActiveSubscriptionInfoList();
+                }
+                if (completeActiveSubscriptionInfoList != null) {
+                    for (SubscriptionInfo subscriptionInfo : completeActiveSubscriptionInfoList) {
+                        String number = subscriptionInfo.getNumber();
+                        if (!TextUtils.isEmpty(number)) {
+                            String str5 = "SIM" + subscriptionInfo.getSimSlotIndex();
+                            sb2.append(str5);
+                            sb2.append(".Phone: ");
+                            sb2.append(number);
+                            sb2.append("\n");
+                            sb2.append(str5);
+                            sb2.append(".MCC: ");
+                            sb2.append(subscriptionInfo.getMcc());
+                            sb2.append("\n");
+                            sb2.append(str5);
+                            sb2.append(".MNC: ");
+                            sb2.append(subscriptionInfo.getMnc());
+                            sb2.append("\n");
+                            sb2.append(str5);
+                            sb2.append(".Carrier: ");
+                            sb2.append(TextUtils.isEmpty(subscriptionInfo.getCarrierName()) ? "unknown" : subscriptionInfo.getCarrierName());
+                            sb2.append("\n\n");
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                FileLog.e(e);
+            }
+            if (Build.VERSION.SDK_INT >= 29) {
+                try {
+                    TelephonyManager telephonyManager = (TelephonyManager) kg0Var.getContext().getSystemService(TelephonyManager.class);
+                    SignalStrength signalStrength = telephonyManager.getSignalStrength();
+                    if (signalStrength != null) {
+                        sb2.append("Signal: ");
+                        sb2.append(signalStrength.getLevel());
+                        sb2.append("/4\n");
+                    } else {
+                        sb2.append("Signal: unknown\n");
+                    }
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+            } else {
+                sb2.append("Signal: unknown\n");
+            }
+            sb2.append("Wi-Fi: ");
+            sb2.append(AndroidUtilities.isWifiEnabled(kg0Var.getContext()));
+            sb2.append("\n");
+            sb2.append("Airplane Mode: ");
+            sb2.append(AndroidUtilities.isInAirplaneMode(kg0Var.getContext()));
+            sb2.append("\n");
+            sb2.append("\n");
+            sb2.append("App: ");
+            sb2.append(BuildVars.APP_ID);
+            sb2.append("\n");
+            int i11 = packageInfo.versionCode % 10;
+            String str6 = (i11 == 1 || i11 == 2) ? "store" : ApplicationLoader.isStandaloneBuild() ? "direct" : ApplicationLoader.isBetaBuild() ? "beta" : ApplicationLoader.isHuaweiStoreBuild() ? "huawei" : "universal";
+            sb2.append("App version: ");
+            sb2.append(str4);
+            sb2.append(" ");
+            sb2.append(str6);
+            sb2.append("\n");
+            sb2.append("\n");
+            sb2.append("Issue: ");
+            sb2.append("billing_issue");
+            sb2.append("\n");
+            if (!TextUtils.isEmpty(kg0Var.e)) {
+                sb2.append("Error: ");
+                sb2.append(kg0Var.e);
+                sb2.append("\n");
+            }
+            sb2.append("\n\n================================================\n");
+            sb2.append("WRITE YOUR COMMENT HERE:\n");
+            sb2.append("\n");
+            sb2.append("\n");
+            intent.putExtra("android.intent.extra.TEXT", sb2.toString());
+            kg0Var.getContext().startActivity(Intent.createChooser(intent, "Send email..."));
+        } catch (Exception unused) {
+            kg0Var.v.l1(LocaleController.getString(R.string.AppName), LocaleController.getString("NoMailInstalled", R.string.NoMailInstalled));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.tw0
+    public final void g() {
+        int i10;
+        if (this.s >= 0) {
+            i10 = ((org.telegram.ui.ActionBar.m2) this.v).currentAccount;
+            ConnectionsManager.getInstance(i10).cancelRequest(this.s, true);
+            this.s = -1;
+        }
+        this.f = false;
+        this.b.setLoading(false);
+    }
+
+    @Override // org.telegram.ui.Components.tw0
+    public final void m(Bundle bundle, boolean z10) {
+        int i10;
+        this.d = bundle;
+        String countryName = LocaleController.getCountryName(bundle == null ? null : bundle.getString("country"));
+        String string = bundle == null ? null : bundle.getString("product");
+        String string2 = bundle == null ? null : bundle.getString("phoneFormated");
+        String string3 = bundle == null ? null : bundle.getString("phoneHash");
+        String string4 = bundle == null ? null : bundle.getString("support_email_email");
+        String string5 = bundle == null ? null : bundle.getString("support_email_subject");
+        String string6 = bundle == null ? null : bundle.getString("currency");
+        long j10 = bundle == null ? 0L : bundle.getLong("amount");
+        int i11 = bundle == null ? 0 : bundle.getInt("premium_days");
+        boolean isEmpty = TextUtils.isEmpty(countryName);
+        zh.s[] sVarArr = this.c;
+        if (isEmpty) {
+            sVarArr[0].c.setText(LocaleController.getString(R.string.SMSFee1Text));
+            i10 = 0;
+        } else {
+            i10 = 0;
+            sVarArr[0].c.setText(LocaleController.formatString(R.string.SMSFee1TextCountry, countryName));
+        }
+        sVarArr[2].setSubtitle(i11 == 7 ? LocaleController.getString(R.string.SMSFee3Text) : LocaleController.formatPluralStringComma("SMSFee3TextDays", i11));
+        this.a.setOnClickListener(new bi.b5(this, string4, string5, string2, 14));
+        di.d dVar = this.b;
+        dVar.setEnabled(true);
+        dVar.setOnClickListener(null);
+        if (!BuildVars.useInvoiceBilling()) {
+            int i12 = i10;
+            String str = string3;
+            int i13 = i11;
+            if (TextUtils.isEmpty(string)) {
+                dVar.setVisibility(8);
+                return;
+            }
+            dVar.setVisibility(i12);
+            dVar.setLoading(true);
+            fi.l3 l3Var = new fi.l3(this, string, str, string2, i13, 28);
+            if (BillingController.getInstance().isReady()) {
+                l3Var.run();
+                return;
+            } else {
+                BillingController.getInstance().whenSetuped(l3Var);
+                return;
+            }
+        }
+        if (TextUtils.isEmpty(string6) || j10 <= 0) {
+            boolean z11 = i10;
+            dVar.setVisibility(z11 ? 1 : 0);
+            dVar.setLoading(z11);
+            dVar.setEnabled(z11);
+            dVar.g(LocaleController.getString(R.string.Unavailable), z11, true);
             return;
         }
-        this.x = true;
-        this.a.a.V.b0 = null;
-        ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(250L);
-        duration.addListener(new jg0(this, 1));
-        duration.addUpdateListener(new gg0(this, 0));
-        duration.setInterpolator(org.telegram.ui.Components.hs.f);
-        duration.start();
+        boolean z12 = i10;
+        dVar.setVisibility(z12 ? 1 : 0);
+        dVar.setLoading(z12);
+        int i14 = R.string.SMSFeePurchaseTitle;
+        Object[] objArr = new Object[1];
+        objArr[z12 ? 1 : 0] = BillingController.getInstance().formatCurrency(j10, string6);
+        dVar.g(LocaleController.formatString(i14, objArr), z12, true);
+        dVar.f(i11 == 7 ? LocaleController.getString(R.string.SMSFeePurchaseText) : LocaleController.formatPluralStringComma("SMSFeePurchaseTextDays", i11), z12);
+        dVar.setOnClickListener(new fi.b1(this, string6, j10, string3, string2, i11));
     }
 
-    public final void b() {
-        int x02 = org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.O9, false);
-        org.telegram.ui.Components.k41 k41Var = this.f;
-        k41Var.setColor(x02);
-        k41Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.P9, false));
-        this.w.setBackground(org.telegram.ui.ActionBar.i6.c0(AndroidUtilities.dp(12.0f), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.h5, false)));
-        this.n.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.q5, false));
-        this.r.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.j5, false));
-        int i10 = org.telegram.ui.ActionBar.i6.Wh;
-        this.s.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i10, false));
-        this.v.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i10, false));
-        this.h.g();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        FrameLayout frameLayout = this.w;
-        int measuredHeight = frameLayout.getMeasuredHeight();
-        int translationY = (int) (this.h.getTranslationY() - AndroidUtilities.dp(32.0f));
-        frameLayout.layout(frameLayout.getLeft(), translationY - measuredHeight, frameLayout.getRight(), translationY);
+    public final void p() {
+        int i10;
+        if (this.f) {
+            TLRPC.TL_checkPaidAuth tL_checkPaidAuth = new TLRPC.TL_checkPaidAuth();
+            tL_checkPaidAuth.form_id = this.r;
+            tL_checkPaidAuth.phone_number = this.h;
+            tL_checkPaidAuth.phone_code_hash = this.n;
+            i10 = ((org.telegram.ui.ActionBar.m2) this.v).currentAccount;
+            this.s = ConnectionsManager.getInstance(i10).sendRequest(tL_checkPaidAuth, new m(this, 14), 1096);
+        }
     }
 }

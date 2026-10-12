@@ -5,22 +5,17 @@ import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
-import n4.x;
+import n4.s;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d extends a implements l.i {
     public Context c;
     public ActionBarContextView d;
-    public x e;
+    public s e;
     public WeakReference f;
     public boolean h;
     public l.k n;
-
-    @Override // l.i
-    public final boolean A(l.k kVar, MenuItem menuItem) {
-        return ((oi.f) this.e.b).G(this, menuItem);
-    }
 
     @Override // k.a
     public final void a() {
@@ -28,7 +23,7 @@ public final class d extends a implements l.i {
             return;
         }
         this.h = true;
-        this.e.X(this);
+        this.e.r(this);
     }
 
     @Override // k.a
@@ -62,7 +57,7 @@ public final class d extends a implements l.i {
 
     @Override // k.a
     public final void g() {
-        this.e.Y(this, this.n);
+        this.e.s(this, this.n);
     }
 
     @Override // k.a
@@ -109,5 +104,10 @@ public final class d extends a implements l.i {
     public final void o(boolean z10) {
         this.b = z10;
         this.d.setTitleOptional(z10);
+    }
+
+    @Override // l.i
+    public final boolean p(l.k kVar, MenuItem menuItem) {
+        return ((qi.e) this.e.b).y(this, menuItem);
     }
 }

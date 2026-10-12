@@ -16,7 +16,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
     public static final ConcurrentHashMap<Long, FileStreamLoadOperation> allStreams = new ConcurrentHashMap<>();
@@ -90,8 +90,8 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
             }
             sb2.append(Utilities.bytesToHex(bArr));
             return Uri.parse("tg://" + attachFileName + sb2.toString());
-        } catch (UnsupportedEncodingException e7) {
-            FileLog.e(e7);
+        } catch (UnsupportedEncodingException e) {
+            FileLog.e(e);
             return null;
         }
     }
@@ -114,7 +114,7 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
 
     public final void bytesTransferred(int i10) {
         g2.m mVar = this.dataSpec;
-        String str = e2.d0.a;
+        String str = e2.m0.a;
         for (int i11 = 0; i11 < this.listenerCount; i11++) {
             g2.c0 c0Var = this.listeners.get(i11);
             boolean z10 = this.isNetwork;
@@ -145,8 +145,8 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
         if (randomAccessFile != null) {
             try {
                 randomAccessFile.close();
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e) {
+                FileLog.e(e);
             }
             this.file = null;
         }
@@ -185,7 +185,7 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
     @Override // g2.h
     public long open(g2.m mVar) {
         Uri uri = mVar.a;
-        long j3 = mVar.e;
+        long j10 = mVar.e;
         this.uri = uri;
         transferInitializing(mVar);
         int intValue = Utilities.parseInt((CharSequence) this.uri.getQueryParameter("account")).intValue();
@@ -208,15 +208,15 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
             this.document.attributes.add(new TLRPC.TL_documentAttributeAudio());
         }
         allStreams.put(Long.valueOf(this.document.id), this);
-        this.currentOffset = j3;
+        this.currentOffset = j10;
         this.requestedLength = mVar.f;
         this.loadOperation = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, null, this.parentObject, this.currentOffset, false, getCurrentPriority());
         this.bytesTransferred = 0L;
-        long j10 = this.document.size - j3;
-        this.bytesRemaining = j10;
-        long j11 = this.requestedLength;
-        if (j11 != -1) {
-            this.bytesRemaining = Math.min(j10, j11);
+        long j11 = this.document.size - j10;
+        this.bytesRemaining = j11;
+        long j12 = this.requestedLength;
+        if (j12 != -1) {
+            this.bytesRemaining = Math.min(j11, j12);
         }
         this.opened = true;
         transferStarted(mVar);
@@ -233,9 +233,9 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
                         this.isNetwork = false;
                         long length = this.currentFile.length() - this.currentOffset;
                         this.bytesRemaining = length;
-                        long j12 = this.requestedLength;
-                        if (j12 != -1) {
-                            this.bytesRemaining = Math.min(length, j12 - this.bytesTransferred);
+                        long j13 = this.requestedLength;
+                        if (j13 != -1) {
+                            this.bytesRemaining = Math.min(length, j13 - this.bytesTransferred);
                         }
                     }
                 } catch (Throwable unused) {
@@ -251,37 +251,37 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
     
         if (r12.opened == false) goto L21;
      */
-    @Override // b2.k
+    @Override // b2.p
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public int read(byte[] bArr, int i10, int i11) {
         Exception exc;
         InterruptedException interruptedException;
-        Exception e7;
-        InterruptedException e10;
+        Exception e;
+        InterruptedException e7;
         FileStreamLoadOperation fileStreamLoadOperation;
         RandomAccessFile randomAccessFile;
         if (i11 == 0) {
             return 0;
         }
-        long j3 = this.bytesRemaining;
-        if (j3 == 0) {
+        long j10 = this.bytesRemaining;
+        if (j10 == 0) {
             return -1;
         }
-        if (j3 < i11) {
-            i11 = (int) j3;
+        if (j10 < i11) {
+            i11 = (int) j10;
         }
         int i12 = 0;
         while (true) {
             if (i12 == 0) {
                 try {
-                } catch (InterruptedException e11) {
-                    interruptedException = e11;
+                } catch (InterruptedException e10) {
+                    interruptedException = e10;
                     FileLog.e(interruptedException);
                     return -3;
-                } catch (Exception e12) {
-                    exc = e12;
+                } catch (Exception e11) {
+                    exc = e11;
                     throw new IOException(exc);
                 }
             }
@@ -306,14 +306,14 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
                             countDownLatch.await();
                             fileStreamLoadOperation.countDownLatch = null;
                         }
-                    } catch (InterruptedException e13) {
-                        e10 = e13;
-                        interruptedException = e10;
+                    } catch (InterruptedException e12) {
+                        e7 = e12;
+                        interruptedException = e7;
                         FileLog.e(interruptedException);
                         return -3;
-                    } catch (Exception e14) {
-                        e7 = e14;
-                        exc = e7;
+                    } catch (Exception e13) {
+                        e = e13;
+                        exc = e;
                         throw new IOException(exc);
                     }
                 } else {
@@ -341,9 +341,9 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
                                 fileStreamLoadOperation.isNetwork = false;
                                 long length = fileStreamLoadOperation.currentFile.length() - fileStreamLoadOperation.currentOffset;
                                 fileStreamLoadOperation.bytesRemaining = length;
-                                long j10 = fileStreamLoadOperation.requestedLength;
-                                if (j10 != -1) {
-                                    fileStreamLoadOperation.bytesRemaining = Math.min(length, j10 - fileStreamLoadOperation.bytesTransferred);
+                                long j11 = fileStreamLoadOperation.requestedLength;
+                                if (j11 != -1) {
+                                    fileStreamLoadOperation.bytesRemaining = Math.min(length, j11 - fileStreamLoadOperation.bytesTransferred);
                                 }
                             }
                         } catch (Throwable unused2) {
@@ -359,14 +359,14 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
                         }
                     }
                 }
-            } catch (InterruptedException e15) {
-                e10 = e15;
-                interruptedException = e10;
+            } catch (InterruptedException e14) {
+                e7 = e14;
+                interruptedException = e7;
                 FileLog.e(interruptedException);
                 return -3;
-            } catch (Exception e16) {
-                e7 = e16;
-                exc = e7;
+            } catch (Exception e15) {
+                e = e15;
+                exc = e;
                 throw new IOException(exc);
             }
         }
@@ -375,10 +375,10 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
         }
         int read = randomAccessFile.read(bArr, i10, i12);
         if (read > 0) {
-            long j11 = read;
-            this.currentOffset += j11;
-            this.bytesRemaining -= j11;
-            this.bytesTransferred += j11;
+            long j12 = read;
+            this.currentOffset += j12;
+            this.bytesRemaining -= j12;
+            this.bytesTransferred += j12;
             bytesTransferred(read);
         }
         return read;
@@ -386,7 +386,7 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
 
     public final void transferEnded() {
         g2.m mVar = this.dataSpec;
-        String str = e2.d0.a;
+        String str = e2.m0.a;
         for (int i10 = 0; i10 < this.listenerCount; i10++) {
             ((y2.f) this.listeners.get(i10)).e(mVar, this.isNetwork);
         }

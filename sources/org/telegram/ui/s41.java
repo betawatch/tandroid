@@ -1,47 +1,112 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
-import org.telegram.messenger.SaveToGallerySettingsHelper;
+import android.content.Context;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class s41 extends og.a {
-    public final SaveToGallerySettingsHelper.DialogException c;
-    public final String d;
+public final class s41 extends org.telegram.ui.Components.lm0 {
+    public final Context c;
 
-    public s41(int i10) {
-        super(i10, false);
-        this.c = null;
+    public s41(Context context) {
+        this.c = context;
     }
 
-    public final boolean equals(Object obj) {
-        SaveToGallerySettingsHelper.DialogException dialogException;
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        int b10 = b1Var.b();
+        if (b10 != 1) {
+            si.a aVar = si.e.d;
+            aVar.a();
+            if (!aVar.d) {
+                return false;
+            }
+            if (b10 != 2 && b10 != 3 && b10 != 4 && b10 != 5 && b10 != 8) {
+                return false;
+            }
         }
-        if (obj == null || s41.class != obj.getClass()) {
-            return false;
-        }
-        s41 s41Var = (s41) obj;
-        if (this.a != s41Var.a) {
-            return false;
-        }
-        String str = this.d;
-        if (str != null) {
-            return Objects.equals(str, s41Var.d);
-        }
-        SaveToGallerySettingsHelper.DialogException dialogException2 = this.c;
-        return dialogException2 == null || (dialogException = s41Var.c) == null || dialogException2.dialogId == dialogException.dialogId;
+        return true;
     }
 
-    public s41(SaveToGallerySettingsHelper.DialogException dialogException) {
-        super(2, false);
-        this.c = dialogException;
+    @Override // s4.g0
+    public final int h() {
+        return 7;
     }
 
-    public s41(int i10, String str) {
-        super(i10, false);
-        this.d = str;
-        this.c = null;
+    @Override // s4.g0
+    public final int j(int i10) {
+        if (i10 == 0 || i10 == 7) {
+            return 0;
+        }
+        if (i10 == 1 || i10 == 8) {
+            return 1;
+        }
+        return (i10 == 6 || i10 == 9) ? 3 : 2;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        si.a aVar = si.e.d;
+        aVar.a();
+        boolean z10 = aVar.d;
+        int i11 = b1Var.f;
+        if (i11 == 0) {
+            ((org.telegram.ui.Cells.m4) b1Var.a).setText(i10 == 0 ? LocaleController.getString(R.string.RoundVideoGeneral) : LocaleController.getString(R.string.RoundVideoComposition));
+            return;
+        }
+        if (i11 == 1) {
+            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) b1Var.a;
+            w8Var.setEnabled(i10 == 1 || z10);
+            if (i10 == 1) {
+                w8Var.f(LocaleController.getString(R.string.RoundVideoUseNewRecorder), z10, false);
+                return;
+            }
+            String string = LocaleController.getString(R.string.RoundVideoCompositionEnabled);
+            si.a aVar2 = si.e.i;
+            aVar2.a();
+            w8Var.f(string, aVar2.d, false);
+            return;
+        }
+        if (i11 != 2) {
+            ((org.telegram.ui.Cells.e9) b1Var.a).setText(i10 == 6 ? LocaleController.getString(R.string.RoundVideoGeneralInfo) : LocaleController.getString(R.string.RoundVideoCompositionInfo));
+            return;
+        }
+        org.telegram.ui.Cells.ca caVar = (org.telegram.ui.Cells.ca) b1Var.a;
+        caVar.setEnabled(z10);
+        if (i10 == 2) {
+            caVar.c(LocaleController.getString(R.string.RoundVideoOutputResolution), a1.g.n(((li.s0) si.e.e.a()).a, "p", new StringBuilder()), false, true);
+            return;
+        }
+        if (i10 == 3) {
+            String string2 = LocaleController.getString(R.string.RoundVideoCameraResolution);
+            li.o0 o0Var = (li.o0) si.e.f.a();
+            caVar.c(string2, o0Var == li.o0.a ? LocaleController.getString(R.string.RoundVideoCameraResolutionHigh) : o0Var == li.o0.b ? LocaleController.getString(R.string.RoundVideoCameraResolutionMedium) : LocaleController.getString(R.string.RoundVideoCameraResolutionLow), false, true);
+        } else if (i10 == 4) {
+            caVar.c(LocaleController.getString(R.string.RoundVideoFrameRate), a1.g.n(((li.p0) si.e.g.a()).a, " FPS", new StringBuilder()), false, true);
+        } else {
+            caVar.c(LocaleController.getString(R.string.RoundVideoBitrate), t41.U(si.e.h.a()), false, false);
+        }
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        Context context = this.c;
+        if (i10 == 0) {
+            frameLayout = new org.telegram.ui.Cells.m4(context);
+        } else if (i10 == 1) {
+            frameLayout = new org.telegram.ui.Cells.w8(context);
+        } else if (i10 == 2) {
+            org.telegram.ui.Cells.ca caVar = new org.telegram.ui.Cells.ca(context);
+            caVar.setCanDisable(true);
+            frameLayout = caVar;
+        } else {
+            frameLayout = new org.telegram.ui.Cells.e9(context);
+        }
+        frameLayout.setLayoutParams(new s4.o0(-1, -2));
+        return new org.telegram.ui.Components.wl0(frameLayout);
     }
 }

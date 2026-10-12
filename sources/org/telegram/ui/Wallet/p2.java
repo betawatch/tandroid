@@ -1,22 +1,22 @@
 package org.telegram.ui.Wallet;
 
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.ib0;
+import org.telegram.ui.nb0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final class p2 extends TwoStepVerificationActivity {
-    public final /* synthetic */ ib0 d0;
+    public final /* synthetic */ nb0 d0;
 
-    public p2(ib0 ib0Var) {
-        this.d0 = ib0Var;
+    public p2(nb0 nb0Var) {
+        this.d0 = nb0Var;
     }
 
-    @Override // org.telegram.ui.TwoStepVerificationActivity, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.TwoStepVerificationActivity, org.telegram.ui.ActionBar.m2
     public final void onFragmentDestroy() {
-        ib0 ib0Var = this.d0;
-        if (((Runnable) ib0Var.d) != null && !ib0Var.c) {
-            ib0Var.b();
+        nb0 nb0Var = this.d0;
+        if (((Runnable) nb0Var.d) != null && !nb0Var.c) {
+            nb0Var.b();
         }
         super.onFragmentDestroy();
     }

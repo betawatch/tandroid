@@ -1,85 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.KeyEvent;
+import android.view.ContextThemeWrapper;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class as extends es {
-    public final /* synthetic */ int M;
-    public final /* synthetic */ int N;
-    public final /* synthetic */ cs O;
+public final class as {
+    public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
+    public final LinearLayout b;
+    public final wr0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public as(cs csVar, Context context, int i10, int i11) {
-        super(context);
-        this.O = csVar;
-        this.M = i10;
-        this.N = i11;
-        this.e = 1.0f;
-        this.f = new o1.k(this, es.I);
-        this.h = new o1.k(this, es.J);
-        this.n = new o1.k(this, es.K);
-        this.r = new o1.k(this, es.L);
-        this.s = true;
-        this.v = 1.0f;
-        this.w = 1.0f;
-        this.H = false;
-        setBackground(null);
-        setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.G6, false));
-        setMovementMethod(null);
-        addTextChangedListener(new m0(this, 5));
-    }
-
-    @Override // android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4) {
-            return false;
+    public as(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.vh0 vh0Var, wr0 wr0Var) {
+        this.c = wr0Var;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, contextThemeWrapper, null);
+        this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
+        org.telegram.ui.ActionBar.e1 c10 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, null);
+        c10.setOnClickListener(new zr(vh0Var, 0));
+        c10.c(-328966, -328966);
+        c10.setSelectorColor(268435455);
+        View i5Var = new bi.i5(contextThemeWrapper, 11);
+        i5Var.setMinimumWidth(AndroidUtilities.dp(196.0f));
+        i5Var.setBackgroundColor(-15198184);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(i5Var);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) i5Var.getLayoutParams();
+        if (LocaleController.isRTL) {
+            layoutParams.gravity = 5;
         }
-        int keyCode = keyEvent.getKeyCode();
-        cs csVar = this.O;
-        int length = csVar.f.length;
-        int i10 = this.M;
-        if (i10 >= length) {
-            return false;
-        }
-        if (keyEvent.getAction() != 1) {
-            return isFocused();
-        }
-        if (keyCode == 67 && csVar.f[i10].length() == 1) {
-            csVar.f[i10].m();
-            csVar.f[i10].setText("");
-            return true;
-        }
-        if (keyCode == 67 && csVar.f[i10].length() == 0 && i10 > 0) {
-            es[] esVarArr = csVar.f;
-            esVarArr[i10 - 1].setSelection(esVarArr[i10 - 1].length());
-            for (int i11 = 0; i11 < i10; i11++) {
-                if (i11 == i10 - 1) {
-                    csVar.f[i10 - 1].requestFocus();
-                } else {
-                    csVar.f[i11].clearFocus();
-                }
-            }
-            csVar.f[i10 - 1].m();
-            csVar.f[i10 - 1].setText("");
-            return true;
-        }
-        if (keyCode >= 7 && keyCode <= 16) {
-            String num = Integer.toString(keyCode - 7);
-            if (csVar.f[i10].getText() != null && num.equals(csVar.f[i10].getText().toString())) {
-                if (i10 >= this.N - 1) {
-                    csVar.a();
-                } else {
-                    csVar.f[i10 + 1].requestFocus();
-                }
-                return true;
-            }
-            if (csVar.f[i10].length() > 0) {
-                csVar.f[i10].m();
-            }
-            csVar.f[i10].setText(num);
-        }
-        return true;
+        layoutParams.width = -1;
+        layoutParams.height = AndroidUtilities.dp(8.0f);
+        i5Var.setLayoutParams(layoutParams);
+        LinearLayout linearLayout = new LinearLayout(contextThemeWrapper);
+        this.b = linearLayout;
+        linearLayout.setOrientation(1);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(linearLayout);
     }
 }

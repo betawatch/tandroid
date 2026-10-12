@@ -1,141 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class en extends of.e {
-    public final /* synthetic */ int d;
-    public final /* synthetic */ org.telegram.ui.Cells.a0 e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class en implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qn b;
+    public final /* synthetic */ TLRPC.Chat c;
 
-    public /* synthetic */ en(Object obj, org.telegram.ui.Cells.a0 a0Var, int i10) {
-        this.d = i10;
-        this.f = obj;
-        this.e = a0Var;
+    public /* synthetic */ en(qn qnVar, TLRPC.Chat chat, int i10) {
+        this.a = i10;
+        this.b = qnVar;
+        this.c = chat;
     }
 
-    @Override // of.e
-    public final void c(boolean z10) {
-        switch (this.d) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        TLRPC.Chat chat = this.c;
+        qn qnVar = this.b;
+        switch (i10) {
             case 0:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ck(((ln) this.f).a, 3), 250L);
-                    break;
-                }
+                qnVar.q(chat);
                 break;
             case 1:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ck(((ln) this.f).a, 4), 250L);
-                    break;
-                }
+                qnVar.a(chat);
                 break;
             case 2:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ck(((ln) this.f).a, 5), 250L);
-                    break;
-                }
-                break;
-            case 3:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ck(((ln) this.f).a, 6), 250L);
-                    break;
-                }
-                break;
-            case 4:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ck(((ln) this.f).a, 7), 250L);
-                    break;
-                }
-                break;
-            case 5:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new ck(((ln) this.f).a, 8), 250L);
-                    break;
-                }
+                qnVar.a.pa(chat);
                 break;
             default:
-                if (!z10) {
-                    AndroidUtilities.runOnUIThread(new sg(13, this, (org.telegram.ui.Cells.w0) this.e), 250L);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // of.e
-    public final void d() {
-        switch (this.d) {
-            case 0:
-                ln lnVar = (ln) this.f;
-                zn znVar = lnVar.a;
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.e;
-                znVar.wb = u1Var.getMessageObject().getId();
-                zn znVar2 = lnVar.a;
-                znVar2.xb = 2;
-                znVar2.yb = null;
-                u1Var.invalidate();
-                break;
-            case 1:
-                ln lnVar2 = (ln) this.f;
-                zn znVar3 = lnVar2.a;
-                org.telegram.ui.Cells.u1 u1Var2 = (org.telegram.ui.Cells.u1) this.e;
-                znVar3.wb = u1Var2.getMessageObject().getId();
-                zn znVar4 = lnVar2.a;
-                znVar4.xb = 2;
-                znVar4.yb = null;
-                u1Var2.invalidate();
-                break;
-            case 2:
-                ln lnVar3 = (ln) this.f;
-                zn znVar5 = lnVar3.a;
-                org.telegram.ui.Cells.u1 u1Var3 = (org.telegram.ui.Cells.u1) this.e;
-                znVar5.wb = u1Var3.getMessageObject().getId();
-                zn znVar6 = lnVar3.a;
-                znVar6.xb = 2;
-                znVar6.yb = null;
-                u1Var3.invalidate();
-                break;
-            case 3:
-                ln lnVar4 = (ln) this.f;
-                zn znVar7 = lnVar4.a;
-                org.telegram.ui.Cells.u1 u1Var4 = (org.telegram.ui.Cells.u1) this.e;
-                znVar7.wb = u1Var4.getMessageObject().getId();
-                zn znVar8 = lnVar4.a;
-                znVar8.xb = 2;
-                znVar8.yb = null;
-                u1Var4.invalidate();
-                break;
-            case 4:
-                ln lnVar5 = (ln) this.f;
-                zn znVar9 = lnVar5.a;
-                org.telegram.ui.Cells.u1 u1Var5 = (org.telegram.ui.Cells.u1) this.e;
-                znVar9.wb = u1Var5.getMessageObject().getId();
-                zn znVar10 = lnVar5.a;
-                znVar10.xb = 2;
-                znVar10.yb = null;
-                u1Var5.invalidate();
-                break;
-            case 5:
-                ln lnVar6 = (ln) this.f;
-                zn znVar11 = lnVar6.a;
-                org.telegram.ui.Cells.u1 u1Var6 = (org.telegram.ui.Cells.u1) this.e;
-                znVar11.wb = u1Var6.getMessageObject().getId();
-                zn znVar12 = lnVar6.a;
-                znVar12.xb = 2;
-                znVar12.yb = null;
-                u1Var6.invalidate();
-                break;
-            default:
-                dm dmVar = (dm) this.f;
-                zn znVar13 = dmVar.a.Q;
-                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.e;
-                znVar13.wb = w0Var.getMessageObject().getId();
-                zn znVar14 = dmVar.a.Q;
-                znVar14.xb = 4;
-                znVar14.yb = null;
-                w0Var.getMessageObject().flickerLoading = true;
-                w0Var.invalidate();
+                org.telegram.ui.Components.zc.a0(qnVar.a).Q(R.raw.contact_check, 36, LocaleController.formatString(R.string.YouJoinedChannel, chat == null ? "" : chat.title)).k(true);
                 break;
         }
     }

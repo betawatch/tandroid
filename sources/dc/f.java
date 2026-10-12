@@ -1,14 +1,56 @@
 package dc;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class f {
-    public static final byte[] d = new byte[0];
-    public final cc.d a;
-    public byte[] b = d;
-    public final int[] c = new int[32];
+public final class f extends d {
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    public f(cc.d dVar) {
-        this.a = dVar;
+    public f(int i10, int i11, int i12, int i13, int i14, int i15) {
+        super(i14, i15);
+        if (i14 + i12 > i10 || i15 + i13 > i11) {
+            throw new IllegalArgumentException("Crop rectangle does not fit within image data.");
+        }
+        this.c = i10;
+        this.d = i11;
+        this.e = i12;
+        this.f = i13;
+    }
+
+    @Override // dc.d
+    public final byte[] a() {
+        int i10 = this.a;
+        int i11 = this.b;
+        int i12 = this.c;
+        if (i10 == i12 && i11 == this.d) {
+            return null;
+        }
+        int i13 = i10 * i11;
+        byte[] bArr = new byte[i13];
+        int i14 = (this.f * i12) + this.e;
+        if (i10 == i12) {
+            System.arraycopy(null, i14, bArr, 0, i13);
+            return bArr;
+        }
+        for (int i15 = 0; i15 < i11; i15++) {
+            System.arraycopy(null, i14, bArr, i15 * i10, i10);
+            i14 += i12;
+        }
+        return bArr;
+    }
+
+    @Override // dc.d
+    public final byte[] b(int i10, byte[] bArr) {
+        if (i10 < 0 || i10 >= this.b) {
+            throw new IllegalArgumentException(i2.d.i(i10, "Requested row is outside the image: "));
+        }
+        int i11 = this.a;
+        if (bArr == null || bArr.length < i11) {
+            bArr = new byte[i11];
+        }
+        System.arraycopy(null, ((i10 + this.f) * this.c) + this.e, bArr, 0, i11);
+        return bArr;
     }
 }

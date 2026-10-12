@@ -1,121 +1,177 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class uz0 extends k71 {
-    public final /* synthetic */ b71[] d2;
-    public final /* synthetic */ ProfileActivity e2;
+public final /* synthetic */ class uz0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uz0(ProfileActivity profileActivity, ProfileActivity profileActivity2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.e6 e6Var, int i11, b71[] b71VarArr) {
-        super(profileActivity2, activity, true, num, i10, true, e6Var, i11);
-        this.e2 = profileActivity;
-        this.d2 = b71VarArr;
+    public /* synthetic */ uz0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.k71
-    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        int i10;
-        if (tL_starGiftUnique == null) {
-            return true;
-        }
-        i10 = ((org.telegram.ui.ActionBar.n2) this.e2).currentAccount;
-        return yh.m5.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
-    }
-
-    @Override // org.telegram.ui.k71
-    public final long getDialogId() {
-        return this.e2.a();
-    }
-
-    @Override // org.telegram.ui.k71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        TLRPC.EmojiStatus emojiStatus;
-        int i10;
-        int i11;
-        int i12;
-        ProfileActivity profileActivity = this.e2;
-        org.telegram.ui.Components.q5[] q5VarArr = profileActivity.G;
-        b71[] b71VarArr = this.d2;
-        if (tL_starGiftUnique != null) {
-            i10 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-            TL_stars.SavedStarGift n10 = yh.m5.y(i10, false).n(tL_starGiftUnique.id);
-            if (n10 != null && MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) < 2) {
-                MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
-                Context context = getContext();
-                i11 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                i12 = ((org.telegram.ui.ActionBar.n2) profileActivity).currentAccount;
-                yh.s3 s3Var = new yh.s3(context, i11, UserConfig.getInstance(i12).getClientUserId(), profileActivity.z0, null);
-                s3Var.l2(n10, null);
-                s3Var.o2();
-                s3Var.show();
-                b71 b71Var = b71VarArr[0];
-                if (b71Var != null) {
-                    profileActivity.B5 = null;
-                    b71Var.dismiss();
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        int i11 = 0;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                ProfileActivity profileActivity = (ProfileActivity) ((ah.v) obj).c;
+                if (profileActivity.n5 != 1.0f) {
+                    wz0 wz0Var = profileActivity.n0;
+                    while (wz0Var.D0.k(i11) != wz0Var.getRealCount() - 1) {
+                        i11++;
+                    }
+                    wz0Var.x(i11, true);
+                    break;
                 }
-                return;
-            }
-            TLRPC.TL_inputEmojiStatusCollectible tL_inputEmojiStatusCollectible = new TLRPC.TL_inputEmojiStatusCollectible();
-            tL_inputEmojiStatusCollectible.collectible_id = tL_starGiftUnique.id;
-            emojiStatus = tL_inputEmojiStatusCollectible;
-            if (num != null) {
-                tL_inputEmojiStatusCollectible.flags |= 1;
-                tL_inputEmojiStatusCollectible.until = num.intValue();
-                emojiStatus = tL_inputEmojiStatusCollectible;
-            }
-        } else if (l4 == null) {
-            emojiStatus = new TLRPC.TL_emojiStatusEmpty();
-        } else {
-            TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-            tL_emojiStatus.document_id = l4.longValue();
-            emojiStatus = tL_emojiStatus;
-            if (num != null) {
-                tL_emojiStatus.flags |= 1;
-                tL_emojiStatus.until = num.intValue();
-                emojiStatus = tL_emojiStatus;
-            }
-        }
-        profileActivity.F = tL_starGiftUnique != null ? Long.valueOf(tL_starGiftUnique.id) : null;
-        MessagesController messagesController = profileActivity.getMessagesController();
-        TLRPC.Chat chat = profileActivity.E2;
-        messagesController.updateEmojiStatus(chat == null ? 0L : -chat.id, emojiStatus, tL_starGiftUnique);
-        for (int i13 = 0; i13 < 2; i13++) {
-            org.telegram.ui.Components.q5 q5Var = q5VarArr[i13];
-            if (q5Var != null) {
-                if (l4 == null && profileActivity.E2 == null) {
-                    q5Var.g(profileActivity.Y3(i13), true);
-                } else if (l4 != null) {
-                    q5Var.j(l4.longValue(), true);
-                } else {
-                    q5Var.g(null, true);
+                break;
+            case 1:
+                ProfileActivity profileActivity2 = ((n01) obj).b;
+                profileActivity2.getMessagesController().toggleChatNoForwards(profileActivity2.e1, 0, true, new di.ya(2, profileActivity2, true));
+                break;
+            case 2:
+                r01 r01Var = (r01) obj;
+                r01Var.M0(r01Var.getTabProgress());
+                break;
+            case 3:
+                ((i11) obj).c();
+                break;
+            case 4:
+                ((w11) obj).a();
+                break;
+            case 5:
+                t11 t11Var = (t11) obj;
+                t11Var.f.add(t11Var.c);
+                t11Var.a();
+                break;
+            case 6:
+                Runnable[] runnableArr = (Runnable[]) obj;
+                runnableArr[0].run();
+                runnableArr[0] = null;
+                break;
+            case 7:
+                ((bi.i8) obj).e();
+                break;
+            case 8:
+                org.telegram.ui.Components.zc zcVar = (org.telegram.ui.Components.zc) obj;
+                if (LaunchActivity.U() != null) {
+                    if (zcVar == null) {
+                        zcVar = org.telegram.ui.Components.zc.a0(LaunchActivity.U());
+                    }
+                    if (zcVar != null) {
+                        org.telegram.ui.Components.sc M = zcVar.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
+                        M.j = 5000;
+                        M.j();
+                        break;
+                    }
                 }
-                q5VarArr[i13].m(tL_starGiftUnique != null, true);
-            }
-        }
-        if (l4 != null) {
-            org.telegram.ui.Cells.o oVar = profileActivity.d0;
-            zg.n0 n0Var = new zg.n0();
-            long longValue = l4.longValue();
-            n0Var.g = longValue;
-            n0Var.h = longValue;
-            oVar.a(n0Var);
-        }
-        profileActivity.X4();
-        profileActivity.Z4();
-        b71 b71Var2 = b71VarArr[0];
-        if (b71Var2 != null) {
-            profileActivity.B5 = null;
-            b71Var2.dismiss();
+                break;
+            case 9:
+                ((r41) obj).invalidate();
+                break;
+            case 10:
+                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj;
+                saveToGallerySettingsActivity.v.clear();
+                saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveToGallerySettingsActivity.v);
+                saveToGallerySettingsActivity.Z();
+                break;
+            case 11:
+                b51 b51Var = (b51) obj;
+                b51Var.dismiss();
+                pf.d.s(b51Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
+                break;
+            case 12:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.ql0) obj).c;
+                Runnable runnable = secretMediaViewer.o0;
+                if (runnable != null) {
+                    runnable.run();
+                    secretMediaViewer.o0 = null;
+                    break;
+                }
+                break;
+            case 13:
+                r51 r51Var = ((q51) obj).a;
+                r51Var.Q = true;
+                r51Var.N.invalidate();
+                break;
+            case 14:
+                ((NotificationCenter) obj).runDelayedNotifications();
+                break;
+            case 15:
+                AndroidUtilities.updateViewShow(((g71) obj).c, true);
+                break;
+            case 16:
+                org.telegram.ui.Components.z61 z61Var = ((b81) obj).i0;
+                if (z61Var != null) {
+                    z61Var.N(true);
+                    break;
+                }
+                break;
+            case 17:
+                ((u71) obj).a();
+                break;
+            case 18:
+                ig.f.a(((SessionsActivity) obj).currentAccount).b();
+                break;
+            case 19:
+                ((nf1) obj).J.r.l();
+                break;
+            case 20:
+                ((vf1) obj).b.C0();
+                break;
+            case 21:
+                ((VoIPFeedbackActivity) obj).finish();
+                break;
+            case 22:
+                ((si1) obj).a.G();
+                break;
+            case 23:
+                ((ti1) obj).a.G();
+                break;
+            case 24:
+                dj1 dj1Var = ((ri1) obj).b;
+                dj1Var.L0.unlock();
+                org.telegram.ui.Components.voip.k2.k().getClass();
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().swapSinks();
+                }
+                dj1Var.Y.setCornerRadius(-1.0f);
+                dj1Var.c0.d.release();
+                dj1Var.d0.d.release();
+                dj1Var.b0.release();
+                dj1Var.k();
+                dj1Var.u0.d();
+                org.telegram.ui.Components.voip.k2.U = false;
+                dj1Var.E0 = false;
+                dj1.n1 = null;
+                break;
+            case 25:
+                bj1 bj1Var = (bj1) obj;
+                bj1Var.getClass();
+                if (VoIPService.getSharedState() != null) {
+                    VoIPService.getSharedState().acceptIncomingCall();
+                    if (bj1Var.a.n0 && VoIPService.getSharedInstance() != null) {
+                        VoIPService.getSharedInstance().requestVideoCall(false);
+                        break;
+                    }
+                }
+                break;
+            case 26:
+                ((VoIPPermissionActivity) obj).finish();
+                break;
+            default:
+                int[][] iArr = WallpapersListActivity.k0;
+                ((WallpapersListActivity) obj).B0(false);
+                break;
         }
     }
 }

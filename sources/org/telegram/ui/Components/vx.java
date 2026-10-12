@@ -1,36 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class vx extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ a00 c;
+public final class vx extends s4.s {
+    public final /* synthetic */ wz Q;
 
-    public /* synthetic */ vx(a00 a00Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = a00Var;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vx(wz wzVar) {
+        super(8);
+        this.Q = wzVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                if (!this.b) {
-                    this.c.x.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!this.b) {
-                    this.c.y.setVisibility(4);
-                    break;
-                }
-                break;
+    @Override // s4.b0, s4.n0
+    public final void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
+        try {
+            di.l1 l1Var = new di.l1(this, recyclerView.getContext(), 2);
+            l1Var.a = i10;
+            w0(l1Var);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 }

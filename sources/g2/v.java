@@ -3,27 +3,27 @@ package g2;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.SocketTimeoutException;
-import v7.r6;
+import v7.s6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class v extends j {
-    public final int c;
+    public final int b;
 
     public v() {
         super(2008);
-        this.c = 1;
+        this.b = 1;
     }
 
     public static v a(IOException iOException, int i10) {
         String message = iOException.getMessage();
-        int i11 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !r6.b(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
+        int i11 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !s6.c(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
         return i11 == 2007 ? new u("Cleartext HTTP traffic not permitted. See https://developer.android.com/guide/topics/media/issues/cleartext-not-permitted", iOException, 2007) : new v(iOException, i11, i10);
     }
 
     public v(String str, int i10) {
         super(str, i10 == 2000 ? 2001 : i10);
-        this.c = 1;
+        this.b = 1;
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -35,11 +35,11 @@ public class v extends j {
         if (i10 == 2000 && i11 == 1) {
             i10 = 2001;
         }
-        this.c = i11;
+        this.b = i11;
     }
 
     public v(String str, IOException iOException, int i10) {
         super(str, iOException, i10 == 2000 ? 2001 : i10);
-        this.c = 1;
+        this.b = 1;
     }
 }

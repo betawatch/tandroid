@@ -1,81 +1,39 @@
 package e9;
 
-import java.util.AbstractSet;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.Set;
+import java.io.Serializable;
+import java.util.AbstractSequentialList;
+import java.util.List;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i1 extends AbstractSet {
-    public final /* synthetic */ Set a;
-    public final /* synthetic */ Set b;
+public final class i1 extends AbstractSequentialList implements Serializable {
+    public final List a;
+    public final d9.k b;
 
-    public i1(Set set, Set set2) {
-        this.a = set;
-        this.b = set2;
+    public i1(List list, d9.k kVar) {
+        list.getClass();
+        this.a = list;
+        this.b = kVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.a.contains(obj) && this.b.contains(obj);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean containsAll(Collection collection) {
-        return this.a.containsAll(collection) && this.b.containsAll(collection);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean isEmpty() {
-        return Collections.disjoint(this.b, this.a);
+        return this.a.isEmpty();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        return new n0(this);
+    @Override // java.util.AbstractSequentialList, java.util.AbstractList, java.util.List
+    public final ListIterator listIterator(int i10) {
+        return new g1(this, this.a.listIterator(i10), 1);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.AbstractList
+    public final void removeRange(int i10, int i11) {
+        this.a.subList(i10, i11).clear();
     }
 
-    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        Iterator it = this.a.iterator();
-        int i10 = 0;
-        while (it.hasNext()) {
-            if (this.b.contains(it.next())) {
-                i10++;
-            }
-        }
-        return i10;
+        return this.a.size();
     }
 }

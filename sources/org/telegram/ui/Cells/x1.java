@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.q71;
+import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.oh0;
 import org.telegram.ui.Components.qh0;
-import org.telegram.ui.Components.sh0;
-import org.telegram.ui.kc0;
+import org.telegram.ui.pc0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class x1 extends org.telegram.ui.Components.r6 {
+public final class x1 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ int s;
     public Object v;
 
@@ -30,10 +30,10 @@ public final class x1 extends org.telegram.ui.Components.r6 {
         switch (this.s) {
             case 1:
                 super.invalidate();
-                qh0 qh0Var = (qh0) this.v;
-                sh0 sh0Var = qh0Var.d;
-                if (qh0Var == sh0Var.b.getPinnedHeader()) {
-                    sh0Var.b.invalidate();
+                oh0 oh0Var = (oh0) this.v;
+                qh0 qh0Var = oh0Var.d;
+                if (oh0Var == qh0Var.b.getPinnedHeader()) {
+                    qh0Var.b.invalidate();
                     break;
                 }
                 break;
@@ -43,7 +43,7 @@ public final class x1 extends org.telegram.ui.Components.r6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r6, android.view.View
+    @Override // org.telegram.ui.Components.s6, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.s) {
             case 0:
@@ -59,7 +59,7 @@ public final class x1 extends org.telegram.ui.Components.r6 {
                 canvas.translate(AndroidUtilities.dp(15.0f), 0.0f);
                 super.onDraw(canvas);
                 canvas.translate(((getMeasuredWidth() - d()) / 2.0f) - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(11.0f));
-                ((q71) this.v).b.draw(canvas);
+                ((n71) this.v).b.draw(canvas);
                 canvas.restore();
                 break;
             case 3:
@@ -71,16 +71,16 @@ public final class x1 extends org.telegram.ui.Components.r6 {
         }
     }
 
-    @Override // org.telegram.ui.Components.r6, android.view.View
+    @Override // org.telegram.ui.Components.s6, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.s) {
             case 4:
-                kc0 kc0Var = (kc0) this.v;
+                pc0 pc0Var = (pc0) this.v;
                 int size = View.MeasureSpec.getSize(i10);
                 if (size <= 0) {
                     size = AndroidUtilities.displaySize.x - AndroidUtilities.dp(20.0f);
                 }
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - kc0Var.d.getPaint().measureText(kc0Var.d.getText().toString())) - kc0Var.f.getPaint().measureText(kc0Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) ((size - pc0Var.d.getPaint().measureText(pc0Var.d.getText().toString())) - pc0Var.f.getPaint().measureText(pc0Var.f.getText().toString())), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -93,7 +93,7 @@ public final class x1 extends org.telegram.ui.Components.r6 {
         ViewGroup viewGroup;
         switch (this.s) {
             case 1:
-                viewGroup = ((org.telegram.ui.ActionBar.f3) ((qh0) this.v).d).containerView;
+                viewGroup = ((org.telegram.ui.ActionBar.e3) ((oh0) this.v).d).containerView;
                 return viewGroup.post(runnable);
             default:
                 return super.post(runnable);
@@ -101,14 +101,14 @@ public final class x1 extends org.telegram.ui.Components.r6 {
     }
 
     @Override // android.view.View
-    public boolean postDelayed(Runnable runnable, long j3) {
+    public boolean postDelayed(Runnable runnable, long j10) {
         ViewGroup viewGroup;
         switch (this.s) {
             case 1:
-                viewGroup = ((org.telegram.ui.ActionBar.f3) ((qh0) this.v).d).containerView;
-                return viewGroup.postDelayed(runnable, j3);
+                viewGroup = ((org.telegram.ui.ActionBar.e3) ((oh0) this.v).d).containerView;
+                return viewGroup.postDelayed(runnable, j10);
             default:
-                return super.postDelayed(runnable, j3);
+                return super.postDelayed(runnable, j10);
         }
     }
 
@@ -120,16 +120,16 @@ public final class x1 extends org.telegram.ui.Components.r6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(q71 q71Var, Context context) {
+    public x1(n71 n71Var, Context context) {
         super(context, true, true, true);
         this.s = 2;
-        this.v = q71Var;
+        this.v = n71Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(kc0 kc0Var, Context context) {
+    public x1(pc0 pc0Var, Context context) {
         super(context, false, true, true);
         this.s = 4;
-        this.v = kc0Var;
+        this.v = pc0Var;
     }
 }

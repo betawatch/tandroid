@@ -1,38 +1,25 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ek extends org.telegram.ui.Components.f31 {
-    public final /* synthetic */ zn e;
+public final class ek extends g.o {
+    public final /* synthetic */ fo c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ek(zn znVar, Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, i10, e6Var);
-        this.e = znVar;
+    public ek(fo foVar) {
+        this.c = foVar;
     }
 
-    @Override // org.telegram.ui.Components.f31, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
-        }
-        zn znVar = this.e;
-        kVar = ((org.telegram.ui.ActionBar.n2) znVar).actionBar;
-        if (kVar.t() || znVar.F9()) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            invalidate();
-        }
-        super.setTranslationY(f7);
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        MessageObject messageObject;
+        MessageObject.GroupedMessages c92;
+        fo foVar = this.c;
+        rm rmVar = foVar.A0;
+        int i12 = rmVar.J;
+        return (i10 < i12 || i10 >= rmVar.K || (i11 = i10 - i12) < 0 || i11 >= rmVar.L().size() || (c92 = foVar.c9((messageObject = (MessageObject) foVar.A0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : c92.getPosition(messageObject).spanSize;
     }
 }

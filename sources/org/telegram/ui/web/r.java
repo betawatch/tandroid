@@ -1,20 +1,20 @@
 package org.telegram.ui.web;
 
-import ai.ea;
+import bi.n9;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ b1 b;
-    public final /* synthetic */ ea c;
+    public final /* synthetic */ n9 c;
 
-    public /* synthetic */ r(b1 b1Var, ea eaVar, int i10) {
+    public /* synthetic */ r(b1 b1Var, n9 n9Var, int i10) {
         this.a = i10;
         this.b = b1Var;
-        this.c = eaVar;
+        this.c = n9Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
@@ -30,12 +30,12 @@ public final /* synthetic */ class r implements Utilities.Callback {
                 b1 b1Var = this.b;
                 b1Var.getClass();
                 boolean booleanValue = ((Boolean) obj).booleanValue();
-                ea eaVar = this.c;
+                n9 n9Var = this.c;
                 if (!booleanValue) {
-                    b1Var.x(eaVar, "home_screen_failed", b1.A("UNSUPPORTED", "error"));
+                    b1Var.x(n9Var, "home_screen_failed", b1.A("UNSUPPORTED", "error"));
                     break;
                 } else {
-                    b1Var.x(eaVar, "home_screen_added", null);
+                    b1Var.x(n9Var, "home_screen_added", null);
                     break;
                 }
         }

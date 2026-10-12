@@ -1,113 +1,70 @@
 package r4;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import c0.l;
+import j$.util.Objects;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
-import java.io.IOException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static final l a = new l();
-    public static final Object b = new Object();
-    public static qb.b c = null;
+public final class i {
+    public final int a;
+    public final int b;
+    public final long c;
+    public final long d;
 
-    public static long a(Context context) {
-        PackageManager packageManager = context.getApplicationContext().getPackageManager();
-        return Build.VERSION.SDK_INT >= 33 ? g.a(packageManager, context).lastUpdateTime : packageManager.getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
+    public i(long j10, int i10, int i11, long j11) {
+        this.a = i10;
+        this.b = i11;
+        this.c = j10;
+        this.d = j11;
     }
 
-    public static qb.b b() {
-        qb.b bVar = new qb.b(21);
-        c = bVar;
-        a.k(bVar);
-        return c;
+    public static i a(File file) {
+        DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
+        try {
+            i iVar = new i(dataInputStream.readLong(), dataInputStream.readInt(), dataInputStream.readInt(), dataInputStream.readLong());
+            dataInputStream.close();
+            return iVar;
+        } finally {
+        }
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(21:14|(1:80)(1:18)|19|(1:79)(1:23)|24|25|26|(2:64|65)(1:28)|29|(9:36|(1:40)|(1:47)|48|(2:56|57)|52|53|54|55)|(1:63)|(1:40)|(3:42|45|47)|48|(1:50)|56|57|52|53|54|55) */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00a1, code lost:
-    
-        r6 = 1;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void c(Context context, boolean z10) {
-        h a2;
-        h hVar;
-        int i10;
-        if (z10 || c == null) {
-            synchronized (b) {
-                if (!z10) {
-                    try {
-                        if (c != null) {
-                            return;
-                        }
-                    } catch (Throwable th2) {
-                        throw th2;
-                    }
-                }
-                int i11 = Build.VERSION.SDK_INT;
-                if (i11 >= 28 && i11 != 30) {
-                    File file = new File(new File("/data/misc/profiles/ref/", context.getPackageName()), "primary.prof");
-                    long length = file.length();
-                    int i12 = 0;
-                    boolean z11 = file.exists() && length > 0;
-                    File file2 = new File(new File("/data/misc/profiles/cur/0/", context.getPackageName()), "primary.prof");
-                    long length2 = file2.length();
-                    boolean z12 = file2.exists() && length2 > 0;
-                    try {
-                        long a10 = a(context);
-                        File file3 = new File(context.getFilesDir(), "profileInstalled");
-                        if (file3.exists()) {
-                            try {
-                                a2 = h.a(file3);
-                            } catch (IOException unused) {
-                                b();
-                                return;
-                            }
-                        } else {
-                            a2 = null;
-                        }
-                        if (a2 != null && a2.c == a10 && (i10 = a2.b) != 2) {
-                            i12 = i10;
-                            if (z10 && z12 && i12 != 1) {
-                                i12 = 2;
-                            }
-                            if (a2 != null && a2.b == 2 && i12 == 1 && length < a2.d) {
-                                i12 = 3;
-                            }
-                            hVar = new h(a10, 1, i12, length2);
-                            if (a2 != null || !a2.equals(hVar)) {
-                                hVar.b(file3);
-                            }
-                            b();
-                            return;
-                        }
-                        if (z12) {
-                            i12 = 2;
-                        }
-                        if (z10) {
-                            i12 = 2;
-                        }
-                        if (a2 != null) {
-                            i12 = 3;
-                        }
-                        hVar = new h(a10, 1, i12, length2);
-                        if (a2 != null) {
-                        }
-                        hVar.b(file3);
-                        b();
-                        return;
-                    } catch (PackageManager.NameNotFoundException unused2) {
-                        b();
-                        return;
-                    }
-                }
-                b();
+    public final void b(File file) {
+        file.delete();
+        DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(file));
+        try {
+            dataOutputStream.writeInt(this.a);
+            dataOutputStream.writeInt(this.b);
+            dataOutputStream.writeLong(this.c);
+            dataOutputStream.writeLong(this.d);
+            dataOutputStream.close();
+        } catch (Throwable th2) {
+            try {
+                dataOutputStream.close();
+            } catch (Throwable th3) {
+                th2.addSuppressed(th3);
+            }
+            throw th2;
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && (obj instanceof i)) {
+            i iVar = (i) obj;
+            if (this.b == iVar.b && this.c == iVar.c && this.a == iVar.a && this.d == iVar.d) {
+                return true;
             }
         }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.b), Long.valueOf(this.c), Integer.valueOf(this.a), Long.valueOf(this.d));
     }
 }

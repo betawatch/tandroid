@@ -1,459 +1,238 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.widget.LinearLayout;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Locale;
-import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 import org.telegram.messenger.SecureDocument;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class vm0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ nn0 a;
+public final class vm0 implements RequestDelegate {
+    public final /* synthetic */ hn0 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ TL_account.saveSecureValue c;
+    public final /* synthetic */ TLRPC.TL_secureRequiredType d;
+    public final /* synthetic */ TLRPC.TL_secureRequiredType e;
+    public final /* synthetic */ ArrayList f;
+    public final /* synthetic */ SecureDocument g;
+    public final /* synthetic */ SecureDocument h;
+    public final /* synthetic */ SecureDocument i;
+    public final /* synthetic */ ArrayList j;
+    public final /* synthetic */ String k;
+    public final /* synthetic */ String l;
+    public final /* synthetic */ Runnable m;
+    public final /* synthetic */ wm0 n;
+    public final /* synthetic */ TLRPC.TL_inputSecureValue o;
+    public final /* synthetic */ wm0 p;
 
-    public vm0(nn0 nn0Var) {
-        this.a = nn0Var;
+    public vm0(wm0 wm0Var, hn0 hn0Var, String str, TL_account.saveSecureValue savesecurevalue, TLRPC.TL_secureRequiredType tL_secureRequiredType, TLRPC.TL_secureRequiredType tL_secureRequiredType2, ArrayList arrayList, SecureDocument secureDocument, SecureDocument secureDocument2, SecureDocument secureDocument3, ArrayList arrayList2, String str2, String str3, Runnable runnable, wm0 wm0Var2, TLRPC.TL_inputSecureValue tL_inputSecureValue) {
+        this.p = wm0Var;
+        this.a = hn0Var;
+        this.b = str;
+        this.c = savesecurevalue;
+        this.d = tL_secureRequiredType;
+        this.e = tL_secureRequiredType2;
+        this.f = arrayList;
+        this.g = secureDocument;
+        this.h = secureDocument2;
+        this.i = secureDocument3;
+        this.j = arrayList2;
+        this.k = str2;
+        this.l = str3;
+        this.m = runnable;
+        this.n = wm0Var2;
+        this.o = tL_inputSecureValue;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0211  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0218  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0221  */
-    @Override // org.telegram.ui.ActionBar.j
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        JSONObject jSONObject;
-        HashMap hashMap;
-        HashMap hashMap2;
-        String str;
-        int i14;
-        String obj;
-        nn0 nn0Var = this.a;
-        int i15 = nn0Var.b;
-        if (i10 == -1) {
-            if (nn0Var.W0(true)) {
-                return;
-            }
-            if (i15 == 0 || i15 == 5) {
-                nn0Var.V0(false);
-            }
-            nn0Var.finishFragment();
-            return;
-        }
-        if (i10 == 1) {
-            if (nn0Var.getParentActivity() == null) {
-                return;
-            }
-            org.telegram.ui.Components.ea0 ea0Var = new org.telegram.ui.Components.ea0(nn0Var.getParentActivity(), null);
-            String string = LocaleController.getString(R.string.PassportInfo2);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
-            int indexOf = string.indexOf(42);
-            int lastIndexOf = string.lastIndexOf(42);
-            if (indexOf != -1 && lastIndexOf != -1) {
-                spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
-                spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.o4(LocaleController.getString(R.string.PassportInfoUrl), 4, this), indexOf, lastIndexOf - 1, 33);
-            }
-            ea0Var.setText(spannableStringBuilder);
-            ea0Var.setTextSize(1, 16.0f);
-            ea0Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.k5, false));
-            ea0Var.setHighlightColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.l5, false));
-            ea0Var.setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
-            ea0Var.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-            ea0Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.j5, false));
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(nn0Var.getParentActivity());
-            alertDialog$Builder.n(ea0Var);
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.PassportInfoTitle);
-            alertDialog$Builder.h(LocaleController.getString(R.string.Close), null);
-            nn0Var.showDialog(alertDialog$Builder.a);
-            return;
-        }
-        if (i10 == 2) {
-            if (i15 == 5) {
-                nn0Var.A1(false);
-                return;
-            }
-            if (i15 == 7) {
-                nn0Var.J1[nn0Var.I1].h(null);
-                return;
-            }
-            tk0 tk0Var = new tk0(this, 4);
-            org.telegram.ui.ActionBar.b5 b5Var = new org.telegram.ui.ActionBar.b5(5, this, tk0Var);
-            if (i15 == 4) {
-                if (nn0Var.f) {
-                    obj = nn0Var.d1;
-                } else if (nn0.C0(nn0Var)) {
+    public final void a(final TLRPC.TL_error tL_error, final TLRPC.TL_secureValue tL_secureValue, final TLRPC.TL_secureValue tL_secureValue2) {
+        wm0 wm0Var = this.p;
+        final boolean z10 = wm0Var.b;
+        final int i10 = wm0Var.c;
+        final hn0 hn0Var = this.a;
+        final String str = this.b;
+        final TL_account.saveSecureValue savesecurevalue = this.c;
+        final TLRPC.TL_secureRequiredType tL_secureRequiredType = this.d;
+        final TLRPC.TL_secureRequiredType tL_secureRequiredType2 = this.e;
+        final ArrayList arrayList = this.f;
+        final SecureDocument secureDocument = this.g;
+        final SecureDocument secureDocument2 = this.h;
+        final SecureDocument secureDocument3 = this.i;
+        final ArrayList arrayList2 = this.j;
+        final String str2 = this.k;
+        final String str3 = this.l;
+        final Runnable runnable = this.m;
+        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.um0
+            @Override // java.lang.Runnable
+            public final void run() {
+                un0 un0Var;
+                TLRPC.TL_secureRequiredType tL_secureRequiredType3;
+                int i11;
+                wm0 wm0Var2 = vm0.this.p;
+                un0 un0Var2 = wm0Var2.d;
+                TLRPC.TL_error tL_error2 = tL_error;
+                String str4 = str;
+                int i12 = 0;
+                if (tL_error2 != null) {
+                    hn0 hn0Var2 = hn0Var;
+                    if (hn0Var2 != null) {
+                        hn0Var2.o(tL_error2.text, str4);
+                    }
+                    i11 = ((org.telegram.ui.ActionBar.m2) un0Var2).currentAccount;
+                    org.telegram.ui.Components.g5.e0(i11, tL_error2, un0Var2, savesecurevalue, str4);
                     return;
+                }
+                boolean z11 = z10;
+                TLRPC.TL_secureRequiredType tL_secureRequiredType4 = tL_secureRequiredType;
+                TLRPC.TL_secureRequiredType tL_secureRequiredType5 = tL_secureRequiredType2;
+                if (!z11) {
+                    un0Var2.G1(tL_secureRequiredType5);
+                    un0Var2.G1(tL_secureRequiredType4);
+                } else if (tL_secureRequiredType4 != null) {
+                    un0Var2.G1(tL_secureRequiredType4);
                 } else {
-                    obj = nn0Var.Y[0].getText().toString();
+                    un0Var2.G1(tL_secureRequiredType5);
                 }
-                ((qm0) nn0Var.B1).c(nn0Var.E, obj, null, null, null, null, null, null, null, null, tk0Var, b5Var);
-            } else if (i15 == 3) {
-                if (nn0Var.f) {
-                    i14 = ((org.telegram.ui.ActionBar.n2) nn0Var).currentAccount;
-                    str = UserConfig.getInstance(i14).getCurrentUser().phone;
-                } else {
-                    if (nn0.C0(nn0Var)) {
-                        return;
-                    }
-                    str = nn0Var.Y[1].getText().toString() + nn0Var.Y[2].getText().toString();
+                TLRPC.TL_secureValue tL_secureValue3 = tL_secureValue;
+                if (tL_secureValue3 != null) {
+                    un0Var2.y.values.add(tL_secureValue3);
                 }
-                ((qm0) nn0Var.B1).c(nn0Var.E, str, null, null, null, null, null, null, null, null, tk0Var, b5Var);
-            } else if (i15 == 2) {
-                if (!nn0Var.o1.isEmpty() || nn0.C0(nn0Var)) {
-                    return;
+                TLRPC.TL_secureValue tL_secureValue4 = tL_secureValue2;
+                if (tL_secureValue4 != null) {
+                    un0Var2.y.values.add(tL_secureValue4);
                 }
-                if (nn0Var.t1()) {
-                    nn0Var.finishFragment();
-                    return;
-                }
-                if (!nn0Var.v0) {
-                    jSONObject = new JSONObject();
-                    try {
-                        jSONObject.put("street_line1", nn0Var.Y[0].getText().toString());
-                        jSONObject.put("street_line2", nn0Var.Y[1].getText().toString());
-                        jSONObject.put("post_code", nn0Var.Y[2].getText().toString());
-                        jSONObject.put("city", nn0Var.Y[3].getText().toString());
-                        jSONObject.put("state", nn0Var.Y[4].getText().toString());
-                        jSONObject.put("country_code", nn0Var.s);
-                    } catch (Exception unused) {
-                    }
-                    hashMap = nn0Var.w1;
-                    if (hashMap != null) {
-                        hashMap.clear();
-                    }
-                    hashMap2 = nn0Var.x1;
-                    if (hashMap2 != null) {
-                        hashMap2.clear();
-                    }
-                    ((qm0) nn0Var.B1).c(nn0Var.E, null, jSONObject != null ? jSONObject.toString() : null, nn0Var.F, null, nn0Var.i1, nn0Var.j1, nn0Var.k1, null, null, tk0Var, b5Var);
-                }
-                jSONObject = null;
-                hashMap = nn0Var.w1;
-                if (hashMap != null) {
-                }
-                hashMap2 = nn0Var.x1;
-                if (hashMap2 != null) {
-                }
-                ((qm0) nn0Var.B1).c(nn0Var.E, null, jSONObject != null ? jSONObject.toString() : null, nn0Var.F, null, nn0Var.i1, nn0Var.j1, nn0Var.k1, null, null, tk0Var, b5Var);
-            } else if (i15 == 1) {
-                if (!c(tk0Var, b5Var)) {
-                    return;
-                }
-            } else if (i15 == 6) {
-                TL_account.verifyEmail verifyemail = new TL_account.verifyEmail();
-                verifyemail.purpose = new TLRPC.TL_emailVerifyPurposePassport();
-                TLRPC.TL_emailVerificationCode tL_emailVerificationCode = new TLRPC.TL_emailVerificationCode();
-                tL_emailVerificationCode.code = nn0Var.Y[0].getText().toString();
-                verifyemail.verification = tL_emailVerificationCode;
-                i11 = ((org.telegram.ui.ActionBar.n2) nn0Var).currentAccount;
-                int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(verifyemail, new ai.q3(this, tk0Var, b5Var, verifyemail, 10));
-                i12 = ((org.telegram.ui.ActionBar.n2) nn0Var).currentAccount;
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i12);
-                i13 = ((org.telegram.ui.ActionBar.n2) nn0Var).classGuid;
-                connectionsManager.bindRequestToGuid(sendRequest, i13);
-            }
-            nn0Var.M1(true, true);
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0140, code lost:
-    
-        if (r0 != false) goto L100;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0301  */
-    /* JADX WARN: Removed duplicated region for block: B:101:0x02f4  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x02dd  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x02e4  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x02ed  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x02fa  */
-    /* JADX WARN: Type inference failed for: r14v0 */
-    /* JADX WARN: Type inference failed for: r14v1, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r14v2 */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean c(tk0 tk0Var, org.telegram.ui.ActionBar.b5 b5Var) {
-        int i10;
-        char c10;
-        int i11;
-        JSONObject jSONObject;
-        JSONObject jSONObject2;
-        HashMap hashMap;
-        HashMap hashMap2;
-        LinearLayout linearLayout;
-        int i12;
-        char c11;
-        boolean z10;
-        nn0 nn0Var = this.a;
-        int[] iArr = nn0Var.x;
-        boolean[] zArr = nn0Var.t0;
-        final int i13 = 0;
-        if (nn0Var.o1.isEmpty() && !nn0.C0(nn0Var)) {
-            int i14 = 3;
-            char c12 = 2;
-            ?? r14 = 1;
-            if (nn0Var.u0) {
-                nn0Var.u0 = false;
-                boolean z11 = false;
-                int i15 = 0;
-                while (i15 < zArr.length) {
-                    if (zArr[i15]) {
-                        nn0Var.Y[i15].setErrorText(LocaleController.getString(R.string.PassportUseLatinOnly));
-                        if (!z11) {
-                            String translitString = zArr[0] ? LocaleController.getInstance().getTranslitString(nn0Var.a0[0].getText().toString(), r14) : nn0Var.Y[0].getText().toString();
-                            String translitString2 = zArr[r14] ? LocaleController.getInstance().getTranslitString(nn0Var.a0[r14].getText().toString(), r14) : nn0Var.Y[r14].getText().toString();
-                            String translitString3 = zArr[c12] ? LocaleController.getInstance().getTranslitString(nn0Var.a0[c12].getText().toString(), r14) : nn0Var.Y[c12].getText().toString();
-                            if (TextUtils.isEmpty(translitString) || TextUtils.isEmpty(translitString2) || TextUtils.isEmpty(translitString3)) {
-                                i12 = i14;
-                                c11 = c12;
-                                z10 = r14;
-                                nn0Var.y1(nn0Var.Y[i15]);
-                            } else {
-                                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(nn0Var.getParentActivity());
-                                int i16 = R.string.PassportNameCheckAlert;
-                                Object[] objArr = new Object[i14];
-                                objArr[0] = translitString;
-                                objArr[r14] = translitString2;
-                                objArr[c12] = translitString3;
-                                String formatString = LocaleController.formatString("PassportNameCheckAlert", i16, objArr);
-                                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                                b2Var.T = formatString;
-                                b2Var.R = LocaleController.getString(R.string.AppName);
-                                i12 = i14;
-                                c11 = c12;
-                                z10 = r14;
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Done), new org.telegram.ui.Components.d1(this, translitString, translitString2, translitString3, tk0Var, b5Var, 1));
-                                alertDialog$Builder.h(LocaleController.getString(R.string.Edit), new i2.s(this, i15, 16));
-                                nn0Var.showDialog(b2Var);
-                            }
-                            z11 = z10;
-                            i15++;
-                            r14 = z10;
-                            c12 = c11;
-                            i14 = i12;
-                        }
-                    }
-                    i12 = i14;
-                    c11 = c12;
-                    z10 = r14;
-                    i15++;
-                    r14 = z10;
-                    c12 = c11;
-                    i14 = i12;
-                }
-                i10 = i14;
-                c10 = c12;
-                i11 = r14;
-            } else {
-                i10 = 3;
-                c10 = 2;
-                i11 = 1;
-            }
-            if (nn0Var.t1()) {
-                nn0Var.finishFragment();
-                return false;
-            }
-            SecureDocument secureDocument = null;
-            try {
-                if (nn0Var.v0) {
-                    jSONObject = null;
-                } else {
-                    HashMap hashMap3 = new HashMap(nn0Var.s1);
-                    if (nn0Var.E.native_names) {
-                        if (nn0Var.q0.getVisibility() == 0) {
-                            hashMap3.put("first_name_native", nn0Var.a0[0].getText().toString());
-                            hashMap3.put("middle_name_native", nn0Var.a0[i11].getText().toString());
-                            hashMap3.put("last_name_native", nn0Var.a0[c10].getText().toString());
-                        } else {
-                            hashMap3.put("first_name_native", nn0Var.Y[0].getText().toString());
-                            hashMap3.put("middle_name_native", nn0Var.Y[i11].getText().toString());
-                            hashMap3.put("last_name_native", nn0Var.Y[c10].getText().toString());
-                        }
-                    }
-                    hashMap3.put("first_name", nn0Var.Y[0].getText().toString());
-                    hashMap3.put("middle_name", nn0Var.Y[i11].getText().toString());
-                    hashMap3.put("last_name", nn0Var.Y[c10].getText().toString());
-                    hashMap3.put("birth_date", nn0Var.Y[i10].getText().toString());
-                    hashMap3.put("gender", nn0Var.w);
-                    hashMap3.put("country_code", nn0Var.s);
-                    hashMap3.put("residence_country_code", nn0Var.v);
-                    jSONObject = new JSONObject();
-                    try {
-                        ArrayList arrayList = new ArrayList(hashMap3.keySet());
-                        Collections.sort(arrayList, new Comparator(this) { // from class: org.telegram.ui.um0
-                            public final /* synthetic */ vm0 b;
-
-                            {
-                                this.b = this;
-                            }
-
-                            @Override // java.util.Comparator
-                            public final int compare(Object obj, Object obj2) {
-                                String str = (String) obj;
-                                String str2 = (String) obj2;
-                                switch (i13) {
-                                    case 0:
-                                        nn0 nn0Var2 = this.b.a;
-                                        int B0 = nn0.B0(nn0Var2, str);
-                                        int B02 = nn0.B0(nn0Var2, str2);
-                                        if (B0 >= B02) {
-                                            if (B0 > B02) {
-                                            }
-                                        }
+                ArrayList arrayList3 = arrayList;
+                if (arrayList3 != null && !arrayList3.isEmpty()) {
+                    int size = arrayList3.size();
+                    int i13 = 0;
+                    while (i13 < size) {
+                        SecureDocument secureDocument4 = (SecureDocument) arrayList3.get(i13);
+                        if (secureDocument4.inputFile != null) {
+                            int size2 = tL_secureValue3.files.size();
+                            int i14 = i12;
+                            while (i14 < size2) {
+                                TLRPC.SecureFile secureFile = tL_secureValue3.files.get(i14);
+                                if (secureFile instanceof TLRPC.TL_secureFile) {
+                                    TLRPC.TL_secureFile tL_secureFile = (TLRPC.TL_secureFile) secureFile;
+                                    un0Var = un0Var2;
+                                    tL_secureRequiredType3 = tL_secureRequiredType5;
+                                    if (Utilities.arraysEquals(secureDocument4.fileSecret, 0, tL_secureFile.secret, 0)) {
+                                        wm0.a(wm0Var2, secureDocument4, tL_secureFile);
                                         break;
-                                    default:
-                                        nn0 nn0Var3 = this.b.a;
-                                        int B03 = nn0.B0(nn0Var3, str);
-                                        int B04 = nn0.B0(nn0Var3, str2);
-                                        if (B03 >= B04) {
-                                            if (B03 > B04) {
-                                            }
-                                        }
-                                        break;
+                                    }
+                                } else {
+                                    un0Var = un0Var2;
+                                    tL_secureRequiredType3 = tL_secureRequiredType5;
                                 }
-                                return 0;
+                                i14++;
+                                un0Var2 = un0Var;
+                                tL_secureRequiredType5 = tL_secureRequiredType3;
                             }
-                        });
-                        int size = arrayList.size();
-                        for (int i17 = 0; i17 < size; i17++) {
-                            String str = (String) arrayList.get(i17);
-                            jSONObject.put(str, hashMap3.get(str));
                         }
-                    } catch (Exception unused) {
-                    }
-                }
-            } catch (Exception unused2) {
-                jSONObject = null;
-                jSONObject2 = null;
-            }
-            if (nn0Var.F != null) {
-                HashMap hashMap4 = new HashMap(nn0Var.t1);
-                hashMap4.put("document_no", nn0Var.Y[7].getText().toString());
-                if (iArr[0] != 0) {
-                    Locale locale = Locale.US;
-                    Integer valueOf = Integer.valueOf(iArr[c10]);
-                    Integer valueOf2 = Integer.valueOf(iArr[i11]);
-                    Integer valueOf3 = Integer.valueOf(iArr[0]);
-                    Object[] objArr2 = new Object[i10];
-                    objArr2[0] = valueOf;
-                    objArr2[i11] = valueOf2;
-                    objArr2[c10] = valueOf3;
-                    hashMap4.put("expiry_date", String.format(locale, "%02d.%02d.%d", objArr2));
-                } else {
-                    hashMap4.put("expiry_date", "");
-                }
-                jSONObject2 = new JSONObject();
-                try {
-                    ArrayList arrayList2 = new ArrayList(hashMap4.keySet());
-                    final int i18 = i11;
-                    Collections.sort(arrayList2, new Comparator(this) { // from class: org.telegram.ui.um0
-                        public final /* synthetic */ vm0 b;
-
-                        {
-                            this.b = this;
-                        }
-
-                        @Override // java.util.Comparator
-                        public final int compare(Object obj, Object obj2) {
-                            String str2 = (String) obj;
-                            String str22 = (String) obj2;
-                            switch (i18) {
-                                case 0:
-                                    nn0 nn0Var2 = this.b.a;
-                                    int B0 = nn0.B0(nn0Var2, str2);
-                                    int B02 = nn0.B0(nn0Var2, str22);
-                                    if (B0 >= B02) {
-                                        if (B0 > B02) {
-                                        }
-                                    }
-                                    break;
-                                default:
-                                    nn0 nn0Var3 = this.b.a;
-                                    int B03 = nn0.B0(nn0Var3, str2);
-                                    int B04 = nn0.B0(nn0Var3, str22);
-                                    if (B03 >= B04) {
-                                        if (B03 > B04) {
-                                        }
-                                    }
-                                    break;
-                            }
-                            return 0;
-                        }
-                    });
-                    int size2 = arrayList2.size();
-                    while (i13 < size2) {
-                        String str2 = (String) arrayList2.get(i13);
-                        jSONObject2.put(str2, hashMap4.get(str2));
+                        un0Var = un0Var2;
+                        tL_secureRequiredType3 = tL_secureRequiredType5;
                         i13++;
+                        un0Var2 = un0Var;
+                        tL_secureRequiredType5 = tL_secureRequiredType3;
+                        i12 = 0;
                     }
-                } catch (Exception unused3) {
                 }
-                hashMap = nn0Var.w1;
-                if (hashMap != null) {
-                    hashMap.clear();
+                un0 un0Var3 = un0Var2;
+                TLRPC.TL_secureRequiredType tL_secureRequiredType6 = tL_secureRequiredType5;
+                SecureDocument secureDocument5 = secureDocument;
+                if (secureDocument5 != null && secureDocument5.inputFile != null) {
+                    TLRPC.SecureFile secureFile2 = tL_secureValue3.selfie;
+                    if (secureFile2 instanceof TLRPC.TL_secureFile) {
+                        TLRPC.TL_secureFile tL_secureFile2 = (TLRPC.TL_secureFile) secureFile2;
+                        if (Utilities.arraysEquals(secureDocument5.fileSecret, 0, tL_secureFile2.secret, 0)) {
+                            wm0.a(wm0Var2, secureDocument5, tL_secureFile2);
+                        }
+                    }
                 }
-                hashMap2 = nn0Var.x1;
-                if (hashMap2 != null) {
-                    hashMap2.clear();
+                SecureDocument secureDocument6 = secureDocument2;
+                if (secureDocument6 != null && secureDocument6.inputFile != null) {
+                    TLRPC.SecureFile secureFile3 = tL_secureValue3.front_side;
+                    if (secureFile3 instanceof TLRPC.TL_secureFile) {
+                        TLRPC.TL_secureFile tL_secureFile3 = (TLRPC.TL_secureFile) secureFile3;
+                        if (Utilities.arraysEquals(secureDocument6.fileSecret, 0, tL_secureFile3.secret, 0)) {
+                            wm0.a(wm0Var2, secureDocument6, tL_secureFile3);
+                        }
+                    }
                 }
-                dn0 dn0Var = nn0Var.B1;
-                TLRPC.TL_secureRequiredType tL_secureRequiredType = nn0Var.E;
-                String jSONObject3 = jSONObject == null ? jSONObject.toString() : null;
-                TLRPC.TL_secureRequiredType tL_secureRequiredType2 = nn0Var.F;
-                String jSONObject4 = jSONObject2 == null ? jSONObject2.toString() : null;
-                SecureDocument secureDocument2 = nn0Var.j1;
-                ArrayList arrayList3 = nn0Var.k1;
-                SecureDocument secureDocument3 = nn0Var.l1;
-                linearLayout = nn0Var.f0;
-                if (linearLayout != null && linearLayout.getVisibility() == 0) {
-                    secureDocument = nn0Var.m1;
+                SecureDocument secureDocument7 = secureDocument3;
+                if (secureDocument7 != null && secureDocument7.inputFile != null) {
+                    TLRPC.SecureFile secureFile4 = tL_secureValue3.reverse_side;
+                    if (secureFile4 instanceof TLRPC.TL_secureFile) {
+                        TLRPC.TL_secureFile tL_secureFile4 = (TLRPC.TL_secureFile) secureFile4;
+                        if (Utilities.arraysEquals(secureDocument7.fileSecret, 0, tL_secureFile4.secret, 0)) {
+                            wm0.a(wm0Var2, secureDocument7, tL_secureFile4);
+                        }
+                    }
                 }
-                ((qm0) dn0Var).c(tL_secureRequiredType, null, jSONObject3, tL_secureRequiredType2, jSONObject4, null, secureDocument2, arrayList3, secureDocument3, secureDocument, tk0Var, b5Var);
-                return true;
+                ArrayList arrayList4 = arrayList2;
+                if (arrayList4 != null && !arrayList4.isEmpty()) {
+                    int size3 = arrayList4.size();
+                    for (int i15 = 0; i15 < size3; i15++) {
+                        SecureDocument secureDocument8 = (SecureDocument) arrayList4.get(i15);
+                        if (secureDocument8.inputFile != null) {
+                            int size4 = tL_secureValue3.translation.size();
+                            for (int i16 = 0; i16 < size4; i16++) {
+                                TLRPC.SecureFile secureFile5 = tL_secureValue3.translation.get(i16);
+                                if (secureFile5 instanceof TLRPC.TL_secureFile) {
+                                    TLRPC.TL_secureFile tL_secureFile5 = (TLRPC.TL_secureFile) secureFile5;
+                                    if (Utilities.arraysEquals(secureDocument8.fileSecret, 0, tL_secureFile5.secret, 0)) {
+                                        wm0.a(wm0Var2, secureDocument8, tL_secureFile5);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                un0Var3.K1(tL_secureRequiredType6, str4, str2, tL_secureRequiredType4, str3, z11, i10);
+                runnable.run();
             }
-            jSONObject2 = null;
-            hashMap = nn0Var.w1;
-            if (hashMap != null) {
+        });
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        vm0 vm0Var;
+        TLRPC.TL_inputSecureValue tL_inputSecureValue;
+        int i10;
+        int i11;
+        un0 un0Var = this.p.d;
+        if (tL_error != null) {
+            boolean equals = tL_error.text.equals("EMAIL_VERIFICATION_NEEDED");
+            String str = this.b;
+            if (equals) {
+                TL_account.sendVerifyEmailCode sendverifyemailcode = new TL_account.sendVerifyEmailCode();
+                sendverifyemailcode.purpose = new TLRPC.TL_emailVerifyPurposePassport();
+                sendverifyemailcode.email = str;
+                i11 = ((org.telegram.ui.ActionBar.m2) un0Var).currentAccount;
+                ConnectionsManager.getInstance(i11).sendRequest(sendverifyemailcode, new di.fd(this, this.b, this.e, this.n, this.a, 10));
+                return;
             }
-            hashMap2 = nn0Var.x1;
-            if (hashMap2 != null) {
+            vm0Var = this;
+            if (tL_error.text.equals("PHONE_VERIFICATION_NEEDED")) {
+                AndroidUtilities.runOnUIThread(new uf0(vm0Var.a, tL_error, str, 11));
+                return;
             }
-            dn0 dn0Var2 = nn0Var.B1;
-            TLRPC.TL_secureRequiredType tL_secureRequiredType3 = nn0Var.E;
-            if (jSONObject == null) {
-            }
-            TLRPC.TL_secureRequiredType tL_secureRequiredType22 = nn0Var.F;
-            if (jSONObject2 == null) {
-            }
-            SecureDocument secureDocument22 = nn0Var.j1;
-            ArrayList arrayList32 = nn0Var.k1;
-            SecureDocument secureDocument32 = nn0Var.l1;
-            linearLayout = nn0Var.f0;
-            if (linearLayout != null) {
-                secureDocument = nn0Var.m1;
-            }
-            ((qm0) dn0Var2).c(tL_secureRequiredType3, null, jSONObject3, tL_secureRequiredType22, jSONObject4, null, secureDocument22, arrayList32, secureDocument32, secureDocument, tk0Var, b5Var);
-            return true;
+        } else {
+            vm0Var = this;
         }
-        return false;
+        if (tL_error != null || (tL_inputSecureValue = vm0Var.o) == null) {
+            a(tL_error, (TLRPC.TL_secureValue) tLObject, null);
+            return;
+        }
+        TL_account.saveSecureValue savesecurevalue = new TL_account.saveSecureValue();
+        savesecurevalue.value = tL_inputSecureValue;
+        savesecurevalue.secure_secret_id = un0Var.b1;
+        i10 = ((org.telegram.ui.ActionBar.m2) un0Var).currentAccount;
+        ConnectionsManager.getInstance(i10).sendRequest(savesecurevalue, new fc0(7, this, (TLRPC.TL_secureValue) tLObject));
     }
 }

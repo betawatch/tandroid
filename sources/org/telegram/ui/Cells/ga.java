@@ -16,29 +16,29 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cd0;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.co;
+import org.telegram.ui.Components.es;
+import org.telegram.ui.io;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public class ga extends LinearLayout {
-    public org.telegram.ui.Components.w9 a;
-    public org.telegram.ui.Components.w9 b;
+    public org.telegram.ui.Components.x9 a;
+    public org.telegram.ui.Components.x9 b;
     public Drawable c;
     public Drawable d;
     public final u1[] e;
     public final Drawable f;
-    public final org.telegram.ui.ActionBar.d5 h;
+    public final org.telegram.ui.ActionBar.b5 h;
     public final int n;
-    public org.telegram.ui.ActionBar.n2 r;
+    public org.telegram.ui.ActionBar.m2 r;
     public int s;
     public final g v;
     public Drawable w;
     public boolean x;
     public final org.telegram.ui.Components.g6 y;
 
-    public ga(Context context, org.telegram.ui.ActionBar.d5 d5Var, int i10) {
-        this(context, d5Var, i10, 0L, null);
+    public ga(Context context, org.telegram.ui.ActionBar.b5 b5Var, int i10) {
+        this(context, b5Var, i10, 0L, null);
     }
 
     public final boolean a() {
@@ -76,27 +76,27 @@ public class ga extends LinearLayout {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         Drawable drawable = this.w;
-        if (drawable instanceof co) {
-            ((co) drawable).f(this);
+        if (drawable instanceof io) {
+            ((io) drawable).f(this);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.w9 w9Var = this.a;
-        if (w9Var != null) {
-            w9Var.dispose();
+        org.telegram.ui.Components.x9 x9Var = this.a;
+        if (x9Var != null) {
+            x9Var.dispose();
             this.a = null;
         }
-        org.telegram.ui.Components.w9 w9Var2 = this.b;
-        if (w9Var2 != null) {
-            w9Var2.dispose();
+        org.telegram.ui.Components.x9 x9Var2 = this.b;
+        if (x9Var2 != null) {
+            x9Var2.dispose();
             this.b = null;
         }
         Drawable drawable = this.w;
-        if (drawable instanceof co) {
-            ((co) drawable).g(this);
+        if (drawable instanceof io) {
+            ((io) drawable).g(this);
         }
     }
 
@@ -104,18 +104,18 @@ public class ga extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         Drawable drawable = this.w;
         if (drawable == null) {
-            drawable = org.telegram.ui.ActionBar.i6.t0();
+            drawable = org.telegram.ui.ActionBar.g6.t0();
         }
-        if (org.telegram.ui.ActionBar.i6.d != null) {
+        if (org.telegram.ui.ActionBar.g6.d != null) {
             invalidate();
         }
         Drawable drawable2 = this.c;
         org.telegram.ui.Components.g6 g6Var = this.y;
         if (drawable != drawable2 && drawable != null) {
-            if (org.telegram.ui.ActionBar.i6.vl == null && !this.x) {
-                org.telegram.ui.Components.w9 w9Var = this.a;
-                if (w9Var != null) {
-                    w9Var.dispose();
+            if (org.telegram.ui.ActionBar.g6.vl == null && !this.x) {
+                org.telegram.ui.Components.x9 x9Var = this.a;
+                if (x9Var != null) {
+                    x9Var.dispose();
                     this.a = null;
                 }
             } else {
@@ -126,19 +126,19 @@ public class ga extends LinearLayout {
             g6Var.d(0.0f, true);
         }
         boolean z10 = this.x;
-        org.telegram.ui.ActionBar.d5 d5Var = this.h;
-        float d = z10 ? g6Var.d(1.0f, false) : d5Var.getThemeAnimationValue();
+        org.telegram.ui.ActionBar.b5 b5Var = this.h;
+        float d = z10 ? g6Var.d(1.0f, false) : b5Var.getThemeAnimationValue();
         int i10 = 0;
         while (i10 < 2) {
             Drawable drawable3 = i10 == 0 ? this.d : this.c;
             if (drawable3 != null) {
-                int i11 = (i10 != 1 || this.d == null || (d5Var == null && !this.x)) ? 255 : (int) (255.0f * d);
+                int i11 = (i10 != 1 || this.d == null || (b5Var == null && !this.x)) ? 255 : (int) (255.0f * d);
                 if (i11 > 0) {
                     drawable3.setAlpha(i11);
                     if ((drawable3 instanceof ColorDrawable) || (drawable3 instanceof GradientDrawable) || (drawable3 instanceof cd0)) {
                         drawable3.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                        if (drawable3 instanceof org.telegram.ui.Components.x9) {
-                            this.a = ((org.telegram.ui.Components.x9) drawable3).c(canvas, this);
+                        if (drawable3 instanceof org.telegram.ui.Components.y9) {
+                            this.a = ((org.telegram.ui.Components.y9) drawable3).c(canvas, this);
                         } else {
                             drawable3.draw(canvas);
                         }
@@ -164,12 +164,12 @@ public class ga extends LinearLayout {
                         drawable3.draw(canvas);
                         canvas.restore();
                     } else {
-                        ci.l8.j(canvas, drawable3, getWidth(), getHeight());
+                        di.k8.j(canvas, drawable3, getWidth(), getHeight());
                     }
                     if (i10 == 0 && this.d != null && d >= 1.0f) {
-                        org.telegram.ui.Components.w9 w9Var2 = this.b;
-                        if (w9Var2 != null) {
-                            w9Var2.dispose();
+                        org.telegram.ui.Components.x9 x9Var2 = this.b;
+                        if (x9Var2 != null) {
+                            x9Var2.dispose();
                             this.b = null;
                         }
                         this.d = null;
@@ -207,8 +207,8 @@ public class ga extends LinearLayout {
         if (drawable != null) {
             drawable.setCallback(this);
         }
-        if ((this.w instanceof co) && isAttachedToWindow()) {
-            ((co) this.w).f(this);
+        if ((this.w instanceof io) && isAttachedToWindow()) {
+            ((io) this.w).f(this);
         }
         invalidate();
     }
@@ -225,7 +225,7 @@ public class ga extends LinearLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public ga(Context context, org.telegram.ui.ActionBar.d5 d5Var, int i10, long j3, org.telegram.ui.ActionBar.e6 e6Var) {
+    public ga(Context context, org.telegram.ui.ActionBar.b5 b5Var, int i10, long j10, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
         int i11;
         MessageObject messageObject;
@@ -237,34 +237,34 @@ public class ga extends LinearLayout {
         this.e = new u1[2];
         this.s = -1;
         this.v = new g(this, 9);
-        this.y = new org.telegram.ui.Components.g6(this, 0L, 350L, hs.h);
+        this.y = new org.telegram.ui.Components.g6(this, 0L, 350L, es.h);
         this.n = i13;
         int i14 = UserConfig.selectedAccount;
-        this.h = d5Var;
+        this.h = b5Var;
         setWillNotDraw(false);
         setOrientation(1);
         setPadding(0, AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f));
-        org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
-        this.f = org.telegram.ui.ActionBar.i6.V0(context2, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.b7, e6Var2));
+        org.telegram.ui.ActionBar.c6 c6Var2 = c6Var;
+        this.f = org.telegram.ui.ActionBar.g6.V0(context2, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.b7, c6Var2));
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
         if (i13 == 3) {
-            boolean z10 = j3 < 0;
+            boolean z10 = j10 < 0;
             TLRPC.TL_message tL_message = new TLRPC.TL_message();
             tL_message.message = LocaleController.getString(z10 ? R.string.ChannelColorPreview : R.string.UserColorPreview);
             TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
             tL_message.reply_to = tL_messageReplyHeader;
             tL_messageReplyHeader.flags |= 1;
-            if (j3 == 0) {
+            if (j10 == 0) {
                 tL_messageReplyHeader.reply_to_peer_id = new TLRPC.TL_peerUser();
                 tL_message.reply_to.reply_to_peer_id.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
             } else {
                 tL_messageReplyHeader.reply_to_peer_id = new TLRPC.TL_peerChannel();
-                tL_message.reply_to.reply_to_peer_id.channel_id = -j3;
+                tL_message.reply_to.reply_to_peer_id.channel_id = -j10;
             }
             TLRPC.Message message = new TLRPC.Message();
             tL_message.replyMessage = message;
             message.media = new TLRPC.TL_messageMediaEmpty();
-            if (j3 == 0) {
+            if (j10 == 0) {
                 tL_message.replyMessage.from_id = new TLRPC.TL_peerUser();
                 tL_message.replyMessage.from_id.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
                 tL_message.replyMessage.peer_id = new TLRPC.TL_peerUser();
@@ -272,10 +272,10 @@ public class ga extends LinearLayout {
             } else {
                 tL_message.replyMessage.from_id = new TLRPC.TL_peerChannel();
                 TLRPC.Message message2 = tL_message.replyMessage;
-                long j10 = -j3;
-                message2.from_id.channel_id = j10;
+                long j11 = -j10;
+                message2.from_id.channel_id = j11;
                 message2.peer_id = new TLRPC.TL_peerChannel();
-                tL_message.replyMessage.peer_id.channel_id = j10;
+                tL_message.replyMessage.peer_id.channel_id = j11;
             }
             tL_message.replyMessage.message = LocaleController.getString(z10 ? R.string.ChannelColorPreviewReply : R.string.UserColorPreviewReply);
             TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
@@ -294,25 +294,25 @@ public class ga extends LinearLayout {
             tL_message.date = currentTimeMillis - 3540;
             tL_message.dialog_id = 1L;
             tL_message.flags = 259;
-            if (j3 == 0) {
+            if (j10 == 0) {
                 TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
                 tL_message.from_id = tL_peerUser;
                 tL_peerUser.user_id = UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
             } else {
                 TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
                 tL_message.from_id = tL_peerChannel;
-                tL_peerChannel.channel_id = -j3;
+                tL_peerChannel.channel_id = -j10;
             }
             tL_message.id = 1;
             tL_message.out = false;
-            if (j3 == 0) {
+            if (j10 == 0) {
                 TLRPC.TL_peerUser tL_peerUser2 = new TLRPC.TL_peerUser();
                 tL_message.peer_id = tL_peerUser2;
                 tL_peerUser2.user_id = 0L;
             } else {
                 TLRPC.TL_peerChannel tL_peerChannel2 = new TLRPC.TL_peerChannel();
                 tL_message.peer_id = tL_peerChannel2;
-                tL_peerChannel2.channel_id = -j3;
+                tL_peerChannel2.channel_id = -j10;
             }
             MessageObject messageObject3 = new MessageObject(UserConfig.selectedAccount, tL_message, true, false);
             messageObject3.notime = true;
@@ -449,7 +449,7 @@ public class ga extends LinearLayout {
                 tL_user.first_name = string2;
                 messageObject7.customName = string2;
                 i11 = 0;
-                messageObject7.customAvatarDrawable = new org.telegram.ui.Components.j9(0, tL_user);
+                messageObject7.customAvatarDrawable = new org.telegram.ui.Components.k9(0, tL_user);
             } else {
                 i11 = 0;
             }
@@ -462,19 +462,19 @@ public class ga extends LinearLayout {
                     return;
                 }
                 int i16 = i13;
-                u1VarArr[i12] = new fa(this, context2, i14, e6Var2, context, i16);
-                this.e[i12].setDelegate(new k2.g0(this, 10));
+                u1VarArr[i12] = new fa(this, context2, i14, c6Var2, context, i16);
+                this.e[i12].setDelegate(new ji.h5(this, 11));
                 u1 u1Var = this.e[i12];
                 u1Var.N7 = (i16 == 2 || i16 == 4) ? 1 : i11;
                 u1Var.setFullyDraw(true);
                 MessageObject messageObject8 = i12 == 0 ? messageObject2 : messageObject;
                 if (messageObject8 != null) {
                     this.e[i12].X3(messageObject8, null, false, false, false, false);
-                    addView(this.e[i12], w7.x5.n(-1, -2));
+                    addView(this.e[i12], w7.a6.n(-1, -2));
                 }
                 i12++;
                 context2 = context;
-                e6Var2 = e6Var;
+                c6Var2 = c6Var;
                 i13 = i16;
             }
         }
@@ -487,7 +487,7 @@ public class ga extends LinearLayout {
             }
             i12++;
             context2 = context;
-            e6Var2 = e6Var;
+            c6Var2 = c6Var;
             i13 = i16;
         }
     }

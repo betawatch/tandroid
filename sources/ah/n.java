@@ -1,79 +1,27 @@
 package ah;
 
-import android.graphics.Canvas;
-import android.graphics.PointF;
-import android.graphics.RectF;
-import android.os.SystemClock;
-import android.view.View;
-import android.view.ViewGroup;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class n implements bh.a {
-    public final ViewGroup c;
-    public final m d;
-    public final ViewGroup e;
-    public boolean h;
-    public final RectF a = new RectF();
-    public final PointF b = new PointF();
-    public final RectF f = new RectF();
+public final /* synthetic */ class n implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a0 b;
 
-    public n(ViewGroup viewGroup, ViewGroup viewGroup2, m mVar) {
-        this.c = viewGroup;
-        this.d = mVar;
-        this.e = viewGroup2;
+    public /* synthetic */ n(a0 a0Var, int i10) {
+        this.a = i10;
+        this.b = a0Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // bh.a
-    public final void b(a aVar, RectF rectF) {
-        ViewGroup viewGroup = this.c;
-        ViewGroup viewGroup2 = this.e;
-        PointF pointF = this.b;
-        if (!hh.j.b(viewGroup, viewGroup2, pointF)) {
-            aVar.a = true;
-            return;
-        }
-        if (!(viewGroup instanceof bh.a) || this.h) {
-            aVar.a = true;
-            return;
-        }
-        aVar.c(pointF.x);
-        aVar.c(pointF.y);
-        RectF rectF2 = this.f;
-        rectF2.set(rectF);
-        rectF.offset(-pointF.x, -pointF.y);
-        ((bh.a) viewGroup).b(aVar, rectF);
-        rectF.set(rectF2);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // bh.a
-    public final void f(Canvas canvas, RectF rectF) {
-        long uptimeMillis = SystemClock.uptimeMillis();
-        ViewGroup viewGroup = this.c;
-        ViewGroup viewGroup2 = this.e;
-        PointF pointF = this.b;
-        if (hh.j.b(viewGroup, viewGroup2, pointF)) {
-            canvas.save();
-            canvas.clipRect(rectF);
-            canvas.translate(pointF.x, pointF.y);
-            if (!(viewGroup instanceof bh.a) || this.h) {
-                for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                    View childAt = viewGroup.getChildAt(i10);
-                    RectF rectF2 = this.a;
-                    if (hh.j.c(childAt, viewGroup2, rectF2) && rectF2.intersect(rectF)) {
-                        this.d.a(canvas, childAt, uptimeMillis);
-                    }
-                }
-            } else {
-                RectF rectF3 = this.f;
-                rectF3.set(rectF);
-                rectF.offset(-pointF.x, -pointF.y);
-                ((bh.a) viewGroup).f(canvas, rectF);
-                rectF.set(rectF3);
-            }
-            canvas.restore();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.b.w.setTranslationY((-((Float) valueAnimator.getAnimatedValue()).floatValue()) * r0.c.getMeasuredHeight());
+                break;
+            default:
+                this.b.w.setTranslationY((-(1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue())) * r0.c.getMeasuredHeight());
+                break;
         }
     }
 }

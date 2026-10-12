@@ -1,23 +1,33 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.FrameLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fj extends FragmentContextView {
-    public final /* synthetic */ FrameLayout R0;
-    public final /* synthetic */ kj S0;
+public final class fj extends k61 {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fj(kj kjVar, Context context, org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, FrameLayout frameLayout2) {
-        super(context, n2Var, frameLayout, false, e6Var);
-        this.S0 = kjVar;
-        this.R0 = frameLayout2;
+    static {
+        k61.setup(new fj());
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        this.S0.x.i(this.R0, i10 == 0, true);
+    @Override // org.telegram.ui.Components.k61
+    public final void bindView(View view, l61 l61Var, boolean z10, z61 z61Var, h71 h71Var) {
+        gj gjVar = (gj) view;
+        CharSequence charSequence = l61Var.l;
+        CharSequence charSequence2 = l61Var.m;
+        gjVar.b.setText(charSequence);
+        gjVar.c.setText(charSequence2);
+    }
+
+    @Override // org.telegram.ui.Components.k61
+    public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
+        return new gj(context, c6Var);
+    }
+
+    @Override // org.telegram.ui.Components.k61
+    public final boolean isShadow() {
+        return true;
     }
 }

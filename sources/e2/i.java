@@ -1,64 +1,81 @@
 package e2;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i implements Iterable {
-    public final Object a = new Object();
-    public final HashMap b = new HashMap();
-    public Set c = Collections.EMPTY_SET;
-    public List d = Collections.EMPTY_LIST;
+public final class i {
+    public final g0 a;
+    public boolean b;
 
-    public final int i(n2.j jVar) {
-        int intValue;
-        synchronized (this.a) {
-            try {
-                intValue = this.b.containsKey(jVar) ? ((Integer) this.b.get(jVar)).intValue() : 0;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return intValue;
+    public i() {
+        this(g0.a);
     }
 
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        Iterator it;
-        synchronized (this.a) {
-            it = this.d.iterator();
+    public final synchronized void a() {
+        while (!this.b) {
+            this.a.getClass();
+            wait();
         }
-        return it;
     }
 
-    public final void n(n2.j jVar) {
-        synchronized (this.a) {
+    public final synchronized void b() {
+        boolean z10 = false;
+        while (!this.b) {
             try {
-                Integer num = (Integer) this.b.get(jVar);
-                if (num == null) {
-                    return;
-                }
-                ArrayList arrayList = new ArrayList(this.d);
-                arrayList.remove(jVar);
-                this.d = DesugarCollections.unmodifiableList(arrayList);
-                if (num.intValue() == 1) {
-                    this.b.remove(jVar);
-                    HashSet hashSet = new HashSet(this.c);
-                    hashSet.remove(jVar);
-                    this.c = DesugarCollections.unmodifiableSet(hashSet);
-                } else {
-                    this.b.put(jVar, Integer.valueOf(num.intValue() - 1));
-                }
-            } catch (Throwable th2) {
-                throw th2;
+                this.a.getClass();
+                wait();
+            } catch (InterruptedException unused) {
+                z10 = true;
             }
         }
+        if (z10) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    public final synchronized boolean c(long j10) {
+        if (j10 <= 0) {
+            return this.b;
+        }
+        this.a.getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j11 = j10 + elapsedRealtime;
+        if (j11 < elapsedRealtime) {
+            b();
+        } else {
+            boolean z10 = false;
+            while (!this.b && elapsedRealtime < j11) {
+                try {
+                    this.a.getClass();
+                    wait(j11 - elapsedRealtime);
+                } catch (InterruptedException unused) {
+                    z10 = true;
+                }
+                this.a.getClass();
+                elapsedRealtime = SystemClock.elapsedRealtime();
+            }
+            if (z10) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        return this.b;
+    }
+
+    public final synchronized void d() {
+        this.b = false;
+    }
+
+    public final synchronized boolean e() {
+        if (this.b) {
+            return false;
+        }
+        this.b = true;
+        notifyAll();
+        return true;
+    }
+
+    public i(g0 g0Var) {
+        this.a = g0Var;
     }
 }

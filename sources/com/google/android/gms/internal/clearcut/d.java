@@ -89,7 +89,7 @@ public abstract class d {
         }
         this.a.getClass();
         Object obj = null;
-        if (e() ? ((Boolean) c(new c5.i("gms:phenotype:phenotype_flag:debug_bypass_phenotype"))).booleanValue() : false) {
+        if (e() ? ((Boolean) c(new c5.j("gms:phenotype:phenotype_flag:debug_bypass_phenotype"))).booleanValue() : false) {
             String valueOf = String.valueOf(this.b);
             Log.w("PhenotypeFlag", valueOf.length() != 0 ? "Bypass reading Phenotype values for flag: ".concat(valueOf) : new String("Bypass reading Phenotype values for flag: "));
         } else if (this.a.a != null) {
@@ -109,7 +109,7 @@ public abstract class d {
                 }
                 this.e = bVar;
             }
-            String str = (String) c(new n4.x(10, this, this.e));
+            String str = (String) c(new qf.b(13, this, this.e));
             if (str != null) {
                 obj = d(str);
             }

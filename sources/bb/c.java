@@ -1,34 +1,117 @@
 package bb;
 
-import android.util.Log;
-import sd.p;
-import v7.a8;
+import j$.util.DesugarCollections;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import jd.r;
+import kotlin.jvm.internal.i;
+import org.telegram.tgnet.TLObject;
+import v7.i8;
+import x9.j;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class c extends ld.j implements p {
-    public /* synthetic */ Object a;
+public final class c {
+    public static final c a = new c();
+    public static final Map b = DesugarCollections.synchronizedMap(new LinkedHashMap());
 
-    @Override // ld.a
-    public final jd.c create(Object obj, jd.c cVar) {
-        c cVar2 = new c(2, cVar);
-        cVar2.a = obj;
-        return cVar2;
+    public static a a(d dVar) {
+        Map dependencies = b;
+        i.d(dependencies, "dependencies");
+        Object obj = dependencies.get(dVar);
+        if (obj != null) {
+            return (a) obj;
+        }
+        throw new IllegalStateException("Cannot get dependency " + dVar + ". Dependencies should be added at class load time.");
     }
 
-    @Override // sd.p
-    public final Object invoke(Object obj, Object obj2) {
-        c cVar = (c) create((String) obj, (jd.c) obj2);
-        hd.i iVar = hd.i.a;
-        cVar.invokeSuspend(iVar);
-        return iVar;
-    }
-
-    @Override // ld.a
-    public final Object invokeSuspend(Object obj) {
-        kd.a aVar = kd.a.a;
-        a8.b(obj);
-        Log.e("SessionConfigFetcher", "Error failing to fetch the remote configs: " + ((String) this.a));
-        return hd.i.a;
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00cd A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00af A[Catch: all -> 0x00c8, TRY_ENTER, TryCatch #0 {all -> 0x00c8, blocks: (B:12:0x0099, B:23:0x00af, B:24:0x00c7), top: B:11:0x0099 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x003f  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0097 -> B:10:0x0098). Please report as a decompilation issue!!! */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object b(md.c cVar) {
+        b bVar;
+        int i10;
+        Map linkedHashMap;
+        Iterator it;
+        if (cVar instanceof b) {
+            bVar = (b) cVar;
+            int i11 = bVar.r;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                bVar.r = i11 - TLObject.FLAG_31;
+                Object obj = bVar.h;
+                ld.a aVar = ld.a.a;
+                i10 = bVar.r;
+                if (i10 != 0) {
+                    i8.b(obj);
+                    Map dependencies = b;
+                    i.d(dependencies, "dependencies");
+                    linkedHashMap = new LinkedHashMap(r.a(dependencies.size()));
+                    it = dependencies.entrySet().iterator();
+                    if (it.hasNext()) {
+                    }
+                } else {
+                    if (i10 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    Object key = bVar.f;
+                    linkedHashMap = bVar.e;
+                    ke.d dVar = bVar.d;
+                    d subscriberName = bVar.c;
+                    it = bVar.b;
+                    Map map = bVar.a;
+                    i8.b(obj);
+                    try {
+                        i.e(subscriberName, "subscriberName");
+                        j jVar = a(subscriberName).b;
+                        if (jVar == null) {
+                            dVar.e(null);
+                            linkedHashMap.put(key, jVar);
+                            linkedHashMap = map;
+                            if (it.hasNext()) {
+                                return linkedHashMap;
+                            }
+                            Map.Entry entry = (Map.Entry) it.next();
+                            key = entry.getKey();
+                            subscriberName = (d) entry.getKey();
+                            dVar = ((a) entry.getValue()).a;
+                            Map map2 = linkedHashMap;
+                            bVar.a = map2;
+                            bVar.b = it;
+                            bVar.c = subscriberName;
+                            bVar.d = dVar;
+                            bVar.e = map2;
+                            bVar.f = key;
+                            bVar.r = 1;
+                            if (dVar.d(bVar) == aVar) {
+                                return aVar;
+                            }
+                            map = linkedHashMap;
+                            i.e(subscriberName, "subscriberName");
+                            j jVar2 = a(subscriberName).b;
+                            if (jVar2 == null) {
+                                throw new IllegalStateException("Subscriber " + subscriberName + " has not been registered.");
+                            }
+                        }
+                    } catch (Throwable th2) {
+                        dVar.e(null);
+                        throw th2;
+                    }
+                }
+            }
+        }
+        bVar = new b(this, cVar);
+        Object obj2 = bVar.h;
+        ld.a aVar2 = ld.a.a;
+        i10 = bVar.r;
+        if (i10 != 0) {
+        }
     }
 }

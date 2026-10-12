@@ -3,7 +3,7 @@ package org.telegram.messenger.support;
 import java.lang.reflect.Array;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class ArrayUtils {
     private static Object[] EMPTY = new Object[0];
@@ -175,11 +175,11 @@ public class ArrayUtils {
     }
 
     public static long total(long[] jArr) {
-        long j3 = 0;
-        for (long j10 : jArr) {
-            j3 += j10;
+        long j10 = 0;
+        for (long j11 : jArr) {
+            j10 += j11;
         }
-        return j3;
+        return j10;
     }
 
     public static boolean contains(int[] iArr, int i10) {

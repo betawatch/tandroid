@@ -1,19 +1,33 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class p2 implements ia.d {
+public final class p2 implements ja.d {
     public static final p2 a = new p2();
+    public static final ja.c b = new ja.c("durationMs", i2.d.n(t8.b.k(h.class, new e(1))));
+    public static final ja.c c = new ja.c("errorCode", i2.d.n(t8.b.k(h.class, new e(2))));
+    public static final ja.c d = new ja.c("isColdCall", i2.d.n(t8.b.k(h.class, new e(3))));
+    public static final ja.c e = new ja.c("autoManageModelOnBackground", i2.d.n(t8.b.k(h.class, new e(4))));
+    public static final ja.c f = new ja.c("autoManageModelOnLowMemory", i2.d.n(t8.b.k(h.class, new e(5))));
+    public static final ja.c g = new ja.c("isNnApiEnabled", i2.d.n(t8.b.k(h.class, new e(6))));
+    public static final ja.c h = new ja.c("eventsCount", i2.d.n(t8.b.k(h.class, new e(7))));
+    public static final ja.c i = new ja.c("otherErrors", i2.d.n(t8.b.k(h.class, new e(8))));
+    public static final ja.c j = new ja.c("remoteConfigValueForAcceleration", i2.d.n(t8.b.k(h.class, new e(9))));
+    public static final ja.c k = new ja.c("isAccelerated", i2.d.n(t8.b.k(h.class, new e(10))));
 
-    static {
-        sc.v.t(sc.v.l(h.class, sc.v.p(3, sc.v.l(h.class, sc.v.p(2, sc.v.l(h.class, new e(1)))))));
-    }
-
-    @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // ja.a
+    public final void a(Object obj, Object obj2) {
+        b6 b6Var = (b6) obj;
+        ja.e eVar = (ja.e) obj2;
+        eVar.d(b, b6Var.a);
+        eVar.d(c, b6Var.b);
+        eVar.d(d, b6Var.c);
+        eVar.d(e, null);
+        eVar.d(f, null);
+        eVar.d(g, null);
+        eVar.d(h, null);
+        eVar.d(i, null);
+        eVar.d(j, null);
+        eVar.d(k, null);
     }
 }

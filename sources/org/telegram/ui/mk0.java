@@ -1,16 +1,50 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class mk0 extends s4.j {
-    public final /* synthetic */ NotificationsCustomSettingsActivity F;
+import android.view.View;
 
-    public mk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
-        this.F = notificationsCustomSettingsActivity;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class mk0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationsCustomSettingsActivity b;
+    public final /* synthetic */ al0 c;
+    public final /* synthetic */ View d;
+
+    public /* synthetic */ mk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, al0 al0Var, View view, int i10, int i11) {
+        this.a = i11;
+        this.b = notificationsCustomSettingsActivity;
+        this.c = al0Var;
+        this.d = view;
     }
 
-    @Override // s4.j
-    public final void P(s4.d1 d1Var) {
-        this.F.a.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.k0(this.c, this.d, false);
+                break;
+            case 1:
+                this.b.e0(this.c, this.d);
+                break;
+            case 2:
+                NotificationsCustomSettingsActivity.X(this.b, this.c, this.d);
+                break;
+            case 3:
+                NotificationsCustomSettingsActivity.V(this.b, this.c, this.d);
+                break;
+            case 4:
+                this.b.e0(this.c, this.d);
+                break;
+            default:
+                this.b.k0(this.c, this.d, true);
+                break;
+        }
+    }
+
+    public /* synthetic */ mk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, al0 al0Var, View view, boolean z10, int i10) {
+        this.a = i10;
+        this.b = notificationsCustomSettingsActivity;
+        this.c = al0Var;
+        this.d = view;
     }
 }

@@ -1,10 +1,11 @@
 package g2;
 
+import e2.m0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class c implements h {
     private m dataSpec;
@@ -28,7 +29,7 @@ public abstract class c implements h {
 
     public final void bytesTransferred(int i10) {
         m mVar = this.dataSpec;
-        String str = e2.d0.a;
+        String str = m0.a;
         for (int i11 = 0; i11 < this.listenerCount; i11++) {
             c0 c0Var = this.listeners.get(i11);
             boolean z10 = this.isNetwork;
@@ -55,7 +56,7 @@ public abstract class c implements h {
 
     public final void transferEnded() {
         m mVar = this.dataSpec;
-        String str = e2.d0.a;
+        String str = m0.a;
         for (int i10 = 0; i10 < this.listenerCount; i10++) {
             ((y2.f) this.listeners.get(i10)).e(mVar, this.isNetwork);
         }

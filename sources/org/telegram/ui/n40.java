@@ -1,50 +1,44 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class n40 extends TextView {
-    public final RectF a;
-    public final Paint b;
+public final class n40 implements TextWatcher {
+    public final /* synthetic */ n60 a;
 
-    public n40(LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.a = new RectF();
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setStyle(Paint.Style.FILL);
-        paint.setColor(-16711936);
+    public n40(n60 n60Var) {
+        this.a = n60Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.b);
-        super.dispatchDraw(canvas);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        n60 n60Var = this.a;
+        n60Var.A3.a(TextUtils.isEmpty(editable), true);
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        int i10 = n60Var.d0;
+        if (codePointCount + 25 > i10) {
+            str = "" + (i10 - codePointCount);
+        } else {
+            str = null;
+        }
+        n60Var.M.a();
+        n60Var.M.setText(str);
+        n60Var.M.setTextColor(codePointCount >= i10 ? -1280137 : -1);
+        if (codePointCount > i10) {
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+        }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.b;
-        paint.setColor(-16711936);
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.a;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
-        super.onDraw(canvas);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

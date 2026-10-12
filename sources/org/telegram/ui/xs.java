@@ -1,35 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class xs extends gg.t1 {
-    public final /* synthetic */ ContactsActivity K;
+public final /* synthetic */ class xs implements MessagesStorage.IntCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ContactsActivity b;
 
-    public xs(ContactsActivity contactsActivity, Context context, a0.i iVar, boolean z10, boolean z11, boolean z12) {
-        this.K = contactsActivity;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
-        this.H = new ArrayList();
-        this.c = context;
-        this.h = iVar;
-        this.r = z10;
-        this.s = z11;
-        this.x = 0;
-        this.v = z12;
-        this.w = true;
-        gg.b2 b2Var = new gg.b2(true);
-        this.f = b2Var;
-        b2Var.a = new gg.q1(this);
+    public /* synthetic */ xs(ContactsActivity contactsActivity, int i10) {
+        this.a = i10;
+        this.b = contactsActivity;
     }
 
-    @Override // gg.t1
-    public final void F() {
-        if (this.y || this.f.e() || h() != 0) {
-            return;
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        switch (this.a) {
+            case 0:
+                ContactsActivity contactsActivity = this.b;
+                contactsActivity.getClass();
+                contactsActivity.b0 = i10 != 0;
+                if (i10 != 0) {
+                    contactsActivity.f0(false);
+                    break;
+                }
+                break;
+            default:
+                ContactsActivity.W(this.b, i10);
+                break;
         }
-        this.K.e.e(false, true);
     }
 }

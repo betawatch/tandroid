@@ -6,11 +6,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.bi;
+import org.telegram.messenger.yh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class u2 extends FrameLayout {
     public int a;
@@ -42,17 +42,17 @@ public final class u2 extends FrameLayout {
         TextView textView2 = this.c;
         if (textView2.getVisibility() == 0) {
             boolean z10 = LocaleController.isRTL;
-            a2 = w7.x5.a(-1.0f, z10 ? 23.0f : 61.0f, 0.0f, z10 ? 61.0f : 23.0f, 0.0f, -1, (z10 ? 5 : 3) | 48);
+            a2 = w7.a6.a(-1.0f, z10 ? 23.0f : 61.0f, 0.0f, z10 ? 61.0f : 23.0f, 0.0f, -1, (z10 ? 5 : 3) | 48);
         } else {
             boolean z11 = LocaleController.isRTL;
-            a2 = w7.x5.a(-1.0f, z11 ? 61.0f : 23.0f, 0.0f, z11 ? 23.0f : 61.0f, 0.0f, -1, (z11 ? 5 : 3) | 48);
+            a2 = w7.a6.a(-1.0f, z11 ? 61.0f : 23.0f, 0.0f, z11 ? 23.0f : 61.0f, 0.0f, -1, (z11 ? 5 : 3) | 48);
         }
         textView.setLayoutParams(a2);
         RadioButton radioButton = this.d;
         if (textView2.getVisibility() == 0) {
-            a10 = w7.x5.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 5 : 3) | 48);
+            a10 = w7.a6.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 5 : 3) | 48);
         } else {
-            a10 = w7.x5.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 3 : 5) | 48);
+            a10 = w7.a6.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 3 : 5) | 48);
         }
         radioButton.setLayoutParams(a10);
     }
@@ -60,7 +60,7 @@ public final class u2 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.e) {
-            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 23.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 23.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 23.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 23.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.g6.k0);
         }
     }
 
@@ -73,7 +73,7 @@ public final class u2 extends FrameLayout {
         this.d.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(22.0f), TLObject.FLAG_30));
         if (textView.getVisibility() == 0) {
             textView.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-            dp = bi.z(12.0f, textView.getMeasuredWidth(), dp);
+            dp = yh.A(12.0f, textView.getMeasuredWidth(), dp);
         }
         this.b.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }

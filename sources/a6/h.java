@@ -10,13 +10,13 @@ import com.google.android.gms.common.api.m;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final a5.a a = new a5.a("GoogleSignInCommon", new String[0]);
 
     public static Intent a(Context context, GoogleSignInOptions googleSignInOptions) {
-        a.j("getSignInIntent()", new Object[0]);
+        a.k("getSignInIntent()", new Object[0]);
         SignInConfiguration signInConfiguration = new SignInConfiguration(context.getPackageName(), googleSignInOptions);
         Intent intent = new Intent("com.google.android.gms.auth.GOOGLE_SIGN_IN");
         intent.setPackage(context.getPackageName());
@@ -28,7 +28,7 @@ public abstract class h {
     }
 
     public static void b(Context context) {
-        i.U(context).Y();
+        i.n(context).o();
         Set set = m.a;
         synchronized (set) {
         }

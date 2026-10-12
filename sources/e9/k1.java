@@ -1,57 +1,12 @@
 package e9;
 
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import java.util.SortedSet;
+import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class k1 extends j1 implements SortedSet {
-    @Override // java.util.SortedSet
-    public final Comparator comparator() {
-        return ((SortedSet) this.a).comparator();
-    }
-
-    @Override // java.util.SortedSet
-    public final Object first() {
-        Iterator it = this.a.iterator();
-        it.getClass();
-        d9.g gVar = this.b;
-        gVar.getClass();
-        while (it.hasNext()) {
-            Object next = it.next();
-            if (gVar.apply(next)) {
-                return next;
-            }
-        }
-        throw new NoSuchElementException();
-    }
-
-    @Override // java.util.SortedSet
-    public final SortedSet headSet(Object obj) {
-        return new k1(((SortedSet) this.a).headSet(obj), this.b);
-    }
-
-    @Override // java.util.SortedSet
-    public final Object last() {
-        SortedSet sortedSet = (SortedSet) this.a;
-        while (true) {
-            Object last = sortedSet.last();
-            if (this.b.apply(last)) {
-                return last;
-            }
-            sortedSet = sortedSet.headSet(last);
-        }
-    }
-
-    @Override // java.util.SortedSet
-    public final SortedSet subSet(Object obj, Object obj2) {
-        return new k1(((SortedSet) this.a).subSet(obj, obj2), this.b);
-    }
-
-    @Override // java.util.SortedSet
-    public final SortedSet tailSet(Object obj) {
-        return new k1(((SortedSet) this.a).tailSet(obj), this.b);
+public final class k1 extends l2 {
+    @Override // e9.l2
+    public final Object a(Object obj) {
+        return ((Map.Entry) obj).getValue();
     }
 }

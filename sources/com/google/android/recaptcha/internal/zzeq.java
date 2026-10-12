@@ -1,43 +1,43 @@
 package com.google.android.recaptcha.internal;
 
-import ae.g0;
+import be.f0;
 import com.google.android.gms.tasks.Task;
 import com.google.android.recaptcha.RecaptchaAction;
 import com.google.android.recaptcha.RecaptchaClient;
 import com.google.android.recaptcha.RecaptchaTasksClient;
-import hd.f;
-import hd.g;
-import kd.a;
+import id.f;
+import id.g;
 import kotlin.jvm.internal.i;
+import ld.a;
 import org.telegram.tgnet.TLObject;
-import v7.a8;
-import v7.z7;
-import yd.c;
+import v7.h8;
+import v7.i8;
+import zd.c;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     private static final c zza = new c();
     private final zzdw zzb;
     private final String zzc;
     private final zzhh zzd;
-    private final hd.c zze;
+    private final id.c zze;
 
     public zzeq(zzdw zzdwVar, String str, zzhh zzhhVar) {
         this.zzb = zzdwVar;
         this.zzc = str;
         this.zzd = zzhhVar;
         int i10 = zzby.zza;
-        this.zze = z7.a(zzep.zza);
+        this.zze = h8.a(zzep.zza);
     }
 
-    public static final void zzd(zzeq zzeqVar, long j3, RecaptchaAction recaptchaAction) {
+    public static final void zzd(zzeq zzeqVar, long j10, RecaptchaAction recaptchaAction) {
         c cVar = zza;
         String input = recaptchaAction.getAction();
         cVar.getClass();
         i.e(input, "input");
         zzcg zzcgVar = !cVar.a.matcher(input).matches() ? new zzcg(zzce.zzg, zzcd.zzh, null, null, 12, null) : null;
-        if (j3 < 5000) {
+        if (j10 < 5000) {
             zzcgVar = new zzcg(zzce.zzb, zzcd.zzI, null, null, 12, null);
         }
         if (zzcgVar != null) {
@@ -51,7 +51,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zze(RecaptchaAction recaptchaAction, long j3, jd.c cVar) {
+    public final Object zze(RecaptchaAction recaptchaAction, long j10, kd.c cVar) {
         zzek zzekVar;
         int i10;
         if (cVar instanceof zzek) {
@@ -63,9 +63,9 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
                 a aVar = a.a;
                 i10 = zzekVar.zzc;
                 if (i10 != 0) {
-                    a8.b(obj);
+                    i8.b(obj);
                     zzhh zzhhVar = this.zzd;
-                    zzem zzemVar = new zzem(this, j3, recaptchaAction, null);
+                    zzem zzemVar = new zzem(this, j10, recaptchaAction, null);
                     zzekVar.zzc = 1;
                     obj = zzemVar.invoke(zzhhVar, zzekVar);
                     if (obj == aVar) {
@@ -75,7 +75,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    a8.b(obj);
+                    i8.b(obj);
                 }
                 return ((f) obj).a;
             }
@@ -95,7 +95,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object execute-0E7RQCE(RecaptchaAction recaptchaAction, long j3, jd.c cVar) {
+    public final Object execute-0E7RQCE(RecaptchaAction recaptchaAction, long j10, kd.c cVar) {
         zzei zzeiVar;
         int i10;
         if (cVar instanceof zzei) {
@@ -110,12 +110,12 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    a8.b(obj);
+                    i8.b(obj);
                     return ((f) obj).a;
                 }
-                a8.b(obj);
+                i8.b(obj);
                 zzeiVar.zzc = 1;
-                Object zze = zze(recaptchaAction, j3, zzeiVar);
+                Object zze = zze(recaptchaAction, j10, zzeiVar);
                 return zze == obj2 ? obj2 : zze;
             }
         }
@@ -133,7 +133,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object execute-gIAlu-s(RecaptchaAction recaptchaAction, jd.c cVar) {
+    public final Object execute-gIAlu-s(RecaptchaAction recaptchaAction, kd.c cVar) {
         zzej zzejVar;
         int i10;
         if (cVar instanceof zzej) {
@@ -148,10 +148,10 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    a8.b(obj);
+                    i8.b(obj);
                     return ((f) obj).a;
                 }
-                a8.b(obj);
+                i8.b(obj);
                 zzejVar.zzc = 1;
                 Object obj3 = execute-0E7RQCE(recaptchaAction, 10000L, zzejVar);
                 return obj3 == obj2 ? obj2 : obj3;
@@ -167,7 +167,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
 
     @Override // com.google.android.recaptcha.RecaptchaTasksClient
     public final Task<String> executeTask(RecaptchaAction recaptchaAction) {
-        return zzbv.zza(g0.c(((zzcr) ((g) this.zze).a()).zzb(), new zzen(this, recaptchaAction, 10000L, null)));
+        return zzbv.zza(f0.c(((zzcr) ((g) this.zze).a()).zzb(), new zzen(this, recaptchaAction, 10000L, null)));
     }
 
     public final String zzc() {
@@ -175,7 +175,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     }
 
     @Override // com.google.android.recaptcha.RecaptchaTasksClient
-    public final Task<String> executeTask(RecaptchaAction recaptchaAction, long j3) {
-        return zzbv.zza(g0.c(((zzcr) ((g) this.zze).a()).zzb(), new zzen(this, recaptchaAction, j3, null)));
+    public final Task<String> executeTask(RecaptchaAction recaptchaAction, long j10) {
+        return zzbv.zza(f0.c(((zzcr) ((g) this.zze).a()).zzb(), new zzen(this, recaptchaAction, j10, null)));
     }
 }

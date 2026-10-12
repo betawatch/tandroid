@@ -1,87 +1,267 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.NotificationsSettingsFacade;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class s11 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ v11 b;
+public final class s11 extends FrameLayout {
+    public final Matrix E;
+    public final Paint F;
+    public int G;
+    public int H;
+    public final org.telegram.ui.Components.q5 I;
+    public final org.telegram.ui.Components.g6 J;
+    public boolean K;
+    public boolean L;
+    public final Rect M;
+    public final /* synthetic */ ProfileActivity N;
+    public int a;
+    public final Paint b;
+    public boolean c;
+    public final org.telegram.ui.Components.g6 d;
+    public int e;
+    public int f;
+    public final org.telegram.ui.Components.j5 h;
+    public final org.telegram.ui.Components.j5 n;
+    public int r;
+    public int s;
+    public int v;
+    public float w;
+    public float x;
+    public RadialGradient y;
 
-    public s11(v11 v11Var, String str) {
-        this.b = v11Var;
-        this.a = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s11(ProfileActivity profileActivity, Context context) {
+        super(context);
+        this.N = profileActivity;
+        this.b = new Paint();
+        org.telegram.ui.Components.es esVar = org.telegram.ui.Components.es.h;
+        this.d = new org.telegram.ui.Components.g6(this, 350L, esVar);
+        this.h = new org.telegram.ui.Components.j5(this, 350L, esVar);
+        this.n = new org.telegram.ui.Components.j5(this, 350L, esVar);
+        this.E = new Matrix();
+        this.F = new Paint(1);
+        this.I = new org.telegram.ui.Components.q5(AndroidUtilities.dp(20.0f), 13, this, false);
+        this.J = new org.telegram.ui.Components.g6(this, 0L, 440L, esVar);
+        new org.telegram.ui.Components.g6(this, 0L, 440L, esVar);
+        this.M = new Rect();
+        setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        v11 v11Var = this.b;
-        long j3 = v11Var.f;
-        long j10 = v11Var.e;
-        String str = this.a;
-        if (i10 == -1) {
-            if (!v11Var.h && v11Var.n) {
-                i17 = ((org.telegram.ui.ActionBar.n2) v11Var).currentAccount;
-                MessagesController.getNotificationsSettings(i17).edit().putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0).apply();
-            }
-        } else if (i10 == 1) {
-            i11 = ((org.telegram.ui.ActionBar.n2) v11Var).currentAccount;
-            SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
-            SharedPreferences.Editor edit = notificationsSettings.edit();
-            edit.putBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + str, true);
-            i12 = ((org.telegram.ui.ActionBar.n2) v11Var).currentAccount;
-            TLRPC.Dialog dialog = (TLRPC.Dialog) MessagesController.getInstance(i12).dialogs_dict.f(j10);
-            if (v11Var.n) {
-                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0);
-                if (j3 == 0) {
-                    i16 = ((org.telegram.ui.ActionBar.n2) v11Var).currentAccount;
-                    MessagesStorage.getInstance(i16).setDialogFlags(j10, 0L);
-                    if (dialog != null) {
-                        dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
-                    }
-                }
+    public final void a(MessagesController.PeerColor peerColor, boolean z10) {
+        ProfileActivity profileActivity = this.N;
+        if (peerColor != null) {
+            this.c = true;
+            this.e = peerColor.getBgColor1(org.telegram.ui.ActionBar.g6.I.q());
+            int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.g6.I.q());
+            this.f = bgColor2;
+            profileActivity.c1 = i0.a.d(0.25f, this.e, bgColor2);
+            int i10 = peerColor.patternColor;
+            if (i10 != 0) {
+                this.G = i10;
+                this.H = org.telegram.ui.ActionBar.g6.m1(0.45f, i10);
             } else {
-                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 2);
-                if (j3 == 0) {
-                    i13 = ((org.telegram.ui.ActionBar.n2) v11Var).currentAccount;
-                    NotificationsController.getInstance(i13).removeNotificationsForDialog(j10);
-                    i14 = ((org.telegram.ui.ActionBar.n2) v11Var).currentAccount;
-                    MessagesStorage.getInstance(i14).setDialogFlags(j10, 1L);
-                    if (dialog != null) {
-                        TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
-                        dialog.notify_settings = tL_peerNotifySettings;
-                        tL_peerNotifySettings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    }
-                }
+                this.G = gq0.w0(this.e);
+                this.H = org.telegram.ui.ActionBar.g6.m1(0.15f, gq0.w0(this.e));
             }
-            edit.apply();
-            i15 = ((org.telegram.ui.ActionBar.n2) v11Var).currentAccount;
-            NotificationsController.getInstance(i15).updateServerNotificationsSettings(j10, j3);
-            if (v11Var.r != null) {
-                vk0 vk0Var = new vk0();
-                vk0Var.d = j10;
-                vk0Var.b = true;
-                int c10 = org.telegram.messenger.q.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
-                vk0Var.c = c10;
-                if (c10 != 0) {
-                    vk0Var.a = org.telegram.messenger.q.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
-                }
-                v11Var.r.v(vk0Var);
+        } else {
+            profileActivity.c1 = this.a;
+            this.c = false;
+            int i11 = org.telegram.ui.ActionBar.g6.s8;
+            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.g6.w0(i11, profileActivity.z0)) > 0.8f) {
+                this.G = -1;
+                this.H = -1;
+            } else if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.g6.w0(i11, profileActivity.z0)) < 0.2f) {
+                this.G = org.telegram.ui.ActionBar.g6.m1(0.5f, org.telegram.ui.ActionBar.g6.b(0.02f, 0.25f, org.telegram.ui.ActionBar.g6.w0(i11, profileActivity.z0)));
+                this.H = org.telegram.ui.ActionBar.g6.m1(0.35f, org.telegram.ui.ActionBar.g6.b(0.02f, 0.25f, org.telegram.ui.ActionBar.g6.w0(i11, profileActivity.z0)));
+            } else {
+                this.G = gq0.w0(org.telegram.ui.ActionBar.g6.w0(i11, profileActivity.z0));
+                this.H = org.telegram.ui.ActionBar.g6.m1(0.15f, gq0.w0(org.telegram.ui.ActionBar.g6.w0(i11, profileActivity.z0)));
             }
         }
-        v11Var.finishFragment();
+        if (!z10) {
+            this.h.a(this.e, true);
+            this.n.a(this.f, true);
+        }
+        invalidate();
+    }
+
+    public final void b(long j10, boolean z10) {
+        org.telegram.ui.Components.q5 q5Var = this.I;
+        boolean z11 = true;
+        q5Var.j(j10, true);
+        q5Var.k(Integer.valueOf(this.G));
+        if (!this.K && (j10 == 0 || j10 == -1)) {
+            z11 = false;
+        }
+        this.K = z11;
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.I.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.I.b();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.k kVar;
+        Canvas canvas2;
+        Paint paint;
+        org.telegram.ui.ActionBar.k kVar2;
+        org.telegram.ui.ActionBar.k kVar3;
+        Paint paint2;
+        float f7;
+        Object obj;
+        org.telegram.ui.ActionBar.k actionBar;
+        org.telegram.ui.ActionBar.y yVar;
+        org.telegram.ui.ActionBar.k kVar4;
+        org.telegram.ui.ActionBar.k kVar5;
+        bi.b4 b4Var;
+        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        ProfileActivity profileActivity = this.N;
+        kVar = ((org.telegram.ui.ActionBar.m2) profileActivity).actionBar;
+        float f10 = currentActionBarHeight + (kVar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + profileActivity.Q1 + profileActivity.T1;
+        int i10 = (int) ((1.0f - profileActivity.E5) * f10);
+        Paint paint3 = this.b;
+        if (i10 != 0) {
+            paint3.setColor(this.a);
+            int a2 = this.h.a(this.e, false);
+            int a10 = this.n.a(this.f, false);
+            org.telegram.ui.Components.ei0 ei0Var = profileActivity.a0;
+            if (ei0Var != null) {
+                int i11 = this.H;
+                boolean z10 = this.c;
+                if (ei0Var.S == null || ei0Var.Q != i11 || ei0Var.R != z10) {
+                    ei0Var.Q = i11;
+                    ei0Var.R = z10;
+                    ei0Var.g();
+                }
+            }
+            int width = getWidth() / 2;
+            RadialGradient radialGradient = this.y;
+            Paint paint4 = this.F;
+            if (radialGradient == null || this.r != a2 || this.s != a10 || this.v != width) {
+                this.w = AndroidUtilities.dp(96.0f) * 2;
+                kVar2 = ((org.telegram.ui.ActionBar.m2) profileActivity).actionBar;
+                float currentActionBarHeight2 = (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (kVar2.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0)) - (AndroidUtilities.density * 21.0f);
+                kVar3 = ((org.telegram.ui.ActionBar.m2) profileActivity).actionBar;
+                this.x = kVar3.getTranslationY() + currentActionBarHeight2;
+                this.v = width;
+                float f11 = this.x;
+                float f12 = this.w;
+                this.s = a10;
+                this.r = a2;
+                RadialGradient radialGradient2 = new RadialGradient(width, (f12 / 2.0f) + f11, f12, new int[]{a10, a2}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                this.y = radialGradient2;
+                radialGradient2.setLocalMatrix(this.E);
+                paint4.setShader(this.y);
+            }
+            float e = this.d.e(this.c) * (profileActivity.J1 == 0 ? 1.0f : profileActivity.S1);
+            if (e < 1.0f) {
+                paint2 = paint3;
+                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), i10, paint2);
+            } else {
+                paint2 = paint3;
+            }
+            if (e > 0.0f) {
+                paint4.setAlpha((int) (e * 255.0f));
+                paint = paint2;
+                canvas2 = canvas;
+                canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), i10, paint4);
+            } else {
+                canvas2 = canvas;
+                paint = paint2;
+            }
+            if (this.K) {
+                boolean z11 = this.L;
+                org.telegram.ui.Components.q5 q5Var = this.I;
+                boolean z12 = true;
+                if (!z11) {
+                    if (q5Var != null) {
+                        Drawable drawable = q5Var.f[0];
+                        if ((drawable instanceof org.telegram.ui.Components.s5) && (b4Var = ((org.telegram.ui.Components.s5) drawable).k) != null && b4Var.hasImageLoaded()) {
+                            this.L = true;
+                        }
+                    }
+                    z12 = false;
+                }
+                float e7 = this.J.e(z12);
+                if ((!profileActivity.G1 || profileActivity.J1 != 2) && e7 > 0.0f && profileActivity.Y != null) {
+                    canvas2.save();
+                    canvas2.clipRect(0, 0, getMeasuredWidth(), i10);
+                    kVar4 = ((org.telegram.ui.ActionBar.m2) profileActivity).actionBar;
+                    float f13 = kVar4.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0.0f;
+                    kVar5 = ((org.telegram.ui.ActionBar.m2) profileActivity).actionBar;
+                    float z13 = com.google.android.gms.internal.play_billing.k3.z(kVar5.getHeight(), f13, 2.0f, profileActivity.U3() + f13);
+                    int measuredWidth = getMeasuredWidth();
+                    float y3 = profileActivity.y3();
+                    l0 l0Var = profileActivity.Y;
+                    float[][] fArr = zh.i0.a;
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    f7 = 1.0f;
+                    rectF.set(l0Var.getX(), l0Var.getY(), (l0Var.getScaleX() * l0Var.getWidth()) + l0Var.getX(), (l0Var.getScaleY() * l0Var.getHeight()) + l0Var.getY());
+                    zh.i0.c(canvas2, q5Var, measuredWidth, z13, y3, rectF, 1.0f);
+                    canvas2.restore();
+                    obj = profileActivity.g5;
+                    if (obj != null && (yVar = (actionBar = ((org.telegram.ui.ActionBar.m2) obj).getActionBar()).E) != null) {
+                        int save = canvas2.save();
+                        canvas2.translate(yVar.getX() + actionBar.getX(), yVar.getY() + actionBar.getY());
+                        canvas2.saveLayerAlpha(0.0f, 0.0f, yVar.getMeasuredWidth(), yVar.getMeasuredHeight(), (int) ((f7 - profileActivity.S1) * 255.0f), 31);
+                        yVar.draw(canvas2);
+                        canvas2.restoreToCount(save);
+                    }
+                }
+            }
+            f7 = 1.0f;
+            obj = profileActivity.g5;
+            if (obj != null) {
+                int save2 = canvas2.save();
+                canvas2.translate(yVar.getX() + actionBar.getX(), yVar.getY() + actionBar.getY());
+                canvas2.saveLayerAlpha(0.0f, 0.0f, yVar.getMeasuredWidth(), yVar.getMeasuredHeight(), (int) ((f7 - profileActivity.S1) * 255.0f), 31);
+                yVar.draw(canvas2);
+                canvas2.restoreToCount(save2);
+            }
+        } else {
+            canvas2 = canvas;
+            paint = paint3;
+        }
+        if (i10 == f10 || profileActivity.G1) {
+            return;
+        }
+        paint.setColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.d6, profileActivity.z0));
+        this.M.set(0, i10, getMeasuredWidth(), (int) f10);
+        profileActivity.m5.J(canvas2, getY(), this.M, paint, true);
+    }
+
+    @Override // android.view.View
+    public final void setBackgroundColor(int i10) {
+        if (i10 != this.a) {
+            this.a = i10;
+            this.b.setColor(i10);
+            invalidate();
+            if (this.c) {
+                return;
+            }
+            this.N.c1 = this.a;
+        }
     }
 }

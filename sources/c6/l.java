@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,11 +15,12 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class l extends o6.a {
-    public static final aa.a e;
+    public static final androidx.biometric.e e;
     public final List a;
     public final Bundle b;
     public int c;
@@ -27,36 +28,36 @@ public final class l extends o6.a {
     public static final Parcelable.Creator<l> CREATOR = new v(11);
 
     static {
-        aa.a aVar = new aa.a();
-        aVar.u(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
-        aVar.u(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
-        aVar.u(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
-        aVar.u(1, "com.google.android.gms.cast.metadata.TITLE", "title");
-        aVar.u(1, "com.google.android.gms.cast.metadata.SUBTITLE", "subtitle");
-        aVar.u(1, "com.google.android.gms.cast.metadata.ARTIST", "artist");
-        aVar.u(1, "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "albumArtist");
-        aVar.u(1, "com.google.android.gms.cast.metadata.ALBUM_TITLE", "albumName");
-        aVar.u(1, "com.google.android.gms.cast.metadata.COMPOSER", "composer");
-        aVar.u(2, "com.google.android.gms.cast.metadata.DISC_NUMBER", "discNumber");
-        aVar.u(2, "com.google.android.gms.cast.metadata.TRACK_NUMBER", "trackNumber");
-        aVar.u(2, "com.google.android.gms.cast.metadata.SEASON_NUMBER", "season");
-        aVar.u(2, "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "episode");
-        aVar.u(1, "com.google.android.gms.cast.metadata.SERIES_TITLE", "seriesTitle");
-        aVar.u(1, "com.google.android.gms.cast.metadata.STUDIO", "studio");
-        aVar.u(2, "com.google.android.gms.cast.metadata.WIDTH", "width");
-        aVar.u(2, "com.google.android.gms.cast.metadata.HEIGHT", "height");
-        aVar.u(1, "com.google.android.gms.cast.metadata.LOCATION_NAME", "location");
-        aVar.u(3, "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "latitude");
-        aVar.u(3, "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "longitude");
-        aVar.u(5, "com.google.android.gms.cast.metadata.SECTION_DURATION", "sectionDuration");
-        aVar.u(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "sectionStartTimeInMedia");
-        aVar.u(5, "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "sectionStartAbsoluteTime");
-        aVar.u(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "sectionStartTimeInContainer");
-        aVar.u(2, "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID", "queueItemId");
-        aVar.u(1, "com.google.android.gms.cast.metadata.BOOK_TITLE", "bookTitle");
-        aVar.u(2, "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "chapterNumber");
-        aVar.u(1, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "chapterTitle");
-        e = aVar;
+        androidx.biometric.e eVar = new androidx.biometric.e();
+        eVar.x(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
+        eVar.x(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
+        eVar.x(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
+        eVar.x(1, "com.google.android.gms.cast.metadata.TITLE", "title");
+        eVar.x(1, "com.google.android.gms.cast.metadata.SUBTITLE", "subtitle");
+        eVar.x(1, "com.google.android.gms.cast.metadata.ARTIST", "artist");
+        eVar.x(1, "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "albumArtist");
+        eVar.x(1, "com.google.android.gms.cast.metadata.ALBUM_TITLE", "albumName");
+        eVar.x(1, "com.google.android.gms.cast.metadata.COMPOSER", "composer");
+        eVar.x(2, "com.google.android.gms.cast.metadata.DISC_NUMBER", "discNumber");
+        eVar.x(2, "com.google.android.gms.cast.metadata.TRACK_NUMBER", "trackNumber");
+        eVar.x(2, "com.google.android.gms.cast.metadata.SEASON_NUMBER", "season");
+        eVar.x(2, "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "episode");
+        eVar.x(1, "com.google.android.gms.cast.metadata.SERIES_TITLE", "seriesTitle");
+        eVar.x(1, "com.google.android.gms.cast.metadata.STUDIO", "studio");
+        eVar.x(2, "com.google.android.gms.cast.metadata.WIDTH", "width");
+        eVar.x(2, "com.google.android.gms.cast.metadata.HEIGHT", "height");
+        eVar.x(1, "com.google.android.gms.cast.metadata.LOCATION_NAME", "location");
+        eVar.x(3, "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "latitude");
+        eVar.x(3, "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "longitude");
+        eVar.x(5, "com.google.android.gms.cast.metadata.SECTION_DURATION", "sectionDuration");
+        eVar.x(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "sectionStartTimeInMedia");
+        eVar.x(5, "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "sectionStartAbsoluteTime");
+        eVar.x(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "sectionStartTimeInContainer");
+        eVar.x(2, "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID", "queueItemId");
+        eVar.x(1, "com.google.android.gms.cast.metadata.BOOK_TITLE", "bookTitle");
+        eVar.x(2, "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "chapterNumber");
+        eVar.x(1, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "chapterTitle");
+        e = eVar;
     }
 
     public l(ArrayList arrayList, Bundle bundle, int i10) {
@@ -69,10 +70,10 @@ public final class l extends o6.a {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("null and empty keys are not allowed");
         }
-        Integer num = (Integer) ((HashMap) e.b).get(str);
+        Integer num = (Integer) ((HashMap) e.d).get(str);
         int intValue = num != null ? num.intValue() : 0;
         if (intValue != i10 && intValue != 0) {
-            throw new IllegalArgumentException(e2.j("Value for ", str, " must be a ", d[i10]));
+            throw new IllegalArgumentException(k3.k("Value for ", str, " must be a ", d[i10]));
         }
     }
 
@@ -144,10 +145,10 @@ public final class l extends o6.a {
                 i11++;
                 String str = (String) obj;
                 if (str != null && bundle.containsKey(str)) {
-                    aa.a aVar = e;
-                    String str2 = (String) ((HashMap) aVar.c).get(str);
+                    androidx.biometric.e eVar = e;
+                    String str2 = (String) ((HashMap) eVar.b).get(str);
                     if (str2 != null) {
-                        Integer num = (Integer) ((HashMap) aVar.b).get(str);
+                        Integer num = (Integer) ((HashMap) eVar.d).get(str);
                         int intValue = num != null ? num.intValue() : 0;
                         if (intValue != 1) {
                             if (intValue == 2) {
@@ -156,9 +157,9 @@ public final class l extends o6.a {
                                 jSONObject.put(str2, bundle.getDouble(str));
                             } else if (intValue != 4) {
                                 if (intValue == 5) {
-                                    long j3 = bundle.getLong(str);
+                                    long j10 = bundle.getLong(str);
                                     Pattern pattern = g6.a.a;
-                                    jSONObject.put(str2, j3 / 1000.0d);
+                                    jSONObject.put(str2, j10 / 1000.0d);
                                 }
                             }
                         }
@@ -221,8 +222,8 @@ public final class l extends o6.a {
             while (keys.hasNext()) {
                 String next = keys.next();
                 if (next != null && !"metadataType".equals(next)) {
-                    aa.a aVar = e;
-                    String str = (String) ((HashMap) aVar.d).get(next);
+                    androidx.biometric.e eVar = e;
+                    String str = (String) ((HashMap) eVar.c).get(next);
                     if (str == null) {
                         hashSet = hashSet2;
                         Object obj = jSONObject.get(next);
@@ -237,7 +238,7 @@ public final class l extends o6.a {
                         try {
                             Object obj2 = jSONObject.get(next);
                             if (obj2 != null) {
-                                Integer num = (Integer) ((HashMap) aVar.b).get(str);
+                                Integer num = (Integer) ((HashMap) eVar.d).get(str);
                                 int intValue = num != null ? num.intValue() : i10;
                                 if (intValue == 1) {
                                     hashSet = hashSet2;
@@ -311,13 +312,13 @@ public final class l extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.d0.q(parcel, 20293);
-        w7.d0.p(parcel, 2, this.a);
-        w7.d0.b(parcel, 3, this.b);
+        int q6 = g0.q(parcel, 20293);
+        g0.p(parcel, 2, this.a);
+        g0.b(parcel, 3, this.b);
         int i11 = this.c;
-        w7.d0.s(parcel, 4, 4);
+        g0.s(parcel, 4, 4);
         parcel.writeInt(i11);
-        w7.d0.r(parcel, q6);
+        g0.r(parcel, q6);
     }
 
     public l(int i10) {

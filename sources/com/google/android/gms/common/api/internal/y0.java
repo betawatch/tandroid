@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class y0 implements OnCompleteListener {
     public final h a;
@@ -14,12 +14,12 @@ public final class y0 implements OnCompleteListener {
     public final long d;
     public final long e;
 
-    public y0(h hVar, int i10, b bVar, long j3, long j10) {
+    public y0(h hVar, int i10, b bVar, long j10, long j11) {
         this.a = hVar;
         this.b = i10;
         this.c = bVar;
-        this.d = j3;
-        this.e = j10;
+        this.d = j10;
+        this.e = j11;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x0031 A[RETURN] */
@@ -65,9 +65,9 @@ public final class y0 implements OnCompleteListener {
         int i12;
         int i13;
         int i14;
-        long j3;
         long j10;
-        long j11 = this.d;
+        long j11;
+        long j12 = this.d;
         h hVar = this.a;
         if (hVar.b()) {
             n6.n nVar = (n6.n) n6.m.a().a;
@@ -78,7 +78,7 @@ public final class y0 implements OnCompleteListener {
                     if (cVar instanceof n6.g) {
                         n6.g gVar = (n6.g) cVar;
                         int i15 = 0;
-                        boolean z10 = j11 > 0;
+                        boolean z10 = j12 > 0;
                         int i16 = gVar.L;
                         if (nVar != null) {
                             z10 &= nVar.c;
@@ -93,7 +93,7 @@ public final class y0 implements OnCompleteListener {
                                 if (a2 == null) {
                                     return;
                                 }
-                                boolean z11 = a2.c && j11 > 0;
+                                boolean z11 = a2.c && j12 > 0;
                                 i11 = i18;
                                 i12 = a2.e;
                                 z10 = z11;
@@ -127,16 +127,16 @@ public final class y0 implements OnCompleteListener {
                             i15 = -1;
                         }
                         if (z10) {
-                            long j12 = this.e;
+                            long j13 = this.e;
                             long currentTimeMillis = System.currentTimeMillis();
-                            i20 = (int) (SystemClock.elapsedRealtime() - j12);
-                            j10 = currentTimeMillis;
-                            j3 = j11;
+                            i20 = (int) (SystemClock.elapsedRealtime() - j13);
+                            j11 = currentTimeMillis;
+                            j10 = j12;
                         } else {
-                            j3 = 0;
                             j10 = 0;
+                            j11 = 0;
                         }
-                        z0 z0Var = new z0(new n6.j(this.b, i14, i15, j3, j10, null, null, i16, i20), i11, i19, i12);
+                        z0 z0Var = new z0(new n6.j(this.b, i14, i15, j10, j11, null, null, i16, i20), i11, i19, i12);
                         com.google.android.gms.internal.cast.a0 a0Var = hVar.x;
                         a0Var.sendMessage(a0Var.obtainMessage(18, z0Var));
                     }

@@ -1,48 +1,74 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.util.SparseIntArray;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class mi extends ci0 {
-    public final /* synthetic */ zn e;
+public final class mi implements z4.e {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ LinearLayout b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ HorizontalScrollView d;
+    public final /* synthetic */ SparseIntArray e;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public final /* synthetic */ int[] g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mi(zn znVar, Context context, int i10, MessageObject messageObject) {
-        super(context);
-        this.e = znVar;
-        this.a = null;
-        if (!messageObject.isRoundVideo()) {
-            messageObject.isVoice();
+    public mi(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i10, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.a = atomicBoolean;
+        this.b = linearLayout;
+        this.c = i10;
+        this.d = horizontalScrollView;
+        this.e = sparseIntArray;
+        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.g = iArr;
+    }
+
+    @Override // z4.e
+    public final void a(float f7, int i10, int i11) {
+        HorizontalScrollView horizontalScrollView;
+        if (this.a.get()) {
+            return;
         }
-        org.telegram.ui.Components.j10 j10Var = new org.telegram.ui.Components.j10(context, null);
-        this.c = j10Var;
-        j10Var.f(org.telegram.ui.ActionBar.i6.G8, org.telegram.ui.ActionBar.i6.i6, -1);
-        j10Var.setViewType(13);
-        j10Var.setIsSingleCell(false);
-        addView(j10Var, w7.x5.d(-1.0f, -2));
-        org.telegram.ui.Components.ea0 ea0Var = new org.telegram.ui.Components.ea0(context, null);
-        this.b = ea0Var;
-        ea0Var.setTextSize(1, 14.0f);
-        ea0Var.setGravity(19);
-        ea0Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.E8, false));
-        ea0Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.gc, false));
-        ea0Var.setEllipsize(TextUtils.TruncateAt.END);
-        ea0Var.setSingleLine();
-        ea0Var.setLines(1);
-        ea0Var.setMaxLines(1);
-        addView(ea0Var, w7.x5.a(-2.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 19));
-        TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
-        tL_channels_getMessageAuthor.channel = MessagesController.getInstance(i10).getInputChannel(-messageObject.getDialogId());
-        tL_channels_getMessageAuthor.id = messageObject.getId();
-        ea0Var.setAlpha(0.0f);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new ai.j8(this, i10, 6));
-        setBackground(org.telegram.ui.ActionBar.i6.Z(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.I5, false), 6, 0));
-        setEnabled(false);
+        float f10 = -1.0f;
+        float f11 = -1.0f;
+        int i12 = 0;
+        while (true) {
+            LinearLayout linearLayout = this.b;
+            int childCount = linearLayout.getChildCount();
+            horizontalScrollView = this.d;
+            if (i12 >= childCount) {
+                break;
+            }
+            org.telegram.ui.Components.rk0 rk0Var = (org.telegram.ui.Components.rk0) linearLayout.getChildAt(i12);
+            rk0Var.setOutlineProgress(i12 == i10 ? 1.0f - f7 : i12 == (i10 + 1) % this.c ? f7 : 0.0f);
+            if (i12 == i10) {
+                f10 = rk0Var.getX() - ((horizontalScrollView.getWidth() - rk0Var.getWidth()) / 2.0f);
+            }
+            if (i12 == i10 + 1) {
+                f11 = rk0Var.getX() - ((horizontalScrollView.getWidth() - rk0Var.getWidth()) / 2.0f);
+            }
+            i12++;
+        }
+        if (f10 != -1.0f && f11 != -1.0f) {
+            horizontalScrollView.setScrollX((int) com.google.android.gms.internal.play_billing.k3.y(f11, f10, f7, f10));
+        }
+        SparseIntArray sparseIntArray = this.e;
+        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i10 + 1, 0) * f7) + ((1.0f - f7) * sparseIntArray.get(i10, 0))), false);
+    }
+
+    @Override // z4.e
+    public final void b(int i10) {
+        this.f.getSwipeBack().f(this.g[0], this.e.get(i10), true);
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+        if (i10 == 0) {
+            this.a.set(false);
+        }
     }
 }

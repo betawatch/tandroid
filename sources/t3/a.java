@@ -1,31 +1,31 @@
 package t3;
 
 import a1.g;
-import b2.m0;
-import b2.o0;
-import b2.s;
-import v7.r6;
-import v7.v7;
+import b2.r0;
+import b2.t0;
+import b2.x;
+import v7.b8;
+import v7.s6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a implements o0 {
+public final class a implements t0 {
     public final String a;
     public final String b;
 
     public a(String str, String str2) {
-        this.a = r6.c(str);
+        this.a = s6.d(str);
         this.b = str2;
     }
 
-    @Override // b2.o0
-    public final /* synthetic */ s a() {
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
         return null;
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    @Override // b2.o0
-    public final void b(m0 m0Var) {
+    @Override // b2.t0
+    public final void b(r0 r0Var) {
         String str = this.a;
         str.getClass();
         char c10 = 65535;
@@ -94,55 +94,55 @@ public final class a implements o0 {
         String str2 = this.b;
         switch (c10) {
             case 0:
-                Integer g10 = v7.g(str2);
+                Integer g10 = b8.g(str2);
                 if (g10 != null) {
-                    m0Var.o = g10;
+                    r0Var.p = g10;
                     break;
                 }
                 break;
             case 1:
-                Integer g11 = v7.g(str2);
+                Integer g11 = b8.g(str2);
                 if (g11 != null) {
-                    m0Var.C = g11;
+                    r0Var.D = g11;
                     break;
                 }
                 break;
             case 2:
-                Integer g12 = v7.g(str2);
+                Integer g12 = b8.g(str2);
                 if (g12 != null) {
-                    m0Var.n = g12;
+                    r0Var.o = g12;
                     break;
                 }
                 break;
             case 3:
-                m0Var.c = str2;
+                r0Var.c = str2;
                 break;
             case 4:
-                m0Var.D = str2;
+                r0Var.E = str2;
                 break;
             case 5:
-                m0Var.a = str2;
+                r0Var.a = str2;
                 break;
             case 6:
-                m0Var.g = str2;
+                r0Var.g = str2;
                 break;
             case 7:
-                Integer g13 = v7.g(str2);
+                Integer g13 = b8.g(str2);
                 if (g13 != null) {
-                    m0Var.B = g13;
+                    r0Var.C = g13;
                     break;
                 }
                 break;
             case '\b':
-                m0Var.d = str2;
+                r0Var.d = str2;
                 break;
             case '\t':
-                m0Var.b = str2;
+                r0Var.b = str2;
                 break;
         }
     }
 
-    @Override // b2.o0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }
@@ -161,7 +161,7 @@ public final class a implements o0 {
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + g.h(527, 31, this.a);
+        return this.b.hashCode() + g.g(527, 31, this.a);
     }
 
     public final String toString() {

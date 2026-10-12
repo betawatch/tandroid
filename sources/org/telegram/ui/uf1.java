@@ -1,171 +1,50 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class uf1 extends og.b {
-    public final /* synthetic */ fg1 d;
+public final class uf1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ lg1 c;
 
-    public uf1(fg1 fg1Var) {
-        this.d = fg1Var;
+    public /* synthetic */ uf1(lg1 lg1Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = lg1Var;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.pm0
-    public final boolean D(s4.d1 d1Var) {
-        int i10 = d1Var.f;
-        return i10 == 0 || i10 == 3;
-    }
-
-    public final ArrayList F() {
-        fg1 fg1Var = this.d;
-        fg1Var.getClass();
-        return fg1Var.b;
-    }
-
-    @Override // s4.i0
-    public final int h() {
-        return F().size() + 1;
-    }
-
-    @Override // s4.i0
-    public final int j(int i10) {
-        if (i10 == h() - 1) {
-            return 2;
-        }
-        return ((wf1) this.d.b.get(i10)).a;
-    }
-
-    @Override // s4.i0
-    public final void l() {
-        this.d.c = h();
-        super.l();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00f9  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0110  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0112  */
-    @Override // s4.i0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void v(s4.d1 d1Var, int i10) {
-        cg1 cg1Var;
-        int i11;
-        boolean z10;
-        int i12;
-        fg1 fg1Var = this.d;
-        ArrayList arrayList = fg1Var.b;
-        long j3 = fg1Var.a;
-        int i13 = d1Var.f;
-        View view = d1Var.a;
-        if (i13 != 0) {
-            boolean z11 = true;
-            if (i13 == 3) {
-                cg1 cg1Var2 = (cg1) view;
-                cg1Var2.setCurrentDialogId(-j3);
-                if (i10 == arrayList.size() - 1 && !fg1Var.N.S0()) {
-                    z11 = false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10;
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                boolean z10 = this.b;
+                float f7 = z10 ? 1.0f : 0.0f;
+                lg1 lg1Var = this.c;
+                lg1Var.S0(f7);
+                if (!z10) {
+                    Activity parentActivity = lg1Var.getParentActivity();
+                    i10 = ((org.telegram.ui.ActionBar.m2) lg1Var).classGuid;
+                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i10);
+                    lg1Var.r0.setVisibility(8);
+                    lg1Var.Q0(true);
+                    break;
+                } else {
+                    lg1Var.q0.setVisibility(8);
+                    break;
                 }
-                cg1Var2.a5 = z11;
-                cg1Var2.b5 = i10;
-                return;
-            }
-            return;
-        }
-        TLRPC.TL_forumTopic tL_forumTopic = ((wf1) F().get(i10)).c;
-        int i14 = i10 + 1;
-        TLRPC.TL_forumTopic tL_forumTopic2 = i14 < F().size() ? ((wf1) F().get(i14)).c : null;
-        cg1 cg1Var3 = (cg1) view;
-        TLRPC.Message message = tL_forumTopic.topMessage;
-        TLRPC.TL_forumTopic tL_forumTopic3 = cg1Var3.N;
-        int i15 = tL_forumTopic3 == null ? 0 : tL_forumTopic3.id;
-        int i16 = tL_forumTopic.id;
-        boolean z12 = i15 == i16 && cg1Var3.b5 == i10 && fg1Var.G;
-        if (message != null) {
-            i12 = ((org.telegram.ui.ActionBar.n2) fg1Var).currentAccount;
-            MessageObject messageObject = new MessageObject(i12, message, false, false);
-            if (!fg1Var.getMessagesController().isMonoForum(-j3)) {
-                TLRPC.TL_forumTopic tL_forumTopic4 = tL_forumTopic2;
-                cg1Var = cg1Var3;
-                i11 = i16;
-                boolean z13 = z12;
-                cg1Var.Y(tL_forumTopic, -j3, messageObject, fg1Var.isInPreviewMode(), z13);
-                z10 = z13;
-                cg1Var.a5 = i10 != arrayList.size() - 1 || fg1Var.N.S0();
-                boolean z14 = tL_forumTopic.pinned;
-                cg1Var.t2 = z14 && (tL_forumTopic4 == null || !tL_forumTopic4.pinned);
-                cg1Var.setPinForced(z14 && !tL_forumTopic.hidden);
-                cg1Var.b5 = i10;
-                if (!fg1Var.getMessagesController().isMonoForum(-j3)) {
-                    cg1Var.setTopicIcon(tL_forumTopic);
+            default:
+                if (!this.b) {
+                    this.c.o0.setVisibility(8);
+                    break;
                 }
-                cg1Var.V(fg1Var.a0.contains(Integer.valueOf(i11)), z10);
-                cg1Var.setDialogSelected(fg1Var.Q0 != ((long) i11));
-                cg1Var.T(fg1Var.b0, true);
-            }
-            cg1Var3.q0 = true;
-            cg1Var3.x = true;
-            cg1Var3.N = tL_forumTopic;
-            cg1Var3.I = 72;
-            cg1Var3.U = 42.0f;
-            cg1Var3.J = 72;
-            cg1Var3.K = 78;
-            long peerDialogId = DialogObject.getPeerDialogId(tL_forumTopic.from_id);
-            int i17 = message.date;
-            i11 = i16;
-            cg1Var3.W(peerDialogId, messageObject, i17, false, false);
-            cg1Var3.s0 = true;
-            cg1Var3.s2 = i14 < h();
-            cg1Var = cg1Var3;
-        } else {
-            cg1Var = cg1Var3;
-            i11 = i16;
+                break;
         }
-        z10 = z12;
-        if (!fg1Var.getMessagesController().isMonoForum(-j3)) {
-        }
-        cg1Var.V(fg1Var.a0.contains(Integer.valueOf(i11)), z10);
-        cg1Var.setDialogSelected(fg1Var.Q0 != ((long) i11));
-        cg1Var.T(fg1Var.b0, true);
-    }
-
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        boolean z10;
-        int i11;
-        fg1 fg1Var = this.d;
-        if (i10 != 0 && i10 != 3) {
-            if (i10 == 2) {
-                tf1 tf1Var = new tf1(this, fg1Var.getParentActivity());
-                fg1Var.E0 = tf1Var;
-                return new org.telegram.ui.Components.am0(tf1Var);
-            }
-            org.telegram.ui.Components.j10 j10Var = new org.telegram.ui.Components.j10(viewGroup.getContext(), null);
-            j10Var.setViewType(24);
-            j10Var.setIsSingleCell(true);
-            j10Var.w = true;
-            return new org.telegram.ui.Components.am0(j10Var);
-        }
-        cg1 cg1Var = new cg1(fg1Var, viewGroup.getContext(), false);
-        if (i10 == 3) {
-            i11 = ((org.telegram.ui.ActionBar.n2) fg1Var).currentAccount;
-            boolean isBotForumWithEditableTopics = UserObject.isBotForumWithEditableTopics(i11, -fg1Var.a);
-            cg1Var.setForumIcon(ng.d.d(ng.a.k[0], ""));
-            cg1Var.setTitleOverride(LocaleController.getString(!isBotForumWithEditableTopics ? R.string.BotForumAskForStartOffNewChatTitle : R.string.BotForumAskForStartNewChatTitle));
-            cg1Var.setCustomMessage(LocaleController.getString(!isBotForumWithEditableTopics ? R.string.BotForumAskForStartOffNewChatForward : R.string.BotForumAskForStartNewChatForward));
-        }
-        z10 = ((org.telegram.ui.ActionBar.n2) fg1Var).inPreviewMode;
-        cg1Var.k0 = z10;
-        cg1Var.setArchivedPullAnimation(fg1Var.w);
-        return new org.telegram.ui.Components.am0(cg1Var);
     }
 }

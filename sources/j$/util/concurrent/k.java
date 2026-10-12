@@ -30,7 +30,7 @@ public final class k implements Map.Entry {
     }
 
     public final String toString() {
-        return j$.com.android.tools.r8.a.V(this.a, this.b);
+        return j$.com.android.tools.r8.a.U(this.a, this.b);
     }
 
     @Override // java.util.Map.Entry

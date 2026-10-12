@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 final class bf extends bm {
     final /* synthetic */ long a;
@@ -14,9 +14,9 @@ final class bf extends bm {
     final /* synthetic */ bn c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bf(bn bnVar, TaskCompletionSource taskCompletionSource, int i10, long j3, TaskCompletionSource taskCompletionSource2) {
+    public bf(bn bnVar, TaskCompletionSource taskCompletionSource, int i10, long j10, TaskCompletionSource taskCompletionSource2) {
         super(bnVar, taskCompletionSource);
-        this.a = j3;
+        this.a = j10;
         this.b = taskCompletionSource2;
         this.c = bnVar;
     }
@@ -46,12 +46,12 @@ final class bf extends bm {
             b10.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(blVar);
             xVar.G0(obtain, 2);
-        } catch (RemoteException e7) {
+        } catch (RemoteException e) {
             bn bnVar2 = this.c;
-            long j3 = this.a;
+            long j10 = this.a;
             j0Var = bnVar2.b;
-            j0Var.a(e7, "warmUpIntegrityToken(%s)", Long.valueOf(j3));
-            this.b.trySetException(new StandardIntegrityException(-100, e7));
+            j0Var.a(e, "warmUpIntegrityToken(%s)", Long.valueOf(j10));
+            this.b.trySetException(new StandardIntegrityException(-100, e));
         }
     }
 }

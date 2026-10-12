@@ -1,209 +1,146 @@
 package androidx.activity;
 
-import ai.t4;
+import android.app.Dialog;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import androidx.lifecycle.m;
-import androidx.lifecycle.t;
-import androidx.savedstate.Recreator;
-import b2.x0;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import e2.d0;
-import java.util.ArrayList;
-import java.util.Map;
-import ki.i0;
-import kotlin.jvm.internal.i;
-import m.p;
-import m4.b0;
-import m4.l0;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.window.OnBackInvokedDispatcher;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class n implements i9.r, com.google.android.gms.common.api.internal.s {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public Object c;
-    public Object d;
+public class n extends Dialog implements androidx.lifecycle.t, t4.e {
+    public androidx.lifecycle.v a;
+    public final o b;
+    public final x c;
 
-    public /* synthetic */ n() {
-        this.a = 5;
+    public n(Context context, int i10) {
+        super(context, i10);
+        this.b = new o(this);
+        this.c = new x(new a3.d(this, 8));
     }
 
-    @Override // com.google.android.gms.common.api.internal.s
-    public void accept(Object obj, Object obj2) {
-        com.google.android.gms.common.api.internal.n nVar;
-        boolean z10;
-        r7.k kVar = (r7.k) obj;
-        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-        synchronized (this) {
-            nVar = ((com.google.android.gms.common.api.internal.p) this.c).c;
-            z10 = this.b;
-            com.google.android.gms.common.api.internal.p pVar = (com.google.android.gms.common.api.internal.p) this.c;
-            pVar.b = null;
-            pVar.c = null;
+    public static void a(n nVar) {
+        super.onBackPressed();
+    }
+
+    @Override // android.app.Dialog
+    public void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
+        kotlin.jvm.internal.i.e(view, "view");
+        b();
+        super.addContentView(view, layoutParams);
+    }
+
+    public final void b() {
+        Window window = getWindow();
+        kotlin.jvm.internal.i.b(window);
+        View decorView = window.getDecorView();
+        kotlin.jvm.internal.i.d(decorView, "window!!.decorView");
+        decorView.setTag(R.id.view_tree_lifecycle_owner, this);
+        Window window2 = getWindow();
+        kotlin.jvm.internal.i.b(window2);
+        View decorView2 = window2.getDecorView();
+        kotlin.jvm.internal.i.d(decorView2, "window!!.decorView");
+        decorView2.setTag(R.id.view_tree_on_back_pressed_dispatcher_owner, this);
+        Window window3 = getWindow();
+        kotlin.jvm.internal.i.b(window3);
+        View decorView3 = window3.getDecorView();
+        kotlin.jvm.internal.i.d(decorView3, "window!!.decorView");
+        decorView3.setTag(R.id.view_tree_saved_state_registry_owner, this);
+    }
+
+    @Override // t4.e
+    public final m.p g() {
+        return (m.p) this.b.c;
+    }
+
+    @Override // androidx.lifecycle.t
+    public final androidx.lifecycle.o m() {
+        androidx.lifecycle.v vVar = this.a;
+        if (vVar != null) {
+            return vVar;
         }
-        if (nVar == null) {
-            taskCompletionSource.setResult(Boolean.FALSE);
-        } else {
-            r7.a.a.a(kVar, nVar, z10, taskCompletionSource);
+        androidx.lifecycle.v vVar2 = new androidx.lifecycle.v(this);
+        this.a = vVar2;
+        return vVar2;
+    }
+
+    @Override // android.app.Dialog
+    public final void onBackPressed() {
+        this.c.b();
+    }
+
+    @Override // android.app.Dialog
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        if (Build.VERSION.SDK_INT >= 33) {
+            OnBackInvokedDispatcher onBackInvokedDispatcher = getOnBackInvokedDispatcher();
+            kotlin.jvm.internal.i.d(onBackInvokedDispatcher, "onBackInvokedDispatcher");
+            x xVar = this.c;
+            xVar.getClass();
+            xVar.e = onBackInvokedDispatcher;
+            xVar.c(xVar.g);
         }
-    }
-
-    public void b() {
-        t4.e eVar = (t4.e) this.c;
-        androidx.lifecycle.o m10 = eVar.m();
-        if (((androidx.lifecycle.v) m10).c != androidx.lifecycle.n.b) {
-            throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
+        this.b.c(bundle);
+        androidx.lifecycle.v vVar = this.a;
+        if (vVar == null) {
+            vVar = new androidx.lifecycle.v(this);
+            this.a = vVar;
         }
-        m10.a(new Recreator(eVar));
-        final m.p pVar = (m.p) this.d;
-        pVar.getClass();
-        if (pVar.c) {
-            throw new IllegalStateException("SavedStateRegistry was already attached.");
+        vVar.e(androidx.lifecycle.m.ON_CREATE);
+    }
+
+    @Override // android.app.Dialog
+    public final Bundle onSaveInstanceState() {
+        Bundle onSaveInstanceState = super.onSaveInstanceState();
+        kotlin.jvm.internal.i.d(onSaveInstanceState, "super.onSaveInstanceState()");
+        this.b.d(onSaveInstanceState);
+        return onSaveInstanceState;
+    }
+
+    @Override // android.app.Dialog
+    public final void onStart() {
+        super.onStart();
+        androidx.lifecycle.v vVar = this.a;
+        if (vVar == null) {
+            vVar = new androidx.lifecycle.v(this);
+            this.a = vVar;
         }
-        m10.a(new androidx.lifecycle.r() { // from class: t4.b
-            @Override // androidx.lifecycle.r
-            public final void d(t tVar, m mVar) {
-                p this$0 = p.this;
-                i.e(this$0, "this$0");
-                if (mVar == m.ON_START) {
-                    this$0.e = true;
-                } else if (mVar == m.ON_STOP) {
-                    this$0.e = false;
-                }
-            }
-        });
-        pVar.c = true;
-        this.b = true;
+        vVar.e(androidx.lifecycle.m.ON_RESUME);
     }
 
-    public void c(Bundle bundle) {
-        if (!this.b) {
-            b();
+    @Override // android.app.Dialog
+    public void onStop() {
+        androidx.lifecycle.v vVar = this.a;
+        if (vVar == null) {
+            vVar = new androidx.lifecycle.v(this);
+            this.a = vVar;
         }
-        androidx.lifecycle.v vVar = (androidx.lifecycle.v) ((t4.e) this.c).m();
-        if (vVar.c.compareTo(androidx.lifecycle.n.d) >= 0) {
-            throw new IllegalStateException(("performRestore cannot be called when owner is " + vVar.c).toString());
-        }
-        m.p pVar = (m.p) this.d;
-        if (!pVar.c) {
-            throw new IllegalStateException("You must call performAttach() before calling performRestore(Bundle).");
-        }
-        if (pVar.d) {
-            throw new IllegalStateException("SavedStateRegistry was already restored.");
-        }
-        pVar.a = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
-        pVar.d = true;
+        vVar.e(androidx.lifecycle.m.ON_DESTROY);
+        this.a = null;
+        super.onStop();
     }
 
-    public void d(Bundle bundle) {
-        m.p pVar = (m.p) this.d;
-        pVar.getClass();
-        Bundle bundle2 = new Bundle();
-        Bundle bundle3 = (Bundle) pVar.a;
-        if (bundle3 != null) {
-            bundle2.putAll(bundle3);
-        }
-        o.f fVar = (o.f) pVar.f;
-        fVar.getClass();
-        o.d dVar = new o.d(fVar);
-        fVar.c.put(dVar, Boolean.FALSE);
-        while (dVar.hasNext()) {
-            Map.Entry entry = (Map.Entry) dVar.next();
-            bundle2.putBundle((String) entry.getKey(), ((t4.d) entry.getValue()).a());
-        }
-        if (bundle2.isEmpty()) {
-            return;
-        }
-        bundle.putBundle("androidx.lifecycle.BundlableSavedStateRegistry.key", bundle2);
+    @Override // android.app.Dialog
+    public void setContentView(int i10) {
+        b();
+        super.setContentView(i10);
     }
 
-    public synchronized com.google.android.gms.common.api.internal.p e() {
-        return (com.google.android.gms.common.api.internal.p) this.c;
+    @Override // android.app.Dialog
+    public void setContentView(View view) {
+        kotlin.jvm.internal.i.e(view, "view");
+        b();
+        super.setContentView(view);
     }
 
-    @Override // i9.r
-    public void h(Throwable th2) {
-        switch (this.a) {
-            case 2:
-                b0 b0Var = (b0) this.d;
-                if (th2 instanceof UnsupportedOperationException) {
-                    e2.a.o("MediaSessionImpl", "UnsupportedOperationException: Make sure to implement MediaSession.Callback.onPlaybackResumption() if you add a media button receiver to your manifest or if you implement the recent media item contract with your MediaLibraryService.", th2);
-                } else {
-                    e2.a.f("MediaSessionImpl", "Failure calling MediaSession.Callback.onPlaybackResumption(): " + th2.getMessage(), th2);
-                }
-                d0.G(b0Var.t);
-                if (this.b) {
-                    b0Var.p((m4.r) this.c);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // i9.r
-    public void onSuccess(Object obj) {
-        switch (this.a) {
-            case 2:
-                b0 b0Var = (b0) this.d;
-                m4.r rVar = (m4.r) this.c;
-                boolean z10 = this.b;
-                w7.s.b(b0Var.t, (m4.s) obj);
-                d0.G(b0Var.t);
-                if (z10) {
-                    b0Var.p(rVar);
-                    break;
-                }
-                break;
-            default:
-                m4.s sVar = (m4.s) obj;
-                b0 b0Var2 = ((l0) this.d).g;
-                Handler handler = b0Var2.l;
-                m4.r rVar2 = (m4.r) this.c;
-                d0.T(handler, new i0(b0Var2, rVar2, new t4(this, sVar, this.b, rVar2, 8)));
-                break;
-        }
-    }
-
-    public /* synthetic */ n(Object obj, Object obj2, boolean z10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = obj2;
-        this.b = z10;
-    }
-
-    public n(r7.c cVar, com.google.android.gms.common.api.internal.p pVar) {
-        this.a = 6;
-        this.d = cVar;
-        this.b = true;
-        this.c = pVar;
-    }
-
-    public n(t4.e eVar) {
-        this.a = 7;
-        this.c = eVar;
-        this.d = new m.p();
-    }
-
-    public n(k kVar, d dVar) {
-        this.a = 0;
-        this.c = new Object();
-        this.d = new ArrayList();
-    }
-
-    public n(ih.a aVar, me.b bVar) {
-        this.a = 1;
-        this.c = aVar;
-        this.d = bVar;
-    }
-
-    public n(b0 b0Var, m4.r rVar, boolean z10, x0 x0Var) {
-        this.a = 2;
-        this.d = b0Var;
-        this.c = rVar;
-        this.b = z10;
-    }
-
-    private final void a(Throwable th2) {
+    @Override // android.app.Dialog
+    public void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
+        kotlin.jvm.internal.i.e(view, "view");
+        b();
+        super.setContentView(view, layoutParams);
     }
 }

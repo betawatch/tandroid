@@ -1,6 +1,5 @@
 package j6;
 
-import ai.r4;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +15,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a {
     public static int h;
@@ -27,7 +26,7 @@ public final class a {
     public final ScheduledThreadPoolExecutor d;
     public Messenger f;
     public f g;
-    public final a0.m a = new a0.m(0);
+    public final a0.l a = new a0.l(0);
     public final Messenger e = new Messenger(new c(this, Looper.getMainLooper()));
 
     public a(Context context) {
@@ -101,7 +100,7 @@ public final class a {
                     Log.d("Rpc", "Messenger failed, fallback to startService");
                 }
             }
-            taskCompletionSource.getTask().addOnCompleteListener(m.a, new aa.a(22, this, this.d.schedule(new r4(taskCompletionSource, 22), 30L, TimeUnit.SECONDS), b10));
+            taskCompletionSource.getTask().addOnCompleteListener(m.a, new androidx.biometric.e(this, b10, this.d.schedule(new androidx.activity.i(taskCompletionSource, 22), 30L, TimeUnit.SECONDS), 23));
             return taskCompletionSource.getTask();
         }
         if (this.c.g() == 2) {
@@ -109,7 +108,7 @@ public final class a {
         } else {
             this.b.startService(intent);
         }
-        taskCompletionSource.getTask().addOnCompleteListener(m.a, new aa.a(22, this, this.d.schedule(new r4(taskCompletionSource, 22), 30L, TimeUnit.SECONDS), b10));
+        taskCompletionSource.getTask().addOnCompleteListener(m.a, new androidx.biometric.e(this, b10, this.d.schedule(new androidx.activity.i(taskCompletionSource, 22), 30L, TimeUnit.SECONDS), 23));
         return taskCompletionSource.getTask();
     }
 

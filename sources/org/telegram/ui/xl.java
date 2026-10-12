@@ -1,34 +1,19 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class xl extends org.telegram.ui.Components.e30 {
-    public final /* synthetic */ zn b;
+public final class xl extends av0 {
+    public final /* synthetic */ fo a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xl(zn znVar, Activity activity, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(activity, n2Var);
-        this.b = znVar;
+    public xl(fo foVar) {
+        this.a = foVar;
     }
 
-    @Override // org.telegram.ui.Components.e30
-    public final void o() {
-        zn znVar = this.b;
-        znVar.T7();
-        UndoView undoView = znVar.y3;
-        if (undoView == null) {
-            return;
-        }
-        undoView.j(75, 0L, null);
-        znVar.getMessagesController().removeSuggestion(znVar.T5, "CONVERT_GIGAGROUP");
-    }
-
-    @Override // org.telegram.ui.Components.e30
-    public final void p() {
-        zn znVar = this.b;
-        znVar.getMessagesController().convertToGigaGroup(znVar.getParentActivity(), znVar.e, znVar, new z0(this, 19));
+    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    public final kv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return fo.E1(this.a, messageObject, fileLocation, i10, z10, false);
     }
 }

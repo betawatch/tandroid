@@ -10,34 +10,34 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s2 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class s2 implements org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
 
-    public /* synthetic */ s2(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+    public /* synthetic */ s2(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
         this.a = i10;
-        this.b = n2Var;
+        this.b = m2Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0084  */
-    @Override // org.telegram.ui.ActionBar.a2
+    @Override // org.telegram.ui.ActionBar.z1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         TLRPC.User user;
         String string;
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.n2 n2Var = this.b;
-                MessagesController.getInstance(n2Var.getCurrentAccount()).openByUserName("spambot", n2Var, 1);
+                org.telegram.ui.ActionBar.m2 m2Var = this.b;
+                MessagesController.getInstance(m2Var.getCurrentAccount()).openByUserName("spambot", m2Var, 1);
                 break;
             default:
-                org.telegram.ui.ActionBar.n2 n2Var2 = this.b;
-                int currentAccount = n2Var2.getCurrentAccount();
+                org.telegram.ui.ActionBar.m2 m2Var2 = this.b;
+                int currentAccount = m2Var2.getCurrentAccount();
                 SharedPreferences mainSettings = MessagesController.getMainSettings(currentAccount);
                 long prefIntOrLong = AndroidUtilities.getPrefIntOrLong(mainSettings, "support_id2", 0L);
                 if (prefIntOrLong != 0) {
@@ -54,21 +54,21 @@ public final /* synthetic */ class s2 implements org.telegram.ui.ActionBar.a2 {
                                 serializedData.cleanup();
                                 user = TLdeserialize;
                             }
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
+                        } catch (Exception e) {
+                            FileLog.e(e);
                         }
                     }
                     if (user == null) {
                         MessagesController.getInstance(currentAccount).putUser(user, true);
                         Bundle bundle = new Bundle();
                         bundle.putLong("user_id", user.id);
-                        n2Var2.presentFragment(new org.telegram.ui.zn(bundle));
+                        m2Var2.presentFragment(new org.telegram.ui.fo(bundle));
                         break;
                     } else {
-                        org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(n2Var2.getParentActivity(), 3, null);
-                        b2Var2.g0 = false;
-                        b2Var2.show();
-                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new ai.ab(mainSettings, b2Var2, currentAccount, n2Var2, 3));
+                        org.telegram.ui.ActionBar.a2 a2Var2 = new org.telegram.ui.ActionBar.a2(m2Var2.getParentActivity(), 3, null);
+                        a2Var2.g0 = false;
+                        a2Var2.show();
+                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new bi.ja(mainSettings, a2Var2, currentAccount, m2Var2, 3));
                         break;
                     }
                 }

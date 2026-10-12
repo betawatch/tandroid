@@ -1,101 +1,50 @@
 package rg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ea0;
-import w7.x5;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.es;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.gu0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class x0 extends LinearLayout {
-    public int a;
-    public final TextView b;
-    public final ea0 c;
-    public LinearLayout d;
-    public final l0 e;
-    public final ViewGroup f;
-    public boolean h;
-    public final /* synthetic */ y0 n;
+public final class x0 implements qg.b1 {
+    public final /* synthetic */ y0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Multi-variable type inference failed */
-    public x0(y0 y0Var, Context context, int i10) {
-        super(context);
-        this.n = y0Var;
-        setOrientation(1);
-        ViewGroup C = y0Var.C(context, i10);
-        this.f = C;
-        addView(C);
-        this.e = (l0) C;
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setGravity(1);
-        int i11 = i6.j5;
-        textView.setTextColor(y0Var.getThemedColor(i11));
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, x5.a(-2.0f, 21.0f, 20.0f, 21.0f, 0.0f, -1, 0));
-        ea0 ea0Var = new ea0(context, null);
-        this.c = ea0Var;
-        ea0Var.setGravity(1);
-        ea0Var.setTextSize(1, 15.0f);
-        ea0Var.setTextColor(y0Var.getThemedColor(i11));
-        if (!y0Var.E) {
-            ea0Var.setLines(2);
-        }
-        addView(ea0Var, x5.t(-1, -2, 1, 21, 10, 21, 16));
-        setImportantForAccessibility(2);
-        setClipChildren(false);
+    public x0(y0 y0Var) {
+        this.a = y0Var;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view != this.f) {
-            return super.drawChild(canvas, view, j3);
-        }
-        boolean z10 = view instanceof b;
-        if (z10) {
-            setTranslationY(0.0f);
-        } else {
-            setTranslationY(this.n.L);
-        }
-        if (z10) {
-            return super.drawChild(canvas, view, j3);
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
+    @Override // qg.b1
+    public final void a() {
+        y0 y0Var = this.a;
+        y0Var.e.animate().alpha(1.0f).setDuration(320L).setUpdateListener(new ki.a(y0Var, 9)).setInterpolator(es.h);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        TextView textView = this.b;
-        textView.setVisibility(0);
-        ViewGroup viewGroup = this.f;
-        boolean z10 = viewGroup instanceof b;
-        y0 y0Var = this.n;
-        if (z10) {
-            ((b) viewGroup).setTopOffset(y0Var.L);
-        }
-        viewGroup.getLayoutParams().height = y0Var.s;
-        ea0 ea0Var = this.c;
-        ea0Var.setVisibility(0);
-        ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = 0;
-        super.onMeasure(i10, i11);
-        if (this.h) {
-            viewGroup.getLayoutParams().height = getMeasuredHeight() - AndroidUtilities.dp(16.0f);
-            ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = AndroidUtilities.dp(16.0f);
-            textView.setVisibility(8);
-            ea0Var.setVisibility(8);
-            super.onMeasure(i10, i11);
-        }
+    @Override // qg.b1
+    public final boolean d() {
+        return true;
+    }
+
+    @Override // qg.b1
+    public final void e() {
+        y0 y0Var = this.a;
+        y0Var.b.a.f();
+        y0Var.w.setViewHidden(false);
+        PhotoViewer photoViewer = ((gu0) y0Var).K;
+        Drawable[] drawableArr = PhotoViewer.U8;
+        photoViewer.X2(true, true);
+    }
+
+    @Override // qg.b1
+    public final void f() {
+        this.a.w.setViewHidden(true);
+    }
+
+    @Override // qg.b1
+    public final /* synthetic */ void b() {
+    }
+
+    @Override // qg.b1
+    public final void c() {
     }
 }

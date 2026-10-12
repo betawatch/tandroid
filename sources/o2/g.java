@@ -3,18 +3,18 @@ package o2;
 import android.os.SystemClock;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g extends x2.c {
     public int g;
 
-    @Override // x2.r
+    @Override // x2.p
     public final int c() {
         return this.g;
     }
 
-    @Override // x2.r
-    public final void k(long j3, long j10, long j11, List list, v2.l[] lVarArr) {
+    @Override // x2.p
+    public final void k(long j10, long j11, long j12, List list, v2.m[] mVarArr) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (a(this.g, elapsedRealtime)) {
             for (int i10 = this.b - 1; i10 >= 0; i10--) {
@@ -27,12 +27,12 @@ public final class g extends x2.c {
         }
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public final int n() {
         return 0;
     }
 
-    @Override // x2.r
+    @Override // x2.p
     public final Object q() {
         return null;
     }

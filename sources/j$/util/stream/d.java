@@ -32,10 +32,10 @@ public abstract class d extends CountedCompleter {
         this.c = dVar.c;
     }
 
-    public static long e(long j3) {
-        long j10 = j3 / g;
-        if (j10 > 0) {
-            return j10;
+    public static long e(long j10) {
+        long j11 = j10 / g;
+        if (j11 > 0) {
+            return j11;
         }
         return 1L;
     }
@@ -65,14 +65,14 @@ public abstract class d extends CountedCompleter {
         Spliterator trySplit;
         Spliterator spliterator = this.b;
         long estimateSize = spliterator.estimateSize();
-        long j3 = this.c;
-        if (j3 == 0) {
-            j3 = e(estimateSize);
-            this.c = j3;
+        long j10 = this.c;
+        if (j10 == 0) {
+            j10 = e(estimateSize);
+            this.c = j10;
         }
         boolean z10 = false;
         d dVar = this;
-        while (estimateSize > j3 && (trySplit = spliterator.trySplit()) != null) {
+        while (estimateSize > j10 && (trySplit = spliterator.trySplit()) != null) {
             d c10 = dVar.c(trySplit);
             dVar.d = c10;
             d c11 = dVar.c(spliterator);

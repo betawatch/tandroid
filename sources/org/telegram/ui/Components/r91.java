@@ -1,136 +1,139 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.view.WindowManager;
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.os.Build;
+import java.io.File;
+import java.io.FileOutputStream;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.mc1;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class r91 implements SensorEventListener {
-    public final float[] a = new float[3];
-    public final float[] b = new float[3];
-    public int c;
-    public final WindowManager d;
-    public final SensorManager e;
-    public final Sensor f;
-    public boolean h;
-    public q91 n;
+public final class r91 {
+    public String a;
+    public final Activity b;
+    public final org.telegram.ui.ActionBar.m2 c;
+    public final q91 d;
+    public File e;
 
-    public r91(Context context) {
-        this.d = (WindowManager) context.getSystemService("window");
-        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
-        this.e = sensorManager;
-        this.f = sensorManager.getDefaultSensor(1);
+    public r91(Activity activity, WallpapersListActivity wallpapersListActivity, q91 q91Var) {
+        this.b = activity;
+        this.c = wallpapersListActivity;
+        this.d = q91Var;
     }
 
-    public static float a(int i10, int i11) {
-        float f7 = i10;
-        float dp = AndroidUtilities.dp(16.0f) * 2;
-        float f10 = (f7 + dp) / f7;
-        float f11 = i11;
-        return Math.max(f10, (dp + f11) / f11);
-    }
-
-    public final void b(mc1 mc1Var) {
-        this.n = mc1Var;
-    }
-
-    public final void c(boolean z10) {
-        if (this.h != z10) {
-            this.h = z10;
-            Sensor sensor = this.f;
-            if (sensor == null) {
-                return;
-            }
-            SensorManager sensorManager = this.e;
-            if (z10) {
-                sensorManager.registerListener(this, sensor, 1);
-            } else {
-                sensorManager.unregisterListener(this);
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00d9  */
-    /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
-    @Override // android.hardware.SensorEventListener
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x006c, code lost:
+    
+        if (r10 == null) goto L24;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0074 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r10v1 */
+    /* JADX WARN: Type inference failed for: r10v11, types: [java.io.FileOutputStream] */
+    /* JADX WARN: Type inference failed for: r10v15 */
+    /* JADX WARN: Type inference failed for: r10v16 */
+    /* JADX WARN: Type inference failed for: r10v9 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onSensorChanged(SensorEvent sensorEvent) {
-        q91 q91Var;
-        float f7;
-        int rotation = this.d.getDefaultDisplay().getRotation();
-        float[] fArr = sensorEvent.values;
-        float f10 = fArr[0] / 9.80665f;
-        float f11 = fArr[1] / 9.80665f;
-        float f12 = fArr[2] / 9.80665f;
-        float f13 = f12 * f12;
-        float atan2 = (float) ((Math.atan2(f10, Math.sqrt((f11 * f11) + f13)) / 3.141592653589793d) * 2.0d);
-        float atan22 = (float) ((Math.atan2(f11, Math.sqrt((f10 * f10) + f13)) / 3.141592653589793d) * 2.0d);
-        if (rotation != 1) {
-            if (rotation == 2) {
-                float f14 = -atan22;
-                atan22 = -atan2;
-                atan2 = f14;
-            } else if (rotation != 3) {
-                atan2 = atan22;
-                atan22 = atan2;
-            } else {
-                atan2 = -atan2;
+    public final void a(int i10, int i11, Intent intent) {
+        FileOutputStream fileOutputStream;
+        if (i11 == -1) {
+            ?? r10 = 10;
+            q91 q91Var = this.d;
+            FileOutputStream fileOutputStream2 = null;
+            if (i10 != 10) {
+                if (i10 != 11 || intent == null || intent.getData() == null) {
+                    return;
+                }
+                try {
+                    this.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
+                    Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                    Bitmap loadBitmap = ImageLoader.loadBitmap(null, intent.getData(), (float) realScreenSize.x, (float) realScreenSize.y, true);
+                    loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(this.e));
+                    q91Var.b(this.e, loadBitmap, false);
+                    return;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
             }
-        }
-        int i10 = this.c;
-        float[] fArr2 = this.a;
-        fArr2[i10] = atan2;
-        float[] fArr3 = this.b;
-        fArr3[i10] = atan22;
-        this.c = (i10 + 1) % fArr2.length;
-        float f15 = 0.0f;
-        float f16 = 0.0f;
-        for (int i11 = 0; i11 < fArr2.length; i11++) {
-            f15 += fArr2[i11];
-            f16 += fArr3[i11];
-        }
-        float length = f15 / fArr2.length;
-        float length2 = f16 / fArr2.length;
-        if (length <= 1.0f) {
-            f7 = length < -1.0f ? -2.0f : 2.0f;
-            int round = Math.round(AndroidUtilities.dpf2(16.0f) * length2);
-            int round2 = Math.round(AndroidUtilities.dpf2(16.0f) * length);
-            float max = Math.max(-1.0f, Math.min(1.0f, (-length2) / 0.45f));
-            float max2 = Math.max(-1.0f, Math.min(1.0f, (-length) / 0.45f));
-            float sqrt = (float) Math.sqrt((max2 * max2) + (max * max));
-            float f17 = max / sqrt;
-            float f18 = max2 / sqrt;
-            Math.atan2((f17 * (-1.0f)) - (f18 * 0.0f), (f18 * (-1.0f)) + (f17 * 0.0f));
-            q91Var = this.n;
-            if (q91Var == null) {
-                q91Var.e(round, round2);
-                return;
+            AndroidUtilities.addMediaToGallery(this.a);
+            try {
+                try {
+                    this.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
+                    Point realScreenSize2 = AndroidUtilities.getRealScreenSize();
+                    Bitmap loadBitmap2 = ImageLoader.loadBitmap(this.a, null, (float) realScreenSize2.x, (float) realScreenSize2.y, true);
+                    fileOutputStream = new FileOutputStream(this.e);
+                    try {
+                        loadBitmap2.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
+                        q91Var.b(this.e, loadBitmap2, false);
+                        r10 = fileOutputStream;
+                    } catch (Exception e7) {
+                        e = e7;
+                        FileLog.e(e);
+                        r10 = fileOutputStream;
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    fileOutputStream2 = r10;
+                    if (fileOutputStream2 != null) {
+                        try {
+                            fileOutputStream2.close();
+                        } catch (Exception e10) {
+                            FileLog.e(e10);
+                        }
+                    }
+                    throw th;
+                }
+            } catch (Exception e11) {
+                e = e11;
+                fileOutputStream = null;
+            } catch (Throwable th3) {
+                th = th3;
+                if (fileOutputStream2 != null) {
+                }
+                throw th;
             }
-            return;
-        }
-        length = f7 - length;
-        int round3 = Math.round(AndroidUtilities.dpf2(16.0f) * length2);
-        int round22 = Math.round(AndroidUtilities.dpf2(16.0f) * length);
-        float max3 = Math.max(-1.0f, Math.min(1.0f, (-length2) / 0.45f));
-        float max22 = Math.max(-1.0f, Math.min(1.0f, (-length) / 0.45f));
-        float sqrt2 = (float) Math.sqrt((max22 * max22) + (max3 * max3));
-        float f172 = max3 / sqrt2;
-        float f182 = max22 / sqrt2;
-        Math.atan2((f172 * (-1.0f)) - (f182 * 0.0f), (f182 * (-1.0f)) + (f172 * 0.0f));
-        q91Var = this.n;
-        if (q91Var == null) {
+            try {
+                r10.close();
+            } catch (Exception e12) {
+                FileLog.e(e12);
+            }
+            this.a = null;
         }
     }
 
-    @Override // android.hardware.SensorEventListener
-    public final void onAccuracyChanged(Sensor sensor, int i10) {
+    public final void b() {
+        org.telegram.ui.ActionBar.m2 m2Var = this.c;
+        if (m2Var == null) {
+            Intent intent = new Intent("android.intent.action.PICK");
+            intent.setType("image/*");
+            this.b.startActivityForResult(intent, 11);
+            return;
+        }
+        Activity parentActivity = m2Var.getParentActivity();
+        if (parentActivity != null) {
+            if (Build.VERSION.SDK_INT >= 33) {
+                if (parentActivity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") != 0) {
+                    parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES"}, 4);
+                    return;
+                }
+            } else if (parentActivity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
+                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
+                return;
+            }
+        }
+        org.telegram.ui.qq0 qq0Var = new org.telegram.ui.qq0(2, false, false, null);
+        qq0Var.x = false;
+        qq0Var.V = new p91(this);
+        m2Var.presentFragment(qq0Var);
     }
 }

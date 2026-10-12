@@ -1,82 +1,45 @@
 package i2;
 
-import java.util.Set;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.do0;
-import org.telegram.ui.Components.rg0;
-import org.telegram.ui.Components.tc;
-import org.telegram.ui.f10;
-import yh.m5;
+import android.content.Context;
+import j$.util.function.IntConsumer$-CC;
+import java.lang.ref.WeakReference;
+import java.util.function.IntConsumer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final class g0 {
+    public final WeakReference a;
+    public final e0 b;
+    public final /* synthetic */ h0 c;
 
-    public /* synthetic */ g0(Object obj, int i10, boolean z10, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.c = i10;
-        this.b = z10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                p0 p0Var = (p0) this.d;
-                j2.f fVar = p0Var.M;
-                o1[] o1VarArr = p0Var.a;
-                int i10 = this.c;
-                int i11 = o1VarArr[i10].a.b;
-                j2.a p5 = fVar.p();
-                fVar.q(p5, 1033, new hg.o1(p5, i10, i11, this.b));
-                break;
-            case 1:
-                ((rg0) this.d).a.b.y3(this.c, this.b);
-                break;
-            case 2:
-                do0 do0Var = (do0) this.d;
-                do0Var.o = null;
-                do0Var.c(this.c, this.b, true);
-                break;
-            case 3:
-                ad a02 = ad.a0((f10) this.d);
-                boolean z10 = this.b;
-                int i12 = z10 ? R.raw.folder_in : R.raw.folder_out;
-                int i13 = this.c;
-                tc M = a02.M(z10 ? LocaleController.formatPluralString("FolderLinkAddedChats", i13, new Object[0]) : LocaleController.formatPluralString("FolderLinkRemovedChats", i13, new Object[0]), LocaleController.getString(R.string.FolderLinkChatlistUpdate), i12);
-                M.j = 5000;
-                M.j();
-                break;
-            default:
-                m5 m5Var = (m5) this.d;
-                if (!this.b) {
-                    m5Var.getClass();
-                    break;
-                } else {
-                    Set set = m5Var.Q;
-                    int i14 = this.c;
-                    set.remove(Integer.valueOf(i14));
-                    Runnable runnable = (Runnable) m5Var.R.remove(Integer.valueOf(i14));
-                    if (runnable != null) {
-                        runnable.run();
-                        break;
-                    }
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v1, types: [i2.e0, java.util.function.IntConsumer] */
+    public g0(h0 h0Var, Context context) {
+        this.c = h0Var;
+        this.a = new WeakReference(context);
+        ?? r02 = new IntConsumer() { // from class: i2.e0
+            @Override // java.util.function.IntConsumer
+            public final void accept(int i10) {
+                h0 h0Var2 = g0.this.c;
+                if (h0Var2.i0) {
+                    return;
                 }
-                break;
-        }
+                h0Var2.t1(1, 19, Integer.valueOf(i10));
+            }
+
+            public /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
+                return IntConsumer$-CC.$default$andThen(this, intConsumer);
+            }
+        };
+        this.b = r02;
+        context.registerDeviceIdChangeListener(new f0(h0Var.v.a(h0Var.t, null), 0), r02);
     }
 
-    public /* synthetic */ g0(Object obj, boolean z10, int i10, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = z10;
-        this.c = i10;
+    public static void a(g0 g0Var) {
+        Context context = (Context) g0Var.a.get();
+        if (context == null) {
+            return;
+        }
+        context.unregisterDeviceIdChangeListener(g0Var.b);
     }
 }

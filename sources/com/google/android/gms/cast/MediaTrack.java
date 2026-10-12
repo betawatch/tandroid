@@ -14,9 +14,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import u6.c;
-import w7.d0;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class MediaTrack extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaTrack> CREATOR = new v(16);
@@ -31,8 +31,8 @@ public final class MediaTrack extends a implements ReflectedParcelable {
     public String r;
     public final JSONObject s;
 
-    public MediaTrack(long j3, int i10, String str, String str2, String str3, String str4, int i11, List list, JSONObject jSONObject) {
-        this.a = j3;
+    public MediaTrack(long j10, int i10, String str, String str2, String str3, String str4, int i11, List list, JSONObject jSONObject) {
+        this.a = j10;
         this.b = i10;
         this.c = str;
         this.d = str2;
@@ -121,19 +121,19 @@ public final class MediaTrack extends a implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.s;
         this.r = jSONObject == null ? null : jSONObject.toString();
-        int q6 = d0.q(parcel, 20293);
-        d0.s(parcel, 2, 8);
+        int q6 = g0.q(parcel, 20293);
+        g0.s(parcel, 2, 8);
         parcel.writeLong(this.a);
-        d0.s(parcel, 3, 4);
+        g0.s(parcel, 3, 4);
         parcel.writeInt(this.b);
-        d0.l(parcel, 4, this.c);
-        d0.l(parcel, 5, this.d);
-        d0.l(parcel, 6, this.e);
-        d0.l(parcel, 7, this.f);
-        d0.s(parcel, 8, 4);
+        g0.l(parcel, 4, this.c);
+        g0.l(parcel, 5, this.d);
+        g0.l(parcel, 6, this.e);
+        g0.l(parcel, 7, this.f);
+        g0.s(parcel, 8, 4);
         parcel.writeInt(this.h);
-        d0.n(parcel, 9, this.n);
-        d0.l(parcel, 10, this.r);
-        d0.r(parcel, q6);
+        g0.n(parcel, 9, this.n);
+        g0.l(parcel, 10, this.r);
+        g0.r(parcel, q6);
     }
 }

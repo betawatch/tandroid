@@ -1,99 +1,92 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.StaticLayout;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ic1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fn0 extends Drawable {
-    public int a = 255;
-    public final /* synthetic */ y90 b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ org.telegram.ui.Cells.u1 d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ Bitmap f;
-    public final /* synthetic */ RectF g;
-    public final /* synthetic */ Paint h;
-    public final /* synthetic */ Paint i;
-    public final /* synthetic */ StaticLayout j;
+public final class fn0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kn0 b;
 
-    public fn0(y90 y90Var, int[] iArr, org.telegram.ui.Cells.u1 u1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
-        this.b = y90Var;
-        this.c = iArr;
-        this.d = u1Var;
-        this.e = iArr2;
-        this.f = bitmap;
-        this.g = rectF;
-        this.h = paint;
-        this.i = paint2;
-        this.j = staticLayout;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (this.a <= 0) {
-            return;
-        }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getBounds());
-        float f7 = rectF.left;
-        CornerPathEffect cornerPathEffect = y90.w;
-        rectF.left = f7 - (AndroidUtilities.dp(5.0f) / 2.0f);
-        canvas.save();
-        canvas.saveLayerAlpha(rectF, this.a, 31);
-        int[] iArr = this.c;
-        canvas.translate(iArr[0], iArr[1]);
-        y90 y90Var = this.b;
-        org.telegram.ui.Cells.u1 u1Var = this.d;
-        if (u1Var == null || !u1Var.C1()) {
-            canvas.drawPath(y90Var, this.i);
-        } else {
-            org.telegram.ui.ActionBar.f5 f5Var = u1Var.t8;
-            if (f5Var == null || f5Var.c == null) {
-                canvas.translate(-iArr[0], -iArr[1]);
-                int[] iArr2 = this.e;
-                canvas.translate(iArr2[0], u1Var.getPaddingTop() + iArr2[1]);
-                u1Var.D1(canvas, true, false);
-                canvas.translate(-iArr2[0], (-iArr2[1]) - u1Var.getPaddingTop());
-                canvas.translate(iArr[0], iArr[1]);
-            } else {
-                canvas.save();
-                u1Var.setBackgroundTopY(true);
-                canvas.translate(0.0f, -u1Var.t8.r);
-                canvas.drawPaint(u1Var.t8.c);
-                canvas.restore();
-            }
-            Bitmap bitmap = this.f;
-            if (bitmap != null) {
-                canvas.save();
-                RectF rectF2 = this.g;
-                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
-                canvas.restore();
-            }
-        }
-        canvas.clipPath(y90Var);
-        this.j.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public /* synthetic */ fn0(kn0 kn0Var, int i10) {
         this.a = i10;
+        this.b = kn0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0039, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0048, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
+    
+        if (r2.q0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
+    
+        r4 = 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x004b, code lost:
+    
+        r2.scrollBy(r0 * r4, 0);
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(r2.s0);
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int tabSize;
+        int max;
+        switch (this.a) {
+            case 0:
+                kn0 kn0Var = this.b;
+                ic1 ic1Var = kn0Var.e;
+                kn0Var.b0 = false;
+                kn0Var.V = kn0Var.getScrollX() + kn0Var.W;
+                tabSize = kn0Var.getTabSize();
+                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
+                kn0Var.U = ceil;
+                kn0Var.T = ceil;
+                if (kn0Var.e(ceil) && ceil >= 0 && ceil < ic1Var.getChildCount()) {
+                    try {
+                        kn0Var.performHapticFeedback(0);
+                    } catch (Exception unused) {
+                    }
+                    kn0Var.d0 = 0.0f;
+                    kn0Var.v = 0.0f;
+                    View childAt = ic1Var.getChildAt(ceil);
+                    kn0Var.s = childAt;
+                    kn0Var.c0 = childAt.getX() - kn0Var.getScrollX();
+                    kn0Var.s.invalidate();
+                    ic1Var.invalidate();
+                    kn0Var.j();
+                    kn0Var.invalidate();
+                    break;
+                }
+                break;
+            default:
+                long currentTimeMillis = System.currentTimeMillis();
+                kn0 kn0Var2 = this.b;
+                long j10 = currentTimeMillis - kn0Var2.r0;
+                int i10 = -1;
+                if (j10 >= 3000) {
+                    if (j10 >= 5000) {
+                        max = Math.max(1, AndroidUtilities.dp(4.0f));
+                        break;
+                    } else {
+                        max = Math.max(1, AndroidUtilities.dp(2.0f));
+                        break;
+                    }
+                } else {
+                    max = Math.max(1, AndroidUtilities.dp(1.0f));
+                    break;
+                }
+        }
     }
 }

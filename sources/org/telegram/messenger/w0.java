@@ -1,53 +1,109 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.RequestDelegate;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.Timer;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w0 implements RequestDelegate {
+public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ w0(Object obj, Object obj2, boolean z10, int i10) {
+    public /* synthetic */ w0(Object obj, Object obj2, long j10, Object obj3, int i10) {
         this.a = i10;
         this.c = obj;
         this.d = obj2;
-        this.b = z10;
+        this.b = j10;
+        this.e = obj3;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((ChatObject.Call) this.c).lambda$loadMembers$3(this.b, (TL_phone.getGroupParticipants) this.d, tLObject, tL_error);
+                ((ChatMessagesMetadataController) this.c).lambda$loadStoriesForMessages$1((MessageObject) this.d, this.b, (TL_stories.StoryItem) this.e);
                 break;
             case 1:
-                ((MediaDataController) this.c).lambda$loadAvatarConstructor$243((SharedPreferences) this.d, this.b, tLObject, tL_error);
+                ((MediaDataController) this.c).lambda$loadReplyMessagesForMessages$170((Timer.Task) this.d, this.b, (ArrayList) this.e);
                 break;
             case 2:
-                ((MediaDataController) this.c).lambda$loadStickersByEmojiOrName$85((String) this.d, this.b, tLObject, tL_error);
+                ((MediaDataController) this.c).lambda$loadMusic$141(this.b, (ArrayList) this.d, (ArrayList) this.e);
                 break;
             case 3:
-                ((MessagesController) this.c).lambda$getBlockedPeers$112(this.b, (TLRPC.TL_contacts_getBlocked) this.d, tLObject, tL_error);
+                ((MessagesController) this.c).lambda$addUserToChat$299((Utilities.Callback) this.d, (TLRPC.TL_messages_invitedUsers) this.e, this.b);
+                break;
+            case 4:
+                ((MessagesController) this.c).lambda$checkChatInviter$373(this.b, (ArrayList) this.d, (TLRPC.TL_channels_channelParticipant) this.e);
+                break;
+            case 5:
+                ((MessagesController) this.c).lambda$getGroupCall$61((TLObject) this.d, this.b, (Runnable) this.e);
+                break;
+            case 6:
+                ((MessagesController) this.c).lambda$reloadMessages$72(this.b, (ArrayList) this.d, (ArrayList) this.e);
+                break;
+            case 7:
+                ((MessagesController) this.c).lambda$checkPromoInfoInternal$164((TLRPC.TL_help_promoData) this.d, (TLRPC.TL_messages_peerDialogs) this.e, this.b);
+                break;
+            case 8:
+                ((MessagesController) this.c).lambda$updateChannelUserName$290(this.b, (String) this.d, (Runnable) this.e);
+                break;
+            case 9:
+                ((MessagesStorage) this.c).lambda$deleteUserChatHistory$85((ArrayList) this.d, this.b, (ArrayList) this.e);
+                break;
+            case 10:
+                ((MessagesStorage) this.c).lambda$updateMessagePollResults$101(this.b, (TLRPC.Poll) this.d, (TLRPC.PollResults) this.e);
+                break;
+            case 11:
+                ((MessagesStorage) this.c).lambda$onReactionsUpdate$106((TLRPC.TL_messageReactions) this.d, (TLRPC.TL_messageReactions) this.e, this.b);
+                break;
+            case 12:
+                ((MessagesStorage) this.c).lambda$getUserSync$258((TLRPC.User[]) this.d, this.b, (CountDownLatch) this.e);
+                break;
+            case 13:
+                ((MessagesStorage) this.c).lambda$containsLocalDialog$179(this.b, (Boolean[]) this.d, (CountDownLatch) this.e);
+                break;
+            case 14:
+                ((MessagesStorage) this.c).lambda$getChannelPtsSync$257(this.b, (Integer[]) this.d, (CountDownLatch) this.e);
+                break;
+            case 15:
+                ((MessagesStorage) this.c).lambda$getChatSync$259((TLRPC.Chat[]) this.d, this.b, (CountDownLatch) this.e);
+                break;
+            case 16:
+                ((MessagesStorage) this.c).lambda$loadPendingTasks$14((TLRPC.TL_dialog) this.d, (TLRPC.InputPeer) this.e, this.b);
+                break;
+            case 17:
+                ((MessagesStorage) this.c).lambda$getEncryptedChat$177(this.b, (ArrayList) this.d, (CountDownLatch) this.e);
+                break;
+            case 18:
+                ((SavedMessagesController) this.c).lambda$updateDialogsLastMessage$9((MessagesStorage) this.d, (ArrayList) this.e, this.b);
                 break;
             default:
-                ((MessagesController.CommonChatsList) this.c).lambda$load$1((int[]) this.d, this.b, tLObject, tL_error);
+                ((SavedMessagesController) this.c).lambda$loadCache$7((MessagesStorage) this.d, this.b, (Runnable) this.e);
                 break;
         }
     }
 
-    public /* synthetic */ w0(Object obj, boolean z10, TLObject tLObject, int i10) {
+    public /* synthetic */ w0(Object obj, Object obj2, Object obj3, long j10, int i10) {
         this.a = i10;
         this.c = obj;
-        this.b = z10;
-        this.d = tLObject;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = j10;
+    }
+
+    public /* synthetic */ w0(BaseController baseController, long j10, Object obj, Object obj2, int i10) {
+        this.a = i10;
+        this.c = baseController;
+        this.b = j10;
+        this.d = obj;
+        this.e = obj2;
     }
 }

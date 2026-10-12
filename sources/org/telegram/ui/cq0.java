@@ -1,50 +1,65 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class cq0 implements ar0 {
-    public final /* synthetic */ HashMap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ kq0 c;
+public final class cq0 {
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public Path i;
+    public Paint j;
+    public Drawable k;
+    public final org.telegram.ui.Components.ad l;
+    public boolean m;
+    public final org.telegram.ui.Components.g6 n;
+    public int o;
+    public final /* synthetic */ dq0 r;
+    public final Paint a = new Paint(1);
+    public final Paint b = new Paint(1);
+    public final Paint c = new Paint(1);
+    public final Path d = new Path();
+    public final Path e = new Path();
+    public final RectF p = new RectF();
+    public final RectF q = new RectF();
 
-    public cq0(kq0 kq0Var, HashMap hashMap, ArrayList arrayList) {
-        this.c = kq0Var;
-        this.a = hashMap;
-        this.b = arrayList;
+    public cq0(dq0 dq0Var) {
+        this.r = dq0Var;
+        this.l = new org.telegram.ui.Components.ad(dq0Var);
+        this.n = new org.telegram.ui.Components.g6(dq0Var, 0L, 320L, org.telegram.ui.Components.es.h);
     }
 
-    @Override // org.telegram.ui.ar0
-    public final void b(Editable editable) {
-        kq0 kq0Var = this.c;
-        org.telegram.ui.Components.zu zuVar = kq0Var.M;
-        kq0Var.a = editable;
-        zuVar.setText(editable);
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final void h(int i10, boolean z10, boolean z11) {
-        kq0 kq0Var = this.c;
-        kq0Var.removeSelfFromStack();
-        if (z10) {
+    public final void a(MessagesController.PeerColor peerColor) {
+        dq0 dq0Var = this.r;
+        org.telegram.ui.ActionBar.c6 c6Var = dq0Var.a;
+        if (peerColor == null) {
             return;
         }
-        kq0Var.V(this.a, this.b, z11, i10);
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final void a() {
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final /* synthetic */ void g() {
+        boolean q6 = c6Var == null ? org.telegram.ui.ActionBar.g6.I.q() : c6Var.a();
+        int i10 = dq0Var.c;
+        Paint paint = this.b;
+        Paint paint2 = this.a;
+        if (i10 != 1) {
+            paint2.setColor(peerColor.getColor(0, c6Var));
+            paint.setColor(peerColor.hasColor6(q6) ? peerColor.getColor(1, c6Var) : peerColor.getColor(0, c6Var));
+            this.f = peerColor.hasColor6(q6);
+            this.g = false;
+            return;
+        }
+        if (q6 && peerColor.hasColor2() && !peerColor.hasColor3()) {
+            paint2.setColor(peerColor.getColor(1, c6Var));
+            paint.setColor(peerColor.getColor(0, c6Var));
+        } else {
+            paint2.setColor(peerColor.getColor(0, c6Var));
+            paint.setColor(peerColor.getColor(1, c6Var));
+        }
+        this.c.setColor(peerColor.getColor(2, c6Var));
+        this.f = peerColor.hasColor2(q6);
+        this.g = peerColor.hasColor3(q6);
     }
 }

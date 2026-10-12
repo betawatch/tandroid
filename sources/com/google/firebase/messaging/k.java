@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import ci.rc;
+import bi.la;
 import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
-import v7.n6;
+import v7.o6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k implements Application.ActivityLifecycleCallbacks {
     public final Set a = Collections.newSetFromMap(new WeakHashMap());
@@ -26,13 +26,13 @@ public final class k implements Application.ActivityLifecycleCallbacks {
             if (extras != null) {
                 bundle = extras.getBundle("gcm.n.analytics_data");
             }
-        } catch (RuntimeException e7) {
-            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e7);
+        } catch (RuntimeException e) {
+            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e);
         }
         if (bundle == null ? false : "1".equals(bundle.getString("google.c.a.e"))) {
             if (bundle != null) {
                 if ("1".equals(bundle.getString("google.c.a.tc"))) {
-                    if (k9.h.c().b(l9.a.class) != null) {
+                    if (l9.h.c().b(m9.a.class) != null) {
                         throw new ClassCastException();
                     }
                     if (Log.isLoggable("FirebaseMessaging", 3)) {
@@ -43,7 +43,7 @@ public final class k implements Application.ActivityLifecycleCallbacks {
                     Log.d("FirebaseMessaging", "Received event with track-conversion=false. Do not set user property");
                 }
             }
-            n6.a("_no", bundle);
+            o6.a("_no", bundle);
         }
     }
 
@@ -54,7 +54,7 @@ public final class k implements Application.ActivityLifecycleCallbacks {
             return;
         }
         if (Build.VERSION.SDK_INT <= 25) {
-            new Handler(Looper.getMainLooper()).post(new rc(this, intent));
+            new Handler(Looper.getMainLooper()).post(new la(this, intent));
         } else {
             a(intent);
         }

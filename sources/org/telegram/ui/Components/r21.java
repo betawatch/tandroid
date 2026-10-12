@@ -1,10 +1,64 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ThemeEditorView;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class r21 extends vq {
-    @Override // org.telegram.ui.Components.vq
-    public final int a() {
-        return -6182737;
+public final class r21 extends FrameLayout {
+    public final ImageView a;
+    public final p21 b;
+    public final /* synthetic */ ThemeEditorView.EditorAlert c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r21(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        super(context);
+        this.c = editorAlert;
+        View view = new View(context);
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(18.0f), -854795));
+        addView(view, w7.a6.a(36.0f, 14.0f, 11.0f, 14.0f, 0.0f, -1, 51));
+        ImageView imageView = new ImageView(context);
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.a6.a(36.0f, 16.0f, 11.0f, 0.0f, 0.0f, 36, 51));
+        ImageView imageView2 = new ImageView(context);
+        this.a = imageView2;
+        imageView2.setScaleType(scaleType);
+        o21 o21Var = new o21();
+        imageView2.setImageDrawable(o21Var);
+        o21Var.f = AndroidUtilities.dp(7.0f);
+        imageView2.setScaleX(0.1f);
+        imageView2.setScaleY(0.1f);
+        imageView2.setAlpha(0.0f);
+        addView(imageView2, w7.a6.a(36.0f, 14.0f, 11.0f, 14.0f, 0.0f, 36, 53));
+        imageView2.setOnClickListener(new z80(this, 20));
+        p21 p21Var = new p21(this, context);
+        this.b = p21Var;
+        p21Var.setTextSize(1, 16.0f);
+        p21Var.setHintTextColor(-6774617);
+        p21Var.setTextColor(-14540254);
+        p21Var.setBackgroundDrawable(null);
+        p21Var.setPadding(0, 0, 0, 0);
+        p21Var.setMaxLines(1);
+        p21Var.setLines(1);
+        p21Var.setSingleLine(true);
+        p21Var.setImeOptions(268435459);
+        p21Var.setHint(LocaleController.getString(R.string.Search));
+        p21Var.setCursorColor(-11491093);
+        p21Var.setCursorSize(AndroidUtilities.dp(20.0f));
+        p21Var.setCursorWidth(1.5f);
+        addView(p21Var, w7.a6.a(40.0f, 54.0f, 9.0f, 46.0f, 0.0f, -1, 51));
+        p21Var.addTextChangedListener(new q21(this));
+        p21Var.setOnEditorActionListener(new e1(this, 10));
     }
 }

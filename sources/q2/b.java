@@ -1,87 +1,133 @@
 package q2;
 
 import android.content.Context;
-import android.graphics.Point;
-import b2.s;
-import b2.s0;
-import e2.d0;
-import h2.h;
-import h2.j;
-import h2.l;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import v7.j7;
+import android.content.pm.PackageInfo;
+import android.content.pm.ServiceInfo;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+import b2.w0;
+import b2.x;
+import e2.m0;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import kotlin.jvm.internal.i;
+import v0.j;
+import v0.l;
+import v0.n;
+import v0.p;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b extends l {
-    public final Context o;
-    public final int p;
+public final class b {
+    public final Context a;
 
-    public b(Context context) {
-        super(new h[1], new a[1]);
-        this.o = context;
-        this.p = -1;
+    public b(Context context, int i10) {
+        switch (i10) {
+            case 1:
+                i.e(context, "context");
+                this.a = context;
+                break;
+            default:
+                context.getClass();
+                this.a = context;
+                break;
+        }
     }
 
-    @Override // h2.l
-    public final h f() {
-        return new h(1, 0);
+    public static j a(b bVar, Object obj) {
+        if (obj.equals("androidx.credentials.TYPE_CLEAR_RESTORE_CREDENTIAL")) {
+            return bVar.c();
+        }
+        if (obj instanceof n) {
+            for (p pVar : ((n) obj).a) {
+            }
+        }
+        Context ctx = bVar.a;
+        i.e(ctx, "ctx");
+        if (ctx.getPackageManager().hasSystemFeature("android.software.leanback") || ctx.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
+            return bVar.c();
+        }
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 34) {
+            l lVar = new l(ctx);
+            l lVar2 = lVar.isAvailableOnDevice() ? lVar : null;
+            return lVar2 == null ? bVar.c() : lVar2;
+        }
+        if (i10 <= 33) {
+            return bVar.c();
+        }
+        return null;
     }
 
-    @Override // h2.l
-    public final j g() {
-        return new a(this);
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0073, code lost:
+    
+        if (android.os.Build.VERSION.SDK_INT >= 26) goto L45;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x007a, code lost:
+    
+        if (android.os.Build.VERSION.SDK_INT >= 34) goto L45;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int b(x xVar) {
+        String str = xVar.s;
+        if (str == null || !w0.k(str)) {
+            return i2.d.c(0, 0, 0, 0);
+        }
+        String str2 = xVar.s;
+        String str3 = m0.a;
+        str2.getClass();
+        switch (str2) {
+            case "image/jpeg":
+            case "image/webp":
+            case "image/bmp":
+            case "image/png":
+                return i2.d.c(4, 0, 0, 0);
+        }
+        return i2.d.c(1, 0, 0, 0);
     }
 
-    @Override // h2.e
-    public final String getName() {
-        return "BitmapFactoryImageDecoder";
-    }
-
-    @Override // h2.l
-    public final h2.f h(Throwable th2) {
-        return new c("Unexpected decode error", th2);
-    }
-
-    @Override // h2.l
-    public final h2.f i(h hVar, j jVar, boolean z10) {
-        a aVar = (a) jVar;
-        ByteBuffer byteBuffer = hVar.c;
-        byteBuffer.getClass();
-        e2.d.g(byteBuffer.hasArray());
-        e2.d.b(byteBuffer.arrayOffset() == 0);
-        try {
-            int i10 = this.p;
-            if (i10 == -1) {
-                Context context = this.o;
-                if (context != null) {
-                    Point v = d0.v(context);
-                    int i11 = v.x;
-                    int i12 = v.y;
-                    s sVar = hVar.a;
-                    if (sVar != null) {
-                        int i13 = sVar.Q;
-                        if (i13 != -1) {
-                            i11 *= i13;
-                        }
-                        int i14 = sVar.R;
-                        if (i14 != -1) {
-                            i12 *= i14;
-                        }
-                    }
-                    i10 = (Math.max(i11, i12) * 2) - 1;
-                } else {
-                    i10 = 4096;
+    public j c() {
+        String string;
+        Context context = this.a;
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 132);
+        ArrayList arrayList = new ArrayList();
+        ServiceInfo[] serviceInfoArr = packageInfo.services;
+        if (serviceInfoArr != null) {
+            for (ServiceInfo serviceInfo : serviceInfoArr) {
+                Bundle bundle = serviceInfo.metaData;
+                if (bundle != null && (string = bundle.getString("androidx.credentials.CREDENTIAL_PROVIDER_KEY")) != null) {
+                    arrayList.add(string);
                 }
             }
-            aVar.a = j7.a(byteBuffer.remaining(), i10, byteBuffer.array());
-            aVar.timeUs = hVar.e;
-            return null;
-        } catch (s0 e7) {
-            return new c("Could not decode image data with BitmapFactory.", e7);
-        } catch (IOException e10) {
-            return new c(e10);
         }
+        List m10 = jd.g.m(arrayList);
+        if (m10.isEmpty()) {
+            return null;
+        }
+        Iterator it = m10.iterator();
+        j jVar = null;
+        while (it.hasNext()) {
+            try {
+                Object newInstance = Class.forName((String) it.next()).getConstructor(Context.class).newInstance(context);
+                i.c(newInstance, "null cannot be cast to non-null type androidx.credentials.CredentialProvider");
+                j jVar2 = (j) newInstance;
+                if (!jVar2.isAvailableOnDevice()) {
+                    continue;
+                } else {
+                    if (jVar != null) {
+                        Log.i("CredProviderFactory", "Only one active OEM CredentialProvider allowed");
+                        return null;
+                    }
+                    jVar = jVar2;
+                }
+            } catch (Throwable unused) {
+            }
+        }
+        return jVar;
     }
 }

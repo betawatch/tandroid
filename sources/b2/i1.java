@@ -1,113 +1,63 @@
 package b2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.os.Bundle;
+import j$.util.Objects;
+import v7.u6;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class i1 extends k1 {
-    public final e9.i0 e;
-    public final e9.i0 f;
-    public final int[] g;
-    public final int[] h;
+public final class i1 extends h1 {
+    public static final String d;
+    public static final String e;
+    public final int b;
+    public final float c;
 
-    public i1(e9.a1 a1Var, e9.a1 a1Var2, int[] iArr) {
-        e2.d.b(a1Var.d == iArr.length);
-        this.e = a1Var;
-        this.f = a1Var2;
-        this.g = iArr;
-        this.h = new int[iArr.length];
-        for (int i10 = 0; i10 < iArr.length; i10++) {
-            this.h[iArr[i10]] = i10;
-        }
+    static {
+        String str = e2.m0.a;
+        d = Integer.toString(1, 36);
+        e = Integer.toString(2, 36);
     }
 
-    @Override // b2.k1
-    public final int a(boolean z10) {
-        if (p()) {
-            return -1;
-        }
-        if (z10) {
-            return this.g[0];
-        }
-        return 0;
+    public i1(int i10) {
+        u6.f("maxStars must be a positive integer", i10 > 0);
+        this.b = i10;
+        this.c = -1.0f;
     }
 
-    @Override // b2.k1
-    public final int b(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // b2.h1
+    public final boolean b() {
+        return this.c != -1.0f;
     }
 
-    @Override // b2.k1
-    public final int c(boolean z10) {
-        if (p()) {
-            return -1;
-        }
-        e9.i0 i0Var = this.e;
-        if (!z10) {
-            return i0Var.size() - 1;
-        }
-        return this.g[i0Var.size() - 1];
+    @Override // b2.h1
+    public final Bundle c() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(h1.a, 2);
+        bundle.putInt(d, this.b);
+        bundle.putFloat(e, this.c);
+        return bundle;
     }
 
-    @Override // b2.k1
-    public final int e(int i10, int i11, boolean z10) {
-        if (i11 == 1) {
-            return i10;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof i1)) {
+            return false;
         }
-        if (i10 == c(z10)) {
-            if (i11 == 2) {
-                return a(z10);
-            }
-            return -1;
-        }
-        if (!z10) {
-            return i10 + 1;
-        }
-        return this.g[this.h[i10] + 1];
+        i1 i1Var = (i1) obj;
+        return this.b == i1Var.b && this.c == i1Var.c;
     }
 
-    @Override // b2.k1
-    public final h1 f(int i10, h1 h1Var, boolean z10) {
-        h1 h1Var2 = (h1) this.f.get(i10);
-        h1Var.h(h1Var2.a, h1Var2.b, h1Var2.c, h1Var2.d, h1Var2.e, h1Var2.g, h1Var2.f);
-        return h1Var;
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.b), Float.valueOf(this.c));
     }
 
-    @Override // b2.k1
-    public final int h() {
-        return this.f.size();
-    }
-
-    @Override // b2.k1
-    public final int k(int i10, int i11, boolean z10) {
-        if (i11 == 1) {
-            return i10;
+    public i1(int i10, float f7) {
+        boolean z10 = false;
+        u6.f("maxStars must be a positive integer", i10 > 0);
+        if (f7 >= 0.0f && f7 <= i10) {
+            z10 = true;
         }
-        if (i10 == a(z10)) {
-            if (i11 == 2) {
-                return c(z10);
-            }
-            return -1;
-        }
-        if (!z10) {
-            return i10 - 1;
-        }
-        return this.g[this.h[i10] - 1];
-    }
-
-    @Override // b2.k1
-    public final Object l(int i10) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // b2.k1
-    public final j1 m(int i10, j1 j1Var, long j3) {
-        j1 j1Var2 = (j1) this.e.get(i10);
-        j1Var.b(j1Var2.a, j1Var2.c, j1Var2.d, j1Var2.e, j1Var2.f, j1Var2.g, j1Var2.h, j1Var2.i, j1Var2.j, j1Var2.l, j1Var2.m, j1Var2.n, j1Var2.o, j1Var2.p);
-        j1Var.k = j1Var2.k;
-        return j1Var;
-    }
-
-    @Override // b2.k1
-    public final int o() {
-        return this.e.size();
+        u6.f("starRating is out of range [0, maxStars]", z10);
+        this.b = i10;
+        this.c = f7;
     }
 }

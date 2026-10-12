@@ -3,21 +3,21 @@ package z7;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class kg implements k {
     public transient ed a;
-    public transient e9.d b;
+    public transient e9.e b;
 
     public final Map a() {
-        e9.d dVar = this.b;
-        if (dVar != null) {
-            return dVar;
+        e9.e eVar = this.b;
+        if (eVar != null) {
+            return eVar;
         }
         lg lgVar = (lg) this;
-        e9.d dVar2 = new e9.d(lgVar, lgVar.c, 2);
-        this.b = dVar2;
-        return dVar2;
+        e9.e eVar2 = new e9.e(lgVar, lgVar.c, 2);
+        this.b = eVar2;
+        return eVar2;
     }
 
     public final Set b() {
@@ -42,10 +42,10 @@ public abstract class kg implements k {
     }
 
     public final int hashCode() {
-        return ((e9.d) a()).b.hashCode();
+        return ((e9.e) a()).b.hashCode();
     }
 
     public final String toString() {
-        return ((e9.d) a()).b.toString();
+        return ((e9.e) a()).b.toString();
     }
 }

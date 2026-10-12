@@ -1,200 +1,277 @@
 package org.telegram.ui;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Toast;
 import java.util.ArrayList;
-import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uv implements View.OnClickListener {
+public final /* synthetic */ class uv implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ty b;
+    public final /* synthetic */ yy b;
 
-    public /* synthetic */ uv(ty tyVar, int i10) {
+    public /* synthetic */ uv(yy yyVar, int i10) {
         this.a = i10;
-        this.b = tyVar;
+        this.b = yyVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        ArrayList arrayList;
-        kx kxVar;
-        kx kxVar2;
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01a0  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x01af  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0216  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01a5  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        org.telegram.ui.ActionBar.u0 u0Var;
+        int i10;
+        lg1 lg1Var = null;
         switch (this.a) {
             case 0:
-                ty tyVar = this.b;
-                if (tyVar.X3() && (arrayList = tyVar.D2) != null && !arrayList.isEmpty() && tyVar.getParentActivity() != null) {
-                    int i10 = 0;
-                    MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) tyVar.D2.get(0);
-                    dx dxVar = tyVar.B1;
-                    CharSequence fieldText = dxVar != null ? dxVar.getFieldText() : photoEntry.caption;
-                    ArrayList arrayList2 = tyVar.D2;
-                    int size = arrayList2.size();
-                    while (i10 < size) {
-                        Object obj = arrayList2.get(i10);
-                        i10++;
-                        ((MediaController.PhotoEntry) obj).caption = fieldText;
-                    }
-                    PhotoViewer.t1().K2(null, tyVar, tyVar.getResourceProvider());
-                    PhotoViewer.t1().p7 = true;
-                    PhotoViewer.t1().q7 = fieldText;
-                    ArrayList arrayList3 = new ArrayList(tyVar.D2);
-                    boolean[] zArr = new boolean[tyVar.D2.size()];
-                    Arrays.fill(zArr, true);
-                    PhotoViewer.t1().g2(arrayList3, 0, 0, false, new zx(tyVar, zArr), null);
-                    PhotoViewer t12 = PhotoViewer.t1();
-                    t12.f4 = true;
-                    CheckBox checkBox = t12.N0;
-                    if (checkBox != null) {
-                        checkBox.setVisibility(8);
-                    }
-                    PhotoViewer.CounterView counterView = t12.O0;
-                    if (counterView != null) {
-                        counterView.setVisibility(8);
-                        break;
-                    }
-                }
+                MessagesController.getInstance(this.b.currentAccount).deleteUserPhoto(null);
                 break;
             case 1:
-                ty tyVar2 = this.b;
-                tyVar2.L4(true, false, true, false);
-                tyVar2.Y.b(true);
-                AndroidUtilities.runOnUIThread(new ov(tyVar2, 3), 100L);
+                yy yyVar = this.b;
+                yyVar.getClass();
+                yyVar.presentFragment(new UserInfoActivity());
                 break;
             case 2:
-                ty tyVar3 = this.b;
-                if (tyVar3.G0 && (kxVar = tyVar3.E0) != null && !kxVar.g()) {
-                    tyVar3.u4(true, true);
-                    break;
-                } else {
-                    tyVar3.M4();
-                    break;
+                yy yyVar2 = this.b;
+                yyVar2.x4(false, true);
+                if (yyVar2.e0 != null) {
+                    int i11 = 0;
+                    while (true) {
+                        xy[] xyVarArr = yyVar2.e0;
+                        if (i11 >= xyVarArr.length) {
+                            break;
+                        } else {
+                            if (xyVarArr[i11].getVisibility() == 0) {
+                                xy xyVar = yyVar2.e0[i11];
+                                if (!xyVar.d.G) {
+                                    xyVar.q(false);
+                                }
+                            }
+                            i11++;
+                        }
+                    }
                 }
                 break;
             case 3:
-                ty tyVar4 = this.b;
-                if (tyVar4.G0 && (kxVar2 = tyVar4.E0) != null && !kxVar2.g()) {
-                    tyVar4.u4(true, true);
-                    break;
-                } else {
-                    tyVar4.M4();
-                    break;
-                }
+                yy yyVar3 = this.b;
+                yyVar3.X.r.requestFocus();
+                AndroidUtilities.showKeyboard(yyVar3.X.r);
                 break;
             case 4:
-                ty tyVar5 = this.b;
-                tyVar5.getClass();
+                yy yyVar4 = this.b;
+                yyVar4.getClass();
                 Bundle bundle = new Bundle();
-                bundle.putLong("community_id", tyVar5.X2);
-                tyVar5.presentFragment(new fi.s(bundle));
+                bundle.putLong("community_id", yyVar4.X2);
+                yyVar4.presentFragment(new gi.p(bundle));
                 break;
             case 5:
-                ty tyVar6 = this.b;
-                ArrayList arrayList4 = tyVar6.I2;
-                if (tyVar6.C2 != null && !arrayList4.isEmpty()) {
-                    ArrayList arrayList5 = new ArrayList();
-                    for (int i11 = 0; i11 < arrayList4.size(); i11++) {
-                        arrayList5.add(MessagesStorage.TopicKey.of(((Long) arrayList4.get(i11)).longValue(), 0L));
-                    }
-                    tyVar6.C2.w(tyVar6, arrayList5, tyVar6.B1.getFieldText(), false, tyVar6.J2, tyVar6.K2, tyVar6.L2, null);
+                yy yyVar5 = this.b;
+                yyVar5.e0[0].a.requestLayout();
+                sx sxVar = yyVar5.F3;
+                if (sxVar != null && (sxVar.getFragment() instanceof lg1)) {
+                    lg1Var = (lg1) yyVar5.F3.getFragment();
+                }
+                if (lg1Var != null) {
+                    lg1Var.B0();
+                }
+                yyVar5.D3(false);
+                yyVar5.P4();
+                iy iyVar = yyVar5.C0;
+                if (iyVar != null) {
+                    iyVar.invalidate();
                     break;
                 }
                 break;
             case 6:
-                this.b.Y3(true);
+                yy yyVar6 = this.b;
+                yyVar6.getClass();
+                yyVar6.presentFragment(new o91(null));
                 break;
             case 7:
-                this.b.finishPreviewFragment();
+                yy yyVar7 = this.b;
+                if (!yyVar7.Y2.collapsed_in_dialogs) {
+                    yyVar7.getMessagesController().toggleCommunityCollapsedInDialogs(yyVar7.X2, true);
+                    yyVar7.finishFragment();
+                    break;
+                }
                 break;
             case 8:
-                ty tyVar7 = this.b;
-                tyVar7.z0.setIsEditing(false);
-                tyVar7.F4(false);
+                yy yyVar8 = this.b;
+                if (yyVar8.Y2.collapsed_in_dialogs) {
+                    yyVar8.getMessagesController().toggleCommunityCollapsedInDialogs(yyVar8.X2, false);
+                    yyVar8.finishFragment();
+                    break;
+                }
                 break;
             case 9:
-                ty tyVar8 = this.b;
-                tyVar8.getClass();
-                tyVar8.showDialog(new rg.y0((org.telegram.ui.ActionBar.n2) tyVar8, 2, true));
+                yy yyVar9 = this.b;
+                yyVar9.getClass();
+                yyVar9.presentFragment(new l());
                 break;
             case 10:
-                ty tyVar9 = this.b;
-                tyVar9.getContactsController().loadGlobalPrivacySetting();
-                tyVar9.H4();
+                this.b.D4();
                 break;
             case 11:
-                this.b.m4(view);
+                yy yyVar10 = this.b;
+                if (!yy.w4) {
+                    yy.w4 = true;
+                    SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
+                    String str = "Blue";
+                    String string = sharedPreferences.getString("lastDayTheme", "Blue");
+                    if (org.telegram.ui.ActionBar.g6.O0(string) == null || org.telegram.ui.ActionBar.g6.O0(string).q()) {
+                        string = "Blue";
+                    }
+                    String str2 = "Dark Blue";
+                    String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
+                    if (org.telegram.ui.ActionBar.g6.O0(string2) == null || !org.telegram.ui.ActionBar.g6.O0(string2).q()) {
+                        string2 = "Dark Blue";
+                    }
+                    org.telegram.ui.ActionBar.f6 f6Var = org.telegram.ui.ActionBar.g6.I;
+                    if (string.equals(string2)) {
+                        if (f6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                            str2 = string2;
+                            boolean equals = str.equals(f6Var.m());
+                            org.telegram.ui.ActionBar.f6 O0 = !equals ? org.telegram.ui.ActionBar.g6.O0(str2) : org.telegram.ui.ActionBar.g6.O0(str);
+                            u0Var = yyVar10.k0;
+                            if (u0Var != null) {
+                                int[] iArr = {(yyVar10.k0.getIconView().getMeasuredWidth() / 2) + r7, (yyVar10.k0.getIconView().getMeasuredHeight() / 2) + r7};
+                                u0Var.getLocationInWindow(iArr);
+                                int i12 = iArr[0];
+                                int i13 = iArr[1];
+                                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, O0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), null, null, null, Boolean.TRUE);
+                            }
+                            org.telegram.ui.Components.zc a02 = org.telegram.ui.Components.zc.a0(yyVar10);
+                            uv uvVar = new uv(yyVar10, 27);
+                            i10 = org.telegram.ui.ActionBar.g6.o;
+                            if (i10 == 0) {
+                                if (a02 != null) {
+                                    try {
+                                        a02.I(R.raw.auto_night_off, i10 == 3 ? LocaleController.getString("AutoNightSystemModeOff", R.string.AutoNightSystemModeOff) : LocaleController.getString("AutoNightModeOff", R.string.AutoNightModeOff), LocaleController.getString("Settings", R.string.Settings), 5000, false, uvVar).j();
+                                    } catch (Exception e) {
+                                        FileLog.e(e);
+                                    }
+                                }
+                                org.telegram.ui.ActionBar.g6.o = 0;
+                                org.telegram.ui.ActionBar.g6.r1();
+                                org.telegram.ui.ActionBar.g6.A();
+                                break;
+                            }
+                        }
+                    } else {
+                        str2 = string2;
+                    }
+                    str = string;
+                    boolean equals2 = str.equals(f6Var.m());
+                    if (!equals2) {
+                    }
+                    u0Var = yyVar10.k0;
+                    if (u0Var != null) {
+                    }
+                    org.telegram.ui.Components.zc a022 = org.telegram.ui.Components.zc.a0(yyVar10);
+                    uv uvVar2 = new uv(yyVar10, 27);
+                    i10 = org.telegram.ui.ActionBar.g6.o;
+                    if (i10 == 0) {
+                    }
+                }
                 break;
             case 12:
-                ty.s0(this.b);
+                yy yyVar11 = this.b;
+                yyVar11.getClass();
+                yyVar11.presentFragment(new j70(new Bundle()));
                 break;
             case 13:
-                ty.G0(this.b);
+                yy.Z(this.b);
                 break;
             case 14:
-                ty.u0(this.b);
+                yy yyVar12 = this.b;
+                yyVar12.getClass();
+                yyVar12.presentFragment(new org.telegram.ui.Wallet.z4());
                 break;
             case 15:
-                ty tyVar10 = this.b;
-                tyVar10.showDialog(org.telegram.ui.Components.g5.l(tyVar10.getParentActivity(), LocaleController.getString(R.string.EditProfileBirthdayTitle), LocaleController.getString(R.string.EditProfileBirthdayButton), null, new wv(tyVar10, 1), new ov(tyVar10, 18), false, false, tyVar10.getResourceProvider()).a);
+                this.b.j3();
                 break;
             case 16:
-                ty.y0(this.b);
+                yy.q0(this.b);
                 break;
             case 17:
-                ty.x0(this.b);
+                this.b.R4();
                 break;
             case 18:
-                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "dialogs_hint");
-                premiumPreviewFragment.j0 = true;
-                ty tyVar11 = this.b;
-                tyVar11.presentFragment(premiumPreviewFragment);
-                AndroidUtilities.runOnUIThread(new ov(tyVar11, 22), 250L);
+                yy yyVar13 = this.b;
+                org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
+                k2Var.a = true;
+                yyVar13.showAsSheet(new PrivacyControlActivity(11, false), k2Var);
                 break;
             case 19:
-                ty.Y(this.b);
+                this.b.fragmentView.dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
                 break;
             case 20:
-                PremiumPreviewFragment premiumPreviewFragment2 = new PremiumPreviewFragment(0, "dialogs_hint");
-                premiumPreviewFragment2.j0 = true;
-                ty tyVar12 = this.b;
-                tyVar12.presentFragment(premiumPreviewFragment2);
-                AndroidUtilities.runOnUIThread(new ov(tyVar12, 16), 250L);
+                yy yyVar14 = this.b;
+                ArrayList arrayList = yyVar14.I2;
+                yyVar14.J2 = false;
+                if (yyVar14.C2 != null && !arrayList.isEmpty()) {
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i14 = 0; i14 < arrayList.size(); i14++) {
+                        arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i14)).longValue(), 0L));
+                    }
+                    yyVar14.C2.w(yyVar14, arrayList2, yyVar14.B1.getFieldText(), false, yyVar14.J2, yyVar14.K2, yyVar14.L2, null);
+                    break;
+                }
                 break;
             case 21:
-                y6 y6Var = new y6();
-                ty tyVar13 = this.b;
-                tyVar13.presentFragment(y6Var);
-                AndroidUtilities.runOnUIThread(new hw(tyVar13, 11), 250L);
+                yy yyVar15 = this.b;
+                org.telegram.ui.Components.g5.L(yyVar15.getParentActivity(), -1L, new gy(yyVar15), yyVar15.getResourceProvider());
                 break;
             case 22:
-                ty.z0(this.b);
+                yy.v0(this.b);
                 break;
             case 23:
-                ty.X(this.b);
+                yy yyVar16 = this.b;
+                yyVar16.getClass();
+                if (LaunchActivity.R() != null) {
+                    yyVar16.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                    break;
+                }
                 break;
             case 24:
-                ty.k0(this.b);
+                this.b.x4(false, true);
                 break;
             case 25:
-                ty tyVar14 = this.b;
-                of.f.s(tyVar14.getParentActivity(), tyVar14.getMessagesController().premiumManageSubscriptionUrl);
+                yy yyVar17 = this.b;
+                yyVar17.getClass();
+                yyVar17.presentFragment(new l());
                 break;
             case 26:
-                ty.j0(this.b);
+                yy yyVar18 = this.b;
+                yyVar18.getClass();
+                yyVar18.presentFragment(new FiltersSetupActivity());
                 break;
             case 27:
-                ty.w0(this.b);
+                yy yyVar19 = this.b;
+                yyVar19.getClass();
+                yyVar19.presentFragment(new ThemeActivity(1));
+                break;
+            case 28:
+                yy yyVar20 = this.b;
+                yyVar20.getMessagesStorage().clearLocalDatabase();
+                Toast.makeText(yyVar20.getParentActivity(), LocaleController.getString(R.string.DebugClearLocalDatabaseSuccess), 0).show();
                 break;
             default:
-                ty.W(this.b);
+                this.b.getMessagesController().clearSendAsPeers();
                 break;
         }
     }

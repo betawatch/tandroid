@@ -1,11 +1,11 @@
 package d3;
 
 import androidx.car.app.media.b;
-import b2.r;
-import b2.r0;
-import b2.s0;
+import b2.w;
+import b2.w0;
+import b2.x0;
 import c3.b0;
-import c3.h0;
+import c3.i0;
 import c3.k;
 import c3.n;
 import c3.o;
@@ -14,19 +14,19 @@ import c3.q;
 import c3.s;
 import c3.t;
 import c3.y;
-import e2.d;
-import e2.d0;
-import e9.a1;
-import e9.g0;
-import e9.i0;
-import hg.c;
+import c5.c0;
+import e2.m0;
+import e9.l0;
+import e9.n0;
+import e9.x1;
+import i2.d;
 import java.io.EOFException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -43,8 +43,8 @@ public final class a implements o {
     public int j;
     public long k;
     public q l;
-    public h0 m;
-    public h0 n;
+    public i0 m;
+    public i0 n;
     public b0 o;
     public boolean p;
     public long q;
@@ -53,7 +53,7 @@ public final class a implements o {
     public int i = -1;
 
     static {
-        String str = d0.a;
+        String str = m0.a;
         Charset charset = StandardCharsets.UTF_8;
         u = "#!AMR\n".getBytes(charset);
         v = "#!AMR-WB\n".getBytes(charset);
@@ -68,81 +68,39 @@ public final class a implements o {
 
     @Override // c3.o
     public final boolean a(p pVar) {
-        return d(pVar);
-    }
-
-    public final int b(p pVar) {
-        boolean z10;
-        pVar.q();
-        byte[] bArr = this.a;
-        pVar.a(0, 1, bArr);
-        byte b10 = bArr[0];
-        if ((b10 & 131) > 0) {
-            throw s0.a(null, "Invalid padding bits for frame header " + ((int) b10));
-        }
-        int i10 = (b10 >> 3) & 15;
-        if (i10 >= 0 && i10 <= 15 && (((z10 = this.d) && (i10 < 10 || i10 > 13)) || (!z10 && (i10 < 12 || i10 > 14)))) {
-            return z10 ? t[i10] : s[i10];
-        }
-        StringBuilder sb2 = new StringBuilder("Illegal AMR ");
-        sb2.append(this.d ? "WB" : "NB");
-        sb2.append(" frame type ");
-        sb2.append(i10);
-        throw s0.a(null, sb2.toString());
-    }
-
-    public final boolean d(p pVar) {
-        pVar.q();
-        byte[] bArr = u;
-        byte[] bArr2 = new byte[bArr.length];
-        pVar.a(0, bArr.length, bArr2);
-        if (Arrays.equals(bArr2, bArr)) {
-            this.d = false;
-            pVar.r(bArr.length);
-            return true;
-        }
-        pVar.q();
-        byte[] bArr3 = v;
-        byte[] bArr4 = new byte[bArr3.length];
-        pVar.a(0, bArr3.length, bArr4);
-        if (!Arrays.equals(bArr4, bArr3)) {
-            return false;
-        }
-        this.d = true;
-        pVar.r(bArr3.length);
-        return true;
+        return h(pVar);
     }
 
     @Override // c3.o
-    public final void g(q qVar) {
+    public final void c(q qVar) {
         this.l = qVar;
-        h0 f22 = qVar.f2(0, 1);
-        this.m = f22;
-        this.n = f22;
-        qVar.k1();
+        i0 a02 = qVar.a0(0, 1);
+        this.m = a02;
+        this.n = a02;
+        qVar.D();
     }
 
     @Override // c3.o
-    public final void h(long j3, long j10) {
+    public final void d(long j10, long j11) {
         this.e = 0L;
         this.f = 0;
         this.g = 0;
-        this.q = j10;
+        this.q = j11;
         b0 b0Var = this.o;
         if (!(b0Var instanceof y)) {
-            if (j3 == 0 || !(b0Var instanceof k)) {
+            if (j10 == 0 || !(b0Var instanceof k)) {
                 this.k = 0L;
                 return;
             } else {
-                this.k = (Math.max(0L, j3 - ((k) b0Var).b) * 8000000) / r7.e;
+                this.k = (Math.max(0L, j10 - ((k) b0Var).b) * 8000000) / r7.e;
                 return;
             }
         }
         y yVar = (y) b0Var;
-        c5.b0 b0Var2 = yVar.b;
-        long i10 = b0Var2.b == 0 ? -9223372036854775807L : b0Var2.i(d0.b(yVar.a, j3));
-        this.k = i10;
-        if (Math.abs(this.q - i10) < 20000) {
+        c0 c0Var = yVar.b;
+        long m10 = c0Var.b == 0 ? -9223372036854775807L : c0Var.m(m0.c(yVar.a, j10));
+        this.k = m10;
+        if (Math.abs(this.q - m10) < 20000) {
             return;
         }
         this.p = true;
@@ -150,24 +108,24 @@ public final class a implements o {
     }
 
     @Override // c3.o
-    public final List i() {
-        g0 g0Var = i0.b;
-        return a1.e;
+    public final List e() {
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:32:0x0122  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x016b  */
     @Override // c3.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int m(p pVar, s sVar) {
+    public final int f(p pVar, s sVar) {
         p pVar2;
         int i10;
-        d.h(this.m);
-        String str = d0.a;
-        if (pVar.getPosition() == 0 && !d(pVar)) {
-            throw s0.a(null, "Could not find AMR header.");
+        this.m.getClass();
+        String str = m0.a;
+        if (pVar.getPosition() == 0 && !h(pVar)) {
+            throw x0.a(null, "Could not find AMR header.");
         }
         if (!this.r) {
             this.r = true;
@@ -176,21 +134,21 @@ public final class a implements o {
             String str3 = z10 ? "audio/amr-wb" : "audio/3gpp";
             int i11 = z10 ? b.AUDIO_CONTENT_SAMPLING_RATE : 8000;
             int i12 = z10 ? t[8] : s[7];
-            h0 h0Var = this.m;
-            r rVar = new r();
-            rVar.p = r0.n(str2);
-            rVar.q = r0.n(str3);
-            rVar.r = i12;
-            rVar.I = 1;
-            rVar.J = i11;
-            c.s(rVar, h0Var);
+            i0 i0Var = this.m;
+            w wVar = new w();
+            wVar.q = w0.n(str2);
+            wVar.r = w0.n(str3);
+            wVar.s = i12;
+            wVar.J = 1;
+            wVar.K = i11;
+            d.s(wVar, i0Var);
         }
         int i13 = 0;
         if (this.g == 0) {
             try {
-                int b10 = b(pVar);
-                this.f = b10;
-                this.g = b10;
+                int g10 = g(pVar);
+                this.f = g10;
+                this.g = g10;
                 if (this.i == -1) {
                     this.h = pVar.getPosition();
                     this.i = this.f;
@@ -201,21 +159,21 @@ public final class a implements o {
                 b0 b0Var = this.o;
                 if (b0Var instanceof y) {
                     y yVar = (y) b0Var;
-                    long j3 = this.k + this.e + 20000;
+                    long j10 = this.k + this.e + 20000;
                     long position = pVar.getPosition() + this.f;
-                    c5.b0 b0Var2 = yVar.b;
-                    int i14 = b0Var2.b;
-                    if (i14 == 0 || j3 - b0Var2.i(i14 - 1) >= 100000) {
-                        c5.b0 b0Var3 = yVar.a;
-                        c5.b0 b0Var4 = yVar.b;
-                        if (b0Var4.b == 0 && j3 > 0) {
-                            b0Var3.c(0L);
-                            b0Var4.c(0L);
+                    c0 c0Var = yVar.b;
+                    int i14 = c0Var.b;
+                    if (i14 == 0 || j10 - c0Var.m(i14 - 1) >= 100000) {
+                        c0 c0Var2 = yVar.a;
+                        c0 c0Var3 = yVar.b;
+                        if (c0Var3.b == 0 && j10 > 0) {
+                            c0Var2.c(0L);
+                            c0Var3.c(0L);
                         }
-                        b0Var3.c(position);
-                        b0Var4.c(j3);
+                        c0Var2.c(position);
+                        c0Var3.c(j10);
                     }
-                    if (this.p && Math.abs(this.q - j3) < 20000) {
+                    if (this.p && Math.abs(this.q - j10) < 20000) {
                         this.p = false;
                         this.n = this.m;
                     }
@@ -238,20 +196,22 @@ public final class a implements o {
                 if ((this.b & 1) == 0 || !((i10 = this.i) == -1 || i10 == this.f)) {
                     this.o = new t(-9223372036854775807L);
                 } else if (this.j >= 20 || i13 == -1) {
-                    this.o = new k(length, (int) ((i10 * 8000000) / 20000), i10, false, this.h);
-                    this.m.getClass();
+                    k kVar = new k(length, this.h, (int) ((i10 * 8000000) / 20000), i10, false, true);
+                    this.o = kVar;
+                    this.m.e(kVar.f);
                 }
-                b0 b0Var5 = this.o;
-                if (b0Var5 != null) {
-                    this.l.d2(b0Var5);
+                b0 b0Var2 = this.o;
+                if (b0Var2 != null) {
+                    this.l.K(b0Var2);
                 }
             }
             if (i13 == -1) {
-                b0 b0Var6 = this.o;
-                if (b0Var6 instanceof y) {
-                    ((y) b0Var6).c = this.k + this.e;
-                    this.l.d2(b0Var6);
-                    this.m.getClass();
+                b0 b0Var3 = this.o;
+                if (b0Var3 instanceof y) {
+                    long j11 = this.k + this.e;
+                    ((y) b0Var3).c = j11;
+                    this.l.K(b0Var3);
+                    this.m.e(j11);
                 }
             }
             return i13;
@@ -265,8 +225,50 @@ public final class a implements o {
         return i13;
     }
 
+    public final int g(p pVar) {
+        boolean z10;
+        pVar.q();
+        byte[] bArr = this.a;
+        pVar.a(0, 1, bArr);
+        byte b10 = bArr[0];
+        if ((b10 & 131) > 0) {
+            throw x0.a(null, "Invalid padding bits for frame header " + ((int) b10));
+        }
+        int i10 = (b10 >> 3) & 15;
+        if (i10 >= 0 && i10 <= 15 && (((z10 = this.d) && (i10 < 10 || i10 > 13)) || (!z10 && (i10 < 12 || i10 > 14)))) {
+            return z10 ? t[i10] : s[i10];
+        }
+        StringBuilder sb2 = new StringBuilder("Illegal AMR ");
+        sb2.append(this.d ? "WB" : "NB");
+        sb2.append(" frame type ");
+        sb2.append(i10);
+        throw x0.a(null, sb2.toString());
+    }
+
+    public final boolean h(p pVar) {
+        pVar.q();
+        byte[] bArr = u;
+        byte[] bArr2 = new byte[bArr.length];
+        pVar.a(0, bArr.length, bArr2);
+        if (Arrays.equals(bArr2, bArr)) {
+            this.d = false;
+            pVar.r(bArr.length);
+            return true;
+        }
+        pVar.q();
+        byte[] bArr3 = v;
+        byte[] bArr4 = new byte[bArr3.length];
+        pVar.a(0, bArr3.length, bArr4);
+        if (!Arrays.equals(bArr4, bArr3)) {
+            return false;
+        }
+        this.d = true;
+        pVar.r(bArr3.length);
+        return true;
+    }
+
     @Override // c3.o
-    public final o c() {
+    public final o b() {
         return this;
     }
 

@@ -1,13 +1,19 @@
 package qg;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface q1 {
-    void a();
+public final class q1 {
+    public int a;
+    public float b;
+    public float c;
 
-    void b(pg.m mVar);
+    public q1(float f7, float f10, int i10) {
+        this.a = i10;
+        this.b = f7;
+        this.c = f10;
+    }
 
-    pg.u0 v();
-
-    void y();
+    public final Object clone() {
+        return new q1(this.b, this.c, this.a);
+    }
 }

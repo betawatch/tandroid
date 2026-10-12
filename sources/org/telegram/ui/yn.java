@@ -1,33 +1,30 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.NumberTextView;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class yn extends org.telegram.ui.ActionBar.j5 {
-    public boolean M0;
-    public final /* synthetic */ zn N0;
+public final /* synthetic */ class yn implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.cd0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yn(zn znVar, Activity activity) {
-        super(activity);
-        this.N0 = znVar;
-        this.M0 = true;
+    public /* synthetic */ yn(org.telegram.ui.Components.cd0 cd0Var, int i10) {
+        this.a = i10;
+        this.b = cd0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j5
-    public final void d(int i10) {
-        super.d(i10);
-        if (this.M0 && getVisibility() == 0) {
-            int dp = AndroidUtilities.dp(4.0f) + getTextWidth();
-            zn znVar = this.N0;
-            znVar.G2 = dp;
-            NumberTextView numberTextView = znVar.F2;
-            if (numberTextView != null) {
-                numberTextView.setTranslationX(dp);
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                this.b.s(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
     }
 }

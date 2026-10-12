@@ -4,18 +4,20 @@ import a4.g;
 import android.graphics.Rect;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a {
-    public boolean b;
-    public boolean c;
-    public int[] d;
-    public int e;
-    public int f;
-    public Rect g;
+    public boolean d;
+    public boolean e;
+    public int[] f;
+    public int g;
+    public int h;
+    public Rect i;
+    public long b = -9223372036854775807L;
+    public long c = -9223372036854775807L;
     public final int[] a = new int[4];
-    public int h = -1;
-    public int i = -1;
+    public int j = -1;
+    public int k = -1;
 
     public static int a(int i10, int[] iArr) {
         return (i10 < 0 || i10 >= iArr.length) ? iArr[0] : iArr[i10];
@@ -42,7 +44,7 @@ public final class a {
                         i11 = 0;
                         break;
                     }
-                    i15 = (i15 << 4) | gVar.i(4);
+                    i15 = (i15 << 4) | gVar.g(4);
                 }
                 i10 = i15 & 3;
                 i11 = i15 < 4 ? width : i15 >> 2;

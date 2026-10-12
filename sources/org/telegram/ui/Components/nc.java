@@ -2,66 +2,47 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class nc extends qb {
-    public final fk0 a;
-    public final r6 b;
-    public final r6 c;
-    public final int d;
+public final class nc extends pb {
+    public final z9 a;
+    public final da0 b;
+    public final da0 c;
 
-    public nc(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        int i10 = org.telegram.ui.ActionBar.i6.Hi;
-        this.d = getThemedColor(i10);
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.i6.Fi));
-        fk0 fk0Var = new fk0(context);
-        this.a = fk0Var;
-        fk0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(fk0Var, w7.x5.h(56.0f, 48.0f, 8388627));
+    public nc(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, c6Var);
+        int i10 = org.telegram.ui.ActionBar.g6.Hi;
+        getThemedColor(i10);
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.g6.Fi));
+        z9 z9Var = new z9(context);
+        this.a = z9Var;
+        addView(z9Var, w7.a6.i(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
         int themedColor = getThemedColor(i10);
-        getThemedColor(org.telegram.ui.ActionBar.i6.Gi);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.x5.i(-1.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-        r6 r6Var = new r6(context, true, true, true);
-        this.b = r6Var;
-        r6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        r6Var.setTextColor(themedColor);
-        r6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        r6Var.setTypeface(AndroidUtilities.bold());
-        r6Var.setEllipsizeByGradient(true);
-        linearLayout.addView(r6Var, w7.x5.n(-1, 20));
-        r6 r6Var2 = new r6(context, true, true, true);
-        this.c = r6Var2;
-        r6Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        r6Var2.setTextColor(themedColor);
-        r6Var2.setTypeface(Typeface.SANS_SERIF);
-        r6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        r6Var2.setEllipsizeByGradient(true);
-        linearLayout.addView(r6Var2, w7.x5.n(-1, 18));
+        int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.g6.Gi);
+        LinearLayout e = org.telegram.messenger.yh.e(context, 1);
+        addView(e, w7.a6.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        da0 da0Var = new da0(context, null);
+        this.b = da0Var;
+        da0Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        da0Var.setTextColor(themedColor);
+        da0Var.setTextSize(1, 14.0f);
+        da0Var.setTypeface(AndroidUtilities.bold());
+        e.addView(da0Var);
+        da0 da0Var2 = new da0(context, null);
+        this.c = da0Var2;
+        da0Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        da0Var2.setTextColor(themedColor);
+        da0Var2.setLinkTextColor(themedColor2);
+        da0Var2.setTypeface(Typeface.SANS_SERIF);
+        da0Var2.setTextSize(1, 13.0f);
+        e.addView(da0Var2);
     }
 
-    public final void c(int i10, String... strArr) {
-        fk0 fk0Var = this.a;
-        fk0Var.f(i10, 32, 32, null);
-        for (String str : strArr) {
-            fk0Var.h(this.d, str);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xb
+    @Override // org.telegram.ui.Components.wb
     public CharSequence getAccessibilityText() {
         return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
-    }
-
-    @Override // org.telegram.ui.Components.xb
-    public final void onShow() {
-        super.onShow();
-        this.a.d();
     }
 }

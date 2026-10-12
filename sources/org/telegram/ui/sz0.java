@@ -1,43 +1,66 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.ImageReceiver;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class sz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ProfileActivity a;
+public final class sz0 extends s4.r0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public sz0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public /* synthetic */ sz0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.ActionBar.k kVar;
-        ProfileActivity profileActivity = this.a;
-        kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-        kVar.C(profileActivity.p2 ? 1090519039 : profileActivity.Q5 != null ? 553648127 : org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.f8, profileActivity.z0), false);
-        oz0 oz0Var = profileActivity.e0;
-        ImageReceiver imageReceiver = oz0Var.U;
-        org.telegram.ui.Components.f6 animation = imageReceiver.getAnimation();
-        if (animation != null) {
-            animation.w(oz0Var);
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity = this.b;
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(profileActivity.getParentActivity().getCurrentFocus());
+                }
+                if (profileActivity.F0 && i10 != 2) {
+                    profileActivity.F0 = false;
+                }
+                org.telegram.ui.ActionBar.u0 u0Var = profileActivity.U0;
+                if (u0Var != null) {
+                    boolean z10 = i10 != 0;
+                    profileActivity.z1 = z10;
+                    u0Var.setEnabled((z10 || profileActivity.p2) ? false : true);
+                }
+                r01 r01Var = profileActivity.O;
+                boolean z11 = profileActivity.a.I1;
+                r01Var.getClass();
+                break;
         }
-        imageReceiver.clearImage();
-        ImageReceiver.BitmapHolder bitmapHolder = oz0Var.W;
-        if (bitmapHolder != null) {
-            bitmapHolder.release();
-            oz0Var.W = null;
-        }
-        oz0Var.V = 0.0f;
-        oz0Var.invalidate();
-        profileActivity.H0 = false;
-        profileActivity.l5(false);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
+    @Override // s4.r0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                ProfileActivity profileActivity = this.b;
+                org.telegram.ui.Components.v40 v40Var = profileActivity.X;
+                if (v40Var != null) {
+                    v40Var.b(true);
+                }
+                profileActivity.A3();
+                if (profileActivity.C1 != null && !profileActivity.D1 && profileActivity.c.N0() > profileActivity.v4 - 8) {
+                    profileActivity.R3(false);
+                }
+                r01 r01Var = profileActivity.O;
+                r01Var.setPinnedToTop(r01Var.getY() <= 0.0f);
+                profileActivity.U4();
+                break;
+        }
     }
 }

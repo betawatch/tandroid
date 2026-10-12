@@ -19,7 +19,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 final class aj {
     final a9.e a;
@@ -120,8 +120,8 @@ final class aj {
             TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
             this.a.c(new af(this, taskCompletionSource, decode, cloudProjectNumber, null, taskCompletionSource, integrityTokenRequest), taskCompletionSource);
             return taskCompletionSource.getTask();
-        } catch (IllegalArgumentException e7) {
-            return Tasks.forException(new IntegrityServiceException(-13, e7));
+        } catch (IllegalArgumentException e) {
+            return Tasks.forException(new IntegrityServiceException(-13, e));
         }
     }
 }

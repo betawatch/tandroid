@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements i5.e, c0 {
     public static final /* synthetic */ z a = new z();
@@ -43,7 +43,7 @@ public final /* synthetic */ class z implements i5.e, c0 {
             int i10 = s1Var.i();
             byte[] bArr = new byte[i10];
             y4 y4Var = new y4(bArr, i10);
-            h6 a2 = e6.c.a(s1.class);
+            i6 a2 = f6.c.a(s1.class);
             u5 u5Var = y4Var.a;
             if (u5Var == null) {
                 u5Var = new u5(y4Var);
@@ -54,7 +54,7 @@ public final /* synthetic */ class z implements i5.e, c0 {
             }
             throw new IllegalStateException("Did not write as much data as expected.");
         } catch (IOException e7) {
-            throw new RuntimeException(a1.g.q("Serializing ", s1Var.getClass().getName(), " to a byte array threw an IOException (should never happen)."), e7);
+            throw new RuntimeException(a1.g.p("Serializing ", s1Var.getClass().getName(), " to a byte array threw an IOException (should never happen)."), e7);
         }
     }
 

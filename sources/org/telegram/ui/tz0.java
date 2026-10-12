@@ -1,71 +1,47 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class tz0 extends qv0 {
-    public final /* synthetic */ ProfileActivity T;
+public final class tz0 implements qq {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ tq b;
+    public final /* synthetic */ ProfileActivity c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tz0(ProfileActivity profileActivity, ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
-        this.T = profileActivity;
+    public tz0(ProfileActivity profileActivity, TLRPC.Chat chat, tq tqVar) {
+        this.c = profileActivity;
+        this.a = chat;
+        this.b = tqVar;
     }
 
-    @Override // org.telegram.ui.qv0
-    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        org.telegram.ui.ActionBar.k kVar3;
-        if (f7 > 0.0f) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            ProfileActivity profileActivity = this.T;
-            rectF.set(0.0f, 0.0f, profileActivity.n0.getMeasuredWidth(), AndroidUtilities.dp(30.0f) + profileActivity.n0.getMeasuredHeight());
-            canvas.saveLayerAlpha(rectF, (int) (255.0f * f7), 31);
-            profileActivity.Z.draw(canvas);
-            canvas.save();
-            kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-            float x10 = kVar.getX();
-            kVar2 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-            canvas.translate(x10, kVar2.getY());
-            kVar3 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-            kVar3.draw(canvas);
-            canvas.restore();
-            org.telegram.ui.Components.fk0 fk0Var = profileActivity.v;
-            if (fk0Var != null && fk0Var.getVisibility() == 0 && profileActivity.v.getAlpha() > 0.0f) {
-                canvas.save();
-                float f14 = (f7 * 0.5f) + 0.5f;
-                canvas.scale(f14, f14, (profileActivity.v.getMeasuredWidth() / 2.0f) + profileActivity.v.getX(), (profileActivity.v.getMeasuredHeight() / 2.0f) + profileActivity.v.getY());
-                canvas.translate(profileActivity.v.getX(), profileActivity.v.getY());
-                profileActivity.v.draw(canvas);
-                canvas.restore();
+    @Override // org.telegram.ui.qq
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.c;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
+    }
+
+    @Override // org.telegram.ui.qq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = this.c;
+        profileActivity.removeSelfFromStack();
+        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1));
+        if (user == null || (chat = this.a) == null || profileActivity.e1 == 0) {
+            return;
+        }
+        tq tqVar = this.b;
+        if (!tqVar.Q || tqVar.getParentLayout() == null) {
+            return;
+        }
+        for (org.telegram.ui.ActionBar.m2 m2Var : tqVar.getParentLayout().getFragmentStack()) {
+            if (m2Var instanceof ac) {
+                ac acVar = (ac) m2Var;
+                acVar.V0();
+                AndroidUtilities.runOnUIThread(new uf0(acVar, user, chat, 25));
+                return;
             }
-            canvas.restore();
         }
-    }
-
-    @Override // org.telegram.ui.qv0
-    public final void e() {
-        super.e();
-        ProfileActivity profileActivity = this.T;
-        profileActivity.fragmentView.invalidate();
-        for (int i10 = 0; i10 < profileActivity.n0.getChildCount(); i10++) {
-            profileActivity.n0.getChildAt(i10).invalidate();
-        }
-        org.telegram.ui.Components.fk0 fk0Var = profileActivity.v;
-        if (fk0Var != null) {
-            fk0Var.invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.qv0
-    public final boolean j(View view, ImageReceiver imageReceiver) {
-        return super.j(view, imageReceiver) && this.T.a.getScrollState() != 1;
     }
 }

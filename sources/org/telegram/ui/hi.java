@@ -1,91 +1,97 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import android.view.View;
-import java.util.List;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class hi extends z4.a {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ SparseArray d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ List f;
-    public final /* synthetic */ MessageObject g;
-    public final /* synthetic */ org.telegram.ui.Components.kk0 h;
-    public final /* synthetic */ MessageObject i;
-    public final /* synthetic */ SparseIntArray j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ z4.g l;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout m;
-    public final /* synthetic */ int[] n;
-    public final /* synthetic */ int o;
-    public final /* synthetic */ zn p;
+public final class hi extends AnimatorListenerAdapter {
+    public final /* synthetic */ eo a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h5 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ bi.f4 e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ fo h;
 
-    public hi(zn znVar, int i10, SparseArray sparseArray, boolean z10, List list, MessageObject messageObject, org.telegram.ui.Components.kk0 kk0Var, MessageObject messageObject2, SparseIntArray sparseIntArray, int i11, z4.g gVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i12) {
-        this.p = znVar;
-        this.c = i10;
-        this.d = sparseArray;
-        this.e = z10;
-        this.f = list;
-        this.g = messageObject;
-        this.h = kk0Var;
-        this.i = messageObject2;
-        this.j = sparseIntArray;
-        this.k = i11;
-        this.l = gVar;
-        this.m = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.n = iArr;
-        this.o = i12;
+    public hi(fo foVar, eo eoVar, boolean z10, org.telegram.ui.ActionBar.h5 h5Var, boolean z11, bi.f4 f4Var, boolean z12) {
+        this.h = foVar;
+        this.a = eoVar;
+        this.b = z10;
+        this.c = h5Var;
+        this.d = z11;
+        this.e = f4Var;
+        this.f = z12;
     }
 
-    @Override // z4.a
-    public final void a(z4.g gVar, Object obj) {
-        gVar.removeView((View) obj);
-    }
-
-    @Override // z4.a
-    public final int b() {
-        return this.c;
-    }
-
-    @Override // z4.a
-    public final Object e(z4.g gVar, int i10) {
-        int i11;
-        SparseArray sparseArray = this.d;
-        View view = (View) sparseArray.get(i10);
-        if (view != null) {
-            gVar.addView(view);
-            return view;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        fo foVar = this.h;
+        if (foVar.F2.getTag() != null) {
+            foVar.F2.setVisibility(4);
+            int L8 = foVar.L8();
+            foVar.F2.a(Math.min(L8 - 1, Math.max(1, L8 - foVar.M4[0])), false);
+        } else {
+            foVar.F2.setAlpha(1.0f);
         }
-        int i12 = this.e ? i10 - 1 : i10;
-        TLRPC.ReactionCount reactionCount = i12 >= 0 ? (TLRPC.ReactionCount) this.f.get(i12) : null;
-        Context context = gVar.getContext();
-        zn znVar = this.p;
-        xn xnVar = znVar.ea;
-        i11 = ((org.telegram.ui.ActionBar.n2) znVar).currentAccount;
-        org.telegram.ui.Components.uk0 uk0Var = new org.telegram.ui.Components.uk0(context, xnVar, i11, this.g, reactionCount, true);
-        org.telegram.ui.Components.kk0 kk0Var = this.h;
-        uk0Var.h(kk0Var.getSeenUsers());
-        uk0Var.G = new z0(this, 16);
-        uk0Var.E = new o(11, this, this.i);
-        uk0Var.y = new ei.t4(this.j, i10, this.k, this.l, this.m, this.n);
-        if (i12 < 0) {
-            uk0Var.setPredictiveCount(this.o);
-            kk0Var.setSeenCallback(new h3(uk0Var, 1));
+        foVar.F2.setTranslationY(0.0f);
+        foVar.D2[0].setTranslationX(0.0f);
+        foVar.D2[1].setTranslationX(0.0f);
+        foVar.F2.setTranslationX(foVar.G2 + 0.0f);
+        eo eoVar = this.a;
+        eoVar.setTranslationY(0.0f);
+        boolean z10 = this.b;
+        if (!z10) {
+            eoVar.setTranslationY(0.0f);
         }
-        gVar.addView(uk0Var);
-        sparseArray.put(i10, uk0Var);
-        return uk0Var;
-    }
-
-    @Override // z4.a
-    public final boolean f(View view, Object obj) {
-        return view == obj;
+        org.telegram.ui.ActionBar.h5 h5Var = this.c;
+        if (!z10) {
+            h5Var.setTranslationY(0.0f);
+        }
+        boolean z11 = this.d;
+        bi.f4 f4Var = this.e;
+        if (!z11) {
+            f4Var.setTranslationY(0.0f);
+        }
+        foVar.C2[0].setTranslationX(0.0f);
+        foVar.C2[1].setTranslationX(0.0f);
+        foVar.B2[1].setAlpha(1.0f);
+        foVar.B2[1].setScaleX(1.0f);
+        foVar.B2[1].setScaleY(1.0f);
+        foVar.B2[0].setAlpha(1.0f);
+        foVar.B2[0].setScaleX(1.0f);
+        foVar.B2[0].setScaleY(1.0f);
+        org.telegram.ui.ActionBar.h5[] h5VarArr = foVar.D2;
+        org.telegram.ui.ActionBar.h5 h5Var2 = h5VarArr[0];
+        h5VarArr[1] = h5Var2;
+        h5VarArr[0] = h5Var;
+        h5Var2.setVisibility(4);
+        bi.f4[] f4VarArr = foVar.E2;
+        bi.f4 f4Var2 = f4VarArr[0];
+        f4VarArr[1] = f4Var2;
+        f4VarArr[0] = f4Var;
+        f4Var2.setVisibility(4);
+        eo[] eoVarArr = foVar.C2;
+        eo eoVar2 = eoVarArr[0];
+        if (eoVar != eoVar2) {
+            eoVarArr[1] = eoVar2;
+            eoVarArr[0] = eoVar;
+            eoVar2.setVisibility(4);
+        }
+        if (this.f) {
+            foVar.B2[1].setImageBitmap(null);
+            foVar.B2[1].setVisibility(4);
+        }
+        org.telegram.ui.Components.z9[] z9VarArr = foVar.B2;
+        org.telegram.ui.Components.z9 z9Var = z9VarArr[1];
+        org.telegram.ui.Components.z9 z9Var2 = z9VarArr[0];
+        z9VarArr[1] = z9Var2;
+        z9VarArr[0] = z9Var;
+        z9Var2.setAlpha(1.0f);
+        foVar.B2[1].setScaleX(1.0f);
+        foVar.B2[1].setScaleY(1.0f);
+        foVar.B2[1].setVisibility(4);
+        foVar.H2[0] = null;
+        foVar.A2 = false;
     }
 }

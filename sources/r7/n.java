@@ -6,9 +6,9 @@ import android.os.Parcelable;
 import android.os.WorkSource;
 import com.google.android.gms.location.LocationRequest;
 import java.util.ArrayList;
-import w7.d0;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class n extends o6.a {
     public static final Parcelable.Creator<n> CREATOR = new m(1);
@@ -27,18 +27,18 @@ public final class n extends o6.a {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public n(LocationRequest locationRequest, ArrayList arrayList, boolean z10, boolean z11, String str, boolean z12, boolean z13, String str2, long j3) {
+    public n(LocationRequest locationRequest, ArrayList arrayList, boolean z10, boolean z11, String str, boolean z12, boolean z13, String str2, long j10) {
         j jVar;
-        long j10;
+        long j11;
         int i10 = locationRequest.a;
-        long j11 = locationRequest.b;
-        long j12 = locationRequest.c;
-        long j13 = locationRequest.d;
-        long j14 = locationRequest.e;
+        long j12 = locationRequest.b;
+        long j13 = locationRequest.c;
+        long j14 = locationRequest.d;
+        long j15 = locationRequest.e;
         int i11 = locationRequest.f;
         float f7 = locationRequest.h;
         boolean z14 = locationRequest.n;
-        long j15 = locationRequest.r;
+        long j16 = locationRequest.r;
         boolean z15 = z14;
         int i12 = locationRequest.s;
         int i13 = locationRequest.v;
@@ -52,7 +52,7 @@ public final class n extends o6.a {
             if (!arrayList.isEmpty()) {
                 workSource = new WorkSource();
                 jVar = jVar2;
-                j10 = j14;
+                j11 = j15;
                 int i14 = 0;
                 for (int size = arrayList.size(); i14 < size; size = size) {
                     Object obj = arrayList.get(i14);
@@ -72,24 +72,24 @@ public final class n extends o6.a {
                 }
                 z16 = z12 ? true : z16;
                 z15 = z13 ? true : z15;
-                if (j3 != Long.MAX_VALUE) {
-                    if (j3 != -1 && j3 < 0) {
+                if (j10 != Long.MAX_VALUE) {
+                    if (j10 != -1 && j10 < 0) {
                         z17 = false;
                     }
                     n6.l.a("maxUpdateAgeMillis must be greater than or equal to 0, or IMPLICIT_MAX_UPDATE_AGE", z17);
-                    j15 = j3;
+                    j16 = j10;
                 }
-                if (j12 != -1) {
-                    j12 = j11;
+                if (j13 != -1) {
+                    j13 = j12;
                 } else if (i10 != 105) {
-                    j12 = Math.min(j12, j11);
+                    j13 = Math.min(j13, j12);
                 }
-                this.a = new LocationRequest(i10, j11, j12, Math.max(j13, j11), Long.MAX_VALUE, j10, i11, f7, z15, j15 == -1 ? j11 : j15, i12, i13, str3, z16, new WorkSource(workSource), jVar);
+                this.a = new LocationRequest(i10, j12, j13, Math.max(j14, j12), Long.MAX_VALUE, j11, i11, f7, z15, j16 == -1 ? j12 : j16, i12, i13, str3, z16, new WorkSource(workSource), jVar);
             }
             jVar = jVar2;
             workSource = null;
         }
-        j10 = j14;
+        j11 = j15;
         boolean z172 = true;
         if (z10) {
         }
@@ -101,11 +101,11 @@ public final class n extends o6.a {
         }
         if (z13) {
         }
-        if (j3 != Long.MAX_VALUE) {
+        if (j10 != Long.MAX_VALUE) {
         }
-        if (j12 != -1) {
+        if (j13 != -1) {
         }
-        this.a = new LocationRequest(i10, j11, j12, Math.max(j13, j11), Long.MAX_VALUE, j10, i11, f7, z15, j15 == -1 ? j11 : j15, i12, i13, str3, z16, new WorkSource(workSource), jVar);
+        this.a = new LocationRequest(i10, j12, j13, Math.max(j14, j12), Long.MAX_VALUE, j11, i11, f7, z15, j16 == -1 ? j12 : j16, i12, i13, str3, z16, new WorkSource(workSource), jVar);
     }
 
     public final boolean equals(Object obj) {
@@ -125,8 +125,8 @@ public final class n extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.k(parcel, 1, this.a, i10);
-        d0.r(parcel, q6);
+        int q6 = g0.q(parcel, 20293);
+        g0.k(parcel, 1, this.a, i10);
+        g0.r(parcel, q6);
     }
 }

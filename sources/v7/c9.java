@@ -1,121 +1,36 @@
 package v7;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class c9 {
     public static t7.r a;
+    public static StaticLayout b;
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0042  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x0084 -> B:13:0x0067). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x0087 -> B:13:0x0067). Please report as a decompilation issue!!! */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final Object a(List list, k1.t tVar, ld.c cVar) {
-        k1.c cVar2;
-        int i10;
-        List list2;
-        kotlin.jvm.internal.p pVar;
-        Iterator it;
-        Throwable th2;
-        if (cVar instanceof k1.c) {
-            cVar2 = (k1.c) cVar;
-            int i11 = cVar2.d;
-            if ((i11 & TLObject.FLAG_31) != 0) {
-                cVar2.d = i11 - TLObject.FLAG_31;
-                Object obj = cVar2.c;
-                Object obj2 = kd.a.a;
-                i10 = cVar2.d;
-                if (i10 != 0) {
-                    a8.b(obj);
-                    ArrayList arrayList = new ArrayList();
-                    k1.e eVar = new k1.e(list, arrayList, null);
-                    cVar2.a = arrayList;
-                    cVar2.d = 1;
-                    if (tVar.a(eVar, cVar2) == obj2) {
-                        return obj2;
-                    }
-                    list2 = arrayList;
-                } else {
-                    if (i10 != 1) {
-                        if (i10 != 2) {
-                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                        }
-                        it = cVar2.b;
-                        pVar = (kotlin.jvm.internal.p) cVar2.a;
-                        try {
-                            a8.b(obj);
-                        } catch (Throwable th3) {
-                            Object obj3 = pVar.a;
-                            if (obj3 == null) {
-                                pVar.a = th3;
-                            } else {
-                                y7.a((Throwable) obj3, th3);
-                            }
-                        }
-                        while (it.hasNext()) {
-                            sd.l lVar = (sd.l) it.next();
-                            cVar2.a = pVar;
-                            cVar2.b = it;
-                            cVar2.d = 2;
-                            if (lVar.invoke(cVar2) == obj2) {
-                                return obj2;
-                            }
-                        }
-                        th2 = (Throwable) pVar.a;
-                        if (th2 == null) {
-                            return hd.i.a;
-                        }
-                        throw th2;
-                    }
-                    list2 = (List) cVar2.a;
-                    a8.b(obj);
-                }
-                pVar = new kotlin.jvm.internal.p();
-                it = list2.iterator();
-                while (it.hasNext()) {
-                }
-                th2 = (Throwable) pVar.a;
-                if (th2 == null) {
-                }
-            }
+    public static ji.b0 a(int i10, int i11, int i12, int i13) {
+        Rect rect = new Rect(i10, i11, i12, i13);
+        if (b == null) {
+            b = new StaticLayout(" ", new TextPaint(), 1, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-        cVar2 = new k1.c(cVar);
-        Object obj4 = cVar2.c;
-        Object obj22 = kd.a.a;
-        i10 = cVar2.d;
-        if (i10 != 0) {
-        }
-        pVar = new kotlin.jvm.internal.p();
-        it = list2.iterator();
-        while (it.hasNext()) {
-        }
-        th2 = (Throwable) pVar.a;
-        if (th2 == null) {
-        }
+        return new ji.b0(b, rect);
     }
 
-    public static synchronized z8 b(w8 w8Var) {
-        z8 z8Var;
+    public static synchronized y8 b(v8 v8Var) {
+        y8 y8Var;
         synchronized (c9.class) {
             try {
                 if (a == null) {
                     a = new t7.r(1);
                 }
-                z8Var = (z8) a.O0(w8Var);
+                y8Var = (y8) a.R0(v8Var);
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return z8Var;
+        return y8Var;
     }
 }

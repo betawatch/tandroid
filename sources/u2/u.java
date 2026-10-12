@@ -1,61 +1,31 @@
 package u2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.net.Uri;
+import java.util.Collections;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class u extends r {
-    public final /* synthetic */ int f;
+public final class u {
+    public static final AtomicLong g = new AtomicLong();
+    public final g2.m a;
+    public final Uri b;
+    public final Map c;
+    public final long d;
+    public final long e;
+    public final long f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u(b2.k1 k1Var, int i10) {
-        super(k1Var);
-        this.f = i10;
+    public u(g2.m mVar, long j10) {
+        this(mVar, mVar.a, Collections.EMPTY_MAP, j10, 0L, 0L);
     }
 
-    @Override // u2.r, b2.k1
-    public int e(int i10, int i11, boolean z10) {
-        switch (this.f) {
-            case 0:
-                b2.k1 k1Var = this.e;
-                int e7 = k1Var.e(i10, i11, z10);
-                return e7 == -1 ? k1Var.a(z10) : e7;
-            default:
-                return super.e(i10, i11, z10);
-        }
-    }
-
-    @Override // u2.r, b2.k1
-    public b2.h1 f(int i10, b2.h1 h1Var, boolean z10) {
-        switch (this.f) {
-            case 1:
-                super.f(i10, h1Var, z10);
-                h1Var.f = true;
-                return h1Var;
-            default:
-                return super.f(i10, h1Var, z10);
-        }
-    }
-
-    @Override // u2.r, b2.k1
-    public int k(int i10, int i11, boolean z10) {
-        switch (this.f) {
-            case 0:
-                b2.k1 k1Var = this.e;
-                int k10 = k1Var.k(i10, i11, z10);
-                return k10 == -1 ? k1Var.c(z10) : k10;
-            default:
-                return super.k(i10, i11, z10);
-        }
-    }
-
-    @Override // u2.r, b2.k1
-    public b2.j1 m(int i10, b2.j1 j1Var, long j3) {
-        switch (this.f) {
-            case 1:
-                super.m(i10, j1Var, j3);
-                j1Var.k = true;
-                return j1Var;
-            default:
-                return super.m(i10, j1Var, j3);
-        }
+    public u(g2.m mVar, Uri uri, Map map, long j10, long j11, long j12) {
+        this.a = mVar;
+        this.b = uri;
+        this.c = map;
+        this.d = j10;
+        this.e = j11;
+        this.f = j12;
     }
 }

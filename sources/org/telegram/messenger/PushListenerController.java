@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class PushListenerController {
     public static final int NOTIFICATION_ID = 1;
@@ -31,7 +31,7 @@ public class PushListenerController {
     public static final int PUSH_TYPE_HUAWEI = 13;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class GooglePushListenerServiceProvider implements IPushListenerServiceProvider {
         public static final GooglePushListenerServiceProvider INSTANCE = new GooglePushListenerServiceProvider();
         private Boolean hasServices;
@@ -62,15 +62,15 @@ public class PushListenerController {
             FirebaseMessaging firebaseMessaging;
             try {
                 SharedConfig.pushStringGetTimeStart = SystemClock.elapsedRealtime();
-                k9.h.f(ApplicationLoader.applicationContext);
-                com.google.firebase.messaging.u uVar = FirebaseMessaging.l;
+                l9.h.f(ApplicationLoader.applicationContext);
+                ya.c cVar = FirebaseMessaging.l;
                 synchronized (FirebaseMessaging.class) {
-                    firebaseMessaging = FirebaseMessaging.getInstance(k9.h.c());
+                    firebaseMessaging = FirebaseMessaging.getInstance(l9.h.c());
                 }
                 firebaseMessaging.getClass();
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                firebaseMessaging.f.execute(new ci.y8(5, firebaseMessaging, taskCompletionSource));
-                taskCompletionSource.getTask().addOnCompleteListener(new d0(this, 11));
+                firebaseMessaging.f.execute(new bi.u8(20, firebaseMessaging, taskCompletionSource));
+                taskCompletionSource.getTask().addOnCompleteListener(new e0(this, 11));
             } catch (Throwable th2) {
                 FileLog.e(th2);
             }
@@ -91,8 +91,8 @@ public class PushListenerController {
             if (this.hasServices == null) {
                 try {
                     this.hasServices = Boolean.valueOf(k6.d.d.d(ApplicationLoader.applicationContext, k6.e.a) == 0);
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     this.hasServices = Boolean.FALSE;
                 }
             }
@@ -109,11 +109,11 @@ public class PushListenerController {
             } else if (BuildVars.DEBUG_PRIVATE_VERSION && BuildVars.LOGS_ENABLED) {
                 FileLog.d("FCM regId = " + str);
             }
-            Utilities.globalQueue.postRunnable(new ug(this, 4));
+            Utilities.globalQueue.postRunnable(new jh(this, 3));
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface IPushListenerServiceProvider {
         String getLogTitle();
 
@@ -124,7 +124,7 @@ public class PushListenerController {
         void onRequestPushToken();
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PushType {
     }
@@ -297,8 +297,8 @@ public class PushListenerController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$processRemoteMessage$5(int i10, long j3, int i11) {
-        MessagesController.getInstance(i10).reportMessageDelivery(j3, i11, true);
+    public static /* synthetic */ void lambda$processRemoteMessage$5(int i10, long j10, int i11) {
+        MessagesController.getInstance(i10).reportMessageDelivery(j10, i11, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -389,7 +389,7 @@ public class PushListenerController {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static /* synthetic */ void lambda$processRemoteMessage$6(String str, String str2, long j3) {
+    public static /* synthetic */ void lambda$processRemoteMessage$6(String str, String str2, long j10) {
         String str3;
         Object obj;
         int i10;
@@ -404,26 +404,26 @@ public class PushListenerController {
         long clientUserId;
         int intValue;
         boolean z10;
-        long j10;
-        JSONObject jSONObject2;
         long j11;
+        JSONObject jSONObject2;
         long j12;
         long j13;
         long j14;
-        int i12;
         long j15;
+        int i12;
         long j16;
+        long j17;
         String str10;
         String str11;
         int i13;
         String str12;
-        long j17;
         long j18;
+        long j19;
         final int i14;
         String[] strArr;
         String str13;
         int i15;
-        long j19;
+        long j20;
         int i16;
         String str14;
         boolean z11;
@@ -431,11 +431,11 @@ public class PushListenerController {
         boolean z12;
         int i17;
         boolean z13;
-        long j20;
+        long j21;
         String[] strArr2;
         String str15;
         String str16;
-        long j21;
+        long j22;
         boolean z14;
         boolean z15;
         String str17;
@@ -455,9 +455,9 @@ public class PushListenerController {
         String str22;
         String str23;
         final int i18;
-        final long j22;
+        final long j23;
         boolean z22;
-        long j23;
+        long j24;
         Object obj5;
         boolean z23;
         MessageObject messageObject;
@@ -626,33 +626,33 @@ public class PushListenerController {
                                     switch (string4.hashCode()) {
                                         case -1963663249:
                                             if (string4.equals("SESSION_REVOKE")) {
-                                                AndroidUtilities.runOnUIThread(new ei.r2(i23, 5));
+                                                AndroidUtilities.runOnUIThread(new fi.r2(i23, 5));
                                                 countDownLatch.countDown();
                                                 break;
                                             }
                                             if (jSONObject.has("channel_id")) {
-                                                j10 = 0;
-                                                j11 = jSONObject.getLong("channel_id");
-                                                jSONObject2 = jSONObject;
-                                                j12 = -j11;
-                                            } else {
-                                                j10 = 0;
-                                                jSONObject2 = jSONObject;
                                                 j11 = 0;
+                                                j12 = jSONObject.getLong("channel_id");
+                                                jSONObject2 = jSONObject;
+                                                j13 = -j12;
+                                            } else {
+                                                j11 = 0;
+                                                jSONObject2 = jSONObject;
                                                 j12 = 0;
+                                                j13 = 0;
                                             }
                                             if (jSONObject2.has("from_id")) {
-                                                j14 = jSONObject2.getLong("from_id");
-                                                j13 = j14;
+                                                j15 = jSONObject2.getLong("from_id");
+                                                j14 = j15;
                                             } else {
-                                                j13 = j12;
-                                                j14 = j10;
+                                                j14 = j13;
+                                                j15 = j11;
                                             }
                                             if (jSONObject2.has("chat_id")) {
                                                 try {
-                                                    j15 = jSONObject2.getLong("chat_id");
+                                                    j16 = jSONObject2.getLong("chat_id");
                                                     i12 = i23;
-                                                    j16 = -j15;
+                                                    j17 = -j16;
                                                     String str26 = str9;
                                                     str10 = "";
                                                     str11 = str26;
@@ -674,8 +674,8 @@ public class PushListenerController {
                                                 String str27 = str9;
                                                 str10 = "";
                                                 str11 = str27;
-                                                j15 = j10;
-                                                j16 = j13;
+                                                j16 = j11;
+                                                j17 = j14;
                                             }
                                             try {
                                                 if (jSONObject2.has(str11)) {
@@ -696,26 +696,26 @@ public class PushListenerController {
                                                 } else {
                                                     i13 = 0;
                                                 }
-                                                long j24 = j16;
-                                                FileLog.d("recived push notification {" + string4 + "} chatId " + j15 + " custom topicId " + i13);
+                                                long j25 = j17;
+                                                FileLog.d("recived push notification {" + string4 + "} chatId " + j16 + " custom topicId " + i13);
                                                 if (jSONObject2.has(str8)) {
                                                     long makeEncryptedDialogId = DialogObject.makeEncryptedDialogId(jSONObject2.getInt(r14));
                                                     str12 = str7;
-                                                    j17 = makeEncryptedDialogId;
+                                                    j18 = makeEncryptedDialogId;
                                                 } else {
                                                     str12 = str7;
-                                                    j17 = j24;
+                                                    j18 = j25;
                                                 }
                                                 boolean z25 = !jSONObject2.has(str12) && jSONObject2.getInt(str12) == 1;
-                                                if (j17 == j10 && "ENCRYPTED_MESSAGE".equals(string4)) {
-                                                    j17 = NotificationsController.globalSecretChatId;
+                                                if (j18 == j11 && "ENCRYPTED_MESSAGE".equals(string4)) {
+                                                    j18 = NotificationsController.globalSecretChatId;
                                                 }
                                                 boolean z26 = z25;
-                                                j18 = j17;
-                                                if (j18 != j10) {
+                                                j19 = j18;
+                                                if (j19 != j11) {
                                                     if ("CONF_CALL_REQUEST".equals(string4) || "CONF_VIDEOCALL_REQUEST".equals(string4)) {
                                                         i14 = i12;
-                                                        long j25 = jSONObject2.getLong("call_id");
+                                                        long j26 = jSONObject2.getLong("call_id");
                                                         int i24 = jSONObject2.getInt("msg_id");
                                                         if (jSONObject3.has("loc_args")) {
                                                             JSONArray jSONArray = jSONObject3.getJSONArray("loc_args");
@@ -727,8 +727,8 @@ public class PushListenerController {
                                                         } else {
                                                             strArr = null;
                                                         }
-                                                        if (System.currentTimeMillis() - j3 < MessagesController.getInstance(i14).callRingTimeout) {
-                                                            VoIPGroupNotification.request(ApplicationLoader.applicationContext, i14, j18, (strArr == null || strArr.length <= 2) ? null : strArr[2], j25, i24, "CONF_VIDEOCALL_REQUEST".equals(string4));
+                                                        if (System.currentTimeMillis() - j10 < MessagesController.getInstance(i14).callRingTimeout) {
+                                                            VoIPGroupNotification.request(ApplicationLoader.applicationContext, i14, j19, (strArr == null || strArr.length <= 2) ? null : strArr[2], j26, i24, "CONF_VIDEOCALL_REQUEST".equals(string4));
                                                             i14 = i14;
                                                         } else {
                                                             VoIPGroupNotification.hide(ApplicationLoader.applicationContext, i14, i24);
@@ -737,53 +737,53 @@ public class PushListenerController {
                                                         int i26 = jSONObject2.getInt("max_id");
                                                         ArrayList<TLRPC.Update> arrayList = new ArrayList<>();
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            FileLog.d(str + " received read notification max_id = " + i26 + " for dialogId = " + j18);
+                                                            FileLog.d(str + " received read notification max_id = " + i26 + " for dialogId = " + j19);
                                                         }
-                                                        if (j11 != j10) {
+                                                        if (j12 != j11) {
                                                             TL_update.TL_updateReadChannelInbox tL_updateReadChannelInbox = new TL_update.TL_updateReadChannelInbox();
-                                                            tL_updateReadChannelInbox.channel_id = j11;
+                                                            tL_updateReadChannelInbox.channel_id = j12;
                                                             tL_updateReadChannelInbox.max_id = i26;
                                                             tL_updateReadChannelInbox.still_unread_count = 0;
                                                             arrayList.add(tL_updateReadChannelInbox);
                                                         } else {
                                                             TL_update.TL_updateReadHistoryInbox tL_updateReadHistoryInbox = new TL_update.TL_updateReadHistoryInbox();
-                                                            if (j14 != j10) {
+                                                            if (j15 != j11) {
                                                                 TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
                                                                 tL_updateReadHistoryInbox.peer = tL_peerUser;
-                                                                tL_peerUser.user_id = j14;
+                                                                tL_peerUser.user_id = j15;
                                                             } else {
                                                                 TLRPC.TL_peerChat tL_peerChat = new TLRPC.TL_peerChat();
                                                                 tL_updateReadHistoryInbox.peer = tL_peerChat;
-                                                                tL_peerChat.chat_id = j15;
+                                                                tL_peerChat.chat_id = j16;
                                                             }
                                                             tL_updateReadHistoryInbox.max_id = i26;
                                                             arrayList.add(tL_updateReadHistoryInbox);
                                                         }
                                                         MessagesController.getInstance(i12).processUpdateArray(arrayList, null, null, false, 0);
                                                     } else {
-                                                        long j26 = j14;
+                                                        long j27 = j15;
                                                         if ("READ_STORIES".equals(string4)) {
-                                                            NotificationsController.getInstance(i12).processReadStories(j18, jSONObject2.getInt("max_id"));
+                                                            NotificationsController.getInstance(i12).processReadStories(j19, jSONObject2.getInt("max_id"));
                                                         } else if ("STORY_DELETED".equals(string4)) {
-                                                            NotificationsController.getInstance(i12).processDeleteStory(j18, jSONObject2.getInt("story_id"));
+                                                            NotificationsController.getInstance(i12).processDeleteStory(j19, jSONObject2.getInt("story_id"));
                                                         } else if ("MESSAGE_DELETED".equals(string4)) {
                                                             String[] split = jSONObject2.getString("messages").split(",");
-                                                            a0.i iVar = new a0.i();
+                                                            a0.h hVar = new a0.h();
                                                             ArrayList<Integer> arrayList2 = new ArrayList<>();
                                                             for (String str28 : split) {
                                                                 arrayList2.add(Utilities.parseInt((CharSequence) str28));
                                                             }
-                                                            iVar.k(arrayList2, -j11);
-                                                            NotificationsController.getInstance(i12).removeDeletedMessagesFromNotifications(iVar, false);
-                                                            MessagesController.getInstance(i12).deleteMessagesByPush(j18, arrayList2, j11);
+                                                            hVar.k(arrayList2, -j12);
+                                                            NotificationsController.getInstance(i12).removeDeletedMessagesFromNotifications(hVar, false);
+                                                            MessagesController.getInstance(i12).deleteMessagesByPush(j19, arrayList2, j12);
                                                             if (BuildVars.LOGS_ENABLED) {
-                                                                FileLog.d(str + " received " + string4 + " for dialogId = " + j18 + " mids = " + TextUtils.join(",", arrayList2));
+                                                                FileLog.d(str + " received " + string4 + " for dialogId = " + j19 + " mids = " + TextUtils.join(",", arrayList2));
                                                             }
                                                         } else {
-                                                            long j27 = j15;
+                                                            long j28 = j16;
                                                             if ("READ_REACTION".equals(string4)) {
                                                                 String[] split2 = jSONObject2.getString("messages").split(",");
-                                                                a0.i iVar2 = new a0.i();
+                                                                a0.h hVar2 = new a0.h();
                                                                 ArrayList arrayList3 = new ArrayList();
                                                                 SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
                                                                 for (String str29 : split2) {
@@ -792,11 +792,11 @@ public class PushListenerController {
                                                                     arrayList3.add(parseInt);
                                                                     sparseBooleanArray.put(intValue2, false);
                                                                 }
-                                                                iVar2.k(arrayList3, -j11);
-                                                                NotificationsController.getInstance(i12).removeDeletedMessagesFromNotifications(iVar2, true);
-                                                                MessagesController.getInstance(i12).checkUnreadReactions(j18, i13, sparseBooleanArray);
+                                                                hVar2.k(arrayList3, -j12);
+                                                                NotificationsController.getInstance(i12).removeDeletedMessagesFromNotifications(hVar2, true);
+                                                                MessagesController.getInstance(i12).checkUnreadReactions(j19, i13, sparseBooleanArray);
                                                                 if (BuildVars.LOGS_ENABLED) {
-                                                                    FileLog.d(str + " received " + string4 + " for dialogId = " + j18 + " mids = " + TextUtils.join(",", arrayList3));
+                                                                    FileLog.d(str + " received " + string4 + " for dialogId = " + j19 + " mids = " + TextUtils.join(",", arrayList3));
                                                                 }
                                                             } else if (!TextUtils.isEmpty(string4)) {
                                                                 if (jSONObject2.has("msg_id")) {
@@ -806,23 +806,23 @@ public class PushListenerController {
                                                                 } else {
                                                                     str13 = str6;
                                                                     i15 = 0;
-                                                                    long longValue = !jSONObject2.has(str13) ? Utilities.parseLong(jSONObject2.getString(str13)).longValue() : j10;
+                                                                    long longValue = !jSONObject2.has(str13) ? Utilities.parseLong(jSONObject2.getString(str13)).longValue() : j11;
                                                                     if (i15 == 0) {
                                                                         i16 = i13;
-                                                                        Integer num = MessagesController.getInstance(i12).dialogs_read_inbox_max.get(Long.valueOf(j18));
+                                                                        Integer num = MessagesController.getInstance(i12).dialogs_read_inbox_max.get(Long.valueOf(j19));
                                                                         if (num == null) {
-                                                                            num = Integer.valueOf(MessagesStorage.getInstance(i12).getDialogReadMax(false, j18));
-                                                                            j19 = j11;
-                                                                            MessagesController.getInstance(i12).dialogs_read_inbox_max.put(Long.valueOf(j18), num);
+                                                                            num = Integer.valueOf(MessagesStorage.getInstance(i12).getDialogReadMax(false, j19));
+                                                                            j20 = j12;
+                                                                            MessagesController.getInstance(i12).dialogs_read_inbox_max.put(Long.valueOf(j19), num);
                                                                         } else {
-                                                                            j19 = j11;
+                                                                            j20 = j12;
                                                                         }
                                                                         z11 = i15 > num.intValue();
                                                                         str14 = "REACT_";
                                                                     } else {
-                                                                        j19 = j11;
+                                                                        j20 = j12;
                                                                         i16 = i13;
-                                                                        if (longValue == j10 || MessagesStorage.getInstance(i12).checkMessageByRandomId(longValue)) {
+                                                                        if (longValue == j11 || MessagesStorage.getInstance(i12).checkMessageByRandomId(longValue)) {
                                                                             str14 = "REACT_";
                                                                             z11 = false;
                                                                         } else {
@@ -850,12 +850,12 @@ public class PushListenerController {
                                                                             VoIPGroupNotification.hideByCallId(ApplicationLoader.applicationContext, i14, jSONObject2.getLong("call_id"));
                                                                         }
                                                                     } else {
-                                                                        long j28 = longValue;
-                                                                        long j29 = j10;
-                                                                        long optLong = jSONObject2.optLong("chat_from_id", j29);
-                                                                        long optLong2 = jSONObject2.optLong("chat_from_broadcast_id", j29);
-                                                                        long optLong3 = jSONObject2.optLong("chat_from_group_id", j29);
-                                                                        if (optLong == j29 && optLong3 == j29) {
+                                                                        long j29 = longValue;
+                                                                        long j30 = j11;
+                                                                        long optLong = jSONObject2.optLong("chat_from_id", j30);
+                                                                        long optLong2 = jSONObject2.optLong("chat_from_broadcast_id", j30);
+                                                                        long optLong3 = jSONObject2.optLong("chat_from_group_id", j30);
+                                                                        if (optLong == j30 && optLong3 == j30) {
                                                                             z13 = false;
                                                                             String str30 = str3;
                                                                             boolean z28 = (jSONObject2.has(str30) || jSONObject2.getInt(str30) == 0) ? false : true;
@@ -863,12 +863,12 @@ public class PushListenerController {
                                                                             boolean z30 = z13;
                                                                             boolean z31 = z28;
                                                                             if (jSONObject3.has("loc_args")) {
-                                                                                j20 = optLong3;
+                                                                                j21 = optLong3;
                                                                                 strArr2 = null;
                                                                             } else {
                                                                                 JSONArray jSONArray2 = jSONObject3.getJSONArray("loc_args");
                                                                                 int length2 = jSONArray2.length();
-                                                                                j20 = optLong3;
+                                                                                j21 = optLong3;
                                                                                 strArr2 = new String[length2];
                                                                                 for (int i29 = 0; i29 < length2; i29++) {
                                                                                     strArr2[i29] = jSONArray2.getString(i29);
@@ -879,9 +879,9 @@ public class PushListenerController {
                                                                                 boolean has = jSONObject2.has("edit_date");
                                                                                 if (string4.startsWith("CHAT_") || strArr2 == null || strArr2.length <= 0) {
                                                                                     if (!string4.startsWith("PINNED_")) {
-                                                                                        z15 = j19 != 0;
+                                                                                        z15 = j20 != 0;
                                                                                         str16 = str15;
-                                                                                        j21 = j26;
+                                                                                        j22 = j27;
                                                                                         z14 = true;
                                                                                         str17 = null;
                                                                                         z16 = false;
@@ -912,13 +912,13 @@ public class PushListenerController {
                                                                                                             sb3.append(" received message notification ");
                                                                                                             sb3.append(string4);
                                                                                                             sb3.append(str19);
-                                                                                                            j22 = j18;
-                                                                                                            sb3.append(j22);
+                                                                                                            j23 = j19;
+                                                                                                            sb3.append(j23);
                                                                                                             sb3.append(" mid = ");
                                                                                                             sb3.append(i18);
                                                                                                             FileLog.d(sb3.toString());
                                                                                                         } else {
-                                                                                                            j22 = j18;
+                                                                                                            j23 = j19;
                                                                                                         }
                                                                                                         if (str23 != null) {
                                                                                                             if (!string4.equals("REACT_STORY") && !string4.equals("REACT_STORY_HIDDEN")) {
@@ -928,45 +928,45 @@ public class PushListenerController {
                                                                                                                     i18 = -i18;
                                                                                                                 }
                                                                                                                 tL_message.id = i18;
-                                                                                                                tL_message.random_id = j28;
+                                                                                                                tL_message.random_id = j29;
                                                                                                                 tL_message.message = str22 == null ? str22 : str23;
-                                                                                                                tL_message.date = (int) (j3 / 1000);
+                                                                                                                tL_message.date = (int) (j10 / 1000);
                                                                                                                 if (z18) {
                                                                                                                     tL_message.action = new TLRPC.TL_messageActionPinMessage();
                                                                                                                 }
                                                                                                                 if (z19) {
                                                                                                                     tL_message.flags |= TLObject.FLAG_31;
                                                                                                                 }
-                                                                                                                tL_message.dialog_id = j22;
-                                                                                                                if (j19 == 0) {
+                                                                                                                tL_message.dialog_id = j23;
+                                                                                                                if (j20 == 0) {
                                                                                                                     TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
                                                                                                                     tL_message.peer_id = tL_peerChannel;
-                                                                                                                    tL_peerChannel.channel_id = j19;
+                                                                                                                    tL_peerChannel.channel_id = j20;
                                                                                                                     obj5 = obj4;
-                                                                                                                    j23 = j27;
-                                                                                                                } else if (j27 != 0) {
+                                                                                                                    j24 = j28;
+                                                                                                                } else if (j28 != 0) {
                                                                                                                     TLRPC.TL_peerChat tL_peerChat2 = new TLRPC.TL_peerChat();
                                                                                                                     tL_message.peer_id = tL_peerChat2;
-                                                                                                                    j23 = j27;
-                                                                                                                    tL_peerChat2.chat_id = j23;
+                                                                                                                    j24 = j28;
+                                                                                                                    tL_peerChat2.chat_id = j24;
                                                                                                                     obj5 = obj4;
                                                                                                                 } else {
-                                                                                                                    j23 = j27;
+                                                                                                                    j24 = j28;
                                                                                                                     TLRPC.TL_peerUser tL_peerUser2 = new TLRPC.TL_peerUser();
                                                                                                                     tL_message.peer_id = tL_peerUser2;
                                                                                                                     obj5 = obj4;
-                                                                                                                    tL_peerUser2.user_id = j21;
+                                                                                                                    tL_peerUser2.user_id = j22;
                                                                                                                 }
                                                                                                                 tL_message.flags |= 256;
-                                                                                                                if (j20 == 0) {
+                                                                                                                if (j21 == 0) {
                                                                                                                     TLRPC.TL_peerChat tL_peerChat3 = new TLRPC.TL_peerChat();
                                                                                                                     tL_message.from_id = tL_peerChat3;
-                                                                                                                    tL_peerChat3.chat_id = j23;
+                                                                                                                    tL_peerChat3.chat_id = j24;
                                                                                                                 } else if (optLong2 != 0) {
                                                                                                                     TLRPC.TL_peerChannel tL_peerChannel2 = new TLRPC.TL_peerChannel();
                                                                                                                     tL_message.from_id = tL_peerChannel2;
                                                                                                                     tL_peerChannel2.channel_id = optLong2;
-                                                                                                                } else if (optLong != j29) {
+                                                                                                                } else if (optLong != j30) {
                                                                                                                     TLRPC.TL_peerUser tL_peerUser3 = new TLRPC.TL_peerUser();
                                                                                                                     tL_message.from_id = tL_peerUser3;
                                                                                                                     tL_peerUser3.user_id = optLong;
@@ -1001,10 +1001,10 @@ public class PushListenerController {
                                                                                                                             arrayList4.add(messageObject);
                                                                                                                             FileLog.d("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
                                                                                                                             if (!messageObject.isStoryReactionPush && !messageObject.isReactionPush && !messageObject.isStoryMentionPush && !messageObject.isStoryPush && !messageObject.isStoryPushHidden && !z31 && !z18 && i18 > 0) {
-                                                                                                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.rh
+                                                                                                                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.uh
                                                                                                                                     @Override // java.lang.Runnable
                                                                                                                                     public final void run() {
-                                                                                                                                        PushListenerController.lambda$processRemoteMessage$5(i14, j22, i18);
+                                                                                                                                        PushListenerController.lambda$processRemoteMessage$5(i14, j23, i18);
                                                                                                                                     }
                                                                                                                                 });
                                                                                                                             }
@@ -1025,10 +1025,10 @@ public class PushListenerController {
                                                                                                                     arrayList42.add(messageObject);
                                                                                                                     FileLog.d("PushListenerController push notification to NotificationsController of " + tL_message.dialog_id);
                                                                                                                     if (!messageObject.isStoryReactionPush) {
-                                                                                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.rh
+                                                                                                                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.uh
                                                                                                                             @Override // java.lang.Runnable
                                                                                                                             public final void run() {
-                                                                                                                                PushListenerController.lambda$processRemoteMessage$5(i14, j22, i18);
+                                                                                                                                PushListenerController.lambda$processRemoteMessage$5(i14, j23, i18);
                                                                                                                             }
                                                                                                                         });
                                                                                                                     }
@@ -1069,18 +1069,18 @@ public class PushListenerController {
                                                                                                                 i18 = -i18;
                                                                                                             }
                                                                                                             tL_message2.id = i18;
-                                                                                                            tL_message2.random_id = j28;
+                                                                                                            tL_message2.random_id = j29;
                                                                                                             tL_message2.message = str22 == null ? str22 : str23;
-                                                                                                            tL_message2.date = (int) (j3 / 1000);
+                                                                                                            tL_message2.date = (int) (j10 / 1000);
                                                                                                             if (z18) {
                                                                                                             }
                                                                                                             if (z19) {
                                                                                                             }
-                                                                                                            tL_message2.dialog_id = j22;
-                                                                                                            if (j19 == 0) {
+                                                                                                            tL_message2.dialog_id = j23;
+                                                                                                            if (j20 == 0) {
                                                                                                             }
                                                                                                             tL_message2.flags |= 256;
-                                                                                                            if (j20 == 0) {
+                                                                                                            if (j21 == 0) {
                                                                                                             }
                                                                                                             if (!z31) {
                                                                                                                 z23 = false;
@@ -1917,7 +1917,7 @@ public class PushListenerController {
                                                                                                 case -1264245338:
                                                                                                     obj4 = "STORY_HIDDEN_AUTHOR";
                                                                                                     if (string4.equals("PINNED_INVOICE")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString(R.string.NotificationActionPinnedInvoiceUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedInvoice, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedInvoiceChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString(R.string.NotificationActionPinnedInvoiceUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedInvoice, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedInvoiceChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -2185,7 +2185,7 @@ public class PushListenerController {
                                                                                                 case -1085137927:
                                                                                                     obj4 = "STORY_HIDDEN_AUTHOR";
                                                                                                     if (string4.equals("PINNED_GAME")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString(R.string.NotificationActionPinnedGameUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedGame, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedGameChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString(R.string.NotificationActionPinnedGameUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedGame, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedGameChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -2217,7 +2217,7 @@ public class PushListenerController {
                                                                                                 case -1084856378:
                                                                                                     obj4 = "STORY_HIDDEN_AUTHOR";
                                                                                                     if (string4.equals("PINNED_POLL")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString(R.string.NotificationActionPinnedPollUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedPoll2, strArr7[0], strArr7[2], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedPollChannel2, strArr7[0], strArr7[1]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString(R.string.NotificationActionPinnedPollUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedPoll2, strArr7[0], strArr7[2], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedPollChannel2, strArr7[0], strArr7[1]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -2249,7 +2249,7 @@ public class PushListenerController {
                                                                                                 case -1084820900:
                                                                                                     obj4 = "STORY_HIDDEN_AUTHOR";
                                                                                                     if (string4.equals("PINNED_QUIZ")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString(R.string.NotificationActionPinnedQuizUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedQuiz2, strArr7[0], strArr7[2], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedQuizChannel2, strArr7[0], strArr7[1]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString(R.string.NotificationActionPinnedQuizUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedQuiz2, strArr7[0], strArr7[2], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedQuizChannel2, strArr7[0], strArr7[1]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -2281,7 +2281,7 @@ public class PushListenerController {
                                                                                                 case -1084746444:
                                                                                                     obj4 = "STORY_HIDDEN_AUTHOR";
                                                                                                     if (string4.equals("PINNED_TEXT")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString("NotificationActionPinnedTextUser", R.string.NotificationActionPinnedTextUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedText", R.string.NotificationActionPinnedText, strArr7[0], strArr7[1], strArr7[2]) : LocaleController.formatString("NotificationActionPinnedTextChannel", R.string.NotificationActionPinnedTextChannel, strArr7[0], strArr7[1]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString("NotificationActionPinnedTextUser", R.string.NotificationActionPinnedTextUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedText", R.string.NotificationActionPinnedText, strArr7[0], strArr7[1], strArr7[2]) : LocaleController.formatString("NotificationActionPinnedTextChannel", R.string.NotificationActionPinnedTextChannel, strArr7[0], strArr7[1]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -2313,7 +2313,7 @@ public class PushListenerController {
                                                                                                 case -1084737459:
                                                                                                     obj4 = "STORY_HIDDEN_AUTHOR";
                                                                                                     if (string4.equals("PINNED_TODO")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString(R.string.NotificationActionPinnedTodoUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedTodo2, strArr7[0], strArr7[2], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedTodoChannel2, strArr7[0], strArr7[1]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString(R.string.NotificationActionPinnedTodoUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedTodo2, strArr7[0], strArr7[2], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedTodoChannel2, strArr7[0], strArr7[1]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -2408,7 +2408,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case -819729482:
                                                                                                     if (string4.equals("PINNED_STICKER")) {
-                                                                                                        formatString = j18 > j10 ? (strArr7.length <= 1 || TextUtils.isEmpty(strArr7[1])) ? LocaleController.formatString("NotificationActionPinnedStickerUser", R.string.NotificationActionPinnedStickerUser, strArr7[0]) : LocaleController.formatString("NotificationActionPinnedStickerEmojiUser", R.string.NotificationActionPinnedStickerEmojiUser, strArr7[0], strArr7[1]) : z30 ? (strArr7.length <= 2 || TextUtils.isEmpty(strArr7[2])) ? LocaleController.formatString("NotificationActionPinnedSticker", R.string.NotificationActionPinnedSticker, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedStickerEmoji", R.string.NotificationActionPinnedStickerEmoji, strArr7[0], strArr7[2], strArr7[1]) : (strArr7.length <= 1 || TextUtils.isEmpty(strArr7[1])) ? LocaleController.formatString("NotificationActionPinnedStickerChannel", R.string.NotificationActionPinnedStickerChannel, strArr7[0]) : LocaleController.formatString("NotificationActionPinnedStickerEmojiChannel", R.string.NotificationActionPinnedStickerEmojiChannel, strArr7[0], strArr7[1]);
+                                                                                                        formatString = j19 > j11 ? (strArr7.length <= 1 || TextUtils.isEmpty(strArr7[1])) ? LocaleController.formatString("NotificationActionPinnedStickerUser", R.string.NotificationActionPinnedStickerUser, strArr7[0]) : LocaleController.formatString("NotificationActionPinnedStickerEmojiUser", R.string.NotificationActionPinnedStickerEmojiUser, strArr7[0], strArr7[1]) : z30 ? (strArr7.length <= 2 || TextUtils.isEmpty(strArr7[2])) ? LocaleController.formatString("NotificationActionPinnedSticker", R.string.NotificationActionPinnedSticker, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedStickerEmoji", R.string.NotificationActionPinnedStickerEmoji, strArr7[0], strArr7[2], strArr7[1]) : (strArr7.length <= 1 || TextUtils.isEmpty(strArr7[1])) ? LocaleController.formatString("NotificationActionPinnedStickerChannel", R.string.NotificationActionPinnedStickerChannel, strArr7[0]) : LocaleController.formatString("NotificationActionPinnedStickerEmojiChannel", R.string.NotificationActionPinnedStickerEmojiChannel, strArr7[0], strArr7[1]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -2550,7 +2550,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case -590403924:
                                                                                                     if (string4.equals("PINNED_GAME_SCORE")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString(R.string.NotificationActionPinnedGameScoreUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedGameScore, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedGameScoreChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString(R.string.NotificationActionPinnedGameScoreUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedGameScore, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedGameScoreChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -2583,7 +2583,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case -589196239:
                                                                                                     if (string4.equals("PINNED_DOC")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString("NotificationActionPinnedFileUser", R.string.NotificationActionPinnedFileUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedFile", R.string.NotificationActionPinnedFile, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedFileChannel", R.string.NotificationActionPinnedFileChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString("NotificationActionPinnedFileUser", R.string.NotificationActionPinnedFileUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedFile", R.string.NotificationActionPinnedFile, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedFileChannel", R.string.NotificationActionPinnedFileChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -2616,7 +2616,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case -589193654:
                                                                                                     if (string4.equals("PINNED_GEO")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString(R.string.NotificationActionPinnedGeoUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedGeo, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedGeoChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString(R.string.NotificationActionPinnedGeoUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedGeo, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedGeoChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -2649,7 +2649,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case -589193539:
                                                                                                     if (string4.equals("PINNED_GIF")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString(R.string.NotificationActionPinnedGifUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedGif, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedGifChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString(R.string.NotificationActionPinnedGifUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedGif, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedGifChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -3845,7 +3845,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case 715508879:
                                                                                                     if (string4.equals("PINNED_AUDIO")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString("NotificationActionPinnedVoiceUser", R.string.NotificationActionPinnedVoiceUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedVoice", R.string.NotificationActionPinnedVoice, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedVoiceChannel", R.string.NotificationActionPinnedVoiceChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString("NotificationActionPinnedVoiceUser", R.string.NotificationActionPinnedVoiceUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedVoice", R.string.NotificationActionPinnedVoice, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedVoiceChannel", R.string.NotificationActionPinnedVoiceChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -3878,7 +3878,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case 728985323:
                                                                                                     if (string4.equals("PINNED_PHOTO")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString("NotificationActionPinnedPhotoUser", R.string.NotificationActionPinnedPhotoUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedPhoto", R.string.NotificationActionPinnedPhoto, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedPhotoChannel", R.string.NotificationActionPinnedPhotoChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString("NotificationActionPinnedPhotoUser", R.string.NotificationActionPinnedPhotoUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedPhoto", R.string.NotificationActionPinnedPhoto, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedPhotoChannel", R.string.NotificationActionPinnedPhotoChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -3911,7 +3911,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case 731046471:
                                                                                                     if (string4.equals("PINNED_ROUND")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString("NotificationActionPinnedRoundUser", R.string.NotificationActionPinnedRoundUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedRound", R.string.NotificationActionPinnedRound, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedRoundChannel", R.string.NotificationActionPinnedRoundChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString("NotificationActionPinnedRoundUser", R.string.NotificationActionPinnedRoundUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedRound", R.string.NotificationActionPinnedRound, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedRoundChannel", R.string.NotificationActionPinnedRoundChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -3944,7 +3944,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case 734545204:
                                                                                                     if (string4.equals("PINNED_VIDEO")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString("NotificationActionPinnedVideoUser", R.string.NotificationActionPinnedVideoUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedVideo", R.string.NotificationActionPinnedVideo, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedVideoChannel", R.string.NotificationActionPinnedVideoChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString("NotificationActionPinnedVideoUser", R.string.NotificationActionPinnedVideoUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedVideo", R.string.NotificationActionPinnedVideo, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedVideoChannel", R.string.NotificationActionPinnedVideoChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -4136,7 +4136,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case 991498806:
                                                                                                     if (string4.equals("PINNED_GEOLIVE")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString(R.string.NotificationActionPinnedGeoLiveUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedGeoLive, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedGeoLiveChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString(R.string.NotificationActionPinnedGeoLiveUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString(R.string.NotificationActionPinnedGeoLive, strArr7[0], strArr7[1]) : LocaleController.formatString(R.string.NotificationActionPinnedGeoLiveChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -4663,7 +4663,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case 1073049781:
                                                                                                     if (string4.equals("PINNED_NOTEXT")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString("NotificationActionPinnedNoTextUser", R.string.NotificationActionPinnedNoTextUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedNoText", R.string.NotificationActionPinnedNoText, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedNoTextChannel", R.string.NotificationActionPinnedNoTextChannel, strArr7[0]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString("NotificationActionPinnedNoTextUser", R.string.NotificationActionPinnedNoTextUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedNoText", R.string.NotificationActionPinnedNoText, strArr7[0], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedNoTextChannel", R.string.NotificationActionPinnedNoTextChannel, strArr7[0]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -5631,7 +5631,7 @@ public class PushListenerController {
                                                                                                     break;
                                                                                                 case 2022049433:
                                                                                                     if (string4.equals("PINNED_CONTACT")) {
-                                                                                                        formatString = j18 > j10 ? LocaleController.formatString("NotificationActionPinnedContactUser", R.string.NotificationActionPinnedContactUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedContact2", R.string.NotificationActionPinnedContact2, strArr7[0], strArr7[2], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedContactChannel2", R.string.NotificationActionPinnedContactChannel2, strArr7[0], strArr7[1]);
+                                                                                                        formatString = j19 > j11 ? LocaleController.formatString("NotificationActionPinnedContactUser", R.string.NotificationActionPinnedContactUser, strArr7[0], strArr7[1]) : z30 ? LocaleController.formatString("NotificationActionPinnedContact2", R.string.NotificationActionPinnedContact2, strArr7[0], strArr7[2], strArr7[1]) : LocaleController.formatString("NotificationActionPinnedContactChannel2", R.string.NotificationActionPinnedContactChannel2, strArr7[0], strArr7[1]);
                                                                                                         i14 = i12;
                                                                                                         i18 = i27;
                                                                                                         str21 = str16;
@@ -5858,7 +5858,7 @@ public class PushListenerController {
                                                                                         }
                                                                                     } else if (string4.startsWith("CHANNEL_")) {
                                                                                         str16 = str15;
-                                                                                        j21 = j26;
+                                                                                        j22 = j27;
                                                                                         z14 = false;
                                                                                         z15 = false;
                                                                                         str17 = null;
@@ -5886,13 +5886,13 @@ public class PushListenerController {
                                                                                         if (str23 != null) {
                                                                                         }
                                                                                     }
-                                                                                } else if (UserObject.isReplyUser(j18)) {
+                                                                                } else if (UserObject.isReplyUser(j19)) {
                                                                                     str15 = str15 + " @ " + strArr2[1];
                                                                                 } else {
-                                                                                    z15 = j19 != 0;
+                                                                                    z15 = j20 != 0;
                                                                                     str16 = strArr2[1];
                                                                                     str17 = str15;
-                                                                                    j21 = j26;
+                                                                                    j22 = j27;
                                                                                     z14 = false;
                                                                                     z16 = false;
                                                                                     if (string4.startsWith(str14)) {
@@ -5919,7 +5919,7 @@ public class PushListenerController {
                                                                                     }
                                                                                 }
                                                                                 str16 = str15;
-                                                                                j21 = j26;
+                                                                                j22 = j27;
                                                                                 z14 = false;
                                                                                 z15 = false;
                                                                                 str17 = null;
@@ -6049,20 +6049,20 @@ public class PushListenerController {
                                             }
                                             if (jSONObject2.has(str11)) {
                                             }
-                                            long j242 = j16;
-                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j15 + " custom topicId " + i13);
+                                            long j252 = j17;
+                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j16 + " custom topicId " + i13);
                                             if (jSONObject2.has(str8)) {
                                             }
                                             if (jSONObject2.has(str12)) {
                                                 break;
                                             }
-                                            if (j17 == j10) {
-                                                j17 = NotificationsController.globalSecretChatId;
+                                            if (j18 == j11) {
+                                                j18 = NotificationsController.globalSecretChatId;
                                                 break;
                                             }
                                             boolean z262 = z25;
-                                            j18 = j17;
-                                            if (j18 != j10) {
+                                            j19 = j18;
+                                            if (j19 != j11) {
                                             }
                                             i14 = i12;
                                             countDownLatch.countDown();
@@ -6090,7 +6090,7 @@ public class PushListenerController {
                                                             tL_message3.id = 2147483637;
                                                             tL_message3.random_id = 9223372036854775797L;
                                                             tL_message3.message = formatString2;
-                                                            tL_message3.date = (int) (j3 / 1000);
+                                                            tL_message3.date = (int) (j10 / 1000);
                                                             tL_message3.dialog_id = UserObject.OAUTH;
                                                             TLRPC.TL_peerUser tL_peerUser4 = new TLRPC.TL_peerUser();
                                                             tL_message3.peer_id = tL_peerUser4;
@@ -6117,17 +6117,17 @@ public class PushListenerController {
                                             }
                                             if (jSONObject2.has(str11)) {
                                             }
-                                            long j2422 = j16;
-                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j15 + " custom topicId " + i13);
+                                            long j2522 = j17;
+                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j16 + " custom topicId " + i13);
                                             if (jSONObject2.has(str8)) {
                                             }
                                             if (jSONObject2.has(str12)) {
                                             }
-                                            if (j17 == j10) {
+                                            if (j18 == j11) {
                                             }
                                             boolean z2622 = z25;
-                                            j18 = j17;
-                                            if (j18 != j10) {
+                                            j19 = j18;
+                                            if (j19 != j11) {
                                             }
                                             i14 = i12;
                                             countDownLatch.countDown();
@@ -6139,13 +6139,13 @@ public class PushListenerController {
                                                 TL_update.TL_updateServiceNotification tL_updateServiceNotification = new TL_update.TL_updateServiceNotification();
                                                 tL_updateServiceNotification.popup = false;
                                                 tL_updateServiceNotification.flags = 2;
-                                                tL_updateServiceNotification.inbox_date = (int) (j3 / 1000);
+                                                tL_updateServiceNotification.inbox_date = (int) (j10 / 1000);
                                                 tL_updateServiceNotification.message = jSONObject3.getString("message");
                                                 tL_updateServiceNotification.type = "announcement";
                                                 tL_updateServiceNotification.media = new TLRPC.TL_messageMediaEmpty();
                                                 TLRPC.TL_updates tL_updates = new TLRPC.TL_updates();
                                                 tL_updates.updates.add(tL_updateServiceNotification);
-                                                Utilities.stageQueue.postRunnable(new p6(i23, tL_updates, 9));
+                                                Utilities.stageQueue.postRunnable(new s6(i23, tL_updates, 9));
                                                 ConnectionsManager.getInstance(i23).resumeNetworkMaybe();
                                                 countDownLatch.countDown();
                                                 break;
@@ -6158,17 +6158,17 @@ public class PushListenerController {
                                             }
                                             if (jSONObject2.has(str11)) {
                                             }
-                                            long j24222 = j16;
-                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j15 + " custom topicId " + i13);
+                                            long j25222 = j17;
+                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j16 + " custom topicId " + i13);
                                             if (jSONObject2.has(str8)) {
                                             }
                                             if (jSONObject2.has(str12)) {
                                             }
-                                            if (j17 == j10) {
+                                            if (j18 == j11) {
                                             }
                                             boolean z26222 = z25;
-                                            j18 = j17;
-                                            if (j18 != j10) {
+                                            j19 = j18;
+                                            if (j19 != j11) {
                                             }
                                             i14 = i12;
                                             countDownLatch.countDown();
@@ -6178,7 +6178,7 @@ public class PushListenerController {
                                         case 657503015:
                                             if (string4.equals("MESSAGE_WALLET_TONCONNECT_REQUEST_DAPP")) {
                                                 JSONArray optJSONArray = jSONObject3.optJSONArray("loc_args");
-                                                NotificationsController.getInstance(i23).showTonConnectNotification((!"MESSAGE_WALLET_TONCONNECT_REQUEST_DAPP".equals(string4) || optJSONArray == null) ? null : optJSONArray.optString(1, null), j3);
+                                                NotificationsController.getInstance(i23).showTonConnectNotification((!"MESSAGE_WALLET_TONCONNECT_REQUEST_DAPP".equals(string4) || optJSONArray == null) ? null : optJSONArray.optString(1, null), j10);
                                                 ConnectionsManager.onInternalPushReceived(i23);
                                                 ConnectionsManager.getInstance(i23).resumeNetworkMaybe();
                                                 countDownLatch.countDown();
@@ -6192,17 +6192,17 @@ public class PushListenerController {
                                             }
                                             if (jSONObject2.has(str11)) {
                                             }
-                                            long j242222 = j16;
-                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j15 + " custom topicId " + i13);
+                                            long j252222 = j17;
+                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j16 + " custom topicId " + i13);
                                             if (jSONObject2.has(str8)) {
                                             }
                                             if (jSONObject2.has(str12)) {
                                             }
-                                            if (j17 == j10) {
+                                            if (j18 == j11) {
                                             }
                                             boolean z262222 = z25;
-                                            j18 = j17;
-                                            if (j18 != j10) {
+                                            j19 = j18;
+                                            if (j19 != j11) {
                                             }
                                             i14 = i12;
                                             countDownLatch.countDown();
@@ -6211,7 +6211,7 @@ public class PushListenerController {
                                             break;
                                         case 1365673842:
                                             if (string4.equals("GEO_LIVE_PENDING")) {
-                                                Utilities.stageQueue.postRunnable(new ei.r2(i23, 6));
+                                                Utilities.stageQueue.postRunnable(new fi.r2(i23, 6));
                                                 countDownLatch.countDown();
                                                 break;
                                             }
@@ -6223,17 +6223,17 @@ public class PushListenerController {
                                             }
                                             if (jSONObject2.has(str11)) {
                                             }
-                                            long j2422222 = j16;
-                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j15 + " custom topicId " + i13);
+                                            long j2522222 = j17;
+                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j16 + " custom topicId " + i13);
                                             if (jSONObject2.has(str8)) {
                                             }
                                             if (jSONObject2.has(str12)) {
                                             }
-                                            if (j17 == j10) {
+                                            if (j18 == j11) {
                                             }
                                             boolean z2622222 = z25;
-                                            j18 = j17;
-                                            if (j18 != j10) {
+                                            j19 = j18;
+                                            if (j19 != j11) {
                                             }
                                             i14 = i12;
                                             countDownLatch.countDown();
@@ -6249,17 +6249,17 @@ public class PushListenerController {
                                             }
                                             if (jSONObject2.has(str11)) {
                                             }
-                                            long j24222222 = j16;
-                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j15 + " custom topicId " + i13);
+                                            long j25222222 = j17;
+                                            FileLog.d("recived push notification {" + string4 + "} chatId " + j16 + " custom topicId " + i13);
                                             if (jSONObject2.has(str8)) {
                                             }
                                             if (jSONObject2.has(str12)) {
                                             }
-                                            if (j17 == j10) {
+                                            if (j18 == j11) {
                                             }
                                             boolean z26222222 = z25;
-                                            j18 = j17;
-                                            if (j18 != j10) {
+                                            j19 = j18;
+                                            if (j19 != j11) {
                                             }
                                             i14 = i12;
                                             countDownLatch.countDown();
@@ -6309,7 +6309,7 @@ public class PushListenerController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$processRemoteMessage$7(String str, String str2, long j3) {
+    public static /* synthetic */ void lambda$processRemoteMessage$7(String str, String str2, long j10) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d(str + " PRE INIT APP");
         }
@@ -6317,7 +6317,7 @@ public class PushListenerController {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d(str + " POST INIT APP");
         }
-        Utilities.stageQueue.postRunnable(new sh(0, j3, str, str2));
+        Utilities.stageQueue.postRunnable(new vh(0, j10, str, str2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -6365,7 +6365,7 @@ public class PushListenerController {
                     ConnectionsManager.getInstance(i11).sendRequest(tL_help_saveAppLog, null);
                     z10 = false;
                 }
-                AndroidUtilities.runOnUIThread(new r6(i11, i10, str));
+                AndroidUtilities.runOnUIThread(new u6(i11, i10, str));
             }
         }
     }
@@ -6380,25 +6380,25 @@ public class PushListenerController {
         countDownLatch.countDown();
     }
 
-    public static void processRemoteMessage(int i10, String str, long j3) {
+    public static void processRemoteMessage(int i10, String str, long j10) {
         String str2 = i10 == 2 ? "FCM" : "HCM";
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d(str2.concat(" PRE START PROCESSING"));
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        AndroidUtilities.runOnUIThread(new sh(1, j3, str2, str));
+        AndroidUtilities.runOnUIThread(new vh(1, j10, str2, str));
         try {
             countDownLatch.await();
         } catch (Throwable unused) {
         }
         if (BuildVars.DEBUG_VERSION) {
-            StringBuilder w10 = a1.g.w("finished ", str2, " service, time = ");
-            w10.append(SystemClock.elapsedRealtime() - elapsedRealtime);
-            FileLog.d(w10.toString());
+            StringBuilder v = a1.g.v("finished ", str2, " service, time = ");
+            v.append(SystemClock.elapsedRealtime() - elapsedRealtime);
+            FileLog.d(v.toString());
         }
     }
 
     public static void sendRegistrationToServer(int i10, String str) {
-        Utilities.stageQueue.postRunnable(new p6(str, i10, 8));
+        Utilities.stageQueue.postRunnable(new s6(str, i10, 8));
     }
 }

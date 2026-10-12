@@ -1,178 +1,62 @@
 package org.telegram.ui;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class um implements yu0 {
-    public final TL_iv.RichMessage a;
-    public final ArrayList b;
-    public final MessageObject c;
+public final class um extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.y b;
+    public final /* synthetic */ vm c;
 
-    public um(TL_iv.RichMessage richMessage, ArrayList arrayList, MessageObject messageObject) {
-        this.a = richMessage;
-        this.b = arrayList;
-        this.c = messageObject;
+    public /* synthetic */ um(vm vmVar, org.telegram.ui.ActionBar.y yVar, int i10) {
+        this.a = i10;
+        this.c = vmVar;
+        this.b = yVar;
     }
 
-    @Override // org.telegram.ui.yu0
-    public final boolean a(int i10) {
-        if (i10 < 0) {
-            return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        switch (this.a) {
+            case 0:
+                kVar = ((org.telegram.ui.ActionBar.m2) this.c.c).actionBar;
+                kVar.setMenuOffsetSuppressed(false);
+                break;
+            default:
+                vm vmVar = this.c;
+                fo foVar = vmVar.c;
+                foVar.i0.f(8);
+                this.b.r(0.0f);
+                kVar2 = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
+                kVar2.setMenuOffsetSuppressed(false);
+                vmVar.b = false;
+                break;
         }
-        ArrayList arrayList = this.b;
-        if (i10 >= arrayList.size()) {
-            return false;
-        }
-        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i10);
-        if (!(pageBlock instanceof TL_iv.pageBlockVideo)) {
-            return false;
-        }
-        TLRPC.Document b10 = f4.b(this.a, ((TL_iv.pageBlockVideo) pageBlock).video_id);
-        if (b10 != null) {
-            return MessageObject.isVideoDocument(b10);
-        }
-        return false;
     }
 
-    @Override // org.telegram.ui.yu0
-    public final File b(int i10) {
-        TLRPC.Document b10;
-        TLRPC.PhotoSize closestPhotoSizeWithSize;
-        if (i10 < 0) {
-            return null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        switch (this.a) {
+            case 0:
+                fo foVar = this.c.c;
+                kVar = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
+                kVar.setMenuOffsetSuppressed(true);
+                fo.S3(foVar);
+                foVar.i0.f(0);
+                this.b.r(AndroidUtilities.dp(48.0f));
+                break;
+            default:
+                vm vmVar = this.c;
+                kVar2 = ((org.telegram.ui.ActionBar.m2) vmVar.c).actionBar;
+                kVar2.setMenuOffsetSuppressed(true);
+                vmVar.b = true;
+                break;
         }
-        ArrayList arrayList = this.b;
-        if (i10 >= arrayList.size()) {
-            return null;
-        }
-        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i10);
-        boolean z10 = pageBlock instanceof TL_iv.pageBlockPhoto;
-        TL_iv.RichMessage richMessage = this.a;
-        if (!z10) {
-            if (!(pageBlock instanceof TL_iv.pageBlockVideo) || (b10 = f4.b(richMessage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) == null) {
-                return null;
-            }
-            return f4.c(b10);
-        }
-        TLRPC.Photo f7 = f4.f(richMessage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
-        if (f7 == null || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(f7.sizes, AndroidUtilities.getPhotoSize())) == null) {
-            return null;
-        }
-        return f4.c(closestPhotoSizeWithSize);
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final String c(int i10) {
-        TLObject d = d(i10);
-        if (d instanceof TLRPC.Photo) {
-            d = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) d).sizes, AndroidUtilities.getPhotoSize());
-        }
-        return FileLoader.getAttachFileName(d);
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final TLObject d(int i10) {
-        if (i10 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.b;
-        if (i10 >= arrayList.size()) {
-            return null;
-        }
-        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i10);
-        boolean z10 = pageBlock instanceof TL_iv.pageBlockPhoto;
-        TL_iv.RichMessage richMessage = this.a;
-        if (z10) {
-            return f4.f(richMessage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
-        }
-        if (pageBlock instanceof TL_iv.pageBlockVideo) {
-            return f4.b(richMessage, ((TL_iv.pageBlockVideo) pageBlock).video_id);
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final boolean e(int i10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final TLRPC.PhotoSize f(TLObject tLObject, int[] iArr) {
-        if (tLObject instanceof TLRPC.Photo) {
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, AndroidUtilities.getPhotoSize());
-            if (closestPhotoSizeWithSize == null) {
-                iArr[0] = -1;
-                return null;
-            }
-            int i10 = closestPhotoSizeWithSize.size;
-            iArr[0] = i10;
-            if (i10 == 0) {
-                iArr[0] = -1;
-            }
-            return closestPhotoSizeWithSize;
-        }
-        if (tLObject instanceof TLRPC.Document) {
-            TLRPC.Document document = (TLRPC.Document) tLObject;
-            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 320, false, null, true);
-            if (closestPhotoSizeWithSize2 == null) {
-                closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
-            }
-            if (closestPhotoSizeWithSize2 != null) {
-                int i11 = closestPhotoSizeWithSize2.size;
-                iArr[0] = i11;
-                if (i11 == 0) {
-                    iArr[0] = -1;
-                }
-                return closestPhotoSizeWithSize2;
-            }
-            iArr[0] = -1;
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final Object g() {
-        MessageObject messageObject = this.c;
-        return messageObject != null ? messageObject : this.a;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final TL_iv.PageBlock get(int i10) {
-        return (TL_iv.PageBlock) this.b.get(i10);
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final List getAll() {
-        return this.b;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final void h(TL_iv.PageBlock pageBlock) {
-        RichMessageLayout richMessageLayout;
-        MessageObject messageObject = this.c;
-        if (messageObject == null || (richMessageLayout = messageObject.richLayout) == null) {
-            return;
-        }
-        richMessageLayout.setSlideshowPage(pageBlock);
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final CharSequence i(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.yu0
-    public final int j() {
-        return this.b.size();
     }
 }

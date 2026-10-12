@@ -2,13 +2,13 @@ package org.webrtc;
 
 import org.webrtc.VideoDecoder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 class VideoDecoderWrapper {
-    public static VideoDecoder.Callback createDecoderCallback(long j3) {
-        return new w(j3);
+    public static VideoDecoder.Callback createDecoderCallback(long j10) {
+        return new x(j10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static native void nativeOnDecodedFrame(long j3, VideoFrame videoFrame, Integer num, Integer num2);
+    public static native void nativeOnDecodedFrame(long j10, VideoFrame videoFrame, Integer num, Integer num2);
 }

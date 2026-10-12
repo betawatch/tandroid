@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.NavigableSet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class s extends o implements NavigableSet, c0, SortedSet {
     public final transient Comparator d;
@@ -15,7 +15,7 @@ public abstract class s extends o implements NavigableSet, c0, SortedSet {
         this.d = comparator;
     }
 
-    public static z x(Comparator comparator) {
+    public static z w(Comparator comparator) {
         if (v.b.equals(comparator)) {
             return z.h;
         }
@@ -51,7 +51,7 @@ public abstract class s extends o implements NavigableSet, c0, SortedSet {
     public final java.util.SortedSet headSet(Object obj) {
         obj.getClass();
         z zVar = (z) this;
-        return zVar.A(0, zVar.y(obj, false));
+        return zVar.z(0, zVar.x(obj, false));
     }
 
     @Override // java.util.SortedSet
@@ -84,17 +84,17 @@ public abstract class s extends o implements NavigableSet, c0, SortedSet {
     public final java.util.SortedSet tailSet(Object obj) {
         obj.getClass();
         z zVar = (z) this;
-        return zVar.A(zVar.z(obj, true), zVar.f.size());
+        return zVar.z(zVar.y(obj, true), zVar.f.size());
     }
 
     @Override // java.util.NavigableSet
-    /* renamed from: v, reason: merged with bridge method [inline-methods] */
+    /* renamed from: u, reason: merged with bridge method [inline-methods] */
     public final s descendingSet() {
         s sVar = this.e;
         if (sVar == null) {
             z zVar = (z) this;
             Comparator reverseOrder = Collections.reverseOrder(zVar.d);
-            sVar = zVar.isEmpty() ? x(reverseOrder) : new z(zVar.f.r(), reverseOrder);
+            sVar = zVar.isEmpty() ? w(reverseOrder) : new z(zVar.f.q(), reverseOrder);
             this.e = sVar;
             sVar.e = this;
         }
@@ -102,7 +102,7 @@ public abstract class s extends o implements NavigableSet, c0, SortedSet {
     }
 
     @Override // java.util.NavigableSet
-    /* renamed from: w, reason: merged with bridge method [inline-methods] */
+    /* renamed from: v, reason: merged with bridge method [inline-methods] */
     public final z subSet(Object obj, boolean z10, Object obj2, boolean z11) {
         obj.getClass();
         obj2.getClass();
@@ -110,21 +110,21 @@ public abstract class s extends o implements NavigableSet, c0, SortedSet {
             throw new IllegalArgumentException();
         }
         z zVar = (z) this;
-        z A = zVar.A(zVar.z(obj, z10), zVar.f.size());
-        return A.A(0, A.y(obj2, z11));
+        z z12 = zVar.z(zVar.y(obj, z10), zVar.f.size());
+        return z12.z(0, z12.x(obj2, z11));
     }
 
     @Override // java.util.NavigableSet
     public final NavigableSet headSet(Object obj, boolean z10) {
         obj.getClass();
         z zVar = (z) this;
-        return zVar.A(0, zVar.y(obj, z10));
+        return zVar.z(0, zVar.x(obj, z10));
     }
 
     @Override // java.util.NavigableSet
     public final NavigableSet tailSet(Object obj, boolean z10) {
         obj.getClass();
         z zVar = (z) this;
-        return zVar.A(zVar.z(obj, z10), zVar.f.size());
+        return zVar.z(zVar.y(obj, z10), zVar.f.size());
     }
 }

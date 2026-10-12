@@ -2,7 +2,7 @@ package androidx.activity;
 
 import android.window.BackEvent;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b {
     public final float a;
@@ -13,11 +13,11 @@ public final class b {
     public b(BackEvent backEvent) {
         a aVar = a.a;
         float d = aVar.d(backEvent);
-        float e7 = aVar.e(backEvent);
+        float e = aVar.e(backEvent);
         float b10 = aVar.b(backEvent);
         int c10 = aVar.c(backEvent);
         this.a = d;
-        this.b = e7;
+        this.b = e;
         this.c = b10;
         this.d = c10;
     }

@@ -2,113 +2,44 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class jr extends View {
-    public final Paint a;
-    public final Paint b;
-    public final RectF c;
-    public int d;
-    public long e;
-    public int f;
-    public int h;
-    public int n;
-    public int r;
+    public final ir a;
 
-    public jr(Context context, int i10) {
+    public jr(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
         super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        Paint paint2 = new Paint(1);
-        this.b = paint2;
-        this.c = new RectF();
-        this.d = 0;
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint2.setStyle(style);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint2.setStrokeCap(Paint.Cap.ROUND);
-        if (i10 == 0) {
-            this.f = org.telegram.ui.ActionBar.i6.B7;
-            this.h = org.telegram.ui.ActionBar.i6.C7;
-        } else if (i10 == 1) {
-            this.f = org.telegram.ui.ActionBar.i6.D7;
-            this.h = org.telegram.ui.ActionBar.i6.E7;
-        } else if (i10 == 2) {
-            this.f = org.telegram.ui.ActionBar.i6.F7;
-            this.h = org.telegram.ui.ActionBar.i6.G7;
-        } else if (i10 == 3) {
-            this.f = org.telegram.ui.ActionBar.i6.H7;
-            this.h = org.telegram.ui.ActionBar.i6.I7;
-        }
-        b();
+        setVisibility(8);
+        ir irVar = new ir(this, true, c6Var);
+        this.a = irVar;
+        irVar.G = true;
     }
 
-    public final void a(int i10, int i11) {
-        this.f = -1;
-        this.h = -1;
-        this.n = i10;
-        this.r = i11;
-        b();
-    }
-
-    public final void b() {
-        int i10 = this.f;
-        Paint paint = this.a;
-        if (i10 >= 0) {
-            paint.setColor(org.telegram.ui.ActionBar.i6.x0(null, i10, false));
-        } else {
-            paint.setColor(this.n);
-        }
-        int i11 = this.h;
-        Paint paint2 = this.b;
-        if (i11 >= 0) {
-            paint2.setColor(org.telegram.ui.ActionBar.i6.x0(null, i11, false));
-        } else {
-            paint2.setColor(this.r);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.e = System.currentTimeMillis();
-        invalidate();
+    public float getEnterProgress() {
+        int i10;
+        ir irVar = this.a;
+        float f7 = irVar.l;
+        return (f7 == 1.0f || !((i10 = irVar.c) == 0 || i10 == 1)) ? irVar.h == 0 ? 0.0f : 1.0f : i10 == 0 ? f7 : 1.0f - f7;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (getVisibility() != 0) {
-            return;
-        }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j3 = currentTimeMillis - this.e;
-        this.e = currentTimeMillis;
-        this.d = (int) (((j3 * 360) / 1000.0f) + this.d);
-        int measuredWidth = (getMeasuredWidth() / 2) - AndroidUtilities.dp(9.0f);
-        int measuredHeight = (getMeasuredHeight() / 2) - AndroidUtilities.dp(9.0f);
-        float f7 = measuredWidth;
-        float f10 = measuredHeight;
-        float dp = AndroidUtilities.dp(18.0f) + measuredWidth;
-        float dp2 = AndroidUtilities.dp(18.0f) + measuredHeight;
-        RectF rectF = this.c;
-        rectF.set(f7, f10, dp, dp2);
-        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, AndroidUtilities.dp(9.0f), this.a);
-        canvas.drawArc(rectF, this.d - 90, 90.0f, false, this.b);
-        invalidate();
+        this.a.a(canvas);
     }
 
     @Override // android.view.View
-    public void setVisibility(int i10) {
-        super.setVisibility(i10);
-        this.e = System.currentTimeMillis();
-        invalidate();
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.a.d(getMeasuredHeight(), getMeasuredWidth());
+    }
+
+    public void setGravity(int i10) {
+        this.a.z = i10;
+    }
+
+    public void setReverse(boolean z10) {
+        this.a.D = z10;
     }
 }

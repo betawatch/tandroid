@@ -1,19 +1,23 @@
 package q3;
 
-import j$.util.Objects;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class l extends j {
-    public final String b;
-    public final String c;
-    public final String d;
+public final class l extends i {
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int[] e;
+    public final int[] f;
 
-    public l(String str, String str2, String str3) {
-        super("----");
-        this.b = str;
-        this.c = str2;
-        this.d = str3;
+    public l(int i10, int i11, int i12, int[] iArr, int[] iArr2) {
+        super("MLLT");
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = iArr;
+        this.f = iArr2;
     }
 
     public final boolean equals(Object obj) {
@@ -22,7 +26,7 @@ public final class l extends j {
         }
         if (obj != null && l.class == obj.getClass()) {
             l lVar = (l) obj;
-            if (Objects.equals(this.c, lVar.c) && Objects.equals(this.b, lVar.b) && Objects.equals(this.d, lVar.d)) {
+            if (this.b == lVar.b && this.c == lVar.c && this.d == lVar.d && Arrays.equals(this.e, lVar.e) && Arrays.equals(this.f, lVar.f)) {
                 return true;
             }
         }
@@ -30,16 +34,6 @@ public final class l extends j {
     }
 
     public final int hashCode() {
-        String str = this.b;
-        int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
-        String str2 = this.c;
-        int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
-        String str3 = this.d;
-        return hashCode2 + (str3 != null ? str3.hashCode() : 0);
-    }
-
-    @Override // q3.j
-    public final String toString() {
-        return this.a + ": domain=" + this.b + ", description=" + this.c;
+        return Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((((((527 + this.b) * 31) + this.c) * 31) + this.d) * 31)) * 31);
     }
 }

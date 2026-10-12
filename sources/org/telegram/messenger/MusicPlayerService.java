@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final int ID_NOTIFICATION = 5;
@@ -57,9 +57,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
     };
     private ImageReceiver imageReceiver;
     private String loadingFilePath;
-    private android.support.v4.media.session.a0 mediaSession;
+    private android.support.v4.media.session.b0 mediaSession;
     private int notificationMessageID;
-    private android.support.v4.media.session.d0 playbackState;
+    private android.support.v4.media.session.e0 playbackState;
     private RemoteControlClient remoteControlClient;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -75,22 +75,22 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         PendingIntent pendingIntent;
         PendingIntent pendingIntent2;
         String str;
-        long j3;
+        long j10;
         String str2;
         String str3;
-        kf.a aVar;
+        lf.a aVar;
         String str4;
         int i10;
         PendingIntent pendingIntent3;
         MessageObject messageObject2;
         String str5;
-        kf.a aVar2;
+        lf.a aVar2;
         String str6;
         Bitmap bitmap3;
         int i11;
         String musicTitle = messageObject.getMusicTitle();
         String musicAuthor = messageObject.getMusicAuthor();
-        kf.a audioInfo = MediaController.getInstance().getAudioInfo();
+        lf.a audioInfo = MediaController.getInstance().getAudioInfo();
         Intent intent = new Intent(ApplicationLoader.applicationContext, (Class<?>) LaunchActivity.class);
         if (messageObject.isMusic()) {
             intent.setAction("com.tmessages.openplayer");
@@ -99,16 +99,16 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             intent.setAction("android.intent.action.VIEW");
             TLRPC.Peer peer = messageObject.messageOwner.peer_id;
             boolean z11 = peer instanceof TLRPC.TL_peerUser;
-            long j10 = z11 ? peer.user_id : peer instanceof TLRPC.TL_peerChat ? peer.chat_id : peer instanceof TLRPC.TL_peerChannel ? peer.channel_id : 0L;
-            if (j10 != 0) {
+            long j11 = z11 ? peer.user_id : peer instanceof TLRPC.TL_peerChat ? peer.chat_id : peer instanceof TLRPC.TL_peerChannel ? peer.channel_id : 0L;
+            if (j11 != 0) {
                 if (z11) {
-                    StringBuilder u10 = a1.g.u(j10, "tg://openmessage?user_id=", "&message_id=");
-                    u10.append(messageObject.getId());
-                    intent.setData(Uri.parse(u10.toString()));
+                    StringBuilder t10 = a1.g.t(j11, "tg://openmessage?user_id=", "&message_id=");
+                    t10.append(messageObject.getId());
+                    intent.setData(Uri.parse(t10.toString()));
                 } else {
-                    StringBuilder u11 = a1.g.u(j10, "tg://openmessage?chat_id=", "&message_id=");
-                    u11.append(messageObject.getId());
-                    intent.setData(Uri.parse(u11.toString()));
+                    StringBuilder t11 = a1.g.t(j11, "tg://openmessage?chat_id=", "&message_id=");
+                    t11.append(messageObject.getId());
+                    intent.setData(Uri.parse(t11.toString()));
                 }
             }
         }
@@ -211,12 +211,12 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         }
         String string = LocaleController.getString(R.string.Next);
         String string2 = LocaleController.getString(R.string.AccDescrPrevious);
-        this.playbackState = new android.support.v4.media.session.d0();
+        this.playbackState = new android.support.v4.media.session.e0();
         if (MediaController.getInstance().isDownloadingCurrentMessage()) {
-            android.support.v4.media.session.d0 d0Var = this.playbackState;
-            j3 = 1000;
-            d0Var.c(6, 0L, 1.0f);
-            d0Var.e = 0L;
+            android.support.v4.media.session.e0 e0Var = this.playbackState;
+            j10 = 1000;
+            e0Var.c(6, 0L, 1.0f);
+            e0Var.e = 0L;
             if (messageObject.isMusic()) {
                 builder.addAction(new Notification.Action.Builder(R.drawable.ic_action_previous, string2, broadcast).build());
             }
@@ -232,13 +232,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             messageObject2 = messageObject;
         } else {
             PendingIntent pendingIntent4 = pendingIntent2;
-            j3 = 1000;
-            long j11 = messageObject.isMusic() ? 2360118L : 2360070L;
+            j10 = 1000;
+            long j12 = messageObject.isMusic() ? 2360118L : 2360070L;
             if (messageObject.isMusic()) {
                 i10 = i12;
                 int i13 = SharedConfig.shuffleMusic ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
                 aVar = audioInfo;
-                android.support.v4.media.session.d0 d0Var2 = this.playbackState;
+                android.support.v4.media.session.e0 e0Var2 = this.playbackState;
                 str2 = musicTitle;
                 String string3 = LocaleController.getString(R.string.ShuffleList);
                 if (TextUtils.isEmpty(str)) {
@@ -254,7 +254,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                 str4 = string;
                 String str7 = str;
                 pendingIntent3 = pendingIntent4;
-                d0Var2.a(new PlaybackStateCompat.CustomAction(str7, string3, i13, null));
+                e0Var2.a(new PlaybackStateCompat.CustomAction(str7, string3, i13, null));
             } else {
                 str2 = musicTitle;
                 str3 = musicAuthor;
@@ -263,14 +263,14 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                 i10 = i12;
                 pendingIntent3 = pendingIntent4;
             }
-            android.support.v4.media.session.d0 d0Var3 = this.playbackState;
+            android.support.v4.media.session.e0 e0Var3 = this.playbackState;
             messageObject2 = messageObject;
-            d0Var3.c(!isMessagePaused ? 3 : 2, MediaController.getInstance().getPlayingMessageObject().audioProgressSec * 1000, getPlaybackSpeed(z15, messageObject2));
-            d0Var3.e = j11;
+            e0Var3.c(!isMessagePaused ? 3 : 2, MediaController.getInstance().getPlayingMessageObject().audioProgressSec * 1000, getPlaybackSpeed(z15, messageObject2));
+            e0Var3.e = j12;
             if (messageObject2.isMusic()) {
                 int i14 = SharedConfig.repeatMode;
                 int i15 = i14 != 1 ? i14 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
-                android.support.v4.media.session.d0 d0Var4 = this.playbackState;
+                android.support.v4.media.session.e0 e0Var4 = this.playbackState;
                 String string4 = LocaleController.getString(R.string.RepeatSong);
                 if (TextUtils.isEmpty(NOTIFY_REPEAT)) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
@@ -282,7 +282,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                     throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
                 }
                 str5 = null;
-                d0Var4.a(new PlaybackStateCompat.CustomAction(NOTIFY_REPEAT, string4, i15, null));
+                e0Var4.a(new PlaybackStateCompat.CustomAction(NOTIFY_REPEAT, string4, i15, null));
             } else {
                 str5 = null;
             }
@@ -303,11 +303,11 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         updateShuffleMode();
         android.support.v4.media.c cVar = new android.support.v4.media.c();
         String str8 = str3;
-        cVar.j("android.media.metadata.ALBUM_ARTIST", str8);
-        cVar.j("android.media.metadata.ARTIST", str8);
-        cVar.i(duration);
+        cVar.d("android.media.metadata.ALBUM_ARTIST", str8);
+        cVar.d("android.media.metadata.ARTIST", str8);
+        cVar.c(duration);
         String str9 = str2;
-        cVar.j("android.media.metadata.TITLE", str9);
+        cVar.d("android.media.metadata.TITLE", str9);
         if (aVar == null || !messageObject2.isMusic()) {
             aVar2 = aVar;
             str6 = str5;
@@ -315,12 +315,12 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             aVar2 = aVar;
             str6 = aVar2.f;
         }
-        cVar.j("android.media.metadata.ALBUM", str6);
+        cVar.d("android.media.metadata.ALBUM", str6);
         if (bitmap4 == null || bitmap4.isRecycled()) {
             bitmap3 = bitmap4;
         } else {
             bitmap3 = bitmap4;
-            cVar.h("android.media.metadata.ALBUM_ART", bitmap3);
+            cVar.b("android.media.metadata.ALBUM_ART", bitmap3);
         }
         this.mediaSession.e(new MediaMetadataCompat(cVar.a));
         builder.setVisibility(1);
@@ -349,7 +349,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                 if (aVar2 != null && !TextUtils.isEmpty(aVar2.f)) {
                     editMetadata.putString(1, aVar2.f);
                 }
-                editMetadata.putLong(9, MediaController.getInstance().getPlayingMessageObject().audioPlayerDuration * j3);
+                editMetadata.putLong(9, MediaController.getInstance().getPlayingMessageObject().audioPlayerDuration * j10);
                 if (bitmap3 != null) {
                     try {
                         editMetadata.putBitmap(100, bitmap3);
@@ -373,7 +373,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                         editMetadata2.apply();
                         MusicPlayerService.this.remoteControlClient.setPlaybackState(MediaController.getInstance().isMessagePaused() ? 2 : 3, Math.max(MediaController.getInstance().getPlayingMessageObject().audioProgressSec * 1000, 100L), MediaController.getInstance().isMessagePaused() ? 0.0f : 1.0f);
                     }
-                }, j3);
+                }, j10);
             } else {
                 i11 = 2;
             }
@@ -438,13 +438,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         if (z10) {
             return null;
         }
-        org.telegram.ui.ActionBar.i6.S(this);
-        org.telegram.ui.Components.j9 j9Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.j9(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.j9((TLRPC.Chat) tLObject);
-        j9Var.r = 1;
+        org.telegram.ui.ActionBar.g6.S(this);
+        org.telegram.ui.Components.k9 k9Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.k9(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.k9((TLRPC.Chat) tLObject);
+        k9Var.r = 1;
         float f11 = i10;
         Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(f11), AndroidUtilities.dp(f11), Bitmap.Config.ARGB_8888);
-        j9Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
-        j9Var.draw(new Canvas(createBitmap));
+        k9Var.setBounds(0, 0, createBitmap.getWidth(), createBitmap.getHeight());
+        k9Var.draw(new Canvas(createBitmap));
         return createBitmap;
     }
 
@@ -490,22 +490,22 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void updatePlaybackState(long j3) {
-        long j10;
-        this.playbackState = new android.support.v4.media.session.d0();
+    public void updatePlaybackState(long j10) {
+        long j11;
+        this.playbackState = new android.support.v4.media.session.e0();
         boolean isMessagePaused = MediaController.getInstance().isMessagePaused();
         boolean z10 = !isMessagePaused;
         if (MediaController.getInstance().isDownloadingCurrentMessage()) {
-            android.support.v4.media.session.d0 d0Var = this.playbackState;
-            d0Var.c(6, 0L, 1.0f);
-            d0Var.e = 0L;
+            android.support.v4.media.session.e0 e0Var = this.playbackState;
+            e0Var.c(6, 0L, 1.0f);
+            e0Var.e = 0L;
         } else {
             MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
             if (playingMessageObject == null || !playingMessageObject.isMusic()) {
-                j10 = 2360070;
+                j11 = 2360070;
             } else {
                 int i10 = SharedConfig.shuffleMusic ? R.drawable.player_new_shuffle : R.drawable.player_new_shuffle_off;
-                android.support.v4.media.session.d0 d0Var2 = this.playbackState;
+                android.support.v4.media.session.e0 e0Var2 = this.playbackState;
                 String string = LocaleController.getString(R.string.ShuffleList);
                 if (TextUtils.isEmpty(NOTIFY_SHUFFLE)) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
@@ -516,16 +516,16 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                 if (i10 == 0) {
                     throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
                 }
-                d0Var2.a(new PlaybackStateCompat.CustomAction(NOTIFY_SHUFFLE, string, i10, null));
-                j10 = 2360118;
+                e0Var2.a(new PlaybackStateCompat.CustomAction(NOTIFY_SHUFFLE, string, i10, null));
+                j11 = 2360118;
             }
-            android.support.v4.media.session.d0 d0Var3 = this.playbackState;
-            d0Var3.c(!isMessagePaused ? 3 : 2, j3, getPlaybackSpeed(z10, playingMessageObject));
-            d0Var3.e = j10;
+            android.support.v4.media.session.e0 e0Var3 = this.playbackState;
+            e0Var3.c(!isMessagePaused ? 3 : 2, j10, getPlaybackSpeed(z10, playingMessageObject));
+            e0Var3.e = j11;
             if (playingMessageObject != null && playingMessageObject.isMusic()) {
                 int i11 = SharedConfig.repeatMode;
                 int i12 = i11 != 1 ? i11 != 2 ? R.drawable.player_new_repeat_off : R.drawable.player_new_repeatone : R.drawable.player_new_repeatall;
-                android.support.v4.media.session.d0 d0Var4 = this.playbackState;
+                android.support.v4.media.session.e0 e0Var4 = this.playbackState;
                 String string2 = LocaleController.getString(R.string.RepeatSong);
                 if (TextUtils.isEmpty(NOTIFY_REPEAT)) {
                     throw new IllegalArgumentException("You must specify an action to build a CustomAction");
@@ -536,7 +536,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                 if (i12 == 0) {
                     throw new IllegalArgumentException("You must specify an icon resource id to build a CustomAction");
                 }
-                d0Var4.a(new PlaybackStateCompat.CustomAction(NOTIFY_REPEAT, string2, i12, null));
+                e0Var4.a(new PlaybackStateCompat.CustomAction(NOTIFY_REPEAT, string2, i12, null));
             }
         }
         this.mediaSession.f(this.playbackState.b());
@@ -544,18 +544,18 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateRepeatMode() {
-        android.support.v4.media.session.a0 a0Var = this.mediaSession;
-        if (a0Var != null) {
+        android.support.v4.media.session.b0 b0Var = this.mediaSession;
+        if (b0Var != null) {
             int i10 = SharedConfig.repeatMode;
-            a0Var.h(i10 != 1 ? i10 != 2 ? 0 : 1 : 2);
+            b0Var.h(i10 != 1 ? i10 != 2 ? 0 : 1 : 2);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateShuffleMode() {
-        android.support.v4.media.session.a0 a0Var = this.mediaSession;
-        if (a0Var != null) {
-            a0Var.i(SharedConfig.shuffleMusic ? 1 : 0);
+        android.support.v4.media.session.b0 b0Var = this.mediaSession;
+        if (b0Var != null) {
+            b0Var.i(SharedConfig.shuffleMusic ? 1 : 0);
         }
     }
 
@@ -621,9 +621,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         }
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.imageReceiver = imageReceiver;
-        imageReceiver.setDelegate(new d0(this, 9));
-        this.mediaSession = new android.support.v4.media.session.a0(this, "telegramAudioPlayer", null, null);
-        this.playbackState = new android.support.v4.media.session.d0();
+        imageReceiver.setDelegate(new e0(this, 9));
+        this.mediaSession = new android.support.v4.media.session.b0(this, "telegramAudioPlayer", null, null);
+        this.playbackState = new android.support.v4.media.session.e0();
         this.albumArtPlaceholder = Bitmap.createBitmap(AndroidUtilities.dp(102.0f), AndroidUtilities.dp(102.0f), Bitmap.Config.ARGB_8888);
         Drawable drawable = getResources().getDrawable(R.drawable.nocover_big);
         drawable.setBounds(0, 0, this.albumArtPlaceholder.getWidth(), this.albumArtPlaceholder.getHeight());
@@ -634,9 +634,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                 if (MusicPlayerService.NOTIFY_REPEAT.equals(str)) {
                     SharedConfig.setRepeatMode((SharedConfig.repeatMode + 1) % 3);
                     MusicPlayerService.this.updateRepeatMode();
-                    org.telegram.ui.Components.l8 l8Var = org.telegram.ui.Components.l8.T0;
-                    if (l8Var != null) {
-                        l8Var.H0();
+                    org.telegram.ui.Components.m8 m8Var = org.telegram.ui.Components.m8.T0;
+                    if (m8Var != null) {
+                        m8Var.H0();
                     }
                 } else if (MusicPlayerService.NOTIFY_SHUFFLE.equals(str)) {
                     if (SharedConfig.shuffleMusic) {
@@ -645,9 +645,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                         MediaController.getInstance().setPlaybackOrderType(2);
                     }
                     MusicPlayerService.this.updateShuffleMode();
-                    org.telegram.ui.Components.l8 l8Var2 = org.telegram.ui.Components.l8.T0;
-                    if (l8Var2 != null) {
-                        l8Var2.H0();
+                    org.telegram.ui.Components.m8 m8Var2 = org.telegram.ui.Components.m8.T0;
+                    if (m8Var2 != null) {
+                        m8Var2.H0();
                     }
                 }
                 MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
@@ -667,11 +667,11 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             }
 
             @Override // android.support.v4.media.session.s
-            public void onSeekTo(long j3) {
+            public void onSeekTo(long j10) {
                 MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
                 if (playingMessageObject != null) {
-                    MediaController.getInstance().seekToProgress(playingMessageObject, (j3 / 1000) / ((float) playingMessageObject.getDuration()));
-                    MusicPlayerService.this.updatePlaybackState(j3);
+                    MediaController.getInstance().seekToProgress(playingMessageObject, (j10 / 1000) / ((float) playingMessageObject.getDuration()));
+                    MusicPlayerService.this.updatePlaybackState(j10);
                 }
             }
 
@@ -742,9 +742,9 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             editMetadata.apply();
             this.audioManager.unregisterRemoteControlClient(this.remoteControlClient);
         }
-        android.support.v4.media.session.a0 a0Var = this.mediaSession;
-        if (a0Var != null) {
-            a0Var.b();
+        android.support.v4.media.session.b0 b0Var = this.mediaSession;
+        if (b0Var != null) {
+            b0Var.b();
         }
         for (int i10 = 0; i10 < 4; i10++) {
             NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.messagePlayingDidSeek);
@@ -762,13 +762,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                     MediaController.getInstance().cleanupPlayer(true, true);
                     return 2;
                 }
-            } catch (Exception e7) {
-                e7.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
         if (playingMessageObject == null) {
-            AndroidUtilities.runOnUIThread(new f1(this, 29));
+            AndroidUtilities.runOnUIThread(new h1(this, 28));
             return 1;
         }
         if (supportLockScreenControls) {
@@ -783,8 +783,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                     this.audioManager.registerRemoteControlClient(remoteControlClient);
                 }
                 this.remoteControlClient.setTransportControlFlags(189);
-            } catch (Exception e10) {
-                FileLog.e(e10);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
         createNotification(playingMessageObject, false);

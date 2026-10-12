@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class t0 extends k0 {
     public static final Object[] r;
@@ -32,7 +32,7 @@ public final class t0 extends k0 {
         if (obj != null) {
             Object[] objArr = this.f;
             if (objArr.length != 0) {
-                int a2 = v7.n5.a(obj.hashCode());
+                int a2 = v7.o5.a(obj.hashCode());
                 while (true) {
                     int i10 = a2 & this.h;
                     Object obj2 = objArr[i10];
@@ -49,41 +49,41 @@ public final class t0 extends k0 {
         return false;
     }
 
-    @Override // com.google.android.gms.internal.cast.k0, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.e;
-    }
-
     @Override // com.google.android.gms.internal.cast.e0
-    public final int i(Object[] objArr) {
+    public final int h(Object[] objArr) {
         Object[] objArr2 = this.d;
         int i10 = this.n;
         System.arraycopy(objArr2, 0, objArr, 0, i10);
         return i10;
     }
 
+    @Override // com.google.android.gms.internal.cast.k0, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return this.e;
+    }
+
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public final Iterator iterator() {
         h0 h0Var = this.b;
         if (h0Var == null) {
-            h0Var = h0.r(this.n, this.d);
+            h0Var = h0.q(this.n, this.d);
             this.b = h0Var;
         }
         return h0Var.listIterator(0);
     }
 
     @Override // com.google.android.gms.internal.cast.e0
-    public final int n() {
+    public final int m() {
         return this.n;
     }
 
     @Override // com.google.android.gms.internal.cast.e0
-    public final int o() {
+    public final int n() {
         return 0;
     }
 
     @Override // com.google.android.gms.internal.cast.e0
-    public final Object[] p() {
+    public final Object[] o() {
         return this.d;
     }
 

@@ -1,11 +1,20 @@
 package v1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final class c {
-    public final Class a;
+import b2.h;
+import java.util.LinkedHashMap;
+import kotlin.jvm.internal.i;
 
-    public c(Class cls) {
-        this.a = cls;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final class c extends h {
+    public c() {
+        this(a.b);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(h initialExtras) {
+        super(8);
+        i.e(initialExtras, "initialExtras");
+        ((LinkedHashMap) this.a).putAll((LinkedHashMap) initialExtras.a);
     }
 }

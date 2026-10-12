@@ -1,22 +1,35 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class dd1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ xd1 a;
+public final class dd1 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Rect b;
+    public final /* synthetic */ ce1 c;
 
-    public dd1(xd1 xd1Var) {
-        this.a = xd1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dd1(ce1 ce1Var, Context context, int i10, Rect rect) {
+        super(context);
+        this.c = ce1Var;
+        this.a = i10;
+        this.b = rect;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        xd1 xd1Var = this.a;
-        if (xd1Var.W0 == null) {
-            xd1Var.J0[0].setVisibility(4);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = this.a;
+        Rect rect = this.b;
+        ce1 ce1Var = this.c;
+        if (i10 == 0) {
+            ce1Var.r.setBounds(ce1Var.V.getLeft() - rect.left, 0, ce1Var.V.getRight() + rect.right, getMeasuredHeight());
+        } else {
+            ce1Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
         }
+        ce1Var.r.draw(canvas);
     }
 }

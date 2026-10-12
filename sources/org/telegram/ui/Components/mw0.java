@@ -1,14 +1,57 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class mw0 {
-    public float a;
-    public float b;
-    public boolean c;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Region;
+import android.graphics.text.MeasuredText;
 
-    public mw0(float f7, float f10) {
-        this.a = f7;
-        this.b = f10;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class mw0 extends Canvas {
+    @Override // android.graphics.Canvas
+    public final boolean clipPath(Path path) {
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(CharSequence charSequence, int i10, int i11, float f7, float f10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextOnPath(String str, Path path, float f7, float f10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(MeasuredText measuredText, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final boolean clipPath(Path path, Region.Op op) {
+        return false;
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(String str, float f7, float f10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextOnPath(char[] cArr, int i10, int i11, Path path, float f7, float f10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(CharSequence charSequence, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(String str, int i10, int i11, float f7, float f10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawTextRun(char[] cArr, int i10, int i11, int i12, int i13, float f7, float f10, boolean z10, Paint paint) {
+    }
+
+    @Override // android.graphics.Canvas
+    public final void drawText(char[] cArr, int i10, int i11, float f7, float f10, Paint paint) {
     }
 }

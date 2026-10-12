@@ -1,10 +1,8 @@
 package androidx.media3.decoder.ffmpeg;
 
 import androidx.media3.decoder.SimpleDecoderOutputBuffer;
-import b2.s;
-import e2.d;
-import e2.d0;
-import e2.v;
+import b2.x;
+import e2.m0;
 import h2.f;
 import h2.h;
 import h2.j;
@@ -13,8 +11,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
 import org.telegram.messenger.MediaController;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class FfmpegAudioDecoder extends l {
     public static final byte[] w = {102, 76, 97, 67};
@@ -36,18 +35,18 @@ public final class FfmpegAudioDecoder extends l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public FfmpegAudioDecoder(int i10, s sVar, boolean z10) {
+    public FfmpegAudioDecoder(int i10, x xVar, boolean z10) {
         super(new h[16], new SimpleDecoderOutputBuffer[16]);
         byte[] bArr;
         int i11;
         byte[] bArr2;
         String str = FfmpegLibrary.a;
-        sVar.r.getClass();
-        String str2 = sVar.r;
+        xVar.s.getClass();
+        String str2 = xVar.s;
         String a2 = FfmpegLibrary.a(str2);
         a2.getClass();
         this.o = a2;
-        List list = sVar.u;
+        List list = xVar.v;
         char c10 = 65535;
         switch (str2.hashCode()) {
             case -1003765268:
@@ -157,7 +156,7 @@ public final class FfmpegAudioDecoder extends l {
         this.p = bArr;
         this.q = z10 ? 4 : 2;
         this.r = z10 ? 131070 : 65535;
-        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, z10, sVar.K, sVar.J);
+        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, z10, xVar.L, xVar.K);
         this.s = ffmpegInitialize;
         if (ffmpegInitialize == 0) {
             throw new FfmpegDecoderException("Initialization failed.");
@@ -165,23 +164,23 @@ public final class FfmpegAudioDecoder extends l {
         o(i10);
     }
 
-    private native int ffmpegDecode(long j3, ByteBuffer byteBuffer, int i10, SimpleDecoderOutputBuffer simpleDecoderOutputBuffer, ByteBuffer byteBuffer2, int i11);
+    private native int ffmpegDecode(long j10, ByteBuffer byteBuffer, int i10, SimpleDecoderOutputBuffer simpleDecoderOutputBuffer, ByteBuffer byteBuffer2, int i11);
 
-    private native int ffmpegGetChannelCount(long j3);
+    private native int ffmpegGetChannelCount(long j10);
 
-    private native int ffmpegGetSampleRate(long j3);
+    private native int ffmpegGetSampleRate(long j10);
 
     private native long ffmpegInitialize(String str, byte[] bArr, boolean z10, int i10, int i11);
 
-    private native void ffmpegRelease(long j3);
+    private native void ffmpegRelease(long j10);
 
-    private native long ffmpegReset(long j3, byte[] bArr);
+    private native long ffmpegReset(long j10, byte[] bArr);
 
     private ByteBuffer growOutputBuffer(SimpleDecoderOutputBuffer simpleDecoderOutputBuffer, int i10) {
         this.r = i10;
         ByteBuffer byteBuffer = simpleDecoderOutputBuffer.b;
         byteBuffer.getClass();
-        d.b(i10 >= byteBuffer.limit());
+        u6.g(i10 >= byteBuffer.limit());
         ByteBuffer order = ByteBuffer.allocateDirect(i10).order(ByteOrder.nativeOrder());
         int position = byteBuffer.position();
         byteBuffer.position(0);
@@ -223,11 +222,11 @@ public final class FfmpegAudioDecoder extends l {
             }
         }
         ByteBuffer byteBuffer = hVar.c;
-        String str = d0.a;
+        String str = m0.a;
         int limit = byteBuffer.limit();
-        long j3 = hVar.e;
+        long j10 = hVar.e;
         int i10 = this.r;
-        simpleDecoderOutputBuffer.timeUs = j3;
+        simpleDecoderOutputBuffer.timeUs = j10;
         ByteBuffer byteBuffer2 = simpleDecoderOutputBuffer.b;
         if (byteBuffer2 == null || byteBuffer2.capacity() < i10) {
             simpleDecoderOutputBuffer.b = ByteBuffer.allocateDirect(i10).order(ByteOrder.nativeOrder());
@@ -251,9 +250,9 @@ public final class FfmpegAudioDecoder extends l {
             this.v = ffmpegGetSampleRate(this.s);
             if (this.v == 0 && "alac".equals(this.o)) {
                 this.p.getClass();
-                v vVar = new v(this.p);
-                vVar.J(this.p.length - 4);
-                this.v = vVar.B();
+                e2.x xVar = new e2.x(this.p);
+                xVar.N(this.p.length - 4);
+                this.v = xVar.E();
             }
             this.t = true;
         }

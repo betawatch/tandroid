@@ -2,108 +2,58 @@ package e9;
 
 import j$.util.Objects;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b extends l1 {
-    public final /* synthetic */ d b;
+public final class b implements Iterator {
+    public final Iterator a;
+    public Object b = null;
+    public Collection c = null;
+    public Iterator d = d1.a;
+    public final /* synthetic */ p1 e;
+    public final /* synthetic */ int f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar) {
-        super(0);
-        this.b = dVar;
+    public b(p1 p1Var, int i10) {
+        this.f = i10;
+        this.e = p1Var;
+        this.a = p1Var.e.entrySet().iterator();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final void clear() {
-        this.b.clear();
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.a.hasNext() || this.d.hasNext();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        Set entrySet = this.b.b.entrySet();
-        entrySet.getClass();
-        try {
-            return entrySet.contains(obj);
-        } catch (ClassCastException | NullPointerException unused) {
-            return false;
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (!this.d.hasNext()) {
+            Map.Entry entry = (Map.Entry) this.a.next();
+            this.b = entry.getKey();
+            Collection collection = (Collection) entry.getValue();
+            this.c = collection;
+            this.d = collection.iterator();
+        }
+        Object obj = this.b;
+        Object next = this.d.next();
+        switch (this.f) {
+            case 0:
+                return next;
+            default:
+                return new j0(obj, next);
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean isEmpty() {
-        return this.b.isEmpty();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        return new c(this.b);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean remove(Object obj) {
-        Object obj2;
-        if (!contains(obj)) {
-            return false;
+    @Override // java.util.Iterator
+    public final void remove() {
+        this.d.remove();
+        Collection collection = this.c;
+        Objects.requireNonNull(collection);
+        if (collection.isEmpty()) {
+            this.a.remove();
         }
-        Map.Entry entry = (Map.Entry) obj;
-        Objects.requireNonNull(entry);
-        v0 v0Var = (v0) this.b.e;
-        Object key = entry.getKey();
-        Map map = v0Var.d;
-        map.getClass();
-        try {
-            obj2 = map.remove(key);
-        } catch (ClassCastException | NullPointerException unused) {
-            obj2 = null;
-        }
-        Collection collection = (Collection) obj2;
-        if (collection == null) {
-            return true;
-        }
-        int size = collection.size();
-        collection.clear();
-        v0Var.e -= size;
-        return true;
-    }
-
-    @Override // e9.l1, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean removeAll(Collection collection) {
-        try {
-            collection.getClass();
-            return super.removeAll(collection);
-        } catch (UnsupportedOperationException unused) {
-            Iterator it = collection.iterator();
-            boolean z10 = false;
-            while (it.hasNext()) {
-                z10 |= remove(it.next());
-            }
-            return z10;
-        }
-    }
-
-    @Override // e9.l1, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean retainAll(Collection collection) {
-        try {
-            collection.getClass();
-            return super.retainAll(collection);
-        } catch (UnsupportedOperationException unused) {
-            HashSet hashSet = new HashSet(q.c(collection.size()));
-            for (Object obj : collection) {
-                if (contains(obj) && (obj instanceof Map.Entry)) {
-                    hashSet.add(((Map.Entry) obj).getKey());
-                }
-            }
-            return this.b.keySet().retainAll(hashSet);
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.b.b.size();
+        p1 p1Var = this.e;
+        p1Var.f--;
     }
 }

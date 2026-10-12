@@ -11,9 +11,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.i61;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class m3 {
     public boolean a;
@@ -30,7 +30,7 @@ public final class m3 {
     public final void a(u1 u1Var) {
         TLRPC.Message message;
         String str;
-        SpannableStringBuilder e7 = ai.ja.e(R.string.ExpiredStory, false, new Object[0]);
+        SpannableStringBuilder e = bi.s9.e(R.string.ExpiredStory, false, new Object[0]);
         MessageObject messageObject = u1Var.getMessageObject();
         if (messageObject != null && (message = messageObject.messageOwner) != null) {
             TLRPC.MessageMedia messageMedia = message.media;
@@ -39,31 +39,31 @@ public final class m3 {
                 String str2 = user == null ? "DELETED" : user.first_name;
                 int minTabletSide = (int) ((AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() : u1Var.getParentWidth()) * 0.4f);
                 String string = LocaleController.getString(R.string.From);
-                TextPaint textPaint = org.telegram.ui.ActionBar.i6.X2;
+                TextPaint textPaint = org.telegram.ui.ActionBar.g6.X2;
                 int ceil = (int) Math.ceil(textPaint.measureText(string + " "));
                 if (str2 == null) {
                     str2 = "";
                 }
-                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.i6.Y2, minTabletSide - ceil, TextUtils.TruncateAt.END);
+                String str3 = (String) TextUtils.ellipsize(str2.replace('\n', ' '), org.telegram.ui.ActionBar.g6.Y2, minTabletSide - ceil, TextUtils.TruncateAt.END);
                 String string2 = LocaleController.getString(R.string.FromFormatted);
                 int indexOf = string2.indexOf("%1$s");
                 String format = String.format(string2, str3);
                 if (indexOf >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(format);
-                    spannableStringBuilder.setSpan(new m61(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
+                    spannableStringBuilder.setSpan(new i61(AndroidUtilities.bold()), indexOf, str3.length() + indexOf, 33);
                     str = spannableStringBuilder;
                 } else {
                     str = format;
                 }
-                TextPaint textPaint2 = org.telegram.ui.ActionBar.i6.Z2;
-                int dp = AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText(e7, 0, e7.length()) + 1.0f));
+                TextPaint textPaint2 = org.telegram.ui.ActionBar.g6.Z2;
+                int dp = AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText(e, 0, e.length()) + 1.0f));
                 Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                this.b = new StaticLayout(e7, textPaint2, dp, alignment, 1.0f, 0.0f, false);
+                this.b = new StaticLayout(e, textPaint2, dp, alignment, 1.0f, 0.0f, false);
                 this.c = new StaticLayout(str, textPaint2, AndroidUtilities.dp(10.0f) + ((int) (textPaint2.measureText((CharSequence) str, 0, str.length()) + 1.0f)), alignment, 1.0f, 0.0f, false);
                 this.e = 0;
                 this.h = AndroidUtilities.dp(4.0f);
                 this.i = AndroidUtilities.dp(12.0f);
-                this.e = (int) sc.v.d(this.h, 2.0f, AndroidUtilities.dp(4.0f) + this.c.getHeight() + AndroidUtilities.dp(2.0f) + this.b.getHeight() + AndroidUtilities.dp(4.0f), this.e);
+                this.e = (int) t8.b.c(this.h, 2.0f, AndroidUtilities.dp(4.0f) + this.c.getHeight() + AndroidUtilities.dp(2.0f) + this.b.getHeight() + AndroidUtilities.dp(4.0f), this.e);
                 this.d = u1Var.getExtraTextX() + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(12.0f) + Math.max(this.b.getWidth(), this.c.getWidth());
                 return;
             }

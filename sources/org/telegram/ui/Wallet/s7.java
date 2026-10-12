@@ -1,77 +1,69 @@
 package org.telegram.ui.Wallet;
 
-import android.text.TextUtils;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.e71;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.zc;
+import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s7 implements Utilities.Callback2 {
+public final /* synthetic */ class s7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j8 b;
+    public final /* synthetic */ i8 b;
 
-    public /* synthetic */ s7(j8 j8Var, int i10) {
+    public /* synthetic */ s7(i8 i8Var, int i10) {
         this.a = i10;
-        this.b = j8Var;
+        this.b = i8Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        EditTextBoldCursor editTextBoldCursor;
         switch (this.a) {
             case 0:
-                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
-                j8 j8Var = this.b;
-                j8Var.getClass();
-                if (wallettransaction != null) {
-                    j8Var.b0 = wallettransaction.fee;
-                    j8Var.x0();
-                    break;
+                i8 i8Var = this.b;
+                if (i8Var.F && (editTextBoldCursor = i8Var.E) != null && editTextBoldCursor.isAttachedToWindow() && i8Var.E.hasWindowFocus()) {
+                    i8Var.E.requestFocus();
+                    if (AndroidUtilities.showKeyboard(i8Var.E)) {
+                        i8Var.F = false;
+                        break;
+                    }
                 }
                 break;
             case 1:
-                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
-                j8 j8Var2 = this.b;
-                j8Var2.n = false;
-                if (!TextUtils.equals((String) obj2, "WALLET_USER_UNAVAILABLE")) {
-                    j8Var2.d = walletuseraddress;
-                    if (walletuseraddress != null) {
-                        j8Var2.f = walletuseraddress.address;
-                    }
-                    e71 e71Var = j8Var2.a;
-                    if (e71Var != null) {
-                        e71Var.W2.N(true);
-                    }
-                    j8Var2.w0();
-                    j8Var2.n0();
-                    n7 n7Var = j8Var2.s;
-                    if (n7Var != null) {
-                        n7Var.a(j8Var2.f, j8Var2.e);
-                        break;
-                    }
-                } else {
-                    j8Var2.finishFragment();
+                this.b.a0.setLoading(false);
+                break;
+            case 2:
+                this.b.a0.setLoading(false);
+                break;
+            case 3:
+                this.b.q0();
+                break;
+            case 4:
+                i8 i8Var2 = this.b;
+                float f7 = i8Var2.Y;
+                if (f7 < 1.0f && i8Var2.X == null) {
+                    o1.k kVar = new o1.k(new o1.j(f7));
+                    i8Var2.X = kVar;
+                    o1.l lVar = new o1.l(1.0f);
+                    lVar.a(0.55f);
+                    lVar.b(65.0f);
+                    kVar.u = lVar;
+                    i8Var2.X.e(0.001f);
+                    int i10 = 1;
+                    i8Var2.X.b(new r2(i8Var2, i10));
+                    i8Var2.X.a(new w5(i8Var2, i10));
+                    i8Var2.X.h();
                     break;
                 }
                 break;
-            case 2:
-                j8 j8Var3 = this.b;
-                j8Var3.d0 = (String) obj;
-                j8Var3.e0 = ((Boolean) obj2).booleanValue();
-                j8Var3.M.setText(j8Var3.d0);
-                j8Var3.M.setVisibility(TextUtils.isEmpty(j8Var3.d0) ? 8 : 0);
-                j8Var3.y0();
-                break;
-            case 3:
-                j8 j8Var4 = this.b;
-                j8Var4.d0 = (String) obj;
-                j8Var4.e0 = ((Boolean) obj2).booleanValue();
-                j8Var4.M.setText(j8Var4.d0);
-                j8Var4.M.setVisibility(TextUtils.isEmpty(j8Var4.d0) ? 8 : 0);
-                j8Var4.y0();
+            case 5:
+                i8 i8Var3 = this.b;
+                i8Var3.presentFragment(fo.W9(i8Var3.e.id));
                 break;
             default:
-                j8.b0(this.b, (TL_wallet.walletUserAddress) obj);
+                org.telegram.messenger.q.r(R.string.WalletAddressCopiedBulletin, zc.a0(this.b), R.raw.copy, 36);
                 break;
         }
     }

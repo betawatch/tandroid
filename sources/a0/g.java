@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g implements Collection, Set {
     public int[] a = b0.a.a;
@@ -17,7 +17,7 @@ public final class g implements Collection, Set {
 
     public g(int i10) {
         if (i10 > 0) {
-            j.a(this, i10);
+            i.a(this, i10);
         }
     }
 
@@ -27,12 +27,12 @@ public final class g implements Collection, Set {
         int b10;
         int i11 = this.c;
         if (obj == null) {
-            b10 = j.b(this, null, 0);
+            b10 = i.b(this, null, 0);
             i10 = 0;
         } else {
             int hashCode = obj.hashCode();
             i10 = hashCode;
-            b10 = j.b(this, obj, hashCode);
+            b10 = i.b(this, obj, hashCode);
         }
         if (b10 >= 0) {
             return false;
@@ -54,16 +54,16 @@ public final class g implements Collection, Set {
                 throw new ConcurrentModificationException();
             }
             if (iArr2.length != 0) {
-                id.f.b(0, 0, iArr.length, iArr, iArr2);
-                id.f.d(0, objArr.length, 6, objArr, this.b);
+                jd.f.b(0, 0, iArr.length, iArr, iArr2);
+                jd.f.d(0, objArr.length, 6, objArr, this.b);
             }
         }
         if (i12 < i11) {
             int[] iArr3 = this.a;
             int i14 = i12 + 1;
-            id.f.b(i14, i12, i11, iArr3, iArr3);
+            jd.f.b(i14, i12, i11, iArr3, iArr3);
             Object[] objArr2 = this.b;
-            id.f.c(i14, i12, i11, objArr2, objArr2);
+            jd.f.c(i14, i12, i11, objArr2, objArr2);
         }
         int i15 = this.c;
         if (i11 == i15) {
@@ -91,8 +91,8 @@ public final class g implements Collection, Set {
             this.a = iArr2;
             this.b = new Object[size];
             if (i10 > 0) {
-                id.f.b(0, 0, i10, iArr, iArr2);
-                id.f.d(0, this.c, 6, objArr, this.b);
+                jd.f.b(0, 0, i10, iArr, iArr2);
+                jd.f.d(0, this.c, 6, objArr, this.b);
             }
         }
         if (this.c != i10) {
@@ -119,7 +119,7 @@ public final class g implements Collection, Set {
 
     @Override // java.util.Collection, java.util.Set
     public final boolean contains(Object obj) {
-        return (obj == null ? j.b(this, null, 0) : j.b(this, obj, obj.hashCode())) >= 0;
+        return (obj == null ? i.b(this, null, 0) : i.b(this, obj, obj.hashCode())) >= 0;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -155,18 +155,7 @@ public final class g implements Collection, Set {
         }
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        int[] iArr = this.a;
-        int i10 = this.c;
-        int i11 = 0;
-        for (int i12 = 0; i12 < i10; i12++) {
-            i11 += iArr[i12];
-        }
-        return i11;
-    }
-
-    public final void i(int i10) {
+    public final void h(int i10) {
         int i11 = this.c;
         Object[] objArr = this.b;
         Object obj = objArr[i10];
@@ -179,9 +168,9 @@ public final class g implements Collection, Set {
         if (iArr.length <= 8 || i11 >= iArr.length / 3) {
             if (i10 < i12) {
                 int i13 = i10 + 1;
-                id.f.b(i10, i13, i11, iArr, iArr);
+                jd.f.b(i10, i13, i11, iArr, iArr);
                 Object[] objArr2 = this.b;
-                id.f.c(i10, i13, i11, objArr2, objArr2);
+                jd.f.c(i10, i13, i11, objArr2, objArr2);
             }
             this.b[i12] = null;
         } else {
@@ -190,19 +179,30 @@ public final class g implements Collection, Set {
             this.a = iArr2;
             this.b = new Object[i14];
             if (i10 > 0) {
-                id.f.b(0, 0, i10, iArr, iArr2);
-                id.f.d(0, i10, 6, objArr, this.b);
+                jd.f.b(0, 0, i10, iArr, iArr2);
+                jd.f.d(0, i10, 6, objArr, this.b);
             }
             if (i10 < i12) {
                 int i15 = i10 + 1;
-                id.f.b(i10, i15, i11, iArr, this.a);
-                id.f.c(i10, i15, i11, objArr, this.b);
+                jd.f.b(i10, i15, i11, iArr, this.a);
+                jd.f.c(i10, i15, i11, objArr, this.b);
             }
         }
         if (i11 != this.c) {
             throw new ConcurrentModificationException();
         }
         this.c = i12;
+    }
+
+    @Override // java.util.Collection, java.util.Set
+    public final int hashCode() {
+        int[] iArr = this.a;
+        int i10 = this.c;
+        int i11 = 0;
+        for (int i12 = 0; i12 < i10; i12++) {
+            i11 += iArr[i12];
+        }
+        return i11;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -217,11 +217,11 @@ public final class g implements Collection, Set {
 
     @Override // java.util.Collection, java.util.Set
     public final boolean remove(Object obj) {
-        int b10 = obj == null ? j.b(this, null, 0) : j.b(this, obj, obj.hashCode());
+        int b10 = obj == null ? i.b(this, null, 0) : i.b(this, obj, obj.hashCode());
         if (b10 < 0) {
             return false;
         }
-        i(b10);
+        h(b10);
         return true;
     }
 
@@ -275,7 +275,7 @@ public final class g implements Collection, Set {
                 z10 = i11 >= 0;
             }
             if (!z10) {
-                i(i10);
+                h(i10);
                 z11 = true;
             }
             i10--;
@@ -334,7 +334,7 @@ public final class g implements Collection, Set {
         } else if (array.length > i10) {
             array[i10] = null;
         }
-        id.f.c(0, 0, this.c, this.b, array);
+        jd.f.c(0, 0, this.c, this.b, array);
         return array;
     }
 }

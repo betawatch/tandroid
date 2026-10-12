@@ -1,65 +1,101 @@
 package k2;
 
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.Arrays;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class l0 extends c2.i {
-    public static final int i = Float.floatToIntBits(Float.NaN);
+public final class l0 extends c2.o {
+    public int[] i;
+    public int[] j;
 
-    public static void k(int i10, ByteBuffer byteBuffer) {
-        int floatToIntBits = Float.floatToIntBits((float) (i10 * 4.656612875245797E-10d));
-        if (floatToIntBits == i) {
-            floatToIntBits = Float.floatToIntBits(0.0f);
-        }
-        byteBuffer.putInt(floatToIntBits);
-    }
-
-    @Override // c2.h
+    @Override // c2.n
     public final void c(ByteBuffer byteBuffer) {
-        ByteBuffer j3;
+        int[] iArr = this.j;
+        iArr.getClass();
         int position = byteBuffer.position();
         int limit = byteBuffer.limit();
-        int i10 = limit - position;
-        int i11 = this.b.c;
-        if (i11 == 21) {
-            j3 = j((i10 / 3) * 4);
-            while (position < limit) {
-                k(((byteBuffer.get(position) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position + 2) & 255) << 24), j3);
-                position += 3;
+        ByteBuffer l4 = l(((limit - position) / this.b.d) * this.c.d);
+        while (position < limit) {
+            for (int i10 : iArr) {
+                int u10 = (e2.m0.u(this.b.c) * i10) + position;
+                int i11 = this.b.c;
+                if (i11 != 2) {
+                    if (i11 == 3) {
+                        l4.put(byteBuffer.get(u10));
+                    } else if (i11 != 4) {
+                        if (i11 != 21) {
+                            if (i11 != 22) {
+                                if (i11 != 268435456) {
+                                    if (i11 != 1342177280) {
+                                        if (i11 != 1610612736) {
+                                            if (i11 != 1879048192) {
+                                                throw new IllegalStateException("Unexpected encoding: " + this.b.c);
+                                            }
+                                            l4.putDouble(byteBuffer.getDouble(u10));
+                                        }
+                                    }
+                                }
+                            }
+                            l4.putInt(byteBuffer.getInt(u10));
+                        }
+                        ByteOrder order = byteBuffer.order();
+                        ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
+                        byte b10 = byteBuffer.get(order == byteOrder ? u10 : u10 + 2);
+                        byte b11 = byteBuffer.get(u10 + 1);
+                        if (byteBuffer.order() == byteOrder) {
+                            u10 += 2;
+                        }
+                        int i12 = ((((b10 << 24) & (-16777216)) | ((b11 << 16) & 16711680)) | ((byteBuffer.get(u10) << 8) & 65280)) >> 8;
+                        u6.h((i12 & (-16777216)) == 0 || (i12 & (-8388608)) == -8388608, "Value out of range of 24-bit integer: %s", Integer.toHexString(i12));
+                        u6.g(l4.remaining() >= 3);
+                        l4.put((byte) (l4.order() == byteOrder ? (i12 & 16711680) >> 16 : i12 & 255)).put((byte) ((i12 & 65280) >> 8)).put((byte) (l4.order() == byteOrder ? i12 & 255 : (i12 & 16711680) >> 16));
+                    } else {
+                        l4.putFloat(byteBuffer.getFloat(u10));
+                    }
+                }
+                l4.putShort(byteBuffer.getShort(u10));
             }
-        } else if (i11 == 22) {
-            j3 = j(i10);
-            while (position < limit) {
-                k((byteBuffer.get(position) & 255) | ((byteBuffer.get(position + 1) & 255) << 8) | ((byteBuffer.get(position + 2) & 255) << 16) | ((byteBuffer.get(position + 3) & 255) << 24), j3);
-                position += 4;
-            }
-        } else if (i11 == 1342177280) {
-            j3 = j((i10 / 3) * 4);
-            while (position < limit) {
-                k(((byteBuffer.get(position + 2) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position) & 255) << 24), j3);
-                position += 3;
-            }
-        } else {
-            if (i11 != 1610612736) {
-                throw new IllegalStateException();
-            }
-            j3 = j(i10);
-            while (position < limit) {
-                k((byteBuffer.get(position + 3) & 255) | ((byteBuffer.get(position + 2) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position) & 255) << 24), j3);
-                position += 4;
-            }
+            position += this.b.d;
         }
-        byteBuffer.position(byteBuffer.limit());
-        j3.flip();
+        byteBuffer.position(limit);
+        l4.flip();
     }
 
-    @Override // c2.i
-    public final c2.f f(c2.f fVar) {
-        int i10 = fVar.c;
-        if (i10 == 21 || i10 == 1342177280 || i10 == 22 || i10 == 1610612736 || i10 == 4) {
-            return i10 != 4 ? new c2.f(fVar.a, fVar.b, 4) : c2.f.e;
+    @Override // c2.o
+    public final c2.k h(c2.k kVar) {
+        int i10 = kVar.c;
+        int[] iArr = this.i;
+        if (iArr == null) {
+            return c2.k.e;
         }
-        throw new c2.g(fVar);
+        int i11 = kVar.b;
+        if (!e2.m0.M(i10)) {
+            throw new c2.m(kVar);
+        }
+        boolean z10 = i11 != iArr.length;
+        int i12 = 0;
+        while (i12 < iArr.length) {
+            int i13 = iArr[i12];
+            if (i13 >= i11) {
+                throw new c2.m("Channel map (" + Arrays.toString(iArr) + ") trying to access non-existent input channel.", kVar);
+            }
+            z10 |= i13 != i12;
+            i12++;
+        }
+        return z10 ? new c2.k(kVar.a, iArr.length, i10) : c2.k.e;
+    }
+
+    @Override // c2.o
+    public final void i() {
+        this.j = this.i;
+    }
+
+    @Override // c2.o
+    public final void k() {
+        this.j = null;
+        this.i = null;
     }
 }

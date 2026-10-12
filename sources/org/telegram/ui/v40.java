@@ -1,27 +1,46 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class v40 extends Paint {
-    public final /* synthetic */ g60 a;
+public final class v40 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ org.telegram.ui.Components.ud0 b;
+    public final /* synthetic */ r40 c;
+    public final /* synthetic */ s40 d;
 
-    public v40(g60 g60Var) {
-        this.a = g60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v40(LaunchActivity launchActivity, org.telegram.ui.Components.ud0 ud0Var, r40 r40Var, s40 s40Var) {
+        super(launchActivity);
+        this.b = ud0Var;
+        this.c = r40Var;
+        this.d = s40Var;
+        this.a = false;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i10) {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        super.setAlpha(i10);
-        g60 g60Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) g60Var).containerView;
-        if (viewGroup != null) {
-            viewGroup2 = ((org.telegram.ui.ActionBar.f3) g60Var).containerView;
-            viewGroup2.invalidate();
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.a = true;
+        org.telegram.ui.Components.ud0 ud0Var = this.b;
+        ud0Var.setItemCount(5);
+        r40 r40Var = this.c;
+        r40Var.setItemCount(5);
+        s40 s40Var = this.d;
+        s40Var.setItemCount(5);
+        ud0Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        r40Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        s40Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        this.a = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
+        super.requestLayout();
     }
 }

@@ -1,20 +1,47 @@
 package hg;
 
-import android.text.InputFilter;
-import android.text.Spanned;
+import java.util.ArrayList;
+import java.util.Comparator;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c1 implements InputFilter {
-    @Override // android.text.InputFilter
-    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
-        if (charSequence == null) {
-            return null;
+public final class c1 implements Comparator {
+    public final /* synthetic */ a0.h a;
+    public final /* synthetic */ ArrayList b;
+
+    public c1(a0.h hVar, ArrayList arrayList) {
+        this.a = hVar;
+        this.b = arrayList;
+    }
+
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        TLObject tLObject = (TLObject) obj;
+        TLObject tLObject2 = (TLObject) obj2;
+        long j10 = tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).id : -((TLRPC.Chat) tLObject).id;
+        long j11 = tLObject2 instanceof TLRPC.User ? ((TLRPC.User) tLObject2).id : -((TLRPC.Chat) tLObject2).id;
+        a0.h hVar = this.a;
+        if (hVar.h(j10) >= 0 && hVar.h(j11) >= 0) {
+            return 0;
         }
-        String charSequence2 = charSequence.toString();
-        if (charSequence2.contains("\n")) {
-            return charSequence2.replaceAll("\n", "");
+        if (hVar.h(j10) < 0) {
+            if (hVar.h(j11) >= 0) {
+                return 1;
+            }
+            Long valueOf = Long.valueOf(j10);
+            ArrayList arrayList = this.b;
+            int indexOf = arrayList.indexOf(valueOf);
+            int indexOf2 = arrayList.indexOf(Long.valueOf(j11));
+            if (indexOf == -1 || indexOf2 == -1) {
+                if (indexOf == -1 || indexOf2 != -1) {
+                    return (indexOf != -1 || indexOf2 == -1) ? 0 : 1;
+                }
+            } else if (indexOf >= indexOf2) {
+                return indexOf == indexOf2 ? 0 : 1;
+            }
         }
-        return null;
+        return -1;
     }
 }

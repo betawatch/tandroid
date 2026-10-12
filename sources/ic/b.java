@@ -1,119 +1,296 @@
 package ic;
 
+import ec.g;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b {
-    public final dc.b a;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final float g;
-    public final ArrayList b = new ArrayList(5);
-    public final int[] h = new int[3];
+public abstract class b {
+    public static final char[] a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
 
-    public b(dc.b bVar, int i10, int i11, int i12, int i13, float f7) {
-        this.a = bVar;
-        this.c = i10;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
-        this.g = f7;
-    }
-
-    public final boolean a(int[] iArr) {
-        float f7 = this.g;
-        float f10 = f7 / 2.0f;
-        for (int i10 = 0; i10 < 3; i10++) {
-            if (Math.abs(f7 - iArr[i10]) >= f10) {
-                return false;
+    public static void a(b4.d dVar, StringBuilder sb2, int i10, boolean z10) {
+        while (i10 > 1) {
+            if (dVar.d() < 11) {
+                throw dc.c.a();
             }
+            int e = dVar.e(11);
+            sb2.append(f(e / 45));
+            sb2.append(f(e % 45));
+            i10 -= 2;
         }
-        return true;
-    }
-
-    public final a b(int i10, int i11, int[] iArr) {
-        int i12 = 0;
-        int i13 = iArr[0];
-        int i14 = iArr[1];
-        int i15 = i13 + i14 + iArr[2];
-        float f7 = (i11 - r5) - (i14 / 2.0f);
-        int i16 = (int) f7;
-        int i17 = i14 * 2;
-        dc.b bVar = this.a;
-        int i18 = bVar.b;
-        int[] iArr2 = this.h;
-        iArr2[0] = 0;
-        iArr2[1] = 0;
-        iArr2[2] = 0;
-        int i19 = i10;
-        while (i19 >= 0 && bVar.b(i16, i19)) {
-            int i20 = iArr2[1];
-            if (i20 > i17) {
-                break;
+        if (i10 == 1) {
+            if (dVar.d() < 6) {
+                throw dc.c.a();
             }
-            iArr2[1] = i20 + 1;
-            i19--;
+            sb2.append(f(dVar.e(6)));
         }
-        float f10 = Float.NaN;
-        if (i19 >= 0 && iArr2[1] <= i17) {
-            while (i19 >= 0 && !bVar.b(i16, i19)) {
-                int i21 = iArr2[0];
-                if (i21 > i17) {
-                    break;
-                }
-                iArr2[0] = i21 + 1;
-                i19--;
-            }
-            if (iArr2[0] <= i17) {
-                int i22 = i10 + 1;
-                while (i22 < i18 && bVar.b(i16, i22)) {
-                    int i23 = iArr2[1];
-                    if (i23 > i17) {
-                        break;
-                    }
-                    iArr2[1] = i23 + 1;
-                    i22++;
-                }
-                if (i22 != i18 && iArr2[1] <= i17) {
-                    while (i22 < i18 && !bVar.b(i16, i22)) {
-                        int i24 = iArr2[2];
-                        if (i24 > i17) {
-                            break;
+        if (z10) {
+            for (int length = sb2.length(); length < sb2.length(); length++) {
+                if (sb2.charAt(length) == '%') {
+                    if (length < sb2.length() - 1) {
+                        int i11 = length + 1;
+                        if (sb2.charAt(i11) == '%') {
+                            sb2.deleteCharAt(i11);
                         }
-                        iArr2[2] = i24 + 1;
-                        i22++;
                     }
-                    int i25 = iArr2[2];
-                    if (i25 <= i17 && Math.abs(((iArr2[0] + iArr2[1]) + i25) - i15) * 5 < i15 * 2 && a(iArr2)) {
-                        f10 = (i22 - iArr2[2]) - (iArr2[1] / 2.0f);
-                    }
+                    sb2.setCharAt(length, (char) 29);
                 }
             }
         }
-        if (Float.isNaN(f10)) {
-            return null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0128 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x00da  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void b(b4.d dVar, StringBuilder sb2, int i10, ec.c cVar, ArrayList arrayList) {
+        Charset forName;
+        boolean z10;
+        byte b10;
+        if (i10 * 8 > dVar.d()) {
+            throw dc.c.a();
         }
-        float f11 = ((iArr[0] + iArr[1]) + iArr[2]) / 3.0f;
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        while (i12 < size) {
-            Object obj = arrayList.get(i12);
-            i12++;
-            a aVar = (a) obj;
-            float f12 = aVar.c;
-            float f13 = aVar.a;
-            float f14 = aVar.b;
-            if (Math.abs(f10 - f14) <= f11 && Math.abs(f7 - f13) <= f11) {
-                float abs = Math.abs(f11 - f12);
-                if (abs <= 1.0f || abs <= f12) {
-                    return new a((f13 + f7) / 2.0f, (f14 + f10) / 2.0f, (aVar.c + f11) / 2.0f);
+        byte[] bArr = new byte[i10];
+        int i11 = 0;
+        for (int i12 = 0; i12 < i10; i12++) {
+            bArr[i12] = (byte) dVar.e(8);
+        }
+        if (cVar == null) {
+            Charset charset = g.b;
+            boolean z11 = true;
+            if (i10 <= 2 || !(((b10 = bArr[0]) == -2 && bArr[1] == -1) || (b10 == -1 && bArr[1] == -2))) {
+                boolean z12 = charset != null;
+                boolean z13 = i10 > 3 && bArr[0] == -17 && bArr[1] == -69 && bArr[2] == -65;
+                int i13 = 0;
+                int i14 = 0;
+                int i15 = 0;
+                int i16 = 0;
+                int i17 = 0;
+                int i18 = 0;
+                int i19 = 0;
+                int i20 = 0;
+                int i21 = 0;
+                int i22 = 0;
+                int i23 = 0;
+                boolean z14 = z12;
+                boolean z15 = true;
+                while (i15 < i10 && (z11 || z14 || z15)) {
+                    Charset charset2 = charset;
+                    byte b11 = bArr[i15];
+                    boolean z16 = z11;
+                    int i24 = b11 & 255;
+                    if (z15) {
+                        if (i16 <= 0) {
+                            z10 = z15;
+                            if ((b11 & 128) != 0) {
+                                if ((b11 & 64) != 0) {
+                                    int i25 = i16 + 1;
+                                    if ((b11 & 32) == 0) {
+                                        i18++;
+                                    } else {
+                                        i25 = i16 + 2;
+                                        if ((b11 & 16) == 0) {
+                                            i19++;
+                                        } else {
+                                            i16 += 3;
+                                            if ((b11 & 8) == 0) {
+                                                i20++;
+                                            }
+                                        }
+                                    }
+                                    i16 = i25;
+                                }
+                            }
+                        } else if ((b11 & 128) != 0) {
+                            i16--;
+                            if (z16) {
+                                if (i24 > 127 && i24 < 160) {
+                                    z16 = false;
+                                } else if (i24 > 159 && (i24 < 192 || i24 == 215 || i24 == 247)) {
+                                    i21++;
+                                }
+                            }
+                            if (z14) {
+                                if (i17 > 0) {
+                                    if (i24 >= 64 && i24 != 127 && i24 <= 252) {
+                                        i17--;
+                                    }
+                                    z14 = false;
+                                } else {
+                                    if (i24 != 128 && i24 != 160 && i24 <= 239) {
+                                        if (i24 <= 160 || i24 >= 224) {
+                                            if (i24 > 127) {
+                                                i17++;
+                                                int i26 = i22 + 1;
+                                                if (i26 > i13) {
+                                                    i13 = i26;
+                                                    i22 = i13;
+                                                } else {
+                                                    i22 = i26;
+                                                }
+                                            } else {
+                                                i22 = 0;
+                                            }
+                                            i23 = 0;
+                                        } else {
+                                            i14++;
+                                            int i27 = i23 + 1;
+                                            if (i27 > i11) {
+                                                i11 = i27;
+                                                i23 = i11;
+                                            } else {
+                                                i23 = i27;
+                                            }
+                                            i22 = 0;
+                                        }
+                                    }
+                                    z14 = false;
+                                }
+                            }
+                            i15++;
+                            charset = charset2;
+                            z11 = z16;
+                        }
+                        z15 = false;
+                        if (z16) {
+                        }
+                        if (z14) {
+                        }
+                        i15++;
+                        charset = charset2;
+                        z11 = z16;
+                    } else {
+                        z10 = z15;
+                    }
+                    z15 = z10;
+                    if (z16) {
+                    }
+                    if (z14) {
+                    }
+                    i15++;
+                    charset = charset2;
+                    z11 = z16;
                 }
+                Charset charset3 = charset;
+                boolean z17 = z11;
+                boolean z18 = z15;
+                boolean z19 = (!z18 || i16 <= 0) ? z18 : false;
+                boolean z20 = (!z14 || i17 <= 0) ? z14 : false;
+                if (!z19 || (!z13 && i18 + i19 + i20 <= 0)) {
+                    if (!z20 || (!g.d && i11 < 3 && i13 < 3)) {
+                        if (z17 && z20) {
+                            if ((i11 != 2 || i14 != 2) && i21 * 10 < i10) {
+                                forName = StandardCharsets.ISO_8859_1;
+                            }
+                        } else if (z17) {
+                            forName = StandardCharsets.ISO_8859_1;
+                        } else if (!z20) {
+                            forName = z19 ? StandardCharsets.UTF_8 : g.a;
+                        }
+                    }
+                    forName = charset3;
+                } else {
+                    forName = StandardCharsets.UTF_8;
+                }
+            } else {
+                forName = StandardCharsets.UTF_16;
             }
+        } else {
+            forName = Charset.forName(cVar.name());
         }
-        arrayList.add(new a(f7, f10, f11));
-        return null;
+        sb2.append(new String(bArr, forName));
+        arrayList.add(bArr);
+    }
+
+    public static void c(b4.d dVar, StringBuilder sb2, int i10) {
+        if (g.c == null) {
+            throw dc.c.a();
+        }
+        if (i10 * 13 > dVar.d()) {
+            throw dc.c.a();
+        }
+        byte[] bArr = new byte[i10 * 2];
+        int i11 = 0;
+        while (i10 > 0) {
+            int e = dVar.e(13);
+            int i12 = (e % 96) | ((e / 96) << 8);
+            int i13 = i12 + (i12 < 2560 ? 41377 : 42657);
+            bArr[i11] = (byte) ((i13 >> 8) & 255);
+            bArr[i11 + 1] = (byte) (i13 & 255);
+            i11 += 2;
+            i10--;
+        }
+        sb2.append(new String(bArr, g.c));
+    }
+
+    public static void d(b4.d dVar, StringBuilder sb2, int i10) {
+        if (g.b == null) {
+            throw dc.c.a();
+        }
+        if (i10 * 13 > dVar.d()) {
+            throw dc.c.a();
+        }
+        byte[] bArr = new byte[i10 * 2];
+        int i11 = 0;
+        while (i10 > 0) {
+            int e = dVar.e(13);
+            int i12 = (e % 192) | ((e / 192) << 8);
+            int i13 = i12 + (i12 < 7936 ? 33088 : 49472);
+            bArr[i11] = (byte) (i13 >> 8);
+            bArr[i11 + 1] = (byte) i13;
+            i11 += 2;
+            i10--;
+        }
+        sb2.append(new String(bArr, g.b));
+    }
+
+    public static void e(b4.d dVar, StringBuilder sb2, int i10) {
+        while (i10 >= 3) {
+            if (dVar.d() < 10) {
+                throw dc.c.a();
+            }
+            int e = dVar.e(10);
+            if (e >= 1000) {
+                throw dc.c.a();
+            }
+            sb2.append(f(e / 100));
+            sb2.append(f((e / 10) % 10));
+            sb2.append(f(e % 10));
+            i10 -= 3;
+        }
+        if (i10 == 2) {
+            if (dVar.d() < 7) {
+                throw dc.c.a();
+            }
+            int e7 = dVar.e(7);
+            if (e7 >= 100) {
+                throw dc.c.a();
+            }
+            sb2.append(f(e7 / 10));
+            sb2.append(f(e7 % 10));
+            return;
+        }
+        if (i10 == 1) {
+            if (dVar.d() < 4) {
+                throw dc.c.a();
+            }
+            int e10 = dVar.e(4);
+            if (e10 >= 10) {
+                throw dc.c.a();
+            }
+            sb2.append(f(e10));
+        }
+    }
+
+    public static char f(int i10) {
+        char[] cArr = a;
+        if (i10 < cArr.length) {
+            return cArr[i10];
+        }
+        throw dc.c.a();
     }
 }

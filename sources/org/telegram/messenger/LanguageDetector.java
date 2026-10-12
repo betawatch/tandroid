@@ -3,16 +3,16 @@ package org.telegram.messenger;
 import android.content.Context;
 import com.google.android.gms.tasks.TaskExecutors;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class LanguageDetector {
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface ExceptionCallback {
         void run(Exception exc);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface StringCallback {
         void run(String str);
     }
@@ -43,24 +43,24 @@ public class LanguageDetector {
         if (z10) {
             try {
                 Context context = ApplicationLoader.applicationContext;
-                synchronized (qb.g.b) {
-                    qb.g.d(context, TaskExecutors.MAIN_THREAD);
+                synchronized (rb.g.b) {
+                    rb.g.d(context, TaskExecutors.MAIN_THREAD);
                 }
-            } catch (IllegalStateException e7) {
+            } catch (IllegalStateException e) {
                 if (!z10) {
                     detectLanguage(str, stringCallback, exceptionCallback, true);
                     return;
                 }
                 if (exceptionCallback != null) {
+                    exceptionCallback.run(e);
+                }
+                FileLog.e((Throwable) e, false);
+                return;
+            } catch (Exception e7) {
+                if (exceptionCallback != null) {
                     exceptionCallback.run(e7);
                 }
-                FileLog.e((Throwable) e7, false);
-                return;
-            } catch (Exception e10) {
-                if (exceptionCallback != null) {
-                    exceptionCallback.run(e10);
-                }
-                FileLog.e(e10);
+                FileLog.e(e7);
                 return;
             } catch (Throwable th2) {
                 if (exceptionCallback != null) {
@@ -70,6 +70,6 @@ public class LanguageDetector {
                 return;
             }
         }
-        w7.l7.a().g(str).addOnSuccessListener(new d0(stringCallback, 5)).addOnFailureListener(new d0(exceptionCallback, 6));
+        w7.t7.a().g(str).addOnSuccessListener(new e0(stringCallback, 5)).addOnFailureListener(new e0(exceptionCallback, 6));
     }
 }

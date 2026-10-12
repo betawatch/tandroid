@@ -1,13 +1,43 @@
 package n4;
 
-import android.os.IInterface;
+import android.content.Context;
+import android.media.session.MediaController;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface f extends IInterface {
-    void h(int i10);
+public class f {
+    public final MediaController a;
+    public final Object b = new Object();
+    public final ArrayList c = new ArrayList();
+    public final HashMap d = new HashMap();
+    public final r e;
 
-    void onRepeatModeChanged(int i10);
+    public f(Context context, r rVar) {
+        this.e = rVar;
+        MediaController mediaController = new MediaController(context, rVar.b);
+        this.a = mediaController;
+        if (rVar.a() == null) {
+            mediaController.sendCommand("android.support.v4.media.session.command.GET_EXTRA_BINDER", null, new c1.d(this));
+        }
+    }
 
-    void t(f0 f0Var);
+    public final void a() {
+        if (this.e.a() == null) {
+            return;
+        }
+        ArrayList arrayList = this.c;
+        Iterator it = arrayList.iterator();
+        if (!it.hasNext()) {
+            arrayList.clear();
+        } else {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            this.d.put(null, new e());
+            throw null;
+        }
+    }
 }

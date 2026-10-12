@@ -1,23 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class u41 extends b51 {
-    public final /* synthetic */ org.telegram.ui.rf T;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u41(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i10, TL_iv.RichMessage richMessage, org.telegram.ui.rf rfVar) {
-        super(activity, str, str2, null, inputPeer, i10, false, richMessage);
-        this.T = rfVar;
-    }
-
-    @Override // org.telegram.ui.Components.b51, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        this.T.run();
+public final class u41 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
+    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min((int) (AndroidUtilities.displaySize.y * 0.33f), View.MeasureSpec.getSize(i11)), TLObject.FLAG_30));
     }
 }

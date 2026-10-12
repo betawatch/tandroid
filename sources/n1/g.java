@@ -1,6 +1,5 @@
 package n1;
 
-import ae.x;
 import androidx.datastore.preferences.protobuf.b0;
 import androidx.datastore.preferences.protobuf.w;
 import androidx.datastore.preferences.protobuf.y;
@@ -17,7 +16,7 @@ import m1.h;
 import m1.j;
 import m1.k;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g {
     public static final g a = new g();
@@ -35,9 +34,9 @@ public final class g {
                 e eVar = pairs[0];
                 throw null;
             }
-            Map j3 = l4.j();
-            i.d(j3, "preferencesProto.preferencesMap");
-            for (Map.Entry entry : j3.entrySet()) {
+            Map j10 = l4.j();
+            i.d(j10, "preferencesProto.preferencesMap");
+            for (Map.Entry entry : j10.entrySet()) {
                 String name = (String) entry.getKey();
                 k value = (k) entry.getValue();
                 i.d(name, "name");
@@ -48,7 +47,7 @@ public final class g {
                         throw new k1.a("Value case is null.", null);
                     case 0:
                     default:
-                        throw new x();
+                        throw new androidx.car.app.j();
                     case 1:
                         bVar.b(new d(name), Boolean.valueOf(value.p()));
                         break;
@@ -74,7 +73,7 @@ public final class g {
                         d dVar2 = new d(name);
                         y k10 = value.w().k();
                         i.d(k10, "value.stringSet.stringsList");
-                        bVar.b(dVar2, id.g.p(k10));
+                        bVar.b(dVar2, jd.g.p(k10));
                         break;
                     case 8:
                         throw new k1.a("Value not set.", null);
@@ -83,8 +82,8 @@ public final class g {
             Map unmodifiableMap = DesugarCollections.unmodifiableMap(bVar.a);
             i.d(unmodifiableMap, "unmodifiableMap(preferencesMap)");
             return new b(new LinkedHashMap(unmodifiableMap), true);
-        } catch (b0 e7) {
-            throw new k1.a("Unable to parse preferences proto.", e7);
+        } catch (b0 e) {
+            throw new k1.a("Unable to parse preferences proto.", e);
         }
     }
 

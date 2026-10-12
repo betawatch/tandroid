@@ -8,10 +8,10 @@ import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.widget.RadioButton;
 import org.telegram.messenger.beta.R;
-import v7.s7;
+import v7.q7;
 import w7.o6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class z extends RadioButton implements u0.k {
     public final p a;
@@ -22,8 +22,8 @@ public final class z extends RadioButton implements u0.k {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public z(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, R.attr.radioButtonStyle);
-        b3.a(context);
-        a3.a(this, getContext());
+        c3.a(context);
+        b3.a(this, getContext());
         p pVar = new p(this);
         this.a = pVar;
         pVar.e(attributeSet, R.attr.radioButtonStyle);
@@ -219,6 +219,6 @@ public final class z extends RadioButton implements u0.k {
 
     @Override // android.widget.CompoundButton
     public void setButtonDrawable(int i10) {
-        setButtonDrawable(s7.b(getContext(), i10));
+        setButtonDrawable(q7.b(getContext(), i10));
     }
 }

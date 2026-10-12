@@ -1,52 +1,83 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class gh1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ ih1 a;
+public final /* synthetic */ class gh1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oh1 b;
 
-    public gh1(ih1 ih1Var) {
-        this.a = ih1Var;
+    public /* synthetic */ gh1(oh1 oh1Var, int i10) {
+        this.a = i10;
+        this.b = oh1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        ih1 ih1Var = this.a;
-        if (i10 == -1) {
-            if (ih1Var.G >= 0) {
-                d5Var = ((org.telegram.ui.ActionBar.n2) ih1Var).parentLayout;
-                if (d5Var.getFragmentStack().size() == 1) {
-                    ih1Var.I0();
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                oh1 oh1Var = this.b;
+                EditTextBoldCursor editTextBoldCursor = oh1Var.n;
+                if (editTextBoldCursor != null && editTextBoldCursor.getVisibility() == 0) {
+                    oh1Var.n.requestFocus();
+                    AndroidUtilities.showKeyboard(oh1Var.n);
+                    break;
                 }
-            }
-            ih1Var.finishFragment();
-            return;
-        }
-        if (i10 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ih1Var.getParentActivity());
-            TL_account.Password password = ih1Var.U;
-            String string = (password == null || !password.has_password) ? LocaleController.getString(R.string.CancelPasswordQuestion) : LocaleController.getString(R.string.CancelEmailQuestion);
-            String string2 = LocaleController.getString(R.string.CancelEmailQuestionTitle);
-            String string3 = LocaleController.getString(R.string.Abort);
-            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-            b2Var.T = string;
-            b2Var.R = string2;
-            alertDialog$Builder.k(string3, new hq0(this, 23));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
-            ih1Var.showDialog(b2Var2);
-            TextView textView = (TextView) b2Var2.d(-1);
-            if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.q7, false));
-            }
+                break;
+            case 1:
+                oh1 oh1Var2 = this.b;
+                ie0 ie0Var = oh1Var2.w;
+                if (ie0Var != null && ie0Var.getVisibility() == 0) {
+                    oh1Var2.w.f[0].requestFocus();
+                    break;
+                }
+                break;
+            case 2:
+                int i10 = 0;
+                while (true) {
+                    ks[] ksVarArr = this.b.w.f;
+                    if (i10 >= ksVarArr.length) {
+                        break;
+                    } else {
+                        ksVarArr[i10].i(0.0f);
+                        i10++;
+                    }
+                }
+            case 3:
+                oh1 oh1Var3 = this.b;
+                EditTextBoldCursor editTextBoldCursor2 = oh1Var3.n;
+                if (editTextBoldCursor2 != null) {
+                    if (editTextBoldCursor2.length() != 0) {
+                        oh1Var3.f0[2].P(49);
+                        oh1Var3.f0[2].T(0.0f, false);
+                        oh1Var3.a.d();
+                        break;
+                    } else {
+                        oh1Var3.F0(true);
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                oh1 oh1Var4 = this.b;
+                if (oh1Var4.g0 != null) {
+                    oh1Var4.F0(false);
+                    break;
+                }
+                break;
+            case 5:
+                oh1.f0(this.b);
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new gh1(this.b, 7), 150L);
+                break;
+            default:
+                for (ks ksVar : this.b.w.f) {
+                    ksVar.i(0.0f);
+                }
+                break;
         }
     }
 }

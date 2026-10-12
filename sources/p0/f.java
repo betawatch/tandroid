@@ -1,11 +1,11 @@
 package p0;
 
-import b2.p;
+import b2.u;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class f {
-    public static final p a = new p((e) null, false);
-    public static final p b = new p((e) null, true);
-    public static final p c = new p(e.a, false);
+    public static final u a = new u((e) null, false);
+    public static final u b = new u((e) null, true);
+    public static final u c = new u(e.a, false);
 }

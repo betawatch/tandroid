@@ -1,60 +1,28 @@
 package androidx.biometric;
 
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class h implements androidx.lifecycle.a0 {
+public final class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
+    public final /* synthetic */ q b;
 
-    public /* synthetic */ h(p pVar, int i10) {
+    public /* synthetic */ h(q qVar, int i10) {
         this.a = i10;
-        this.b = pVar;
+        this.b = qVar;
     }
 
-    @Override // androidx.lifecycle.a0
-    public final void X(Object obj) {
-        int i10 = this.a;
-        CharSequence charSequence = null;
-        p pVar = this.b;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                s sVar = (s) obj;
-                if (sVar != null) {
-                    pVar.V(sVar);
-                    x xVar = pVar.l0;
-                    if (xVar.r == null) {
-                        xVar.r = new androidx.lifecycle.z();
-                    }
-                    x.h(xVar.r, null);
-                    break;
+                z zVar = this.b.l0;
+                if (zVar.e == null) {
+                    zVar.e = new w();
                 }
+                zVar.e.b();
                 break;
             default:
-                if (((Boolean) obj).booleanValue()) {
-                    if (pVar.Q()) {
-                        pVar.S();
-                    } else {
-                        x xVar2 = pVar.l0;
-                        String str = xVar2.k;
-                        if (str != null) {
-                            charSequence = str;
-                        } else {
-                            j6.l lVar = xVar2.f;
-                            if (lVar != null && (charSequence = (CharSequence) lVar.d) == null) {
-                                charSequence = "";
-                            }
-                        }
-                        if (charSequence == null) {
-                            charSequence = pVar.q(R.string.default_error_msg);
-                        }
-                        pVar.T(13, charSequence);
-                        pVar.N(2);
-                    }
-                    pVar.l0.g(false);
-                    break;
-                }
+                this.b.l0.w = false;
                 break;
         }
     }

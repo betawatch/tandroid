@@ -27,9 +27,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import r0.j0;
+import r0.k0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class k implements Menu {
     public static final int[] y = {1, 4, 5, 3, 2, 0};
@@ -72,7 +72,7 @@ public class k implements Menu {
         this.k = true;
         if (resources.getConfiguration().keyboard != 1) {
             ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
-            Method method = j0.a;
+            Method method = k0.a;
             if (Build.VERSION.SDK_INT >= 28) {
                 z10 = b5.d.B(viewConfiguration);
             } else {
@@ -223,7 +223,7 @@ public class k implements Menu {
 
     public boolean e(k kVar, MenuItem menuItem) {
         i iVar = this.e;
-        return iVar != null && iVar.A(kVar, menuItem);
+        return iVar != null && iVar.p(kVar, menuItem);
     }
 
     public boolean f(m mVar) {
@@ -482,8 +482,8 @@ public class k implements Menu {
             if (intent != null) {
                 try {
                     kVar.a.startActivity(intent);
-                } catch (ActivityNotFoundException e7) {
-                    Log.e("MenuItemImpl", "Can't find activity to handle intent; ignoring", e7);
+                } catch (ActivityNotFoundException e) {
+                    Log.e("MenuItemImpl", "Can't find activity to handle intent; ignoring", e);
                 }
             }
             n nVar = mVar.A;

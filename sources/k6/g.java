@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class g {
     public static boolean b = false;
@@ -28,16 +28,16 @@ public abstract class g {
         try {
             if (!c) {
                 try {
-                    PackageInfo d10 = w6.b.a(context).d(64, "com.google.android.gms");
-                    h.c(context);
-                    if (d10 == null || h.f(d10, false) || !h.f(d10, true)) {
+                    PackageInfo e7 = w6.b.a(context).e(64, "com.google.android.gms");
+                    h.p(context);
+                    if (e7 == null || h.t(e7, false) || !h.t(e7, true)) {
                         b = false;
                     } else {
                         b = true;
                     }
                     c = true;
-                } catch (PackageManager.NameNotFoundException e7) {
-                    Log.w("GooglePlayServicesUtil", "Cannot find Google Play services package name.", e7);
+                } catch (PackageManager.NameNotFoundException e10) {
+                    Log.w("GooglePlayServicesUtil", "Cannot find Google Play services package name.", e10);
                     c = true;
                 }
             }
@@ -114,13 +114,13 @@ public abstract class g {
                         }
                     }
                     packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
-                    h.c(context);
-                    if (h.f(packageInfo2, true)) {
+                    h.p(context);
+                    if (h.t(packageInfo2, true)) {
                         Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but their signature is invalid."));
                     } else {
                         if (z10) {
                             n6.l.h(packageInfo);
-                            if (!h.f(packageInfo, true)) {
+                            if (!h.t(packageInfo, true)) {
                                 Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature is invalid."));
                             }
                         }
@@ -147,8 +147,8 @@ public abstract class g {
                 }
             }
             packageInfo2 = packageManager.getPackageInfo("com.google.android.gms", 64);
-            h.c(context);
-            if (h.f(packageInfo2, true)) {
+            h.p(context);
+            if (h.t(packageInfo2, true)) {
             }
             return 9;
         } catch (PackageManager.NameNotFoundException unused3) {

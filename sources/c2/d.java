@@ -1,156 +1,31 @@
 package c2;
 
-import ai.ca;
-import android.app.Notification;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Icon;
-import android.hardware.display.DisplayManager;
-import android.media.AudioFocusRequest;
-import android.media.AudioManager;
-import android.os.Build;
-import android.os.Looper;
-import android.view.Display;
-import android.view.ViewConfiguration;
-import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static AudioManager a;
+public final /* synthetic */ class d implements d9.u {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
 
-    public static void a(AudioManager audioManager, c cVar) {
-        if (Build.VERSION.SDK_INT < 26) {
-            audioManager.abandonAudioFocus(cVar.b);
-            return;
+    public /* synthetic */ d(Context context, int i10) {
+        this.a = i10;
+        this.b = context;
+    }
+
+    @Override // d9.u
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                return i.e(this.b);
+            case 1:
+                return new i2.k(this.b);
+            case 2:
+                return new u2.q(this.b, new c3.m());
+            case 3:
+                return new x2.n(this.b, new oa.d(26));
+            default:
+                return y2.f.b(this.b);
         }
-        Object obj = cVar.f;
-        obj.getClass();
-        audioManager.abandonAudioFocusRequest((AudioFocusRequest) obj);
-    }
-
-    public static Notification.Builder b(Context context, String str) {
-        return new Notification.Builder(context, str);
-    }
-
-    public static Icon c(Bitmap bitmap) {
-        return Icon.createWithAdaptiveBitmap(bitmap);
-    }
-
-    public static boolean d(Context context) {
-        DisplayManager displayManager = (DisplayManager) context.getSystemService("display");
-        Display display = displayManager != null ? displayManager.getDisplay(0) : null;
-        if (display != null && display.isHdr()) {
-            for (int i10 : display.getHdrCapabilities().getSupportedHdrTypes()) {
-                if (i10 == 1) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public static synchronized AudioManager e(Context context) {
-        synchronized (d.class) {
-            synchronized (d.class) {
-                try {
-                    Context applicationContext = context.getApplicationContext();
-                    if (applicationContext != null) {
-                        a = null;
-                    }
-                    AudioManager audioManager = a;
-                    if (audioManager != null) {
-                        return audioManager;
-                    }
-                    Looper myLooper = Looper.myLooper();
-                    if (myLooper != null && myLooper != Looper.getMainLooper()) {
-                        e2.g gVar = new e2.g();
-                        e2.a.g().execute(new ca(11, applicationContext, gVar));
-                        gVar.b();
-                        AudioManager audioManager2 = a;
-                        audioManager2.getClass();
-                        return audioManager2;
-                    }
-                    AudioManager audioManager3 = (AudioManager) applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-                    a = audioManager3;
-                    audioManager3.getClass();
-                    return audioManager3;
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
-        }
-    }
-
-    public static float f(ViewConfiguration viewConfiguration) {
-        return viewConfiguration.getScaledHorizontalScrollFactor();
-    }
-
-    public static float g(ViewConfiguration viewConfiguration) {
-        return viewConfiguration.getScaledVerticalScrollFactor();
-    }
-
-    public static int h(AudioManager audioManager, c cVar) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            Object obj = cVar.f;
-            obj.getClass();
-            return audioManager.requestAudioFocus((AudioFocusRequest) obj);
-        }
-        AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = cVar.b;
-        b2.e eVar = cVar.d;
-        int i10 = 1;
-        if ((eVar.b & 1) != 1) {
-            switch (eVar.c) {
-                case 2:
-                    i10 = 0;
-                    break;
-                case 3:
-                    i10 = 8;
-                    break;
-                case 4:
-                    i10 = 4;
-                    break;
-                case 5:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                    i10 = 5;
-                    break;
-                case 6:
-                    i10 = 2;
-                    break;
-                case 11:
-                    i10 = 10;
-                    break;
-                case 12:
-                default:
-                    i10 = 3;
-                    break;
-                case 13:
-                    break;
-            }
-        }
-        return audioManager.requestAudioFocus(onAudioFocusChangeListener, i10, cVar.a);
-    }
-
-    public static void i(Notification.Builder builder) {
-        builder.setBadgeIconType(0);
-    }
-
-    public static void j(Notification.Builder builder, int i10) {
-        builder.setGroupAlertBehavior(i10);
-    }
-
-    public static void k(Notification.Builder builder) {
-        builder.setSettingsText(null);
-    }
-
-    public static void l(Notification.Builder builder, String str) {
-        builder.setShortcutId(str);
-    }
-
-    public static void m(Notification.Builder builder) {
-        builder.setTimeoutAfter(0L);
     }
 }

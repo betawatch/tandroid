@@ -1,7 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface nv0 {
-    void b(float[] fArr);
+public final class nv0 {
+    public final int a;
+    public final ArrayList b;
+    public final iv0 c;
+    public final /* synthetic */ PhotoViewer d;
+
+    public nv0(PhotoViewer photoViewer, int i10, ArrayList arrayList, iv0 iv0Var) {
+        this.d = photoViewer;
+        this.b = arrayList;
+        this.a = i10;
+        this.c = iv0Var;
+    }
 }

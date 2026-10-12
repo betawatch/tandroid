@@ -15,7 +15,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class CameraSession {
     public static final int ORIENTATION_HYSTERESIS = 5;
@@ -45,7 +45,7 @@ public class CameraSession {
     public ArrayList<String> availableFlashModes = new ArrayList<>();
     private int infoCameraId = -1;
     Camera.CameraInfo info = new Camera.CameraInfo();
-    private Camera.AutoFocusCallback autoFocusCallback = new k();
+    private Camera.AutoFocusCallback autoFocusCallback = new j();
 
     public CameraSession(CameraInfo cameraInfo, Size size, Size size2, int i10, boolean z10) {
         this.previewSize = size;
@@ -152,8 +152,8 @@ public class CameraSession {
             if (camera != null) {
                 try {
                     parameters = camera.getParameters();
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     parameters = null;
                 }
                 updateCameraInfo();
@@ -245,8 +245,8 @@ public class CameraSession {
             if (camera != null) {
                 try {
                     parameters = camera.getParameters();
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     parameters = null;
                 }
                 updateCameraInfo();
@@ -291,8 +291,8 @@ public class CameraSession {
                         if (parameters.getMaxNumMeteringAreas() > 0) {
                             this.meteringAreaSupported = true;
                         }
-                    } catch (Exception e10) {
-                        throw new RuntimeException(e10);
+                    } catch (Exception e7) {
+                        throw new RuntimeException(e7);
                     }
                 }
             }
@@ -321,8 +321,8 @@ public class CameraSession {
                 camera.cancelAutoFocus();
                 try {
                     parameters = camera.getParameters();
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     parameters = null;
                 }
                 if (parameters != null) {
@@ -338,13 +338,13 @@ public class CameraSession {
                     try {
                         camera.setParameters(parameters);
                         camera.autoFocus(this.autoFocusCallback);
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                     }
                 }
             }
-        } catch (Exception e11) {
-            FileLog.e(e11);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 
@@ -452,8 +452,8 @@ public class CameraSession {
             } else {
                 configurePhotoCamera();
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
@@ -536,8 +536,8 @@ public class CameraSession {
         try {
             updateCameraInfo();
             return getDisplayOrientation(this.info, true);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
             return 0;
         }
     }

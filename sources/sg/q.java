@@ -1,17 +1,32 @@
 package sg;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final class q {
-    public final float a;
-    public final float b;
-    public final boolean c;
-    public final boolean d;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public q(float f7, float f10, boolean z10, boolean z11) {
-        this.a = f7;
-        this.b = f10;
-        this.c = z10;
-        this.d = z11;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class q extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r b;
+    public final /* synthetic */ s c;
+
+    public /* synthetic */ q(s sVar, r rVar, int i10) {
+        this.a = i10;
+        this.c = sVar;
+        this.b = rVar;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.f = null;
+                s.a(this.c);
+                break;
+            default:
+                this.b.f = null;
+                s.a(this.c);
+                break;
+        }
     }
 }

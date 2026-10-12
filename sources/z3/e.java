@@ -1,7 +1,15 @@
 package z3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.util.List;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface e extends h2.e {
-    void b(long j3);
+public interface e {
+    int c(long j10);
+
+    long d(int i10);
+
+    List f(long j10);
+
+    int j();
 }

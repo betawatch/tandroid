@@ -1,91 +1,53 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.CacheByChatsController;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import j$.util.Objects;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class y5 extends og.b {
-    public final /* synthetic */ a6 d;
+public final class y5 extends pg.a {
+    public final String c;
+    public final TL_stories.Boost d;
+    public TL_stories.PrepaidGiveaway e;
+    public boolean f;
+    public final int g;
 
-    public y5(a6 a6Var) {
-        this.d = a6Var;
+    public y5(int i10, String str) {
+        super(i10, false);
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.pm0
-    public final boolean D(s4.d1 d1Var) {
-        int i10 = d1Var.f;
-        return i10 == 1 || i10 == 2 || i10 == 4;
-    }
-
-    @Override // s4.i0
-    public final int h() {
-        return this.d.c.size();
-    }
-
-    @Override // s4.i0
-    public final int j(int i10) {
-        return ((z5) this.d.c.get(i10)).a;
-    }
-
-    @Override // s4.i0
-    public final void v(s4.d1 d1Var, int i10) {
-        String str;
-        a6 a6Var = this.d;
-        ArrayList arrayList = a6Var.c;
-        if (((z5) arrayList.get(i10)).a == 2) {
-            org.telegram.ui.Cells.xa xaVar = (org.telegram.ui.Cells.xa) d1Var.a;
-            CacheByChatsController.KeepMediaException keepMediaException = ((z5) arrayList.get(i10)).c;
-            TLObject userOrChat = a6Var.getMessagesController().getUserOrChat(keepMediaException.dialogId);
-            if (userOrChat instanceof TLRPC.User) {
-                TLRPC.User user = (TLRPC.User) userOrChat;
-                str = user.self ? LocaleController.getString(R.string.SavedMessages) : ContactsController.formatName(user.first_name, user.last_name);
-            } else {
-                str = userOrChat instanceof TLRPC.Chat ? ((TLRPC.Chat) userOrChat).title : null;
-            }
-            boolean z10 = true;
-            xaVar.setSelfAsSavedMessages(true);
-            String keepMediaString = CacheByChatsController.getKeepMediaString(keepMediaException.keepMedia);
-            if (i10 != arrayList.size() - 1 && ((z5) arrayList.get(i10 + 1)).a != 2) {
-                z10 = false;
-            }
-            xaVar.d(userOrChat, str, keepMediaString, z10);
+    public final boolean equals(Object obj) {
+        TL_stories.PrepaidGiveaway prepaidGiveaway;
+        boolean z10 = this.f;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || y5.class != obj.getClass()) {
+            return false;
+        }
+        y5 y5Var = (y5) obj;
+        TL_stories.Boost boost = y5Var.d;
+        boolean z11 = y5Var.f;
+        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
+        if (prepaidGiveaway2 != null && (prepaidGiveaway = y5Var.e) != null) {
+            return prepaidGiveaway2.id == prepaidGiveaway.id && z10 == z11;
+        }
+        TL_stories.Boost boost2 = this.d;
+        if (boost2 == null || boost == null) {
+            return true;
+        }
+        return boost2.id.hashCode() == boost.id.hashCode() && z10 == z11 && this.g == y5Var.g;
     }
 
-    @Override // s4.i0
-    public final s4.d1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        View view2 = null;
-        if (i10 != 1) {
-            if (i10 == 2) {
-                View xaVar = new org.telegram.ui.Cells.xa(4, 0, viewGroup.getContext(), null, false, false);
-                xaVar.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
-                view2 = xaVar;
-            } else if (i10 == 3) {
-                view = new org.telegram.ui.Cells.b7(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
-            } else if (i10 == 4) {
-                org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(viewGroup.getContext());
-                r8Var.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
-                r8Var.e(-1, org.telegram.ui.ActionBar.i6.p7);
-                r8Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
-                view = r8Var;
-            }
-            return com.google.android.gms.internal.vision.e2.k(view2, view2, -1, -2);
-        }
-        org.telegram.ui.Cells.r8 r8Var2 = new org.telegram.ui.Cells.r8(viewGroup.getContext());
-        r8Var2.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.NotificationsAddAnException), true);
-        r8Var2.e(org.telegram.ui.ActionBar.i6.v6, org.telegram.ui.ActionBar.i6.u6);
-        r8Var2.setBackgroundColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.d6, false));
-        view = r8Var2;
-        view2 = view;
-        return com.google.android.gms.internal.vision.e2.k(view2, view2, -1, -2);
+    public final int hashCode() {
+        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
+    }
+
+    public y5(TL_stories.Boost boost, boolean z10, int i10) {
+        super(5, true);
+        this.d = boost;
+        this.f = z10;
+        this.g = i10;
     }
 }

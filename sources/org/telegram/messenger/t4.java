@@ -1,36 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.ImageLoader;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t4 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ImageLoader b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ t4(int i10, String str, boolean z10) {
-        this.b = i10;
-        this.d = str;
-        this.c = z10;
+    public /* synthetic */ t4(ImageLoader imageLoader, String str, int i10) {
+        this.a = i10;
+        this.b = imageLoader;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ImageLoader.5.lambda$fileDidFailedUpload$3(this.b, (String) this.d, this.c);
+                this.b.lambda$artworkLoadError$10(this.c);
+                break;
+            case 1:
+                this.b.lambda$cancelForceLoadingForImageReceiver$6(this.c);
+                break;
+            case 2:
+                this.b.lambda$preloadArtwork$8(this.c);
+                break;
+            case 3:
+                this.b.lambda$httpFileLoadError$9(this.c);
                 break;
             default:
-                ((MessagesController) this.d).lambda$removeFolderTemporarily$482(this.b, this.c);
+                this.b.lambda$fileDidFailedLoad$12(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ t4(int i10, MessagesController messagesController, boolean z10) {
-        this.d = messagesController;
-        this.b = i10;
-        this.c = z10;
     }
 }

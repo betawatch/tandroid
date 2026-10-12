@@ -1,31 +1,95 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.CacheByChatsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y6 b;
-    public final /* synthetic */ l6 c;
-    public final /* synthetic */ m6 d;
+public class e6 extends org.telegram.ui.ActionBar.m2 {
+    public c6 a;
+    public org.telegram.ui.Components.mm0 b;
+    public final ArrayList c;
+    public ArrayList d;
+    public int e;
 
-    public /* synthetic */ e6(y6 y6Var, l6 l6Var, m6 m6Var, int i10) {
-        this.a = i10;
-        this.b = y6Var;
-        this.c = l6Var;
-        this.d = m6Var;
+    public e6(Bundle bundle) {
+        super(bundle);
+        this.c = new ArrayList();
+        this.d = new ArrayList();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                Utilities.globalQueue.postRunnable(new e6(this.b, this.c, this.d, 1));
-                break;
-            default:
-                y6.W(this.b, this.c, this.d);
-                break;
+    public final void U() {
+        ArrayList arrayList;
+        boolean z10 = this.isPaused;
+        ArrayList arrayList2 = this.c;
+        if (z10 || this.a == null) {
+            arrayList = null;
+        } else {
+            arrayList = new ArrayList();
+            arrayList.addAll(arrayList2);
         }
+        arrayList2.clear();
+        arrayList2.add(new d6(1, null));
+        ArrayList arrayList3 = this.d;
+        int size = arrayList3.size();
+        boolean z11 = false;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList3.get(i10);
+            i10++;
+            arrayList2.add(new d6(2, (CacheByChatsController.KeepMediaException) obj));
+            z11 = true;
+        }
+        if (z11) {
+            arrayList2.add(new d6(3, null));
+            arrayList2.add(new d6(4, null));
+        }
+        arrayList2.add(new d6(3, null));
+        c6 c6Var = this.a;
+        if (c6Var != null) {
+            if (arrayList != null) {
+                c6Var.E(arrayList, arrayList2);
+            } else {
+                c6Var.l();
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final View createView(Context context) {
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        i2.d.v(false, this.actionBar);
+        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 23));
+        this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsExceptions));
+        this.b = new org.telegram.ui.Components.mm0(context, null);
+        s4.k kVar = new s4.k();
+        kVar.C = false;
+        kVar.m = false;
+        this.b.setItemAnimator(kVar);
+        this.b.setLayoutManager(new s4.b0());
+        org.telegram.ui.Components.mm0 mm0Var = this.b;
+        c6 c6Var = new c6(this);
+        this.a = c6Var;
+        mm0Var.setAdapter(c6Var);
+        this.b.setOnItemClickListener(new b1(this, 7));
+        frameLayout.addView(this.b);
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.a7, false));
+        U();
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.m2
+    public final boolean onFragmentCreate() {
+        this.e = getArguments().getInt(TeXSymbolParser.TYPE_ATTR);
+        U();
+        return super.onFragmentCreate();
     }
 }

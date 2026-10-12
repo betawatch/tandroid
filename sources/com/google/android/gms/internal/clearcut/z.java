@@ -21,8 +21,8 @@ public abstract class z {
             if ((0 - 0) + length > Integer.MAX_VALUE) {
                 throw c0.a();
             }
-        } catch (c0 e7) {
-            throw new IllegalArgumentException(e7);
+        } catch (c0 e) {
+            throw new IllegalArgumentException(e);
         }
     }
 
@@ -38,7 +38,7 @@ public abstract class z {
         return wVar.c();
     }
 
-    public static int b(long j3) {
-        return (int) (j3 ^ (j3 >>> 32));
+    public static int b(long j10) {
+        return (int) (j10 ^ (j10 >>> 32));
     }
 }

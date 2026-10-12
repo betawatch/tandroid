@@ -1,55 +1,34 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class pk extends org.telegram.ui.Components.sd {
-    public final /* synthetic */ zn d;
+public final class pk extends org.telegram.ui.Components.gp {
+    public final /* synthetic */ fo f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pk(zn znVar, Context context) {
+    public pk(fo foVar, Context context) {
         super(context);
-        this.d = znVar;
+        this.f = foVar;
     }
 
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        zn znVar = this.d;
-        ok okVar = znVar.Y;
-        if (okVar != null) {
-            okVar.invalidate();
+    @Override // org.telegram.ui.Components.gp
+    public final void a(boolean z10) {
+        fo foVar = this.f;
+        foVar.w7();
+        foVar.u7();
+        foVar.x7();
+        foVar.y7();
+        il ilVar = foVar.bb;
+        if (ilVar != null) {
+            ilVar.setTranslationY(foVar.w9 + getCurrentHeight());
         }
-        if (getVisibility() != 8) {
-            znVar.m9(true);
-            FrameLayout frameLayout = znVar.P;
-            if (frameLayout != null) {
-                frameLayout.setTranslationY(f7);
-            }
-            znVar.t9();
-            znVar.w9();
-            View view = znVar.fragmentView;
-            if (view != null) {
-                view.invalidate();
-            }
+        if (!z10) {
+            foVar.t9();
+        } else {
+            foVar.D9 = true;
+            foVar.nc();
         }
-    }
-
-    @Override // android.view.View
-    public final void setVisibility(int i10) {
-        FrameLayout frameLayout;
-        super.setVisibility(i10);
-        if (i10 != 8 || (frameLayout = this.d.P) == null) {
-            return;
-        }
-        frameLayout.setTranslationY(0.0f);
     }
 }

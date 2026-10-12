@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class CarText {
     private final List<SpanWrapper> mSpans;
@@ -16,7 +16,7 @@ public final class CarText {
     private final String mText;
     private final List<String> mTextVariants;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static final class Builder {
         CharSequence mText;
         List<CharSequence> mTextVariants = new ArrayList();
@@ -133,10 +133,10 @@ public final class CarText {
                 }
             }
         }
-        return androidx.car.app.utils.g.g(arrayList);
+        return androidx.car.app.utils.i.g(arrayList);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class SpanWrapper {
         private final CarSpan mCarSpan;
         private final int mEnd;
@@ -189,7 +189,7 @@ public final class CarText {
             sb2.append(", ");
             sb2.append(this.mEnd);
             sb2.append(", flags: ");
-            return a1.g.o(this.mFlags, "]", sb2);
+            return a1.g.n(this.mFlags, "]", sb2);
         }
 
         public SpanWrapper() {
@@ -219,7 +219,7 @@ public final class CarText {
             arrayList.add(charSequence.toString());
             arrayList2.add(getSpans(charSequence));
         }
-        this.mTextVariants = androidx.car.app.utils.g.g(arrayList);
-        this.mSpansForVariants = androidx.car.app.utils.g.g(arrayList2);
+        this.mTextVariants = androidx.car.app.utils.i.g(arrayList);
+        this.mSpansForVariants = androidx.car.app.utils.i.g(arrayList2);
     }
 }

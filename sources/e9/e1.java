@@ -1,36 +1,28 @@
 package e9;
 
-import j$.util.Objects;
-import v7.t6;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e1 extends i0 {
-    public final transient Object[] c;
-    public final transient int d;
-    public final transient int e;
+public final class e1 extends m2 {
+    public final Object a;
+    public boolean b;
 
-    public e1(int i10, int i11, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
-        this.e = i11;
+    public e1(Object obj) {
+        this.a = obj;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        t6.c(i10, this.e);
-        Object obj = this.c[(i10 * 2) + this.d];
-        Objects.requireNonNull(obj);
-        return obj;
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return !this.b;
     }
 
-    @Override // e9.d0
-    public final boolean r() {
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.e;
+    @Override // java.util.Iterator
+    public final Object next() {
+        if (this.b) {
+            throw new NoSuchElementException();
+        }
+        this.b = true;
+        return this.a;
     }
 }

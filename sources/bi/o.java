@@ -1,477 +1,145 @@
 package bi;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.text.Layout;
+import android.graphics.Rect;
 import android.view.View;
-import android.widget.TextView;
-import ii.f6;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ia0;
-import org.telegram.ui.Components.voip.x0;
-import org.telegram.ui.Components.y90;
-import org.telegram.ui.Components.yi;
-import org.telegram.ui.d80;
-import rg.i0;
-import rg.v1;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class o extends TextView {
+public final class o extends s4.m0 {
     public final /* synthetic */ int a;
-    public Object b;
-    public final Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(f6 f6Var, Context context) {
-        super(context);
-        this.a = 3;
-        this.c = f6Var;
-        this.b = new Paint(1);
+    public /* synthetic */ o(int i10) {
+        this.a = i10;
     }
 
-    public void a() {
-        ia0 ia0Var = (ia0) this.c;
-        y90 y90Var = (y90) this.b;
-        if (y90Var == null || ia0Var == null) {
-            return;
-        }
-        y90Var.rewind();
-        if (getLayout() != null && getLayout().getText() != null) {
-            y90Var.e(getLayout(), 0, getPaddingLeft(), getPaddingTop());
-            getLayout().getSelectionPath(0, getLayout().getText().length(), y90Var);
-        }
-        ia0Var.l();
-    }
-
-    @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        e6 e6Var;
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
         switch (this.a) {
             case 0:
-                Paint paint = (Paint) this.b;
-                int dp = AndroidUtilities.dp(1.0f) + (getHeight() / 2);
-                int max = Math.max(1, AndroidUtilities.dp(0.66f));
-                Layout layout = getLayout();
-                if (layout != null) {
-                    paint.setColor(i6.m1(0.45f, i6.w0(i6.y6, ((u) this.c).W.c)));
-                    float f7 = dp;
-                    float f10 = max / 2.0f;
-                    float f11 = f7 - f10;
-                    float f12 = f7 + f10;
-                    canvas.drawRect(0.0f, f11, (getWidth() - (layout.getLineWidth(0) + AndroidUtilities.dp(16.0f))) / 2.0f, f12, paint);
-                    canvas.drawRect(((layout.getLineWidth(0) + getWidth()) + AndroidUtilities.dp(16.0f)) / 2.0f, f11, getWidth(), f12, paint);
+                recyclerView.getClass();
+                int S = RecyclerView.S(view);
+                rect.setEmpty();
+                if (S != 1) {
+                    if (S == 2) {
+                        rect.left = AndroidUtilities.dp(31.0f) + (-AndroidUtilities.dp(85.0f));
+                        break;
+                    }
+                } else {
+                    rect.left = AndroidUtilities.dp(31.0f) + (-AndroidUtilities.dp(85.0f));
+                    break;
                 }
-                super.dispatchDraw(canvas);
                 break;
             case 1:
-                Paint paint2 = (Paint) this.b;
-                int dp2 = AndroidUtilities.dp(1.0f) + (getHeight() / 2);
-                int max2 = Math.max(1, AndroidUtilities.dp(0.66f));
-                Layout layout2 = getLayout();
-                if (layout2 != null) {
-                    paint2.setColor(i6.m1(0.45f, i6.w0(i6.y6, (e6) this.c)));
-                    float f13 = dp2;
-                    float f14 = max2 / 2.0f;
-                    float f15 = f13 - f14;
-                    float f16 = f13 + f14;
-                    canvas.drawRect(0.0f, f15, (getWidth() - (layout2.getLineWidth(0) + AndroidUtilities.dp(16.0f))) / 2.0f, f16, paint2);
-                    canvas.drawRect(((layout2.getLineWidth(0) + getWidth()) + AndroidUtilities.dp(16.0f)) / 2.0f, f15, getWidth(), f16, paint2);
+                super.a(rect, view, recyclerView, y0Var);
+                recyclerView.getClass();
+                int R = RecyclerView.R(view);
+                rect.left = AndroidUtilities.dp(8.0f);
+                if (R == y0Var.b() - 1) {
+                    rect.right = AndroidUtilities.dp(10.0f);
                 }
-                super.dispatchDraw(canvas);
-                break;
-            case 10:
-                Paint paint3 = (Paint) this.b;
-                int i10 = i6.z6;
-                e6Var = ((f3) ((i0) this.c).e).resourcesProvider;
-                paint3.setColor(i6.m1(0.8f, i6.w0(i10, e6Var)));
-                paint3.setStyle(Paint.Style.STROKE);
-                paint3.setStrokeWidth(1.0f);
-                float height = getHeight() / 2.0f;
-                Layout layout3 = getLayout();
-                int i11 = 0;
-                for (int i12 = 0; i12 < layout3.getLineCount(); i12++) {
-                    i11 = Math.max(i11, (int) layout3.getLineWidth(i12));
+                if (R == 0) {
+                    rect.left = AndroidUtilities.dp(10.0f);
+                    break;
                 }
-                float f17 = i11 / 2.0f;
-                canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - f17) - AndroidUtilities.dp(8.0f), height, paint3);
-                canvas.drawLine((getWidth() / 2.0f) + f17 + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint3);
-                super.dispatchDraw(canvas);
                 break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.a) {
-            case 4:
-                ((org.telegram.ui.h) this.c).b.draw(canvas);
-                super.draw(canvas);
-                break;
-            case 9:
-                ((d80) this.c).h.draw(canvas);
-                super.draw(canvas);
-                break;
-            default:
-                super.draw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.a) {
-            case 7:
-                super.onDetachedFromWindow();
-                ((ia0) this.c).b = -1L;
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
             case 2:
-                Paint paint = (Paint) this.b;
-                paint.setColor(((fi.p) this.c).getThemedColor(i6.Oh));
-                canvas.drawRoundRect(0.0f, (getHeight() / 2.0f) - AndroidUtilities.dp(14.0f), getWidth(), (getHeight() / 2.0f) + AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), paint);
-                super.onDraw(canvas);
+                rect.top = AndroidUtilities.dp(6.0f);
                 break;
             case 3:
-                Paint paint2 = (Paint) this.b;
-                ii.a aVar = ((f6) this.c).x;
-                if (aVar != null && aVar.c > 0 && aVar.d == 0 && !aVar.e) {
-                    paint2.setColor(getCurrentTextColor());
-                    canvas.drawCircle(getWidth() / 2.0f, getBaseline() - (getTextSize() * 0.35f), AndroidUtilities.dpf2(4.3f) / 2.0f, paint2);
-                    break;
-                } else {
-                    super.onDraw(canvas);
-                    break;
-                }
+                rect.right = AndroidUtilities.dp(2.0f);
+                break;
             case 4:
-                super.onDraw(canvas);
-                if (((org.telegram.ui.h) this.c).w) {
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                    ((org.telegram.ui.Components.voip.h) this.b).a(getMeasuredHeight() / 2.0f, canvas, rectF, null);
-                    invalidate();
-                    break;
-                }
+                rect.right = AndroidUtilities.dp(2.0f);
                 break;
             case 5:
-                Paint paint3 = (Paint) this.b;
-                paint3.setColor(((yi) this.c).getThemedColor(i6.Oh));
-                canvas.drawRoundRect(0.0f, (getHeight() / 2.0f) - AndroidUtilities.dp(14.0f), getWidth(), (getHeight() / 2.0f) + AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), paint3);
-                super.onDraw(canvas);
-                break;
-            case 6:
-                if (((v1) this.b) != null) {
-                    canvas.save();
-                    canvas.clipPath((Path) this.c);
-                    ((v1) this.b).d(canvas);
-                    canvas.restore();
-                    invalidate();
-                }
-                super.onDraw(canvas);
-                break;
-            case 7:
-            case 10:
-            default:
-                super.onDraw(canvas);
-                break;
-            case 8:
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                rectF2.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                Paint[] paintArr = (Paint[]) this.b;
-                x0 x0Var = (x0) this.c;
-                paintArr[x0Var.x].setAlpha(255);
-                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[x0Var.x]);
-                float f7 = x0Var.w;
-                if (f7 > 0.0f) {
-                    int i10 = x0Var.x;
-                    if (i10 + 1 < paintArr.length) {
-                        paintArr[i10 + 1].setAlpha((int) (f7 * 255.0f));
-                        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[x0Var.x + 1]);
-                    }
-                }
-                super.onDraw(canvas);
-                break;
-            case 9:
-                super.onDraw(canvas);
-                RectF rectF3 = AndroidUtilities.rectTmp;
-                rectF3.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                ((org.telegram.ui.Components.voip.h) this.b).a(getMeasuredHeight() / 2.0f, canvas, rectF3, null);
-                invalidate();
-                break;
-            case 11:
-                Paint paint4 = (Paint) this.b;
-                paint4.setColor(((th.f) this.c).getThemedColor(i6.Oh));
-                canvas.drawRoundRect(0.0f, (getHeight() / 2.0f) - AndroidUtilities.dp(14.0f), getWidth(), (getHeight() / 2.0f) + AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), paint4);
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 6:
-                super.onLayout(z10, i10, i11, i12, i13);
-                v1 v1Var = new v1(10);
-                this.b = v1Var;
-                v1Var.N = 100;
-                v1Var.J = false;
-                v1Var.M = true;
-                v1Var.G = false;
-                v1Var.K = true;
-                v1Var.H = true;
-                v1Var.r = 1;
-                v1Var.w = 0.98f;
-                v1Var.v = 0.98f;
-                v1Var.u = 0.98f;
-                v1Var.g = false;
-                v1Var.o = 0.0f;
-                v1Var.x = 750L;
-                v1Var.y = 750;
-                v1Var.c();
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                ((v1) this.b).a.set(rectF);
-                ((v1) this.b).b.set(rectF);
-                ((v1) this.b).f();
-                Path path = (Path) this.c;
-                path.reset();
-                path.addRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, Path.Direction.CW);
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 7:
-                super.onMeasure(i10, i11);
-                a();
-                break;
-            case 8:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 9:
-                if (View.MeasureSpec.getSize(i10) <= AndroidUtilities.dp(260.0f)) {
-                    super.onMeasure(i10, i11);
+                wl0 wl0Var = (wl0) recyclerView.T(view);
+                if (wl0Var == null) {
+                    rect.left = AndroidUtilities.dp(4.0f);
+                    rect.right = AndroidUtilities.dp(4.0f);
                     break;
                 } else {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(320.0f), TLObject.FLAG_30), i11);
+                    int b10 = wl0Var.b() % 4;
+                    rect.left = b10 == 0 ? 0 : AndroidUtilities.dp(4.0f);
+                    rect.right = b10 != 3 ? AndroidUtilities.dp(4.0f) : 0;
                     break;
                 }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:17:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0080  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15;
-        int i16;
-        switch (this.a) {
-            case 4:
-                super.onSizeChanged(i10, i11, i12, i13);
-                org.telegram.ui.h hVar = (org.telegram.ui.h) this.c;
-                hVar.b.setBounds(0, 0, i10, i11);
-                hVar.b.setCornerRadius(Math.min(i10, i11) / 2.0f);
-                ((org.telegram.ui.Components.voip.h) this.b).f = i10;
-                break;
-            case 8:
-                x0 x0Var = (x0) this.c;
-                Paint[] paintArr = (Paint[]) this.b;
-                super.onSizeChanged(i10, i11, i12, i13);
-                for (int i17 = 0; i17 < paintArr.length; i17++) {
-                    if (i17 == 0 && x0Var.y) {
-                        i14 = -8919716;
-                        i15 = -11089922;
-                    } else {
-                        i14 = -9015575;
-                        if (i17 == 0 || (i17 == 1 && x0Var.y)) {
-                            i15 = -9015575;
-                            i14 = -11033346;
-                        } else {
-                            i15 = -1026983;
-                            i16 = -1792170;
-                            paintArr[i17].setShader(i16 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i14, i15, i16}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i14, i15}, (float[]) null, Shader.TileMode.CLAMP));
-                        }
-                    }
-                    i16 = 0;
-                    paintArr[i17].setShader(i16 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i14, i15, i16}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i14, i15}, (float[]) null, Shader.TileMode.CLAMP));
+            case 6:
+                wl0 wl0Var2 = (wl0) recyclerView.T(view);
+                if (wl0Var2 == null) {
+                    rect.left = AndroidUtilities.dp(4.0f);
+                    rect.right = AndroidUtilities.dp(4.0f);
+                    break;
+                } else {
+                    int b11 = wl0Var2.b() % 4;
+                    rect.left = b11 == 0 ? 0 : AndroidUtilities.dp(4.0f);
+                    rect.right = b11 != 3 ? AndroidUtilities.dp(4.0f) : 0;
+                    break;
                 }
+            case 7:
+                wl0 wl0Var3 = (wl0) recyclerView.T(view);
+                if (wl0Var3 == null) {
+                    rect.left = AndroidUtilities.dp(4.0f);
+                    rect.right = AndroidUtilities.dp(4.0f);
+                    break;
+                } else {
+                    if (wl0Var3.f == 5) {
+                        int b12 = wl0Var3.b() % 4;
+                        rect.left = b12 == 0 ? 0 : AndroidUtilities.dp(4.0f);
+                        rect.right = b12 != 3 ? AndroidUtilities.dp(4.0f) : 0;
+                        break;
+                    } else {
+                        rect.right = 0;
+                        rect.left = 0;
+                        break;
+                    }
+                }
+            case 8:
+                rect.left = 0;
+                rect.right = 0;
+                rect.bottom = 0;
+                rect.top = 0;
                 break;
             case 9:
-                super.onSizeChanged(i10, i11, i12, i13);
-                d80 d80Var = (d80) this.c;
-                d80Var.h.setBounds(0, 0, i10, i11);
-                d80Var.h.setCornerRadius(Math.min(i10, i11) / 2.0f);
-                ((org.telegram.ui.Components.voip.h) this.b).f = i10;
+                recyclerView.getClass();
+                int R2 = RecyclerView.R(view);
+                rect.left = AndroidUtilities.dp(12.0f);
+                rect.top = 0;
+                rect.bottom = 0;
+                if (R2 == y0Var.b() - 1) {
+                    rect.right = AndroidUtilities.dp(12.0f);
+                    break;
+                }
                 break;
             default:
-                super.onSizeChanged(i10, i11, i12, i13);
+                super.a(rect, view, recyclerView, y0Var);
+                rect.top = 1;
                 break;
         }
     }
 
-    @Override // android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+    @Override // s4.m0
+    public void b(Canvas canvas, RecyclerView recyclerView) {
         switch (this.a) {
-            case 7:
-                super.setText(charSequence, bufferType);
-                a();
-                break;
-            default:
-                super.setText(charSequence, bufferType);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView
-    public void setTextColor(int i10) {
-        switch (this.a) {
-            case 7:
-                super.setTextColor(i6.m1(0.2f, i10));
-                ((ia0) this.c).g(i6.m1(0.03f, i10), i6.m1(0.175f, i10), i6.m1(0.2f, i10), i6.m1(0.45f, i10));
-                break;
-            default:
-                super.setTextColor(i10);
+            case 10:
+                int width = recyclerView.getWidth();
+                int childCount = recyclerView.getChildCount();
+                int i10 = childCount - 1;
+                int i11 = 0;
+                while (i11 < i10) {
+                    View childAt = recyclerView.getChildAt(i11);
+                    View childAt2 = i11 < childCount + (-2) ? recyclerView.getChildAt(i11 + 1) : null;
+                    if (RecyclerView.R(childAt) >= 0 && !(childAt instanceof org.telegram.ui.Cells.v3) && !(childAt2 instanceof org.telegram.ui.Cells.v3)) {
+                        float bottom = childAt.getBottom();
+                        canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), bottom, width - (LocaleController.isRTL ? AndroidUtilities.dp(72.0f) : 0), bottom, org.telegram.ui.ActionBar.g6.k0);
+                    }
+                    i11++;
+                }
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(x0 x0Var, Context context) {
-        super(context);
-        this.a = 8;
-        this.c = x0Var;
-        this.b = new Paint[x0Var.f.length];
-        int i10 = 0;
-        while (true) {
-            Paint[] paintArr = (Paint[]) this.b;
-            if (i10 >= paintArr.length) {
-                return;
-            }
-            paintArr[i10] = new Paint(1);
-            i10++;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(Context context, int i10) {
-        super(context);
-        this.a = i10;
-        switch (i10) {
-            case 7:
-                super(context);
-                y90 y90Var = new y90(0);
-                this.b = y90Var;
-                ia0 ia0Var = new ia0();
-                this.c = ia0Var;
-                ia0Var.y = y90Var;
-                ia0Var.u = 0.65f;
-                ia0Var.k(4.0f);
-                setBackground(ia0Var);
-                break;
-            default:
-                this.c = new Path();
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(th.f fVar, Context context) {
-        super(context);
-        this.a = 11;
-        this.c = fVar;
-        this.b = new Paint(1);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(fi.p pVar, Context context) {
-        super(context);
-        this.a = 2;
-        this.c = pVar;
-        this.b = new Paint(1);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(d80 d80Var, Context context) {
-        super(context);
-        this.a = 9;
-        this.c = d80Var;
-        org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
-        this.b = hVar;
-        hVar.k = false;
-        hVar.m = 2.0f;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(org.telegram.ui.h hVar, Context context) {
-        super(context);
-        this.a = 4;
-        this.c = hVar;
-        org.telegram.ui.Components.voip.h hVar2 = new org.telegram.ui.Components.voip.h();
-        this.b = hVar2;
-        hVar2.k = false;
-        hVar2.m = 2.0f;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(u uVar, Context context) {
-        super(context);
-        this.a = 0;
-        this.c = uVar;
-        this.b = new Paint(1);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(Context context, e6 e6Var) {
-        super(context);
-        this.a = 1;
-        this.c = e6Var;
-        this.b = new Paint(1);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(i0 i0Var, Context context) {
-        super(context);
-        this.a = 10;
-        this.c = i0Var;
-        this.b = new Paint(1);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(yi yiVar, Context context) {
-        super(context);
-        this.a = 5;
-        this.c = yiVar;
-        this.b = new Paint(1);
     }
 }

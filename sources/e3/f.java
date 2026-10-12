@@ -1,57 +1,55 @@
 package e3;
 
-import b2.r;
-import b2.r0;
-import b2.s;
-import com.google.android.gms.common.api.internal.w;
-import com.google.android.gms.internal.vision.e2;
-import e2.d0;
-import e2.v;
-import e9.a1;
-import e9.g0;
-import e9.i0;
-import e9.q;
+import b2.w;
+import b2.w0;
+import e2.m0;
+import e2.x;
+import e9.h0;
+import e9.l0;
+import e9.n0;
+import e9.s;
+import e9.x1;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class f implements a {
-    public final i0 a;
+    public final n0 a;
     public final int b;
 
-    public f(int i10, a1 a1Var) {
+    public f(int i10, x1 x1Var) {
         this.b = i10;
-        this.a = a1Var;
+        this.a = x1Var;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static f b(int i10, v vVar) {
+    public static f b(int i10, x xVar) {
         a gVar;
         String str;
         int i11 = 4;
-        q.e(4, "initialCapacity");
+        s.f(4, "initialCapacity");
         Object[] objArr = new Object[4];
-        int i12 = vVar.c;
+        int i12 = xVar.c;
         int i13 = -2;
         int i14 = 0;
-        while (vVar.a() > 8) {
-            int l4 = vVar.l();
-            int l10 = vVar.b + vVar.l();
-            vVar.I(l10);
-            if (l4 != 1414744396) {
+        while (xVar.a() > 8) {
+            int o10 = xVar.o();
+            int o11 = xVar.b + xVar.o();
+            xVar.M(o11);
+            if (o10 != 1414744396) {
                 d dVar = null;
-                switch (l4) {
+                switch (o10) {
                     case 1718776947:
                         if (i13 == 2) {
-                            vVar.K(i11);
-                            int l11 = vVar.l();
-                            int l12 = vVar.l();
-                            vVar.K(i11);
-                            int l13 = vVar.l();
-                            switch (l13) {
+                            xVar.O(i11);
+                            int o12 = xVar.o();
+                            int o13 = xVar.o();
+                            xVar.O(i11);
+                            int o14 = xVar.o();
+                            switch (o14) {
                                 case 808802372:
                                 case 877677894:
                                 case 1145656883:
@@ -81,105 +79,105 @@ public final class f implements a {
                                     break;
                             }
                             if (str != null) {
-                                r rVar = new r();
-                                rVar.x = l11;
-                                rVar.y = l12;
-                                rVar.q = r0.n(str);
-                                gVar = new g(new s(rVar));
+                                w wVar = new w();
+                                wVar.y = o12;
+                                wVar.z = o13;
+                                wVar.r = w0.n(str);
+                                gVar = new g(new b2.x(wVar));
                                 break;
                             } else {
-                                e2.m(l13, "Ignoring track with unsupported compression ", "StreamFormatChunk");
+                                a1.g.x(o14, "Ignoring track with unsupported compression ", "StreamFormatChunk");
                                 gVar = dVar;
                                 break;
                             }
                         } else {
                             if (i13 == 1) {
-                                int q6 = vVar.q();
-                                String str2 = q6 != 1 ? q6 != 85 ? q6 != 255 ? q6 != 8192 ? q6 != 8193 ? null : "audio/vnd.dts" : "audio/ac3" : MediaController.AUDIO_MIME_TYPE : "audio/mpeg" : "audio/raw";
+                                int t10 = xVar.t();
+                                String str2 = t10 != 1 ? t10 != 85 ? t10 != 255 ? t10 != 8192 ? t10 != 8193 ? null : "audio/vnd.dts" : "audio/ac3" : MediaController.AUDIO_MIME_TYPE : "audio/mpeg" : "audio/raw";
                                 if (str2 != null) {
-                                    int q10 = vVar.q();
-                                    int l14 = vVar.l();
-                                    vVar.K(6);
-                                    int q11 = vVar.q();
-                                    String str3 = d0.a;
-                                    int A = d0.A(q11, ByteOrder.LITTLE_ENDIAN);
-                                    int q12 = vVar.a() > 0 ? vVar.q() : 0;
-                                    r rVar2 = new r();
-                                    rVar2.q = r0.n(str2);
-                                    rVar2.I = q10;
-                                    rVar2.J = l14;
-                                    if (str2.equals("audio/raw") && A != 0) {
-                                        rVar2.K = A;
+                                    int t11 = xVar.t();
+                                    int o15 = xVar.o();
+                                    xVar.O(6);
+                                    int t12 = xVar.t();
+                                    String str3 = m0.a;
+                                    int D = m0.D(t12, ByteOrder.LITTLE_ENDIAN);
+                                    int t13 = xVar.a() > 0 ? xVar.t() : 0;
+                                    w wVar2 = new w();
+                                    wVar2.r = w0.n(str2);
+                                    wVar2.J = t11;
+                                    wVar2.K = o15;
+                                    if (str2.equals("audio/raw") && D != 0) {
+                                        wVar2.L = D;
                                     }
-                                    if (str2.equals(MediaController.AUDIO_MIME_TYPE) && q12 > 0) {
-                                        byte[] bArr = new byte[q12];
-                                        vVar.h(0, q12, bArr);
-                                        rVar2.t = i0.z(bArr);
+                                    if (str2.equals(MediaController.AUDIO_MIME_TYPE) && t13 > 0) {
+                                        byte[] bArr = new byte[t13];
+                                        xVar.k(0, t13, bArr);
+                                        wVar2.u = n0.y(bArr);
                                     }
-                                    gVar = new g(new s(rVar2));
+                                    gVar = new g(new b2.x(wVar2));
                                     break;
                                 } else {
-                                    e2.m(q6, "Ignoring track with unsupported format tag ", "StreamFormatChunk");
+                                    a1.g.x(t10, "Ignoring track with unsupported format tag ", "StreamFormatChunk");
                                 }
                             } else {
-                                e2.a.n("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + d0.F(i13));
+                                e2.a.l("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + m0.I(i13));
                             }
                             gVar = dVar;
                         }
                     case 1751742049:
-                        int l15 = vVar.l();
-                        vVar.K(8);
-                        int l16 = vVar.l();
-                        int l17 = vVar.l();
-                        vVar.K(i11);
-                        vVar.l();
-                        vVar.K(12);
-                        gVar = new c(l15, l16, l17);
+                        int o16 = xVar.o();
+                        xVar.O(8);
+                        int o17 = xVar.o();
+                        int o18 = xVar.o();
+                        xVar.O(i11);
+                        xVar.o();
+                        xVar.O(12);
+                        gVar = new c(o16, o17, o18);
                         break;
                     case 1752331379:
-                        int l18 = vVar.l();
-                        vVar.K(12);
-                        vVar.l();
-                        int l19 = vVar.l();
-                        int l20 = vVar.l();
-                        vVar.K(i11);
-                        int l21 = vVar.l();
-                        int l22 = vVar.l();
-                        vVar.K(i11);
-                        dVar = new d(l18, l19, l20, l21, l22, vVar.l());
+                        int o19 = xVar.o();
+                        xVar.O(12);
+                        xVar.o();
+                        int o20 = xVar.o();
+                        int o21 = xVar.o();
+                        xVar.O(i11);
+                        int o22 = xVar.o();
+                        int o23 = xVar.o();
+                        xVar.O(i11);
+                        dVar = new d(o19, o20, o21, o22, o23, xVar.o());
                         gVar = dVar;
                         break;
                     case 1852994675:
-                        gVar = new h(vVar.v(vVar.a(), StandardCharsets.UTF_8));
+                        gVar = new h(xVar.y(xVar.a(), StandardCharsets.UTF_8));
                         break;
                     default:
                         gVar = dVar;
                         break;
                 }
             } else {
-                gVar = b(vVar.l(), vVar);
+                gVar = b(xVar.o(), xVar);
             }
             if (gVar != null) {
                 if (gVar.getType() == 1752331379) {
                     i13 = ((d) gVar).a();
                 }
                 int i15 = i14 + 1;
-                int h = w.h(objArr.length, i15);
-                if (h > objArr.length) {
-                    objArr = Arrays.copyOf(objArr, h);
+                int b10 = h0.b(objArr.length, i15);
+                if (b10 > objArr.length) {
+                    objArr = Arrays.copyOf(objArr, b10);
                 }
                 objArr[i14] = gVar;
                 i14 = i15;
             }
-            vVar.J(l10);
-            vVar.I(i12);
+            xVar.N(o11);
+            xVar.M(i12);
             i11 = 4;
         }
-        return new f(i10, i0.t(i14, objArr));
+        return new f(i10, n0.s(i14, objArr));
     }
 
     public final a a(Class cls) {
-        g0 listIterator = this.a.listIterator(0);
+        l0 listIterator = this.a.listIterator(0);
         while (listIterator.hasNext()) {
             a aVar = (a) listIterator.next();
             if (aVar.getClass() == cls) {

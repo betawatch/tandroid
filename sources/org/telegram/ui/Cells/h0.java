@@ -2,528 +2,160 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RadialGradient;
+import android.graphics.Rect;
+import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextUtils;
-import android.text.style.ClickableSpan;
-import android.text.style.URLSpan;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import j$.util.Objects;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.FileRefController;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.Components.ba0;
-import org.telegram.ui.Components.fa0;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.uq;
-import org.telegram.ui.Components.y90;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class h0 extends View {
-    public final ImageReceiver E;
-    public boolean F;
-    public boolean G;
-    public final int H;
-    public boolean I;
-    public final z J;
-    public int K;
-    public StaticLayout a;
-    public String b;
-    public String c;
-    public String d;
+public final class h0 extends Drawable {
+    public final Drawable a;
+    public final Paint b;
+    public final Paint c;
+    public final Paint d;
     public int e;
-    public int f;
-    public int h;
-    public int n;
-    public fa0 r;
-    public final ba0 s;
-    public f0 v;
-    public final int w;
-    public final org.telegram.ui.ActionBar.e6 x;
-    public int y;
+    public ColorFilter f;
 
-    public h0(Context context, int i10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.s = new ba0(this);
-        this.H = AndroidUtilities.dp(4.0f);
-        this.w = i10;
-        this.x = e6Var;
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.E = imageReceiver;
-        imageReceiver.setInvalidateAll(true);
-        imageReceiver.setCrossfadeWithOldImage(true);
-        imageReceiver.setCrossfadeDuration(300);
-        int w02 = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.i6, e6Var);
-        int i11 = SharedConfig.bubbleRadius;
-        this.K = i11;
-        z Z = org.telegram.ui.ActionBar.i6.Z(w02, i11, i11);
-        this.J = Z;
-        Z.setCallback(this);
+    public h0(Context context) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        this.d = new Paint();
+        this.e = 255;
+        Drawable mutate = context.getResources().getDrawable(R.drawable.msg_folders_bots).mutate();
+        this.a = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(-13628751, PorterDuff.Mode.SRC_IN));
+        paint.setShader(new RadialGradient(400.0f, 213.0f, 500.0f, -4811527, -9674273, Shader.TileMode.CLAMP));
+        paint2.setColor(-1);
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeCap(Paint.Cap.ROUND);
     }
 
-    public final void a() {
-        if (this.r != null) {
-            this.r = null;
-        }
-        this.s.d(true);
-        invalidate();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:104:0x0170  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0189  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x01a2  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x028e  */
-    /* JADX WARN: Removed duplicated region for block: B:68:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0191  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(boolean z10, long j3, String str, TLObject tLObject, TL_bots.BotInfo botInfo, String str2) {
-        char c10;
-        float f7;
-        float f10;
-        int min;
-        boolean z11;
-        boolean z12 = tLObject != null;
-        boolean isEmpty = TextUtils.isEmpty(str);
-        if ((str == null || str.length() == 0) && TextUtils.isEmpty(str2) && !z12) {
-            setVisibility(8);
+    public final void a(Canvas canvas, float f7, float f10, float f11, float f12) {
+        Drawable drawable = this.a;
+        int intrinsicWidth = drawable.getIntrinsicWidth();
+        int intrinsicHeight = drawable.getIntrinsicHeight();
+        if (intrinsicWidth <= 0 || intrinsicHeight <= 0) {
             return;
         }
-        String str3 = str == null ? "" : str;
-        if (str3.equals(this.b) && TextUtils.equals(this.c, str2) && this.F == z12) {
-            return;
-        }
-        boolean z13 = TextUtils.isEmpty(str3) && tLObject == null && !TextUtils.isEmpty(str2) && j3 != 0;
-        boolean z14 = z12 || z13;
-        this.F = z14;
-        this.G = !isEmpty || z13;
-        float f11 = 2.0f;
-        float f12 = 4.0f;
-        ImageReceiver imageReceiver = this.E;
-        if (z13) {
-            if (!Objects.equals(this.d, "setup")) {
-                this.d = "setup";
-                imageReceiver.setImageBitmap(new uq(new g0(getContext())));
-                int dp = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(2.0f);
-                int dp2 = AndroidUtilities.dp(4.0f);
-                if (!this.G) {
-                    dp2 = dp;
-                }
-                imageReceiver.setRoundRadius(dp, dp, dp2, dp2);
-            }
-        } else if (z14) {
-            String keyForParentObject = FileRefController.getKeyForParentObject(botInfo);
-            if (!Objects.equals(this.d, keyForParentObject)) {
-                this.d = keyForParentObject;
-                if (tLObject instanceof TLRPC.TL_photo) {
-                    TLRPC.Photo photo = (TLRPC.Photo) tLObject;
-                    imageReceiver.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 400), photo), "400_400", null, "jpg", botInfo, 0);
-                } else if (tLObject instanceof TLRPC.Document) {
-                    TLRPC.Document document = (TLRPC.Document) tLObject;
-                    TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 400);
-                    BitmapDrawable bitmapDrawable = null;
-                    if (SharedConfig.getDevicePerformanceClass() != 0) {
-                        ArrayList<TLRPC.PhotoSize> arrayList = document.thumbs;
-                        int size = arrayList.size();
-                        int i10 = 0;
-                        c10 = 1;
-                        while (i10 < size) {
-                            TLRPC.PhotoSize photoSize = arrayList.get(i10);
-                            i10++;
-                            float f13 = f11;
-                            TLRPC.PhotoSize photoSize2 = photoSize;
-                            float f14 = f12;
-                            if (photoSize2 instanceof TLRPC.TL_photoStrippedSize) {
-                                bitmapDrawable = new BitmapDrawable(getResources(), ImageLoader.getStrippedPhotoBitmap(photoSize2.bytes, "b"));
-                            }
-                            f11 = f13;
-                            f12 = f14;
-                        }
-                    } else {
-                        c10 = 1;
-                    }
-                    f7 = f11;
-                    f10 = f12;
-                    imageReceiver.setImage(ImageLocation.getForDocument(document), ImageLoader.AUTOPLAY_FILTER, ImageLocation.getForDocument(MessageObject.getDocumentVideoThumb(document), document), null, ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "86_86_b", bitmapDrawable, document.size, "mp4", botInfo, 0);
-                    int dp3 = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(f7);
-                    int dp4 = AndroidUtilities.dp(f10);
-                    if (!this.G) {
-                        dp4 = dp3;
-                    }
-                    imageReceiver.setRoundRadius(dp3, dp3, dp4, dp4);
-                    this.b = AndroidUtilities.getSafeString(str3);
-                    this.c = str2;
-                    setVisibility(0);
-                    if (AndroidUtilities.isTablet()) {
-                        min = AndroidUtilities.getMinTabletSide();
-                    } else {
-                        Point point = AndroidUtilities.displaySize;
-                        min = Math.min(point.x, point.y);
-                    }
-                    int i11 = (int) (min * 0.7f);
-                    if (this.G) {
-                        String[] split = str3.split("\n");
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                        if (z13) {
-                            int i12 = R.string.ManagedBotChatInfo;
-                            Object[] objArr = new Object[2];
-                            objArr[0] = DialogObject.getName(this.w, j3);
-                            objArr[c10] = str2;
-                            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(i12, objArr)));
-                            z11 = false;
-                        } else {
-                            String string = LocaleController.getString(R.string.BotInfoTitle);
-                            if (z10) {
-                                spannableStringBuilder.append((CharSequence) string);
-                                spannableStringBuilder.append((CharSequence) "\n\n");
-                            }
-                            for (int i13 = 0; i13 < split.length; i13++) {
-                                spannableStringBuilder.append((CharSequence) split[i13].trim());
-                                if (i13 != split.length - 1) {
-                                    spannableStringBuilder.append((CharSequence) "\n");
-                                }
-                            }
-                            z11 = false;
-                            MessageObject.addLinks(false, spannableStringBuilder);
-                            if (z10) {
-                                spannableStringBuilder.setSpan(new m61(AndroidUtilities.bold()), 0, string.length(), 33);
-                            }
-                        }
-                        Emoji.replaceEmoji(spannableStringBuilder, org.telegram.ui.ActionBar.i6.o2.getFontMetricsInt(), z11);
-                        try {
-                            StaticLayout staticLayout = new StaticLayout(spannableStringBuilder, org.telegram.ui.ActionBar.i6.o2, i11 - (this.F ? AndroidUtilities.dp(5.0f) : 0), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                            this.a = staticLayout;
-                            this.e = 0;
-                            this.f = staticLayout.getHeight() + AndroidUtilities.dp(22.0f);
-                            int lineCount = this.a.getLineCount();
-                            for (int i14 = 0; i14 < lineCount; i14++) {
-                                this.e = (int) Math.ceil(Math.max(this.e, this.a.getLineWidth(i14) + this.a.getLineLeft(i14)));
-                            }
-                            if (this.e > i11 || this.F) {
-                                this.e = i11;
-                            }
-                        } catch (Exception e7) {
-                            FileLog.e(e7);
-                        }
-                    } else if (this.F) {
-                        this.e = i11;
-                    }
-                    int dp5 = AndroidUtilities.dp(22.0f) + this.e;
-                    this.e = dp5;
-                    if (this.F) {
-                        int i15 = this.f;
-                        int i16 = (int) (dp5 * 0.5625d);
-                        this.y = i16;
-                        this.f = org.telegram.messenger.q.C(f10, i16, i15);
-                        return;
-                    }
-                    return;
-                }
-                f7 = 2.0f;
-                f10 = 4.0f;
-                c10 = 1;
-                int dp32 = AndroidUtilities.dp(SharedConfig.bubbleRadius) - AndroidUtilities.dp(f7);
-                int dp42 = AndroidUtilities.dp(f10);
-                if (!this.G) {
-                }
-                imageReceiver.setRoundRadius(dp32, dp32, dp42, dp42);
-                this.b = AndroidUtilities.getSafeString(str3);
-                this.c = str2;
-                setVisibility(0);
-                if (AndroidUtilities.isTablet()) {
-                }
-                int i112 = (int) (min * 0.7f);
-                if (this.G) {
-                }
-                int dp52 = AndroidUtilities.dp(22.0f) + this.e;
-                this.e = dp52;
-                if (this.F) {
-                }
-            }
-        }
-        f10 = 4.0f;
-        c10 = 1;
-        this.b = AndroidUtilities.getSafeString(str3);
-        this.c = str2;
-        setVisibility(0);
-        if (AndroidUtilities.isTablet()) {
-        }
-        int i1122 = (int) (min * 0.7f);
-        if (this.G) {
-        }
-        int dp522 = AndroidUtilities.dp(22.0f) + this.e;
-        this.e = dp522;
-        if (this.F) {
-        }
-    }
-
-    public int getSideMenuWidth() {
-        return 0;
-    }
-
-    public CharSequence getText() {
-        StaticLayout staticLayout = this.a;
-        if (staticLayout == null) {
-            return null;
-        }
-        return staticLayout.getText();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.E.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.E.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+        drawable.setAlpha(Math.round(this.e * f12));
+        drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
         canvas.save();
-        canvas.translate(getSideMenuWidth() / 2.0f, 0.0f);
-        int width = (getWidth() - this.e) / 2;
-        int dp = AndroidUtilities.dp(2.0f) + this.y;
-        Drawable j3 = org.telegram.ui.ActionBar.i6.q3.j();
-        if (j3 != null) {
-            j3.setBounds(width, dp, this.e + width, this.f + dp);
-            j3.draw(canvas);
-        }
-        Point point = AndroidUtilities.displaySize;
-        int i10 = point.x;
-        int i11 = point.y;
-        if (getParent() instanceof View) {
-            View view = (View) getParent();
-            i10 = view.getMeasuredWidth();
-            i11 = view.getMeasuredHeight();
-        }
-        org.telegram.ui.ActionBar.e6 e6Var = this.x;
-        Drawable drawable = e6Var != null ? e6Var.getDrawable("drawableMsgInMedia") : null;
-        if (drawable == null) {
-            drawable = org.telegram.ui.ActionBar.i6.P0("drawableMsgInMedia");
-        }
-        org.telegram.ui.ActionBar.f5 f5Var = (org.telegram.ui.ActionBar.f5) drawable;
-        f5Var.n((int) getY(), i10, i11);
-        f5Var.setBounds(width, 0, this.e + width, this.f);
-        f5Var.draw(canvas);
-        z zVar = this.J;
-        if (zVar != null) {
-            int i12 = this.K;
-            int i13 = SharedConfig.bubbleRadius;
-            if (i12 != i13) {
-                this.K = i13;
-                org.telegram.ui.ActionBar.i6.B1(zVar, i13, i13);
-            }
-            zVar.setBounds(AndroidUtilities.dp(2.0f) + width, AndroidUtilities.dp(2.0f), (this.e + width) - AndroidUtilities.dp(2.0f), this.f - AndroidUtilities.dp(2.0f));
-            zVar.draw(canvas);
-        }
-        int i14 = this.H;
-        float f7 = width + i14;
-        float f10 = i14;
-        float f11 = this.e - (i14 * 2);
-        float f12 = this.y - i14;
-        ImageReceiver imageReceiver = this.E;
-        imageReceiver.setImageCoords(f7, f10, f11, f12);
-        imageReceiver.draw(canvas);
-        org.telegram.ui.ActionBar.i6.o2.setColor(org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.ec, e6Var));
-        org.telegram.ui.ActionBar.i6.o2.linkColor = org.telegram.ui.ActionBar.i6.w0(org.telegram.ui.ActionBar.i6.gc, e6Var);
-        canvas.save();
-        int dp2 = AndroidUtilities.dp(this.F ? 14.0f : 11.0f) + width;
-        this.h = dp2;
-        float f13 = dp2;
-        int dp3 = AndroidUtilities.dp(11.0f) + dp;
-        this.n = dp3;
-        canvas.translate(f13, dp3);
-        if (this.s.f(canvas)) {
-            invalidate();
-        }
-        StaticLayout staticLayout = this.a;
-        if (staticLayout != null) {
-            staticLayout.draw(canvas);
-        }
-        canvas.restore();
+        canvas.translate(f7, f10);
+        canvas.scale(f11 / intrinsicWidth, f11 / intrinsicHeight);
+        canvas.translate((-intrinsicWidth) / 2.0f, (-intrinsicHeight) / 2.0f);
+        drawable.draw(canvas);
         canvas.restore();
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        StaticLayout staticLayout = this.a;
-        if (staticLayout != null) {
-            accessibilityNodeInfo.setText(staticLayout.getText());
+    public final void b(Canvas canvas, Rect rect, float f7, float f10, float f11, float f12, float f13, float f14) {
+        float f15 = rect.left;
+        float f16 = rect.top;
+        canvas.drawLine((f11 * f7) + f15, (f12 * f10) + f16, (f13 * f7) + f15, (f14 * f10) + f16, this.c);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Canvas canvas2;
+        int i10;
+        Rect bounds = getBounds();
+        if (bounds.isEmpty() || this.e == 0) {
+            return;
+        }
+        ColorFilter colorFilter = this.f;
+        if (colorFilter != null) {
+            Paint paint = this.d;
+            paint.setColorFilter(colorFilter);
+            i10 = canvas.saveLayer(bounds.left, bounds.top, bounds.right, bounds.bottom, paint);
+            canvas2 = canvas;
+        } else {
+            canvas2 = canvas;
+            i10 = -1;
+        }
+        float width = bounds.width() / 800.0f;
+        float height = bounds.height() / 427.0f;
+        int i11 = this.e;
+        Paint paint2 = this.b;
+        paint2.setAlpha(i11);
+        canvas2.save();
+        canvas2.translate(bounds.left, bounds.top);
+        canvas2.scale(width, height);
+        Canvas canvas3 = canvas2;
+        canvas3.drawRect(0.0f, 0.0f, 800.0f, 427.0f, paint2);
+        canvas3.restore();
+        int i12 = this.e;
+        Paint paint3 = this.c;
+        paint3.setAlpha(i12);
+        paint3.setStrokeWidth(Math.min(width, height) * 16.4f);
+        b(canvas3, bounds, width, height, 449.809f, 246.04f, 483.703f, 212.418f);
+        b(canvas3, bounds, width, height, 483.703f, 212.418f, 451.291f, 179.901f);
+        b(canvas3, bounds, width, height, 350.197f, 246.04f, 316.302f, 212.418f);
+        b(canvas3, bounds, width, height, 316.302f, 212.418f, 348.716f, 179.901f);
+        b(canvas3, bounds, width, height, 379.613f, 278.0f, 420.657f, 146.0f);
+        canvas3.save();
+        canvas3.translate(bounds.left, bounds.top);
+        canvas3.scale(width, height);
+        a(canvas3, 299.339f, 60.9305f, 56.0f, 0.1629f);
+        a(canvas3, 500.651f, 60.9305f, 56.0f, 0.1629f);
+        a(canvas3, 579.018f, 225.477f, 56.0f, 0.2239f);
+        a(canvas3, 220.979f, 225.477f, 56.0f, 0.2239f);
+        a(canvas3, 548.102f, 359.18f, 52.0f, 0.1816f);
+        a(canvas3, 400.0f, 382.172f, 52.0f, 0.123f);
+        a(canvas3, 251.891f, 359.18f, 52.0f, 0.1816f);
+        a(canvas3, 698.424f, 175.361f, 42.0f, 0.12f);
+        a(canvas3, 572.549f, 125.064f, 42.0f, 0.2409f);
+        a(canvas3, 650.19f, 61.1149f, 42.0f, 0.0764f);
+        a(canvas3, 399.994f, 18.0016f, 42.0f, 0.1231f);
+        a(canvas3, 149.799f, 61.1149f, 42.0f, 0.0753f);
+        a(canvas3, 227.44f, 125.064f, 42.0f, 0.2409f);
+        a(canvas3, 101.565f, 175.361f, 42.0f, 0.12f);
+        a(canvas3, 167.057f, 316.916f, 42.0f, 0.15f);
+        a(canvas3, 114.502f, 408.888f, 42.0f, 0.075f);
+        a(canvas3, 678.299f, 408.888f, 42.0f, 0.075f);
+        a(canvas3, 655.947f, 316.916f, 42.0f, 0.15f);
+        canvas3.restore();
+        if (i10 >= 0) {
+            canvas3.restoreToCount(i10);
         }
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), AndroidUtilities.dp(8.0f) + this.f);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(427.0f);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0133  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0184  */
-    /* JADX WARN: Removed duplicated region for block: B:54:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        z zVar;
-        boolean z11;
-        float x10 = motionEvent.getX();
-        float y3 = motionEvent.getY();
-        if (this.a != null) {
-            if (motionEvent.getAction() == 0 || (this.r != null && motionEvent.getAction() == 1)) {
-                if (motionEvent.getAction() == 0) {
-                    a();
-                    try {
-                        int i10 = (int) (y3 - this.n);
-                        int lineForVertical = this.a.getLineForVertical(i10);
-                        float f7 = (int) (x10 - this.h);
-                        int offsetForHorizontal = this.a.getOffsetForHorizontal(lineForVertical, f7);
-                        float lineLeft = this.a.getLineLeft(lineForVertical);
-                        if (lineLeft > f7 || lineLeft + this.a.getLineWidth(lineForVertical) < f7) {
-                            a();
-                        } else {
-                            Spannable spannable = (Spannable) this.a.getText();
-                            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                            if (clickableSpanArr.length != 0) {
-                                a();
-                                this.r = new fa0(clickableSpanArr[0], this.x, f7, i10, 0);
-                                try {
-                                    try {
-                                        int spanStart = spannable.getSpanStart(clickableSpanArr[0]);
-                                        y90 b10 = this.r.b();
-                                        b10.d(this.a, spanStart, 0.0f);
-                                        this.a.getSelectionPath(spanStart, spannable.getSpanEnd(clickableSpanArr[0]), b10);
-                                    } catch (Exception e7) {
-                                        FileLog.e(e7);
-                                    }
-                                    this.s.a(this.r, null);
-                                    invalidate();
-                                    z10 = true;
-                                } catch (Exception e10) {
-                                    e = e10;
-                                    z11 = true;
-                                    a();
-                                    FileLog.e(e);
-                                    z10 = z11;
-                                    zVar = this.J;
-                                    if (zVar != null) {
-                                    }
-                                    if (z10) {
-                                    }
-                                }
-                            } else {
-                                a();
-                            }
-                        }
-                    } catch (Exception e11) {
-                        e = e11;
-                        z11 = false;
-                    }
-                } else {
-                    fa0 fa0Var = this.r;
-                    if (fa0Var != null) {
-                        try {
-                            ClickableSpan clickableSpan = (ClickableSpan) fa0Var.i;
-                            if (clickableSpan instanceof t61) {
-                                String url = ((t61) clickableSpan).getURL();
-                                if (!url.startsWith("@")) {
-                                    if (!url.startsWith("#")) {
-                                        if (!url.startsWith("/")) {
-                                            if (url.startsWith("$")) {
-                                            }
-                                        }
-                                    }
-                                }
-                                f0 f0Var = this.v;
-                                if (f0Var != null) {
-                                    ((org.telegram.ui.z0) f0Var).k(url);
-                                }
-                            } else if (clickableSpan instanceof URLSpan) {
-                                f0 f0Var2 = this.v;
-                                if (f0Var2 != null) {
-                                    ((org.telegram.ui.z0) f0Var2).k(((URLSpan) clickableSpan).getURL());
-                                }
-                            } else if (clickableSpan != null) {
-                                clickableSpan.onClick(this);
-                            }
-                        } catch (Exception e12) {
-                            FileLog.e(e12);
-                        }
-                        a();
-                        z10 = true;
-                    }
-                }
-                zVar = this.J;
-                if (zVar != null) {
-                    if (!z10 && y3 > 0.0f && motionEvent.getAction() == 0 && isClickable()) {
-                        zVar.setState(new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled});
-                        zVar.setHotspot(motionEvent.getX(), motionEvent.getY());
-                        invalidate();
-                    } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        zVar.setState(new int[0]);
-                        invalidate();
-                        if (!z10 && motionEvent.getAction() == 1) {
-                            performClick();
-                        }
-                    }
-                    z10 = true;
-                }
-                return !z10 || super.onTouchEvent(motionEvent);
-            }
-            if (motionEvent.getAction() == 3) {
-                a();
-            }
-        }
-        z10 = false;
-        zVar = this.J;
-        if (zVar != null) {
-        }
-        if (z10) {
-            return true;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(800.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        int max = Math.max(0, Math.min(255, i10));
+        if (this.e != max) {
+            this.e = max;
+            invalidateSelf();
         }
     }
 
-    public void setAnimating(boolean z10) {
-        this.I = z10;
-    }
-
-    public void setDelegate(f0 f0Var) {
-        this.v = f0Var;
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.J || super.verifyDrawable(drawable);
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        if (this.f != colorFilter) {
+            this.f = colorFilter;
+            invalidateSelf();
+        }
     }
 }

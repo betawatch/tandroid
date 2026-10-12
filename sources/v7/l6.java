@@ -1,17 +1,9 @@
 package v7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class l6 {
-    public final f8 a;
-    public final k6 b;
-    public final i6 c;
-    public final h7 d;
-
-    public /* synthetic */ l6(oi.f fVar) {
-        this.a = (f8) fVar.a;
-        this.b = (k6) fVar.b;
-        this.c = (i6) fVar.c;
-        this.d = (h7) fVar.d;
+public abstract class l6 {
+    public static boolean a(byte b10) {
+        return b10 > -65;
     }
 }

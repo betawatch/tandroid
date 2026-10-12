@@ -11,16 +11,17 @@ import com.google.android.gms.internal.vision.f0;
 import com.google.android.gms.vision.clearcut.DynamiteClearcutLogger;
 import com.google.android.gms.vision.clearcut.VisionClearcutLogger;
 import java.util.ArrayList;
+import k2.y0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.nw0;
+import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.ow0;
-import org.telegram.ui.Components.sw0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -50,7 +51,7 @@ public final class g implements Runnable {
             case 0:
                 h hVar = (h) this.c;
                 int i11 = this.b;
-                Object obj = ((e.a) this.d).a;
+                Object obj = ((a9.r) this.d).a;
                 String str = (String) hVar.a.get(Integer.valueOf(i11));
                 if (str == null) {
                     return;
@@ -63,7 +64,7 @@ public final class g implements Runnable {
                 } else {
                     androidx.activity.result.b bVar = dVar.a;
                     if (hVar.d.remove(str)) {
-                        bVar.j(obj);
+                        bVar.i(obj);
                         return;
                     }
                     return;
@@ -73,10 +74,10 @@ public final class g implements Runnable {
                 return;
             case 2:
                 com.google.android.gms.internal.cast.r rVar2 = (com.google.android.gms.internal.cast.r) this.d;
-                p4.r rVar3 = (p4.r) this.c;
+                p4.s sVar = (p4.s) this.c;
                 int i12 = this.b;
                 synchronized (rVar2.e) {
-                    rVar2.L0(rVar3, i12);
+                    rVar2.L0(sVar, i12);
                 }
                 return;
             case 3:
@@ -110,7 +111,7 @@ public final class g implements Runnable {
                     n6.l.h(aVar2);
                     rVar = p0Var.g;
                     if (rVar == null) {
-                        rVar.a(aVar2, new j2.e(16));
+                        rVar.a(aVar2, new y0(2));
                         return;
                     }
                     return;
@@ -141,18 +142,18 @@ public final class g implements Runnable {
                 return;
             case 6:
                 long currentTimeMillis = System.currentTimeMillis();
-                Utilities.stackBlurBitmap(((ow0) this.d).c, this.b);
-                ((ow0) this.d).getClass();
-                sw0 sw0Var = (sw0) this.c;
-                sw0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + sw0Var.j0);
-                int i16 = sw0Var.i0 + 1;
-                sw0Var.i0 = i16;
+                Utilities.stackBlurBitmap(((kw0) this.d).c, this.b);
+                ((kw0) this.d).getClass();
+                ow0 ow0Var = (ow0) this.c;
+                ow0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + ow0Var.j0);
+                int i16 = ow0Var.i0 + 1;
+                ow0Var.i0 = i16;
                 if (i16 > 1000) {
-                    FileLog.d("chat blur generating average time" + (sw0Var.j0 / sw0Var.i0));
-                    sw0Var.i0 = 0;
-                    sw0Var.j0 = 0;
+                    FileLog.d("chat blur generating average time" + (ow0Var.j0 / ow0Var.i0));
+                    ow0Var.i0 = 0;
+                    ow0Var.j0 = 0;
                 }
-                AndroidUtilities.runOnUIThread(new nw0(this, i10));
+                AndroidUtilities.runOnUIThread(new jw0(this, i10));
                 return;
             default:
                 visionClearcutLogger = ((DynamiteClearcutLogger) this.c).zzc;
@@ -168,8 +169,8 @@ public final class g implements Runnable {
         this.b = i10;
     }
 
-    public g(sw0 sw0Var) {
+    public g(ow0 ow0Var) {
         this.a = 6;
-        this.c = sw0Var;
+        this.c = ow0Var;
     }
 }

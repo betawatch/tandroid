@@ -1,39 +1,141 @@
 package hg;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.p61;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import bi.g8;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.m9;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m1 implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ z1 a;
+public final class m1 extends FrameLayout {
+    public final c6 a;
+    public final m9 b;
+    public final TextView[] c;
+    public final TextView[] d;
+    public float e;
+    public ValueAnimator f;
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        z1.W(this.a, (p61) obj, (View) obj2);
+    public m1(Context context, c6 c6Var) {
+        super(context);
+        this.c = new TextView[2];
+        this.d = new TextView[2];
+        this.a = c6Var;
+        setWillNotDraw(false);
+        m9 m9Var = new m9(this, false);
+        this.b = m9Var;
+        m9Var.l = true;
+        m9Var.p = AndroidUtilities.dp(75.0f);
+        m9Var.o = AndroidUtilities.dp(48.0f);
+        m9Var.x = true;
+        m9Var.s = AndroidUtilities.dp(22.0f);
+        int i10 = 0;
+        while (i10 < 2) {
+            this.c[i10] = new TextView(context);
+            this.c[i10].setTextColor(g6.w0(g6.G6, c6Var));
+            this.c[i10].setTypeface(AndroidUtilities.bold());
+            this.c[i10].setTextSize(1, 14.0f);
+            int i11 = 8;
+            this.c[i10].setVisibility(i10 == 0 ? 0 : 8);
+            addView(this.c[i10], a6.a(-2.0f, 76.0f, 7.0f, 40.0f, 0.0f, -1, 48));
+            this.d[i10] = new TextView(context);
+            this.d[i10].setTextColor(g6.w0(g6.z6, c6Var));
+            this.d[i10].setTextSize(1, 12.0f);
+            TextView textView = this.d[i10];
+            if (i10 == 0) {
+                i11 = 0;
+            }
+            textView.setVisibility(i11);
+            addView(this.d[i10], a6.a(-2.0f, 76.0f, 26.33f, 40.0f, 0.0f, -1, 48));
+            i10++;
+        }
+        ImageView imageView = new ImageView(context);
+        imageView.setImageResource(R.drawable.msg_arrowright);
+        imageView.setColorFilter(new PorterDuffColorFilter(g6.w0(g6.P5, c6Var), PorterDuff.Mode.SRC_IN));
+        addView(imageView, a6.a(24.0f, 0.0f, 0.0f, 8.66f, 0.0f, 24, 21));
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        boolean z10;
-        p61 p61Var = (p61) obj;
-        View view = (View) obj2;
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        if (p61Var.a == 16) {
-            Object obj6 = p61Var.G;
-            if (!(obj6 instanceof b2) || !((b2) obj6).g) {
-                this.a.e0(p61Var, view);
-                z10 = true;
-                return Boolean.valueOf(z10);
+    public final boolean a(g8 g8Var) {
+        String str;
+        m9 m9Var;
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList = g8Var.i;
+            str = g8Var.D;
+            int size = arrayList.size();
+            m9Var = this.b;
+            if (i10 >= size || i11 >= 3) {
+                break;
             }
+            MessageObject messageObject = (MessageObject) g8Var.i.get(i10);
+            long j10 = messageObject.storyItem.dialogId;
+            TextUtils.isEmpty(str);
+            m9Var.l(i11, messageObject.storyItem, g8Var.c);
+            i11++;
+            i10++;
         }
-        z10 = false;
-        return Boolean.valueOf(z10);
+        m9Var.k(i11);
+        m9Var.b(false, true);
+        boolean isEmpty = TextUtils.isEmpty(str);
+        TextView[] textViewArr = this.c;
+        if (isEmpty) {
+            textViewArr[0].setText(LocaleController.formatPluralStringSpaced("HashtagStoriesFound", g8Var.J));
+        } else {
+            textViewArr[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagStoriesFoundChannel", g8Var.J, "@" + str), g6.w0(g6.Oh, this.a), null));
+        }
+        this.d[0].setText(LocaleController.formatString(R.string.HashtagStoriesFoundSubtitle, g8Var.C));
+        return i11 > 0;
+    }
+
+    public final void b(int i10, String str, String str2) {
+        boolean isEmpty = TextUtils.isEmpty(str2);
+        TextView[] textViewArr = this.c;
+        if (isEmpty) {
+            textViewArr[1].setText(LocaleController.formatPluralStringSpaced("HashtagMessagesFound", i10));
+        } else {
+            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, t8.b.h("@", str2)), g6.w0(g6.Oh, this.a), null));
+        }
+        this.d[1].setText(LocaleController.formatString(R.string.HashtagMessagesFoundSubtitle, str));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.e > 0.0f) {
+            canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - this.e) * 255.0f), 31);
+        } else {
+            canvas.save();
+        }
+        canvas.translate(AndroidUtilities.lerp(0, -AndroidUtilities.dp(62.0f), this.e), 0.0f);
+        this.b.i(canvas);
+        canvas.restore();
+        super.onDraw(canvas);
+        Paint U0 = g6.U0("paintDivider", this.a);
+        if (U0 == null) {
+            U0 = g6.k0;
+        }
+        canvas.drawRect(0.0f, getHeight() - 1, getWidth(), getHeight(), U0);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 }

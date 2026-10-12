@@ -1,57 +1,34 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wb0 implements Utilities.Callback2 {
+public final class wb0 extends EditText {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ec0 b;
-    public final /* synthetic */ String c;
 
-    public /* synthetic */ wb0(ec0 ec0Var, String str, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ wb0(Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.b = ec0Var;
-        this.c = str;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 0:
-                TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
-                ec0 ec0Var = this.b;
-                ec0Var.c();
-                if (passkeys != null) {
-                    ec0Var.u(new PasskeysActivity(passkeys.passkeys), false);
-                    if ("create".equalsIgnoreCase(this.c)) {
-                        ec0Var.x("addPasskeyRow");
-                        break;
-                    }
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.y1 y1Var = (org.telegram.ui.Wallet.y1) obj;
-                String str = (String) obj2;
-                ec0 ec0Var2 = this.b;
-                ec0Var2.c();
-                if (y1Var != null) {
-                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                    if (U != null && U.getContext() != null) {
-                        org.telegram.ui.Wallet.d2.B(U.getContext(), ec0Var2.b, y1Var, null, U.getResourceProvider(), null, new zb0(ec0Var2, this.c, 1));
-                        break;
-                    }
-                } else {
-                    if (str == null) {
-                        str = LocaleController.getString(R.string.WalletTonConnectSessionResponseEmpty);
-                    }
-                    org.telegram.ui.Components.ad.b0(str);
-                    break;
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
                 }
                 break;
         }
+        return super.onTouchEvent(motionEvent);
     }
 }

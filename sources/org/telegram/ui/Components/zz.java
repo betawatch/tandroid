@@ -1,154 +1,179 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.os.SystemClock;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
-import androidx.recyclerview.widget.RecyclerView;
+import android.util.SparseIntArray;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class zz extends s4.t0 {
-    public final int a;
-    public boolean b;
-    public final /* synthetic */ a00 c;
+public class zz extends s4.s {
+    public final boolean Q;
+    public final SparseIntArray R;
+    public final SparseIntArray S;
+    public int T;
+    public int U;
+    public int V;
+    public int W;
 
-    public zz(a00 a00Var, int i10) {
-        this.c = a00Var;
-        this.a = i10;
+    public zz(int i10, boolean z10) {
+        super(i10);
+        this.R = new SparseIntArray();
+        this.S = new SparseIntArray();
+        this.Q = z10;
     }
 
-    @Override // s4.t0
-    public void a(RecyclerView recyclerView, int i10) {
-        ObjectAnimator objectAnimator;
-        mz mzVar;
-        a00 a00Var = this.c;
-        ObjectAnimator[] objectAnimatorArr = a00Var.R0;
-        s4.z0 z0Var = recyclerView.getLayoutManager().e;
-        if (z0Var != null && z0Var.e) {
-            this.b = true;
+    public static iw0 C1(iw0 iw0Var) {
+        if (iw0Var == null) {
+            return null;
+        }
+        if (iw0Var.a == 0.0f) {
+            iw0Var.a = 100.0f;
+        }
+        if (iw0Var.b == 0.0f) {
+            iw0Var.b = 100.0f;
+        }
+        float f7 = iw0Var.a;
+        float f10 = iw0Var.b;
+        float f11 = f7 / f10;
+        if (f11 <= 4.0f && f11 >= 0.2f) {
+            return iw0Var;
+        }
+        float max = Math.max(f7, f10);
+        iw0Var.a = max;
+        iw0Var.b = max;
+        return iw0Var;
+    }
+
+    public final void B1() {
+        int i10;
+        int min;
+        boolean z10;
+        float f7;
+        SparseIntArray sparseIntArray = this.R;
+        if (sparseIntArray.size() == A() && this.W == this.m && this.T == this.J) {
             return;
         }
-        int i11 = this.a;
-        if (i10 != 0) {
-            if (i10 == 1) {
-                if (a00Var.J0) {
-                    a00Var.J0 = false;
-                }
-                if (i11 == 0) {
-                    mzVar = a00Var.G0;
-                } else if (i11 == 1) {
-                    mzVar = a00Var.V;
+        int i11 = this.m;
+        this.W = i11;
+        float f10 = i11;
+        if (f10 == 0.0f) {
+            f10 = 100.0f;
+        }
+        sparseIntArray.clear();
+        SparseIntArray sparseIntArray2 = this.S;
+        sparseIntArray2.clear();
+        boolean z11 = false;
+        this.V = 0;
+        this.U = 0;
+        int A = A();
+        this.T = A;
+        if (A == 0) {
+            return;
+        }
+        int dp = AndroidUtilities.dp(100.0f);
+        int i12 = this.J;
+        boolean z12 = this.Q;
+        int i13 = A + (z12 ? 1 : 0);
+        int i14 = 0;
+        int i15 = 0;
+        int i16 = i12;
+        while (i14 < i13) {
+            iw0 C1 = i14 < A ? C1(D1(i14)) : null;
+            if (C1 == null) {
+                z10 = i15 != 0 ? true : z11;
+                i10 = dp;
+                min = i12;
+            } else {
+                i10 = dp;
+                min = Math.min(i12, (int) Math.floor((((C1.a / C1.b) * dp) / f10) * i12));
+                boolean z13 = i16 < min || (min > 33 && i16 < min + (-15));
+                if (C1.c) {
+                    sparseIntArray.put(i14, i16);
+                    this.V++;
+                    f7 = f10;
+                    i16 = i12;
+                    i15 = 0;
+                    i14++;
+                    dp = i10;
+                    f10 = f7;
+                    z11 = false;
                 } else {
-                    if (i11 != 2) {
-                        throw new IllegalArgumentException(hg.c.h(i11, "Unexpected argument: "));
-                    }
-                    mzVar = a00Var.o0;
+                    z10 = z13;
                 }
-                if (mzVar != null) {
-                    mzVar.b();
-                }
-                this.b = false;
             }
-            if (!this.b && (objectAnimator = objectAnimatorArr[i11]) != null && objectAnimator.isRunning()) {
-                objectAnimatorArr[i11].cancel();
-            }
-            if (i11 == 0) {
-                if (a00Var.T0 == null) {
-                    gg.f1 f1Var = new gg.f1(a00Var, a00Var.c1, a00Var.t1.a(), a00Var.t1.f(), 1);
-                    a00Var.T0 = f1Var;
-                    f1Var.a();
-                }
-                a00Var.T0.b();
-                return;
-            }
-            return;
-        }
-        if (!this.b) {
-            int[] iArr = a00Var.Q0;
-            az azVar = a00Var.t1;
-            if ((azVar == null || !azVar.z()) && i11 != 0) {
-                float dpf2 = AndroidUtilities.dpf2(i11 == 1 ? 36.0f : 48.0f);
-                float f7 = iArr[i11] / (-dpf2);
-                if (f7 <= 0.0f || f7 >= 1.0f) {
-                    qm0 y3 = a00Var.y(i11);
-                    int dp = AndroidUtilities.dp(i11 == 1 ? 38.0f : 48.0f);
-                    s4.d1 K = y3.K(0);
-                    if (K != null) {
-                        int bottom = K.a.getBottom();
-                        int i12 = iArr[i11];
-                        float f10 = (bottom - (dp + i12)) / a00Var.b1;
-                        if (f10 > 0.0f || f10 < 1.0f) {
-                            a00Var.i(i11, i12, f10 > 0.5f);
+            if (z10) {
+                if (i16 == 0 || i15 == 0) {
+                    f7 = f10;
+                } else {
+                    int i17 = i16 / i15;
+                    int i18 = i14 - i15;
+                    f7 = f10;
+                    int i19 = i18;
+                    while (true) {
+                        int i20 = i18 + i15;
+                        if (i19 >= i20) {
+                            break;
                         }
+                        if (i19 == i20 - 1) {
+                            sparseIntArray.put(i19, sparseIntArray.get(i19) + i16);
+                        } else {
+                            sparseIntArray.put(i19, sparseIntArray.get(i19) + i17);
+                        }
+                        i16 -= i17;
+                        i19++;
                     }
-                } else {
-                    HorizontalScrollView z10 = a00Var.z(i11);
-                    int i13 = f7 > 0.5f ? (int) (-Math.ceil(dpf2)) : 0;
-                    if (f7 > 0.5f) {
-                        a00Var.i(i11, i13, false);
-                    }
-                    if (i11 == 1) {
-                        a00Var.m(i13);
-                    }
-                    ObjectAnimator objectAnimator2 = objectAnimatorArr[i11];
-                    if (objectAnimator2 == null) {
-                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(z10, (Property<HorizontalScrollView, Float>) View.TRANSLATION_Y, z10.getTranslationY(), i13);
-                        objectAnimatorArr[i11] = ofFloat;
-                        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.q2(a00Var, i11, 3));
-                        objectAnimatorArr[i11].setDuration(200L);
-                    } else {
-                        objectAnimator2.setFloatValues(z10.getTranslationY(), i13);
-                    }
-                    objectAnimatorArr[i11].start();
+                    sparseIntArray2.put(i14 - 1, this.V);
+                }
+                if (i14 == A) {
+                    break;
+                }
+                this.V++;
+                i16 = i12;
+                i15 = 0;
+            } else {
+                f7 = f10;
+                if (i16 < min) {
+                    min = i16;
                 }
             }
+            if (this.V == 0) {
+                this.U = Math.max(this.U, i14);
+            }
+            if (i14 == A - 1 && !z12) {
+                sparseIntArray2.put(i14, this.V);
+            }
+            i15++;
+            i16 -= min;
+            sparseIntArray.put(i14, min);
+            i14++;
+            dp = i10;
+            f10 = f7;
+            z11 = false;
         }
-        if (a00Var.J0) {
-            a00Var.J0 = false;
-        }
-        this.b = false;
+        this.V++;
     }
 
-    @Override // s4.t0
-    public void b(RecyclerView recyclerView, int i10, int i11) {
-        a00 a00Var = this.c;
-        int i12 = this.a;
-        a00Var.q(i12);
-        a00.e(a00Var, i12, i11);
-        if (i12 == 0) {
-            a00Var.r(false);
-        } else if (i12 == 1) {
-            a00Var.l(false);
-        } else if (i12 == 2) {
-            a00.f(a00Var, false);
-        }
-        if (this.b) {
-            return;
-        }
-        float f7 = i11;
-        FrameLayout frameLayout = a00Var.n;
-        if (SystemClock.elapsedRealtime() - a00Var.E2 < ViewConfiguration.getTapTimeout()) {
-            return;
-        }
-        a00Var.H += f7;
-        int dp = a00Var.h.getCurrentItem() == 0 ? AndroidUtilities.dp(38.0f) : AndroidUtilities.dp(48.0f);
-        float f10 = a00Var.H;
-        if (f10 >= dp) {
-            a00Var.M(false);
-            return;
-        }
-        if (f10 <= (-dp)) {
-            a00Var.M(true);
-        } else {
-            if ((frameLayout.getTag() != null || a00Var.H >= 0.0f) && (frameLayout.getTag() == null || a00Var.H <= 0.0f)) {
-                return;
-            }
-            a00Var.H = 0.0f;
-        }
+    public iw0 D1(int i10) {
+        return new iw0(100.0f, 100.0f);
+    }
+
+    public final boolean E1(int i10) {
+        B1();
+        return this.S.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;
+    }
+
+    @Override // s4.s, s4.n0
+    public final int I(qf.e eVar, s4.y0 y0Var) {
+        return y0Var.b();
+    }
+
+    @Override // s4.s, s4.n0
+    public final int u(qf.e eVar, s4.y0 y0Var) {
+        return 1;
+    }
+
+    @Override // s4.s, s4.b0, s4.n0
+    public boolean y0() {
+        return false;
     }
 }

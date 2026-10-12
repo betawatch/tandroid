@@ -1,13 +1,13 @@
 package androidx.media3.decoder;
 
-import b2.s;
+import b2.x;
 import h2.i;
 import h2.j;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class VideoDecoderOutputBuffer extends j {
     public static final int COLORSPACE_BT2020 = 3;
@@ -17,7 +17,7 @@ public class VideoDecoderOutputBuffer extends j {
     public int colorspace;
     public ByteBuffer data;
     public long decoderPrivate;
-    public s format;
+    public x format;
     public int height;
     public int mode;
     private final i owner;
@@ -39,8 +39,8 @@ public class VideoDecoderOutputBuffer extends j {
         return i11 <= 0 || i10 < ConnectionsManager.DEFAULT_DATACENTER_ID / i11;
     }
 
-    public void init(long j3, int i10, ByteBuffer byteBuffer) {
-        this.timeUs = j3;
+    public void init(long j10, int i10, ByteBuffer byteBuffer) {
+        this.timeUs = j10;
         this.mode = i10;
         if (byteBuffer == null || !byteBuffer.hasRemaining()) {
             this.supplementalData = null;
@@ -151,6 +151,6 @@ public class VideoDecoderOutputBuffer extends j {
 
     @Override // h2.j
     public void release() {
-        this.owner.h(this);
+        this.owner.i(this);
     }
 }

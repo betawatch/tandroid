@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class u0 extends c1 {
     public final m a;
@@ -90,16 +90,16 @@ public final class u0 extends c1 {
         Iterator it = arrayList.iterator();
         try {
             if (it.hasNext()) {
-                sb2.append(na.d.J3(it.next()));
+                sb2.append(sb.a.u2(it.next()));
                 while (it.hasNext()) {
                     sb2.append((CharSequence) ",\n  ");
-                    sb2.append(na.d.J3(it.next()));
+                    sb2.append(sb.a.u2(it.next()));
                 }
             }
             sb2.append("\n]");
             return sb2.toString();
-        } catch (IOException e7) {
-            throw new AssertionError(e7);
+        } catch (IOException e) {
+            throw new AssertionError(e);
         }
     }
 

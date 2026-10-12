@@ -1,9 +1,51 @@
 package og;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public interface c {
-    float getX();
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-    float getY();
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class c extends Drawable {
+    public Drawable a;
+    public float b;
+    public int c;
+
+    public final void a(int i10) {
+        if (this.c != i10) {
+            this.c = i10;
+            setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Drawable drawable = this.a;
+        Rect bounds = getBounds();
+        float f7 = this.b;
+        if (f7 == 1.0f) {
+            drawable.setBounds(bounds);
+        } else {
+            drawable.setBounds((int) (bounds.centerX() - ((bounds.width() / 2.0f) * f7)), (int) (bounds.centerY() - ((bounds.height() / 2.0f) * f7)), (int) (((bounds.width() / 2.0f) * f7) + bounds.centerX()), (int) (((bounds.height() / 2.0f) * f7) + bounds.centerY()));
+        }
+        drawable.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
 }

@@ -1,32 +1,41 @@
 package ph;
 
-import ii.q1;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.web.q0;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c {
-    public final q1 a;
-    public b c = b.a;
-    public final q0 d = new q0(this, 14);
-    public final long b = (long) ((AndroidUtilities.getAnimatorDurationScale() * 250.0f) * 1.1f);
+public abstract class c extends FrameLayout {
+    public final LinearLayout a;
+    public float b;
+    public final Rect c;
+    public final Rect d;
+    public final Paint e;
 
-    public c(q1 q1Var) {
-        this.a = q1Var;
+    public c(Context context) {
+        super(context);
+        this.c = new Rect();
+        this.d = new Rect();
+        this.e = new Paint(1);
+        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.a = linearLayout;
+        linearLayout.setOrientation(0);
+        addView(linearLayout, a6.d(-1.0f, -1));
     }
 
-    public final void a(b bVar, boolean z10) {
-        if (this.c != bVar) {
-            q0 q0Var = this.d;
-            AndroidUtilities.cancelRunOnUIThread(q0Var);
-            this.c = bVar;
-            if (z10) {
-                this.a.run(bVar);
-            }
-            if (bVar == b.b || bVar == b.c) {
-                AndroidUtilities.runOnUIThread(q0Var, this.b);
-            }
-        }
+    public void setLensVisibility(float f7) {
+        this.b = f7;
+        int dp = AndroidUtilities.dp(f7 * 7.0f);
+        Rect rect = this.c;
+        Rect rect2 = this.d;
+        rect2.set(rect);
+        int i10 = -dp;
+        rect2.inset(i10, i10);
     }
 }

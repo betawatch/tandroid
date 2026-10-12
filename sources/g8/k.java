@@ -3,9 +3,9 @@ package g8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import w7.d0;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class k extends o6.a {
     public static final Parcelable.Creator<k> CREATOR = new j(2);
@@ -14,11 +14,11 @@ public final class k extends o6.a {
     public final long c;
     public final long d;
 
-    public k(long j3, int i10, int i11, long j10) {
+    public k(long j10, int i10, int i11, long j11) {
         this.a = i10;
         this.b = i11;
-        this.c = j3;
-        this.d = j10;
+        this.c = j10;
+        this.d = j11;
     }
 
     public final boolean equals(Object obj) {
@@ -36,24 +36,24 @@ public final class k extends o6.a {
     }
 
     public final String toString() {
-        StringBuilder k10 = hg.c.k("NetworkLocationStatus: Wifi status: ", this.a, " Cell status: ", this.b, " elapsed time NS: ");
-        k10.append(this.d);
-        k10.append(" system time ms: ");
-        k10.append(this.c);
-        return k10.toString();
+        StringBuilder l4 = i2.d.l("NetworkLocationStatus: Wifi status: ", this.a, " Cell status: ", this.b, " elapsed time NS: ");
+        l4.append(this.d);
+        l4.append(" system time ms: ");
+        l4.append(this.c);
+        return l4.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.s(parcel, 1, 4);
+        int q6 = g0.q(parcel, 20293);
+        g0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        d0.s(parcel, 2, 4);
+        g0.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        d0.s(parcel, 3, 8);
+        g0.s(parcel, 3, 8);
         parcel.writeLong(this.c);
-        d0.s(parcel, 4, 8);
+        g0.s(parcel, 4, 8);
         parcel.writeLong(this.d);
-        d0.r(parcel, q6);
+        g0.r(parcel, q6);
     }
 }

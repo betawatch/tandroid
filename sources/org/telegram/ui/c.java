@@ -5,9 +5,9 @@ import android.net.Uri;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class c implements org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ h b;
 
@@ -16,8 +16,8 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.a2 {
         this.b = hVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
             case 0:
                 h hVar = this.b;
@@ -27,16 +27,16 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.a2 {
                     intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                     hVar.getParentActivity().startActivity(intent);
                     break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e) {
+                    FileLog.e(e);
                     return;
                 }
             default:
                 h hVar2 = this.b;
                 hVar2.getClass();
-                wg0 wg0Var = new wg0();
-                wg0Var.F = 2;
-                hVar2.presentFragment(wg0Var, true);
+                bh0 bh0Var = new bh0();
+                bh0Var.F = 2;
+                hVar2.presentFragment(bh0Var, true);
                 break;
         }
     }

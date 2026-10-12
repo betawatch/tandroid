@@ -4,9 +4,9 @@ import android.animation.ValueAnimator;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.yi;
+import org.telegram.ui.Components.vi;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -24,9 +24,9 @@ public final /* synthetic */ class s2 implements ValueAnimator.AnimatorUpdateLis
                 ((x2) this.b).setPendingProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                a5 a5Var = (a5) this.b;
-                a5Var.getClass();
-                a5Var.x0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                z4 z4Var = (z4) this.b;
+                z4Var.getClass();
+                z4Var.x0(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 2:
                 o4 o4Var = (o4) this.b;
@@ -35,49 +35,49 @@ public final /* synthetic */ class s2 implements ValueAnimator.AnimatorUpdateLis
                 o4Var.invalidate();
                 break;
             case 3:
-                y4 y4Var = (y4) this.b;
-                y4Var.getClass();
+                x4 x4Var = (x4) this.b;
+                x4Var.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                y4Var.b.setRotationY(floatValue);
+                x4Var.b.setRotationY(floatValue);
                 boolean z10 = floatValue > 90.0f;
-                y4Var.c.setVisibility(z10 ? 4 : 0);
-                y4Var.d.setVisibility(z10 ? 0 : 4);
+                x4Var.c.setVisibility(z10 ? 4 : 0);
+                x4Var.d.setVisibility(z10 ? 0 : 4);
                 break;
             case 4:
-                v5 v5Var = (v5) this.b;
+                u5 u5Var = (u5) this.b;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t5 t5Var = v5Var.q;
-                c6 c6Var = v5Var.i;
-                RectF rectF = v5Var.n;
-                RectF rectF2 = v5Var.o;
-                if (!v5Var.v) {
-                    v5Var.e();
-                    float interpolation = v5Var.k.getInterpolation(Math.min(1.0f, floatValue2 * 2.0f));
-                    yi yiVar = v5Var.c;
-                    if (yiVar != null) {
-                        yiVar.M1(interpolation);
+                s5 s5Var = u5Var.q;
+                b6 b6Var = u5Var.i;
+                RectF rectF = u5Var.n;
+                RectF rectF2 = u5Var.o;
+                if (!u5Var.v) {
+                    u5Var.e();
+                    float interpolation = u5Var.k.getInterpolation(Math.min(1.0f, floatValue2 * 2.0f));
+                    vi viVar = u5Var.c;
+                    if (viVar != null) {
+                        viVar.M1(interpolation);
                     } else {
-                        v5Var.b.setTranslationY(r7.getHeight() * interpolation);
+                        u5Var.b.setTranslationY(r7.getHeight() * interpolation);
                     }
-                    if (v5Var.p != null && !rectF2.isEmpty()) {
-                        org.telegram.ui.Cells.w0 u82 = v5Var.e.u8(v5Var.f);
-                        org.telegram.ui.Cells.w0 w0Var = v5Var.p;
-                        if (u82 != w0Var) {
-                            w0Var.I0.i(false);
-                            v5Var.p = u82;
+                    if (u5Var.p != null && !rectF2.isEmpty()) {
+                        org.telegram.ui.Cells.x0 u82 = u5Var.e.u8(u5Var.f);
+                        org.telegram.ui.Cells.x0 x0Var = u5Var.p;
+                        if (u82 != x0Var) {
+                            x0Var.I0.i(false);
+                            u5Var.p = u82;
                         }
-                        org.telegram.ui.Cells.w0 w0Var2 = v5Var.p;
-                        if (w0Var2 != null && !v5Var.s) {
-                            w0Var2.I0.i(true);
-                            c3 c3Var = v5Var.p.I0.m;
+                        org.telegram.ui.Cells.x0 x0Var2 = u5Var.p;
+                        if (x0Var2 != null && !u5Var.s) {
+                            x0Var2.I0.i(true);
+                            c3 c3Var = u5Var.p.I0.m;
                             if (c3Var != null && c3Var.isAttachedToWindow()) {
-                                rectF2.set(v5Var.c(c3Var));
-                                v5Var.r = floatValue2;
+                                rectF2.set(u5Var.c(c3Var));
+                                u5Var.r = floatValue2;
                                 float max = Math.max(0.0f, Math.min(1.0f, (floatValue2 - 0.25f) / 0.5f));
-                                float B = com.google.android.gms.internal.vision.e2.B(max, 2.0f, 3.0f, max * max);
-                                c6Var.setAlpha((1.0f - B) * v5Var.l);
-                                t5Var.setAlpha(B);
-                                v5Var.d();
+                                float B = com.google.android.gms.internal.play_billing.k3.B(max, 2.0f, 3.0f, max * max);
+                                b6Var.setAlpha((1.0f - B) * u5Var.l);
+                                s5Var.setAlpha(B);
+                                u5Var.d();
                                 float f7 = 1.0f - floatValue2;
                                 float centerX = ((rectF2.centerX() - rectF.centerX()) * 0.35f) + rectF.centerX();
                                 float min = Math.min(rectF.centerY(), rectF2.centerY()) - AndroidUtilities.dp(150.0f);
@@ -86,49 +86,49 @@ public final /* synthetic */ class s2 implements ValueAnimator.AnimatorUpdateLis
                                 float f12 = floatValue2 * floatValue2;
                                 float centerX2 = (rectF2.centerX() * f12) + (centerX * f11) + (rectF.centerX() * f10);
                                 float centerY = (rectF2.centerY() * f12) + (f11 * min) + (rectF.centerY() * f10);
-                                v5Var.b(centerX2, centerY, ((rectF2.width() - rectF.width()) * floatValue2) + rectF.width());
+                                u5Var.b(centerX2, centerY, ((rectF2.width() - rectF.width()) * floatValue2) + rectF.width());
                                 if (floatValue2 < 0.92f) {
-                                    v5Var.j.g(centerX2, centerY);
+                                    u5Var.j.g(centerX2, centerY);
                                 }
-                                v5Var.h.invalidate();
+                                u5Var.h.invalidate();
                                 break;
                             } else {
                                 rectF2.setEmpty();
-                                c6Var.setAlpha(0.0f);
-                                t5Var.setAlpha(0.0f);
+                                b6Var.setAlpha(0.0f);
+                                s5Var.setAlpha(0.0f);
                                 break;
                             }
                         } else {
                             rectF2.setEmpty();
-                            c6Var.setAlpha(0.0f);
-                            t5Var.setAlpha(0.0f);
+                            b6Var.setAlpha(0.0f);
+                            s5Var.setAlpha(0.0f);
                             break;
                         }
                     }
                 }
                 break;
             case 5:
-                c6 c6Var2 = (c6) this.b;
-                c6Var2.getClass();
-                c6Var2.i0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c6Var2.e();
+                b6 b6Var2 = (b6) this.b;
+                b6Var2.getClass();
+                b6Var2.i0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b6Var2.e();
                 break;
             case 6:
-                m7 m7Var = (m7) this.b;
-                m7Var.getClass();
-                m7Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m7Var.invalidate();
+                l7 l7Var = (l7) this.b;
+                l7Var.getClass();
+                l7Var.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l7Var.invalidate();
                 break;
             case 7:
-                j8 j8Var = (j8) this.b;
-                j8Var.getClass();
-                j8Var.s0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            case 8:
                 i8 i8Var = (i8) this.b;
                 i8Var.getClass();
-                i8Var.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i8Var.c();
+                i8Var.s0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 8:
+                h8 h8Var = (h8) this.b;
+                h8Var.getClass();
+                h8Var.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h8Var.c();
                 break;
             default:
                 w8 w8Var = (w8) this.b;
@@ -138,14 +138,14 @@ public final /* synthetic */ class s2 implements ValueAnimator.AnimatorUpdateLis
                 if (!w8Var.s) {
                     w8Var.e();
                     float interpolation2 = w8Var.k.getInterpolation(Math.min(1.0f, floatValue3 * 2.0f));
-                    yi yiVar2 = w8Var.a;
-                    if (yiVar2 != null) {
-                        yiVar2.M1(interpolation2);
+                    vi viVar2 = w8Var.a;
+                    if (viVar2 != null) {
+                        viVar2.M1(interpolation2);
                     } else {
                         w8Var.c.setTranslationY(r5.getHeight() * interpolation2);
                     }
                     if (w8Var.p != null && !rectF4.isEmpty()) {
-                        c6 pendingDiamond = w8Var.p.getPendingDiamond();
+                        b6 pendingDiamond = w8Var.p.getPendingDiamond();
                         if (pendingDiamond != null) {
                             x2 x2Var = w8Var.p;
                             TL_wallet.walletTransaction wallettransaction = w8Var.f;

@@ -1,52 +1,29 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class uc implements RequestDelegate {
+public final /* synthetic */ class uc implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ TL_update.TL_updatePeerBlocked c;
 
-    public /* synthetic */ uc(int i10, long j3, long j10, MessagesController messagesController) {
-        this.a = 0;
+    public /* synthetic */ uc(MessagesController messagesController, TL_update.TL_updatePeerBlocked tL_updatePeerBlocked, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.d = j3;
-        this.c = i10;
-        this.e = j10;
+        this.c = tL_updatePeerBlocked;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                int i10 = this.c;
-                long j3 = this.e;
-                this.b.lambda$getChannelDifference$348(this.d, i10, j3, tLObject, tL_error);
-                break;
-            case 1:
-                long j10 = this.d;
-                long j11 = this.e;
-                this.b.lambda$sendTyping$171(this.c, j10, j11, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$394(this.c);
                 break;
             default:
-                long j12 = this.d;
-                long j13 = this.e;
-                this.b.lambda$sendTyping$173(this.c, j12, j13, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$393(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ uc(MessagesController messagesController, int i10, long j3, long j10, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = i10;
-        this.d = j3;
-        this.e = j10;
     }
 }

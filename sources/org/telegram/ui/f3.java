@@ -1,277 +1,100 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.os.Build;
-import android.view.Surface;
-import android.view.SurfaceView;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.List;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class f3 extends uu0 {
-    public final int[] a = new int[2];
-    public final List b;
-    public final /* synthetic */ i4 c;
+public final class f3 extends FrameLayout {
+    public final LinearLayout a;
+    public boolean b;
+    public final org.telegram.ui.Components.z9 c;
+    public final TextView d;
+    public final TextView e;
+    public final TextView f;
+    public final di.d h;
+    public ValueAnimator n;
+    public boolean r;
 
-    public f3(i4 i4Var, List list) {
-        this.c = i4Var;
-        this.b = list;
+    public f3(Context context) {
+        super(context);
+        this.r = true;
+        setVisibility(8);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.a = linearLayout;
+        linearLayout.setPadding(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f));
+        linearLayout.setOrientation(1);
+        linearLayout.setGravity(3);
+        addView(linearLayout, w7.a6.e(-2, -2, 17));
+        org.telegram.ui.Components.z9 z9Var = new org.telegram.ui.Components.z9(context);
+        this.c = z9Var;
+        linearLayout.addView(z9Var, w7.a6.n(100, 100));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 19.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextColor(-1);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.a6.t(-2, -2, 3, 0, 4, 0, 2), context);
+        this.e = i10;
+        i10.setTextSize(1, 15.0f);
+        i10.setTextColor(-1);
+        i10.setSingleLine(false);
+        i10.setMaxLines(3);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, i10, w7.a6.t(-2, -2, 3, 0, 0, 0, 1), context);
+        this.f = i11;
+        i11.setTextSize(1, 12.0f);
+        i11.setTextColor(-1);
+        i11.setAlpha(0.4f);
+        linearLayout.addView(i11, w7.a6.q(-2, -2, 3));
+        di.d dVar = new di.d(context, null, true);
+        this.h = dVar;
+        dVar.setMinWidth(AndroidUtilities.dp(140.0f));
+        dVar.g(LocaleController.getString(R.string.Refresh), false, true);
+        linearLayout.addView(dVar, w7.a6.t(-2, 40, 3, 0, 12, 0, 0));
     }
 
-    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
-    public final void D() {
-        this.c.n();
+    public final void a(String str, String str2) {
+        this.d.setText(LocaleController.getString(R.string.WebErrorTitle));
+        org.telegram.messenger.yh.q(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
+        this.f.setText(str2);
     }
 
-    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
-    public final ev0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        if (i10 < 0) {
-            return null;
+    public final void b(boolean z10, boolean z11) {
+        if (this.r == z10) {
+            return;
         }
-        List list = this.b;
-        if (i10 >= list.size()) {
-            return null;
+        this.r = z10;
+        ValueAnimator valueAnimator = this.n;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
-        i4 i4Var = this.c;
-        ci.v vVar = i4Var.u0[0].b;
-        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) list.get(i10);
-        int[] iArr = this.a;
-        ImageReceiver c02 = c0(vVar, pageBlock, iArr);
-        if (c02 == null) {
-            return null;
+        if (!z11) {
+            this.d.setTextColor(!z10 ? -16777216 : -1);
+            this.e.setTextColor(!z10 ? -16777216 : -1);
+            this.f.setTextColor(z10 ? -1 : -16777216);
+        } else {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f);
+            this.n = ofFloat;
+            ofFloat.addUpdateListener(new e3(this, 0));
+            this.n.start();
         }
-        ev0 ev0Var = new ev0();
-        ev0Var.b = iArr[0];
-        ev0Var.c = iArr[1];
-        ev0Var.d = i4Var.u0[0].b;
-        ev0Var.a = c02;
-        ev0Var.e = c02.getBitmapSafe();
-        ev0Var.h = c02.getRoundRadius(true);
-        ev0Var.j = i4Var.I0;
-        return ev0Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0067  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0049 A[EDGE_INSN: B:46:0x0049->B:14:0x0049 BREAK  A[LOOP:0: B:7:0x0034->B:44:0x0046], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0036  */
-    @Override // org.telegram.ui.uu0, org.telegram.ui.cv0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void X(int i10) {
-        TL_iv.PageBlock pageBlock;
-        org.telegram.ui.Components.k81 k81Var;
-        TextureView textureView;
-        a0.i iVar;
-        int i11;
-        int childCount;
-        y2 y2Var;
-        Bitmap bitmap;
-        y2 y2Var2;
-        Bitmap bitmap2;
-        x2 x2Var = null;
-        if (i10 >= 0) {
-            List list = this.b;
-            if (i10 < list.size()) {
-                pageBlock = (TL_iv.PageBlock) list.get(i10);
-                k81Var = PhotoViewer.t1().F2;
-                textureView = PhotoViewer.t1().B2;
-                SurfaceView surfaceView = PhotoViewer.t1().C2;
-                i4 i4Var = this.c;
-                m3[] m3VarArr = i4Var.u0;
-                iVar = i4Var.y;
-                i11 = 0;
-                ci.v vVar = m3VarArr[0].b;
-                childCount = vVar.getChildCount();
-                while (true) {
-                    if (i11 < childCount) {
-                        break;
-                    }
-                    View childAt = vVar.getChildAt(i11);
-                    if (childAt instanceof x2) {
-                        x2 x2Var2 = (x2) childAt;
-                        if (x2Var2.L == pageBlock) {
-                            x2Var = x2Var2;
-                            break;
-                        }
-                    }
-                    i11++;
-                }
-                if (x2Var != null && k81Var != null && textureView != null) {
-                    long j3 = x2Var.L.video_id;
-                    y2 y2Var3 = new y2();
-                    y2Var3.a = k81Var.n();
-                    if (textureView.getSurfaceTexture() != null) {
-                        if (Build.VERSION.SDK_INT >= 24) {
-                            Surface surface = new Surface(textureView.getSurfaceTexture());
-                            Bitmap createBitmap = Bitmap.createBitmap(textureView.getMeasuredWidth(), textureView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-                            AndroidUtilities.getBitmapFromSurface(surface, createBitmap);
-                            surface.release();
-                            y2Var3.b = createBitmap;
-                        } else {
-                            y2Var3.b = textureView.getBitmap();
-                        }
-                    }
-                    x2Var.c(y2Var3);
-                    iVar.k(y2Var3, j3);
-                    int i12 = x2.V;
-                    x2Var.n.setAlpha(0.0f);
-                    y2Var2 = x2Var.M;
-                    if (y2Var2 != null && (bitmap2 = y2Var2.b) != null) {
-                        x2Var.e.setImageBitmap(bitmap2);
-                    }
-                }
-                if (x2Var != null && k81Var != null && surfaceView != null) {
-                    long j10 = x2Var.L.video_id;
-                    y2 y2Var4 = new y2();
-                    y2Var4.a = k81Var.n();
-                    if (Build.VERSION.SDK_INT >= 24) {
-                        Bitmap createBitmap2 = Bitmap.createBitmap(surfaceView.getMeasuredWidth(), surfaceView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-                        AndroidUtilities.getBitmapFromSurface(surfaceView, createBitmap2);
-                        y2Var4.b = createBitmap2;
-                    }
-                    x2Var.c(y2Var4);
-                    iVar.k(y2Var4, j10);
-                    int i13 = x2.V;
-                    x2Var.n.setAlpha(0.0f);
-                    y2Var = x2Var.M;
-                    if (y2Var != null && (bitmap = y2Var.b) != null) {
-                        x2Var.e.setImageBitmap(bitmap);
-                    }
-                }
-                i4Var.n();
-            }
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 != 0 || this.b) {
+            return;
         }
-        pageBlock = null;
-        k81Var = PhotoViewer.t1().F2;
-        textureView = PhotoViewer.t1().B2;
-        SurfaceView surfaceView2 = PhotoViewer.t1().C2;
-        i4 i4Var2 = this.c;
-        m3[] m3VarArr2 = i4Var2.u0;
-        iVar = i4Var2.y;
-        i11 = 0;
-        ci.v vVar2 = m3VarArr2[0].b;
-        childCount = vVar2.getChildCount();
-        while (true) {
-            if (i11 < childCount) {
-            }
-            i11++;
-        }
-        if (x2Var != null) {
-            long j32 = x2Var.L.video_id;
-            y2 y2Var32 = new y2();
-            y2Var32.a = k81Var.n();
-            if (textureView.getSurfaceTexture() != null) {
-            }
-            x2Var.c(y2Var32);
-            iVar.k(y2Var32, j32);
-            int i122 = x2.V;
-            x2Var.n.setAlpha(0.0f);
-            y2Var2 = x2Var.M;
-            if (y2Var2 != null) {
-                x2Var.e.setImageBitmap(bitmap2);
-            }
-        }
-        if (x2Var != null) {
-            long j102 = x2Var.L.video_id;
-            y2 y2Var42 = new y2();
-            y2Var42.a = k81Var.n();
-            if (Build.VERSION.SDK_INT >= 24) {
-            }
-            x2Var.c(y2Var42);
-            iVar.k(y2Var42, j102);
-            int i132 = x2.V;
-            x2Var.n.setAlpha(0.0f);
-            y2Var = x2Var.M;
-            if (y2Var != null) {
-                x2Var.e.setImageBitmap(bitmap);
-            }
-        }
-        i4Var2.n();
-    }
-
-    public final ImageReceiver c0(ViewGroup viewGroup, TL_iv.PageBlock pageBlock, int[] iArr) {
-        int childCount = viewGroup.getChildCount();
-        for (int i10 = 0; i10 < childCount; i10++) {
-            ImageReceiver d02 = d0(viewGroup.getChildAt(i10), pageBlock, iArr);
-            if (d02 != null) {
-                return d02;
-            }
-        }
-        return null;
-    }
-
-    public final ImageReceiver d0(View view, TL_iv.PageBlock pageBlock, int[] iArr) {
-        org.telegram.ui.Components.am0 am0Var;
-        ImageReceiver d02;
-        ImageReceiver d03;
-        VideoPlayerHolderBase videoPlayerHolderBase;
-        if (view instanceof d2) {
-            d2 d2Var = (d2) view;
-            if (d2Var.N != pageBlock) {
-                return null;
-            }
-            view.getLocationInWindow(iArr);
-            return d2Var.e;
-        }
-        if (view instanceof x2) {
-            x2 x2Var = (x2) view;
-            ImageReceiver imageReceiver = x2Var.e;
-            TextureView textureView = x2Var.n;
-            if (x2Var.L != pageBlock) {
-                return null;
-            }
-            view.getLocationInWindow(iArr);
-            i4 i4Var = this.c;
-            if (x2Var == i4Var.x && (videoPlayerHolderBase = i4Var.w) != null && videoPlayerHolderBase.firstFrameRendered && textureView.getSurfaceTexture() != null) {
-                if (Build.VERSION.SDK_INT >= 24) {
-                    Surface surface = new Surface(textureView.getSurfaceTexture());
-                    Bitmap createBitmap = Bitmap.createBitmap(textureView.getMeasuredWidth(), textureView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
-                    AndroidUtilities.getBitmapFromSurface(surface, createBitmap);
-                    surface.release();
-                    imageReceiver.setImageBitmap(createBitmap);
-                } else {
-                    imageReceiver.setImageBitmap(textureView.getBitmap());
-                }
-                int i10 = x2.V;
-                textureView.setAlpha(0.0f);
-            }
-            return imageReceiver;
-        }
-        if (view instanceof k1) {
-            ImageReceiver c02 = c0(((k1) view).a, pageBlock, iArr);
-            if (c02 != null) {
-                return c02;
-            }
-            return null;
-        }
-        if (view instanceof q2) {
-            ImageReceiver c03 = c0(((q2) view).a, pageBlock, iArr);
-            if (c03 != null) {
-                return c03;
-            }
-            return null;
-        }
-        if (view instanceof y1) {
-            org.telegram.ui.Components.am0 am0Var2 = ((y1) view).d;
-            if (am0Var2 == null || (d03 = d0(am0Var2.a, pageBlock, iArr)) == null) {
-                return null;
-            }
-            return d03;
-        }
-        if (!(view instanceof b2) || (am0Var = ((b2) view).d) == null || (d02 = d0(am0Var.a, pageBlock, iArr)) == null) {
-            return null;
-        }
-        return d02;
+        this.b = true;
+        MediaDataController.getInstance(UserConfig.selectedAccount).setPlaceholderImage(this.c, AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, "🧐", "100_100");
     }
 }

@@ -3,12 +3,12 @@ package g;
 import android.view.View;
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 import java.util.WeakHashMap;
-import r0.i0;
-import r0.n0;
+import r0.j0;
+import r0.o0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class y extends n0 {
+public final class y extends o0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ a0 b;
 
@@ -17,7 +17,7 @@ public final class y extends n0 {
         this.b = a0Var;
     }
 
-    @Override // r0.m0
+    @Override // r0.n0
     public final void c() {
         View view;
         int i10 = this.a;
@@ -31,16 +31,16 @@ public final class y extends n0 {
                 a0Var.d.setVisibility(8);
                 a0Var.d.setTransitioning(false);
                 a0Var.s = null;
-                n4.x xVar = a0Var.k;
-                if (xVar != null) {
-                    xVar.X(a0Var.j);
+                n4.s sVar = a0Var.k;
+                if (sVar != null) {
+                    sVar.r(a0Var.j);
                     a0Var.j = null;
                     a0Var.k = null;
                 }
                 ActionBarOverlayLayout actionBarOverlayLayout = a0Var.c;
                 if (actionBarOverlayLayout != null) {
-                    WeakHashMap weakHashMap = i0.a;
-                    r0.y.c(actionBarOverlayLayout);
+                    WeakHashMap weakHashMap = j0.a;
+                    r0.z.c(actionBarOverlayLayout);
                     break;
                 }
                 break;

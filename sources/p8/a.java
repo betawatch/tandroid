@@ -1,6 +1,5 @@
 package p8;
 
-import ae.x;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -9,6 +8,7 @@ import android.os.SystemClock;
 import android.os.WorkSource;
 import android.text.TextUtils;
 import android.util.Log;
+import androidx.car.app.j;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -19,11 +19,11 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import n6.l;
-import org.telegram.ui.Wallet.n5;
+import org.telegram.ui.Wallet.m5;
 import u6.e;
 import u6.f;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class a {
     public static final long n = TimeUnit.DAYS.toMillis(366);
@@ -65,7 +65,7 @@ public final class a {
         if (powerManager == null) {
             StringBuilder sb2 = new StringBuilder(29);
             sb2.append((CharSequence) "expected a non-null reference", 0, 29);
-            throw new x(sb2.toString());
+            throw new j(sb2.toString());
         }
         this.b = powerManager.newWakeLock(1, "wake:com.google.firebase.iid.WakeLockHolder");
         if (f.b(context)) {
@@ -88,8 +88,8 @@ public final class a {
             if (workSource != null) {
                 try {
                     this.b.setWorkSource(workSource);
-                } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e7) {
-                    Log.wtf("WakeLock", e7.toString());
+                } catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
+                    Log.wtf("WakeLock", e.toString());
                 }
             }
         }
@@ -109,11 +109,11 @@ public final class a {
         this.m = scheduledExecutorService;
     }
 
-    public final void a(long j3) {
+    public final void a(long j10) {
         this.l.incrementAndGet();
         long max = Math.max(Math.min(Long.MAX_VALUE, n), 1L);
-        if (j3 > 0) {
-            max = Math.min(j3, max);
+        if (j10 > 0) {
+            max = Math.min(j10, max);
         }
         synchronized (this.a) {
             try {
@@ -135,14 +135,14 @@ public final class a {
                 bVar.a++;
                 this.i.getClass();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
-                long j10 = Long.MAX_VALUE - elapsedRealtime > max ? elapsedRealtime + max : Long.MAX_VALUE;
-                if (j10 > this.e) {
-                    this.e = j10;
+                long j11 = Long.MAX_VALUE - elapsedRealtime > max ? elapsedRealtime + max : Long.MAX_VALUE;
+                if (j11 > this.e) {
+                    this.e = j11;
                     ScheduledFuture scheduledFuture = this.d;
                     if (scheduledFuture != null) {
                         scheduledFuture.cancel(false);
                     }
-                    this.d = this.m.schedule(new n5(this, 2), max, TimeUnit.MILLISECONDS);
+                    this.d = this.m.schedule(new m5(this, 2), max, TimeUnit.MILLISECONDS);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -232,11 +232,11 @@ public final class a {
                                 if (this.h != null) {
                                     this.h = null;
                                 }
-                            } catch (RuntimeException e7) {
-                                if (!e7.getClass().equals(RuntimeException.class)) {
-                                    throw e7;
+                            } catch (RuntimeException e) {
+                                if (!e.getClass().equals(RuntimeException.class)) {
+                                    throw e;
                                 }
-                                Log.e("WakeLock", String.valueOf(this.j).concat(" failed to release!"), e7);
+                                Log.e("WakeLock", String.valueOf(this.j).concat(" failed to release!"), e);
                                 if (this.h != null) {
                                     this.h = null;
                                 }

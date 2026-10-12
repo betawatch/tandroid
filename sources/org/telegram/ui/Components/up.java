@@ -1,43 +1,40 @@
 package org.telegram.ui.Components;
 
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.messenger.ChatThemeController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.od1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class up implements od1 {
-    public final /* synthetic */ cq a;
+public final class up implements ResultCallback {
+    public final /* synthetic */ ChatThemeController a;
+    public final /* synthetic */ zp b;
 
-    public up(cq cqVar) {
-        this.a = cqVar;
+    public up(zp zpVar, ChatThemeController chatThemeController) {
+        this.b = zpVar;
+        this.a = chatThemeController;
     }
 
-    @Override // org.telegram.ui.od1
-    public final boolean T0() {
-        return true;
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        int i10;
+        List<org.telegram.ui.ActionBar.b4> emojiThemes = this.a.getEmojiThemes(7);
+        zp zpVar = this.b;
+        i10 = ((org.telegram.ui.ActionBar.e3) zpVar).currentAccount;
+        NotificationCenter.getInstance(i10).doOnIdle(new sk(7, this, emojiThemes));
+        zpVar.b0 = false;
     }
 
-    @Override // org.telegram.ui.od1
-    public final boolean a() {
-        return this.a.N;
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
     }
 
-    @Override // org.telegram.ui.od1
-    public final void l1(boolean z10) {
-        cq cqVar = this.a;
-        org.telegram.ui.zn znVar = cqVar.v;
-        cqVar.N = !cqVar.N;
-        if (cqVar.M != null) {
-            cqVar.P = true;
-            znVar.e7 = true;
-            TLRPC.WallPaper wallPaper = cqVar.x() ? null : cqVar.n.h;
-            org.telegram.ui.ActionBar.c4 c4Var = cqVar.M.a;
-            if (c4Var.a) {
-                cqVar.n.i(null, wallPaper, z10, Boolean.valueOf(cqVar.N), false);
-            } else {
-                cqVar.n.i(c4Var, wallPaper, z10, Boolean.valueOf(cqVar.N), false);
-            }
-            znVar.e7 = false;
-        }
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

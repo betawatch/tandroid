@@ -1,455 +1,119 @@
 package qg;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Paint;
-import android.graphics.PointF;
-import android.graphics.RectF;
-import android.text.TextPaint;
-import android.util.SparseIntArray;
-import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import ci.a7;
-import ci.b6;
-import ci.l8;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.f5;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ma;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.t5;
-import w7.x5;
+import j$.util.DesugarCollections;
+import java.util.HashMap;
+import java.util.Map;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public abstract class e1 extends j {
-    public boolean A0;
-    public boolean B0;
-    public final SparseIntArray C0;
-    public final com.google.firebase.messaging.n D0;
-    public f5 E0;
-    public f5 F0;
-    public f5 G0;
-    public f5 H0;
-    public f5 I0;
-    public f5 J0;
-    public f5 K0;
-    public f5 L0;
-    public final t5 q0;
-    public final x0 r0;
-    public final ArrayList s0;
-    public final MessageObject.GroupedMessages t0;
-    public boolean u0;
-    public boolean v0;
-    public TextureView w0;
-    public boolean x0;
-    public int y0;
-    public int z0;
+public abstract class e1 {
+    public static final Map a;
 
-    public e1(Context context, PointF pointF, ArrayList arrayList, ma maVar, boolean z10, a7 a7Var) {
-        super(context, pointF);
-        hi.a aVar;
-        TLRPC.Message message;
-        TLRPC.Message tL_messageService;
-        Boolean D;
-        TLRPC.MessageFwdHeader messageFwdHeader;
-        TLRPC.Peer peer;
-        this.s0 = new ArrayList();
-        this.y0 = 1;
-        this.z0 = 1;
-        this.A0 = true;
-        this.B0 = i6.I.q();
-        this.C0 = new SparseIntArray();
-        b6 b6Var = (b6) this;
-        com.google.firebase.messaging.n nVar = new com.google.firebase.messaging.n();
-        nVar.f = b6Var;
-        TextPaint textPaint = new TextPaint();
-        nVar.a = textPaint;
-        TextPaint textPaint2 = new TextPaint();
-        nVar.b = textPaint2;
-        TextPaint textPaint3 = new TextPaint();
-        nVar.c = textPaint3;
-        new Paint(3);
-        nVar.d = new Paint(3);
-        Paint paint = new Paint(3);
-        nVar.e = paint;
-        textPaint.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
-        textPaint2.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
-        textPaint3.setTextSize(AndroidUtilities.dp(15.0f));
-        textPaint3.setTypeface(AndroidUtilities.bold());
-        paint.setColor(352321536);
-        this.D0 = nVar;
-        setRotation(0.0f);
-        setScale(1.0f);
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            MessageObject messageObject = (MessageObject) arrayList.get(i10);
-            TLRPC.Message message2 = messageObject.messageOwner;
-            int i11 = message2.date;
-            if (message2 instanceof TLRPC.TL_message) {
-                tL_messageService = new TLRPC.TL_message();
-            } else if (message2 instanceof TLRPC.TL_messageService) {
-                tL_messageService = new TLRPC.TL_messageService();
-            } else {
-                message = message2;
-                D = l8.D(messageObject);
-                if (D != null && D.booleanValue() && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
-                    message.from_id = peer;
-                    message.peer_id = peer;
-                    message.flags &= -5;
-                    message.fwd_from = null;
-                }
-                message.voiceTranscriptionOpen = false;
-                int i12 = messageObject.currentAccount;
-                MessageObject messageObject2 = new MessageObject(i12, message, messageObject.replyMessageObject, MessagesController.getInstance(i12).getUsers(), MessagesController.getInstance(messageObject.currentAccount).getChats(), null, null, true, true, 0L, true, z10, false);
-                messageObject2.setType();
-                this.s0.add(messageObject2);
-            }
-            tL_messageService.id = message2.id;
-            tL_messageService.from_id = message2.from_id;
-            tL_messageService.peer_id = message2.peer_id;
-            tL_messageService.date = message2.date;
-            tL_messageService.expire_date = message2.expire_date;
-            tL_messageService.action = message2.action;
-            tL_messageService.message = message2.message;
-            tL_messageService.media = message2.media;
-            tL_messageService.flags = message2.flags;
-            tL_messageService.mentioned = message2.mentioned;
-            tL_messageService.media_unread = message2.media_unread;
-            tL_messageService.out = message2.out;
-            tL_messageService.unread = message2.unread;
-            tL_messageService.entities = message2.entities;
-            tL_messageService.via_bot_name = message2.via_bot_name;
-            tL_messageService.reply_markup = message2.reply_markup;
-            tL_messageService.views = message2.views;
-            tL_messageService.forwards = message2.forwards;
-            tL_messageService.replies = message2.replies;
-            tL_messageService.edit_date = message2.edit_date;
-            tL_messageService.silent = message2.silent;
-            tL_messageService.post = message2.post;
-            tL_messageService.from_scheduled = message2.from_scheduled;
-            tL_messageService.legacy = message2.legacy;
-            tL_messageService.edit_hide = message2.edit_hide;
-            tL_messageService.pinned = message2.pinned;
-            tL_messageService.fwd_from = message2.fwd_from;
-            tL_messageService.via_bot_id = message2.via_bot_id;
-            tL_messageService.reply_to = message2.reply_to;
-            tL_messageService.post_author = message2.post_author;
-            tL_messageService.grouped_id = message2.grouped_id;
-            tL_messageService.reactions = message2.reactions;
-            tL_messageService.restriction_reason = message2.restriction_reason;
-            tL_messageService.ttl_period = message2.ttl_period;
-            tL_messageService.noforwards = message2.noforwards;
-            tL_messageService.invert_media = message2.invert_media;
-            tL_messageService.send_state = message2.send_state;
-            tL_messageService.fwd_msg_id = message2.fwd_msg_id;
-            tL_messageService.attachPath = message2.attachPath;
-            tL_messageService.params = message2.params;
-            tL_messageService.random_id = message2.random_id;
-            tL_messageService.local_id = message2.local_id;
-            tL_messageService.dialog_id = message2.dialog_id;
-            tL_messageService.ttl = message2.ttl;
-            tL_messageService.destroyTime = message2.destroyTime;
-            tL_messageService.destroyTimeMillis = message2.destroyTimeMillis;
-            tL_messageService.layer = message2.layer;
-            tL_messageService.seq_in = message2.seq_in;
-            tL_messageService.seq_out = message2.seq_out;
-            tL_messageService.with_my_score = message2.with_my_score;
-            tL_messageService.replyMessage = message2.replyMessage;
-            tL_messageService.reqId = message2.reqId;
-            tL_messageService.realId = message2.realId;
-            tL_messageService.stickerVerified = message2.stickerVerified;
-            tL_messageService.isThreadMessage = message2.isThreadMessage;
-            tL_messageService.voiceTranscription = message2.voiceTranscription;
-            tL_messageService.voiceTranscriptionOpen = message2.voiceTranscriptionOpen;
-            tL_messageService.voiceTranscriptionRated = message2.voiceTranscriptionRated;
-            tL_messageService.voiceTranscriptionFinal = message2.voiceTranscriptionFinal;
-            tL_messageService.voiceTranscriptionForce = message2.voiceTranscriptionForce;
-            tL_messageService.voiceTranscriptionId = message2.voiceTranscriptionId;
-            tL_messageService.premiumEffectWasPlayed = message2.premiumEffectWasPlayed;
-            tL_messageService.originalLanguage = message2.originalLanguage;
-            tL_messageService.translatedToLanguage = message2.translatedToLanguage;
-            tL_messageService.translatedText = message2.translatedText;
-            tL_messageService.replyStory = message2.replyStory;
-            message = tL_messageService;
-            D = l8.D(messageObject);
-            if (D != null) {
-                message.from_id = peer;
-                message.peer_id = peer;
-                message.flags &= -5;
-                message.fwd_from = null;
-            }
-            message.voiceTranscriptionOpen = false;
-            int i122 = messageObject.currentAccount;
-            MessageObject messageObject22 = new MessageObject(i122, message, messageObject.replyMessageObject, MessagesController.getInstance(i122).getUsers(), MessagesController.getInstance(messageObject.currentAccount).getChats(), null, null, true, true, 0L, true, z10, false);
-            messageObject22.setType();
-            this.s0.add(messageObject22);
-        }
-        this.t0 = null;
-        if (this.s0.size() > 1) {
-            MessageObject.GroupedMessages groupedMessages = new MessageObject.GroupedMessages();
-            this.t0 = groupedMessages;
-            groupedMessages.messages.addAll(this.s0);
-            groupedMessages.groupId = ((MessageObject) this.s0.get(0)).getGroupId();
-            groupedMessages.calculate();
-        }
-        t5 t5Var = new t5(b6Var, context);
-        this.q0 = t5Var;
-        addView(t5Var, x5.d(-1.0f, -1));
-        x0 x0Var = new x0(b6Var, context, this.D0);
-        this.r0 = x0Var;
-        x0Var.setAdapter(new a1(b6Var, context, maVar, a7Var, z10));
-        b1 b1Var = new b1(b6Var);
-        b1Var.O = new c1(b6Var);
-        x0Var.setLayoutManager(b1Var);
-        x0Var.i(new d1());
-        t5Var.addView(x0Var, x5.d(-1.0f, -1));
-        if (a7Var != null && a7Var.g) {
-            ii.q1 q1Var = new ii.q1(b6Var, 8);
-            hi.a aVar2 = new hi.a(b6Var, 7);
-            a7Var.b = q1Var;
-            a7Var.c = aVar2;
-            TextureView textureView = a7Var.a;
-            if (textureView != null) {
-                q1Var.run(textureView);
-            }
-            if (a7Var.d && (aVar = a7Var.c) != null) {
-                aVar.run(Integer.valueOf(a7Var.e), Integer.valueOf(a7Var.f));
-            }
-        }
-        k();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public org.telegram.ui.Cells.u1 getCell() {
-        x0 x0Var = this.r0;
-        if (x0Var == null) {
-            return null;
-        }
-        for (int i10 = 0; i10 < x0Var.getChildCount(); i10++) {
-            if (x0Var.getChildAt(i10) instanceof org.telegram.ui.Cells.u1) {
-                return (org.telegram.ui.Cells.u1) x0Var.getChildAt(i10);
-            }
-        }
-        return null;
-    }
-
-    @Override // qg.j
-    public final i a() {
-        return new p0(this, getContext());
-    }
-
-    @Override // qg.j
-    public float getBounceScale() {
-        return 0.02f;
-    }
-
-    @Override // qg.j
-    public ml0 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new ml0();
-        }
-        float scaleX = viewGroup.getScaleX();
-        return new ml0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), (getScale() * getMeasuredWidth() * scaleX) + AndroidUtilities.dp(71.0f), (getScale() * getMeasuredHeight() * scaleX) + AndroidUtilities.dp(71.0f));
-    }
-
-    @Override // qg.j
-    public final void k() {
-        setX(getPositionX() - (getMeasuredWidth() / 2.0f));
-        setY(getPositionY() - (getMeasuredHeight() / 2.0f));
-        m();
-        if (this.v0) {
-            s();
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x002b, code lost:
-    
-        if (((org.telegram.messenger.MessageObject) r0.get(0)).contentType == 1) goto L12;
-     */
-    @Override // android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i10, int i11) {
-        boolean z10;
-        t5 t5Var = this.q0;
-        t5Var.measure(i10, i11);
-        setMeasuredDimension(t5Var.getMeasuredWidth(), t5Var.getMeasuredHeight());
-        k();
-        if (this.A0) {
-            ArrayList arrayList = this.s0;
-            if (arrayList != null) {
-                z10 = true;
-                if (arrayList.size() == 1) {
-                }
-            }
-            z10 = false;
-            float min = Math.min((View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(z10 ? 0.0f : 44.0f)) / getMeasuredWidth(), (View.MeasureSpec.getSize(i11) - AndroidUtilities.dp(z10 ? 0.0f : 192.0f)) / getMeasuredHeight());
-            if (min < 1.0f) {
-                setScale(min);
-            }
-            PointF position = getPosition();
-            if (!z10) {
-                position.x -= Math.min(1.0f, min) * AndroidUtilities.dp(19.0f);
-            }
-            setPosition(position);
-            this.A0 = false;
-        }
-    }
-
-    public final float r(RectF rectF) {
-        float y3;
-        float f7;
-        float f10;
-        float f11;
-        float f12 = 2.14748365E9f;
-        float f13 = -2.14748365E9f;
-        int i10 = 0;
-        float f14 = 2.14748365E9f;
-        float f15 = -2.14748365E9f;
-        while (true) {
-            x0 x0Var = this.r0;
-            if (i10 >= x0Var.getChildCount()) {
-                rectF.set(f12, f14, f15, f13);
-                return AndroidUtilities.dp(SharedConfig.bubbleRadius);
-            }
-            View childAt = x0Var.getChildAt(i10);
-            boolean z10 = childAt instanceof org.telegram.ui.Cells.u1;
-            t5 t5Var = this.q0;
-            if (z10) {
-                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) childAt;
-                if (u1Var.getMessageObject() == null || !u1Var.getMessageObject().isRoundVideo() || u1Var.getPhotoImage() == null) {
-                    float x10 = childAt.getX() + t5Var.getX() + u1Var.getBackgroundDrawableLeft() + AndroidUtilities.dp(1.0f);
-                    if (this.t0 == null) {
-                        x10 += AndroidUtilities.dp(8.0f);
-                    }
-                    float x11 = ((childAt.getX() + t5Var.getX()) + u1Var.getBackgroundDrawableRight()) - AndroidUtilities.dp(1.66f);
-                    float dp = AndroidUtilities.dp(2.0f) + childAt.getY() + t5Var.getY() + u1Var.getBackgroundDrawableTop();
-                    y3 = ((childAt.getY() + t5Var.getY()) + u1Var.getBackgroundDrawableBottom()) - AndroidUtilities.dp(1.0f);
-                    f7 = x10;
-                    f10 = x11;
-                    f11 = dp;
-                } else {
-                    f7 = u1Var.getPhotoImage().getImageX() + u1Var.getX() + t5Var.getX();
-                    f10 = u1Var.getPhotoImage().getImageX2() + u1Var.getX() + t5Var.getX();
-                    f11 = u1Var.getPhotoImage().getImageY() + u1Var.getY() + t5Var.getY();
-                    y3 = u1Var.getPhotoImage().getImageY2() + u1Var.getY() + t5Var.getY();
-                }
-                f12 = Math.min(Math.min(f12, f7), f10);
-                f15 = Math.max(Math.max(f15, f7), f10);
-                f14 = Math.min(Math.min(f14, f11), y3);
-                f13 = Math.max(Math.max(f13, f11), y3);
-            } else if (childAt instanceof org.telegram.ui.Cells.w0) {
-                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
-                if (w0Var.L()) {
-                    float x12 = w0Var.getX() + t5Var.getX() + w0Var.getBoundsLeft();
-                    float x13 = w0Var.getX() + t5Var.getX() + w0Var.getBoundsRight();
-                    float y10 = w0Var.getY() + t5Var.getY();
-                    float y11 = w0Var.getY() + t5Var.getY() + w0Var.getMeasuredHeight();
-                    f12 = Math.min(Math.min(f12, x12), x13);
-                    f15 = Math.max(Math.max(f15, x12), x13);
-                    f14 = Math.min(Math.min(f14, y10), y11);
-                    f13 = Math.max(Math.max(f13, y10), y11);
-                }
-            }
-            i10++;
-        }
-    }
-
-    public final void s() {
-        x0 x0Var = this.r0;
-        x0Var.invalidate();
-        for (int i10 = 0; i10 < x0Var.getChildCount(); i10++) {
-            x0Var.getChildAt(i10).invalidate();
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x007d  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00ab A[LOOP:1: B:36:0x00a5->B:38:0x00ab, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0082  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0071  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void setupTheme(l8 l8Var) {
-        SparseIntArray R0;
-        int[] iArr;
-        int i10;
-        g6 k10;
-        if (l8Var == null) {
-            this.C0.clear();
-            return;
-        }
-        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
-        String str = "Blue";
-        String string = sharedPreferences.getString("lastDayTheme", "Blue");
-        if (i6.O0(string) == null || i6.O0(string).q()) {
-            string = "Blue";
-        }
-        String str2 = "Dark Blue";
-        String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-        if (i6.O0(string2) == null || !i6.O0(string2).q()) {
-            string2 = "Dark Blue";
-        }
-        h6 h6Var = i6.I;
-        if (!string.equals(string2)) {
-            str2 = string2;
-        } else if (h6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
-            str2 = string2;
-            boolean z10 = l8Var.y0;
-            this.B0 = z10;
-            h6 O0 = !z10 ? i6.O0(str2) : i6.O0(str);
-            String[] strArr = new String[1];
-            String str3 = O0.d;
-            R0 = str3 == null ? i6.R0(null, str3, strArr) : i6.R0(new File(O0.b), null, strArr);
-            this.C0.clear();
-            iArr = i6.ql;
-            if (iArr != null) {
-                for (int i11 = 0; i11 < iArr.length; i11++) {
-                    this.C0.put(i11, iArr[i11]);
-                }
-            }
-            for (i10 = 0; i10 < R0.size(); i10++) {
-                this.C0.put(R0.keyAt(i10), R0.valueAt(i10));
-            }
-            k10 = O0.k(false);
-            if (k10 != null) {
-                k10.c(R0, this.C0);
-            }
-            s();
-        }
-        str = string;
-        boolean z102 = l8Var.y0;
-        this.B0 = z102;
-        if (!z102) {
-        }
-        String[] strArr2 = new String[1];
-        String str32 = O0.d;
-        if (str32 == null) {
-        }
-        this.C0.clear();
-        iArr = i6.ql;
-        if (iArr != null) {
-        }
-        while (i10 < R0.size()) {
-        }
-        k10 = O0.k(false);
-        if (k10 != null) {
-        }
-        s();
+    static {
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = new HashMap();
+        hashMap2.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;attribute float alpha;varying vec2 varTexcoord;varying float varIntensity;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;   varIntensity = alpha;}");
+        hashMap2.put("fragment", "precision highp float;varying vec2 varTexcoord;varying float varIntensity;uniform sampler2D texture;void main (void) {   gl_FragColor = vec4(1, 1, 1, varIntensity * texture2D(texture, varTexcoord.st, 0.0).r);}");
+        hashMap2.put("attributes", new String[]{"inPosition", "inTexcoord", "alpha"});
+        hashMap2.put("uniforms", new String[]{"mvpMatrix", "texture"});
+        hashMap.put("brush", DesugarCollections.unmodifiableMap(hashMap2));
+        HashMap hashMap3 = new HashMap();
+        hashMap3.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap3.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;void main (void) {   gl_FragColor = texture2D(texture, varTexcoord.st, 0.0);   gl_FragColor.rgb *= gl_FragColor.a;}");
+        hashMap3.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap3.put("uniforms", new String[]{"mvpMatrix", "texture", "alpha"});
+        hashMap.put("blit", DesugarCollections.unmodifiableMap(hashMap3));
+        HashMap hashMap4 = new HashMap();
+        hashMap4.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap4.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D mask;uniform float preview;void main (void) {   gl_FragColor = texture2D(texture, varTexcoord.st, 0.0) * (preview + (1.0 - preview) * texture2D(mask, varTexcoord.st, 0.0).a);   gl_FragColor.rgb *= gl_FragColor.a;}");
+        hashMap4.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap4.put("uniforms", new String[]{"mvpMatrix", "texture", "mask", "alpha", "preview"});
+        hashMap.put("maskingBlit", DesugarCollections.unmodifiableMap(hashMap4));
+        HashMap hashMap5 = new HashMap();
+        hashMap5.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap5.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D otexture;uniform sampler2D mask;uniform vec4 color;void main (void) {   vec4 dst = texture2D(texture, varTexcoord.st, 0.0);   float srcAlpha = color.a * texture2D(mask, varTexcoord.st, 0.0).a;   float outAlpha = srcAlpha + dst.a * (1.0 - srcAlpha);   gl_FragColor.rgb = (color.rgb * srcAlpha + dst.rgb * dst.a * (1.0 - srcAlpha));   gl_FragColor.a = outAlpha;}");
+        hashMap5.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap5.put("uniforms", new String[]{"mvpMatrix", "texture", "mask", "color"});
+        hashMap.put("blitWithMask", DesugarCollections.unmodifiableMap(hashMap5));
+        HashMap hashMap6 = new HashMap();
+        hashMap6.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap6.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D otexture;uniform sampler2D mask;uniform vec4 color;uniform float preview;void main (void) {   vec4 dst = texture2D(texture, varTexcoord.st, 0.0);   float srcAlpha = color.a * texture2D(mask, varTexcoord.st, 0.0).a;   float outAlpha = srcAlpha + dst.a * (1.0 - srcAlpha);   gl_FragColor = texture2D(otexture, varTexcoord.st, 0.0) * (preview + (1.0 - preview) * outAlpha);   gl_FragColor.rgb *= gl_FragColor.a;}");
+        hashMap6.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap6.put("uniforms", new String[]{"mvpMatrix", "otexture", "texture", "mask", "color", "preview"});
+        hashMap.put("blitWithMask_masking", DesugarCollections.unmodifiableMap(hashMap6));
+        HashMap hashMap7 = new HashMap();
+        hashMap7.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap7.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D mask;uniform vec4 color;void main(void) {   vec4 dst = texture2D(texture, varTexcoord.st, 0.0);   float srcAlpha = color.a * texture2D(mask, varTexcoord.st, 0.0).a;   float outAlpha = srcAlpha + dst.a * (1.0 - srcAlpha);   gl_FragColor.rgb = (color.rgb * srcAlpha + dst.rgb * dst.a * (1.0 - srcAlpha)) / outAlpha;   gl_FragColor.a = outAlpha;}");
+        hashMap7.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap7.put("uniforms", new String[]{"mvpMatrix", "texture", "mask", "color"});
+        hashMap.put("compositeWithMask", DesugarCollections.unmodifiableMap(hashMap7));
+        HashMap hashMap8 = new HashMap();
+        hashMap8.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap8.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D mask;uniform sampler2D blured;uniform vec4 color;void main (void) {   vec4 dst = texture2D(texture, varTexcoord.st, 0.0);   float srcAlpha = color.a * texture2D(mask, varTexcoord.st, 0.0).a;   float outAlpha = srcAlpha + dst.a * (1.0 - srcAlpha);   vec4 blurColor = texture2D(blured, varTexcoord.st, 0.0);   gl_FragColor.rgb = (blurColor.rgb * srcAlpha + dst.rgb * dst.a * (1.0 - srcAlpha)) / outAlpha;   gl_FragColor.a = outAlpha;   gl_FragColor.rgb *= gl_FragColor.a;}");
+        hashMap8.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap8.put("uniforms", new String[]{"mvpMatrix", "texture", "mask", "blured", "color"});
+        hashMap.put("blitWithMaskBlurer", DesugarCollections.unmodifiableMap(hashMap8));
+        HashMap hashMap9 = new HashMap();
+        hashMap9.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap9.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D mask;uniform sampler2D blured;uniform vec4 color;void main (void) {   vec4 dst = texture2D(texture, varTexcoord.st, 0.0);   float srcAlpha = color.a * texture2D(mask, varTexcoord.st, 0.0).a;   float outAlpha = srcAlpha + dst.a * (1.0 - srcAlpha);   vec4 blurColor = texture2D(blured, varTexcoord.st, 0.0);   gl_FragColor.rgb = (blurColor.rgb * srcAlpha + dst.rgb * dst.a * (1.0 - srcAlpha)) / outAlpha;   gl_FragColor.a = outAlpha;}");
+        hashMap9.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap9.put("uniforms", new String[]{"mvpMatrix", "texture", "mask", "blured", "color"});
+        hashMap.put("compositeWithMaskBlurer", DesugarCollections.unmodifiableMap(hashMap9));
+        HashMap hashMap10 = new HashMap();
+        hashMap10.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap10.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D blured;uniform float eraser;uniform float flipy;uniform sampler2D mask;void main (void) {   vec2 uv = vec2(varTexcoord.x, flipy > 0. ? 1. - varTexcoord.y : varTexcoord.y);   vec4 dst = texture2D(texture, uv, 0.0);   vec4 blurColor = texture2D(blured, uv, 0.0);   gl_FragColor = dst.a <= 0. ? vec4(0.) : vec4(blurColor.rgb, 1.) * dst.a;   if (eraser > 0.) {       vec4 maskColor = texture2D(mask, uv, 0.0);       if (maskColor.a > 0.) {           gl_FragColor.rgba *= (1. - maskColor.a);       }   }}");
+        hashMap10.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap10.put("uniforms", new String[]{"mvpMatrix", "texture", "blured", "eraser", "mask", "flipy"});
+        hashMap.put("videoBlur", DesugarCollections.unmodifiableMap(hashMap10));
+        HashMap hashMap11 = new HashMap();
+        hashMap11.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;attribute float alpha;varying vec2 varTexcoord;varying float varIntensity;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;   varIntensity = alpha;}");
+        hashMap11.put("fragment", "precision highp float;varying vec2 varTexcoord;varying float varIntensity;uniform sampler2D texture;void main (void) {   vec4 f = texture2D(texture, varTexcoord.st, 0.0);   gl_FragColor = vec4(f.r * varIntensity, f.g, f.b, 0.0);}");
+        hashMap11.put("attributes", new String[]{"inPosition", "inTexcoord", "alpha"});
+        hashMap11.put("uniforms", new String[]{"mvpMatrix", "texture"});
+        hashMap.put("brushLight", DesugarCollections.unmodifiableMap(hashMap11));
+        HashMap hashMap12 = new HashMap();
+        hashMap12.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap12.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D mask;uniform vec4 color;void main (void) {   vec4 dst = texture2D(texture, varTexcoord.st, 0.0);   vec3 maskColor = texture2D(mask, varTexcoord.st, 0.0).rgb;   float srcAlpha = clamp(0.78 * maskColor.r + maskColor.b + maskColor.g, 0.0, 1.0);   vec3 borderColor = mix(color.rgb, vec3(1.0, 1.0, 1.0), 0.86);   vec3 finalColor = mix(color.rgb, borderColor, maskColor.g);   finalColor = mix(finalColor.rgb, vec3(1.0, 1.0, 1.0), maskColor.b);   float outAlpha = srcAlpha + dst.a * (1.0 - srcAlpha);   gl_FragColor.rgb = (finalColor * srcAlpha + dst.rgb * dst.a * (1.0 - srcAlpha)) / outAlpha;   gl_FragColor.a = outAlpha;   gl_FragColor.rgb *= gl_FragColor.a;}");
+        hashMap12.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap12.put("uniforms", new String[]{"mvpMatrix", "texture", "mask", "color"});
+        hashMap.put("blitWithMaskLight", DesugarCollections.unmodifiableMap(hashMap12));
+        HashMap hashMap13 = new HashMap();
+        hashMap13.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap13.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D mask;uniform vec4 color;void main(void) {   vec4 dst = texture2D(texture, varTexcoord.st, 0.0);   vec3 maskColor = texture2D(mask, varTexcoord.st, 0.0).rgb;   float srcAlpha = clamp(0.78 * maskColor.r + maskColor.b + maskColor.g, 0.0, 1.0);   vec3 borderColor = mix(color.rgb, vec3(1.0, 1.0, 1.0), 0.86);   vec3 finalColor = mix(color.rgb, borderColor, maskColor.g);   finalColor = mix(finalColor.rgb, vec3(1.0, 1.0, 1.0), maskColor.b);   float outAlpha = srcAlpha + dst.a * (1.0 - srcAlpha);   gl_FragColor.rgb = (finalColor * srcAlpha + dst.rgb * dst.a * (1.0 - srcAlpha)) / outAlpha;   gl_FragColor.a = outAlpha;}");
+        hashMap13.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap13.put("uniforms", new String[]{"mvpMatrix", "texture", "mask", "color"});
+        hashMap.put("compositeWithMaskLight", DesugarCollections.unmodifiableMap(hashMap13));
+        HashMap hashMap14 = new HashMap();
+        hashMap14.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap14.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D mask;uniform vec4 color;void main (void) {   vec4 dst = texture2D(texture, varTexcoord.st, 0.0);   float srcAlpha = color.a * texture2D(mask, varTexcoord.st, 0.0).a;   float outAlpha = dst.a * (1. - srcAlpha);   gl_FragColor.rgb = dst.rgb;   gl_FragColor.a = outAlpha;   gl_FragColor.rgb *= gl_FragColor.a;}");
+        hashMap14.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap14.put("uniforms", new String[]{"mvpMatrix", "texture", "mask", "color"});
+        hashMap.put("blitWithMaskEraser", DesugarCollections.unmodifiableMap(hashMap14));
+        HashMap hashMap15 = new HashMap();
+        hashMap15.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap15.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D otexture;uniform sampler2D mask;uniform vec4 color;uniform float preview;void main (void) {   vec4 dst = texture2D(texture, varTexcoord.st, 0.0);   float srcAlpha = color.a * texture2D(mask, varTexcoord.st, 0.0).a;   float outAlpha = dst.a * (1. - srcAlpha);   gl_FragColor = texture2D(otexture, varTexcoord.st, 0.0) * (preview + (1.0 - preview) * outAlpha);   gl_FragColor.rgb *= gl_FragColor.a;}");
+        hashMap15.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap15.put("uniforms", new String[]{"mvpMatrix", "texture", "otexture", "preview", "mask", "color"});
+        hashMap.put("blitWithMaskEraser_masking", DesugarCollections.unmodifiableMap(hashMap15));
+        HashMap hashMap16 = new HashMap();
+        hashMap16.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap16.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D mask;uniform vec4 color;void main (void) {   vec4 dst = texture2D(texture, varTexcoord.st, 0.0);   float srcAlpha = color.a * texture2D(mask, varTexcoord.st, 0.0).a;   gl_FragColor = vec4(dst.rgb, dst.a * (1.0 - srcAlpha));   if (gl_FragColor.a <= 0.) gl_FragColor.rgb = vec3(0.);}");
+        hashMap16.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap16.put("uniforms", new String[]{"mvpMatrix", "texture", "mask", "color"});
+        hashMap.put("compositeWithMaskEraser", DesugarCollections.unmodifiableMap(hashMap16));
+        HashMap hashMap17 = new HashMap();
+        hashMap17.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap17.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;void main (void) {   gl_FragColor = texture2D(texture, varTexcoord.st, 0.0);}");
+        hashMap17.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap17.put("uniforms", new String[]{"mvpMatrix", "texture"});
+        hashMap.put("nonPremultipliedBlit", DesugarCollections.unmodifiableMap(hashMap17));
+        HashMap hashMap18 = new HashMap();
+        hashMap18.put("vertex", "precision highp float;uniform mat4 mvpMatrix;attribute vec4 inPosition;attribute vec2 inTexcoord;varying vec2 varTexcoord;void main (void) {   gl_Position = mvpMatrix * inPosition;   varTexcoord = inTexcoord;}");
+        hashMap18.put("fragment", "precision highp float;varying vec2 varTexcoord;uniform sampler2D texture;uniform sampler2D mask;uniform bool composite;uniform int type;uniform vec4 color;uniform vec2 resolution;uniform vec2 center;uniform vec2 radius;uniform float thickness;uniform float rounding;uniform float rotation;uniform float arrowTriangleLength;uniform vec2 middle;uniform bool fill;uniform bool clear;float sdTriangle( in vec2 p, in vec2 p0, in vec2 p1, in vec2 p2 ) {   vec2 e0 = p1 - p0, e1 = p2 - p1, e2 = p0 - p2, v0 = p - p0, v1 = p - p1, v2 = p - p2;   vec2 pq0 = v0 - e0*clamp( dot(v0,e0)/dot(e0,e0), 0.0, 1.0 ), pq1 = v1 - e1*clamp( dot(v1,e1)/dot(e1,e1), 0.0, 1.0 ), pq2 = v2 - e2*clamp( dot(v2,e2)/dot(e2,e2), 0.0, 1.0 );   float s = e0.x * e2.y - e0.y * e2.x;   vec2 d = min( min( vec2( dot( pq0, pq0 ), s*(v0.x*e0.y-v0.y*e0.x) ),                      vec2( dot( pq1, pq1 ), s*(v1.x*e1.y-v1.y*e1.x) )),                      vec2( dot( pq2, pq2 ), s*(v2.x*e2.y-v2.y*e2.x) ));   return -sqrt(d.x) * sign(d.y);}float sdBezier(vec2 A, vec2 B, vec2 C, vec2 P) {    vec2 a=B-A,b=A-B*2.+C,c=a*2.,d=A-P;    vec3 k=vec3(3.*dot(a,b),2.*dot(a,a)+dot(d,b),dot(d,a))/dot(b,b);    float p=k.y-k.x*k.x/3., p3=p*p*p, q=k.x*(2.*k.x*k.x-9.*k.y)/27.+k.z, D=q*q+4.*p3/27.;    if (D >= 0.) {        float z=sqrt(D);        vec2 x=(vec2(z,-z)-q)/2., uv=sign(x)*pow(abs(x),vec2(1./3.));        float r=clamp(uv.x+uv.y-k.x/3.,0.,1.);        return length(d+(c+b*r)*r);    } else {        float v=acos(-sqrt(-27./p3)*q/2.)/3., m=cos(v), n=sin(v)*1.73205;        vec3 t=clamp(vec3(m+m,-n-m,n-m)*sqrt(-p/3.)-k.x/3.,0.,1.);        return min(min(length(d+(c+b*t.x)*t.x),length(d+(c+b*t.y)*t.y)),length(d+(c+b*t.z)*t.z));    }}vec4 blendOver(vec4 a, vec4 b) {    float alpha = b.a + a.a * (1. - b.a);    if (alpha <= 0.) return vec4(0.);    return vec4((b.rgb * b.a + a.rgb * a.a * (1. - b.a)) / alpha, alpha);}void main (void) {   vec4 dst = clear ? vec4(0.) : texture2D(texture, varTexcoord.st, 0.0);   vec2 p = varTexcoord.st * resolution - center;   float sdf;   vec2 pp = p;   p *= mat2(cos(rotation), -sin(rotation), sin(rotation), cos(rotation));   if (type == 0) {       sdf = length(p) - min(radius.x, radius.y);   } else if (type == 1 || type == 3) {       vec2 q = abs(p) - abs(radius) + rounding;       sdf = min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - rounding;   } else if (type == 2) {       float n = 5.;       float an = 3.141593 / float(n);       vec2  acs = vec2(cos(an), sin(an)), ecs = vec2(cos(1.), sin(1.));       float bn = mod(atan(p.x, -p.y), 2.0 * an) - an;       p = length(p) * vec2(cos(bn), abs(sin(bn)));       p -= min(radius.x, radius.y) * acs;       p += ecs*clamp( -dot(p, ecs), 0.0, min(radius.x, radius.y) * acs.y / ecs.y);       sdf = length(p) * sign(p.x);   } else if (type == 4) {       p += center;       sdf = sdBezier(center, middle, radius, p) - thickness;       vec2 ba = center - middle;       float a = atan(ba.y, ba.x), g = 30. / 180. * 3.14, ar = sin(g) * arrowTriangleLength;       vec2 ac = center + vec2(cos(a),sin(a)) * ar / 2.;       sdf = min(sdf, max(0., sdTriangle(p, ac, ac+vec2(cos(a+3.14-g), sin(a+3.14-g))*ar, ac+vec2(cos(a+3.14+g), sin(a+3.14+g))*ar)));       sdf += thickness;   }   if (type == 3) {       vec2 c = middle-center;       float a = atan(c.x, -c.y), r = min(radius.x, radius.y) / 2.;       float k = rounding/2., bsdf = sdTriangle(pp+center, center-vec2(cos(a),sin(a))*r, center-vec2(cos(a-3.14),sin(a-3.14))*r, middle);       float h = max(k-abs(sdf-bsdf), 0.)/k;       sdf = min(sdf,bsdf)-h*h*h*k*(1.0/6.0);   }   if (fill && sdf < 0.) {       sdf = 0.;   }   vec4 c = vec4(color.rgb, color.a * (1. - clamp((abs(sdf) - thickness), 0., 2.) / 2.));   gl_FragColor = blendOver(dst, c);   if (!composite) {       gl_FragColor.rgb *= gl_FragColor.a;   }}");
+        hashMap18.put("attributes", new String[]{"inPosition", "inTexcoord"});
+        hashMap18.put("uniforms", new String[]{"mvpMatrix", "texture", "mask", "clear", "color", TeXSymbolParser.TYPE_ATTR, "color", "resolution", "center", "radius", "thickness", "rounding", "fill", "rotation", "middle", "arrowTriangleLength", "composite"});
+        hashMap.put("shape", DesugarCollections.unmodifiableMap(hashMap18));
+        a = DesugarCollections.unmodifiableMap(hashMap);
     }
 }

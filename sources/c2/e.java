@@ -1,103 +1,146 @@
 package c2;
 
-import e9.i0;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
+import android.content.Context;
+import android.media.AudioManager;
+import android.os.Handler;
+import android.os.Looper;
+import e2.h0;
+import e2.i0;
+import i2.r0;
+import v7.w6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e {
-    public final i0 a;
-    public final ArrayList b = new ArrayList();
-    public ByteBuffer[] c = new ByteBuffer[0];
-    public boolean d;
+    public final d9.u a;
+    public final Handler b;
+    public r0 c;
+    public b2.f d;
+    public int f;
+    public h h;
+    public float g = 1.0f;
+    public int e = 0;
 
-    public e(i0 i0Var) {
-        this.a = i0Var;
-        f fVar = f.e;
-        this.d = false;
+    public e(Context context, Looper looper, r0 r0Var) {
+        this.a = w6.a(new d(context, 0));
+        this.c = r0Var;
+        this.b = new Handler(looper);
     }
 
     public final void a() {
-        ArrayList arrayList = this.b;
-        arrayList.clear();
-        this.d = false;
-        int i10 = 0;
-        while (true) {
-            i0 i0Var = this.a;
-            if (i10 >= i0Var.size()) {
-                break;
-            }
-            h hVar = (h) i0Var.get(i10);
-            hVar.flush();
-            if (hVar.isActive()) {
-                arrayList.add(hVar);
-            }
-            i10++;
+        int i10 = this.e;
+        if (i10 == 1 || i10 == 0 || this.h == null) {
+            return;
         }
-        this.c = new ByteBuffer[arrayList.size()];
-        for (int i11 = 0; i11 <= b(); i11++) {
-            this.c[i11] = ((h) arrayList.get(i11)).a();
+        i.a((AudioManager) this.a.get(), this.h);
+    }
+
+    public final void b(int i10) {
+        r0 r0Var = this.c;
+        if (r0Var != null) {
+            i0 i0Var = r0Var.n;
+            i0Var.getClass();
+            h0 c10 = i0.c();
+            c10.a = i0Var.a.obtainMessage(33, i10, 0);
+            c10.b();
         }
     }
 
-    public final int b() {
-        return this.c.length - 1;
+    public final void c(int i10) {
+        if (this.e == i10) {
+            return;
+        }
+        this.e = i10;
+        float f7 = i10 == 4 ? 0.2f : 1.0f;
+        if (this.g == f7) {
+            return;
+        }
+        this.g = f7;
+        r0 r0Var = this.c;
+        if (r0Var != null) {
+            r0Var.n.f(34);
+        }
     }
 
-    public final boolean c() {
-        return this.d && ((h) this.b.get(b())).b() && !this.c[b()].hasRemaining();
-    }
-
-    public final boolean d() {
-        return !this.b.isEmpty();
-    }
-
-    public final void e(ByteBuffer byteBuffer) {
-        boolean z10;
-        for (boolean z11 = true; z11; z11 = z10) {
-            z10 = false;
-            int i10 = 0;
-            while (i10 <= b()) {
-                if (!this.c[i10].hasRemaining()) {
-                    ArrayList arrayList = this.b;
-                    h hVar = (h) arrayList.get(i10);
-                    if (!hVar.b()) {
-                        ByteBuffer byteBuffer2 = i10 > 0 ? this.c[i10 - 1] : byteBuffer.hasRemaining() ? byteBuffer : h.a;
-                        long remaining = byteBuffer2.remaining();
-                        hVar.c(byteBuffer2);
-                        this.c[i10] = hVar.a();
-                        z10 |= remaining - ((long) byteBuffer2.remaining()) > 0 || this.c[i10].hasRemaining();
-                    } else if (!this.c[i10].hasRemaining() && i10 < b()) {
-                        ((h) arrayList.get(i10 + 1)).e();
-                    }
+    public final int d(int i10, boolean z10) {
+        int i11;
+        f fVar;
+        boolean z11 = false;
+        if (i10 == 1 || (i11 = this.f) != 1) {
+            a();
+            c(0);
+            return 1;
+        }
+        if (!z10) {
+            int i12 = this.e;
+            if (i12 == 1) {
+                return -1;
+            }
+            if (i12 == 3) {
+                return 0;
+            }
+        } else if (this.e != 2) {
+            h hVar = this.h;
+            if (hVar == null) {
+                if (hVar == null) {
+                    fVar = new f();
+                    fVar.b = b2.f.i;
+                    fVar.a = i11;
+                } else {
+                    f fVar2 = new f();
+                    fVar2.a = hVar.a;
+                    fVar2.b = hVar.d;
+                    fVar2.c = hVar.e;
+                    fVar = fVar2;
                 }
-                i10++;
+                b2.f fVar3 = this.d;
+                if (fVar3 != null && fVar3.a == 1) {
+                    z11 = true;
+                }
+                fVar3.getClass();
+                fVar.b = fVar3;
+                fVar.c = z11;
+                fVar.d = true;
+                AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() { // from class: c2.c
+                    @Override // android.media.AudioManager.OnAudioFocusChangeListener
+                    public final void onAudioFocusChange(int i13) {
+                        b2.f fVar4;
+                        e eVar = e.this;
+                        eVar.getClass();
+                        if (i13 == -3 || i13 == -2) {
+                            if (i13 != -2 && ((fVar4 = eVar.d) == null || fVar4.a != 1)) {
+                                eVar.c(4);
+                                return;
+                            } else {
+                                eVar.b(0);
+                                eVar.c(3);
+                                return;
+                            }
+                        }
+                        if (i13 == -1) {
+                            eVar.b(-1);
+                            eVar.a();
+                            eVar.c(1);
+                        } else if (i13 != 1) {
+                            a1.g.x(i13, "Unknown focus change type: ", "AudioFocusManager");
+                        } else {
+                            eVar.c(2);
+                            eVar.b(1);
+                        }
+                    }
+                };
+                Handler handler = this.b;
+                handler.getClass();
+                this.h = new h(fVar.a, onAudioFocusChangeListener, handler, fVar.b, fVar.c, fVar.d);
             }
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof e)) {
-            return false;
-        }
-        i0 i0Var = ((e) obj).a;
-        i0 i0Var2 = this.a;
-        if (i0Var2.size() != i0Var.size()) {
-            return false;
-        }
-        for (int i10 = 0; i10 < i0Var2.size(); i10++) {
-            if (i0Var2.get(i10) != i0Var.get(i10)) {
-                return false;
+            int h = i.h((AudioManager) this.a.get(), this.h);
+            if (h == 1 || h == 2) {
+                c(2);
+                return 1;
             }
+            c(1);
+            return -1;
         }
-        return true;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
+        return 1;
     }
 }

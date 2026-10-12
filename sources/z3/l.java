@@ -1,14 +1,15 @@
 package z3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final class l {
-    public static final l c = new l(-9223372036854775807L, false);
-    public final long a;
-    public final boolean b;
+import b2.x;
 
-    public l(long j3, boolean z10) {
-        this.a = j3;
-        this.b = z10;
-    }
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public interface l {
+    public static final oa.d D = new oa.d(29);
+
+    int J(x xVar);
+
+    boolean b0(x xVar);
+
+    n p(x xVar);
 }

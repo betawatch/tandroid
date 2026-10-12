@@ -3,10 +3,9 @@ package k6;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import n4.x;
-import w7.d0;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c extends o6.a {
     public static final Parcelable.Creator<c> CREATOR = new g8.j(18);
@@ -14,15 +13,15 @@ public final class c extends o6.a {
     public final int b;
     public final long c;
 
-    public c(int i10, String str, long j3) {
+    public c(int i10, String str, long j10) {
         this.a = str;
         this.b = i10;
-        this.c = j3;
+        this.c = j10;
     }
 
     public final long b() {
-        long j3 = this.c;
-        return j3 == -1 ? this.b : j3;
+        long j10 = this.c;
+        return j10 == -1 ? this.b : j10;
     }
 
     public final boolean equals(Object obj) {
@@ -42,27 +41,27 @@ public final class c extends o6.a {
     }
 
     public final String toString() {
-        x xVar = new x(this);
-        xVar.o(this.a, "name");
-        xVar.o(Long.valueOf(b()), "version");
-        return xVar.toString();
+        m4.c cVar = new m4.c(this);
+        cVar.u(this.a, "name");
+        cVar.u(Long.valueOf(b()), "version");
+        return cVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = d0.q(parcel, 20293);
-        d0.l(parcel, 1, this.a);
-        d0.s(parcel, 2, 4);
+        int q6 = g0.q(parcel, 20293);
+        g0.l(parcel, 1, this.a);
+        g0.s(parcel, 2, 4);
         parcel.writeInt(this.b);
         long b10 = b();
-        d0.s(parcel, 3, 8);
+        g0.s(parcel, 3, 8);
         parcel.writeLong(b10);
-        d0.r(parcel, q6);
+        g0.r(parcel, q6);
     }
 
-    public c(String str, long j3) {
+    public c(String str, long j10) {
         this.a = str;
-        this.c = j3;
+        this.c = j10;
         this.b = -1;
     }
 }

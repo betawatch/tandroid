@@ -1,43 +1,53 @@
 package a3;
 
+import android.content.res.Resources;
 import android.util.Base64;
+import e9.c2;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s implements d9.j {
+public final /* synthetic */ class s implements d9.u {
     public final /* synthetic */ int a;
 
     public /* synthetic */ s(int i10) {
         this.a = i10;
     }
 
-    @Override // d9.j
+    @Override // d9.u
     public final Object get() {
         switch (this.a) {
             case 0:
                 try {
                     return Class.forName("androidx.media3.effect.DefaultVideoFrameProcessor$Factory$Builder");
-                } catch (Exception e7) {
-                    throw new IllegalStateException(e7);
+                } catch (Exception e) {
+                    throw new IllegalStateException(e);
                 }
             case 1:
                 throw new IllegalStateException();
             case 2:
                 ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor();
-                if (newSingleThreadExecutor instanceof i9.x) {
-                    return (i9.x) newSingleThreadExecutor;
+                if (newSingleThreadExecutor instanceof j9.z) {
+                    return (j9.z) newSingleThreadExecutor;
                 }
-                return newSingleThreadExecutor instanceof ScheduledExecutorService ? new i9.b0((ScheduledExecutorService) newSingleThreadExecutor) : new i9.y(newSingleThreadExecutor);
+                return newSingleThreadExecutor instanceof ScheduledExecutorService ? new j9.d0((ScheduledExecutorService) newSingleThreadExecutor) : new j9.a0(newSingleThreadExecutor);
             case 3:
-                return new i2.k(new y2.d(), MediaDataController.MAX_STYLE_RUNS_COUNT, 2000);
-            default:
+                return new i2.i(new y2.d(), MediaDataController.MAX_STYLE_RUNS_COUNT, MediaDataController.MAX_STYLE_RUNS_COUNT, MediaDataController.MAX_STYLE_RUNS_COUNT, 2000, MediaDataController.MAX_STYLE_RUNS_COUNT, true, c2.h);
+            case 4:
                 byte[] bArr = new byte[12];
                 j2.h.i.nextBytes(bArr);
                 return Base64.encodeToString(bArr, 10);
+            default:
+                Resources system = Resources.getSystem();
+                int i10 = system.getDisplayMetrics().widthPixels;
+                try {
+                    i10 = system.getDimensionPixelSize(system.getIdentifier("config_mediaMetadataBitmapMaxSize", "dimen", "android"));
+                } catch (Resources.NotFoundException unused) {
+                }
+                return Integer.valueOf(i10);
         }
     }
 }

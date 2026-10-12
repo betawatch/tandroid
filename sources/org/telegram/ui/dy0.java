@@ -1,48 +1,41 @@
 package org.telegram.ui;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Iterator;
-import org.telegram.messenger.GenericProvider;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dy0 implements GenericProvider, org.telegram.ui.Components.gm0, y60 {
-    public final /* synthetic */ gy0 a;
+public final class dy0 extends ClickableSpan {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ ey0 b;
 
-    public /* synthetic */ dy0(gy0 gy0Var) {
-        this.a = gy0Var;
+    public dy0(ey0 ey0Var, String str) {
+        this.b = ey0Var;
+        this.a = str;
     }
 
-    @Override // org.telegram.ui.y60
-    public void b(ArrayList arrayList, boolean z10, boolean z11) {
-        Iterator it = arrayList.iterator();
-        if (it.hasNext()) {
-            throw null;
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        org.telegram.ui.Components.sc b10;
+        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.a));
+        org.telegram.ui.Components.zc a02 = org.telegram.ui.Components.zc.a0(this.b.d);
+        String string = LocaleController.getString(R.string.LinkCopied);
+        org.telegram.ui.ActionBar.c6 resourceProvider = this.b.d.getResourceProvider();
+        a02.getClass();
+        if (AndroidUtilities.shouldShowClipboardToast()) {
+            org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(a02.W(), resourceProvider);
+            acVar.c(R.raw.voip_invite, 36, 36, "Wibe", "Circle");
+            acVar.b.setText(string);
+            b10 = a02.b(acVar, 1500);
+        } else {
+            b10 = new org.telegram.ui.Components.rb();
         }
-        this.a.V();
-    }
-
-    @Override // org.telegram.ui.Components.gm0
-    public boolean d(int i10, View view) {
-        gy0 gy0Var = this.a;
-        if (i10 < gy0Var.r || i10 >= gy0Var.s) {
-            return false;
-        }
-        if (gy0Var.y != 1) {
-            throw null;
-        }
-        gy0Var.U(Long.valueOf(gy0Var.getMessagesController().blockePeers.keyAt(i10 - gy0Var.r)), view);
-        return true;
-    }
-
-    @Override // org.telegram.messenger.GenericProvider
-    public Object provide(Object obj) {
-        gy0 gy0Var = this.a;
-        gy0Var.getClass();
-        if (((Integer) obj).intValue() == gy0Var.w) {
-            return Integer.valueOf(org.telegram.ui.ActionBar.i6.m1(0.12f, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.p7, false)));
-        }
-        return null;
+        b10.j();
     }
 }

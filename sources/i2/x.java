@@ -1,31 +1,59 @@
 package i2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import android.os.Bundle;
+import org.telegram.messenger.GenericProvider;
+import org.telegram.ui.Components.sc;
+import org.telegram.ui.Components.zc;
+import org.telegram.ui.kh0;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x implements e2.n, e2.m {
+public final /* synthetic */ class x implements e2.o, e2.j, p.a, GenericProvider {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f0 b;
+    public final /* synthetic */ boolean b;
 
-    public /* synthetic */ x(f0 f0Var, int i10) {
+    public /* synthetic */ x(int i10, boolean z10) {
         this.a = i10;
-        this.b = f0Var;
+        this.b = z10;
     }
 
-    @Override // e2.n
-    public void e(Object obj, b2.q qVar) {
-        ((b2.z0) obj).onEvents(this.b.f, new b2.y0(qVar));
-    }
-
-    @Override // e2.m
-    public void invoke(Object obj) {
-        b2.z0 z0Var = (b2.z0) obj;
+    @Override // e2.j
+    public void accept(Object obj) {
         switch (this.a) {
+            case 2:
+                ((m4.n1) obj).X(this.b);
+                break;
             case 3:
-                z0Var.onAvailableCommandsChanged(this.b.N);
+                ((m4.n1) obj).q0(this.b);
                 break;
             default:
-                z0Var.onPlaylistMetadataChanged(this.b.P);
+                ((m4.n1) obj).w(this.b);
                 break;
         }
+    }
+
+    @Override // p.a
+    public sc c(zc zcVar) {
+        return zcVar.k(this.b);
+    }
+
+    @Override // e2.o
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((b2.e1) obj).onShuffleModeEnabledChanged(this.b);
+                break;
+            default:
+                ((b2.e1) obj).onSkipSilenceEnabledChanged(this.b);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        Bundle h = a1.g.h("afterSignup", this.b);
+        kh0 kh0Var = new kh0();
+        kh0Var.l0(h);
+        return kh0Var;
     }
 }

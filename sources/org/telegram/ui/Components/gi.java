@@ -1,68 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MotionEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class gi extends zu {
-    public final /* synthetic */ yi V;
+public final class gi extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gi(yi yiVar, Context context, oi oiVar, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, oiVar, null, 1, true, e6Var);
-        this.V = yiVar;
+    public /* synthetic */ gi(Object obj, int i10, Object obj2, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = i10;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.ui.Components.zu
-    public final void f() {
-        super.f();
-        a00 emojiView = getEmojiView();
-        if (emojiView != null) {
-            emojiView.w0 = false;
-            emojiView.w2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.zu
-    public final void i(Menu menu) {
-        org.telegram.ui.ActionBar.n2 n2Var = this.V.f0;
-        if (n2Var instanceof org.telegram.ui.zn) {
-            org.telegram.ui.zn.n8(menu, ((org.telegram.ui.zn) n2Var).h, true, true, true, true);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        yi yiVar = this.V;
-        gi giVar = yiVar.S0;
-        if (!yiVar.x1) {
-            if (motionEvent.getX() <= giVar.getEditText().getLeft() || motionEvent.getX() >= giVar.getEditText().getRight() || motionEvent.getY() <= giVar.getEditText().getTop() || motionEvent.getY() >= giVar.getEditText().getBottom()) {
-                yiVar.w1(giVar.getEditText(), false);
-            } else {
-                yiVar.w1(giVar.getEditText(), true);
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.V.f2();
-    }
-
-    @Override // org.telegram.ui.Components.zu
-    public final void q(int i10, int i11) {
-        yi yiVar = this.V;
-        yiVar.f2();
-        if (yiVar.c0) {
-            yiVar.Q1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                vi viVar = (vi) this.d;
+                viVar.B0.setAlpha(0.0f);
+                viVar.B0.setTranslationY(AndroidUtilities.dp(78.0f) + this.b);
+                ji jiVar = viVar.e0;
+                ni niVar = viVar.B0;
+                Float valueOf = Float.valueOf(1.0f);
+                jiVar.getClass();
+                jiVar.a(niVar, valueOf);
+                viVar.a1.setAlpha(0.0f);
+                o1.k kVar = new o1.k(viVar.C0, o1.h.n, 0.0f);
+                kVar.u.a(0.75f);
+                kVar.u.b(500.0f);
+                kVar.b(new n7(this, 3));
+                kVar.a(new fi.m4(3, this, (hh) this.c));
+                viVar.w1 = kVar;
+                kVar.h();
+                break;
+            case 1:
+                a5.a aVar = (a5.a) this.d;
+                ((mm0) aVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                aVar.c = null;
+                break;
+            default:
+                zh.r3 r3Var = (zh.r3) this.d;
+                r3Var.U1();
+                zh.d2 d2Var = r3Var.g0;
+                int i10 = this.b;
+                d2Var.setVisibility(i10 == 0 ? 0 : 8);
+                r3Var.s0.setVisibility(i10 == 1 ? 0 : 8);
+                r3Var.z0.setVisibility(i10 == 2 ? 0 : 8);
+                r3Var.B0.setVisibility(i10 == 3 ? 0 : 8);
+                r3Var.u2();
+                r3Var.a1 = null;
+                Runnable runnable = (Runnable) this.c;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
     }
 }

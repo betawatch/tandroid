@@ -1,21 +1,21 @@
 package x7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class t1 implements ia.d {
+public final class t1 implements ja.d {
     public static final t1 a = new t1();
-    public static final ia.c b = new ia.c("errorCode", hg.c.m(sc.v.n(c0.class, new z(1))));
-    public static final ia.c c = new ia.c("isColdCall", hg.c.m(sc.v.n(c0.class, new z(2))));
-    public static final ia.c d = new ia.c("imageInfo", hg.c.m(sc.v.n(c0.class, new z(3))));
-    public static final ia.c e = new ia.c("detectorOptions", hg.c.m(sc.v.n(c0.class, new z(4))));
+    public static final ja.c b = new ja.c("errorCode", i2.d.n(t8.b.m(c0.class, new z(1))));
+    public static final ja.c c = new ja.c("isColdCall", i2.d.n(t8.b.m(c0.class, new z(2))));
+    public static final ja.c d = new ja.c("imageInfo", i2.d.n(t8.b.m(c0.class, new z(3))));
+    public static final ja.c e = new ja.c("detectorOptions", i2.d.n(t8.b.m(c0.class, new z(4))));
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
         r0 r0Var = (r0) obj;
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, r0Var.a);
-        eVar.a(c, r0Var.b);
-        eVar.a(d, null);
-        eVar.a(e, r0Var.c);
+        ja.e eVar = (ja.e) obj2;
+        eVar.d(b, r0Var.a);
+        eVar.d(c, r0Var.b);
+        eVar.d(d, null);
+        eVar.d(e, r0Var.c);
     }
 }

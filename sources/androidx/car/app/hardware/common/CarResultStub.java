@@ -3,19 +3,18 @@ package androidx.car.app.hardware.common;
 import android.os.IBinder;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.hardware.ICarHardwareResult;
-import androidx.car.app.utils.g;
-import com.google.firebase.messaging.i;
+import androidx.car.app.utils.i;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.web.w1;
-import pg.e0;
+import org.telegram.ui.Wallet.t8;
+import org.telegram.ui.ul0;
 import r.a;
 import r.c;
 import w.b;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
@@ -54,7 +53,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private void notifyResults(boolean z10, b bVar) {
         T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
         for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new w1(11, entry, convertAndRecast));
+            entry.getValue().execute(new t8(20, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
@@ -69,7 +68,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
 
     @Override // androidx.car.app.hardware.ICarHardwareResult
     public void onCarHardwareResult(int i10, boolean z10, b bVar, IBinder iBinder) {
-        g.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new i(this, z10, bVar, 12));
+        i.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new com.google.firebase.messaging.i(this, z10, bVar, 11));
     }
 
     public boolean removeListener(c cVar) {
@@ -86,7 +85,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         int i10 = this.mResultType;
         b bVar = this.mBundle;
         aVar.getClass();
-        g.d("unsubscribeCarHardwareResult", new e0(aVar, i10, bVar));
+        i.d("unsubscribeCarHardwareResult", new ul0(aVar, i10, bVar));
         return true;
     }
 }

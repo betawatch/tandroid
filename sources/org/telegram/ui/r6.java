@@ -1,41 +1,43 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class r6 {
-    public long a;
-    public int b;
-    public long c;
-    public final SparseArray d = new SparseArray();
+public final /* synthetic */ class r6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ v6 c;
+    public final /* synthetic */ long[] d;
+    public final /* synthetic */ s6 e;
 
-    public r6(long j3) {
-        this.a = j3;
+    public /* synthetic */ r6(boolean[] zArr, v6 v6Var, long[] jArr, s6 s6Var, int i10) {
+        this.a = i10;
+        this.b = zArr;
+        this.c = v6Var;
+        this.d = jArr;
+        this.e = s6Var;
     }
 
-    public final void a(zh.a aVar, int i10) {
-        SparseArray sparseArray = this.d;
-        s6 s6Var = (s6) sparseArray.get(i10, null);
-        if (s6Var == null) {
-            s6Var = new s6();
-            sparseArray.put(i10, s6Var);
-        }
-        long j3 = aVar.c;
-        s6Var.a += j3;
-        this.c += j3;
-        this.b++;
-        s6Var.b.add(aVar);
-    }
-
-    public final void b(zh.a aVar) {
-        s6 s6Var = (s6) this.d.get(aVar.d, null);
-        if (s6Var != null && s6Var.b.remove(aVar)) {
-            long j3 = s6Var.a;
-            long j10 = aVar.c;
-            s6Var.a = j3 - j10;
-            this.c -= j10;
-            this.b--;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new r6(this.b, this.c, this.d, this.e, 1));
+                break;
+            default:
+                this.b[0] = true;
+                this.c.a(1.0f);
+                long[] jArr = this.d;
+                long j10 = jArr[0];
+                s6 s6Var = this.e;
+                if (j10 <= 0) {
+                    s6Var.dismiss();
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new tu0(s6Var, 16), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
+                    break;
+                }
         }
     }
 }

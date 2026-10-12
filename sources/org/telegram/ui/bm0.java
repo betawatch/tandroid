@@ -1,82 +1,72 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bm0 implements org.telegram.ui.ActionBar.a2, yt, bn0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nn0 b;
+public final class bm0 extends org.telegram.ui.Components.k61 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ bm0(nn0 nn0Var, int i10) {
-        this.a = i10;
-        this.b = nn0Var;
+    static {
+        org.telegram.ui.Components.k61.setup(new bm0());
     }
 
-    @Override // org.telegram.ui.yt
-    public void U0(ut utVar) {
-        switch (this.a) {
-            case 2:
-                nn0 nn0Var = this.b;
-                nn0Var.Y[5].setText(utVar.a);
-                nn0Var.s = utVar.d;
-                break;
-            default:
-                nn0 nn0Var2 = this.b;
-                nn0Var2.Y[0].setText(utVar.a);
-                if (nn0Var2.U0.indexOf(utVar.a) != -1) {
-                    nn0Var2.Z0 = true;
-                    String str = (String) nn0Var2.V0.get(utVar.a);
-                    nn0Var2.Y[1].setText(str);
-                    String str2 = (String) nn0Var2.X0.get(str);
-                    nn0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
-                    nn0Var2.Z0 = false;
-                }
-                AndroidUtilities.runOnUIThread(new yl0(nn0Var2, 3), 300L);
-                nn0Var2.Y[2].requestFocus();
-                EditTextBoldCursor editTextBoldCursor = nn0Var2.Y[2];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                break;
+    @Override // org.telegram.ui.Components.k61
+    public final void bindView(View view, org.telegram.ui.Components.l61 l61Var, boolean z10, org.telegram.ui.Components.z61 z61Var, org.telegram.ui.Components.h71 h71Var) {
+        cm0 cm0Var = (cm0) view;
+        TL_account.Passkey passkey = (TL_account.Passkey) l61Var.G;
+        View.OnClickListener onClickListener = l61Var.D;
+        TextView textView = cm0Var.f;
+        TextView textView2 = cm0Var.e;
+        org.telegram.ui.ActionBar.c6 c6Var = cm0Var.b;
+        FrameLayout frameLayout = cm0Var.c;
+        org.telegram.ui.Components.z9 z9Var = cm0Var.d;
+        cm0Var.r = passkey.id;
+        long j10 = passkey.software_emoji_id;
+        if (j10 != 0) {
+            z9Var.setAnimatedEmojiDrawable(org.telegram.ui.Components.s5.n(cm0Var.a, j10, null, 3));
+            frameLayout.setBackground(null);
+            z9Var.setColorFilter(null);
+            z9Var.setScaleX(1.0f);
+            z9Var.setScaleY(1.0f);
+        } else {
+            int dp = AndroidUtilities.dp(4.0f);
+            int i10 = org.telegram.ui.ActionBar.g6.G6;
+            frameLayout.setBackground(org.telegram.ui.ActionBar.g6.c0(dp, org.telegram.ui.ActionBar.g6.m1(0.04f, org.telegram.ui.ActionBar.g6.w0(i10, c6Var))));
+            z9Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.m1(0.3f, org.telegram.ui.ActionBar.g6.w0(i10, c6Var)), PorterDuff.Mode.SRC_IN));
+            z9Var.setImageResource(R.drawable.msg2_permissions);
+            z9Var.setScaleX(0.666f);
+            z9Var.setScaleY(0.666f);
+            z9Var.setAnimatedEmojiDrawable(null);
         }
-    }
-
-    @Override // org.telegram.ui.bn0
-    public void c(String str, String str2) {
-        this.b.w1();
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                nn0 nn0Var = this.b;
-                nn0Var.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    nn0Var.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
-                }
-            case 1:
-                this.b.finishFragment();
-                break;
-            case 2:
-            case 3:
-            default:
-                nn0.a0(this.b);
-                break;
-            case 4:
-                of.f.s(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
-                break;
+        if (TextUtils.isEmpty(passkey.name)) {
+            textView2.setText(LocaleController.getString(R.string.PasskeyUnknown));
+        } else {
+            textView2.setText(passkey.name);
         }
+        int i11 = passkey.last_usage_date;
+        if (i11 != 0) {
+            textView.setText(LocaleController.formatString(R.string.PasskeyLastUsedOn, LocaleController.formatDateTime(i11, false)));
+        } else {
+            textView.setText(LocaleController.formatString(R.string.PasskeyCreatedOn, LocaleController.formatDateTime(passkey.date, false)));
+        }
+        cm0Var.h.setOnClickListener(onClickListener);
+        cm0Var.n = z10;
+        cm0Var.setWillNotDraw(!z10);
+    }
+
+    @Override // org.telegram.ui.Components.k61
+    public final View createView(Context context, org.telegram.ui.Components.mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
+        return new cm0(context, i10, c6Var);
     }
 }

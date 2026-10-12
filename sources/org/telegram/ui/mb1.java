@@ -1,145 +1,41 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import java.io.File;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mb1 implements Comparator {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class mb1 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ StickersActivity a;
 
-    public /* synthetic */ mb1(int i10) {
-        this.a = i10;
+    public /* synthetic */ mb1(StickersActivity stickersActivity) {
+        this.a = stickersActivity;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x008b A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0089 A[RETURN, SYNTHETIC] */
-    @Override // java.util.Comparator
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int compare(Object obj, Object obj2) {
-        int i10;
-        int i11;
-        switch (this.a) {
-            case 0:
-                return Integer.compare(((org.telegram.ui.ActionBar.h6) obj).V, ((org.telegram.ui.ActionBar.h6) obj2).V);
-            case 1:
-                long j3 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j10 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j3 > j10) {
-                    return 1;
-                }
-                return j3 < j10 ? -1 : 0;
-            case 2:
-                return Integer.compare(((org.telegram.ui.Wallet.g0) obj2).b, ((org.telegram.ui.Wallet.g0) obj).b);
-            case 3:
-                return Integer.compare(((TL_wallet.walletTransaction) obj2).date, ((TL_wallet.walletTransaction) obj).date);
-            case 4:
-                long j11 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j12 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j11 > j12) {
-                    return 1;
-                }
-                return j11 < j12 ? -1 : 0;
-            case 5:
-                return (int) (((org.telegram.ui.web.j) obj2).c - ((org.telegram.ui.web.j) obj).c);
-            case 6:
-                return (int) (((org.telegram.ui.web.j) obj2).c - ((org.telegram.ui.web.j) obj).c);
-            case 7:
-                return ((p2.d) obj).a.compareTo(((p2.d) obj2).a);
-            case 8:
-                return (int) ((((rg.o1) obj).a * 100.0f) - (((rg.o1) obj2).a * 100.0f));
-            case 9:
-                return ((String) obj).compareTo((String) obj2);
-            case 10:
-                return Long.compare(((File) obj2).lastModified(), ((File) obj).lastModified());
-            case 11:
-                return ((y9.d0) ((y9.h1) obj)).a.compareTo(((y9.d0) ((y9.h1) obj2)).a);
-            case 12:
-                i10 = ((b2.s) obj2).j;
-                i11 = ((b2.s) obj).j;
-                break;
-            case 13:
-                Integer num = (Integer) obj;
-                Integer num2 = (Integer) obj2;
-                if (num.intValue() == -1) {
-                    return num2.intValue() == -1 ? 0 : -1;
-                }
-                if (num2.intValue() == -1) {
-                    return 1;
-                }
-                return num.intValue() - num2.intValue();
-            case 14:
-                return Integer.compare(((x2.f) ((List) obj).get(0)).f, ((x2.f) ((List) obj2).get(0)).f);
-            case 15:
-                List list = (List) obj;
-                List list2 = (List) obj2;
-                int i12 = 19;
-                return e9.x.f(x2.o.c((x2.o) Collections.max(list, new mb1(18)), (x2.o) Collections.max(list2, new mb1(18)))).a(list.size(), list2.size()).b((x2.o) Collections.max(list, new mb1(i12)), (x2.o) Collections.max(list2, new mb1(i12)), new mb1(i12)).e();
-            case 16:
-                return ((x2.e) Collections.max((List) obj)).compareTo((x2.e) Collections.max((List) obj2));
-            case 17:
-                return ((x2.l) ((List) obj).get(0)).compareTo((x2.l) ((List) obj2).get(0));
-            case 18:
-                return x2.o.c((x2.o) obj, (x2.o) obj2);
-            case 19:
-                x2.o oVar = (x2.o) obj;
-                x2.o oVar2 = (x2.o) obj2;
-                boolean z10 = oVar.e;
-                int i13 = oVar.s;
-                e9.y0 a2 = (z10 && oVar.n) ? x2.p.l : x2.p.l.a();
-                boolean z11 = oVar.f.B;
-                e9.z zVar = e9.z.a;
-                if (z11) {
-                    zVar = zVar.b(Integer.valueOf(i13), Integer.valueOf(oVar2.s), x2.p.l.a());
-                }
-                return zVar.b(Integer.valueOf(oVar.v), Integer.valueOf(oVar2.v), a2).b(Integer.valueOf(i13), Integer.valueOf(oVar2.s), a2).e();
-            case 20:
-                return ((y2.p) obj).a - ((y2.p) obj2).a;
-            case 21:
-                return Float.compare(((y2.p) obj).c, ((y2.p) obj2).c);
-            case 22:
-                RectF rectF = (RectF) obj;
-                RectF rectF2 = (RectF) obj2;
-                if (Math.abs(rectF.top - rectF2.top) > 1.0E-4f) {
-                    return rectF.top < rectF2.top ? -1 : 1;
-                }
-                if (Math.abs(rectF.left - rectF2.left) <= 1.0E-4f) {
-                    return 0;
-                }
-                if (rectF.left < rectF2.left) {
-                }
-            case 23:
-                i10 = ((TL_stars.SavedStarGift) obj2).date;
-                i11 = ((TL_stars.SavedStarGift) obj).date;
-                break;
-            case 24:
-                i10 = ((TL_stars.SavedStarGift) obj2).date;
-                i11 = ((TL_stars.SavedStarGift) obj).date;
-                break;
-            case 25:
-                return (int) (((yh.c8) obj2).d - ((yh.c8) obj).d);
-            case 26:
-                return Long.compare(((TLRPC.PollAnswer) obj).shuffle_hash ^ Long.MIN_VALUE, ((TLRPC.PollAnswer) obj2).shuffle_hash ^ Long.MIN_VALUE);
-            case 27:
-                return (int) (zg.o0.k((TLObject) obj) - zg.o0.k((TLObject) obj2));
-            default:
-                long j13 = ((zh.a) obj2).c;
-                long j14 = ((zh.a) obj).c;
-                if (j13 > j14) {
-                    return 1;
-                }
-                return j13 < j14 ? -1 : 0;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        StickersActivity.U(this.a, (org.telegram.ui.Components.l61) obj, (View) obj2);
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        boolean z10;
+        org.telegram.ui.Components.l61 l61Var = (org.telegram.ui.Components.l61) obj;
+        View view = (View) obj2;
+        ((Integer) obj3).intValue();
+        ((Float) obj4).floatValue();
+        ((Float) obj5).floatValue();
+        StickersActivity stickersActivity = this.a;
+        if (stickersActivity.x.isEmpty() && (l61Var.G instanceof TLRPC.TL_messages_stickerSet)) {
+            stickersActivity.n0((org.telegram.ui.Cells.m8) view);
+            z10 = true;
+        } else {
+            z10 = false;
         }
-        return i10 - i11;
+        return Boolean.valueOf(z10);
     }
 }

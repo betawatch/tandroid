@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class e0 extends com.google.android.gms.common.api.j implements f0 {
     public static final g6.b G = new g6.b("CastClient", null);
@@ -54,11 +54,11 @@ public final class e0 extends com.google.android.gms.common.api.j implements f0 
         j();
     }
 
-    public static void f(e0 e0Var, long j3, int i10) {
+    public static void f(e0 e0Var, long j10, int i10) {
         TaskCompletionSource taskCompletionSource;
         synchronized (e0Var.B) {
             HashMap hashMap = e0Var.B;
-            Long valueOf = Long.valueOf(j3);
+            Long valueOf = Long.valueOf(j10);
             taskCompletionSource = (TaskCompletionSource) hashMap.get(valueOf);
             e0Var.B.remove(valueOf);
         }

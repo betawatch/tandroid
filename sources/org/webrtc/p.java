@@ -1,25 +1,18 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class p implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ScreenCapturerAndroid b;
+import android.view.Choreographer;
 
-    public /* synthetic */ p(ScreenCapturerAndroid screenCapturerAndroid, int i10) {
-        this.a = i10;
-        this.b = screenCapturerAndroid;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class p implements Choreographer.FrameCallback {
+    public final /* synthetic */ RenderSynchronizer a;
+
+    public /* synthetic */ p(RenderSynchronizer renderSynchronizer) {
+        this.a = renderSynchronizer;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$changeCaptureFormat$1();
-                break;
-            default:
-                this.b.lambda$stopCapture$0();
-                break;
-        }
+    @Override // android.view.Choreographer.FrameCallback
+    public final void doFrame(long j10) {
+        this.a.onDisplayRefreshCycleBegin(j10);
     }
 }

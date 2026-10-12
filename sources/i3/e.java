@@ -1,23 +1,23 @@
 package i3;
 
-import b2.g;
-import c3.h0;
-import e2.v;
+import b2.h;
+import c3.i0;
+import e2.x;
 import f2.p;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class e extends g {
-    public final v b;
-    public final v c;
+public final class e extends h {
+    public final x b;
+    public final x c;
     public int d;
     public boolean e;
     public boolean f;
     public int g;
 
-    public e(h0 h0Var) {
-        super(h0Var);
-        this.b = new v(p.a);
-        this.c = new v(4);
+    public e(i0 i0Var) {
+        super(i0Var);
+        this.b = new x(p.a);
+        this.c = new x(4);
     }
 }

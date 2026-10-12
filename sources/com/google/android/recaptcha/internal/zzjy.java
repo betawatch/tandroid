@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import id.f;
 import java.util.Arrays;
+import jd.f;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzjy implements zzjt {
     public static final zzjy zza = new zzjy();
@@ -41,8 +41,8 @@ public final class zzjy implements zzjt {
         Class[] zzf = zzizVar.zzc().zzf(f.h(zzztVarArr).subList(2, length));
         try {
             zzizVar.zzc().zze(i10, cls.getMethod(zza4, (Class[]) Arrays.copyOf(zzf, zzf.length)));
-        } catch (Exception e7) {
-            throw new zzdm(6, 13, e7);
+        } catch (Exception e) {
+            throw new zzdm(6, 13, e);
         }
     }
 }

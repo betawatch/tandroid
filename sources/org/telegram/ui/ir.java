@@ -1,47 +1,47 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ir implements q0.a {
-    public final /* synthetic */ int a;
+public final class ir implements qq {
+    public final /* synthetic */ TLObject a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ yr d;
 
-    public /* synthetic */ ir(int i10) {
-        this.a = i10;
+    public ir(yr yrVar, TLObject tLObject, long j10, boolean z10) {
+        this.d = yrVar;
+        this.a = tLObject;
+        this.b = j10;
+        this.c = z10;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                View view = (View) obj;
-                boolean z10 = ChatAttachAlertPhotoLayout.q1;
-                if (view instanceof org.telegram.ui.Cells.t5) {
-                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-                    t5Var.c(t5Var.getPhotoEntry() != null && t5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
-                    t5Var.setHighQuality(t5Var.getPhotoEntry() != null && t5Var.getPhotoEntry().isHighQuality());
-                    t5Var.f(t5Var.getPhotoEntry() != null ? t5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
-                    break;
-                }
-                break;
-            case 2:
-                View view2 = (View) obj;
-                if (view2 instanceof org.telegram.ui.Components.mo0) {
-                    ((org.telegram.ui.Components.mo0) view2).a(false, true);
-                    break;
-                }
-                break;
-            default:
-                View view3 = (View) obj;
-                if (view3 instanceof org.telegram.ui.Components.mo0) {
-                    ((org.telegram.ui.Components.mo0) view3).a(false, true);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.qq
+    public final void a(TLRPC.User user) {
+        yr.c0(this.d, user);
+    }
+
+    @Override // org.telegram.ui.qq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLObject tLObject = this.a;
+        if (tLObject instanceof TLRPC.ChannelParticipant) {
+            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
+            channelParticipant.admin_rights = tL_chatAdminRights;
+            channelParticipant.banned_rights = tL_chatBannedRights;
+            channelParticipant.rank = str;
+        }
+        yr yrVar = this.d;
+        rr rrVar = yrVar.m1;
+        long j10 = this.b;
+        if (rrVar != null && i10 == 1) {
+            rrVar.b(j10);
+        } else if (rrVar != null) {
+            rrVar.c(j10, tLObject);
+        }
+        if (this.c) {
+            yrVar.removeSelfFromStack();
         }
     }
 }

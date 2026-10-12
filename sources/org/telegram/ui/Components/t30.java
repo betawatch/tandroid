@@ -1,23 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class t30 extends FrameLayout {
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || !ChatObject.isChannelOrGiga(sharedInstance.getChat())) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.VoipGroupOpenVoiceChat)));
+    public final /* synthetic */ org.telegram.ui.m50 a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t30(org.telegram.ui.m50 m50Var, Context context) {
+        super(context);
+        this.a = m50Var;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        y30.n(this.a);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        boolean z10 = View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i11);
+        org.telegram.ui.m50 m50Var = this.a;
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) m50Var.c.getLayoutParams();
+        if (z10) {
+            int dp = AndroidUtilities.dp(80.0f);
+            marginLayoutParams.leftMargin = dp;
+            marginLayoutParams.rightMargin = dp;
         } else {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.VoipChannelOpenVoiceChat)));
+            int dp2 = AndroidUtilities.dp(16.0f);
+            marginLayoutParams.leftMargin = dp2;
+            marginLayoutParams.rightMargin = dp2;
         }
+        int B = org.telegram.messenger.yh.B(200.0f, View.MeasureSpec.getSize(i10), 2);
+        m50Var.b.setPadding(B, 0, B, 0);
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(370.0f), TLObject.FLAG_30));
+        measureChildWithMargins(m50Var.d, View.MeasureSpec.makeMeasureSpec(0, 0), 0, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30), 0);
     }
 }

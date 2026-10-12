@@ -1,44 +1,117 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.BotWebViewVibrationEffect;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class h40 implements TextWatcher {
-    public final /* synthetic */ g60 a;
+public final class h40 extends FrameLayout {
+    public final Rect a;
+    public final RectF b;
+    public final Path c;
+    public final /* synthetic */ n60 d;
 
-    public h40(g60 g60Var) {
-        this.a = g60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h40(n60 n60Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.d = n60Var;
+        this.a = new Rect();
+        this.b = new RectF();
+        this.c = new Path();
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String str;
-        g60 g60Var = this.a;
-        g60Var.A3.a(TextUtils.isEmpty(editable), true);
-        int codePointCount = Character.codePointCount(editable, 0, editable.length());
-        int i10 = g60Var.d0;
-        if (codePointCount + 25 > i10) {
-            str = "" + (i10 - codePointCount);
-        } else {
-            str = null;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        View childAt;
+        org.telegram.ui.Components.voip.t tVar;
+        n60 n60Var = this.d;
+        g40 g40Var = n60Var.b;
+        if (n60Var.d2 != 1.0f) {
+            if (n60Var.X2 != null && n60Var.b3) {
+                canvas.save();
+                float measuredHeight = (n60Var.X2.getAvatarImageView().getMeasuredHeight() / 2.0f) * (getMeasuredHeight() / n60Var.X2.getAvatarImageView().getMeasuredHeight());
+                float f7 = (1.0f - n60Var.d2) * measuredHeight;
+                float dp = AndroidUtilities.dp(13.0f);
+                float f10 = n60Var.d2;
+                int i10 = (int) ((dp * f10) + f7);
+                int i11 = (int) ((1.0f - f10) * measuredHeight);
+                n60Var.X2.getAvatarWavesDrawable().a(canvas, n60Var.X2.getAvatarImageView().getMeasuredHeight() / 2, n60Var.X2.getAvatarImageView().getMeasuredHeight() / 2, this);
+                n60Var.X2.getAvatarImageView().getImageReceiver().setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                n60Var.X2.getAvatarImageView().r(i10, i10, i11, i11);
+                n60Var.X2.getAvatarImageView().getImageReceiver().draw(canvas);
+                n60Var.X2.getAvatarImageView().setRoundRadius(n60Var.X2.getAvatarImageView().getMeasuredHeight() / 2);
+                canvas.restore();
+            } else if (n60Var.a3 != null && n60Var.Z2 == null && n60Var.O2) {
+                canvas.save();
+                float measuredHeight2 = (n60Var.a3.getAvatarImageView().getMeasuredHeight() / 2.0f) * (getMeasuredHeight() / n60Var.a3.getAvatarImageView().getMeasuredHeight());
+                float f11 = (1.0f - n60Var.d2) * measuredHeight2;
+                float dp2 = AndroidUtilities.dp(13.0f);
+                float f12 = n60Var.d2;
+                int i12 = (int) ((dp2 * f12) + f11);
+                int i13 = (int) ((1.0f - f12) * measuredHeight2);
+                n60Var.a3.getAvatarImageView().getImageReceiver().setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                n60Var.a3.getAvatarImageView().r(i12, i12, i13, i13);
+                n60Var.a3.getAvatarImageView().getImageReceiver().draw(canvas);
+                n60Var.a3.getAvatarImageView().setRoundRadius(n60Var.a3.getAvatarImageView().getMeasuredHeight() / 2);
+                canvas.restore();
+            }
         }
-        g60Var.M.a();
-        g60Var.M.setText(str);
-        g60Var.M.setTextColor(codePointCount >= i10 ? -1280137 : -1);
-        if (codePointCount > i10) {
-            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+        g40Var.setAlpha(n60Var.d2);
+        Path path = this.c;
+        path.reset();
+        float measuredHeight3 = getMeasuredHeight();
+        float measuredWidth = getMeasuredWidth();
+        RectF rectF = this.b;
+        rectF.set(0.0f, 0.0f, measuredHeight3, measuredWidth);
+        path.addRoundRect(rectF, new float[]{AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), 0.0f, 0.0f, 0.0f, 0.0f}, Path.Direction.CCW);
+        canvas.save();
+        canvas.clipPath(path);
+        if (g40Var.i1) {
+            for (int i14 = 0; i14 < g40Var.getChildCount(); i14++) {
+                childAt = g40Var.getChildAt(i14);
+                if (childAt instanceof org.telegram.ui.Components.mi0) {
+                    break;
+                }
+            }
         }
+        childAt = null;
+        if (childAt != null && (tVar = n60Var.Z2) != null && tVar.v && !n60Var.F2) {
+            canvas.save();
+            Rect rect = this.a;
+            rect.setEmpty();
+            g40Var.getChildVisibleRect(childAt, rect, null);
+            int i15 = rect.left;
+            if (i15 < (-g40Var.getMeasuredWidth())) {
+                i15 += g40Var.getMeasuredWidth() * 2;
+            } else if (i15 > g40Var.getMeasuredWidth()) {
+                i15 -= g40Var.getMeasuredWidth() * 2;
+            }
+            canvas.translate(i15, 0.0f);
+            n60Var.Z2.draw(canvas);
+            canvas.restore();
+        }
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.View
+    public final void invalidate() {
+        ViewGroup viewGroup;
+        super.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.e3) this.d).containerView;
+        viewGroup.invalidate();
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int min = Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + min, TLObject.FLAG_30));
     }
 }

@@ -1,54 +1,52 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class we implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ MessagesController c;
-    public final /* synthetic */ CharSequence d;
-    public final /* synthetic */ boolean e;
+public final /* synthetic */ class we implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fo b;
 
-    public /* synthetic */ we(zn znVar, CharSequence charSequence, MessagesController messagesController, boolean z10) {
-        this.b = znVar;
-        this.d = charSequence;
-        this.c = messagesController;
-        this.e = z10;
+    public /* synthetic */ we(fo foVar, int i10) {
+        this.a = i10;
+        this.b = foVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                zn.o0(this.b, this.d, this.c, this.e);
+                mk mkVar = this.b.X1;
+                if (mkVar != null) {
+                    mkVar.c(false);
+                    break;
+                }
+                break;
+            case 1:
+                fo.a1(this.b);
+                break;
+            case 2:
+                this.b.j8(false, true, 0.0f);
+                break;
+            case 3:
+                this.b.j8(false, true, 0.0f);
+                break;
+            case 4:
+                this.b.j8(false, true, 0.0f);
+                break;
+            case 5:
+                this.b.j8(false, true, 0.0f);
+                break;
+            case 6:
+                this.b.j8(false, true, 0.0f);
+                break;
+            case 7:
+                this.b.j8(false, true, 0.0f);
                 break;
             default:
-                zn znVar = this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(znVar.getParentActivity(), 0, znVar.ea);
-                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                String string = LocaleController.getString(R.string.OK);
-                MessagesController messagesController = this.c;
-                alertDialog$Builder.k(string, new ca.b(znVar, messagesController, this.d, this.e, 3));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                String string2 = LocaleController.getString(R.string.SecretLinkPreviewAlert);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.T = string2;
-                znVar.showDialog(b2Var);
-                messagesController.secretWebpagePreview = 0;
-                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", messagesController.secretWebpagePreview).commit();
+                this.b.Gb = null;
                 break;
         }
-    }
-
-    public /* synthetic */ we(zn znVar, MessagesController messagesController, CharSequence charSequence, boolean z10) {
-        this.b = znVar;
-        this.c = messagesController;
-        this.d = charSequence;
-        this.e = z10;
     }
 }

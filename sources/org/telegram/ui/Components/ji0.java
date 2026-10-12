@@ -1,130 +1,171 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ji0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ki0 b;
+public final class ji0 extends z9 implements lw0 {
+    public final int G;
+    public RadialProgress2 H;
+    public ValueAnimator I;
+    public float J;
+    public long K;
+    public boolean L;
+    public final int M;
+    public final Paint N;
+    public Runnable O;
+    public final /* synthetic */ pi0 P;
 
-    public /* synthetic */ ji0(ki0 ki0Var, int i10) {
-        this.a = i10;
-        this.b = ki0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ji0(pi0 pi0Var, Context context, int i10, Paint paint) {
+        super(context);
+        this.P = pi0Var;
+        this.G = AndroidUtilities.dp(64.0f);
+        this.K = -1L;
+        this.M = i10;
+        this.N = paint;
+        setLayerNum(pi0Var.l1);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x007a, code lost:
-    
-        if (r3.getHeight() != r5.b.getHeight()) goto L30;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i10;
-        yi0[] yi0VarArr;
-        switch (this.a) {
-            case 0:
-                ki0 ki0Var = this.b;
-                synchronized (ki0Var.b) {
-                    yi0[] yi0VarArr2 = ki0Var.c;
-                    yi0 yi0Var = yi0VarArr2[0];
-                    yi0[] yi0VarArr3 = ki0Var.d;
-                    i10 = 2;
-                    yi0VarArr = new yi0[]{yi0Var, yi0VarArr3[0], yi0VarArr2[1], yi0VarArr3[1], yi0VarArr2[2], yi0VarArr3[2]};
+    @Override // org.telegram.ui.Components.lw0
+    public final void g(Runnable runnable) {
+        this.O = runnable;
+    }
+
+    @Override // android.view.View
+    public final void invalidate(int i10, int i11, int i12, int i13) {
+        super.invalidate(i10, i11, i12, i13);
+        Runnable runnable = this.O;
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.z9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        pi0 pi0Var = this.P;
+        float[] fArr = pi0Var.O0;
+        Path path = pi0Var.M0;
+        ArrayList arrayList = pi0Var.b1;
+        RectF rectF = pi0Var.N0;
+        org.telegram.ui.wv0 wv0Var = pi0Var.h1;
+        if (wv0Var == null || !wv0Var.n) {
+            if (this.H != null) {
+                int k10 = pi0Var.D0.k(this.M);
+                if (pi0Var.i1) {
+                    k10--;
                 }
-                boolean z10 = false;
-                for (int i11 = 0; i11 < 6; i11 += 2) {
-                    yi0 yi0Var2 = yi0VarArr[i11];
-                    yi0 yi0Var3 = yi0VarArr[i11 + 1];
-                    if (yi0Var2 != null && !yi0Var2.c && yi0Var2.f) {
-                        yi0Var2.e = true;
-                        if (yi0Var3 != null) {
-                            Bitmap bitmap = yi0Var3.b;
-                            if (!yi0Var3.d) {
-                                if (bitmap.getWidth() == yi0Var2.b.getWidth()) {
-                                    break;
-                                }
-                            }
+                Drawable drawable = getImageReceiver().getDrawable();
+                long j10 = 0;
+                if (k10 >= arrayList.size() || arrayList.get(k10) == null ? drawable == null || (this.L && (!(drawable instanceof f6) || ((f6) drawable).d[4] <= 0)) : ((Float) arrayList.get(k10)).floatValue() < 1.0f) {
+                    if (this.K < 0) {
+                        this.K = System.currentTimeMillis();
+                    } else {
+                        long currentTimeMillis = System.currentTimeMillis() - this.K;
+                        long j11 = this.L ? 250L : 750L;
+                        if (currentTimeMillis <= 250 + j11 && currentTimeMillis > j11) {
+                            this.H.E = es.f.getInterpolation((currentTimeMillis - j11) / 250.0f);
                         }
-                        if (yi0Var3 != null) {
-                            yi0Var3.a();
+                    }
+                    if (pi0Var.g1) {
+                        invalidate();
+                    } else {
+                        postInvalidateOnAnimation();
+                    }
+                    invalidate();
+                } else if (this.I == null) {
+                    RadialProgress2 radialProgress2 = this.H;
+                    if ((radialProgress2.c ? radialProgress2.j : radialProgress2.i).w < 1.0f) {
+                        radialProgress2.o(1.0f, true);
+                        j10 = 100;
+                    }
+                    this.J = this.H.E;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    this.I = ofFloat;
+                    ofFloat.setStartDelay(j10);
+                    this.I.setDuration((long) (this.J * 250.0f));
+                    this.I.setInterpolator(es.f);
+                    this.I.addUpdateListener(new g80(this, 5));
+                    this.I.addListener(new fi.v2(this, k10, 9));
+                    this.I.start();
+                }
+                int i10 = pi0Var.m1;
+                if (i10 == 0 && pi0Var.n1 == 0) {
+                    canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.N);
+                    canvas2 = canvas;
+                } else {
+                    canvas2 = canvas;
+                    int i11 = pi0Var.n1;
+                    Paint paint = this.N;
+                    if (i10 == i11) {
+                        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                        float f7 = pi0Var.m1;
+                        canvas2.drawRoundRect(rectF, f7, f7, paint);
+                    } else {
+                        path.reset();
+                        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                        for (int i12 = 0; i12 < 4; i12++) {
+                            fArr[i12] = pi0Var.m1;
+                            fArr[i12 + 4] = pi0Var.n1;
                         }
-                        yi0Var3 = new yi0();
-                        Bitmap createBitmap = Bitmap.createBitmap(yi0Var2.b.getWidth(), yi0Var2.b.getHeight(), Bitmap.Config.ARGB_8888);
-                        yi0Var3.b = createBitmap;
-                        yi0Var3.a = new Canvas(createBitmap);
-                        synchronized (ki0Var.b) {
-                            yi0[] yi0VarArr4 = ki0Var.d;
-                            int i12 = 0;
-                            while (true) {
-                                yi0[] yi0VarArr5 = ki0Var.c;
-                                if (i12 >= yi0VarArr5.length) {
-                                    i12 = 0;
-                                } else if (yi0VarArr5[i12] != yi0Var2) {
-                                    i12++;
-                                }
-                            }
-                            yi0VarArr4[i12] = yi0Var3;
-                        }
-                        Bitmap bitmap2 = yi0Var2.b;
-                        Utilities.stackBlurBitmap(bitmap2, Math.max(10, bitmap2.getWidth() / 180));
-                        synchronized (ki0Var.b) {
-                            if (!yi0Var3.d) {
-                                yi0Var3.f = false;
-                                yi0Var3.b.eraseColor(0);
-                            }
-                            yi0Var3.a.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
-                            yi0Var3.f = true;
-                            Bitmap bitmap3 = yi0Var3.b;
-                            int i13 = 0;
-                            while (true) {
-                                yi0[] yi0VarArr6 = ki0Var.c;
-                                if (i13 >= yi0VarArr6.length) {
-                                    i13 = 0;
-                                } else if (yi0VarArr6[i13] != yi0Var2) {
-                                    i13++;
-                                }
-                            }
-                            ki0Var.b(bitmap3, i13);
-                        }
-                        if (!yi0Var2.d) {
-                            yi0Var2.f = false;
-                            yi0Var2.b.eraseColor(0);
-                        }
-                        yi0Var2.e = false;
-                        if (!yi0Var2.d && yi0Var2.c) {
-                            yi0Var2.d = true;
-                            yi0Var2.b.recycle();
-                        }
-                        z10 = true;
+                        path.addRoundRect(rectF, fArr, Path.Direction.CW);
+                        canvas2.drawPath(path, paint);
                     }
                 }
-                if (z10 && ki0Var.e && ki0Var.h != null) {
-                    ki0Var.postInvalidateOnAnimation();
-                }
-                if (ki0Var.e && (ki0Var.F || ki0Var.H)) {
-                    AndroidUtilities.runOnUIThread(new ji0(ki0Var, i10));
-                    return;
-                } else {
-                    ki0Var.e = false;
-                    return;
-                }
-            case 1:
-                ki0 ki0Var2 = this.b;
-                ki0Var2.H = true;
-                ki0Var2.postInvalidateOnAnimation();
+            } else {
+                canvas2 = canvas;
+            }
+            super.onDraw(canvas);
+            RadialProgress2 radialProgress22 = this.H;
+            if (radialProgress22 == null || radialProgress22.E <= 0.0f) {
                 return;
-            default:
-                ki0 ki0Var3 = this.b;
-                ki0Var3.d();
-                zi0.a.postRunnable(ki0Var3.s);
-                return;
+            }
+            radialProgress22.draw(canvas2);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        if (this.H != null) {
+            int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (this.P.z0.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
+            int dp2 = AndroidUtilities.dp2(80.0f);
+            RadialProgress2 radialProgress2 = this.H;
+            int i14 = this.G;
+            int i15 = (i11 - currentActionBarHeight) - dp2;
+            radialProgress2.q((i10 - i14) / 2, i2.d.z(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate(Rect rect) {
+        super.invalidate(rect);
+        Runnable runnable = this.O;
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        pi0 pi0Var = this.P;
+        if (pi0Var.g1) {
+            pi0Var.invalidate();
+        }
+        Runnable runnable = this.O;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 }

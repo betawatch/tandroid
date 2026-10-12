@@ -10,7 +10,7 @@ import org.webrtc.JniCommon;
 import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class JavaAudioDeviceModule implements AudioDeviceModule {
     private static final String TAG = "JavaAudioDeviceModule";
@@ -25,7 +25,7 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
     private final boolean useStereoInput;
     private final boolean useStereoOutput;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface AudioRecordErrorCallback {
         void onWebRtcAudioRecordError(String str);
 
@@ -34,20 +34,20 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         void onWebRtcAudioRecordStartError(AudioRecordStartErrorCode audioRecordStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum AudioRecordStartErrorCode {
         AUDIO_RECORD_START_EXCEPTION,
         AUDIO_RECORD_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface AudioRecordStateCallback {
         void onWebRtcAudioRecordStart();
 
         void onWebRtcAudioRecordStop();
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class AudioSamples {
         private final int audioFormat;
         private final int channelCount;
@@ -78,7 +78,7 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface AudioTrackErrorCallback {
         void onWebRtcAudioTrackError(String str);
 
@@ -87,20 +87,20 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         void onWebRtcAudioTrackStartError(AudioTrackStartErrorCode audioTrackStartErrorCode, String str);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public enum AudioTrackStartErrorCode {
         AUDIO_TRACK_START_EXCEPTION,
         AUDIO_TRACK_START_STATE_MISMATCH
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface AudioTrackStateCallback {
         void onWebRtcAudioTrackStart();
 
         void onWebRtcAudioTrackStop();
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class Builder {
         private AudioAttributes audioAttributes;
         private int audioFormat;
@@ -267,7 +267,7 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface SamplesReadyCallback {
         void onWebRtcAudioRecordSamplesReady(AudioSamples audioSamples);
     }
@@ -288,27 +288,27 @@ public class JavaAudioDeviceModule implements AudioDeviceModule {
 
     @Override // org.webrtc.audio.AudioDeviceModule
     public long getNativeAudioDeviceModulePointer() {
-        long j3;
+        long j10;
         synchronized (this.nativeLock) {
             try {
                 if (this.nativeAudioDeviceModule == 0) {
                     this.nativeAudioDeviceModule = nativeCreateAudioDeviceModule(this.context, this.audioManager, this.audioInput, this.audioOutput, this.inputSampleRate, this.outputSampleRate, this.useStereoInput, this.useStereoOutput);
                 }
-                j3 = this.nativeAudioDeviceModule;
+                j10 = this.nativeAudioDeviceModule;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return j3;
+        return j10;
     }
 
     @Override // org.webrtc.audio.AudioDeviceModule
     public void release() {
         synchronized (this.nativeLock) {
             try {
-                long j3 = this.nativeAudioDeviceModule;
-                if (j3 != 0) {
-                    JniCommon.nativeReleaseRef(j3);
+                long j10 = this.nativeAudioDeviceModule;
+                if (j10 != 0) {
+                    JniCommon.nativeReleaseRef(j10);
                     this.nativeAudioDeviceModule = 0L;
                 }
             } catch (Throwable th2) {

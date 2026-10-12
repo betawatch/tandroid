@@ -1,25 +1,17 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class fl implements NotificationCenter.PostponeNotificationCallback {
-    public final /* synthetic */ zn a;
+public final class fl extends zo {
+    public boolean T0;
 
-    public fl(zn znVar) {
-        this.a = znVar;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.PostponeNotificationCallback
-    public final boolean needPostpone(int i10, int i11, Object[] objArr) {
-        if (i10 == NotificationCenter.didReceiveNewMessages) {
-            long longValue = ((Long) objArr[0]).longValue();
-            zn znVar = this.a;
-            if (znVar.H6 && longValue == znVar.T5) {
-                return true;
-            }
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.T0) {
+            return;
         }
-        return false;
+        i0();
+        this.T0 = true;
     }
 }

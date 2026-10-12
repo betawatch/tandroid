@@ -1,48 +1,177 @@
 package wh;
 
+import android.R;
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Point;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.te;
-import yh.s3;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.l60;
+import org.telegram.ui.d61;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class f {
+    public static HashMap n;
+    public final double a;
+    public final double b;
+    public final int c;
+    public final d61 d;
+    public final l60 e;
+    public e f;
+    public final int g;
+    public final int h;
+    public boolean i;
+    public final ArrayList j = new ArrayList();
+    public final HashMap k = new HashMap();
+    public int l = 0;
+    public final d m = new d(this, 0);
 
-    public /* synthetic */ f(l lVar, boolean z10, e eVar, String str, boolean z11) {
-        this.d = lVar;
-        this.b = z10;
-        this.e = eVar;
-        this.f = str;
-        this.c = z11;
+    public f(int i10, d61 d61Var, int i11, int i12) {
+        double d = 1.0d / ((int) AndroidUtilities.screenRefreshRate);
+        this.a = d;
+        this.b = d * 4.0d;
+        this.c = i10;
+        this.g = i11;
+        this.h = i12;
+        this.d = d61Var;
+        l60 l60Var = new l60(this, d61Var.getContext(), 1);
+        this.e = l60Var;
+        l60Var.setSurfaceTextureListener(new li.e(this, 5));
+        l60Var.setOpaque(false);
+        d61Var.addView(l60Var);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new te((l) this.d, this.b, (Runnable) this.e, (String) this.f, tL_error, tLObject, this.c));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new te((s3) this.d, tLObject, this.b, (TLRPC.Document) this.e, this.c, tL_error, (TL_stars.saveStarGift) this.f));
-                break;
+    public static f d(int i10, View view, ViewGroup viewGroup) {
+        int min;
+        if (view == null) {
+            return null;
+        }
+        if (n == null) {
+            n = new HashMap();
+        }
+        f fVar = (f) n.get(Integer.valueOf(i10));
+        if (fVar == null) {
+            int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
+            if (devicePerformanceClass == 1) {
+                Point point = AndroidUtilities.displaySize;
+                min = Math.min(RichMessageLayout.PART_MAX_HEIGHT_DP, (int) (((point.x + point.y) / 2.0f) * 0.8f));
+            } else if (devicePerformanceClass != 2) {
+                Point point2 = AndroidUtilities.displaySize;
+                min = Math.min(720, (int) (((point2.x + point2.y) / 2.0f) * 0.7f));
+            } else {
+                Point point3 = AndroidUtilities.displaySize;
+                min = Math.min(1280, (int) (((point3.x + point3.y) / 2.0f) * 1.0f));
+            }
+            if (viewGroup == null) {
+                return null;
+            }
+            HashMap hashMap = n;
+            Integer valueOf = Integer.valueOf(i10);
+            d61 d61Var = new d61(viewGroup.getContext(), 11);
+            viewGroup.addView(d61Var);
+            f fVar2 = new f(i10, d61Var, min, min);
+            hashMap.put(valueOf, fVar2);
+            fVar = fVar2;
+        }
+        fVar.a(view);
+        return fVar;
+    }
+
+    public static f e(View view) {
+        Activity findActivity = AndroidUtilities.findActivity(view.getContext());
+        ViewGroup viewGroup = null;
+        if (findActivity != null) {
+            View rootView = findActivity.findViewById(R.id.content).getRootView();
+            if (rootView instanceof ViewGroup) {
+                viewGroup = (ViewGroup) rootView;
+            }
+        }
+        return d(0, view, viewGroup);
+    }
+
+    public static void f(boolean z10) {
+        e eVar;
+        HashMap hashMap = n;
+        if (hashMap == null) {
+            return;
+        }
+        for (f fVar : hashMap.values()) {
+            if (fVar.c == 0 && (eVar = fVar.f) != null) {
+                eVar.b = z10;
+            }
         }
     }
 
-    public /* synthetic */ f(s3 s3Var, boolean z10, TLRPC.Document document, boolean z11, TL_stars.saveStarGift savestargift) {
-        this.d = s3Var;
-        this.b = z10;
-        this.e = document;
-        this.c = z11;
-        this.f = savestargift;
+    public final void a(View view) {
+        if (this.i) {
+            return;
+        }
+        ArrayList arrayList = this.j;
+        if (arrayList.contains(view)) {
+            return;
+        }
+        arrayList.add(view);
+        int i10 = this.l;
+        this.l = i10 + 1;
+        this.k.put(view, Integer.valueOf(i10));
+    }
+
+    public final void b(View view) {
+        this.j.remove(view);
+        this.k.remove(view);
+        if (this.i) {
+            return;
+        }
+        d dVar = this.m;
+        AndroidUtilities.cancelRunOnUIThread(dVar);
+        AndroidUtilities.runOnUIThread(dVar, 30L);
+    }
+
+    public final void c(Canvas canvas, View view, int i10, int i11, float f7, boolean z10) {
+        if (canvas == null || view == null) {
+            return;
+        }
+        canvas.save();
+        Integer num = (Integer) this.k.get(view);
+        if (num == null) {
+            num = 0;
+        }
+        int i12 = this.g;
+        int i13 = this.h;
+        if (i10 > i12 || i11 > i13) {
+            float max = Math.max(i10 / i12, i11 / i13);
+            canvas.scale(max, max);
+        }
+        if (num.intValue() % 4 == 1) {
+            canvas.rotate(180.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        if (num.intValue() % 4 == 2) {
+            canvas.scale(-1.0f, 1.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        if (num.intValue() % 4 == 3) {
+            canvas.scale(1.0f, -1.0f, i12 / 2.0f, i13 / 2.0f);
+        }
+        l60 l60Var = this.e;
+        if (z10) {
+            Bitmap bitmap = l60Var.getBitmap();
+            if (bitmap != null) {
+                Paint paint = new Paint(7);
+                paint.setColor(-1);
+                canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
+                bitmap.recycle();
+            }
+        } else {
+            l60Var.setAlpha(f7);
+            l60Var.draw(canvas);
+        }
+        canvas.restore();
     }
 }

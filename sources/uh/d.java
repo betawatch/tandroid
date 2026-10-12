@@ -1,136 +1,35 @@
 package uh;
 
-import android.animation.ValueAnimator;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.j9;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import s4.m0;
+import zf.z;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class d implements ValueAnimator.AnimatorUpdateListener {
-    public final h a;
-    public final u1 b;
-    public final ImageReceiver c;
-    public final long d;
-    public b e;
-    public b f;
-    public Paint g;
-    public final StaticLayout h;
-    public float i;
-    public float j;
-    public ValueAnimator k;
-    public float l;
-    public boolean m;
-    public ValueAnimator n;
-    public float o;
-    public boolean p;
+public final class d extends m0 {
+    public final z a = new z(2);
+    public final /* synthetic */ c6 b;
+    public final /* synthetic */ f c;
 
-    public d(h hVar, long j3) {
-        ImageReceiver imageReceiver;
-        String str;
-        String str2;
-        j9 j9Var = new j9((e6) null);
-        int i10 = UserConfig.selectedAccount;
-        this.l = 1.0f;
-        this.m = true;
-        this.o = 0.0f;
-        this.p = false;
-        ImageReceiver imageReceiver2 = new ImageReceiver(hVar.a);
-        this.c = imageReceiver2;
-        this.a = hVar;
-        u1 u1Var = hVar.y;
-        this.b = u1Var;
-        this.d = j3;
-        j9Var.p = 1.0f;
-        if (DialogObject.isUserDialog(j3)) {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
-            j9Var.m(i10, user);
-            if (UserObject.isUserSelf(user)) {
-                str2 = LocaleController.getString(R.string.SavedMessages);
-                j9Var.g(1);
-                j9Var.p = 0.75f;
-                imageReceiver = imageReceiver2;
-                imageReceiver.setImage(null, null, null, null, j9Var, 0L, null, user, 0);
-                imageReceiver.setRoundRadius(AndroidUtilities.dp(g.a / 2.0f));
-                imageReceiver.setImageCoords(0.0f, 0.0f, AndroidUtilities.dp(r2), AndroidUtilities.dp(r2));
-                Paint M2 = u1Var.M2("paintChatActionText");
-                if (str2 != null || M2 == null) {
-                }
-                int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(48);
-                TextPaint textPaint = new TextPaint(M2);
-                this.h = new StaticLayout(TextUtils.ellipsize(str2, textPaint, dp, TextUtils.TruncateAt.END), textPaint, (int) Math.ceil(textPaint.measureText(r5, 0, r5.length())), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                return;
-            }
-            imageReceiver = imageReceiver2;
-            str = user != null ? ContactsController.formatName(user.first_name, user.last_name) : "";
-            imageReceiver.setForUserOrChat(user, j9Var);
-        } else {
-            imageReceiver = imageReceiver2;
-            TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
-            str = chat != null ? chat.title : "";
-            j9Var.k(i10, chat);
-            imageReceiver.setForUserOrChat(chat, j9Var);
-        }
-        str2 = str;
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(g.a / 2.0f));
-        imageReceiver.setImageCoords(0.0f, 0.0f, AndroidUtilities.dp(r2), AndroidUtilities.dp(r2));
-        Paint M22 = u1Var.M2("paintChatActionText");
-        if (str2 != null) {
-        }
+    public d(f fVar, c6 c6Var) {
+        this.c = fVar;
+        this.b = c6Var;
     }
 
-    public static float b(float f7, float f10, float f11, float f12) {
-        float f13 = f10 / 2.0f;
-        float f14 = f7 - f13;
-        float f15 = f7 + f13;
-        float f16 = f12 - f11;
-        if (f10 <= f16) {
-            return f14 < f11 ? f11 + f13 : f15 > f12 ? f12 - f13 : f7;
-        }
-        float f17 = (f11 + f12) / 2.0f;
-        float f18 = f10 - f16;
-        float max = Math.max(0.0f, f11 - f14);
-        float max2 = Math.max(0.0f, f15 - f12);
-        float f19 = max + max2;
-        return f19 < 0.1f ? f17 : a1.g.e(f18, 2.0f, (max - max2) / f19, f17);
-    }
-
-    public final void a(Canvas canvas, float f7, float f10, float f11, float f12) {
-        canvas.save();
-        canvas.translate(f7 - f11, f10 - f11);
-        int i10 = g.a;
-        float f13 = 21;
-        canvas.scale(f11 / AndroidUtilities.dp(f13), f11 / AndroidUtilities.dp(f13));
-        float f14 = ((this.l * 0.25f) + 0.75f) * f12;
-        ImageReceiver imageReceiver = this.c;
-        imageReceiver.setAlpha(f14);
-        imageReceiver.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        if (valueAnimator == this.n) {
-            this.o = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        } else if (valueAnimator == this.k) {
-            this.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        }
-        this.a.invalidateSelf();
+    @Override // s4.m0
+    public final void c(Canvas canvas, RecyclerView recyclerView) {
+        f fVar = this.c;
+        int max = Math.max(0, AndroidUtilities.dp(80.0f) + ((int) fVar.g0.getTranslationY()) + ((int) fVar.X.e));
+        int w02 = g6.w0(g6.h5, this.b);
+        z zVar = this.a;
+        zVar.b(w02);
+        zVar.setBounds(0, max, recyclerView.getWidth(), AndroidUtilities.dp(8.0f) + max);
+        zVar.draw(canvas);
+        fVar.R();
+        fVar.S();
     }
 }

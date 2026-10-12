@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class aa extends View {
     public final Paint a;
@@ -57,7 +57,7 @@ public final class aa extends View {
                 this.b = motionEvent.getX();
                 this.c = motionEvent.getY();
                 this.d = System.currentTimeMillis();
-            } else if (action == 1 && System.currentTimeMillis() - this.d < 200 && v7.z6.b((int) this.b, (int) this.c, (int) motionEvent.getX(), (int) motionEvent.getY()) < baVar.m) {
+            } else if (action == 1 && System.currentTimeMillis() - this.d < 200 && v7.f7.b((int) this.b, (int) this.c, (int) motionEvent.getX(), (int) motionEvent.getY()) < baVar.m) {
                 baVar.K(motionEvent.getRawX(), motionEvent.getRawY());
                 baVar.u();
                 baVar.f(false);
@@ -124,9 +124,9 @@ public final class aa extends View {
                 w9 w9Var2 = baVar.W;
                 MessageObject messageObject = w9Var2 instanceof u1 ? ((u1) w9Var2).getMessageObject() : null;
                 if (messageObject == null || !messageObject.isOutOwner()) {
-                    paint.setColor(baVar.t(org.telegram.ui.ActionBar.i6.vf));
+                    paint.setColor(baVar.t(org.telegram.ui.ActionBar.g6.vf));
                 } else {
-                    paint.setColor(baVar.t(org.telegram.ui.ActionBar.i6.Wb));
+                    paint.setColor(baVar.t(org.telegram.ui.ActionBar.g6.Wb));
                 }
                 int length = baVar.s(baVar.W, false).length();
                 int i14 = baVar.v;
@@ -302,12 +302,12 @@ public final class aa extends View {
                 AndroidUtilities.cancelRunOnUIThread(gVar);
                 AndroidUtilities.runOnUIThread(gVar);
             }
-            org.telegram.ui.ActionBar.h4 h4Var = baVar.Y;
-            if (h4Var != null) {
-                h4Var.invalidateContentRect();
-                org.telegram.ui.ActionBar.h4 h4Var2 = baVar.Y;
-                if (h4Var2 != null) {
-                    h4Var2.c();
+            org.telegram.ui.ActionBar.g4 g4Var = baVar.Y;
+            if (g4Var != null) {
+                g4Var.invalidateContentRect();
+                org.telegram.ui.ActionBar.g4 g4Var2 = baVar.Y;
+                if (g4Var2 != null) {
+                    g4Var2.c();
                 }
             }
             if (baVar.k) {

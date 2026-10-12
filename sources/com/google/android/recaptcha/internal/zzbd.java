@@ -1,19 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import ae.d0;
-import ae.t;
+import be.c0;
+import be.t;
 import com.google.android.play.core.integrity.StandardIntegrityException;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
-import hd.i;
-import jd.c;
-import kd.a;
-import ld.j;
-import sd.p;
-import v7.a8;
+import kd.c;
+import ld.a;
+import md.i;
+import td.p;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-final class zzbd extends j implements p {
+final class zzbd extends i implements p {
     long zza;
     boolean zzb;
     int zzc;
@@ -27,14 +26,14 @@ final class zzbd extends j implements p {
         this.zze = pVar;
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final c create(Object obj, c cVar) {
         return new zzbd(this.zzd, this.zze, cVar);
     }
 
-    @Override // sd.p
+    @Override // td.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbd) create((d0) obj, (c) obj2)).invokeSuspend(i.a);
+        return ((zzbd) create((c0) obj, (c) obj2)).invokeSuspend(id.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x007a, code lost:
@@ -43,7 +42,7 @@ final class zzbd extends j implements p {
      */
     /* JADX WARN: Code restructure failed: missing block: B:31:0x0075, code lost:
     
-        if (ae.g0.g(r4, r7) != r0) goto L6;
+        if (be.f0.g(r4, r7) != r0) goto L6;
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x002e, code lost:
     
@@ -53,47 +52,47 @@ final class zzbd extends j implements p {
     /* JADX WARN: Removed duplicated region for block: B:8:0x0024 A[Catch: Exception -> 0x001a, TRY_ENTER, TryCatch #0 {Exception -> 0x001a, blocks: (B:8:0x0024, B:10:0x0030, B:38:0x0016), top: B:37:0x0016 }] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0042 -> B:7:0x0022). Please report as a decompilation issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:31:0x0075 -> B:5:0x0011). Please report as a decompilation issue!!! */
-    @Override // ld.a
+    @Override // md.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        long j3;
+        long j10;
         boolean z10;
         boolean z11;
         int errorCode;
         a aVar = a.a;
         int i10 = this.zzc;
         if (i10 == 0) {
-            a8.b(obj);
-            j3 = 1000;
+            i8.b(obj);
+            j10 = 1000;
             z10 = true;
             if (!z10) {
             }
         } else if (i10 != 1) {
             z11 = this.zzb;
-            j3 = this.zza;
-            a8.b(obj);
+            j10 = this.zza;
+            i8.b(obj);
             z10 = z11;
-            j3 += j3;
+            j10 += j10;
             if (!z10) {
-                return i.a;
+                return id.i.a;
             }
             zzbo zzboVar = this.zzd;
-            this.zza = j3;
+            this.zza = j10;
             this.zzc = 1;
             obj = zzboVar.zzl(this);
         } else {
-            j3 = this.zza;
+            j10 = this.zza;
             try {
-                a8.b(obj);
-            } catch (Exception e7) {
-                this.zze.a = e7;
-                z11 = (e7 instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e7).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
+                i8.b(obj);
+            } catch (Exception e) {
+                this.zze.a = e;
+                z11 = (e instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);
                 if (!z11) {
-                    throw e7;
+                    throw e;
                 }
-                this.zza = j3;
+                this.zza = j10;
                 this.zzb = true;
                 this.zzc = 2;
             }

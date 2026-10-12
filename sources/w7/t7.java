@@ -1,36 +1,27 @@
 package w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import com.google.android.gms.tasks.Task;
+import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class t7 {
-    public static void a(int i10, int i11) {
-        String a2;
-        if (i10 < 0 || i10 >= i11) {
-            if (i10 < 0) {
-                a2 = u7.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
-            } else {
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
-                }
-                a2 = u7.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
-            }
-            throw new IndexOutOfBoundsException(a2);
-        }
-    }
-
-    public static void b(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 < i10 || i11 > i12) {
-            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? c(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? c(i11, i12, "end index") : u7.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
-        }
-    }
-
-    public static String c(int i10, int i11, String str) {
-        if (i10 < 0) {
-            return u7.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
-        }
-        if (i11 >= 0) {
-            return u7.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
-        }
-        throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
+    public static LanguageIdentifierImpl a() {
+        vb.a aVar = (vb.a) rb.g.c().a(vb.a.class);
+        vb.e eVar = aVar.b;
+        eVar.getClass();
+        v7.y8 y8Var = aVar.a;
+        LanguageIdentifierImpl languageIdentifierImpl = new LanguageIdentifierImpl(eVar, y8Var, (Executor) aVar.c.a.get());
+        qi.e eVar2 = new qi.e();
+        eVar2.c = languageIdentifierImpl.f;
+        u2.c cVar = new u2.c(5, false);
+        cVar.c = LanguageIdentifierImpl.k();
+        eVar2.d = new v7.g7(cVar);
+        a5.a aVar2 = new a5.a(eVar2, 1);
+        Task task = y8Var.e;
+        rb.m.a.execute(new com.google.android.gms.internal.cast.p(y8Var, aVar2, v7.j6.c, task.isSuccessful() ? (String) task.getResult() : n6.i.c.a(y8Var.g), 6));
+        ((vb.e) languageIdentifierImpl.d.get()).b.incrementAndGet();
+        return languageIdentifierImpl;
     }
 }

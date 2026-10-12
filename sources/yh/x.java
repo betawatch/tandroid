@@ -1,36 +1,49 @@
 package yh;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class x implements TextWatcher {
-    public final /* synthetic */ y a;
+public final class x extends FrameLayout {
+    public final RectF a;
+    public final RectF b;
+    public final /* synthetic */ d0 c;
 
-    public x(y yVar) {
-        this.a = yVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x(d0 d0Var, Context context) {
+        super(context);
+        this.c = d0Var;
+        this.a = new RectF();
+        this.b = new RectF();
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String obj;
-        int indexOf;
-        boolean z10 = editable == null || editable.toString().isEmpty() || ".".equals(editable.toString());
-        if (!z10 && (indexOf = (obj = editable.toString()).indexOf(46)) >= 0 && (obj.length() - indexOf) - 1 > 2) {
-            editable.delete(indexOf + 3, obj.length());
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        d0 d0Var = this.c;
+        y yVar = d0Var.a0;
+        FrameLayout frameLayout = yVar.b;
+        RectF rectF = this.a;
+        if (ih.j.c(frameLayout, this, rectF)) {
+            TextView textView = d0Var.b0;
+            RectF rectF2 = this.b;
+            if (ih.j.c(textView, this, rectF2)) {
+                float dp = rectF2.right - AndroidUtilities.dp(32.0f);
+                float centerY = rectF2.centerY() - AndroidUtilities.dp(16.0f);
+                if (rectF.isEmpty()) {
+                    return;
+                }
+                canvas.save();
+                canvas.translate(dp, centerY);
+                canvas.scale(AndroidUtilities.dp(32.0f) / rectF.width(), AndroidUtilities.dp(32.0f) / rectF.height());
+                yVar.b.draw(canvas);
+                canvas.restore();
+            }
         }
-        y yVar = this.a;
-        yVar.V(!z10 ? zf.a.h(editable.toString(), yVar.m0.a) : zf.a.i(0L, yVar.m0.a), false, false, true);
-        yVar.c0.c(yVar.d0.isFocused(), true ^ TextUtils.isEmpty(yVar.d0.getText()));
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

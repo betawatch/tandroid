@@ -1,13 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class oy extends TLRPC.Dialog {
-    public final int a;
+public final class oy extends org.telegram.ui.Components.o20 {
+    public oy(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, c6Var);
+    }
 
-    public oy(int i10) {
-        this.a = i10;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || getAlpha() >= 0.25f) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return false;
     }
 }

@@ -1,27 +1,27 @@
 package w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class b3 implements ia.d {
+public final class b3 implements ja.d {
     public static final b3 a = new b3();
-    public static final ia.c b = new ia.c("durationMs", hg.c.m(sc.v.m(d.class, new a(1))));
-    public static final ia.c c = new ia.c("imageSource", hg.c.m(sc.v.m(d.class, new a(2))));
-    public static final ia.c d = new ia.c("imageFormat", hg.c.m(sc.v.m(d.class, new a(3))));
-    public static final ia.c e = new ia.c("imageByteSize", hg.c.m(sc.v.m(d.class, new a(4))));
-    public static final ia.c f = new ia.c("imageWidth", hg.c.m(sc.v.m(d.class, new a(5))));
-    public static final ia.c g = new ia.c("imageHeight", hg.c.m(sc.v.m(d.class, new a(6))));
-    public static final ia.c h = new ia.c("rotationDegrees", hg.c.m(sc.v.m(d.class, new a(7))));
+    public static final ja.c b = new ja.c("durationMs", i2.d.n(t8.b.l(d.class, new a(1))));
+    public static final ja.c c = new ja.c("imageSource", i2.d.n(t8.b.l(d.class, new a(2))));
+    public static final ja.c d = new ja.c("imageFormat", i2.d.n(t8.b.l(d.class, new a(3))));
+    public static final ja.c e = new ja.c("imageByteSize", i2.d.n(t8.b.l(d.class, new a(4))));
+    public static final ja.c f = new ja.c("imageWidth", i2.d.n(t8.b.l(d.class, new a(5))));
+    public static final ja.c g = new ja.c("imageHeight", i2.d.n(t8.b.l(d.class, new a(6))));
+    public static final ja.c h = new ja.c("rotationDegrees", i2.d.n(t8.b.l(d.class, new a(7))));
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
         e7 e7Var = (e7) obj;
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, e7Var.a);
-        eVar.a(c, e7Var.b);
-        eVar.a(d, e7Var.c);
-        eVar.a(e, e7Var.d);
-        eVar.a(f, e7Var.e);
-        eVar.a(g, e7Var.f);
-        eVar.a(h, e7Var.g);
+        ja.e eVar = (ja.e) obj2;
+        eVar.d(b, e7Var.a);
+        eVar.d(c, e7Var.b);
+        eVar.d(d, e7Var.c);
+        eVar.d(e, e7Var.d);
+        eVar.d(f, e7Var.e);
+        eVar.d(g, e7Var.f);
+        eVar.d(h, e7Var.g);
     }
 }

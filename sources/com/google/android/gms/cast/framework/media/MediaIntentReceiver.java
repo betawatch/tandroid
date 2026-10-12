@@ -15,7 +15,7 @@ import e6.j;
 import g6.b;
 import n6.l;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_DISCONNECT = "com.google.android.gms.cast.framework.action.DISCONNECT";
@@ -37,12 +37,12 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         return cVar.j;
     }
 
-    private void seek(c cVar, long j3) {
+    private void seek(c cVar, long j10) {
         h remoteMediaClient;
-        if (j3 == 0 || (remoteMediaClient = getRemoteMediaClient(cVar)) == null || remoteMediaClient.j() || remoteMediaClient.n()) {
+        if (j10 == 0 || (remoteMediaClient = getRemoteMediaClient(cVar)) == null || remoteMediaClient.j() || remoteMediaClient.n()) {
             return;
         }
-        remoteMediaClient.q(new p(remoteMediaClient.a() + j3));
+        remoteMediaClient.q(new p(remoteMediaClient.a() + j10));
     }
 
     private void togglePlayback(c cVar) {
@@ -118,9 +118,9 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         onReceiveOtherAction(context, action, intent);
     }
 
-    public void onReceiveActionForward(f fVar, long j3) {
+    public void onReceiveActionForward(f fVar, long j10) {
         if (fVar instanceof c) {
-            seek((c) fVar, j3);
+            seek((c) fVar, j10);
         }
     }
 
@@ -135,9 +135,9 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         }
     }
 
-    public void onReceiveActionRewind(f fVar, long j3) {
+    public void onReceiveActionRewind(f fVar, long j10) {
         if (fVar instanceof c) {
-            seek((c) fVar, -j3);
+            seek((c) fVar, -j10);
         }
     }
 

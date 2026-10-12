@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import n6.l0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class e {
     public static final int a;
@@ -62,7 +62,7 @@ public class e {
         sb2.append("-");
         if (context != null) {
             try {
-                sb2.append(w6.b.a(context).d(0, context.getPackageName()).versionCode);
+                sb2.append(w6.b.a(context).e(0, context.getPackageName()).versionCode);
             } catch (PackageManager.NameNotFoundException unused) {
             }
         }

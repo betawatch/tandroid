@@ -1,72 +1,53 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
+import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q20 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.Components.gm0, r0.n, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.l1 {
+public final /* synthetic */ class q20 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g60 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ q20(g60 g60Var, int i10) {
+    public /* synthetic */ q20(Object obj, int i10) {
         this.a = i10;
-        this.b = g60Var;
+        this.b = obj;
     }
 
-    @Override // r0.n
-    public r0.k1 M0(View view, r0.k1 k1Var) {
-        return g60.C(this.b, k1Var);
-    }
-
-    @Override // org.telegram.ui.Components.gm0
-    public boolean d(int i10, View view) {
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
         switch (this.a) {
+            case 0:
+                v20 v20Var = (v20) this.b;
+                v20Var.getClass();
+                if (((View) obj).getParent() == v20Var.c) {
+                    break;
+                } else {
+                    break;
+                }
             case 1:
-                g60 g60Var = this.b;
-                if (g60Var.G1(view)) {
-                    try {
-                        g60Var.Q.performHapticFeedback(0);
-                    } catch (Exception unused) {
-                    }
+                kg0 kg0Var = (kg0) this.b;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
+                if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    AndroidUtilities.runOnUIThread(new gg0(kg0Var, 1));
+                    break;
+                } else {
+                    break;
                 }
-                return false;
+                break;
             default:
-                g60 g60Var2 = this.b;
-                if (!g60Var2.s1()) {
-                    if (view instanceof org.telegram.ui.Components.voip.l) {
-                        return g60Var2.G1(view);
-                    }
-                    if (view instanceof org.telegram.ui.Cells.e4) {
-                        g60Var2.J1();
-                        org.telegram.ui.Components.fk0 fk0Var = ((org.telegram.ui.Cells.e4) view).f;
-                        if (fk0Var.isEnabled()) {
-                            fk0Var.callOnClick();
-                            return true;
-                        }
-                    }
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                URLSpan uRLSpan = (URLSpan) obj;
+                if (uRLSpan == null) {
+                    break;
+                } else {
+                    profileActivity.B4(uRLSpan.getURL(), null);
+                    break;
                 }
-                return false;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.r0
-    public void m(int i10) {
-        this.b.O.getActionBarMenuOnItemClick().b(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.l1
-    public void o(KeyEvent keyEvent) {
-        g60 g60Var;
-        g50 g50Var;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g50Var = (g60Var = this.b).f3) != null && g50Var.isShowing()) {
-            g60Var.f3.dismiss();
-        }
-    }
-
-    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
-    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
-        g60.E(this.b, iArr, fArr);
+        return Boolean.FALSE;
     }
 }

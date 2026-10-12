@@ -1,36 +1,69 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class xc0 extends org.telegram.ui.Components.bw0 {
-    public final /* synthetic */ hd0 f2;
+public final /* synthetic */ class xc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nd0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xc0(hd0 hd0Var, Context context, org.telegram.ui.Components.tv0 tv0Var, hd0 hd0Var2, wc0 wc0Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, 0L, tv0Var, 0, null, null, null, 8, 0, hd0Var2, wc0Var, 0, e6Var, null);
-        this.f2 = hd0Var;
+    public /* synthetic */ xc0(nd0 nd0Var, int i10) {
+        this.a = i10;
+        this.b = nd0Var;
     }
 
-    @Override // org.telegram.ui.Components.bw0
-    public final int B0() {
-        return 32;
-    }
-
-    @Override // org.telegram.ui.Components.bw0
-    public final boolean N() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.bw0
-    public final int S0() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.bw0
-    public final TL_stories.MediaArea getStoriesArea() {
-        return this.f2.M0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                nd0 nd0Var = this.b;
+                IMapsProvider.ICameraUpdate iCameraUpdate = nd0Var.J;
+                if (iCameraUpdate != null) {
+                    nd0Var.I.moveCamera(iCameraUpdate);
+                    nd0Var.J = null;
+                    break;
+                }
+                break;
+            case 1:
+                nd0 nd0Var2 = this.b;
+                nd0Var2.getLocationController().setProximityLocation(nd0Var2.e0, 0, true);
+                nd0Var2.G = false;
+                break;
+            case 2:
+                nd0 nd0Var3 = this.b;
+                IMapsProvider.IMap iMap = nd0Var3.I;
+                if (iMap != null) {
+                    iMap.setPadding(AndroidUtilities.dp(70.0f), 0, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(10.0f));
+                }
+                if (!nd0Var3.R.getRadiusSet()) {
+                    double d = nd0Var3.P;
+                    if (d > 0.0d) {
+                        nd0Var3.O.setRadius(d);
+                    } else {
+                        IMapsProvider.ICircle iCircle = nd0Var3.O;
+                        if (iCircle != null) {
+                            iCircle.remove();
+                            nd0Var3.O = null;
+                        }
+                    }
+                }
+                nd0Var3.R = null;
+                break;
+            case 3:
+                kd0 kd0Var = this.b.x;
+                if (kd0Var != null) {
+                    kd0Var.a();
+                    break;
+                }
+                break;
+            case 4:
+                nd0.V(this.b);
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new xc0(this.b, 0));
+                break;
+        }
     }
 }

@@ -1,100 +1,133 @@
 package vg;
 
-import ai.a6;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.j9;
-import org.telegram.ui.Components.y9;
-import org.telegram.ui.vy0;
-import w7.x5;
+import org.telegram.ui.Components.cr;
+import org.telegram.ui.bz0;
+import ug.c1;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class g extends c {
-    public final ImageView s;
-    public f v;
-    public TLRPC.Chat w;
-    public boolean x;
+public final class g extends pg.a {
+    public TLRPC.User c;
+    public TLRPC.InputPeer d;
+    public TLRPC.Chat e;
+    public TLRPC.TL_help_country f;
+    public CharSequence g;
+    public String h;
+    public int i;
+    public int j;
+    public boolean k;
+    public int l;
+    public bz0 m;
+    public bz0 n;
+    public c1 o;
+    public c1 p;
+    public View q;
+    public cr r;
 
-    public g(Context context, e6 e6Var) {
-        super(context, e6Var);
-        this.d.setTypeface(AndroidUtilities.bold());
-        ImageView imageView = new ImageView(context);
-        this.s = imageView;
-        imageView.setFocusable(false);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setBackground(i6.g0(i6.x0(null, i6.Vh, false), 1, -1));
-        imageView.setImageResource(R.drawable.poll_remove);
-        imageView.setColorFilter(new PorterDuffColorFilter(i6.x0(null, i6.m6, false), PorterDuff.Mode.MULTIPLY));
-        imageView.setContentDescription(LocaleController.getString(R.string.Delete));
-        boolean z10 = LocaleController.isRTL;
-        addView(imageView, x5.a(50.0f, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f, 48, (z10 ? 3 : 5) | 17));
-        this.d.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : 0.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 24.0f), 0);
+    public g(int i10, boolean z10) {
+        super(i10, z10);
+        this.l = -1;
     }
 
-    @Override // vg.c
-    public final boolean b() {
-        return false;
+    public static g b(CharSequence charSequence) {
+        g gVar = new g(8, false);
+        gVar.g = charSequence;
+        return gVar;
     }
 
-    public final void f(TLRPC.Chat chat, int i10, boolean z10, int i11) {
-        String string;
-        this.x = z10;
-        this.w = chat;
-        j9 j9Var = this.b;
-        j9Var.q(chat);
-        int dp = AndroidUtilities.dp(20.0f);
-        y9 y9Var = this.c;
-        y9Var.setRoundRadius(dp);
-        y9Var.e(chat, j9Var);
-        String str = chat.title;
-        a6 a6Var = this.d;
-        a6Var.k(Emoji.replaceEmoji(str, a6Var.getPaint().getFontMetricsInt(), false));
-        boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
-        if (z10) {
-            if (i11 >= 1) {
-                string = LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "Subscribers" : "Members", i11, new Object[0]);
-            } else {
-                string = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.DiscussChannel : R.string.AccDescrGroup);
+    public static g c(TLRPC.User user, boolean z10) {
+        g gVar = new g(3, true);
+        gVar.c = user;
+        gVar.d = null;
+        gVar.e = null;
+        gVar.k = z10;
+        return gVar;
+    }
+
+    @Override // pg.a
+    public final boolean a(pg.a aVar) {
+        if (this != aVar) {
+            if (g.class == aVar.getClass()) {
+                g gVar = (g) aVar;
+                if (this.k == gVar.k) {
+                    if (this.a == 8) {
+                        if (TextUtils.equals(this.h, gVar.h)) {
+                            if ((this.m == null) == (gVar.m == null)) {
+                            }
+                        }
+                    }
+                }
             }
-            setSubtitle(string);
-        } else {
-            setSubtitle(LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", i10, new Object[0]));
+            return false;
         }
-        this.e.setTextColor(i6.w0(i6.r5, this.a));
-        setDivider(true);
-        ImageView imageView = this.s;
-        if (z10) {
-            imageView.setVisibility(0);
-        } else {
-            imageView.setVisibility(4);
+        return true;
+    }
+
+    public final boolean equals(Object obj) {
+        long peerDialogId;
+        if (this == obj) {
+            return true;
         }
-        imageView.setOnClickListener(new vy0(27, this, chat));
-    }
-
-    public TLRPC.Chat getChat() {
-        return this.w;
-    }
-
-    @Override // vg.c, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.s.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-    }
-
-    public void setChatDeleteListener(f fVar) {
-        this.v = fVar;
+        if (obj == null || g.class != obj.getClass()) {
+            return false;
+        }
+        g gVar = (g) obj;
+        int i10 = this.a;
+        if (i10 != gVar.a) {
+            return false;
+        }
+        if (i10 == -1 && this.l != gVar.l) {
+            return false;
+        }
+        if (i10 == 3) {
+            TLRPC.User user = this.c;
+            long j10 = 0;
+            if (user != null) {
+                peerDialogId = user.id;
+            } else {
+                TLRPC.Chat chat = this.e;
+                if (chat != null) {
+                    peerDialogId = -chat.id;
+                } else {
+                    TLRPC.InputPeer inputPeer = this.d;
+                    peerDialogId = inputPeer != null ? DialogObject.getPeerDialogId(inputPeer) : 0L;
+                }
+            }
+            TLRPC.User user2 = gVar.c;
+            if (user2 != null) {
+                j10 = user2.id;
+            } else {
+                TLRPC.Chat chat2 = gVar.e;
+                if (chat2 != null) {
+                    j10 = -chat2.id;
+                } else {
+                    TLRPC.InputPeer inputPeer2 = gVar.d;
+                    if (inputPeer2 != null) {
+                        j10 = DialogObject.getPeerDialogId(inputPeer2);
+                    }
+                }
+            }
+            if (peerDialogId != j10) {
+                return false;
+            }
+        }
+        int i11 = this.a;
+        if (i11 == 6 && this.f != gVar.f) {
+            return false;
+        }
+        if (i11 == 7 && !TextUtils.equals(this.g, gVar.g)) {
+            return false;
+        }
+        if (this.a == 8 && !TextUtils.equals(this.g, gVar.g)) {
+            return false;
+        }
+        if (this.a != 9 || (TextUtils.equals(this.g, gVar.g) && this.i == gVar.i && this.j == gVar.j)) {
+            return this.a != 10 || this.q == gVar.q;
+        }
+        return false;
     }
 }

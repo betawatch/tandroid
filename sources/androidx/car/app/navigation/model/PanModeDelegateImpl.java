@@ -6,12 +6,12 @@ import androidx.car.app.navigation.model.IPanModeListener;
 import androidx.car.app.navigation.model.PanModeDelegateImpl;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class PanModeDelegateImpl implements g {
     private final IPanModeListener mStub;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class PanModeListenerStub extends IPanModeListener.Stub {
         private final i mListener;
 
@@ -25,8 +25,8 @@ public class PanModeDelegateImpl implements g {
 
         @Override // androidx.car.app.navigation.model.IPanModeListener
         public void onPanModeChanged(final boolean z10, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.g.b(iOnDoneCallback, "onPanModeChanged", new androidx.car.app.utils.a() { // from class: androidx.car.app.navigation.model.h
-                @Override // androidx.car.app.utils.a
+            androidx.car.app.utils.i.b(iOnDoneCallback, "onPanModeChanged", new androidx.car.app.utils.c() { // from class: androidx.car.app.navigation.model.h
+                @Override // androidx.car.app.utils.c
                 public final Object a() {
                     Object lambda$onPanModeChanged$0;
                     lambda$onPanModeChanged$0 = PanModeDelegateImpl.PanModeListenerStub.this.lambda$onPanModeChanged$0(z10);
@@ -44,13 +44,13 @@ public class PanModeDelegateImpl implements g {
         return new PanModeDelegateImpl(iVar);
     }
 
-    public void sendPanModeChanged(boolean z10, androidx.car.app.j jVar) {
+    public void sendPanModeChanged(boolean z10, androidx.car.app.k kVar) {
         try {
             IPanModeListener iPanModeListener = this.mStub;
             Objects.requireNonNull(iPanModeListener);
-            iPanModeListener.onPanModeChanged(z10, androidx.car.app.utils.g.a());
-        } catch (RemoteException e7) {
-            throw new RuntimeException(e7);
+            iPanModeListener.onPanModeChanged(z10, androidx.car.app.utils.i.a());
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
         }
     }
 

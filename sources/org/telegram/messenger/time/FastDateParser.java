@@ -2,7 +2,7 @@ package org.telegram.messenger.time;
 
 import a1.g;
 import androidx.car.app.navigation.model.Maneuver;
-import com.google.android.gms.internal.vision.e2;
+import com.google.android.gms.internal.play_billing.k3;
 import j$.util.DesugarTimeZone;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.ObjectInputStream;
@@ -24,7 +24,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class FastDateParser implements DateParser, Serializable {
     private static final long serialVersionUID = 2;
@@ -80,7 +80,7 @@ public class FastDateParser implements DateParser, Serializable {
     private static final Strategy SECOND_STRATEGY = new NumberStrategy(13);
     private static final Strategy MILLISECOND_STRATEGY = new NumberStrategy(14);
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class CopyQuotedStrategy extends Strategy {
         private final String formatField;
 
@@ -105,7 +105,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class TextStrategy extends Strategy {
         private final int field;
         private final Map<String, Integer> keyValues;
@@ -146,7 +146,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class TimeZoneStrategy extends Strategy {
         private static final int ID = 0;
         private static final int LONG_DST = 3;
@@ -178,13 +178,13 @@ public class FastDateParser implements DateParser, Serializable {
                     }
                 }
             }
-            StringBuilder v = g.v("(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|");
+            StringBuilder u10 = g.u("(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|");
             Iterator<String> it = this.tzNames.keySet().iterator();
             while (it.hasNext()) {
-                FastDateParser.escapeRegex(v, it.next(), false).append('|');
+                FastDateParser.escapeRegex(u10, it.next(), false).append('|');
             }
-            v.setCharAt(v.length() - 1, ')');
-            this.validTimeZoneChars = v.toString();
+            u10.setCharAt(u10.length() - 1, ')');
+            this.validTimeZoneChars = u10.toString();
         }
 
         @Override // org.telegram.messenger.time.FastDateParser.Strategy
@@ -314,7 +314,7 @@ public class FastDateParser implements DateParser, Serializable {
             switch (charAt) {
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     if (str.length() > 2) {
-                        return new CopyQuotedStrategy(e2.i(1, 1, str));
+                        return new CopyQuotedStrategy(k3.j(1, 1, str));
                     }
                     break;
                 case 'S':
@@ -463,9 +463,9 @@ public class FastDateParser implements DateParser, Serializable {
             return parse;
         }
         if (!this.locale.equals(JAPANESE_IMPERIAL)) {
-            StringBuilder w10 = g.w("Unparseable date: \"", str, "\" does not match ");
-            w10.append(this.parsePattern.pattern());
-            throw new ParseException(w10.toString(), 0);
+            StringBuilder v = g.v("Unparseable date: \"", str, "\" does not match ");
+            v.append(this.parsePattern.pattern());
+            throw new ParseException(v.toString(), 0);
         }
         throw new ParseException("(The " + this.locale + " locale does not support dates before 1868 AD)\nUnparseable date: \"" + str + "\" does not match " + this.parsePattern.pattern(), 0);
     }
@@ -533,7 +533,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class NumberStrategy extends Strategy {
         private final int field;
 
@@ -569,7 +569,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static abstract class Strategy {
         private Strategy() {
         }

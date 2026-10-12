@@ -1,37 +1,37 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class b9 extends org.telegram.ui.Components.mr0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 b1;
+public final class b9 extends FragmentContextView {
+    public final /* synthetic */ int R0 = 1;
+    public final /* synthetic */ org.telegram.ui.ActionBar.m2 S0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b9(Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.f3 f3Var) {
-        super(context, null, str, false, str2, false, e6Var);
-        this.b1 = f3Var;
+    public b9(n9 n9Var, Context context, n9 n9Var2, z8 z8Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, n9Var2, z8Var, false, c6Var);
+        this.S0 = n9Var;
     }
 
-    @Override // org.telegram.ui.Components.mr0
-    public final void S0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        String formatString;
-        if (z10) {
-            if (iVar == null || iVar.m() != 1) {
-                formatString = LocaleController.formatString(R.string.InvLinkToChats, LocaleController.formatPluralString("Chats", iVar == null ? 1 : iVar.m(), new Object[0]));
-            } else {
-                long j3 = ((TLRPC.Dialog) iVar.n(0)).id;
-                formatString = (j3 == 0 || j3 == UserConfig.getInstance(this.currentAccount).getClientUserId()) ? LocaleController.getString(R.string.InvLinkToSavedMessages) : LocaleController.formatString(R.string.InvLinkToUser, MessagesController.getInstance(this.currentAccount).getPeerName(j3, true));
-            }
-            org.telegram.ui.Components.tc Q = new org.telegram.ui.Components.ad(this.b1.topBulletinContainer, this.resourcesProvider).Q(R.raw.forward, 36, AndroidUtilities.replaceTags(formatString));
-            Q.r = false;
-            Q.j();
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.R0) {
+            case 0:
+                n9 n9Var = (n9) this.S0;
+                n9Var.M.i(n9Var.N, i10 == 0, true);
+                break;
+            default:
+                lg1 lg1Var = (lg1) this.S0;
+                lg1Var.U0.i(lg1Var.F0, i10 == 0, true);
+                break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b9(lg1 lg1Var, Context context, lg1 lg1Var2) {
+        super(context, lg1Var2, null, false, null);
+        this.S0 = lg1Var;
     }
 }

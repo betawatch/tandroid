@@ -1,133 +1,134 @@
 package k2;
 
-import android.os.Handler;
-import java.nio.ByteBuffer;
-import org.telegram.messenger.FourierTransform;
-import org.telegram.ui.Components.c81;
-import org.telegram.ui.Components.ci0;
-import org.telegram.ui.Components.d81;
-import org.telegram.ui.Components.j81;
-import org.telegram.ui.Components.k81;
+import android.media.AudioTrack;
+import android.os.Build;
+import android.os.SystemClock;
+import java.lang.reflect.Method;
+import java.math.RoundingMode;
+import ji.w4;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class k0 extends c2.i {
-    public final j81 i;
+public final class k0 {
+    public boolean A;
+    public long B;
+    public final w4 a;
+    public final e2.g0 b;
+    public final long[] c;
+    public final AudioTrack d;
+    public final int e;
+    public final long f;
+    public final boolean g;
+    public final b0 h;
+    public float i;
+    public long j;
+    public long k;
+    public long l;
+    public Method m;
+    public long n;
+    public long o;
+    public long p;
+    public long q;
+    public long r;
+    public int s;
+    public int t;
+    public long u;
+    public long v;
+    public long w;
+    public long x;
+    public long y;
+    public long z;
 
-    public k0(j81 j81Var) {
-        this.i = j81Var;
+    public k0(w4 w4Var, e2.g0 g0Var, AudioTrack audioTrack, int i10, int i11, int i12) {
+        this.a = w4Var;
+        this.b = g0Var;
+        this.d = audioTrack;
+        try {
+            this.m = AudioTrack.class.getMethod("getLatency", null);
+        } catch (NoSuchMethodException unused) {
+        }
+        this.c = new long[10];
+        this.z = -9223372036854775807L;
+        this.y = -9223372036854775807L;
+        this.h = new b0(audioTrack, w4Var);
+        int sampleRate = audioTrack.getSampleRate();
+        this.e = sampleRate;
+        boolean M = e2.m0.M(i10);
+        this.g = M;
+        this.f = M ? e2.m0.Y(sampleRate, i12 / i11) : -9223372036854775807L;
+        this.q = 0L;
+        this.r = 0L;
+        this.A = false;
+        this.B = 0L;
+        this.u = -9223372036854775807L;
+        this.v = -9223372036854775807L;
+        this.o = 0L;
+        this.n = 0L;
+        this.i = 1.0f;
+        this.j = -9223372036854775807L;
     }
 
-    @Override // c2.h
-    public final void c(ByteBuffer byteBuffer) {
-        int remaining = byteBuffer.remaining();
-        if (remaining == 0) {
-            return;
+    public final long a() {
+        if (this.u != -9223372036854775807L) {
+            return Math.min(this.x, c());
         }
-        String str = e2.d0.a;
-        ByteBuffer order = byteBuffer.asReadOnlyBuffer().order(byteBuffer.order());
-        j81 j81Var = this.i;
-        float[] fArr = j81Var.b;
-        ByteBuffer byteBuffer2 = j81Var.c;
-        FourierTransform.FFT fft = j81Var.a;
-        k81 k81Var = j81Var.f;
-        d81 d81Var = k81Var.K;
-        Handler handler = k81Var.a0;
-        if (d81Var != null) {
-            if (order == c2.h.a || !k81Var.I) {
-                handler.postDelayed(new c81(j81Var, 1), 80L);
-            } else if (d81Var.needUpdate()) {
-                int limit = order.limit();
-                int i10 = 0;
-                if (limit > 8192) {
-                    handler.removeCallbacksAndMessages(null);
-                    k81Var.K.onVisualizerUpdate(false, true, null);
-                } else {
-                    byteBuffer2.put(order);
-                    int i11 = j81Var.d + limit;
-                    j81Var.d = i11;
-                    if (i11 >= 1024) {
-                        byteBuffer2.position(0);
-                        for (int i12 = 0; i12 < 1024; i12++) {
-                            fArr[i12] = byteBuffer2.getShort() / 32768.0f;
-                        }
-                        byteBuffer2.rewind();
-                        j81Var.d = 0;
-                        fft.forward(fArr);
-                        float f7 = 0.0f;
-                        int i13 = 0;
-                        while (true) {
-                            float f10 = 1.0f;
-                            if (i13 >= 1024) {
-                                break;
-                            }
-                            float f11 = fft.getSpectrumReal()[i13];
-                            float f12 = fft.getSpectrumImaginary()[i13];
-                            float sqrt = ((float) Math.sqrt((f12 * f12) + (f11 * f11))) / 30.0f;
-                            if (sqrt <= 1.0f) {
-                                f10 = sqrt < 0.0f ? 0.0f : sqrt;
-                            }
-                            f7 += f10 * f10;
-                            i13++;
-                        }
-                        float sqrt2 = (float) Math.sqrt(f7 / 1024);
-                        float[] fArr2 = new float[7];
-                        fArr2[6] = sqrt2;
-                        if (sqrt2 < 0.4f) {
-                            while (i10 < 7) {
-                                fArr2[i10] = 0.0f;
-                                i10++;
-                            }
-                        } else {
-                            while (i10 < 6) {
-                                int i14 = 170 * i10;
-                                float f13 = fft.getSpectrumReal()[i14];
-                                float f14 = fft.getSpectrumImaginary()[i14];
-                                float sqrt3 = (float) (Math.sqrt((f14 * f14) + (f13 * f13)) / 30.0d);
-                                fArr2[i10] = sqrt3;
-                                if (sqrt3 > 1.0f) {
-                                    fArr2[i10] = 1.0f;
-                                } else if (sqrt3 < 0.0f) {
-                                    fArr2[i10] = 0.0f;
-                                }
-                                i10++;
-                            }
-                        }
-                        if (System.currentTimeMillis() - j81Var.e >= 64) {
-                            j81Var.e = System.currentTimeMillis();
-                            handler.postDelayed(new ci0(28, j81Var, fArr2), 130L);
-                        }
+        this.b.getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (elapsedRealtime - this.p >= 5) {
+            int playState = this.d.getPlayState();
+            if (playState != 1) {
+                long playbackHeadPosition = r4.getPlaybackHeadPosition() & 4294967295L;
+                if (Build.VERSION.SDK_INT <= 29) {
+                    if (playbackHeadPosition != 0 || this.q <= 0 || playState != 3) {
+                        this.v = -9223372036854775807L;
+                    } else if (this.v == -9223372036854775807L) {
+                        this.v = elapsedRealtime;
                     }
                 }
+                long j10 = this.q;
+                if (j10 > playbackHeadPosition) {
+                    if (this.A) {
+                        this.B += j10;
+                        this.A = false;
+                    } else {
+                        this.r++;
+                    }
+                }
+                this.q = playbackHeadPosition;
             }
+            this.p = elapsedRealtime;
         }
-        j(remaining).put(byteBuffer).flip();
+        return this.q + this.B + (this.r << 32);
     }
 
-    @Override // c2.i
-    public final void g() {
-        k();
+    public final long b(long j10) {
+        int i10 = this.t;
+        int i11 = this.e;
+        long max = Math.max(0L, (i10 == 0 ? this.u != -9223372036854775807L ? e2.m0.Y(i11, c()) : e2.m0.Y(i11, a()) : e2.m0.B(j10 + this.k, this.i)) - this.n);
+        return this.u != -9223372036854775807L ? Math.min(e2.m0.Y(i11, this.x), max) : max;
     }
 
-    @Override // c2.i
-    public final void h() {
-        k();
-    }
-
-    @Override // c2.i
-    public final void i() {
-        k();
-    }
-
-    public final void k() {
-        if (isActive()) {
-            int i10 = this.b.a;
-            this.i.getClass();
+    public final long c() {
+        if (this.d.getPlayState() == 2) {
+            return this.w;
         }
+        this.b.getClass();
+        return this.w + e2.m0.a0(e2.m0.B(e2.m0.S(SystemClock.elapsedRealtime()) - this.u, this.i), this.e, 1000000L, RoundingMode.UP);
     }
 
-    @Override // c2.i
-    public final c2.f f(c2.f fVar) {
-        return fVar;
+    public final void d(long j10) {
+        long j11 = this.j;
+        if (j11 == -9223372036854775807L || j10 < j11) {
+            return;
+        }
+        long F = e2.m0.F(j10 - j11, this.i);
+        this.b.getClass();
+        long currentTimeMillis = System.currentTimeMillis() - e2.m0.h0(F);
+        this.j = -9223372036854775807L;
+        e2.r rVar = ((h0) this.a.b).j;
+        rVar.getClass();
+        if (Thread.currentThread() == rVar.a) {
+            rVar.e(-1, new e0(currentTimeMillis));
+        }
     }
 }

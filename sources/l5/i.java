@@ -3,7 +3,7 @@ package l5;
 import android.util.Base64;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -16,21 +16,21 @@ public final class i {
         this.c = dVar;
     }
 
-    public static aa.a a() {
-        aa.a aVar = new aa.a(28);
-        aVar.d = i5.d.a;
-        return aVar;
+    public static androidx.biometric.e a() {
+        androidx.biometric.e eVar = new androidx.biometric.e(28);
+        eVar.d = i5.d.a;
+        return eVar;
     }
 
     public final i b(i5.d dVar) {
-        aa.a a2 = a();
-        a2.t(this.a);
+        androidx.biometric.e a2 = a();
+        a2.v(this.a);
         if (dVar == null) {
             throw new NullPointerException("Null priority");
         }
         a2.d = dVar;
         a2.c = this.b;
-        return a2.d();
+        return a2.g();
     }
 
     public final boolean equals(Object obj) {
@@ -58,6 +58,6 @@ public final class i {
         sb2.append(", ");
         sb2.append(this.c);
         sb2.append(", ");
-        return a1.g.t(sb2, encodeToString, ")");
+        return a1.g.s(sb2, encodeToString, ")");
     }
 }

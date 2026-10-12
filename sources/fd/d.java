@@ -1,54 +1,18 @@
 package fd;
 
-import cf.p;
-import cf.s;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d extends h {
-    public final /* synthetic */ int e;
+public class d extends f2.e {
+    public String c;
 
-    @Override // fd.h
-    public final p b() {
-        switch (this.e) {
-            case 0:
-                int i10 = this.d + 1;
-                this.d = i10;
-                if (c() != '[') {
-                    return null;
-                }
-                this.d++;
-                s f7 = f("![");
-                i iVar = this.a;
-                f6.f fVar = iVar.i;
-                f6.f fVar2 = new f6.f(f7, i10, fVar, iVar.h, true);
-                if (fVar != null) {
-                    fVar.d = true;
-                }
-                iVar.i = fVar2;
-                return f7;
-            default:
-                int i11 = this.d;
-                this.d = i11 + 1;
-                s f10 = f("[");
-                i iVar2 = this.a;
-                f6.f fVar3 = iVar2.i;
-                f6.f fVar4 = new f6.f(f10, i11, fVar3, iVar2.h, false);
-                if (fVar3 != null) {
-                    fVar3.d = true;
-                }
-                iVar2.i = fVar4;
-                return f10;
-        }
+    @Override // f2.e
+    public final f2.e b() {
+        this.c = null;
+        return this;
     }
 
-    @Override // fd.h
-    public final char d() {
-        switch (this.e) {
-            case 0:
-                return '!';
-            default:
-                return '[';
-        }
+    @Override // f2.e
+    public String toString() {
+        return this.c;
     }
 }

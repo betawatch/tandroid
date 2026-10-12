@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class v extends o {
     public final boolean a;
@@ -75,9 +75,9 @@ public final class v extends o {
         uVar.b = reflectiveGenericLifecycleObserver;
         uVar.a = nVar2;
         o.a aVar = this.b;
-        o.c i10 = aVar.i(sVar);
-        if (i10 != null) {
-            obj = i10.b;
+        o.c h = aVar.h(sVar);
+        if (h != null) {
+            obj = h.b;
         } else {
             HashMap hashMap2 = aVar.e;
             o.c cVar = new o.c(sVar, uVar);
@@ -126,7 +126,7 @@ public final class v extends o {
     public final void b(s observer) {
         kotlin.jvm.internal.i.e(observer, "observer");
         d("removeObserver");
-        this.b.n(observer);
+        this.b.m(observer);
     }
 
     public final n c(s sVar) {
@@ -135,7 +135,7 @@ public final class v extends o {
         o.c cVar = hashMap.containsKey(sVar) ? ((o.c) hashMap.get(sVar)).d : null;
         n nVar = (cVar == null || (uVar = (u) cVar.b) == null) ? null : uVar.a;
         ArrayList arrayList = this.h;
-        n nVar2 = arrayList.isEmpty() ? null : (n) hg.c.g(1, arrayList);
+        n nVar2 = arrayList.isEmpty() ? null : (n) i2.d.g(1, arrayList);
         n state1 = this.c;
         kotlin.jvm.internal.i.e(state1, "state1");
         if (nVar == null || nVar.compareTo(state1) >= 0) {
@@ -148,7 +148,7 @@ public final class v extends o {
         if (this.a) {
             n.a.a().a.getClass();
             if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-                throw new IllegalStateException(a1.g.q("Method ", str, " must be called on the main thread").toString());
+                throw new IllegalStateException(a1.g.p("Method ", str, " must be called on the main thread").toString());
             }
         }
     }

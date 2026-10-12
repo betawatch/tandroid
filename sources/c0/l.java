@@ -1,6 +1,58 @@
 package c0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import j9.y;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class l extends h {
+public final class l implements y {
+    public final WeakReference a;
+    public final k b = new k(this);
+
+    public l(i iVar) {
+        this.a = new WeakReference(iVar);
+    }
+
+    @Override // j9.y
+    public final void a(Runnable runnable, Executor executor) {
+        this.b.a(runnable, executor);
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z10) {
+        i iVar = (i) this.a.get();
+        boolean cancel = this.b.cancel(z10);
+        if (cancel && iVar != null) {
+            iVar.a = null;
+            iVar.b = null;
+            iVar.c.k(null);
+        }
+        return cancel;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return this.b.get();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return this.b.a instanceof a;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return this.b.isDone();
+    }
+
+    public final String toString() {
+        return this.b.toString();
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j10, TimeUnit timeUnit) {
+        return this.b.get(j10, timeUnit);
+    }
 }

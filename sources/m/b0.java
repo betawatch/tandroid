@@ -9,7 +9,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class b0 {
     public static boolean a(DragEvent dragEvent, TextView textView, Activity activity) {
@@ -28,7 +28,7 @@ public abstract class b0 {
                 eVar.c = 3;
                 dVar = eVar;
             }
-            r0.i0.h(textView, dVar.build());
+            r0.j0.h(textView, dVar.build());
             textView.endBatchEdit();
             return true;
         } catch (Throwable th2) {
@@ -49,7 +49,7 @@ public abstract class b0 {
             eVar.c = 3;
             dVar = eVar;
         }
-        r0.i0.h(view, dVar.build());
+        r0.j0.h(view, dVar.build());
         return true;
     }
 }

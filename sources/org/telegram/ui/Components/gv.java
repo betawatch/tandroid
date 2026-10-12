@@ -1,67 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ImageView;
+import android.webkit.JavascriptInterface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class gv extends WebViewClient {
-    public final /* synthetic */ lv a;
+public final class gv {
+    public final /* synthetic */ hv a;
 
-    public gv(lv lvVar) {
-        this.a = lvVar;
+    public gv(hv hvVar) {
+        this.a = hvVar;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void onPageFinished(WebView webView, String str) {
-        super.onPageFinished(webView, str);
-        lv lvVar = this.a;
-        ImageView imageView = lvVar.x;
-        if (lvVar.y) {
-            return;
+    @JavascriptInterface
+    public void postEvent(String str, String str2) {
+        if ("loaded".equals(str)) {
+            AndroidUtilities.runOnUIThread(new kq(this, 11));
         }
-        lvVar.n.setVisibility(4);
-        lvVar.h.setVisibility(4);
-        imageView.setEnabled(true);
-        imageView.setAlpha(1.0f);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        org.telegram.ui.ActionBar.e6 e6Var;
-        lv lvVar = this.a;
-        try {
-            if (!AndroidUtilities.isSafeToShow(lvVar.getContext())) {
-                return true;
-            }
-            Context context = lvVar.getContext();
-            e6Var = ((org.telegram.ui.ActionBar.f3) lvVar).resourcesProvider;
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, e6Var);
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new nq(this, 10));
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.o();
-            return true;
-        } catch (Exception e7) {
-            FileLog.e(e7);
-            return false;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        if (!this.a.y) {
-            return super.shouldOverrideUrlLoading(webView, str);
-        }
-        of.f.s(webView.getContext(), str);
-        return true;
     }
 }

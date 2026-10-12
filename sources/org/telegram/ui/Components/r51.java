@@ -1,39 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class r51 extends ScrollView {
-    public Drawable a;
-    public g6 b;
-    public boolean c;
+public final class r51 implements nw0 {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ s51 c;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float d = this.b.d(canScrollVertically(-1) ? 1.0f : 0.0f, false) * 0.5f;
-        if (d > 0.0f) {
-            if (this.a == null) {
-                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
-            }
-            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
-            this.a.setAlpha((int) (d * 255.0f));
-            this.a.draw(canvas);
-        }
+    public r51(s51 s51Var) {
+        this.c = s51Var;
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
-        super.onNestedScroll(view, i10, i11, i12, i13);
-        boolean canScrollVertically = canScrollVertically(-1);
-        if (this.c != canScrollVertically) {
-            invalidate();
-            this.c = canScrollVertically;
+    @Override // org.telegram.ui.Components.nw0
+    public final void H(int i10, boolean z10) {
+        if (this.a == i10 && this.b == z10) {
+            return;
+        }
+        this.a = i10;
+        this.b = z10;
+        if (i10 > AndroidUtilities.dp(20.0f)) {
+            s51 s51Var = this.c;
+            if (s51Var.x0) {
+                return;
+            }
+            s51Var.E0.setAllowNestedScroll(false);
+            s51Var.x0 = true;
         }
     }
 }

@@ -1,358 +1,296 @@
 package e9;
 
-import java.io.Serializable;
-import java.util.AbstractCollection;
-import java.util.AbstractMap;
 import java.util.AbstractSet;
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
-import java.util.NavigableMap;
 import java.util.RandomAccess;
-import java.util.Set;
-import java.util.SortedMap;
-import x7.ra;
+import v7.u6;
 import z7.de;
 import z7.ed;
-import z7.l9;
 import z7.lg;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public class d extends AbstractMap {
+public class d implements Iterator {
     public final /* synthetic */ int a;
-    public final transient Map b;
-    public transient AbstractSet c;
-    public transient AbstractCollection d;
-    public final /* synthetic */ Serializable e;
+    public final Iterator b;
+    public Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ d(Serializable serializable, Map map, int i10) {
-        this.a = i10;
-        this.e = serializable;
-        this.b = map;
+    public d(m mVar, ListIterator listIterator, byte b10) {
+        this.a = 3;
+        this.d = mVar;
+        this.c = mVar.c;
+        this.b = listIterator;
     }
 
-    public e0 a(Map.Entry entry) {
-        Object key = entry.getKey();
-        v0 v0Var = (v0) this.e;
-        List list = (List) ((Collection) entry.getValue());
-        return new e0(key, list instanceof RandomAccess ? new h(v0Var, key, list, null) : new l(v0Var, key, list, (l) null));
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final void clear() {
-        switch (this.a) {
-            case 0:
-                v0 v0Var = (v0) this.e;
-                if (this.b != v0Var.d) {
-                    c cVar = new c(this);
-                    while (cVar.hasNext()) {
-                        cVar.next();
-                        cVar.remove();
-                    }
-                    break;
-                } else {
-                    v0Var.b();
-                    break;
-                }
-            case 1:
-                x7.f fVar = (x7.f) this.e;
-                x7.j jVar = fVar.c;
-                if (this.b != jVar) {
-                    c cVar2 = new c(this, (byte) 0);
-                    while (cVar2.hasNext()) {
-                        cVar2.next();
-                        cVar2.remove();
-                    }
-                    break;
-                } else {
-                    Iterator it = jVar.values().iterator();
-                    while (it.hasNext()) {
-                        ((Collection) it.next()).clear();
-                    }
-                    jVar.clear();
-                    fVar.d = 0;
-                    break;
-                }
-            default:
-                z7.d dVar = ((lg) this.e).c;
-                if (this.b != dVar) {
-                    c cVar3 = new c(this, (char) 0);
-                    while (cVar3.hasNext()) {
-                        cVar3.next();
-                        cVar3.remove();
-                    }
-                    break;
-                } else {
-                    Iterator it2 = dVar.values().iterator();
-                    while (it2.hasNext()) {
-                        ((Collection) it2.next()).clear();
-                    }
-                    dVar.clear();
-                    break;
-                }
+    public void a() {
+        m mVar = (m) this.d;
+        mVar.m();
+        if (mVar.c != ((Collection) this.c)) {
+            throw new ConcurrentModificationException();
         }
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean containsKey(Object obj) {
+    public void b() {
         switch (this.a) {
-            case 0:
-                Map map = this.b;
-                map.getClass();
-                try {
-                    return map.containsKey(obj);
-                } catch (ClassCastException | NullPointerException unused) {
-                    return false;
+            case 3:
+                m mVar = (m) this.d;
+                mVar.zzb();
+                if (mVar.c != ((Collection) this.c)) {
+                    throw new ConcurrentModificationException();
                 }
-            case 1:
-                Map map2 = this.b;
-                map2.getClass();
-                try {
-                    return map2.containsKey(obj);
-                } catch (ClassCastException | NullPointerException unused2) {
-                    return false;
-                }
+                return;
             default:
-                Map map3 = this.b;
-                map3.getClass();
-                try {
-                    return map3.containsKey(obj);
-                } catch (ClassCastException | NullPointerException unused3) {
-                    return false;
+                m mVar2 = (m) this.d;
+                mVar2.zzb();
+                if (mVar2.c != ((Collection) this.c)) {
+                    throw new ConcurrentModificationException();
                 }
+                return;
         }
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Set entrySet() {
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
         switch (this.a) {
             case 0:
-                b bVar = (b) this.c;
-                if (bVar != null) {
-                    return bVar;
-                }
-                b bVar2 = new b(this);
-                this.c = bVar2;
-                return bVar2;
-            case 1:
-                ra raVar = (ra) this.c;
-                if (raVar != null) {
-                    return raVar;
-                }
-                ra raVar2 = new ra(this);
-                this.c = raVar2;
-                return raVar2;
-            default:
-                l9 l9Var = (l9) this.c;
-                if (l9Var != null) {
-                    return l9Var;
-                }
-                l9 l9Var2 = new l9(this);
-                this.c = l9Var2;
-                return l9Var2;
-        }
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final boolean equals(Object obj) {
-        switch (this.a) {
-            case 0:
-                if (this == obj || this.b.equals(obj)) {
-                }
                 break;
             case 1:
-                if (this == obj || this.b.equals(obj)) {
-                }
+                break;
+            case 2:
+                a();
+                break;
+            case 3:
+                b();
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
                 break;
             default:
-                if (this == obj || this.b.equals(obj)) {
-                }
+                b();
                 break;
         }
-        return true;
+        return this.b.hasNext();
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Object get(Object obj) {
-        Object obj2;
-        Object obj3;
-        Object obj4;
+    @Override // java.util.Iterator
+    public final Object next() {
         switch (this.a) {
             case 0:
-                Map map = this.b;
-                map.getClass();
-                try {
-                    obj2 = map.get(obj);
-                } catch (ClassCastException | NullPointerException unused) {
-                    obj2 = null;
-                }
-                Collection collection = (Collection) obj2;
-                if (collection == null) {
-                    return null;
-                }
-                v0 v0Var = (v0) this.e;
+                Map.Entry entry = (Map.Entry) this.b.next();
+                this.c = (Collection) entry.getValue();
+                return ((e) this.d).a(entry);
+            case 1:
+                Map.Entry entry2 = (Map.Entry) this.b.next();
+                this.c = entry2;
+                return entry2.getKey();
+            case 2:
+                a();
+                return this.b.next();
+            case 3:
+                b();
+                return this.b.next();
+            case 4:
+                Map.Entry entry3 = (Map.Entry) this.b.next();
+                this.c = (Collection) entry3.getValue();
+                e eVar = (e) this.d;
+                Object key = entry3.getKey();
+                x7.f fVar = (x7.f) eVar.e;
+                Collection collection = (Collection) entry3.getValue();
+                fVar.getClass();
                 List list = (List) collection;
-                return list instanceof RandomAccess ? new h(v0Var, obj, list, null) : new l(v0Var, obj, list, (l) null);
-            case 1:
-                Map map2 = this.b;
-                map2.getClass();
-                try {
-                    obj3 = map2.get(obj);
-                } catch (ClassCastException | NullPointerException unused2) {
-                    obj3 = null;
-                }
-                Collection collection2 = (Collection) obj3;
-                if (collection2 == null) {
-                    return null;
-                }
-                x7.f fVar = (x7.f) this.e;
-                fVar.getClass();
+                return new x7.l(key, list instanceof RandomAccess ? new x7.b(fVar, key, list, null) : new m(fVar, key, list, (m) null));
+            case 5:
+                Map.Entry entry4 = (Map.Entry) this.b.next();
+                this.c = entry4;
+                return entry4.getKey();
+            case 6:
+                Map.Entry entry5 = (Map.Entry) this.b.next();
+                this.c = (Collection) entry5.getValue();
+                Object key2 = entry5.getKey();
+                Collection collection2 = (Collection) entry5.getValue();
+                lg lgVar = (lg) ((e) this.d).e;
+                lgVar.getClass();
                 List list2 = (List) collection2;
-                return list2 instanceof RandomAccess ? new x7.b(fVar, obj, list2, null) : new l(fVar, obj, list2, (l) null);
+                return new z7.f(key2, list2 instanceof RandomAccess ? new de(lgVar, key2, list2, null) : new m(lgVar, key2, list2, (m) null));
+            case 7:
+                Map.Entry entry6 = (Map.Entry) this.b.next();
+                this.c = entry6;
+                return entry6.getKey();
             default:
-                Map map3 = this.b;
-                map3.getClass();
-                try {
-                    obj4 = map3.get(obj);
-                } catch (ClassCastException | NullPointerException unused3) {
-                    obj4 = null;
-                }
-                Collection collection3 = (Collection) obj4;
-                if (collection3 == null) {
-                    return null;
-                }
-                lg lgVar = (lg) this.e;
-                lgVar.getClass();
-                List list3 = (List) collection3;
-                return list3 instanceof RandomAccess ? new de(lgVar, obj, list3, null) : new l(lgVar, obj, list3, (l) null);
+                b();
+                return this.b.next();
         }
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int hashCode() {
-        switch (this.a) {
-        }
-        return this.b.hashCode();
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public Set keySet() {
+    @Override // java.util.Iterator
+    public final void remove() {
         switch (this.a) {
             case 0:
-                v0 v0Var = (v0) this.e;
-                Set set = v0Var.a;
-                if (set == null) {
-                    Map map = v0Var.d;
-                    set = map instanceof NavigableMap ? new g(v0Var, (NavigableMap) map) : map instanceof SortedMap ? new j(v0Var, (SortedMap) map) : new e(v0Var, map);
-                    v0Var.a = set;
-                }
-                return set;
+                u6.o("no calls to next() since the last call to remove()", ((Collection) this.c) != null);
+                this.b.remove();
+                ((p1) ((e) this.d).e).f -= ((Collection) this.c).size();
+                ((Collection) this.c).clear();
+                this.c = null;
+                return;
             case 1:
-                x7.f fVar = (x7.f) this.e;
-                x7.a aVar = fVar.a;
-                if (aVar != null) {
-                    return aVar;
-                }
-                x7.a aVar2 = new x7.a(fVar, fVar.c);
-                fVar.a = aVar2;
-                return aVar2;
-            default:
-                lg lgVar = (lg) this.e;
-                ed edVar = lgVar.a;
-                if (edVar != null) {
-                    return edVar;
-                }
-                ed edVar2 = new ed(lgVar, lgVar.c);
-                lgVar.a = edVar2;
-                return edVar2;
-        }
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Object remove(Object obj) {
-        switch (this.a) {
-            case 0:
-                v0 v0Var = (v0) this.e;
-                Collection collection = (Collection) this.b.remove(obj);
-                if (collection == null) {
-                    return null;
-                }
-                Collection c10 = v0Var.c();
-                c10.addAll(collection);
-                v0Var.e -= collection.size();
+                u6.o("no calls to next() since the last call to remove()", ((Map.Entry) this.c) != null);
+                Collection collection = (Collection) ((Map.Entry) this.c).getValue();
+                this.b.remove();
+                ((f) this.d).c.f -= collection.size();
                 collection.clear();
-                return c10;
-            case 1:
-                x7.f fVar = (x7.f) this.e;
-                Collection collection2 = (Collection) this.b.remove(obj);
-                if (collection2 == null) {
-                    return null;
+                this.c = null;
+                return;
+            case 2:
+                this.b.remove();
+                m mVar = (m) this.d;
+                p1 p1Var = (p1) mVar.f;
+                p1Var.f--;
+                mVar.n();
+                return;
+            case 3:
+                this.b.remove();
+                m mVar2 = (m) this.d;
+                x7.f fVar = (x7.f) mVar2.f;
+                fVar.d--;
+                mVar2.p();
+                return;
+            case 4:
+                if (!(((Collection) this.c) != null)) {
+                    throw new IllegalStateException("no calls to next() since the last call to remove()");
                 }
-                fVar.getClass();
-                ArrayList arrayList = new ArrayList(3);
-                arrayList.addAll(collection2);
-                fVar.d -= collection2.size();
+                this.b.remove();
+                ((x7.f) ((e) this.d).e).d -= ((Collection) this.c).size();
+                ((Collection) this.c).clear();
+                this.c = null;
+                return;
+            case 5:
+                Map.Entry entry = (Map.Entry) this.c;
+                if (!(entry != null)) {
+                    throw new IllegalStateException("no calls to next() since the last call to remove()");
+                }
+                Collection collection2 = (Collection) entry.getValue();
+                this.b.remove();
+                ((x7.a) this.d).c.d -= collection2.size();
                 collection2.clear();
-                return arrayList;
-            default:
-                lg lgVar = (lg) this.e;
-                Collection collection3 = (Collection) this.b.remove(obj);
-                if (collection3 == null) {
-                    return null;
+                this.c = null;
+                return;
+            case 6:
+                if (!(((Collection) this.c) != null)) {
+                    throw new IllegalStateException("no calls to next() since the last call to remove()");
                 }
-                lgVar.getClass();
-                ArrayList arrayList2 = new ArrayList(3);
-                arrayList2.addAll(collection3);
+                this.b.remove();
+                ((lg) ((e) this.d).e).getClass();
+                ((Collection) this.c).size();
+                ((Collection) this.c).clear();
+                this.c = null;
+                return;
+            case 7:
+                Map.Entry entry2 = (Map.Entry) this.c;
+                if (!(entry2 != null)) {
+                    throw new IllegalStateException("no calls to next() since the last call to remove()");
+                }
+                Collection collection3 = (Collection) entry2.getValue();
+                this.b.remove();
+                ((ed) this.d).c.getClass();
                 collection3.size();
                 collection3.clear();
-                return arrayList2;
-        }
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final int size() {
-        switch (this.a) {
-        }
-        return this.b.size();
-    }
-
-    @Override // java.util.AbstractMap
-    public final String toString() {
-        switch (this.a) {
-        }
-        return this.b.toString();
-    }
-
-    @Override // java.util.AbstractMap, java.util.Map
-    public final Collection values() {
-        switch (this.a) {
-            case 0:
-                n nVar = (n) this.d;
-                if (nVar != null) {
-                    return nVar;
-                }
-                n nVar2 = new n(this, 2);
-                this.d = nVar2;
-                return nVar2;
-            case 1:
-                n nVar3 = (n) this.d;
-                if (nVar3 != null) {
-                    return nVar3;
-                }
-                n nVar4 = new n(this, 4);
-                this.d = nVar4;
-                return nVar4;
+                this.c = null;
+                return;
             default:
-                n nVar5 = (n) this.d;
-                if (nVar5 != null) {
-                    return nVar5;
-                }
-                n nVar6 = new n(this, 6);
-                this.d = nVar6;
-                return nVar6;
+                this.b.remove();
+                ((m) this.d).p();
+                return;
         }
+    }
+
+    public d(m mVar, ListIterator listIterator, char c10) {
+        this.a = 8;
+        this.d = mVar;
+        this.c = mVar.c;
+        this.b = listIterator;
+    }
+
+    public /* synthetic */ d(AbstractSet abstractSet, Iterator it, int i10) {
+        this.a = i10;
+        this.b = it;
+        this.d = abstractSet;
+    }
+
+    public d(e eVar, byte b10) {
+        this.a = 4;
+        this.d = eVar;
+        this.b = eVar.b.entrySet().iterator();
+    }
+
+    public d(e eVar, char c10) {
+        this.a = 6;
+        this.d = eVar;
+        this.b = eVar.b.entrySet().iterator();
+    }
+
+    public d(m mVar, byte b10) {
+        Iterator it;
+        this.a = 3;
+        this.d = mVar;
+        Collection collection = mVar.c;
+        this.c = collection;
+        if (collection instanceof List) {
+            it = ((List) collection).listIterator();
+        } else {
+            it = collection.iterator();
+        }
+        this.b = it;
+    }
+
+    public d(m mVar, char c10) {
+        Iterator it;
+        this.a = 8;
+        this.d = mVar;
+        Collection collection = mVar.c;
+        this.c = collection;
+        if (collection instanceof List) {
+            it = ((List) collection).listIterator();
+        } else {
+            it = collection.iterator();
+        }
+        this.b = it;
+    }
+
+    public d(m mVar) {
+        Iterator it;
+        this.a = 2;
+        this.d = mVar;
+        Collection collection = mVar.c;
+        this.c = collection;
+        if (collection instanceof List) {
+            it = ((List) collection).listIterator();
+        } else {
+            it = collection.iterator();
+        }
+        this.b = it;
+    }
+
+    public d(m mVar, ListIterator listIterator) {
+        this.a = 2;
+        this.d = mVar;
+        this.c = mVar.c;
+        this.b = listIterator;
+    }
+
+    public d(e eVar) {
+        this.a = 0;
+        this.d = eVar;
+        this.b = eVar.b.entrySet().iterator();
     }
 }

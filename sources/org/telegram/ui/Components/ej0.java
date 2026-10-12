@@ -1,56 +1,79 @@
 package org.telegram.ui.Components;
 
-import java.util.Locale;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ej0 implements qd0, sd0 {
+public final class ej0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jj0 b;
+    public final /* synthetic */ fj0 b;
 
-    public /* synthetic */ ej0(jj0 jj0Var, int i10) {
+    public /* synthetic */ ej0(fj0 fj0Var, int i10) {
         this.a = i10;
-        this.b = jj0Var;
+        this.b = fj0Var;
     }
 
-    @Override // org.telegram.ui.Components.qd0
-    public String i(int i10) {
-        int i11 = this.a;
-        jj0 jj0Var = this.b;
-        switch (i11) {
-            case 0:
-                return jj0Var.O ? LocaleController.formatString("MilesShort", R.string.MilesShort, Integer.valueOf(i10)) : LocaleController.formatString("KMetersShort", R.string.KMetersShort, Integer.valueOf(i10));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                fj0 fj0Var = this.b;
+                AnimatorSet animatorSet = fj0Var.s;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    fj0Var.s = null;
+                    fj0Var.getClass();
+                    break;
+                }
+                break;
+            case 2:
+                fj0 fj0Var2 = this.b;
+                AnimatorSet animatorSet2 = fj0Var2.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    fj0Var2.s = null;
+                    fj0Var2.getClass();
+                    break;
+                }
+                break;
             default:
-                if (!jj0Var.O) {
-                    if (i10 == 1) {
-                        return LocaleController.formatString("MetersShort", R.string.MetersShort, 50);
-                    }
-                    if (i10 > 1) {
-                        i10--;
-                    }
-                    return LocaleController.formatString("MetersShort", R.string.MetersShort, Integer.valueOf(i10 * 100));
-                }
-                if (i10 == 1) {
-                    return LocaleController.formatString("FootsShort", R.string.FootsShort, Integer.valueOf(MediaDataController.MAX_LINKS_COUNT));
-                }
-                if (i10 > 1) {
-                    i10--;
-                }
-                Locale locale = Locale.US;
-                return hg.c.h(i10, ".");
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.sd0
-    public void r(ud0 ud0Var, int i10) {
-        jj0 jj0Var = this.b;
-        try {
-            jj0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        fj0 fj0Var = this.b;
+        switch (i10) {
+            case 0:
+                AnimatorSet animatorSet = fj0Var.h;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    fj0Var.h = null;
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
+            case 1:
+                AnimatorSet animatorSet2 = fj0Var.s;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    fj0Var.s = null;
+                    if (fj0Var.w) {
+                        fj0Var.setLayerType(0, null);
+                    }
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
+            default:
+                AnimatorSet animatorSet3 = fj0Var.s;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    fj0Var.s = null;
+                    AndroidUtilities.runOnUIThread(new yc0(this, 15));
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
         }
-        jj0Var.c(true);
     }
 }

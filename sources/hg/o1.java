@@ -1,143 +1,194 @@
 package hg;
 
-import android.graphics.Bitmap;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.WeakHashMap;
+import org.telegram.messenger.BuildVars;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.a2, gh.b, d9.e, e2.m, e2.n {
+public final class o1 extends s4.i0 {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ o1(int i10) {
+    public /* synthetic */ o1(Object obj, int i10) {
         this.a = i10;
+        this.b = obj;
     }
 
-    @Override // gh.b
-    public Object a(Bitmap bitmap) {
+    @Override // s4.i0
+    public final void a() {
         switch (this.a) {
+            case 0:
+                ((p1) this.b).l();
+                break;
             case 1:
-                if (bitmap == null || bitmap.isRecycled()) {
-                    return null;
+                mm0 mm0Var = (mm0) this.b;
+                mm0Var.K0(true);
+                if (mm0Var.q2) {
+                    mm0Var.q1 = -1;
+                    if (mm0Var.T1 == null) {
+                        mm0Var.E1.setEmpty();
+                    }
                 }
-                Bitmap stackBlurBitmapWithScaleFactor = Utilities.stackBlurBitmapWithScaleFactor(bitmap, Math.max(bitmap.getWidth() / 90.0f, bitmap.getHeight() / 120.0f));
-                stackBlurBitmapWithScaleFactor.setHasAlpha(false);
-                return stackBlurBitmapWithScaleFactor;
-            case 2:
-                int i10 = 0;
-                if (bitmap != null && !bitmap.isRecycled()) {
-                    int height = bitmap.getHeight();
-                    i10 = Utilities.averageBitmapColor(bitmap, 0, (height * 9) / 10, bitmap.getWidth(), height);
-                }
-                return Integer.valueOf(i10);
+                mm0Var.invalidate();
+                break;
             default:
-                int i11 = 0;
-                if (bitmap != null && !bitmap.isRecycled()) {
-                    i11 = Utilities.averageBitmapColor(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight() / 10);
+                RecyclerView recyclerView = (RecyclerView) this.b;
+                recyclerView.l(null);
+                recyclerView.u0.f = true;
+                if (BuildVars.DEBUG_VERSION) {
+                    recyclerView.d.i("notifyDataSetChanged()");
                 }
-                return Integer.valueOf(i11);
+                recyclerView.m0(true);
+                if (!recyclerView.d.h()) {
+                    recyclerView.requestLayout();
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // d9.e, i5.e
-    public Object apply(Object obj) {
-        return new j2.f((e2.x) obj);
-    }
-
-    @Override // e2.n
-    public void e(Object obj, b2.q qVar) {
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        b2Var.dismiss();
-    }
-
-    @Override // e2.m
-    public void invoke(Object obj) {
+    @Override // s4.i0
+    public void b(int i10, int i11) {
         switch (this.a) {
-            case 9:
-                ((b2.z0) obj).onPlayerError(new i2.n(2, new ae.x("Player release timed out."), 1003));
-                break;
-            case 10:
-                ((b2.z0) obj).onRenderedFirstFrame();
-                break;
-            case 11:
-            case 25:
-            default:
-                ((j2.b) obj).getClass();
-                break;
-            case 12:
-                ((j2.b) obj).getClass();
-                break;
-            case 13:
-                ((j2.b) obj).getClass();
-                break;
-            case 14:
-                ((j2.b) obj).getClass();
-                break;
-            case 15:
-                ((j2.b) obj).getClass();
-                break;
-            case 16:
-                ((j2.b) obj).getClass();
-                break;
-            case 17:
-                ((j2.b) obj).getClass();
-                break;
-            case 18:
-                ((j2.b) obj).getClass();
-                break;
-            case 19:
-                ((j2.b) obj).getClass();
-                break;
-            case 20:
-                ((j2.b) obj).getClass();
-                break;
-            case 21:
-                ((j2.b) obj).getClass();
-                break;
-            case 22:
-                ((j2.b) obj).getClass();
-                break;
-            case 23:
-                ((j2.b) obj).getClass();
-                break;
-            case 24:
-                ((j2.b) obj).getClass();
-                break;
-            case 26:
-                ((j2.b) obj).getClass();
-                break;
-            case 27:
-                ((j2.b) obj).getClass();
-                break;
-            case 28:
-                ((j2.b) obj).getClass();
+            case 0:
+                ((p1) this.b).q(i10 + 1, i11);
                 break;
         }
     }
 
-    public /* synthetic */ o1(j2.a aVar, int i10, int i11) {
-        this.a = i11;
+    @Override // s4.i0
+    public void c(int i10, int i11, Object obj) {
+        switch (this.a) {
+            case 2:
+                RecyclerView recyclerView = (RecyclerView) this.b;
+                recyclerView.l(null);
+                s4.b bVar = recyclerView.d;
+                ArrayList arrayList = (ArrayList) bVar.d;
+                if (i11 >= 1) {
+                    if (BuildVars.DEBUG_VERSION) {
+                        StringBuilder l4 = i2.d.l("onItemRangeChanged(", i10, ", ", i11, ", ");
+                        l4.append(obj);
+                        l4.append(")");
+                        bVar.i(l4.toString());
+                    }
+                    arrayList.add(bVar.j(4, i10, obj, i11));
+                    bVar.b |= 4;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.c(i10, i11, obj);
+                break;
+        }
     }
 
-    public /* synthetic */ o1(j2.a aVar, int i10, int i11, boolean z10) {
-        this.a = 24;
+    @Override // s4.i0
+    public final void d(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                ((p1) this.b).s(i10 + 1, i11);
+                break;
+            case 1:
+                mm0 mm0Var = (mm0) this.b;
+                mm0Var.K0(true);
+                View view = mm0Var.p1;
+                if (view != null && view.getAlpha() == 0.0f) {
+                    mm0Var.q1 = -1;
+                    mm0Var.f1();
+                    break;
+                }
+                break;
+            default:
+                RecyclerView recyclerView = (RecyclerView) this.b;
+                recyclerView.l(null);
+                s4.b bVar = recyclerView.d;
+                ArrayList arrayList = (ArrayList) bVar.d;
+                if (i11 >= 1) {
+                    if (BuildVars.DEBUG_VERSION) {
+                        bVar.i("onItemRangeInserted(" + i10 + ", " + i11 + ")");
+                    }
+                    arrayList.add(bVar.j(1, i10, null, i11));
+                    bVar.b |= 1;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 
-    public /* synthetic */ o1(j2.a aVar, Object obj, int i10) {
-        this.a = i10;
+    @Override // s4.i0
+    public void e(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                ((p1) this.b).q(i10 + 1, i11 + 2);
+                break;
+            case 2:
+                RecyclerView recyclerView = (RecyclerView) this.b;
+                recyclerView.l(null);
+                s4.b bVar = recyclerView.d;
+                ArrayList arrayList = (ArrayList) bVar.d;
+                if (i10 != i11) {
+                    if (BuildVars.DEBUG_VERSION) {
+                        bVar.i("onItemRangeMoved(" + i10 + ", " + i11 + ", 1)");
+                    }
+                    arrayList.add(bVar.j(8, i10, null, i11));
+                    bVar.b |= 8;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 
-    public /* synthetic */ o1(j2.a aVar, String str, long j3, long j10) {
-        this.a = 18;
+    @Override // s4.i0
+    public final void f(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                ((p1) this.b).t(i10 + 1, i11);
+                break;
+            case 1:
+                ((mm0) this.b).K0(true);
+                break;
+            default:
+                RecyclerView recyclerView = (RecyclerView) this.b;
+                recyclerView.l(null);
+                s4.b bVar = recyclerView.d;
+                ArrayList arrayList = (ArrayList) bVar.d;
+                if (i11 >= 1) {
+                    if (BuildVars.DEBUG_VERSION) {
+                        bVar.i("onItemRangeRemoved(" + i10 + ", " + i11 + ")");
+                    }
+                    arrayList.add(bVar.j(2, i10, null, i11));
+                    bVar.b |= 2;
+                    if (arrayList.size() == 1) {
+                        g();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 
-    public /* synthetic */ o1(j2.a aVar, boolean z10) {
-        this.a = 17;
-    }
-
-    public /* synthetic */ o1(j2.a aVar, boolean z10, int i10, int i11) {
-        this.a = i11;
+    public void g() {
+        int[] iArr = RecyclerView.Q0;
+        RecyclerView recyclerView = (RecyclerView) this.b;
+        if (!recyclerView.H || !recyclerView.G) {
+            recyclerView.requestLayout();
+            return;
+        }
+        s4.f0 f0Var = recyclerView.n;
+        WeakHashMap weakHashMap = r0.j0.a;
+        recyclerView.postOnAnimation(f0Var);
     }
 }

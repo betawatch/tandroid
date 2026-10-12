@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class zzqq {
     public static final /* synthetic */ int zze = 0;
@@ -17,8 +17,8 @@ public abstract class zzqq {
         return (i10 >>> 1) ^ (-(i10 & 1));
     }
 
-    public static long zzG(long j3) {
-        return (j3 >>> 1) ^ (-(1 & j3));
+    public static long zzG(long j10) {
+        return (j10 >>> 1) ^ (-(1 & j10));
     }
 
     public static zzqq zzH(byte[] bArr, int i10, int i11, boolean z10) {
@@ -26,8 +26,8 @@ public abstract class zzqq {
         try {
             zzqnVar.zze(0);
             return zzqnVar;
-        } catch (zzsx e7) {
-            throw new IllegalArgumentException(e7);
+        } catch (zzsx e) {
+            throw new IllegalArgumentException(e);
         }
     }
 

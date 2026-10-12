@@ -1,13 +1,54 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.MenuItem;
+import android.graphics.Rect;
+import android.view.View;
+import org.telegram.ui.Components.gp0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i4 implements MenuItem.OnMenuItemClickListener {
-    @Override // android.view.MenuItem.OnMenuItemClickListener
-    public final boolean onMenuItemClick(MenuItem menuItem) {
-        i4 i4Var = w4.p;
-        return false;
+public final class i4 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ Object d;
+
+    public i4(gp0 gp0Var, gp0 gp0Var2, gp0 gp0Var3) {
+        this.a = 1;
+        this.b = gp0Var;
+        this.c = gp0Var2;
+        this.d = gp0Var3;
+    }
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        switch (this.a) {
+            case 0:
+                Rect rect = (Rect) this.b;
+                rect.set(i10, i11, i12, i13);
+                Rect rect2 = (Rect) this.c;
+                rect2.set(i14, i15, i16, i17);
+                v4 v4Var = (v4) this.d;
+                t4 t4Var = v4Var.b;
+                if (t4Var.f() && !rect.equals(rect2)) {
+                    v4Var.h = true;
+                    if (t4Var.f()) {
+                        v4Var.c();
+                        break;
+                    }
+                }
+                break;
+            default:
+                ((gp0) this.b).setProgress(org.telegram.ui.m5.c);
+                ((gp0) this.c).setProgress(org.telegram.ui.m5.d);
+                ((gp0) this.d).setProgress(org.telegram.ui.m5.e);
+                break;
+        }
+    }
+
+    public i4(v4 v4Var) {
+        this.a = 0;
+        this.d = v4Var;
+        this.b = new Rect();
+        this.c = new Rect();
     }
 }

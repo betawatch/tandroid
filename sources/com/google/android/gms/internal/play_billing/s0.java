@@ -2,11 +2,11 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class s0 {
-    public final String a;
-    public volatile Logger b;
+    public final Object a;
+    public volatile Object b;
     public final Object c;
 
     public s0(Class cls, int i10) {
@@ -23,17 +23,17 @@ public final class s0 {
     }
 
     public Logger a() {
-        Logger logger = this.b;
+        Logger logger = (Logger) this.b;
         if (logger != null) {
             return logger;
         }
         synchronized (this.c) {
             try {
-                Logger logger2 = this.b;
+                Logger logger2 = (Logger) this.b;
                 if (logger2 != null) {
                     return logger2;
                 }
-                Logger logger3 = Logger.getLogger(this.a);
+                Logger logger3 = Logger.getLogger((String) this.a);
                 this.b = logger3;
                 return logger3;
             } catch (Throwable th2) {
@@ -42,23 +42,39 @@ public final class s0 {
         }
     }
 
-    public Logger b() {
-        Logger logger = this.b;
+    public synchronized int[] b() {
+        try {
+            if (((int[]) this.b) == null) {
+                this.b = ((mi.s) this.a).b(this);
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+        return (int[]) this.b;
+    }
+
+    public Logger c() {
+        Logger logger = (Logger) this.b;
         if (logger != null) {
             return logger;
         }
         synchronized (((n) this.c)) {
             try {
-                Logger logger2 = this.b;
+                Logger logger2 = (Logger) this.b;
                 if (logger2 != null) {
                     return logger2;
                 }
-                Logger logger3 = Logger.getLogger(this.a);
+                Logger logger3 = Logger.getLogger((String) this.a);
                 this.b = logger3;
                 return logger3;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
+    }
+
+    public s0(int[] iArr, mi.s sVar) {
+        this.c = iArr;
+        this.a = sVar;
     }
 }

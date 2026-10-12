@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import c5.w;
+import c5.x;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.j;
@@ -20,9 +20,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import v7.n6;
+import v7.o6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
@@ -61,13 +61,13 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
         }
         try {
             i11 = ((Integer) Tasks.await(new j(context).b(intent))).intValue();
-        } catch (InterruptedException | ExecutionException e7) {
-            Log.e("FirebaseMessaging", "Failed to send message to service.", e7);
+        } catch (InterruptedException | ExecutionException e) {
+            Log.e("FirebaseMessaging", "Failed to send message to service.", e);
         }
         try {
             Tasks.await(l4, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
-        } catch (InterruptedException | ExecutionException | TimeoutException e10) {
-            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e10.toString()));
+        } catch (InterruptedException | ExecutionException | TimeoutException e7) {
+            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e7.toString()));
         }
         return i11;
     }
@@ -93,10 +93,10 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             return 500;
         }
         Intent putExtras = new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(extras);
-        if (!n6.b(putExtras)) {
+        if (!o6.b(putExtras)) {
             return -1;
         }
-        n6.a("_nd", putExtras.getExtras());
+        o6.a("_nd", putExtras.getExtras());
         return -1;
     }
 
@@ -113,7 +113,7 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
                 SoftReference softReference = a;
                 ExecutorService executorService2 = softReference != null ? (ExecutorService) softReference.get() : null;
                 if (executorService2 == null) {
-                    executorService2 = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool(new w("firebase-iid-executor")));
+                    executorService2 = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool(new x("firebase-iid-executor")));
                     a = new SoftReference(executorService2);
                 }
                 executorService = executorService2;

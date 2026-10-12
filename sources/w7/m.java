@@ -1,19 +1,16 @@
 package w7;
 
-import android.view.View;
-import android.view.ViewParent;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.widget.TextView;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class m {
-    public static void a(EditorInfo editorInfo, InputConnection inputConnection, TextView textView) {
-        if (inputConnection == null || editorInfo.hintText != null) {
-            return;
-        }
-        for (ViewParent parent = textView.getParent(); parent instanceof View; parent = parent.getParent()) {
-        }
+    public b2.u0 a(l3.a aVar) {
+        ByteBuffer byteBuffer = aVar.c;
+        byteBuffer.getClass();
+        v7.u6.g(byteBuffer.position() == 0 && byteBuffer.hasArray() && byteBuffer.arrayOffset() == 0);
+        return b(aVar, byteBuffer);
     }
+
+    public abstract b2.u0 b(l3.a aVar, ByteBuffer byteBuffer);
 }

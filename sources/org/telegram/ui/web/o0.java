@@ -2,19 +2,19 @@ package org.telegram.ui.web;
 
 import android.webkit.PermissionRequest;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements q0.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ v0 b;
     public final /* synthetic */ PermissionRequest c;
-    public final /* synthetic */ String[] d;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ o0(v0 v0Var, PermissionRequest permissionRequest, String[] strArr, int i10) {
+    public /* synthetic */ o0(v0 v0Var, PermissionRequest permissionRequest, String str, int i10) {
         this.a = i10;
         this.b = v0Var;
         this.c = permissionRequest;
-        this.d = strArr;
+        this.d = str;
     }
 
     @Override // q0.a
@@ -31,23 +31,50 @@ public final /* synthetic */ class o0 implements q0.a {
                         permissionRequest.deny();
                         break;
                     } else {
-                        b1.a(v0Var.e.Q, new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, new o0(v0Var, permissionRequest, this.d, 1));
+                        b1.a(v0Var.e.Q, new String[]{"android.permission.RECORD_AUDIO"}, new o0(v0Var, permissionRequest, this.d, 2));
                         break;
                     }
                 }
                 break;
-            default:
+            case 1:
                 v0 v0Var2 = this.b;
-                v0Var2.getClass();
-                boolean booleanValue2 = bool.booleanValue();
-                PermissionRequest permissionRequest2 = this.c;
-                if (!booleanValue2) {
-                    permissionRequest2.deny();
+                if (v0Var2.a != null) {
+                    v0Var2.a = null;
+                    boolean booleanValue2 = bool.booleanValue();
+                    PermissionRequest permissionRequest2 = this.c;
+                    if (!booleanValue2) {
+                        permissionRequest2.deny();
+                        break;
+                    } else {
+                        b1.a(v0Var2.e.Q, new String[]{"android.permission.CAMERA"}, new o0(v0Var2, permissionRequest2, this.d, 3));
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                v0 v0Var3 = this.b;
+                v0Var3.getClass();
+                boolean booleanValue3 = bool.booleanValue();
+                PermissionRequest permissionRequest3 = this.c;
+                if (!booleanValue3) {
+                    permissionRequest3.deny();
                     break;
                 } else {
-                    String[] strArr = this.d;
-                    permissionRequest2.grant(new String[]{strArr[0], strArr[1]});
-                    v0Var2.e.Q.T = true;
+                    permissionRequest3.grant(new String[]{this.d});
+                    v0Var3.e.Q.T = true;
+                    break;
+                }
+            default:
+                v0 v0Var4 = this.b;
+                v0Var4.getClass();
+                boolean booleanValue4 = bool.booleanValue();
+                PermissionRequest permissionRequest4 = this.c;
+                if (!booleanValue4) {
+                    permissionRequest4.deny();
+                    break;
+                } else {
+                    permissionRequest4.grant(new String[]{this.d});
+                    v0Var4.e.Q.T = true;
                     break;
                 }
         }

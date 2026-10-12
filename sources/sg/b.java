@@ -1,34 +1,58 @@
 package sg;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
-    public final /* synthetic */ int c;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.FrameLayout;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.mm0;
+import w7.a6;
 
-    public /* synthetic */ b(f fVar, int i10, int i11) {
-        this.a = i11;
-        this.b = fVar;
-        this.c = i10;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public abstract class b extends FrameLayout implements l0 {
+    public final c6 a;
+    public final mm0 b;
+    public final s4.b0 c;
+
+    public b(Context context, c6 c6Var) {
+        super(context);
+        this.a = c6Var;
+        mm0 mm0Var = new mm0(context, c6Var);
+        this.b = mm0Var;
+        mm0Var.setNestedScrollingEnabled(true);
+        mm0Var.setAdapter(a());
+        s4.b0 b0Var = new s4.b0(1, false);
+        this.c = b0Var;
+        mm0Var.setLayoutManager(b0Var);
+        mm0Var.setClipToPadding(false);
+        addView(mm0Var, a6.d(-1.0f, -1));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                f fVar = this.b;
-                fVar.postOnAnimation(new b(fVar, this.c, 1));
-                break;
-            default:
-                f fVar2 = this.b;
-                int i10 = this.c;
-                if (fVar2.e && !fVar2.r && i10 == fVar2.E) {
-                    fVar2.x = true;
-                    fVar2.requestRender();
-                    break;
-                }
-                break;
+    public abstract s4.g0 a();
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Paint U0 = g6.U0("paintDivider", this.a);
+        if (U0 == null) {
+            U0 = g6.k0;
         }
+        canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, U0);
+    }
+
+    @Override // sg.l0
+    public void setOffset(float f7) {
+        if (Math.abs(f7 / getMeasuredWidth()) == 1.0f) {
+            mm0 mm0Var = this.b;
+            if (mm0Var.K(0) == null || mm0Var.K(0).a.getTop() != mm0Var.getPaddingTop()) {
+                mm0Var.u0(0);
+            }
+        }
+    }
+
+    public void setTopOffset(int i10) {
+        this.b.setPadding(0, i10, 0, 0);
     }
 }

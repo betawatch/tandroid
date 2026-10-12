@@ -12,7 +12,7 @@ import android.os.Build;
 import android.view.Surface;
 import org.webrtc.EglBase14;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 class EglBase14Impl implements EglBase14 {
     private static final int CURRENT_SDK_VERSION = Build.VERSION.SDK_INT;
@@ -24,7 +24,7 @@ class EglBase14Impl implements EglBase14 {
     private EGLSurface eglSurface;
     private EGLSurface eglSurfaceBackground;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class Context implements EglBase14.Context {
         private final EGLContext egl14Context;
 
@@ -165,9 +165,9 @@ class EglBase14Impl implements EglBase14 {
         if (eglCreatePbufferSurface != EGL14.EGL_NO_SURFACE) {
             return;
         }
-        StringBuilder k10 = hg.c.k("Failed to create pixel buffer surface with size ", i10, "x", i11, ": 0x");
-        k10.append(Integer.toHexString(EGL14.eglGetError()));
-        throw new RuntimeException(k10.toString());
+        StringBuilder l4 = i2.d.l("Failed to create pixel buffer surface with size ", i10, "x", i11, ": 0x");
+        l4.append(Integer.toHexString(EGL14.eglGetError()));
+        throw new RuntimeException(l4.toString());
     }
 
     @Override // org.webrtc.EglBase
@@ -309,12 +309,12 @@ class EglBase14Impl implements EglBase14 {
     }
 
     @Override // org.webrtc.EglBase
-    public void swapBuffers(long j3, boolean z10) {
+    public void swapBuffers(long j10, boolean z10) {
         checkIsNotReleased();
         EGLSurface eGLSurface = z10 ? this.eglSurfaceBackground : this.eglSurface;
         if (eGLSurface != EGL14.EGL_NO_SURFACE) {
             synchronized (EglBase.lock) {
-                EGLExt.eglPresentationTimeANDROID(this.eglDisplay, eGLSurface, j3);
+                EGLExt.eglPresentationTimeANDROID(this.eglDisplay, eGLSurface, j10);
                 EGL14.eglSwapBuffers(this.eglDisplay, eGLSurface);
             }
             return;

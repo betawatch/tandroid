@@ -2,42 +2,42 @@ package v3;
 
 import c3.k;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a extends k implements f {
-    public final long h;
-    public final int i;
+public final class a extends k implements h {
+    public final long i;
     public final int j;
-    public final boolean k;
-    public final long l;
+    public final int k;
+    public final boolean l;
+    public final long m;
 
-    public a(long j3, int i10, int i11, boolean z10, long j10) {
-        super(j3, i10, i11, z10, j10);
-        long j11 = j3;
-        this.h = j10;
-        this.i = i10;
-        this.j = i11;
-        this.k = z10;
-        this.l = j11 == -1 ? -1L : j11;
+    public a(long j10, long j11, int i10, int i11, boolean z10, boolean z11) {
+        super(j10, j11, i10, i11, z10, z11);
+        long j12 = j10;
+        this.i = j11;
+        this.j = i10;
+        this.k = i11;
+        this.l = z10;
+        this.m = j12 == -1 ? -1L : j12;
     }
 
-    @Override // v3.f
-    public final long b(long j3) {
-        return (Math.max(0L, j3 - this.b) * 8000000) / this.e;
+    @Override // v3.h
+    public final long a() {
+        return this.m;
     }
 
-    @Override // v3.f
-    public final long d() {
-        return this.l;
+    @Override // v3.h
+    public final long b(long j10) {
+        return (Math.max(0L, j10 - this.b) * 8000000) / this.e;
     }
 
-    @Override // v3.f
-    public final long e() {
-        return this.h;
-    }
-
-    @Override // v3.f
-    public final int k() {
+    @Override // v3.h
+    public final long c() {
         return this.i;
+    }
+
+    @Override // v3.h
+    public final int g() {
+        return this.j;
     }
 }

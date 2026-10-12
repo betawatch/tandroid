@@ -1,147 +1,40 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class l3 implements org.telegram.ui.web.g0 {
-    public final /* synthetic */ m3 a;
+public final class l3 extends fi.p4 {
+    public boolean c0;
+    public final /* synthetic */ o3 d0;
 
-    public l3(m3 m3Var) {
-        this.a = m3Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l3(o3 o3Var, Context context) {
+        super(context);
+        this.d0 = o3Var;
     }
 
-    @Override // org.telegram.ui.web.g0
-    public final void b() {
-        v3 v3Var = this.a.K.K;
-        if (v3Var != null) {
-            v3Var.dismiss(true);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.c0 = true;
+        setOffsetY(View.MeasureSpec.getSize(i11) * 0.4f);
+        this.c0 = false;
+        int size = View.MeasureSpec.getSize(i11);
+        x3 x3Var = this.d0.K.K;
+        if (x3Var != null) {
+            x3Var.getClass();
         }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp(56.0f)) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ String g(boolean z10, boolean z11) {
-        return "UNSUPPORTED";
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ boolean h() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void j() {
-        m3 m3Var = this.a;
-        i4 i4Var = m3Var.K;
-        v3 v3Var = i4Var.K;
-        if (v3Var == null) {
-            if (i4Var.u0[0] == m3Var) {
-                i4Var.G();
-            }
-        } else {
-            if (v3Var.h) {
-                return;
-            }
-            v3Var.h = true;
-            v3Var.release();
-            v3Var.K.s();
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c0) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void o(int i10, boolean z10) {
-        m3.a(this.a, z10, i10);
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void y() {
-        m3 m3Var = this.a;
-        i4 i4Var = m3Var.K;
-        if (i4Var.u0[0] == m3Var) {
-            i4Var.G();
-        }
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ ei.a1 z() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void a() {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void c() {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void d(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void e(String str) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void f(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void i(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void k(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void m(int i10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void p(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void r(int i10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void s() {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void t(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void w(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void x(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void u(int i10, int i11, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void v(TLRPC.User user, String str, ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void q(boolean z10, boolean z11, String str, long j3, int i10, int i11, boolean z12, boolean z13) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void l(boolean z10, boolean z11, String str, long j3, int i10, int i11, boolean z12, boolean z13, String str2) {
+        super.requestLayout();
     }
 }

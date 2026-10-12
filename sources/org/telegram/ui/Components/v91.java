@@ -1,139 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.os.Build;
-import java.io.File;
-import java.io.FileOutputStream;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import android.webkit.WebView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class v91 {
-    public String a;
-    public final Activity b;
-    public final org.telegram.ui.ActionBar.n2 c;
-    public final u91 d;
-    public File e;
+public final class v91 extends WebView {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
 
-    public v91(Activity activity, WallpapersListActivity wallpapersListActivity, u91 u91Var) {
-        this.b = activity;
-        this.c = wallpapersListActivity;
-        this.d = u91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v91(org.telegram.ui.cp0 cp0Var, Context context) {
+        super(context);
+        this.b = cp0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x006c, code lost:
-    
-        if (r10 == null) goto L24;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0074 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r10v1 */
-    /* JADX WARN: Type inference failed for: r10v11, types: [java.io.FileOutputStream] */
-    /* JADX WARN: Type inference failed for: r10v15 */
-    /* JADX WARN: Type inference failed for: r10v16 */
-    /* JADX WARN: Type inference failed for: r10v9 */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(int i10, int i11, Intent intent) {
-        FileOutputStream fileOutputStream;
-        if (i11 == -1) {
-            ?? r10 = 10;
-            u91 u91Var = this.d;
-            FileOutputStream fileOutputStream2 = null;
-            if (i10 != 10) {
-                if (i10 != 11 || intent == null || intent.getData() == null) {
-                    return;
-                }
-                try {
-                    this.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                    Point realScreenSize = AndroidUtilities.getRealScreenSize();
-                    Bitmap loadBitmap = ImageLoader.loadBitmap(null, intent.getData(), (float) realScreenSize.x, (float) realScreenSize.y, true);
-                    loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(this.e));
-                    u91Var.b(this.e, loadBitmap, false);
-                    return;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                    return;
-                }
-            }
-            AndroidUtilities.addMediaToGallery(this.a);
-            try {
-                try {
-                    this.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                    Point realScreenSize2 = AndroidUtilities.getRealScreenSize();
-                    Bitmap loadBitmap2 = ImageLoader.loadBitmap(this.a, null, (float) realScreenSize2.x, (float) realScreenSize2.y, true);
-                    fileOutputStream = new FileOutputStream(this.e);
-                    try {
-                        loadBitmap2.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
-                        u91Var.b(this.e, loadBitmap2, false);
-                        r10 = fileOutputStream;
-                    } catch (Exception e10) {
-                        e = e10;
-                        FileLog.e(e);
-                        r10 = fileOutputStream;
-                    }
-                } catch (Throwable th2) {
-                    th = th2;
-                    fileOutputStream2 = r10;
-                    if (fileOutputStream2 != null) {
-                        try {
-                            fileOutputStream2.close();
-                        } catch (Exception e11) {
-                            FileLog.e(e11);
-                        }
-                    }
-                    throw th;
-                }
-            } catch (Exception e12) {
-                e = e12;
-                fileOutputStream = null;
-            } catch (Throwable th3) {
-                th = th3;
-                if (fileOutputStream2 != null) {
-                }
-                throw th;
-            }
-            try {
-                r10.close();
-            } catch (Exception e13) {
-                FileLog.e(e13);
-            }
-            this.a = null;
+    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.checkAndroidTheme((Context) this.b, true);
+                super.onAttachedToWindow();
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
         }
     }
 
-    public final void b() {
-        org.telegram.ui.ActionBar.n2 n2Var = this.c;
-        if (n2Var == null) {
-            Intent intent = new Intent("android.intent.action.PICK");
-            intent.setType("image/*");
-            this.b.startActivityForResult(intent, 11);
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.checkAndroidTheme((Context) this.b, false);
+                super.onDetachedFromWindow();
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
         }
-        Activity parentActivity = n2Var.getParentActivity();
-        if (parentActivity != null) {
-            if (Build.VERSION.SDK_INT >= 33) {
-                if (parentActivity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") != 0) {
-                    parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES"}, 4);
-                    return;
-                }
-            } else if (parentActivity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
-                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
-                return;
-            }
+    }
+
+    @Override // android.webkit.WebView, android.widget.AbsoluteLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                super.onMeasure(i10, i11);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
         }
-        org.telegram.ui.kq0 kq0Var = new org.telegram.ui.kq0(2, false, false, null);
-        kq0Var.x = false;
-        kq0Var.V = new t91(this);
-        n2Var.presentFragment(kq0Var);
+    }
+
+    @Override // android.webkit.WebView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                ((ViewGroup) ((org.telegram.ui.cp0) this.b).fragmentView).requestDisallowInterceptTouchEvent(true);
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v91(Context context, Context context2) {
+        super(context);
+        this.b = context2;
     }
 }

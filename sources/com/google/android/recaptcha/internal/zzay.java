@@ -1,15 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import hd.i;
-import jd.c;
-import kd.a;
-import ld.j;
-import sd.p;
-import v7.a8;
+import kd.c;
+import ld.a;
+import md.i;
+import td.p;
+import v7.i8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-final class zzay extends j implements p {
+final class zzay extends i implements p {
     int zza;
     final /* synthetic */ zzba zzb;
     final /* synthetic */ zzxp zzc;
@@ -22,16 +21,16 @@ final class zzay extends j implements p {
         this.zzc = zzxpVar;
     }
 
-    @Override // ld.a
+    @Override // md.a
     public final c create(Object obj, c cVar) {
         zzay zzayVar = new zzay(this.zzb, this.zzc, cVar);
         zzayVar.zzd = obj;
         return zzayVar;
     }
 
-    @Override // sd.p
+    @Override // td.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzay) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
+        return ((zzay) create((zzhk) obj, (c) obj2)).invokeSuspend(id.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0069, code lost:
@@ -46,7 +45,7 @@ final class zzay extends j implements p {
     
         if (r9 != r0) goto L13;
      */
-    @Override // ld.a
+    @Override // md.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -59,7 +58,7 @@ final class zzay extends j implements p {
         a aVar = a.a;
         int i10 = this.zza;
         if (i10 == 0) {
-            a8.b(obj);
+            i8.b(obj);
             zzhkVar = (zzhk) this.zzd;
             zzba zzbaVar = this.zzb;
             zzdaVar = zzbaVar.zzb;
@@ -80,11 +79,11 @@ final class zzay extends j implements p {
             throw new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null);
         }
         if (i10 != 1) {
-            a8.b(obj);
-            return i.a;
+            i8.b(obj);
+            return id.i.a;
         }
         zzhkVar = (zzhk) this.zzd;
-        a8.b(obj);
+        i8.b(obj);
         this.zzd = null;
         this.zza = 2;
     }

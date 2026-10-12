@@ -1,81 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class g50 implements org.telegram.ui.ar0 {
-    public boolean a;
-    public final /* synthetic */ HashMap b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ m50 d;
+public final class g50 {
+    public final TLObject a;
+    public TLRPC.User b;
+    public final int c;
+    public final boolean d;
+    public boolean e;
 
-    public g50(m50 m50Var, HashMap hashMap, ArrayList arrayList) {
-        this.d = m50Var;
-        this.b = hashMap;
-        this.c = arrayList;
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final boolean e() {
-        return this.d.b.e();
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final void h(int i10, boolean z10, boolean z11) {
-        HashMap hashMap = this.b;
-        if (hashMap.isEmpty()) {
-            return;
-        }
-        m50 m50Var = this.d;
-        if (m50Var.b == null || this.a || z10) {
-            return;
-        }
-        this.a = true;
-        ArrayList arrayList = new ArrayList();
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList2 = this.c;
-            if (i11 >= arrayList2.size()) {
-                m50.a(m50Var, false, arrayList);
-                return;
-            }
-            Object obj = hashMap.get(arrayList2.get(i11));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            arrayList.add(sendingMediaInfo);
-            if (obj instanceof MediaController.SearchImage) {
-                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
-                String str = searchImage.imagePath;
-                if (str != null) {
-                    sendingMediaInfo.path = str;
-                } else {
-                    sendingMediaInfo.searchImage = searchImage;
-                }
-                sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
-                sendingMediaInfo.thumbPath = searchImage.thumbPath;
-                CharSequence charSequence = searchImage.caption;
-                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-                sendingMediaInfo.entities = searchImage.entities;
-                sendingMediaInfo.masks = searchImage.stickers;
-                sendingMediaInfo.ttl = searchImage.ttl;
-            }
-            i11++;
-        }
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final void a() {
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final void b(Editable editable) {
-    }
-
-    @Override // org.telegram.ui.ar0
-    public final /* synthetic */ void g() {
+    public g50(int i10, TLObject tLObject) {
+        this.a = tLObject;
+        this.c = i10;
+        this.d = (tLObject instanceof TLRPC.User) && ((TLRPC.User) tLObject).self;
     }
 }

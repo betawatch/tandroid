@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     private static final long[] zza;
@@ -34,7 +34,7 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     }
 
     private final String zzj(int i10) {
-        return g.m(i10, this.zzd, "Index:", ", Size:");
+        return g.l(i10, this.zzd, "Index:", ", Size:");
     }
 
     private final void zzk(int i10) {
@@ -131,9 +131,9 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     public final int hashCode() {
         int i10 = 1;
         for (int i11 = 0; i11 < this.zzd; i11++) {
-            long j3 = this.zzc[i11];
+            long j10 = this.zzc[i11];
             byte[] bArr = zzsv.zzb;
-            i10 = (i10 * 31) + ((int) (j3 ^ (j3 >>> 32)));
+            i10 = (i10 * 31) + ((int) (j10 ^ (j10 >>> 32)));
         }
         return i10;
     }
@@ -158,13 +158,13 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         zza();
         zzk(i10);
         long[] jArr = this.zzc;
-        long j3 = jArr[i10];
+        long j10 = jArr[i10];
         if (i10 < this.zzd - 1) {
             System.arraycopy(jArr, i10 + 1, jArr, i10, (r3 - i10) - 1);
         }
         this.zzd--;
         ((AbstractList) this).modCount++;
-        return Long.valueOf(j3);
+        return Long.valueOf(j10);
     }
 
     @Override // java.util.AbstractList
@@ -185,9 +185,9 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         zza();
         zzk(i10);
         long[] jArr = this.zzc;
-        long j3 = jArr[i10];
+        long j10 = jArr[i10];
         jArr[i10] = longValue;
-        return Long.valueOf(j3);
+        return Long.valueOf(j10);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -208,7 +208,7 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         return this.zzc[i10];
     }
 
-    public final void zzg(long j3) {
+    public final void zzg(long j10) {
         zza();
         int i10 = this.zzd;
         int length = this.zzc.length;
@@ -220,7 +220,7 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         long[] jArr2 = this.zzc;
         int i11 = this.zzd;
         this.zzd = i11 + 1;
-        jArr2[i11] = j3;
+        jArr2[i11] = j10;
     }
 
     public final void zzh(int i10) {

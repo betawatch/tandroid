@@ -2,9 +2,9 @@ package org.telegram.ui.Cells;
 
 import android.graphics.RectF;
 import android.text.StaticLayout;
-import org.telegram.ui.Components.bd;
+import org.telegram.ui.Components.ad;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class m1 {
     public int a;
@@ -12,6 +12,6 @@ public final class m1 {
     public float c;
     public StaticLayout d;
     public final RectF e = new RectF();
-    public bd f;
+    public ad f;
     public z g;
 }

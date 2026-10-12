@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d0 extends k implements SubMenu {
     public final m A;
@@ -45,7 +45,7 @@ public final class d0 extends k implements SubMenu {
         if (i10 == 0) {
             return null;
         }
-        return hg.c.h(i10, "android:menu:actionviewstates:");
+        return i2.d.i(i10, "android:menu:actionviewstates:");
     }
 
     @Override // l.k

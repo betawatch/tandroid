@@ -1,123 +1,61 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class a00 extends vz {
-    public final /* synthetic */ b00 E;
+public abstract class a00 extends FrameLayout {
+    public FrameLayout a;
+    public org.telegram.ui.ActionBar.h5 b;
+    public org.telegram.ui.ActionBar.h5 c;
+    public ImageView d;
+    public di.f9 e;
+    public bi.f4 f;
+    public bi.f4 h;
+    public TextView n;
+    public org.telegram.ui.ActionBar.m2 r;
+    public String s;
+    public float v;
+    public ValueAnimator w;
+    public org.telegram.ui.ActionBar.m1 x;
+    public float[] y;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a00(b00 b00Var, Activity activity, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(activity);
-        this.E = b00Var;
-        this.y = new float[2];
-        this.r = n2Var;
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.a = frameLayout;
-        int dp = AndroidUtilities.dp(8.0f);
-        int i10 = org.telegram.ui.ActionBar.i6.e7;
-        int x02 = org.telegram.ui.ActionBar.i6.x0(null, i10, false);
-        int v = org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.x0(null, i10, false), org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.i6, false));
-        frameLayout.setBackground(org.telegram.ui.ActionBar.i6.j0(dp, dp, dp, dp, x02, v, v));
-        frameLayout.setOnClickListener(new tz(this, 0));
-        addView(frameLayout, w7.x5.a(48.0f, 22.0f, 9.0f, 22.0f, 0.0f, -1, 55));
-        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(activity);
-        this.b = j5Var;
-        j5Var.setTextSize(16);
-        int i11 = org.telegram.ui.ActionBar.i6.G6;
-        j5Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i11, false));
-        SpannableString spannableString = new SpannableString("t.me/folder/N3k/dImA/bIo");
-        org.telegram.ui.Components.t11 t11Var = new org.telegram.ui.Components.t11();
-        t11Var.a |= 256;
-        spannableString.setSpan(new org.telegram.ui.Components.u11(t11Var, 0), 0, spannableString.length(), 33);
-        j5Var.l(spannableString, false);
-        j5Var.setAlpha(1.0f);
-        frameLayout.addView(j5Var, w7.x5.a(-2.0f, 20.0f, 0.0f, 40.0f, 0.0f, -1, 23));
-        org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(activity);
-        this.c = j5Var2;
-        j5Var2.setTextSize(16);
-        j5Var2.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i11, false));
-        j5Var2.l(spannableString, false);
-        j5Var2.setAlpha(0.0f);
-        frameLayout.addView(j5Var2, w7.x5.a(-2.0f, 20.0f, 0.0f, 40.0f, 0.0f, -1, 23));
-        ImageView imageView = new ImageView(activity);
-        this.d = imageView;
-        imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_ab_other));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.r5, false), PorterDuff.Mode.SRC_IN));
-        imageView.setAlpha(0.0f);
-        imageView.setVisibility(8);
-        imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
-        imageView.setOnClickListener(new tz(this, 1));
-        frameLayout.addView(imageView, w7.x5.a(40.0f, 4.0f, 4.0f, 4.0f, 4.0f, 40, 21));
-        ci.g9 g9Var = new ci.g9(activity);
-        Paint paint = new Paint();
-        g9Var.b = paint;
-        g9Var.e = new float[8];
-        g9Var.d = new Path();
-        g9Var.setWillNotDraw(false);
-        paint.setColor(org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.Oh, false));
-        this.e = g9Var;
-        addView(g9Var, w7.x5.a(42.0f, 22.0f, 69.0f, 22.0f, 0.0f, -1, 55));
-        ai.q4 q4Var = new ai.q4(activity, 25);
-        this.f = q4Var;
-        q4Var.setGravity(17);
-        int i12 = org.telegram.ui.ActionBar.i6.Sh;
-        q4Var.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i12, false));
-        q4Var.setBackground(org.telegram.ui.ActionBar.i6.Z(822083583, 8, 8));
-        q4Var.setTypeface(AndroidUtilities.bold());
-        q4Var.setTextSize(14.0f);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "..").setSpan(new org.telegram.ui.Components.er(0, activity.getDrawable(R.drawable.msg_copy_filled)), 0, 1, 0);
-        spannableStringBuilder.setSpan(new org.telegram.ui.Cells.q2(AndroidUtilities.dp(8.0f)), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.LinkActionCopy));
-        spannableStringBuilder.append((CharSequence) ".").setSpan(new org.telegram.ui.Cells.q2(AndroidUtilities.dp(5.0f)), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
-        q4Var.setText(spannableStringBuilder);
-        q4Var.setOnClickListener(new tz(this, 2));
-        q4Var.setAlpha(0.0f);
-        q4Var.setVisibility(8);
-        g9Var.addView(q4Var, w7.x5.e(-1, -1, 3));
-        ai.q4 q4Var2 = new ai.q4(activity, 26);
-        this.h = q4Var2;
-        q4Var2.setGravity(17);
-        q4Var2.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i12, false));
-        q4Var2.setBackground(org.telegram.ui.ActionBar.i6.Z(822083583, 8, 8));
-        q4Var2.setTypeface(AndroidUtilities.bold());
-        q4Var2.setTextSize(14.0f);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        spannableStringBuilder2.append((CharSequence) "..").setSpan(new org.telegram.ui.Components.er(0, activity.getDrawable(R.drawable.msg_share_filled)), 0, 1, 0);
-        spannableStringBuilder2.setSpan(new org.telegram.ui.Cells.q2(AndroidUtilities.dp(8.0f)), 1, 2, 0);
-        spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.LinkActionShare));
-        spannableStringBuilder2.append((CharSequence) ".").setSpan(new org.telegram.ui.Cells.q2(AndroidUtilities.dp(5.0f)), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 0);
-        q4Var2.setText(spannableStringBuilder2);
-        q4Var2.setOnClickListener(new tz(this, 3));
-        q4Var2.setAlpha(0.0f);
-        q4Var2.setVisibility(8);
-        g9Var.addView(q4Var2, w7.x5.e(-1, -1, 5));
-        TextView textView = new TextView(activity);
-        this.n = textView;
-        textView.setGravity(17);
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.x0(null, i12, false));
-        textView.setBackground(org.telegram.ui.ActionBar.i6.Z(822083583, 8, 8));
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(14.0f);
-        textView.setText("Generate Invite Link");
-        textView.setOnClickListener(new ai.e2(this, 18));
-        textView.setAlpha(1.0f);
-        textView.setVisibility(0);
-        g9Var.addView(textView, w7.x5.d(-1.0f, -1));
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v0, types: [android.widget.FrameLayout] */
+    /* JADX WARN: Type inference failed for: r3v1, types: [android.view.View] */
+    /* JADX WARN: Type inference failed for: r3v9, types: [android.view.View] */
+    public static void a(FrameLayout frameLayout, FrameLayout frameLayout2, float[] fArr) {
+        float f7 = 0.0f;
+        float f10 = 0.0f;
+        while (frameLayout != frameLayout2) {
+            float y3 = frameLayout.getY() + f7;
+            f10 += frameLayout.getX();
+            if (frameLayout instanceof ScrollView) {
+                y3 -= frameLayout.getScrollY();
+            }
+            f7 = y3;
+            if (!(frameLayout.getParent() instanceof View)) {
+                break;
+            }
+            frameLayout = (View) frameLayout.getParent();
+            if (!(frameLayout instanceof ViewGroup)) {
+                return;
+            }
+        }
+        fArr[0] = f10 - frameLayout2.getPaddingLeft();
+        fArr[1] = f7 - frameLayout2.getPaddingTop();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(127.0f), TLObject.FLAG_30));
     }
 }

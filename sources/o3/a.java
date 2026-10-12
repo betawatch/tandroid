@@ -1,17 +1,16 @@
 package o3;
 
 import a1.g;
-import b2.m0;
-import b2.o0;
 import b2.r0;
-import b2.s;
-import e2.v;
+import b2.t0;
+import b2.w0;
+import e2.x;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a implements o0 {
+public final class a implements t0 {
     public final int a;
     public final String b;
     public final String c;
@@ -32,31 +31,31 @@ public final class a implements o0 {
         this.h = bArr;
     }
 
-    public static a d(v vVar) {
-        int j3 = vVar.j();
-        String n10 = r0.n(vVar.v(vVar.j(), StandardCharsets.US_ASCII));
-        String v = vVar.v(vVar.j(), StandardCharsets.UTF_8);
-        int j10 = vVar.j();
-        int j11 = vVar.j();
-        int j12 = vVar.j();
-        int j13 = vVar.j();
-        int j14 = vVar.j();
-        byte[] bArr = new byte[j14];
-        vVar.h(0, j14, bArr);
-        return new a(j3, n10, v, j10, j11, j12, j13, bArr);
+    public static a d(x xVar) {
+        int m10 = xVar.m();
+        String n10 = w0.n(xVar.y(xVar.m(), StandardCharsets.US_ASCII));
+        String y3 = xVar.y(xVar.m(), StandardCharsets.UTF_8);
+        int m11 = xVar.m();
+        int m12 = xVar.m();
+        int m13 = xVar.m();
+        int m14 = xVar.m();
+        int m15 = xVar.m();
+        byte[] bArr = new byte[m15];
+        xVar.k(0, m15, bArr);
+        return new a(m10, n10, y3, m11, m12, m13, m14, bArr);
     }
 
-    @Override // b2.o0
-    public final /* synthetic */ s a() {
+    @Override // b2.t0
+    public final /* synthetic */ b2.x a() {
         return null;
     }
 
-    @Override // b2.o0
-    public final void b(m0 m0Var) {
-        m0Var.a(this.a, this.h);
+    @Override // b2.t0
+    public final void b(r0 r0Var) {
+        r0Var.a(this.a, this.h);
     }
 
-    @Override // b2.o0
+    @Override // b2.t0
     public final /* synthetic */ byte[] c() {
         return null;
     }
@@ -75,7 +74,7 @@ public final class a implements o0 {
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.h) + ((((((((g.h(g.h((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g) * 31);
+        return Arrays.hashCode(this.h) + ((((((((g.g(g.g((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.g) * 31);
     }
 
     public final String toString() {

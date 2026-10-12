@@ -12,13 +12,13 @@ import java.util.Comparator;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public abstract class i6 extends LinearLayout {
-    public static final Comparator r = Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new ai.h7(9)), new ai.h7(10));
+    public static final Comparator r = Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new bi.s6(8)), new bi.s6(9));
     public final HashMap a;
     public final ArrayList b;
-    public final me.j c;
+    public final ne.j c;
     public boolean d;
     public int e;
     public int f;
@@ -29,7 +29,7 @@ public abstract class i6 extends LinearLayout {
         super(context);
         this.a = new HashMap();
         this.b = new ArrayList();
-        this.c = new me.j(new s(this, 11), hs.h, 420L);
+        this.c = new ne.j(new s(this, 11), es.h, 420L);
     }
 
     public final void a() {
@@ -53,7 +53,7 @@ public abstract class i6 extends LinearLayout {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            me.g gVar = (me.g) obj;
+            ne.g gVar = (ne.g) obj;
             View view = ((h6) gVar.a).a;
             RectF b10 = gVar.b();
             if (getOrientation() == 1) {
@@ -102,7 +102,7 @@ public abstract class i6 extends LinearLayout {
         return this.c.b.size();
     }
 
-    public me.i getMetadata() {
+    public ne.i getMetadata() {
         return this.c.d;
     }
 
@@ -159,7 +159,7 @@ public abstract class i6 extends LinearLayout {
             }
         }
         Collections.sort(arrayList, r);
-        this.c.r(arrayList, !this.d);
+        this.c.q(arrayList, !this.d);
         int size = arrayList.size();
         int i15 = 0;
         while (i15 < size) {

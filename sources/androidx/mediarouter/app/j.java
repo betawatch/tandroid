@@ -1,17 +1,11 @@
 package androidx.mediarouter.app;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.WeakHashMap;
-import m.j2;
-import org.telegram.ui.Components.ee0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class j implements ViewTreeObserver.OnGlobalLayoutListener {
+public final class j implements Animation.AnimationListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -20,105 +14,67 @@ public final class j implements ViewTreeObserver.OnGlobalLayoutListener {
         this.b = obj;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        int i10 = this.a;
-        int i11 = 0;
-        Object obj = this.b;
-        switch (i10) {
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationEnd(Animation animation) {
+        switch (this.a) {
             case 0:
-                u uVar = (u) obj;
-                uVar.U.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                HashSet hashSet = uVar.X;
-                if (hashSet != null && hashSet.size() != 0) {
-                    k kVar = new k(uVar, i11);
-                    int firstVisiblePosition = uVar.U.getFirstVisiblePosition();
-                    boolean z10 = false;
-                    while (i11 < uVar.U.getChildCount()) {
-                        View childAt = uVar.U.getChildAt(i11);
-                        if (uVar.X.contains((p4.v) uVar.V.getItem(firstVisiblePosition + i11))) {
-                            AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
-                            alphaAnimation.setDuration(uVar.y0);
-                            alphaAnimation.setFillEnabled(true);
-                            alphaAnimation.setFillAfter(true);
-                            if (!z10) {
-                                alphaAnimation.setAnimationListener(kVar);
-                                z10 = true;
-                            }
-                            childAt.clearAnimation();
-                            childAt.startAnimation(alphaAnimation);
-                        }
-                        i11++;
-                    }
-                    break;
-                } else {
-                    uVar.j(true);
-                    break;
-                }
+                ((t) this.b).j(true);
+                break;
             case 1:
-                l.e eVar = (l.e) obj;
-                ArrayList arrayList = eVar.n;
-                if (eVar.a() && arrayList.size() > 0 && !((l.d) arrayList.get(0)).a.N) {
-                    View view = eVar.E;
-                    if (view != null && view.isShown()) {
-                        int size = arrayList.size();
-                        while (i11 < size) {
-                            Object obj2 = arrayList.get(i11);
-                            i11++;
-                            ((l.d) obj2).a.g();
-                        }
-                        break;
-                    } else {
-                        eVar.dismiss();
-                        break;
-                    }
-                }
-                break;
-            case 2:
-                l.c0 c0Var = (l.c0) obj;
-                j2 j2Var = c0Var.n;
-                if (c0Var.a() && !j2Var.N) {
-                    View view2 = c0Var.x;
-                    if (view2 != null && view2.isShown()) {
-                        j2Var.g();
-                        break;
-                    } else {
-                        c0Var.dismiss();
-                        break;
-                    }
-                }
-                break;
-            case 3:
-                m.p0 p0Var = (m.p0) obj;
-                if (!p0Var.getInternalPopup().a()) {
-                    p0Var.f.l(m.g0.b(p0Var), m.g0.a(p0Var));
-                }
-                ViewTreeObserver viewTreeObserver = p0Var.getViewTreeObserver();
-                if (viewTreeObserver != null) {
-                    m.f0.a(viewTreeObserver, this);
-                    break;
-                }
-                break;
-            case 4:
-                m.m0 m0Var = (m.m0) obj;
-                m.p0 p0Var2 = m0Var.W;
-                m0Var.getClass();
-                WeakHashMap weakHashMap = r0.i0.a;
-                if (!p0Var2.isAttachedToWindow() || !p0Var2.getGlobalVisibleRect(m0Var.U)) {
-                    m0Var.dismiss();
-                    break;
-                } else {
-                    m0Var.q();
-                    m0Var.g();
-                    break;
-                }
                 break;
             default:
-                ee0 ee0Var = (ee0) obj;
-                ee0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                ee0Var.h = ee0Var.e.getCurrentItem();
-                ee0.a(ee0Var, ee0Var.h, 0);
+                n0 n0Var = ((l0) this.b).w;
+                n0Var.O = false;
+                n0Var.o();
                 break;
         }
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationRepeat(Animation animation) {
+        int i10 = this.a;
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationStart(Animation animation) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                t tVar = (t) this.b;
+                OverlayListView overlayListView = tVar.U;
+                ArrayList arrayList = overlayListView.a;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    o0 o0Var = (o0) obj;
+                    if (!o0Var.j) {
+                        o0Var.i = overlayListView.getDrawingTime();
+                        o0Var.j = true;
+                    }
+                }
+                tVar.U.postDelayed(tVar.E0, tVar.x0);
+                break;
+            default:
+                ((l0) this.b).w.O = true;
+                break;
+        }
+    }
+
+    private final void a(Animation animation) {
+    }
+
+    private final void b(Animation animation) {
+    }
+
+    private final void c(Animation animation) {
+    }
+
+    private final void d(Animation animation) {
+    }
+
+    private final void e(Animation animation) {
     }
 }

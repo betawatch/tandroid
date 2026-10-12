@@ -1,75 +1,19 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c01 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ProfileActivity c;
+public final class c01 extends i71 {
+    public final /* synthetic */ ProfileActivity e;
 
-    public /* synthetic */ c01(ProfileActivity profileActivity, boolean z10, int i10) {
-        this.a = i10;
-        this.c = profileActivity;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c01(ProfileActivity profileActivity, b01 b01Var) {
+        super(b01Var);
+        this.e = profileActivity;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.c.f0 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
-        org.telegram.ui.Cells.z3 z3Var;
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.c;
-                boolean z10 = this.b;
-                ProfileActivity.n1(profileActivity, z10);
-                profileActivity.Y.setClickable(true);
-                if (z10) {
-                    org.telegram.ui.ActionBar.v0 v0Var = profileActivity.U0;
-                    if (v0Var.F.getWidth() != 0 && !v0Var.e.isFocused()) {
-                        v0Var.e.requestFocus();
-                        AndroidUtilities.showKeyboard(v0Var.e);
-                    }
-                }
-                profileActivity.k4(true);
-                profileActivity.V1 = null;
-                profileActivity.fragmentView.invalidate();
-                if (z10) {
-                    profileActivity.U4 = true;
-                    profileActivity.F4();
-                    Activity parentActivity = profileActivity.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.n2) profileActivity).classGuid;
-                    AndroidUtilities.requestAdjustResize(parentActivity, i10);
-                    profileActivity.P.setPreventMoving(false);
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity2 = this.c;
-                if (profileActivity2.f0 != null && (z3Var = profileActivity2.g0) != null) {
-                    if (!this.b) {
-                        z3Var.setVisibility(4);
-                    }
-                    profileActivity2.f0 = null;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.i71, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.B5 = null;
     }
 }

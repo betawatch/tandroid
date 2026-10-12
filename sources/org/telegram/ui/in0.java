@@ -1,26 +1,29 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class in0 extends TimerTask {
-    public final /* synthetic */ jn0 a;
+public final class in0 extends ClickableSpan {
+    public final /* synthetic */ un0 a;
 
-    public in0(jn0 jn0Var) {
-        this.a = jn0Var;
+    public in0(un0 un0Var) {
+        this.a = un0Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        jn0 jn0Var = this.a;
-        if (jn0Var.v == null) {
-            return;
-        }
-        double currentTimeMillis = System.currentTimeMillis();
-        jn0Var.y = (int) (jn0Var.y - (currentTimeMillis - jn0Var.F));
-        jn0Var.F = currentTimeMillis;
-        AndroidUtilities.runOnUIThread(new tk0(this, 7));
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        un0 un0Var = this.a;
+        pf.d.s(un0Var.getParentActivity(), un0Var.y.privacy_policy_url);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(true);
+        textPaint.setTypeface(AndroidUtilities.bold());
     }
 }

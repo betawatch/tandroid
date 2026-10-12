@@ -1,10 +1,12 @@
 package org.telegram.messenger.voip;
 
+import ah.i1;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
+import w7.m6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class GroupCallMessage {
     private static final int FLAG_IS_OUT = 1;
@@ -18,59 +20,59 @@ public class GroupCallMessage {
     public final TLRPC.TL_textWithEntities message;
     public final long randomId;
     public final long reactionAnimatedEmojiId;
-    public final zg.n0 visibleReaction;
+    public final i1 visibleReaction;
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0036  */
     /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public GroupCallMessage(int i10, long j3, long j10, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        long j11;
+    public GroupCallMessage(int i10, long j10, long j11, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        long j12;
         TLRPC.TL_availableReaction tL_availableReaction;
-        zg.n0 c10;
+        i1 c10;
         this.currentAccount = i10;
-        this.fromId = j3;
-        this.randomId = j10;
+        this.fromId = j10;
+        this.randomId = j11;
         this.message = tL_textWithEntities;
         ArrayList<TLRPC.MessageEntity> arrayList = tL_textWithEntities.entities;
         if (arrayList != null && arrayList.size() == 1) {
             TLRPC.MessageEntity messageEntity = tL_textWithEntities.entities.get(0);
             if (messageEntity instanceof TLRPC.TL_messageEntityCustomEmoji) {
-                j11 = ((TLRPC.TL_messageEntityCustomEmoji) messageEntity).document_id;
-                if (j11 == 0) {
-                    c10 = new zg.n0();
-                    c10.g = j11;
-                    c10.h = j11;
+                j12 = ((TLRPC.TL_messageEntityCustomEmoji) messageEntity).document_id;
+                if (j12 == 0) {
+                    c10 = new i1();
+                    c10.g = j12;
+                    c10.h = j12;
                 } else {
                     ArrayList<TLRPC.MessageEntity> arrayList2 = tL_textWithEntities.entities;
-                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(tL_textWithEntities.text)) != null) ? zg.n0.c(tL_availableReaction) : null;
+                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(tL_textWithEntities.text)) != null) ? i1.c(tL_availableReaction) : null;
                 }
-                this.reactionAnimatedEmojiId = j11;
+                this.reactionAnimatedEmojiId = j12;
                 this.visibleReaction = c10;
             }
         }
-        j11 = 0;
-        if (j11 == 0) {
+        j12 = 0;
+        if (j12 == 0) {
         }
-        this.reactionAnimatedEmojiId = j11;
+        this.reactionAnimatedEmojiId = j12;
         this.visibleReaction = c10;
     }
 
     public boolean isOut() {
-        return w7.g0.a(this.flags, 1);
+        return m6.a(this.flags, 1);
     }
 
     public boolean isSendConfirmed() {
-        return w7.g0.a(this.flags, 8);
+        return m6.a(this.flags, 8);
     }
 
     public boolean isSendDelayed() {
-        return w7.g0.a(this.flags, 2);
+        return m6.a(this.flags, 2);
     }
 
     public boolean isSendError() {
-        return w7.g0.a(this.flags, 4);
+        return m6.a(this.flags, 4);
     }
 
     public void notifyStateUpdate() {
@@ -85,19 +87,19 @@ public class GroupCallMessage {
     }
 
     public void setIsOut(boolean z10) {
-        this.flags = w7.g0.b(this.flags, 1, z10);
+        this.flags = m6.b(this.flags, 1, z10);
     }
 
     public void setIsSendConfirmed(boolean z10) {
-        this.flags = w7.g0.b(this.flags, 8, z10);
+        this.flags = m6.b(this.flags, 8, z10);
     }
 
     public void setIsSendDelayed(boolean z10) {
-        this.flags = w7.g0.b(this.flags, 2, z10);
+        this.flags = m6.b(this.flags, 2, z10);
     }
 
     public void setIsSendError(boolean z10) {
-        this.flags = w7.g0.b(this.flags, 4, z10);
+        this.flags = m6.b(this.flags, 4, z10);
     }
 
     public void subscribeToStateUpdates(Runnable runnable) {

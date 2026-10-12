@@ -1,112 +1,277 @@
 package org.telegram.ui;
 
+import android.graphics.Bitmap;
+import android.os.Build;
+import android.view.Surface;
+import android.view.SurfaceView;
+import android.view.TextureView;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Collections;
+import android.view.ViewGroup;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h3 implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class h3 extends av0 {
+    public final int[] a = new int[2];
+    public final List b;
+    public final /* synthetic */ k4 c;
 
-    public /* synthetic */ h3(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public h3(k4 k4Var, List list) {
+        this.c = k4Var;
+        this.b = list;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                m3 m3Var = (m3) this.b;
-                Float f7 = (Float) obj;
-                i4 i4Var = m3Var.K;
-                if (m3Var == i4Var.u0[0]) {
-                    if (i4Var.h0.d0.getCurrentProgress() > f7.floatValue()) {
-                        i4Var.h0.d0.a(0.0f, false);
-                    }
-                    i4Var.h0.d0.a(f7.floatValue(), true);
-                    break;
-                }
-                break;
-            case 1:
-                ((org.telegram.ui.Components.uk0) this.b).h((List) obj);
-                break;
-            case 2:
-                TLRPC.User user = (TLRPC.User) obj;
-                tr trVar = ((jr) this.b).b;
-                mr w02 = trVar.w0();
-                ArrayList arrayList = trVar.F;
-                a0.i iVar = trVar.M;
-                ArrayList arrayList2 = (iVar == null || iVar.m() == 0) ? arrayList : trVar.H;
-                if (iVar == null || iVar.m() == 0) {
-                    iVar = trVar.K;
-                }
-                if (iVar.f(user.id) == null) {
-                    if (ChatObject.isChannel(trVar.r)) {
-                        TLRPC.TL_channelParticipant tL_channelParticipant = new TLRPC.TL_channelParticipant();
-                        tL_channelParticipant.inviter_id = trVar.getUserConfig().getClientUserId();
-                        TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                        tL_channelParticipant.peer = tL_peerUser;
-                        tL_peerUser.user_id = user.id;
-                        tL_channelParticipant.date = trVar.getConnectionsManager().getCurrentTime();
-                        arrayList2.add(0, tL_channelParticipant);
-                        iVar.k(tL_channelParticipant, user.id);
-                    } else {
-                        TLRPC.TL_chatParticipant tL_chatParticipant = new TLRPC.TL_chatParticipant();
-                        tL_chatParticipant.user_id = user.id;
-                        tL_chatParticipant.inviter_id = trVar.getUserConfig().getClientUserId();
-                        arrayList2.add(0, tL_chatParticipant);
-                        iVar.k(tL_chatParticipant, user.id);
-                    }
-                }
-                if (arrayList2 == arrayList) {
-                    Collections.sort(arrayList, new gf(4));
-                }
-                trVar.A0(w02);
-                break;
-            case 3:
-                t3 t3Var = (t3) this.b;
-                int i10 = ((c5.h) obj).a;
-                AndroidUtilities.runOnUIThread(new tf0(2, t3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
-                break;
-            case 4:
-                si0 si0Var = (si0) this.b;
-                if (((c5.h) obj).a == 0) {
-                    AndroidUtilities.runOnUIThread(si0Var);
-                    break;
-                }
-                break;
-            case 5:
-                ((ArrayList) this.b).add((TLRPC.User) obj);
-                break;
-            case 6:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                TLRPC.User user2 = (TLRPC.User) obj;
-                for (int i11 = 0; i11 < profileActivity.u2.participants.participants.size(); i11++) {
-                    if (profileActivity.u2.participants.participants.get(i11).user_id == user2.id) {
-                        profileActivity.u2.participants.participants.remove(i11);
-                        profileActivity.e5(true, false);
+    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    public final void D() {
+        this.c.n();
+    }
+
+    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    public final kv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        if (i10 < 0) {
+            return null;
+        }
+        List list = this.b;
+        if (i10 >= list.size()) {
+            return null;
+        }
+        k4 k4Var = this.c;
+        di.v vVar = k4Var.u0[0].b;
+        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) list.get(i10);
+        int[] iArr = this.a;
+        ImageReceiver c02 = c0(vVar, pageBlock, iArr);
+        if (c02 == null) {
+            return null;
+        }
+        kv0 kv0Var = new kv0();
+        kv0Var.b = iArr[0];
+        kv0Var.c = iArr[1];
+        kv0Var.d = k4Var.u0[0].b;
+        kv0Var.a = c02;
+        kv0Var.e = c02.getBitmapSafe();
+        kv0Var.h = c02.getRoundRadius(true);
+        kv0Var.j = k4Var.I0;
+        return kv0Var;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x0049 A[EDGE_INSN: B:46:0x0049->B:14:0x0049 BREAK  A[LOOP:0: B:7:0x0034->B:44:0x0046], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0036  */
+    @Override // org.telegram.ui.av0, org.telegram.ui.iv0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void X(int i10) {
+        TL_iv.PageBlock pageBlock;
+        org.telegram.ui.Components.h81 h81Var;
+        TextureView textureView;
+        a0.h hVar;
+        int i11;
+        int childCount;
+        a3 a3Var;
+        Bitmap bitmap;
+        a3 a3Var2;
+        Bitmap bitmap2;
+        z2 z2Var = null;
+        if (i10 >= 0) {
+            List list = this.b;
+            if (i10 < list.size()) {
+                pageBlock = (TL_iv.PageBlock) list.get(i10);
+                h81Var = PhotoViewer.t1().F2;
+                textureView = PhotoViewer.t1().B2;
+                SurfaceView surfaceView = PhotoViewer.t1().C2;
+                k4 k4Var = this.c;
+                o3[] o3VarArr = k4Var.u0;
+                hVar = k4Var.y;
+                i11 = 0;
+                di.v vVar = o3VarArr[0].b;
+                childCount = vVar.getChildCount();
+                while (true) {
+                    if (i11 < childCount) {
                         break;
                     }
+                    View childAt = vVar.getChildAt(i11);
+                    if (childAt instanceof z2) {
+                        z2 z2Var2 = (z2) childAt;
+                        if (z2Var2.L == pageBlock) {
+                            z2Var = z2Var2;
+                            break;
+                        }
+                    }
+                    i11++;
                 }
-                break;
-            default:
-                View view = ((ProxyListActivity) this.b).b.T((View) obj).a;
-                if (view instanceof f21) {
-                    f21 f21Var = (f21) view;
-                    f21Var.setChecked(f21Var.d == SharedConfig.currentProxy);
-                    f21Var.b();
-                    break;
+                if (z2Var != null && h81Var != null && textureView != null) {
+                    long j10 = z2Var.L.video_id;
+                    a3 a3Var3 = new a3();
+                    a3Var3.a = h81Var.n();
+                    if (textureView.getSurfaceTexture() != null) {
+                        if (Build.VERSION.SDK_INT >= 24) {
+                            Surface surface = new Surface(textureView.getSurfaceTexture());
+                            Bitmap createBitmap = Bitmap.createBitmap(textureView.getMeasuredWidth(), textureView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                            AndroidUtilities.getBitmapFromSurface(surface, createBitmap);
+                            surface.release();
+                            a3Var3.b = createBitmap;
+                        } else {
+                            a3Var3.b = textureView.getBitmap();
+                        }
+                    }
+                    z2Var.c(a3Var3);
+                    hVar.k(a3Var3, j10);
+                    int i12 = z2.V;
+                    z2Var.n.setAlpha(0.0f);
+                    a3Var2 = z2Var.M;
+                    if (a3Var2 != null && (bitmap2 = a3Var2.b) != null) {
+                        z2Var.e.setImageBitmap(bitmap2);
+                    }
                 }
-                break;
+                if (z2Var != null && h81Var != null && surfaceView != null) {
+                    long j11 = z2Var.L.video_id;
+                    a3 a3Var4 = new a3();
+                    a3Var4.a = h81Var.n();
+                    if (Build.VERSION.SDK_INT >= 24) {
+                        Bitmap createBitmap2 = Bitmap.createBitmap(surfaceView.getMeasuredWidth(), surfaceView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                        AndroidUtilities.getBitmapFromSurface(surfaceView, createBitmap2);
+                        a3Var4.b = createBitmap2;
+                    }
+                    z2Var.c(a3Var4);
+                    hVar.k(a3Var4, j11);
+                    int i13 = z2.V;
+                    z2Var.n.setAlpha(0.0f);
+                    a3Var = z2Var.M;
+                    if (a3Var != null && (bitmap = a3Var.b) != null) {
+                        z2Var.e.setImageBitmap(bitmap);
+                    }
+                }
+                k4Var.n();
+            }
         }
+        pageBlock = null;
+        h81Var = PhotoViewer.t1().F2;
+        textureView = PhotoViewer.t1().B2;
+        SurfaceView surfaceView2 = PhotoViewer.t1().C2;
+        k4 k4Var2 = this.c;
+        o3[] o3VarArr2 = k4Var2.u0;
+        hVar = k4Var2.y;
+        i11 = 0;
+        di.v vVar2 = o3VarArr2[0].b;
+        childCount = vVar2.getChildCount();
+        while (true) {
+            if (i11 < childCount) {
+            }
+            i11++;
+        }
+        if (z2Var != null) {
+            long j102 = z2Var.L.video_id;
+            a3 a3Var32 = new a3();
+            a3Var32.a = h81Var.n();
+            if (textureView.getSurfaceTexture() != null) {
+            }
+            z2Var.c(a3Var32);
+            hVar.k(a3Var32, j102);
+            int i122 = z2.V;
+            z2Var.n.setAlpha(0.0f);
+            a3Var2 = z2Var.M;
+            if (a3Var2 != null) {
+                z2Var.e.setImageBitmap(bitmap2);
+            }
+        }
+        if (z2Var != null) {
+            long j112 = z2Var.L.video_id;
+            a3 a3Var42 = new a3();
+            a3Var42.a = h81Var.n();
+            if (Build.VERSION.SDK_INT >= 24) {
+            }
+            z2Var.c(a3Var42);
+            hVar.k(a3Var42, j112);
+            int i132 = z2.V;
+            z2Var.n.setAlpha(0.0f);
+            a3Var = z2Var.M;
+            if (a3Var != null) {
+                z2Var.e.setImageBitmap(bitmap);
+            }
+        }
+        k4Var2.n();
+    }
+
+    public final ImageReceiver c0(ViewGroup viewGroup, TL_iv.PageBlock pageBlock, int[] iArr) {
+        int childCount = viewGroup.getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            ImageReceiver d02 = d0(viewGroup.getChildAt(i10), pageBlock, iArr);
+            if (d02 != null) {
+                return d02;
+            }
+        }
+        return null;
+    }
+
+    public final ImageReceiver d0(View view, TL_iv.PageBlock pageBlock, int[] iArr) {
+        org.telegram.ui.Components.wl0 wl0Var;
+        ImageReceiver d02;
+        ImageReceiver d03;
+        VideoPlayerHolderBase videoPlayerHolderBase;
+        if (view instanceof f2) {
+            f2 f2Var = (f2) view;
+            if (f2Var.N != pageBlock) {
+                return null;
+            }
+            view.getLocationInWindow(iArr);
+            return f2Var.e;
+        }
+        if (view instanceof z2) {
+            z2 z2Var = (z2) view;
+            ImageReceiver imageReceiver = z2Var.e;
+            TextureView textureView = z2Var.n;
+            if (z2Var.L != pageBlock) {
+                return null;
+            }
+            view.getLocationInWindow(iArr);
+            k4 k4Var = this.c;
+            if (z2Var == k4Var.x && (videoPlayerHolderBase = k4Var.w) != null && videoPlayerHolderBase.firstFrameRendered && textureView.getSurfaceTexture() != null) {
+                if (Build.VERSION.SDK_INT >= 24) {
+                    Surface surface = new Surface(textureView.getSurfaceTexture());
+                    Bitmap createBitmap = Bitmap.createBitmap(textureView.getMeasuredWidth(), textureView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+                    AndroidUtilities.getBitmapFromSurface(surface, createBitmap);
+                    surface.release();
+                    imageReceiver.setImageBitmap(createBitmap);
+                } else {
+                    imageReceiver.setImageBitmap(textureView.getBitmap());
+                }
+                int i10 = z2.V;
+                textureView.setAlpha(0.0f);
+            }
+            return imageReceiver;
+        }
+        if (view instanceof m1) {
+            ImageReceiver c02 = c0(((m1) view).a, pageBlock, iArr);
+            if (c02 != null) {
+                return c02;
+            }
+            return null;
+        }
+        if (view instanceof s2) {
+            ImageReceiver c03 = c0(((s2) view).a, pageBlock, iArr);
+            if (c03 != null) {
+                return c03;
+            }
+            return null;
+        }
+        if (view instanceof a2) {
+            org.telegram.ui.Components.wl0 wl0Var2 = ((a2) view).d;
+            if (wl0Var2 == null || (d03 = d0(wl0Var2.a, pageBlock, iArr)) == null) {
+                return null;
+            }
+            return d03;
+        }
+        if (!(view instanceof d2) || (wl0Var = ((d2) view).d) == null || (d02 = d0(wl0Var.a, pageBlock, iArr)) == null) {
+            return null;
+        }
+        return d02;
     }
 }

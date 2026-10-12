@@ -2,7 +2,7 @@ package k5;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class l extends s {
     public final long a;
@@ -12,10 +12,10 @@ public final class l extends s {
     public final String e;
     public final ArrayList f;
 
-    public l(long j3, long j10, j jVar, Integer num, String str, ArrayList arrayList) {
+    public l(long j10, long j11, j jVar, Integer num, String str, ArrayList arrayList) {
         w wVar = w.a;
-        this.a = j3;
-        this.b = j10;
+        this.a = j10;
+        this.b = j11;
         this.c = jVar;
         this.d = num;
         this.e = str;
@@ -58,9 +58,9 @@ public final class l extends s {
     }
 
     public final int hashCode() {
-        long j3 = this.a;
-        long j10 = this.b;
-        int hashCode = (((((((int) (j3 ^ (j3 >>> 32))) ^ 1000003) * 1000003) ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003) ^ this.c.hashCode()) * 1000003;
+        long j10 = this.a;
+        long j11 = this.b;
+        int hashCode = (((((((int) (j10 ^ (j10 >>> 32))) ^ 1000003) * 1000003) ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003) ^ this.c.hashCode()) * 1000003;
         Integer num = this.d;
         int hashCode2 = (hashCode ^ (num == null ? 0 : num.hashCode())) * 1000003;
         String str = this.e;

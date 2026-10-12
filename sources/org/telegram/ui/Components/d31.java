@@ -1,37 +1,35 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class d31 extends TextView {
-    public View a;
-    public ViewPropertyAnimator b;
-    public boolean c;
-    public or0 d;
+public final /* synthetic */ class d31 implements ne.d, Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ y31 a;
 
-    public final void a() {
-        if (this.a == null) {
-            return;
-        }
-        View view = (View) getParent();
-        int i10 = 0;
-        int i11 = 0;
-        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
-            i11 += view2.getTop();
-            i10 += view2.getLeft();
-        }
-        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
-        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
-        setTranslationY(i11 - getMeasuredHeight());
+    @Override // ne.d
+    public void p(int i10, float f7, float f10, ne.e eVar) {
+        this.a.g();
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        a();
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(y31.c(this.a, (l61) obj, (View) obj2));
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        y31.a(this.a, (l61) obj);
+    }
+
+    @Override // ne.d
+    public /* synthetic */ void C(float f7, int i10) {
     }
 }

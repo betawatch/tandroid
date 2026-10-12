@@ -1,23 +1,62 @@
 package yb;
 
+import java.util.Arrays;
 import n6.l;
-import o1.j;
-import xb.c;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a extends c {
-    public static final a b;
+public final class a {
+    public final String a;
+    public final float b;
+    public final int c;
+    public final String d;
 
-    static {
-        j jVar = new j();
-        jVar.a = -1.0f;
-        boolean z10 = false;
-        if (Float.compare(0.5f, 0.0f) >= 0 && Float.compare(0.5f, 1.0f) <= 0) {
-            z10 = true;
+    public a(float f7, int i10, String str, String str2) {
+        int i11 = y7.b.a;
+        this.a = str == null ? "" : str;
+        this.b = f7;
+        this.c = i10;
+        this.d = str2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        l.a("Confidence Threshold should be in range [0.0f, 1.0f].", z10);
-        jVar.a = 0.5f;
-        b = new a(jVar);
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        return l.l(this.a, aVar.a) && Float.compare(this.b, aVar.b) == 0 && this.c == aVar.c && l.l(this.d, aVar.d);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, Float.valueOf(this.b), Integer.valueOf(this.c), this.d});
+    }
+
+    public final String toString() {
+        u2.c cVar = new u2.c(a.class.getSimpleName(), 14);
+        u2.c cVar2 = new u2.c(13, false);
+        ((u2.c) cVar.d).d = cVar2;
+        cVar.d = cVar2;
+        cVar2.c = this.a;
+        cVar2.b = "text";
+        String valueOf = String.valueOf(this.b);
+        y7.a aVar = new y7.a(13, false);
+        ((u2.c) cVar.d).d = aVar;
+        cVar.d = aVar;
+        aVar.c = valueOf;
+        aVar.b = "confidence";
+        String valueOf2 = String.valueOf(this.c);
+        y7.a aVar2 = new y7.a(13, false);
+        ((u2.c) cVar.d).d = aVar2;
+        aVar2.c = valueOf2;
+        aVar2.b = "index";
+        u2.c cVar3 = new u2.c(13, false);
+        aVar2.d = cVar3;
+        cVar.d = cVar3;
+        cVar3.c = this.d;
+        cVar3.b = "mid";
+        return cVar.toString();
     }
 }

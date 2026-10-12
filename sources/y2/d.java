@@ -1,9 +1,10 @@
 package y2;
 
-import e2.d0;
+import e2.m0;
 import java.util.Arrays;
+import u2.z0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d {
     public int c;
@@ -13,16 +14,67 @@ public final class d {
     public int e = 0;
     public a[] f = new a[100];
 
-    public final synchronized void a(int i10) {
-        boolean z10 = i10 < this.c;
-        this.c = i10;
-        if (z10) {
-            b();
+    public final synchronized a a() {
+        a aVar;
+        try {
+            int i10 = this.d + 1;
+            this.d = i10;
+            int i11 = this.e;
+            if (i11 > 0) {
+                a[] aVarArr = this.f;
+                int i12 = i11 - 1;
+                this.e = i12;
+                aVar = aVarArr[i12];
+                aVar.getClass();
+                this.f[this.e] = null;
+            } else {
+                a aVar2 = new a(new byte[this.b], 0);
+                a[] aVarArr2 = this.f;
+                if (i10 > aVarArr2.length) {
+                    this.f = (a[]) Arrays.copyOf(aVarArr2, aVarArr2.length * 2);
+                }
+                aVar = aVar2;
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+        return aVar;
+    }
+
+    public final synchronized void b(z0 z0Var) {
+        while (z0Var != null) {
+            a[] aVarArr = this.f;
+            int i10 = this.e;
+            this.e = i10 + 1;
+            a aVar = (a) z0Var.c;
+            aVar.getClass();
+            aVarArr[i10] = aVar;
+            this.d--;
+            z0Var = (z0) z0Var.d;
+            if (z0Var == null || ((a) z0Var.c) == null) {
+                z0Var = null;
+            }
         }
     }
 
-    public final synchronized void b() {
-        int max = Math.max(0, d0.f(this.c, this.b) - this.d);
+    public final synchronized void c(a aVar) {
+        a[] aVarArr = this.f;
+        int i10 = this.e;
+        this.e = i10 + 1;
+        aVarArr[i10] = aVar;
+        this.d--;
+    }
+
+    public final synchronized void d(int i10) {
+        boolean z10 = i10 < this.c;
+        this.c = i10;
+        if (z10) {
+            e();
+        }
+    }
+
+    public final synchronized void e() {
+        int max = Math.max(0, m0.g(this.c, this.b) - this.d);
         int i10 = this.e;
         if (max >= i10) {
             return;

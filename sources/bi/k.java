@@ -1,72 +1,40 @@
 package bi;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Cells.t7;
-import s4.a1;
-import s4.o0;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.cr;
+import org.telegram.ui.px;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class k extends o0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u b;
+public final class k extends cr {
+    public final /* synthetic */ Drawable E;
+    public final /* synthetic */ Drawable F;
+    public final /* synthetic */ px G;
+    public int y;
 
-    public /* synthetic */ k(u uVar, int i10) {
-        this.a = i10;
-        this.b = uVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k(px pxVar, Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super(drawable, drawable2);
+        this.G = pxVar;
+        this.E = drawable3;
+        this.F = drawable4;
     }
 
-    @Override // s4.o0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, a1 a1Var) {
-        switch (this.a) {
-            case 0:
-                if (!(view instanceof t7)) {
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                } else {
-                    t7 t7Var = (t7) view;
-                    u uVar = this.b;
-                    uVar.f.getClass();
-                    int R = RecyclerView.R(t7Var);
-                    int i10 = uVar.h.J;
-                    t7Var.a0 = R < i10;
-                    int i11 = R % i10;
-                    t7Var.V = i11 == 0;
-                    t7Var.W = i11 == i10 - 1;
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                }
-            default:
-                if (!(view instanceof t7)) {
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                } else {
-                    t7 t7Var2 = (t7) view;
-                    u uVar2 = this.b;
-                    uVar2.r.getClass();
-                    int R2 = RecyclerView.R(t7Var2);
-                    int i12 = uVar2.s.J;
-                    t7Var2.a0 = R2 < i12;
-                    int i13 = R2 % i12;
-                    t7Var2.V = i13 == 0;
-                    t7Var2.W = i13 == i12 - 1;
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                }
+    @Override // org.telegram.ui.Components.cr, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        px pxVar = this.G;
+        int i10 = pxVar.b;
+        int f7 = pxVar.f(i10 == 0 ? org.telegram.ui.ActionBar.g6.s8 : org.telegram.ui.ActionBar.g6.M8);
+        if (this.y != f7) {
+            this.y = f7;
+            int d = i0.a.d(0.1f, pxVar.f(i10 == 0 ? org.telegram.ui.ActionBar.g6.A8 : org.telegram.ui.ActionBar.g6.P8), f7);
+            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+            this.E.setColorFilter(new PorterDuffColorFilter(d, mode));
+            this.F.setColorFilter(new PorterDuffColorFilter(f7, mode));
         }
+        super.draw(canvas);
     }
 }

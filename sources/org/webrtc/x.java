@@ -1,27 +1,24 @@
 package org.webrtc;
 
+import org.webrtc.VideoDecoder;
 import org.webrtc.VideoEncoder;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public abstract /* synthetic */ class x {
-    public static long a(VideoEncoder videoEncoder) {
-        return 0L;
+public final /* synthetic */ class x implements VideoDecoder.Callback, VideoEncoder.Callback {
+    public final /* synthetic */ long a;
+
+    public /* synthetic */ x(long j10) {
+        this.a = j10;
     }
 
-    public static VideoEncoder.EncoderInfo b(VideoEncoder videoEncoder) {
-        return new VideoEncoder.EncoderInfo(1, false);
+    @Override // org.webrtc.VideoDecoder.Callback
+    public void onDecodedFrame(VideoFrame videoFrame, Integer num, Integer num2) {
+        VideoDecoderWrapper.nativeOnDecodedFrame(this.a, videoFrame, num, num2);
     }
 
-    public static VideoEncoder.ResolutionBitrateLimits[] c(VideoEncoder videoEncoder) {
-        return new VideoEncoder.ResolutionBitrateLimits[0];
-    }
-
-    public static boolean d(VideoEncoder videoEncoder) {
-        return true;
-    }
-
-    public static VideoCodecStatus e(VideoEncoder videoEncoder, VideoEncoder.RateControlParameters rateControlParameters) {
-        return videoEncoder.setRateAllocation(rateControlParameters.bitrate, (int) Math.ceil(rateControlParameters.framerateFps));
+    @Override // org.webrtc.VideoEncoder.Callback
+    public void onEncodedFrame(EncodedImage encodedImage, VideoEncoder.CodecSpecificInfo codecSpecificInfo) {
+        VideoEncoderWrapper.nativeOnEncodedFrame(this.a, encodedImage);
     }
 }

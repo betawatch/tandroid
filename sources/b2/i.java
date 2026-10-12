@@ -1,13 +1,77 @@
 package b2;
 
-import java.util.UUID;
+import android.os.Binder;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.os.RemoteException;
+import java.util.List;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static final UUID a = new UUID(0, 0);
-    public static final UUID b = new UUID(1186680826959645954L, -5988876978535335093L);
-    public static final UUID c = new UUID(-2129748144642739255L, 8654423357094679310L);
-    public static final UUID d = new UUID(-1301668207276963122L, -6645017420763422227L);
-    public static final UUID e = new UUID(-7348484286925749626L, -6083546864340672619L);
+public final class i extends Binder {
+    public final e9.n0 a;
+
+    public i(List list) {
+        this.a = e9.n0.u(list);
+    }
+
+    public static e9.n0 a(IBinder iBinder) {
+        int readInt;
+        if (iBinder instanceof i) {
+            return ((i) iBinder).a;
+        }
+        e9.k0 t10 = e9.n0.t();
+        int i10 = 0;
+        int i11 = 1;
+        while (i11 != 0) {
+            Parcel obtain = Parcel.obtain();
+            Parcel obtain2 = Parcel.obtain();
+            try {
+                obtain.writeInt(i10);
+                try {
+                    iBinder.transact(1, obtain, obtain2, 0);
+                    while (true) {
+                        readInt = obtain2.readInt();
+                        if (readInt == 1) {
+                            Bundle readBundle = obtain2.readBundle();
+                            readBundle.getClass();
+                            t10.c(readBundle);
+                            i10++;
+                        }
+                    }
+                    obtain2.recycle();
+                    obtain.recycle();
+                    i11 = readInt;
+                } catch (RemoteException e) {
+                    throw new RuntimeException(e);
+                }
+            } catch (Throwable th2) {
+                obtain2.recycle();
+                obtain.recycle();
+                throw th2;
+            }
+        }
+        return t10.f();
+    }
+
+    @Override // android.os.Binder
+    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+        if (i10 != 1) {
+            return super.onTransact(i10, parcel, parcel2, i11);
+        }
+        if (parcel2 == null) {
+            return false;
+        }
+        e9.n0 n0Var = this.a;
+        int size = n0Var.size();
+        int readInt = parcel.readInt();
+        while (readInt < size && parcel2.dataSize() < n.a) {
+            parcel2.writeInt(1);
+            parcel2.writeBundle((Bundle) n0Var.get(readInt));
+            readInt++;
+        }
+        parcel2.writeInt(readInt < size ? 2 : 0);
+        return true;
+    }
 }

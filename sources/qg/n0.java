@@ -1,61 +1,33 @@
 package qg;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import ji.h5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class n0 extends TLObject {
-    public static final /* synthetic */ int j = 0;
-    public int a;
-    public String b;
-    public String c;
-    public TLRPC.WebPage d;
-    public boolean e;
-    public boolean f = true;
-    public int i;
+public final /* synthetic */ class n0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q0 b;
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        int readInt32 = inputSerializedData.readInt32(z10);
-        this.a = readInt32;
-        this.e = (readInt32 & 8) != 0;
-        this.f = (readInt32 & 16) != 0;
-        this.c = inputSerializedData.readString(z10);
-        if ((this.a & 1) != 0) {
-            this.d = TLRPC.WebPage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        if ((this.a & 2) != 0) {
-            this.b = inputSerializedData.readString(z10);
-        }
-        if ((this.a & 4) != 0) {
-            this.i = inputSerializedData.readInt32(z10);
-        }
+    public /* synthetic */ n0(q0 q0Var, int i10) {
+        this.a = i10;
+        this.b = q0Var;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-625858389);
-        this.a = this.d != null ? this.a | 1 : this.a & (-2);
-        int i10 = !TextUtils.isEmpty(this.b) ? this.a | 2 : this.a & (-3);
-        this.a = i10;
-        int i11 = this.e ? i10 | 8 : i10 & (-9);
-        this.a = i11;
-        int i12 = this.f ? i11 | 16 : i11 & (-17);
-        this.a = i12;
-        outputSerializedData.writeInt32(i12);
-        outputSerializedData.writeString(this.c);
-        if ((this.a & 1) != 0) {
-            this.d.serializeToStream(outputSerializedData);
-        }
-        if ((this.a & 2) != 0) {
-            outputSerializedData.writeString(this.b);
-        }
-        if ((this.a & 4) != 0) {
-            outputSerializedData.writeInt32(this.i);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                q0 q0Var = this.b;
+                q0Var.c = null;
+                h5 h5Var = q0Var.a;
+                if (h5Var != null) {
+                    h5Var.Q0();
+                    break;
+                }
+                break;
+            default:
+                this.b.b();
+                break;
         }
     }
 }

@@ -1,29 +1,73 @@
 package x8;
 
-import y8.l0;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class q implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l0 b;
-    public final /* synthetic */ m c;
+public final class q extends Handler {
+    public boolean a;
+    public final p b;
+    public final /* synthetic */ k c;
 
-    public /* synthetic */ q(m mVar, l0 l0Var, int i10) {
-        this.a = i10;
-        this.c = mVar;
-        this.b = l0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q(k kVar, Looper looper) {
+        super(looper);
+        this.c = kVar;
+        this.b = new p();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.c.c.onPeerConnected(this.b);
-                break;
-            default:
-                this.c.c.onPeerDisconnected(this.b);
-                break;
+    public final synchronized void a(String str) {
+        ComponentName componentName;
+        if (this.a) {
+            if (Log.isLoggable("WearableLS", 2)) {
+                componentName = this.c.zza;
+                Log.v("WearableLS", "unbindService: " + str + ", " + String.valueOf(componentName));
+            }
+            try {
+                this.c.unbindService(this.b);
+            } catch (RuntimeException e) {
+                Log.e("WearableLS", "Exception when unbinding from local service", e);
+            }
+            this.a = false;
+        }
+    }
+
+    @Override // android.os.Handler
+    public final void dispatchMessage(Message message) {
+        Intent intent;
+        ComponentName componentName;
+        synchronized (this) {
+            try {
+                if (!this.a) {
+                    if (Log.isLoggable("WearableLS", 2)) {
+                        componentName = this.c.zza;
+                        Log.v("WearableLS", "bindService: ".concat(String.valueOf(componentName)));
+                    }
+                    k kVar = this.c;
+                    intent = kVar.zzd;
+                    kVar.bindService(intent, this.b, 1);
+                    this.a = true;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        try {
+            super.dispatchMessage(message);
+            if (hasMessages(0)) {
+                return;
+            }
+            a("dispatch");
+        } catch (Throwable th3) {
+            if (!hasMessages(0)) {
+                a("dispatch");
+            }
+            throw th3;
         }
     }
 }

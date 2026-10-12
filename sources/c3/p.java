@@ -1,13 +1,13 @@
 package c3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public interface p extends b2.k {
+public interface p extends b2.p {
     void a(int i10, int i11, byte[] bArr);
 
-    boolean c(byte[] bArr, int i10, int i11, boolean z10);
+    boolean d(byte[] bArr, int i10, int i11, boolean z10);
 
-    int e(int i10, int i11, byte[] bArr);
+    int f(int i10, int i11, byte[] bArr);
 
     boolean g(int i10, boolean z10);
 
@@ -15,9 +15,9 @@ public interface p extends b2.k {
 
     long getPosition();
 
-    boolean h(byte[] bArr, int i10, int i11, boolean z10);
+    boolean j(byte[] bArr, int i10, int i11, boolean z10);
 
-    long j();
+    long k();
 
     void l(int i10);
 

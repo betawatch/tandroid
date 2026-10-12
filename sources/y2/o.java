@@ -1,15 +1,15 @@
 package y2;
 
 import android.net.Uri;
-import e2.d0;
+import e2.m0;
 import g2.b0;
 import java.io.IOException;
-import u2.t;
+import u2.u;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class o implements i {
-    public final long a = t.b.getAndIncrement();
+    public final long a = u.g.getAndIncrement();
     public final g2.m b;
     public final int c;
     public final b0 d;
@@ -28,17 +28,16 @@ public final class o implements i {
         this.d.b = 0L;
         g2.k kVar = new g2.k(this.d, this.b);
         try {
-            kVar.a.open(kVar.b);
-            kVar.d = true;
+            kVar.a();
             Uri uri = this.d.a.getUri();
             uri.getClass();
-            this.f = this.e.t2(uri, kVar);
+            this.f = this.e.d2(uri, kVar);
             try {
                 kVar.close();
             } catch (IOException unused) {
             }
         } finally {
-            String str = d0.a;
+            String str = m0.a;
             try {
                 kVar.close();
             } catch (IOException unused2) {
@@ -47,6 +46,6 @@ public final class o implements i {
     }
 
     @Override // y2.i
-    public final void v() {
+    public final void J() {
     }
 }

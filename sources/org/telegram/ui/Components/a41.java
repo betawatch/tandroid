@@ -1,48 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class a41 extends o61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class a41 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ String d;
 
-    static {
-        o61.setup(new a41());
+    public /* synthetic */ a41(String str, MessageObject messageObject, long j10, int i10) {
+        this.a = i10;
+        this.b = messageObject;
+        this.c = j10;
+        this.d = str;
     }
 
-    @Override // org.telegram.ui.Components.o61
-    public final void bindView(View view, p61 p61Var, boolean z10, c71 c71Var, k71 k71Var) {
-        b41 b41Var = (b41) view;
-        boolean z11 = false;
-        if (p61Var.r) {
-            b41Var.e();
-        } else {
-            Object obj = p61Var.G;
-            if (obj == null) {
-                if (p61Var.B == -2) {
-                    b41Var.b(p61Var.q, p61Var.e);
-                } else {
-                    b41Var.c((p61Var.y & 1) != 0, p61Var.q, p61Var.e);
-                }
-            } else if (obj instanceof TLRPC.TL_forumTopic) {
-                if (p61Var.I) {
-                    b41Var.a(p61Var.x, (TLRPC.TL_forumTopic) obj, p61Var.e);
-                } else {
-                    b41Var.f((TLRPC.TL_forumTopic) obj, p61Var.e);
-                }
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        String str = this.d;
+        long j10 = this.c;
+        MessageObject messageObject = this.b;
+        switch (i10) {
+            case 0:
+                NotificationCenter notificationCenter = NotificationCenter.getInstance(messageObject.currentAccount);
+                int i11 = NotificationCenter.voiceTranscriptionUpdate;
+                Long valueOf = Long.valueOf(j10);
+                Boolean bool = Boolean.TRUE;
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, messageObject, valueOf, str, bool, bool);
+                break;
+            default:
+                f41.g(messageObject, j10, str);
+                break;
         }
-        if (k71Var != null && k71Var.a3 && b41Var.y) {
-            z11 = true;
-        }
-        b41Var.setReorder(z11);
-    }
-
-    @Override // org.telegram.ui.Components.o61
-    public final View createView(Context context, qm0 qm0Var, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new b41(context, i10, e6Var);
     }
 }

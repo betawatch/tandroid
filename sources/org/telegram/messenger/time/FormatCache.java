@@ -9,14 +9,14 @@ import java.util.Locale;
 import java.util.TimeZone;
 import java.util.concurrent.ConcurrentMap;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 abstract class FormatCache<F extends Format> {
     static final int NONE = -1;
     private static final ConcurrentMap<MultipartKey, String> cDateTimeInstanceCache = new ConcurrentHashMap(7);
     private final ConcurrentMap<MultipartKey, F> cInstanceCache = new ConcurrentHashMap(7);
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class MultipartKey {
         private int hashCode;
         private final Object[] keys;

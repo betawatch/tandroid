@@ -42,14 +42,14 @@ public abstract class b implements Collection, Serializable {
 
     @Override // java.util.Collection
     public final Object[] toArray() {
-        long j3 = this.a.j();
-        if (j3 < 0) {
-            j3 = 0;
+        long j10 = this.a.j();
+        if (j10 < 0) {
+            j10 = 0;
         }
-        if (j3 > 2147483639) {
+        if (j10 > 2147483639) {
             throw new OutOfMemoryError("Required array size too large");
         }
-        int i10 = (int) j3;
+        int i10 = (int) j10;
         Object[] objArr = new Object[i10];
         Iterator it = iterator();
         int i11 = 0;
@@ -71,14 +71,14 @@ public abstract class b implements Collection, Serializable {
 
     @Override // java.util.Collection
     public final Object[] toArray(Object[] objArr) {
-        long j3 = this.a.j();
-        if (j3 < 0) {
-            j3 = 0;
+        long j10 = this.a.j();
+        if (j10 < 0) {
+            j10 = 0;
         }
-        if (j3 > 2147483639) {
+        if (j10 > 2147483639) {
             throw new OutOfMemoryError("Required array size too large");
         }
-        int i10 = (int) j3;
+        int i10 = (int) j10;
         Object[] objArr2 = objArr.length >= i10 ? objArr : (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i10);
         int length = objArr2.length;
         Iterator it = iterator();

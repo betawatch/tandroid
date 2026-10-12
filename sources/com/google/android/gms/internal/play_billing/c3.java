@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import libcore.io.Memory;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class c3 {
     public static final Unsafe a;
@@ -21,9 +21,9 @@ public abstract class c3 {
     public static final boolean g;
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0151  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0152  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0164  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x008e  */
     /* JADX WARN: Type inference failed for: r16v0 */
     /* JADX WARN: Type inference failed for: r16v1 */
     /* JADX WARN: Type inference failed for: r16v2 */
@@ -39,14 +39,14 @@ public abstract class c3 {
         int i11 = g1.a;
         b = Memory.class;
         Class<?> cls = Long.TYPE;
-        boolean o9 = o(cls);
+        boolean o10 = o(cls);
         Class<?> cls2 = Integer.TYPE;
-        boolean o10 = o(cls2);
+        boolean o11 = o(cls2);
         b3 b3Var3 = null;
         if (i10 != null) {
-            if (o9) {
+            if (o10) {
                 b3Var3 = new a3(i10);
-            } else if (o10) {
+            } else if (o11) {
                 b3Var3 = new z2(i10);
             }
         }
@@ -207,27 +207,27 @@ public abstract class c3 {
         return field2;
     }
 
-    public static void c(Object obj, long j3, byte b10) {
+    public static void c(Object obj, long j10, byte b10) {
         Unsafe unsafe = c.a;
-        long j10 = (-4) & j3;
-        int i10 = unsafe.getInt(obj, j10);
-        int i11 = ((~((int) j3)) & 3) << 3;
-        unsafe.putInt(obj, j10, ((255 & b10) << i11) | (i10 & (~(255 << i11))));
+        long j11 = (-4) & j10;
+        int i10 = unsafe.getInt(obj, j11);
+        int i11 = ((~((int) j10)) & 3) << 3;
+        unsafe.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(255 << i11))));
     }
 
-    public static void d(Object obj, long j3, byte b10) {
+    public static void d(Object obj, long j10, byte b10) {
         Unsafe unsafe = c.a;
-        long j10 = (-4) & j3;
-        int i10 = (((int) j3) & 3) << 3;
-        unsafe.putInt(obj, j10, ((255 & b10) << i10) | (unsafe.getInt(obj, j10) & (~(255 << i10))));
+        long j11 = (-4) & j10;
+        int i10 = (((int) j10) & 3) << 3;
+        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (unsafe.getInt(obj, j11) & (~(255 << i10))));
     }
 
-    public static int e(Object obj, long j3) {
-        return c.a.getInt(obj, j3);
+    public static int e(Object obj, long j10) {
+        return c.a.getInt(obj, j10);
     }
 
-    public static long f(Object obj, long j3) {
-        return c.a.getLong(obj, j3);
+    public static long f(Object obj, long j10) {
+        return c.a.getLong(obj, j10);
     }
 
     public static Object g(Class cls) {
@@ -238,8 +238,8 @@ public abstract class c3 {
         }
     }
 
-    public static Object h(Object obj, long j3) {
-        return c.a.getObject(obj, j3);
+    public static Object h(Object obj, long j10) {
+        return c.a.getObject(obj, j10);
     }
 
     public static Unsafe i() {
@@ -250,24 +250,24 @@ public abstract class c3 {
         }
     }
 
-    public static void j(Object obj, long j3, int i10) {
-        c.a.putInt(obj, j3, i10);
+    public static void j(Object obj, long j10, int i10) {
+        c.a.putInt(obj, j10, i10);
     }
 
-    public static void k(Object obj, long j3, long j10) {
-        c.a.putLong(obj, j3, j10);
+    public static void k(Object obj, long j10, long j11) {
+        c.a.putLong(obj, j10, j11);
     }
 
-    public static void l(Object obj, long j3, Object obj2) {
-        c.a.putObject(obj, j3, obj2);
+    public static void l(Object obj, long j10, Object obj2) {
+        c.a.putObject(obj, j10, obj2);
     }
 
-    public static /* bridge */ /* synthetic */ boolean m(Object obj, long j3) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & 255)) != 0;
+    public static /* bridge */ /* synthetic */ boolean m(Object obj, long j10) {
+        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & 255)) != 0;
     }
 
-    public static /* bridge */ /* synthetic */ boolean n(Object obj, long j3) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & 255)) != 0;
+    public static /* bridge */ /* synthetic */ boolean n(Object obj, long j10) {
+        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & 255)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

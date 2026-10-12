@@ -1,23 +1,24 @@
 package k4;
 
 import c3.p;
-import e2.v;
+import e2.x;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d {
     public final int a;
     public final long b;
 
-    public /* synthetic */ d(int i10, long j3, boolean z10) {
+    public /* synthetic */ d(int i10, long j10, boolean z10) {
         this.a = i10;
-        this.b = j3;
+        this.b = j10;
     }
 
-    public static d b(p pVar, v vVar) {
-        pVar.a(0, 8, vVar.a);
-        vVar.J(0);
-        return new d(vVar.j(), vVar.o(), false);
+    public static d b(p pVar, x xVar) {
+        pVar.a(0, 8, xVar.a);
+        xVar.N(0);
+        return new d(xVar.m(), xVar.r(), false);
     }
 
     public boolean a() {
@@ -25,9 +26,9 @@ public final class d {
         return i10 == 0 || i10 == 1;
     }
 
-    public d(int i10, long j3) {
-        e2.d.b(j3 >= 0);
+    public d(int i10, long j10) {
+        u6.g(j10 >= 0);
         this.a = i10;
-        this.b = j3;
+        this.b = j10;
     }
 }

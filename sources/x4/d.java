@@ -1,5 +1,6 @@
 package x4;
 
+import ah.f1;
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.content.Context;
@@ -20,23 +21,23 @@ import android.util.Log;
 import android.util.Xml;
 import java.io.IOException;
 import java.util.ArrayList;
-import org.telegram.ui.Components.hr;
+import org.telegram.ui.Components.er;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.q8;
+import v7.j8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d extends hr implements Animatable {
+public final class d extends er implements Animatable {
     public final Context d;
-    public final i.f e = new i.f(this, 8);
+    public final f1 e = new f1(this, 7);
     public final b c = new b();
 
     public d(Context context) {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.hr, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
     public final void applyTheme(Resources.Theme theme) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -110,7 +111,7 @@ public final class d extends hr implements Animatable {
         return drawable != null ? drawable.getIntrinsicWidth() : this.c.a.getIntrinsicWidth();
     }
 
-    @Override // org.telegram.ui.Components.hr, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
     public final int getOpacity() {
         Drawable drawable = (Drawable) this.b;
         return drawable != null ? drawable.getOpacity() : this.c.a.getOpacity();
@@ -182,8 +183,8 @@ public final class d extends hr implements Animatable {
                                 }
                                 oVar = new o();
                                 oVar.inflate(resources, xml, asAttributeSet, theme);
-                            } catch (IOException e7) {
-                                Log.e("VectorDrawableCompat", "parser error", e7);
+                            } catch (IOException e) {
+                                Log.e("VectorDrawableCompat", "parser error", e);
                                 oVar = null;
                                 oVar.h = false;
                                 oVar.setCallback(this.e);
@@ -193,8 +194,8 @@ public final class d extends hr implements Animatable {
                                 bVar.a = oVar;
                                 f7.recycle();
                                 eventType = xmlPullParser.next();
-                            } catch (XmlPullParserException e10) {
-                                Log.e("VectorDrawableCompat", "parser error", e10);
+                            } catch (XmlPullParserException e7) {
+                                Log.e("VectorDrawableCompat", "parser error", e7);
                                 oVar = null;
                                 oVar.h = false;
                                 oVar.setCallback(this.e);
@@ -238,21 +239,21 @@ public final class d extends hr implements Animatable {
                                     } catch (Throwable th2) {
                                         th = th2;
                                     }
-                                } catch (IOException e11) {
+                                } catch (IOException e10) {
+                                    e = e10;
+                                } catch (XmlPullParserException e11) {
                                     e = e11;
-                                } catch (XmlPullParserException e12) {
-                                    e = e12;
                                 }
                                 try {
                                     a2 = a.a(context, resources2, theme2, animation, Xml.asAttributeSet(animation), null, 0);
                                     animation.close();
-                                } catch (IOException e13) {
-                                    e = e13;
+                                } catch (IOException e12) {
+                                    e = e12;
                                     Resources.NotFoundException notFoundException = new Resources.NotFoundException("Can't load animation resource ID #0x" + Integer.toHexString(resourceId2));
                                     notFoundException.initCause(e);
                                     throw notFoundException;
-                                } catch (XmlPullParserException e14) {
-                                    e = e14;
+                                } catch (XmlPullParserException e13) {
+                                    e = e13;
                                     Resources.NotFoundException notFoundException2 = new Resources.NotFoundException("Can't load animation resource ID #0x" + Integer.toHexString(resourceId2));
                                     notFoundException2.initCause(e);
                                     throw notFoundException2;
@@ -320,7 +321,7 @@ public final class d extends hr implements Animatable {
         }
     }
 
-    @Override // org.telegram.ui.Components.hr, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
     public final boolean onLevelChange(int i10) {
         Drawable drawable = (Drawable) this.b;
         return drawable != null ? drawable.setLevel(i10) : this.c.a.setLevel(i10);
@@ -332,7 +333,7 @@ public final class d extends hr implements Animatable {
         return drawable != null ? drawable.setState(iArr) : this.c.a.setState(iArr);
     }
 
-    @Override // org.telegram.ui.Components.hr, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -352,7 +353,7 @@ public final class d extends hr implements Animatable {
         }
     }
 
-    @Override // org.telegram.ui.Components.hr, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -366,7 +367,7 @@ public final class d extends hr implements Animatable {
     public final void setTint(int i10) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
-            q8.a(i10, drawable);
+            j8.a(i10, drawable);
         } else {
             this.c.a.setTint(i10);
         }

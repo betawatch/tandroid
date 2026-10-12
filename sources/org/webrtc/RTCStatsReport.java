@@ -2,19 +2,19 @@ package org.webrtc;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class RTCStatsReport {
     private final Map<String, RTCStats> stats;
     private final long timestampUs;
 
-    public RTCStatsReport(long j3, Map<String, RTCStats> map) {
-        this.timestampUs = j3;
+    public RTCStatsReport(long j10, Map<String, RTCStats> map) {
+        this.timestampUs = j10;
         this.stats = map;
     }
 
-    private static RTCStatsReport create(long j3, Map map) {
-        return new RTCStatsReport(j3, map);
+    private static RTCStatsReport create(long j10, Map map) {
+        return new RTCStatsReport(j10, map);
     }
 
     public Map<String, RTCStats> getStatsMap() {

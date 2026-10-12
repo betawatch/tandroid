@@ -10,19 +10,19 @@ public abstract class q7 {
     public long d;
     public long e;
 
-    public abstract Spliterator a(Spliterator spliterator, long j3, long j10, long j11, long j12);
+    public abstract Spliterator a(Spliterator spliterator, long j10, long j11, long j12, long j13);
 
-    public q7(Spliterator spliterator, long j3, long j10, long j11, long j12) {
+    public q7(Spliterator spliterator, long j10, long j11, long j12, long j13) {
         this.c = spliterator;
-        this.a = j3;
-        this.b = j10;
-        this.d = j11;
-        this.e = j12;
+        this.a = j10;
+        this.b = j11;
+        this.d = j12;
+        this.e = j13;
     }
 
     public final Spliterator trySplit() {
-        long j3 = this.e;
-        if (this.a >= j3 || this.d >= j3) {
+        long j10 = this.e;
+        if (this.a >= j10 || this.d >= j10) {
             return null;
         }
         while (true) {
@@ -32,32 +32,32 @@ public abstract class q7 {
             }
             long estimateSize = trySplit.estimateSize() + this.d;
             long min = Math.min(estimateSize, this.b);
-            long j10 = this.a;
-            if (j10 >= min) {
+            long j11 = this.a;
+            if (j11 >= min) {
                 this.d = min;
             } else {
-                long j11 = this.b;
-                if (min >= j11) {
+                long j12 = this.b;
+                if (min >= j12) {
                     this.c = trySplit;
                     this.e = min;
                 } else {
-                    long j12 = this.d;
-                    if (j12 >= j10 && estimateSize <= j11) {
+                    long j13 = this.d;
+                    if (j13 >= j11 && estimateSize <= j12) {
                         this.d = min;
                         return trySplit;
                     }
                     this.d = min;
-                    return a(trySplit, j10, j11, j12, min);
+                    return a(trySplit, j11, j12, j13, min);
                 }
             }
         }
     }
 
     public final long estimateSize() {
-        long j3 = this.e;
-        long j10 = this.a;
-        if (j10 < j3) {
-            return j3 - Math.max(j10, this.d);
+        long j10 = this.e;
+        long j11 = this.a;
+        if (j11 < j10) {
+            return j10 - Math.max(j11, this.d);
         }
         return 0L;
     }

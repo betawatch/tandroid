@@ -1,39 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.ImageView;
+import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class cf extends ImageView {
-    public float a;
+public final class cf implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cf(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
+    public /* synthetic */ cf(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.a = i10;
         this.b = chatActivityEnterView;
     }
 
-    @Override // android.view.View
-    public final float getTranslationX() {
-        return this.a;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        this.a = f7;
-        float dp = AndroidUtilities.dp(-44.0f) + this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        float f10 = dp + chatActivityEnterView.y + chatActivityEnterView.x;
-        ef efVar = chatActivityEnterView.K1;
-        float dp2 = AndroidUtilities.dp((efVar == null || efVar.getVisibility() != 0) ? 0.0f : -44.0f);
-        ef efVar2 = chatActivityEnterView.K1;
-        float alpha = (dp2 * (efVar2 == null ? 0.0f : efVar2.getAlpha())) + f10;
-        ef efVar3 = chatActivityEnterView.x1;
-        float dp3 = AndroidUtilities.dp((efVar3 == null || efVar3.getVisibility() != 0) ? 0.0f : -44.0f);
-        ef efVar4 = chatActivityEnterView.x1;
-        super.setTranslationX((dp3 * (efVar4 != null ? efVar4.getAlpha() : 0.0f)) + alpha);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                cf cfVar = chatActivityEnterView.r3;
+                if ((!chatActivityEnterView.h0() || !chatActivityEnterView.u()) && !org.telegram.ui.ActionBar.m2.hasSheets(chatActivityEnterView.P2) && !chatActivityEnterView.Y1 && chatActivityEnterView.E0 != null && chatActivityEnterView.k3 && !chatActivityEnterView.z2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
+                    pg pgVar = chatActivityEnterView.Z2;
+                    if (pgVar != null) {
+                        pgVar.m1();
+                    }
+                    chatActivityEnterView.E0.requestFocus();
+                    AndroidUtilities.showKeyboard(chatActivityEnterView.E0);
+                    AndroidUtilities.cancelRunOnUIThread(cfVar);
+                    AndroidUtilities.runOnUIThread(cfVar, 100L);
+                    break;
+                }
+                break;
+            case 1:
+                pg pgVar2 = this.b.Z2;
+                if (pgVar2 != null) {
+                    pgVar2.a2(0, 0, 0, 0L, 0L, true);
+                    break;
+                }
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                AnimatorSet animatorSet = chatActivityEnterView2.V0;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    chatActivityEnterView2.V0.start();
+                    break;
+                }
+                break;
+        }
     }
 }

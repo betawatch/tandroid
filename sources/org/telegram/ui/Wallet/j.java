@@ -3,9 +3,9 @@ package org.telegram.ui.Wallet;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.e90;
+import org.telegram.ui.j90;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -22,16 +22,16 @@ public final /* synthetic */ class j implements Utilities.Callback {
         Object obj2 = this.b;
         switch (i10) {
             case 0:
-                ((ai.j3) obj2).run(Boolean.valueOf(((String) obj) == null));
+                ((bi.y2) obj2).run(Boolean.valueOf(((String) obj) == null));
                 break;
             case 1:
-                h0 h0Var = (h0) obj;
-                ((Utilities.Callback2) obj2).run(h0Var, h0Var == null ? "LOCAL_STORAGE_ERROR" : null);
+                g0 g0Var = (g0) obj;
+                ((Utilities.Callback2) obj2).run(g0Var, g0Var == null ? "LOCAL_STORAGE_ERROR" : null);
                 break;
             case 2:
                 String str = (String) obj;
                 d2.k("approve session", str);
-                ((e90) obj2).run(str);
+                ((j90) obj2).run(str);
                 break;
             case 3:
                 String str2 = (String) obj;
@@ -39,14 +39,14 @@ public final /* synthetic */ class j implements Utilities.Callback {
                 ((Utilities.Callback) obj2).run(str2);
                 break;
             default:
-                a7 a7Var = (a7) obj2;
-                a7Var.getClass();
+                z6 z6Var = (z6) obj2;
+                z6Var.getClass();
                 int i11 = ((Integer) obj).intValue() == 0 ? 12 : 24;
-                if (a7Var.a != i11) {
-                    a7Var.a = i11;
-                    a7Var.W(a7Var.getParentActivity());
-                    a7Var.Y();
-                    a7Var.h.setText(a7Var.s != null ? LocaleController.formatSpannable(R.string.WalletImportCurrentPhraseInfo, Integer.valueOf(i11)) : LocaleController.formatSpannable(R.string.WalletImportPhraseInfo, Integer.valueOf(i11)));
+                if (z6Var.a != i11) {
+                    z6Var.a = i11;
+                    z6Var.W(z6Var.getParentActivity());
+                    z6Var.Y();
+                    z6Var.h.setText(z6Var.s != null ? LocaleController.formatSpannable(R.string.WalletImportCurrentPhraseInfo, Integer.valueOf(i11)) : LocaleController.formatSpannable(R.string.WalletImportPhraseInfo, Integer.valueOf(i11)));
                     break;
                 }
                 break;

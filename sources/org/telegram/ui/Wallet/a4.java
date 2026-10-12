@@ -12,15 +12,15 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.o91;
-import org.telegram.ui.Components.tc;
+import org.telegram.ui.Components.k91;
+import org.telegram.ui.Components.sc;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class a4 extends o91 {
+public final class a4 extends k91 {
     public boolean T;
     public final z3 U;
-    public final /* synthetic */ j0 V;
+    public final /* synthetic */ i0 V;
     public final /* synthetic */ ArrayList W;
     public final /* synthetic */ int a0;
     public final /* synthetic */ Rect b0;
@@ -28,9 +28,9 @@ public final class a4 extends o91 {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Type inference failed for: r1v1, types: [org.telegram.ui.Wallet.z3] */
-    public a4(Context context, org.telegram.ui.ActionBar.e6 e6Var, final j0 j0Var, final ArrayList arrayList, int i10, Rect rect, View[] viewArr) {
-        super(context, e6Var);
-        this.V = j0Var;
+    public a4(Context context, org.telegram.ui.ActionBar.c6 c6Var, final i0 i0Var, final ArrayList arrayList, int i10, Rect rect, View[] viewArr) {
+        super(context, c6Var);
+        this.V = i0Var;
         this.W = arrayList;
         this.a0 = i10;
         this.b0 = rect;
@@ -39,7 +39,7 @@ public final class a4 extends o91 {
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i11, int i12, Object[] objArr) {
                 ArrayList arrayList2;
-                ArrayList arrayList3 = j0.this.c;
+                ArrayList arrayList3 = i0.this.c;
                 int size = arrayList3.size();
                 int i13 = 0;
                 while (i13 < size) {
@@ -52,7 +52,7 @@ public final class a4 extends o91 {
                         if (i14 >= arrayList2.size()) {
                             arrayList2.add(wallettransaction);
                             break;
-                        } else if (arrayList2.get(i14) == wallettransaction || k0.d0((TL_wallet.walletTransaction) arrayList2.get(i14), wallettransaction)) {
+                        } else if (arrayList2.get(i14) == wallettransaction || j0.d0((TL_wallet.walletTransaction) arrayList2.get(i14), wallettransaction)) {
                             break;
                         } else {
                             i14++;
@@ -64,7 +64,7 @@ public final class a4 extends o91 {
         };
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.k91
     public final void E(View view, float f7) {
         view.setTranslationX(f7);
         if (getMeasuredWidth() <= 0) {
@@ -76,62 +76,62 @@ public final class a4 extends o91 {
         view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
         view.setScaleX(1.0f - Math.abs(0.25f * clamp));
         view.setRotationY(10.0f * clamp);
-        c6 c6Var = (c6) view.findViewWithTag(c6.class);
-        if (c6Var != null) {
+        b6 b6Var = (b6) view.findViewWithTag(b6.class);
+        if (b6Var != null) {
             boolean z10 = this.T;
             long nanoTime = System.nanoTime();
-            if (!c6Var.S) {
-                c6Var.S = true;
-                c6Var.N = clamp;
-                c6Var.R = nanoTime;
+            if (!b6Var.S) {
+                b6Var.S = true;
+                b6Var.N = clamp;
+                b6Var.R = nanoTime;
                 return;
             }
-            float f10 = clamp - c6Var.N;
-            c6Var.N = clamp;
+            float f10 = clamp - b6Var.N;
+            b6Var.N = clamp;
             if (!z10) {
-                c6Var.Q = 0.0f;
-                c6Var.R = nanoTime;
+                b6Var.Q = 0.0f;
+                b6Var.R = nanoTime;
             } else if (f10 != 0.0f) {
-                float max = Math.max(0.008333334f, Math.min(0.033333335f, (nanoTime - c6Var.R) / 1.0E9f));
-                c6Var.R = nanoTime;
+                float max = Math.max(0.008333334f, Math.min(0.033333335f, (nanoTime - b6Var.R) / 1.0E9f));
+                b6Var.R = nanoTime;
                 float f11 = f10 / max;
-                float dp = (-(f11 - c6Var.Q)) * AndroidUtilities.dp(140.0f);
-                c6Var.Q = f11;
-                if (c6Var.O == null) {
-                    o1.k kVar = new o1.k(c6Var, o1.h.m);
-                    c6Var.O = kVar;
+                float dp = (-(f11 - b6Var.Q)) * AndroidUtilities.dp(140.0f);
+                b6Var.Q = f11;
+                if (b6Var.O == null) {
+                    o1.k kVar = new o1.k(b6Var, o1.h.m);
+                    b6Var.O = kVar;
                     o1.l lVar = new o1.l(0.0f);
                     lVar.a(0.32f);
                     lVar.b(300.0f);
                     kVar.u = lVar;
-                    c6Var.O.b(new w5(c6Var, 1));
+                    b6Var.O.b(new v5(b6Var, 1));
                 }
-                float max2 = Math.max(-AndroidUtilities.dp(1600.0f), Math.min(AndroidUtilities.dp(1600.0f), c6Var.P + dp));
-                c6Var.P = max2;
-                o1.k kVar2 = c6Var.O;
+                float max2 = Math.max(-AndroidUtilities.dp(1600.0f), Math.min(AndroidUtilities.dp(1600.0f), b6Var.P + dp));
+                b6Var.P = max2;
+                o1.k kVar2 = b6Var.O;
                 kVar2.a = max2;
                 kVar2.g(0.0f);
             }
             if (f10 == 0.0f) {
                 return;
             }
-            c6Var.U = Math.max(-720.0f, Math.min(720.0f, c6Var.U - (f10 * 300.0f)));
-            if (c6Var.W || !c6Var.n) {
+            b6Var.U = Math.max(-720.0f, Math.min(720.0f, b6Var.U - (f10 * 300.0f)));
+            if (b6Var.W || !b6Var.n) {
                 return;
             }
-            c6Var.W = true;
-            c6Var.V = 0L;
-            Choreographer.getInstance().postFrameCallback(c6Var.a0);
+            b6Var.W = true;
+            b6Var.V = 0L;
+            Choreographer.getInstance().postFrameCallback(b6Var.a0);
         }
     }
 
     public final void J() {
         if (this.b >= this.W.size() - 2) {
-            j0 j0Var = this.V;
-            if (j0Var.g) {
+            i0 i0Var = this.V;
+            if (i0Var.g) {
                 return;
             }
-            j0Var.e();
+            i0Var.e();
         }
     }
 
@@ -146,7 +146,7 @@ public final class a4 extends o91 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.k91
     public final float getAvailableTranslationX() {
         return getMeasuredWidth();
     }
@@ -180,7 +180,7 @@ public final class a4 extends o91 {
         super.onMeasure(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.k91
     public final void t(View view, View view2, int i10, int i11) {
         requestLayout();
         View childAt = ((FrameLayout) view).getChildAt(0);
@@ -188,13 +188,13 @@ public final class a4 extends o91 {
             ((Runnable) childAt.getTag()).run();
         }
         J();
-        tc tcVar = tc.w;
-        if (tcVar != null) {
-            tcVar.c(0L, false);
+        sc scVar = sc.w;
+        if (scVar != null) {
+            scVar.c(0L, false);
         }
     }
 
-    @Override // org.telegram.ui.Components.o91
+    @Override // org.telegram.ui.Components.k91
     public final void w(boolean z10) {
         requestLayout();
         View view = this.c0[0];

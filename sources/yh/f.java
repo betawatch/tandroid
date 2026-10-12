@@ -1,134 +1,113 @@
 package yh;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import android.util.LongSparseArray;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.qm0;
-import org.telegram.ui.Components.sw0;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.db;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.lm0;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.z61;
+import w7.a6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final class f extends sw0 implements r0.m {
-    public final b2.q0 w0;
-    public final /* synthetic */ g x0;
+public final class f extends db implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
+    public final l61 X;
+    public final LongSparseArray Y;
+    public ArrayList Z;
+    public boolean a0;
+    public z61 b0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(g gVar, Context context) {
-        super(context, null);
-        this.x0 = gVar;
-        this.w0 = new b2.q0();
+    public f(Context context) {
+        super(context, null, false, false, 2, null);
+        int i10 = 0;
+        this.Y = new LongSparseArray();
+        this.Z = new ArrayList();
+        setBackgroundColor(g6.x0(null, g6.a7, false));
+        GiftAuctionController.getInstance(this.currentAccount).subscribeToActiveAuctionsUpdates(this);
+        this.L = false;
+        this.K = AndroidUtilities.dp(12.0f);
+        fixNavigationBar();
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        linearLayout.setClickable(true);
+        this.X = l61.j(-1, linearLayout);
+        this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f));
+        this.d.setOverScrollMode(2);
+        this.b0.N(false);
+        ArrayList<GiftAuctionController.Auction> activeAuctions = GiftAuctionController.getInstance(this.currentAccount).getActiveAuctions();
+        int size = activeAuctions.size();
+        while (i10 < size) {
+            GiftAuctionController.Auction auction = activeAuctions.get(i10);
+            i10++;
+            GiftAuctionController.Auction auction2 = auction;
+            e eVar = new e(context, auction2);
+            eVar.a.setOnClickListener(new yg.e(this, context, auction2, 1));
+            linearLayout.addView(eVar, a6.n(-1, -2));
+            this.Y.put(auction2.giftId, eVar);
+        }
+        onActiveAuctionsUpdate(activeAuctions);
     }
 
-    @Override // r0.l
-    public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
-        org.telegram.ui.ActionBar.k kVar;
-        int i13;
-        org.telegram.ui.ActionBar.k kVar2;
-        g gVar = this.x0;
-        if (viewGroup == gVar.e && gVar.F.isAttachedToWindow()) {
-            kVar = ((org.telegram.ui.ActionBar.n2) gVar).actionBar;
-            boolean z10 = kVar.n0;
-            int top = (((View) gVar.F.getParent()).getTop() - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-            int bottom = ((View) gVar.F.getParent()).getBottom();
-            boolean z11 = false;
-            if (i11 >= 0) {
-                if (z10) {
-                    qm0 currentListView = gVar.F.getCurrentListView();
-                    iArr[1] = i11;
-                    if (top > 0) {
-                        iArr[1] = 0;
-                    }
-                    if (currentListView == null || (i13 = iArr[1]) <= 0) {
-                        return;
-                    }
-                    currentListView.scrollBy(0, i13);
-                    return;
-                }
-                if (i11 > 0) {
-                    qm0 currentListView2 = gVar.F.getCurrentListView();
-                    if (gVar.e.getHeight() - bottom < 0 || currentListView2 == null || currentListView2.canScrollVertically(1)) {
-                        return;
-                    }
-                    iArr[1] = i11;
-                    gVar.e.B0();
-                    return;
-                }
-                return;
-            }
-            kVar2 = ((org.telegram.ui.ActionBar.n2) gVar).actionBar;
-            kVar2.setCastShadows(gVar.e.getHeight() - bottom < 0);
-            if (gVar.e.getHeight() - bottom >= 0) {
-                qm0 currentListView3 = gVar.F.getCurrentListView();
-                int L0 = ((s4.d0) currentListView3.getLayoutManager()).L0();
-                if (L0 != -1) {
-                    s4.d1 K = currentListView3.K(L0);
-                    int top2 = K != null ? K.a.getTop() : -1;
-                    int paddingTop = currentListView3.getPaddingTop();
-                    if (top2 != paddingTop || L0 != 0) {
-                        iArr[1] = L0 != 0 ? i11 : Math.max(i11, top2 - paddingTop);
-                        currentListView3.scrollBy(0, i11);
-                        z11 = true;
-                    }
-                }
-            }
-            if (z10) {
-                if (z11 || top >= 0) {
-                    iArr[1] = i11;
-                } else {
-                    iArr[1] = i11 - Math.max(top, i11);
-                }
+    @Override // org.telegram.ui.Components.db
+    public final CharSequence A() {
+        ArrayList arrayList = this.Z;
+        if (arrayList == null) {
+            return null;
+        }
+        return LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveAuctionsTitle, Integer.valueOf(arrayList.size()));
+    }
+
+    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    public final void dismiss() {
+        GiftAuctionController.getInstance(this.currentAccount).unsubscribeFromActiveAuctionsUpdates(this);
+        super.dismiss();
+    }
+
+    @Override // org.telegram.messenger.GiftAuctionController.OnActiveAuctionsUpdateListeners
+    public final void onActiveAuctionsUpdate(List list) {
+        this.Z = new ArrayList(list);
+        this.e.setTitle(A());
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            GiftAuctionController.Auction auction = (GiftAuctionController.Auction) it.next();
+            TL_stars.TL_starGiftAuctionState tL_starGiftAuctionState = auction.auctionStateActive;
+            int i10 = tL_starGiftAuctionState != null ? tL_starGiftAuctionState.next_round_at : 0;
+            e eVar = (e) this.Y.get(auction.giftId);
+            if (eVar != null) {
+                eVar.b(this.a0);
+                long max = Math.max(0, i10 - ConnectionsManager.getInstance(this.currentAccount).getCurrentTime());
+                eVar.a(max, this.a0);
+                eVar.f.a(max);
             }
         }
     }
 
-    @Override // r0.m
-    public final void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
-        org.telegram.ui.ActionBar.k kVar;
-        g gVar = this.x0;
-        try {
-            if (viewGroup == gVar.e && gVar.F.isAttachedToWindow()) {
-                qm0 currentListView = gVar.F.getCurrentListView();
-                int bottom = ((View) gVar.F.getParent()).getBottom();
-                kVar = ((org.telegram.ui.ActionBar.n2) gVar).actionBar;
-                kVar.setCastShadows(gVar.e.getHeight() - bottom < 0);
-                if (gVar.e.getHeight() - bottom >= 0) {
-                    iArr[1] = i13;
-                    currentListView.scrollBy(0, i13);
-                }
-            }
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-            AndroidUtilities.runOnUIThread(new rg.x1(this, 26));
-        }
+    @Override // org.telegram.ui.ActionBar.e3
+    public final void onOpenAnimationEnd() {
+        super.onOpenAnimationEnd();
+        this.a0 = true;
     }
 
-    @Override // r0.l
-    public final void o(int i10, View view) {
-        this.w0.a = 0;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // r0.l
-    public final boolean p(View view, View view2, int i10, int i11) {
-        return i10 == 2;
-    }
-
-    @Override // r0.l
-    public final void s(View view, View view2, int i10, int i11) {
-        this.w0.a = i10;
-    }
-
-    @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onStopNestedScroll(View view) {
-    }
-
-    @Override // r0.l
-    public final void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
+    @Override // org.telegram.ui.Components.db
+    public final lm0 x(mm0 mm0Var) {
+        z61 z61Var = new z61(this.d, getContext(), this.currentAccount, 0, true, new ii.a(this, 12), this.resourcesProvider);
+        this.b0 = z61Var;
+        z61Var.r = false;
+        return z61Var;
     }
 }

@@ -12,7 +12,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import m.q3;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final Lock a;
@@ -46,12 +46,12 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
         }
         this.e = new h0(this, looper, 1);
         this.b = lock.newCondition();
-        this.m = new a4.l(this, 10);
+        this.m = new qb.c(this, 11);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
     public final void a() {
-        this.m.n();
+        this.m.g();
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -62,7 +62,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     @Override // com.google.android.gms.common.api.internal.x0
     public final e c(e eVar) {
         eVar.l();
-        return this.m.R(eVar);
+        return this.m.G(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -72,7 +72,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
 
     @Override // com.google.android.gms.common.api.internal.x0
     public final void f() {
-        if (this.m.J()) {
+        if (this.m.z()) {
             this.i.clear();
         }
     }
@@ -92,8 +92,8 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void h() {
         this.a.lock();
         try {
-            this.m = new a4.l(this, 10);
-            this.m.H();
+            this.m = new qb.c(this, 11);
+            this.m.u();
             this.b.signalAll();
         } finally {
             this.a.unlock();
@@ -104,7 +104,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void onConnected(Bundle bundle) {
         this.a.lock();
         try {
-            this.m.b(bundle);
+            this.m.c(bundle);
         } finally {
             this.a.unlock();
         }
@@ -114,7 +114,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final void onConnectionSuspended(int i10) {
         this.a.lock();
         try {
-            this.m.D(i10);
+            this.m.s(i10);
         } finally {
             this.a.unlock();
         }

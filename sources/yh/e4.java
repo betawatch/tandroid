@@ -1,33 +1,57 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ConnectionsManager;
+import zh.f5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qh.r b;
+public final class e4 implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final f5 b;
+    public final t3 c;
+    public x3 d;
+    public boolean e;
 
-    public /* synthetic */ e4(qh.r rVar, int i10) {
+    public e4(int i10, long j10) {
         this.a = i10;
-        this.b = rVar;
+        f5 f5Var = new f5(i10, 0L, false);
+        this.b = f5Var;
+        f5Var.p = j10;
+        t3 t3Var = new t3(j10, i10, new ji.p1(this, 22));
+        t3Var.s = true;
+        this.c = t3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.run(Boolean.FALSE, "PRODUCT_NOT_FOUND");
-                break;
-            case 1:
-                this.b.run(Boolean.FALSE, "PRODUCT_NO_ONETIME_OFFER_DETAILS");
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new e4(this.b, 3));
-                break;
-            default:
-                this.b.run(Boolean.FALSE, null);
-                break;
+    public final void a() {
+        if (this.e) {
+            return;
+        }
+        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.starUserGiftsLoaded);
+        this.b.a();
+        this.c.g(false);
+        this.e = true;
+    }
+
+    public final void b() {
+        if (this.e) {
+            NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
+            f5 f5Var = this.b;
+            if (f5Var.m != -1) {
+                ConnectionsManager.getInstance(f5Var.a).cancelRequest(f5Var.m, true);
+                f5Var.m = -1;
+            }
+            f5Var.i = false;
+            this.c.f();
+            this.e = false;
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        x3 x3Var;
+        if (i10 == NotificationCenter.starUserGiftsLoaded && objArr[1] == this.b && (x3Var = this.d) != null) {
+            x3Var.run();
         }
     }
 }

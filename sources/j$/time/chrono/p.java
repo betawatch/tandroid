@@ -28,8 +28,8 @@ public final class p extends d {
         this.d = i12;
     }
 
-    public p(n nVar, long j3) {
-        int i10 = (int) j3;
+    public p(n nVar, long j10) {
+        int i10 = (int) j10;
         nVar.k();
         if (i10 < nVar.e || i10 >= nVar.f) {
             throw new j$.time.b("Hijrah date out of range");
@@ -59,7 +59,7 @@ public final class p extends d {
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.k(this);
         }
-        if (!j$.com.android.tools.r8.a.q(this, oVar)) {
+        if (!j$.com.android.tools.r8.a.p(this, oVar)) {
             throw new j$.time.temporal.r(j$.time.c.a("Unsupported field: ", oVar));
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
@@ -80,7 +80,7 @@ public final class p extends d {
             case 3:
                 return ((this.d - 1) / 7) + 1;
             case 4:
-                return ((int) j$.com.android.tools.r8.a.R(z() + 3, 7)) + 1;
+                return ((int) j$.com.android.tools.r8.a.Q(z() + 3, 7)) + 1;
             case 5:
                 return ((this.d - 1) % 7) + 1;
             case 6:
@@ -106,34 +106,34 @@ public final class p extends d {
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
     /* renamed from: R, reason: merged with bridge method [inline-methods] */
-    public final p c(long j3, j$.time.temporal.o oVar) {
+    public final p c(long j10, j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return (p) super.c(j3, oVar);
+            return (p) super.c(j10, oVar);
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        this.a.s(aVar).b(j3, aVar);
-        int i10 = (int) j3;
+        this.a.s(aVar).b(j10, aVar);
+        int i10 = (int) j10;
         switch (o.a[aVar.ordinal()]) {
             case 1:
                 return Q(this.b, this.c, i10);
             case 2:
                 return J(Math.min(i10, this.a.y(this.b, 12)) - N());
             case 3:
-                return J((j3 - y(j$.time.temporal.a.ALIGNED_WEEK_OF_MONTH)) * 7);
+                return J((j10 - y(j$.time.temporal.a.ALIGNED_WEEK_OF_MONTH)) * 7);
             case 4:
-                return J(j3 - (((int) j$.com.android.tools.r8.a.R(z() + 3, 7)) + 1));
+                return J(j10 - (((int) j$.com.android.tools.r8.a.Q(z() + 3, 7)) + 1));
             case 5:
-                return J(j3 - y(j$.time.temporal.a.ALIGNED_DAY_OF_WEEK_IN_MONTH));
+                return J(j10 - y(j$.time.temporal.a.ALIGNED_DAY_OF_WEEK_IN_MONTH));
             case 6:
-                return J(j3 - y(j$.time.temporal.a.ALIGNED_DAY_OF_WEEK_IN_YEAR));
+                return J(j10 - y(j$.time.temporal.a.ALIGNED_DAY_OF_WEEK_IN_YEAR));
             case 7:
-                return new p(this.a, j3);
+                return new p(this.a, j10);
             case 8:
-                return J((j3 - y(j$.time.temporal.a.ALIGNED_WEEK_OF_YEAR)) * 7);
+                return J((j10 - y(j$.time.temporal.a.ALIGNED_WEEK_OF_YEAR)) * 7);
             case 9:
                 return Q(this.b, i10, this.d);
             case 10:
-                return K(j3 - (((this.b * 12) + this.c) - 1));
+                return K(j10 - (((this.b * 12) + this.c) - 1));
             case 11:
                 if (this.b < 1) {
                     i10 = 1 - i10;
@@ -177,13 +177,13 @@ public final class p extends d {
     }
 
     @Override // j$.time.chrono.d
-    public final b L(long j3) {
-        if (j3 == 0) {
+    public final b L(long j10) {
+        if (j10 == 0) {
             return this;
         }
-        long j10 = this.b + ((int) j3);
-        int i10 = (int) j10;
-        if (j10 == i10) {
+        long j11 = this.b + ((int) j10);
+        int i10 = (int) j11;
+        if (j11 == i10) {
             return Q(i10, this.c, this.d);
         }
         throw new ArithmeticException();
@@ -191,45 +191,45 @@ public final class p extends d {
 
     @Override // j$.time.chrono.d
     /* renamed from: P, reason: merged with bridge method [inline-methods] */
-    public final p K(long j3) {
-        if (j3 == 0) {
+    public final p K(long j10) {
+        if (j10 == 0) {
             return this;
         }
-        long j10 = (this.b * 12) + (this.c - 1) + j3;
+        long j11 = (this.b * 12) + (this.c - 1) + j10;
         n nVar = this.a;
-        long S = j$.com.android.tools.r8.a.S(j10, 12L);
+        long R = j$.com.android.tools.r8.a.R(j11, 12L);
         int i10 = nVar.g;
-        if (S >= i10 / 12 && S <= (((nVar.d.length - 1) + i10) / 12) - 1) {
-            return Q((int) S, ((int) j$.com.android.tools.r8.a.R(j10, 12L)) + 1, this.d);
+        if (R >= i10 / 12 && R <= (((nVar.d.length - 1) + i10) / 12) - 1) {
+            return Q((int) R, ((int) j$.com.android.tools.r8.a.Q(j11, 12L)) + 1, this.d);
         }
-        throw new j$.time.b("Invalid Hijrah year: " + S);
+        throw new j$.time.b("Invalid Hijrah year: " + R);
     }
 
     @Override // j$.time.chrono.d
     /* renamed from: O, reason: merged with bridge method [inline-methods] */
-    public final p J(long j3) {
-        return new p(this.a, z() + j3);
+    public final p J(long j10) {
+        return new p(this.a, z() + j10);
     }
 
     @Override // j$.time.chrono.d, j$.time.chrono.b, j$.time.temporal.Temporal
-    public final b d(long j3, j$.time.temporal.q qVar) {
-        return (p) super.d(j3, qVar);
+    public final b d(long j10, j$.time.temporal.q qVar) {
+        return (p) super.d(j10, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal d(long j3, j$.time.temporal.q qVar) {
-        return (p) super.d(j3, qVar);
+    public final Temporal d(long j10, j$.time.temporal.q qVar) {
+        return (p) super.d(j10, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.chrono.b
     /* renamed from: t */
-    public final b w(long j3, j$.time.temporal.q qVar) {
-        return (p) super.w(j3, qVar);
+    public final b w(long j10, j$.time.temporal.q qVar) {
+        return (p) super.w(j10, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal w(long j3, ChronoUnit chronoUnit) {
-        return (p) super.w(j3, chronoUnit);
+    public final Temporal w(long j10, ChronoUnit chronoUnit) {
+        return (p) super.w(j10, chronoUnit);
     }
 
     @Override // j$.time.chrono.d

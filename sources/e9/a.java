@@ -1,50 +1,70 @@
 package e9;
 
-import j$.util.Objects;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a implements Iterator {
-    public final Iterator a;
-    public Object b = null;
-    public Collection c = null;
-    public Iterator d = o0.a;
-    public final /* synthetic */ v0 e;
+public abstract class a extends m2 implements ListIterator {
+    public final int a;
+    public int b;
 
-    public a(v0 v0Var) {
-        this.e = v0Var;
-        this.a = v0Var.d.entrySet().iterator();
+    public a(int i10, int i11) {
+        u6.m(i11, i10);
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // java.util.Iterator
+    public abstract Object a(int i10);
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
     public final boolean hasNext() {
-        return this.a.hasNext() || this.d.hasNext();
+        return this.b < this.a;
     }
 
-    @Override // java.util.Iterator
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.b > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
     public final Object next() {
-        if (!this.d.hasNext()) {
-            Map.Entry entry = (Map.Entry) this.a.next();
-            this.b = entry.getKey();
-            Collection collection = (Collection) entry.getValue();
-            this.c = collection;
-            this.d = collection.iterator();
+        if (!hasNext()) {
+            throw new NoSuchElementException();
         }
-        return this.d.next();
+        int i10 = this.b;
+        this.b = i10 + 1;
+        return a(i10);
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.d.remove();
-        Collection collection = this.c;
-        Objects.requireNonNull(collection);
-        if (collection.isEmpty()) {
-            this.a.remove();
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            throw new NoSuchElementException();
         }
-        v0 v0Var = this.e;
-        v0Var.e--;
+        int i10 = this.b - 1;
+        this.b = i10;
+        return a(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.b - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

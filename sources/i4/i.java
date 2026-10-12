@@ -1,20 +1,20 @@
 package i4;
 
-import b2.s0;
-import e2.d0;
-import e2.v;
+import b2.x0;
+import e2.m0;
+import e2.x;
 import java.nio.charset.StandardCharsets;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final Pattern a = Pattern.compile("^NOTE([ \t].*)?$");
 
-    public static boolean a(v vVar) {
-        vVar.getClass();
-        String k10 = vVar.k(StandardCharsets.UTF_8);
-        return k10 != null && k10.startsWith("WEBVTT");
+    public static boolean a(x xVar) {
+        xVar.getClass();
+        String n10 = xVar.n(StandardCharsets.UTF_8);
+        return n10 != null && n10.startsWith("WEBVTT");
     }
 
     public static float b(String str) {
@@ -25,29 +25,29 @@ public abstract class i {
     }
 
     public static long c(String str) {
-        String str2 = d0.a;
+        String str2 = m0.a;
         String[] split = str.split("\\.", 2);
-        long j3 = 0;
+        long j10 = 0;
         for (String str3 : split[0].split(":", -1)) {
-            j3 = (j3 * 60) + Long.parseLong(str3);
+            j10 = (j10 * 60) + Long.parseLong(str3);
         }
-        long j10 = j3 * 1000;
+        long j11 = j10 * 1000;
         if (split.length == 2) {
             String trim = split[1].trim();
             if (trim.length() != 3) {
                 throw new IllegalArgumentException("Expected 3 decimal places, got: ".concat(trim));
             }
-            j10 += Long.parseLong(trim);
+            j11 += Long.parseLong(trim);
         }
-        return j10 * 1000;
+        return j11 * 1000;
     }
 
-    public static void d(v vVar) {
-        int i10 = vVar.b;
-        if (a(vVar)) {
+    public static void d(x xVar) {
+        int i10 = xVar.b;
+        if (a(xVar)) {
             return;
         }
-        vVar.J(i10);
-        throw s0.a(null, "Expected WEBVTT. Got " + vVar.k(StandardCharsets.UTF_8));
+        xVar.N(i10);
+        throw x0.a(null, "Expected WEBVTT. Got " + xVar.n(StandardCharsets.UTF_8));
     }
 }

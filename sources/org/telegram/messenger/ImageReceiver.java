@@ -28,15 +28,15 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.ka0;
-import org.telegram.ui.Components.nl0;
-import org.telegram.ui.Components.uq;
-import org.telegram.ui.Components.v71;
-import org.telegram.ui.Components.xd0;
+import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.ja0;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.wd0;
+import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class ImageReceiver implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.y5 {
     public static final int DEFAULT_CROSSFADE_DURATION = 150;
@@ -174,7 +174,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     private boolean videoThumbIsSame;
     private Runnable visibleInvalidate;
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface ImageReceiverDelegate {
         void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12);
 
@@ -183,7 +183,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         void onAnimationReady(ImageReceiver imageReceiver);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class ReactionLastFrame extends BitmapDrawable {
         public static final float LAST_FRAME_SCALE = 1.2f;
 
@@ -192,7 +192,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class SetImageBackup {
         public int cacheType;
         public String ext;
@@ -260,15 +260,15 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             if (!z10) {
                 if (backgroundThreadDrawHolder != null) {
                     long currentTimeMillis = System.currentTimeMillis();
-                    long j3 = this.lastUpdateAlphaTime;
-                    long j10 = currentTimeMillis - j3;
-                    if (j3 == 0) {
-                        j10 = 16;
+                    long j10 = this.lastUpdateAlphaTime;
+                    long j11 = currentTimeMillis - j10;
+                    if (j10 == 0) {
+                        j11 = 16;
                     }
-                    if (j10 > 30 && AndroidUtilities.screenRefreshRate > 60.0f) {
-                        j10 = 30;
+                    if (j11 > 30 && AndroidUtilities.screenRefreshRate > 60.0f) {
+                        j11 = 30;
                     }
-                    this.currentAlpha = (j10 / this.crossfadeDuration) + this.currentAlpha;
+                    this.currentAlpha = (j11 / this.crossfadeDuration) + this.currentAlpha;
                 } else {
                     this.currentAlpha = (16.0f / this.crossfadeDuration) + f7;
                 }
@@ -282,7 +282,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 }
             }
             if (backgroundThreadDrawHolder != null) {
-                AndroidUtilities.runOnUIThread(new f1(this, 22));
+                AndroidUtilities.runOnUIThread(new h1(this, 21));
             } else {
                 invalidate();
             }
@@ -292,8 +292,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     private void drawBitmapDrawable(Canvas canvas, BitmapDrawable bitmapDrawable, BackgroundThreadDrawHolder backgroundThreadDrawHolder, int i10) {
         if (backgroundThreadDrawHolder == null) {
             bitmapDrawable.setAlpha(i10);
-            if (bitmapDrawable instanceof ck0) {
-                ((ck0) bitmapDrawable).q(canvas, null, false, this.currentTime, 0);
+            if (bitmapDrawable instanceof yj0) {
+                ((yj0) bitmapDrawable).q(canvas, null, false, this.currentTime, 0);
                 return;
             } else if (bitmapDrawable instanceof org.telegram.ui.Components.f6) {
                 ((org.telegram.ui.Components.f6) bitmapDrawable).l(canvas, false, this.currentTime, 0);
@@ -303,16 +303,16 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 return;
             }
         }
-        if (bitmapDrawable instanceof ck0) {
-            ck0 ck0Var = (ck0) bitmapDrawable;
+        if (bitmapDrawable instanceof yj0) {
+            yj0 yj0Var = (yj0) bitmapDrawable;
             float f7 = backgroundThreadDrawHolder.imageX;
             float f10 = backgroundThreadDrawHolder.imageY;
             float f11 = backgroundThreadDrawHolder.imageW;
             float f12 = backgroundThreadDrawHolder.imageH;
             ColorFilter colorFilter = backgroundThreadDrawHolder.colorFilter;
             int i11 = backgroundThreadDrawHolder.threadIndex;
-            Paint[] paintArr = ck0Var.j0;
-            RectF[] rectFArr = ck0Var.i0;
+            Paint[] paintArr = yj0Var.j0;
+            RectF[] rectFArr = yj0Var.i0;
             if (rectFArr[i11] == null) {
                 rectFArr[i11] = new RectF();
                 Paint paint = new Paint(1);
@@ -322,7 +322,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             paintArr[i11].setAlpha(i10);
             paintArr[i11].setColorFilter(colorFilter);
             rectFArr[i11].set(f7, f10, f7 + f11, f12 + f10);
-            ck0Var.q(canvas, null, true, 0L, i11);
+            yj0Var.q(canvas, null, true, 0L, i11);
             return;
         }
         if (!(bitmapDrawable instanceof org.telegram.ui.Components.f6)) {
@@ -436,8 +436,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 return file;
             }
             return null;
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e) {
+            FileLog.e(e);
             return null;
         }
     }
@@ -513,26 +513,26 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
 
     /* JADX WARN: Multi-variable type inference failed */
     private void setStaticDrawable(Drawable drawable) {
-        org.telegram.ui.Components.z6 z6Var;
+        org.telegram.ui.Components.a7 a7Var;
         Drawable drawable2 = this.staticThumbDrawable;
         if (drawable == drawable2) {
             return;
         }
-        if (!(drawable2 instanceof org.telegram.ui.Components.z6)) {
-            z6Var = null;
+        if (!(drawable2 instanceof org.telegram.ui.Components.a7)) {
+            a7Var = null;
         } else if (drawable2.equals(drawable)) {
             return;
         } else {
-            z6Var = (org.telegram.ui.Components.z6) this.staticThumbDrawable;
+            a7Var = (org.telegram.ui.Components.a7) this.staticThumbDrawable;
         }
         this.staticThumbDrawable = drawable;
-        if (this.attachedToWindow && (drawable instanceof org.telegram.ui.Components.z6)) {
-            ((org.telegram.ui.Components.z6) drawable).c(this);
+        if (this.attachedToWindow && (drawable instanceof org.telegram.ui.Components.a7)) {
+            ((org.telegram.ui.Components.a7) drawable).c(this);
         }
-        if (!this.attachedToWindow || z6Var == null) {
+        if (!this.attachedToWindow || a7Var == null) {
             return;
         }
-        z6Var.b(this);
+        a7Var.b(this);
     }
 
     private void updateDrawableRadius(Drawable drawable) {
@@ -541,17 +541,17 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
         boolean z10 = true;
         int[] roundRadius = getRoundRadius(true);
-        if (!(drawable instanceof uq)) {
-            if ((!hasRoundRadius() && this.gradientShader == null) || (!(drawable instanceof BitmapDrawable) && !(drawable instanceof org.telegram.ui.Components.j9))) {
+        if (!(drawable instanceof rq)) {
+            if ((!hasRoundRadius() && this.gradientShader == null) || (!(drawable instanceof BitmapDrawable) && !(drawable instanceof org.telegram.ui.Components.k9))) {
                 setDrawableShader(drawable, null);
                 return;
             }
-            if (drawable instanceof org.telegram.ui.Components.j9) {
-                ((org.telegram.ui.Components.j9) drawable).r = roundRadius[0];
+            if (drawable instanceof org.telegram.ui.Components.k9) {
+                ((org.telegram.ui.Components.k9) drawable).r = roundRadius[0];
                 return;
             }
             BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
-            if (bitmapDrawable instanceof ck0) {
+            if (bitmapDrawable instanceof yj0) {
                 return;
             }
             if (bitmapDrawable instanceof org.telegram.ui.Components.f6) {
@@ -567,12 +567,12 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 return;
             }
         }
-        uq uqVar = (uq) drawable;
+        rq rqVar = (rq) drawable;
         float f7 = roundRadius[0];
         float f10 = roundRadius[1];
         float f11 = roundRadius[2];
         float f12 = roundRadius[3];
-        float[] fArr = uqVar.f;
+        float[] fArr = rqVar.f;
         float max = Math.max(0.0f, f7);
         fArr[1] = max;
         fArr[0] = max;
@@ -588,8 +588,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         if (f7 <= 0.0f && f10 <= 0.0f && f11 <= 0.0f && f12 <= 0.0f) {
             z10 = false;
         }
-        uqVar.e = z10;
-        uqVar.a();
+        rqVar.e = z10;
+        rqVar.a();
     }
 
     public void addDecorator(Decorator decorator) {
@@ -685,7 +685,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             int intValue = num.intValue() | this.currentOpenedLayerFlags;
             this.currentOpenedLayerFlags = intValue;
             if (intValue != 0) {
-                ck0 lottieAnimation = getLottieAnimation();
+                yj0 lottieAnimation = getLottieAnimation();
                 if (lottieAnimation != null && lottieAnimation.z()) {
                     lottieAnimation.stop();
                 }
@@ -706,7 +706,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             int i13 = (~num2.intValue()) & i12;
             this.currentOpenedLayerFlags = i13;
             if (i13 == 0) {
-                ck0 lottieAnimation2 = getLottieAnimation();
+                yj0 lottieAnimation2 = getLottieAnimation();
                 if (lottieAnimation2 != null) {
                     lottieAnimation2.E = this.allowLottieVibration;
                 }
@@ -788,7 +788,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     public Bitmap getBitmap() {
-        ck0 lottieAnimation = getLottieAnimation();
+        yj0 lottieAnimation = getLottieAnimation();
         if (lottieAnimation != null && lottieAnimation.u()) {
             if (lottieAnimation.Q != null) {
                 return lottieAnimation.Q;
@@ -803,15 +803,15 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             return animation.m();
         }
         Drawable drawable = this.currentMediaDrawable;
-        if ((drawable instanceof BitmapDrawable) && !(drawable instanceof org.telegram.ui.Components.f6) && !(drawable instanceof ck0)) {
+        if ((drawable instanceof BitmapDrawable) && !(drawable instanceof org.telegram.ui.Components.f6) && !(drawable instanceof yj0)) {
             return ((BitmapDrawable) drawable).getBitmap();
         }
         Drawable drawable2 = this.currentImageDrawable;
-        if ((drawable2 instanceof BitmapDrawable) && !(drawable2 instanceof org.telegram.ui.Components.f6) && !(drawable instanceof ck0)) {
+        if ((drawable2 instanceof BitmapDrawable) && !(drawable2 instanceof org.telegram.ui.Components.f6) && !(drawable instanceof yj0)) {
             return ((BitmapDrawable) drawable2).getBitmap();
         }
         Drawable drawable3 = this.currentThumbDrawable;
-        if ((drawable3 instanceof BitmapDrawable) && !(drawable3 instanceof org.telegram.ui.Components.f6) && !(drawable instanceof ck0)) {
+        if ((drawable3 instanceof BitmapDrawable) && !(drawable3 instanceof org.telegram.ui.Components.f6) && !(drawable instanceof yj0)) {
             return ((BitmapDrawable) drawable3).getBitmap();
         }
         Drawable drawable4 = this.staticThumbDrawable;
@@ -828,7 +828,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             int i10 = this.imageOrientation;
             return (i10 % 360 == 0 || i10 % 360 == 180) ? animation.getIntrinsicHeight() : animation.getIntrinsicWidth();
         }
-        ck0 lottieAnimation = getLottieAnimation();
+        yj0 lottieAnimation = getLottieAnimation();
         if (lottieAnimation != null) {
             return lottieAnimation.c;
         }
@@ -853,18 +853,18 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         Bitmap bitmap;
         String str;
         org.telegram.ui.Components.f6 animation = getAnimation();
-        ck0 lottieAnimation = getLottieAnimation();
+        yj0 lottieAnimation = getLottieAnimation();
         int i10 = 0;
         if (lottieAnimation != null && lottieAnimation.u()) {
             bitmap = lottieAnimation.Q != null ? lottieAnimation.Q : lottieAnimation.R != null ? lottieAnimation.R : null;
         } else {
             if (animation == null || !animation.s()) {
                 Drawable drawable = this.currentMediaDrawable;
-                if (!(drawable instanceof BitmapDrawable) || (drawable instanceof org.telegram.ui.Components.f6) || (drawable instanceof ck0)) {
+                if (!(drawable instanceof BitmapDrawable) || (drawable instanceof org.telegram.ui.Components.f6) || (drawable instanceof yj0)) {
                     Drawable drawable2 = this.currentImageDrawable;
-                    if (!(drawable2 instanceof BitmapDrawable) || (drawable2 instanceof org.telegram.ui.Components.f6) || (drawable instanceof ck0)) {
+                    if (!(drawable2 instanceof BitmapDrawable) || (drawable2 instanceof org.telegram.ui.Components.f6) || (drawable instanceof yj0)) {
                         Drawable drawable3 = this.currentThumbDrawable;
-                        if (!(drawable3 instanceof BitmapDrawable) || (drawable3 instanceof org.telegram.ui.Components.f6) || (drawable instanceof ck0)) {
+                        if (!(drawable3 instanceof BitmapDrawable) || (drawable3 instanceof org.telegram.ui.Components.f6) || (drawable instanceof yj0)) {
                             Drawable drawable4 = this.staticThumbDrawable;
                             if (drawable4 instanceof BitmapDrawable) {
                                 bitmap = ((BitmapDrawable) drawable4).getBitmap();
@@ -908,7 +908,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             int i10 = this.imageOrientation;
             return (i10 % 360 == 0 || i10 % 360 == 180) ? animation.getIntrinsicWidth() : animation.getIntrinsicHeight();
         }
-        ck0 lottieAnimation = getLottieAnimation();
+        yj0 lottieAnimation = getLottieAnimation();
         if (lottieAnimation != null) {
             return lottieAnimation.b;
         }
@@ -972,11 +972,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         String str;
         String str2;
         Drawable drawable = this.currentMediaDrawable;
-        if (!(drawable instanceof BitmapDrawable) || (drawable instanceof org.telegram.ui.Components.f6) || (drawable instanceof ck0)) {
+        if (!(drawable instanceof BitmapDrawable) || (drawable instanceof org.telegram.ui.Components.f6) || (drawable instanceof yj0)) {
             Drawable drawable2 = this.currentImageDrawable;
-            if (!(drawable2 instanceof BitmapDrawable) || (drawable2 instanceof org.telegram.ui.Components.f6) || (drawable instanceof ck0)) {
+            if (!(drawable2 instanceof BitmapDrawable) || (drawable2 instanceof org.telegram.ui.Components.f6) || (drawable instanceof yj0)) {
                 drawable2 = this.currentThumbDrawable;
-                if (!(drawable2 instanceof BitmapDrawable) || (drawable2 instanceof org.telegram.ui.Components.f6) || (drawable instanceof ck0)) {
+                if (!(drawable2 instanceof BitmapDrawable) || (drawable2 instanceof org.telegram.ui.Components.f6) || (drawable instanceof yj0)) {
                     drawable = this.staticThumbDrawable;
                     if (drawable instanceof BitmapDrawable) {
                         str = null;
@@ -1071,22 +1071,22 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         return this.loadingOperations;
     }
 
-    public ck0 getLottieAnimation() {
+    public yj0 getLottieAnimation() {
         Drawable drawable = this.currentMediaDrawable;
-        if (drawable instanceof ck0) {
-            return (ck0) drawable;
+        if (drawable instanceof yj0) {
+            return (yj0) drawable;
         }
         Drawable drawable2 = this.currentImageDrawable;
-        if (drawable2 instanceof ck0) {
-            return (ck0) drawable2;
+        if (drawable2 instanceof yj0) {
+            return (yj0) drawable2;
         }
         Drawable drawable3 = this.currentThumbDrawable;
-        if (drawable3 instanceof ck0) {
-            return (ck0) drawable3;
+        if (drawable3 instanceof yj0) {
+            return (yj0) drawable3;
         }
         Drawable drawable4 = this.staticThumbDrawable;
-        if (drawable4 instanceof ck0) {
-            return (ck0) drawable4;
+        if (drawable4 instanceof yj0) {
+            return (yj0) drawable4;
         }
         return null;
     }
@@ -1245,7 +1245,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     public boolean hasNotThumb() {
-        return (this.currentImageDrawable == null && this.currentMediaDrawable == null && !(this.staticThumbDrawable instanceof v71)) ? false : true;
+        return (this.currentImageDrawable == null && this.currentMediaDrawable == null && !(this.staticThumbDrawable instanceof s71)) ? false : true;
     }
 
     public boolean hasNotThumbOrOnlyStaticThumb() {
@@ -1253,10 +1253,10 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             return true;
         }
         Drawable drawable = this.staticThumbDrawable;
-        if (drawable instanceof v71) {
+        if (drawable instanceof s71) {
             return true;
         }
-        return drawable != null && !(drawable instanceof org.telegram.ui.Components.j9) && this.currentImageKey == null && this.currentMediaKey == null;
+        return drawable != null && !(drawable instanceof org.telegram.ui.Components.k9) && this.currentImageKey == null && this.currentMediaKey == null;
     }
 
     public boolean hasStaticThumb() {
@@ -1320,7 +1320,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     public boolean isLottieRunning() {
-        ck0 lottieAnimation = getLottieAnimation();
+        yj0 lottieAnimation = getLottieAnimation();
         return lottieAnimation != null && lottieAnimation.k0;
     }
 
@@ -1341,12 +1341,12 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         BitmapDrawable bitmapDrawable;
         String str;
         Drawable drawable = this.currentMediaDrawable;
-        if (drawable instanceof ck0) {
+        if (drawable instanceof yj0) {
             bitmapDrawable = (BitmapDrawable) drawable;
             str = this.currentMediaKey;
         } else {
             Drawable drawable2 = this.currentImageDrawable;
-            if (drawable2 instanceof ck0) {
+            if (drawable2 instanceof yj0) {
                 bitmapDrawable = (BitmapDrawable) drawable2;
                 str = this.currentImageKey;
             } else {
@@ -1379,7 +1379,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             if (setBackupImage()) {
                 return true;
             }
-            ck0 lottieAnimation = getLottieAnimation();
+            yj0 lottieAnimation = getLottieAnimation();
             if (lottieAnimation != null) {
                 lottieAnimation.I0.add(this);
                 lottieAnimation.E = this.allowLottieVibration;
@@ -1403,8 +1403,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 didReceivedNotification(NotificationCenter.stopAllHeavyOperations, this.currentAccount, 512);
             }
             Object obj = this.staticThumbDrawable;
-            if (obj instanceof org.telegram.ui.Components.z6) {
-                ((org.telegram.ui.Components.z6) obj).c(this);
+            if (obj instanceof org.telegram.ui.Components.a7) {
+                ((org.telegram.ui.Components.a7) obj).c(this);
             }
             if (this.decorators != null) {
                 for (int i10 = 0; i10 < this.decorators.size(); i10++) {
@@ -1441,8 +1441,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 this.observersGroup = null;
             }
             Object obj = this.staticThumbDrawable;
-            if (obj instanceof org.telegram.ui.Components.z6) {
-                ((org.telegram.ui.Components.z6) obj).b(this);
+            if (obj instanceof org.telegram.ui.Components.a7) {
+                ((org.telegram.ui.Components.a7) obj).b(this);
             }
             if (this.staticThumbDrawable != null) {
                 setStaticDrawable(null);
@@ -1461,7 +1461,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             if (animation != null) {
                 animation.v(this);
             }
-            ck0 lottieAnimation = getLottieAnimation();
+            yj0 lottieAnimation = getLottieAnimation();
             if (lottieAnimation != null) {
                 lottieAnimation.F(this);
             }
@@ -1493,8 +1493,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         if (str2 != null && ((str2.startsWith("-") || str2.startsWith("strippedmessage-")) && (replacedKey = ImageLoader.getInstance().getReplacedKey(str2)) != null)) {
             str2 = replacedKey;
         }
-        if (drawable instanceof ck0) {
-            ((ck0) drawable).F(this);
+        if (drawable instanceof yj0) {
+            ((yj0) drawable).F(this);
         }
         if (drawable instanceof org.telegram.ui.Components.f6) {
             ((org.telegram.ui.Components.f6) drawable).v(this);
@@ -1503,11 +1503,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             ((org.telegram.ui.Components.s5) drawable).p(this);
         }
         if (str2 != null && ((str == null || !str.equals(str2)) && drawable != null)) {
-            if (drawable instanceof ck0) {
-                ck0 ck0Var = (ck0) drawable;
+            if (drawable instanceof yj0) {
+                yj0 yj0Var = (yj0) drawable;
                 boolean decrementUseCount = ImageLoader.getInstance().decrementUseCount(str2);
                 if (!ImageLoader.getInstance().isInMemCache(str2, true) && decrementUseCount) {
-                    ck0Var.C(false);
+                    yj0Var.C(false);
                 }
             } else if (drawable instanceof org.telegram.ui.Components.f6) {
                 org.telegram.ui.Components.f6 f6Var = (org.telegram.ui.Components.f6) drawable;
@@ -1586,7 +1586,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
 
     public void setAutoRepeat(int i10) {
         this.autoRepeat = i10;
-        ck0 lottieAnimation = getLottieAnimation();
+        yj0 lottieAnimation = getLottieAnimation();
         if (lottieAnimation != null) {
             lottieAnimation.K(i10);
         }
@@ -1604,8 +1604,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    public void setAutoRepeatTimeout(long j3) {
-        this.autoRepeatTimeout = j3;
+    public void setAutoRepeatTimeout(long j10) {
+        this.autoRepeatTimeout = j10;
         getLottieAnimation();
     }
 
@@ -1619,14 +1619,14 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         Drawable drawable = setImageBackup2.thumb;
         if (drawable instanceof BitmapDrawable) {
             BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
-            if (!(bitmapDrawable instanceof ck0) && !(bitmapDrawable instanceof org.telegram.ui.Components.f6) && bitmapDrawable.getBitmap() != null && bitmapDrawable.getBitmap().isRecycled()) {
+            if (!(bitmapDrawable instanceof yj0) && !(bitmapDrawable instanceof org.telegram.ui.Components.f6) && bitmapDrawable.getBitmap() != null && bitmapDrawable.getBitmap().isRecycled()) {
                 setImageBackup2.thumb = null;
             }
         }
         setImage(setImageBackup2.mediaLocation, setImageBackup2.mediaFilter, setImageBackup2.imageLocation, setImageBackup2.imageFilter, setImageBackup2.thumbLocation, setImageBackup2.thumbFilter, setImageBackup2.thumb, setImageBackup2.size, setImageBackup2.ext, setImageBackup2.parentObject, setImageBackup2.cacheType);
         setImageBackup2.clear();
         this.setImageBackup = setImageBackup2;
-        ck0 lottieAnimation = getLottieAnimation();
+        yj0 lottieAnimation = getLottieAnimation();
         if (lottieAnimation != null) {
             lottieAnimation.E = this.allowLottieVibration;
         }
@@ -1673,8 +1673,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         this.currentAlpha = f7;
     }
 
-    public void setCurrentTime(long j3) {
-        this.currentTime = j3;
+    public void setCurrentTime(long j10) {
+        this.currentTime = j10;
     }
 
     public void setDelegate(ImageReceiverDelegate imageReceiverDelegate) {
@@ -1725,7 +1725,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
         this.emojiPaused = z10;
         this.allowStartLottieAnimation = !z10;
-        ck0 lottieAnimation = getLottieAnimation();
+        yj0 lottieAnimation = getLottieAnimation();
         if (lottieAnimation != null) {
             if (z10) {
                 lottieAnimation.stop();
@@ -1884,12 +1884,12 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                             this.previousAlpha = 1.0f;
                         } else {
                             Drawable drawable5 = this.currentMediaDrawable;
-                            if (!(drawable5 instanceof ck0) || !((ck0) drawable5).u()) {
+                            if (!(drawable5 instanceof yj0) || !((yj0) drawable5).u()) {
                                 Drawable drawable6 = this.currentMediaDrawable;
                                 if (!(drawable6 instanceof org.telegram.ui.Components.f6) || !((org.telegram.ui.Components.f6) drawable6).s()) {
-                                    if (this.currentImageDrawable instanceof ck0) {
+                                    if (this.currentImageDrawable instanceof yj0) {
                                         Drawable drawable7 = this.staticThumbDrawable;
-                                        if (!(drawable7 instanceof ka0)) {
+                                        if (!(drawable7 instanceof ja0)) {
                                             if (!(drawable7 instanceof SvgHelper.SvgDrawable)) {
                                             }
                                         }
@@ -1940,18 +1940,18 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                             if (view != null) {
                                 view.invalidate();
                             }
-                        } else if (drawable instanceof ck0) {
-                            ck0 ck0Var = (ck0) drawable;
+                        } else if (drawable instanceof yj0) {
+                            yj0 yj0Var = (yj0) drawable;
                             if (this.attachedToWindow) {
-                                ck0Var.I0.add(this);
+                                yj0Var.I0.add(this);
                             }
-                            if (this.allowStartLottieAnimation && (!ck0Var.z() || this.currentOpenedLayerFlags == 0)) {
-                                ck0Var.start();
+                            if (this.allowStartLottieAnimation && (!yj0Var.z() || this.currentOpenedLayerFlags == 0)) {
+                                yj0Var.start();
                             }
-                            ck0Var.J(true);
-                            ck0Var.K(this.autoRepeat);
-                            ck0Var.L = this.autoRepeatCount;
-                            ck0Var.E0 = this.allowDrawWhileCacheGenerating;
+                            yj0Var.J(true);
+                            yj0Var.K(this.autoRepeat);
+                            yj0Var.L = this.autoRepeatCount;
+                            yj0Var.E0 = this.allowDrawWhileCacheGenerating;
                             this.animationReadySent = false;
                         }
                         invalidate();
@@ -2103,12 +2103,12 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         this.mark = obj;
     }
 
-    public void setMediaStartEndTime(long j3, long j10) {
-        this.startTime = j3;
-        this.endTime = j10;
+    public void setMediaStartEndTime(long j10, long j11) {
+        this.startTime = j10;
+        this.endTime = j11;
         Drawable drawable = this.currentMediaDrawable;
         if (drawable instanceof org.telegram.ui.Components.f6) {
-            ((org.telegram.ui.Components.f6) drawable).C(j3, j10);
+            ((org.telegram.ui.Components.f6) drawable).C(j10, j11);
         }
     }
 
@@ -2252,7 +2252,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             animation.stop();
             return;
         }
-        ck0 lottieAnimation = getLottieAnimation();
+        yj0 lottieAnimation = getLottieAnimation();
         if (lottieAnimation != null) {
             lottieAnimation.stop();
         }
@@ -2305,7 +2305,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         this.loadingOperations = new ArrayList<>();
         this.allowLoadingOnAttachedOnly = false;
         this.clip = true;
-        this.invalidateRunnable = new f1(this, 22);
+        this.invalidateRunnable = new h1(this, 21);
         this.parentView = view;
         this.roundPaint = new Paint(3);
         this.currentAccount = UserConfig.selectedAccount;
@@ -2349,7 +2349,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         boolean z10;
         int i10;
         org.telegram.ui.Components.f6 animation;
-        ck0 lottieAnimation;
+        yj0 lottieAnimation;
         int[] iArr;
         BitmapShader bitmapShader;
         Drawable drawable;
@@ -2463,11 +2463,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 if (animation != null) {
                     animation.B(iArr2);
                 }
-            } catch (Exception e7) {
-                e = e7;
+            } catch (Exception e) {
+                e = e;
             }
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e7) {
+            e = e7;
         }
         if (animation == null) {
             if (lottieAnimation != null) {
@@ -2552,13 +2552,13 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                                     drawable10 = drawable2;
                                                     bitmapShader8 = bitmapShader5;
                                                     if (drawable10 != null) {
-                                                        int z22 = ((drawable10 instanceof SvgHelper.SvgDrawable) || (drawable10 instanceof Emoji.EmojiDrawable)) ? (int) q.z(1.0f, f12, f7, 255.0f) : (int) (f11 * f7 * 255.0f);
+                                                        int B = ((drawable10 instanceof SvgHelper.SvgDrawable) || (drawable10 instanceof Emoji.EmojiDrawable)) ? (int) q.B(1.0f, f12, f7, 255.0f) : (int) (f11 * f7 * 255.0f);
                                                         drawable12 = drawable11;
                                                         iArr4 = iArr3;
                                                         BitmapShader bitmapShader13 = bitmapShader8;
                                                         canvas2 = canvas;
-                                                        imageReceiver.drawDrawable(canvas2, drawable10, z22, bitmapShader13, imageReceiver.thumbOrientation, imageReceiver.thumbInvert, backgroundThreadDrawHolder);
-                                                        if (z22 != 255 && (drawable10 instanceof Emoji.EmojiDrawable)) {
+                                                        imageReceiver.drawDrawable(canvas2, drawable10, B, bitmapShader13, imageReceiver.thumbOrientation, imageReceiver.thumbInvert, backgroundThreadDrawHolder);
+                                                        if (B != 255 && (drawable10 instanceof Emoji.EmojiDrawable)) {
                                                             drawable10.setAlpha(255);
                                                         }
                                                         if (imageReceiver.crossfadeByScale > 0.0f || f12 >= 1.0f || !z12) {
@@ -2579,7 +2579,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                                             }
                                                             imageReceiver.roundPath.addRoundRect(AndroidUtilities.rectTmp, radii, Path.Direction.CW);
                                                             canvas2.clipPath(imageReceiver.roundPath);
-                                                            float y3 = com.google.android.gms.internal.vision.e2.y(1.0f, hs.i.getInterpolation(f10), imageReceiver.crossfadeByScale, 1.0f);
+                                                            float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, es.i.getInterpolation(f10), imageReceiver.crossfadeByScale, 1.0f);
                                                             canvas2.scale(y3, y3, imageReceiver.getCenterX(), imageReceiver.getCenterY());
                                                             z17 = z10;
                                                         }
@@ -2683,8 +2683,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                         imageReceiver = this;
                         backgroundThreadDrawHolder2 = backgroundThreadDrawHolder;
                         drawable7 = drawable1822;
-                    } catch (Exception e11) {
-                        e = e11;
+                    } catch (Exception e10) {
+                        e = e10;
                         imageReceiver = this;
                         canvas3 = canvas;
                         z10 = false;
@@ -2695,9 +2695,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                         }
                         return z10;
                     }
-                    boolean z23 = z11;
+                    boolean z22 = z11;
                     bitmapShader7 = bitmapShader3;
-                    z15 = z23;
+                    z15 = z22;
                     iArr3 = iArr2;
                     bitmapShader8 = bitmapShader4;
                     drawable8 = drawable5;
@@ -2723,8 +2723,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 z15 = z11;
                 z10 = true;
                 if (drawable21 != null) {
-                    if (drawable21 instanceof v71) {
-                        ((v71) drawable21).e = imageReceiver;
+                    if (drawable21 instanceof s71) {
+                        ((s71) drawable21).e = imageReceiver;
                     }
                     canvas3 = canvas;
                     imageReceiver.drawDrawable(canvas3, drawable21, (int) (f7 * 255.0f), null, imageReceiver.thumbOrientation, imageReceiver.thumbInvert, backgroundThreadDrawHolder);
@@ -2738,8 +2738,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             if (drawable7 == null && z15 && !z13) {
                 try {
                     imageReceiver.invalidate();
-                } catch (Exception e12) {
-                    e = e12;
+                } catch (Exception e11) {
+                    e = e11;
                     FileLog.e(e);
                     if (imageReceiver.gradientBitmap != null) {
                     }
@@ -2823,8 +2823,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         setForUserOrChat(tLObject, drawable, obj, false, 0, false);
     }
 
-    public void setImage(ImageLocation imageLocation, String str, Drawable drawable, long j3, String str2, Object obj, int i10) {
-        setImage(imageLocation, str, null, null, drawable, j3, str2, obj, i10);
+    public void setImage(ImageLocation imageLocation, String str, Drawable drawable, long j10, String str2, Object obj, int i10) {
+        setImage(imageLocation, str, null, null, drawable, j10, str2, obj, i10);
     }
 
     public void setImageBitmap(Drawable drawable) {
@@ -2866,11 +2866,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             this.crossfadeShader = null;
         }
         Drawable drawable2 = this.staticThumbDrawable;
-        if (drawable2 instanceof nl0) {
-            xd0 xd0Var = (xd0) ((nl0) drawable2);
-            DownloadController.getInstance(xd0Var.r.currentAccount).removeLoadingFileObserver(xd0Var);
-            xd0Var.n = null;
-            xd0Var.r = null;
+        if (drawable2 instanceof jl0) {
+            wd0 wd0Var = (wd0) ((jl0) drawable2);
+            DownloadController.getInstance(wd0Var.r.currentAccount).removeLoadingFileObserver(wd0Var);
+            wd0Var.n = null;
+            wd0Var.r = null;
         }
         if (drawable instanceof org.telegram.ui.Components.s5) {
             org.telegram.ui.Components.s5 s5Var = (org.telegram.ui.Components.s5) drawable;
@@ -2898,16 +2898,16 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             if (z12) {
                 f6Var.x(false);
             }
-        } else if (drawable instanceof ck0) {
-            ck0 ck0Var = (ck0) drawable;
+        } else if (drawable instanceof yj0) {
+            yj0 yj0Var = (yj0) drawable;
             if (this.attachedToWindow) {
-                ck0Var.I0.add(this);
+                yj0Var.I0.add(this);
             }
-            ck0Var.E = this.allowLottieVibration;
-            if (this.allowStartLottieAnimation && (!ck0Var.z() || this.currentOpenedLayerFlags == 0)) {
-                ck0Var.start();
+            yj0Var.E = this.allowLottieVibration;
+            if (this.allowStartLottieAnimation && (!yj0Var.z() || this.currentOpenedLayerFlags == 0)) {
+                yj0Var.start();
             }
-            ck0Var.J(true);
+            yj0Var.J(true);
         }
         this.staticThumbShader = null;
         this.thumbShader = null;
@@ -2992,7 +2992,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             animation.start();
             return;
         }
-        ck0 lottieAnimation = getLottieAnimation();
+        yj0 lottieAnimation = getLottieAnimation();
         if (lottieAnimation == null || lottieAnimation.k0) {
             return;
         }
@@ -3104,7 +3104,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             z12 = false;
         }
         if (videoSize2 != null && i10 != 0) {
-            setImageBitmap(new v71(videoSize2, z12, i10));
+            setImageBitmap(new s71(videoSize2, z12, i10));
             return;
         }
         if (!z11) {
@@ -3132,8 +3132,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    public void setImage(String str, String str2, Drawable drawable, String str3, long j3) {
-        setImage(ImageLocation.getForPath(str), str2, null, null, drawable, j3, str3, null, 1);
+    public void setImage(String str, String str2, Drawable drawable, String str3, long j10) {
+        setImage(ImageLocation.getForPath(str), str2, null, null, drawable, j10, str3, null, 1);
     }
 
     public void setRoundRadius(int[] iArr) {
@@ -3177,7 +3177,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class BackgroundThreadDrawHolder {
         private org.telegram.ui.Components.f6 animation;
         public boolean animationNotReady;
@@ -3193,7 +3193,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         public float imageW;
         public float imageX;
         public float imageY;
-        private ck0 lottieDrawable;
+        private yj0 lottieDrawable;
         private Drawable mediaDrawable;
         private BitmapShader mediaShader;
         public float overrideAlpha;
@@ -3264,7 +3264,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         setImage(imageLocation, str, imageLocation2, str2, null, 0L, str3, obj, i10);
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class BitmapHolder {
         public Bitmap bitmap;
         public Drawable drawable;
@@ -3324,8 +3324,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 } else {
                     Drawable drawable = this.drawable;
                     if (drawable != null) {
-                        if (drawable instanceof ck0) {
-                            ((ck0) drawable).C(false);
+                        if (drawable instanceof yj0) {
+                            ((yj0) drawable).C(false);
                         } else if (drawable instanceof org.telegram.ui.Components.f6) {
                             ((org.telegram.ui.Components.f6) drawable).u();
                         } else if (drawable instanceof BitmapDrawable) {
@@ -3354,8 +3354,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    public void setImage(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, long j3, String str3, Object obj, int i10) {
-        setImage(imageLocation, str, imageLocation2, str2, null, j3, str3, obj, i10);
+    public void setImage(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, long j10, String str3, Object obj, int i10) {
+        setImage(imageLocation, str, imageLocation2, str2, null, j10, str3, obj, i10);
     }
 
     public void setImageCoords(Rect rect) {
@@ -3371,11 +3371,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         setImage(null, null, imageLocation, str, imageLocation2, str2, drawable, 0L, null, obj, i10);
     }
 
-    public void setImage(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, Drawable drawable, long j3, String str3, Object obj, int i10) {
-        setImage(null, null, imageLocation, str, imageLocation2, str2, drawable, j3, str3, obj, i10);
+    public void setImage(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, Drawable drawable, long j10, String str3, Object obj, int i10) {
+        setImage(null, null, imageLocation, str, imageLocation2, str2, drawable, j10, str3, obj, i10);
     }
 
-    public void setImage(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, ImageLocation imageLocation3, String str3, Drawable drawable, long j3, String str4, Object obj, int i10) {
+    public void setImage(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, ImageLocation imageLocation3, String str3, Drawable drawable, long j10, String str4, Object obj, int i10) {
         String str5;
         boolean z10;
         boolean z11;
@@ -3395,7 +3395,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             setImageBackup2.thumbLocation = imageLocation3;
             setImageBackup2.thumbFilter = str3;
             setImageBackup2.thumb = drawable;
-            setImageBackup2.size = j3;
+            setImageBackup2.size = j10;
             setImageBackup2.ext = str4;
             setImageBackup2.cacheType = i10;
             setImageBackup2.parentObject = obj;
@@ -3478,7 +3478,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             str7 = a1.g.D(str7, "@", str2);
         }
         if (this.uniqKeyPrefix != null) {
-            str7 = a1.g.t(new StringBuilder(), this.uniqKeyPrefix, str7);
+            str7 = a1.g.s(new StringBuilder(), this.uniqKeyPrefix, str7);
         }
         String key2 = imageLocation4 != null ? imageLocation4.getKey(obj, null, false) : null;
         if (key2 == null && imageLocation4 != null) {
@@ -3488,7 +3488,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             key2 = a1.g.D(key2, "@", str);
         }
         if (this.uniqKeyPrefix != null) {
-            key2 = a1.g.t(new StringBuilder(), this.uniqKeyPrefix, key2);
+            key2 = a1.g.s(new StringBuilder(), this.uniqKeyPrefix, key2);
         }
         if ((key2 == null && (str6 = this.currentImageKey) != null && str6.equals(str7)) || ((str5 = this.currentMediaKey) != null && str5.equals(key2))) {
             ImageReceiverDelegate imageReceiverDelegate2 = this.delegate;
@@ -3594,7 +3594,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         this.currentThumbKey = key3;
         this.currentParentObject = obj;
         this.currentExt = str4;
-        this.currentSize = j3;
+        this.currentSize = j10;
         this.currentCacheType = i10;
         setStaticDrawable(drawable);
         this.imageShader = null;
@@ -3716,10 +3716,10 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         if (drawable instanceof BitmapDrawable) {
             BitmapDrawable bitmapDrawable2 = (BitmapDrawable) drawable;
             int[] iArr3 = iArr2;
-            boolean z15 = drawable instanceof ck0;
+            boolean z15 = drawable instanceof yj0;
             if (z15) {
                 z10 = z15;
-                ((ck0) drawable).a = this.skipUpdateFrame;
+                ((yj0) drawable).a = this.skipUpdateFrame;
             } else {
                 z10 = z15;
                 if (drawable instanceof org.telegram.ui.Components.f6) {
@@ -3767,7 +3767,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                         }
                     }
                     z12 = bitmapDrawable2 instanceof org.telegram.ui.Components.f6;
-                    if (z12 && !(bitmapDrawable2 instanceof ck0)) {
+                    if (z12 && !(bitmapDrawable2 instanceof yj0)) {
                         Bitmap bitmap = bitmapDrawable2.getBitmap();
                         if (bitmap != null && bitmap.isRecycled()) {
                             return;
@@ -3811,7 +3811,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                             float max = Math.max(f25, f24);
                             float f26 = (int) (intrinsicHeight / max);
                             float f27 = (int) (intrinsicWidth / max);
-                            rectF.set(com.google.android.gms.internal.vision.e2.z(f12, f26, 2.0f, f7), com.google.android.gms.internal.vision.e2.z(f11, f27, 2.0f, f10), q.a(f12, f26, 2.0f, f7), q.a(f11, f27, 2.0f, f10));
+                            rectF.set(com.google.android.gms.internal.play_billing.k3.z(f12, f26, 2.0f, f7), com.google.android.gms.internal.play_billing.k3.z(f11, f27, 2.0f, f10), q.b(f12, f26, 2.0f, f7), q.b(f11, f27, 2.0f, f10));
                             if (this.isVisible) {
                                 this.shaderMatrix.reset();
                                 this.shaderMatrix.setTranslate((int) rectF.left, (int) rectF.top);
@@ -3856,9 +3856,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                         } else {
                                             canvas.drawRoundRect(this.roundRect, i22, i22, this.roundPaint);
                                         }
-                                    } catch (Exception e7) {
+                                    } catch (Exception e) {
                                         onBitmapException(bitmapDrawable2);
-                                        FileLog.e(e7);
+                                        FileLog.e(e);
                                     }
                                 }
                             }
@@ -3891,12 +3891,12 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                 float f32 = intrinsicHeight / f24;
                                 if (f32 > f20) {
                                     float f33 = (int) f32;
-                                    rectF.set(q.x(f33, f20, 2.0f, f7), f10, q.a(f33, f20, 2.0f, f7), f10 + f21);
+                                    rectF.set(q.y(f33, f20, 2.0f, f7), f10, q.b(f33, f20, 2.0f, f7), f10 + f21);
                                     f18 = f21;
                                 } else {
                                     float f34 = (int) (intrinsicWidth / f25);
                                     f18 = f21;
-                                    rectF.set(f7, q.x(f34, f18, 2.0f, f10), f7 + f20, q.a(f34, f18, 2.0f, f10));
+                                    rectF.set(f7, q.y(f34, f18, 2.0f, f10), f7 + f20, q.b(f34, f18, 2.0f, f10));
                                 }
                             } else {
                                 f18 = f21;
@@ -3945,11 +3945,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                         if (f40 > f20) {
                                             width = (int) f40;
                                             float f41 = width;
-                                            rectF.set(q.x(f41, f20, 2.0f, f7), f10, q.a(f41, f20, 2.0f, f7), f10 + f18);
+                                            rectF.set(q.y(f41, f20, 2.0f, f7), f10, q.b(f41, f20, 2.0f, f7), f10 + f18);
                                         } else {
                                             height = (int) (height / f38);
                                             float f42 = height;
-                                            rectF.set(f7, q.x(f42, f18, 2.0f, f10), f7 + f20, q.a(f42, f18, 2.0f, f10));
+                                            rectF.set(f7, q.y(f42, f18, 2.0f, f10), f7 + f20, q.b(f42, f18, 2.0f, f10));
                                         }
                                     } else {
                                         rectF.set(f7, f10, f7 + f20, f10 + f18);
@@ -3991,11 +3991,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                         } else {
                                             canvas.drawRect(this.roundRect, this.roundPaint);
                                         }
-                                    } catch (Exception e10) {
+                                    } catch (Exception e7) {
                                         if (backgroundThreadDrawHolder == null) {
                                             onBitmapException(bitmapDrawable);
                                         }
-                                        FileLog.e(e10);
+                                        FileLog.e(e7);
                                     }
                                 }
                             }
@@ -4013,7 +4013,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                 f17 = f45;
                                 float f48 = i28;
                                 f16 = f46;
-                                rectF.set(com.google.android.gms.internal.vision.e2.z(f17, f47, 2.0f, f7), com.google.android.gms.internal.vision.e2.z(f16, f48, 2.0f, f10), q.a(f17, f47, 2.0f, f7), q.a(f16, f48, 2.0f, f10));
+                                rectF.set(com.google.android.gms.internal.play_billing.k3.z(f17, f47, 2.0f, f7), com.google.android.gms.internal.play_billing.k3.z(f16, f48, 2.0f, f10), q.b(f17, f47, 2.0f, f7), q.b(f16, f48, 2.0f, f10));
                                 bitmapDrawable2.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
                                 if (z12) {
                                     ((org.telegram.ui.Components.f6) bitmapDrawable2).z(rectF.left, rectF.top, rectF.width(), rectF.height());
@@ -4043,11 +4043,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                 try {
                                     bitmapDrawable2.setAlpha(i10);
                                     drawBitmapDrawable(canvas, bitmapDrawable2, backgroundThreadDrawHolder3, i10);
-                                } catch (Exception e11) {
+                                } catch (Exception e10) {
                                     if (backgroundThreadDrawHolder3 == null) {
                                         onBitmapException(bitmapDrawable2);
                                     }
-                                    FileLog.e(e11);
+                                    FileLog.e(e10);
                                 }
                             }
                             canvas.restore();
@@ -4083,10 +4083,10 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                 float f49 = intrinsicHeight / f14;
                                 if (f49 > f45) {
                                     float f50 = (int) f49;
-                                    rectF.set(q.x(f50, f45, 2.0f, f7), f10, q.a(f50, f45, 2.0f, f7), f10 + f46);
+                                    rectF.set(q.y(f50, f45, 2.0f, f7), f10, q.b(f50, f45, 2.0f, f7), f10 + f46);
                                 } else {
                                     float f51 = (int) (intrinsicWidth / f25);
-                                    rectF.set(f7, q.x(f51, f46, 2.0f, f10), f7 + f45, q.a(f51, f46, 2.0f, f10));
+                                    rectF.set(f7, q.y(f51, f46, 2.0f, f10), f7 + f45, q.b(f51, f46, 2.0f, f10));
                                 }
                                 if (z12) {
                                     ((org.telegram.ui.Components.f6) bitmapDrawable2).z(f7, f10, f45, f46);
@@ -4110,8 +4110,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                             } else {
                                                 bitmapDrawable2.getPaint().setBlendMode(null);
                                             }
-                                        } catch (Exception e12) {
-                                            e = e12;
+                                        } catch (Exception e11) {
+                                            e = e11;
                                             backgroundThreadDrawHolder2 = backgroundThreadDrawHolder;
                                             if (backgroundThreadDrawHolder2 == null) {
                                             }
@@ -4124,8 +4124,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                     backgroundThreadDrawHolder2 = backgroundThreadDrawHolder;
                                     try {
                                         drawBitmapDrawable(canvas, bitmapDrawable2, backgroundThreadDrawHolder2, i10);
-                                    } catch (Exception e13) {
-                                        e = e13;
+                                    } catch (Exception e12) {
+                                        e = e12;
                                         if (backgroundThreadDrawHolder2 == null) {
                                             onBitmapException(bitmapDrawable2);
                                         }
@@ -4183,9 +4183,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                                             } else {
                                                 bitmapDrawable2.getPaint().setBlendMode(null);
                                             }
-                                        } catch (Exception e14) {
+                                        } catch (Exception e13) {
                                             onBitmapException(bitmapDrawable2);
-                                            FileLog.e(e14);
+                                            FileLog.e(e13);
                                         }
                                     }
                                     drawBitmapDrawable(canvas, bitmapDrawable2, backgroundThreadDrawHolder, i10);
@@ -4195,7 +4195,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                         }
                     }
                     if (!z10) {
-                        ((ck0) drawable).a = false;
+                        ((yj0) drawable).a = false;
                         return;
                     } else {
                         if (drawable instanceof org.telegram.ui.Components.f6) {
@@ -4259,7 +4259,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                     float max3 = Math.max(f12 != 0.0f ? intrinsicWidth2 / f53 : 1.0f, f11 == 0.0f ? 1.0f : intrinsicHeight2 / f54);
                     float f55 = (int) (intrinsicWidth2 / max3);
                     float f56 = (int) (intrinsicHeight2 / max3);
-                    rectF.set(com.google.android.gms.internal.vision.e2.z(f12, f55, 2.0f, f7), com.google.android.gms.internal.vision.e2.z(f11, f56, 2.0f, f10), q.a(f12, f55, 2.0f, f7), q.a(f11, f56, 2.0f, f10));
+                    rectF.set(com.google.android.gms.internal.play_billing.k3.z(f12, f55, 2.0f, f7), com.google.android.gms.internal.play_billing.k3.z(f11, f56, 2.0f, f10), q.b(f12, f55, 2.0f, f7), q.b(f11, f56, 2.0f, f10));
                 } else {
                     rectF.set(f7, f10, f12 + f7, f11 + f10);
                 }
@@ -4272,8 +4272,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 svgDrawable2 = (SvgHelper.SvgDrawable) drawable;
                 svgDrawable2.setParent(this);
             } else {
-                if (drawable instanceof uq) {
-                    Drawable drawable2 = ((uq) drawable).a;
+                if (drawable instanceof rq) {
+                    Drawable drawable2 = ((rq) drawable).a;
                     if (drawable2 instanceof SvgHelper.SvgDrawable) {
                         svgDrawable2 = (SvgHelper.SvgDrawable) drawable2;
                         svgDrawable2.setParent(this);
@@ -4287,11 +4287,11 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 if (backgroundThreadDrawHolder != null) {
                     drawable.draw(canvas);
                 } else if (svgDrawable != null) {
-                    long j3 = backgroundThreadDrawHolder.time;
-                    if (j3 == 0) {
-                        j3 = System.currentTimeMillis();
+                    long j10 = backgroundThreadDrawHolder.time;
+                    if (j10 == 0) {
+                        j10 = System.currentTimeMillis();
                     }
-                    ((SvgHelper.SvgDrawable) drawable).drawInternal(canvas, true, backgroundThreadDrawHolder.threadIndex, j3, backgroundThreadDrawHolder.imageX, backgroundThreadDrawHolder.imageY, backgroundThreadDrawHolder.imageW, backgroundThreadDrawHolder.imageH);
+                    ((SvgHelper.SvgDrawable) drawable).drawInternal(canvas, true, backgroundThreadDrawHolder.threadIndex, j10, backgroundThreadDrawHolder.imageX, backgroundThreadDrawHolder.imageY, backgroundThreadDrawHolder.imageW, backgroundThreadDrawHolder.imageH);
                 } else {
                     drawable.draw(canvas);
                 }
@@ -4313,7 +4313,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         }
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static abstract class Decorator {
         public abstract void onDraw(Canvas canvas, ImageReceiver imageReceiver);
 

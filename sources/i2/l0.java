@@ -1,17 +1,21 @@
 package i2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class l0 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final u2.g1 d;
+    public final /* synthetic */ r0 a;
 
-    public l0(int i10, int i11, int i12, u2.g1 g1Var) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = g1Var;
+    public l0(r0 r0Var) {
+        this.a = r0Var;
+    }
+
+    public final void a() {
+        r0 r0Var = this.a;
+        if (r0Var.T) {
+            r0Var.S.getClass();
+        } else if (!r0Var.j0) {
+            return;
+        }
+        r0Var.n.f(2);
     }
 }

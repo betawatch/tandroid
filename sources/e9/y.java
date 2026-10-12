@@ -1,38 +1,38 @@
 package e9;
 
-import java.util.Comparator;
+import java.io.Serializable;
+import org.telegram.ui.es0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class y extends z {
-    public final int d;
+public final class y extends v1 implements Serializable {
+    public final es0 a;
 
-    public y(int i10) {
-        this.d = i10;
+    public y(es0 es0Var) {
+        this.a = es0Var;
     }
 
-    @Override // e9.z
-    public final int e() {
-        return this.d;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return this.a.compare(obj, obj2);
     }
 
-    @Override // e9.z
-    public final z a(int i10, int i11) {
-        return this;
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof y) {
+            return this.a.equals(((y) obj).a);
+        }
+        return false;
     }
 
-    @Override // e9.z
-    public final z c(boolean z10, boolean z11) {
-        return this;
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 
-    @Override // e9.z
-    public final z d(boolean z10, boolean z11) {
-        return this;
-    }
-
-    @Override // e9.z
-    public final z b(Object obj, Object obj2, Comparator comparator) {
-        return this;
+    public final String toString() {
+        return this.a.toString();
     }
 }

@@ -4,9 +4,9 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a extends e9.l1 {
+public final class a extends e9.j2 {
     public final Map b;
     public final /* synthetic */ f c;
 
@@ -22,12 +22,12 @@ public final class a extends e9.l1 {
     public final void clear() {
         Iterator it = iterator();
         while (true) {
-            e9.c cVar = (e9.c) it;
-            if (!cVar.hasNext()) {
+            e9.d dVar = (e9.d) it;
+            if (!dVar.hasNext()) {
                 return;
             }
-            cVar.next();
-            cVar.remove();
+            dVar.next();
+            dVar.remove();
         }
     }
 
@@ -58,7 +58,7 @@ public final class a extends e9.l1 {
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public final Iterator iterator() {
-        return new e9.c(this, this.b.entrySet().iterator(), 5);
+        return new e9.d(this, this.b.entrySet().iterator(), 5);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set

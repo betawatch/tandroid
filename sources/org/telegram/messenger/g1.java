@@ -1,48 +1,42 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class g1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ContactsController b;
+import org.telegram.messenger.UnconfirmedAuthController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_payments;
 
-    public /* synthetic */ g1(ContactsController contactsController, int i10) {
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class g1 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ g1(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = contactsController;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadContacts$27();
+                ((ChatThemeController) this.b).lambda$requestNextChatThemes$21((ResultCallback) this.c, (TL_account.ChatThemes) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                this.b.lambda$performSyncPhoneBook$18();
+                ((GiftAuctionController) this.b).lambda$requestGiftAuctionInternal$4((Utilities.Callback2) this.c, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                this.b.lambda$processLoadedContacts$29();
+                ((MessagesController) this.b).lambda$fetchJoinedCommunities$250((Utilities.Callback) this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
                 break;
             case 3:
-                this.b.lambda$applyContactsUpdates$47();
-                break;
-            case 4:
-                this.b.lambda$checkAppAccount$4();
-                break;
-            case 5:
-                this.b.lambda$cleanup$1();
-                break;
-            case 6:
-                this.b.lambda$new$0();
-                break;
-            case 7:
-                this.b.lambda$forceImportContacts$6();
-                break;
-            case 8:
-                this.b.lambda$readContacts$11();
+                PasskeysController.lambda$create$4((org.telegram.ui.ActionBar.a2) this.b, (Utilities.Callback2) this.c, (TL_account.Passkey) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$checkContacts$5();
+                ((UnconfirmedAuthController.UnconfirmedAuth) this.b).lambda$confirm$0((Utilities.Callback) this.c, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

@@ -1,45 +1,21 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.drawable.Drawable;
+import org.telegram.ui.lz;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class r extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ActionBarLayout b;
+public final class r extends lz {
+    public final /* synthetic */ ActionBarLayout a;
 
-    public /* synthetic */ r(ActionBarLayout actionBarLayout, int i10) {
-        this.a = i10;
-        this.b = actionBarLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r(ActionBarLayout actionBarLayout) {
+        super(null);
+        this.a = actionBarLayout;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        ActionBarLayout actionBarLayout = this.b;
-        switch (i10) {
-            case 0:
-                Drawable drawable = ActionBarLayout.p1;
-                actionBarLayout.F(false);
-                break;
-            default:
-                Drawable drawable2 = ActionBarLayout.p1;
-                actionBarLayout.F(false);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.v0 = System.currentTimeMillis();
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.m2
+    public final void updateSheetsVisibility() {
+        super.updateSheetsVisibility();
+        this.a.invalidate();
     }
 }

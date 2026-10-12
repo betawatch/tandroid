@@ -1,16 +1,16 @@
 package f4;
 
-import e9.m0;
+import e9.y0;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b {
     public static final Pattern d = Pattern.compile("\\s+");
-    public static final m0 e = m0.u(2, "auto", "none");
-    public static final m0 f = m0.u(3, "dot", "sesame", "circle");
-    public static final m0 g = m0.u(2, "filled", "open");
-    public static final m0 h = m0.u(3, "after", "before", "outside");
+    public static final y0 e = y0.t(2, "auto", "none");
+    public static final y0 f = y0.t(3, "dot", "sesame", "circle");
+    public static final y0 g = y0.t(2, "filled", "open");
+    public static final y0 h = y0.t(3, "after", "before", "outside");
     public final int a;
     public final int b;
     public final int c;

@@ -1,65 +1,65 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class wp0 {
-    public boolean f;
-    public boolean g;
-    public boolean h;
-    public Path i;
-    public Paint j;
-    public Drawable k;
-    public final org.telegram.ui.Components.bd l;
-    public boolean m;
-    public final org.telegram.ui.Components.g6 n;
-    public int o;
-    public final /* synthetic */ xp0 r;
-    public final Paint a = new Paint(1);
-    public final Paint b = new Paint(1);
-    public final Paint c = new Paint(1);
-    public final Path d = new Path();
-    public final Path e = new Path();
-    public final RectF p = new RectF();
-    public final RectF q = new RectF();
+public final class wp0 extends r71 {
+    public final /* synthetic */ zp0 d2;
+    public final /* synthetic */ i71[] e2;
+    public final /* synthetic */ aq0 f2;
 
-    public wp0(xp0 xp0Var) {
-        this.r = xp0Var;
-        this.l = new org.telegram.ui.Components.bd(xp0Var);
-        this.n = new org.telegram.ui.Components.g6(xp0Var, 0L, 320L, org.telegram.ui.Components.hs.h);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wp0(aq0 aq0Var, org.telegram.ui.ActionBar.m2 m2Var, Context context, Integer num, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11, int i12, zp0 zp0Var, i71[] i71VarArr) {
+        super(m2Var, context, true, num, i10, true, c6Var, i11, i12);
+        this.f2 = aq0Var;
+        this.d2 = zp0Var;
+        this.e2 = i71VarArr;
     }
 
-    public final void a(MessagesController.PeerColor peerColor) {
-        xp0 xp0Var = this.r;
-        org.telegram.ui.ActionBar.e6 e6Var = xp0Var.a;
-        if (peerColor == null) {
-            return;
-        }
-        boolean q6 = e6Var == null ? org.telegram.ui.ActionBar.i6.I.q() : e6Var.a();
-        int i10 = xp0Var.c;
-        Paint paint = this.b;
-        Paint paint2 = this.a;
-        if (i10 != 1) {
-            paint2.setColor(peerColor.getColor(0, e6Var));
-            paint.setColor(peerColor.hasColor6(q6) ? peerColor.getColor(1, e6Var) : peerColor.getColor(0, e6Var));
-            this.f = peerColor.hasColor6(q6);
-            this.g = false;
-            return;
-        }
-        if (q6 && peerColor.hasColor2() && !peerColor.hasColor3()) {
-            paint2.setColor(peerColor.getColor(1, e6Var));
-            paint.setColor(peerColor.getColor(0, e6Var));
+    @Override // org.telegram.ui.r71
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.r71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        aq0 aq0Var = this.f2;
+        if (tL_starGiftUnique != null) {
+            if (aq0Var.m0 == 0) {
+                TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
+                if (!(peerColor instanceof TLRPC.TL_peerColorCollectible)) {
+                    return;
+                }
+                aq0Var.s = (TLRPC.TL_peerColorCollectible) peerColor;
+                aq0Var.r = null;
+            } else {
+                aq0Var.s = null;
+                aq0Var.r = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
+            }
+            aq0Var.I = null;
+            aq0Var.h = -1;
         } else {
-            paint2.setColor(peerColor.getColor(0, e6Var));
-            paint.setColor(peerColor.getColor(1, e6Var));
+            aq0Var.n = l4 == null ? 0L : l4.longValue();
+            aq0Var.r = null;
+            aq0Var.s = null;
+            aq0Var.I = null;
         }
-        this.c.setColor(peerColor.getColor(2, e6Var));
-        this.f = peerColor.hasColor2(q6);
-        this.g = peerColor.hasColor3(q6);
+        zp0 zp0Var = this.d2;
+        if (zp0Var != null) {
+            zp0Var.b(true);
+        }
+        aq0Var.j(true);
+        aq0Var.i();
+        aq0Var.f(true);
+        i71 i71Var = this.e2[0];
+        if (i71Var != null) {
+            aq0Var.o0 = null;
+            i71Var.dismiss();
+        }
     }
 }

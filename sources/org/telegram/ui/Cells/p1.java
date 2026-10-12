@@ -3,9 +3,8 @@ package org.telegram.ui.Cells;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import java.util.Comparator;
-import org.telegram.messenger.CodeHighlighting;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p1 implements Comparator {
     public final /* synthetic */ int a;
@@ -23,8 +22,8 @@ public final /* synthetic */ class p1 implements Comparator {
         switch (this.a) {
             case 0:
                 Spanned spanned = this.b;
-                spanStart = spanned.getSpanStart((CodeHighlighting.Span) obj2);
-                spanStart2 = spanned.getSpanStart((CodeHighlighting.Span) obj);
+                spanStart = spanned.getSpanStart((mi.h) obj2);
+                spanStart2 = spanned.getSpanStart((mi.h) obj);
                 break;
             default:
                 SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) this.b;

@@ -1,42 +1,127 @@
 package f2;
 
-import e2.v;
+import b2.r0;
+import b2.t0;
+import b2.x;
+import com.google.android.gms.internal.play_billing.k3;
+import e2.m0;
+import java.util.ArrayList;
+import java.util.Arrays;
+import v7.b8;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class a implements fb.n {
-    public String a;
+public final class a implements t0 {
+    public final String a;
+    public final byte[] b;
+    public final int c;
+    public final int d;
 
-    public /* synthetic */ a(String str) {
-        this.a = str;
-    }
-
-    public static a a(v vVar) {
-        String str;
-        vVar.K(2);
-        int x10 = vVar.x();
-        int i10 = x10 >> 1;
-        int x11 = ((vVar.x() >> 3) & 31) | ((x10 & 1) << 5);
-        if (i10 == 4 || i10 == 5 || i10 == 7 || i10 == 8) {
-            str = "dvhe";
-        } else if (i10 == 9) {
-            str = "dvav";
-        } else {
-            if (i10 != 10) {
-                return null;
-            }
-            str = "dav1";
+    public a(String str, byte[] bArr, int i10, int i11) {
+        boolean z10;
+        byte b10;
+        str.getClass();
+        switch (str) {
+            case "com.android.capture.fps":
+                if (i11 == 23 && bArr.length == 4) {
+                    z10 = true;
+                }
+                u6.g(z10);
+                break;
+            case "auxiliary.tracks.interleaved":
+                if (i11 == 75 && bArr.length == 1 && ((b10 = bArr[0]) == 0 || b10 == 1)) {
+                    z10 = true;
+                }
+                u6.g(z10);
+                break;
+            case "auxiliary.tracks.length":
+            case "auxiliary.tracks.offset":
+                if (i11 == 78 && bArr.length == 8) {
+                    z10 = true;
+                }
+                u6.g(z10);
+                break;
+            case "auxiliary.tracks.map":
+                u6.g(i11 == 0);
+                break;
         }
-        StringBuilder v = a1.g.v(str);
-        v.append(i10 < 10 ? ".0" : ".");
-        v.append(i10);
-        v.append(x11 < 10 ? ".0" : ".");
-        v.append(x11);
-        return new a(v.toString());
+        this.a = str;
+        this.b = bArr;
+        this.c = i10;
+        this.d = i11;
     }
 
-    @Override // fb.n
-    public Object v2() {
-        throw new db.j(this.a);
+    @Override // b2.t0
+    public final /* synthetic */ x a() {
+        return null;
+    }
+
+    @Override // b2.t0
+    public final /* synthetic */ byte[] c() {
+        return null;
+    }
+
+    public final ArrayList d() {
+        u6.o("Metadata is not an auxiliary tracks map", this.a.equals("auxiliary.tracks.map"));
+        byte[] bArr = this.b;
+        byte b10 = bArr[1];
+        ArrayList arrayList = new ArrayList();
+        for (int i10 = 0; i10 < b10; i10 = k3.f(bArr[i10 + 2], i10, 1, arrayList)) {
+        }
+        return arrayList;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && a.class == obj.getClass()) {
+            a aVar = (a) obj;
+            if (this.a.equals(aVar.a) && Arrays.equals(this.b, aVar.b) && this.c == aVar.c && this.d == aVar.d) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return ((((Arrays.hashCode(this.b) + a1.g.g(527, 31, this.a)) * 31) + this.c) * 31) + this.d;
+    }
+
+    public final String toString() {
+        String sb2;
+        String str = this.a;
+        byte[] bArr = this.b;
+        int i10 = this.d;
+        if (i10 == 0) {
+            if (str.equals("auxiliary.tracks.map")) {
+                ArrayList d = d();
+                StringBuilder u10 = a1.g.u("track types = ");
+                new d9.l(String.valueOf(',')).a(u10, d.iterator());
+                sb2 = u10.toString();
+            }
+            sb2 = m0.f0(bArr);
+        } else if (i10 == 1) {
+            sb2 = m0.r(bArr);
+        } else if (i10 == 23) {
+            u6.d("array too small: %s < %s", bArr.length, 4, bArr.length >= 4);
+            sb2 = String.valueOf(Float.intBitsToFloat(b8.c(bArr[0], bArr[1], bArr[2], bArr[3])));
+        } else if (i10 == 67) {
+            u6.d("array too small: %s < %s", bArr.length, 4, bArr.length >= 4);
+            sb2 = String.valueOf(b8.c(bArr[0], bArr[1], bArr[2], bArr[3]));
+        } else if (i10 != 75) {
+            if (i10 == 78) {
+                sb2 = String.valueOf(new e2.x(bArr).G());
+            }
+            sb2 = m0.f0(bArr);
+        } else {
+            sb2 = String.valueOf(bArr[0] & 255);
+        }
+        return k3.k("mdta: key=", str, ", value=", sb2);
+    }
+
+    @Override // b2.t0
+    public final /* synthetic */ void b(r0 r0Var) {
     }
 }

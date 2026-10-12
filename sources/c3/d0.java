@@ -1,10 +1,13 @@
 package c3;
 
-import b2.r0;
-import e9.a1;
+import b2.w0;
+import e9.l0;
+import e9.n0;
+import e9.x1;
 import java.util.List;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class d0 implements o {
     public final int a;
@@ -13,7 +16,7 @@ public final class d0 implements o {
     public int d;
     public int e;
     public q f;
-    public h0 g;
+    public i0 g;
 
     public d0(int i10, int i11, String str) {
         this.a = i10;
@@ -25,43 +28,43 @@ public final class d0 implements o {
     public final boolean a(p pVar) {
         int i10 = this.b;
         int i11 = this.a;
-        e2.d.g((i11 == -1 || i10 == -1) ? false : true);
-        e2.v vVar = new e2.v(i10);
-        ((l) pVar).h(vVar.a, 0, i10, false);
-        return vVar.D() == i11;
+        u6.p((i11 == -1 || i10 == -1) ? false : true);
+        e2.x xVar = new e2.x(i10);
+        ((l) pVar).j(xVar.a, 0, i10, false);
+        return xVar.H() == i11;
     }
 
     @Override // c3.o
-    public final void g(q qVar) {
+    public final void c(q qVar) {
         this.f = qVar;
-        h0 f22 = qVar.f2(1024, 4);
-        this.g = f22;
-        b2.r rVar = new b2.r();
+        i0 a02 = qVar.a0(1024, 4);
+        this.g = a02;
+        b2.w wVar = new b2.w();
         String str = this.c;
-        rVar.p = r0.n(str);
-        rVar.q = r0.n(str);
-        hg.c.s(rVar, f22);
-        this.f.k1();
-        this.f.d2(new e0());
+        wVar.q = w0.n(str);
+        wVar.r = w0.n(str);
+        i2.d.s(wVar, a02);
+        this.f.D();
+        this.f.K(new e0());
         this.e = 1;
     }
 
     @Override // c3.o
-    public final void h(long j3, long j10) {
-        if (j3 == 0 || this.e == 1) {
+    public final void d(long j10, long j11) {
+        if (j10 == 0 || this.e == 1) {
             this.e = 1;
             this.d = 0;
         }
     }
 
     @Override // c3.o
-    public final List i() {
-        e9.g0 g0Var = e9.i0.b;
-        return a1.e;
+    public final List e() {
+        l0 l0Var = n0.b;
+        return x1.e;
     }
 
     @Override // c3.o
-    public final int m(p pVar, s sVar) {
+    public final int f(p pVar, s sVar) {
         int i10 = this.e;
         if (i10 != 1) {
             if (i10 == 2) {
@@ -69,9 +72,9 @@ public final class d0 implements o {
             }
             throw new IllegalStateException();
         }
-        h0 h0Var = this.g;
-        h0Var.getClass();
-        int a2 = h0Var.a(pVar, 1024, true);
+        i0 i0Var = this.g;
+        i0Var.getClass();
+        int a2 = i0Var.a(pVar, 1024, true);
         if (a2 != -1) {
             this.d += a2;
             return 0;
@@ -83,7 +86,7 @@ public final class d0 implements o {
     }
 
     @Override // c3.o
-    public final o c() {
+    public final o b() {
         return this;
     }
 

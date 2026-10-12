@@ -1,44 +1,43 @@
 package e9;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import v7.u6;
+
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class d1 extends m0 {
-    public final transient k0 d;
-    public final transient e1 e;
+public final class d1 implements Iterator {
+    public static final d1 a;
+    public static final /* synthetic */ d1[] b;
 
-    public d1(k0 k0Var, e1 e1Var) {
-        this.d = k0Var;
-        this.e = e1Var;
+    static {
+        d1 d1Var = new d1("INSTANCE", 0);
+        a = d1Var;
+        b = new d1[]{d1Var};
     }
 
-    @Override // e9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.get(obj) != null;
+    public static d1 valueOf(String str) {
+        return (d1) Enum.valueOf(d1.class, str);
     }
 
-    @Override // e9.m0, e9.d0
-    public final i0 i() {
-        return this.e;
+    public static d1[] values() {
+        return (d1[]) b.clone();
     }
 
-    @Override // e9.d0
-    public final int n(int i10, Object[] objArr) {
-        return this.e.n(i10, objArr);
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return false;
     }
 
-    @Override // e9.d0
-    public final boolean r() {
-        return true;
+    @Override // java.util.Iterator
+    public final Object next() {
+        throw new NoSuchElementException();
     }
 
-    @Override // e9.d0
-    /* renamed from: s */
-    public final o1 iterator() {
-        return this.e.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.d.size();
+    @Override // java.util.Iterator
+    public final void remove() {
+        u6.o("no calls to next() since the last call to remove()", false);
     }
 }

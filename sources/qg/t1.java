@@ -1,76 +1,40 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.UUID;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.bi;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.voip.m2;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class t1 extends qm0 implements NotificationCenter.NotificationCenterDelegate {
-    public final Path V2;
-    public q0.a W2;
+public final class t1 {
+    public s1 a;
+    public final HashMap b = new HashMap();
+    public final ArrayList c = new ArrayList();
 
-    public t1(Context context) {
-        super(context, null);
-        this.V2 = new Path();
-        setWillNotDraw(false);
-        setLayoutManager(new s4.d0());
-        setAdapter(new s1());
-        setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        setClipToPadding(false);
+    public final boolean a() {
+        return !this.c.isEmpty();
     }
 
-    @Override // org.telegram.ui.Components.qm0
-    public final Integer W0(int i10) {
-        return 285212671;
+    public final void b(UUID uuid, Runnable runnable) {
+        this.b.put(uuid, runnable);
+        this.c.add(uuid);
+        AndroidUtilities.runOnUIThread(new m2(this, 18));
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.customTypefacesLoaded) {
-            getAdapter().l();
+    public final void c() {
+        ArrayList arrayList = this.c;
+        if (arrayList.size() == 0) {
+            return;
         }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        q0.a aVar = this.W2;
-        if (aVar != null) {
-            Path path = this.V2;
-            aVar.accept(path);
-            canvas.save();
-            canvas.clipPath(path);
-        }
-        super.draw(canvas);
-        if (this.W2 != null) {
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.customTypefacesLoaded);
-    }
-
-    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.customTypefacesLoaded);
-    }
-
-    @Override // org.telegram.ui.Components.qm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, bi.C(16.0f, AndroidUtilities.dp(48.0f) * Math.min(pg.k0.c().size(), 6), TLObject.FLAG_30));
-    }
-
-    public void setMaskProvider(q0.a aVar) {
-        this.W2 = aVar;
-        invalidate();
+        int size = arrayList.size() - 1;
+        UUID uuid = (UUID) arrayList.get(size);
+        HashMap hashMap = this.b;
+        Runnable runnable = (Runnable) hashMap.get(uuid);
+        hashMap.remove(uuid);
+        arrayList.remove(size);
+        runnable.run();
+        AndroidUtilities.runOnUIThread(new m2(this, 18));
     }
 }

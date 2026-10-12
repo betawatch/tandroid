@@ -1,48 +1,38 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class m0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ m0(long j3, long j10, long j11, org.telegram.ui.b5 b5Var) {
-        this.a = 2;
-        this.b = j3;
-        this.c = j10;
-        this.d = j11;
-        this.e = b5Var;
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes.dex */
+public final /* synthetic */ class m0 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ m0(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((BotGuardHelper) this.e).lambda$openGuardBotWebApp$0(this.b, this.c, this.d);
+                BotForumHelper.lambda$stopStreaming$2((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                ((MediaDataController) this.e).lambda$loadMusic$142(this.b, this.c, this.d);
+                MessagesController.lambda$revertWelcomeEphemeralMessage$125((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 2:
+                MessagesController.lambda$toggleCommunityCollapsedInDialogs$253((TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 3:
+                MessagesController.lambda$deleteEphemeralMessage$126((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 4:
+                MessagesController.lambda$deleteEphemeralMessage$127((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                org.telegram.ui.b5 b5Var = (org.telegram.ui.b5) this.e;
-                long j3 = this.b;
-                long j10 = this.c;
-                org.telegram.ui.y6.n0 = Long.valueOf(j3 * j10);
-                Long valueOf = Long.valueOf(this.d * j10);
-                org.telegram.ui.y6.o0 = valueOf;
-                b5Var.run(org.telegram.ui.y6.n0, valueOf);
+                MessagesController.lambda$deleteAllReactionsFrom$130((TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
         }
-    }
-
-    public /* synthetic */ m0(BaseController baseController, long j3, long j10, long j11, int i10) {
-        this.a = i10;
-        this.e = baseController;
-        this.b = j3;
-        this.c = j10;
-        this.d = j11;
     }
 }

@@ -8,12 +8,12 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Process;
 import android.text.TextUtils;
-import androidx.biometric.n;
+import androidx.biometric.o;
 import e0.l0;
 import j$.util.Objects;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final Object a = null;
@@ -37,7 +37,7 @@ public abstract class c {
                     AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(AppOpsManager.class);
                     noteProxyOpNoThrow = appOpsManager == null ? 1 : appOpsManager.checkOpNoThrow(permissionToOp, Binder.getCallingUid(), str2);
                     if (noteProxyOpNoThrow == 0) {
-                        noteProxyOpNoThrow = appOpsManager != null ? appOpsManager.checkOpNoThrow(permissionToOp, i11, b2.c.g(context)) : 1;
+                        noteProxyOpNoThrow = appOpsManager != null ? appOpsManager.checkOpNoThrow(permissionToOp, i11, b2.d.g(context)) : 1;
                     }
                 } else {
                     noteProxyOpNoThrow = ((AppOpsManager) context.getSystemService(AppOpsManager.class)).noteProxyOpNoThrow(permissionToOp, str2);
@@ -63,6 +63,6 @@ public abstract class c {
     }
 
     public static Executor d(Context context) {
-        return Build.VERSION.SDK_INT >= 28 ? b.a(context) : new n(new Handler(context.getMainLooper()), 3);
+        return Build.VERSION.SDK_INT >= 28 ? b.a(context) : new o(new Handler(context.getMainLooper()), 3);
     }
 }

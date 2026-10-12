@@ -1,161 +1,28 @@
 package kg;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import ci.e4;
-import com.google.android.gms.internal.vision.e2;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.i6;
-import w7.x5;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public class c extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final TextView c;
-    public final TextView d;
-    public boolean e;
-    public boolean f;
-    public final Drawable h;
-    public final int n;
-    public final e6 r;
+public final class c extends b {
+    public float[] l;
 
-    public c(Context context, e6 e6Var) {
-        super(context);
-        this.e = true;
-        new SimpleDateFormat("d MMM yyyy");
-        this.r = e6Var;
-        TextPaint textPaint = new TextPaint();
-        textPaint.setTextSize(14.0f);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        int measureText = (int) textPaint.measureText("00 MMM 0000 - 00 MMM 000");
-        this.n = measureText;
-        TextView textView = new TextView(context);
-        this.a = textView;
-        e2.l(15.0f, 1, textView);
-        addView(textView, x5.a(-2.0f, 16.0f, 0.0f, measureText, 0.0f, -2, 8388627));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 15.0f);
-        textView2.setTypeface(Typeface.DEFAULT_BOLD);
-        textView2.setGravity(8388627);
-        addView(textView2, x5.a(-2.0f, 8.0f, 0.0f, 8.0f, 0.0f, -2, 8388627));
-        TextView textView3 = new TextView(context);
-        this.b = textView3;
-        textView3.setTextSize(1, 13.0f);
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setGravity(8388629);
-        addView(textView3, x5.a(-2.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, 8388629));
-        TextView textView4 = new TextView(context);
-        this.c = textView4;
-        textView4.setTextSize(1, 13.0f);
-        textView4.setTypeface(AndroidUtilities.bold());
-        textView4.setGravity(8388629);
-        addView(textView4, x5.a(-2.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, 8388629));
-        textView4.setVisibility(8);
-        textView2.setVisibility(8);
-        textView2.setText(LocaleController.getString(R.string.ZoomOut));
-        Drawable drawable = getContext().getDrawable(R.drawable.msg_zoomout_stats);
-        this.h = drawable;
-        textView2.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
-        textView2.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
-        textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f));
-        textView2.setBackground(i6.H0(AndroidUtilities.dp(3.0f), i6.w0(i6.Rh, e6Var)));
-        textView4.addOnLayoutChangeListener(new e4(this, 1));
-        a();
-    }
-
-    public final void a() {
-        int i10 = i6.j5;
-        e6 e6Var = this.r;
-        this.a.setTextColor(i6.w0(i10, e6Var));
-        this.b.setTextColor(i6.w0(i10, e6Var));
-        this.c.setTextColor(i6.w0(i10, e6Var));
-        int i11 = i6.fj;
-        this.d.setTextColor(i6.w0(i11, e6Var));
-        this.h.setColorFilter(i6.w0(i11, e6Var), PorterDuff.Mode.SRC_IN);
-    }
-
-    public final void b(long j3, long j10) {
-        String format;
-        boolean z10 = this.e;
-        TextView textView = this.b;
-        if (!z10) {
-            textView.setVisibility(8);
-            this.c.setVisibility(8);
-            return;
+    @Override // kg.b
+    public final void e() {
+        super.e();
+        int size = this.d.size();
+        long j10 = 0;
+        for (int i10 = 0; i10 < size; i10++) {
+            long j11 = ((a) this.d.get(i10)).e;
+            if (j11 > j10) {
+                j10 = j11;
+            }
         }
-        if (this.f) {
-            j10 += 604800000;
+        this.l = new float[size];
+        for (int i11 = 0; i11 < size; i11++) {
+            if (j10 == ((a) this.d.get(i11)).e) {
+                this.l[i11] = 1.0f;
+            } else {
+                this.l[i11] = j10 / r4;
+            }
         }
-        if (j10 - j3 >= 86400000) {
-            format = LocaleController.getInstance().getFormatterYear().format(new Date(j3)) + " — " + LocaleController.getInstance().getFormatterYear().format(new Date(j10));
-        } else {
-            format = LocaleController.getInstance().getFormatterYear().format(new Date(j3));
-        }
-        textView.setText(format);
-        textView.setVisibility(0);
-    }
-
-    public final void c(boolean z10) {
-        this.e = z10;
-        TextView textView = this.a;
-        if (z10) {
-            textView.setLayoutParams(x5.a(-2.0f, 16.0f, 0.0f, this.n, 0.0f, -2, 8388627));
-            return;
-        }
-        this.c.setVisibility(8);
-        this.b.setVisibility(8);
-        textView.setLayoutParams(x5.a(-2.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, 8388627));
-        textView.requestLayout();
-    }
-
-    public final void d(long j3, boolean z10) {
-        b(j3, j3);
-        TextView textView = this.d;
-        textView.setVisibility(0);
-        TextView textView2 = this.a;
-        if (!z10) {
-            textView.setAlpha(1.0f);
-            textView.setTranslationX(0.0f);
-            textView.setTranslationY(0.0f);
-            textView.setScaleX(1.0f);
-            textView.setScaleY(1.0f);
-            textView2.setAlpha(0.0f);
-            return;
-        }
-        textView.setAlpha(0.0f);
-        textView.setScaleX(0.3f);
-        textView.setScaleY(0.3f);
-        textView.setPivotX(0.0f);
-        textView.setPivotY(AndroidUtilities.dp(40.0f));
-        textView.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(200L).start();
-        textView2.setAlpha(1.0f);
-        textView2.setTranslationX(0.0f);
-        textView2.setTranslationY(0.0f);
-        textView2.setScaleX(1.0f);
-        textView2.setScaleY(1.0f);
-        textView2.setPivotX(0.0f);
-        textView2.setPivotY(0.0f);
-        textView2.animate().alpha(0.0f).scaleY(0.3f).scaleX(0.3f).setDuration(200L).start();
-    }
-
-    public void setTitle(String str) {
-        this.a.setText(str);
-    }
-
-    public void setUseWeekInterval(boolean z10) {
-        this.f = z10;
     }
 }

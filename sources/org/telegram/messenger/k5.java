@@ -1,32 +1,30 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+import org.telegram.messenger.ImageLoader;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LocaleController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ ImageLoader.HttpImageTask b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ k5(LocaleController localeController, int i10, int i11) {
-        this.a = i11;
-        this.b = localeController;
-        this.c = i10;
+    public /* synthetic */ k5(ImageLoader.HttpImageTask httpImageTask, long j10, long j11, int i10) {
+        this.a = i10;
+        this.b = httpImageTask;
+        this.c = j10;
+        this.d = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$applyLanguage$8(this.c);
-                break;
-            case 1:
-                this.b.lambda$checkPatchLangpack$4(this.c);
-                break;
-            case 2:
-                this.b.lambda$checkUpdateForCurrentRemoteLocale$2(this.c);
+                this.b.lambda$reportProgress$0(this.c, this.d);
                 break;
             default:
-                this.b.lambda$checkUpdateForCurrentRemoteLocale$3(this.c);
+                this.b.lambda$reportProgress$1(this.c, this.d);
                 break;
         }
     }

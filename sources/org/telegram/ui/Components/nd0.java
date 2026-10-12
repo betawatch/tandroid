@@ -18,7 +18,7 @@ import android.graphics.fonts.Font;
 import android.graphics.text.MeasuredText;
 import android.os.Build;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class nd0 extends Canvas {
     public Canvas a;
@@ -87,9 +87,9 @@ public final class nd0 extends Canvas {
     }
 
     @Override // android.graphics.Canvas
-    public final void drawColor(long j3, BlendMode blendMode) {
+    public final void drawColor(long j10, BlendMode blendMode) {
         if (Build.VERSION.SDK_INT >= 29) {
-            this.a.drawColor(j3, blendMode);
+            this.a.drawColor(j10, blendMode);
         }
     }
 
@@ -571,9 +571,9 @@ public final class nd0 extends Canvas {
     }
 
     @Override // android.graphics.Canvas
-    public final void drawColor(long j3) {
+    public final void drawColor(long j10) {
         if (Build.VERSION.SDK_INT >= 29) {
-            this.a.drawColor(j3);
+            this.a.drawColor(j10);
         }
     }
 

@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class m extends o6.a {
     public static final Parcelable.Creator<m> CREATOR = new r0(18);
@@ -21,8 +21,8 @@ public final class m extends o6.a {
         } else {
             try {
                 a2 = c.a(str);
-            } catch (b | d0 | t0 e7) {
-                throw new IllegalArgumentException(e7);
+            } catch (b | d0 | t0 e) {
+                throw new IllegalArgumentException(e);
             }
         }
         this.a = a2;
@@ -62,24 +62,24 @@ public final class m extends o6.a {
         String valueOf = String.valueOf(this.a);
         String valueOf2 = String.valueOf(this.c);
         String valueOf3 = String.valueOf(this.d);
-        StringBuilder w10 = a1.g.w("AuthenticatorSelectionCriteria{\n attachment=", valueOf, ", \n requireResidentKey=");
-        w10.append(this.b);
-        w10.append(", \n requireUserVerification=");
-        w10.append(valueOf2);
-        w10.append(", \n residentKeyRequirement=");
-        return a1.g.t(w10, valueOf3, "\n }");
+        StringBuilder v = a1.g.v("AuthenticatorSelectionCriteria{\n attachment=", valueOf, ", \n requireResidentKey=");
+        v.append(this.b);
+        v.append(", \n requireUserVerification=");
+        v.append(valueOf2);
+        v.append(", \n residentKeyRequirement=");
+        return a1.g.s(v, valueOf3, "\n }");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.d0.q(parcel, 20293);
+        int q6 = w7.g0.q(parcel, 20293);
         c cVar = this.a;
-        w7.d0.l(parcel, 2, cVar == null ? null : cVar.a);
-        w7.d0.a(parcel, 3, this.b);
+        w7.g0.l(parcel, 2, cVar == null ? null : cVar.a);
+        w7.g0.a(parcel, 3, this.b);
         j0 j0Var = this.c;
-        w7.d0.l(parcel, 4, j0Var == null ? null : j0Var.a);
+        w7.g0.l(parcel, 4, j0Var == null ? null : j0Var.a);
         e0 b10 = b();
-        w7.d0.l(parcel, 5, b10 != null ? b10.a : null);
-        w7.d0.r(parcel, q6);
+        w7.g0.l(parcel, 5, b10 != null ? b10.a : null);
+        w7.g0.r(parcel, q6);
     }
 }

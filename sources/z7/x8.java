@@ -1,23 +1,23 @@
 package z7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class x8 implements ia.d {
+public final class x8 implements ja.d {
     public static final x8 a = new x8();
-    public static final ia.c b = new ia.c("isForegroundConfidenceMaskEnabled", hg.c.m(sc.v.o(w.class, new s(1))));
-    public static final ia.c c = new ia.c("isForegroundBitmapEnabled", hg.c.m(sc.v.o(w.class, new s(2))));
-    public static final ia.c d = new ia.c("isMultipleSubjectsEnabled", hg.c.m(sc.v.o(w.class, new s(3))));
-    public static final ia.c e = new ia.c("isSubjectConfidenceMaskEnabled", hg.c.m(sc.v.o(w.class, new s(4))));
-    public static final ia.c f = new ia.c("isSubjectBitmapEnabled", hg.c.m(sc.v.o(w.class, new s(5))));
+    public static final ja.c b = new ja.c("isForegroundConfidenceMaskEnabled", i2.d.n(t8.b.n(w.class, new s(1))));
+    public static final ja.c c = new ja.c("isForegroundBitmapEnabled", i2.d.n(t8.b.n(w.class, new s(2))));
+    public static final ja.c d = new ja.c("isMultipleSubjectsEnabled", i2.d.n(t8.b.n(w.class, new s(3))));
+    public static final ja.c e = new ja.c("isSubjectConfidenceMaskEnabled", i2.d.n(t8.b.n(w.class, new s(4))));
+    public static final ja.c f = new ja.c("isSubjectBitmapEnabled", i2.d.n(t8.b.n(w.class, new s(5))));
 
-    @Override // ia.a
+    @Override // ja.a
     public final void a(Object obj, Object obj2) {
         ve veVar = (ve) obj;
-        ia.e eVar = (ia.e) obj2;
-        eVar.a(b, veVar.a);
-        eVar.a(c, veVar.b);
-        eVar.a(d, veVar.c);
-        eVar.a(e, veVar.d);
-        eVar.a(f, veVar.e);
+        ja.e eVar = (ja.e) obj2;
+        eVar.d(b, veVar.a);
+        eVar.d(c, veVar.b);
+        eVar.d(d, veVar.c);
+        eVar.d(e, veVar.d);
+        eVar.d(f, veVar.e);
     }
 }

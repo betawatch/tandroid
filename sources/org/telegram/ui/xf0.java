@@ -1,71 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class xf0 extends org.telegram.ui.Components.voip.n2 {
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Components.xw0 f;
+public final /* synthetic */ class xf0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ eg0 b;
+    public final /* synthetic */ int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xf0(zf0 zf0Var, Context context, int i10) {
-        super(zf0Var.s0, context);
-        this.e = i10;
-        switch (i10) {
-            case 1:
-                this.f = zf0Var;
-                super(zf0Var.s0, context);
-                break;
-            default:
-                this.f = zf0Var;
-                break;
-        }
+    public /* synthetic */ xf0(eg0 eg0Var, int i10, int i11) {
+        this.a = i11;
+        this.b = eg0Var;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.Components.voip.n2
-    public final boolean a() {
-        switch (this.e) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                return ((zf0) this.f).i0;
-            case 1:
-                return ((zf0) this.f).i0;
-            default:
-                return ((we0) this.f).M;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.voip.n2
-    public final boolean b() {
-        xf0 xf0Var;
-        switch (this.e) {
-            case 0:
-                if (getVisibility() == 0) {
-                    zf0 zf0Var = (zf0) this.f;
-                    if (zf0Var.V <= 0 || zf0Var.R == null) {
-                    }
-                }
+                AndroidUtilities.runOnUIThread(new xf0(this.b, this.c, 1));
                 break;
             case 1:
-                zf0 zf0Var2 = (zf0) this.f;
-                if (!isClickable() || getVisibility() != 0 || zf0Var2.d0 || (((xf0Var = zf0Var2.v) != null && xf0Var.getVisibility() != 8) || zf0Var2.i0)) {
-                }
+                this.b.A(this.c);
                 break;
             default:
-                if (getVisibility() == 0) {
-                    we0 we0Var = (we0) this.f;
-                    if (we0Var.P <= 0 || we0Var.N == null) {
-                    }
-                }
+                this.b.f.f[this.c].l(1.0f);
                 break;
         }
-        return false;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xf0(we0 we0Var, Context context) {
-        super(we0Var.a0, context);
-        this.e = 2;
-        this.f = we0Var;
     }
 }

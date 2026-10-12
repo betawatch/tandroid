@@ -1,8 +1,118 @@
 package hg;
 
-import android.widget.LinearLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ac;
+import org.telegram.ui.kt0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class a0 extends LinearLayout {
+public final class a0 extends s4.b0 {
+    public final /* synthetic */ int I;
+
+    public /* synthetic */ a0(int i10) {
+        this.I = i10;
+    }
+
+    @Override // s4.b0
+    public int W0(s4.y0 y0Var) {
+        switch (this.I) {
+            case 5:
+                return 5000;
+            case 9:
+                return AndroidUtilities.dp(4000.0f);
+            default:
+                return super.W0(y0Var);
+        }
+    }
+
+    @Override // s4.b0, s4.n0
+    public boolean e() {
+        switch (this.I) {
+            case 1:
+                return false;
+            default:
+                return super.e();
+        }
+    }
+
+    @Override // s4.b0, s4.n0
+    public void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
+        switch (this.I) {
+            case 4:
+                ki.o oVar = new ki.o(recyclerView.getContext(), 0);
+                oVar.a = i10;
+                w0(oVar);
+                break;
+            case 15:
+                kt0 kt0Var = new kt0(recyclerView.getContext());
+                kt0Var.a = i10;
+                w0(kt0Var);
+                break;
+            default:
+                super.v0(recyclerView, y0Var, i10);
+                break;
+        }
+    }
+
+    @Override // s4.b0, s4.n0
+    public boolean y0() {
+        switch (this.I) {
+            case 0:
+                return false;
+            case 1:
+            case 5:
+            case 6:
+            case 9:
+            case 15:
+            default:
+                return super.y0();
+            case 2:
+                return false;
+            case 3:
+                return false;
+            case 4:
+                return true;
+            case 7:
+                return false;
+            case 8:
+                return false;
+            case 10:
+                return true;
+            case 11:
+                return false;
+            case 12:
+                return false;
+            case 13:
+                return false;
+            case 14:
+                return false;
+            case 16:
+                return false;
+            case 17:
+                return false;
+            case 18:
+                return true;
+            case 19:
+                return false;
+            case 20:
+                return false;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ a0(int i10, boolean z10, int i11) {
+        super(i10, z10);
+        this.I = i11;
+    }
+
+    public a0(ac acVar) {
+        this.I = 4;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a0() {
+        super(0, true);
+        this.I = 15;
+    }
 }

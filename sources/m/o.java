@@ -12,9 +12,10 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.CheckedTextView;
 import org.telegram.messenger.beta.R;
-import v7.s7;
+import v7.q7;
+import w7.w7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class o extends CheckedTextView implements u0.k {
     public final p a;
@@ -32,8 +33,8 @@ public final class o extends CheckedTextView implements u0.k {
         super(context, attributeSet, R.attr.checkedTextViewStyle);
         int resourceId;
         int resourceId2;
-        b3.a(context);
-        a3.a(this, getContext());
+        c3.a(context);
+        b3.a(this, getContext());
         w0 w0Var = new w0(this);
         this.c = w0Var;
         w0Var.f(attributeSet, R.attr.checkedTextViewStyle);
@@ -44,35 +45,35 @@ public final class o extends CheckedTextView implements u0.k {
         this.a = new p(this);
         Context context2 = getContext();
         int[] iArr = f.a.l;
-        la.h R = la.h.R(context2, attributeSet, iArr, R.attr.checkedTextViewStyle);
-        TypedArray typedArray = (TypedArray) R.c;
-        r0.i0.i(this, getContext(), iArr, attributeSet, (TypedArray) R.c, R.attr.checkedTextViewStyle);
+        li.k P = li.k.P(context2, attributeSet, iArr, R.attr.checkedTextViewStyle);
+        TypedArray typedArray = (TypedArray) P.c;
+        r0.j0.i(this, getContext(), iArr, attributeSet, (TypedArray) P.c, R.attr.checkedTextViewStyle);
         try {
             if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
                 try {
-                    setCheckMarkDrawable(s7.b(getContext(), resourceId2));
+                    setCheckMarkDrawable(q7.b(getContext(), resourceId2));
                 } catch (Resources.NotFoundException unused) {
                 }
                 if (typedArray.hasValue(2)) {
-                    setCheckMarkTintList(R.E(2));
+                    setCheckMarkTintList(P.E(2));
                 }
                 if (typedArray.hasValue(3)) {
                     setCheckMarkTintMode(l1.b(typedArray.getInt(3, -1), null));
                 }
-                R.S();
+                P.Q();
                 getEmojiTextViewHelper().a(attributeSet, R.attr.checkedTextViewStyle);
             }
             if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
-                setCheckMarkDrawable(s7.b(getContext(), resourceId));
+                setCheckMarkDrawable(q7.b(getContext(), resourceId));
             }
             if (typedArray.hasValue(2)) {
             }
             if (typedArray.hasValue(3)) {
             }
-            R.S();
+            P.Q();
             getEmojiTextViewHelper().a(attributeSet, R.attr.checkedTextViewStyle);
         } catch (Throwable th2) {
-            R.S();
+            P.Q();
             throw th2;
         }
     }
@@ -103,7 +104,7 @@ public final class o extends CheckedTextView implements u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return w7.s7.d(super.getCustomSelectionActionModeCallback());
+        return w7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -149,7 +150,7 @@ public final class o extends CheckedTextView implements u0.k {
     @Override // android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        w7.m.a(editorInfo, onCreateInputConnection, this);
+        w7.q.a(editorInfo, onCreateInputConnection, this);
         return onCreateInputConnection;
     }
 
@@ -211,7 +212,7 @@ public final class o extends CheckedTextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(w7.s7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(w7.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {
@@ -275,6 +276,6 @@ public final class o extends CheckedTextView implements u0.k {
 
     @Override // android.widget.CheckedTextView
     public void setCheckMarkDrawable(int i10) {
-        setCheckMarkDrawable(s7.b(getContext(), i10));
+        setCheckMarkDrawable(q7.b(getContext(), i10));
     }
 }

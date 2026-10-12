@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class a0 extends g.o implements Menu {
     public final k c;
@@ -46,9 +46,9 @@ public class a0 extends g.o implements Menu {
 
     @Override // android.view.Menu
     public final void clear() {
-        a0.m mVar = (a0.m) this.b;
-        if (mVar != null) {
-            mVar.clear();
+        a0.l lVar = (a0.l) this.b;
+        if (lVar != null) {
+            lVar.clear();
         }
         this.c.clear();
     }
@@ -90,15 +90,15 @@ public class a0 extends g.o implements Menu {
 
     @Override // android.view.Menu
     public final void removeGroup(int i10) {
-        if (((a0.m) this.b) != null) {
+        if (((a0.l) this.b) != null) {
             int i11 = 0;
             while (true) {
-                a0.m mVar = (a0.m) this.b;
-                if (i11 >= mVar.c) {
+                a0.l lVar = (a0.l) this.b;
+                if (i11 >= lVar.c) {
                     break;
                 }
-                if (((l0.a) mVar.e(i11)).getGroupId() == i10) {
-                    ((a0.m) this.b).f(i11);
+                if (((l0.a) lVar.e(i11)).getGroupId() == i10) {
+                    ((a0.l) this.b).f(i11);
                     i11--;
                 }
                 i11++;
@@ -109,15 +109,15 @@ public class a0 extends g.o implements Menu {
 
     @Override // android.view.Menu
     public final void removeItem(int i10) {
-        if (((a0.m) this.b) != null) {
+        if (((a0.l) this.b) != null) {
             int i11 = 0;
             while (true) {
-                a0.m mVar = (a0.m) this.b;
-                if (i11 >= mVar.c) {
+                a0.l lVar = (a0.l) this.b;
+                if (i11 >= lVar.c) {
                     break;
                 }
-                if (((l0.a) mVar.e(i11)).getItemId() == i10) {
-                    ((a0.m) this.b).f(i11);
+                if (((l0.a) lVar.e(i11)).getItemId() == i10) {
+                    ((a0.l) this.b).f(i11);
                     break;
                 }
                 i11++;

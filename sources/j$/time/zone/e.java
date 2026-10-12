@@ -92,9 +92,9 @@ public final class e implements Serializable {
             j$.time.h hVar2 = j$.time.h.e;
             j$.time.temporal.a.SECOND_OF_DAY.w(readInt2);
             int i16 = (int) (readInt2 / 3600);
-            long j3 = readInt2 - (i16 * 3600);
+            long j10 = readInt2 - (i16 * 3600);
             dVar = dVar2;
-            hVar = j$.time.h.H(i16, (int) (j3 / 60), (int) (j3 - (r14 * 60)), 0);
+            hVar = j$.time.h.H(i16, (int) (j10 / 60), (int) (j10 - (r14 * 60)), 0);
         } else {
             dVar = dVar2;
             int i17 = i12 % 24;

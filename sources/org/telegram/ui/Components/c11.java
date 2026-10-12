@@ -1,72 +1,110 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Iterator;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class c11 extends ReplacementSpan {
-    public final /* synthetic */ int a;
-    public int b;
-    public final Object c;
+public final class c11 implements li.r0, NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final boolean b;
+    public final HashMap c = new HashMap();
+    public boolean d;
 
-    public c11(int i10) {
-        this.a = 0;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.b = i10;
-        paint.setColor(org.telegram.ui.ActionBar.i6.m1(0.3f, org.telegram.ui.ActionBar.i6.x0(null, org.telegram.ui.ActionBar.i6.nd, false)));
+    public c11(int i10, boolean z10) {
+        this.a = i10;
+        this.b = z10;
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileUploaded);
     }
 
-    public void a(int i10) {
-        org.telegram.ui.vp0 vp0Var = (org.telegram.ui.vp0) this.c;
-        if (vp0Var != null) {
-            vp0Var.a = i10 / 2.0f;
-            vp0Var.d();
-            this.b = i10;
+    public final synchronized void a(long j10, File file, long j11, long j12) {
+        a11 a11Var = (a11) this.c.get(Long.valueOf(j10));
+        if (!this.d && a11Var != null && !a11Var.e) {
+            e(a11Var);
+            a11Var.b = Math.max(a11Var.b, j11 + j12);
+            FileLoader.getInstance(this.a).checkUploadNewDataAvailable(file.getAbsolutePath(), this.b, a11Var.b, 0L);
         }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        switch (this.a) {
-            case 0:
-                float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.33f);
-                float dp2 = AndroidUtilities.dp(6.66f);
-                RectF rectF = AndroidUtilities.rectTmp;
-                float f10 = dp2 / 2.0f;
-                rectF.set(f7, dp - f10, this.b + f7, dp + f10);
-                canvas.drawRoundRect(rectF, f10, f10, (Paint) this.c);
-                break;
-            default:
-                org.telegram.ui.vp0 vp0Var = (org.telegram.ui.vp0) this.c;
-                if (vp0Var != null) {
-                    int i15 = (i12 + i14) / 2;
-                    int i16 = this.b;
-                    vp0Var.setBounds((int) (AndroidUtilities.dp(3.0f) + f7), i15 - this.b, (int) (f7 + AndroidUtilities.dp(5.0f) + i16), i15 + i16);
-                    vp0Var.draw(canvas);
+    public final synchronized void b(long j10, long j11, File file) {
+        a11 a11Var = (a11) this.c.get(Long.valueOf(j10));
+        if (!this.d && a11Var != null && !a11Var.e) {
+            e(a11Var);
+            a11Var.b = Math.max(a11Var.b, j11);
+            a11Var.c = j11;
+            FileLoader.getInstance(this.a).checkUploadNewDataAvailable(file.getAbsolutePath(), this.b, a11Var.b, j11);
+        }
+    }
+
+    public final synchronized void c(long j10) {
+        a11 a11Var = (a11) this.c.remove(Long.valueOf(j10));
+        if (a11Var == null) {
+            return;
+        }
+        a11Var.e = true;
+        if (a11Var.d) {
+            FileLoader.getInstance(this.a).cancelFileUpload(a11Var.a.getAbsolutePath(), this.b);
+        }
+    }
+
+    public final synchronized void d(boolean z10) {
+        try {
+            if (this.d) {
+                return;
+            }
+            this.d = true;
+            NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.fileUploaded);
+            if (z10) {
+                Iterator it = this.c.values().iterator();
+                while (it.hasNext()) {
+                    a11 a11Var = (a11) it.next();
+                    if (a11Var.d && !a11Var.e) {
+                        FileLoader.getInstance(this.a).cancelFileUpload(a11Var.a.getAbsolutePath(), this.b);
+                    }
+                    it.remove();
+                }
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0039, code lost:
+    
+        r0.f = (org.telegram.tgnet.TLRPC.InputFile) r6[1];
+        r0.g = (org.telegram.tgnet.TLRPC.InputEncryptedFile) r6[2];
+        r0.h = (byte[]) r6[3];
+        r0.i = (byte[]) r6[4];
+        r0.c = java.lang.Math.max(r0.c, ((java.lang.Long) r6[5]).longValue());
+     */
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final synchronized void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (!this.d && i10 == NotificationCenter.fileUploaded && objArr.length >= 6) {
+            String str = (String) objArr[0];
+            Iterator it = this.c.values().iterator();
+            while (true) {
+                if (!it.hasNext()) {
                     break;
                 }
-                break;
+                a11 a11Var = (a11) it.next();
+                if (!a11Var.e && a11Var.a.getAbsolutePath().equals(str)) {
+                    break;
+                }
+            }
         }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        switch (this.a) {
-            case 0:
-                return this.b;
-            default:
-                return AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(3.0f) + this.b;
+    public final void e(a11 a11Var) {
+        if (a11Var.d) {
+            return;
         }
-    }
-
-    public c11(boolean z10, int i10, int i11) {
-        this.a = 1;
-        this.b = AndroidUtilities.dp(21.0f);
-        this.c = z10 ? org.telegram.ui.vp0.c(i10, i11) : org.telegram.ui.vp0.a(i10, i11);
+        a11Var.d = true;
+        FileLoader.getInstance(this.a).uploadFile(a11Var.a.getAbsolutePath(), this.b, false, 1L, 33554432, false);
     }
 }

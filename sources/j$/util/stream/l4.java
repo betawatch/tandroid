@@ -1,6 +1,7 @@
 package j$.util.stream;
 
 import j$.util.function.Consumer$-CC;
+import j$.util.function.IntConsumer$-CC;
 import java.util.function.Consumer;
 import java.util.function.IntConsumer;
 import java.util.function.ObjIntConsumer;
@@ -19,7 +20,7 @@ public final class l4 extends p4 implements o4, h5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j3) {
+    public final /* synthetic */ void accept(long j10) {
         t3.K();
         throw null;
     }
@@ -35,7 +36,7 @@ public final class l4 extends p4 implements o4, h5 {
     }
 
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
     @Override // j$.util.stream.j5
@@ -58,7 +59,7 @@ public final class l4 extends p4 implements o4, h5 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j3) {
+    public final void o(long j10) {
         this.a = this.b.get();
     }
 

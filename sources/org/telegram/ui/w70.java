@@ -1,91 +1,156 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class w70 extends ReplacementSpan {
-    public final Paint a;
-    public final ImageReceiver b;
-    public final float c;
-    public float d;
-    public final View e;
-    public boolean f;
-    public float h;
-    public int n;
+public final class w70 extends org.telegram.ui.Components.lm0 {
+    public final Context c;
+    public final /* synthetic */ y70 d;
 
-    public w70(View view, float f7, int i10) {
-        f5 f5Var = new f5(this, 2);
-        this.f = true;
-        this.n = 255;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.b = imageReceiver;
-        imageReceiver.setCurrentAccount(i10);
-        this.c = f7;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), 855638016);
-        View view2 = this.e;
-        if (view2 == view) {
+    public w70(y70 y70Var, Context context) {
+        this.d = y70Var;
+        this.c = context;
+    }
+
+    @Override // org.telegram.ui.Components.lm0
+    public final boolean D(s4.b1 b1Var) {
+        return b1Var.f == 0;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.d.G;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        y70 y70Var = this.d;
+        if ((i10 >= y70Var.E && i10 < y70Var.F) || i10 == y70Var.J) {
+            return 0;
+        }
+        if (i10 == y70Var.y || i10 == y70Var.H) {
+            return 4;
+        }
+        if (i10 == y70Var.x || i10 == y70Var.K) {
+            return 1;
+        }
+        return i10 == y70Var.I ? 5 : 0;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        int i11;
+        y70 y70Var = this.d;
+        boolean z10 = y70Var.N;
+        int i12 = b1Var.f;
+        View view = b1Var.a;
+        if (i12 == 0) {
+            org.telegram.ui.Cells.m8 m8Var = (org.telegram.ui.Cells.m8) view;
+            if (i10 == y70Var.J) {
+                m8Var.b(false, false);
+                m8Var.d(y70Var.r, false, false);
+                m8Var.setDeleteAction(new t60(this, 2));
+                return;
+            }
+            i11 = ((org.telegram.ui.ActionBar.m2) y70Var).currentAccount;
+            ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i11).getStickerSets(y70Var.c0());
+            int i13 = i10 - y70Var.E;
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSets.get(i13);
+            m8Var.d(stickerSets.get(i13), i13 != stickerSets.size() - 1, false);
+            m8Var.setDeleteAction(null);
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = y70Var.r;
+            m8Var.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : y70Var.b0(y70Var.v) != null ? y70Var.b0(y70Var.v).id : 0L), false);
             return;
         }
-        if (view2 != null) {
-            view2.removeOnAttachStateChangeListener(f5Var);
-            if (this.e.isAttachedToWindow() && !view.isAttachedToWindow()) {
-                imageReceiver.onDetachedFromWindow();
+        if (i12 == 1) {
+            if (i10 != y70Var.x) {
+                if (i10 == y70Var.K) {
+                    ((org.telegram.ui.Cells.e9) view).setText(LocaleController.getString(R.string.AddGroupEmojiPackHint));
+                    return;
+                }
+                return;
+            }
+            String string = LocaleController.getString(z10 ? R.string.ChooseEmojiPackMy : R.string.ChooseStickerSetMy);
+            int indexOf = string.indexOf("@stickers");
+            if (indexOf == -1) {
+                ((org.telegram.ui.Cells.e9) view).setText(string);
+                return;
+            }
+            try {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.o4(this, 3), indexOf, indexOf + 9, 18);
+                ((org.telegram.ui.Cells.e9) view).setText(spannableStringBuilder);
+                return;
+            } catch (Exception e) {
+                FileLog.e(e);
+                ((org.telegram.ui.Cells.e9) view).setText(string);
+                return;
             }
         }
-        View view3 = this.e;
-        if ((view3 == null || !view3.isAttachedToWindow()) && view != null && view.isAttachedToWindow()) {
-            imageReceiver.onAttachedToWindow();
+        if (i12 == 4) {
+            if (i10 == y70Var.H) {
+                ((org.telegram.ui.Cells.m4) view).setText(LocaleController.getString(R.string.AddEmojiPackHeader));
+                return;
+            } else {
+                ((org.telegram.ui.Cells.m4) view).setText(LocaleController.getString(z10 ? R.string.ChooseEmojiPackHeader : R.string.ChooseStickerSetHeader));
+                return;
+            }
         }
-        this.e = view;
-        imageReceiver.setParentView(view);
-        if (view != null) {
-            view.addOnAttachStateChangeListener(f5Var);
+        if (i12 != 5) {
+            return;
         }
+        v70 v70Var = (v70) view;
+        boolean z11 = y70Var.J > 0;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = y70Var.r;
+        v70Var.b = z11;
+        org.telegram.ui.Components.nu nuVar = v70Var.a;
+        u70 u70Var = v70Var.f;
+        nuVar.removeTextChangedListener(u70Var);
+        if (tL_messages_stickerSet3 == null) {
+            nuVar.setText("");
+        } else {
+            String str = tL_messages_stickerSet3.set.short_name;
+            nuVar.setText(str);
+            nuVar.setSelection(str.length());
+        }
+        nuVar.addTextChangedListener(u70Var);
     }
 
-    public final void a(float f7) {
-        float dp = AndroidUtilities.dp(f7);
-        this.d = dp;
-        this.b.setRoundRadius((int) dp);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        boolean z10 = this.f;
-        Paint paint2 = this.a;
-        if (z10 && this.n != paint.getAlpha()) {
-            int alpha = paint.getAlpha();
-            this.n = alpha;
-            paint2.setAlpha(alpha);
-            paint2.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.i6.m1(this.n / 255.0f, 855638016));
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        Context context = this.c;
+        if (i10 == 0) {
+            FrameLayout m8Var = new org.telegram.ui.Cells.m8(context, 3);
+            m8Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
+            frameLayout = m8Var;
+        } else if (i10 == 1) {
+            FrameLayout e9Var = new org.telegram.ui.Cells.e9(context);
+            e9Var.setBackground(org.telegram.ui.ActionBar.g6.W0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.g6.b7));
+            frameLayout = e9Var;
+        } else if (i10 != 5) {
+            FrameLayout m4Var = new org.telegram.ui.Cells.m4(context);
+            m4Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
+            frameLayout = m4Var;
+        } else {
+            y70 y70Var = this.d;
+            v70 v70Var = new v70(y70Var, context);
+            y70Var.O = v70Var;
+            frameLayout = v70Var;
         }
-        float f10 = this.h + f7;
-        float dp = (((i12 + i14) / 2.0f) + 0.0f) - (AndroidUtilities.dp(this.c) / 2.0f);
-        if (this.f) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(f10, dp, AndroidUtilities.dp(this.c) + f10, AndroidUtilities.dp(this.c) + dp);
-            float f11 = this.d;
-            canvas.drawRoundRect(rectF, f11, f11, paint2);
-        }
-        float dp2 = AndroidUtilities.dp(this.c);
-        float dp3 = AndroidUtilities.dp(this.c);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.setImageCoords(f10, dp, dp2, dp3);
-        imageReceiver.setAlpha(paint.getAlpha() / 255.0f);
-        imageReceiver.draw(canvas);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return AndroidUtilities.dp(this.c);
+        frameLayout.setLayoutParams(new s4.o0(-1, -2));
+        return new org.telegram.ui.Components.wl0(frameLayout);
     }
 }

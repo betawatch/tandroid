@@ -25,14 +25,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class h implements c6.f {
     public static final g6.b k = new g6.b("RemoteMediaClient", null);
     public final Object a;
     public final a0 b;
     public final g6.m c;
-    public final aa.a d;
+    public final androidx.biometric.e d;
     public final c e;
     public f0 f;
     public TaskCompletionSource g;
@@ -49,37 +49,37 @@ public final class h implements c6.f {
         this.j = new ConcurrentHashMap();
         this.a = new Object();
         this.b = new a0(Looper.getMainLooper(), 0);
-        aa.a aVar = new aa.a(this);
-        this.d = aVar;
+        androidx.biometric.e eVar = new androidx.biometric.e(this);
+        this.d = eVar;
         this.c = mVar;
-        mVar.h = new a6.i(this, 18);
-        mVar.c = aVar;
+        mVar.h = new ya.c(this, 17);
+        mVar.c = eVar;
         this.e = new c(this);
     }
 
     public static u t() {
         u uVar = new u(null, 1);
-        uVar.a(new o(new Status(17, null, null, null), 0));
+        uVar.a(new n(new Status(17, null, null, null), 0));
         return uVar;
     }
 
-    public static final void x(p pVar) {
+    public static final void x(o oVar) {
         try {
-            pVar.p();
-        } catch (IllegalArgumentException e7) {
-            throw e7;
+            oVar.p();
+        } catch (IllegalArgumentException e) {
+            throw e;
         } catch (Throwable unused) {
-            pVar.a(new o(new Status(2100, null, null, null), 1));
+            oVar.a(new n(new Status(2100, null, null, null), 1));
         }
     }
 
     public final long a() {
-        long o9;
+        long o10;
         synchronized (this.a) {
             n6.l.e("Must be called from the main thread.");
-            o9 = this.c.o();
+            o10 = this.c.o();
         }
-        return o9;
+        return o10;
     }
 
     public final int b() {
@@ -87,8 +87,8 @@ public final class h implements c6.f {
         synchronized (this.a) {
             try {
                 n6.l.e("Must be called from the main thread.");
-                c6.q e7 = e();
-                i10 = e7 != null ? e7.f : 0;
+                c6.q e = e();
+                i10 = e != null ? e.f : 0;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -98,15 +98,15 @@ public final class h implements c6.f {
 
     public final c6.o c() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e7 = e();
-        if (e7 == null) {
+        c6.q e = e();
+        if (e == null) {
             return null;
         }
-        Integer num = (Integer) e7.N.get(e7.w);
+        Integer num = (Integer) e.N.get(e.w);
         if (num == null) {
             return null;
         }
-        return (c6.o) e7.G.get(num.intValue());
+        return (c6.o) e.G.get(num.intValue());
     }
 
     public final MediaInfo d() {
@@ -133,8 +133,8 @@ public final class h implements c6.f {
         synchronized (this.a) {
             try {
                 n6.l.e("Must be called from the main thread.");
-                c6.q e7 = e();
-                i10 = e7 != null ? e7.e : 1;
+                c6.q e = e();
+                i10 = e != null ? e.e : 1;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -143,14 +143,14 @@ public final class h implements c6.f {
     }
 
     public final long g() {
-        long j3;
+        long j10;
         synchronized (this.a) {
             n6.l.e("Must be called from the main thread.");
             c6.q qVar = this.c.f;
             MediaInfo mediaInfo = qVar == null ? null : qVar.a;
-            j3 = mediaInfo != null ? mediaInfo.e : 0L;
+            j10 = mediaInfo != null ? mediaInfo.e : 0L;
         }
-        return j3;
+        return j10;
     }
 
     public final boolean h() {
@@ -159,14 +159,14 @@ public final class h implements c6.f {
             return true;
         }
         n6.l.e("Must be called from the main thread.");
-        c6.q e7 = e();
-        return (e7 != null && e7.e == 5) || m() || l() || k();
+        c6.q e = e();
+        return (e != null && e.e == 5) || m() || l() || k();
     }
 
     public final boolean i() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e7 = e();
-        return e7 != null && e7.e == 4;
+        c6.q e = e();
+        return e != null && e.e == 4;
     }
 
     public final boolean j() {
@@ -177,17 +177,17 @@ public final class h implements c6.f {
 
     public final boolean k() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e7 = e();
-        return (e7 == null || e7.w == 0) ? false : true;
+        c6.q e = e();
+        return (e == null || e.w == 0) ? false : true;
     }
 
     public final boolean l() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e7 = e();
-        if (e7 == null) {
+        c6.q e = e();
+        if (e == null) {
             return false;
         }
-        if (e7.e != 3) {
+        if (e.e != 3) {
             return j() && b() == 2;
         }
         return true;
@@ -195,14 +195,14 @@ public final class h implements c6.f {
 
     public final boolean m() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e7 = e();
-        return e7 != null && e7.e == 2;
+        c6.q e = e();
+        return e != null && e.e == 2;
     }
 
     public final boolean n() {
         n6.l.e("Must be called from the main thread.");
-        c6.q e7 = e();
-        return e7 != null && e7.H;
+        c6.q e = e();
+        return e != null && e.H;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -258,7 +258,7 @@ public final class h implements c6.f {
                                         JSONArray jSONArray = jSONObject.getJSONArray("items");
                                         c6.o[] oVarArr = new c6.o[jSONArray.length()];
                                         for (int i12 = 0; i12 < jSONArray.length(); i12++) {
-                                            oVarArr[i12] = new a4.l(jSONArray.getJSONObject(i12)).S();
+                                            oVarArr[i12] = new qb.c(jSONArray.getJSONObject(i12)).M();
                                         }
                                         Iterator it = ((h) mVar.h.b).i.iterator();
                                         while (it.hasNext()) {
@@ -417,12 +417,12 @@ public final class h implements c6.f {
                                                 }
                                                 if ((i11 & 32) != 0) {
                                                     mVar.e = SystemClock.elapsedRealtime();
-                                                    a6.i iVar = mVar.h;
-                                                    if (iVar != null) {
-                                                        h hVar = (h) iVar.b;
+                                                    ya.c cVar = mVar.h;
+                                                    if (cVar != null) {
+                                                        h hVar = (h) cVar.b;
                                                         Iterator it11 = hVar.h.iterator();
                                                         if (it11.hasNext()) {
-                                                            throw a1.g.k(it11);
+                                                            throw a1.g.j(it11);
                                                         }
                                                         Iterator it12 = hVar.i.iterator();
                                                         while (it12.hasNext()) {
@@ -556,27 +556,27 @@ public final class h implements c6.f {
                             default:
                                 return;
                         }
-                    } catch (JSONException e7) {
-                        e = e7;
+                    } catch (JSONException e) {
+                        e = e;
                         Object[] objArr = new Object[2];
                         objArr[0] = e.getMessage();
                         objArr[c10] = str;
                         Log.w(str2, bVar.d("Message is malformed (%s); ignoring: %s", objArr));
                     }
-                } catch (JSONException e10) {
-                    e = e10;
+                } catch (JSONException e7) {
+                    e = e7;
                     str2 = str3;
                     Object[] objArr2 = new Object[2];
                     objArr2[0] = e.getMessage();
                     objArr2[c10] = str;
                     Log.w(str2, bVar.d("Message is malformed (%s); ignoring: %s", objArr2));
                 }
-            } catch (JSONException e11) {
-                e = e11;
+            } catch (JSONException e10) {
+                e = e10;
                 c10 = 1;
             }
-        } catch (JSONException e12) {
-            e = e12;
+        } catch (JSONException e11) {
+            e = e11;
             c10 = 1;
             str2 = str3;
         }
@@ -651,10 +651,10 @@ public final class h implements c6.f {
         synchronized (e0Var.C) {
             e0Var.C.put(str, this);
         }
-        v e7 = w.e();
-        e7.c = new c6.a0(e0Var, str, this);
-        e7.a = 8413;
-        e0Var.e(1, e7.a());
+        v b10 = w.b();
+        b10.c = new c6.a0(e0Var, str, this);
+        b10.a = 8413;
+        e0Var.e(1, b10.a());
         n6.l.e("Must be called from the main thread.");
         if (w()) {
             x(new j(this, 0));
@@ -681,10 +681,10 @@ public final class h implements c6.f {
             synchronized (e0Var2.C) {
                 fVar = (c6.f) e0Var2.C.remove(str);
             }
-            v e7 = w.e();
-            e7.c = new c6.a0(e0Var2, fVar, str);
-            e7.a = 8414;
-            e0Var2.e(1, e7.a());
+            v b10 = w.b();
+            b10.c = new c6.a0(e0Var2, fVar, str);
+            b10.a = 8414;
+            e0Var2.e(1, b10.a());
             this.d.b = null;
             this.b.removeCallbacksAndMessages(null);
         }

@@ -1,42 +1,45 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.os.Bundle;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.play.core.integrity.IntegrityTokenResponse;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qd0 implements org.telegram.ui.Components.rw0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+public final /* synthetic */ class qd0 implements OnSuccessListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ bh0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ TLRPC.auth_SentCode d;
+    public final /* synthetic */ Bundle e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ qd0(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.a = i10;
-        this.b = n2Var;
+    public /* synthetic */ qd0(bh0 bh0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z10) {
+        this.b = bh0Var;
+        this.e = bundle;
+        this.d = auth_sentcode;
+        this.c = str;
+        this.f = z10;
     }
 
-    @Override // org.telegram.ui.Components.rw0
-    public final void H(int i10, boolean z10) {
-        lg0 lg0Var;
-        ol0 ol0Var;
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public final void onSuccess(Object obj) {
         switch (this.a) {
             case 0:
-                wg0 wg0Var = (wg0) this.b;
-                if (i10 > AndroidUtilities.dp(20.0f) && wg0Var.h1()) {
-                    AndroidUtilities.hideKeyboard(wg0Var.fragmentView);
-                }
-                if (i10 <= AndroidUtilities.dp(20.0f) && (lg0Var = wg0Var.T) != null) {
-                    lg0Var.run();
-                    wg0Var.T = null;
-                    break;
-                }
+                bh0.X(this.b, this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
                 break;
             default:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
-                if (i10 >= AndroidUtilities.dp(20.0f) && (ol0Var = passcodeActivity.T) != null) {
-                    ol0Var.run();
-                    passcodeActivity.T = null;
-                    break;
-                }
+                bh0.V(this.b, this.c, this.d, this.e, this.f, (m8.d) obj);
                 break;
         }
+    }
+
+    public /* synthetic */ qd0(bh0 bh0Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z10) {
+        this.b = bh0Var;
+        this.c = str;
+        this.d = auth_sentcode;
+        this.e = bundle;
+        this.f = z10;
     }
 }

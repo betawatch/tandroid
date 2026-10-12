@@ -1,35 +1,28 @@
 package yh;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
+    public final /* synthetic */ f4 b;
 
-    public /* synthetic */ x3(int i10, Utilities.Callback2 callback2) {
+    public /* synthetic */ x3(f4 f4Var, int i10) {
         this.a = i10;
-        this.b = callback2;
+        this.b = f4Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                FileLog.d("StarsController.buy onCanceled");
-                AndroidUtilities.runOnUIThread(new x3(1, this.b));
-                break;
-            case 1:
-                this.b.run(Boolean.FALSE, null);
-                break;
-            case 2:
-                this.b.run(Boolean.FALSE, "PRODUCT_NOT_FOUND");
+                this.b.a0();
                 break;
             default:
-                this.b.run(Boolean.FALSE, "PRODUCT_NO_ONETIME_OFFER_DETAILS");
+                f4 f4Var = this.b;
+                f4Var.i0.N(true);
+                AndroidUtilities.runOnUIThread(new x3(f4Var, 0), 150L);
                 break;
         }
     }

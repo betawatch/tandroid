@@ -1,44 +1,38 @@
 package yh;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.Utilities;
+import zh.f7;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n4 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class n4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
-    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ x4 b;
 
-    public /* synthetic */ n4(Utilities.Callback2 callback2, boolean[] zArr, int i10) {
+    public /* synthetic */ n4(x4 x4Var, int i10) {
         this.a = i10;
-        this.b = callback2;
-        this.c = zArr;
+        this.b = x4Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                Utilities.Callback2 callback2 = this.b;
-                if (callback2 != null && !this.c[0]) {
-                    callback2.run(0L, Boolean.FALSE);
-                    break;
-                }
+                this.b.Z(false);
                 break;
             case 1:
-                Utilities.Callback2 callback22 = this.b;
-                if (callback22 != null && !this.c[0]) {
-                    callback22.run(Boolean.FALSE, null);
-                    break;
-                }
+                this.b.Z(true);
+                break;
+            case 2:
+                x4.V(this.b);
+                break;
+            case 3:
+                w.V(r0.getContext(), r0.c0, this.b.resourcesProvider);
+                break;
+            case 4:
+                new f7(r0.getContext(), this.b.resourcesProvider).show();
                 break;
             default:
-                Utilities.Callback2 callback23 = this.b;
-                if (callback23 != null && !this.c[0]) {
-                    callback23.run(Boolean.FALSE, null);
-                    break;
-                }
+                this.b.dismiss();
                 break;
         }
     }

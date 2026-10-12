@@ -1,27 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cj implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ kj a;
+public final class cj extends FragmentContextView {
+    public final /* synthetic */ FrameLayout R0;
+    public final /* synthetic */ hj S0;
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.P((p61) obj, (View) obj2);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cj(hj hjVar, Context context, org.telegram.ui.ActionBar.m2 m2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.c6 c6Var, FrameLayout frameLayout2) {
+        super(context, m2Var, frameLayout, false, c6Var);
+        this.S0 = hjVar;
+        this.R0 = frameLayout2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.P((p61) obj, (View) obj2);
-        return Boolean.TRUE;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        this.S0.x.i(this.R0, i10 == 0, true);
     }
 }

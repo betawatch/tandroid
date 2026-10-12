@@ -1,33 +1,21 @@
 package yh;
 
-import org.telegram.ui.TwoStepVerificationActivity;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.c6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g b;
-    public final /* synthetic */ TwoStepVerificationActivity c;
+public final class c extends FrameLayout {
+    public static final /* synthetic */ int c = 0;
+    public final c6 a;
+    public final int b;
 
-    public /* synthetic */ c(g gVar, TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
-        this.a = i10;
-        this.b = gVar;
-        this.c = twoStepVerificationActivity;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                g gVar = this.b;
-                gVar.Y.setLoading(false);
-                gVar.presentFragment(this.c);
-                break;
-            default:
-                g gVar2 = this.b;
-                gVar2.R.setLoading(false);
-                gVar2.presentFragment(this.c);
-                break;
-        }
+    public c(Context context, int i10, c6 c6Var) {
+        super(context);
+        this.b = i10;
+        this.a = c6Var;
+        setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f));
     }
 }

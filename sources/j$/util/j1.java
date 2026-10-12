@@ -12,12 +12,12 @@ public final class j1 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ long getExactSizeIfKnown() {
-        return j$.com.android.tools.r8.a.n(this);
+        return j$.com.android.tools.r8.a.m(this);
     }
 
     @Override // j$.util.Spliterator
     public final /* synthetic */ boolean hasCharacteristics(int i10) {
-        return j$.com.android.tools.r8.a.p(this, i10);
+        return j$.com.android.tools.r8.a.o(this, i10);
     }
 
     public j1(Object[] objArr, int i10, int i11, int i12) {
@@ -81,7 +81,7 @@ public final class j1 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final Comparator getComparator() {
-        if (j$.com.android.tools.r8.a.p(this, 4)) {
+        if (j$.com.android.tools.r8.a.o(this, 4)) {
             return null;
         }
         throw new IllegalStateException();

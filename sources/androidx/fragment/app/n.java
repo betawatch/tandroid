@@ -1,23 +1,43 @@
 package androidx.fragment.app;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
+import android.view.View;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class n implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ p a;
+public final class n extends v7.x {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ r b;
 
-    public n(p pVar) {
-        this.a = pVar;
+    public n(o oVar, n nVar) {
+        this.b = oVar;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        p pVar = this.a;
-        Dialog dialog = pVar.v0;
-        if (dialog != null) {
-            pVar.onDismiss(dialog);
+    @Override // v7.x
+    public final View b(int i10) {
+        switch (this.a) {
+            case 0:
+                Dialog dialog = ((o) this.b).v0;
+                if (dialog != null) {
+                    return dialog.findViewById(i10);
+                }
+                return null;
+            default:
+                throw new IllegalStateException("Fragment " + this.b + " does not have a view");
         }
+    }
+
+    @Override // v7.x
+    public final boolean c() {
+        switch (this.a) {
+            case 0:
+                return ((o) this.b).z0;
+            default:
+                return false;
+        }
+    }
+
+    public n(r rVar) {
+        this.b = rVar;
     }
 }

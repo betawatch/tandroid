@@ -1,15 +1,46 @@
 package rg;
 
-import android.animation.ValueAnimator;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class r {
-    public boolean a;
-    public final ArrayList b = new ArrayList();
-    public float c;
-    public boolean d;
-    public float e;
-    public ValueAnimator f;
+public final /* synthetic */ class r implements o1.f {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o0 b;
+    public final /* synthetic */ boolean c;
+
+    public /* synthetic */ r(o0 o0Var, boolean z10, int i10) {
+        this.a = i10;
+        this.b = o0Var;
+        this.c = z10;
+    }
+
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                o0 o0Var = this.b;
+                v1 v1Var = o0Var.v1;
+                if (hVar == o0Var.F1) {
+                    o0Var.F1 = null;
+                    if (!this.c) {
+                        v1Var.setVisibility(8);
+                    }
+                    v1Var.setMaskProvider(null);
+                    break;
+                }
+                break;
+            default:
+                o0 o0Var2 = this.b;
+                k0 k0Var = o0Var2.G1;
+                if (hVar == o0Var2.M1) {
+                    o0Var2.M1 = null;
+                    if (!this.c) {
+                        k0Var.setVisibility(8);
+                        qg.s0.e(o0Var2.P1).g();
+                        k0Var.getAdapter().l();
+                        break;
+                    }
+                }
+                break;
+        }
+    }
 }

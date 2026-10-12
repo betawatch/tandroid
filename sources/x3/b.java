@@ -2,11 +2,12 @@ package x3;
 
 import c3.b0;
 import c3.p;
-import e2.d0;
+import e2.m0;
 import java.io.EOFException;
 import java.io.IOException;
+import v7.u6;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final f a;
@@ -22,18 +23,28 @@ public final class b implements g {
     public long v;
     public long w;
 
-    public b(i iVar, long j3, long j10, long j11, long j12, boolean z10) {
-        e2.d.b(j3 >= 0 && j10 > j3);
+    public b(i iVar, long j10, long j11, long j12, long j13, boolean z10) {
+        u6.g(j10 >= 0 && j11 > j10);
         this.d = iVar;
-        this.b = j3;
-        this.c = j10;
-        if (j11 == j10 - j3 || z10) {
-            this.f = j12;
+        this.b = j10;
+        this.c = j11;
+        if (j12 == j11 - j10 || z10) {
+            this.f = j13;
             this.e = 4;
         } else {
             this.e = 0;
         }
         this.a = new f();
+    }
+
+    @Override // x3.g
+    public final void W(long j10) {
+        this.n = m0.j(j10, 0L, this.f - 1);
+        this.e = 2;
+        this.r = this.b;
+        this.s = this.c;
+        this.v = 0L;
+        this.w = this.f;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:26:0x00c3 A[RETURN] */
@@ -42,80 +53,80 @@ public final class b implements g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long c(p pVar) {
-        long j3;
+    public final long k(p pVar) {
         long j10;
-        long i10;
-        int i11 = this.e;
-        long j11 = this.c;
+        long j11;
+        long j12;
+        int i10 = this.e;
+        long j13 = this.c;
         f fVar = this.a;
-        if (i11 == 0) {
-            j3 = 0;
+        if (i10 == 0) {
+            j10 = 0;
             long position = pVar.getPosition();
             this.h = position;
             this.e = 1;
-            long j12 = j11 - 65307;
-            if (j12 > position) {
-                return j12;
+            long j14 = j13 - 65307;
+            if (j14 > position) {
+                return j14;
             }
-        } else if (i11 != 1) {
-            if (i11 == 2) {
+        } else if (i10 != 1) {
+            if (i10 == 2) {
                 if (this.r == this.s) {
-                    i10 = -1;
+                    j12 = -1;
                 } else {
                     long position2 = pVar.getPosition();
                     if (fVar.b(pVar, this.s)) {
                         fVar.a(pVar, false);
                         pVar.q();
-                        long j13 = this.n;
-                        long j14 = fVar.b;
-                        long j15 = j13 - j14;
-                        j10 = 2;
-                        int i12 = fVar.d + fVar.e;
-                        if (0 > j15 || j15 >= 72000) {
-                            if (j15 < 0) {
+                        long j15 = this.n;
+                        long j16 = fVar.b;
+                        long j17 = j15 - j16;
+                        j11 = 2;
+                        int i11 = fVar.d + fVar.e;
+                        if (0 > j17 || j17 >= 72000) {
+                            if (j17 < 0) {
                                 this.s = position2;
-                                this.w = j14;
+                                this.w = j16;
                             } else {
-                                this.r = pVar.getPosition() + i12;
+                                this.r = pVar.getPosition() + i11;
                                 this.v = fVar.b;
                             }
-                            long j16 = this.s;
-                            long j17 = this.r;
-                            if (j16 - j17 < 100000) {
-                                this.s = j17;
-                                i10 = j17;
+                            long j18 = this.s;
+                            long j19 = this.r;
+                            if (j18 - j19 < 100000) {
+                                this.s = j19;
+                                j12 = j19;
                             } else {
-                                long position3 = pVar.getPosition() - (i12 * (j15 <= 0 ? 2L : 1L));
-                                long j18 = this.s;
-                                long j19 = this.r;
-                                i10 = d0.i((((j18 - j19) * j15) / (this.w - this.v)) + position3, j19, j18 - 1);
+                                long position3 = pVar.getPosition() - (i11 * (j17 <= 0 ? 2L : 1L));
+                                long j20 = this.s;
+                                long j21 = this.r;
+                                j12 = m0.j((((j20 - j21) * j17) / (this.w - this.v)) + position3, j21, j20 - 1);
                             }
                         } else {
-                            i10 = -1;
+                            j12 = -1;
                         }
-                        if (i10 == -1) {
-                            return i10;
+                        if (j12 == -1) {
+                            return j12;
                         }
                         this.e = 3;
                     } else {
-                        i10 = this.r;
-                        if (i10 == position2) {
+                        j12 = this.r;
+                        if (j12 == position2) {
                             throw new IOException("No ogg page can be found.");
                         }
                     }
                 }
-                j10 = 2;
-                if (i10 == -1) {
+                j11 = 2;
+                if (j12 == -1) {
                 }
             } else {
-                if (i11 != 3) {
-                    if (i11 == 4) {
+                if (i10 != 3) {
+                    if (i10 == 4) {
                         return -1L;
                     }
                     throw new IllegalStateException();
                 }
-                j10 = 2;
+                j11 = 2;
             }
             while (true) {
                 fVar.b(pVar, -1L);
@@ -123,17 +134,17 @@ public final class b implements g {
                 if (fVar.b > this.n) {
                     pVar.q();
                     this.e = 4;
-                    return -(this.v + j10);
+                    return -(this.v + j11);
                 }
                 pVar.r(fVar.d + fVar.e);
                 this.r = pVar.getPosition();
                 this.v = fVar.b;
             }
         } else {
-            j3 = 0;
+            j10 = 0;
         }
         fVar.a = 0;
-        fVar.b = j3;
+        fVar.b = j10;
         fVar.c = 0;
         fVar.d = 0;
         fVar.e = 0;
@@ -142,34 +153,24 @@ public final class b implements g {
         }
         fVar.a(pVar, false);
         pVar.r(fVar.d + fVar.e);
-        long j20 = fVar.b;
-        while ((fVar.a & 4) != 4 && fVar.b(pVar, -1L) && pVar.getPosition() < j11 && fVar.a(pVar, true)) {
+        long j22 = fVar.b;
+        while ((fVar.a & 4) != 4 && fVar.b(pVar, -1L) && pVar.getPosition() < j13 && fVar.a(pVar, true)) {
             try {
                 pVar.r(fVar.d + fVar.e);
-                j20 = fVar.b;
+                j22 = fVar.b;
             } catch (EOFException unused) {
             }
         }
-        this.f = j20;
+        this.f = j22;
         this.e = 4;
         return this.h;
     }
 
     @Override // x3.g
-    public final b0 d() {
+    public final b0 v() {
         if (this.f != 0) {
             return new a(this);
         }
         return null;
-    }
-
-    @Override // x3.g
-    public final void l(long j3) {
-        this.n = d0.i(j3, 0L, this.f - 1);
-        this.e = 2;
-        this.r = this.b;
-        this.s = this.c;
-        this.v = 0L;
-        this.w = this.f;
     }
 }

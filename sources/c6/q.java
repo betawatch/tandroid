@@ -14,9 +14,10 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import v7.t7;
+import v7.r7;
+import w7.g0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class q extends o6.a {
     public static final Parcelable.Creator<q> CREATOR;
@@ -51,15 +52,15 @@ public final class q extends o6.a {
         CREATOR = new v(15);
     }
 
-    public q(MediaInfo mediaInfo, long j3, int i10, double d, int i11, int i12, long j10, long j11, double d10, boolean z10, long[] jArr, int i13, int i14, String str, int i15, ArrayList arrayList, boolean z11, c cVar, u uVar, j jVar, n nVar) {
+    public q(MediaInfo mediaInfo, long j10, int i10, double d, int i11, int i12, long j11, long j12, double d10, boolean z10, long[] jArr, int i13, int i14, String str, int i15, ArrayList arrayList, boolean z11, c cVar, u uVar, j jVar, n nVar) {
         this.a = mediaInfo;
-        this.b = j3;
+        this.b = j10;
         this.c = i10;
         this.d = d;
         this.e = i11;
         this.f = i12;
-        this.h = j10;
-        this.n = j11;
+        this.h = j11;
+        this.n = j12;
         this.r = d10;
         this.s = z10;
         this.v = jArr;
@@ -154,7 +155,7 @@ public final class q extends o6.a {
     */
     public final int b(int i10, JSONObject jSONObject) {
         JSONObject jSONObject2;
-        long j3;
+        long j10;
         int i11;
         double d;
         JSONArray jSONArray;
@@ -217,10 +218,10 @@ public final class q extends o6.a {
                 jSONObject2.remove("extendedStatus");
             } catch (JSONException unused) {
             }
-            j3 = jSONObject2.getLong("mediaSessionId");
+            j10 = jSONObject2.getLong("mediaSessionId");
             int i27 = 1;
-            if (j3 == this.b) {
-                this.b = j3;
+            if (j10 == this.b) {
+                this.b = j10;
                 i11 = 1;
             } else {
                 i11 = 0;
@@ -252,17 +253,17 @@ public final class q extends o6.a {
             if (jSONObject2.has("currentTime")) {
                 double d11 = jSONObject2.getDouble("currentTime");
                 Pattern pattern = g6.a.a;
-                long j10 = (long) (d11 * 1000.0d);
-                if (j10 != this.h) {
-                    this.h = j10;
+                long j11 = (long) (d11 * 1000.0d);
+                if (j11 != this.h) {
+                    this.h = j11;
                     i11 |= 2;
                 }
                 i11 |= 128;
             }
             if (jSONObject2.has("supportedMediaCommands")) {
-                long j11 = jSONObject2.getLong("supportedMediaCommands");
-                if (j11 != this.n) {
-                    this.n = j11;
+                long j12 = jSONObject2.getLong("supportedMediaCommands");
+                if (j12 != this.n) {
+                    this.n = j12;
                     i11 |= 2;
                 }
             }
@@ -358,18 +359,18 @@ public final class q extends o6.a {
                         i16 = i11;
                         optJSONObject = jSONObject2.optJSONObject("breakStatus");
                         Parcelable.Creator<c> creator = c.CREATOR;
-                        long j12 = -1;
+                        long j13 = -1;
                         if (optJSONObject != null) {
-                            long j13 = optJSONObject.getLong("currentBreakTime");
+                            long j14 = optJSONObject.getLong("currentBreakTime");
                             Pattern pattern3 = g6.a.a;
-                            long j14 = j13 * 1000;
-                            long j15 = optJSONObject.getLong("currentBreakClipTime") * 1000;
+                            long j15 = j14 * 1000;
+                            long j16 = optJSONObject.getLong("currentBreakClipTime") * 1000;
                             String a10 = g6.a.a("breakId", optJSONObject);
                             String a11 = g6.a.a("breakClipId", optJSONObject);
                             optLong = optJSONObject.optLong("whenSkippable", -1L);
                             if (optLong != -1) {
                             }
-                            cVar = new c(j14, j15, a10, a11, optLong);
+                            cVar = new c(j15, j16, a10, a11, optLong);
                             cVar2 = this.I;
                             if (cVar2 == null) {
                             }
@@ -429,23 +430,23 @@ public final class q extends o6.a {
                     i15 = 2;
                     optJSONObject = jSONObject2.optJSONObject("breakStatus");
                     Parcelable.Creator<c> creator2 = c.CREATOR;
-                    long j122 = -1;
+                    long j132 = -1;
                     if (optJSONObject != null && optJSONObject.has("currentBreakTime") && optJSONObject.has("currentBreakClipTime")) {
                         try {
-                            long j132 = optJSONObject.getLong("currentBreakTime");
+                            long j142 = optJSONObject.getLong("currentBreakTime");
                             Pattern pattern32 = g6.a.a;
-                            long j142 = j132 * 1000;
-                            long j152 = optJSONObject.getLong("currentBreakClipTime") * 1000;
+                            long j152 = j142 * 1000;
+                            long j162 = optJSONObject.getLong("currentBreakClipTime") * 1000;
                             String a102 = g6.a.a("breakId", optJSONObject);
                             String a112 = g6.a.a("breakClipId", optJSONObject);
                             optLong = optJSONObject.optLong("whenSkippable", -1L);
                             if (optLong != -1) {
                                 optLong *= 1000;
                             }
-                            cVar = new c(j142, j152, a102, a112, optLong);
-                        } catch (JSONException e7) {
+                            cVar = new c(j152, j162, a102, a112, optLong);
+                        } catch (JSONException e) {
                             g6.b bVar3 = c.f;
-                            Log.e(bVar3.a, bVar3.d("Error while creating an AdBreakClipInfo from JSON", new Object[0]), e7);
+                            Log.e(bVar3.a, bVar3.d("Error while creating an AdBreakClipInfo from JSON", new Object[0]), e);
                         }
                         cVar2 = this.I;
                         if ((cVar2 == null && cVar != null) || (cVar2 != null && !cVar2.equals(cVar))) {
@@ -495,8 +496,8 @@ public final class q extends o6.a {
                                         bVar22.b("Unknown HDR type: %s", objArr22);
                                         i18 = 0;
                                         uVar = new u(optJSONObject2.getInt("width"), optJSONObject2.getInt("height"), i18);
-                                    } catch (JSONException e10) {
-                                        e = e10;
+                                    } catch (JSONException e7) {
+                                        e = e7;
                                         bVar22.a(e, "Error while creating a VideoInfo instance from JSON", new Object[0]);
                                         uVar = null;
                                         uVar2 = this.J;
@@ -527,8 +528,8 @@ public final class q extends o6.a {
                                     i18 = 0;
                                     uVar = new u(optJSONObject2.getInt("width"), optJSONObject2.getInt("height"), i18);
                                 }
-                            } catch (JSONException e11) {
-                                e = e11;
+                            } catch (JSONException e10) {
+                                e = e10;
                                 i17 = i14;
                             }
                             uVar2 = this.J;
@@ -703,7 +704,7 @@ public final class q extends o6.a {
                                         i22 = i21;
                                         mVar = null;
                                     }
-                                    Integer a15 = t7.a(jSONObject5.optString("repeatMode"));
+                                    Integer a15 = r7.a(jSONObject5.optString("repeatMode"));
                                     int intValue = a15 != null ? a15.intValue() : 0;
                                     JSONArray optJSONArray3 = jSONObject5.optJSONArray("items");
                                     if (optJSONArray3 != null) {
@@ -724,10 +725,10 @@ public final class q extends o6.a {
                                     long optDouble3 = jSONObject5.has("startTime") ? (long) (jSONObject5.optDouble("startTime", -1L) * d13) : -1L;
                                     optBoolean = jSONObject5.optBoolean("shuffle");
                                     arrayList2 = arrayList;
-                                    long j16 = optDouble3;
+                                    long j17 = optDouble3;
                                     i23 = optInt3;
                                     i24 = intValue;
-                                    j122 = j16;
+                                    j132 = j17;
                                     str3 = str2;
                                     str4 = str;
                                 }
@@ -740,7 +741,7 @@ public final class q extends o6.a {
                                 nVar.f = i24;
                                 nVar.h = arrayList2;
                                 nVar.n = i23;
-                                nVar.r = j122;
+                                nVar.r = j132;
                                 nVar.s = optBoolean;
                                 this.L = nVar;
                                 if (this.M != optBoolean) {
@@ -856,7 +857,7 @@ public final class q extends o6.a {
                 }
             }
             if (jSONObject2.has("repeatMode")) {
-                Integer a16 = t7.a(jSONObject2.getString("repeatMode"));
+                Integer a16 = r7.a(jSONObject2.getString("repeatMode"));
                 int intValue2 = a16 == null ? this.F : a16.intValue();
                 if (this.F != intValue2) {
                     this.F = intValue2;
@@ -890,9 +891,9 @@ public final class q extends o6.a {
                             } else if (num.intValue() != this.c || (mediaInfo = this.a) == null) {
                                 arrayList7.add(new o(jSONObject6));
                             } else {
-                                o S = new a4.l(mediaInfo).S();
-                                S.b(jSONObject6);
-                                arrayList7.add(S);
+                                o M = new qb.c(mediaInfo).M();
+                                M.b(jSONObject6);
+                                arrayList7.add(M);
                             }
                             i13 = i41;
                             i40++;
@@ -911,7 +912,7 @@ public final class q extends o6.a {
                     i16 = i11;
                     optJSONObject = jSONObject2.optJSONObject("breakStatus");
                     Parcelable.Creator<c> creator22 = c.CREATOR;
-                    long j1222 = -1;
+                    long j1322 = -1;
                     if (optJSONObject != null) {
                     }
                     cVar = null;
@@ -949,7 +950,7 @@ public final class q extends o6.a {
             i16 = i11;
             optJSONObject = jSONObject2.optJSONObject("breakStatus");
             Parcelable.Creator<c> creator222 = c.CREATOR;
-            long j12222 = -1;
+            long j13222 = -1;
             if (optJSONObject != null) {
             }
             cVar = null;
@@ -979,9 +980,9 @@ public final class q extends o6.a {
             return i20;
         }
         jSONObject2 = jSONObject;
-        j3 = jSONObject2.getLong("mediaSessionId");
+        j10 = jSONObject2.getLong("mediaSessionId");
         int i272 = 1;
-        if (j3 == this.b) {
+        if (j10 == this.b) {
         }
         int i282 = 2;
         if (jSONObject2.has("playerState")) {
@@ -1037,7 +1038,7 @@ public final class q extends o6.a {
         i16 = i11;
         optJSONObject = jSONObject2.optJSONObject("breakStatus");
         Parcelable.Creator<c> creator2222 = c.CREATOR;
-        long j122222 = -1;
+        long j132222 = -1;
         if (optJSONObject != null) {
         }
         cVar = null;
@@ -1103,54 +1104,54 @@ public final class q extends o6.a {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.E;
         this.y = jSONObject == null ? null : jSONObject.toString();
-        int q6 = w7.d0.q(parcel, 20293);
-        w7.d0.k(parcel, 2, this.a, i10);
-        long j3 = this.b;
-        w7.d0.s(parcel, 3, 8);
-        parcel.writeLong(j3);
+        int q6 = g0.q(parcel, 20293);
+        g0.k(parcel, 2, this.a, i10);
+        long j10 = this.b;
+        g0.s(parcel, 3, 8);
+        parcel.writeLong(j10);
         int i11 = this.c;
-        w7.d0.s(parcel, 4, 4);
+        g0.s(parcel, 4, 4);
         parcel.writeInt(i11);
         double d = this.d;
-        w7.d0.s(parcel, 5, 8);
+        g0.s(parcel, 5, 8);
         parcel.writeDouble(d);
         int i12 = this.e;
-        w7.d0.s(parcel, 6, 4);
+        g0.s(parcel, 6, 4);
         parcel.writeInt(i12);
         int i13 = this.f;
-        w7.d0.s(parcel, 7, 4);
+        g0.s(parcel, 7, 4);
         parcel.writeInt(i13);
-        long j10 = this.h;
-        w7.d0.s(parcel, 8, 8);
-        parcel.writeLong(j10);
-        long j11 = this.n;
-        w7.d0.s(parcel, 9, 8);
+        long j11 = this.h;
+        g0.s(parcel, 8, 8);
         parcel.writeLong(j11);
+        long j12 = this.n;
+        g0.s(parcel, 9, 8);
+        parcel.writeLong(j12);
         double d10 = this.r;
-        w7.d0.s(parcel, 10, 8);
+        g0.s(parcel, 10, 8);
         parcel.writeDouble(d10);
         boolean z10 = this.s;
-        w7.d0.s(parcel, 11, 4);
+        g0.s(parcel, 11, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        w7.d0.j(parcel, 12, this.v);
+        g0.j(parcel, 12, this.v);
         int i14 = this.w;
-        w7.d0.s(parcel, 13, 4);
+        g0.s(parcel, 13, 4);
         parcel.writeInt(i14);
         int i15 = this.x;
-        w7.d0.s(parcel, 14, 4);
+        g0.s(parcel, 14, 4);
         parcel.writeInt(i15);
-        w7.d0.l(parcel, 15, this.y);
+        g0.l(parcel, 15, this.y);
         int i16 = this.F;
-        w7.d0.s(parcel, 16, 4);
+        g0.s(parcel, 16, 4);
         parcel.writeInt(i16);
-        w7.d0.p(parcel, 17, this.G);
+        g0.p(parcel, 17, this.G);
         boolean z11 = this.H;
-        w7.d0.s(parcel, 18, 4);
+        g0.s(parcel, 18, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        w7.d0.k(parcel, 19, this.I, i10);
-        w7.d0.k(parcel, 20, this.J, i10);
-        w7.d0.k(parcel, 21, this.K, i10);
-        w7.d0.k(parcel, 22, this.L, i10);
-        w7.d0.r(parcel, q6);
+        g0.k(parcel, 19, this.I, i10);
+        g0.k(parcel, 20, this.J, i10);
+        g0.k(parcel, 21, this.K, i10);
+        g0.k(parcel, 22, this.L, i10);
+        g0.r(parcel, q6);
     }
 }

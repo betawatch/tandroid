@@ -1,75 +1,133 @@
 package w7;
 
-import android.graphics.Matrix;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class k6 {
-    public static float[] a(Matrix matrix) {
-        float[] fArr = new float[9];
-        matrix.getValues(fArr);
-        return new float[]{fArr[0], fArr[1], 0.0f, 0.0f, fArr[3], fArr[4], 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, fArr[2], fArr[5], 0.0f, 1.0f};
-    }
-
-    public static float[] b(float f7, float f10) {
-        float f11 = f7 - 0.0f;
-        float f12 = f10 - 0.0f;
-        return new float[]{2.0f / f11, 0.0f, 0.0f, 0.0f, 0.0f, 2.0f / f12, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, (-(f7 + 0.0f)) / f11, (-(f10 + 0.0f)) / f12, -0.0f, 1.0f};
-    }
-
-    public static float[] c(float[] fArr, float[] fArr2) {
-        float f7 = fArr[0];
-        float f10 = fArr2[0];
-        float f11 = fArr[4];
-        float f12 = fArr2[1];
-        float f13 = fArr[8];
-        float f14 = fArr2[2];
-        float f15 = fArr[12];
-        float f16 = fArr2[3];
-        float f17 = f15 * f16;
-        float f18 = f17 + (f13 * f14) + (f11 * f12) + (f7 * f10);
-        float f19 = fArr[1];
-        float f20 = fArr[5];
-        float f21 = fArr[9];
-        float f22 = fArr[13];
-        float f23 = f22 * f16;
-        float f24 = f23 + (f21 * f14) + (f20 * f12) + (f19 * f10);
-        float f25 = fArr[2];
-        float f26 = fArr[6];
-        float f27 = fArr[10];
-        float f28 = fArr[14];
-        float f29 = f28 * f16;
-        float f30 = f29 + (f27 * f14) + (f26 * f12) + (f25 * f10);
-        float f31 = fArr[3];
-        float f32 = fArr[7];
-        float f33 = fArr[11];
-        float f34 = fArr[15];
-        float f35 = f16 * f34;
-        float f36 = f35 + (f14 * f33) + (f12 * f32) + (f10 * f31);
-        float f37 = fArr2[4];
-        float f38 = fArr2[5];
-        float f39 = fArr2[6];
-        float f40 = fArr2[7];
-        float f41 = (f15 * f40) + (f13 * f39) + (f11 * f38) + (f7 * f37);
-        float f42 = (f22 * f40) + (f21 * f39) + (f20 * f38) + (f19 * f37);
-        float f43 = (f28 * f40) + (f27 * f39) + (f26 * f38) + (f25 * f37);
-        float f44 = f40 * f34;
-        float f45 = f44 + (f39 * f33) + (f38 * f32) + (f37 * f31);
-        float f46 = fArr2[8];
-        float f47 = fArr2[9];
-        float f48 = fArr2[10];
-        float f49 = fArr2[11];
-        float f50 = (f15 * f49) + (f13 * f48) + (f11 * f47) + (f7 * f46);
-        float f51 = (f22 * f49) + (f21 * f48) + (f20 * f47) + (f19 * f46);
-        float f52 = (f28 * f49) + (f27 * f48) + (f26 * f47) + (f25 * f46);
-        float f53 = f49 * f34;
-        float f54 = f53 + (f48 * f33) + (f47 * f32) + (f46 * f31);
-        float f55 = fArr2[12];
-        float f56 = fArr2[13];
-        float f57 = (f11 * f56) + (f7 * f55);
-        float f58 = fArr2[14];
-        float f59 = (f13 * f58) + f57;
-        float f60 = fArr2[15];
-        return new float[]{f18, f24, f30, f36, f41, f42, f43, f45, f50, f51, f52, f54, (f15 * f60) + f59, (f22 * f60) + (f21 * f58) + (f20 * f56) + (f19 * f55), (f28 * f60) + (f27 * f58) + (f26 * f56) + (f25 * f55), (f34 * f60) + (f33 * f58) + (f32 * f56) + (f31 * f55)};
+    public static void a(float[] fArr, int i10, int i11, float f7, float f10, float f11, float f12, int i12, int i13, boolean z10, int[] iArr, float[] fArr2) {
+        double d;
+        double d10;
+        double d11;
+        double d12;
+        double d13;
+        double d14;
+        fArr2[1] = Float.POSITIVE_INFINITY;
+        fArr2[0] = Float.POSITIVE_INFINITY;
+        iArr[1] = 0;
+        iArr[0] = 0;
+        iArr[2] = i10;
+        iArr[3] = i11;
+        if (i10 <= 0 || i11 <= 0) {
+            return;
+        }
+        double d15 = fArr[8];
+        double d16 = d15 * 2.0d;
+        double d17 = fArr[4];
+        double d18 = d17 * (-1.219512d);
+        double d19 = (((d17 * 0.609756d) + (fArr[0] * (-0.012500000186264515d))) - d15) + fArr[12];
+        double d20 = fArr[9];
+        double d21 = d20 * 2.0d;
+        double d22 = fArr[5];
+        double d23 = d22 * (-1.219512d);
+        double d24 = (((d22 * 0.609756d) + (fArr[1] * (-0.012500000186264515d))) - d20) + fArr[13];
+        double d25 = fArr[11];
+        double d26 = d25 * 2.0d;
+        double d27 = fArr[7];
+        double d28 = (-1.219512d) * d27;
+        double d29 = (((d27 * 0.609756d) + (fArr[3] * (-0.012500000186264515d))) - d25) + fArr[15];
+        double d30 = (d23 * d29) - (d24 * d28);
+        double d31 = d21 * d29;
+        double d32 = d24 * d26;
+        double d33 = (d21 * d28) - (d23 * d26);
+        double d34 = (d19 * d33) + ((d16 * d30) - ((d31 - d32) * d18));
+        if (Math.abs(d34) < 1.0E-12d) {
+            return;
+        }
+        double d35 = d30 / d34;
+        double d36 = ((d19 * d28) - (d18 * d29)) / d34;
+        double d37 = ((d18 * d24) - (d19 * d23)) / d34;
+        double d38 = (d32 - d31) / d34;
+        double d39 = ((d16 * d29) - (d19 * d26)) / d34;
+        double d40 = ((d19 * d21) - (d16 * d24)) / d34;
+        double d41 = d33 / d34;
+        double d42 = ((d18 * d26) - (d16 * d28)) / d34;
+        double d43 = ((d16 * d23) - (d18 * d21)) / d34;
+        double d44 = i10;
+        double d45 = (4.0d / d44) + 1.0d;
+        double d46 = i11;
+        double d47 = (4.0d / d46) + 1.0d;
+        double abs = (d43 - (Math.abs(d41) * d45)) - (Math.abs(d42) * d47);
+        if (abs <= 1.0E-9d) {
+            return;
+        }
+        double d48 = abs * abs;
+        double d49 = d35 * d42;
+        double d50 = d41 * d36;
+        double abs2 = ((((Math.abs((d36 * d43) - (d37 * d42)) + (Math.abs(d50 - d49) * d45)) * 2.0d) / d46) + (((Math.abs((d35 * d43) - (d41 * d37)) + (Math.abs(d49 - d50) * d47)) * 2.0d) / d44)) / d48;
+        double d51 = d38 * d42;
+        double d52 = d41 * d39;
+        double abs3 = ((((Math.abs((d39 * d43) - (d42 * d40)) + (Math.abs(d52 - d51) * d45)) * 2.0d) / d46) + (((Math.abs((d38 * d43) - (d41 * d40)) + (Math.abs(d51 - d52) * d47)) * 2.0d) / d44)) / d48;
+        fArr2[0] = (float) abs2;
+        fArr2[1] = (float) abs3;
+        double d53 = i12;
+        double max = Math.max(1.0d / d53, abs2 * 1.5d) + (2.0d / d53);
+        double d54 = i13;
+        double max2 = Math.max(1.0d / d54, abs3 * 1.5d) + (2.0d / d54);
+        if (z10) {
+            double max3 = Math.max(1.0d, Math.max(abs2 * d53, abs3 * d54)) * 4.0d;
+            double d55 = (max3 / d53) + max;
+            d = max2 + (max3 / d54);
+            d10 = d55;
+        } else {
+            d = max2;
+            d10 = max;
+        }
+        double d56 = Double.NEGATIVE_INFINITY;
+        double d57 = d10;
+        double d58 = d;
+        double d59 = Double.POSITIVE_INFINITY;
+        double d60 = Double.POSITIVE_INFINITY;
+        int i14 = 0;
+        double d61 = Double.NEGATIVE_INFINITY;
+        while (i14 < 4) {
+            if ((i14 & 1) == 0) {
+                d11 = d46;
+                d12 = f7 - d57;
+            } else {
+                d11 = d46;
+                d12 = f11 + d57;
+            }
+            if ((i14 & 2) == 0) {
+                d13 = d12;
+                d14 = f10 - d58;
+            } else {
+                d13 = d12;
+                d14 = f12 + d58;
+            }
+            double d62 = (d28 * d14) + (d26 * d13) + d29;
+            if (d62 <= 1.0E-9d) {
+                return;
+            }
+            double d63 = d14;
+            double d64 = ((((((d18 * d14) + (d16 * d13)) + d19) / d62) * 0.5d) + 0.5d) * d44;
+            double d65 = ((((((d23 * d63) + (d13 * d21)) + d24) / d62) * 0.5d) + 0.5d) * d11;
+            if (Double.isInfinite(d64) || Double.isNaN(d64) || Double.isInfinite(d65) || Double.isNaN(d65)) {
+                return;
+            }
+            d60 = Math.min(d60, d64);
+            d56 = Math.max(d56, d64);
+            d59 = Math.min(d59, d65);
+            d61 = Math.max(d61, d65);
+            i14++;
+            d46 = d11;
+        }
+        double d66 = d46;
+        int max4 = (int) Math.max(0.0d, Math.min(d44, Math.floor(d60) - 2.0d));
+        int max5 = (int) Math.max(0.0d, Math.min(d66, Math.floor(d59) - 2.0d));
+        int max6 = (int) Math.max(0.0d, Math.min(d44, Math.ceil(d56) + 2.0d));
+        int max7 = (int) Math.max(0.0d, Math.min(d66, Math.ceil(d61) + 2.0d));
+        iArr[0] = max4;
+        iArr[1] = max5;
+        iArr[2] = Math.max(0, max6 - max4);
+        iArr[3] = Math.max(0, max7 - max5);
     }
 }

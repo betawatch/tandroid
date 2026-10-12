@@ -12,7 +12,7 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class FileVideoCapturer implements VideoCapturer {
     private static final String TAG = "FileVideoCapturer";
@@ -26,14 +26,14 @@ public class FileVideoCapturer implements VideoCapturer {
         }
     };
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public interface VideoReader {
         void close();
 
         VideoFrame getNextFrame();
     }
 
-    /* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+    /* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
     public static class VideoReaderY4M implements VideoReader {
         private static final int FRAME_DELIMETER_LENGTH = 6;
         private static final String TAG = "VideoReaderY4M";
@@ -52,7 +52,7 @@ public class FileVideoCapturer implements VideoCapturer {
             while (true) {
                 int read = this.mediaFile.read();
                 if (read == -1) {
-                    throw new RuntimeException(sc.v.i("Found end of file before end of header for file: ", str));
+                    throw new RuntimeException(t8.b.h("Found end of file before end of header for file: ", str));
                 }
                 if (read == 10) {
                     this.videoStart = this.mediaFileChannel.position();
@@ -89,8 +89,8 @@ public class FileVideoCapturer implements VideoCapturer {
         public void close() {
             try {
                 this.mediaFile.close();
-            } catch (IOException e7) {
-                Logging.e(TAG, "Problem closing file", e7);
+            } catch (IOException e) {
+                Logging.e(TAG, "Problem closing file", e);
             }
         }
 
@@ -121,8 +121,8 @@ public class FileVideoCapturer implements VideoCapturer {
                     return new VideoFrame(allocate, 0, nanos);
                 }
                 throw new RuntimeException("Frames should be delimited by FRAME plus newline, found delimter was: '" + str + "'");
-            } catch (IOException e7) {
-                throw new RuntimeException(e7);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
     }
@@ -130,9 +130,9 @@ public class FileVideoCapturer implements VideoCapturer {
     public FileVideoCapturer(String str) {
         try {
             this.videoReader = new VideoReaderY4M(str);
-        } catch (IOException e7) {
+        } catch (IOException e) {
             Logging.d(TAG, "Could not open video file: " + str);
-            throw e7;
+            throw e;
         }
     }
 

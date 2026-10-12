@@ -1,256 +1,272 @@
 package org.telegram.ui;
 
+import android.animation.Animator;
 import android.os.Build;
+import android.util.SparseArray;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class dk extends s4.t0 {
-    public boolean b;
-    public final /* synthetic */ zn d;
-    public float a = 0.0f;
-    public final int c = AndroidUtilities.dp(100.0f);
+public final class dk extends s4.t {
+    public boolean S;
+    public final /* synthetic */ fo T;
 
-    public dk(zn znVar) {
-        this.d = znVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dk(fo foVar, boolean z10) {
+        super(z10);
+        this.T = foVar;
     }
 
-    @Override // s4.t0
-    public final void a(RecyclerView recyclerView, int i10) {
-        zn znVar = this.d;
-        if (i10 == 0) {
-            org.telegram.ui.Cells.u1 u1Var = znVar.p2;
-            if (u1Var != null) {
-                znVar.n2.e(u1Var, -1, znVar.q2, znVar.r2, true);
-                znVar.p2 = null;
-            }
-            znVar.j3 = false;
-            znVar.k3 = false;
-            znVar.l3 = false;
-            znVar.m3 = false;
-            znVar.k9(true);
-            znVar.l9(true);
-            if (SharedConfig.getDevicePerformanceClass() == 0) {
-                int i11 = zn.Hc;
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-            }
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startSpoilers, new Object[0]);
-            znVar.x0.setOverScrollMode(0);
-            znVar.c9.V();
-            znVar.ad(false);
-            znVar.v9(1);
-            znVar.sa = false;
-            return;
-        }
-        ci.d4 d4Var = znVar.y1;
-        if (d4Var != null && d4Var.V) {
-            d4Var.e(true);
-        }
-        org.telegram.ui.Components.r6 r6Var = znVar.W2;
-        if (r6Var != null && r6Var.getVisibility() == 0 && znVar.C9()) {
-            AndroidUtilities.hideKeyboard(znVar.getParentActivity().getCurrentFocus());
-        }
-        if (i10 == 2) {
-            znVar.D4 = true;
-            znVar.l3 = true;
-        } else if (i10 == 1) {
-            znVar.p2 = null;
-            znVar.D4 = true;
-            znVar.j3 = true;
-            znVar.k3 = true;
-            znVar.m3 = true;
-            znVar.l3 = true;
-        }
-        if (SharedConfig.getDevicePerformanceClass() == 0) {
-            int i12 = zn.Hc;
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-        }
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopSpoilers, new Object[0]);
-        zg.t tVar = znVar.Y9;
-        if (tVar == null || !tVar.d()) {
-            return;
-        }
-        znVar.Y9.setHiddenByScroll(true);
-    }
-
-    @Override // s4.t0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.h hVar;
-        boolean z10;
-        zn znVar = this.d;
-        zn znVar2 = znVar.da;
-        if (znVar2 == null) {
-            znVar2 = znVar;
-        }
-        znVar.x0.invalidate();
-        boolean z11 = true;
-        this.b = i11 < 0;
-        int L0 = znVar.z0.L0();
-        if (((i11 != 0 && znVar.sa && recyclerView.getScrollState() == 2) || recyclerView.getScrollState() == 1) && znVar.N4 != 0) {
-            if (!this.b || znVar.O4) {
-                znVar.N4 = 0;
-            } else if (!znVar.x0.V1 && L0 != -1) {
-                int N0 = znVar.z0.N0();
-                MessageObject messageObject = null;
-                while (true) {
-                    if (N0 < L0) {
-                        z10 = false;
-                        break;
-                    }
-                    View m10 = znVar.z0.m(N0);
-                    if (m10 instanceof org.telegram.ui.Cells.u1) {
-                        messageObject = ((org.telegram.ui.Cells.u1) m10).getMessageObject();
-                    } else if (m10 instanceof org.telegram.ui.Cells.w0) {
-                        messageObject = ((org.telegram.ui.Cells.w0) m10).getMessageObject();
-                    }
-                    if (messageObject != null && znVar.N4 == messageObject.getId()) {
-                        z10 = true;
-                        break;
-                    }
-                    N0--;
-                }
-                if (!z10 && messageObject != null && messageObject.getId() < znVar.N4) {
-                    znVar.N4 = 0;
-                }
-            }
-        }
-        if (recyclerView.getScrollState() == 1) {
-            znVar.O4 = false;
-            if (!znVar.D4 && i11 != 0) {
-                znVar.D4 = true;
-            }
-        }
-        if (i11 != 0) {
-            znVar.v9(1);
-            znVar.X0.getClass();
-            znVar.m9(true);
-        }
-        if (i11 != 0 && znVar.j3 && !znVar.f3) {
-            if (znVar.L7 != Integer.MAX_VALUE) {
-                znVar.Ma();
-                znVar.ad(false);
-            }
-            znVar.Jb(true);
-        }
-        if (znVar.y9() && i11 != 0 && znVar.k3 && !znVar.f3) {
-            if (znVar.L7 != Integer.MAX_VALUE) {
-                znVar.Ma();
-                znVar.ad(false);
-            }
-            znVar.Kb(true);
-        }
-        znVar.d7(true);
-        if (L0 != -1) {
-            znVar.A0.h();
-            if (L0 != 0 || !znVar.E6[0]) {
-                aa.a[] aVarArr = znVar.j1.e;
-                aa.a aVar = 1 < aVarArr.length ? aVarArr[1] : null;
-                boolean z12 = aVar != null && ((me.b) aVar.c).f;
-                int i12 = this.c;
-                if (i11 > 0) {
-                    if (!z12) {
-                        float f7 = this.a + i11;
-                        this.a = f7;
-                        if (f7 > i12) {
-                            this.a = 0.0f;
-                            znVar.g9 = true;
-                            znVar.zc();
-                            znVar.k1 = true;
+    @Override // s4.t
+    public final boolean B1(int i10) {
+        int i11;
+        MessageObject messageObject;
+        MessageObject.GroupedMessages c92;
+        byte b10;
+        fo foVar = this.T;
+        rm rmVar = foVar.A0;
+        int i12 = rmVar.J;
+        if (i10 >= i12 && i10 < rmVar.K && (i11 = i10 - i12) >= 0 && i11 < rmVar.L().size() && (c92 = foVar.c9((messageObject = (MessageObject) foVar.A0.L().get(i11)))) != null) {
+            MessageObject.GroupedMessagePosition position = c92.getPosition(messageObject);
+            if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
+                int size = c92.posArray.size();
+                for (int i13 = 0; i13 < size; i13++) {
+                    MessageObject.GroupedMessagePosition groupedMessagePosition = c92.posArray.get(i13);
+                    if (groupedMessagePosition != position) {
+                        byte b11 = groupedMessagePosition.minY;
+                        byte b12 = position.minY;
+                        if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
+                            return true;
                         }
                     }
-                } else if (znVar.k1 && z12) {
-                    float f10 = this.a + i11;
-                    this.a = f10;
-                    if (f10 < (-i12)) {
-                        znVar.g9 = false;
-                        znVar.zc();
-                        this.a = 0.0f;
-                    }
                 }
-            } else if (i11 >= 0) {
-                znVar.g9 = false;
-                znVar.zc();
             }
         }
-        znVar.w9();
-        znVar.c9.G();
-        ArrayList arrayList = znVar.xa.F;
-        for (int i13 = 0; i13 < arrayList.size(); i13++) {
-            if (!((ez) arrayList.get(i13)).c) {
-                ((ez) arrayList.get(i13)).b -= i11;
-            }
+        return false;
+    }
+
+    @Override // s4.t
+    public final boolean C1(View view) {
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            return !((org.telegram.ui.Cells.u1) view).getMessageObject().isOutOwner();
         }
-        zg.j0 j0Var = zg.j0.B;
-        if (j0Var != null) {
-            j0Var.r -= i11;
-            if (i11 != 0) {
-                j0Var.u = true;
-            }
+        return false;
+    }
+
+    @Override // s4.n0
+    public final int G() {
+        if (this.S) {
+            return (int) this.T.s9;
         }
-        if (Build.VERSION.SDK_INT >= 31 && (hVar = znVar2.F) != null) {
-            hVar.f(i10, i11);
-        }
-        znVar.l7(false);
-        ci.d4 d4Var = znVar.x1;
-        if (d4Var != null) {
-            if (d4Var.V) {
-                d4Var.e(true);
-            } else if (!znVar.Vb) {
-                znVar.Ub = System.currentTimeMillis();
-                AndroidUtilities.cancelRunOnUIThread(new tg(znVar, 29));
-                AndroidUtilities.runOnUIThread(new ck(znVar, 0), 2000L);
-            }
-        }
-        yl ylVar = znVar.B1;
-        if (ylVar != null && ylVar.V) {
-            ylVar.e(true);
-        }
-        ci.d4 d4Var2 = znVar.z1;
-        if (d4Var2 == null || !d4Var2.V) {
-            AndroidUtilities.cancelRunOnUIThread(new ck(znVar, 1));
-            AndroidUtilities.runOnUIThread(new ck(znVar, 2), 2000L);
-        } else {
-            d4Var2.e(true);
-        }
-        ci.d4 d4Var3 = znVar.A1;
-        if (d4Var3 != null) {
-            d4Var3.e(true);
-        }
-        ok okVar = znVar.Y;
-        if (okVar != null) {
-            okVar.j0();
-        }
-        yh.w3 w3Var = znVar.qc;
-        if (w3Var != null) {
-            w3Var.invalidate();
-        }
-        hh.a aVar2 = znVar.Qb;
-        if (aVar2 == null || aVar2.b <= 0) {
+        return 0;
+    }
+
+    @Override // s4.n0
+    public final int J() {
+        return this.S ? (int) this.T.s9 : F();
+    }
+
+    @Override // s4.n0
+    public final int K() {
+        return this.S ? (int) ((this.n - this.T.s9) - C()) : super.K();
+    }
+
+    @Override // s4.b0
+    public final int X0() {
+        return (int) this.T.s9;
+    }
+
+    @Override // s4.s, s4.b0, s4.n0
+    public final void b0(qf.e eVar, s4.y0 y0Var) {
+        if (BuildVars.DEBUG_PRIVATE_VERSION) {
+            super.b0(eVar, y0Var);
             return;
         }
-        int childCount = aVar2.a.getChildCount();
-        int i14 = 0;
+        try {
+            super.b0(eVar, y0Var);
+        } catch (Exception e) {
+            FileLog.e(e);
+            AndroidUtilities.runOnUIThread(new gj(this, 3));
+        }
+    }
+
+    @Override // s4.b0
+    public final void i1(int i10, int i11, boolean z10) {
+        if (!z10) {
+            i11 = (int) ((i11 - F()) + this.T.s9);
+        }
+        super.i1(i10, i11, z10);
+    }
+
+    @Override // s4.b0, s4.n0
+    public final int j(s4.y0 y0Var) {
+        this.S = true;
+        int B0 = B0(y0Var);
+        this.S = false;
+        return B0;
+    }
+
+    @Override // s4.s, s4.b0, s4.n0
+    public final int k(s4.y0 y0Var) {
+        this.S = true;
+        int C0 = C0(y0Var);
+        this.S = false;
+        return C0;
+    }
+
+    @Override // s4.s, s4.b0, s4.n0
+    public final int l(s4.y0 y0Var) {
+        this.S = true;
+        int D0 = D0(y0Var);
+        this.S = false;
+        return D0;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0157  */
+    @Override // s4.s, s4.b0, s4.n0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int o0(int i10, qf.e eVar, s4.y0 y0Var) {
+        int i11;
+        boolean z10;
+        int i12;
+        float f7;
+        float f10;
+        float f11;
+        float f12;
+        ah.d1 d1Var;
+        bh.f fVar;
+        boolean z11 = false;
+        fo foVar = this.T;
+        if (i10 < 0) {
+            float f13 = foVar.N9;
+            if (f13 != 0.0f) {
+                float f14 = f13 + i10;
+                foVar.N9 = f14;
+                if (f14 < 0.0f) {
+                    i10 = (int) f14;
+                    foVar.N9 = 0.0f;
+                    foVar.x0.invalidate();
+                } else {
+                    i10 = 0;
+                }
+            }
+        }
+        int childCount = foVar.x0.getChildCount();
+        int i13 = 0;
         while (true) {
-            if (i14 >= childCount) {
-                z11 = false;
+            if (i13 >= childCount) {
+                i11 = 0;
+                z10 = false;
                 break;
             }
-            View childAt = aVar2.a.getChildAt(i14);
-            if (childAt instanceof org.telegram.ui.Cells.u1 ? aVar2.a(((org.telegram.ui.Cells.u1) childAt).getMessageObject()) : childAt instanceof org.telegram.ui.Cells.w0 ? aVar2.a(((org.telegram.ui.Cells.w0) childAt).getMessageObject()) : false) {
-                break;
+            View childAt = foVar.x0.getChildAt(i13);
+            float f15 = foVar.s9;
+            foVar.x0.getClass();
+            if (RecyclerView.R(childAt) == (foVar.Qa ? 0 : foVar.A0.h() - 1)) {
+                i11 = super.o0(((float) (childAt.getTop() - i10)) > f15 ? (int) (childAt.getTop() - f15) : i10, eVar, y0Var);
+                z10 = true;
             } else {
-                i14++;
+                i13++;
             }
         }
-        if (z11) {
-            return;
+        if (!z10) {
+            i11 = super.o0(i10, eVar, y0Var);
         }
-        aVar2.c(0, 0L);
+        if (!foVar.wc.f) {
+            SparseArray[] sparseArrayArr = foVar.W5;
+            if (sparseArrayArr[0].size() <= 0 && sparseArrayArr[1].size() <= 0 && i10 > 0 && i11 == 0 && (((ChatObject.isChannel(foVar.e) && !foVar.e.megagroup) || (foVar.h4 && !UserObject.isBotForum(foVar.f))) && (i12 = foVar.R3) != 3 && i12 != 9 && i12 != 1 && foVar.x0.getScrollState() == 1)) {
+                ak akVar = foVar.x0;
+                if (!akVar.V1 && !akVar.b2 && !foVar.F9()) {
+                    if (foVar.N9 == 0.0f && foVar.P9 != null) {
+                        ArrayList arrayList = foVar.fb;
+                        if (arrayList != null && !arrayList.isEmpty()) {
+                            foVar.P9.i((TLRPC.Chat) foVar.fb.get(0));
+                        } else if (foVar.h4) {
+                            foVar.P9.j();
+                        } else {
+                            foVar.P9.h();
+                        }
+                    }
+                    Animator animator = foVar.Q9;
+                    if (animator != null) {
+                        animator.removeAllListeners();
+                        foVar.Q9.cancel();
+                    }
+                    if (foVar.N9 < AndroidUtilities.dp(110.0f)) {
+                        float dp = foVar.N9 / AndroidUtilities.dp(110.0f);
+                        f10 = (1.0f - dp) * 0.65f;
+                        f11 = dp * 0.45f;
+                    } else if (foVar.N9 < AndroidUtilities.dp(160.0f)) {
+                        float dp2 = (foVar.N9 - AndroidUtilities.dp(110.0f)) / AndroidUtilities.dp(50.0f);
+                        f10 = (1.0f - dp2) * 0.45f;
+                        f11 = dp2 * 0.05f;
+                    } else {
+                        f7 = 0.05f;
+                        f12 = i10 * f7;
+                        foVar.N9 += f12;
+                        int i14 = (int) f12;
+                        d1Var = ah.d1.B;
+                        if (d1Var != null) {
+                            d1Var.r -= i14;
+                            if (i14 != 0) {
+                                d1Var.u = true;
+                            }
+                        }
+                        if (Build.VERSION.SDK_INT >= 31 && (fVar = foVar.F) != null) {
+                            fVar.f(0.0f, f12);
+                        }
+                        foVar.x0.invalidate();
+                    }
+                    f7 = f11 + f10;
+                    f12 = i10 * f7;
+                    foVar.N9 += f12;
+                    int i142 = (int) f12;
+                    d1Var = ah.d1.B;
+                    if (d1Var != null) {
+                    }
+                    if (Build.VERSION.SDK_INT >= 31) {
+                        fVar.f(0.0f, f12);
+                    }
+                    foVar.x0.invalidate();
+                }
+            }
+        }
+        if (foVar.N9 == 0.0f) {
+            foVar.x0.setOverScrollMode(0);
+        } else {
+            foVar.x0.setOverScrollMode(2);
+        }
+        if (foVar.P9 != null) {
+            ne.b bVar = foVar.uc;
+            if (foVar.N9 > 0.0f && foVar.x0.getScrollState() == 1) {
+                z11 = true;
+            }
+            bVar.a(z11, true);
+        }
+        return i11;
+    }
+
+    @Override // s4.b0, s4.n0
+    public final void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
+        this.T.sa = false;
+        ki.o oVar = new ki.o(recyclerView.getContext(), 0);
+        oVar.a = i10;
+        w0(oVar);
+    }
+
+    @Override // s4.s, s4.b0, s4.n0
+    public final boolean y0() {
+        return true;
     }
 }

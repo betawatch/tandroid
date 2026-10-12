@@ -9,7 +9,7 @@ import android.text.style.UnderlineSpan;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class b {
     public final ArrayList a;
@@ -82,14 +82,14 @@ public final class b {
         int length = (32 - i12) - spannableStringBuilder.length();
         int i13 = i12 - length;
         int i14 = i10 != Integer.MIN_VALUE ? i10 : (this.g != 2 || (Math.abs(i13) >= 3 && length >= 0)) ? (this.g != 2 || i13 <= 0) ? 0 : 2 : 1;
-        float e7 = i14 != 1 ? i14 != 2 ? a1.g.e(i12, 32.0f, 0.8f, 0.1f) : a1.g.e(32 - length, 32.0f, 0.8f, 0.1f) : 0.5f;
+        float d = i14 != 1 ? i14 != 2 ? a1.g.d(i12, 32.0f, 0.8f, 0.1f) : a1.g.d(32 - length, 32.0f, 0.8f, 0.1f) : 0.5f;
         int i15 = this.d;
         if (i15 > 7) {
             i15 -= 17;
         } else if (this.g == 1) {
             i15 -= this.h - 1;
         }
-        return new d2.b(spannableStringBuilder, Layout.Alignment.ALIGN_NORMAL, null, null, i15, 1, TLObject.FLAG_31, e7, i14, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
+        return new d2.b(spannableStringBuilder, Layout.Alignment.ALIGN_NORMAL, null, null, i15, 1, TLObject.FLAG_31, d, i14, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
     }
 
     public final SpannableString d() {

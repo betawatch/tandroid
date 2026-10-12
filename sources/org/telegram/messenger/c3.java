@@ -1,56 +1,62 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoader;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c3 implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ BaseController e;
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
+    public final /* synthetic */ Object v;
+    public final /* synthetic */ Object w;
 
-    public /* synthetic */ c3(FileLoader.1 r22, boolean z10, String str, boolean z11, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, FileUploadOperation fileUploadOperation) {
-        this.e = r22;
-        this.c = z10;
-        this.b = str;
-        this.d = z11;
-        this.f = inputFile;
-        this.h = inputEncryptedFile;
-        this.n = bArr;
-        this.r = bArr2;
-        this.s = fileUploadOperation;
+    public /* synthetic */ c3(FileLoader fileLoader, TLRPC.Document document, SecureDocument secureDocument, WebFile webFile, TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated, ImageLocation imageLocation, Object obj, String str, long j10, int i10, int i11) {
+        this.e = fileLoader;
+        this.f = document;
+        this.h = secureDocument;
+        this.n = webFile;
+        this.r = tL_fileLocationToBeDeprecated;
+        this.s = imageLocation;
+        this.v = obj;
+        this.w = str;
+        this.c = j10;
+        this.b = i10;
+        this.d = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((FileLoader.1) this.e).lambda$didFinishUploadingFile$0(this.c, this.b, this.d, (TLRPC.InputFile) this.f, (TLRPC.InputEncryptedFile) this.h, (byte[]) this.n, (byte[]) this.r, (FileUploadOperation) this.s);
+                ((FileLoader) this.e).lambda$loadFile$13((TLRPC.Document) this.f, (SecureDocument) this.h, (WebFile) this.n, (TLRPC.TL_fileLocationToBeDeprecated) this.r, (ImageLocation) this.s, this.v, (String) this.w, this.c, this.b, this.d);
                 break;
             default:
-                ((MessagesController) this.e).lambda$openApp$501((org.telegram.ui.ActionBar.n2) this.f, (of.e) this.h, (boolean[]) this.n, (TLRPC.User) this.r, this.b, this.c, this.d, (TL_bots.BotInfo[]) this.s);
+                ((MediaDataController) this.e).lambda$processLoadedStickers$105(this.b, (a0.h) this.f, (HashMap) this.h, (ArrayList) this.n, this.c, this.d, (a0.h) this.r, (HashMap) this.s, (a0.h) this.v, (Runnable) this.w);
                 break;
         }
     }
 
-    public /* synthetic */ c3(MessagesController messagesController, org.telegram.ui.ActionBar.n2 n2Var, of.e eVar, boolean[] zArr, TLRPC.User user, String str, boolean z10, boolean z11, TL_bots.BotInfo[] botInfoArr) {
-        this.e = messagesController;
-        this.f = n2Var;
-        this.h = eVar;
-        this.n = zArr;
-        this.r = user;
-        this.b = str;
-        this.c = z10;
-        this.d = z11;
-        this.s = botInfoArr;
+    public /* synthetic */ c3(MediaDataController mediaDataController, int i10, a0.h hVar, HashMap hashMap, ArrayList arrayList, long j10, int i11, a0.h hVar2, HashMap hashMap2, a0.h hVar3, Runnable runnable) {
+        this.e = mediaDataController;
+        this.b = i10;
+        this.f = hVar;
+        this.h = hashMap;
+        this.n = arrayList;
+        this.c = j10;
+        this.d = i11;
+        this.r = hVar2;
+        this.s = hashMap2;
+        this.v = hVar3;
+        this.w = runnable;
     }
 }

@@ -10,9 +10,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
-import v7.y5;
+import org.telegram.messenger.BuildConfig;
+import v7.z5;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -35,7 +36,7 @@ public final class w0 extends l0 implements g0 {
         if (th3 != null) {
             throw new ExecutionException(th3);
         }
-        l0.e.b().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "getDoneValue", "Failure.exception is unexpectedly null.");
+        l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "getDoneValue", "Failure.exception is unexpectedly null.");
         throw new ExecutionException(e0.c.a);
     }
 
@@ -76,8 +77,8 @@ public final class w0 extends l0 implements g0 {
                     try {
                         obj = t0Var.get();
                         break;
-                    } catch (Error e7) {
-                        e = e7;
+                    } catch (Error e) {
+                        e = e;
                         return new e0(e);
                     }
                 } catch (InterruptedException unused) {
@@ -88,13 +89,13 @@ public final class w0 extends l0 implements g0 {
                     }
                     throw th3;
                 }
-            } catch (Error | Exception e10) {
-                e = e10;
+            } catch (Error | Exception e7) {
+                e = e7;
                 return new e0(e);
-            } catch (CancellationException e11) {
-                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e11)) : new b0(e11, false);
-            } catch (ExecutionException e12) {
-                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e12), false) : new e0(e12.getCause());
+            } catch (CancellationException e10) {
+                return !isCancelled ? new e0(new IllegalArgumentException("get() threw CancellationException, despite reporting isCancelled() == false: ".concat(String.valueOf(t0Var)), e10)) : new b0(e10, false);
+            } catch (ExecutionException e11) {
+                return isCancelled ? new b0(new IllegalArgumentException("get() did not throw CancellationException, despite reporting isCancelled() == true: ".concat(String.valueOf(t0Var)), e11), false) : new e0(e11.getCause());
             }
         }
         if (z11) {
@@ -164,8 +165,8 @@ public final class w0 extends l0 implements g0 {
     public static void k(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (Exception e7) {
-            l0.e.b().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.vision.e2.j("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
+        } catch (Exception e) {
+            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", k3.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
         }
     }
 
@@ -256,15 +257,15 @@ public final class w0 extends l0 implements g0 {
         if (t0Var == null) {
             return null;
         }
-        String q6 = a1.g.q("inputFuture=[", t0Var.toString(), "]");
+        String p5 = a1.g.p("inputFuture=[", t0Var.toString(), "]");
         if (scheduledFuture == null) {
-            return q6;
+            return p5;
         }
         long delay = scheduledFuture.getDelay(TimeUnit.MILLISECONDS);
         if (delay <= 0) {
-            return q6;
+            return p5;
         }
-        return q6 + ", remaining delay=[" + delay + " ms]";
+        return p5 + ", remaining delay=[" + delay + " ms]";
     }
 
     @Override // java.util.concurrent.Future
@@ -282,9 +283,9 @@ public final class w0 extends l0 implements g0 {
         if (k0Var2 != k0Var) {
             k0 k0Var3 = new k0();
             do {
-                y5 y5Var = l0.h;
-                y5Var.c(k0Var3, k0Var2);
-                if (y5Var.g(this, k0Var2, k0Var3)) {
+                z5 z5Var = l0.h;
+                z5Var.c(k0Var3, k0Var2);
+                if (z5Var.g(this, k0Var2, k0Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -322,14 +323,14 @@ public final class w0 extends l0 implements g0 {
             } catch (CancellationException unused2) {
                 sb2.append("CANCELLED");
                 return;
-            } catch (ExecutionException e7) {
+            } catch (ExecutionException e) {
                 sb2.append("FAILURE, cause=[");
-                sb2.append(e7.getCause());
+                sb2.append(e.getCause());
                 sb2.append("]");
                 return;
-            } catch (Exception e10) {
+            } catch (Exception e7) {
                 sb2.append("UNKNOWN, cause=[");
-                sb2.append(e10.getClass());
+                sb2.append(e7.getClass());
                 sb2.append(" thrown from get()]");
                 return;
             }
@@ -339,7 +340,7 @@ public final class w0 extends l0 implements g0 {
         }
         sb2.append("SUCCESS, result=[");
         if (obj == null) {
-            sb2.append("null");
+            sb2.append(BuildConfig.BETA_URL);
         } else if (obj == this) {
             sb2.append("this future");
         } else {
@@ -438,27 +439,27 @@ public final class w0 extends l0 implements g0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object get(long j3, TimeUnit timeUnit) {
-        long j10;
+    public final Object get(long j10, TimeUnit timeUnit) {
+        long j11;
         long nanoTime;
         k0 k0Var = k0.c;
-        long nanos = timeUnit.toNanos(j3);
+        long nanos = timeUnit.toNanos(j10);
         if (!Thread.interrupted()) {
             Object obj = this.a;
             if ((obj != null) & g(obj)) {
                 return e(obj);
             }
-            long j11 = 0;
+            long j12 = 0;
             long nanoTime2 = nanos > 0 ? System.nanoTime() + nanos : 0L;
             if (nanos >= 1000) {
                 k0 k0Var2 = this.c;
                 if (k0Var2 != k0Var) {
                     k0 k0Var3 = new k0();
                     while (true) {
-                        y5 y5Var = l0.h;
-                        y5Var.c(k0Var3, k0Var2);
-                        if (y5Var.g(this, k0Var2, k0Var3)) {
-                            j10 = j11;
+                        z5 z5Var = l0.h;
+                        z5Var.c(k0Var3, k0Var2);
+                        if (z5Var.g(this, k0Var2, k0Var3)) {
+                            j11 = j12;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
                                 if (!Thread.interrupted()) {
@@ -478,16 +479,16 @@ public final class w0 extends l0 implements g0 {
                                 }
                             }
                         } else {
-                            long j12 = j11;
+                            long j13 = j12;
                             k0Var2 = this.c;
                             if (k0Var2 == k0Var) {
                                 break;
                             }
-                            j11 = j12;
+                            j12 = j13;
                         }
                     }
                     nanos = nanoTime;
-                    if (nanos > j10) {
+                    if (nanos > j11) {
                         Object obj3 = this.a;
                         if ((obj3 != null) & g(obj3)) {
                             return e(obj3);
@@ -495,7 +496,7 @@ public final class w0 extends l0 implements g0 {
                         if (!Thread.interrupted()) {
                             nanoTime = nanoTime2 - System.nanoTime();
                             nanos = nanoTime;
-                            if (nanos > j10) {
+                            if (nanos > j11) {
                             }
                         } else {
                             throw new InterruptedException();
@@ -505,14 +506,14 @@ public final class w0 extends l0 implements g0 {
                         String obj4 = timeUnit.toString();
                         Locale locale = Locale.ROOT;
                         String lowerCase = obj4.toLowerCase(locale);
-                        String str = "Waited " + j3 + " " + timeUnit.toString().toLowerCase(locale);
-                        if (nanos + 1000 < j10) {
+                        String str = "Waited " + j10 + " " + timeUnit.toString().toLowerCase(locale);
+                        if (nanos + 1000 < j11) {
                             String concat = str.concat(" (plus ");
-                            long j13 = -nanos;
-                            long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
-                            long nanos2 = j13 - timeUnit.toNanos(convert);
-                            boolean z10 = convert == j10 || nanos2 > 1000;
-                            if (convert > j10) {
+                            long j14 = -nanos;
+                            long convert = timeUnit.convert(j14, TimeUnit.NANOSECONDS);
+                            long nanos2 = j14 - timeUnit.toNanos(convert);
+                            boolean z10 = convert == j11 || nanos2 > 1000;
+                            if (convert > j11) {
                                 String str2 = concat + convert + " " + lowerCase;
                                 if (z10) {
                                     str2 = str2.concat(",");
@@ -534,8 +535,8 @@ public final class w0 extends l0 implements g0 {
                 Objects.requireNonNull(obj5);
                 return e(obj5);
             }
-            j10 = 0;
-            if (nanos > j10) {
+            j11 = 0;
+            if (nanos > j11) {
             }
         } else {
             throw new InterruptedException();

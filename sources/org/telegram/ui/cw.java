@@ -1,62 +1,29 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cw implements View.OnLongClickListener {
+public final /* synthetic */ class cw implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ty b;
+    public final /* synthetic */ yy b;
+    public final /* synthetic */ float c;
 
-    public /* synthetic */ cw(ty tyVar, int i10) {
+    public /* synthetic */ cw(yy yyVar, float f7, int i10) {
         this.a = i10;
-        this.b = tyVar;
+        this.b = yyVar;
+        this.c = f7;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ty tyVar = this.b;
-                ArrayList arrayList = tyVar.I2;
-                if (tyVar.getParentActivity() != null) {
-                    boolean z10 = true;
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        long longValue = ((Long) arrayList.get(i10)).longValue();
-                        if (DialogObject.isEncryptedDialog(longValue)) {
-                            z10 = false;
-                        }
-                        TLRPC.Chat chat = tyVar.getMessagesController().getChat(Long.valueOf(-longValue));
-                        if (chat != null && !ChatObject.canWriteToChat(chat)) {
-                            z10 = false;
-                        }
-                    }
-                    org.telegram.ui.Components.p80 H = org.telegram.ui.Components.p80.H(tyVar, view);
-                    H.c(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new ov(tyVar, 20), false);
-                    H.l(R.drawable.msg_calendar2, LocaleController.getString(R.string.ScheduleMessage), new ov(tyVar, 21), z10);
-                    H.Z();
-                    break;
-                }
-                break;
-            case 1:
-                ty tyVar2 = this.b;
-                tyVar2.o4(tyVar2.I2, 104, true, true, null);
-                break;
-            case 2:
-                this.b.m4(view);
+                yy.V(this.b, this.c, valueAnimator);
                 break;
             default:
-                ty tyVar3 = this.b;
-                tyVar3.getContactsController().loadGlobalPrivacySetting();
-                tyVar3.H4();
+                yy.B0(this.b, this.c, valueAnimator);
                 break;
         }
-        return true;
     }
 }

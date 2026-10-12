@@ -1,79 +1,32 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bg implements org.telegram.ui.Components.tk0, org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class bg implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ bg(zn znVar, MessageObject messageObject, int i10) {
+    public /* synthetic */ bg(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = znVar;
-        this.c = messageObject;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.ui.Components.tk0
-    public void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
         switch (this.a) {
             case 0:
-                Bundle bundle = new Bundle();
-                if (j3 > 0) {
-                    bundle.putLong("user_id", j3);
-                } else {
-                    bundle.putLong("chat_id", -j3);
-                }
-                zn znVar = this.b;
-                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
-                    bundle.putInt("report_reaction_message_id", this.c.getId());
-                    bundle.putLong("report_reaction_from_dialog_id", znVar.T5);
-                }
-                znVar.presentFragment(new ProfileActivity(bundle, null));
-                znVar.D7(true);
-                break;
+                fo foVar = (fo) this.b;
+                View view = (View) this.c;
+                foVar.X7((URLSpan) obj, false, foVar.d5, view instanceof org.telegram.ui.Cells.u1 ? (org.telegram.ui.Cells.u1) view : null);
+                return Boolean.TRUE;
             default:
-                zn znVar2 = this.b;
-                znVar2.getClass();
-                Bundle bundle2 = new Bundle();
-                if (j3 > 0) {
-                    bundle2.putLong("user_id", j3);
-                } else {
-                    bundle2.putLong("chat_id", -j3);
-                }
-                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
-                    bundle2.putInt("report_reaction_message_id", this.c.getId());
-                    bundle2.putLong("report_reaction_from_dialog_id", znVar2.T5);
-                }
-                znVar2.presentFragment(new ProfileActivity(bundle2, null));
-                znVar2.D7(true);
-                break;
+                return sh.c.d((View) obj, (String) this.b, (String) this.c, null, null);
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.a2
-    public void f(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        zn znVar = this.b;
-        org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(znVar.getParentActivity(), 3, znVar.ea)};
-        TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
-        MessageObject messageObject = this.c;
-        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageObject.messageOwner.media;
-        TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
-        TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
-        tL_inputMediaPoll.poll = tL_poll;
-        TLRPC.Poll poll = tL_messageMediaPoll.poll;
-        tL_poll.id = poll.id;
-        tL_poll.question = poll.question;
-        tL_poll.answers = poll.answers;
-        tL_poll.closed = true;
-        tL_messages_editMessage.media = tL_inputMediaPoll;
-        tL_messages_editMessage.peer = znVar.getMessagesController().getInputPeer(znVar.T5);
-        tL_messages_editMessage.id = messageObject.getId();
-        tL_messages_editMessage.flags |= 16384;
-        AndroidUtilities.runOnUIThread(new vg(znVar, b2VarArr, znVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new ba(znVar, b2VarArr, tL_messages_editMessage, 5)), 2), 500L);
     }
 }

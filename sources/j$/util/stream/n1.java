@@ -1,5 +1,6 @@
 package j$.util.stream;
 
+import j$.util.function.IntConsumer$-CC;
 import java.util.function.IntConsumer;
 import java.util.function.IntPredicate;
 
@@ -11,7 +12,7 @@ public final class n1 extends q1 implements h5 {
     }
 
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
-        return j$.com.android.tools.r8.a.c(this, intConsumer);
+        return IntConsumer$-CC.$default$andThen(this, intConsumer);
     }
 
     @Override // j$.util.stream.h5

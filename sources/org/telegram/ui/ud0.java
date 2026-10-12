@@ -1,48 +1,31 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final class ud0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class ud0 implements org.telegram.ui.ActionBar.z1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wg0 b;
+    public final /* synthetic */ bh0 b;
 
-    public /* synthetic */ ud0(wg0 wg0Var, int i10) {
+    public /* synthetic */ ud0(bh0 bh0Var, int i10) {
         this.a = i10;
-        this.b = wg0Var;
+        this.b = bh0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.ui.ActionBar.z1
+    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
             case 0:
-                wg0 wg0Var = this.b;
-                if (wg0Var.d == animator) {
-                    wg0Var.d = null;
-                    break;
-                }
+                bh0 bh0Var = this.b;
+                bh0Var.b[bh0Var.a].d();
+                bh0Var.k1(true, true);
                 break;
             default:
-                wg0 wg0Var2 = this.b;
-                wg0Var2.c.setVisibility(8);
-                if (wg0Var2.d == animator) {
-                    wg0Var2.d = null;
+                bh0 bh0Var2 = this.b;
+                bh0Var2.l0 = true;
+                if (bh0Var2.a != 0) {
+                    bh0Var2.u1(0, true, null, true);
                     break;
                 }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.c.setVisibility(0);
-                break;
-            default:
-                super.onAnimationStart(animator);
                 break;
         }
     }

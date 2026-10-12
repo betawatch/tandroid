@@ -1,0 +1,105 @@
+package ig;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.WebFile;
+import org.telegram.messenger.yh;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.ha0;
+import w7.a6;
+
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
+/* loaded from: classes3.dex */
+public final class k1 extends LinearLayout {
+    public final c6 a;
+    public final ha0 b;
+    public final ImageReceiver c;
+    public final TextView d;
+    public boolean e;
+
+    public k1(Context context, c6 c6Var) {
+        super(context);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.c = imageReceiver;
+        this.a = c6Var;
+        setOrientation(1);
+        ha0 ha0Var = new ha0();
+        this.b = ha0Var;
+        int i10 = g6.G6;
+        int w02 = g6.w0(i10, c6Var);
+        ha0Var.g(g6.m1(0.05f, w02), g6.m1(0.15f, w02), g6.m1(0.1f, w02), g6.m1(0.3f, w02));
+        ha0Var.k(4.0f);
+        ha0Var.x.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setGravity(LocaleController.isRTL ? 5 : 3);
+        textView.setTextColor(g6.w0(i10, c6Var));
+        textView.setTextSize(1, 16.0f);
+        boolean z10 = LocaleController.isRTL;
+        addView(textView, a6.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
+        TextView textView2 = new TextView(context);
+        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
+        textView2.setTextColor(g6.w0(g6.z6, c6Var));
+        yh.j(13.0f, R.string.BusinessProfileLocation, 1, textView2);
+        boolean z11 = LocaleController.isRTL;
+        addView(textView2, a6.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
+        setWillNotDraw(false);
+    }
+
+    public final void a(TLRPC.TL_businessLocation tL_businessLocation, boolean z10) {
+        if (tL_businessLocation != null) {
+            this.d.setText(tL_businessLocation.address);
+            if (tL_businessLocation.geo_point != null) {
+                this.c.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(tL_businessLocation.geo_point, AndroidUtilities.dp(44.0f), AndroidUtilities.dp(44.0f), 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), "44_44", this.b, 0L, (String) null, (Object) null, 0);
+            } else {
+                this.c.setImageBitmap((Drawable) null);
+            }
+        }
+        this.e = z10;
+        setPadding(0, 0, 0, z10 ? 1 : 0);
+        invalidate();
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        float dp = LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : getWidth() - AndroidUtilities.dp(60.0f);
+        float dp2 = AndroidUtilities.dp(8.0f);
+        float dp3 = AndroidUtilities.dp(44.0f);
+        float dp4 = AndroidUtilities.dp(44.0f);
+        ImageReceiver imageReceiver = this.c;
+        imageReceiver.setImageCoords(dp, dp2, dp3, dp4);
+        imageReceiver.draw(canvas);
+        super.onDraw(canvas);
+        if (this.e) {
+            Paint U0 = g6.U0("paintDivider", this.a);
+            if (U0 == null) {
+                U0 = g6.k0;
+            }
+            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 21.33f : 0.0f), getMeasuredHeight(), U0);
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.b || super.verifyDrawable(drawable);
+    }
+}

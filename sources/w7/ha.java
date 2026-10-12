@@ -5,7 +5,7 @@ import java.io.Closeable;
 import java.util.HashMap;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public class ha implements Closeable {
     public static final HashMap f = new HashMap();
@@ -22,10 +22,10 @@ public class ha implements Closeable {
         this.b = SystemClock.elapsedRealtimeNanos() / 1000;
     }
 
-    public void b(long j3) {
+    public void b(long j10) {
         long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos() / 1000;
-        long j10 = this.c;
-        if (j10 != 0 && elapsedRealtimeNanos - j10 >= 1000000) {
+        long j11 = this.c;
+        if (j11 != 0 && elapsedRealtimeNanos - j11 >= 1000000) {
             this.a = 0;
             this.b = 0L;
             this.d = 2147483647L;
@@ -33,8 +33,8 @@ public class ha implements Closeable {
         }
         this.c = elapsedRealtimeNanos;
         this.a++;
-        this.d = Math.min(this.d, j3);
-        this.e = Math.max(this.e, j3);
+        this.d = Math.min(this.d, j10);
+        this.e = Math.max(this.e, j10);
         if (this.a % 50 == 0) {
             Locale locale = Locale.US;
             pa.b();
@@ -47,16 +47,16 @@ public class ha implements Closeable {
         }
     }
 
-    public void c(long j3) {
-        b((SystemClock.elapsedRealtimeNanos() / 1000) - j3);
+    public void c(long j10) {
+        b((SystemClock.elapsedRealtimeNanos() / 1000) - j10);
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() {
-        long j3 = this.b;
-        if (j3 == 0) {
+        long j10 = this.b;
+        if (j10 == 0) {
             throw new IllegalStateException("Did you forget to call start()?");
         }
-        c(j3);
+        c(j10);
     }
 }

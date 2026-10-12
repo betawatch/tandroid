@@ -1,9 +1,9 @@
 package org.telegram.ui.Cells;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qm0;
+import org.telegram.ui.Components.mm0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
 public final class i9 implements Runnable {
     public final /* synthetic */ int a;
@@ -41,12 +41,12 @@ public final class i9 implements Runnable {
                             m10 = i10 + p5;
                         }
                     }
-                    qm0 qm0Var = baVar.E;
-                    if (qm0Var != null) {
+                    mm0 mm0Var = baVar.E;
+                    if (mm0Var != null) {
                         if (!baVar.O) {
                             m10 = -m10;
                         }
-                        qm0Var.scrollBy(0, m10);
+                        mm0Var.scrollBy(0, m10);
                     }
                     AndroidUtilities.runOnUIThread(this);
                     break;
@@ -54,9 +54,9 @@ public final class i9 implements Runnable {
                 break;
             default:
                 ba baVar2 = this.b;
-                org.telegram.ui.ActionBar.h4 h4Var = baVar2.Y;
-                if (h4Var != null && !baVar2.P) {
-                    h4Var.hide(Long.MAX_VALUE);
+                org.telegram.ui.ActionBar.g4 g4Var = baVar2.Y;
+                if (g4Var != null && !baVar2.P) {
+                    g4Var.hide(Long.MAX_VALUE);
                     AndroidUtilities.runOnUIThread(baVar2.n0, 1000L);
                     break;
                 }

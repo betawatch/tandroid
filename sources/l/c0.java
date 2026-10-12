@@ -1,6 +1,5 @@
 package l;
 
-import ai.v2;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -18,9 +17,9 @@ import java.util.WeakHashMap;
 import m.j2;
 import m.r1;
 import org.telegram.messenger.beta.R;
-import r0.i0;
+import r0.j0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class c0 extends s implements PopupWindow.OnDismissListener, View.OnKeyListener {
     public ViewTreeObserver E;
@@ -39,8 +38,8 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     public View w;
     public View x;
     public w y;
-    public final androidx.mediarouter.app.j r = new androidx.mediarouter.app.j(this, 2);
-    public final v2 s = new v2(this, 3);
+    public final androidx.mediarouter.app.i r = new androidx.mediarouter.app.i(this, 2);
+    public final bi.j2 s = new bi.j2(this, 3);
     public int I = 0;
 
     public c0(Context context, k kVar, View view, int i10, boolean z10) {
@@ -133,7 +132,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             this.H = s.m(hVar, context, this.f);
             this.G = true;
         }
-        j2Var.p(this.H);
+        j2Var.q(this.H);
         xVar2.setInputMethodMode(2);
         Rect rect = this.a;
         j2Var.M = rect != null ? new Rect(rect) : null;
@@ -152,7 +151,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
                 r1Var.addHeaderView(frameLayout, null, false);
             }
         }
-        j2Var.n(hVar);
+        j2Var.o(hVar);
         j2Var.g();
     }
 
@@ -196,21 +195,21 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             this.c.c(false);
             j2 j2Var = this.n;
             int i11 = j2Var.f;
-            int m10 = j2Var.m();
+            int n10 = j2Var.n();
             int i12 = this.I;
             View view = this.w;
-            WeakHashMap weakHashMap = i0.a;
+            WeakHashMap weakHashMap = j0.a;
             if ((Gravity.getAbsoluteGravity(i12, view.getLayoutDirection()) & 7) == 5) {
                 i11 += this.w.getWidth();
             }
             if (!vVar.b()) {
                 if (vVar.e != null) {
-                    vVar.d(i11, m10, true, true);
+                    vVar.d(i11, n10, true, true);
                 }
             }
             w wVar2 = this.y;
             if (wVar2 != null) {
-                wVar2.v(d0Var);
+                wVar2.q(d0Var);
             }
             return true;
         }
@@ -277,7 +276,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
 
     @Override // l.s
     public final void t(int i10) {
-        this.n.j(i10);
+        this.n.k(i10);
     }
 
     @Override // l.s

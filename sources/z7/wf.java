@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class wf {
     public static m k;
@@ -15,7 +15,7 @@ public final class wf {
     public final String a;
     public final String b;
     public final uf c;
-    public final qb.k d;
+    public final rb.k d;
     public final Task e;
     public final Task f;
     public final String g;
@@ -30,22 +30,22 @@ public final class wf {
         l = new r(objArr);
     }
 
-    public wf(Context context, qb.k kVar, uf ufVar) {
+    public wf(Context context, rb.k kVar, uf ufVar) {
         this.a = context.getPackageName();
-        this.b = qb.c.a(context);
+        this.b = rb.c.a(context);
         this.d = kVar;
         this.c = ufVar;
         zf.b();
         this.g = "subject-segmentation";
-        qb.f a2 = qb.f.a();
-        c5.x xVar = new c5.x(this, 10);
+        rb.f a2 = rb.f.a();
+        c5.y yVar = new c5.y(this, 10);
         a2.getClass();
-        this.e = qb.f.b(xVar);
-        qb.f a10 = qb.f.a();
+        this.e = rb.f.b(yVar);
+        rb.f a10 = rb.f.a();
         kVar.getClass();
         t7.p pVar = new t7.p(kVar, 4);
         a10.getClass();
-        this.f = qb.f.b(pVar);
+        this.f = rb.f.b(pVar);
         r rVar = l;
         this.h = rVar.containsKey("subject-segmentation") ? y6.e.d(context, (String) rVar.get("subject-segmentation"), false) : -1;
     }
@@ -58,7 +58,7 @@ public final class wf {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (d(hbVar, elapsedRealtime)) {
             this.i.put(hbVar, Long.valueOf(elapsedRealtime));
-            qb.m.a.execute(new com.google.android.gms.internal.cast.p(this, vfVar.zza(), hbVar, c(), 8));
+            rb.m.a.execute(new com.google.android.gms.internal.cast.p(this, vfVar.zza(), hbVar, c(), 8));
         }
     }
 
@@ -70,8 +70,8 @@ public final class wf {
         return n6.i.c.a(this.g);
     }
 
-    public final boolean d(hb hbVar, long j3) {
+    public final boolean d(hb hbVar, long j10) {
         HashMap hashMap = this.i;
-        return hashMap.get(hbVar) == null || j3 - ((Long) hashMap.get(hbVar)).longValue() > TimeUnit.SECONDS.toMillis(30L);
+        return hashMap.get(hbVar) == null || j10 - ((Long) hashMap.get(hbVar)).longValue() > TimeUnit.SECONDS.toMillis(30L);
     }
 }

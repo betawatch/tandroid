@@ -1,7 +1,7 @@
 package com.google.android.recaptcha.internal;
 
-import hd.c;
-import hd.g;
+import id.c;
+import id.g;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.HttpURLConnection;
@@ -9,16 +9,16 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
 import kotlin.jvm.internal.i;
-import v7.z7;
+import v7.h8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public final class zzhp implements zzhn {
     private final c zza;
 
     public zzhp() {
         int i10 = zzby.zza;
-        this.zza = z7.a(zzho.zza);
+        this.zza = h8.a(zzho.zza);
     }
 
     @Override // com.google.android.recaptcha.internal.zzhn
@@ -34,20 +34,20 @@ public final class zzhp implements zzhn {
                 zzxn zzxnVar = (zzxn) zza;
                 zzhlVar.zzd();
                 return zzxnVar;
-            } catch (zzcg e7) {
+            } catch (zzcg e) {
                 if (zzhlVar == null) {
-                    throw e7;
+                    throw e;
                 }
-                if (!i.a(e7.zza(), zzcd.zzax)) {
-                    throw e7;
+                if (!i.a(e.zza(), zzcd.zzax)) {
+                    throw e;
                 }
                 try {
                     throw zzcf.zza(zzzj.zzg(zzhlVar.zzb().getErrorStream()).zzi());
-                } catch (Exception e10) {
-                    throw new zzcg(zzce.zzc, zzcd.zzG, e10.getMessage(), null, 8, null);
+                } catch (Exception e7) {
+                    throw new zzcg(zzce.zzc, zzcd.zzG, e7.getMessage(), null, 8, null);
                 }
-            } catch (Exception e11) {
-                throw new zzcg(zzce.zzc, zzcd.zzF, e11.getMessage(), null, 8, null);
+            } catch (Exception e10) {
+                throw new zzcg(zzce.zzc, zzcd.zzF, e10.getMessage(), null, 8, null);
             }
         } finally {
         }

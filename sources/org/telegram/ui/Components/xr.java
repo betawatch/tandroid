@@ -1,108 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.text.SpannableStringBuilder;
+import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xr implements RequestDelegate {
+public final /* synthetic */ class xr implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ds b;
-    public final /* synthetic */ ci.d c;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ xr(ds dsVar, ci.d dVar, int i10) {
+    public /* synthetic */ xr(Object obj, Object obj2, Object obj3, long j10, int i10) {
         this.a = i10;
-        this.b = dsVar;
-        this.c = dVar;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = j10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                final int i10 = 0;
-                final ds dsVar = this.b;
-                final ci.d dVar = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.yr
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                ds dsVar2 = dsVar;
-                                dsVar2.getClass();
-                                dVar.setLoading(false);
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
-                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
-                                    dsVar2.b0 = groupcallstreamrtmpurl.url;
-                                    dsVar2.c0 = groupcallstreamrtmpurl.key;
-                                    dsVar2.d0 = new SpannableStringBuilder(dsVar2.c0);
-                                    dsVar2.e0.N(true);
-                                    break;
-                                }
-                                break;
-                            default:
-                                ds dsVar3 = dsVar;
-                                dsVar3.getClass();
-                                dVar.setLoading(false);
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
-                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
-                                    dsVar3.b0 = groupcallstreamrtmpurl2.url;
-                                    dsVar3.c0 = groupcallstreamrtmpurl2.key;
-                                    dsVar3.d0 = new SpannableStringBuilder(dsVar3.c0);
-                                    dsVar3.e0.N(true);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+                as.T((as) this.c, (Context) this.d, (di.d) this.e, this.b);
+                break;
+            case 1:
+                org.telegram.ui.yy yyVar = (org.telegram.ui.yy) this.c;
+                MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) this.d;
+                TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
+                yyVar.finishPreviewFragment();
+                AndroidUtilities.runOnUIThread(new bi.b8(yyVar, dialogFilter, dialog, this.b, 11), 100L);
                 break;
             default:
-                final int i11 = 1;
-                final ds dsVar2 = this.b;
-                final ci.d dVar2 = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.yr
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                ds dsVar22 = dsVar2;
-                                dsVar22.getClass();
-                                dVar2.setLoading(false);
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
-                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
-                                    dsVar22.b0 = groupcallstreamrtmpurl.url;
-                                    dsVar22.c0 = groupcallstreamrtmpurl.key;
-                                    dsVar22.d0 = new SpannableStringBuilder(dsVar22.c0);
-                                    dsVar22.e0.N(true);
-                                    break;
-                                }
-                                break;
-                            default:
-                                ds dsVar3 = dsVar2;
-                                dsVar3.getClass();
-                                dVar2.setLoading(false);
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
-                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
-                                    dsVar3.b0 = groupcallstreamrtmpurl2.url;
-                                    dsVar3.c0 = groupcallstreamrtmpurl2.key;
-                                    dsVar3.d0 = new SpannableStringBuilder(dsVar3.c0);
-                                    dsVar3.e0.N(true);
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+                ug.a0.Q((ug.a0) this.c, (TL_stories.PrepaidGiveaway) this.d, this.b, (org.telegram.ui.ActionBar.m2) this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ xr(ug.a0 a0Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j10, org.telegram.ui.ActionBar.m2 m2Var) {
+        this.a = 2;
+        this.c = a0Var;
+        this.d = prepaidGiveaway;
+        this.b = j10;
+        this.e = m2Var;
     }
 }

@@ -1,25 +1,1766 @@
 package org.telegram.ui.Components;
 
-import android.graphics.SurfaceTexture;
+import android.content.SharedPreferences;
+import android.media.MediaCodecInfo;
+import android.media.MediaCodecList;
+import android.media.MediaFormat;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.TextUtils;
+import android.util.Base64;
+import android.util.LongSparseArray;
+import android.view.Surface;
+import android.view.SurfaceView;
+import android.view.TextureView;
+import androidx.media3.exoplayer.dash.DashMediaSource$Factory;
+import androidx.media3.exoplayer.hls.HlsMediaSource$Factory;
+import b2.p0;
+import g2.g;
+import j$.util.Objects;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import l2.f;
+import l2.h;
+import li.k;
+import m2.e;
+import n2.n;
+import n6.o;
+import o2.c;
+import o2.l;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ul0;
+import p2.d;
+import p2.t;
+import pb.a;
+import t7.u;
+import u2.f0;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes3.dex */
-public interface h81 {
-    void onError(k81 k81Var, Exception exc);
+public class h81 implements b2.e1, b2.a2, j2.b, NotificationCenter.NotificationCenterDelegate {
+    public static int j0;
+    public static final HashSet k0 = new HashSet();
+    public static HashMap l0;
+    public boolean E;
+    public Uri F;
+    public boolean G;
+    public boolean H;
+    public boolean I;
+    public e81 J;
+    public a81 K;
+    public int L;
+    public boolean M;
+    public ArrayList N;
+    public d81 O;
+    public ArrayList P;
+    public Uri Q;
+    public Uri R;
+    public String S;
+    public String T;
+    public boolean U;
+    public boolean V;
+    public final boolean W;
+    public DashMediaSource$Factory X;
+    public HlsMediaSource$Factory Y;
+    public u2.x0 Z;
+    public final int a;
+    public final Handler a0;
+    public DispatchQueue b;
+    public final boolean b0;
+    public boolean c;
+    public boolean c0;
+    public i2.h0 d;
+    public int d0;
+    public i2.h0 e;
+    public boolean e0;
+    public final x2.n f;
+    public long f0;
+    public long g0;
+    public final ExtendedDefaultDataSourceFactory h;
+    public org.telegram.ui.or0 h0;
+    public final ArrayList i0;
+    public TextureView n;
+    public SurfaceView r;
+    public Surface s;
+    public boolean v;
+    public boolean w;
+    public boolean x;
+    public boolean y;
 
-    void onRenderedFirstFrame();
+    public h81() {
+        this(true, false);
+    }
 
-    void onRenderedFirstFrame(j2.a aVar);
+    public static void I(MessageObject messageObject, boolean z10) {
+        if (messageObject == null) {
+            return;
+        }
+        ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit().putBoolean(messageObject.getDialogId() + "_" + messageObject.getId() + "loop", z10).apply();
+    }
 
-    void onSeekFinished(j2.a aVar);
+    public static void J(d81 d81Var, MessageObject messageObject) {
+        if (messageObject == null) {
+            return;
+        }
+        long dialogId = messageObject.getDialogId();
+        int id2 = messageObject.getId();
+        SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit();
+        if (d81Var == null) {
+            edit.remove(dialogId + "_" + id2 + "q2");
+        } else {
+            String str = dialogId + "_" + id2 + "q2";
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(d81Var.b);
+            sb2.append("x");
+            sb2.append(d81Var.c);
+            sb2.append(d81Var.a ? "s" : "");
+            edit.putString(str, sb2.toString());
+        }
+        edit.apply();
+    }
 
-    void onSeekStarted(j2.a aVar);
+    public static boolean Y(String str) {
+        String concat;
+        if (str == null) {
+            concat = null;
+        } else {
+            switch (str) {
+                case "av1":
+                case "av01":
+                    concat = "video/av01";
+                    break;
+                case "avc":
+                case "h264":
+                    concat = MediaController.VIDEO_MIME_TYPE;
+                    break;
+                case "vp8":
+                    concat = "video/x-vnd.on2.vp8";
+                    break;
+                case "vp9":
+                    concat = "video/x-vnd.on2.vp9";
+                    break;
+                case "h265":
+                case "hevc":
+                    concat = "video/hevc";
+                    break;
+                default:
+                    try {
+                        concat = "video/".concat(str);
+                        break;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return false;
+                    }
+            }
+        }
+        if (concat != null) {
+            if (l0 == null) {
+                l0 = new HashMap();
+            }
+            Boolean bool = (Boolean) l0.get(concat);
+            if (bool != null) {
+                return bool.booleanValue();
+            }
+            if (!MessagesController.getGlobalMainSettings().getBoolean("unsupport_".concat(concat), false)) {
+                int codecCount = MediaCodecList.getCodecCount();
+                for (int i10 = 0; i10 < codecCount; i10++) {
+                    MediaCodecInfo codecInfoAt = MediaCodecList.getCodecInfoAt(i10);
+                    if (!codecInfoAt.isEncoder() && r2.w.i(codecInfoAt, concat)) {
+                        for (String str2 : codecInfoAt.getSupportedTypes()) {
+                            if (str2.equalsIgnoreCase(concat)) {
+                                l0.put(concat, Boolean.TRUE);
+                                return true;
+                            }
+                        }
+                    }
+                }
+                l0.put(concat, Boolean.FALSE);
+                return false;
+            }
+        }
+        return false;
+    }
 
-    void onStateChanged(boolean z10, int i10);
+    public static f81 k(ArrayList arrayList) {
+        if (arrayList == null) {
+            return null;
+        }
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ArrayList arrayList2 = ((d81) obj).d;
+            int size2 = arrayList2.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList2.get(i11);
+                i11++;
+                f81 f81Var = (f81) obj2;
+                if (f81Var.b()) {
+                    return f81Var;
+                }
+            }
+        }
+        return null;
+    }
 
-    boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture);
+    public static ArrayList s(int i10, TLRPC.Document document, ArrayList arrayList, int i11, boolean z10) {
+        d81 d81Var;
+        String str;
+        ArrayList arrayList2 = new ArrayList();
+        if (document != null) {
+            arrayList2.add(document);
+        }
+        if (!MessagesController.getInstance(i10).videoIgnoreAltDocuments && arrayList != null) {
+            arrayList2.addAll(arrayList);
+        }
+        LongSparseArray longSparseArray = new LongSparseArray();
+        int i12 = 0;
+        while (i12 < arrayList2.size()) {
+            TLRPC.Document document2 = (TLRPC.Document) arrayList2.get(i12);
+            if ("application/x-mpegurl".equalsIgnoreCase(document2.mime_type) && (str = document2.file_name_fixed) != null && str.startsWith("mtproto")) {
+                try {
+                    longSparseArray.put(Long.parseLong(document2.file_name_fixed.substring(7)), document2);
+                    arrayList2.remove(i12);
+                    i12--;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                }
+            }
+            i12++;
+        }
+        ArrayList arrayList3 = new ArrayList();
+        for (int i13 = 0; i13 < arrayList2.size(); i13++) {
+            try {
+                TLRPC.Document document3 = (TLRPC.Document) arrayList2.get(i13);
+                if (!"application/x-mpegurl".equalsIgnoreCase(document3.mime_type) && !"application/x-tgstoryboard".equalsIgnoreCase(document3.mime_type) && !"application/x-tgstoryboardmap".equalsIgnoreCase(document3.mime_type)) {
+                    f81 d = f81.d(i10, document3, (TLRPC.Document) longSparseArray.get(document3.id), i11, z10);
+                    if (d.i > 0 && d.j > 0) {
+                        if (document3 == document) {
+                            d.b = true;
+                        }
+                        arrayList3.add(d);
+                    }
+                }
+            } catch (Exception e7) {
+                FileLog.e(e7);
+            }
+        }
+        ArrayList arrayList4 = new ArrayList();
+        for (int i14 = 0; i14 < arrayList3.size(); i14++) {
+            f81 f81Var = (f81) arrayList3.get(i14);
+            String str2 = f81Var.m;
+            if (str2 == null || ((!"av1".equals(str2) && !"av01".equals(f81Var.m) && !"hevc".equals(f81Var.m) && !"h265".equals(f81Var.m) && !"vp9".equals(f81Var.m)) || Y(f81Var.m))) {
+                arrayList4.add(f81Var);
+            }
+        }
+        ArrayList arrayList5 = new ArrayList();
+        if (arrayList4.isEmpty()) {
+            arrayList5.addAll(arrayList3);
+        } else {
+            arrayList5.addAll(arrayList4);
+        }
+        ArrayList arrayList6 = new ArrayList();
+        int size = arrayList5.size();
+        int i15 = 0;
+        while (i15 < size) {
+            Object obj = arrayList5.get(i15);
+            i15++;
+            f81 f81Var2 = (f81) obj;
+            if (f81Var2.b) {
+                arrayList6.add(new d81(f81Var2));
+            } else {
+                int size2 = arrayList6.size();
+                int i16 = 0;
+                while (true) {
+                    if (i16 >= size2) {
+                        d81Var = null;
+                        break;
+                    }
+                    Object obj2 = arrayList6.get(i16);
+                    i16++;
+                    d81Var = (d81) obj2;
+                    if (!d81Var.a && d81Var.b == f81Var2.i && d81Var.c == f81Var2.j) {
+                        break;
+                    }
+                }
+                if (d81Var == null || SharedConfig.debugVideoQualities) {
+                    arrayList6.add(new d81(f81Var2));
+                } else {
+                    d81Var.d.add(f81Var2);
+                }
+            }
+        }
+        return arrayList6;
+    }
 
-    void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture);
+    public static f81 v(ArrayList arrayList) {
+        int i10;
+        int i11;
+        int size = arrayList.size();
+        int i12 = 0;
+        while (i12 < size) {
+            Object obj = arrayList.get(i12);
+            i12++;
+            ArrayList arrayList2 = ((d81) obj).d;
+            int size2 = arrayList2.size();
+            int i13 = 0;
+            while (i13 < size2) {
+                Object obj2 = arrayList2.get(i13);
+                i13++;
+                f81 f81Var = (f81) obj2;
+                if (f81Var.b && f81Var.b()) {
+                    return f81Var;
+                }
+            }
+        }
+        int size3 = arrayList.size();
+        f81 f81Var2 = null;
+        int i14 = 0;
+        while (i14 < size3) {
+            Object obj3 = arrayList.get(i14);
+            i14++;
+            ArrayList arrayList3 = ((d81) obj3).d;
+            int size4 = arrayList3.size();
+            int i15 = 0;
+            while (i15 < size4) {
+                Object obj4 = arrayList3.get(i15);
+                i15++;
+                f81 f81Var3 = (f81) obj4;
+                if (!f81Var3.b && Y(f81Var3.m) && (f81Var2 == null || (i10 = f81Var3.i * f81Var3.j) > (i11 = f81Var2.i * f81Var2.j) || (i10 == i11 && f81Var3.l < f81Var2.l))) {
+                    f81Var2 = f81Var3;
+                }
+            }
+        }
+        if (f81Var2 == null) {
+            int size5 = arrayList.size();
+            int i16 = 0;
+            while (i16 < size5) {
+                Object obj5 = arrayList.get(i16);
+                i16++;
+                ArrayList arrayList4 = ((d81) obj5).d;
+                int size6 = arrayList4.size();
+                int i17 = 0;
+                while (i17 < size6) {
+                    Object obj6 = arrayList4.get(i17);
+                    i17++;
+                    f81 f81Var4 = (f81) obj6;
+                    if (f81Var2 == null || f81Var2.i * f81Var2.j > f81Var4.i * f81Var4.j || f81Var4.l < f81Var2.l) {
+                        f81Var2 = f81Var4;
+                    }
+                }
+            }
+        }
+        return f81Var2;
+    }
 
-    void onVideoSizeChanged(int i10, int i11, int i12, float f7);
+    public static f81 w(ArrayList arrayList) {
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ArrayList arrayList2 = ((d81) obj).d;
+            int size2 = arrayList2.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList2.get(i11);
+                i11++;
+                f81 f81Var = (f81) obj2;
+                if (f81Var.b()) {
+                    return f81Var;
+                }
+            }
+        }
+        int size3 = arrayList.size();
+        f81 f81Var2 = null;
+        int i12 = 0;
+        while (i12 < size3) {
+            Object obj3 = arrayList.get(i12);
+            i12++;
+            ArrayList arrayList3 = ((d81) obj3).d;
+            int size4 = arrayList3.size();
+            int i13 = 0;
+            while (i13 < size4) {
+                Object obj4 = arrayList3.get(i13);
+                i13++;
+                f81 f81Var3 = (f81) obj4;
+                if (!f81Var3.b && (f81Var2 == null || f81Var2.i * f81Var2.j > f81Var3.i * f81Var3.j || f81Var3.l < f81Var2.l)) {
+                    if (f81Var3.i <= 900 && f81Var3.j <= 900) {
+                        f81Var2 = f81Var3;
+                    }
+                }
+            }
+        }
+        if (f81Var2 == null) {
+            int size5 = arrayList.size();
+            int i14 = 0;
+            while (i14 < size5) {
+                Object obj5 = arrayList.get(i14);
+                i14++;
+                ArrayList arrayList4 = ((d81) obj5).d;
+                int size6 = arrayList4.size();
+                int i15 = 0;
+                while (i15 < size6) {
+                    Object obj6 = arrayList4.get(i15);
+                    i15++;
+                    f81 f81Var4 = (f81) obj6;
+                    if (f81Var2 == null || f81Var2.i * f81Var2.j > f81Var4.i * f81Var4.j || f81Var4.l < f81Var2.l) {
+                        f81Var2 = f81Var4;
+                    }
+                }
+            }
+        }
+        return f81Var2;
+    }
+
+    /* JADX WARN: Type inference failed for: r0v4, types: [androidx.media3.exoplayer.hls.HlsMediaSource$Factory] */
+    /* JADX WARN: Type inference failed for: r0v9, types: [androidx.media3.exoplayer.dash.DashMediaSource$Factory] */
+    public final u2.a A(Uri uri, String str, long j10) {
+        b2.i0 i0Var;
+        b2.k0 k0Var;
+        n2.n u10;
+        n2.n nVar;
+        final ExtendedDefaultDataSourceFactory extendedDefaultDataSourceFactory = this.h;
+        b2.d0 d0Var = new b2.d0();
+        b2.g0 g0Var = new b2.g0();
+        List list = Collections.EMPTY_LIST;
+        e9.x1 x1Var = e9.x1.e;
+        b2.i0 i0Var2 = new b2.i0();
+        b2.l0 l0Var = b2.l0.d;
+        v7.u6.p(g0Var.b == null || g0Var.a != null);
+        if (uri != null) {
+            b2.h0 h0Var = g0Var.a != null ? new b2.h0(g0Var) : null;
+            i0Var = i0Var2;
+            k0Var = new b2.k0(uri, null, h0Var, null, list, null, x1Var, -9223372036854775807L);
+        } else {
+            i0Var = i0Var2;
+            k0Var = null;
+        }
+        b2.p0 p0Var = new b2.p0("", new b2.f0(d0Var), k0Var, new b2.j0(i0Var), b2.s0.L, l0Var);
+        if (j10 == 0) {
+            str.getClass();
+            if (str.equals("hls")) {
+                if (this.Y == null) {
+                    this.Y = new u2.f0(extendedDefaultDataSourceFactory) { // from class: androidx.media3.exoplayer.hls.HlsMediaSource$Factory
+                        public final f a;
+                        public c b;
+                        public u c;
+                        public final k i = new k(6);
+                        public final a f = new a(19);
+                        public final ul0 g = d.J;
+                        public final oa.d j = new oa.d(27);
+                        public final oa.d h = new oa.d(24);
+                        public final int l = 1;
+                        public final long m = -9223372036854775807L;
+                        public final boolean k = true;
+                        public int e = 3;
+                        public boolean d = true;
+
+                        {
+                            this.a = new f(extendedDefaultDataSourceFactory, 5);
+                        }
+
+                        @Override // u2.f0
+                        public final f0 b(boolean z10) {
+                            this.d = z10;
+                            return this;
+                        }
+
+                        @Override // u2.f0
+                        public final f0 c(int i10) {
+                            this.e = i10;
+                            return this;
+                        }
+
+                        @Override // u2.f0
+                        public final f0 d(u uVar) {
+                            this.c = uVar;
+                            return this;
+                        }
+
+                        @Override // u2.f0
+                        /* renamed from: e, reason: merged with bridge method [inline-methods] */
+                        public final l a(p0 p0Var2) {
+                            p0Var2.b.getClass();
+                            if (this.b == null) {
+                                c cVar = new c();
+                                cVar.a = new u(28);
+                                cVar.c = 3;
+                                this.b = cVar;
+                            }
+                            u uVar = this.c;
+                            if (uVar != null) {
+                                this.b.a = uVar;
+                            }
+                            c cVar2 = this.b;
+                            cVar2.b = this.d;
+                            cVar2.c = this.e;
+                            List list2 = p0Var2.b.e;
+                            boolean isEmpty = list2.isEmpty();
+                            t tVar = this.f;
+                            if (!isEmpty) {
+                                tVar = new o(11, tVar, list2);
+                            }
+                            n A = this.i.A(p0Var2);
+                            this.g.getClass();
+                            f fVar = this.a;
+                            oa.d dVar = this.j;
+                            return new l(p0Var2, fVar, cVar2, this.h, A, dVar, new d(fVar, dVar, tVar), this.m, this.k, this.l);
+                        }
+                    };
+                }
+                return a(p0Var);
+            }
+            if (str.equals("dash")) {
+                if (this.X == null) {
+                    this.X = new u2.f0(extendedDefaultDataSourceFactory) { // from class: androidx.media3.exoplayer.dash.DashMediaSource$Factory
+                        public final a5.a a;
+                        public final g b;
+                        public final k c;
+                        public final oa.d d;
+                        public final oa.d e;
+                        public final long f;
+                        public final long g;
+
+                        {
+                            a5.a aVar = new a5.a(extendedDefaultDataSourceFactory);
+                            this.a = aVar;
+                            this.b = extendedDefaultDataSourceFactory;
+                            this.c = new k(6);
+                            this.e = new oa.d(27);
+                            this.f = 30000L;
+                            this.g = 5000000L;
+                            this.d = new oa.d(24);
+                            ((c5.f) aVar.d).b = true;
+                        }
+
+                        @Override // u2.f0
+                        public final u2.a a(p0 p0Var2) {
+                            p0Var2.b.getClass();
+                            e eVar = new e();
+                            List list2 = p0Var2.b.e;
+                            return new h(p0Var2, this.b, !list2.isEmpty() ? new m4.c(24, eVar, list2) : eVar, this.a, this.d, this.c.A(p0Var2), this.e, this.f, this.g);
+                        }
+
+                        @Override // u2.f0
+                        public final f0 b(boolean z10) {
+                            ((c5.f) this.a.d).b = z10;
+                            return this;
+                        }
+
+                        @Override // u2.f0
+                        public final f0 c(int i10) {
+                            ((c5.f) this.a.d).a = i10;
+                            return this;
+                        }
+
+                        @Override // u2.f0
+                        public final f0 d(u uVar) {
+                            c5.f fVar = (c5.f) this.a.d;
+                            fVar.getClass();
+                            fVar.c = uVar;
+                            return this;
+                        }
+                    };
+                }
+                return a(p0Var);
+            }
+            if (this.Z == null) {
+                this.Z = new u2.x0(extendedDefaultDataSourceFactory, new c3.m());
+            }
+            return this.Z.a(p0Var);
+        }
+        bi.p1 p1Var = new bi.p1(this, j10, 7);
+        rg.b0 b0Var = new rg.b0(new c3.m(), 8);
+        Object obj = new Object();
+        oa.d dVar = new oa.d(27);
+        k0Var.getClass();
+        p0Var.b.getClass();
+        b2.h0 h0Var2 = p0Var.b.c;
+        if (h0Var2 == null) {
+            nVar = n2.n.z;
+        } else {
+            synchronized (obj) {
+                try {
+                    u10 = !h0Var2.equals(null) ? li.k.u(h0Var2) : null;
+                    u10.getClass();
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+            nVar = u10;
+        }
+        return new u2.y0(p0Var, p1Var, b0Var, nVar, dVar, 1048576, null);
+    }
+
+    public void B() {
+        this.I = false;
+        i2.h0 h0Var = this.d;
+        if (h0Var != null) {
+            h0Var.X(false);
+        }
+        i2.h0 h0Var2 = this.e;
+        if (h0Var2 != null) {
+            h0Var2.X(false);
+        }
+        if (this.K != null) {
+            this.a0.removeCallbacksAndMessages(null);
+            this.K.onVisualizerUpdate(false, true, null);
+        }
+    }
+
+    public void C() {
+        this.I = true;
+        if (!this.x || (this.H && this.G)) {
+            i2.h0 h0Var = this.d;
+            if (h0Var != null) {
+                h0Var.X(true);
+            }
+            i2.h0 h0Var2 = this.e;
+            if (h0Var2 != null) {
+                h0Var2.X(true);
+                return;
+            }
+            return;
+        }
+        i2.h0 h0Var3 = this.d;
+        if (h0Var3 != null) {
+            h0Var3.X(false);
+        }
+        i2.h0 h0Var4 = this.e;
+        if (h0Var4 != null) {
+            h0Var4.X(false);
+        }
+    }
+
+    public final void D(Uri uri, String str) {
+        E(uri, str, 0L);
+    }
+
+    public final void E(Uri uri, String str, long j10) {
+        this.N = null;
+        this.O = null;
+        this.Q = uri;
+        this.S = str;
+        this.R = null;
+        this.T = null;
+        boolean z10 = false;
+        this.U = false;
+        this.c0 = false;
+        this.e0 = false;
+        this.G = false;
+        this.x = false;
+        this.F = uri;
+        String scheme = uri != null ? uri.getScheme() : null;
+        if (scheme != null && !scheme.startsWith("file")) {
+            z10 = true;
+        }
+        this.v = z10;
+        i();
+        this.d.u1(A(uri, str, j10), true);
+        this.d.b();
+    }
+
+    public final void F(ArrayList arrayList, d81 d81Var) {
+        ArrayList arrayList2;
+        this.N = arrayList;
+        this.O = d81Var;
+        this.Q = null;
+        this.S = "hls";
+        this.R = null;
+        this.T = null;
+        this.U = false;
+        this.c0 = false;
+        this.G = false;
+        this.x = false;
+        this.F = null;
+        this.v = true;
+        i();
+        this.e0 = false;
+        this.d0 = (d81Var == null || (arrayList2 = this.N) == null) ? -1 : arrayList2.indexOf(d81Var);
+        R(true, d81Var);
+        if (this.c0) {
+            this.d0 = -1;
+        }
+    }
+
+    public final void G(Uri uri, String str, Uri uri2, String str2) {
+        Uri uri3;
+        String str3;
+        u2.x xVar = null;
+        this.N = null;
+        this.O = null;
+        this.Q = uri;
+        this.R = uri2;
+        this.S = str;
+        this.T = str2;
+        this.U = true;
+        this.e0 = false;
+        this.x = true;
+        this.H = false;
+        this.G = false;
+        i();
+        u2.x xVar2 = null;
+        for (int i10 = 0; i10 < 2; i10++) {
+            if (i10 == 0) {
+                uri3 = uri;
+                str3 = str;
+            } else {
+                uri3 = uri2;
+                str3 = str2;
+            }
+            u2.x xVar3 = new u2.x(A(uri3, str3, 0L));
+            if (i10 == 0) {
+                xVar = xVar3;
+            } else {
+                xVar2 = xVar3;
+            }
+        }
+        this.d.u1(xVar, true);
+        this.d.b();
+        this.e.u1(xVar2, true);
+        this.e.b();
+        k0.add(Integer.valueOf(this.a));
+    }
+
+    public final void H() {
+        k0.remove(Integer.valueOf(this.a));
+        i2.h0 h0Var = this.d;
+        if (h0Var != null) {
+            h0Var.X0();
+            this.d = null;
+        }
+        i2.h0 h0Var2 = this.e;
+        if (h0Var2 != null) {
+            h0Var2.X0();
+            this.e = null;
+        }
+        if (this.W) {
+            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.playerDidStartPlaying);
+        }
+    }
+
+    public void K(long j10) {
+        L(j10, false);
+    }
+
+    public final void L(long j10, boolean z10) {
+        i2.h0 h0Var = this.d;
+        if (h0Var != null) {
+            h0Var.w1(z10 ? i2.t1.d : i2.t1.c);
+            this.d.Z0(5, j10);
+        }
+    }
+
+    public final void M(long j10, boolean z10, Runnable runnable) {
+        if (this.d != null) {
+            if (runnable != null) {
+                this.i0.add(runnable);
+            }
+            this.d.w1(z10 ? i2.t1.d : i2.t1.c);
+            this.d.Z0(5, j10);
+        }
+    }
+
+    public final void N(boolean z10) {
+        if (this.V != z10) {
+            this.V = z10;
+            i2.h0 h0Var = this.d;
+            if (h0Var != null) {
+                h0Var.j(z10 ? 2 : 0);
+            }
+        }
+    }
+
+    public final void O(boolean z10) {
+        i2.h0 h0Var = this.d;
+        if (h0Var != null) {
+            h0Var.U(z10 ? 0.0f : 1.0f);
+        }
+        i2.h0 h0Var2 = this.e;
+        if (h0Var2 != null) {
+            h0Var2.U(z10 ? 0.0f : 1.0f);
+        }
+    }
+
+    public void P(boolean z10) {
+        this.I = z10;
+        if (z10 && this.x && (!this.H || !this.G)) {
+            i2.h0 h0Var = this.d;
+            if (h0Var != null) {
+                h0Var.X(false);
+            }
+            i2.h0 h0Var2 = this.e;
+            if (h0Var2 != null) {
+                h0Var2.X(false);
+                return;
+            }
+            return;
+        }
+        this.w = z10;
+        i2.h0 h0Var3 = this.d;
+        if (h0Var3 != null) {
+            h0Var3.X(z10);
+        }
+        i2.h0 h0Var4 = this.e;
+        if (h0Var4 != null) {
+            h0Var4.X(z10);
+        }
+    }
+
+    public void Q(float f7) {
+        try {
+            i2.h0 h0Var = this.d;
+            if (h0Var != null) {
+                h0Var.f(new b2.a1(f7, f7 > 1.0f ? 0.98f : 1.0f));
+            }
+        } catch (Exception unused) {
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:91:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x01b8 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void R(boolean z10, d81 d81Var) {
+        boolean z11;
+        boolean z12;
+        int i10;
+        int i11;
+        b2.r1 r1Var;
+        int i12;
+        d81 d81Var2;
+        i2.h0 h0Var = this.d;
+        if (h0Var == null) {
+            return;
+        }
+        boolean j02 = h0Var.j0();
+        long M0 = this.d.M0();
+        if (!z10) {
+            this.g0 = M0;
+            this.f0 = this.d.getDuration();
+        }
+        this.O = d81Var;
+        x2.n nVar = this.f;
+        boolean z13 = true;
+        int i13 = 0;
+        if (d81Var == null) {
+            Uri z14 = z(this.N);
+            int i14 = 0;
+            while (true) {
+                if (i14 >= t()) {
+                    d81Var2 = null;
+                    break;
+                }
+                d81 u10 = u(i14);
+                if (u10.a) {
+                    d81Var2 = u10;
+                    break;
+                }
+                i14++;
+            }
+            if (d81Var2 != null) {
+                ArrayList arrayList = d81Var2.d;
+                if (arrayList.size() == 1 && ((f81) arrayList.get(0)).b()) {
+                    this.e0 = false;
+                    this.c0 = true;
+                    this.O = d81Var2;
+                    this.d.u1(A(d81Var2.a().d, "other", 0L), false);
+                    z11 = j02;
+                }
+            }
+            if (z14 != null) {
+                this.c0 = false;
+                x2.i j10 = nVar.j();
+                j10.getClass();
+                x2.h hVar = new x2.h(j10);
+                hVar.c();
+                nVar.b(new x2.i(hVar));
+                if (this.e0) {
+                    z13 = false;
+                } else {
+                    this.e0 = true;
+                    this.d.u1(A(z14, "hls", 0L), false);
+                }
+            } else {
+                d81 r10 = r(Boolean.TRUE);
+                if (r10 == null) {
+                    r10 = r(Boolean.FALSE);
+                }
+                if (r10 == null || r10.d.isEmpty()) {
+                    return;
+                }
+                this.e0 = false;
+                this.O = r10;
+                this.c0 = r10.a;
+                this.d.u1(A(r10.a().d, "other", 0L), false);
+            }
+            z11 = j02;
+        } else {
+            ArrayList arrayList2 = d81Var.d;
+            this.c0 = false;
+            if (arrayList2.isEmpty()) {
+                return;
+            }
+            Uri z15 = arrayList2.size() > 1 ? z(this.N) : null;
+            if (z15 == null || arrayList2.size() == 1 || nVar.c == null) {
+                z11 = j02;
+                this.e0 = false;
+                this.d.u1(A(d81Var.a().d, "other", 0L), false);
+            } else {
+                if (this.e0) {
+                    z13 = false;
+                } else {
+                    this.e0 = true;
+                    this.d.u1(A(z15, "hls", 0L), false);
+                }
+                x2.i j11 = nVar.j();
+                j11.getClass();
+                x2.h hVar2 = new x2.h(j11);
+                hVar2.c();
+                int size = arrayList2.size();
+                int i15 = 0;
+                while (i15 < size) {
+                    int i16 = i15 + 1;
+                    f81 f81Var = (f81) arrayList2.get(i15);
+                    try {
+                        int indexOf = this.P.indexOf(f81Var);
+                        x2.r rVar = nVar.c;
+                        int i17 = i13;
+                        while (i17 < rVar.a) {
+                            u2.r1 r1Var2 = rVar.c[i17];
+                            z12 = j02;
+                            while (i13 < r1Var2.a) {
+                                try {
+                                    b2.q1 a2 = r1Var2.a(i13);
+                                    i10 = size;
+                                    i11 = i16;
+                                    int i18 = 0;
+                                    while (i18 < a2.a) {
+                                        try {
+                                            b2.x xVar = a2.d[i18];
+                                            u2.r1 r1Var3 = r1Var2;
+                                            try {
+                                                i12 = Integer.parseInt(xVar.a);
+                                            } catch (Exception unused) {
+                                                i12 = -1;
+                                            }
+                                            if (i12 >= 0 && indexOf == i12) {
+                                                r1Var = new b2.r1(a2, i18);
+                                                break;
+                                            }
+                                            int i19 = indexOf;
+                                            if (xVar.z == f81Var.i && xVar.A == f81Var.j) {
+                                                r1Var = new b2.r1(a2, i18);
+                                                break;
+                                            } else {
+                                                i18++;
+                                                r1Var2 = r1Var3;
+                                                indexOf = i19;
+                                            }
+                                        } catch (Exception e) {
+                                            e = e;
+                                            FileLog.e(e);
+                                            r1Var = null;
+                                            if (r1Var != null) {
+                                            }
+                                            size = i10;
+                                            j02 = z12;
+                                            i15 = i11;
+                                            i13 = 0;
+                                        }
+                                    }
+                                    i13++;
+                                    size = i10;
+                                    i16 = i11;
+                                } catch (Exception e7) {
+                                    e = e7;
+                                    i10 = size;
+                                    i11 = i16;
+                                    FileLog.e(e);
+                                    r1Var = null;
+                                    if (r1Var != null) {
+                                    }
+                                    size = i10;
+                                    j02 = z12;
+                                    i15 = i11;
+                                    i13 = 0;
+                                }
+                            }
+                            i17++;
+                            j02 = z12;
+                            i13 = 0;
+                        }
+                        z12 = j02;
+                        i10 = size;
+                        i11 = i16;
+                    } catch (Exception e10) {
+                        e = e10;
+                        z12 = j02;
+                    }
+                    r1Var = null;
+                    if (r1Var != null) {
+                        hVar2.H.put(r1Var.a, r1Var);
+                    }
+                    size = i10;
+                    j02 = z12;
+                    i15 = i11;
+                    i13 = 0;
+                }
+                z11 = j02;
+                nVar.b(new x2.i(hVar2));
+            }
+        }
+        if (z13) {
+            this.d.b();
+            if (!z10) {
+                this.d.Z0(5, M0);
+                if (z11) {
+                    this.d.i();
+                }
+            }
+            org.telegram.ui.or0 or0Var = this.h0;
+            if (or0Var != null) {
+                AndroidUtilities.runOnUIThread(or0Var);
+            }
+            k0.add(Integer.valueOf(this.a));
+        }
+    }
+
+    public final void S(int i10) {
+        i2.h0 h0Var = this.d;
+        if (h0Var != null) {
+            h0Var.N0(new b2.f(0, 0, i10 == 0 ? 2 : 1, 1, false, 0, true), false);
+        }
+        i2.h0 h0Var2 = this.e;
+        if (h0Var2 != null) {
+            h0Var2.N0(new b2.f(0, 0, i10 == 0 ? 2 : 1, 1, false, 0, true), true);
+        }
+    }
+
+    public final void T(Surface surface) {
+        if (this.s == surface) {
+            return;
+        }
+        this.s = surface;
+        i2.h0 h0Var = this.d;
+        if (h0Var == null) {
+            return;
+        }
+        h0Var.y1(surface);
+    }
+
+    public final void U(SurfaceView surfaceView) {
+        if (this.r == surfaceView) {
+            return;
+        }
+        this.r = surfaceView;
+        i2.h0 h0Var = this.d;
+        if (h0Var == null) {
+            return;
+        }
+        h0Var.F1();
+        h0Var.T(surfaceView == null ? null : surfaceView.getHolder());
+    }
+
+    public final void V(TextureView textureView) {
+        if (this.n == textureView) {
+            return;
+        }
+        this.n = textureView;
+        i2.h0 h0Var = this.d;
+        if (h0Var == null) {
+            return;
+        }
+        h0Var.z1(textureView);
+    }
+
+    public final void W(float f7) {
+        i2.h0 h0Var = this.d;
+        if (h0Var != null) {
+            h0Var.U(f7);
+        }
+        i2.h0 h0Var2 = this.e;
+        if (h0Var2 != null) {
+            h0Var2.U(f7);
+        }
+    }
+
+    public final void X(DispatchQueue dispatchQueue) {
+        this.b = dispatchQueue;
+        if (dispatchQueue == null) {
+            this.d.s0 = null;
+        } else {
+            this.d.s0 = new org.telegram.messenger.f1(dispatchQueue);
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 != NotificationCenter.playerDidStartPlaying || ((h81) objArr[0]) == this || !y() || this.y) {
+            return;
+        }
+        B();
+    }
+
+    @Override // j2.b
+    public final void g(j2.a aVar, int i10) {
+        if (i10 == 1) {
+            e81 e81Var = this.J;
+            if (e81Var != null) {
+                e81Var.onSeekFinished(aVar);
+            }
+            ArrayList arrayList = this.i0;
+            int size = arrayList.size();
+            int i11 = 0;
+            while (i11 < size) {
+                Object obj = arrayList.get(i11);
+                i11++;
+                ((Runnable) obj).run();
+            }
+            arrayList.clear();
+        }
+    }
+
+    public final void i() {
+        HashMap hashMap = new HashMap();
+        hashMap.put(j2.k.c.a, 144179200);
+        y2.d dVar = new y2.d();
+        boolean z10 = this.c;
+        int i10 = MediaDataController.MAX_STYLE_RUNS_COUNT;
+        int i11 = z10 ? 1000 : 100;
+        if (!z10) {
+            i10 = 2000;
+        }
+        int i12 = i10;
+        i2.i.a(i11, 0, "bufferForPlaybackMs", "0");
+        i2.i.a(i12, 0, "bufferForPlaybackAfterRebufferMs", "0");
+        i2.i.a(50000, i11, "minBufferMs", "bufferForPlaybackMs");
+        i2.i.a(50000, i12, "minBufferMs", "bufferForPlaybackAfterRebufferMs");
+        i2.i.a(50000, 50000, "maxBufferMs", "minBufferMs");
+        i2.i.a(0, 0, "backBufferDurationMs", "0");
+        i2.i iVar = new i2.i(dVar, 50000, i11, i11, i12, i12, false, hashMap);
+        if (this.d == null) {
+            i2.k b81Var = this.K != null ? new b81(ApplicationLoader.applicationContext, this) : new i2.k(ApplicationLoader.applicationContext);
+            b81Var.c = 1;
+            i2.o oVar = new i2.o(ApplicationLoader.applicationContext);
+            v7.u6.p(!oVar.z);
+            oVar.c = new i2.n(b81Var, 2);
+            x2.n nVar = this.f;
+            v7.u6.p(!oVar.z);
+            nVar.getClass();
+            oVar.e = new i2.n(nVar, 1);
+            v7.u6.p(!oVar.z);
+            oVar.f = new i2.n(iVar, 0);
+            i2.h0 a2 = oVar.a();
+            this.d = a2;
+            j2.f fVar = a2.s;
+            fVar.getClass();
+            fVar.f.a(this);
+            this.d.m.a(this);
+            this.d.t0.add(this);
+            TextureView textureView = this.n;
+            if (textureView != null) {
+                this.d.z1(textureView);
+            } else {
+                Surface surface = this.s;
+                if (surface != null) {
+                    this.d.y1(surface);
+                } else {
+                    SurfaceView surfaceView = this.r;
+                    if (surfaceView != null) {
+                        i2.h0 h0Var = this.d;
+                        h0Var.F1();
+                        h0Var.T(surfaceView.getHolder());
+                    }
+                }
+            }
+            this.d.X(this.w);
+            this.d.j(this.V ? 2 : 0);
+        }
+        if (this.x && this.e == null) {
+            i2.o oVar2 = new i2.o(ApplicationLoader.applicationContext);
+            x2.n nVar2 = this.f;
+            v7.u6.p(!oVar2.z);
+            nVar2.getClass();
+            oVar2.e = new i2.n(nVar2, 1);
+            v7.u6.p(true ^ oVar2.z);
+            oVar2.f = new i2.n(iVar, 0);
+            i2.h0 a10 = oVar2.a();
+            this.e = a10;
+            a10.m.a(new e2.z(this, 2));
+            this.e.X(this.w);
+        }
+    }
+
+    public final long j() {
+        i2.h0 h0Var = this.d;
+        if (h0Var != null) {
+            return this.v ? h0Var.d0() : h0Var.getDuration();
+        }
+        return 0L;
+    }
+
+    public final qf.g l(String str, String str2, String str3) {
+        if (this.N == null) {
+            if (this.Q == null) {
+                return null;
+            }
+            String h = t8.b.h("/mtproto_", str);
+            String queryParameter = this.Q.getQueryParameter("mime");
+            qf.e eVar = new qf.e(this.Q, TextUtils.isEmpty(queryParameter) ? "video/mp4" : queryParameter, h);
+            eVar.e = str2;
+            eVar.f = str3;
+            return new qf.g(new qf.f(eVar));
+        }
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = this.N;
+        int size = arrayList2.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList2.get(i10);
+            i10++;
+            ArrayList arrayList3 = ((d81) obj).d;
+            int size2 = arrayList3.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList3.get(i11);
+                i11++;
+                f81 f81Var = (f81) obj2;
+                StringBuilder sb2 = new StringBuilder("/mtproto_");
+                ArrayList arrayList4 = arrayList2;
+                sb2.append(f81Var.c);
+                String sb3 = sb2.toString();
+                TLRPC.Document document = f81Var.g;
+                String str4 = document != null ? document.mime_type : null;
+                if (TextUtils.isEmpty(str4)) {
+                    str4 = "video/mp4";
+                }
+                qf.e eVar2 = new qf.e(f81Var.d, str4, sb3);
+                eVar2.e = str2;
+                eVar2.f = str3;
+                int i12 = f81Var.i;
+                int i13 = f81Var.j;
+                eVar2.a = i12;
+                eVar2.b = i13;
+                arrayList.add(new qf.f(eVar2));
+                arrayList2 = arrayList4;
+            }
+        }
+        return new qf.g(arrayList);
+    }
+
+    public final TLRPC.Document m() {
+        ArrayList arrayList;
+        i2.h0 h0Var = this.d;
+        if (h0Var == null) {
+            return null;
+        }
+        h0Var.F1();
+        b2.x xVar = h0Var.S;
+        if (xVar == null || xVar.o == 0 || (arrayList = this.N) == null) {
+            return null;
+        }
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ArrayList arrayList2 = ((d81) obj).d;
+            int size2 = arrayList2.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList2.get(i11);
+                i11++;
+                f81 f81Var = (f81) obj2;
+                if (f81Var.c == xVar.o) {
+                    return f81Var.g;
+                }
+            }
+        }
+        return null;
+    }
+
+    public final long n() {
+        long j10 = this.g0;
+        if (j10 != -9223372036854775807L) {
+            return j10;
+        }
+        i2.h0 h0Var = this.d;
+        if (h0Var != null) {
+            return h0Var.M0();
+        }
+        return 0L;
+    }
+
+    public final int o() {
+        if (this.d0 == -1) {
+            try {
+                if (this.c0) {
+                    for (int i10 = 0; i10 < t(); i10++) {
+                        if (u(i10).a) {
+                            return i10;
+                        }
+                    }
+                }
+                i2.h0 h0Var = this.d;
+                if (h0Var != null) {
+                    h0Var.F1();
+                    b2.x xVar = h0Var.S;
+                    if (xVar != null) {
+                        for (int i11 = 0; i11 < t(); i11++) {
+                            d81 u10 = u(i11);
+                            if (!u10.a && xVar.z == u10.b && xVar.A == u10.c && xVar.j == ((int) Math.floor(((f81) u10.d.get(0)).l * 8.0d))) {
+                                return i11;
+                            }
+                        }
+                    }
+                }
+                return -1;
+            } catch (Exception e) {
+                FileLog.e(e);
+                return -1;
+            }
+        }
+        return this.d0;
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onCues(d2.c cVar) {
+    }
+
+    @Override // b2.e1
+    public final void onPlayerError(b2.z0 z0Var) {
+        AndroidUtilities.runOnUIThread(new k31(8, this, z0Var));
+    }
+
+    @Override // b2.e1
+    public final void onPlayerStateChanged(boolean z10, int i10) {
+        i2.h0 h0Var = this.d;
+        if (h0Var != null) {
+            boolean t10 = h0Var.t();
+            int d = this.d.d();
+            if (this.M != t10 || this.L != d) {
+                this.J.onStateChanged(t10, d);
+                this.M = t10;
+                this.L = d;
+            }
+        }
+        if (z10 && i10 == 3 && !x() && this.W) {
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.playerDidStartPlaying, this);
+        }
+        if (!this.G && i10 == 3) {
+            this.G = true;
+            if (this.H && this.I) {
+                C();
+            }
+        }
+        if (i10 != 3) {
+            this.a0.removeCallbacksAndMessages(null);
+            a81 a81Var = this.K;
+            if (a81Var != null) {
+                a81Var.onVisualizerUpdate(false, true, null);
+            }
+        }
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onPositionDiscontinuity(int i10) {
+    }
+
+    @Override // j2.b
+    public final void onRenderedFirstFrame(j2.a aVar) {
+        this.g0 = -9223372036854775807L;
+        this.f0 = -9223372036854775807L;
+        e81 e81Var = this.J;
+        if (e81Var != null) {
+            e81Var.onRenderedFirstFrame(aVar);
+        }
+    }
+
+    @Override // j2.b
+    public final void onSeekStarted(j2.a aVar) {
+        e81 e81Var = this.J;
+        if (e81Var != null) {
+            e81Var.onSeekStarted(aVar);
+        }
+    }
+
+    @Override // b2.e1
+    public final void onTrackSelectionParametersChanged(b2.u1 u1Var) {
+        org.telegram.ui.or0 or0Var = this.h0;
+        if (or0Var != null) {
+            AndroidUtilities.runOnUIThread(or0Var);
+        }
+    }
+
+    @Override // b2.e1
+    public final void onTracksChanged(b2.w1 w1Var) {
+        org.telegram.ui.or0 or0Var = this.h0;
+        if (or0Var != null) {
+            AndroidUtilities.runOnUIThread(or0Var);
+        }
+    }
+
+    @Override // b2.e1
+    public final void onVideoSizeChanged(b2.b2 b2Var) {
+        if (Objects.equals(b2Var, b2.b2.d)) {
+            return;
+        }
+        this.J.onVideoSizeChanged(b2Var.a, b2Var.b, 0, b2Var.c);
+    }
+
+    public final long p() {
+        long j10 = this.f0;
+        if (j10 != -9223372036854775807L) {
+            return j10;
+        }
+        i2.h0 h0Var = this.d;
+        if (h0Var != null) {
+            return h0Var.getDuration();
+        }
+        return 0L;
+    }
+
+    public final di.j8 q(di.j8 j8Var) {
+        if (j8Var == null) {
+            j8Var = new di.j8();
+        }
+        try {
+            i2.h0 h0Var = this.d;
+            h0Var.F1();
+            MediaFormat mediaFormat = ((r2.r) h0Var.g[0]).f0;
+            ByteBuffer byteBuffer = mediaFormat.getByteBuffer("hdr-static-info");
+            byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
+            if (byteBuffer.get() == 0) {
+                byteBuffer.getShort(17);
+                byteBuffer.getShort(19);
+            }
+            if (Build.VERSION.SDK_INT >= 24) {
+                if (mediaFormat.containsKey("color-transfer")) {
+                    j8Var.b = mediaFormat.getInteger("color-transfer");
+                }
+                if (mediaFormat.containsKey("color-standard")) {
+                    j8Var.a = mediaFormat.getInteger("color-standard");
+                }
+                if (mediaFormat.containsKey("color-range")) {
+                    mediaFormat.getInteger("color-range");
+                }
+            }
+        } catch (Exception unused) {
+        }
+        return j8Var;
+    }
+
+    public final d81 r(Boolean bool) {
+        d81 d81Var = null;
+        for (int i10 = 0; i10 < t(); i10++) {
+            d81 u10 = u(i10);
+            if (u10.a == bool.booleanValue() && (d81Var == null || d81Var.b * d81Var.c < u10.b * u10.c)) {
+                d81Var = u10;
+            }
+        }
+        return d81Var;
+    }
+
+    public final int t() {
+        ArrayList arrayList = this.N;
+        if (arrayList == null) {
+            return 0;
+        }
+        return arrayList.size();
+    }
+
+    public final d81 u(int i10) {
+        ArrayList arrayList = this.N;
+        return arrayList == null ? r(Boolean.FALSE) : (i10 < 0 || i10 >= arrayList.size()) ? r(Boolean.FALSE) : (d81) this.N.get(i10);
+    }
+
+    public final boolean x() {
+        i2.h0 h0Var = this.d;
+        if (h0Var == null) {
+            return false;
+        }
+        h0Var.F1();
+        return h0Var.b0 == 0.0f;
+    }
+
+    public final boolean y() {
+        if (this.x && this.I) {
+            return true;
+        }
+        i2.h0 h0Var = this.d;
+        return h0Var != null && h0Var.t();
+    }
+
+    public final Uri z(ArrayList arrayList) {
+        String str;
+        StringBuilder sb2 = new StringBuilder("#EXTM3U\n#EXT-X-VERSION:6\n#EXT-X-INDEPENDENT-SEGMENTS\n\n");
+        this.P = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        int size = arrayList.size();
+        boolean z10 = false;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ArrayList arrayList3 = ((d81) obj).d;
+            int size2 = arrayList3.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj2 = arrayList3.get(i11);
+                i11++;
+                f81 f81Var = (f81) obj2;
+                long j10 = f81Var.c;
+                Uri uri = f81Var.d;
+                ExtendedDefaultDataSourceFactory extendedDefaultDataSourceFactory = this.h;
+                extendedDefaultDataSourceFactory.putDocumentUri(j10, uri);
+                extendedDefaultDataSourceFactory.putDocumentUri(f81Var.e, f81Var.f);
+                if (f81Var.f != null) {
+                    this.P.add(f81Var);
+                    StringBuilder sb3 = new StringBuilder("#EXT-X-STREAM-INF:BANDWIDTH=");
+                    sb3.append((int) Math.floor(f81Var.l * 8.0d));
+                    sb3.append(",RESOLUTION=");
+                    sb3.append(f81Var.i);
+                    sb3.append("x");
+                    sb3.append(f81Var.j);
+                    String str2 = f81Var.m;
+                    if (str2 != null) {
+                        switch (str2) {
+                            case "av1":
+                            case "av01":
+                                str = "video/av01";
+                                break;
+                            case "avc":
+                            case "h264":
+                                str = MediaController.VIDEO_MIME_TYPE;
+                                break;
+                            case "vp8":
+                                str = "video/x-vnd.on2.vp8";
+                                break;
+                            case "vp9":
+                                str = "video/x-vnd.on2.vp9";
+                                break;
+                            case "h265":
+                            case "hevc":
+                                str = "video/hevc";
+                                break;
+                            default:
+                                str = "video/".concat(str2);
+                                break;
+                        }
+                    } else {
+                        str = null;
+                    }
+                    if (str != null) {
+                        sb3.append(",MIME=\"");
+                        sb3.append(str);
+                        sb3.append("\"");
+                    }
+                    if (f81Var.b() && f81Var.c()) {
+                        sb3.append(",CACHED=\"true\"");
+                    }
+                    sb3.append(",DOCID=\"");
+                    sb3.append(f81Var.c);
+                    sb3.append("\",ACCOUNT=\"");
+                    sb3.append(f81Var.a);
+                    sb3.append("\"\n");
+                    if (f81Var.c()) {
+                        sb3.append(f81Var.f);
+                        sb3.append("\n\n");
+                    } else {
+                        sb3.append("mtproto:");
+                        sb3.append(f81Var.e);
+                        sb3.append("\n\n");
+                    }
+                    arrayList2.add(sb3.toString());
+                    z10 = true;
+                }
+            }
+        }
+        if (!z10) {
+            return null;
+        }
+        Collections.reverse(arrayList2);
+        sb2.append(TextUtils.join("", arrayList2));
+        return Uri.parse("data:application/x-mpegurl;base64," + Base64.encodeToString(sb2.toString().getBytes(), 2));
+    }
+
+    public h81(boolean z10, boolean z11) {
+        int i10 = j0;
+        j0 = i10 + 1;
+        this.a = i10;
+        this.a0 = new Handler(Looper.getMainLooper());
+        this.c0 = false;
+        this.d0 = -1;
+        this.f0 = -9223372036854775807L;
+        this.g0 = -9223372036854775807L;
+        this.i0 = new ArrayList();
+        this.b0 = z11;
+        this.h = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
+        x2.n nVar = new x2.n(ApplicationLoader.applicationContext, new oa.d(26));
+        this.f = nVar;
+        if (z11) {
+            x2.i j10 = nVar.j();
+            j10.getClass();
+            x2.h hVar = new x2.h(j10);
+            hVar.I.add(1);
+            nVar.b(new x2.i(hVar));
+        }
+        this.L = 1;
+        this.W = z10;
+        if (z10) {
+            NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.playerDidStartPlaying);
+        }
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onCues(List list) {
+    }
+
+    @Override // b2.e1
+    public final void onPositionDiscontinuity(b2.f1 f1Var, b2.f1 f1Var2, int i10) {
+    }
+
+    @Override // b2.e1
+    public void onRenderedFirstFrame() {
+        this.J.onRenderedFirstFrame();
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void a(i2.e eVar) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void b(u2.c0 c0Var) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void c(b2.b2 b2Var) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void h(b2.z0 z0Var) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onAudioAttributesChanged(b2.f fVar) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onAudioSessionIdChanged(int i10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onAvailableCommandsChanged(b2.c1 c1Var) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onIsLoadingChanged(boolean z10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onIsPlayingChanged(boolean z10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onLoadingChanged(boolean z10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onMediaMetadataChanged(b2.s0 s0Var) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onMetadata(b2.u0 u0Var) {
+    }
+
+    @Override // b2.e1
+    public final void onPlaybackParametersChanged(b2.a1 a1Var) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onPlaybackStateChanged(int i10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onPlaybackSuppressionReasonChanged(int i10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onPlayerErrorChanged(b2.z0 z0Var) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onPlaylistMetadataChanged(b2.s0 s0Var) {
+    }
+
+    @Override // b2.e1
+    public final void onRepeatModeChanged(int i10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onShuffleModeEnabledChanged(boolean z10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onSkipSilenceEnabledChanged(boolean z10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onVolumeChanged(float f7) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void d(b2.g1 g1Var, qf.b bVar) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void e(j2.a aVar, u2.c0 c0Var) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onEvents(b2.g1 g1Var, b2.d1 d1Var) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onMediaItemTransition(b2.p0 p0Var, int i10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onPlayWhenReadyChanged(boolean z10, int i10) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onSurfaceSizeChanged(int i10, int i11) {
+    }
+
+    @Override // b2.e1
+    public final /* synthetic */ void onTimelineChanged(b2.p1 p1Var, int i10) {
+    }
+
+    @Override // j2.b
+    public final /* synthetic */ void f(j2.a aVar, int i10, long j10) {
+    }
 }

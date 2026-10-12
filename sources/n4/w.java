@@ -1,64 +1,151 @@
 package n4;
 
-import android.media.session.MediaSession;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.ComponentName;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.media.Rating;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Process;
+import android.provider.Settings;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
-public final class w implements Parcelable {
-    public static final Parcelable.Creator<w> CREATOR = new m8.h(7);
-    public final MediaSession.Token b;
-    public h c;
-    public final Object a = new Object();
-    public y4.d d = null;
+public final class w {
+    public static final Object b = new Object();
+    public static volatile w c;
+    public Object a;
 
-    public w(MediaSession.Token token, q qVar) {
-        this.b = token;
-        this.c = qVar;
-    }
-
-    public final h a() {
-        h hVar;
-        synchronized (this.a) {
-            hVar = this.c;
+    public static w a(Context context) {
+        w wVar;
+        synchronized (b) {
+            try {
+                if (c == null) {
+                    Context applicationContext = context.getApplicationContext();
+                    w wVar2 = new w();
+                    m4.c cVar = new m4.c(4, (byte) 0);
+                    cVar.b = applicationContext;
+                    cVar.c = applicationContext.getContentResolver();
+                    wVar2.a = cVar;
+                    c = wVar2;
+                }
+                wVar = c;
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        return hVar;
+        return wVar;
     }
 
-    public final void b(h hVar) {
-        synchronized (this.a) {
-            this.c = hVar;
+    public boolean b(t tVar) {
+        m4.c cVar = (m4.c) this.a;
+        v vVar = tVar.a;
+        Context context = (Context) cVar.b;
+        int i10 = vVar.c;
+        String str = vVar.a;
+        try {
+            int i11 = Build.VERSION.SDK_INT;
+            if (i11 == 23 && str.equals("android.media.session.MediaController")) {
+                return true;
+            }
+            ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo(str, 0);
+            if (applicationInfo != null) {
+                if (i11 < 28) {
+                    i10 = applicationInfo.uid;
+                }
+                if (i10 == 1000 || i10 == Process.myUid() || context.checkPermission("android.permission.MEDIA_CONTENT_CONTROL", vVar.b, vVar.c) == 0 || cVar.F(vVar, "android.permission.STATUS_BAR_SERVICE") || cVar.F(vVar, "android.permission.MEDIA_CONTENT_CONTROL")) {
+                    return true;
+                }
+                String string = Settings.Secure.getString((ContentResolver) cVar.c, "enabled_notification_listeners");
+                if (string != null) {
+                    for (String str2 : string.split(":")) {
+                        ComponentName unflattenFromString = ComponentName.unflattenFromString(str2);
+                        if (unflattenFromString != null && unflattenFromString.getPackageName().equals(str)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        } catch (PackageManager.NameNotFoundException unused) {
+            e2.a.b("MediaSessionManager", "Package " + str + " doesn't exist");
+            return false;
         }
     }
 
-    public final void c(y4.d dVar) {
-        synchronized (this.a) {
-            this.d = dVar;
+    public void c(String str, Bitmap bitmap) {
+        Integer num = (Integer) i.c.get(str);
+        if (num != null && num.intValue() != 2) {
+            throw new IllegalArgumentException(a1.g.p("The ", str, " key cannot be used to put a Bitmap"));
         }
+        ((Bundle) this.a).putParcelable(str, bitmap);
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public void d(long j10, String str) {
+        Integer num = (Integer) i.c.get(str);
+        if (num != null && num.intValue() != 0) {
+            throw new IllegalArgumentException(a1.g.p("The ", str, " key cannot be used to put a long"));
         }
-        if (obj instanceof w) {
-            return this.b.equals(((w) obj).b);
+        ((Bundle) this.a).putLong(str, j10);
+    }
+
+    public void e(String str, z zVar) {
+        Rating rating;
+        float f7 = zVar.b;
+        int i10 = zVar.a;
+        Integer num = (Integer) i.c.get(str);
+        if (num != null && num.intValue() != 3) {
+            throw new IllegalArgumentException(a1.g.p("The ", str, " key cannot be used to put a Rating"));
         }
-        return false;
+        Bundle bundle = (Bundle) this.a;
+        if (zVar.c == null) {
+            if (zVar.b()) {
+                switch (i10) {
+                    case 1:
+                        zVar.c = Rating.newHeartRating(i10 == 1 && f7 == 1.0f);
+                        break;
+                    case 2:
+                        zVar.c = Rating.newThumbRating(i10 == 2 && f7 == 1.0f);
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        zVar.c = Rating.newStarRating(i10, zVar.a());
+                        break;
+                    case 6:
+                        if (i10 != 6 || !zVar.b()) {
+                            f7 = -1.0f;
+                        }
+                        zVar.c = Rating.newPercentageRating(f7);
+                        break;
+                    default:
+                        rating = null;
+                        break;
+                }
+                bundle.putParcelable(str, rating);
+            }
+            zVar.c = Rating.newUnratedRating(i10);
+        }
+        rating = zVar.c;
+        bundle.putParcelable(str, rating);
     }
 
-    public final int hashCode() {
-        return this.b.hashCode();
+    public void f(String str, String str2) {
+        Integer num = (Integer) i.c.get(str);
+        if (num != null && num.intValue() != 1) {
+            throw new IllegalArgumentException(a1.g.p("The ", str, " key cannot be used to put a String"));
+        }
+        ((Bundle) this.a).putCharSequence(str, str2);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeParcelable(this.b, i10);
+    public void g(CharSequence charSequence, String str) {
+        Integer num = (Integer) i.c.get(str);
+        if (num != null && num.intValue() != 1) {
+            throw new IllegalArgumentException(a1.g.p("The ", str, " key cannot be used to put a CharSequence"));
+        }
+        ((Bundle) this.a).putCharSequence(str, charSequence);
     }
 }

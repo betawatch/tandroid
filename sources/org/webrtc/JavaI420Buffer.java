@@ -1,9 +1,10 @@
 package org.webrtc;
 
+import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes4.dex */
 public class JavaI420Buffer implements VideoFrame.I420Buffer {
     private final ByteBuffer dataU;
@@ -43,17 +44,17 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
         ByteBuffer slice2 = nativeAllocateByteBuffer.slice();
         nativeAllocateByteBuffer.position(i16);
         nativeAllocateByteBuffer.limit(i16 + i15);
-        return new JavaI420Buffer(i10, i11, slice, i10, slice2, i13, nativeAllocateByteBuffer.slice(), i13, new j(0, nativeAllocateByteBuffer));
+        return new JavaI420Buffer(i10, i11, slice, i10, slice2, i13, nativeAllocateByteBuffer.slice(), i13, new k(0, nativeAllocateByteBuffer));
     }
 
     private static void checkCapacity(ByteBuffer byteBuffer, int i10, int i11, int i12) {
-        int f7 = hg.c.f(i11, 1, i12, i10);
-        if (byteBuffer.capacity() >= f7) {
+        int v = k3.v(i11, 1, i12, i10);
+        if (byteBuffer.capacity() >= v) {
             return;
         }
-        StringBuilder j3 = hg.c.j(f7, "Buffer must be at least ", " bytes, but was ");
-        j3.append(byteBuffer.capacity());
-        throw new IllegalArgumentException(j3.toString());
+        StringBuilder k10 = i2.d.k(v, "Buffer must be at least ", " bytes, but was ");
+        k10.append(byteBuffer.capacity());
+        throw new IllegalArgumentException(k10.toString());
     }
 
     public static VideoFrame.Buffer cropAndScaleI420(VideoFrame.I420Buffer i420Buffer, int i10, int i11, int i12, int i13, int i14, int i15) {
@@ -101,7 +102,7 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
 
     @Override // org.webrtc.VideoFrame.I420Buffer, org.webrtc.VideoFrame.Buffer
     public final /* synthetic */ int getBufferType() {
-        return b0.a(this);
+        return c0.a(this);
     }
 
     @Override // org.webrtc.VideoFrame.I420Buffer

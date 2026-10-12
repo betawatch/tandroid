@@ -8,20 +8,20 @@ public final class i6 extends w5 {
     public int d;
 
     @Override // j$.util.stream.e5, j$.util.stream.j5
-    public final void o(long j3) {
-        if (j3 >= 2147483639) {
+    public final void o(long j10) {
+        if (j10 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.c = new long[(int) j3];
+        this.c = new long[(int) j10];
     }
 
     @Override // j$.util.stream.e5, j$.util.stream.j5
     public final void end() {
         int i10 = 0;
         Arrays.sort(this.c, 0, this.d);
-        long j3 = this.d;
+        long j10 = this.d;
         j5 j5Var = this.a;
-        j5Var.o(j3);
+        j5Var.o(j10);
         if (!this.b) {
             while (i10 < this.d) {
                 j5Var.accept(this.c[i10]);
@@ -38,10 +38,10 @@ public final class i6 extends w5 {
     }
 
     @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j3) {
+    public final void accept(long j10) {
         long[] jArr = this.c;
         int i10 = this.d;
         this.d = i10 + 1;
-        jArr[i10] = j3;
+        jArr[i10] = j10;
     }
 }

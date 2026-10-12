@@ -1,7 +1,6 @@
 package o0;
 
-import a0.k;
-import a0.m;
+import a0.l;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
@@ -11,23 +10,23 @@ import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import v7.d8;
-import w7.a8;
+import v7.y7;
+import w7.d8;
 
-/* compiled from: r8-map-id-e959fc77415b2a9f71493a2f526f1cffce04a1a9a22b5908f4d2a6356f8feb22 */
+/* compiled from: r8-map-id-3c12e33287fbb2ce9486607f172b60a6e11d5f90866ff33993704227d9627b1d */
 /* loaded from: classes.dex */
 public abstract class g {
-    public static final k a = new k(16);
+    public static final a0.j a = new a0.j(16);
     public static final ThreadPoolExecutor b;
     public static final Object c;
-    public static final m d;
+    public static final l d;
 
     static {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 10000, TimeUnit.MILLISECONDS, new LinkedBlockingDeque(), new j());
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         b = threadPoolExecutor;
         c = new Object();
-        d = new m(0);
+        d = new l(0);
     }
 
     public static String a(int i10, List list) {
@@ -54,10 +53,10 @@ public abstract class g {
         Typeface typeface;
         int i11;
         Typeface b10;
-        k kVar = a;
-        a8.a("getFontSync");
+        a0.j jVar = a;
+        d8.a("getFontSync");
         try {
-            typeface = (Typeface) kVar.a(str);
+            typeface = (Typeface) jVar.a(str);
         } catch (PackageManager.NameNotFoundException unused) {
             return new f(-1);
         } catch (Throwable th2) {
@@ -78,18 +77,18 @@ public abstract class g {
                 }
                 if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
                     h[] hVarArr = (h[]) list2.get(0);
-                    d8 d8Var = i0.e.a;
-                    a8.a("TypefaceCompat.createFromFontInfo");
+                    y7 y7Var = i0.e.a;
+                    d8.a("TypefaceCompat.createFromFontInfo");
                     b10 = i0.e.a.b(context, hVarArr, i10);
                     Trace.endSection();
                     if (b10 != null) {
                         return new f(-3);
                     }
-                    kVar.b(str, b10);
+                    jVar.b(str, b10);
                     return new f(b10);
                 }
-                d8 d8Var2 = i0.e.a;
-                a8.a("TypefaceCompat.createFromFontInfoWithFallback");
+                y7 y7Var2 = i0.e.a;
+                d8.a("TypefaceCompat.createFromFontInfoWithFallback");
                 b10 = i0.e.a.c(context, list2, i10);
                 Trace.endSection();
                 if (b10 != null) {
